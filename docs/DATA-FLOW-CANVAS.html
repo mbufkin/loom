@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loom — Data flow with router split</title>
+  <style>
+    :root {
+      --ink: #1a2421;
+      --muted: #5a6b64;
+      --line: #c5d0c8;
+      --code: #2f5d50;
+      --code-bg: #dceae3;
+      --model: #9a4a1c;
+      --model-bg: #f3ddd0;
+      --out: #1e3a5f;
+      --out-bg: #d9e4f0;
+      --loom: #0f4c5c;
+      --loom-bg: #cfe8ee;
+      --lesson: #1b5e4a;
+      --lesson-bg: #d4efe6;
+      --quiz: #6b3d12;
+      --quiz-bg: #f3e0c8;
+      --general: #3d3f55;
+      --general-bg: #e2e3ec;
+      --decision: #7a5c12;
+      --decision-bg: #f5ebc8;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: #f0ebe3;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 2.25rem 1.5rem 1rem;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    header h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 700;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      margin: 0 0 0.4rem;
+      letter-spacing: -0.02em;
+      color: #1a2421;
+    }
+    header p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 46rem;
+      line-height: 1.45;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem 0.9rem;
+      margin: 1.15rem 0 0;
+      font-size: 0.82rem;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.22rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.55);
+    }
+    .dot {
+      width: 0.6rem;
+      height: 0.6rem;
+      border-radius: 50%;
+    }
+    .dot.code { background: var(--code); }
+    .dot.model { background: var(--model); }
+    .dot.loom { background: var(--loom); }
+    .dot.lesson { background: var(--lesson); }
+    .dot.quiz { background: var(--quiz); }
+    .dot.general { background: var(--general); }
+    .dot.out { background: var(--out); }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0.5rem 1.5rem 3rem;
+    }
+
+    .flow { display: flex; flex-direction: column; gap: 0; }
+
+    .stage {
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+    .when {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0.6rem 0 0.25rem;
+      text-align: left;
+    }
+
+    .card {
+      border: 1px solid #9aab9f;
+      border-radius: 12px;
+      padding: 0.95rem 1.1rem;
+      background: #ffffff;
+      color: #1a2421;
+    }
+    .card h2 {
+      margin: 0 0 0.3rem;
+      font-size: 1.02rem;
+      font-weight: 600;
+    }
+    .card p, .card li {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    .card ul {
+      margin: 0.4rem 0 0;
+      padding-left: 1.05rem;
+      color: var(--muted);
+    }
+    .card code {
+      font-size: 0.82em;
+      background: rgba(26,36,33,0.06);
+      padding: 0.05em 0.3em;
+      border-radius: 3px;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 0.45rem;
+    }
+    .tag {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      padding: 0.12rem 0.4rem;
+      border-radius: 4px;
+    }
+    .tag.code { background: var(--code-bg); color: var(--code); }
+    .tag.model { background: var(--model-bg); color: var(--model); }
+    .tag.loom { background: var(--loom-bg); color: var(--loom); }
+    .tag.out { background: var(--out-bg); color: var(--out); }
+    .tag.planned { background: var(--decision-bg); color: var(--decision); }
+
+    .connector {
+      height: 0.85rem;
+      margin: 0.15rem 0 0.15rem 0.5rem;
+      border-left: 2px solid #9aab9f;
+    }
+    .connector::after { content: none; }
+
+    @media (max-width: 640px) {
+      .when { text-align: left; }
+    }
+
+    /* --- Loom router fan-out --- */
+    .router-wrap {
+      margin: 0.35rem 0 0.5rem;
+      padding: 1.1rem 1.15rem 1.25rem;
+      border-radius: 16px;
+      border: 2px solid #7ab0bc;
+      background:
+        linear-gradient(160deg, rgba(207,232,238,0.55), rgba(255,255,255,0.85));
+    }
+    .router-wrap > h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.35rem;
+      margin: 0 0 0.25rem;
+      color: var(--loom);
+    }
+    .router-wrap > .sub {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      max-width: 40rem;
+      line-height: 1.4;
+    }
+
+    .branches {
+      display: block;
+    }
+    .branch {
+      border-radius: 12px;
+      padding: 0.9rem 0.95rem;
+      border: 1px solid #ccc;
+      background: #ffffff;
+      margin-bottom: 0.75rem;
+    }
+    .branch.lesson {
+      border-color: #8fc9b5;
+      box-shadow: inset 0 0 0 1px rgba(27,94,74,0.08);
+    }
+    .branch.quiz {
+      border-color: #e0b88a;
+      box-shadow: inset 0 0 0 1px rgba(107,61,18,0.08);
+    }
+    .branch.general {
+      border-color: #b4b7c9;
+      box-shadow: inset 0 0 0 1px rgba(61,63,85,0.08);
+    }
+    .branch h3 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .branch .path-tag {
+      align-self: flex-start;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+    }
+    .branch.lesson .path-tag { background: var(--lesson-bg); color: var(--lesson); }
+    .branch.quiz .path-tag { background: var(--quiz-bg); color: var(--quiz); }
+    .branch.general .path-tag { background: var(--general-bg); color: var(--general); }
+
+    .branch ol {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.4;
+    }
+    .branch ol li { margin: 0.2rem 0; }
+    .branch .out-line {
+      margin-top: auto;
+      padding-top: 0.55rem;
+      border-top: 1px dashed var(--line);
+      font-size: 0.82rem;
+      color: var(--ink);
+    }
+
+    .rejoin {
+      margin-top: 0.85rem;
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--loom);
+    }
+
+    .note {
+      margin-top: 1.5rem;
+      padding: 1rem 1.15rem;
+      border-radius: 12px;
+      border: 1px solid #d4c48a;
+      background: linear-gradient(160deg, #fffdf6, #f4ebd0);
+      font-size: 0.9rem;
+      line-height: 1.45;
+      color: var(--ink);
+    }
+    .note strong { color: var(--decision); }
+
+    footer {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 1.5rem 2.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 640px) {
+      .stage { grid-template-columns: 1fr; gap: 0.3rem; }
+      .when { text-align: left; padding-top: 0; }
+      .connector { margin-left: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Loom data flow — type split</h1>
+    <p>
+      Shared pipeline until we know what a document is. Then Loom’s router
+      fans out: lesson plans, quizzes, and everything else get different
+      workflows. Paths rejoin for unit reports and Drive.
+    </p>
+    <div class="legend">
+      <span class="chip"><span class="dot model"></span> Model</span>
+      <span class="chip"><span class="dot code"></span> Code</span>
+      <span class="chip"><span class="dot loom"></span> Loom router</span>
+      <span class="chip"><span class="dot lesson"></span> Lesson plan path</span>
+      <span class="chip"><span class="dot quiz"></span> Quiz path</span>
+      <span class="chip"><span class="dot general"></span> General path</span>
+      <span class="chip"><span class="dot out"></span> Deliverable</span>
+    </div>
+  </header>
+
+  <main class="flow">
+
+    <section class="stage">
+      <div class="when">Start</div>
+      <article class="card">
+        <div class="meta"><span class="tag code">Code</span></div>
+        <h2>1. Sources land</h2>
+        <p>Drop curriculum into <code>projects/&lt;id&gt;/sources/</code> — mixed types, one pile.</p>
+      </article>
+    </section>
+    <div class="connector" aria-hidden="true"></div>
+
+    <section class="stage">
+      <div class="when">Extract</div>
+      <article class="card">
+        <div class="meta"><span class="tag code">Code</span></div>
+        <h2>2. Text extraction</h2>
+        <p><code>doc_extract.py</code> — still shared for every file.</p>
+      </article>
+    </section>
+    <div class="connector" aria-hidden="true"></div>
+
+    <section class="stage">
+      <div class="when">Organize</div>
+      <article class="card">
+        <div class="meta"><span class="tag model">Model</span></div>
+        <h2>3. Ingest</h2>
+        <p><code>ingest.py</code> — group into units + day calendars. Types not routed yet.</p>
+      </article>
+    </section>
+    <div class="connector" aria-hidden="true"></div>
+
+    <section class="stage">
+      <div class="when">Map year</div>
+      <article class="card">
+        <div class="meta"><span class="tag code">Code</span></div>
+        <h2>4. Rollup</h2>
+        <p><code>rollup.py</code> — pacing / year map from calendars.</p>
+      </article>
+    </section>
+    <div class="connector" aria-hidden="true"></div>
+
+    <section class="stage">
+      <div class="when">Break apart</div>
+      <article class="card">
+        <div class="meta"><span class="tag model">Model</span></div>
+        <h2>5. Layer 0 — decompose + classify</h2>
+        <p>Model extracts cited elements <em>and</em> we know the document’s pedagogical type
+          (lesson plan, quiz, exit ticket, worksheet, slides, …).</p>
+        <ul>
+          <li>Ledger: <code>layer0/ledger.json</code></li>
+          <li><strong>This is the last shared step before Loom splits</strong></li>
+        </ul>
+      </article>
+    </section>
+    <div class="connector" aria-hidden="true"></div>
+
+    <!-- LOOM SPLIT -->
+    <div class="router-wrap" id="loom-split">
+      <div class="meta" style="margin-bottom:0.35rem">
+        <span class="tag loom">Loom</span>
+        <span class="tag planned">Planned / building</span>
+      </div>
+      <h2>6. Router — figure out what it is, then split</h2>
+      <p class="sub">
+        <code>route.py</code> reads classification → picks a workflow.
+        Same document never gets a one-size-fits-all analysis after this point.
+        Unknown types → general path + feedback log.
+      </p>
+
+      <div class="branches">
+        <article class="branch lesson">
+          <span class="path-tag">Path A · Lesson plan</span>
+          <h3>Lesson plan workflow</h3>
+          <ol>
+            <li>Layer 1 place on calendar (shared idea, lesson-aware roles)</li>
+            <li>Hunter / CTAT checklist Layer 2</li>
+            <li><strong>Model assigns excerpts → Hunter fields</strong> (fix for fill drift)</li>
+            <li>Emit <code>LESSON-PLAN.md/.pdf</code> structure plate</li>
+          </ol>
+          <div class="out-line">Out: lesson completeness + filled Hunter sheet</div>
+        </article>
+
+        <article class="branch quiz">
+          <span class="path-tag">Path B · Quiz / assessment</span>
+          <h3>Quiz workflow</h3>
+          <ol>
+            <li>Check answer key present?</li>
+            <li>Item coverage vs unit TEKS / learning targets</li>
+            <li>Formative vs summative role on the day grid</li>
+            <li>No Hunter plate — assessment-shaped findings</li>
+          </ol>
+          <div class="out-line">Out: quiz audit rows for teacher packet</div>
+        </article>
+
+        <article class="branch general">
+          <span class="path-tag">Path C · Everything else</span>
+          <h3>General pass</h3>
+          <ol>
+            <li>Slides, worksheets, rubrics, flyers, unknown…</li>
+            <li>Current generic Layer 1–2 style analysis</li>
+            <li>Log unknown types → <code>_loom_feedback.yaml</code></li>
+            <li>Later: promote hot patterns to their own workflow</li>
+          </ol>
+          <div class="out-line">Out: generic findings + feedback for growth</div>
+        </article>
+      </div>
+
+      <div class="rejoin">↓ paths rejoin per unit ↓</div>
+    </div>
+
+    <div class="connector" aria-hidden="true"></div>
+
+    <section class="stage">
+      <div class="when">Unit view</div>
+      <article class="card">
+        <div class="meta">
+          <span class="tag code">Code</span>
+          <span class="tag model">Model</span>
+          <span class="tag out">Deliverable</span>
+        </div>
+        <h2>7. Unit assemble — reports + education plates</h2>
+        <p>Findings from all three paths merge into the unit folder.</p>
+        <ul>
+          <li><code>TEACHER-PACKET</code> — auditor punch list (hybrid)</li>
+          <li><code>UNIT-PLAN</code> — NW ISD macro inventory (discovery fill)</li>
+          <li><code>LESSON-PLAN</code> — only from Path A (Hunter), once model placement ships</li>
+        </ul>
+      </article>
+    </section>
+    <div class="connector" aria-hidden="true"></div>
+
+    <section class="stage">
+      <div class="when">Ship</div>
+      <article class="card">
+        <div class="meta"><span class="tag code">Code</span><span class="tag out">Deliverable</span></div>
+        <h2>8. Drive push</h2>
+        <p>Per-unit PDFs + files. Add <code>LESSON-PLAN.pdf</code> when Path A fill is trusted.</p>
+      </article>
+    </section>
+
+    <div class="note">
+      <strong>Where model fills the lesson-plan sheet:</strong>
+      on Path A, after the document is typed as <em>lesson plan</em> —
+      not on the shared trunk, and not on quiz/general.
+      That keeps quiz analysis assessment-shaped and stops keyword drift
+      from treating every chunk like a Hunter step.
+    </div>
+  </main>
+
+  <footer>
+    Visual: <code>docs/DATA-FLOW-CANVAS.html</code> ·
+    Notes: <code>docs/DATA-FLOW.md</code> ·
+    Plan: <code>PLAN.md</code>
+  </footer>
+</body>
+</html>

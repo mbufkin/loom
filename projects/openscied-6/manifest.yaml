@@ -1,0 +1,39 @@
+project_id: openscied-6
+title: OpenSciEd Middle School Science Sampler
+description: 8 complete teacher edition units from OpenSciEd Grades 6-8
+units:
+  6.2-thermal-energy:
+    title: 6.2 Thermal Energy
+    calendar: units/6.2-thermal-energy/calendar.yaml
+    documents:
+    - 6.2-te.pdf
+  6.3-weather-climate:
+    title: 6.3 Weather, Climate & Water Cycling
+    calendar: units/6.3-weather-climate/calendar.yaml
+    documents:
+    - 6.3-te.pdf
+  7.1-chemical-reactions-matter:
+    title: 7.1 Chemical Reactions & Matter
+    calendar: units/7.1-chemical-reactions-matter/calendar.yaml
+    documents:
+    - 7.1-te.pdf
+  7.2-chemical-reactions-energy:
+    title: 7.2 Chemical Reactions & Energy
+    calendar: units/7.2-chemical-reactions-energy/calendar.yaml
+    documents:
+    - 7.2-te.pdf
+  7.3-metabolic-reactions:
+    title: 7.3 Metabolic Reactions
+    calendar: units/7.3-metabolic-reactions/calendar.yaml
+    documents:
+    - 7.3-te.pdf
+  7.4-matter-cycling:
+    title: 7.4 Matter Cycling & Photosynthesis
+    calendar: units/7.4-matter-cycling/calendar.yaml
+    documents:
+    - 7.4-te.pdf
+  8.2-sound-waves:
+    title: 8.2 Sound Waves
+    calendar: units/8.2-sound-waves/calendar.yaml
+    documents:
+    - 8.2-te.pdf

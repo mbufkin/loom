@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="720" viewBox="0 0 1400 720">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title { font: 700 28px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 16px 'Segoe UI', Arial, sans-serif; fill: #64748b; }
+      .group-title { font: 700 13px 'Segoe UI', Arial, sans-serif; fill: #475569; letter-spacing: 0.08em; }
+      .box { rx: 12; stroke-width: 2; }
+      .box-text { font: 600 15px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .box-sub { font: 400 13px 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .arrow { stroke: #64748b; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  <text x="40" y="48" class="title">Crystallize — Data Flow</text>
+  <text x="40" y="76" class="subtitle">Layer 0/1 headline path · ./run-audit &lt;id&gt; · CTAT 2026</text>
+  
+  <rect x="40" y="100" width="240" height="500" rx="16" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2" opacity="0.35"/>
+  <text x="56" y="128" class="group-title">1  INPUT</text>
+  <rect x="300" y="100" width="240" height="500" rx="16" fill="#dcfce7" stroke="#166534" stroke-width="2" opacity="0.35"/>
+  <text x="316" y="128" class="group-title">2  EXTRACT &amp; ORGANIZE</text>
+  <rect x="560" y="100" width="240" height="500" rx="16" fill="#fef9c3" stroke="#a16207" stroke-width="2" opacity="0.35"/>
+  <text x="576" y="128" class="group-title">3  STRUCTURAL MAP</text>
+  <rect x="820" y="100" width="240" height="500" rx="16" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2" opacity="0.35"/>
+  <text x="836" y="128" class="group-title">4  AUDIT (headline)</text>
+  <rect x="1080" y="100" width="240" height="500" rx="16" fill="#ffedd5" stroke="#c2410c" stroke-width="2" opacity="0.35"/>
+  <text x="1096" y="128" class="group-title">5  OUTPUT</text>
+  <rect class="box" x="60" y="160" width="200" height="70" fill="#ffffff" stroke="#334155"/>
+  <text x="160.0" y="191.0" text-anchor="middle" class="box-text">Curriculum documents</text><text x="160.0" y="211.0" text-anchor="middle" class="box-sub">PDF · DOCX · PPTX · TXT</text>
+  <rect class="box" x="60" y="260" width="200" height="70" fill="#eff6ff" stroke="#93c5fd"/>
+  <text x="160.0" y="291.0" text-anchor="middle" class="box-text">District calendar</text><text x="160.0" y="311.0" text-anchor="middle" class="box-sub">optional YAML / image</text>
+  <rect class="box" x="320" y="150" width="200" height="56" fill="#ffffff" stroke="#334155"/>
+  <text x="420.0" y="174.0" text-anchor="middle" class="box-text">doc_extract / scrub</text><text x="420.0" y="194.0" text-anchor="middle" class="box-sub">code · full text</text>
+  <rect class="box" x="320" y="230" width="200" height="56" fill="#ffffff" stroke="#334155"/>
+  <text x="420.0" y="254.0" text-anchor="middle" class="box-text">ingest.py</text><text x="420.0" y="274.0" text-anchor="middle" class="box-sub">models · organize</text>
+  <rect class="box" x="320" y="320" width="200" height="56" fill="#ecfdf5" stroke="#059669"/>
+  <text x="420.0" y="344.0" text-anchor="middle" class="box-text">manifest.yaml</text><text x="420.0" y="364.0" text-anchor="middle" class="box-sub">unit ↔ documents</text>
+  <rect class="box" x="320" y="400" width="200" height="56" fill="#ecfdf5" stroke="#059669"/>
+  <text x="420.0" y="424.0" text-anchor="middle" class="box-text">units/*/calendar.yaml</text><text x="420.0" y="444.0" text-anchor="middle" class="box-sub">provisional day roles</text>
+  <rect class="box" x="580" y="180" width="200" height="56" fill="#ffffff" stroke="#334155"/>
+  <text x="680.0" y="204.0" text-anchor="middle" class="box-text">rollup.py</text><text x="680.0" y="224.0" text-anchor="middle" class="box-sub">code</text>
+  <rect class="box" x="580" y="280" width="200" height="56" fill="#ecfdf5" stroke="#059669"/>
+  <text x="680.0" y="304.0" text-anchor="middle" class="box-text">pacing-plan.yaml</text><text x="680.0" y="324.0" text-anchor="middle" class="box-sub">inferred year map</text>
+  <rect class="box" x="580" y="380" width="200" height="56" fill="#ffffff" stroke="#334155"/>
+  <text x="680.0" y="404.0" text-anchor="middle" class="box-text">Year at a Glance</text><text x="680.0" y="424.0" text-anchor="middle" class="box-sub">demoted scaffold</text>
+  <rect class="box" x="840" y="150" width="200" height="56" fill="#dbeafe" stroke="#1d4ed8"/>
+  <text x="940.0" y="174.0" text-anchor="middle" class="box-text">layer0.py</text><text x="940.0" y="194.0" text-anchor="middle" class="box-sub">models · cited elements</text>
+  <rect class="box" x="840" y="230" width="200" height="56" fill="#ecfdf5" stroke="#059669"/>
+  <text x="940.0" y="254.0" text-anchor="middle" class="box-text">layer0/ledger.json</text><text x="940.0" y="274.0" text-anchor="middle" class="box-sub">element ledger</text>
+  <rect class="box" x="840" y="310" width="200" height="56" fill="#dbeafe" stroke="#1d4ed8"/>
+  <text x="940.0" y="334.0" text-anchor="middle" class="box-text">layer1.py</text><text x="940.0" y="354.0" text-anchor="middle" class="box-sub">placement conformance</text>
+  <rect class="box" x="840" y="390" width="200" height="56" fill="#ffedd5" stroke="#c2410c"/>
+  <text x="940.0" y="414.0" text-anchor="middle" class="box-text">MATCH / MISMATCH / …</text><text x="940.0" y="434.0" text-anchor="middle" class="box-sub">bucket-ledger · findings</text>
+  <rect class="box" x="840" y="470" width="200" height="56" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="940.0" y="494.0" text-anchor="middle" class="box-text">REVIEW-QUEUE.md</text><text x="940.0" y="514.0" text-anchor="middle" class="box-sub">human calibration</text>
+  <rect class="box" x="1100" y="180" width="200" height="56" fill="#ffffff" stroke="#334155"/>
+  <text x="1200.0" y="204.0" text-anchor="middle" class="box-text">synthesize.py</text><text x="1200.0" y="224.0" text-anchor="middle" class="box-sub">Layer-1 globals</text>
+  <rect class="box" x="1100" y="270" width="200" height="56" fill="#ffffff" stroke="#334155"/>
+  <text x="1200.0" y="294.0" text-anchor="middle" class="box-text">render_pdf.py</text><text x="1200.0" y="314.0" text-anchor="middle" class="box-sub">code</text>
+  <rect class="box" x="1100" y="360" width="200" height="70" fill="#ecfdf5" stroke="#059669"/>
+  <text x="1200.0" y="391.0" text-anchor="middle" class="box-text">GLOBAL-AUDIT-REPORT.pdf</text><text x="1200.0" y="411.0" text-anchor="middle" class="box-sub">director deliverable</text>
+  <rect class="box" x="1100" y="460" width="200" height="56" fill="#ecfdf5" stroke="#059669"/>
+  <text x="1200.0" y="484.0" text-anchor="middle" class="box-text">DASHBOARD.md</text><text x="1200.0" y="504.0" text-anchor="middle" class="box-sub">counts · patterns</text><line class="arrow" x1="260" y1="195" x2="320" y2="178"/><line class="arrow" x1="260" y1="295" x2="320" y2="258"/><line class="arrow" x1="520" y1="258" x2="580" y2="208"/><line class="arrow" x1="520" y1="348" x2="580" y2="308"/><line class="arrow" x1="780" y1="208" x2="840" y2="178"/><line class="arrow" x1="780" y1="308" x2="840" y2="338"/><line class="arrow" x1="1040" y1="338" x2="1100" y2="208"/><line class="arrow" x1="1040" y1="418" x2="1100" y2="298"/><line class="arrow" x1="1040" y1="498" x2="1100" y2="395"/>
+  <rect x="40" y="630" width="1320" height="48" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="700" y="660" text-anchor="middle" class="box-text" fill="#991b1b">Auditor only — never writes lesson content</text>
+
+</svg>

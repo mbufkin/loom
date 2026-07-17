@@ -1,0 +1,28 @@
+{
+  "name": "loom",
+  "version": "1.0.0",
+  "description": "Loom — read-only curriculum auditor. Drop any corpus in `projects/<id>/sources/`, get a solid report out.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "python3 -m pytest test_*.py -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbufkin/loom.git"
+  },
+  "keywords": ["curriculum", "audit", "education", "cte"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mbufkin/loom/issues"
+  },
+  "homepage": "https://github.com/mbufkin/loom#readme",
+  "devDependencies": {
+    "markdown-link-check": "^3.14.2",
+    "markdownlint": "^0.41.1"
+  }
+}

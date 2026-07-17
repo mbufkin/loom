@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title { font: 700 28px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 16px 'Segoe UI', Arial, sans-serif; fill: #64748b; }
+      .group-title { font: 700 13px 'Segoe UI', Arial, sans-serif; fill: #475569; letter-spacing: 0.08em; }
+      .box { rx: 12; stroke-width: 2; }
+      .box-text { font: 600 15px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .box-sub { font: 400 13px 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .arrow { stroke: #64748b; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  <text x="40" y="48" class="title">File Flow — High Level</text>
+  <text x="40" y="76" class="subtitle">Crystallize Lite · CTAT 2026 · export for Canva / Google Drive</text>
+  
+  <rect x="40" y="110" width="280" height="420" rx="16" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2" opacity="0.35"/>
+  <text x="56" y="138" class="group-title">INPUT FILES</text>
+  <rect x="360" y="110" width="320" height="420" rx="16" fill="#fef9c3" stroke="#a16207" stroke-width="2" opacity="0.35"/>
+  <text x="376" y="138" class="group-title">PROJECT SPINE</text>
+  <rect x="720" y="110" width="440" height="420" rx="16" fill="#ffedd5" stroke="#c2410c" stroke-width="2" opacity="0.35"/>
+  <text x="736" y="138" class="group-title">OUTPUT FILES</text>
+  <rect class="box" x="60" y="170" width="240" height="72" fill="#ffffff" stroke="#334155"/>
+  <text x="180.0" y="202.0" text-anchor="middle" class="box-text">sources/</text><text x="180.0" y="222.0" text-anchor="middle" class="box-sub">111 extracted .txt</text>
+  <rect class="box" x="60" y="270" width="240" height="72" fill="#ffffff" stroke="#334155"/>
+  <text x="180.0" y="302.0" text-anchor="middle" class="box-text">reference/</text><text x="180.0" y="322.0" text-anchor="middle" class="box-sub">district calendar PNG</text>
+  <rect class="box" x="60" y="370" width="240" height="72" fill="#ffffff" stroke="#334155"/>
+  <text x="180.0" y="402.0" text-anchor="middle" class="box-text">units/*/calendar.yaml</text><text x="180.0" y="422.0" text-anchor="middle" class="box-sub">18 provisional grids</text>
+  <rect class="box" x="380" y="170" width="280" height="72" fill="#ffffff" stroke="#334155"/>
+  <text x="520.0" y="202.0" text-anchor="middle" class="box-text">manifest.yaml</text><text x="520.0" y="222.0" text-anchor="middle" class="box-sub">unit ↔ doc list</text>
+  <rect class="box" x="380" y="270" width="280" height="72" fill="#ffffff" stroke="#334155"/>
+  <text x="520.0" y="302.0" text-anchor="middle" class="box-text">school-calendar.yaml</text><text x="520.0" y="322.0" text-anchor="middle" class="box-sub">175 instructional days</text>
+  <rect class="box" x="380" y="370" width="280" height="72" fill="#ecfdf5" stroke="#059669"/>
+  <text x="520.0" y="402.0" text-anchor="middle" class="box-text">pacing-plan.yaml</text><text x="520.0" y="422.0" text-anchor="middle" class="box-sub">inferred year map</text>
+  <rect class="box" x="740" y="170" width="400" height="72" fill="#ffffff" stroke="#334155"/>
+  <text x="940.0" y="202.0" text-anchor="middle" class="box-text">output/&amp;lt;unit&amp;gt;/</text><text x="940.0" y="222.0" text-anchor="middle" class="box-sub">00 · 01 · 02 · PDF</text>
+  <rect class="box" x="740" y="270" width="400" height="72" fill="#ecfdf5" stroke="#059669"/>
+  <text x="940.0" y="302.0" text-anchor="middle" class="box-text">GLOBAL-AUDIT-REPORT.pdf</text><text x="940.0" y="322.0" text-anchor="middle" class="box-sub">DASHBOARD · SUMMARY</text>
+  <rect class="box" x="740" y="370" width="400" height="72" fill="#ffffff" stroke="#334155"/>
+  <text x="940.0" y="402.0" text-anchor="middle" class="box-text">runs/run-*.log</text><text x="940.0" y="422.0" text-anchor="middle" class="box-sub">operator trace</text><line class="arrow" x1="300" y1="206" x2="380" y2="206"/><line class="arrow" x1="300" y1="306" x2="380" y2="306"/><line class="arrow" x1="300" y1="406" x2="380" y2="406"/><line class="arrow" x1="660" y1="206" x2="740" y2="206"/><line class="arrow" x1="660" y1="306" x2="740" y2="306"/><line class="arrow" x1="660" y1="406" x2="740" y2="406"/><line class="arrow" x1="880" y1="242" x2="880" y2="270"/>
+</svg>

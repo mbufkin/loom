@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+  <!-- Simple crystallize mark: faceted diamond  brand chrome, not decoration -->
+  <path d="M32 4 L56 24 L32 60 L8 24 Z" stroke="#0d9488" stroke-width="3" fill="#0f172a"/>
+  <path d="M32 4 L32 60 M8 24 L56 24 M20 24 L32 4 L44 24" stroke="#5eead4" stroke-width="1.5" opacity="0.85"/>
+</svg>

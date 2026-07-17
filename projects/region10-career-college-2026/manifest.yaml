@@ -1,0 +1,45 @@
+project:
+  id: region10-career-college-2026
+  name: Region 10 Career & College Exploration (C&CE)
+sources_dir: sources
+units:
+  course-map:
+    title: Course Map
+    calendar: units/course-map/calendar.yaml
+    documents:
+    - course-map.txt
+  unit-1-fundamentals-leadership:
+    title: Unit 1 — Fundamentals of Effective Leadership
+    calendar: units/unit-1-fundamentals-leadership/calendar.yaml
+    documents:
+    - unit-1-fundamentals-leadership.txt
+    - unit-1/planning-guides/describe-and-explain-the-different-types-of-leadership__1KVnSeeF.txt
+    - unit-1/planning-guides/explain-how-a-student-or-community-organization-contains-the__1xfFTlOb.txt
+    - unit-1/planning-guides/identify-what-i-can-do-as-a-leader__1p33Dg6I.txt
+  unit-2-pathways-careers:
+    title: Unit 2 — Exploring Pathways to Careers
+    calendar: units/unit-2-pathways-careers/calendar.yaml
+    documents:
+    - unit-2-pathways-careers.txt
+    - unit-2/planning-guides/describe-a-career-pathway-that-interests-me__10RL5Nil.txt
+    - unit-2/planning-guides/explain-the-different-high-school-programs-of-study-availabl__1YfS6ojQ.txt
+    - unit-2/planning-guides/model-direct-and-indirect-pathways-to-my-career-pathway-of-i__1MMQQ7Af.txt
+  unit-3-financial-literacy:
+    title: Unit 3 — Financial Literacy
+    calendar: units/unit-3-financial-literacy/calendar.yaml
+    documents:
+    - unit-3-financial-literacy.txt
+    - unit-3/planning-guides/explain-wealth-management-strategies__1VRSSCMk.txt
+    - unit-3/planning-guides/manage-money-at-a-basic-level-using-tools-and-resources__13K6BvhU.txt
+    - unit-3/planning-guides/plan-for-post-secondary-success__1TUnfhAA.txt
+  unit-4-non-technical-skills:
+    title: Unit 4 — Non-Technical Skills
+    calendar: units/unit-4-non-technical-skills/calendar.yaml
+    documents:
+    - unit-4-non-technical-skills.txt
+    - unit-4/planning-guides/apply-for-a-job__1l5RQh6_.txt
+    - unit-4/planning-guides/communicate-with-others-appropriately__1-CNId-p.txt
+    - unit-4/planning-guides/effectively-and-appropriately-manage-conflict__1sMXrtlj.txt
+    - unit-4/planning-guides/effectively-manage-my-stress__18iHDPJC.txt
+    - unit-4/planning-guides/set-goals__1qs_JXcz.txt
+generated_by: manual-milestone-manifest + planning-guide crawl (2026-07-07)

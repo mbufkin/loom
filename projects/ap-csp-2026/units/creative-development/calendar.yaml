@@ -1,0 +1,24 @@
+unit_id: creative-development
+title: Creative Development (Big Idea 1)
+unit_length_days: 4
+days:
+  - id: d1
+    label: Collaboration
+    expected:
+      - lesson_content
+  - id: d2
+    label: Program Function and Purpose
+    expected:
+      - lesson_content
+  - id: d3
+    label: Program Design and Development
+    expected:
+      - lesson_content
+  - id: d4
+    label: Identifying and Correcting Errors
+    expected:
+      - lesson_content
+unit_supporting:
+  - other
+  - other
+  - other

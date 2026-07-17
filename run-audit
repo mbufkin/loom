@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Crystallize — one program, any curriculum dataset.
+# Usage: ./run-audit <project-id> [run_project.py flags...]
+# Example: ./run-audit my-district
+#          ./run-audit dallas-career-2026 --only engineering
+set -euo pipefail
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [[ $# -lt 1 ]]; then
+  echo "Usage: $0 <project-id> [flags...]" >&2
+  echo "  project-id = folder under projects/ (curriculum data)" >&2
+  exit 2
+fi
+PROJECT="$1"
+shift
+exec python3 "$DIR/run_project.py" --project "$PROJECT" "$@"

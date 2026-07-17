@@ -1,0 +1,391 @@
+project_id: dallas-career-2026
+school_year: 2026-2027
+district: Dallas Independent School District
+source: inferred_from_documents
+disclaimer: Inferred projected map — reconstructed from available documents. Not official
+  district curriculum. Does not replace missing lesson materials.
+source_school_calendar: school-calendar.yaml
+generated_at: '2026-07-14T02:02:30Z'
+generated_by: rollup.py
+mode: dated
+summary:
+  units_total: 18
+  units_placed: 18
+  units_unplaced: 0
+  instructional_days_available: 175
+  instructional_days_consumed: 39
+  instructional_days_remaining: 136
+year_at_a_glance:
+  grading_period_columns:
+  - id: fall-1
+    label: Fall — Nine Weeks 1
+    begin: '2026-08-11'
+    end: '2026-10-07'
+    unit_ids:
+    - agriculture
+    - architecture-construction
+    - arts-av-technology
+    - business-marketing
+    - career-cluster
+    - career-exploration
+    - dallas-isd
+    - engineering
+    - family-community
+    - financial-literacy
+    - health-science
+    - hospitality-tourism
+    - information-technology
+    - law-and-public-service
+    - manufacturing
+    - professional-preparedness
+    - teaching-and-training
+    - transportation-distribution
+    unit_count: 18
+  - id: fall-2
+    label: Fall — Nine Weeks 2
+    begin: '2026-10-13'
+    end: '2026-12-18'
+    unit_ids: []
+    unit_count: 0
+  - id: spring-1
+    label: Spring — Nine Weeks 3
+    begin: '2027-01-06'
+    end: '2027-03-12'
+    unit_ids: []
+    unit_count: 0
+  - id: spring-2
+    label: Spring — Nine Weeks 4
+    begin: '2027-03-22'
+    end: '2027-05-26'
+    unit_ids: []
+    unit_count: 0
+  unit_rows:
+  - unit_id: agriculture
+    title: Agriculture
+    start_date: '2026-08-11'
+    end_date: '2026-08-12'
+    unit_length_days: 2
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: architecture-construction
+    title: Architecture & Construction
+    start_date: '2026-08-13'
+    end_date: '2026-08-14'
+    unit_length_days: 2
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: arts-av-technology
+    title: Arts AV Technology
+    start_date: '2026-08-17'
+    end_date: '2026-08-18'
+    unit_length_days: 2
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: business-marketing
+    title: Business Marketing
+    start_date: '2026-08-19'
+    end_date: '2026-08-21'
+    unit_length_days: 3
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: career-cluster
+    title: Career Cluster
+    start_date: '2026-08-24'
+    end_date: '2026-08-25'
+    unit_length_days: 2
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: career-exploration
+    title: Career Exploration
+    start_date: '2026-08-26'
+    end_date: '2026-08-27'
+    unit_length_days: 2
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: dallas-isd
+    title: Dallas ISD
+    start_date: '2026-08-28'
+    end_date: '2026-08-28'
+    unit_length_days: 1
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: engineering
+    title: Engineering
+    start_date: '2026-08-31'
+    end_date: '2026-09-01'
+    unit_length_days: 2
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: family-community
+    title: Family Community
+    start_date: '2026-09-02'
+    end_date: '2026-09-03'
+    unit_length_days: 2
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: financial-literacy
+    title: Financial Literacy
+    start_date: '2026-09-04'
+    end_date: '2026-09-09'
+    unit_length_days: 3
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: health-science
+    title: Health Science
+    start_date: '2026-09-10'
+    end_date: '2026-09-14'
+    unit_length_days: 3
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: hospitality-tourism
+    title: Hospitality Tourism
+    start_date: '2026-09-15'
+    end_date: '2026-09-16'
+    unit_length_days: 2
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: information-technology
+    title: Information Technology
+    start_date: '2026-09-17'
+    end_date: '2026-09-21'
+    unit_length_days: 3
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: law-and-public-service
+    title: Law and Public Service
+    start_date: '2026-09-22'
+    end_date: '2026-09-23'
+    unit_length_days: 2
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: manufacturing
+    title: Manufacturing
+    start_date: '2026-09-24'
+    end_date: '2026-09-25'
+    unit_length_days: 2
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: professional-preparedness
+    title: Professional Preparedness
+    start_date: '2026-09-28'
+    end_date: '2026-09-29'
+    unit_length_days: 2
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: teaching-and-training
+    title: Teaching and Training
+    start_date: '2026-09-30'
+    end_date: '2026-10-01'
+    unit_length_days: 2
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: transportation-distribution
+    title: Transportation Distribution
+    start_date: '2026-10-02'
+    end_date: '2026-10-05'
+    unit_length_days: 2
+    grading_periods_spanned:
+    - fall-1
+units:
+- unit_id: agriculture
+  title: Agriculture
+  calendar: units/agriculture/calendar.yaml
+  unit_length_days: 2
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-08-11'
+    d2: '2026-08-12'
+  start_date: '2026-08-11'
+  end_date: '2026-08-12'
+  grading_period_id: fall-1
+- unit_id: architecture-construction
+  title: Architecture & Construction
+  calendar: units/architecture-construction/calendar.yaml
+  unit_length_days: 2
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-08-13'
+    d2: '2026-08-14'
+  start_date: '2026-08-13'
+  end_date: '2026-08-14'
+  grading_period_id: fall-1
+- unit_id: arts-av-technology
+  title: Arts AV Technology
+  calendar: units/arts-av-technology/calendar.yaml
+  unit_length_days: 2
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-08-17'
+    d2: '2026-08-18'
+  start_date: '2026-08-17'
+  end_date: '2026-08-18'
+  grading_period_id: fall-1
+- unit_id: business-marketing
+  title: Business Marketing
+  calendar: units/business-marketing/calendar.yaml
+  unit_length_days: 3
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-08-19'
+    d2: '2026-08-20'
+    d3: '2026-08-21'
+  start_date: '2026-08-19'
+  end_date: '2026-08-21'
+  grading_period_id: fall-1
+- unit_id: career-cluster
+  title: Career Cluster
+  calendar: units/career-cluster/calendar.yaml
+  unit_length_days: 2
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-08-24'
+    d2: '2026-08-25'
+  start_date: '2026-08-24'
+  end_date: '2026-08-25'
+  grading_period_id: fall-1
+- unit_id: career-exploration
+  title: Career Exploration
+  calendar: units/career-exploration/calendar.yaml
+  unit_length_days: 2
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-08-26'
+    d2: '2026-08-27'
+  start_date: '2026-08-26'
+  end_date: '2026-08-27'
+  grading_period_id: fall-1
+- unit_id: dallas-isd
+  title: Dallas ISD
+  calendar: units/dallas-isd/calendar.yaml
+  unit_length_days: 1
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-08-28'
+  start_date: '2026-08-28'
+  end_date: '2026-08-28'
+  grading_period_id: fall-1
+- unit_id: engineering
+  title: Engineering
+  calendar: units/engineering/calendar.yaml
+  unit_length_days: 2
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-08-31'
+    d2: '2026-09-01'
+  start_date: '2026-08-31'
+  end_date: '2026-09-01'
+  grading_period_id: fall-1
+- unit_id: family-community
+  title: Family Community
+  calendar: units/family-community/calendar.yaml
+  unit_length_days: 2
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-09-02'
+    d2: '2026-09-03'
+  start_date: '2026-09-02'
+  end_date: '2026-09-03'
+  grading_period_id: fall-1
+- unit_id: financial-literacy
+  title: Financial Literacy
+  calendar: units/financial-literacy/calendar.yaml
+  unit_length_days: 3
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-09-04'
+    d2: '2026-09-08'
+    d3: '2026-09-09'
+  start_date: '2026-09-04'
+  end_date: '2026-09-09'
+  grading_period_id: fall-1
+- unit_id: health-science
+  title: Health Science
+  calendar: units/health-science/calendar.yaml
+  unit_length_days: 3
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-09-10'
+    d2: '2026-09-11'
+    d3: '2026-09-14'
+  start_date: '2026-09-10'
+  end_date: '2026-09-14'
+  grading_period_id: fall-1
+- unit_id: hospitality-tourism
+  title: Hospitality Tourism
+  calendar: units/hospitality-tourism/calendar.yaml
+  unit_length_days: 2
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-09-15'
+    d2: '2026-09-16'
+  start_date: '2026-09-15'
+  end_date: '2026-09-16'
+  grading_period_id: fall-1
+- unit_id: information-technology
+  title: Information Technology
+  calendar: units/information-technology/calendar.yaml
+  unit_length_days: 3
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-09-17'
+    d2: '2026-09-18'
+    d3: '2026-09-21'
+  start_date: '2026-09-17'
+  end_date: '2026-09-21'
+  grading_period_id: fall-1
+- unit_id: law-and-public-service
+  title: Law and Public Service
+  calendar: units/law-and-public-service/calendar.yaml
+  unit_length_days: 2
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-09-22'
+    d2: '2026-09-23'
+  start_date: '2026-09-22'
+  end_date: '2026-09-23'
+  grading_period_id: fall-1
+- unit_id: manufacturing
+  title: Manufacturing
+  calendar: units/manufacturing/calendar.yaml
+  unit_length_days: 2
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-09-24'
+    d2: '2026-09-25'
+  start_date: '2026-09-24'
+  end_date: '2026-09-25'
+  grading_period_id: fall-1
+- unit_id: professional-preparedness
+  title: Professional Preparedness
+  calendar: units/professional-preparedness/calendar.yaml
+  unit_length_days: 2
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-09-28'
+    d2: '2026-09-29'
+  start_date: '2026-09-28'
+  end_date: '2026-09-29'
+  grading_period_id: fall-1
+- unit_id: teaching-and-training
+  title: Teaching and Training
+  calendar: units/teaching-and-training/calendar.yaml
+  unit_length_days: 2
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-09-30'
+    d2: '2026-10-01'
+  start_date: '2026-09-30'
+  end_date: '2026-10-01'
+  grading_period_id: fall-1
+- unit_id: transportation-distribution
+  title: Transportation Distribution
+  calendar: units/transportation-distribution/calendar.yaml
+  unit_length_days: 2
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-10-02'
+    d2: '2026-10-05'
+  start_date: '2026-10-02'
+  end_date: '2026-10-05'
+  grading_period_id: fall-1
+warnings: []

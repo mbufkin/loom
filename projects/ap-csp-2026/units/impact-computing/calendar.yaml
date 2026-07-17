@@ -1,0 +1,24 @@
+unit_id: impact-computing
+title: Impact of Computing (Big Idea 5)
+unit_length_days: 4
+days:
+  - id: d1
+    label: Beneficial and Harmful Effects
+    expected:
+      - lesson_content
+  - id: d2
+    label: Digital Divide and Computing Bias
+    expected:
+      - lesson_content
+  - id: d3
+    label: Crowdsourcing
+    expected:
+      - lesson_content
+  - id: d4
+    label: Legal, Ethical, and Safe Computing
+    expected:
+      - lesson_content
+unit_supporting:
+  - other
+  - other
+  - other

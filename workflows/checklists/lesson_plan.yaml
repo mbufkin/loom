@@ -1,0 +1,155 @@
+# Unit-plan structure checklist (local partner templates are not redistributed)
+# Blank / MISSING in findings = not found in uploaded materials (discovery).
+# Do not invent curriculum content into these fields.
+#
+# element_types: Layer 0 ELEMENT_TYPES that count as PRESENT for this field.
+# Empty list = fill only from metadata/calendar, or leave blank unless excerpt
+# keyword routing finds something (see unit_plan_fill.py).
+
+version: "v1-ctat-unit-plan"
+role: lesson_plan
+source_template: workflows/checklists/lesson_plan.yaml
+
+sections:
+  unit_overview:
+    label: Unit Overview
+    fields:
+      - id: program_of_study
+        label: Program of Study
+        element_types: []
+        fill_from: manifest
+      - id: course_name
+        label: Course Name
+        element_types: []
+        fill_from: manifest
+      - id: lesson_unit_title
+        label: Lesson/Unit Title
+        element_types: []
+        fill_from: manifest
+      - id: teks
+        label: TEKS
+        element_types: [standards_objectives]
+        note: "Must align with learning objectives when both present"
+
+  lesson_notes:
+    label: Lesson Notes
+    fields:
+      - id: supplementary_materials
+        label: Supplementary Materials
+        element_types: [logistics_materials]
+      - id: supply_needs
+        label: Supply Needs
+        element_types: [logistics_materials]
+      - id: references_teacher_prep
+        label: References / Resources / Teacher Prep
+        element_types: [logistics_materials]
+
+  lesson_instruction:
+    label: Lesson Instruction
+    fields:
+      - id: learning_target
+        label: Learning Target
+        element_types: [standards_objectives]
+      - id: rationale
+        label: Rationale
+        element_types: [standards_objectives]
+      - id: duration
+        label: Duration of Lesson(s)
+        element_types: []
+        fill_from: calendar
+      - id: prerequisite_knowledge
+        label: Prerequisite Knowledge
+        element_types: []
+      - id: key_vocabulary
+        label: Key Vocabulary
+        element_types: []
+        keywords: [vocabulary, vocab, key terms, key words]
+      - id: launch_intro
+        label: Launch / Intro
+        element_types: [hook_engagement]
+      - id: instructional_activities
+        label: Describe Instructional Activities
+        element_types: [direct_instruction, guided_practice, independent_practice]
+      - id: closure
+        label: Closure of Unit / Lesson
+        element_types: [reflection_closure]
+
+  assessments:
+    label: Unit Assessments
+    fields:
+      - id: summative_assessments
+        label: Summative Assessments
+        element_types: [assessment_checkpoint]
+        roles: [quiz, rubric]
+      - id: formative_assessments
+        label: Formative Assessments
+        element_types: [assessment_checkpoint]
+        roles: [exit_ticket]
+
+  accommodations:
+    label: Additional Required Components
+    fields:
+      - id: elps_strategies
+        label: English Language Proficiency Standards (ELPS) Strategies
+        element_types: []
+        keywords: [ELPS, English language, language proficiency]
+      - id: special_education
+        label: Special Education
+        element_types: []
+        keywords: [IEP, special education, SpEd, accommodation, modification]
+      - id: section_504
+        label: "504"
+        element_types: []
+        keywords: ["504", section 504]
+      - id: gt
+        label: GT
+        element_types: []
+        keywords: [gifted, GT, extension, enrichment]
+
+  recommended_strategies:
+    label: Recommended Strategies
+    fields:
+      - id: quotes
+        label: Quotes
+        element_types: []
+        keywords: [quote, quotation]
+      - id: reading_strategies
+        label: Reading Strategies
+        element_types: []
+        keywords: [reading strategy, trade publication, current events]
+      - id: writing_strategies
+        label: Writing Strategies
+        element_types: []
+        keywords: [journal, reflection, note taking, summarizing]
+      - id: math_science_connections
+        label: Math / Science Connections
+        element_types: []
+        keywords: [math, science, STEM]
+      - id: graphic_organizers
+        label: Graphic Organizers
+        element_types: []
+        keywords: [graphic organizer, KWL, Venn, handout]
+      - id: professional_communication
+        label: Professional Communication
+        element_types: []
+        keywords: [speech, presentation topic, communicate]
+
+  cte_essentials:
+    label: CTE Essential Unit Elements
+    fields:
+      - id: student_career_development
+        label: Student Career Development
+        element_types: []
+        keywords: [career, speaker, Major Clarity, career tree]
+      - id: portfolio_checks
+        label: Portfolio Checks & Reflections
+        element_types: []
+        keywords: [portfolio]
+      - id: pspr
+        label: Professional Skills Performance Review
+        element_types: []
+        keywords: [PSPR, professional skills, self-assess]
+      - id: certification_prep
+        label: Certification Prep & Practice
+        element_types: []
+        keywords: [certification, IBC, cert prep, industry-based]

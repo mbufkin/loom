@@ -1,0 +1,28 @@
+unit_id: algorithms-programming
+title: Algorithms and Programming (Big Idea 3)
+unit_length_days: 5
+days:
+  - id: d1
+    label: Variables, Assignments, and Data Abstraction
+    expected:
+      - lesson_content
+  - id: d2
+    label: Conditionals and Iteration
+    expected:
+      - lesson_content
+  - id: d3
+    label: Lists, Binary Search, and Procedures
+    expected:
+      - lesson_content
+  - id: d4
+    label: Libraries, Random Values, and Simulations
+    expected:
+      - lesson_content
+  - id: d5
+    label: Algorithmic Efficiency and Undecidable Problems
+    expected:
+      - lesson_content
+unit_supporting:
+  - other
+  - other
+  - other

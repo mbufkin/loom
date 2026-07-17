@@ -1,0 +1,126 @@
+project_id: ap-csp-2026
+school_year: null
+district: null
+source: inferred_from_documents
+disclaimer: Inferred projected map — reconstructed from available documents. Not official
+  district curriculum. Does not replace missing lesson materials.
+source_school_calendar: school-calendar.yaml
+generated_at: '2026-07-01T14:21:42Z'
+generated_by: rollup.py
+mode: sequential
+summary:
+  units_total: 5
+  units_placed: 5
+  units_unplaced: 0
+  instructional_days_available: null
+  instructional_days_consumed: 20
+  instructional_days_remaining: null
+year_at_a_glance:
+  grading_period_columns:
+  - id: sequential
+    label: Inferred sequence (no grading periods)
+    unit_ids:
+    - creative-development
+    - data
+    - algorithms-programming
+    - systems-networks
+    - impact-computing
+    unit_count: 5
+  unit_rows:
+  - unit_id: creative-development
+    title: Creative Development (Big Idea 1)
+    start_date: null
+    end_date: null
+    unit_length_days: 4
+    grading_periods_spanned:
+    - sequential
+  - unit_id: data
+    title: Data (Big Idea 2)
+    start_date: null
+    end_date: null
+    unit_length_days: 4
+    grading_periods_spanned:
+    - sequential
+  - unit_id: algorithms-programming
+    title: Algorithms and Programming (Big Idea 3)
+    start_date: null
+    end_date: null
+    unit_length_days: 5
+    grading_periods_spanned:
+    - sequential
+  - unit_id: systems-networks
+    title: Computer Systems and Networks (Big Idea 4)
+    start_date: null
+    end_date: null
+    unit_length_days: 3
+    grading_periods_spanned:
+    - sequential
+  - unit_id: impact-computing
+    title: Impact of Computing (Big Idea 5)
+    start_date: null
+    end_date: null
+    unit_length_days: 4
+    grading_periods_spanned:
+    - sequential
+units:
+- unit_id: creative-development
+  title: Creative Development (Big Idea 1)
+  calendar: units/creative-development/calendar.yaml
+  unit_length_days: 4
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_1
+    d2: instructional_day_2
+    d3: instructional_day_3
+    d4: instructional_day_4
+  start_instructional_index: 1
+  end_instructional_index: 4
+- unit_id: data
+  title: Data (Big Idea 2)
+  calendar: units/data/calendar.yaml
+  unit_length_days: 4
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_5
+    d2: instructional_day_6
+    d3: instructional_day_7
+    d4: instructional_day_8
+  start_instructional_index: 5
+  end_instructional_index: 8
+- unit_id: algorithms-programming
+  title: Algorithms and Programming (Big Idea 3)
+  calendar: units/algorithms-programming/calendar.yaml
+  unit_length_days: 5
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_9
+    d2: instructional_day_10
+    d3: instructional_day_11
+    d4: instructional_day_12
+    d5: instructional_day_13
+  start_instructional_index: 9
+  end_instructional_index: 13
+- unit_id: systems-networks
+  title: Computer Systems and Networks (Big Idea 4)
+  calendar: units/systems-networks/calendar.yaml
+  unit_length_days: 3
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_14
+    d2: instructional_day_15
+    d3: instructional_day_16
+  start_instructional_index: 14
+  end_instructional_index: 16
+- unit_id: impact-computing
+  title: Impact of Computing (Big Idea 5)
+  calendar: units/impact-computing/calendar.yaml
+  unit_length_days: 4
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_17
+    d2: instructional_day_18
+    d3: instructional_day_19
+    d4: instructional_day_20
+  start_instructional_index: 17
+  end_instructional_index: 20
+warnings: []

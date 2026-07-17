@@ -1,0 +1,32 @@
+project:
+  id: ap-csp-2026
+  name: AP Computer Science Principles — Course Framework
+
+sources_dir: projects/ap-csp-2026/sources
+
+units:
+  creative-development:
+    title: Creative Development (Big Idea 1)
+    calendar: units/creative-development/calendar.yaml
+    documents:
+      - ap-csp-ced.pdf
+  data:
+    title: Data (Big Idea 2)
+    calendar: units/data/calendar.yaml
+    documents:
+      - ap-csp-ced.pdf
+  algorithms-programming:
+    title: Algorithms and Programming (Big Idea 3)
+    calendar: units/algorithms-programming/calendar.yaml
+    documents:
+      - ap-csp-ced.pdf
+  systems-networks:
+    title: Computer Systems and Networks (Big Idea 4)
+    calendar: units/systems-networks/calendar.yaml
+    documents:
+      - ap-csp-ced.pdf
+  impact-computing:
+    title: Impact of Computing (Big Idea 5)
+    calendar: units/impact-computing/calendar.yaml
+    documents:
+      - ap-csp-ced.pdf

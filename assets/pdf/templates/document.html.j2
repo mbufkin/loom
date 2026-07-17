@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="base.css"/>
+</head>
+<body>
+  {# Running header strings for @page (WeasyPrint string-set) #}
+  <div class="running-brand">Crystallize</div>
+  <div class="running-meta">{{ running_meta }}</div>
+
+  <header class="cover">
+    <table class="cover-top">
+      <tr>
+        <td style="width:44px"><img class="cover-mark" src="mark.png" alt=""/></td>
+        <td class="cover-brand-cell">
+          <div class="cover-brand">Crystallize</div>
+          <div class="cover-product">Loom curriculum intelligence</div>
+        </td>
+      </tr>
+    </table>
+    <p class="cover-kind">{{ doc_kind }}</p>
+    <h1 class="cover-title">{{ title }}</h1>
+    <p class="cover-meta">
+      <strong>Project</strong> {{ project_id }}
+      {% if unit_id %}&nbsp;·&nbsp;<strong>Unit</strong> {{ unit_id }}{% endif %}
+      &nbsp;·&nbsp;<strong>Generated</strong> {{ generated_at }}
+    </p>
+  </header>
+
+  <main class="doc-body">
+    {{ body_html | safe }}
+    {% if appendix_html %}
+      {{ appendix_html | safe }}
+    {% endif %}
+  </main>
+</body>
+</html>

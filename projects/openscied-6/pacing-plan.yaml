@@ -1,0 +1,218 @@
+project_id: openscied-6
+school_year: null
+district: null
+source: inferred_from_documents
+disclaimer: Inferred projected map — reconstructed from available documents. Not official
+  district curriculum. Does not replace missing lesson materials.
+source_school_calendar: school-calendar.yaml
+generated_at: '2026-07-01T15:05:06Z'
+generated_by: rollup.py
+mode: sequential
+summary:
+  units_total: 7
+  units_placed: 7
+  units_unplaced: 0
+  instructional_days_available: null
+  instructional_days_consumed: 80
+  instructional_days_remaining: null
+year_at_a_glance:
+  grading_period_columns:
+  - id: sequential
+    label: Inferred sequence (no grading periods)
+    unit_ids:
+    - 6.2-thermal-energy
+    - 6.3-weather-climate
+    - 7.1-chemical-reactions-matter
+    - 7.2-chemical-reactions-energy
+    - 7.3-metabolic-reactions
+    - 7.4-matter-cycling
+    - 8.2-sound-waves
+    unit_count: 7
+  unit_rows:
+  - unit_id: 6.2-thermal-energy
+    title: 6.2 Thermal Energy
+    start_date: null
+    end_date: null
+    unit_length_days: 10
+    grading_periods_spanned:
+    - sequential
+  - unit_id: 6.3-weather-climate
+    title: 6.3 Weather, Climate & Water Cycling
+    start_date: null
+    end_date: null
+    unit_length_days: 12
+    grading_periods_spanned:
+    - sequential
+  - unit_id: 7.1-chemical-reactions-matter
+    title: 7.1 Chemical Reactions & Matter
+    start_date: null
+    end_date: null
+    unit_length_days: 12
+    grading_periods_spanned:
+    - sequential
+  - unit_id: 7.2-chemical-reactions-energy
+    title: 7.2 Chemical Reactions & Energy
+    start_date: null
+    end_date: null
+    unit_length_days: 12
+    grading_periods_spanned:
+    - sequential
+  - unit_id: 7.3-metabolic-reactions
+    title: 7.3 Metabolic Reactions
+    start_date: null
+    end_date: null
+    unit_length_days: 12
+    grading_periods_spanned:
+    - sequential
+  - unit_id: 7.4-matter-cycling
+    title: 7.4 Matter Cycling & Photosynthesis
+    start_date: null
+    end_date: null
+    unit_length_days: 12
+    grading_periods_spanned:
+    - sequential
+  - unit_id: 8.2-sound-waves
+    title: 8.2 Sound Waves
+    start_date: null
+    end_date: null
+    unit_length_days: 10
+    grading_periods_spanned:
+    - sequential
+units:
+- unit_id: 6.2-thermal-energy
+  title: 6.2 Thermal Energy
+  calendar: units/6.2-thermal-energy/calendar.yaml
+  unit_length_days: 10
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_1
+    d2: instructional_day_2
+    d3: instructional_day_3
+    d4: instructional_day_4
+    d5: instructional_day_5
+    d6: instructional_day_6
+    d7: instructional_day_7
+    d8: instructional_day_8
+    d9: instructional_day_9
+    d10: instructional_day_10
+  start_instructional_index: 1
+  end_instructional_index: 10
+- unit_id: 6.3-weather-climate
+  title: 6.3 Weather, Climate & Water Cycling
+  calendar: units/6.3-weather-climate/calendar.yaml
+  unit_length_days: 12
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_11
+    d2: instructional_day_12
+    d3: instructional_day_13
+    d4: instructional_day_14
+    d5: instructional_day_15
+    d6: instructional_day_16
+    d7: instructional_day_17
+    d8: instructional_day_18
+    d9: instructional_day_19
+    d10: instructional_day_20
+    d11: instructional_day_21
+    d12: instructional_day_22
+  start_instructional_index: 11
+  end_instructional_index: 22
+- unit_id: 7.1-chemical-reactions-matter
+  title: 7.1 Chemical Reactions & Matter
+  calendar: units/7.1-chemical-reactions-matter/calendar.yaml
+  unit_length_days: 12
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_23
+    d2: instructional_day_24
+    d3: instructional_day_25
+    d4: instructional_day_26
+    d5: instructional_day_27
+    d6: instructional_day_28
+    d7: instructional_day_29
+    d8: instructional_day_30
+    d9: instructional_day_31
+    d10: instructional_day_32
+    d11: instructional_day_33
+    d12: instructional_day_34
+  start_instructional_index: 23
+  end_instructional_index: 34
+- unit_id: 7.2-chemical-reactions-energy
+  title: 7.2 Chemical Reactions & Energy
+  calendar: units/7.2-chemical-reactions-energy/calendar.yaml
+  unit_length_days: 12
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_35
+    d2: instructional_day_36
+    d3: instructional_day_37
+    d4: instructional_day_38
+    d5: instructional_day_39
+    d6: instructional_day_40
+    d7: instructional_day_41
+    d8: instructional_day_42
+    d9: instructional_day_43
+    d10: instructional_day_44
+    d11: instructional_day_45
+    d12: instructional_day_46
+  start_instructional_index: 35
+  end_instructional_index: 46
+- unit_id: 7.3-metabolic-reactions
+  title: 7.3 Metabolic Reactions
+  calendar: units/7.3-metabolic-reactions/calendar.yaml
+  unit_length_days: 12
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_47
+    d2: instructional_day_48
+    d3: instructional_day_49
+    d4: instructional_day_50
+    d5: instructional_day_51
+    d6: instructional_day_52
+    d7: instructional_day_53
+    d8: instructional_day_54
+    d9: instructional_day_55
+    d10: instructional_day_56
+    d11: instructional_day_57
+    d12: instructional_day_58
+  start_instructional_index: 47
+  end_instructional_index: 58
+- unit_id: 7.4-matter-cycling
+  title: 7.4 Matter Cycling & Photosynthesis
+  calendar: units/7.4-matter-cycling/calendar.yaml
+  unit_length_days: 12
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_59
+    d2: instructional_day_60
+    d3: instructional_day_61
+    d4: instructional_day_62
+    d5: instructional_day_63
+    d6: instructional_day_64
+    d7: instructional_day_65
+    d8: instructional_day_66
+    d9: instructional_day_67
+    d10: instructional_day_68
+    d11: instructional_day_69
+    d12: instructional_day_70
+  start_instructional_index: 59
+  end_instructional_index: 70
+- unit_id: 8.2-sound-waves
+  title: 8.2 Sound Waves
+  calendar: units/8.2-sound-waves/calendar.yaml
+  unit_length_days: 10
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_71
+    d2: instructional_day_72
+    d3: instructional_day_73
+    d4: instructional_day_74
+    d5: instructional_day_75
+    d6: instructional_day_76
+    d7: instructional_day_77
+    d8: instructional_day_78
+    d9: instructional_day_79
+    d10: instructional_day_80
+  start_instructional_index: 71
+  end_instructional_index: 80
+warnings: []

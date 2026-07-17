@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "loom/handoffs/router_to_workflow.json",
+  "title": "Loom router → workflow handoff",
+  "description": "Dispatch decision for one document.",
+  "type": "object",
+  "required": ["doc_id", "workflow_id", "path"],
+  "properties": {
+    "doc_id": { "type": "string", "minLength": 1 },
+    "doc_type": { "type": "string" },
+    "workflow_id": {
+      "type": "string",
+      "enum": ["lesson_plan", "quiz", "general"]
+    },
+    "path": {
+      "type": "string",
+      "enum": ["A", "B", "C"],
+      "description": "Path letter on DATA-FLOW.png"
+    },
+    "reason": { "type": "string" },
+    "feedback": {
+      "type": "boolean",
+      "description": "True if unknown/weak type was logged to _loom_feedback.yaml"
+    }
+  },
+  "additionalProperties": true
+}

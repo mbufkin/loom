@@ -1,0 +1,32 @@
+unit_id: unit-3-financial-literacy
+title: "Unit 3 \u2014 Financial Literacy"
+unit_length_days: 41
+days:
+- id: d1
+  label: "Milestone 1 \u2014 Plan for post-secondary success (~12 days)"
+  expected:
+  - lesson_content
+  - worksheet
+  - presentation
+- id: d2
+  label: "Milestone 2 \u2014 Manage money using tools and resources (~10 days)"
+  expected:
+  - lesson_content
+  - worksheet
+  - presentation
+- id: d3
+  label: "Milestone 3 \u2014 Explain wealth management strategies (~8 days)"
+  expected:
+  - lesson_content
+  - worksheet
+  - presentation
+- id: d4
+  label: "Milestone 4 \u2014 Cornerstone task \u2014 financial plans (~11 days)"
+  expected:
+  - lesson_content
+  - worksheet
+  - presentation
+unit_supporting:
+- lesson_plan
+- rubric
+- worksheet

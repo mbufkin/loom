@@ -1,0 +1,121 @@
+# Dallas ISD — Official Academic Calendar 2026-2027 (Traditional, not ADSY)
+# Source image: reference/DISD-Academic-Calendar-2026-2027.png
+# Canonical shared copy: shared/disd-school-calendar/
+# Bilingual DISD one-page calendar (English / Spanish)
+# Verified 2026-07-09 against published Traditional dates + image [ ] markers
+
+district: Dallas Independent School District
+school_year: "2026-2027"
+source: reference/DISD-Academic-Calendar-2026-2027.png
+
+# Core instructional boundaries
+first_day_of_class: "2026-08-11"
+last_day_of_class: "2027-05-26"
+
+# Nine-week grading periods — from official calendar's [ begin / ] end markers
+# (corrected 2026-07-09 against reference/DISD-Academic-Calendar-2026-2027.png):
+#   begin: Aug 11, Oct 13, Jan 6, Mar 22
+#   end:   Oct 7,  Dec 18, Mar 12, May 26
+grading_periods:
+  - id: fall-1
+    label: "Fall — Nine Weeks 1"
+    begin: "2026-08-11"
+    end: "2026-10-07"
+  - id: fall-2
+    label: "Fall — Nine Weeks 2"
+    begin: "2026-10-13"
+    end: "2026-12-18"
+  - id: spring-1
+    label: "Spring — Nine Weeks 3"
+    begin: "2027-01-06"
+    end: "2027-03-12"
+  - id: spring-2
+    label: "Spring — Nine Weeks 4"
+    begin: "2027-03-22"
+    end: "2027-05-26"
+
+# Non-instructional / blocked days (curriculum should not expect student-facing lessons)
+professional_development:
+  - "2026-08-03"
+  - "2026-08-04"
+  - "2026-08-05"
+  - "2026-08-06"
+  - "2026-10-12"
+  - "2026-11-03"
+  - "2027-01-05"
+
+teacher_workdays:
+  - "2026-08-03"
+  - "2026-08-07"
+  - "2026-08-10"
+  - "2027-05-27"
+
+holidays_no_school:
+  - date: "2026-07-04"
+    name: Independence Day
+  - date: "2026-09-07"
+    name: Labor Day
+  - begin: "2026-11-23"
+    end: "2026-11-27"
+    name: Thanksgiving Break
+  - begin: "2026-12-21"
+    end: "2027-01-04"
+    name: Winter Break
+  - date: "2027-01-18"
+    name: Martin Luther King Jr. Day
+  - date: "2027-02-15"
+    name: Presidents Day
+  - begin: "2027-03-15"
+    end: "2027-03-19"
+    name: Spring Break
+  - date: "2027-03-26"
+    name: Staff/Student Holiday
+  - date: "2027-05-31"
+    name: Memorial Day
+  - date: "2027-06-19"
+    name: Juneteenth
+
+fall_break:
+  begin: "2026-10-08"
+  end: "2026-10-09"
+  note: Students and campus team members
+
+early_release:
+  - dates: ["2026-12-16", "2026-12-17"]
+    schools: secondary
+  - dates: ["2026-12-18"]
+    schools: all
+  - dates: ["2027-05-24", "2027-05-25"]
+    schools: secondary
+  - dates: ["2027-05-26"]
+    schools: all
+
+parent_conferences:
+  fall:
+    - date: "2026-10-19"
+      level: high_school
+    - date: "2026-10-20"
+      level: middle_school
+    - date: "2026-10-22"
+      level: elementary
+  spring:
+    - date: "2027-01-25"
+      level: high_school
+    - date: "2027-01-26"
+      level: middle_school
+    - date: "2027-01-28"
+      level: elementary
+
+inclement_weather_days:
+  - "2027-03-29"
+  - "2027-04-19"
+
+# Legend colors from official calendar (for PDF/report rendering)
+legend:
+  professional_development: dark_blue
+  teacher_workdays: orange
+  staff_student_holiday: purple
+  parent_conferences: teal
+  fall_break: red
+  early_release: green
+  inclement_weather: orange

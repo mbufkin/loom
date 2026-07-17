@@ -1,0 +1,10 @@
+unit_id: course-map
+title: Course Map
+unit_length_days: 1
+days:
+- id: d1
+  label: Course overview & unit sequence
+  expected:
+  - lesson_plan
+unit_supporting:
+- other

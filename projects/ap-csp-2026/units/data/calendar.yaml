@@ -1,0 +1,24 @@
+unit_id: data
+title: Data (Big Idea 2)
+unit_length_days: 4
+days:
+  - id: d1
+    label: Binary Numbers
+    expected:
+      - lesson_content
+  - id: d2
+    label: Data Compression
+    expected:
+      - lesson_content
+  - id: d3
+    label: Extracting Information from Data
+    expected:
+      - lesson_content
+  - id: d4
+    label: Using Programs with Data
+    expected:
+      - lesson_content
+unit_supporting:
+  - other
+  - other
+  - other

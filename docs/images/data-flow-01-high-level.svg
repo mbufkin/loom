@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#64748b"/>
+    </marker>
+    <style>
+      .title { font: 700 28px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 16px 'Segoe UI', Arial, sans-serif; fill: #64748b; }
+      .group-title { font: 700 13px 'Segoe UI', Arial, sans-serif; fill: #475569; letter-spacing: 0.08em; }
+      .box { rx: 12; stroke-width: 2; }
+      .box-text { font: 600 15px 'Segoe UI', Arial, sans-serif; fill: #0f172a; }
+      .box-sub { font: 400 13px 'Segoe UI', Arial, sans-serif; fill: #475569; }
+      .arrow { stroke: #64748b; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="100%" height="100%" fill="#f8fafc"/>
+  <text x="40" y="48" class="title">Data Flow — High Level</text>
+  <text x="40" y="76" class="subtitle">Crystallize Lite · CTAT 2026 · export for Canva / Google Drive</text>
+  
+  <rect x="40" y="110" width="250" height="420" rx="16" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2" opacity="0.35"/>
+  <text x="56" y="138" class="group-title">INPUT</text>
+  <rect x="330" y="110" width="520" height="420" rx="16" fill="#dcfce7" stroke="#166534" stroke-width="2" opacity="0.35"/>
+  <text x="346" y="138" class="group-title">CRYSTALLIZE PIPELINE</text>
+  <rect x="890" y="110" width="270" height="420" rx="16" fill="#ffedd5" stroke="#c2410c" stroke-width="2" opacity="0.35"/>
+  <text x="906" y="138" class="group-title">OUTPUT</text>
+  <rect class="box" x="60" y="160" width="210" height="70" fill="#ffffff" stroke="#334155"/>
+  <text x="165.0" y="191.0" text-anchor="middle" class="box-text">Curriculum docs</text><text x="165.0" y="211.0" text-anchor="middle" class="box-sub">pdf · docx · pptx</text>
+  <rect class="box" x="60" y="260" width="210" height="70" fill="#ffffff" stroke="#334155"/>
+  <text x="165.0" y="291.0" text-anchor="middle" class="box-text">District calendar</text><text x="165.0" y="311.0" text-anchor="middle" class="box-sub">PNG / YAML</text>
+  <rect class="box" x="360" y="160" width="180" height="56" fill="#ffffff" stroke="#334155"/>
+  <text x="450.0" y="184.0" text-anchor="middle" class="box-text">Extract text</text><text x="450.0" y="204.0" text-anchor="middle" class="box-sub">doc_extract.py</text>
+  <rect class="box" x="560" y="160" width="180" height="56" fill="#ffffff" stroke="#334155"/>
+  <text x="650.0" y="184.0" text-anchor="middle" class="box-text">Ingest</text><text x="650.0" y="204.0" text-anchor="middle" class="box-sub">models</text>
+  <rect class="box" x="360" y="250" width="180" height="56" fill="#ffffff" stroke="#334155"/>
+  <text x="450.0" y="274.0" text-anchor="middle" class="box-text">Rollup year</text><text x="450.0" y="294.0" text-anchor="middle" class="box-sub">code</text>
+  <rect class="box" x="560" y="250" width="180" height="56" fill="#dbeafe" stroke="#1d4ed8"/>
+  <text x="650.0" y="274.0" text-anchor="middle" class="box-text">Layer 0 extract</text><text x="650.0" y="294.0" text-anchor="middle" class="box-sub">models · cited</text>
+  <rect class="box" x="360" y="340" width="180" height="56" fill="#dbeafe" stroke="#1d4ed8"/>
+  <text x="450.0" y="364.0" text-anchor="middle" class="box-text">Layer 1 place</text><text x="450.0" y="384.0" text-anchor="middle" class="box-sub">MATCH / MISMATCH</text>
+  <rect class="box" x="560" y="340" width="180" height="56" fill="#ffffff" stroke="#334155"/>
+  <text x="650.0" y="364.0" text-anchor="middle" class="box-text">Synthesize + PDF</text><text x="650.0" y="384.0" text-anchor="middle" class="box-sub">code</text>
+  <rect class="box" x="910" y="180" width="230" height="80" fill="#ecfdf5" stroke="#059669"/>
+  <text x="1025.0" y="216.0" text-anchor="middle" class="box-text">GLOBAL PDF</text><text x="1025.0" y="236.0" text-anchor="middle" class="box-sub">DASHBOARD · SUMMARY</text>
+  <rect class="box" x="910" y="300" width="230" height="80" fill="#ffffff" stroke="#334155"/>
+  <text x="1025.0" y="336.0" text-anchor="middle" class="box-text">Year map</text><text x="1025.0" y="356.0" text-anchor="middle" class="box-sub">pacing-plan.yaml</text><line class="arrow" x1="270" y1="195" x2="360" y2="188"/><line class="arrow" x1="270" y1="295" x2="360" y2="278"/><line class="arrow" x1="540" y1="188" x2="560" y2="188"/><line class="arrow" x1="540" y1="278" x2="560" y2="278"/><line class="arrow" x1="540" y1="368" x2="560" y2="368"/><line class="arrow" x1="740" y1="368" x2="910" y2="220"/><line class="arrow" x1="740" y1="278" x2="910" y2="340"/>
+</svg>

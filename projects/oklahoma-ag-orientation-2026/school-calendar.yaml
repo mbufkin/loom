@@ -1,0 +1,17 @@
+school_year: null
+notes: "Sequential mode \u2014 no district calendar for Oklahoma Ag Orientation public\
+  \ pack."
+grading_periods: []
+units:
+- unit_id: unit-1
+  title: Agriculture in Society
+- unit_id: unit-2
+  title: Animal and Livestock Production
+- unit_id: unit-3
+  title: Plant Science in Agriculture
+- unit_id: unit-4
+  title: Food Science in Agriculture
+- unit_id: unit-5
+  title: Natural Resources in Agriculture
+- unit_id: unit-6
+  title: Power, Structure & Technical Systems

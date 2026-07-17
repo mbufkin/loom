@@ -1,0 +1,125 @@
+project_id: region10-career-college-2026
+school_year: 2025-2026
+district: null
+source: inferred_from_documents
+disclaimer: Inferred projected map — reconstructed from available documents. Not official
+  district curriculum. Does not replace missing lesson materials.
+source_school_calendar: school-calendar.yaml
+generated_at: '2026-07-07T15:00:13Z'
+generated_by: rollup.py
+mode: sequential
+summary:
+  units_total: 5
+  units_placed: 5
+  units_unplaced: 0
+  instructional_days_available: null
+  instructional_days_consumed: 167
+  instructional_days_remaining: null
+year_at_a_glance:
+  grading_period_columns:
+  - id: sequential
+    label: Inferred sequence (no grading periods)
+    unit_ids:
+    - course-map
+    - unit-1-fundamentals-leadership
+    - unit-2-pathways-careers
+    - unit-3-financial-literacy
+    - unit-4-non-technical-skills
+    unit_count: 5
+  unit_rows:
+  - unit_id: course-map
+    title: Course Map
+    start_date: null
+    end_date: null
+    unit_length_days: 1
+    grading_periods_spanned:
+    - sequential
+  - unit_id: unit-1-fundamentals-leadership
+    title: Unit 1 — Fundamentals of Effective Leadership
+    start_date: null
+    end_date: null
+    unit_length_days: 42
+    grading_periods_spanned:
+    - sequential
+  - unit_id: unit-2-pathways-careers
+    title: Unit 2 — Exploring Pathways to Careers
+    start_date: null
+    end_date: null
+    unit_length_days: 42
+    grading_periods_spanned:
+    - sequential
+  - unit_id: unit-3-financial-literacy
+    title: Unit 3 — Financial Literacy
+    start_date: null
+    end_date: null
+    unit_length_days: 41
+    grading_periods_spanned:
+    - sequential
+  - unit_id: unit-4-non-technical-skills
+    title: Unit 4 — Non-Technical Skills
+    start_date: null
+    end_date: null
+    unit_length_days: 41
+    grading_periods_spanned:
+    - sequential
+units:
+- unit_id: course-map
+  title: Course Map
+  calendar: units/course-map/calendar.yaml
+  unit_length_days: 1
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_1
+  start_instructional_index: 1
+  end_instructional_index: 1
+- unit_id: unit-1-fundamentals-leadership
+  title: Unit 1 — Fundamentals of Effective Leadership
+  calendar: units/unit-1-fundamentals-leadership/calendar.yaml
+  unit_length_days: 42
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_2
+    d2: instructional_day_3
+    d3: instructional_day_4
+    d4: instructional_day_5
+  start_instructional_index: 2
+  end_instructional_index: 43
+- unit_id: unit-2-pathways-careers
+  title: Unit 2 — Exploring Pathways to Careers
+  calendar: units/unit-2-pathways-careers/calendar.yaml
+  unit_length_days: 42
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_44
+    d2: instructional_day_45
+    d3: instructional_day_46
+    d4: instructional_day_47
+  start_instructional_index: 44
+  end_instructional_index: 85
+- unit_id: unit-3-financial-literacy
+  title: Unit 3 — Financial Literacy
+  calendar: units/unit-3-financial-literacy/calendar.yaml
+  unit_length_days: 41
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_86
+    d2: instructional_day_87
+    d3: instructional_day_88
+    d4: instructional_day_89
+  start_instructional_index: 86
+  end_instructional_index: 126
+- unit_id: unit-4-non-technical-skills
+  title: Unit 4 — Non-Technical Skills
+  calendar: units/unit-4-non-technical-skills/calendar.yaml
+  unit_length_days: 41
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_127
+    d2: instructional_day_128
+    d3: instructional_day_129
+    d4: instructional_day_130
+    d5: instructional_day_131
+    d6: instructional_day_132
+  start_instructional_index: 127
+  end_instructional_index: 167
+warnings: []

@@ -1,0 +1,149 @@
+project_id: oklahoma-ag-orientation-2026
+school_year: null
+district: null
+source: inferred_from_documents
+disclaimer: Inferred projected map — reconstructed from available documents. Not official
+  district curriculum. Does not replace missing lesson materials.
+source_school_calendar: school-calendar.yaml
+generated_at: '2026-07-15T17:02:13Z'
+generated_by: rollup.py
+mode: sequential
+summary:
+  units_total: 6
+  units_placed: 6
+  units_unplaced: 0
+  instructional_days_available: null
+  instructional_days_consumed: 27
+  instructional_days_remaining: null
+year_at_a_glance:
+  grading_period_columns:
+  - id: sequential
+    label: Inferred sequence (no grading periods)
+    unit_ids:
+    - unit-1
+    - unit-2
+    - unit-3
+    - unit-4
+    - unit-5
+    - unit-6
+    unit_count: 6
+  unit_rows:
+  - unit_id: unit-1
+    title: Agriculture in Society
+    start_date: null
+    end_date: null
+    unit_length_days: 5
+    grading_periods_spanned:
+    - sequential
+  - unit_id: unit-2
+    title: Animal and Livestock Production
+    start_date: null
+    end_date: null
+    unit_length_days: 5
+    grading_periods_spanned:
+    - sequential
+  - unit_id: unit-3
+    title: Plant Science in Agriculture
+    start_date: null
+    end_date: null
+    unit_length_days: 4
+    grading_periods_spanned:
+    - sequential
+  - unit_id: unit-4
+    title: Food Science in Agriculture
+    start_date: null
+    end_date: null
+    unit_length_days: 5
+    grading_periods_spanned:
+    - sequential
+  - unit_id: unit-5
+    title: Natural Resources in Agriculture
+    start_date: null
+    end_date: null
+    unit_length_days: 5
+    grading_periods_spanned:
+    - sequential
+  - unit_id: unit-6
+    title: Power, Structure & Technical Systems
+    start_date: null
+    end_date: null
+    unit_length_days: 3
+    grading_periods_spanned:
+    - sequential
+units:
+- unit_id: unit-1
+  title: Agriculture in Society
+  calendar: units/unit-1/calendar.yaml
+  unit_length_days: 5
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_1
+    d2: instructional_day_2
+    d3: instructional_day_3
+    d4: instructional_day_4
+    d5: instructional_day_5
+  start_instructional_index: 1
+  end_instructional_index: 5
+- unit_id: unit-2
+  title: Animal and Livestock Production
+  calendar: units/unit-2/calendar.yaml
+  unit_length_days: 5
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_6
+    d2: instructional_day_7
+    d3: instructional_day_8
+    d4: instructional_day_9
+    d5: instructional_day_10
+  start_instructional_index: 6
+  end_instructional_index: 10
+- unit_id: unit-3
+  title: Plant Science in Agriculture
+  calendar: units/unit-3/calendar.yaml
+  unit_length_days: 4
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_11
+    d2: instructional_day_12
+    d3: instructional_day_13
+    d4: instructional_day_14
+  start_instructional_index: 11
+  end_instructional_index: 14
+- unit_id: unit-4
+  title: Food Science in Agriculture
+  calendar: units/unit-4/calendar.yaml
+  unit_length_days: 5
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_15
+    d2: instructional_day_16
+    d3: instructional_day_17
+    d4: instructional_day_18
+    d5: instructional_day_19
+  start_instructional_index: 15
+  end_instructional_index: 19
+- unit_id: unit-5
+  title: Natural Resources in Agriculture
+  calendar: units/unit-5/calendar.yaml
+  unit_length_days: 5
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_20
+    d2: instructional_day_21
+    d3: instructional_day_22
+    d4: instructional_day_23
+    d5: instructional_day_24
+  start_instructional_index: 20
+  end_instructional_index: 24
+- unit_id: unit-6
+  title: Power, Structure & Technical Systems
+  calendar: units/unit-6/calendar.yaml
+  unit_length_days: 3
+  source: inferred_from_documents
+  day_map:
+    d1: instructional_day_25
+    d2: instructional_day_26
+    d3: instructional_day_27
+  start_instructional_index: 25
+  end_instructional_index: 27
+warnings: []

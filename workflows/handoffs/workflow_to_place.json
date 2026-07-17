@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "loom/handoffs/workflow_to_place.json",
+  "title": "Workflow → place-into-units handoff",
+  "description": "Per-document path findings ready for unit placement.",
+  "type": "object",
+  "required": ["doc_id", "workflow_id", "status"],
+  "properties": {
+    "doc_id": { "type": "string", "minLength": 1 },
+    "workflow_id": {
+      "type": "string",
+      "enum": ["lesson_plan", "quiz", "general"]
+    },
+    "path": { "type": "string", "enum": ["A", "B", "C"] },
+    "status": {
+      "type": "string",
+      "enum": ["ready", "stub", "failed", "skipped"]
+    },
+    "findings_path": {
+      "type": "string",
+      "description": "Relative path to path findings JSON under the project"
+    },
+    "emit_paths": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Artifacts emitted (e.g. LESSON-PLAN.md)"
+    },
+    "summary": { "type": "object" }
+  },
+  "additionalProperties": true
+}

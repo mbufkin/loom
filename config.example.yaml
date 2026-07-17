@@ -1,0 +1,22 @@
+# Copy to config.yaml and adjust for your environment:
+#   cp config.example.yaml config.yaml
+
+models:
+  # OpenAI-compatible chat/completions URLs (llama-server, vLLM, etc.).
+  # Single-strong-model doctrine (docs/BETS.md Bets 5 & 9): point BOTH roles at the
+  # same endpoint/model. The "verifier" role is the on-demand independent-second-pass
+  # framing of the SAME model, not a separate weaker one. Split them back onto two
+  # servers only if you deliberately want the old two-model setup — no code change.
+  analyst_url: "http://localhost:8081/v1/chat/completions"
+  verifier_url: "http://localhost:8081/v1/chat/completions"
+  # Model id/path as your server expects — local GGUF filenames are fine.
+  analyst_model: "your-strong-model-id"
+  verifier_model: "your-strong-model-id"
+  timeout_seconds: 300
+
+paths:
+  base_dir: "."
+  default_sources_dir: "projects/my-district/sources"
+
+policy:
+  auditor_only: true  # never generate or fix curriculum content

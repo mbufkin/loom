@@ -1,0 +1,84 @@
+# Daily lesson-plan plate → Loom checklist (test draft labeling on PDFs).
+# Structure sequence: anticipatory set → objective → input → modeling →
+# CFU → guided → independent → closure. Used as STRUCTURE inventory for
+# lesson-level discovery fill — blank / MISSING = not found. Never invent.
+#
+# Distinct from workflows/checklists/lesson_plan.yaml (NW ISD *Unit* Plan).
+# element_types map to Layer 0 ELEMENT_TYPES already in the ledger.
+
+version: "v1-test-draft-daily-lesson"
+role: lesson_plan
+framework: test_draft
+source_template: academic/daily-lesson-structure
+
+sections:
+  header:
+    label: Lesson header
+    fields:
+      - id: lesson_title
+        label: Lesson / unit title
+        element_types: []
+        fill_from: manifest
+      - id: learning_objective
+        label: Objective / purpose (what students will do)
+        element_types: [standards_objectives]
+        keywords: [objective, learning target, students will, SWBAT, purpose]
+      - id: teks
+        label: TEKS / standards
+        element_types: [standards_objectives]
+        keywords: [TEKS, student expectation, §]
+      - id: materials
+        label: Materials / logistics
+        element_types: [logistics_materials]
+        keywords: [materials, supplies, needed, prepare]
+
+  hunter_sequence:
+    label: Instructional sequence (test draft)
+    note: >
+      Core structure. Each field is one structure element. PRESENT = evidence
+      found in unit materials; MISSING = structure gap (do not invent).
+    fields:
+      - id: anticipatory_set
+        label: 1. Anticipatory set (hook / Do Now / Engage)
+        element_types: [hook_engagement]
+        keywords: [anticipatory, do now, engage, hook, warm-up, warmup, bell work, bellringer]
+      - id: objective_purpose
+        label: 2. Objective & purpose (stated to students)
+        element_types: [standards_objectives]
+        keywords: [today you will, learning target, objective, purpose]
+      - id: input
+        label: 3. Input (teach content / vocabulary)
+        element_types: [direct_instruction]
+        keywords: [direct instruction, teach, explain, content, vocabulary, lecture, mini-lesson]
+      - id: modeling
+        label: 4. Modeling (I do / demonstrate)
+        element_types: [direct_instruction]
+        keywords: [model, modeling, I do, demonstrate, example, think aloud]
+      - id: check_for_understanding
+        label: 5. Check for understanding
+        element_types: [assessment_checkpoint]
+        keywords: [check for understanding, CFU, thumbs, cold call, turn and talk, formative]
+      - id: guided_practice
+        label: 6. Guided practice (We do)
+        element_types: [guided_practice]
+        keywords: [guided practice, we do, together, with support, scaffold]
+      - id: independent_practice
+        label: 7. Independent practice (You do)
+        element_types: [independent_practice]
+        keywords: [independent practice, you do, on your own, independently, assignment]
+      - id: closure
+        label: 8. Closure
+        element_types: [reflection_closure]
+        keywords: [closure, exit ticket, wrap up, summarize, reflect, debrief]
+
+  supports:
+    label: Supports (optional structure)
+    fields:
+      - id: elps_language
+        label: ELPS / language support
+        element_types: []
+        keywords: [ELPS, language objective, sentence stem, vocabulary support]
+      - id: accommodations
+        label: SpEd / 504 / accommodations
+        element_types: []
+        keywords: [accommodation, modification, IEP, "504", differentiated, scaffold]

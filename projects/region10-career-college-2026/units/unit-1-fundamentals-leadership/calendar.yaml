@@ -1,0 +1,34 @@
+unit_id: unit-1-fundamentals-leadership
+title: "Unit 1 \u2014 Fundamentals of Effective Leadership"
+unit_length_days: 42
+days:
+- id: d1
+  label: "Milestone 1 \u2014 Describe and explain different types of leadership (~10\
+    \ days)"
+  expected:
+  - lesson_content
+  - worksheet
+  - presentation
+- id: d2
+  label: "Milestone 2 \u2014 Explain leadership within student/community organizations\
+    \ (~10 days)"
+  expected:
+  - lesson_content
+  - worksheet
+  - presentation
+- id: d3
+  label: "Milestone 3 \u2014 Identify what I can do as a leader (~10 days)"
+  expected:
+  - lesson_content
+  - worksheet
+  - presentation
+- id: d4
+  label: "Milestone 4 \u2014 Cornerstone task \u2014 leadership infographic (~12 days)"
+  expected:
+  - lesson_content
+  - worksheet
+  - presentation
+unit_supporting:
+- lesson_plan
+- rubric
+- project_work

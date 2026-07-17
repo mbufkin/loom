@@ -1,0 +1,65 @@
+unit_id: 7.3-metabolic-reactions
+title: 7.3 Metabolic Reactions
+unit_length_days: 12
+days:
+- id: d1
+  label: Lesson 1
+  expected:
+  - lesson_content
+  - exit_ticket
+- id: d2
+  label: Lesson 2
+  expected:
+  - lesson_content
+  - exit_ticket
+- id: d3
+  label: Lesson 3
+  expected:
+  - lesson_content
+  - exit_ticket
+- id: d4
+  label: Lesson 4
+  expected:
+  - lesson_content
+  - exit_ticket
+- id: d5
+  label: Lesson 5
+  expected:
+  - lesson_content
+  - exit_ticket
+- id: d6
+  label: Lesson 6
+  expected:
+  - lesson_content
+  - exit_ticket
+- id: d7
+  label: Lesson 7
+  expected:
+  - lesson_content
+  - exit_ticket
+- id: d8
+  label: Lesson 8
+  expected:
+  - lesson_content
+  - exit_ticket
+- id: d9
+  label: Lesson 9
+  expected:
+  - lesson_content
+  - exit_ticket
+- id: d10
+  label: Lesson 10
+  expected:
+  - lesson_content
+  - exit_ticket
+- id: d11
+  label: Lesson 11
+  expected:
+  - lesson_content
+  - exit_ticket
+- id: d12
+  label: Lesson 12
+  expected:
+  - lesson_content
+  - exit_ticket
+unit_supporting: []

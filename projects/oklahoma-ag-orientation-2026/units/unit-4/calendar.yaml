@@ -1,0 +1,34 @@
+unit_id: unit-4
+title: Food Science in Agriculture
+unit_length_days: 5
+days:
+- id: d1
+  label: Day 1
+  expected:
+  - lesson_content
+  - exit_ticket
+- id: d2
+  label: Day 2
+  expected:
+  - lesson_content
+  - exit_ticket
+- id: d3
+  label: Day 3
+  expected:
+  - lesson_content
+  - exit_ticket
+- id: d4
+  label: Day 4
+  expected:
+  - lesson_content
+  - exit_ticket
+- id: d5
+  label: Day 5
+  expected:
+  - lesson_content
+  - exit_ticket
+unit_supporting:
+- lesson_plan
+- quiz
+- worksheet
+- answer_key

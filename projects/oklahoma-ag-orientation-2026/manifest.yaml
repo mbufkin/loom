@@ -1,0 +1,31 @@
+project:
+  id: oklahoma-ag-orientation-2026
+  name: "Oklahoma CareerTech — Orientation to Agriculture in Society"
+sources_dir: sources
+# Structure-only public sample: unit titles + calendars. Drop curriculum files
+# into sources/ locally; do not commit source documents.
+units:
+  unit-1:
+    title: Agriculture in Society
+    calendar: units/unit-1/calendar.yaml
+    documents: []
+  unit-2:
+    title: Animal and Livestock Production
+    calendar: units/unit-2/calendar.yaml
+    documents: []
+  unit-3:
+    title: Plant Science in Agriculture
+    calendar: units/unit-3/calendar.yaml
+    documents: []
+  unit-4:
+    title: Food Science in Agriculture
+    calendar: units/unit-4/calendar.yaml
+    documents: []
+  unit-5:
+    title: Natural Resources in Agriculture
+    calendar: units/unit-5/calendar.yaml
+    documents: []
+  unit-6:
+    title: Power, Structure & Technical Systems
+    calendar: units/unit-6/calendar.yaml
+    documents: []

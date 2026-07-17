@@ -1,0 +1,45 @@
+unit_id: unit-4-non-technical-skills
+title: "Unit 4 \u2014 Non-Technical Skills"
+unit_length_days: 41
+days:
+- id: d1
+  label: "Milestone 1 \u2014 Communicate with others appropriately (~7 days)"
+  expected:
+  - lesson_content
+  - worksheet
+  - presentation
+- id: d2
+  label: "Milestone 2 \u2014 Effectively manage stress (~5 days)"
+  expected:
+  - lesson_content
+  - worksheet
+  - presentation
+- id: d3
+  label: "Milestone 3 \u2014 Set goals (~7 days)"
+  expected:
+  - lesson_content
+  - worksheet
+  - presentation
+- id: d4
+  label: "Milestone 4 \u2014 Effectively manage conflict (~6 days)"
+  expected:
+  - lesson_content
+  - worksheet
+  - presentation
+- id: d5
+  label: "Milestone 5 \u2014 Apply for a job (~6 days)"
+  expected:
+  - lesson_content
+  - worksheet
+  - presentation
+- id: d6
+  label: "Milestone 6 \u2014 Cornerstone task \u2014 interview portfolio (~10 days)"
+  expected:
+  - lesson_content
+  - worksheet
+  - presentation
+unit_supporting:
+- lesson_plan
+- rubric
+- worksheet
+- presentation

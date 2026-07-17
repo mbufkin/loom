@@ -1,0 +1,69 @@
+# --- Local / machine config (not public) ---
+config.yaml
+**/manifest.local.yaml
+
+# --- One-off local debug scripts ---
+tools/_check_place.py
+
+# --- Generated per run ---
+__pycache__/
+*.py[cod]
+*.tmp
+logs/
+*.log
+projects/*/output/
+projects/*/ingest/
+projects/*/runs/
+**/.raw/
+
+# --- Curriculum corpus (licensing / size) ---
+data/career-curriculum/
+projects/*/sources/**
+!projects/*/sources/.gitkeep
+
+# --- Large download artifacts ---
+projects/*/_download/
+
+# --- Internal R&D (stays local only) ---
+research/
+archive/reviews/
+
+# --- Entire archive (deprecated code & frozen outputs) ---
+archive/
+
+# --- Pilot / scratch projects (legacy paths + current fixtures) ---
+projects/ingest-pilot/
+projects/ingest-test/
+projects/_fixtures/ingest-pilot/
+projects/_fixtures/ingest-test/
+
+# --- OS artifacts ---
+.DS_Store
+*.swp
+.venv/
+
+# --- Local npm tooling (markdownlint, etc.) — never commit ---
+node_modules/
+
+# --- Third-party / partner template packs (licensing) — never public ---
+templates-northwest-isd/
+data/ctat-admin-training/
+
+# --- Generated analysis artifacts that embed verbatim curriculum text ---
+# Public demo keeps only structural / id-only artifacts (route-map.json,
+# path_*/findings.json summaries, calendars, manifests). Element ledgers and
+# per-document findings quote copyrighted curriculum, so they stay local.
+projects/*/layer0/ledger.json
+projects/*/layer0/ledger.md
+projects/*/layer0/REPORT.md
+projects/*/layer0/LAYER0B-REPORT.md
+projects/*/layer0/workflow-handoff.json
+projects/*/layer1/
+projects/*/layer2/
+projects/*/path_a/
+
+# --- Experiment run outputs (embed excerpts / large dumps) ---
+experiments/*/out/
+
+# --- Internal R&D review briefs (stays local, like research/) ---
+reviews/

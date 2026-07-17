@@ -1,0 +1,15 @@
+school_year: 2025-2026
+notes: Middle school Career and College Exploration (7th/8th). Four ~40-day units
+  plus course map.
+grading_periods: []
+units:
+- unit_id: course-map
+  title: Course Map
+- unit_id: unit-1-fundamentals-leadership
+  title: "Unit 1 \u2014 Fundamentals of Effective Leadership"
+- unit_id: unit-2-pathways-careers
+  title: "Unit 2 \u2014 Exploring Pathways to Careers"
+- unit_id: unit-3-financial-literacy
+  title: "Unit 3 \u2014 Financial Literacy"
+- unit_id: unit-4-non-technical-skills
+  title: "Unit 4 \u2014 Non-Technical Skills"
