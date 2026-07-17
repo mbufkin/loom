@@ -111,7 +111,7 @@ Prefer `./run-audit` unless debugging a single stage.
 
 ## Google Drive (report PDFs)
 
-After every successful `./run-audit` / `run_project.py`, Crystallize uploads the
+After every successful `./run-audit` / `run_project.py`, Loom uploads the
 course report PDF via rclone (default remote `gdrive:`):
 
 ```text
@@ -137,7 +137,8 @@ python3 tools/push_drive_reports.py --all
 python3 tools/push_drive_reports.py --project dallas-career-2026
 ```
 
-Env: `CRYSTALLIZE_DRIVE_REMOTE` (default `gdrive`), `CRYSTALLIZE_DRIVE_BASE`
+Loom Drive settings (env names kept for compatibility):
+`CRYSTALLIZE_DRIVE_REMOTE` (default `gdrive`), `CRYSTALLIZE_DRIVE_BASE`
 (default `Loom`). Setup: `docs/images/setup-gdrive-rclone.sh`.
 
 ---
@@ -172,18 +173,25 @@ Details: [`projects/ap-csp-2026/README.md`](projects/ap-csp-2026/README.md), [`d
 
 ## Tests
 
+Offline-safe (public clone; no private corpora):
+
 ```bash
-python3 test_audit.py
-python3 test_doc_extract.py
 python3 test_schema_validate.py
+python3 test_audit.py
 python3 test_rollup.py
+python3 test_doc_extract.py
+python3 test_loom_pipeline.py
 ```
+
+Dallas integration cases inside `test_loom_pipeline.py` skip automatically when
+local sources / Layer 0 ledgers are absent.
 
 ---
 
 ## Deprecated
 
-- [archive/crystallize-legacy/](archive/crystallize-legacy/README.md) — old 4-layer batch
-- [archive/legacy-unit-audit/](archive/legacy-unit-audit/README.md) — doc-level scrub→place (removed from `./run-audit`)
+Older Crystallize batch and doc-level scrub→place code lived under a local
+`archive/` tree. That tree is **not shipped** in the public repo and is not
+part of `./run-audit`.
 
 **Canonical path:** `./run-audit <dataset-id>` only.

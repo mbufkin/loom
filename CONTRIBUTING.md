@@ -111,8 +111,8 @@ You MUST follow this protocol on every change set:
 ### 6.4 Headline path honesty
 
 When documenting behavior, you MUST treat **Layer 0/1** as the product path
-(skippable via `--skip-layer01`). Doc-level scrub→place is archived under
-`archive/legacy-unit-audit/` and MUST NOT be described as part of `./run-audit`.
+(skippable via `--skip-layer01`). Doc-level scrub→place is retired and MUST NOT
+be described as part of `./run-audit`.
 
 Curricula are **data** under `projects/`; do not invent curriculum-specific program forks.
 
@@ -141,8 +141,8 @@ Curricula are **data** under `projects/`; do not invent curriculum-specific prog
 
 | Action | Status |
 |--------|--------|
-| Extending `archive/crystallize-legacy/` | Forbidden |
-| New imports from `archive/` | Forbidden |
+| Reviving retired scrub→place / legacy batch as production | Forbidden |
+| New imports from local-only `archive/` (if present on disk) | Forbidden |
 | Calling `tools/` from production | Forbidden |
 | Writing curriculum content into `sources/` via models | Forbidden |
 | Parallel project layout that ignores §3 of PROJECT_STRUCTURE | Forbidden |

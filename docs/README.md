@@ -1,6 +1,6 @@
-# Crystallize — Documentation
+# Loom — Documentation
 
-Reference for the curriculum crystallization auditor.
+Reference for the Loom curriculum auditor (router + Path A/B/C workflows).
 
 > Built on the design doctrine in [BETS.md](BETS.md): full-document model reading,
 > regex-as-hint-only, narrow repeated tasks, citations + "unknown", **single strong

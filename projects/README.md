@@ -1,6 +1,6 @@
 # projects/ — Curriculum data (not the program)
 
-**Crystallize** (repo root) is the **program**.  
+**Loom** (repo root) is the **program**.  
 Everything under `projects/` is **data**: interchangeable curriculum corpora you feed the program.
 
 ```bash

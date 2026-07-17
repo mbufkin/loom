@@ -1,6 +1,6 @@
 # Curriculum dataset status
 
-Each row is **data** for the Crystallize program (`./run-audit <id>`).  
+Each row is **data** for the Loom program (`./run-audit <id>`).  
 Maturity = how complete generated artifacts are — not a separate code path.
 
 | Dataset id | Tier | Layer 0 | Layer 1 | Notes |

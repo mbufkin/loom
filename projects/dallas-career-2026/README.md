@@ -3,7 +3,7 @@
 | | |
 |--|--|
 | **Tier** | Golden (acceptance / demo) |
-| **Program** | Crystallize at repo root — this folder is **data only** |
+| **Program** | Loom at repo root — this folder is **data only** |
 | **Units** | 18 career-cluster / CTE modules (flat `units/<id>/`) |
 | **Run** | `./run-audit dallas-career-2026` |
 

@@ -172,8 +172,8 @@ Dataset shelf / tiers: [projects/STATUS.md](projects/STATUS.md). Same shape for 
 | **Layer 2** | Yes (unless `--skip-layer01`) | Document × role (no new model calls) | `layer2/` |
 | **Reports** | Yes (`synthesize --report all`) | Project / unit plates | `output/FIRST-PASS.md`, `teachers/`, `DASHBOARD.md`; refreshes `layer1/REVIEW-QUEUE.md` |
 
-Doc-level scrub→place (`scrub.py` / `place.py` / `run-all-units.py`) lives under
-[`archive/legacy-unit-audit/`](archive/legacy-unit-audit/) and is **not** part of production.
+Doc-level scrub→place (`scrub.py` / `place.py` / `run-all-units.py`) is retired
+and is **not** part of production (local-only `archive/` if present on disk).
 
 **MUST NOT** treat archived `place.py` gap reports as the source of truth for
 `FIRST-PASS.md` / `GLOBAL-AUDIT.md` / `DASHBOARD.md` — those are Layer 1–sourced via `reports.py`.

@@ -2,7 +2,7 @@
 
 > **Archived path — not `./run-audit`.** This canvas documents the old doc-level
 > scrub→place pipeline. Production is Layer 0 → Layer 1 → synthesize
-> ([PIPELINE.md](PIPELINE.md)). Scripts live under `archive/legacy-unit-audit/`.
+> ([PIPELINE.md](PIPELINE.md)). Legacy scripts are not shipped in the public tree.
 > **Not the structure source of truth** — for dirs/zones/dataset layout see
 > [PROJECT_STRUCTURE.md](../PROJECT_STRUCTURE.md). Diagrams below are historical.
 

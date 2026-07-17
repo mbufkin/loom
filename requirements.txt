@@ -1,14 +1,7 @@
-# Runtime dependencies for the active Crystallize pipeline (layer0.py, layer1.py,
-# layer2.py, ingest.py, rollup.py, synthesize.py, doc_extract.py, render_pdf.py,
-# report_delivery.py, audit_lib.py, etc).
+# Runtime dependencies for the Loom pipeline (layer0/1/2, ingest, rollup,
+# synthesize, doc_extract, render_pdf, route, workflows, etc).
 #
-# Pinned to what's actually installed and validated on the G10 box, not just
-# "latest" — a security/dependency-hygiene follow-up (see chat), so `pip-audit`
-# (or any CVE scanner) has a real lockfile to check instead of nothing. Bump
-# deliberately, one at a time, re-validating the pipeline after each bump.
-#
-# NOTE: archive/ (legacy, unmaintained prototypes) is excluded — those files
-# import fastapi/flask/pydantic/httpx, none of which the live pipeline uses.
+# Pinned versions — bump deliberately and re-validate the pipeline after each change.
 
 requests==2.31.0
 PyYAML==6.0.1

@@ -91,7 +91,7 @@
 
 | Path | Role |
 |------|------|
-| [`archive/legacy-unit-audit/`](archive/legacy-unit-audit/) | Doc-level scrub→place (`scrub.py`, `place.py`, `audit.py`, `run-all-units.py`) — removed from `./run-audit` |
+| Local-only `archive/` (not shipped publicly) | Retired scrub→place / legacy batch — removed from `./run-audit` |
 
 ---
 
@@ -158,7 +158,7 @@ Do not duplicate the zone table here.
 | `data/` | Low | Has [data/README.md](data/README.md) — backup, not I/O |
 | `research/` | Low | Optional private README |
 | `logs/` | Low | Optional |
-| `archive/` | Low | Has [archive/README.md](archive/README.md) |
+| `archive/` | Low | Local-only if present; not shipped publicly |
 | Generated subdirs (`ingest/`, `layer0/`, `layer1/`, `layer2/`, `sources/`, `units/`, `runs/`) | Info | Covered by [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) — per-subdir READMEs optional |
 
 ### 6.3 Pivot points (change these → widest blast radius)

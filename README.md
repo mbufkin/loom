@@ -8,10 +8,10 @@ classifies its pedagogical type, then **routes** each document through a
 type-specific workflow before checking placement, pacing, and gaps. It reports
 what is present, missing, or misplaced — and never authors curriculum content.
 
-> Loom is the evolution of the **Crystallize** auditor. Crystallize classified
-> documents but then ran the *same* generic analysis on everything. Loom adds a
-> router so lesson plans, quizzes, and general docs each get the right workflow.
-> Loom supersedes and replaces Crystallize.
+> Loom grew out of Crystallize (same auditor charter; Loom adds the router).
+> See [README-crystallize.md](README-crystallize.md) for lineage only.
+
+[![CI](https://github.com/mbufkin/loom/actions/workflows/ci.yml/badge.svg)](https://github.com/mbufkin/loom/actions/workflows/ci.yml)
 
 ---
 
@@ -47,16 +47,6 @@ flowchart TB
   cal --> reports[reports_and_PDF]
 ```
 
-## Loom vs Crystallize
-
-| | Crystallize | Loom |
-|---|---|---|
-| **Decompose** | Breaks docs into chunks | Same |
-| **Classify** | Identifies pedagogical types | Same |
-| **Route** | No router — everything through identical layers | **Router picks a workflow per type** |
-| **Analysis** | Generic questions for everything | Type-specific per workflow (Path A/B/C) |
-| **Feedback** | None | Unknown types logged to `_loom_feedback.yaml` |
-
 ## Doctrine
 
 - **Auditor only.** Loom reports structure and gaps. It **never** writes lesson
@@ -85,12 +75,28 @@ Loom runs against any OpenAI-compatible chat/completions endpoint
 (llama.cpp `llama-server`, vLLM, etc.). See [OPERATORS.md](OPERATORS.md) for
 flags, single-stage debugging, and dataset conventions.
 
+### Public samples
+
+Datasets under `projects/` (Dallas, Oklahoma, etc.) ship **structure only** in
+this public tree — manifests, calendars, route maps — not curriculum source
+files or excerpt-bearing ledgers. Bring your own corpus in `sources/`.
+
+### Tests
+
+Offline-safe suite (no private corpora required):
+
+```bash
+python3 test_schema_validate.py
+python3 test_audit.py
+python3 test_rollup.py
+python3 test_loom_pipeline.py
+```
+
 ## Docs
 
 - [OPERATORS.md](OPERATORS.md) — commands, flags, pipeline stages
 - [PLAN.md](PLAN.md) — router + Path A/B/C build order
-- [docs/README.md](docs/README.md) — full documentation index
-- [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) — repository layout
+- [docs/README.md](docs/README.md) — full documentation index (includes Context Layer)
 - [CONTRIBUTING.md](CONTRIBUTING.md) — rules of engagement
 
 ## License

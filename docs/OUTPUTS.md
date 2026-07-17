@@ -32,7 +32,8 @@ Hybrid narrative details: [REPORT-DELIVERY.md](REPORT-DELIVERY.md).
 
 Older doc-level scrub→place runs may still leave files under `output/<unit>/`
 (`02-gap-report.*`, `evidence/`, `AUDIT-REPORT.pdf`). Those are **not** regenerated
-by the product path. See [archive/legacy-unit-audit/README.md](../archive/legacy-unit-audit/README.md).
+by the product path. Legacy scrub→place tooling is not shipped publicly and is
+not part of `./run-audit`.
 
 ## What outputs are **not**
 
