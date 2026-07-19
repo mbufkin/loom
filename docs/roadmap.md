@@ -1271,27 +1271,23 @@ closing out that open item from #11's "still open" list. Remaining open items
 from #11 (dense-model swap experiment, unit test coverage for
 `resolve_excerpt()`/`run_layer0b()`) are still outstanding.
 
-### 13. Layer 1: chunk ORGANIZE (and FULFILL) for oversized single documents — DEFERRED (found 2026-07-10)
+### 13. Layer 1: chunk ORGANIZE for oversized single documents — DONE (2026-07-17)
 
-**Not MVP.** Documented so we stop rediscovering it; fix after launch if a
-partner needs framework-PDF corpora end-to-end.
+**Driving corpus:** TEA Bluebonnet Grade 5 + Algebra I validation
+(`projects/bluebonnet-math-2026/`). Smoke hit the same wall as AP CSP: G5
+Module 1 Learn SE produced **195** Layer 0 elements and ORGANIZE JSON-failed
+as one call; AP CSP CED (~507 els) previously hit **65k context overflow**.
 
-**Symptom (live, `ap-csp-2026`):** Layer 0 / 0-B succeed on the AP CSP CED
-(~507 elements after splits). Layer 1 Phase 1 ORGANIZE sends the whole
-document’s element list + text in one prompt → **~113k tokens** vs local
-context **65,536** → HTTP 400 `exceed_context_size_error`. All rows left
-`UNVERIFIED`. Phase 3 FULFILL hit the same class of failure on at least one
-slot. Hybrid reports still generated but are not a real review.
+**Fix (in [`layer1.py`](../layer1.py)):** when a document has more than
+`ORGANIZE_BATCH_SIZE` (40) elements, Phase 1 splits into contiguous batches,
+reuses the same closed unit/day vocab, merges by `element_id`, and isolates
+batch failures (one bad batch leaves those rows unjudged; others still apply).
+Dallas-shaped small docs stay a single call. Batched calls use a longer
+per-call timeout (`LARGE_CALL_TIMEOUT_SECONDS`) without raising the global
+300s default. Covered by `test_layer1_organize_batch.py`.
 
-**Why Layer 0 is fine and Layer 1 is not:** Layer 0 already map-reduces
-oversized docs into chunks. Layer 1 ORGANIZE is still **one call per source
-file**, which is correct for Dallas-shaped multi-doc packs and wrong for one
-giant CED.
-
-**Intended fix (later):** chunk ORGANIZE (and, if needed, FULFILL context) the
-same way Layer 0 chunks — per-chunk placement drafts, then merge/check —
-without changing the multi-doc happy path. Until then: treat `ap-csp-2026` as
-Layer 0 stress only (`projects/ap-csp-2026/README.md`, `projects/STATUS.md`).
+**Still open:** AP CSP end-to-end re-run after Bluebonnet D4 is green; FULFILL
+batching only if TE modules blow up Phase 3 the same way.
 
 ## Questions for the Roadmap
 

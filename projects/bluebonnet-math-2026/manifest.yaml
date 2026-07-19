@@ -1,0 +1,64 @@
+project:
+  id: bluebonnet-math-2026
+  name: "TEA Bluebonnet Math \u2014 Grade 5 + Algebra I validation"
+sources_dir: /home/lenovo/g10-control-center-loom/projects/bluebonnet-math-2026/sources
+units:
+  g5-mod-1:
+    title: "Grade 5 Math \u2014 Module 1"
+    calendar: units/g5-mod-1/calendar.yaml
+    documents:
+    - grade-5/K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition.pdf
+    - grade-5/K-5_Math_Grade_5_Module_1_Place_Value_and_Decimals_Teacher_Edition.pdf
+    - grade-5/K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition.pdf
+    - grade-5/K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition.pdf
+  g5-mod-2:
+    title: "Grade 5 Math \u2014 Module 2"
+    calendar: units/g5-mod-2/calendar.yaml
+    documents:
+    - grade-5/K-5_Math_Grade_5_Module_2_Learn_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf
+    - grade-5/K-5_Math_Grade_5_Module_2_Multi-Digit_Whole_Number_and_Decimal_Operations_Teacher_Edition.pdf
+    - grade-5/K-5_Math_Grade_5_Module_2_Practice_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf
+    - grade-5/K-5_Math_Grade_5_Module_2_Succeed_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf
+  g5-mod-3:
+    title: "Grade 5 Math \u2014 Module 3"
+    calendar: units/g5-mod-3/calendar.yaml
+    documents:
+    - grade-5/K-5_Math_Grade_5_Module_3_Addition_and_Subtraction_of_Fractions_Teacher_Edition.pdf
+    - grade-5/K-5_Math_Grade_5_Module_3_Learn_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf
+    - grade-5/K-5_Math_Grade_5_Module_3_Practice_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf
+    - grade-5/K-5_Math_Grade_5_Module_3_Succeed_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf
+  g5-mod-4:
+    title: "Grade 5 Math \u2014 Module 4"
+    calendar: units/g5-mod-4/calendar.yaml
+    documents:
+    - grade-5/K-5_Math_Grade_5_Module_4_Learn_Multiplication_and_Division_of_Fractions_Student_Edition.pdf
+    - grade-5/K-5_Math_Grade_5_Module_4_Multiplication_and_Division_of_Fractions_Teacher_Edition.pdf
+    - grade-5/K-5_Math_Grade_5_Module_4_Practice_Multiplication_and_Division_of_Fractions_Student_Edition.pdf
+    - grade-5/K-5_Math_Grade_5_Module_4_Succeed_Multiplication_and_Division_of_Fractions_Student_Edition.pdf
+  g5-mod-5:
+    title: "Grade 5 Math \u2014 Module 5"
+    calendar: units/g5-mod-5/calendar.yaml
+    documents:
+    - grade-5/K-5_Math_Grade_5_Module_5_Addition_and_Multiplication_with_Volume_and_Area_Teacher_Edition.pdf
+    - grade-5/K-5_Math_Grade_5_Module_5_Learn_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf
+    - grade-5/K-5_Math_Grade_5_Module_5_Practice_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf
+    - grade-5/K-5_Math_Grade_5_Module_5_Succeed_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf
+  g5-mod-6:
+    title: "Grade 5 Math \u2014 Module 6"
+    calendar: units/g5-mod-6/calendar.yaml
+    documents:
+    - grade-5/K-5_Math_Grade_5_Module_6_Learn_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf
+    - grade-5/K-5_Math_Grade_5_Module_6_Practice_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf
+    - grade-5/K-5_Math_Grade_5_Module_6_Problem_Solving_with_the_Coordinate_Plane_and_Data_Teacher_Edition.pdf
+    - grade-5/K-5_Math_Grade_5_Module_6_Succeed_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf
+  g5-program:
+    title: "Grade 5 Math \u2014 program guides"
+    calendar: units/g5-program/calendar.yaml
+    documents:
+    - grade-5/K-5_Math_Component_Navigation_Guide.pdf
+    - grade-5/K-5_Math_Family_Guide.pdf
+    - grade-5/K-5_Math_Grade_5_Additional_Days_School_Year_ADSY_Teacher_Edition.pdf
+    - grade-5/K-5_Math_Grade_5_Course_Guide.pdf
+    - grade-5/K-5_Math_Grade_5_Manipulatives_Kit.pdf
+    - grade-5/K-5_Math_Program_and_Implementation_Guide.pdf
+generated_by: tools/stage_bluebonnet_units.py

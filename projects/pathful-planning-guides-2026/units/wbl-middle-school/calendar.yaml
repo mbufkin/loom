@@ -1,0 +1,19 @@
+unit_id: wbl-middle-school
+title: Planning Guide WBL Middle School
+unit_length_days: 3
+days:
+- id: d1
+  label: Grade 6
+  expected:
+  - lesson_content
+- id: d2
+  label: Grade 7
+  expected:
+  - lesson_content
+- id: d3
+  label: Grade 8
+  expected:
+  - lesson_content
+unit_supporting:
+- lesson_plan
+- worksheet

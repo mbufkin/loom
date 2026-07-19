@@ -1,0 +1,77 @@
+{
+  "project_id": "bluebonnet-math-2026",
+  "generated_at": "2026-07-17T20:42:02.672835+00:00",
+  "counts": {
+    "general": 6
+  },
+  "unrouted_ledger_doc_ids": [],
+  "feedback_path": "/home/lenovo/g10-control-center-loom/projects/bluebonnet-math-2026/_loom_feedback.yaml",
+  "routes": [
+    {
+      "doc_id": "K-5_Math_Component_Navigation_Guide.pdf",
+      "doc_type": "other",
+      "workflow_id": "general",
+      "path": "C",
+      "reason": "mapped from doc_type=other",
+      "feedback": true,
+      "confidence": 0.85,
+      "source_file": "K-5_Math_Component_Navigation_Guide.pdf",
+      "element_count": 6
+    },
+    {
+      "doc_id": "K-5_Math_Family_Guide.pdf",
+      "doc_type": "other",
+      "workflow_id": "general",
+      "path": "C",
+      "reason": "mapped from doc_type=other",
+      "feedback": true,
+      "confidence": 0.85,
+      "source_file": "K-5_Math_Family_Guide.pdf",
+      "element_count": 9
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Course_Guide.pdf",
+      "doc_type": "other",
+      "workflow_id": "general",
+      "path": "C",
+      "reason": "mapped from doc_type=other",
+      "feedback": true,
+      "confidence": 0.85,
+      "source_file": "K-5_Math_Grade_5_Course_Guide.pdf",
+      "element_count": 5
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition.pdf",
+      "doc_type": "other",
+      "workflow_id": "general",
+      "path": "C",
+      "reason": "mapped from doc_type=other",
+      "feedback": true,
+      "confidence": 0.85,
+      "source_file": "K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition.pdf",
+      "element_count": 195
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_1_Place_Value_and_Decimals_Teacher_Edition.pdf",
+      "doc_type": "other",
+      "workflow_id": "general",
+      "path": "C",
+      "reason": "mapped from doc_type=other",
+      "feedback": true,
+      "confidence": 0.85,
+      "source_file": "K-5_Math_Grade_5_Module_1_Place_Value_and_Decimals_Teacher_Edition.pdf",
+      "element_count": 41
+    },
+    {
+      "doc_id": "K-5_Math_Program_and_Implementation_Guide.pdf",
+      "doc_type": "other",
+      "workflow_id": "general",
+      "path": "C",
+      "reason": "mapped from doc_type=other",
+      "feedback": true,
+      "confidence": 0.85,
+      "source_file": "K-5_Math_Program_and_Implementation_Guide.pdf",
+      "element_count": 33
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+project_id: pathful-planning-guides-2026
+school_year: 2026-2027
+district: Dallas Independent School District
+source: inferred_from_documents
+disclaimer: Inferred projected map — reconstructed from available documents. Not official
+  district curriculum. Does not replace missing lesson materials.
+source_school_calendar: school-calendar.yaml
+generated_at: '2026-07-17T16:05:04Z'
+generated_by: rollup.py
+mode: dated
+summary:
+  units_total: 7
+  units_placed: 7
+  units_unplaced: 0
+  instructional_days_available: 175
+  instructional_days_consumed: 19
+  instructional_days_remaining: 156
+year_at_a_glance:
+  grading_period_columns:
+  - id: fall-1
+    label: Fall — Nine Weeks 1
+    begin: '2026-08-11'
+    end: '2026-10-07'
+    unit_ids:
+    - wbl-high-school
+    - wbl-middle-school
+    - cce-middle-school
+    - cce-high-school
+    - special-education-transition
+    - preets-roadmap
+    - activity-sequence-flowchart
+    unit_count: 7
+  - id: fall-2
+    label: Fall — Nine Weeks 2
+    begin: '2026-10-13'
+    end: '2026-12-18'
+    unit_ids: []
+    unit_count: 0
+  - id: spring-1
+    label: Spring — Nine Weeks 3
+    begin: '2027-01-06'
+    end: '2027-03-12'
+    unit_ids: []
+    unit_count: 0
+  - id: spring-2
+    label: Spring — Nine Weeks 4
+    begin: '2027-03-22'
+    end: '2027-05-26'
+    unit_ids: []
+    unit_count: 0
+  unit_rows:
+  - unit_id: wbl-high-school
+    title: Planning Guide WBL High School
+    start_date: '2026-08-11'
+    end_date: '2026-08-14'
+    unit_length_days: 4
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: wbl-middle-school
+    title: Planning Guide WBL Middle School
+    start_date: '2026-08-17'
+    end_date: '2026-08-19'
+    unit_length_days: 3
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: cce-middle-school
+    title: Planning Guide CCE Middle School
+    start_date: '2026-08-20'
+    end_date: '2026-08-24'
+    unit_length_days: 3
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: cce-high-school
+    title: Planning Guide CCE High School
+    start_date: '2026-08-25'
+    end_date: '2026-08-28'
+    unit_length_days: 4
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: special-education-transition
+    title: Special Education Transition Planning Guide
+    start_date: '2026-08-31'
+    end_date: '2026-09-01'
+    unit_length_days: 2
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: preets-roadmap
+    title: PreETS Roadmap Planning Guide
+    start_date: '2026-09-02'
+    end_date: '2026-09-03'
+    unit_length_days: 2
+    grading_periods_spanned:
+    - fall-1
+  - unit_id: activity-sequence-flowchart
+    title: Activity Sequence Flowchart Planning Guide
+    start_date: '2026-09-04'
+    end_date: '2026-09-04'
+    unit_length_days: 1
+    grading_periods_spanned:
+    - fall-1
+units:
+- unit_id: wbl-high-school
+  title: Planning Guide WBL High School
+  calendar: units/wbl-high-school/calendar.yaml
+  unit_length_days: 4
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-08-11'
+    d2: '2026-08-12'
+    d3: '2026-08-13'
+    d4: '2026-08-14'
+  start_date: '2026-08-11'
+  end_date: '2026-08-14'
+  grading_period_id: fall-1
+- unit_id: wbl-middle-school
+  title: Planning Guide WBL Middle School
+  calendar: units/wbl-middle-school/calendar.yaml
+  unit_length_days: 3
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-08-17'
+    d2: '2026-08-18'
+    d3: '2026-08-19'
+  start_date: '2026-08-17'
+  end_date: '2026-08-19'
+  grading_period_id: fall-1
+- unit_id: cce-middle-school
+  title: Planning Guide CCE Middle School
+  calendar: units/cce-middle-school/calendar.yaml
+  unit_length_days: 3
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-08-20'
+    d2: '2026-08-21'
+    d3: '2026-08-24'
+  start_date: '2026-08-20'
+  end_date: '2026-08-24'
+  grading_period_id: fall-1
+- unit_id: cce-high-school
+  title: Planning Guide CCE High School
+  calendar: units/cce-high-school/calendar.yaml
+  unit_length_days: 4
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-08-25'
+    d2: '2026-08-26'
+    d3: '2026-08-27'
+    d4: '2026-08-28'
+  start_date: '2026-08-25'
+  end_date: '2026-08-28'
+  grading_period_id: fall-1
+- unit_id: special-education-transition
+  title: Special Education Transition Planning Guide
+  calendar: units/special-education-transition/calendar.yaml
+  unit_length_days: 2
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-08-31'
+    d2: '2026-09-01'
+  start_date: '2026-08-31'
+  end_date: '2026-09-01'
+  grading_period_id: fall-1
+- unit_id: preets-roadmap
+  title: PreETS Roadmap Planning Guide
+  calendar: units/preets-roadmap/calendar.yaml
+  unit_length_days: 2
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-09-02'
+    d2: '2026-09-03'
+  start_date: '2026-09-02'
+  end_date: '2026-09-03'
+  grading_period_id: fall-1
+- unit_id: activity-sequence-flowchart
+  title: Activity Sequence Flowchart Planning Guide
+  calendar: units/activity-sequence-flowchart/calendar.yaml
+  unit_length_days: 1
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-09-04'
+  start_date: '2026-09-04'
+  end_date: '2026-09-04'
+  grading_period_id: fall-1
+warnings: []

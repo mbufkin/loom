@@ -20,6 +20,8 @@ projects/*/runs/
 data/career-curriculum/
 projects/*/sources/**
 !projects/*/sources/.gitkeep
+projects/*/_corpus/
+projects/*/_held_out/
 
 # --- Large download artifacts ---
 projects/*/_download/
@@ -54,6 +56,7 @@ data/ctat-admin-training/
 # path_*/findings.json summaries, calendars, manifests). Element ledgers and
 # per-document findings quote copyrighted curriculum, so they stay local.
 projects/*/layer0/ledger.json
+projects/*/layer0/ledger.json.*
 projects/*/layer0/ledger.md
 projects/*/layer0/REPORT.md
 projects/*/layer0/LAYER0B-REPORT.md

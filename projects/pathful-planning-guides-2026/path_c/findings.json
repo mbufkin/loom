@@ -1,0 +1,130 @@
+{
+  "project_id": "pathful-planning-guides-2026",
+  "workflow_id": "general",
+  "path": "C",
+  "status": "stub",
+  "doc_ids": [
+    "doc_pathful_1424833_Planning_Guide_WBL_High_School",
+    "doc_pathful_1424838_Planning_Guide_WBL_Middle_School",
+    "doc_pathful_1424840_Planning_Guide_CCE_Middle_School",
+    "doc_pathful_1424841_Planning_Guide_CCE_High_School",
+    "doc_pathful_1424890_Planning_Guide_Special_Education_Transition",
+    "doc_pathful_1454298_Planning_Guide_PreETS_Roadmap",
+    "doc_pathful_1530547_Planning_Guide_Activity_Sequence_Flowchart"
+  ],
+  "inventory": [
+    {
+      "doc_id": "doc_pathful_1424833_Planning_Guide_WBL_High_School",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "doc_pathful_1424838_Planning_Guide_WBL_Middle_School",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "doc_pathful_1424840_Planning_Guide_CCE_Middle_School",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "doc_pathful_1424841_Planning_Guide_CCE_High_School",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "doc_pathful_1424890_Planning_Guide_Special_Education_Transition",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "doc_pathful_1454298_Planning_Guide_PreETS_Roadmap",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "doc_pathful_1530547_Planning_Guide_Activity_Sequence_Flowchart",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    }
+  ],
+  "feedback_file": "_loom_feedback.yaml"
+}

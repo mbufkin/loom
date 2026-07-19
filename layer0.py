@@ -60,9 +60,19 @@ from schema_validate import (
 # AP CSP CED framework doc, to silently under-extract — 13 elements from 266 pages —
 # because the model quietly sampled rather than exhaustively covering a prompt that
 # size. See docs/roadmap.md "Large single-document chunking" for the full writeup.)
-CHUNK_THRESHOLD_CHARS = 100_000
-CHUNK_SIZE_CHARS = 60_000  # generous single-prompt budget per chunk (~15K tokens)
+# Bluebonnet TE/Learn SE validation (2026-07-18): 60k chunks + 16k max_tokens
+# repeatedly truncated mid-JSON array ("Expecting ',' delimiter" ~54k chars of
+# output). Smaller chunks → fewer elements per call → JSON fits. Docs in the
+# 40–100k band (many Learn/Succeed SEs) must also chunk, not take the single-
+# prompt path that was failing wholesale.
+CHUNK_THRESHOLD_CHARS = 40_000
+CHUNK_SIZE_CHARS = 30_000
 OVERLAP_PARAGRAPHS = 2  # trailing paragraphs repeated at the start of the next chunk
+
+# Overnight TE runs: give decompose more wall-clock without raising the global
+# config timeout for small Dallas-shaped calls elsewhere.
+LARGE_CALL_TIMEOUT_SECONDS = 900
+DECOMPOSE_PARSE_RETRIES = 2  # was 1; Bluebonnet truncations often succeed on retry
 
 # --- Citation mechanism: pointers, not generated text -----------------------
 # Earlier versions asked the model to *retype* a verbatim excerpt, then verified it
@@ -387,11 +397,26 @@ def dedup_elements(elements: list[dict]) -> list[dict]:
     return deduped
 
 
-def model_call(cfg: dict, role: str, messages: list, step: str) -> dict:
+def model_call(
+    cfg: dict,
+    role: str,
+    messages: list,
+    step: str,
+    *,
+    timeout_seconds: float | None = None,
+) -> dict:
     # 16384 (was 8192): content-dense chunks were hitting the 8192 ceiling mid-array,
     # producing a deterministic "Expecting ',' delimiter" JSON parse failure that a
     # retry cannot fix (observed live against the AP CSP framework — see roadmap.md).
-    return model_chat(cfg, role, messages, step, temperature=0.1, max_tokens=16384)
+    return model_chat(
+        cfg,
+        role,
+        messages,
+        step,
+        temperature=0.1,
+        max_tokens=16384,
+        timeout_seconds=timeout_seconds,
+    )
 
 
 def extract_content(response: dict) -> str:
@@ -408,7 +433,8 @@ def _decompose_text_with_retry(
     char_label: str,
     step: str,
     chunk_note: str = "",
-    parse_retries: int = 1,
+    parse_retries: int = DECOMPOSE_PARSE_RETRIES,
+    timeout_seconds: float | None = None,
 ) -> tuple[dict, list[str]]:
     """Call a model to decompose one span of text, retrying on PARSE failure (not
     just HTTP failure). Works identically for a whole document or a single chunk.
@@ -436,7 +462,13 @@ DOCUMENT TEXT ({char_label}, shown as numbered paragraphs):
 """
     last_err: Exception | None = None
     for attempt in range(parse_retries + 1):
-        resp = model_call(cfg, role, [{"role": "user", "content": prompt}], step)
+        resp = model_call(
+            cfg,
+            role,
+            [{"role": "user", "content": prompt}],
+            step,
+            timeout_seconds=timeout_seconds,
+        )
         try:
             return parse_model_json(extract_content(resp), context=step), paragraphs
         except ValueError as e:
@@ -445,8 +477,13 @@ DOCUMENT TEXT ({char_label}, shown as numbered paragraphs):
                 log(
                     f"WARN: {step} parse failure (attempt {attempt + 1}), retrying: {e}"
                 )
+    # Bluebonnet Practice/Succeed-class failures: leave a one-line operator hint.
+    hint = (
+        " — if this keeps failing, check .raw/ for truncated JSON; "
+        "force re-chunk with a smaller CHUNK_SIZE_CHARS or re-run this doc alone"
+    )
     raise ValueError(
-        f"{step}: parse failed after {parse_retries + 1} attempts: {last_err}"
+        f"{step}: parse failed after {parse_retries + 1} attempts: {last_err}{hint}"
     )
 
 
@@ -457,6 +494,7 @@ def decompose_text(
     char_label: str,
     step: str,
     chunk_note: str = "",
+    timeout_seconds: float | None = None,
 ) -> tuple[dict, list[str]]:
     """Primary decomposition pass — the one strong model reads the span. (The
     "analyst" role now resolves to the same single model as "verifier"; see config.yaml.)
@@ -471,6 +509,7 @@ def decompose_text(
         char_label,
         step,
         chunk_note,
+        timeout_seconds=timeout_seconds,
     )
 
 
@@ -481,6 +520,7 @@ def recheck_text(
     char_label: str,
     step: str,
     chunk_note: str = "",
+    timeout_seconds: float | None = None,
 ) -> tuple[dict, list[str]]:
     """On-demand recheck pass — the SAME strong model re-reads the span independently
     with deeper-read framing (docs/BETS.md Bet 5). Not a different/stronger model:
@@ -495,6 +535,7 @@ def recheck_text(
         char_label,
         step,
         chunk_note,
+        timeout_seconds=timeout_seconds,
     )
 
 
@@ -669,8 +710,17 @@ def _decompose_with_recheck(
     Returns (rows, pass_used, rechecked, errors) — pass_used is 1 (primary taken) or
     2 (recheck taken), stored in the ledger's "tier" field as extraction provenance."""
     errors: list[str] = []
+    # Bluebonnet math PDFs often hang past 300s even under the chunk threshold
+    # (Practice/Succeed SE). Use the large timeout for every decompose call;
+    # Dallas-sized docs usually finish well under 300s anyway.
+    call_timeout = LARGE_CALL_TIMEOUT_SECONDS
     primary, p_paragraphs = decompose_text(
-        cfg, priors_block, text, char_label, f"{step_prefix}-pass1"
+        cfg,
+        priors_block,
+        text,
+        char_label,
+        f"{step_prefix}-pass1",
+        timeout_seconds=call_timeout,
     )
     atomic_write(raw_dir / f"{step_prefix}-pass1.json", json.dumps(primary, indent=2))
     schema_errors = validate_layer0_elements(primary)
@@ -701,7 +751,12 @@ def _decompose_with_recheck(
 
     try:
         recheck, r_paragraphs = recheck_text(
-            cfg, priors_block, text, char_label, f"{step_prefix}-pass2"
+            cfg,
+            priors_block,
+            text,
+            char_label,
+            f"{step_prefix}-pass2",
+            timeout_seconds=call_timeout,
         )
         atomic_write(
             raw_dir / f"{step_prefix}-pass2.json", json.dumps(recheck, indent=2)
@@ -787,13 +842,75 @@ def process_document_simple(
     return rows, stats
 
 
+def _chunk_resolved_path(raw_dir: Path, step_prefix: str) -> Path:
+    """Per-chunk resume cache: resolved ledger rows + content_hash for mid-doc resume."""
+    return raw_dir / f"{step_prefix}-resolved-rows.json"
+
+
+def _load_chunk_resume(
+    raw_dir: Path, step_prefix: str, content_hash_value: str, chunk_id: str
+) -> tuple[list[dict], int, bool, list[str]] | None:
+    """Return cached (rows, pass_used, rechecked, errors) if hash+chunk match."""
+    path = _chunk_resolved_path(raw_dir, step_prefix)
+    if not path.is_file():
+        return None
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    if data.get("content_hash") != content_hash_value or data.get("chunk_id") != chunk_id:
+        return None
+    rows = data.get("rows")
+    if not isinstance(rows, list) or not rows:
+        return None
+    return (
+        rows,
+        int(data.get("pass_used") or 1),
+        bool(data.get("rechecked")),
+        list(data.get("errors") or []),
+    )
+
+
+def _save_chunk_resume(
+    raw_dir: Path,
+    step_prefix: str,
+    content_hash_value: str,
+    chunk_id: str,
+    rows: list[dict],
+    pass_used: int,
+    rechecked: bool,
+    errors: list[str],
+) -> None:
+    atomic_write(
+        _chunk_resolved_path(raw_dir, step_prefix),
+        json.dumps(
+            {
+                "content_hash": content_hash_value,
+                "chunk_id": chunk_id,
+                "pass_used": pass_used,
+                "rechecked": rechecked,
+                "errors": errors,
+                "rows": rows,
+            },
+            indent=2,
+        ),
+    )
+
+
 def process_document_chunked(
     cfg: dict, record: dict, raw_dir: Path
 ) -> tuple[list[dict], dict]:
     """Real map/reduce path for oversized documents (Bet 1): one Tier1/Tier2 call
     PER CHUNK, never one oversized prompt. See CHUNK_THRESHOLD_CHARS comment for why
-    this replaced the earlier reassemble-into-one-prompt approach."""
+    this replaced the earlier reassemble-into-one-prompt approach.
+
+    Mid-chunk resume (Bluebonnet overnight): after each successful chunk, write
+    ``.raw/{doc}-{chunk}-resolved-rows.json``. On restart with the same
+    content_hash, skip model calls for chunks already resolved — crash on chunk
+    4/6 must not redo 1–3.
+    """
     doc_id = record["doc_id"]
+    chash = content_hash(record["content_clean"])
     priors_block = build_priors_block(record)
     chunks = split_into_chunks(record["content_clean"])
     n = len(chunks)
@@ -804,10 +921,27 @@ def process_document_chunked(
 
     all_rows: list[dict] = []
     chunks_escalated = 0
+    chunks_resumed = 0
     all_errors: list[str] = []
 
     for idx, chunk_text in enumerate(chunks, start=1):
         chunk_id = f"chunk{idx}of{n}"
+        step_prefix = f"{doc_id}-{chunk_id}"
+        resumed = _load_chunk_resume(raw_dir, step_prefix, chash, chunk_id)
+        if resumed is not None:
+            rows, pass_used, rechecked, errors = resumed
+            log(
+                f"  cache hit  {doc_id} {chunk_id} "
+                f"({len(rows)} elements, mid-chunk resume)"
+            )
+            chunks_resumed += 1
+            if rechecked:
+                chunks_escalated += 1
+            all_errors.extend(f"{chunk_id}: {e}" for e in errors)
+            all_errors.append(f"{chunk_id}: (chunk resume cache)")
+            all_rows.extend(rows)
+            continue
+
         chunk_note = (
             f"\nIMPORTANT: this is {chunk_id} of a larger document that was too big for a "
             f"single pass (Bet 1: chunked and reassembled, never truncated). Only decompose "
@@ -823,7 +957,7 @@ def process_document_chunked(
                 priors_block,
                 chunk_text,
                 char_label,
-                f"{doc_id}-{chunk_id}",
+                step_prefix,
                 raw_dir,
                 chunk_id=chunk_id,
             )
@@ -833,6 +967,9 @@ def process_document_chunked(
             log(f"ERROR: {doc_id} {chunk_id} failed, skipping this chunk only: {e}")
             all_errors.append(f"{chunk_id}: FAILED, skipped: {e}")
             continue
+        _save_chunk_resume(
+            raw_dir, step_prefix, chash, chunk_id, rows, pass_used, rechecked, errors
+        )
         if rechecked:
             chunks_escalated += 1
         all_errors.extend(f"{chunk_id}: {e}" for e in errors)
@@ -856,16 +993,30 @@ def process_document_chunked(
         "errors": all_errors,
         "chunks": n,
         "chunks_escalated": chunks_escalated,
+        "chunks_resumed": chunks_resumed,
         "duplicates_removed": removed,
     }
     return deduped, stats
 
 
 def process_document(cfg: dict, record: dict, raw_dir: Path) -> tuple[list[dict], dict]:
-    """Dispatch to the single-prompt or map/reduce path based on document size."""
+    """Dispatch to the single-prompt or map/reduce path based on document size.
+
+    If the single-prompt path parse-fails on a mid-size doc, fall back to forced
+    chunking (Bluebonnet Learn/Succeed SE pattern) instead of dropping the file.
+    """
     if needs_chunking(record):
         return process_document_chunked(cfg, record, raw_dir)
-    return process_document_simple(cfg, record, raw_dir)
+    try:
+        return process_document_simple(cfg, record, raw_dir)
+    except (RuntimeError, ValueError) as e:
+        if record["char_count_clean"] < 8_000:
+            raise
+        log(
+            f"  {record['doc_id']}: simple path failed ({e}); "
+            f"falling back to forced chunking"
+        )
+        return process_document_chunked(cfg, record, raw_dir)
 
 
 # --- Layer 0-B: citation-precision review for excerpt_wide_span rows --------
@@ -995,7 +1146,7 @@ def coerce_element_type(raw: object, element_id: str, errors: list[str]) -> str:
     """
     if raw in ELEMENT_TYPES:
         return raw  # type: ignore[return-value]
-    msg = f"{element_id}: Layer 0-B split produced invalid element_type {raw!r} — coerced to 'unclear'"
+    msg = f"{element_id}: invalid element_type {raw!r} — coerced to 'unclear'"
     log(f"  WARN: {msg}")
     errors.append(msg)
     return "unclear"
@@ -1289,7 +1440,13 @@ def run_layer0(
             continue
 
         chunk_info = (
-            f", {stats['chunks']} chunks ({stats.get('chunks_escalated', 0)} rechecked)"
+            f", {stats['chunks']} chunks ({stats.get('chunks_escalated', 0)} rechecked"
+            + (
+                f", {stats.get('chunks_resumed', 0)} resumed"
+                if stats.get("chunks_resumed")
+                else ""
+            )
+            + ")"
             if stats.get("chunks", 1) > 1
             else ""
         )
@@ -1338,10 +1495,9 @@ def run_layer0(
 ## Artifacts
 - `ledger.json` — the shared evidence ledger (one row per element)
 - `ledger.md` — human-readable ledger + per-document notes
-- `.raw/<doc_id>-tier1.json`, `.raw/<doc_id>-tier2.json` — raw model responses
-- `.raw/<doc_id>-chunk<N>of<M>-tier1.json`, `-tier2.json` — for oversized documents,
-  one pair per chunk (real map/reduce — see docs/roadmap.md "Large single-document
-  chunking")
+- `.raw/<doc_id>-pass1.json`, `.raw/<doc_id>-pass2.json` — raw model responses
+- `.raw/<doc_id>-chunk<N>of<M>-pass1.json`, `-pass2.json` — oversized docs (map/reduce)
+- `.raw/<doc_id>-chunk<N>of<M>-resolved-rows.json` — mid-chunk resume cache (same content_hash)
 """
     atomic_write(l0_dir / "REPORT.md", report)
     log(

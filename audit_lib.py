@@ -141,12 +141,22 @@ def model_chat(
     temperature: float = 0.1,
     max_tokens: int = 8192,
     retries: int = 2,
+    timeout_seconds: float | None = None,
 ) -> dict:
-    """POST to analyst/verifier; retry only transient errors (not 4xx client failures)."""
+    """POST to analyst/verifier; retry only transient errors (not 4xx client failures).
+
+    timeout_seconds: optional per-call override. Use a longer value for Layer 0
+    chunks / Layer 1 ORGANIZE batches without raising the global config default
+    (keeps small Dallas-shaped calls at the normal 300s budget).
+    """
     key = "analyst" if role == "analyst" else "verifier"
     url = cfg["models"][f"{key}_url"]
     model = cfg["models"][f"{key}_model"]
-    timeout = cfg["models"]["timeout_seconds"]
+    timeout = (
+        timeout_seconds
+        if timeout_seconds is not None
+        else cfg["models"]["timeout_seconds"]
+    )
     payload = {
         "model": model,
         "messages": messages,

@@ -1,0 +1,41 @@
+project:
+  id: pathful-planning-guides-2026
+  name: pathful-planning-guides-2026
+sources_dir: /home/lenovo/g10-control-center-loom/projects/pathful-planning-guides-2026/sources
+units:
+  wbl-high-school:
+    title: Planning Guide WBL High School
+    calendar: units/wbl-high-school/calendar.yaml
+    documents:
+    - doc_pathful_1424833_Planning_Guide_WBL_High_School.txt
+  wbl-middle-school:
+    title: Planning Guide WBL Middle School
+    calendar: units/wbl-middle-school/calendar.yaml
+    documents:
+    - doc_pathful_1424838_Planning_Guide_WBL_Middle_School.txt
+  cce-middle-school:
+    title: Planning Guide CCE Middle School
+    calendar: units/cce-middle-school/calendar.yaml
+    documents:
+    - doc_pathful_1424840_Planning_Guide_CCE_Middle_School.txt
+  cce-high-school:
+    title: Planning Guide CCE High School
+    calendar: units/cce-high-school/calendar.yaml
+    documents:
+    - doc_pathful_1424841_Planning_Guide_CCE_High_School.txt
+  special-education-transition:
+    title: Special Education Transition Planning Guide
+    calendar: units/special-education-transition/calendar.yaml
+    documents:
+    - doc_pathful_1424890_Planning_Guide_Special_Education_Transition.txt
+  preets-roadmap:
+    title: PreETS Roadmap Planning Guide
+    calendar: units/preets-roadmap/calendar.yaml
+    documents:
+    - doc_pathful_1454298_Planning_Guide_PreETS_Roadmap.txt
+  activity-sequence-flowchart:
+    title: Activity Sequence Flowchart Planning Guide
+    calendar: units/activity-sequence-flowchart/calendar.yaml
+    documents:
+    - doc_pathful_1530547_Planning_Guide_Activity_Sequence_Flowchart.txt
+generated_by: ingest.py

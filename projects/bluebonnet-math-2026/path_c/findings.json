@@ -1,0 +1,113 @@
+{
+  "project_id": "bluebonnet-math-2026",
+  "workflow_id": "general",
+  "path": "C",
+  "status": "stub",
+  "doc_ids": [
+    "K-5_Math_Component_Navigation_Guide.pdf",
+    "K-5_Math_Family_Guide.pdf",
+    "K-5_Math_Grade_5_Course_Guide.pdf",
+    "K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition.pdf",
+    "K-5_Math_Grade_5_Module_1_Place_Value_and_Decimals_Teacher_Edition.pdf",
+    "K-5_Math_Program_and_Implementation_Guide.pdf"
+  ],
+  "inventory": [
+    {
+      "doc_id": "K-5_Math_Component_Navigation_Guide.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Family_Guide.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Course_Guide.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_1_Place_Value_and_Decimals_Teacher_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Program_and_Implementation_Guide.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    }
+  ],
+  "feedback_file": "_loom_feedback.yaml"
+}

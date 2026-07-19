@@ -71,15 +71,43 @@ UNIT_SUPPORTING_SLOT = (
     "unit_supporting"  # pseudo-day-id for calendar.yaml's unit_supporting list
 )
 
+# Phase 1 ORGANIZE batch ceiling (roadmap §13 / Bluebonnet validation).
+# One call per source file is correct for Dallas-shaped packs (~tens of
+# elements) and wrong for TE/CED-sized ledgers (195–507 elements): the model
+# either times out, emits truncated JSON, or overflows context. Split above
+# this size into independent batches with the same closed vocab, merge by
+# element_id; one batch fail must not discard the others (Layer 0 chunk
+# isolation discipline).
+ORGANIZE_BATCH_SIZE = 40
 
-def model_call(cfg: dict, role: str, messages: list, step: str) -> dict:
+# Longer wall-clock for multi-element ORGANIZE batches (and Layer 0 chunks via
+# the same constant). Global config stays at 300s for small calls.
+LARGE_CALL_TIMEOUT_SECONDS = 900
+
+
+def model_call(
+    cfg: dict,
+    role: str,
+    messages: list,
+    step: str,
+    *,
+    timeout_seconds: float | None = None,
+) -> dict:
     # 16384, not 8192: Phase 1 batches a whole document's elements and Phase 3
     # batches a whole day-slot's candidates into one JSON response — the same
     # content-dense-output shape that hit layer0.py's old 8192 ceiling and caused
     # deterministic "Expecting ',' delimiter" parse failures (see docs/roadmap.md,
     # "max_tokens ceiling"). Reusing the lower value here would just reintroduce
     # a bug this project already paid to find and fix once.
-    return model_chat(cfg, role, messages, step, temperature=0.1, max_tokens=16384)
+    return model_chat(
+        cfg,
+        role,
+        messages,
+        step,
+        temperature=0.1,
+        max_tokens=16384,
+        timeout_seconds=timeout_seconds,
+    )
 
 
 def extract_content(response: dict) -> str:
@@ -168,6 +196,7 @@ def call_and_parse_with_retry(
     parse_retries: int = 1,
     validator=None,
     normalizer=None,
+    timeout_seconds: float | None = None,
 ) -> dict:
     """Call a model and parse its JSON, retrying on PARSE *or schema* failure (not
     just the transient HTTP/connection retry model_chat() already does). Same
@@ -189,7 +218,13 @@ def call_and_parse_with_retry(
     last_err: Exception | None = None
     resp: dict = {}
     for attempt in range(parse_retries + 1):
-        resp = model_call(cfg, role, [{"role": "user", "content": prompt}], step)
+        resp = model_call(
+            cfg,
+            role,
+            [{"role": "user", "content": prompt}],
+            step,
+            timeout_seconds=timeout_seconds,
+        )
         try:
             data = parse_model_json(extract_content(resp), context=step)
             if normalizer is not None:
@@ -210,6 +245,25 @@ def call_and_parse_with_retry(
     raise ValueError(
         f"{step}: parse/schema failed after {parse_retries + 1} attempts: {last_err}"
     )
+
+
+def _organize_element_batches(
+    elements: list[dict], batch_size: int = ORGANIZE_BATCH_SIZE
+) -> list[list[dict]]:
+    """Split a document's elements into ORGANIZE prompt batches.
+
+    Educational note: keep batch boundaries contiguous in ledger order so
+    near-neighbor elements (same lesson section) stay in one prompt — that
+    preserves the "concept clustering" consistency Bet 11 wanted from
+    per-document batching, just at a size the model can finish.
+    """
+    if batch_size < 1:
+        raise ValueError(f"batch_size must be >= 1, got {batch_size}")
+    if not elements:
+        return []
+    return [
+        elements[i : i + batch_size] for i in range(0, len(elements), batch_size)
+    ]
 
 
 # --- Load Layer 0 + manifest + calendars -------------------------------------
@@ -455,6 +509,20 @@ def validate_judgment(
     return judgment
 
 
+def _placements_from_organize_payload(
+    data: dict,
+    unit_ids: set[str],
+    valid_days: dict[str, set[str]],
+    step: str,
+) -> dict[str, dict]:
+    by_id: dict[str, dict] = {}
+    for p in data.get("placements", []):
+        eid = p.get("element_id")
+        if eid:
+            by_id[eid] = validate_judgment(p, unit_ids, valid_days, f"{step}:{eid}")
+    return by_id
+
+
 def organize_document(
     cfg: dict,
     doc_id: str,
@@ -462,30 +530,70 @@ def organize_document(
     unit_vocab: list[dict],
     day_vocab: list[dict],
     raw_dir: Path,
+    *,
+    batch_size: int = ORGANIZE_BATCH_SIZE,
 ) -> dict[str, dict]:
-    """Phase 1 for one document's elements. Returns {element_id: placement_judgment}."""
-    prompt = build_phase1_prompt(elements, unit_vocab, day_vocab)
-    step = f"layer1-organize-{doc_id}"
-    raw_dir.mkdir(parents=True, exist_ok=True)
-    data = call_and_parse_with_retry(
-        cfg,
-        "analyst",
-        prompt,
-        step,
-        raw_path=raw_dir / f"{doc_id}-phase1.json",
-        validator=validate_layer1_placements,
-    )
+    """Phase 1 for one document's elements. Returns {element_id: placement_judgment}.
 
+    Documents with more than ``batch_size`` elements are split into independent
+    ORGANIZE calls (roadmap §13). Small docs stay one call — Dallas happy path.
+    """
+    raw_dir.mkdir(parents=True, exist_ok=True)
     unit_ids = {u["unit_id"] for u in unit_vocab}
     valid_days: dict[str, set[str]] = defaultdict(set)
     for d in day_vocab:
         valid_days[d["unit_id"]].add(d["day_id"])
 
-    by_id = {}
-    for p in data.get("placements", []):
-        eid = p.get("element_id")
-        if eid:
-            by_id[eid] = validate_judgment(p, unit_ids, valid_days, f"{step}:{eid}")
+    batches = _organize_element_batches(elements, batch_size=batch_size)
+    if not batches:
+        return {}
+
+    # Single-batch path: identical artifacts/names to pre-§13 runs.
+    if len(batches) == 1:
+        step = f"layer1-organize-{doc_id}"
+        data = call_and_parse_with_retry(
+            cfg,
+            "analyst",
+            build_phase1_prompt(batches[0], unit_vocab, day_vocab),
+            step,
+            raw_path=raw_dir / f"{doc_id}-phase1.json",
+            validator=validate_layer1_placements,
+            timeout_seconds=(
+                LARGE_CALL_TIMEOUT_SECONDS
+                if len(batches[0]) > batch_size // 2
+                else None
+            ),
+        )
+        return _placements_from_organize_payload(data, unit_ids, valid_days, step)
+
+    by_id: dict[str, dict] = {}
+    n = len(batches)
+    for idx, batch in enumerate(batches, start=1):
+        step = f"layer1-organize-{doc_id}-batch{idx}of{n}"
+        log(
+            f"  Phase 1 (ORGANIZE): {doc_id} batch {idx}/{n} "
+            f"({len(batch)} elements)"
+        )
+        try:
+            data = call_and_parse_with_retry(
+                cfg,
+                "analyst",
+                build_phase1_prompt(batch, unit_vocab, day_vocab),
+                step,
+                raw_path=raw_dir / f"{doc_id}-phase1-batch{idx}of{n}.json",
+                validator=validate_layer1_placements,
+                timeout_seconds=LARGE_CALL_TIMEOUT_SECONDS,
+            )
+        except (RuntimeError, ValueError) as e:
+            # Mirror Layer 0 chunk isolation: one batch must not wipe the rest.
+            log(
+                f"  ERROR: Phase 1 batch {idx}/{n} failed for {doc_id}, "
+                f"leaving those elements unjudged: {e}"
+            )
+            continue
+        by_id.update(
+            _placements_from_organize_payload(data, unit_ids, valid_days, step)
+        )
     return by_id
 
 

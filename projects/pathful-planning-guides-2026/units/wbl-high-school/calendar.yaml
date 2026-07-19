@@ -1,0 +1,23 @@
+unit_id: wbl-high-school
+title: Planning Guide WBL High School
+unit_length_days: 4
+days:
+- id: d1
+  label: Grade 9
+  expected:
+  - lesson_content
+- id: d2
+  label: Grade 10
+  expected:
+  - lesson_content
+- id: d3
+  label: Grade 11
+  expected:
+  - lesson_content
+- id: d4
+  label: Grade 12
+  expected:
+  - lesson_content
+unit_supporting:
+- lesson_plan
+- worksheet

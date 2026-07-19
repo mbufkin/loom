@@ -1,0 +1,11 @@
+unit_id: activity-sequence-flowchart
+title: Activity Sequence Flowchart Planning Guide
+unit_length_days: 1
+days:
+- id: d1
+  label: Activity sequence overview
+  expected:
+  - lesson_content
+unit_supporting:
+- lesson_plan
+- worksheet

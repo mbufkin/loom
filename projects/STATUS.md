@@ -7,6 +7,8 @@ Maturity = how complete generated artifacts are — not a separate code path.
 |------------|------|---------|---------|-------|
 | `dallas-career-2026` | **Golden** | Yes | Yes | 18 CTE units; acceptance / demo / MVP |
 | `oklahoma-ag-orientation-2026` | Active | — | — | Public OK CareerTech Orientation to Ag (6 units); sequential calendar |
+| `pathful-planning-guides-2026` | Experiment | Yes | Yes | Pathful WBL/CCE planning guides; Path C; all Weak (planning guides ≠ lesson packs) |
+| `bluebonnet-math-2026` | Active | Yes | In progress | G5+Alg I validation; D1 pass; D2–D4 via `tools/run_bluebonnet_ladder.py` (30k chunks) |
 | `region10-career-college-2026` | Active | Yes | Yes | Region 10 career/college |
 | `ap-csp-2026` | Stress | Yes | **Blocked** | Layer 0 OK; Layer 1 ORGANIZE exceeds 65k ctx on single CED (~113k) — see dataset README; deferred roadmap |
 | `openscied-6` | Experiment | — | — | Pairs with `experiments/openscied/` |

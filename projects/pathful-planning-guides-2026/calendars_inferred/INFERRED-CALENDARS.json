@@ -1,0 +1,167 @@
+{
+  "project_id": "pathful-planning-guides-2026",
+  "source": "inferred_from_documents",
+  "generated_at": "2026-07-17T16:12:20.475900+00:00",
+  "provisional_rollup": "pacing-plan.yaml remains provisional early spine",
+  "year_note": "The planning guides show no evidence of actual lesson content or pacing details across all units. Empty days range from 1 to 4 per guide, indicating significant gaps in documented instructional sequences. No specific unit appears stocked with material while others are thin; the absence is consistent and systemic throughout every document provided. All titles lack any referenced curriculum structure, standards alignment, or activity sequencing evidence.",
+  "units": {
+    "wbl-high-school": {
+      "unit_id": "wbl-high-school",
+      "title": "Planning Guide WBL High School",
+      "source": "inferred_from_documents",
+      "generated_at": "2026-07-17T16:12:18.314830+00:00",
+      "days": [
+        {
+          "id": "d1",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d2",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d3",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d4",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        }
+      ],
+      "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
+    },
+    "wbl-middle-school": {
+      "unit_id": "wbl-middle-school",
+      "title": "Planning Guide WBL Middle School",
+      "source": "inferred_from_documents",
+      "generated_at": "2026-07-17T16:12:18.315296+00:00",
+      "days": [
+        {
+          "id": "d1",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d2",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d3",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        }
+      ],
+      "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
+    },
+    "cce-middle-school": {
+      "unit_id": "cce-middle-school",
+      "title": "Planning Guide CCE Middle School",
+      "source": "inferred_from_documents",
+      "generated_at": "2026-07-17T16:12:18.315737+00:00",
+      "days": [
+        {
+          "id": "d1",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d2",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d3",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        }
+      ],
+      "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
+    },
+    "cce-high-school": {
+      "unit_id": "cce-high-school",
+      "title": "Planning Guide CCE High School",
+      "source": "inferred_from_documents",
+      "generated_at": "2026-07-17T16:12:18.316258+00:00",
+      "days": [
+        {
+          "id": "d1",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d2",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d3",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d4",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        }
+      ],
+      "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
+    },
+    "special-education-transition": {
+      "unit_id": "special-education-transition",
+      "title": "Special Education Transition Planning Guide",
+      "source": "inferred_from_documents",
+      "generated_at": "2026-07-17T16:12:18.316622+00:00",
+      "days": [
+        {
+          "id": "d1",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d2",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        }
+      ],
+      "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
+    },
+    "preets-roadmap": {
+      "unit_id": "preets-roadmap",
+      "title": "PreETS Roadmap Planning Guide",
+      "source": "inferred_from_documents",
+      "generated_at": "2026-07-17T16:12:18.316971+00:00",
+      "days": [
+        {
+          "id": "d1",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d2",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        }
+      ],
+      "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
+    },
+    "activity-sequence-flowchart": {
+      "unit_id": "activity-sequence-flowchart",
+      "title": "Activity Sequence Flowchart Planning Guide",
+      "source": "inferred_from_documents",
+      "generated_at": "2026-07-17T16:12:18.317249+00:00",
+      "days": [
+        {
+          "id": "d1",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        }
+      ],
+      "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
+    }
+  }
+}
