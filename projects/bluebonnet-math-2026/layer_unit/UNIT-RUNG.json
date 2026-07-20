@@ -1,0 +1,519 @@
+{
+  "project_id": "bluebonnet-math-2026",
+  "gate_scorer": "s1_completeness",
+  "summary": {
+    "unit_count": 13,
+    "band_counts": {
+      "Developing": 6,
+      "Unrated": 7
+    }
+  },
+  "units": {
+    "alg1-mod-1": {
+      "title": "Algebra I \u2014 Module 1",
+      "band": "Developing",
+      "lessons": {
+        "count": 4,
+        "gate_pass": 3,
+        "gate_pass_rate": 0.75,
+        "mean_coverage": {
+          "s1_completeness": 0.781,
+          "s3_curriculum_own": 0.781
+        }
+      },
+      "roles": {
+        "fulfilled": 0,
+        "missing": 0,
+        "systemic_absent": [],
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
+      },
+      "pacing": {
+        "planned_days": 10,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "alg1-mod-1"
+      }
+    },
+    "alg1-mod-2": {
+      "title": "Algebra I \u2014 Module 2",
+      "band": "Developing",
+      "lessons": {
+        "count": 6,
+        "gate_pass": 5,
+        "gate_pass_rate": 0.833,
+        "mean_coverage": {
+          "s1_completeness": 0.833,
+          "s3_curriculum_own": 0.833
+        }
+      },
+      "roles": {
+        "fulfilled": 0,
+        "missing": 0,
+        "systemic_absent": [],
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
+      },
+      "pacing": {
+        "planned_days": 10,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "alg1-mod-2"
+      }
+    },
+    "alg1-mod-3": {
+      "title": "Algebra I \u2014 Module 3",
+      "band": "Developing",
+      "lessons": {
+        "count": 6,
+        "gate_pass": 4,
+        "gate_pass_rate": 0.667,
+        "mean_coverage": {
+          "s1_completeness": 0.771,
+          "s3_curriculum_own": 0.771
+        }
+      },
+      "roles": {
+        "fulfilled": 0,
+        "missing": 0,
+        "systemic_absent": [],
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
+      },
+      "pacing": {
+        "planned_days": 10,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "alg1-mod-3"
+      }
+    },
+    "alg1-mod-4": {
+      "title": "Algebra I \u2014 Module 4",
+      "band": "Developing",
+      "lessons": {
+        "count": 5,
+        "gate_pass": 4,
+        "gate_pass_rate": 0.8,
+        "mean_coverage": {
+          "s1_completeness": 0.8,
+          "s3_curriculum_own": 0.8
+        }
+      },
+      "roles": {
+        "fulfilled": 0,
+        "missing": 0,
+        "systemic_absent": [],
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
+      },
+      "pacing": {
+        "planned_days": 10,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "alg1-mod-4"
+      }
+    },
+    "alg1-mod-5": {
+      "title": "Algebra I \u2014 Module 5",
+      "band": "Developing",
+      "lessons": {
+        "count": 5,
+        "gate_pass": 4,
+        "gate_pass_rate": 0.8,
+        "mean_coverage": {
+          "s1_completeness": 0.8,
+          "s3_curriculum_own": 0.8
+        }
+      },
+      "roles": {
+        "fulfilled": 0,
+        "missing": 0,
+        "systemic_absent": [],
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
+      },
+      "pacing": {
+        "planned_days": 10,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "alg1-mod-5"
+      }
+    },
+    "alg1-program": {
+      "title": "Algebra I \u2014 program guides",
+      "band": "Developing",
+      "lessons": {
+        "count": 4,
+        "gate_pass": 3,
+        "gate_pass_rate": 0.75,
+        "mean_coverage": {
+          "s1_completeness": 0.719,
+          "s3_curriculum_own": 0.719
+        }
+      },
+      "roles": {
+        "fulfilled": 0,
+        "missing": 0,
+        "systemic_absent": [],
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
+      },
+      "pacing": {
+        "planned_days": 5,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "alg1-program"
+      }
+    },
+    "g5-mod-1": {
+      "title": "g5-mod-1",
+      "band": "Unrated",
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 1,
+        "missing": 16,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content",
+          "lesson_plan",
+          "quiz"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 1
+      },
+      "pacing": {
+        "planned_days": null,
+        "evidence_days": 0,
+        "ratio": null,
+        "flag": "UNKNOWN"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "g5-mod-1"
+      }
+    },
+    "g5-mod-2": {
+      "title": "g5-mod-2",
+      "band": "Unrated",
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 0,
+        "missing": 16,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content",
+          "lesson_plan",
+          "quiz"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 1
+      },
+      "pacing": {
+        "planned_days": null,
+        "evidence_days": 0,
+        "ratio": null,
+        "flag": "UNKNOWN"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "g5-mod-2"
+      }
+    },
+    "g5-mod-3": {
+      "title": "g5-mod-3",
+      "band": "Unrated",
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 3,
+        "missing": 14,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content",
+          "lesson_plan"
+        ],
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
+      },
+      "pacing": {
+        "planned_days": null,
+        "evidence_days": 0,
+        "ratio": null,
+        "flag": "UNKNOWN"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "g5-mod-3"
+      }
+    },
+    "g5-mod-4": {
+      "title": "g5-mod-4",
+      "band": "Unrated",
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 0,
+        "missing": 16,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content",
+          "lesson_plan",
+          "quiz"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "worksheet",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 1
+      },
+      "pacing": {
+        "planned_days": null,
+        "evidence_days": 0,
+        "ratio": null,
+        "flag": "UNKNOWN"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "g5-mod-4"
+      }
+    },
+    "g5-mod-5": {
+      "title": "g5-mod-5",
+      "band": "Unrated",
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 0,
+        "missing": 16,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content",
+          "lesson_plan",
+          "quiz"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 1
+      },
+      "pacing": {
+        "planned_days": null,
+        "evidence_days": 0,
+        "ratio": null,
+        "flag": "UNKNOWN"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "g5-mod-5"
+      }
+    },
+    "g5-mod-6": {
+      "title": "g5-mod-6",
+      "band": "Unrated",
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 1,
+        "missing": 16,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content",
+          "lesson_plan",
+          "quiz"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 1
+      },
+      "pacing": {
+        "planned_days": null,
+        "evidence_days": 0,
+        "ratio": null,
+        "flag": "UNKNOWN"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "g5-mod-6"
+      }
+    },
+    "g5-program": {
+      "title": "g5-program",
+      "band": "Unrated",
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 1,
+        "missing": 7,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content",
+          "lesson_plan",
+          "quiz"
+        ],
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
+      },
+      "pacing": {
+        "planned_days": null,
+        "evidence_days": 0,
+        "ratio": null,
+        "flag": "UNKNOWN"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "g5-program"
+      }
+    }
+  }
+}

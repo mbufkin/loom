@@ -1,0 +1,930 @@
+{
+  "project_id": "dallas-career-2026",
+  "gate_scorer": "s1_completeness",
+  "summary": {
+    "unit_count": 18,
+    "band_counts": {
+      "Weak": 15,
+      "Unrated": 3
+    }
+  },
+  "units": {
+    "agriculture": {
+      "title": "Agriculture",
+      "band": "Weak",
+      "lessons": {
+        "count": 1,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.625,
+          "s3_curriculum_own": 0.75
+        }
+      },
+      "roles": {
+        "fulfilled": 2,
+        "missing": 7,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 4
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 1,
+        "ratio": 0.5,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "agriculture"
+      }
+    },
+    "architecture-construction": {
+      "title": "Architecture & Construction",
+      "band": "Weak",
+      "lessons": {
+        "count": 2,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.5,
+        "mean_coverage": {
+          "s1_completeness": 0.625,
+          "s3_curriculum_own": 0.562
+        }
+      },
+      "roles": {
+        "fulfilled": 4,
+        "missing": 5,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 1
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 2,
+        "docs_incomplete": 2,
+        "top_missing_components": [
+          "independent_practice",
+          "logistics_materials",
+          "reflection_closure"
+        ]
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "architecture-construction"
+      }
+    },
+    "arts-av-technology": {
+      "title": "Arts AV Technology",
+      "band": "Weak",
+      "lessons": {
+        "count": 2,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.5,
+        "mean_coverage": {
+          "s1_completeness": 0.688,
+          "s3_curriculum_own": 0.688
+        }
+      },
+      "roles": {
+        "fulfilled": 3,
+        "missing": 6,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 2
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "arts-av-technology"
+      }
+    },
+    "business-marketing": {
+      "title": "Business Marketing",
+      "band": "Weak",
+      "lessons": {
+        "count": 2,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.438,
+          "s3_curriculum_own": 0.375
+        }
+      },
+      "roles": {
+        "fulfilled": 2,
+        "missing": 9,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "worksheet",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 3
+      },
+      "pacing": {
+        "planned_days": 3,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 1,
+        "top_missing_components": [
+          "assessment_checkpoint",
+          "direct_instruction",
+          "guided_practice"
+        ]
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "business-marketing"
+      }
+    },
+    "career-cluster": {
+      "title": "Career Cluster",
+      "band": "Weak",
+      "lessons": {
+        "count": 4,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.406,
+          "s3_curriculum_own": 0.438
+        }
+      },
+      "roles": {
+        "fulfilled": 2,
+        "missing": 7,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "worksheet",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 3
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "career-cluster"
+      }
+    },
+    "career-exploration": {
+      "title": "Career Exploration",
+      "band": "Weak",
+      "lessons": {
+        "count": 3,
+        "gate_pass": 2,
+        "gate_pass_rate": 0.667,
+        "mean_coverage": {
+          "s1_completeness": 0.583,
+          "s3_curriculum_own": 0.625
+        }
+      },
+      "roles": {
+        "fulfilled": 2,
+        "missing": 6,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 2
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 1,
+        "top_missing_components": [
+          "hook_engagement",
+          "independent_practice"
+        ]
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "career-exploration"
+      }
+    },
+    "dallas-isd": {
+      "title": "Dallas ISD",
+      "band": "Weak",
+      "lessons": {
+        "count": 2,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.5,
+        "mean_coverage": {
+          "s1_completeness": 0.438,
+          "s3_curriculum_own": 0.562
+        }
+      },
+      "roles": {
+        "fulfilled": 2,
+        "missing": 4,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 2
+      },
+      "pacing": {
+        "planned_days": 1,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "dallas-isd"
+      }
+    },
+    "engineering": {
+      "title": "Engineering",
+      "band": "Weak",
+      "lessons": {
+        "count": 2,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.438,
+          "s3_curriculum_own": 0.312
+        }
+      },
+      "roles": {
+        "fulfilled": 4,
+        "missing": 5,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 2
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 1,
+        "ratio": 0.5,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 1,
+        "top_missing_components": [
+          "assessment_checkpoint",
+          "guided_practice",
+          "independent_practice"
+        ]
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "engineering"
+      }
+    },
+    "family-community": {
+      "title": "Family Community",
+      "band": "Weak",
+      "lessons": {
+        "count": 2,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.438,
+          "s3_curriculum_own": 0.438
+        }
+      },
+      "roles": {
+        "fulfilled": 2,
+        "missing": 7,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 3
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 1,
+        "top_missing_components": [
+          "assessment_checkpoint",
+          "guided_practice",
+          "hook_engagement"
+        ]
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "family-community"
+      }
+    },
+    "financial-literacy": {
+      "title": "Financial Literacy",
+      "band": "Unrated",
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 4,
+        "missing": 7,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 3
+      },
+      "pacing": {
+        "planned_days": 3,
+        "evidence_days": 2,
+        "ratio": 0.667,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "financial-literacy"
+      }
+    },
+    "health-science": {
+      "title": "Health Science",
+      "band": "Unrated",
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 2,
+        "missing": 9,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "worksheet",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 3
+      },
+      "pacing": {
+        "planned_days": 3,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "health-science"
+      }
+    },
+    "hospitality-tourism": {
+      "title": "Hospitality Tourism",
+      "band": "Weak",
+      "lessons": {
+        "count": 1,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.5,
+          "s3_curriculum_own": 0.5
+        }
+      },
+      "roles": {
+        "fulfilled": 3,
+        "missing": 6,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 2
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "hospitality-tourism"
+      }
+    },
+    "information-technology": {
+      "title": "Information Technology",
+      "band": "Unrated",
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 2,
+        "missing": 9,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "worksheet",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 3
+      },
+      "pacing": {
+        "planned_days": 3,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "information-technology"
+      }
+    },
+    "law-and-public-service": {
+      "title": "Law and Public Service",
+      "band": "Weak",
+      "lessons": {
+        "count": 4,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.25,
+        "mean_coverage": {
+          "s1_completeness": 0.656,
+          "s3_curriculum_own": 0.531
+        }
+      },
+      "roles": {
+        "fulfilled": 3,
+        "missing": 6,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 2
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 2,
+        "docs_incomplete": 2,
+        "top_missing_components": [
+          "reflection_closure",
+          "logistics_materials",
+          "standards_objectives"
+        ]
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "law-and-public-service"
+      }
+    },
+    "manufacturing": {
+      "title": "Manufacturing",
+      "band": "Weak",
+      "lessons": {
+        "count": 2,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.5,
+        "mean_coverage": {
+          "s1_completeness": 0.688,
+          "s3_curriculum_own": 0.688
+        }
+      },
+      "roles": {
+        "fulfilled": 5,
+        "missing": 4,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 1
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 1,
+        "ratio": 0.5,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 2,
+        "docs_incomplete": 2,
+        "top_missing_components": [
+          "independent_practice",
+          "direct_instruction",
+          "logistics_materials"
+        ]
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "manufacturing"
+      }
+    },
+    "professional-preparedness": {
+      "title": "Professional Preparedness",
+      "band": "Weak",
+      "lessons": {
+        "count": 3,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.417,
+          "s3_curriculum_own": 0.333
+        }
+      },
+      "roles": {
+        "fulfilled": 2,
+        "missing": 6,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 2
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "professional-preparedness"
+      }
+    },
+    "teaching-and-training": {
+      "title": "Teaching and Training",
+      "band": "Weak",
+      "lessons": {
+        "count": 1,
+        "gate_pass": 1,
+        "gate_pass_rate": 1.0,
+        "mean_coverage": {
+          "s1_completeness": 0.75,
+          "s3_curriculum_own": 0.75
+        }
+      },
+      "roles": {
+        "fulfilled": 3,
+        "missing": 6,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 2
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 1,
+        "top_missing_components": [
+          "hook_engagement",
+          "independent_practice"
+        ]
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "teaching-and-training"
+      }
+    },
+    "transportation-distribution": {
+      "title": "Transportation Distribution",
+      "band": "Weak",
+      "lessons": {
+        "count": 2,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.5,
+          "s3_curriculum_own": 0.438
+        }
+      },
+      "roles": {
+        "fulfilled": 1,
+        "missing": 8,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 4
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "transportation-distribution"
+      }
+    }
+  }
+}

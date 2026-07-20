@@ -1,7 +1,7 @@
 {
   "project_id": "dallas-career-2026",
   "source": "inferred_from_documents",
-  "generated_at": "2026-07-20T23:23:08.107978+00:00",
+  "generated_at": "2026-07-20T23:48:18.839958+00:00",
   "provisional_rollup": "pacing-plan.yaml remains provisional early spine",
   "year_note": "",
   "units": {
@@ -9,7 +9,7 @@
       "unit_id": "agriculture",
       "title": "Agriculture",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-20T23:23:08.099147+00:00",
+      "generated_at": "2026-07-20T23:48:18.831069+00:00",
       "days": [
         {
           "id": "d1",
@@ -30,7 +30,7 @@
       "unit_id": "architecture-construction",
       "title": "Architecture & Construction",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-20T23:23:08.099691+00:00",
+      "generated_at": "2026-07-20T23:48:18.831615+00:00",
       "days": [
         {
           "id": "d1",
@@ -49,7 +49,7 @@
       "unit_id": "arts-av-technology",
       "title": "Arts AV Technology",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-20T23:23:08.100200+00:00",
+      "generated_at": "2026-07-20T23:48:18.832127+00:00",
       "days": [
         {
           "id": "d1",
@@ -68,7 +68,7 @@
       "unit_id": "business-marketing",
       "title": "Business Marketing",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-20T23:23:08.100793+00:00",
+      "generated_at": "2026-07-20T23:48:18.832733+00:00",
       "days": [
         {
           "id": "d1",
@@ -92,7 +92,7 @@
       "unit_id": "career-cluster",
       "title": "Career Cluster",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-20T23:23:08.101294+00:00",
+      "generated_at": "2026-07-20T23:48:18.833233+00:00",
       "days": [
         {
           "id": "d1",
@@ -111,7 +111,7 @@
       "unit_id": "career-exploration",
       "title": "Career Exploration",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-20T23:23:08.101790+00:00",
+      "generated_at": "2026-07-20T23:48:18.833733+00:00",
       "days": [
         {
           "id": "d1",
@@ -130,7 +130,7 @@
       "unit_id": "dallas-isd",
       "title": "Dallas ISD",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-20T23:23:08.102184+00:00",
+      "generated_at": "2026-07-20T23:48:18.834132+00:00",
       "days": [
         {
           "id": "d1",
@@ -144,7 +144,7 @@
       "unit_id": "engineering",
       "title": "Engineering",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-20T23:23:08.102676+00:00",
+      "generated_at": "2026-07-20T23:48:18.834633+00:00",
       "days": [
         {
           "id": "d1",
@@ -165,7 +165,7 @@
       "unit_id": "family-community",
       "title": "Family Community",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-20T23:23:08.103167+00:00",
+      "generated_at": "2026-07-20T23:48:18.835129+00:00",
       "days": [
         {
           "id": "d1",
@@ -184,7 +184,7 @@
       "unit_id": "financial-literacy",
       "title": "Financial Literacy",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-20T23:23:08.103776+00:00",
+      "generated_at": "2026-07-20T23:48:18.835726+00:00",
       "days": [
         {
           "id": "d1",
@@ -212,7 +212,7 @@
       "unit_id": "health-science",
       "title": "Health Science",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-20T23:23:08.104388+00:00",
+      "generated_at": "2026-07-20T23:48:18.836321+00:00",
       "days": [
         {
           "id": "d1",
@@ -236,7 +236,7 @@
       "unit_id": "hospitality-tourism",
       "title": "Hospitality Tourism",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-20T23:23:08.104884+00:00",
+      "generated_at": "2026-07-20T23:48:18.836826+00:00",
       "days": [
         {
           "id": "d1",
@@ -255,7 +255,7 @@
       "unit_id": "information-technology",
       "title": "Information Technology",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-20T23:23:08.105490+00:00",
+      "generated_at": "2026-07-20T23:48:18.837434+00:00",
       "days": [
         {
           "id": "d1",
@@ -279,7 +279,7 @@
       "unit_id": "law-and-public-service",
       "title": "Law and Public Service",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-20T23:23:08.105987+00:00",
+      "generated_at": "2026-07-20T23:48:18.837936+00:00",
       "days": [
         {
           "id": "d1",
@@ -298,7 +298,7 @@
       "unit_id": "manufacturing",
       "title": "Manufacturing",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-20T23:23:08.106484+00:00",
+      "generated_at": "2026-07-20T23:48:18.838441+00:00",
       "days": [
         {
           "id": "d1",
@@ -319,7 +319,7 @@
       "unit_id": "professional-preparedness",
       "title": "Professional Preparedness",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-20T23:23:08.106979+00:00",
+      "generated_at": "2026-07-20T23:48:18.838939+00:00",
       "days": [
         {
           "id": "d1",
@@ -338,7 +338,7 @@
       "unit_id": "teaching-and-training",
       "title": "Teaching and Training",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-20T23:23:08.107472+00:00",
+      "generated_at": "2026-07-20T23:48:18.839445+00:00",
       "days": [
         {
           "id": "d1",
@@ -357,7 +357,7 @@
       "unit_id": "transportation-distribution",
       "title": "Transportation Distribution",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-20T23:23:08.107966+00:00",
+      "generated_at": "2026-07-20T23:48:18.839945+00:00",
       "days": [
         {
           "id": "d1",

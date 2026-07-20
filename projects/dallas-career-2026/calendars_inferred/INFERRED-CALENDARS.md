@@ -1,7 +1,7 @@
 # Inferred calendars — `dallas-career-2026`
 
 **source:** `inferred_from_documents`  
-**generated:** 2026-07-20T23:23:08.107978+00:00
+**generated:** 2026-07-20T23:48:18.839958+00:00
 
 Early `rollup.py` / `pacing-plan.yaml` is provisional. This file is the post-assemble evidence calendar.
 
