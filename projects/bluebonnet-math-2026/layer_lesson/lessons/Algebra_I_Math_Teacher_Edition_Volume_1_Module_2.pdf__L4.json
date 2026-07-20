@@ -1,0 +1,281 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L4",
+  "unit_id": "alg1-mod-2",
+  "title": "Algebra I Math Teacher Edition Volume 1 Module 2 \u2014 Lesson 4",
+  "element_count": 20,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L4",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk7of17-e7",
+              "excerpt": "MODULE 2 \u2022 TOPIC 1 \u2022 LESSON 4\n\nTXOER_A1_M02_T01_L04_Student Lesson.indd 201\n\n201\n\n08/05/24 5:42 PM\n\nMODULE 2 \u2022 TOPIC 1 \u2022 LESSON 4\n\n201"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk7of17-e6",
+              "excerpt": "Talk the Talk\n\nDEMONSTRATE\n\nSAY WHAT?\n\nFacilitation Notes\n\nIn this activity, students examine equations written in different forms and\nidentify specific information such as slope, y-intercept, and the coordinates of a\npoint on the line.\n\nHave students work with a partner or in a group to complete\nQuestions 1 and 2. Share responses as a class.\nQUESTIONS TO SUPPORT DISCOURSE\n\u2022 What equations are in "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk7of17-e2",
+              "excerpt": "4.1\n\nWriting Equations in Point-Slope Form\n\nFacilitation Notes\n\nDEVELOP\n\nIn this activity, students use the slope formula to derive the point-slope form of\na linear equation. They write equations in point-slope and slope-intercept form\ngiven different sets of information: a table of values, two points, a context, a\nslope and the y-intercept, a slope and a point, a graph with visible y-intercept,\na"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk7of17-e4",
+              "excerpt": "Horizontal and Vertical Lines\n\nFacilitation Notes\n\nIn this activity, students analyze tables of values for horizontal and\nvertical lines. They determine that the slope of a horizontal line is 0,\nand its equation is y 5 a constant. They determine that the slope of a\nvertical line is undefined, and its equation is x 5 a constant. In both cases,\nstudents practice writing equations and relating the eq"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk7of17-e1",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 2 DAYS\nDAY 1\nENGAGE\nGetting Started: Draining the Pool 10\u201315 minutes\nCONNECT TO PRIOR KNOWLEDGE\nStudents write equations to represent the water level as three pools are drained. The rate and\ninitial value are provided for one pool, and the water level at three distinct times are provided for\nthe other pool. Students then compare the process of writing each equation.\n\n"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk7of17-e3",
+              "excerpt": "\u2022 Why do you think this form is the point-slope form?\n\n1\n2\nslope? The point? How can you tell?\n\n\u2022 If the equation was y 1 6 5 2\u200b\u200b\u2012\u2012\u2012\u200b\u200b(x 1 2), what is the\n\nDIFFERENTIATION STRATEGIES\nChallenge Opportunity\n\u2022 Compare the Worked Examples for slope-intercept form and point-slope\n\nform side-by-side so that students see that the same process was used\neach time. Discuss the fact that the y-intercept is j"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk7of17-e11",
+              "excerpt": "9\n\nx\n\ny2x52\ne.\n\n\u2702\n\nNumber of\nGames Ben\nWon Today\n\nNumber of\nCredits on Ben\u2019s\nPlayer\u2019s Card\n\nx\n\ny\n\n12\n\n216\n\n18\n\n264\n\n25\n\n320\n\n40\n\n440\n\nf. A pizza shop charges $4.50 for a\nsmall pizza, $7.00 for a medium\npizza, and $9.00 for a large pizza.\nAdditional toppings cost extra\ndepending on the size of the pizza\nordered. Antonio ordered a large\npizza with three toppings that cost a\ntotal of $12.60.\ny 5 1.2x"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk7of17-e5",
+              "excerpt": "Matching Representations\n\nFacilitation Notes\n\nIn this activity, students cut out and analyze graphs, tables, and contexts\nrepresenting linear relationships. They use what they have learned about\nslopes, y-intercepts, and equations of a line to match either a table, graph, or\nscenario with an equation. Students may recognize some of the representations\nfrom previous activities.\n\nTo begin the Day 2 "
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L4",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk7of17-e7",
+              "excerpt": "MODULE 2 \u2022 TOPIC 1 \u2022 LESSON 4\n\nTXOER_A1_M02_T01_L04_Student Lesson.indd 201\n\n201\n\n08/05/24 5:42 PM\n\nMODULE 2 \u2022 TOPIC 1 \u2022 LESSON 4\n\n201"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk7of17-e6",
+              "excerpt": "Talk the Talk\n\nDEMONSTRATE\n\nSAY WHAT?\n\nFacilitation Notes\n\nIn this activity, students examine equations written in different forms and\nidentify specific information such as slope, y-intercept, and the coordinates of a\npoint on the line.\n\nHave students work with a partner or in a group to complete\nQuestions 1 and 2. Share responses as a class.\nQUESTIONS TO SUPPORT DISCOURSE\n\u2022 What equations are in "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk7of17-e2",
+              "excerpt": "4.1\n\nWriting Equations in Point-Slope Form\n\nFacilitation Notes\n\nDEVELOP\n\nIn this activity, students use the slope formula to derive the point-slope form of\na linear equation. They write equations in point-slope and slope-intercept form\ngiven different sets of information: a table of values, two points, a context, a\nslope and the y-intercept, a slope and a point, a graph with visible y-intercept,\na"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk7of17-e4",
+              "excerpt": "Horizontal and Vertical Lines\n\nFacilitation Notes\n\nIn this activity, students analyze tables of values for horizontal and\nvertical lines. They determine that the slope of a horizontal line is 0,\nand its equation is y 5 a constant. They determine that the slope of a\nvertical line is undefined, and its equation is x 5 a constant. In both cases,\nstudents practice writing equations and relating the eq"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk7of17-e1",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 2 DAYS\nDAY 1\nENGAGE\nGetting Started: Draining the Pool 10\u201315 minutes\nCONNECT TO PRIOR KNOWLEDGE\nStudents write equations to represent the water level as three pools are drained. The rate and\ninitial value are provided for one pool, and the water level at three distinct times are provided for\nthe other pool. Students then compare the process of writing each equation.\n\n"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk7of17-e3",
+              "excerpt": "\u2022 Why do you think this form is the point-slope form?\n\n1\n2\nslope? The point? How can you tell?\n\n\u2022 If the equation was y 1 6 5 2\u200b\u200b\u2012\u2012\u2012\u200b\u200b(x 1 2), what is the\n\nDIFFERENTIATION STRATEGIES\nChallenge Opportunity\n\u2022 Compare the Worked Examples for slope-intercept form and point-slope\n\nform side-by-side so that students see that the same process was used\neach time. Discuss the fact that the y-intercept is j"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk7of17-e11",
+              "excerpt": "9\n\nx\n\ny2x52\ne.\n\n\u2702\n\nNumber of\nGames Ben\nWon Today\n\nNumber of\nCredits on Ben\u2019s\nPlayer\u2019s Card\n\nx\n\ny\n\n12\n\n216\n\n18\n\n264\n\n25\n\n320\n\n40\n\n440\n\nf. A pizza shop charges $4.50 for a\nsmall pizza, $7.00 for a medium\npizza, and $9.00 for a large pizza.\nAdditional toppings cost extra\ndepending on the size of the pizza\nordered. Antonio ordered a large\npizza with three toppings that cost a\ntotal of $12.60.\ny 5 1.2x"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk7of17-e5",
+              "excerpt": "Matching Representations\n\nFacilitation Notes\n\nIn this activity, students cut out and analyze graphs, tables, and contexts\nrepresenting linear relationships. They use what they have learned about\nslopes, y-intercepts, and equations of a line to match either a table, graph, or\nscenario with an equation. Students may recognize some of the representations\nfrom previous activities.\n\nTo begin the Day 2 "
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.875,
+    "s3_curriculum_own": 0.875
+  },
+  "divergence": 0.0
+}

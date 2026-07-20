@@ -1,0 +1,261 @@
+{
+  "lesson_id": "62fc60052993",
+  "unit_id": "architecture-construction",
+  "title": "Architecture Construction Lesson Plan",
+  "element_count": 4,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "62fc60052993",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "62fc60052993-e1",
+              "excerpt": "--- TABLE ---\nSTEM Tallest Paper Tower for Grades 6-8                   Estimated Day(s): 2 - 60 minute classes\nResources:\nConstruction materials\nPaper (maximum 30 sheets). Printer, construction, graph, and notebook paper are allowed (letter or A4 size; 9\" x 12\" or 22 x 30-cm construction paper also allowed). Cardstock and newspapers are not allowed.\nTape (maximum one roll), maximum 1\" (2.5 cm) wi"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "62fc60052993-e1",
+              "excerpt": "--- TABLE ---\nSTEM Tallest Paper Tower for Grades 6-8                   Estimated Day(s): 2 - 60 minute classes\nResources:\nConstruction materials\nPaper (maximum 30 sheets). Printer, construction, graph, and notebook paper are allowed (letter or A4 size; 9\" x 12\" or 22 x 30-cm construction paper also allowed). Cardstock and newspapers are not allowed.\nTape (maximum one roll), maximum 1\" (2.5 cm) wi"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "62fc60052993-e2",
+              "excerpt": "Question Stems:\nEngagement Question 1: Can you design a tall, sturdy tower that uses as little paper as possible?\nEngagement Question 2:\nExplain Activity\nExplain: (10-15 Minutes)\n\nSCORING\nYour score is calculated using the following equation:\nTotal score = (distance to the button of the can in centimeters) - (2 X number of pieces of paper)\nRules:\nGo over the rules (listed below).\nThe tower can onl"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "62fc60052993-e4",
+              "excerpt": "Question Stems:\nWhy is important to explore and understand different careers?\nEvaluate Activity\nEvaluate: (5-10 Minutes)\n\nJornal notes review. | Evaluate: (5-10 Minutes)\n\nJornal notes review. | Evaluate: (5-10 Minutes)\n\nJornal notes review."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "62fc60052993-e1",
+              "excerpt": "--- TABLE ---\nSTEM Tallest Paper Tower for Grades 6-8                   Estimated Day(s): 2 - 60 minute classes\nResources:\nConstruction materials\nPaper (maximum 30 sheets). Printer, construction, graph, and notebook paper are allowed (letter or A4 size; 9\" x 12\" or 22 x 30-cm construction paper also allowed). Cardstock and newspapers are not allowed.\nTape (maximum one roll), maximum 1\" (2.5 cm) wi"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "62fc60052993-e3",
+              "excerpt": "\nQuestion Stems:\nWhy is important to know the constraints in a project?\nWhy is important to know the rules in a competition?\nExplore Activity\nExplore: (60-120 Minutes)\n\nPresent the Engineering Design Process Video\n\nDesign: Before they start building, encourage your students to sketch at least two potential designs for their towers. If they are working in a group, each student can start by drawing "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 4,
+        "partial": 2,
+        "missing": 2,
+        "coverage": 0.5,
+        "required_total": 4,
+        "required_present": 2,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "curriculum_own_dallas_career_2026",
+      "rubric_version": "v1-dallas-ctat-2026-07",
+      "scoring": "presence",
+      "lesson_id": "62fc60052993",
+      "criteria": [
+        {
+          "criterion_id": "learning_target",
+          "label": "Learning target / objective",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "teks_alignment",
+          "label": "TEKS listed and aligned to objective",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "62fc60052993-e1",
+              "excerpt": "--- TABLE ---\nSTEM Tallest Paper Tower for Grades 6-8                   Estimated Day(s): 2 - 60 minute classes\nResources:\nConstruction materials\nPaper (maximum 30 sheets). Printer, construction, graph, and notebook paper are allowed (letter or A4 size; 9\" x 12\" or 22 x 30-cm construction paper also allowed). Cardstock and newspapers are not allowed.\nTape (maximum one roll), maximum 1\" (2.5 cm) wi"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "materials_prep",
+          "label": "Materials, supplies & teacher prep",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "62fc60052993-e1",
+              "excerpt": "--- TABLE ---\nSTEM Tallest Paper Tower for Grades 6-8                   Estimated Day(s): 2 - 60 minute classes\nResources:\nConstruction materials\nPaper (maximum 30 sheets). Printer, construction, graph, and notebook paper are allowed (letter or A4 size; 9\" x 12\" or 22 x 30-cm construction paper also allowed). Cardstock and newspapers are not allowed.\nTape (maximum one roll), maximum 1\" (2.5 cm) wi"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "instructional_activities",
+          "label": "Instructional activities (launch -> activities -> closure)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "62fc60052993-e1",
+              "excerpt": "--- TABLE ---\nSTEM Tallest Paper Tower for Grades 6-8                   Estimated Day(s): 2 - 60 minute classes\nResources:\nConstruction materials\nPaper (maximum 30 sheets). Printer, construction, graph, and notebook paper are allowed (letter or A4 size; 9\" x 12\" or 22 x 30-cm construction paper also allowed). Cardstock and newspapers are not allowed.\nTape (maximum one roll), maximum 1\" (2.5 cm) wi"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "formative_assessment",
+          "label": "Formative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "62fc60052993-e4",
+              "excerpt": "Question Stems:\nWhy is important to explore and understand different careers?\nEvaluate Activity\nEvaluate: (5-10 Minutes)\n\nJornal notes review. | Evaluate: (5-10 Minutes)\n\nJornal notes review. | Evaluate: (5-10 Minutes)\n\nJornal notes review."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "summative_assessment",
+          "label": "Summative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "62fc60052993-e4",
+              "excerpt": "Question Stems:\nWhy is important to explore and understand different careers?\nEvaluate Activity\nEvaluate: (5-10 Minutes)\n\nJornal notes review. | Evaluate: (5-10 Minutes)\n\nJornal notes review. | Evaluate: (5-10 Minutes)\n\nJornal notes review."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "elps_strategies",
+          "label": "ELPS / language strategies",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "cte_essentials",
+          "label": "CTE essential unit elements",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "62fc60052993-e1",
+              "excerpt": "--- TABLE ---\nSTEM Tallest Paper Tower for Grades 6-8                   Estimated Day(s): 2 - 60 minute classes\nResources:\nConstruction materials\nPaper (maximum 30 sheets). Printer, construction, graph, and notebook paper are allowed (letter or A4 size; 9\" x 12\" or 22 x 30-cm construction paper also allowed). Cardstock and newspapers are not allowed.\nTape (maximum one roll), maximum 1\" (2.5 cm) wi"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 3,
+        "partial": 3,
+        "missing": 2,
+        "coverage": 0.375,
+        "required_total": 5,
+        "required_present": 2,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.5,
+    "s3_curriculum_own": 0.375
+  },
+  "divergence": 0.125
+}

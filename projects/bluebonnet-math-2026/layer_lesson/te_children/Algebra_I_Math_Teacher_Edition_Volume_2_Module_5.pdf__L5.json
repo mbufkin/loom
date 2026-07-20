@@ -1,0 +1,100 @@
+{
+  "project_id": "bluebonnet-math-2026",
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf__L5",
+  "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf",
+  "unit_id": "alg1-mod-5",
+  "lesson_number": 5,
+  "title": "Algebra I Math Teacher Edition Volume 2 Module 5 \u2014 Lesson 5",
+  "elements": [
+    {
+      "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e3",
+      "element_type": "guided_practice",
+      "excerpt": "Have students work with a partner or in a group to complete\nQuestions 4 and 5. Share responses as a class.\n\nMODULE 5 \u2022 TOPIC 3 \u2022 LESSON 5 901E"
+    },
+    {
+      "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e4",
+      "element_type": "assessment_checkpoint",
+      "excerpt": "Probing\n\nto determine the temperatures?\n\u2022 Do you think your predictions are relatively accurate?\n\nWhy or why not?"
+    },
+    {
+      "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e5",
+      "element_type": "guided_practice",
+      "excerpt": "\u2022 How did you address the results of interpolation and\n\nextrapolation in your summary?"
+    },
+    {
+      "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e6",
+      "element_type": "assessment_checkpoint",
+      "excerpt": "Some data in context can be modeled by a quadratic regression model. The\nregression model can be used to make estimations and predictions; however,\nthere may be limitations on the domain depending on the context.\nAC TI V IT Y\n\n5. 2\n\nAnalyzing a Quadratic Model\n\nFacilitation Notes"
+    },
+    {
+      "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e7",
+      "element_type": "guided_practice",
+      "excerpt": "901F\n\nMODULE 5 \u2022 TOPIC 3 \u2022 LESSON 5\n\n\nQUESTIONS TO SUPPORT DISCOURSE\n\u2022 What causes vehicles to leave skid marks?\n\nGathering\n\n\u2022 Do you think faster cars leave longer or shorter skid marks? Why?\n\u2022 How are stopping distance and length of skid marks related?\n\u2022 Give an example of how weather would affect stopping distances and\n\nthe length of skid marks left by a vehicle.\nProbing\n\n\u2022 How would the road surface, the grade of the road, or the vehicle type\n\naffect stopping distances and the length of skid marks left by a vehicle?\n\u2022 Do you think if a car increased its speed by 20 mph that the length of\n\nits skid marks would also increase by 20 feet? Why or why not?\n\nHave students work with a partner or in a group to complete\nQuestions 1 through 6. Share responses as a class.\nDIFFERENTIATION STRATEGY\nJust in Time Support\nProvide a scale for the graph in Question 3.\nLength of Skid Mark (feet)\n\ny\n400\n300\n200\n100\n0\n30 60 90 120\nCar Speed (miles per hour)\n\nx\n\nQUESTIONS TO SUPPORT DISCOURSE\n\u2022 What pattern do you notice in the table?\n\u2022 Why does this pattern make sense for the situation?\n\u2022 How does the domain and range of the function compare"
+    },
+    {
+      "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e8",
+      "element_type": "assessment_checkpoint",
+      "excerpt": "Facilitation Notes\n\nIn this activity, students use technology to analyze a table of values and\ndetermine the regression model. They determine whether the quadratic\nregression model is the best fit for the data in the table and use the model\nto make predictions.\n\nHave students work with a partner or in a group to complete\nQuestions 1 through 4. Share responses as a class.\nQUESTIONS TO SUPPORT DISCOURSE\n\nGathering\n\n\u2022 The year 2030 is how many years after 1980?\n\u2022 How do you determine whether a relationship is linear\n\nor quadratic?\nProbing"
+    },
+    {
+      "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e9",
+      "element_type": "reflection_closure",
+      "excerpt": "Summary\n\nThere are instances in which real-world data can be modeled by a quadratic\nregression model.\n\n901H MODULE 5 \u2022 TOPIC 3 \u2022 LESSON 5\n\n\n5\n\nUsing Quadratic Functions\nLiteral Equations\nto Model Data\n\nSetting the Stage\n\u2022 Communicate the\n\nobjectives."
+    },
+    {
+      "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e10",
+      "element_type": "standards_objectives",
+      "excerpt": "problem situation.\n\n\u2022 Use graphs of quadratic functions to make estimations\n\nand predictions.\n\nYou know how to model data with regression.\nHow can you determine whether a quadratic regression model\nmay best model the data?\nSample answer:\nI can use quadratic regression models to represent real-world situations and interpret them\nin context."
+    },
+    {
+      "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e11",
+      "element_type": "standards_objectives",
+      "excerpt": "901\n\n\nGetting Started\nChunking the Activity\n\nThat Might Be a Bad Idea. . ."
+    },
+    {
+      "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e12",
+      "element_type": "logistics_materials",
+      "excerpt": "\u2022 Group students to\n\ncomplete the activity.\n\n\u2022 Share and summarize.\n\nThe first step of the\nmodeling process is\n\nOptimizing Learning\nThis activity offers ways\nof customizing the display\nof information.\n\nTemperature of Can\n(8F)\n\nSoda Volume\ncm3"
+    },
+    {
+      "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e13",
+      "element_type": "logistics_materials",
+      "excerpt": "\u2022 Share and summarize.\n\nThe first step of the\nmodeling process is\n\nOptimizing Learning\nThis activity offers ways\nof customizing the display\nof information.\n\nTemperature of Can\n(8F)\n\nSoda Volume\ncm3"
+    },
+    {
+      "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e14",
+      "element_type": "assessment_checkpoint",
+      "excerpt": "What do you notice\n\n50.0\n\n354.98\n\n42.8\n\n354.89\n\nbrings to mind that\n\n39.2\n\n354.88\n\nyou wonder about?\n\n35.6\n\n354.89\n\n32.0\n\n354.93\n\n23.0\n\n355.13"
+    },
+    {
+      "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e15",
+      "element_type": "guided_practice",
+      "excerpt": "\nAC TI V IT Y\n\n5.1\n\nUsing Quadratic Functions\nto Model Data\n\nChunking the Activity\n\u2022 Read and discuss\n\nLet\u2019s continue to analyze the data and make some estimations and\npredictions about the volume of soda at different temperatures.\n1. Use technology to calculate the regression model that best models\nthe data in the previous activity. Sketch the graph of the regression\nmodel on the coordinate plane on which you created your scatterplot.\nExplain why the regression model best represents the data.\nLet x represent the temperature of the can in degrees Fahrenheit.\nLet y represent the volume of the soda in cm3.\ny 5 0.00088x2 2 0.07223x 1 356.35\n\nthe directions.\n\n\u2022 Group students to\nYou can mathematize\nthe data by modeling\nit with an appropriate\n\n\u2022 Check in and share.\n\u2022 Group students to\n\ncomplete Questions 4\nand 5.\n\nregression model.\n\n\u2022 Check in and share.\n\nTemperature and Volume of a\nSoda Can in a Freezer\ny\nSoda Volume (cm3)\n\ncomplete Questions 1\u20133.\n\n\u2022 Group students to\n\ncomplete Question 6."
+    },
+    {
+      "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e16",
+      "element_type": "assessment_checkpoint",
+      "excerpt": "x\n\nThe quadratic regression model is the best fit for the data because\nthe parabola passes through almost all the points. The r2-value for the\nquadratic regression fit is 0.994, which is very close to 1.\n2. State the domain and range of your function. How do they compare\nto the domain and range of this problem situation?\nFor the function:\nDomain: 2\u221e , x , \u221e\nRange: y $ 354.88\nFor the problem situation:\nDomain: 14 # x # 68\nRange: 354.88 # y # 355.54\nThe domain of the function is all possible values, and the range is all\nvalues greater than or equal to 354.88. The domain and range of the\nproblem situation is restricted to the spread of the values in the table.\nMODULE 5 \u2022 TOPIC 3 \u2022 LESSON 5\n\nTXOER_A1_M05_T03_L05_Student Lesson.indd 903\n\n903\n\n05/05/24 3:55 PM\n\nMODULE 5 \u2022 TOPIC 3 \u2022 LESSON 5\n\n903\n\n\nThe third step of the\n\nModeling Moment\n\nmodeling process is to\n\n\u2022 Provide students with the\n\nand the fourth step is\n\nProblem-Solving Model\nGraphic Organizer.\n\n\u2022 Have students work\n\nindividually or with a\npartner to complete the\ngraphic organizer.\n\n\u2022 Have students share and\n\nevaluate their problemsolving strategies as\na class.\n\npredict and analyze,\nto test and interpret.\nThese questions focus\non these two steps of\nthe process.\n\nPROBLEM SOLVING\n\nNOTICE\n\nREPORT\n\n3. Use the regression model to answer each question.\na. Determine the y-intercept and interpret its meaning in terms of\nthis problem situation.\nThe y-intercept is (0, 356.35). This is the volume of the soda\nwhen the temperature is 0\u00b0F.\nb. Determine the x-intercepts and interpret the meaning of each in\nterms of this problem situation.\nThere are no x-intercepts. The volume of the soda will never\nbe 0 cm3.\n4. Estimate the volume of the soda can when the temperature is:\na. 20\u00b0F.\nThe volume of the soda is 355.26 cm3 at 20\u00b0F.\nb. 60\u00b0F.\nThe volume of the soda is 355.2 cm3 at 60\u00b0F.\n\nORGANIZE"
+    },
+    {
+      "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e17",
+      "element_type": "assessment_checkpoint",
+      "excerpt": "6. Write a summary of the problem situation, your model of the\nsolution, and any limitations of your model.\nSample answer:\nData was provided for the different temperatures of a soda can and\nthe corresponding volume of the soda can. Looking at the table, I\ncould see that as the temperature decreased, the volume decreased\nuntil the temperature reached 39.2\u00b0. When the temperature reached\n39.2\u00b0 or below, the volume began to increase. Because there is a\nminimum volume, I thought the function modeling the data would be\nquadratic, and after completing a regression of the data, I was correct.\nThe regression model is y 5 0.00088x2 2 0.07223x 1 356.35 with an\nr2-value of 0.994. I know the can will never have a volume of 0 cm3, and\nI know it will not increase infinitely in volume either. Without more data,\nI am only confident that my model works for the specified values in\nthe table, with a domain (temperature in degrees F) of 14 # x # 68 and\na range (volume in cm3) of 354.88 # y # 355.54.\n904\n\nMODULE 5 \u2022 TOPIC 3 \u2022 LESSON 5\n\nEB STUDENT TIP\n\nTXOER_A1_M05_T03_L05_Student Lesson.indd 904\n\nFor \u201cIntermediate\u201d and higher proficiency levels\n\nDiscuss the root word of limitations, which is limit. As a noun, a limit is a restriction\non the amount of something. Connect the meaning with the phrase speed limit. In\nthe context of Question 6, the question is asking whether students would like to\nmake restrictions on their model; perhaps their model makes accurate predictions\nfor the context only in some cases, or for limited temperatures. Help students\nrephrase the directions to Question 6 in their own words.\n\n904\n\nMODULE 5 \u2022 TOPIC 3 \u2022 LESSON 5\n\n05/05/24 3:55 PM\n\n\nAC TI V IT Y"
+    },
+    {
+      "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e18",
+      "element_type": "reflection_closure",
+      "excerpt": "A local police department is offering special classes for interested\nhigh school students this summer. Destiny decides to enroll in an\nintroductory forensic science class. On the first day, Dr. Jackson tells\nDestiny\u2019s class that crime scenes often involve speeding vehicles which\nleave skid marks on the road as evidence. Taking into account the road\nsurface, weather conditions, the percent grade of the road, and vehicle\ntype, they use the function\n\nQuestion and activity\nsummaries from\nSession 1.\n\n\u2022 Read and discuss\n\nthe introduction.\n\n\u2022 Group students to\n\ncomplete the activity.\n\nf(s) 5 0.034s 1 0.96s 2 26.6\n2\n\n\u2022 Share and summarize.\n\nto determine the length in feet of skid marks left by a vehicle based on\nits speed, s, in miles per hour.\n1. Complete the table based on f(s). Label the column\ntitles with the independent and dependent quantities\nand their units."
+    },
+    {
+      "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e19",
+      "element_type": "guided_practice",
+      "excerpt": "\u2022 Have students work\n\nindividually or with a\npartner to complete the\ngraphic organizer.\n\n?\nANALYZE\n\n\u2022 Have students share and\n\nevaluate their problemsolving strategies as a class.\n\nStudent Look-Fors\nWhether students are\ndemonstrating proficiencies\nrelated to TEKS A.1G:\n\nDuring another class period, Dr. Jackson takes Destiny\u2019s class to a\nmock crime scene to collect evidence.\n\nAsk Yourself . . .\nHow do these\ndata differ from\nthe data in\nthe table?\n\na. Use the graph to estimate the speed of the vehicle that created\nthis skid mark. Explain your process.\nEstimating from the data table, the car was traveling at about\n80 miles per hour.\nb. Use the equation to estimate the speed of the vehicle that\ncreated this skid mark. Show your work.\nUsing the quadratic formula the car was traveling at 84.9 miles\nper hour.\nc. Does the exact speed seem reasonable for the problem situation?\nSample answer:\nYes, it is not unreasonable for a car to be going 85 miles per hour.\n5. At a second mock crime scene the skid mark is 800 feet long.\na. Use the equation to predict the speed of the vehicle that created\nthis skid mark. Show your work.\nUsing the quadratic formula, the car was traveling at 142.4 miles\nper hour.\n\n\u2022 Do students defend their\n\nmathematical reasoning?\n\n\u2022 Do students use precise\n\nb. Does the exact speed seem reasonable for the problem situation?\nSample answer:\nNo, that is a very dangerous speed and it is unlikely that\nsomeone drives that fast.\n\nmathematical language\nwhen communicating?\n\n6. Write a report about the length of skid marks left by vehicles and\nvehicle speeds. Discuss possible factors that would affect the length\nof the skid marks left by a vehicle and what effect these factors\nwould have on the graph of f(s).\nAnswers will vary.\nThere is a quadratic relationship between the speed of a car and\nthe length of the skid marks it may leave on a road surface. The\nquadratic function may vary depending upon factors, such as road\nsurface, weather, percent grade of the road, vehicle type, etc.\nFor example, if the road is slick or the weather is icy, the values\nin the function may change to recognize the fact that for a given\ntemperature, the length of the skid marks would be greater than the\nresults from the original quadratic function.\n906\n\nMODULE 5 \u2022 TOPIC 3 \u2022 LESSON 5"
+    },
+    {
+      "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e20",
+      "element_type": "assessment_checkpoint",
+      "excerpt": "Ask Yourself . . .\nHow can you\nuse quadratic\nregression\nmodels in\neveryday life?\n\ncomplete the activity.\n\n\u2022 Share and summarize.\n\u2022 Have students answer\n\nthe Essential Question\non the lesson opener.\n\n1. Does the data appear to be linear or quadratic?\nThe data appears to be quadratic in nature.\n2. Use graphing technology to determine the regression model of best\nfit and calculate the correlation coefficient.\nf(x) \u2248 0.024x2 1 0.149x 1 32.857; r2 \u2248 0.954\n3. Estimate how many Americans were over 100 years old in 2005.\nf(25) 5 51.582\nThere were about 52 people over 100 years old in 2005.\n4. Predict the number of Americans that will live to be over 100 years\nold in the year 2030.\nf(50) \u2248 100\nIn the year 2030, there will be approximately 100,000 Americans\nthat will live to be over 100 years old.\n5. Predict when there will be 90,000 Americans that will live to be\nover 100 years old.\nUsing the quadratic formula, there will be 90,000 Americans over 100\nyears old approximately 47 years after the survey started, or in 2027.\n\nMODULE 5 \u2022 TOPIC 3 \u2022 LESSON 5\n\nTXOER_A1_M05_T03_L05_Student Lesson.indd 907\n\n907\n\n05/05/24 3:55 PM\n\nMODULE 5 \u2022 TOPIC 3 \u2022 LESSON 5\n\n907\n\n\n908\n\nMODULE 5 \u2022 TOPIC 3 \u2022 LESSON 5\n\n\nLesson 5\n2 Assignment\nWrite"
+    }
+  ]
+}

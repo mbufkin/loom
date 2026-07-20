@@ -1,0 +1,281 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L1",
+  "unit_id": "alg1-mod-2",
+  "title": "Algebra I Math Teacher Edition Volume 1 Module 2 \u2014 Lesson 1",
+  "element_count": 21,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L1",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk2of17-e7",
+              "excerpt": "Setting the Stage\n\nLeast Squares Regression\n\n\u2022 Communicate the\n\nobjectives and new key\nterms to look for.\n\n\u2022 Tap into your students\u2019\n\nprior learning by reading\nthe narrative statement.\n\n\u2022 Provide a sense of\n\ndirection by reading the\nEssential Question.\n\nOBJECTIVES\n\u2022 Create a graph of data points with and without technology.\n\u2022 Determine an equation for a line of best fit by visual\n\nNEW KEY TERMS\n\u2022 "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk2of17-e6",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk1of17-e3",
+              "excerpt": "correlation [correlaci\u00f3n]\n\u2022 correlation coefficient\n[coeficiente de correlaci\u00f3n]\n\u2022\n\n\u2022\n\n\u2022\n\ncoefficient of determination\n[coeficiente de\ndeterminaci\u00f3n]\ncausation [causalidad]\nnecessary condition\n[condici\u00f3n necesaria]\n\n\u2022\n\nsufficient condition\n[condici\u00f3n suficiente]\n\n\u2022\n\ncommon response\n[respuesta com\u00fan]\n\n\u2022\n\nconfounding variable\n[variable de confusi\u00f3n]\n\nHow do the activities in Linear Functions promote"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk2of17-e4",
+              "excerpt": "TXOER_A1_M02_T01_L01_Student Lesson.indd 149\n\n149\n\n11/05/24 11:12 AM\n\nMODULE 2 \u2022 TOPIC 1 \u2022 LESSON 1\n\n149\n\n\nAC TI V IT Y\n\nChunking the Activity\n\u2022 Read and discuss\n\nthe introduction.\n\n\u2022 Group students to\n\ncomplete Questions 1\u20133.\n\n\u2022 Check in and share.\n\u2022 Group students to\n\ncomplete Questions 4\u20137.\n\n\u2022 Read and discuss the\n\ninformation and definitions."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk2of17-e1",
+              "excerpt": "In this activity, students analyze data by creating a scatterplot and using a\npiece of spaghetti to estimate the line of best fit. They readjust the line of\nbest fit (piece of spaghetti) as each data point is added to the scatterplot.\nStudents conclude that with only one data value, an infinite number of lines\nare possible, and with two data values, only one line is possible. Once the\nthird non-co"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk2of17-e3",
+              "excerpt": "Have students work with a partner or in a group to complete\nQuestions 6 through 10. Share responses as a class.\nQUESTIONS TO SUPPORT DISCOURSE\n\u2022 How did you know which value to substitute into\n\nProbing\n\nthe equation?\n\u2022 Does your prediction make sense? Why or why not?\n\nDIFFERENTIATION STRATEGIES\nJust in Time Support\n\u2022 Create additional word boxes for students to use. Depending on students\u2019\nneeds, c"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk3of17-e3",
+              "excerpt": "Patterns in data can\nbe modeled with\nlines of best fit.\nThe Least Squares\nMethod is one way\nto create a linear\nregression function,\nand it is the method\nthat graphing\ntechnology tends\nto use.\n\n1. A data table can be used to organize and display the values of\ntwo variables in a data set.\n2. A linear regression function models the relationship between two\nvariables in a data set by producing a line "
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk2of17-e5",
+              "excerpt": "TXOER_A1_M02_T01_L01_Student Lesson.indd 152\n\n152\n\nMODULE 2 \u2022 TOPIC 1 \u2022 LESSON 1\n\n11/05/24 11:12 AM\n\n\nAC TI V IT Y\n\n1. 2\n\nMaking Predictions\n\nChunking the Activity\n\u2022 Read the Essential\n\nThe table shows the population of a small town for each year from\n2010 to 2017.\n\nQuestion and activity\nsummaries from\nSession 1."
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L1",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk2of17-e7",
+              "excerpt": "Setting the Stage\n\nLeast Squares Regression\n\n\u2022 Communicate the\n\nobjectives and new key\nterms to look for.\n\n\u2022 Tap into your students\u2019\n\nprior learning by reading\nthe narrative statement.\n\n\u2022 Provide a sense of\n\ndirection by reading the\nEssential Question.\n\nOBJECTIVES\n\u2022 Create a graph of data points with and without technology.\n\u2022 Determine an equation for a line of best fit by visual\n\nNEW KEY TERMS\n\u2022 "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk2of17-e6",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk1of17-e3",
+              "excerpt": "correlation [correlaci\u00f3n]\n\u2022 correlation coefficient\n[coeficiente de correlaci\u00f3n]\n\u2022\n\n\u2022\n\n\u2022\n\ncoefficient of determination\n[coeficiente de\ndeterminaci\u00f3n]\ncausation [causalidad]\nnecessary condition\n[condici\u00f3n necesaria]\n\n\u2022\n\nsufficient condition\n[condici\u00f3n suficiente]\n\n\u2022\n\ncommon response\n[respuesta com\u00fan]\n\n\u2022\n\nconfounding variable\n[variable de confusi\u00f3n]\n\nHow do the activities in Linear Functions promote"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk2of17-e4",
+              "excerpt": "TXOER_A1_M02_T01_L01_Student Lesson.indd 149\n\n149\n\n11/05/24 11:12 AM\n\nMODULE 2 \u2022 TOPIC 1 \u2022 LESSON 1\n\n149\n\n\nAC TI V IT Y\n\nChunking the Activity\n\u2022 Read and discuss\n\nthe introduction.\n\n\u2022 Group students to\n\ncomplete Questions 1\u20133.\n\n\u2022 Check in and share.\n\u2022 Group students to\n\ncomplete Questions 4\u20137.\n\n\u2022 Read and discuss the\n\ninformation and definitions."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk2of17-e1",
+              "excerpt": "In this activity, students analyze data by creating a scatterplot and using a\npiece of spaghetti to estimate the line of best fit. They readjust the line of\nbest fit (piece of spaghetti) as each data point is added to the scatterplot.\nStudents conclude that with only one data value, an infinite number of lines\nare possible, and with two data values, only one line is possible. Once the\nthird non-co"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk2of17-e3",
+              "excerpt": "Have students work with a partner or in a group to complete\nQuestions 6 through 10. Share responses as a class.\nQUESTIONS TO SUPPORT DISCOURSE\n\u2022 How did you know which value to substitute into\n\nProbing\n\nthe equation?\n\u2022 Does your prediction make sense? Why or why not?\n\nDIFFERENTIATION STRATEGIES\nJust in Time Support\n\u2022 Create additional word boxes for students to use. Depending on students\u2019\nneeds, c"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk3of17-e3",
+              "excerpt": "Patterns in data can\nbe modeled with\nlines of best fit.\nThe Least Squares\nMethod is one way\nto create a linear\nregression function,\nand it is the method\nthat graphing\ntechnology tends\nto use.\n\n1. A data table can be used to organize and display the values of\ntwo variables in a data set.\n2. A linear regression function models the relationship between two\nvariables in a data set by producing a line "
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk2of17-e5",
+              "excerpt": "TXOER_A1_M02_T01_L01_Student Lesson.indd 152\n\n152\n\nMODULE 2 \u2022 TOPIC 1 \u2022 LESSON 1\n\n11/05/24 11:12 AM\n\n\nAC TI V IT Y\n\n1. 2\n\nMaking Predictions\n\nChunking the Activity\n\u2022 Read the Essential\n\nThe table shows the population of a small town for each year from\n2010 to 2017.\n\nQuestion and activity\nsummaries from\nSession 1."
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.875,
+    "s3_curriculum_own": 0.875
+  },
+  "divergence": 0.0
+}

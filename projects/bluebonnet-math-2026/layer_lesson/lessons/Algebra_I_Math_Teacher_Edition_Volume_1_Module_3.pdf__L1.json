@@ -1,0 +1,281 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L1",
+  "unit_id": "alg1-mod-3",
+  "title": "Algebra I Math Teacher Edition Volume 1 Module 3 \u2014 Lesson 1",
+  "element_count": 35,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L1",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk2of15-e6",
+              "excerpt": "MODULE 3 \u2022 TOPIC 1 \u2022 LESSON 1\n\nTXOER_A1_M03_T01_L01_Student Lesson.indd 345"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk1of15-e2",
+              "excerpt": "Linear Functions, Equations, and Inequalities\n(5) The student applies the mathematical process standards\nto solve, with and without technology, linear equations and\nevaluate the reasonableness of their solutions.\nThe student is expected to:\n\nExpression Cards\n(located at the end of\nthese Facilitation Notes)\n\nELPS\n(1) Learning Strategies\nThe student is expected to:\n(H) develop and expand repertoire "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk2of15-e1",
+              "excerpt": "the solution?\n\u2022 Explain the steps you used to verify the solution using\n\nthe properties of equality.\n\u2022 What is another way to apply the properties of equality"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk1of15-e5",
+              "excerpt": "1\n\nLearning Individually with Skills Practice\nSchedule these days strategically throughout the topic to support student learning.\n\n3\n*Bold TEKS = Readiness Standard\n\n344F\n\nMODULE 3 \u2022 TOPIC 1 \u2022 PACING GUIDE\n\n\nMODULE 3, TOPIC 1 PACING GUIDE\n\n165-Day Pacing\n\n1 DAY PACING = 45-MINUTE SESSION\nDay 1\n\nDay 2\n\nDay 3\n\nDay 4\n\nTEKS: A.5A\n\nLESSON 1\n\nSolving Linear\nEquations\n\nDay 5\n\nTEKS: A.3A, A.12E\n\nLESSON 1 "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk7of15-e1",
+              "excerpt": "ENGAGE"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk1of15-e4",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 2 DAYS\nDAY 1\nENGAGE\nGetting Started: Equation Creation 15 minutes\nCONNECT TO PRIOR KNOWLEDGE\nStudents start with a simple solution statement and create more complex equations by\nperforming the same operation on each side of the equation. They then exchange the equations\nthey created with a partner to verify correct solutions.\n\nDEVELOP\nActivity 1.1: Using Properties to"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk3of15-e2",
+              "excerpt": "1\n(210x 1 4) 5 24 (23 1 2x) 1 8\nc. \u2012\u2012\n2\n1\n\u2012\u2012(210x 1 4) 5 24(23 1 2x) 1 8\n2\n\n25x 1 2 5 12 2 8x 1 8\n25x 1 2 5 20 2 8x\n3x 1 2 5 20\n3x 5 18\nx56\n\n(22x 2 4)\n\ndistributive property\nassociative property\naddition property of equality\nsubtraction property of equality\ndivision property of equality\n\n8\n\nd. \u2012\u2012\u2012\u2012\u2012\u2012\u2012\u2012\u2012\n1 \u2012\u2012\n5\n5 5 3(x 2 1)\n(22x 2 4)\n8\n\u2012\u2012\u2012\u2012\u2012\u2012\u2012\u2012\u2012\u2012 1 \u2012\u2012 5 3(x 2 1)\n5\n\n22x 2 4 1 8 5 15(x 2 1)\n22x 2 4 1"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk1of15-e6",
+              "excerpt": "Ask a student to read the introduction aloud and review the\nproperties of equality as a class.\nHave students work with a partner or in a group to complete\nQuestion 1. Share responses as a class.\n\nMODULE 3 \u2022 TOPIC 1 \u2022 LESSON 1 345E\n\n\nQUESTIONS TO SUPPORT DISCOURSE\n\nGathering\n\n\u2022 Explain what each property means in your own words.\n\u2022 Show how you applied each property in the Getting\n\nStarted activity."
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L1",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk2of15-e6",
+              "excerpt": "MODULE 3 \u2022 TOPIC 1 \u2022 LESSON 1\n\nTXOER_A1_M03_T01_L01_Student Lesson.indd 345"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk1of15-e2",
+              "excerpt": "Linear Functions, Equations, and Inequalities\n(5) The student applies the mathematical process standards\nto solve, with and without technology, linear equations and\nevaluate the reasonableness of their solutions.\nThe student is expected to:\n\nExpression Cards\n(located at the end of\nthese Facilitation Notes)\n\nELPS\n(1) Learning Strategies\nThe student is expected to:\n(H) develop and expand repertoire "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk2of15-e1",
+              "excerpt": "the solution?\n\u2022 Explain the steps you used to verify the solution using\n\nthe properties of equality.\n\u2022 What is another way to apply the properties of equality"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk1of15-e5",
+              "excerpt": "1\n\nLearning Individually with Skills Practice\nSchedule these days strategically throughout the topic to support student learning.\n\n3\n*Bold TEKS = Readiness Standard\n\n344F\n\nMODULE 3 \u2022 TOPIC 1 \u2022 PACING GUIDE\n\n\nMODULE 3, TOPIC 1 PACING GUIDE\n\n165-Day Pacing\n\n1 DAY PACING = 45-MINUTE SESSION\nDay 1\n\nDay 2\n\nDay 3\n\nDay 4\n\nTEKS: A.5A\n\nLESSON 1\n\nSolving Linear\nEquations\n\nDay 5\n\nTEKS: A.3A, A.12E\n\nLESSON 1 "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk7of15-e1",
+              "excerpt": "ENGAGE"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk1of15-e4",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 2 DAYS\nDAY 1\nENGAGE\nGetting Started: Equation Creation 15 minutes\nCONNECT TO PRIOR KNOWLEDGE\nStudents start with a simple solution statement and create more complex equations by\nperforming the same operation on each side of the equation. They then exchange the equations\nthey created with a partner to verify correct solutions.\n\nDEVELOP\nActivity 1.1: Using Properties to"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk3of15-e2",
+              "excerpt": "1\n(210x 1 4) 5 24 (23 1 2x) 1 8\nc. \u2012\u2012\n2\n1\n\u2012\u2012(210x 1 4) 5 24(23 1 2x) 1 8\n2\n\n25x 1 2 5 12 2 8x 1 8\n25x 1 2 5 20 2 8x\n3x 1 2 5 20\n3x 5 18\nx56\n\n(22x 2 4)\n\ndistributive property\nassociative property\naddition property of equality\nsubtraction property of equality\ndivision property of equality\n\n8\n\nd. \u2012\u2012\u2012\u2012\u2012\u2012\u2012\u2012\u2012\n1 \u2012\u2012\n5\n5 5 3(x 2 1)\n(22x 2 4)\n8\n\u2012\u2012\u2012\u2012\u2012\u2012\u2012\u2012\u2012\u2012 1 \u2012\u2012 5 3(x 2 1)\n5\n\n22x 2 4 1 8 5 15(x 2 1)\n22x 2 4 1"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk1of15-e6",
+              "excerpt": "Ask a student to read the introduction aloud and review the\nproperties of equality as a class.\nHave students work with a partner or in a group to complete\nQuestion 1. Share responses as a class.\n\nMODULE 3 \u2022 TOPIC 1 \u2022 LESSON 1 345E\n\n\nQUESTIONS TO SUPPORT DISCOURSE\n\nGathering\n\n\u2022 Explain what each property means in your own words.\n\u2022 Show how you applied each property in the Getting\n\nStarted activity."
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.875,
+    "s3_curriculum_own": 0.875
+  },
+  "divergence": 0.0
+}

@@ -1,0 +1,281 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L3",
+  "unit_id": "alg1-mod-3",
+  "title": "Algebra I Math Teacher Edition Volume 1 Module 3 \u2014 Lesson 3",
+  "element_count": 29,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L3",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk5of15-e16",
+              "excerpt": "solving linear equations in one variable, including\nthose for which the application of the distributive\nproperty is necessary and for which variables are\nincluded on both sides.\nconstructing an argument to justify a solution\nprocess for a one-variable equation.\nusing and interpreting units when solving literal\nequations for a given variable.\nsolving literal equations for a specified variable.\nreco"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk5of15-e15",
+              "excerpt": "\nAC TI V IT Y\n\n3. 2\n\nChunking the Activity\n\u2022 Read the Essential\n\nQuestion and activity\nsummaries from Session 1.\n\n\u2022 Read and discuss\n\nthe introduction and\nWorked Example.\n\nTo solve an inequality\nmeans to determine\nthe values of the\nvariable that make the\ninequality true.\n\n\u2022 Answer Question 1 as\n\nTo make the first deposit on the trip, Elijah\u2019s total sales, f(b), need to be\nat least $1100."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk1of15-e3",
+              "excerpt": "Students start with a simple solution statement and create more\ncomplex equations by performing the same operation on each\nside of the equation. They then analyze different equations\ncreated by two students and reason about how to verify that\nthe equations have the same solution as the original equation.\nThe properties of equality and some basic number properties are\nreviewed before students pract"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk5of15-e10",
+              "excerpt": "b. How many boxes would Elijah have to sell to earn less\nthan $2050?\n\nQuestions 1\u20135 present\nan opportunity to assess\nstudents' understanding\nof the essential content\nof the lesson. Use student\nresponses to determine\nwhen to schedule Learning\nIndividually Days. To\nprovide additional practice\nof writing and solving a\nlinear inequality graphically,\nassign Skills Practice\nSet A for this lesson. To\npro"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk10of15-e1",
+              "excerpt": "AS STUDENTS WORK, LOOK FOR\nErrors translating the context into an equation, such as f\u200b 1 34 5 m\u200b,\nrather than f\u200b 5 m 1 34\u200b."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk5of15-e3",
+              "excerpt": "\nGetting Started\nChunking the Activity\n\nFundraising Function\n\n\u2022 Read and discuss\n\nthe situation.\n\n\u2022 Group students to\n\ncomplete the activity.\n\n\u2022 Share and summarize.\n\nAsk yourself . . .\nHow will you\nrepresent the\n$25 credit in\nyour function?\n\nElijah\u2019s camping troop is selling popcorn to earn money for an upcoming\ncamping trip. Each camper starts with a credit of $25 toward his sales,\nand each box "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk5of15-e11",
+              "excerpt": "\nLesson 3 Assignment\nWrite\nDescribe how to solve an\ninequality in your own words.\n\nRemember\n\nWrite\n\nThe methods for solving linear inequalities are similar\nto the methods for solving linear equations. Be sure to\nreverse the direction of the inequality symbol when\nmultiplying or dividing both sides by a negative number.\n\nSample answer:\n\nPractice\n1. Noah is going on a trip to visit some friends from"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk5of15-e14",
+              "excerpt": "\nLesson 3 Assignment\nWrite\nDescribe how to solve an\ninequality in your own words.\n\nRemember\n\nWrite\n\nThe methods for solving linear inequalities are similar\nto the methods for solving linear equations. Be sure to\nreverse the direction of the inequality symbol when\nmultiplying or dividing both sides by a negative number.\n\nSample answer:\n\nPractice\n1. Noah is going on a trip to visit some friends from"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L3",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk5of15-e16",
+              "excerpt": "solving linear equations in one variable, including\nthose for which the application of the distributive\nproperty is necessary and for which variables are\nincluded on both sides.\nconstructing an argument to justify a solution\nprocess for a one-variable equation.\nusing and interpreting units when solving literal\nequations for a given variable.\nsolving literal equations for a specified variable.\nreco"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk5of15-e15",
+              "excerpt": "\nAC TI V IT Y\n\n3. 2\n\nChunking the Activity\n\u2022 Read the Essential\n\nQuestion and activity\nsummaries from Session 1.\n\n\u2022 Read and discuss\n\nthe introduction and\nWorked Example.\n\nTo solve an inequality\nmeans to determine\nthe values of the\nvariable that make the\ninequality true.\n\n\u2022 Answer Question 1 as\n\nTo make the first deposit on the trip, Elijah\u2019s total sales, f(b), need to be\nat least $1100."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk1of15-e3",
+              "excerpt": "Students start with a simple solution statement and create more\ncomplex equations by performing the same operation on each\nside of the equation. They then analyze different equations\ncreated by two students and reason about how to verify that\nthe equations have the same solution as the original equation.\nThe properties of equality and some basic number properties are\nreviewed before students pract"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk5of15-e10",
+              "excerpt": "b. How many boxes would Elijah have to sell to earn less\nthan $2050?\n\nQuestions 1\u20135 present\nan opportunity to assess\nstudents' understanding\nof the essential content\nof the lesson. Use student\nresponses to determine\nwhen to schedule Learning\nIndividually Days. To\nprovide additional practice\nof writing and solving a\nlinear inequality graphically,\nassign Skills Practice\nSet A for this lesson. To\npro"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk10of15-e1",
+              "excerpt": "AS STUDENTS WORK, LOOK FOR\nErrors translating the context into an equation, such as f\u200b 1 34 5 m\u200b,\nrather than f\u200b 5 m 1 34\u200b."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk5of15-e3",
+              "excerpt": "\nGetting Started\nChunking the Activity\n\nFundraising Function\n\n\u2022 Read and discuss\n\nthe situation.\n\n\u2022 Group students to\n\ncomplete the activity.\n\n\u2022 Share and summarize.\n\nAsk yourself . . .\nHow will you\nrepresent the\n$25 credit in\nyour function?\n\nElijah\u2019s camping troop is selling popcorn to earn money for an upcoming\ncamping trip. Each camper starts with a credit of $25 toward his sales,\nand each box "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk5of15-e11",
+              "excerpt": "\nLesson 3 Assignment\nWrite\nDescribe how to solve an\ninequality in your own words.\n\nRemember\n\nWrite\n\nThe methods for solving linear inequalities are similar\nto the methods for solving linear equations. Be sure to\nreverse the direction of the inequality symbol when\nmultiplying or dividing both sides by a negative number.\n\nSample answer:\n\nPractice\n1. Noah is going on a trip to visit some friends from"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk5of15-e14",
+              "excerpt": "\nLesson 3 Assignment\nWrite\nDescribe how to solve an\ninequality in your own words.\n\nRemember\n\nWrite\n\nThe methods for solving linear inequalities are similar\nto the methods for solving linear equations. Be sure to\nreverse the direction of the inequality symbol when\nmultiplying or dividing both sides by a negative number.\n\nSample answer:\n\nPractice\n1. Noah is going on a trip to visit some friends from"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.875,
+    "s3_curriculum_own": 0.875
+  },
+  "divergence": 0.0
+}

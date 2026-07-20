@@ -1,0 +1,271 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L4",
+  "unit_id": "alg1-mod-3",
+  "title": "Algebra I Math Teacher Edition Volume 1 Module 3 \u2014 Lesson 4",
+  "element_count": 8,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L4",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk11of15-e5",
+              "excerpt": "Determining the Graphs of Linear Inequalities\n\nFacilitation Notes\nIn this activity, the graph of a linear equality is described as a half-plane.\nStudents graph inequalities by graphing each inequality\u2019s corresponding\nequation as a boundary line, determining whether it should be solid or\ndashed, and identifying which half-plane to shade by testing the point (0, 0)\nin the original inequality. Studen"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk11of15-e3",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 2 DAYS\nDAY 1\nENGAGE\nGetting Started: Making a Statement 5\u201310 minutes\nESTABLISH A SITUATION\nStudents compare five different solution statements that relate the value of x to the constant 2.\nNext, they write a scenario that can be represented by one of the statements and then modify\nthe scenario so that it can be represented by one of the different statements.\n\nDEVELOP\n"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk11of15-e3",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 2 DAYS\nDAY 1\nENGAGE\nGetting Started: Making a Statement 5\u201310 minutes\nESTABLISH A SITUATION\nStudents compare five different solution statements that relate the value of x to the constant 2.\nNext, they write a scenario that can be represented by one of the statements and then modify\nthe scenario so that it can be represented by one of the different statements.\n\nDEVELOP\n"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk11of15-e8",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 2 DAYS\nDAY 1\nENGAGE\nGetting Started: Making a Statement 5\u201310 minutes\nESTABLISH A SITUATION\nStudents compare five different solution statements that relate the value of x to the constant 2.\nNext, they write a scenario that can be represented by one of the statements and then modify\nthe scenario so that it can be represented by one of the different statements."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk13of15-e1",
+              "excerpt": "variables as the intersection of the corresponding half-planes.\n\n\u2022 Verify solutions to systems of linear inequalities algebraically."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk11of15-e4",
+              "excerpt": "x\n\n\nAC TI V IT Y\n\n4.1\n\nLinear Inequalities in Two Variables\n\nFacilitation Notes\n\nDEVELOP\n\nIn this activity, students write an inequality to represent a given scenario. They\nuse the inequality to complete a table of values, graph the data from the table,\nthen determine which parts of the graph are solutions to the inequality.\nDIFFERENTIATION STRATEGY\nChallenge Opportunity\nMaterials Needed: Poster o"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk11of15-e9",
+              "excerpt": "A real-world problem can be modeled by a linear inequality, and both the\ninequality and its graph can be used to solve problems in context.\n\nSTAMP THE\nLEARNING\n\nMODULE 3 \u2022 TOPIC 2 \u2022 LESSON 4\n\n449I\n\n\nTalk the Talk\n\nDEMONSTRATE\n\nTHERE\u2019S A FINE LINE\n\nFacilitation Notes\n\nIn this activity, students demonstrate an understanding of the difference\nbetween the graphs of linear equations and linear inequali"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 5,
+        "partial": 2,
+        "missing": 1,
+        "coverage": 0.625,
+        "required_total": 4,
+        "required_present": 2,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L4",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk11of15-e5",
+              "excerpt": "Determining the Graphs of Linear Inequalities\n\nFacilitation Notes\nIn this activity, the graph of a linear equality is described as a half-plane.\nStudents graph inequalities by graphing each inequality\u2019s corresponding\nequation as a boundary line, determining whether it should be solid or\ndashed, and identifying which half-plane to shade by testing the point (0, 0)\nin the original inequality. Studen"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk11of15-e3",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 2 DAYS\nDAY 1\nENGAGE\nGetting Started: Making a Statement 5\u201310 minutes\nESTABLISH A SITUATION\nStudents compare five different solution statements that relate the value of x to the constant 2.\nNext, they write a scenario that can be represented by one of the statements and then modify\nthe scenario so that it can be represented by one of the different statements.\n\nDEVELOP\n"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk11of15-e3",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 2 DAYS\nDAY 1\nENGAGE\nGetting Started: Making a Statement 5\u201310 minutes\nESTABLISH A SITUATION\nStudents compare five different solution statements that relate the value of x to the constant 2.\nNext, they write a scenario that can be represented by one of the statements and then modify\nthe scenario so that it can be represented by one of the different statements.\n\nDEVELOP\n"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk11of15-e8",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 2 DAYS\nDAY 1\nENGAGE\nGetting Started: Making a Statement 5\u201310 minutes\nESTABLISH A SITUATION\nStudents compare five different solution statements that relate the value of x to the constant 2.\nNext, they write a scenario that can be represented by one of the statements and then modify\nthe scenario so that it can be represented by one of the different statements."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk13of15-e1",
+              "excerpt": "variables as the intersection of the corresponding half-planes.\n\n\u2022 Verify solutions to systems of linear inequalities algebraically."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk11of15-e4",
+              "excerpt": "x\n\n\nAC TI V IT Y\n\n4.1\n\nLinear Inequalities in Two Variables\n\nFacilitation Notes\n\nDEVELOP\n\nIn this activity, students write an inequality to represent a given scenario. They\nuse the inequality to complete a table of values, graph the data from the table,\nthen determine which parts of the graph are solutions to the inequality.\nDIFFERENTIATION STRATEGY\nChallenge Opportunity\nMaterials Needed: Poster o"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk11of15-e9",
+              "excerpt": "A real-world problem can be modeled by a linear inequality, and both the\ninequality and its graph can be used to solve problems in context.\n\nSTAMP THE\nLEARNING\n\nMODULE 3 \u2022 TOPIC 2 \u2022 LESSON 4\n\n449I\n\n\nTalk the Talk\n\nDEMONSTRATE\n\nTHERE\u2019S A FINE LINE\n\nFacilitation Notes\n\nIn this activity, students demonstrate an understanding of the difference\nbetween the graphs of linear equations and linear inequali"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 5,
+        "partial": 2,
+        "missing": 1,
+        "coverage": 0.625,
+        "required_total": 4,
+        "required_present": 2,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.625,
+    "s3_curriculum_own": 0.625
+  },
+  "divergence": 0.0
+}

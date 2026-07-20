@@ -1,0 +1,271 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L5",
+  "unit_id": "alg1-mod-2",
+  "title": "Algebra I Math Teacher Edition Volume 1 Module 2 \u2014 Lesson 5",
+  "element_count": 14,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L5",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk8of17-e9",
+              "excerpt": "ALGEBRA I TEKS\nMathematical Process Standards\n(1) The student uses mathematical processes to acquire and\ndemonstrate mathematical understanding.\nThe student is expected to:\n\t\t\u0007A.1C select tools, including real objects, manipulatives,\npaper and pencil, and technology as appropriate, and\ntechniques, including mental math, estimation, and\nnumber sense as appropriate, to solve problems.\n\t\t\u0007A.1F analyz"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk8of17-e2",
+              "excerpt": "DEVELOP\nActivity 5.1: Using Slope-Intercept Form to Graph a Line 25\u201330 minutes\nWORKED EXAMPLE, MATHEMATICAL PROBLEM SOLVING\nIn this activity, students learn through a Worked Example how to graph equations written in\nslope-intercept form. They graph lines from equations written in slope-intercept form or contexts\nthat can be modeled using slope-intercept form without creating a table of values.\n\nDA"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk8of17-e2",
+              "excerpt": "DEVELOP\nActivity 5.1: Using Slope-Intercept Form to Graph a Line 25\u201330 minutes\nWORKED EXAMPLE, MATHEMATICAL PROBLEM SOLVING\nIn this activity, students learn through a Worked Example how to graph equations written in\nslope-intercept form. They graph lines from equations written in slope-intercept form or contexts\nthat can be modeled using slope-intercept form without creating a table of values.\n\nDA"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk8of17-e8",
+              "excerpt": "MODULE 2 \u2022 TOPIC 1 \u2022 LESSON 5\n\n11/05/24 11:19 AM\n\n\n3. y 5 10x 1 25\ny\n\nUse a straightedge to\ndraw your lines.\n\n80\n70\n60\n\nAsk Yourself . . .\n\n50\n\nShould each graph\nhave arrows or\npoints on each\nend? When using\na point, how\ndo you know\nwhether to use an\nopen circle or a\nclosed circle?\n\n40\n30\n20\n10\n\u20138\n\n\u20136\n\n\u20132 0\n\u221210\n\n\u20134\n\n2\n\n4\n\n6\n\nx\n\n8\n\nQuestions 1\u20133 present\nan opportunity to assess\nstudents\u2019 understand"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk8of17-e2",
+              "excerpt": "DEVELOP\nActivity 5.1: Using Slope-Intercept Form to Graph a Line 25\u201330 minutes\nWORKED EXAMPLE, MATHEMATICAL PROBLEM SOLVING\nIn this activity, students learn through a Worked Example how to graph equations written in\nslope-intercept form. They graph lines from equations written in slope-intercept form or contexts\nthat can be modeled using slope-intercept form without creating a table of values.\n\nDA"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk8of17-e3",
+              "excerpt": "\nQUESTIONS TO SUPPORT DISCOURSE\n\nProbing\n\n\u2022 Which point did you plot first? Where did you locate it?\n2\n\u2022 How did you apply the slope \u2012\u2012\n\u200b\u200b3 \u200b\u200bto plot an additional point?\n\u2022 How is graphing using the slope related to slope triangles?\n\u2022 In which direction do you move with a positive numerator?\n\nA negative numerator? A positive denominator?\nA negative denominator?\n\u2022 How do you know the direction of t"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk8of17-e13",
+              "excerpt": "Setting the Stage\n\nUsing Linear Equations\n\n\u2022 Communicate the\n\nobjectives and new key\nterms to look for.\n\n\u2022 Tap into your students\u2019\n\nprior learning by reading\nthe narrative statement.\n\n\u2022 Provide a sense of\n\ndirection by reading the\nEssential Question.\n\nOBJECTIVES\n\u2022 Construct linear equations to model relationships between\n\ntwo quantities.\n\nNEW KEY TERMS\n\u2022 standard form\n\u2022 x-intercept\n\n\u2022 Graph lines "
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 5,
+        "partial": 2,
+        "missing": 1,
+        "coverage": 0.625,
+        "required_total": 4,
+        "required_present": 3,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L5",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk8of17-e9",
+              "excerpt": "ALGEBRA I TEKS\nMathematical Process Standards\n(1) The student uses mathematical processes to acquire and\ndemonstrate mathematical understanding.\nThe student is expected to:\n\t\t\u0007A.1C select tools, including real objects, manipulatives,\npaper and pencil, and technology as appropriate, and\ntechniques, including mental math, estimation, and\nnumber sense as appropriate, to solve problems.\n\t\t\u0007A.1F analyz"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk8of17-e2",
+              "excerpt": "DEVELOP\nActivity 5.1: Using Slope-Intercept Form to Graph a Line 25\u201330 minutes\nWORKED EXAMPLE, MATHEMATICAL PROBLEM SOLVING\nIn this activity, students learn through a Worked Example how to graph equations written in\nslope-intercept form. They graph lines from equations written in slope-intercept form or contexts\nthat can be modeled using slope-intercept form without creating a table of values.\n\nDA"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk8of17-e2",
+              "excerpt": "DEVELOP\nActivity 5.1: Using Slope-Intercept Form to Graph a Line 25\u201330 minutes\nWORKED EXAMPLE, MATHEMATICAL PROBLEM SOLVING\nIn this activity, students learn through a Worked Example how to graph equations written in\nslope-intercept form. They graph lines from equations written in slope-intercept form or contexts\nthat can be modeled using slope-intercept form without creating a table of values.\n\nDA"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk8of17-e8",
+              "excerpt": "MODULE 2 \u2022 TOPIC 1 \u2022 LESSON 5\n\n11/05/24 11:19 AM\n\n\n3. y 5 10x 1 25\ny\n\nUse a straightedge to\ndraw your lines.\n\n80\n70\n60\n\nAsk Yourself . . .\n\n50\n\nShould each graph\nhave arrows or\npoints on each\nend? When using\na point, how\ndo you know\nwhether to use an\nopen circle or a\nclosed circle?\n\n40\n30\n20\n10\n\u20138\n\n\u20136\n\n\u20132 0\n\u221210\n\n\u20134\n\n2\n\n4\n\n6\n\nx\n\n8\n\nQuestions 1\u20133 present\nan opportunity to assess\nstudents\u2019 understand"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk8of17-e2",
+              "excerpt": "DEVELOP\nActivity 5.1: Using Slope-Intercept Form to Graph a Line 25\u201330 minutes\nWORKED EXAMPLE, MATHEMATICAL PROBLEM SOLVING\nIn this activity, students learn through a Worked Example how to graph equations written in\nslope-intercept form. They graph lines from equations written in slope-intercept form or contexts\nthat can be modeled using slope-intercept form without creating a table of values.\n\nDA"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk8of17-e3",
+              "excerpt": "\nQUESTIONS TO SUPPORT DISCOURSE\n\nProbing\n\n\u2022 Which point did you plot first? Where did you locate it?\n2\n\u2022 How did you apply the slope \u2012\u2012\n\u200b\u200b3 \u200b\u200bto plot an additional point?\n\u2022 How is graphing using the slope related to slope triangles?\n\u2022 In which direction do you move with a positive numerator?\n\nA negative numerator? A positive denominator?\nA negative denominator?\n\u2022 How do you know the direction of t"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk8of17-e13",
+              "excerpt": "Setting the Stage\n\nUsing Linear Equations\n\n\u2022 Communicate the\n\nobjectives and new key\nterms to look for.\n\n\u2022 Tap into your students\u2019\n\nprior learning by reading\nthe narrative statement.\n\n\u2022 Provide a sense of\n\ndirection by reading the\nEssential Question.\n\nOBJECTIVES\n\u2022 Construct linear equations to model relationships between\n\ntwo quantities.\n\nNEW KEY TERMS\n\u2022 standard form\n\u2022 x-intercept\n\n\u2022 Graph lines "
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 5,
+        "partial": 2,
+        "missing": 1,
+        "coverage": 0.625,
+        "required_total": 4,
+        "required_present": 3,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.625,
+    "s3_curriculum_own": 0.625
+  },
+  "divergence": 0.0
+}

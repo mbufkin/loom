@@ -1,0 +1,224 @@
+{
+  "project_id": "bluebonnet-math-2026",
+  "te_parents": [
+    "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf",
+    "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf",
+    "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf",
+    "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf",
+    "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf",
+    "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf"
+  ],
+  "child_count": 30,
+  "children": [
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf__L1",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf",
+      "unit_id": "alg1-program",
+      "lesson_number": 1,
+      "element_count": 29
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf__L2",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf",
+      "unit_id": "alg1-program",
+      "lesson_number": 2,
+      "element_count": 8
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf__L4",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf",
+      "unit_id": "alg1-program",
+      "lesson_number": 4,
+      "element_count": 20
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf__L3",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf",
+      "unit_id": "alg1-program",
+      "lesson_number": 3,
+      "element_count": 8
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf__L1",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf",
+      "unit_id": "alg1-mod-1",
+      "lesson_number": 1,
+      "element_count": 26
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf__L3",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf",
+      "unit_id": "alg1-mod-1",
+      "lesson_number": 3,
+      "element_count": 47
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf__L4",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf",
+      "unit_id": "alg1-mod-1",
+      "lesson_number": 4,
+      "element_count": 6
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf__L2",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf",
+      "unit_id": "alg1-mod-1",
+      "lesson_number": 2,
+      "element_count": 15
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L1",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf",
+      "unit_id": "alg1-mod-2",
+      "lesson_number": 1,
+      "element_count": 21
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L2",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf",
+      "unit_id": "alg1-mod-2",
+      "lesson_number": 2,
+      "element_count": 32
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L3",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf",
+      "unit_id": "alg1-mod-2",
+      "lesson_number": 3,
+      "element_count": 35
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L4",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf",
+      "unit_id": "alg1-mod-2",
+      "lesson_number": 4,
+      "element_count": 20
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L5",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf",
+      "unit_id": "alg1-mod-2",
+      "lesson_number": 5,
+      "element_count": 14
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L6",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf",
+      "unit_id": "alg1-mod-2",
+      "lesson_number": 6,
+      "element_count": 20
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L1",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf",
+      "unit_id": "alg1-mod-3",
+      "lesson_number": 1,
+      "element_count": 35
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L3",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf",
+      "unit_id": "alg1-mod-3",
+      "lesson_number": 3,
+      "element_count": 29
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L2",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf",
+      "unit_id": "alg1-mod-3",
+      "lesson_number": 2,
+      "element_count": 20
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L4",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf",
+      "unit_id": "alg1-mod-3",
+      "lesson_number": 4,
+      "element_count": 8
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L5",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf",
+      "unit_id": "alg1-mod-3",
+      "lesson_number": 5,
+      "element_count": 4
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L6",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf",
+      "unit_id": "alg1-mod-3",
+      "lesson_number": 6,
+      "element_count": 22
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf__L1",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf",
+      "unit_id": "alg1-mod-4",
+      "lesson_number": 1,
+      "element_count": 35
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf__L2",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf",
+      "unit_id": "alg1-mod-4",
+      "lesson_number": 2,
+      "element_count": 44
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf__L3",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf",
+      "unit_id": "alg1-mod-4",
+      "lesson_number": 3,
+      "element_count": 16
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf__L4",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf",
+      "unit_id": "alg1-mod-4",
+      "lesson_number": 4,
+      "element_count": 11
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf__L5",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf",
+      "unit_id": "alg1-mod-4",
+      "lesson_number": 5,
+      "element_count": 11
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf__L1",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf",
+      "unit_id": "alg1-mod-5",
+      "lesson_number": 1,
+      "element_count": 75
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf__L2",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf",
+      "unit_id": "alg1-mod-5",
+      "lesson_number": 2,
+      "element_count": 38
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf__L3",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf",
+      "unit_id": "alg1-mod-5",
+      "lesson_number": 3,
+      "element_count": 24
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf__L4",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf",
+      "unit_id": "alg1-mod-5",
+      "lesson_number": 4,
+      "element_count": 46
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf__L5",
+      "parent_doc_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf",
+      "unit_id": "alg1-mod-5",
+      "lesson_number": 5,
+      "element_count": 18
+    }
+  ]
+}

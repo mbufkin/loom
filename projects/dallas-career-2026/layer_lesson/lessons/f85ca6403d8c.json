@@ -1,0 +1,251 @@
+{
+  "lesson_id": "f85ca6403d8c",
+  "unit_id": "business-marketing",
+  "title": "Copy of Business Marketing Finance - Slides",
+  "element_count": 12,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "f85ca6403d8c",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "f85ca6403d8c-e1",
+              "excerpt": "Business, Marketing & Finance\n\nDay 1"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "f85ca6403d8c-e3",
+              "excerpt": "Vocabulary\n\nTarget market\nFeatures\nBenefits\nPrototype\nEntrepreneurs"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "f85ca6403d8c-e5",
+              "excerpt": "Day 1-Evaluate\n\nOn your Exit Ticket handout, write a paragraph describing the process of creating a new product and the process of working in a group."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "f85ca6403d8c-e2",
+              "excerpt": "Day 1-Engage\n\nDo Now"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "f85ca6403d8c-e4",
+              "excerpt": "Create a Product\n\nInstructions\n\nWith your group you will create a product from the supplies given to you by your teacher. (All groups will receive the same supplies)\n\nYou will have 25-30 minutes to:\nCreate your product\nName your product\nIdentify the target market for your product\nPrepare to share your product with the class\n\n\nPresent your Product"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "f85ca6403d8c-e6",
+              "excerpt": "\nPrice a Product\n\nDay 2-Evaluate\n\nOn a piece of paper, write a paragraph explaining if they would be comfortable selling the product at the cost the team decided, why or why not?\nAlso, would you buy the product for the price your team decided? Why or why not?"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 0,
+        "missing": 2,
+        "coverage": 0.75,
+        "required_total": 4,
+        "required_present": 3,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "curriculum_own_dallas_career_2026",
+      "rubric_version": "v1-dallas-ctat-2026-07",
+      "scoring": "presence",
+      "lesson_id": "f85ca6403d8c",
+      "criteria": [
+        {
+          "criterion_id": "learning_target",
+          "label": "Learning target / objective",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "teks_alignment",
+          "label": "TEKS listed and aligned to objective",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "materials_prep",
+          "label": "Materials, supplies & teacher prep",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "f85ca6403d8c-e1",
+              "excerpt": "Business, Marketing & Finance\n\nDay 1"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "instructional_activities",
+          "label": "Instructional activities (launch -> activities -> closure)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "f85ca6403d8c-e2",
+              "excerpt": "Day 1-Engage\n\nDo Now"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "formative_assessment",
+          "label": "Formative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "f85ca6403d8c-e5",
+              "excerpt": "Day 1-Evaluate\n\nOn your Exit Ticket handout, write a paragraph describing the process of creating a new product and the process of working in a group."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "summative_assessment",
+          "label": "Summative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "f85ca6403d8c-e5",
+              "excerpt": "Day 1-Evaluate\n\nOn your Exit Ticket handout, write a paragraph describing the process of creating a new product and the process of working in a group."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "elps_strategies",
+          "label": "ELPS / language strategies",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "cte_essentials",
+          "label": "CTE essential unit elements",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 4,
+        "partial": 0,
+        "missing": 4,
+        "coverage": 0.5,
+        "required_total": 5,
+        "required_present": 3,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.75,
+    "s3_curriculum_own": 0.5
+  },
+  "divergence": 0.25
+}

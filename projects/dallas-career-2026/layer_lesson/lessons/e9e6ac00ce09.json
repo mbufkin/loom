@@ -1,0 +1,271 @@
+{
+  "lesson_id": "e9e6ac00ce09",
+  "unit_id": "agriculture",
+  "title": "Agriculture- Plant Science Alternate Lesson Plan Template",
+  "element_count": 6,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "e9e6ac00ce09",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e9e6ac00ce09-e1",
+              "excerpt": "--- TABLE ---\nAgriculture Career-Plant Science Program of study\nEstimated Day(s): 2 - 45 minute classes | Agriculture Career-Plant Science Program of study\n    Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities\nTEKS Student Expectation(s):\n\u00a7127.2. Career and Coll"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e9e6ac00ce09-e2",
+              "excerpt": "\u00a7130.2. Principles of Agriculture, Food, and Natural Resources\n(10) The student develops technical knowledge and skills related to soil systems.\n(A) identify the components and properties of soils; (B) identify and describe the process of soil formation\n(11) The student develops technical knowledge and skills related to plant systems.\n(D) identify plants of importance to agriculture, food, and nat"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e9e6ac00ce09-e2",
+              "excerpt": "\u00a7130.2. Principles of Agriculture, Food, and Natural Resources\n(10) The student develops technical knowledge and skills related to soil systems.\n(A) identify the components and properties of soils; (B) identify and describe the process of soil formation\n(11) The student develops technical knowledge and skills related to plant systems.\n(D) identify plants of importance to agriculture, food, and nat"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e9e6ac00ce09-e5",
+              "excerpt": "Reference Worksheet:\n\n3-2-1 Reflection | Evaluate: (5-10 Minutes)\nUpon completion, have students complete the 3-2-1 Reflection handout over this lesson.\n\nReference Worksheet:\n\n3-2-1 Reflection | Evaluate: (5-10 Minutes)\nUpon completion, have students complete the 3-2-1 Reflection handout over this lesson.\n\nReference Worksheet:\n\n3-2-1 Reflection"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e9e6ac00ce09-e3",
+              "excerpt": "\nQuestion Stems:\nPrompt: How do we grow Plants?\nExplain Activity\nExplore: (20-30 Minutes)\nStudents will take notes and collaborate in small groups\nStudent Engagement Strategy / Resource:\nStudents will document their understanding through the provided guided notes.\nQuestion Stems:\nWhat is the difference between Horticulture and Floriculture?\n\nMaterials Needed:\nSticky Notes (1)\nNote taking device or"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e9e6ac00ce09-e4-split1",
+              "excerpt": "\nQuestion Stems:\nWhat is the Agriculture Food and Natural Resources Career Cluster?\nWhat are careers in Plant Science?\nHow does Plant Science affect our daily life?\nExtend Activity\nExtend: (20-30 Minutes)\nStudents will complete the soil lab. Instructor will take students outside to an area where there is visible soft soil. Students will be able to fill their bag \u2153 of the way up. Students will use "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e9e6ac00ce09-e4-split2",
+              "excerpt": "Question Stems:\nWhat is the importance of soil?\nWhat are the properties of soil?\nWhat is the difference between soil and dirt? | Extend: (20-30 Minutes)\nStudents will complete the soil lab. Instructor will take students outside to an area where there is visible soft soil. Students will be able to fill their bag \u2153 of the way up. Students will use their spoons to act like shovels. Once collection of"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 5,
+        "partial": 2,
+        "missing": 1,
+        "coverage": 0.625,
+        "required_total": 4,
+        "required_present": 3,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "curriculum_own_dallas_career_2026",
+      "rubric_version": "v1-dallas-ctat-2026-07",
+      "scoring": "presence",
+      "lesson_id": "e9e6ac00ce09",
+      "criteria": [
+        {
+          "criterion_id": "learning_target",
+          "label": "Learning target / objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e9e6ac00ce09-e1",
+              "excerpt": "--- TABLE ---\nAgriculture Career-Plant Science Program of study\nEstimated Day(s): 2 - 45 minute classes | Agriculture Career-Plant Science Program of study\n    Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities\nTEKS Student Expectation(s):\n\u00a7127.2. Career and Coll"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "teks_alignment",
+          "label": "TEKS listed and aligned to objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e9e6ac00ce09-e1",
+              "excerpt": "--- TABLE ---\nAgriculture Career-Plant Science Program of study\nEstimated Day(s): 2 - 45 minute classes | Agriculture Career-Plant Science Program of study\n    Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities\nTEKS Student Expectation(s):\n\u00a7127.2. Career and Coll"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "materials_prep",
+          "label": "Materials, supplies & teacher prep",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e9e6ac00ce09-e2",
+              "excerpt": "\u00a7130.2. Principles of Agriculture, Food, and Natural Resources\n(10) The student develops technical knowledge and skills related to soil systems.\n(A) identify the components and properties of soils; (B) identify and describe the process of soil formation\n(11) The student develops technical knowledge and skills related to plant systems.\n(D) identify plants of importance to agriculture, food, and nat"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "instructional_activities",
+          "label": "Instructional activities (launch -> activities -> closure)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e9e6ac00ce09-e3",
+              "excerpt": "\nQuestion Stems:\nPrompt: How do we grow Plants?\nExplain Activity\nExplore: (20-30 Minutes)\nStudents will take notes and collaborate in small groups\nStudent Engagement Strategy / Resource:\nStudents will document their understanding through the provided guided notes.\nQuestion Stems:\nWhat is the difference between Horticulture and Floriculture?\n\nMaterials Needed:\nSticky Notes (1)\nNote taking device or"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "formative_assessment",
+          "label": "Formative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e9e6ac00ce09-e5",
+              "excerpt": "Reference Worksheet:\n\n3-2-1 Reflection | Evaluate: (5-10 Minutes)\nUpon completion, have students complete the 3-2-1 Reflection handout over this lesson.\n\nReference Worksheet:\n\n3-2-1 Reflection | Evaluate: (5-10 Minutes)\nUpon completion, have students complete the 3-2-1 Reflection handout over this lesson.\n\nReference Worksheet:\n\n3-2-1 Reflection"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "summative_assessment",
+          "label": "Summative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e9e6ac00ce09-e5",
+              "excerpt": "Reference Worksheet:\n\n3-2-1 Reflection | Evaluate: (5-10 Minutes)\nUpon completion, have students complete the 3-2-1 Reflection handout over this lesson.\n\nReference Worksheet:\n\n3-2-1 Reflection | Evaluate: (5-10 Minutes)\nUpon completion, have students complete the 3-2-1 Reflection handout over this lesson.\n\nReference Worksheet:\n\n3-2-1 Reflection"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "elps_strategies",
+          "label": "ELPS / language strategies",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "cte_essentials",
+          "label": "CTE essential unit elements",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e9e6ac00ce09-e1",
+              "excerpt": "--- TABLE ---\nAgriculture Career-Plant Science Program of study\nEstimated Day(s): 2 - 45 minute classes | Agriculture Career-Plant Science Program of study\n    Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities\nTEKS Student Expectation(s):\n\u00a7127.2. Career and Coll"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 1,
+        "missing": 1,
+        "coverage": 0.75,
+        "required_total": 5,
+        "required_present": 5,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.625,
+    "s3_curriculum_own": 0.75
+  },
+  "divergence": 0.125
+}

@@ -6,9 +6,31 @@
   "doc_ids": [
     "K-5_Math_Component_Navigation_Guide.pdf",
     "K-5_Math_Family_Guide.pdf",
+    "K-5_Math_Grade_5_Additional_Days_School_Year_ADSY_Teacher_Edition.pdf",
     "K-5_Math_Grade_5_Course_Guide.pdf",
+    "K-5_Math_Grade_5_Manipulatives_Kit.pdf",
     "K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition.pdf",
     "K-5_Math_Grade_5_Module_1_Place_Value_and_Decimals_Teacher_Edition.pdf",
+    "K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition.pdf",
+    "K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition.pdf",
+    "K-5_Math_Grade_5_Module_2_Learn_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf",
+    "K-5_Math_Grade_5_Module_2_Multi-Digit_Whole_Number_and_Decimal_Operations_Teacher_Edition.pdf",
+    "K-5_Math_Grade_5_Module_2_Practice_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf",
+    "K-5_Math_Grade_5_Module_2_Succeed_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf",
+    "K-5_Math_Grade_5_Module_3_Addition_and_Subtraction_of_Fractions_Teacher_Edition.pdf",
+    "K-5_Math_Grade_5_Module_3_Learn_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf",
+    "K-5_Math_Grade_5_Module_3_Practice_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf",
+    "K-5_Math_Grade_5_Module_3_Succeed_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf",
+    "K-5_Math_Grade_5_Module_4_Learn_Multiplication_and_Division_of_Fractions_Student_Edition.pdf",
+    "K-5_Math_Grade_5_Module_4_Multiplication_and_Division_of_Fractions_Teacher_Edition.pdf",
+    "K-5_Math_Grade_5_Module_4_Practice_Multiplication_and_Division_of_Fractions_Student_Edition.pdf",
+    "K-5_Math_Grade_5_Module_4_Succeed_Multiplication_and_Division_of_Fractions_Student_Edition.pdf",
+    "K-5_Math_Grade_5_Module_5_Addition_and_Multiplication_with_Volume_and_Area_Teacher_Edition.pdf",
+    "K-5_Math_Grade_5_Module_5_Practice_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf",
+    "K-5_Math_Grade_5_Module_5_Succeed_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf",
+    "K-5_Math_Grade_5_Module_6_Learn_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf",
+    "K-5_Math_Grade_5_Module_6_Practice_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf",
+    "K-5_Math_Grade_5_Module_6_Problem_Solving_with_the_Coordinate_Plane_and_Data_Teacher_Edition.pdf",
     "K-5_Math_Program_and_Implementation_Guide.pdf"
   ],
   "inventory": [
@@ -45,7 +67,39 @@
       }
     },
     {
+      "doc_id": "K-5_Math_Grade_5_Additional_Days_School_Year_ADSY_Teacher_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
       "doc_id": "K-5_Math_Grade_5_Course_Guide.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Manipulatives_Kit.pdf",
       "doc_type": "other",
       "C1": {
         "status": "PRESENT",
@@ -78,6 +132,326 @@
     },
     {
       "doc_id": "K-5_Math_Grade_5_Module_1_Place_Value_and_Decimals_Teacher_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_2_Learn_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_2_Multi-Digit_Whole_Number_and_Decimal_Operations_Teacher_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_2_Practice_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_2_Succeed_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_3_Addition_and_Subtraction_of_Fractions_Teacher_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_3_Learn_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_3_Practice_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_3_Succeed_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_4_Learn_Multiplication_and_Division_of_Fractions_Student_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_4_Multiplication_and_Division_of_Fractions_Teacher_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_4_Practice_Multiplication_and_Division_of_Fractions_Student_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_4_Succeed_Multiplication_and_Division_of_Fractions_Student_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_5_Addition_and_Multiplication_with_Volume_and_Area_Teacher_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_5_Practice_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_5_Succeed_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_6_Learn_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_6_Practice_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf",
+      "doc_type": "other",
+      "C1": {
+        "status": "PRESENT",
+        "note": "routed to general"
+      },
+      "C2": {
+        "status": "STUB",
+        "note": "generic checks TBD"
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_6_Problem_Solving_with_the_Coordinate_Plane_and_Data_Teacher_Edition.pdf",
       "doc_type": "other",
       "C1": {
         "status": "PRESENT",

@@ -1,0 +1,281 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf__L4",
+  "unit_id": "alg1-mod-5",
+  "title": "Algebra I Math Teacher Edition Volume 2 Module 5 \u2014 Lesson 4",
+  "element_count": 46,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf__L4",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk8of23-e11",
+              "excerpt": "MODULE 5 \u2022 TOPIC 1 \u2022 LESSON 4 723O\n\n\n723P\n\nMODULE 5 \u2022 TOPIC 1 \u2022 LESSON 4\n\n\n4\n\nHorizontal Transformations\nTransformations\nof\nand\nQuadratic\nVertex Functions\nForm\n\nSetting the Stage\n\u2022 Communicate the\n\nobjectives and the new\nkey term to look for.\n\n\u2022 Tap into your students\u2019\n\nprior learning by reading\nthe narrative statement.\n\n\u2022 Provide a sense of\n\ndirection by reading the\nEssential Question.\n\nOBJECTIVE"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk7of23-e9",
+              "excerpt": "MODULE 5 \u2022 TOPIC 1 \u2022 LESSON 4 723E\n\n\nAC TI V IT Y\n\n4.1\n\nHorizontal Dilations of Quadratic Functions\n\nFacilitation Notes\n\nIn this activity, students sketch and analyze graphs of parent functions\nbefore and after they have undergone a horizontal dilation. They describe the\ngraphical behavior in terms of stretching and compressing and use coordinate\nnotation to explain how each point on the parent fu"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk8of23-e2",
+              "excerpt": "Have students work with a partner or in a group to complete\nQuestions 8 through 10. Share responses as a class.\nMODULE 5 \u2022 TOPIC 1 \u2022 LESSON 4 723G\n\n\nDIFFERENTIATION STRATEGY\nAccess for All\nHave students construct a table of values for both representations of m(x) to\nsee the similarities in the representations. Suggest students use this strategy\nwhen they are comparing functions throughout the less"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk8of23-e4",
+              "excerpt": "Read the paragraph and analyze the graph after Question 10 as a\nclass. Have students work with a partner or in a group to complete\nQuestion 11. Share responses as a class.\nDIFFERENTIATION STRATEGY\nJust in Time Support\nWhen analyzing the function \u200ba(r) 5 \u03c0r2\u200b, students may not recall that \u200b\u03c0\u200bis a\nconstant. Remind them that \u200b\u03c0\u200bis an irrational number and a constant value.\nQUESTIONS TO SUPPORT DISCOU"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk8of23-e1",
+              "excerpt": "graph of the Worked Example.\n\u2022 When b 5 3, by what value should you multiply\n\neach x-value?\n\u2022 Is this a horizontal stretch or compression?"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk8of23-e3",
+              "excerpt": "compression? A horizontal stretch?\n\u2022 Use coordinate pairs to justify Madison\u2019s and\n\nProbing\n\nAmir\u2019s thinking.\n\n1\n\u2022 What is the value of f\u200b\u200b(\u2012\u2012\n\u200b3 \u200bx)\u200b\u200b? How can you rewrite the\n1\nresult \u2012\u2012\n\u200b\u200b9 \u200b\u200b\u200b\u200bx\u200b\u200b2\u200b\u200b using function notation with an a-value?\n\u2022 How does your solution in Question 10 relate to your\n\nresponse to Question 9?"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk21of23-e7",
+              "excerpt": "MODULE 5 \u2022 TOPIC 3 \u2022 LESSON 4\n\nEB STUDENT TIP\n\nTXOER_A1_M05_T03_L04_Student Lesson.indd 893\n\n893\n\n11/05/24 5:22 PM\n\nFor \u201cIntermediate\u201d and higher proficiency levels\n\nTo help students make sense of the mathematical term discriminant, discuss\nthe related term, discriminate, which means to recognize the differences\nbetween two or more objects. Some synonyms of discriminate are distinguish,\ndifferenti"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk8of23-e9",
+              "excerpt": "Summary\n\nA function written in equivalent forms can reveal different characteristics\nof the function it defines. You can write a quadratic function in vertex form\nwhen you know the coordinates of the vertex and another point on the\ngraph. You can write a quadratic function in factored form when you know\nthe zeros and another point on the graph.\n\n723N MODULE 5 \u2022 TOPIC 1 \u2022 LESSON 4\n\n\nTalk the Talk\n\n"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf__L4",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk8of23-e11",
+              "excerpt": "MODULE 5 \u2022 TOPIC 1 \u2022 LESSON 4 723O\n\n\n723P\n\nMODULE 5 \u2022 TOPIC 1 \u2022 LESSON 4\n\n\n4\n\nHorizontal Transformations\nTransformations\nof\nand\nQuadratic\nVertex Functions\nForm\n\nSetting the Stage\n\u2022 Communicate the\n\nobjectives and the new\nkey term to look for.\n\n\u2022 Tap into your students\u2019\n\nprior learning by reading\nthe narrative statement.\n\n\u2022 Provide a sense of\n\ndirection by reading the\nEssential Question.\n\nOBJECTIVE"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk7of23-e9",
+              "excerpt": "MODULE 5 \u2022 TOPIC 1 \u2022 LESSON 4 723E\n\n\nAC TI V IT Y\n\n4.1\n\nHorizontal Dilations of Quadratic Functions\n\nFacilitation Notes\n\nIn this activity, students sketch and analyze graphs of parent functions\nbefore and after they have undergone a horizontal dilation. They describe the\ngraphical behavior in terms of stretching and compressing and use coordinate\nnotation to explain how each point on the parent fu"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk8of23-e2",
+              "excerpt": "Have students work with a partner or in a group to complete\nQuestions 8 through 10. Share responses as a class.\nMODULE 5 \u2022 TOPIC 1 \u2022 LESSON 4 723G\n\n\nDIFFERENTIATION STRATEGY\nAccess for All\nHave students construct a table of values for both representations of m(x) to\nsee the similarities in the representations. Suggest students use this strategy\nwhen they are comparing functions throughout the less"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk8of23-e4",
+              "excerpt": "Read the paragraph and analyze the graph after Question 10 as a\nclass. Have students work with a partner or in a group to complete\nQuestion 11. Share responses as a class.\nDIFFERENTIATION STRATEGY\nJust in Time Support\nWhen analyzing the function \u200ba(r) 5 \u03c0r2\u200b, students may not recall that \u200b\u03c0\u200bis a\nconstant. Remind them that \u200b\u03c0\u200bis an irrational number and a constant value.\nQUESTIONS TO SUPPORT DISCOU"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk8of23-e1",
+              "excerpt": "graph of the Worked Example.\n\u2022 When b 5 3, by what value should you multiply\n\neach x-value?\n\u2022 Is this a horizontal stretch or compression?"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk8of23-e3",
+              "excerpt": "compression? A horizontal stretch?\n\u2022 Use coordinate pairs to justify Madison\u2019s and\n\nProbing\n\nAmir\u2019s thinking.\n\n1\n\u2022 What is the value of f\u200b\u200b(\u2012\u2012\n\u200b3 \u200bx)\u200b\u200b? How can you rewrite the\n1\nresult \u2012\u2012\n\u200b\u200b9 \u200b\u200b\u200b\u200bx\u200b\u200b2\u200b\u200b using function notation with an a-value?\n\u2022 How does your solution in Question 10 relate to your\n\nresponse to Question 9?"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk21of23-e7",
+              "excerpt": "MODULE 5 \u2022 TOPIC 3 \u2022 LESSON 4\n\nEB STUDENT TIP\n\nTXOER_A1_M05_T03_L04_Student Lesson.indd 893\n\n893\n\n11/05/24 5:22 PM\n\nFor \u201cIntermediate\u201d and higher proficiency levels\n\nTo help students make sense of the mathematical term discriminant, discuss\nthe related term, discriminate, which means to recognize the differences\nbetween two or more objects. Some synonyms of discriminate are distinguish,\ndifferenti"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk8of23-e9",
+              "excerpt": "Summary\n\nA function written in equivalent forms can reveal different characteristics\nof the function it defines. You can write a quadratic function in vertex form\nwhen you know the coordinates of the vertex and another point on the\ngraph. You can write a quadratic function in factored form when you know\nthe zeros and another point on the graph.\n\n723N MODULE 5 \u2022 TOPIC 1 \u2022 LESSON 4\n\n\nTalk the Talk\n\n"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.875,
+    "s3_curriculum_own": 0.875
+  },
+  "divergence": 0.0
+}

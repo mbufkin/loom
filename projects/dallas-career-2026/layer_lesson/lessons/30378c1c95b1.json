@@ -1,0 +1,266 @@
+{
+  "lesson_id": "30378c1c95b1",
+  "unit_id": "law-and-public-service",
+  "title": "Law and Public Service Lesson Plans",
+  "element_count": 5,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "30378c1c95b1",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "30378c1c95b1-e1",
+              "excerpt": "--- TABLE ---\nLaw and Public Service Career                                                          Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nComputer\nPromethean board\nInternet access | Resources:\nLesson plan\nComputer\nPromethean board\nInternet access | Resources:\nLesson plan\nComputer\nPromethean board\nInternet access\nTEKS Student Expectation(s):\n\u00a7127.2. Career and College Expl"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "30378c1c95b1-e1",
+              "excerpt": "--- TABLE ---\nLaw and Public Service Career                                                          Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nComputer\nPromethean board\nInternet access | Resources:\nLesson plan\nComputer\nPromethean board\nInternet access | Resources:\nLesson plan\nComputer\nPromethean board\nInternet access\nTEKS Student Expectation(s):\n\u00a7127.2. Career and College Expl"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "30378c1c95b1-e2",
+              "excerpt": "Question Stems:\nWhat careers are you thinking about learning about?\nHave you heard of any of these careers prior to today?\nDo you know anyone in the Criminal Justice Profession?\nExplore Activity\nExplore: (20-30 Minutes)\n Students will work with a partner and explore their given law enforcement employment. Jobs include: lawyer, police officer, crime scene investigator, correctional officer, FBI spe"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "30378c1c95b1-e5",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "30378c1c95b1-e1",
+              "excerpt": "--- TABLE ---\nLaw and Public Service Career                                                          Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nComputer\nPromethean board\nInternet access | Resources:\nLesson plan\nComputer\nPromethean board\nInternet access | Resources:\nLesson plan\nComputer\nPromethean board\nInternet access\nTEKS Student Expectation(s):\n\u00a7127.2. Career and College Expl"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "30378c1c95b1-e3",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "30378c1c95b1-e4",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 5,
+        "partial": 2,
+        "missing": 1,
+        "coverage": 0.625,
+        "required_total": 4,
+        "required_present": 2,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "curriculum_own_dallas_career_2026",
+      "rubric_version": "v1-dallas-ctat-2026-07",
+      "scoring": "presence",
+      "lesson_id": "30378c1c95b1",
+      "criteria": [
+        {
+          "criterion_id": "learning_target",
+          "label": "Learning target / objective",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "teks_alignment",
+          "label": "TEKS listed and aligned to objective",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "30378c1c95b1-e1",
+              "excerpt": "--- TABLE ---\nLaw and Public Service Career                                                          Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nComputer\nPromethean board\nInternet access | Resources:\nLesson plan\nComputer\nPromethean board\nInternet access | Resources:\nLesson plan\nComputer\nPromethean board\nInternet access\nTEKS Student Expectation(s):\n\u00a7127.2. Career and College Expl"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "materials_prep",
+          "label": "Materials, supplies & teacher prep",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "30378c1c95b1-e1",
+              "excerpt": "--- TABLE ---\nLaw and Public Service Career                                                          Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nComputer\nPromethean board\nInternet access | Resources:\nLesson plan\nComputer\nPromethean board\nInternet access | Resources:\nLesson plan\nComputer\nPromethean board\nInternet access\nTEKS Student Expectation(s):\n\u00a7127.2. Career and College Expl"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "instructional_activities",
+          "label": "Instructional activities (launch -> activities -> closure)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "30378c1c95b1-e1",
+              "excerpt": "--- TABLE ---\nLaw and Public Service Career                                                          Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nComputer\nPromethean board\nInternet access | Resources:\nLesson plan\nComputer\nPromethean board\nInternet access | Resources:\nLesson plan\nComputer\nPromethean board\nInternet access\nTEKS Student Expectation(s):\n\u00a7127.2. Career and College Expl"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "formative_assessment",
+          "label": "Formative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "30378c1c95b1-e5",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "summative_assessment",
+          "label": "Summative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "30378c1c95b1-e5",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "elps_strategies",
+          "label": "ELPS / language strategies",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "cte_essentials",
+          "label": "CTE essential unit elements",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "30378c1c95b1-e1",
+              "excerpt": "--- TABLE ---\nLaw and Public Service Career                                                          Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nComputer\nPromethean board\nInternet access | Resources:\nLesson plan\nComputer\nPromethean board\nInternet access | Resources:\nLesson plan\nComputer\nPromethean board\nInternet access\nTEKS Student Expectation(s):\n\u00a7127.2. Career and College Expl"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 3,
+        "partial": 3,
+        "missing": 2,
+        "coverage": 0.375,
+        "required_total": 5,
+        "required_present": 2,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.625,
+    "s3_curriculum_own": 0.375
+  },
+  "divergence": 0.25
+}

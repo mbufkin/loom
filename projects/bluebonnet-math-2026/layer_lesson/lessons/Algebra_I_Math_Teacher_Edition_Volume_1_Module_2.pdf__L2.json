@@ -1,0 +1,281 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L2",
+  "unit_id": "alg1-mod-2",
+  "title": "Algebra I Math Teacher Edition Volume 1 Module 2 \u2014 Lesson 2",
+  "element_count": 32,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L2",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk3of17-e5",
+              "excerpt": "ELPS\n(1) Learning Strategies\nThe student is expected to:\n(E) internalize new basic and academic language by using\nand reusing it in meaningful ways in speaking and writing\nactivities that build concept and language attainment.\n(2) Listening\nThe student is expected to:\n(E) use visual, contextual, and linguistic support to enhance\nand confirm understanding of increasingly complex and\nelaborated spok"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk4of17-e11",
+              "excerpt": "MODULE 2 \u2022 TOPIC 1 \u2022 LESSON 2 165K\n\n\n165L\n\nMODULE 2 \u2022 TOPIC 1 \u2022 LESSON 2\n\n\n2"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk4of17-e2",
+              "excerpt": "the directions.\n\nConsider each relationship shown.\n\n\u2022 Group students to\n\n1. Describe any associations between the independent and dependent\nvariables, and then draw a line of best fit, if possible.\n\ncomplete the activity.\n\n\u2022 Share and summarize.\n\nb.\n\ny\n\nWeight of Vehicle\n\nFor \u201cIntermediate\u201d\nand higher\nproficiency levels\nReview the meaning\nof the phrase\nline of best fit by\nbreaking it down\nand firs"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk4of17-e5",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk4of17-e12",
+              "excerpt": "Have students read and answer the Essential Question on the lesson\nopener page.\n\nSummary"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk4of17-e3",
+              "excerpt": "A measure of how well a regression model fits a set of data is called\ncorrelation. The correlation coefficient is a value between 21 and 1,\nwhich indicates how close the data are to the graph of the regression\nfunction. The closer the correlation coefficient is to 1 or 21, the\nstronger the relationship is between the two variables. The variable r is\nused to represent the correlation coefficient.\n1"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk3of17-e4",
+              "excerpt": "\n2\n\nCorrelation\nMATERIALS\n\nLESSON OVERVIEW\n\nGraphing Technology\n\nThis lesson provides several definitions related to correlations. The terms\ncorrelation and correlation coefficient are defined. The formula to compute\nthe correlation coefficient is given; however, students are only required\nto use technology to determine the value of r or to estimate correlation\ncoefficients from a list of choices."
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk3of17-e4",
+              "excerpt": "\n2\n\nCorrelation\nMATERIALS\n\nLESSON OVERVIEW\n\nGraphing Technology\n\nThis lesson provides several definitions related to correlations. The terms\ncorrelation and correlation coefficient are defined. The formula to compute\nthe correlation coefficient is given; however, students are only required\nto use technology to determine the value of r or to estimate correlation\ncoefficients from a list of choices."
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L2",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk3of17-e5",
+              "excerpt": "ELPS\n(1) Learning Strategies\nThe student is expected to:\n(E) internalize new basic and academic language by using\nand reusing it in meaningful ways in speaking and writing\nactivities that build concept and language attainment.\n(2) Listening\nThe student is expected to:\n(E) use visual, contextual, and linguistic support to enhance\nand confirm understanding of increasingly complex and\nelaborated spok"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk4of17-e11",
+              "excerpt": "MODULE 2 \u2022 TOPIC 1 \u2022 LESSON 2 165K\n\n\n165L\n\nMODULE 2 \u2022 TOPIC 1 \u2022 LESSON 2\n\n\n2"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk4of17-e2",
+              "excerpt": "the directions.\n\nConsider each relationship shown.\n\n\u2022 Group students to\n\n1. Describe any associations between the independent and dependent\nvariables, and then draw a line of best fit, if possible.\n\ncomplete the activity.\n\n\u2022 Share and summarize.\n\nb.\n\ny\n\nWeight of Vehicle\n\nFor \u201cIntermediate\u201d\nand higher\nproficiency levels\nReview the meaning\nof the phrase\nline of best fit by\nbreaking it down\nand firs"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk4of17-e5",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk4of17-e12",
+              "excerpt": "Have students read and answer the Essential Question on the lesson\nopener page.\n\nSummary"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk4of17-e3",
+              "excerpt": "A measure of how well a regression model fits a set of data is called\ncorrelation. The correlation coefficient is a value between 21 and 1,\nwhich indicates how close the data are to the graph of the regression\nfunction. The closer the correlation coefficient is to 1 or 21, the\nstronger the relationship is between the two variables. The variable r is\nused to represent the correlation coefficient.\n1"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk3of17-e4",
+              "excerpt": "\n2\n\nCorrelation\nMATERIALS\n\nLESSON OVERVIEW\n\nGraphing Technology\n\nThis lesson provides several definitions related to correlations. The terms\ncorrelation and correlation coefficient are defined. The formula to compute\nthe correlation coefficient is given; however, students are only required\nto use technology to determine the value of r or to estimate correlation\ncoefficients from a list of choices."
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk3of17-e4",
+              "excerpt": "\n2\n\nCorrelation\nMATERIALS\n\nLESSON OVERVIEW\n\nGraphing Technology\n\nThis lesson provides several definitions related to correlations. The terms\ncorrelation and correlation coefficient are defined. The formula to compute\nthe correlation coefficient is given; however, students are only required\nto use technology to determine the value of r or to estimate correlation\ncoefficients from a list of choices."
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.875,
+    "s3_curriculum_own": 0.875
+  },
+  "divergence": 0.0
+}

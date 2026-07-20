@@ -1,0 +1,261 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf__L3",
+  "unit_id": "alg1-mod-4",
+  "title": "Algebra I Math Teacher Edition Volume 2 Module 4 \u2014 Lesson 3",
+  "element_count": 16,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf__L3",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk1of13-e8",
+              "excerpt": "TEKS* Addressed:\nA.3B, A.3C, A.9A, A.9B, A.9C, A.9D, A.9E, A.11A, A.11B\nA.12B, A.12C, A.12D\n\n*Bold TEKS = Readiness Standard\n\nInvestigating Growth and Decay\nSessions: 25\n\nWhy is this module named Investigating Growth and Decay?\nStudents are familiar with constant differences\u2014\nwhere the ratio of output values to input values\nis the same across the function\u2019s domain.\nIn this module, however, the fun"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk1of13-e7",
+              "excerpt": "Highlights\n\nThe terms power, base of a power, and exponent of a power are\ndefined. Students write and evaluate expressions with positive\ninteger exponents. They begin with a context using the power\nwith a base of 2. Students then investigate positive and negative\ninteger bases where the negative sign may or may not be raised\nto a power depending on the placement of parentheses. Some\nexpressions al"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk2of13-e1",
+              "excerpt": "Facilitation Notes\n\nDEVELOP"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk5of13-e6",
+              "excerpt": "Probing\n\n\u2022 What is the relationship between the Square Number\n\nvalues and the exponents in the Power column? Why don\u2019t\nthey match exactly?\n\n\u2022 How can you tell this graph represents an\n\nexponential function?\n\n\u2022 Select a point on the graph and describe what it represents.\n\u2022 How can you identify the constant ratio in the table\u2019s\n\nmiddle column?\n\n\u2022 Describe how to use two points on the graph to calcul"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk6of13-e2",
+              "excerpt": "The table cannot be\nrepresented with an\nexponential function.\n\ny\n\nd.\n\u22124"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk5of13-e7",
+              "excerpt": "To close the Day 1 session, have students reread the Essential\nQuestion and read the activity summaries to the class.\n\nSummary\n\nAll geometric sequences are functions; however, only geometric sequences\nwith a positive constant ratio are exponential functions. Geometric sequences\nexpressed in explicit form that represent exponential functions can be\nrewritten in function form, f\u200b (x) 5 abx\u200b, where b"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 0,
+        "missing": 2,
+        "coverage": 0.75,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf__L3",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk1of13-e8",
+              "excerpt": "TEKS* Addressed:\nA.3B, A.3C, A.9A, A.9B, A.9C, A.9D, A.9E, A.11A, A.11B\nA.12B, A.12C, A.12D\n\n*Bold TEKS = Readiness Standard\n\nInvestigating Growth and Decay\nSessions: 25\n\nWhy is this module named Investigating Growth and Decay?\nStudents are familiar with constant differences\u2014\nwhere the ratio of output values to input values\nis the same across the function\u2019s domain.\nIn this module, however, the fun"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk1of13-e7",
+              "excerpt": "Highlights\n\nThe terms power, base of a power, and exponent of a power are\ndefined. Students write and evaluate expressions with positive\ninteger exponents. They begin with a context using the power\nwith a base of 2. Students then investigate positive and negative\ninteger bases where the negative sign may or may not be raised\nto a power depending on the placement of parentheses. Some\nexpressions al"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk2of13-e1",
+              "excerpt": "Facilitation Notes\n\nDEVELOP"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk5of13-e6",
+              "excerpt": "Probing\n\n\u2022 What is the relationship between the Square Number\n\nvalues and the exponents in the Power column? Why don\u2019t\nthey match exactly?\n\n\u2022 How can you tell this graph represents an\n\nexponential function?\n\n\u2022 Select a point on the graph and describe what it represents.\n\u2022 How can you identify the constant ratio in the table\u2019s\n\nmiddle column?\n\n\u2022 Describe how to use two points on the graph to calcul"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk6of13-e2",
+              "excerpt": "The table cannot be\nrepresented with an\nexponential function.\n\ny\n\nd.\n\u22124"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk5of13-e7",
+              "excerpt": "To close the Day 1 session, have students reread the Essential\nQuestion and read the activity summaries to the class.\n\nSummary\n\nAll geometric sequences are functions; however, only geometric sequences\nwith a positive constant ratio are exponential functions. Geometric sequences\nexpressed in explicit form that represent exponential functions can be\nrewritten in function form, f\u200b (x) 5 abx\u200b, where b"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 0,
+        "missing": 2,
+        "coverage": 0.75,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.75,
+    "s3_curriculum_own": 0.75
+  },
+  "divergence": 0.0
+}

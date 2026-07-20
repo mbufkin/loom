@@ -1,0 +1,281 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf__L2",
+  "unit_id": "alg1-mod-1",
+  "title": "Algebra I Math Teacher Edition Volume 1 Module 1 \u2014 Lesson 2",
+  "element_count": 15,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf__L2",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk3of12-e5",
+              "excerpt": "ALGEBRA I TEKS\nMathematical Process Standards\n(1) The student uses mathematical processes to acquire and\ndemonstrate mathematical understanding.\nThe student is expected to:\n\nGraph Cards (located at the\nend of the lesson)\n\nELPS\n(1) Learning Strategies\nThe student is expected to:\n(A) use prior knowledge and experiences to understand\nmeanings in English.\n\nA.1E create and use representations to organi"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk9of12-e6",
+              "excerpt": "\nWhy is this page blank?\n\nSo you can cut out the Sequence Cards on the other side"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk3of12-e5",
+              "excerpt": "ALGEBRA I TEKS\nMathematical Process Standards\n(1) The student uses mathematical processes to acquire and\ndemonstrate mathematical understanding.\nThe student is expected to:\n\nGraph Cards (located at the\nend of the lesson)\n\nELPS\n(1) Learning Strategies\nThe student is expected to:\n(A) use prior knowledge and experiences to understand\nmeanings in English.\n\nA.1E create and use representations to organi"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk9of12-e3",
+              "excerpt": "Probing\n\n\u2022 How do you apply a common difference to create\n\na sequence?\n\nSeeing\nstructure\n\n\u2022 Is there more than one possible sequence for this\n\nGathering\n\n\u2022 How do you know this sequence is geometric?\n\nProbing\n\n\u2022 How do you apply a common ratio to create a sequence?\n\ncriteria? Explain your thinking.\n\nHave students read and answer the Essential Question on the lesson\nopener page.\n\nSummary\n\nA unique "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk11of12-e1",
+              "excerpt": "While a common ratio or a common difference can help you determine\nthe next term in a sequence, how can they help you determine\nthe thousandth term of a sequence? The ten-thousandth term of\na sequence?\n\nNotice that the first\nterm in this sequence\nis the amount Jamal\ndonates if the team\nhits 0 home runs."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk9of12-e2",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 1 DAY\nENGAGE\nGetting Started: What Comes Next, and How Do You Know? 10\u201315 minutes\nESTABLISH A SITUATION\nStudents generate several additional terms for 8 different numeric sequences and describe the\nrule they used for each sequence. They sort the sequences into groups based upon common\ncharacteristics of their choosing and explain their rationale.\n\nDEVELOP\nActivity 2.1"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk4of12-e15",
+              "excerpt": "Remember\n\nWrite\n\nDescribe the importance of\ngraphical representations.\n\nGraphs of relationships between quantities have\ncharacteristics that can give you important information\nabout the relationship. For example, a graph can be\nincreasing, decreasing, neither increasing nor decreasing,\nor both increasing and decreasing. A graph can have\nstraight lines or smooth curves, a maximum or a\nminimum, or n"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk9of12-e4",
+              "excerpt": "An arithmetic sequence is a sequence of numbers in which a positive or\nnegative constant, called the constant difference, is added to each term to\nproduce the next term. A geometric sequence is a sequence of numbers\nin which you multiply each term by a constant, called the common ratio, to\ndetermine the next term.\n\nSTAMP THE\nLEARNING\n\nMODULE 1 \u2022 TOPIC 2 \u2022 LESSON 2\n\n95G\n\n\nAC TI V IT Y\n\n2.2\n\nMatchin"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 2,
+        "missing": 0,
+        "coverage": 0.75,
+        "required_total": 4,
+        "required_present": 3,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf__L2",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk3of12-e5",
+              "excerpt": "ALGEBRA I TEKS\nMathematical Process Standards\n(1) The student uses mathematical processes to acquire and\ndemonstrate mathematical understanding.\nThe student is expected to:\n\nGraph Cards (located at the\nend of the lesson)\n\nELPS\n(1) Learning Strategies\nThe student is expected to:\n(A) use prior knowledge and experiences to understand\nmeanings in English.\n\nA.1E create and use representations to organi"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk9of12-e6",
+              "excerpt": "\nWhy is this page blank?\n\nSo you can cut out the Sequence Cards on the other side"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk3of12-e5",
+              "excerpt": "ALGEBRA I TEKS\nMathematical Process Standards\n(1) The student uses mathematical processes to acquire and\ndemonstrate mathematical understanding.\nThe student is expected to:\n\nGraph Cards (located at the\nend of the lesson)\n\nELPS\n(1) Learning Strategies\nThe student is expected to:\n(A) use prior knowledge and experiences to understand\nmeanings in English.\n\nA.1E create and use representations to organi"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk9of12-e3",
+              "excerpt": "Probing\n\n\u2022 How do you apply a common difference to create\n\na sequence?\n\nSeeing\nstructure\n\n\u2022 Is there more than one possible sequence for this\n\nGathering\n\n\u2022 How do you know this sequence is geometric?\n\nProbing\n\n\u2022 How do you apply a common ratio to create a sequence?\n\ncriteria? Explain your thinking.\n\nHave students read and answer the Essential Question on the lesson\nopener page.\n\nSummary\n\nA unique "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk11of12-e1",
+              "excerpt": "While a common ratio or a common difference can help you determine\nthe next term in a sequence, how can they help you determine\nthe thousandth term of a sequence? The ten-thousandth term of\na sequence?\n\nNotice that the first\nterm in this sequence\nis the amount Jamal\ndonates if the team\nhits 0 home runs."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk9of12-e2",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 1 DAY\nENGAGE\nGetting Started: What Comes Next, and How Do You Know? 10\u201315 minutes\nESTABLISH A SITUATION\nStudents generate several additional terms for 8 different numeric sequences and describe the\nrule they used for each sequence. They sort the sequences into groups based upon common\ncharacteristics of their choosing and explain their rationale.\n\nDEVELOP\nActivity 2.1"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk4of12-e15",
+              "excerpt": "Remember\n\nWrite\n\nDescribe the importance of\ngraphical representations.\n\nGraphs of relationships between quantities have\ncharacteristics that can give you important information\nabout the relationship. For example, a graph can be\nincreasing, decreasing, neither increasing nor decreasing,\nor both increasing and decreasing. A graph can have\nstraight lines or smooth curves, a maximum or a\nminimum, or n"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk9of12-e4",
+              "excerpt": "An arithmetic sequence is a sequence of numbers in which a positive or\nnegative constant, called the constant difference, is added to each term to\nproduce the next term. A geometric sequence is a sequence of numbers\nin which you multiply each term by a constant, called the common ratio, to\ndetermine the next term.\n\nSTAMP THE\nLEARNING\n\nMODULE 1 \u2022 TOPIC 2 \u2022 LESSON 2\n\n95G\n\n\nAC TI V IT Y\n\n2.2\n\nMatchin"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 2,
+        "missing": 0,
+        "coverage": 0.75,
+        "required_total": 4,
+        "required_present": 3,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.75,
+    "s3_curriculum_own": 0.75
+  },
+  "divergence": 0.0
+}

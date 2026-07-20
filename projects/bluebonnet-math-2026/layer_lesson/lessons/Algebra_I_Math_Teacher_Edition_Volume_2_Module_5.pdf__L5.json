@@ -1,0 +1,271 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf__L5",
+  "unit_id": "alg1-mod-5",
+  "title": "Algebra I Math Teacher Edition Volume 2 Module 5 \u2014 Lesson 5",
+  "element_count": 18,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf__L5",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e10",
+              "excerpt": "problem situation.\n\n\u2022 Use graphs of quadratic functions to make estimations\n\nand predictions.\n\nYou know how to model data with regression.\nHow can you determine whether a quadratic regression model\nmay best model the data?\nSample answer:\nI can use quadratic regression models to represent real-world situations and interpret them\nin context."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e12",
+              "excerpt": "\u2022 Group students to\n\ncomplete the activity.\n\n\u2022 Share and summarize.\n\nThe first step of the\nmodeling process is\n\nOptimizing Learning\nThis activity offers ways\nof customizing the display\nof information.\n\nTemperature of Can\n(8F)\n\nSoda Volume\ncm3"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e6",
+              "excerpt": "Some data in context can be modeled by a quadratic regression model. The\nregression model can be used to make estimations and predictions; however,\nthere may be limitations on the domain depending on the context.\nAC TI V IT Y\n\n5. 2\n\nAnalyzing a Quadratic Model\n\nFacilitation Notes"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e4",
+              "excerpt": "Probing\n\nto determine the temperatures?\n\u2022 Do you think your predictions are relatively accurate?\n\nWhy or why not?"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e3",
+              "excerpt": "Have students work with a partner or in a group to complete\nQuestions 4 and 5. Share responses as a class.\n\nMODULE 5 \u2022 TOPIC 3 \u2022 LESSON 5 901E"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e20",
+              "excerpt": "Ask Yourself . . .\nHow can you\nuse quadratic\nregression\nmodels in\neveryday life?\n\ncomplete the activity.\n\n\u2022 Share and summarize.\n\u2022 Have students answer\n\nthe Essential Question\non the lesson opener.\n\n1. Does the data appear to be linear or quadratic?\nThe data appears to be quadratic in nature.\n2. Use graphing technology to determine the regression model of best\nfit and calculate the correlation coe"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e9",
+              "excerpt": "Summary\n\nThere are instances in which real-world data can be modeled by a quadratic\nregression model.\n\n901H MODULE 5 \u2022 TOPIC 3 \u2022 LESSON 5\n\n\n5\n\nUsing Quadratic Functions\nLiteral Equations\nto Model Data\n\nSetting the Stage\n\u2022 Communicate the\n\nobjectives."
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 5,
+        "partial": 2,
+        "missing": 1,
+        "coverage": 0.625,
+        "required_total": 4,
+        "required_present": 3,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf__L5",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e10",
+              "excerpt": "problem situation.\n\n\u2022 Use graphs of quadratic functions to make estimations\n\nand predictions.\n\nYou know how to model data with regression.\nHow can you determine whether a quadratic regression model\nmay best model the data?\nSample answer:\nI can use quadratic regression models to represent real-world situations and interpret them\nin context."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e12",
+              "excerpt": "\u2022 Group students to\n\ncomplete the activity.\n\n\u2022 Share and summarize.\n\nThe first step of the\nmodeling process is\n\nOptimizing Learning\nThis activity offers ways\nof customizing the display\nof information.\n\nTemperature of Can\n(8F)\n\nSoda Volume\ncm3"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e6",
+              "excerpt": "Some data in context can be modeled by a quadratic regression model. The\nregression model can be used to make estimations and predictions; however,\nthere may be limitations on the domain depending on the context.\nAC TI V IT Y\n\n5. 2\n\nAnalyzing a Quadratic Model\n\nFacilitation Notes"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e4",
+              "excerpt": "Probing\n\nto determine the temperatures?\n\u2022 Do you think your predictions are relatively accurate?\n\nWhy or why not?"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e3",
+              "excerpt": "Have students work with a partner or in a group to complete\nQuestions 4 and 5. Share responses as a class.\n\nMODULE 5 \u2022 TOPIC 3 \u2022 LESSON 5 901E"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e20",
+              "excerpt": "Ask Yourself . . .\nHow can you\nuse quadratic\nregression\nmodels in\neveryday life?\n\ncomplete the activity.\n\n\u2022 Share and summarize.\n\u2022 Have students answer\n\nthe Essential Question\non the lesson opener.\n\n1. Does the data appear to be linear or quadratic?\nThe data appears to be quadratic in nature.\n2. Use graphing technology to determine the regression model of best\nfit and calculate the correlation coe"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk22of23-e9",
+              "excerpt": "Summary\n\nThere are instances in which real-world data can be modeled by a quadratic\nregression model.\n\n901H MODULE 5 \u2022 TOPIC 3 \u2022 LESSON 5\n\n\n5\n\nUsing Quadratic Functions\nLiteral Equations\nto Model Data\n\nSetting the Stage\n\u2022 Communicate the\n\nobjectives."
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 5,
+        "partial": 2,
+        "missing": 1,
+        "coverage": 0.625,
+        "required_total": 4,
+        "required_present": 3,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.625,
+    "s3_curriculum_own": 0.625
+  },
+  "divergence": 0.0
+}

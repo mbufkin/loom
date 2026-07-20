@@ -1,0 +1,241 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L5",
+  "unit_id": "alg1-mod-3",
+  "title": "Algebra I Math Teacher Edition Volume 1 Module 3 \u2014 Lesson 5",
+  "element_count": 4,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L5",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk13of15-e2",
+              "excerpt": "You have graphed a linear inequality in two variables and\ninterpreted the solutions.\nWhat does the graph of a system of linear inequalities look like,\nand how can you describe the solution set?\nSample answer:\nThe graph of a system of linear inequalities is a plane that shows two lines, one or both of which\ncould be dashed lines, and shading in one or more regions defined by the intersection of\nthe"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk13of15-e4",
+              "excerpt": "5.1\n\nChunking the Activity\n\u2022 Read and discuss\n\nIn a system of linear inequalities, the inequalities are known as\nconstraints because the values of the expressions are \u201cconstrained\u201d\nto lie within a certain region on the graph.\n\nthe definition.\n\n\u2022 Group students to\n\ncomplete the activity.\n\n1. Let\u2019s consider two trips that Noah guides. Determine whether\neach combination of rafters is a solution of th"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk13of15-e3",
+              "excerpt": "\nGetting Started\nChunking the Activity\n\nA River Runs Through It\n\n\u2022 Read and discuss\n\nthe introduction.\n\nNoah is an experienced whitewater rafter who guides groups of adults\nand children out on the water for amazing adventures. The raft he uses\ncan hold 800 pounds of weight. Any weight greater than 800 pounds\ncan cause the raft to sink, hit more rocks, and/or maneuver more slowly.\n\n\u2022 Group students"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk13of15-e5",
+              "excerpt": "STAMP THE\nLEARNING\n\n3. Analyze your graph.\n\nThe definition\nprovides an\nopportunity for\nexplicit instruction.\nInteract with this\ninformation as a\nclass and encourage\nstudents to restate\nor explain the\ninformation in their\nown words.\n\na. Describe the possible number of solutions for a system\nof linear inequalities.\nA system of linear inequalities can have many solutions as long as\nthe half-planes ov"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 4,
+        "partial": 0,
+        "missing": 4,
+        "coverage": 0.5,
+        "required_total": 4,
+        "required_present": 2,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L5",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk13of15-e2",
+              "excerpt": "You have graphed a linear inequality in two variables and\ninterpreted the solutions.\nWhat does the graph of a system of linear inequalities look like,\nand how can you describe the solution set?\nSample answer:\nThe graph of a system of linear inequalities is a plane that shows two lines, one or both of which\ncould be dashed lines, and shading in one or more regions defined by the intersection of\nthe"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk13of15-e4",
+              "excerpt": "5.1\n\nChunking the Activity\n\u2022 Read and discuss\n\nIn a system of linear inequalities, the inequalities are known as\nconstraints because the values of the expressions are \u201cconstrained\u201d\nto lie within a certain region on the graph.\n\nthe definition.\n\n\u2022 Group students to\n\ncomplete the activity.\n\n1. Let\u2019s consider two trips that Noah guides. Determine whether\neach combination of rafters is a solution of th"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk13of15-e3",
+              "excerpt": "\nGetting Started\nChunking the Activity\n\nA River Runs Through It\n\n\u2022 Read and discuss\n\nthe introduction.\n\nNoah is an experienced whitewater rafter who guides groups of adults\nand children out on the water for amazing adventures. The raft he uses\ncan hold 800 pounds of weight. Any weight greater than 800 pounds\ncan cause the raft to sink, hit more rocks, and/or maneuver more slowly.\n\n\u2022 Group students"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk13of15-e5",
+              "excerpt": "STAMP THE\nLEARNING\n\n3. Analyze your graph.\n\nThe definition\nprovides an\nopportunity for\nexplicit instruction.\nInteract with this\ninformation as a\nclass and encourage\nstudents to restate\nor explain the\ninformation in their\nown words.\n\na. Describe the possible number of solutions for a system\nof linear inequalities.\nA system of linear inequalities can have many solutions as long as\nthe half-planes ov"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 4,
+        "partial": 0,
+        "missing": 4,
+        "coverage": 0.5,
+        "required_total": 4,
+        "required_present": 2,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.5,
+    "s3_curriculum_own": 0.5
+  },
+  "divergence": 0.0
+}

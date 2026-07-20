@@ -1,0 +1,251 @@
+{
+  "lesson_id": "4b97944cd264",
+  "unit_id": "engineering",
+  "title": "Engineering Lesson",
+  "element_count": 5,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "4b97944cd264",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "4b97944cd264-e1",
+              "excerpt": "Learning Objective\n\nUse the engineering design process to design, build, and test a paper airplane launcher\nUnderstand how potential energy is converted to kinetic energy when using the launcher"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "4b97944cd264-e2",
+              "excerpt": "@DallasISDCTE\n\ndallasisd.org/cte"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "4b97944cd264-e4",
+              "excerpt": "Explain\n\nPotential and Kinetic Energy\n\nWhat do you already know about potential and kinetic energy?\n\nPotential and Kinetic Energy\n\nhttps://youtu.be/BSWl_Zj-CZs\n\n\nKinetic energy is the energy of an object due to its _____.\nA.position\nB.motion\nC.friction\nD.chemicals\n\nWhat is the unit of work?\nA.Joules\nB.Newton\nC.Kilogram\nD.Meter per second\n\nExplain\n\nPaper airplane launcher video\n\nPotential and Kinet"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "4b97944cd264-e3",
+              "excerpt": "A regular airport runway is much longer than an aircraft carrier. The biggest aircraft carrier is just over 1,000 feet long, but airport runways can typically be more than 6,000 feet long (over a mile!).\n\nDesign a Paper Airplane Launcher"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "4b97944cd264-e5",
+              "excerpt": "Design\n\nPaper clip attachment\n\nExplore Activity\n\nSketch your paper airplane designs. Sketch on journal.\n\nDesign\n\nExplore Activity\n\nAfter agreeing on a design, you should start building.\n\nBuild\n\nExplore Activity\n\nRecord the results in your worksheet.\n\nBuild\n\nConnect with Dallas ISD CTE"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 5,
+        "partial": 0,
+        "missing": 3,
+        "coverage": 0.625,
+        "required_total": 4,
+        "required_present": 3,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "curriculum_own_dallas_career_2026",
+      "rubric_version": "v1-dallas-ctat-2026-07",
+      "scoring": "presence",
+      "lesson_id": "4b97944cd264",
+      "criteria": [
+        {
+          "criterion_id": "learning_target",
+          "label": "Learning target / objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "4b97944cd264-e1",
+              "excerpt": "Learning Objective\n\nUse the engineering design process to design, build, and test a paper airplane launcher\nUnderstand how potential energy is converted to kinetic energy when using the launcher"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "teks_alignment",
+          "label": "TEKS listed and aligned to objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "4b97944cd264-e1",
+              "excerpt": "Learning Objective\n\nUse the engineering design process to design, build, and test a paper airplane launcher\nUnderstand how potential energy is converted to kinetic energy when using the launcher"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "materials_prep",
+          "label": "Materials, supplies & teacher prep",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "4b97944cd264-e2",
+              "excerpt": "@DallasISDCTE\n\ndallasisd.org/cte"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "instructional_activities",
+          "label": "Instructional activities (launch -> activities -> closure)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "4b97944cd264-e3",
+              "excerpt": "A regular airport runway is much longer than an aircraft carrier. The biggest aircraft carrier is just over 1,000 feet long, but airport runways can typically be more than 6,000 feet long (over a mile!).\n\nDesign a Paper Airplane Launcher"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "formative_assessment",
+          "label": "Formative assessment",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "summative_assessment",
+          "label": "Summative assessment",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "4b97944cd264-e1",
+              "excerpt": "Learning Objective\n\nUse the engineering design process to design, build, and test a paper airplane launcher\nUnderstand how potential energy is converted to kinetic energy when using the launcher"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "elps_strategies",
+          "label": "ELPS / language strategies",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "cte_essentials",
+          "label": "CTE essential unit elements",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 4,
+        "partial": 1,
+        "missing": 3,
+        "coverage": 0.5,
+        "required_total": 5,
+        "required_present": 4,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.625,
+    "s3_curriculum_own": 0.5
+  },
+  "divergence": 0.125
+}

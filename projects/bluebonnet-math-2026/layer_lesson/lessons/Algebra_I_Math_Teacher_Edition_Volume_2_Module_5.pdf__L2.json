@@ -1,0 +1,281 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf__L2",
+  "unit_id": "alg1-mod-5",
+  "title": "Algebra I Math Teacher Edition Volume 2 Module 5 \u2014 Lesson 2",
+  "element_count": 38,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf__L2",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk4of23-e11",
+              "excerpt": "Summary\n\nWhen a quadratic function has a positive leading coefficient, the graph\nopens upward, and when the leading coefficient is negative, the graph\nopens downward.\nAC TI V IT Y\n\n2 .3\n\nAxis of Symmetry\n\nFacilitation Notes\n\nIn this activity, the terms vertex of a parabola and axis of symmetry are defined.\nKnowing that the absolute maximum or minimum lies on the axis of symmetry,\nstudents determin"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk4of23-e10",
+              "excerpt": "\nDIFFERENTIATION STRATEGY\nAccess for All\nMaterials Needed: Poster Paper\nHave students create posters that identify key characteristics of linear\nfunctions with both positive and negative slopes, and quadratic functions with\nboth positive and negative leading coefficients.\n\nTo close the Day 1 session, have students reread the Essential\nQuestion and read the activity summaries to the class.\nSTAMP TH"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk4of23-e2",
+              "excerpt": "DEVELOP\nActivity 2.1: Second Differences 30\u201335 minutes\nINVESTIGATION\nStudents are presented with a table of values where the first differences are calculated. They\ncalculate the second differences and notice the second differences for a quadratic function are\nconstant. Two graphs are provided, which allow students to visually compare the magnitude of\nthe first and second differences between consec"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk4of23-e5",
+              "excerpt": "\nGetting Started\nDogs, Handshakes,\nPumpkins, and the Alamo\n\nENGAGE\n\nFacilitation Notes\n\nIn this activity, students revisit the four scenarios from the previous lesson. The\nequation, the graph, and a table of values is given for each situation, and students\nuse these multiple representations to identify key characteristics of quadratics.\n\nHave students work with a partner or in a group to complete\n"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk4of23-e1",
+              "excerpt": "MODULE 5 \u2022 TOPIC 1 \u2022 LESSON 2\n\n\nLESSON STRUCTURE AND PACING: 3 DAYS\nDAY 1\nENGAGE\nGetting Started: Dogs, Handshakes, Pumpkins, and the Alamo 10\u201315 minutes\nESTABLISH A SITUATION\nStudents revisit the four scenarios from the previous lesson. The equation, graph, and a table of\nvalues is given for each situation and students use these multiple representations to identify key\ncharacteristics of quadrati"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk4of23-e3",
+              "excerpt": "Activity 2.3: Axis of Symmetry 30\u201335 minutes\nINVESTIGATION\nThe terms vertex of a parabola and axis of symmetry are defined. Knowing that the absolute\nmaximum or minimum lies on the axis of symmetry, students determine that this point can\nbe calculated by substituting the x-value of the axis of symmetry into the quadratic function.\nIntervals of increase and decrease are then determined using the x-"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk18of23-e3",
+              "excerpt": "y\n\nSample answer:\nf(x) 5 x2 1 4\n\n8\n4\n\u22128\n\n\u22124\n\n0\n\n4\n\n8\n\nx\n\n\u22124\n\u22128\n\n852\n\nMODULE 5 \u2022 TOPIC 3 \u2022 LESSON 2\n\nTXOER_A1_M05_T03_L02_Student Lesson.indd 852\n\n852\n\nMODULE 5 \u2022 TOPIC 3 \u2022 LESSON 2\n\n11/05/24 5:21 PM\n\n\nLesson 2\n3 Assignment\nWrite\n\nRemember\n\nDescribe the number of\npossible real zeros for any\nquadratic function.\n\nThe solutions to a quadratic equation can be represented\nas the axis of symmetry plus or"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk4of23-e9",
+              "excerpt": "In factored form, f(x) 5 a(x 2 r1)(x 2 r2), the values of (r1, 0) and (r2, 0) are the\nx-intercepts of the quadratic function. In standard form, f(x) 5 ax2 1 bx 1 c,\n(0, c) is the y-intercept of the quadratic function.\n\nSTAMP THE\nLEARNING\n\nTalk the Talk\n\nQUADRATIC SLEUTHING\n\nFacilitation Notes\n\nIn this activity, students determine the axis of symmetry, the vertex, or another\npoint on the graph of a"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf__L2",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk4of23-e11",
+              "excerpt": "Summary\n\nWhen a quadratic function has a positive leading coefficient, the graph\nopens upward, and when the leading coefficient is negative, the graph\nopens downward.\nAC TI V IT Y\n\n2 .3\n\nAxis of Symmetry\n\nFacilitation Notes\n\nIn this activity, the terms vertex of a parabola and axis of symmetry are defined.\nKnowing that the absolute maximum or minimum lies on the axis of symmetry,\nstudents determin"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk4of23-e10",
+              "excerpt": "\nDIFFERENTIATION STRATEGY\nAccess for All\nMaterials Needed: Poster Paper\nHave students create posters that identify key characteristics of linear\nfunctions with both positive and negative slopes, and quadratic functions with\nboth positive and negative leading coefficients.\n\nTo close the Day 1 session, have students reread the Essential\nQuestion and read the activity summaries to the class.\nSTAMP TH"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk4of23-e2",
+              "excerpt": "DEVELOP\nActivity 2.1: Second Differences 30\u201335 minutes\nINVESTIGATION\nStudents are presented with a table of values where the first differences are calculated. They\ncalculate the second differences and notice the second differences for a quadratic function are\nconstant. Two graphs are provided, which allow students to visually compare the magnitude of\nthe first and second differences between consec"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk4of23-e5",
+              "excerpt": "\nGetting Started\nDogs, Handshakes,\nPumpkins, and the Alamo\n\nENGAGE\n\nFacilitation Notes\n\nIn this activity, students revisit the four scenarios from the previous lesson. The\nequation, the graph, and a table of values is given for each situation, and students\nuse these multiple representations to identify key characteristics of quadratics.\n\nHave students work with a partner or in a group to complete\n"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk4of23-e1",
+              "excerpt": "MODULE 5 \u2022 TOPIC 1 \u2022 LESSON 2\n\n\nLESSON STRUCTURE AND PACING: 3 DAYS\nDAY 1\nENGAGE\nGetting Started: Dogs, Handshakes, Pumpkins, and the Alamo 10\u201315 minutes\nESTABLISH A SITUATION\nStudents revisit the four scenarios from the previous lesson. The equation, graph, and a table of\nvalues is given for each situation and students use these multiple representations to identify key\ncharacteristics of quadrati"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk4of23-e3",
+              "excerpt": "Activity 2.3: Axis of Symmetry 30\u201335 minutes\nINVESTIGATION\nThe terms vertex of a parabola and axis of symmetry are defined. Knowing that the absolute\nmaximum or minimum lies on the axis of symmetry, students determine that this point can\nbe calculated by substituting the x-value of the axis of symmetry into the quadratic function.\nIntervals of increase and decrease are then determined using the x-"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk18of23-e3",
+              "excerpt": "y\n\nSample answer:\nf(x) 5 x2 1 4\n\n8\n4\n\u22128\n\n\u22124\n\n0\n\n4\n\n8\n\nx\n\n\u22124\n\u22128\n\n852\n\nMODULE 5 \u2022 TOPIC 3 \u2022 LESSON 2\n\nTXOER_A1_M05_T03_L02_Student Lesson.indd 852\n\n852\n\nMODULE 5 \u2022 TOPIC 3 \u2022 LESSON 2\n\n11/05/24 5:21 PM\n\n\nLesson 2\n3 Assignment\nWrite\n\nRemember\n\nDescribe the number of\npossible real zeros for any\nquadratic function.\n\nThe solutions to a quadratic equation can be represented\nas the axis of symmetry plus or"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk4of23-e9",
+              "excerpt": "In factored form, f(x) 5 a(x 2 r1)(x 2 r2), the values of (r1, 0) and (r2, 0) are the\nx-intercepts of the quadratic function. In standard form, f(x) 5 ax2 1 bx 1 c,\n(0, c) is the y-intercept of the quadratic function.\n\nSTAMP THE\nLEARNING\n\nTalk the Talk\n\nQUADRATIC SLEUTHING\n\nFacilitation Notes\n\nIn this activity, students determine the axis of symmetry, the vertex, or another\npoint on the graph of a"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.875,
+    "s3_curriculum_own": 0.875
+  },
+  "divergence": 0.0
+}

@@ -1,0 +1,251 @@
+{
+  "lesson_id": "b05bfe476c76",
+  "unit_id": "family-community",
+  "title": "Family and Community Wellness-Human Services - Slides",
+  "element_count": 9,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "b05bfe476c76",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "b05bfe476c76-e1",
+              "excerpt": "Family and Community Wellness-Human Services\n\nDay 1\n\nBell Ringer\n\nWhat do you think of when you hear Family and Community Wellness-Human Services?\n\n\nAnswer the following on the template!\n\nClick the hands for a video!\n\nWhat is it?\n\nThe Family and Community Services program of study introduces students to knowledge and skills related to social services, including child and human development and cons"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "b05bfe476c76-e3-split1",
+              "excerpt": "The Family and Community Services program of study introduces students to knowledge and skills related to social services, including child and human development and consumer sciences. CTE learners may learn about or practice managing social and community services or teaching family and consumer sciences. Students may follow career paths in social work or therapy for children, families, or school c"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "b05bfe476c76-e5-split2",
+              "excerpt": "What do you think are the requirements to become a social worker?\n\nAnswer the following on the template!\n\nHow to become a Social Worker?\n\n1. Earn a bachelor\u2019s degree in social work or related field.\n2. Complete a CSWE-accredited MSW program.\n3. Complete field experience requirements.\n4. Take the Texas Jurisprudence Exam\n5. Apply for the Social Worker License Exam\n\n\nWhat colleges offer Social Work "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "b05bfe476c76-e2",
+              "excerpt": "Bell Ringer\n\nWhat do you think of when you hear Family and Community Wellness-Human Services?\n\n\nAnswer the following on the template!\n\nClick the hands for a video!\n\nWhat is it?"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "b05bfe476c76-e4",
+              "excerpt": "Let\u2019s Focus on a specific career\u2026\u2026\u2026..Social Worker!\n\nTake out the \u201cA Social Worker for a Day\u201d KWL worksheet out.\nFill out the Know and the Want to Know sections. You have 10 mins to fill those two sections out.\n\nA Social Worker for a Day\n\nToday you will explore the kind of day a typical social worker might have.\n\nUse the sheet Social Worker for a Day\n\nUse the space provided to record the details o"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 5,
+        "partial": 0,
+        "missing": 3,
+        "coverage": 0.625,
+        "required_total": 4,
+        "required_present": 3,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "curriculum_own_dallas_career_2026",
+      "rubric_version": "v1-dallas-ctat-2026-07",
+      "scoring": "presence",
+      "lesson_id": "b05bfe476c76",
+      "criteria": [
+        {
+          "criterion_id": "learning_target",
+          "label": "Learning target / objective",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "teks_alignment",
+          "label": "TEKS listed and aligned to objective",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "materials_prep",
+          "label": "Materials, supplies & teacher prep",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "b05bfe476c76-e1",
+              "excerpt": "Family and Community Wellness-Human Services\n\nDay 1\n\nBell Ringer\n\nWhat do you think of when you hear Family and Community Wellness-Human Services?\n\n\nAnswer the following on the template!\n\nClick the hands for a video!\n\nWhat is it?\n\nThe Family and Community Services program of study introduces students to knowledge and skills related to social services, including child and human development and cons"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "instructional_activities",
+          "label": "Instructional activities (launch -> activities -> closure)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "b05bfe476c76-e2",
+              "excerpt": "Bell Ringer\n\nWhat do you think of when you hear Family and Community Wellness-Human Services?\n\n\nAnswer the following on the template!\n\nClick the hands for a video!\n\nWhat is it?"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "formative_assessment",
+          "label": "Formative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "b05bfe476c76-e5-split2",
+              "excerpt": "What do you think are the requirements to become a social worker?\n\nAnswer the following on the template!\n\nHow to become a Social Worker?\n\n1. Earn a bachelor\u2019s degree in social work or related field.\n2. Complete a CSWE-accredited MSW program.\n3. Complete field experience requirements.\n4. Take the Texas Jurisprudence Exam\n5. Apply for the Social Worker License Exam\n\n\nWhat colleges offer Social Work "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "summative_assessment",
+          "label": "Summative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "b05bfe476c76-e5-split2",
+              "excerpt": "What do you think are the requirements to become a social worker?\n\nAnswer the following on the template!\n\nHow to become a Social Worker?\n\n1. Earn a bachelor\u2019s degree in social work or related field.\n2. Complete a CSWE-accredited MSW program.\n3. Complete field experience requirements.\n4. Take the Texas Jurisprudence Exam\n5. Apply for the Social Worker License Exam\n\n\nWhat colleges offer Social Work "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "elps_strategies",
+          "label": "ELPS / language strategies",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "cte_essentials",
+          "label": "CTE essential unit elements",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "b05bfe476c76-e1",
+              "excerpt": "Family and Community Wellness-Human Services\n\nDay 1\n\nBell Ringer\n\nWhat do you think of when you hear Family and Community Wellness-Human Services?\n\n\nAnswer the following on the template!\n\nClick the hands for a video!\n\nWhat is it?\n\nThe Family and Community Services program of study introduces students to knowledge and skills related to social services, including child and human development and cons"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 4,
+        "partial": 1,
+        "missing": 3,
+        "coverage": 0.5,
+        "required_total": 5,
+        "required_present": 3,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.625,
+    "s3_curriculum_own": 0.5
+  },
+  "divergence": 0.125
+}

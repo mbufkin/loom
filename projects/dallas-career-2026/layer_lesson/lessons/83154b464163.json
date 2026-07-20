@@ -1,0 +1,246 @@
+{
+  "lesson_id": "83154b464163",
+  "unit_id": "professional-preparedness",
+  "title": "Skills for Success-Career Ready - Slides",
+  "element_count": 14,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "83154b464163",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "83154b464163-e1",
+              "excerpt": "Skills for Success-Career Ready\n\nDay 1"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "83154b464163-e9-split2",
+              "excerpt": "Is this considered business professional or business casual?\n\nIs this considered business professional or business casual?\n\nBusiness Casual\n\nIs this considered business professional or business casual?\n\nIs this considered business professional or business casual?\n\nBusiness Professional\n\nIs this considered business professional or business casual?\n\nIs this considered business professional or busine"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "83154b464163-e2",
+              "excerpt": "\nHow many of you have had previous speaking experiences:\nHow many of you have given speeches in school?\nHow many of you have given a speech in public before?\nHave any of you ever been on the radio or on TV for an interview before?\n\nAnswer the following by raising your hand\u2026."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "83154b464163-e3",
+              "excerpt": "Characteristics of good speaking\n\n\nEye Contact\nConfidence and Enthusiasm\nInflection\nVolume\nTempo"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "83154b464163-e13",
+              "excerpt": "\nLet\u2019s Customize our own outfits.\n\nConnect with Dallas ISD CTE\n\nDallas ISD Career and Technical Education\n\n@DallasISD_CTEIP and @CTEinDallasISD\n\n@DallasISDCTE\n\ndallasisd.org/cte"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 5,
+        "partial": 0,
+        "missing": 3,
+        "coverage": 0.625,
+        "required_total": 4,
+        "required_present": 2,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "curriculum_own_dallas_career_2026",
+      "rubric_version": "v1-dallas-ctat-2026-07",
+      "scoring": "presence",
+      "lesson_id": "83154b464163",
+      "criteria": [
+        {
+          "criterion_id": "learning_target",
+          "label": "Learning target / objective",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "teks_alignment",
+          "label": "TEKS listed and aligned to objective",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "materials_prep",
+          "label": "Materials, supplies & teacher prep",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "instructional_activities",
+          "label": "Instructional activities (launch -> activities -> closure)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "83154b464163-e1",
+              "excerpt": "Skills for Success-Career Ready\n\nDay 1"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "formative_assessment",
+          "label": "Formative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "83154b464163-e9-split2",
+              "excerpt": "Is this considered business professional or business casual?\n\nIs this considered business professional or business casual?\n\nBusiness Casual\n\nIs this considered business professional or business casual?\n\nIs this considered business professional or business casual?\n\nBusiness Professional\n\nIs this considered business professional or business casual?\n\nIs this considered business professional or busine"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "summative_assessment",
+          "label": "Summative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "83154b464163-e9-split2",
+              "excerpt": "Is this considered business professional or business casual?\n\nIs this considered business professional or business casual?\n\nBusiness Casual\n\nIs this considered business professional or business casual?\n\nIs this considered business professional or business casual?\n\nBusiness Professional\n\nIs this considered business professional or business casual?\n\nIs this considered business professional or busine"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "elps_strategies",
+          "label": "ELPS / language strategies",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "cte_essentials",
+          "label": "CTE essential unit elements",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "83154b464163-e1",
+              "excerpt": "Skills for Success-Career Ready\n\nDay 1"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 3,
+        "partial": 1,
+        "missing": 4,
+        "coverage": 0.375,
+        "required_total": 5,
+        "required_present": 2,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.625,
+    "s3_curriculum_own": 0.375
+  },
+  "divergence": 0.25
+}

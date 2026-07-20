@@ -1,0 +1,281 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf__L3",
+  "unit_id": "alg1-mod-1",
+  "title": "Algebra I Math Teacher Edition Volume 1 Module 1 \u2014 Lesson 3",
+  "element_count": 47,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf__L3",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk5of12-e5",
+              "excerpt": "NOTE: This is the first lesson where TEKS A.1D\nis highlighted.\n\u2022 Read and display TEKS A.1D and explain that\n\nthis activity is an example of communicating\nmathematical ideas through multiple representations.\n\n39"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk5of12-e6",
+              "excerpt": "MODULE 1 \u2022 TOPIC 1 \u2022 LESSON 3\n\n37O\n\n\n37P\n\nMODULE 1 \u2022 TOPIC 1 \u2022 LESSON 3"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk1of12-e9",
+              "excerpt": "LESSON 3\n\nRecognizing\nFunctions and\nFunction Families\n\nTALK THE TALK\n\nGETTING STARTED\nACTIVITY 1\nDay 12\n\nDay 13\n\nDay 14\n\nTEKS: A.2A, A.3C, A.6A,\nA.7A, A.9A, A.9D, A.12A\n\nLESSON 4\n\nRecognizing\nFunctions by\nCharacteristics\nGETTING STARTED\nACTIVITY 1\n\nLESSON 4 continued\nACTIVITY 2\nTALK THE TALK\n\nLEARNING\nINDIVIDUALLY"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk5of12-e3",
+              "excerpt": "To close the Day 2 session, have the students reread the Essential\nQuestion and read the activity summaries to the class.\n\nSummary\n\nThe family of linear functions includes functions of the form f(x) 5 ax 1 b,\nwhere a and b are real numbers. The family of exponential functions includes\nfunctions of the form f(x) 5 a ? bx, where a and b are real numbers, and b is\ngreater than 0 but is not equal to 1"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk4of12-e6",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 3 DAYS\nDAY 1\nENGAGE\nGetting Started: Odd One Out 5 minutes\nBUILD OFF INTUITION\nStudents are presented with four numberless graphs of relations and decide which of the graphs\ndoes not belong with the others. This activity solicits students\u2019 prior knowledge related to the\ncharacteristics of graphs, which they explored in the previous lesson. This activity has no correct"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk5of12-e2",
+              "excerpt": "In this activity, students use a sorting activity and the graphs from the previous\nlesson to distinguish among increasing and decreasing behaviors and functions\nthat show a combination of increasing and decreasing behaviors. Next, focusing\nonly on the graphs of increasing, decreasing, and constant functions, they match\neach graph with the appropriate equation written in function notation. They sor"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk4of12-e6",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 3 DAYS\nDAY 1\nENGAGE\nGetting Started: Odd One Out 5 minutes\nBUILD OFF INTUITION\nStudents are presented with four numberless graphs of relations and decide which of the graphs\ndoes not belong with the others. This activity solicits students\u2019 prior knowledge related to the\ncharacteristics of graphs, which they explored in the previous lesson. This activity has no correct"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk5of12-e4",
+              "excerpt": "\nHave students read the closing paragraph.\nNote: The intent of this topic is to introduce these new functions, providing\nan overview but not a deep understanding. Students will formalize their\nunderstanding of the defining characteristics of each type of function later in\nthis course.\n\nSummary\n\nFunctions can be classified as linear, exponential, and quadratic."
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 2,
+        "missing": 0,
+        "coverage": 0.75,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf__L3",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk5of12-e5",
+              "excerpt": "NOTE: This is the first lesson where TEKS A.1D\nis highlighted.\n\u2022 Read and display TEKS A.1D and explain that\n\nthis activity is an example of communicating\nmathematical ideas through multiple representations.\n\n39"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk5of12-e6",
+              "excerpt": "MODULE 1 \u2022 TOPIC 1 \u2022 LESSON 3\n\n37O\n\n\n37P\n\nMODULE 1 \u2022 TOPIC 1 \u2022 LESSON 3"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk1of12-e9",
+              "excerpt": "LESSON 3\n\nRecognizing\nFunctions and\nFunction Families\n\nTALK THE TALK\n\nGETTING STARTED\nACTIVITY 1\nDay 12\n\nDay 13\n\nDay 14\n\nTEKS: A.2A, A.3C, A.6A,\nA.7A, A.9A, A.9D, A.12A\n\nLESSON 4\n\nRecognizing\nFunctions by\nCharacteristics\nGETTING STARTED\nACTIVITY 1\n\nLESSON 4 continued\nACTIVITY 2\nTALK THE TALK\n\nLEARNING\nINDIVIDUALLY"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk5of12-e3",
+              "excerpt": "To close the Day 2 session, have the students reread the Essential\nQuestion and read the activity summaries to the class.\n\nSummary\n\nThe family of linear functions includes functions of the form f(x) 5 ax 1 b,\nwhere a and b are real numbers. The family of exponential functions includes\nfunctions of the form f(x) 5 a ? bx, where a and b are real numbers, and b is\ngreater than 0 but is not equal to 1"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk4of12-e6",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 3 DAYS\nDAY 1\nENGAGE\nGetting Started: Odd One Out 5 minutes\nBUILD OFF INTUITION\nStudents are presented with four numberless graphs of relations and decide which of the graphs\ndoes not belong with the others. This activity solicits students\u2019 prior knowledge related to the\ncharacteristics of graphs, which they explored in the previous lesson. This activity has no correct"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk5of12-e2",
+              "excerpt": "In this activity, students use a sorting activity and the graphs from the previous\nlesson to distinguish among increasing and decreasing behaviors and functions\nthat show a combination of increasing and decreasing behaviors. Next, focusing\nonly on the graphs of increasing, decreasing, and constant functions, they match\neach graph with the appropriate equation written in function notation. They sor"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk4of12-e6",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 3 DAYS\nDAY 1\nENGAGE\nGetting Started: Odd One Out 5 minutes\nBUILD OFF INTUITION\nStudents are presented with four numberless graphs of relations and decide which of the graphs\ndoes not belong with the others. This activity solicits students\u2019 prior knowledge related to the\ncharacteristics of graphs, which they explored in the previous lesson. This activity has no correct"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk5of12-e4",
+              "excerpt": "\nHave students read the closing paragraph.\nNote: The intent of this topic is to introduce these new functions, providing\nan overview but not a deep understanding. Students will formalize their\nunderstanding of the defining characteristics of each type of function later in\nthis course.\n\nSummary\n\nFunctions can be classified as linear, exponential, and quadratic."
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 2,
+        "missing": 0,
+        "coverage": 0.75,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.75,
+    "s3_curriculum_own": 0.75
+  },
+  "divergence": 0.0
+}

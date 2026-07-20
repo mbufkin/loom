@@ -1,0 +1,266 @@
+{
+  "lesson_id": "545aa2c2190a",
+  "unit_id": "career-exploration",
+  "title": "Career Exploration Project Slides",
+  "element_count": 6,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "545aa2c2190a",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "545aa2c2190a-e2",
+              "excerpt": "Please tell us about yourself in a paragraph.\nINTRODUCTION\nHi! I\u2019m ______\nPlease place a picture of yourself in the window.\n\nMy Dream Job\n1\nCAREER\nASPIRATIONS\nPlease pick your top 3 career choices or dream jobs and describe the\n employment as well as why you have chosen this profession.  Please list your dream job here and why make sure to write a whole paragraph. Please also put a picture of your"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "545aa2c2190a-e1",
+              "excerpt": "CAREER\nPLANNER\nSteps That Helped Me Create The Best Work Of My Life.\nCareer Exploration\n\nOVERVIEW\nIntroduction\nCareer Aspirations\nCareer Milestones\nMy Abilities\nCareer Goals\nCareer Exploration"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "545aa2c2190a-e3",
+              "excerpt": "CAREER\nASPIRATIONS\nMy Dream Job\n2\nPlease pick your top 3 career choices or dream jobs and describe the\n employment as well as why you have chosen this profession. Please lis\nt you r drea m jo b her e an d wh y mak e sur e t o writ e a whol e paragrap\nh. Please also put a picture of your dream job in the window.\n\nMy Dream Job\n3\nCAREER\nASPIRATIONS\nPlease pick your top 3 career choices or dream jobs "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "545aa2c2190a-e5",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "545aa2c2190a-e4",
+              "excerpt": "MY ABILITIES\nMy Abilities\nThe Training I Attend\nStatus\nPUBLIC SPEAKING\nLICERIA TRAINING CENTER\nMARKETING\nSTUDIO SHODWE WORKSHOP\nPlease list abilities you will\n need for this employment an\nd training needed.\nStatus :\nIn Progress\nAchieved\nUp Next\nTotal Mastery\n68%\n\nPlease list 1, 5 and 10 year goals to reach your career aspirations.\nCAREER GOALS\nIn 5 Years\nPlease list 1, 5 and 10 year goals to reach"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "545aa2c2190a-e6",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 0,
+        "missing": 2,
+        "coverage": 0.75,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "curriculum_own_dallas_career_2026",
+      "rubric_version": "v1-dallas-ctat-2026-07",
+      "scoring": "presence",
+      "lesson_id": "545aa2c2190a",
+      "criteria": [
+        {
+          "criterion_id": "learning_target",
+          "label": "Learning target / objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "545aa2c2190a-e2",
+              "excerpt": "Please tell us about yourself in a paragraph.\nINTRODUCTION\nHi! I\u2019m ______\nPlease place a picture of yourself in the window.\n\nMy Dream Job\n1\nCAREER\nASPIRATIONS\nPlease pick your top 3 career choices or dream jobs and describe the\n employment as well as why you have chosen this profession.  Please list your dream job here and why make sure to write a whole paragraph. Please also put a picture of your"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "teks_alignment",
+          "label": "TEKS listed and aligned to objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "545aa2c2190a-e2",
+              "excerpt": "Please tell us about yourself in a paragraph.\nINTRODUCTION\nHi! I\u2019m ______\nPlease place a picture of yourself in the window.\n\nMy Dream Job\n1\nCAREER\nASPIRATIONS\nPlease pick your top 3 career choices or dream jobs and describe the\n employment as well as why you have chosen this profession.  Please list your dream job here and why make sure to write a whole paragraph. Please also put a picture of your"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "materials_prep",
+          "label": "Materials, supplies & teacher prep",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "545aa2c2190a-e1",
+              "excerpt": "CAREER\nPLANNER\nSteps That Helped Me Create The Best Work Of My Life.\nCareer Exploration\n\nOVERVIEW\nIntroduction\nCareer Aspirations\nCareer Milestones\nMy Abilities\nCareer Goals\nCareer Exploration"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "instructional_activities",
+          "label": "Instructional activities (launch -> activities -> closure)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "545aa2c2190a-e3",
+              "excerpt": "CAREER\nASPIRATIONS\nMy Dream Job\n2\nPlease pick your top 3 career choices or dream jobs and describe the\n employment as well as why you have chosen this profession. Please lis\nt you r drea m jo b her e an d wh y mak e sur e t o writ e a whol e paragrap\nh. Please also put a picture of your dream job in the window.\n\nMy Dream Job\n3\nCAREER\nASPIRATIONS\nPlease pick your top 3 career choices or dream jobs "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "formative_assessment",
+          "label": "Formative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "545aa2c2190a-e5",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "summative_assessment",
+          "label": "Summative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "545aa2c2190a-e5",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "elps_strategies",
+          "label": "ELPS / language strategies",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "cte_essentials",
+          "label": "CTE essential unit elements",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "545aa2c2190a-e1",
+              "excerpt": "CAREER\nPLANNER\nSteps That Helped Me Create The Best Work Of My Life.\nCareer Exploration\n\nOVERVIEW\nIntroduction\nCareer Aspirations\nCareer Milestones\nMy Abilities\nCareer Goals\nCareer Exploration"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 1,
+        "missing": 1,
+        "coverage": 0.75,
+        "required_total": 5,
+        "required_present": 5,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.75,
+    "s3_curriculum_own": 0.75
+  },
+  "divergence": 0.0
+}

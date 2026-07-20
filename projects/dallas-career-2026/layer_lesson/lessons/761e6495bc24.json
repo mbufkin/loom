@@ -1,0 +1,276 @@
+{
+  "lesson_id": "761e6495bc24",
+  "unit_id": "arts-av-technology",
+  "title": "Arts A V Tech Lesson Plan",
+  "element_count": 9,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "761e6495bc24",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "761e6495bc24-e1",
+              "excerpt": "--- TABLE ---\nArts A/V Technology and Communication                         Estimated Day(s): 2.5 class periods\nResources:\nLesson plan\nMaterials for activities ( Poster Board, Pencils, Color Pencils)\nTeacher Slideshow Arts, A/V Technology and Communication Google Slides | Resources:\nLesson plan\nMaterials for activities ( Poster Board, Pencils, Color Pencils)\nTeacher Slideshow Arts, A/V Technology "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "761e6495bc24-e1",
+              "excerpt": "--- TABLE ---\nArts A/V Technology and Communication                         Estimated Day(s): 2.5 class periods\nResources:\nLesson plan\nMaterials for activities ( Poster Board, Pencils, Color Pencils)\nTeacher Slideshow Arts, A/V Technology and Communication Google Slides | Resources:\nLesson plan\nMaterials for activities ( Poster Board, Pencils, Color Pencils)\nTeacher Slideshow Arts, A/V Technology "
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "761e6495bc24-e2",
+              "excerpt": "Teacher will explain what Arts, A/V Technology & Communication is about, what careers fall under the cluster and the different pathways that the district offers.\n\nStudent Engagement Strategy / Resource:\nStudents will follow along with the teacher and fill in the blank from the worksheet provided.\nArts, A/V Technology and Communication Google Slides\n\nStudent Slideshow notes\n\nQuestion Stems:\nWhat do"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "761e6495bc24-e4-split1",
+              "excerpt": "Students write one sentence on what the commercials message is. Exit Ticket Here\nDay 2 - Create\nEngage Activity\nEngage: (5-10 minutes)\n\nTeachers show\u2019s class a commercial from a non-profit BSM Nonprofit commercial.\nStudents answer the question: \u201cWhat is the problem this nonprofit is trying to solve?\u201d | Engage: (5-10 minutes)\n\nTeachers show\u2019s class a commercial from a non-profit BSM Nonprofit comme"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "761e6495bc24-e1",
+              "excerpt": "--- TABLE ---\nArts A/V Technology and Communication                         Estimated Day(s): 2.5 class periods\nResources:\nLesson plan\nMaterials for activities ( Poster Board, Pencils, Color Pencils)\nTeacher Slideshow Arts, A/V Technology and Communication Google Slides | Resources:\nLesson plan\nMaterials for activities ( Poster Board, Pencils, Color Pencils)\nTeacher Slideshow Arts, A/V Technology "
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "761e6495bc24-e3-split1",
+              "excerpt": "Students will brainstorm in small groups or whole class setting what problems face their community. Group or class will decide on a single problem to tackle through advertisement.\n\nStudents will brainstorm in small groups or whole class setting what the name of their nonprofit will be called that will tackle the community issue.\n\nStudents will brainstorm in small groups or whole class setting on w"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "761e6495bc24-e1",
+              "excerpt": "--- TABLE ---\nArts A/V Technology and Communication                         Estimated Day(s): 2.5 class periods\nResources:\nLesson plan\nMaterials for activities ( Poster Board, Pencils, Color Pencils)\nTeacher Slideshow Arts, A/V Technology and Communication Google Slides | Resources:\nLesson plan\nMaterials for activities ( Poster Board, Pencils, Color Pencils)\nTeacher Slideshow Arts, A/V Technology "
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "761e6495bc24-e3-split2",
+              "excerpt": "Student Engagement Strategy / Resource:\nStudents will demonstrate their understanding through the provided activity sheets. Community Problem Brainstorming Worksheet\n\nQuestion Stems:\n\nWhat is my community?\nWhat do I think can change to make my community better?\nWhere in my community do I feel can change for the better?\nWhat is a nonprofit company?\nWhat are some names of nonprofits that I know?\nHow"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 4,
+        "partial": 4,
+        "missing": 0,
+        "coverage": 0.5,
+        "required_total": 4,
+        "required_present": 3,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "curriculum_own_dallas_career_2026",
+      "rubric_version": "v1-dallas-ctat-2026-07",
+      "scoring": "presence",
+      "lesson_id": "761e6495bc24",
+      "criteria": [
+        {
+          "criterion_id": "learning_target",
+          "label": "Learning target / objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "761e6495bc24-e1",
+              "excerpt": "--- TABLE ---\nArts A/V Technology and Communication                         Estimated Day(s): 2.5 class periods\nResources:\nLesson plan\nMaterials for activities ( Poster Board, Pencils, Color Pencils)\nTeacher Slideshow Arts, A/V Technology and Communication Google Slides | Resources:\nLesson plan\nMaterials for activities ( Poster Board, Pencils, Color Pencils)\nTeacher Slideshow Arts, A/V Technology "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "teks_alignment",
+          "label": "TEKS listed and aligned to objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "761e6495bc24-e1",
+              "excerpt": "--- TABLE ---\nArts A/V Technology and Communication                         Estimated Day(s): 2.5 class periods\nResources:\nLesson plan\nMaterials for activities ( Poster Board, Pencils, Color Pencils)\nTeacher Slideshow Arts, A/V Technology and Communication Google Slides | Resources:\nLesson plan\nMaterials for activities ( Poster Board, Pencils, Color Pencils)\nTeacher Slideshow Arts, A/V Technology "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "materials_prep",
+          "label": "Materials, supplies & teacher prep",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "761e6495bc24-e1",
+              "excerpt": "--- TABLE ---\nArts A/V Technology and Communication                         Estimated Day(s): 2.5 class periods\nResources:\nLesson plan\nMaterials for activities ( Poster Board, Pencils, Color Pencils)\nTeacher Slideshow Arts, A/V Technology and Communication Google Slides | Resources:\nLesson plan\nMaterials for activities ( Poster Board, Pencils, Color Pencils)\nTeacher Slideshow Arts, A/V Technology "
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "instructional_activities",
+          "label": "Instructional activities (launch -> activities -> closure)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "761e6495bc24-e2",
+              "excerpt": "Teacher will explain what Arts, A/V Technology & Communication is about, what careers fall under the cluster and the different pathways that the district offers.\n\nStudent Engagement Strategy / Resource:\nStudents will follow along with the teacher and fill in the blank from the worksheet provided.\nArts, A/V Technology and Communication Google Slides\n\nStudent Slideshow notes\n\nQuestion Stems:\nWhat do"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "formative_assessment",
+          "label": "Formative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "761e6495bc24-e4-split1",
+              "excerpt": "Students write one sentence on what the commercials message is. Exit Ticket Here\nDay 2 - Create\nEngage Activity\nEngage: (5-10 minutes)\n\nTeachers show\u2019s class a commercial from a non-profit BSM Nonprofit commercial.\nStudents answer the question: \u201cWhat is the problem this nonprofit is trying to solve?\u201d | Engage: (5-10 minutes)\n\nTeachers show\u2019s class a commercial from a non-profit BSM Nonprofit comme"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "summative_assessment",
+          "label": "Summative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "761e6495bc24-e4-split1",
+              "excerpt": "Students write one sentence on what the commercials message is. Exit Ticket Here\nDay 2 - Create\nEngage Activity\nEngage: (5-10 minutes)\n\nTeachers show\u2019s class a commercial from a non-profit BSM Nonprofit commercial.\nStudents answer the question: \u201cWhat is the problem this nonprofit is trying to solve?\u201d | Engage: (5-10 minutes)\n\nTeachers show\u2019s class a commercial from a non-profit BSM Nonprofit comme"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "elps_strategies",
+          "label": "ELPS / language strategies",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "cte_essentials",
+          "label": "CTE essential unit elements",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "761e6495bc24-e1",
+              "excerpt": "--- TABLE ---\nArts A/V Technology and Communication                         Estimated Day(s): 2.5 class periods\nResources:\nLesson plan\nMaterials for activities ( Poster Board, Pencils, Color Pencils)\nTeacher Slideshow Arts, A/V Technology and Communication Google Slides | Resources:\nLesson plan\nMaterials for activities ( Poster Board, Pencils, Color Pencils)\nTeacher Slideshow Arts, A/V Technology "
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 5,
+        "partial": 2,
+        "missing": 1,
+        "coverage": 0.625,
+        "required_total": 5,
+        "required_present": 4,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.5,
+    "s3_curriculum_own": 0.625
+  },
+  "divergence": 0.125
+}

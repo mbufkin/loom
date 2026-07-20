@@ -1,0 +1,256 @@
+{
+  "lesson_id": "0acbc6d0b180",
+  "unit_id": "engineering",
+  "title": "Engineering Lesson Plan",
+  "element_count": 8,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "0acbc6d0b180",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "0acbc6d0b180-e1",
+              "excerpt": "--- TABLE ---\nDesign a Paper Airplane Launcher for Grades 6-8     Estimated Day(s): 2 - 60 minute classes\nResources:\nConstruction materials\nPaper airplane launchers are made from different materials. Left: cardboard. Center: construction bricks. Right: Wooden board and screws.\nPaper\nPaper clips\nTape\nRubber bands\nTape measures\nStapler\nConstruction materials to make paper airplane launchers. You can"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "0acbc6d0b180-e1",
+              "excerpt": "--- TABLE ---\nDesign a Paper Airplane Launcher for Grades 6-8     Estimated Day(s): 2 - 60 minute classes\nResources:\nConstruction materials\nPaper airplane launchers are made from different materials. Left: cardboard. Center: construction bricks. Right: Wooden board and screws.\nPaper\nPaper clips\nTape\nRubber bands\nTape measures\nStapler\nConstruction materials to make paper airplane launchers. You can"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "0acbc6d0b180-e2-split1",
+              "excerpt": "\nStudent Engagement Strategy / Resource:\nShow the video to the students and have them ask questions for possible activity clarification.\nSplain students that Aircraft that take off from airport runways accelerate under their own power. The planes must get going fast enough to generate enough lift to get off the ground. So especially for large, heavy planes, airport runways are typically very long "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "0acbc6d0b180-e1",
+              "excerpt": "--- TABLE ---\nDesign a Paper Airplane Launcher for Grades 6-8     Estimated Day(s): 2 - 60 minute classes\nResources:\nConstruction materials\nPaper airplane launchers are made from different materials. Left: cardboard. Center: construction bricks. Right: Wooden board and screws.\nPaper\nPaper clips\nTape\nRubber bands\nTape measures\nStapler\nConstruction materials to make paper airplane launchers. You can"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "0acbc6d0b180-e2-split3",
+              "excerpt": "Working in pairs, each group of students should make a paper airplane. It is not critical that all students use the same type of airplane for this lesson, so students who have experience making paper airplanes can make their own designs. Less-experienced students can use the paper airplane instructions as a guide.\nStudents should test to make sure that their paper airplane flies well (it goes rela"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "0acbc6d0b180-e2-split3",
+              "excerpt": "Working in pairs, each group of students should make a paper airplane. It is not critical that all students use the same type of airplane for this lesson, so students who have experience making paper airplanes can make their own designs. Less-experienced students can use the paper airplane instructions as a guide.\nStudents should test to make sure that their paper airplane flies well (it goes rela"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 2,
+        "partial": 4,
+        "missing": 2,
+        "coverage": 0.25,
+        "required_total": 4,
+        "required_present": 1,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "curriculum_own_dallas_career_2026",
+      "rubric_version": "v1-dallas-ctat-2026-07",
+      "scoring": "presence",
+      "lesson_id": "0acbc6d0b180",
+      "criteria": [
+        {
+          "criterion_id": "learning_target",
+          "label": "Learning target / objective",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "teks_alignment",
+          "label": "TEKS listed and aligned to objective",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "0acbc6d0b180-e1",
+              "excerpt": "--- TABLE ---\nDesign a Paper Airplane Launcher for Grades 6-8     Estimated Day(s): 2 - 60 minute classes\nResources:\nConstruction materials\nPaper airplane launchers are made from different materials. Left: cardboard. Center: construction bricks. Right: Wooden board and screws.\nPaper\nPaper clips\nTape\nRubber bands\nTape measures\nStapler\nConstruction materials to make paper airplane launchers. You can"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "materials_prep",
+          "label": "Materials, supplies & teacher prep",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "0acbc6d0b180-e1",
+              "excerpt": "--- TABLE ---\nDesign a Paper Airplane Launcher for Grades 6-8     Estimated Day(s): 2 - 60 minute classes\nResources:\nConstruction materials\nPaper airplane launchers are made from different materials. Left: cardboard. Center: construction bricks. Right: Wooden board and screws.\nPaper\nPaper clips\nTape\nRubber bands\nTape measures\nStapler\nConstruction materials to make paper airplane launchers. You can"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "instructional_activities",
+          "label": "Instructional activities (launch -> activities -> closure)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "0acbc6d0b180-e1",
+              "excerpt": "--- TABLE ---\nDesign a Paper Airplane Launcher for Grades 6-8     Estimated Day(s): 2 - 60 minute classes\nResources:\nConstruction materials\nPaper airplane launchers are made from different materials. Left: cardboard. Center: construction bricks. Right: Wooden board and screws.\nPaper\nPaper clips\nTape\nRubber bands\nTape measures\nStapler\nConstruction materials to make paper airplane launchers. You can"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "formative_assessment",
+          "label": "Formative assessment",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "summative_assessment",
+          "label": "Summative assessment",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "0acbc6d0b180-e1",
+              "excerpt": "--- TABLE ---\nDesign a Paper Airplane Launcher for Grades 6-8     Estimated Day(s): 2 - 60 minute classes\nResources:\nConstruction materials\nPaper airplane launchers are made from different materials. Left: cardboard. Center: construction bricks. Right: Wooden board and screws.\nPaper\nPaper clips\nTape\nRubber bands\nTape measures\nStapler\nConstruction materials to make paper airplane launchers. You can"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "elps_strategies",
+          "label": "ELPS / language strategies",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "cte_essentials",
+          "label": "CTE essential unit elements",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "0acbc6d0b180-e1",
+              "excerpt": "--- TABLE ---\nDesign a Paper Airplane Launcher for Grades 6-8     Estimated Day(s): 2 - 60 minute classes\nResources:\nConstruction materials\nPaper airplane launchers are made from different materials. Left: cardboard. Center: construction bricks. Right: Wooden board and screws.\nPaper\nPaper clips\nTape\nRubber bands\nTape measures\nStapler\nConstruction materials to make paper airplane launchers. You can"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 1,
+        "partial": 4,
+        "missing": 3,
+        "coverage": 0.125,
+        "required_total": 5,
+        "required_present": 1,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.25,
+    "s3_curriculum_own": 0.125
+  },
+  "divergence": 0.125
+}

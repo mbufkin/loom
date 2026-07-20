@@ -1,0 +1,281 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L6",
+  "unit_id": "alg1-mod-2",
+  "title": "Algebra I Math Teacher Edition Volume 1 Module 2 \u2014 Lesson 6",
+  "element_count": 20,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L6",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk9of17-e5",
+              "excerpt": "LESSON OVERVIEW\nStudents determine whether tables of values with non-consecutive input\nvalues represent linear functions. They evaluate functions and analyze\nWorked Examples that demonstrate how to solve equations algebraically and\ngraphically. For the remainder of the lesson, students deal with a context, a\ngraph, and two translations of the graph based on additions to the context.\nThey focus on "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk9of17-e6",
+              "excerpt": "LESSON OVERVIEW\nStudents determine whether tables of values with non-consecutive input\nvalues represent linear functions. They evaluate functions and analyze\nWorked Examples that demonstrate how to solve equations algebraically and\ngraphically. For the remainder of the lesson, students deal with a context, a\ngraph, and two translations of the graph based on additions to the context.\nThey focus on "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk10of17-e2",
+              "excerpt": "Have students work with a partner or in a group to complete\nQuestions 1 through 5. Share responses as a class.\nTo begin the Day 2 session, have a student read the Essential\nQuestion aloud.\nAS STUDENTS WORK, LOOK FOR\n\u2022 Identification of the domain and range of the function rather than the\ndomain and range of the scenario.\nDIFFERENTIATION STRATEGIES\nJust in Time Support\n\u2022 Have students label additio"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk10of17-e5",
+              "excerpt": "T-shirt sold?\n\u2022 Did you use one or two points on the graph to\n\ncalculate the earnings per T-shirt sold? Explain the\nrelationship between the two strategies.\n\u2022 Why doesn\u2019t the equation have a constant value?"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk10of17-e1",
+              "excerpt": "Facilitation Notes\n\nIn this activity, students begin with a graph and context. They interpret the\ngraph with reference to the context and write a function to model the graph.\nStudents evaluate the function at various values of the independent variable\nand interpret the meaning of each. They then solve for the independent\nvariable both algebraically and graphically. A Worked Example is provided for"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk10of17-e3",
+              "excerpt": "MODULE 2 \u2022 TOPIC 1 \u2022 LESSON 6 239G\n\n\nQUESTIONS TO SUPPORT DISCOURSE"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk11of17-e1",
+              "excerpt": "The general form of a\nlinear function is\nf(x) 5 ax 1 b.\n\nThe factored form of\na linear function is\n\nc. Rewrite F(t) in factored form. Use a fraction to represent the\nc-value. Then describe how the a- and c-values are represented\non the graph.\nF(t) 5 15(t 2 \u2012\u2012\u2012\n; a is evident by a slope triangle, and c is\n3)\n16\n\n1\nan x-intercept, (5\u2012\u2012\n,0 .\n3 )\n\nf(x) 5 a(x 2 c).\n\nThe values a, b, and c\nare real numb"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk10of17-e6",
+              "excerpt": "Summary\n\nAn equation or a graph can be used to determine the value of an independent\nvariable. Sometimes a graph can only give an approximate answer; however,\nusing an equation always results in an exact answer.\n\n239H MODULE 2 \u2022 TOPIC 1 \u2022 LESSON 6"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L6",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk9of17-e5",
+              "excerpt": "LESSON OVERVIEW\nStudents determine whether tables of values with non-consecutive input\nvalues represent linear functions. They evaluate functions and analyze\nWorked Examples that demonstrate how to solve equations algebraically and\ngraphically. For the remainder of the lesson, students deal with a context, a\ngraph, and two translations of the graph based on additions to the context.\nThey focus on "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk9of17-e6",
+              "excerpt": "LESSON OVERVIEW\nStudents determine whether tables of values with non-consecutive input\nvalues represent linear functions. They evaluate functions and analyze\nWorked Examples that demonstrate how to solve equations algebraically and\ngraphically. For the remainder of the lesson, students deal with a context, a\ngraph, and two translations of the graph based on additions to the context.\nThey focus on "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk10of17-e2",
+              "excerpt": "Have students work with a partner or in a group to complete\nQuestions 1 through 5. Share responses as a class.\nTo begin the Day 2 session, have a student read the Essential\nQuestion aloud.\nAS STUDENTS WORK, LOOK FOR\n\u2022 Identification of the domain and range of the function rather than the\ndomain and range of the scenario.\nDIFFERENTIATION STRATEGIES\nJust in Time Support\n\u2022 Have students label additio"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk10of17-e5",
+              "excerpt": "T-shirt sold?\n\u2022 Did you use one or two points on the graph to\n\ncalculate the earnings per T-shirt sold? Explain the\nrelationship between the two strategies.\n\u2022 Why doesn\u2019t the equation have a constant value?"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk10of17-e1",
+              "excerpt": "Facilitation Notes\n\nIn this activity, students begin with a graph and context. They interpret the\ngraph with reference to the context and write a function to model the graph.\nStudents evaluate the function at various values of the independent variable\nand interpret the meaning of each. They then solve for the independent\nvariable both algebraically and graphically. A Worked Example is provided for"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk10of17-e3",
+              "excerpt": "MODULE 2 \u2022 TOPIC 1 \u2022 LESSON 6 239G\n\n\nQUESTIONS TO SUPPORT DISCOURSE"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk11of17-e1",
+              "excerpt": "The general form of a\nlinear function is\nf(x) 5 ax 1 b.\n\nThe factored form of\na linear function is\n\nc. Rewrite F(t) in factored form. Use a fraction to represent the\nc-value. Then describe how the a- and c-values are represented\non the graph.\nF(t) 5 15(t 2 \u2012\u2012\u2012\n; a is evident by a slope triangle, and c is\n3)\n16\n\n1\nan x-intercept, (5\u2012\u2012\n,0 .\n3 )\n\nf(x) 5 a(x 2 c).\n\nThe values a, b, and c\nare real numb"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk10of17-e6",
+              "excerpt": "Summary\n\nAn equation or a graph can be used to determine the value of an independent\nvariable. Sometimes a graph can only give an approximate answer; however,\nusing an equation always results in an exact answer.\n\n239H MODULE 2 \u2022 TOPIC 1 \u2022 LESSON 6"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.875,
+    "s3_curriculum_own": 0.875
+  },
+  "divergence": 0.0
+}

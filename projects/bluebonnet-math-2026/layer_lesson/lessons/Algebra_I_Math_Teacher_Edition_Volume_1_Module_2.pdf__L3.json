@@ -1,0 +1,281 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L3",
+  "unit_id": "alg1-mod-2",
+  "title": "Algebra I Math Teacher Edition Volume 1 Module 2 \u2014 Lesson 3",
+  "element_count": 35,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L3",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk5of17-e14",
+              "excerpt": "\nGetting Started\nLine Up in Sequential Order\n\nENGAGE\n\nFacilitation Notes\n\nIn this activity, students are provided two sequences. They must identify\neach sequence as arithmetic or geometric, write the explicit formula for the\nsequence, and graph the sequence. They list 3 characteristics of the graphs and\ncompare them.\n\nHave students work with a partner or in a group to complete\nQuestions 1 and 2. S"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk5of17-e12",
+              "excerpt": "Have students work with a partner or in a group to complete\nQuestions 1 through 3. Share responses as a class.\nQUESTIONS TO SUPPORT DISCOURSE\n\u2022 What are the independent and dependent quantities?\n\u2022 What does the product of 8(n 2 1) represent in the context?\n\nProbing"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk5of17-e2",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 3 DAYS\nDAY 1\nENGAGE\nGetting Started: Line Up in Sequential Order 10\u201315 minutes\nCONNECT TO PRIOR KNOWLEDGE\nStudents are provided two sequences. They must identify each sequence as arithmetic or\ngeometric, write the explicit formula for the sequence, and graph the sequence. They list\n3 characteristics of the graphs and compare them.\n\nDEVELOP\nActivity 3.1: Connecting For"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk5of17-e10",
+              "excerpt": "In this activity, students revisit the sequences and graphs from Activity 1 and\nsummarize their conclusions. They identify the constant difference on the\ngraph, write the sequences in function notation, verify the constant difference\nis the slope, and describe the relationship between the first term of the\nsequence and the y-intercept.\n\nTo begin the Day 3 session, have a student read the Essential"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk6of17-e1",
+              "excerpt": "\u2022 Connect the slope of a line to the average rate of change of\n\na function.\n\nYou know that all sequences are functions. What type of function\nis an arithmetic sequence?\nSample answer:\nAll arithmetic sequences are linear functions. The average rate of change of any linear\nrelationship is constant between any two points on that line."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk5of17-e3",
+              "excerpt": "Probing\n\n\u2022 Explain how you wrote the explicit formula for\n\neach sequence.\n\n\u2022 How can you tell whether a sequence is geometric\n\nSeeing\nstructure\n\nor arithmetic?\n\u2022 What part of each formula tells you how the\nsequence grows?\n\u2022 What does (n 2 1) represent in explicit form?\n\u2022 How are the common difference and common ratio visible\nin the graphs?\n\u2022 Do you think all geometric sequences grow faster than\nar"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk5of17-e10",
+              "excerpt": "In this activity, students revisit the sequences and graphs from Activity 1 and\nsummarize their conclusions. They identify the constant difference on the\ngraph, write the sequences in function notation, verify the constant difference\nis the slope, and describe the relationship between the first term of the\nsequence and the y-intercept.\n\nTo begin the Day 3 session, have a student read the Essential"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk5of17-e11",
+              "excerpt": "181P\n\nSummary\nAll arithmetic sequences are linear functions. The explicit formula of an arithmetic\nsequence can be rewritten as a linear function. The common difference of an\narithmetic sequence is the same as the slope of its linear function. The explicit form\ndisplays the value of f(1) while the slope-intercept form displays the value of f(0).\n\nMODULE 2 \u2022 TOPIC 1 \u2022 LESSON 3"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L3",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk5of17-e14",
+              "excerpt": "\nGetting Started\nLine Up in Sequential Order\n\nENGAGE\n\nFacilitation Notes\n\nIn this activity, students are provided two sequences. They must identify\neach sequence as arithmetic or geometric, write the explicit formula for the\nsequence, and graph the sequence. They list 3 characteristics of the graphs and\ncompare them.\n\nHave students work with a partner or in a group to complete\nQuestions 1 and 2. S"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk5of17-e12",
+              "excerpt": "Have students work with a partner or in a group to complete\nQuestions 1 through 3. Share responses as a class.\nQUESTIONS TO SUPPORT DISCOURSE\n\u2022 What are the independent and dependent quantities?\n\u2022 What does the product of 8(n 2 1) represent in the context?\n\nProbing"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk5of17-e2",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 3 DAYS\nDAY 1\nENGAGE\nGetting Started: Line Up in Sequential Order 10\u201315 minutes\nCONNECT TO PRIOR KNOWLEDGE\nStudents are provided two sequences. They must identify each sequence as arithmetic or\ngeometric, write the explicit formula for the sequence, and graph the sequence. They list\n3 characteristics of the graphs and compare them.\n\nDEVELOP\nActivity 3.1: Connecting For"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk5of17-e10",
+              "excerpt": "In this activity, students revisit the sequences and graphs from Activity 1 and\nsummarize their conclusions. They identify the constant difference on the\ngraph, write the sequences in function notation, verify the constant difference\nis the slope, and describe the relationship between the first term of the\nsequence and the y-intercept.\n\nTo begin the Day 3 session, have a student read the Essential"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk6of17-e1",
+              "excerpt": "\u2022 Connect the slope of a line to the average rate of change of\n\na function.\n\nYou know that all sequences are functions. What type of function\nis an arithmetic sequence?\nSample answer:\nAll arithmetic sequences are linear functions. The average rate of change of any linear\nrelationship is constant between any two points on that line."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk5of17-e3",
+              "excerpt": "Probing\n\n\u2022 Explain how you wrote the explicit formula for\n\neach sequence.\n\n\u2022 How can you tell whether a sequence is geometric\n\nSeeing\nstructure\n\nor arithmetic?\n\u2022 What part of each formula tells you how the\nsequence grows?\n\u2022 What does (n 2 1) represent in explicit form?\n\u2022 How are the common difference and common ratio visible\nin the graphs?\n\u2022 Do you think all geometric sequences grow faster than\nar"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk5of17-e10",
+              "excerpt": "In this activity, students revisit the sequences and graphs from Activity 1 and\nsummarize their conclusions. They identify the constant difference on the\ngraph, write the sequences in function notation, verify the constant difference\nis the slope, and describe the relationship between the first term of the\nsequence and the y-intercept.\n\nTo begin the Day 3 session, have a student read the Essential"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk5of17-e11",
+              "excerpt": "181P\n\nSummary\nAll arithmetic sequences are linear functions. The explicit formula of an arithmetic\nsequence can be rewritten as a linear function. The common difference of an\narithmetic sequence is the same as the slope of its linear function. The explicit form\ndisplays the value of f(1) while the slope-intercept form displays the value of f(0).\n\nMODULE 2 \u2022 TOPIC 1 \u2022 LESSON 3"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.875,
+    "s3_curriculum_own": 0.875
+  },
+  "divergence": 0.0
+}

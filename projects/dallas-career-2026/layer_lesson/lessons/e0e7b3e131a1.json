@@ -1,0 +1,251 @@
+{
+  "lesson_id": "e0e7b3e131a1",
+  "unit_id": "dallas-isd",
+  "title": "Dallas ISD High School Options - Lesson Plan",
+  "element_count": 7,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "e0e7b3e131a1",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e0e7b3e131a1-e1",
+              "excerpt": "--- TABLE ---\nDallas ISD High School Options Career                                                          Estimated Day(s): 1 - 45 minute classes\nResources:\nProjector or whiteboard\nHandouts (optional) | Resources:\nProjector or whiteboard\nHandouts (optional) | Resources:\nProjector or whiteboard\nHandouts (optional)\nTEKS Student Expectation(s):\n\u00a7127.2. Career and College Exploration.\n(B) explore a"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e0e7b3e131a1-e7",
+              "excerpt": "The Career Advocate will lead a Think & Throw (aka Snowballing) to evaluate student knowledge.  Students will answer an engagement question on a piece of paper, crinkle the paper into a ball, and throw it towards the center of the room.  The Career Advocate will choose at least 3-5 responses to share with the group.\n\nQuestion Stems:\nEngagement Question 1: What do you know about the programs of stu"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e0e7b3e131a1-e1",
+              "excerpt": "--- TABLE ---\nDallas ISD High School Options Career                                                          Estimated Day(s): 1 - 45 minute classes\nResources:\nProjector or whiteboard\nHandouts (optional) | Resources:\nProjector or whiteboard\nHandouts (optional) | Resources:\nProjector or whiteboard\nHandouts (optional)\nTEKS Student Expectation(s):\n\u00a7127.2. Career and College Exploration.\n(B) explore a"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e0e7b3e131a1-e1",
+              "excerpt": "--- TABLE ---\nDallas ISD High School Options Career                                                          Estimated Day(s): 1 - 45 minute classes\nResources:\nProjector or whiteboard\nHandouts (optional) | Resources:\nProjector or whiteboard\nHandouts (optional) | Resources:\nProjector or whiteboard\nHandouts (optional)\nTEKS Student Expectation(s):\n\u00a7127.2. Career and College Exploration.\n(B) explore a"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 2,
+        "partial": 2,
+        "missing": 4,
+        "coverage": 0.25,
+        "required_total": 4,
+        "required_present": 2,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "curriculum_own_dallas_career_2026",
+      "rubric_version": "v1-dallas-ctat-2026-07",
+      "scoring": "presence",
+      "lesson_id": "e0e7b3e131a1",
+      "criteria": [
+        {
+          "criterion_id": "learning_target",
+          "label": "Learning target / objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e0e7b3e131a1-e1",
+              "excerpt": "--- TABLE ---\nDallas ISD High School Options Career                                                          Estimated Day(s): 1 - 45 minute classes\nResources:\nProjector or whiteboard\nHandouts (optional) | Resources:\nProjector or whiteboard\nHandouts (optional) | Resources:\nProjector or whiteboard\nHandouts (optional)\nTEKS Student Expectation(s):\n\u00a7127.2. Career and College Exploration.\n(B) explore a"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "teks_alignment",
+          "label": "TEKS listed and aligned to objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e0e7b3e131a1-e1",
+              "excerpt": "--- TABLE ---\nDallas ISD High School Options Career                                                          Estimated Day(s): 1 - 45 minute classes\nResources:\nProjector or whiteboard\nHandouts (optional) | Resources:\nProjector or whiteboard\nHandouts (optional) | Resources:\nProjector or whiteboard\nHandouts (optional)\nTEKS Student Expectation(s):\n\u00a7127.2. Career and College Exploration.\n(B) explore a"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "materials_prep",
+          "label": "Materials, supplies & teacher prep",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e0e7b3e131a1-e7",
+              "excerpt": "The Career Advocate will lead a Think & Throw (aka Snowballing) to evaluate student knowledge.  Students will answer an engagement question on a piece of paper, crinkle the paper into a ball, and throw it towards the center of the room.  The Career Advocate will choose at least 3-5 responses to share with the group.\n\nQuestion Stems:\nEngagement Question 1: What do you know about the programs of stu"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "instructional_activities",
+          "label": "Instructional activities (launch -> activities -> closure)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e0e7b3e131a1-e1",
+              "excerpt": "--- TABLE ---\nDallas ISD High School Options Career                                                          Estimated Day(s): 1 - 45 minute classes\nResources:\nProjector or whiteboard\nHandouts (optional) | Resources:\nProjector or whiteboard\nHandouts (optional) | Resources:\nProjector or whiteboard\nHandouts (optional)\nTEKS Student Expectation(s):\n\u00a7127.2. Career and College Exploration.\n(B) explore a"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "formative_assessment",
+          "label": "Formative assessment",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "summative_assessment",
+          "label": "Summative assessment",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e0e7b3e131a1-e1",
+              "excerpt": "--- TABLE ---\nDallas ISD High School Options Career                                                          Estimated Day(s): 1 - 45 minute classes\nResources:\nProjector or whiteboard\nHandouts (optional) | Resources:\nProjector or whiteboard\nHandouts (optional) | Resources:\nProjector or whiteboard\nHandouts (optional)\nTEKS Student Expectation(s):\n\u00a7127.2. Career and College Exploration.\n(B) explore a"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "elps_strategies",
+          "label": "ELPS / language strategies",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "cte_essentials",
+          "label": "CTE essential unit elements",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "e0e7b3e131a1-e1",
+              "excerpt": "--- TABLE ---\nDallas ISD High School Options Career                                                          Estimated Day(s): 1 - 45 minute classes\nResources:\nProjector or whiteboard\nHandouts (optional) | Resources:\nProjector or whiteboard\nHandouts (optional) | Resources:\nProjector or whiteboard\nHandouts (optional)\nTEKS Student Expectation(s):\n\u00a7127.2. Career and College Exploration.\n(B) explore a"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 3,
+        "partial": 3,
+        "missing": 2,
+        "coverage": 0.375,
+        "required_total": 5,
+        "required_present": 3,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.25,
+    "s3_curriculum_own": 0.375
+  },
+  "divergence": 0.125
+}

@@ -5,16 +5,16 @@ source: inferred_from_documents
 disclaimer: Inferred projected map — reconstructed from available documents. Not official
   district curriculum. Does not replace missing lesson materials.
 source_school_calendar: school-calendar.yaml
-generated_at: '2026-07-18T17:09:40Z'
+generated_at: '2026-07-20T02:10:56Z'
 generated_by: rollup.py
 mode: dated
 summary:
-  units_total: 7
-  units_placed: 7
+  units_total: 6
+  units_placed: 6
   units_unplaced: 0
   instructional_days_available: 175
-  instructional_days_consumed: 83
-  instructional_days_remaining: 92
+  instructional_days_consumed: 55
+  instructional_days_remaining: 120
 year_at_a_glance:
   grading_period_columns:
   - id: fall-1
@@ -22,20 +22,19 @@ year_at_a_glance:
     begin: '2026-08-11'
     end: '2026-10-07'
     unit_ids:
-    - g5-mod-1
-    - g5-mod-2
-    - g5-mod-3
-    - g5-mod-4
-    unit_count: 4
+    - alg1-mod-1
+    - alg1-mod-2
+    - alg1-mod-3
+    - alg1-mod-4
+    - alg1-mod-5
+    unit_count: 5
   - id: fall-2
     label: Fall — Nine Weeks 2
     begin: '2026-10-13'
     end: '2026-12-18'
     unit_ids:
-    - g5-mod-5
-    - g5-mod-6
-    - g5-program
-    unit_count: 3
+    - alg1-program
+    unit_count: 1
   - id: spring-1
     label: Spring — Nine Weeks 3
     begin: '2027-01-06'
@@ -49,60 +48,53 @@ year_at_a_glance:
     unit_ids: []
     unit_count: 0
   unit_rows:
-  - unit_id: g5-mod-1
-    title: Grade 5 Math — Module 1
+  - unit_id: alg1-mod-1
+    title: Algebra I — Module 1
     start_date: '2026-08-11'
-    end_date: '2026-08-27'
-    unit_length_days: 13
+    end_date: '2026-08-24'
+    unit_length_days: 10
     grading_periods_spanned:
     - fall-1
-  - unit_id: g5-mod-2
-    title: Grade 5 Math — Module 2
-    start_date: '2026-08-28'
-    end_date: '2026-09-16'
-    unit_length_days: 13
+  - unit_id: alg1-mod-2
+    title: Algebra I — Module 2
+    start_date: '2026-08-25'
+    end_date: '2026-09-08'
+    unit_length_days: 10
     grading_periods_spanned:
     - fall-1
-  - unit_id: g5-mod-3
-    title: Grade 5 Math — Module 3
-    start_date: '2026-09-17'
-    end_date: '2026-10-05'
-    unit_length_days: 13
+  - unit_id: alg1-mod-3
+    title: Algebra I — Module 3
+    start_date: '2026-09-09'
+    end_date: '2026-09-22'
+    unit_length_days: 10
     grading_periods_spanned:
     - fall-1
-  - unit_id: g5-mod-4
-    title: Grade 5 Math — Module 4
-    start_date: '2026-10-06'
-    end_date: '2026-10-27'
-    unit_length_days: 13
+  - unit_id: alg1-mod-4
+    title: Algebra I — Module 4
+    start_date: '2026-09-23'
+    end_date: '2026-10-06'
+    unit_length_days: 10
     grading_periods_spanned:
     - fall-1
-  - unit_id: g5-mod-5
-    title: Grade 5 Math — Module 5
-    start_date: '2026-10-28'
-    end_date: '2026-11-16'
-    unit_length_days: 13
+  - unit_id: alg1-mod-5
+    title: Algebra I — Module 5
+    start_date: '2026-10-07'
+    end_date: '2026-10-23'
+    unit_length_days: 10
     grading_periods_spanned:
-    - fall-2
-  - unit_id: g5-mod-6
-    title: Grade 5 Math — Module 6
-    start_date: '2026-11-17'
-    end_date: '2026-12-10'
-    unit_length_days: 13
-    grading_periods_spanned:
-    - fall-2
-  - unit_id: g5-program
-    title: Grade 5 Math — program guides
-    start_date: '2026-12-11'
-    end_date: '2026-12-17'
+    - fall-1
+  - unit_id: alg1-program
+    title: Algebra I — program guides
+    start_date: '2026-10-26'
+    end_date: '2026-10-30'
     unit_length_days: 5
     grading_periods_spanned:
     - fall-2
 units:
-- unit_id: g5-mod-1
-  title: Grade 5 Math — Module 1
-  calendar: units/g5-mod-1/calendar.yaml
-  unit_length_days: 13
+- unit_id: alg1-mod-1
+  title: Algebra I — Module 1
+  calendar: units/alg1-mod-1/calendar.yaml
+  unit_length_days: 10
   source: inferred_from_documents
   day_map:
     d1: '2026-08-11'
@@ -115,134 +107,97 @@ units:
     d8: '2026-08-20'
     d9: '2026-08-21'
     d10: '2026-08-24'
-    d11: '2026-08-25'
-    d12: '2026-08-26'
-    d13: '2026-08-27'
   start_date: '2026-08-11'
-  end_date: '2026-08-27'
+  end_date: '2026-08-24'
   grading_period_id: fall-1
-- unit_id: g5-mod-2
-  title: Grade 5 Math — Module 2
-  calendar: units/g5-mod-2/calendar.yaml
-  unit_length_days: 13
+- unit_id: alg1-mod-2
+  title: Algebra I — Module 2
+  calendar: units/alg1-mod-2/calendar.yaml
+  unit_length_days: 10
   source: inferred_from_documents
   day_map:
-    d1: '2026-08-28'
-    d2: '2026-08-31'
-    d3: '2026-09-01'
-    d4: '2026-09-02'
-    d5: '2026-09-03'
-    d6: '2026-09-04'
-    d7: '2026-09-08'
-    d8: '2026-09-09'
-    d9: '2026-09-10'
-    d10: '2026-09-11'
-    d11: '2026-09-14'
-    d12: '2026-09-15'
-    d13: '2026-09-16'
-  start_date: '2026-08-28'
-  end_date: '2026-09-16'
+    d1: '2026-08-25'
+    d2: '2026-08-26'
+    d3: '2026-08-27'
+    d4: '2026-08-28'
+    d5: '2026-08-31'
+    d6: '2026-09-01'
+    d7: '2026-09-02'
+    d8: '2026-09-03'
+    d9: '2026-09-04'
+    d10: '2026-09-08'
+  start_date: '2026-08-25'
+  end_date: '2026-09-08'
   grading_period_id: fall-1
-- unit_id: g5-mod-3
-  title: Grade 5 Math — Module 3
-  calendar: units/g5-mod-3/calendar.yaml
-  unit_length_days: 13
+- unit_id: alg1-mod-3
+  title: Algebra I — Module 3
+  calendar: units/alg1-mod-3/calendar.yaml
+  unit_length_days: 10
   source: inferred_from_documents
   day_map:
-    d1: '2026-09-17'
-    d2: '2026-09-18'
-    d3: '2026-09-21'
-    d4: '2026-09-22'
-    d5: '2026-09-23'
-    d6: '2026-09-24'
-    d7: '2026-09-25'
-    d8: '2026-09-28'
-    d9: '2026-09-29'
-    d10: '2026-09-30'
-    d11: '2026-10-01'
-    d12: '2026-10-02'
-    d13: '2026-10-05'
-  start_date: '2026-09-17'
-  end_date: '2026-10-05'
+    d1: '2026-09-09'
+    d2: '2026-09-10'
+    d3: '2026-09-11'
+    d4: '2026-09-14'
+    d5: '2026-09-15'
+    d6: '2026-09-16'
+    d7: '2026-09-17'
+    d8: '2026-09-18'
+    d9: '2026-09-21'
+    d10: '2026-09-22'
+  start_date: '2026-09-09'
+  end_date: '2026-09-22'
   grading_period_id: fall-1
-- unit_id: g5-mod-4
-  title: Grade 5 Math — Module 4
-  calendar: units/g5-mod-4/calendar.yaml
-  unit_length_days: 13
+- unit_id: alg1-mod-4
+  title: Algebra I — Module 4
+  calendar: units/alg1-mod-4/calendar.yaml
+  unit_length_days: 10
   source: inferred_from_documents
   day_map:
-    d1: '2026-10-06'
-    d2: '2026-10-07'
-    d3: '2026-10-13'
-    d4: '2026-10-14'
-    d5: '2026-10-15'
-    d6: '2026-10-16'
-    d7: '2026-10-19'
-    d8: '2026-10-20'
-    d9: '2026-10-21'
-    d10: '2026-10-22'
-    d11: '2026-10-23'
-    d12: '2026-10-26'
-    d13: '2026-10-27'
-  start_date: '2026-10-06'
-  end_date: '2026-10-27'
+    d1: '2026-09-23'
+    d2: '2026-09-24'
+    d3: '2026-09-25'
+    d4: '2026-09-28'
+    d5: '2026-09-29'
+    d6: '2026-09-30'
+    d7: '2026-10-01'
+    d8: '2026-10-02'
+    d9: '2026-10-05'
+    d10: '2026-10-06'
+  start_date: '2026-09-23'
+  end_date: '2026-10-06'
   grading_period_id: fall-1
-- unit_id: g5-mod-5
-  title: Grade 5 Math — Module 5
-  calendar: units/g5-mod-5/calendar.yaml
-  unit_length_days: 13
+- unit_id: alg1-mod-5
+  title: Algebra I — Module 5
+  calendar: units/alg1-mod-5/calendar.yaml
+  unit_length_days: 10
   source: inferred_from_documents
   day_map:
-    d1: '2026-10-28'
-    d2: '2026-10-29'
-    d3: '2026-10-30'
-    d4: '2026-11-02'
-    d5: '2026-11-04'
-    d6: '2026-11-05'
-    d7: '2026-11-06'
-    d8: '2026-11-09'
-    d9: '2026-11-10'
-    d10: '2026-11-11'
-    d11: '2026-11-12'
-    d12: '2026-11-13'
-    d13: '2026-11-16'
-  start_date: '2026-10-28'
-  end_date: '2026-11-16'
-  grading_period_id: fall-2
-- unit_id: g5-mod-6
-  title: Grade 5 Math — Module 6
-  calendar: units/g5-mod-6/calendar.yaml
-  unit_length_days: 13
-  source: inferred_from_documents
-  day_map:
-    d1: '2026-11-17'
-    d2: '2026-11-18'
-    d3: '2026-11-19'
-    d4: '2026-11-20'
-    d5: '2026-11-30'
-    d6: '2026-12-01'
-    d7: '2026-12-02'
-    d8: '2026-12-03'
-    d9: '2026-12-04'
-    d10: '2026-12-07'
-    d11: '2026-12-08'
-    d12: '2026-12-09'
-    d13: '2026-12-10'
-  start_date: '2026-11-17'
-  end_date: '2026-12-10'
-  grading_period_id: fall-2
-- unit_id: g5-program
-  title: Grade 5 Math — program guides
-  calendar: units/g5-program/calendar.yaml
+    d1: '2026-10-07'
+    d2: '2026-10-13'
+    d3: '2026-10-14'
+    d4: '2026-10-15'
+    d5: '2026-10-16'
+    d6: '2026-10-19'
+    d7: '2026-10-20'
+    d8: '2026-10-21'
+    d9: '2026-10-22'
+    d10: '2026-10-23'
+  start_date: '2026-10-07'
+  end_date: '2026-10-23'
+  grading_period_id: fall-1
+- unit_id: alg1-program
+  title: Algebra I — program guides
+  calendar: units/alg1-program/calendar.yaml
   unit_length_days: 5
   source: inferred_from_documents
   day_map:
-    d1: '2026-12-11'
-    d2: '2026-12-14'
-    d3: '2026-12-15'
-    d4: '2026-12-16'
-    d5: '2026-12-17'
-  start_date: '2026-12-11'
-  end_date: '2026-12-17'
+    d1: '2026-10-26'
+    d2: '2026-10-27'
+    d3: '2026-10-28'
+    d4: '2026-10-29'
+    d5: '2026-10-30'
+  start_date: '2026-10-26'
+  end_date: '2026-10-30'
   grading_period_id: fall-2
 warnings: []

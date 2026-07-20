@@ -1,0 +1,256 @@
+{
+  "lesson_id": "ea8edac5d8da",
+  "unit_id": "transportation-distribution",
+  "title": "Transportation Distribution and Logistics Lesson Plan",
+  "element_count": 155,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "ea8edac5d8da",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "ea8edac5d8da-e2",
+              "excerpt": "Teachers will activate prior knowledge and prompt students to think about flight and airplanes using engagement questions.\n\nQuestion Stems:\nEngagement Question 1: What is one place you would love to travel in a plane to?\nEngagement Question 2: What are the parts of an airplane? | Engage: (5-10 minutes)\nStudents will use Lego to create their own mini airplanes.\n\nStudent Engagement Strategy / Resour"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "ea8edac5d8da-e1",
+              "excerpt": "--- TABLE ---\nTransportation Career                                                          Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nPresentation Slides\nStudent Worksheet\nWorksheet Answer Key | Resources:\nLesson plan\nPresentation Slides\nStudent Worksheet\nWorksheet Answer Key | Resources:\nLesson plan\nPresentation Slides\nStudent Worksheet\nWorksheet Answer Key\nMaterials Needed:"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "ea8edac5d8da-e4",
+              "excerpt": "Student Engagement Strategy / Resource:\nTeacher will post an image with the parts of a plane as a visual guide to how students can build their plan. (See visual A below)\n\nStudents will use assorted Lego pieces at their tables to build mini airplane models individually or in pairs. (See visual B below).\n\nTeachers will activate prior knowledge and prompt students to think about flight and airplanes "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "ea8edac5d8da-e3",
+              "excerpt": "Students will use assorted Lego pieces at their tables to build mini airplane models individually or in pairs. (See visual B below).\n\nTeachers will activate prior knowledge and prompt students to think about flight and airplanes using engagement questions.\n\nQuestion Stems:\nEngagement Question 1: What is one place you would love to travel in a plane to?\nEngagement Question 2: What are the parts of "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "ea8edac5d8da-e5",
+              "excerpt": "\nLift: Upward Force\nA wing moving through air generates the force called lift, also previously discussed. Lift from the wing that is greater than the force of gravity, directed opposite to the direction of gravity, enables an aircraft to fly.\nWeight: Downward Force\nAlso known as the force of gravity. It acts in a downward direction\u2014toward the center of the Earth.\nThrust: Forward Force\nThe force th"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 5,
+        "partial": 0,
+        "missing": 3,
+        "coverage": 0.625,
+        "required_total": 4,
+        "required_present": 3,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "curriculum_own_dallas_career_2026",
+      "rubric_version": "v1-dallas-ctat-2026-07",
+      "scoring": "presence",
+      "lesson_id": "ea8edac5d8da",
+      "criteria": [
+        {
+          "criterion_id": "learning_target",
+          "label": "Learning target / objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "ea8edac5d8da-e2",
+              "excerpt": "Teachers will activate prior knowledge and prompt students to think about flight and airplanes using engagement questions.\n\nQuestion Stems:\nEngagement Question 1: What is one place you would love to travel in a plane to?\nEngagement Question 2: What are the parts of an airplane? | Engage: (5-10 minutes)\nStudents will use Lego to create their own mini airplanes.\n\nStudent Engagement Strategy / Resour"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "teks_alignment",
+          "label": "TEKS listed and aligned to objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "ea8edac5d8da-e2",
+              "excerpt": "Teachers will activate prior knowledge and prompt students to think about flight and airplanes using engagement questions.\n\nQuestion Stems:\nEngagement Question 1: What is one place you would love to travel in a plane to?\nEngagement Question 2: What are the parts of an airplane? | Engage: (5-10 minutes)\nStudents will use Lego to create their own mini airplanes.\n\nStudent Engagement Strategy / Resour"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "materials_prep",
+          "label": "Materials, supplies & teacher prep",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "ea8edac5d8da-e1",
+              "excerpt": "--- TABLE ---\nTransportation Career                                                          Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nPresentation Slides\nStudent Worksheet\nWorksheet Answer Key | Resources:\nLesson plan\nPresentation Slides\nStudent Worksheet\nWorksheet Answer Key | Resources:\nLesson plan\nPresentation Slides\nStudent Worksheet\nWorksheet Answer Key\nMaterials Needed:"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "instructional_activities",
+          "label": "Instructional activities (launch -> activities -> closure)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "ea8edac5d8da-e3",
+              "excerpt": "Students will use assorted Lego pieces at their tables to build mini airplane models individually or in pairs. (See visual B below).\n\nTeachers will activate prior knowledge and prompt students to think about flight and airplanes using engagement questions.\n\nQuestion Stems:\nEngagement Question 1: What is one place you would love to travel in a plane to?\nEngagement Question 2: What are the parts of "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "formative_assessment",
+          "label": "Formative assessment",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "summative_assessment",
+          "label": "Summative assessment",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "ea8edac5d8da-e1",
+              "excerpt": "--- TABLE ---\nTransportation Career                                                          Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nPresentation Slides\nStudent Worksheet\nWorksheet Answer Key | Resources:\nLesson plan\nPresentation Slides\nStudent Worksheet\nWorksheet Answer Key | Resources:\nLesson plan\nPresentation Slides\nStudent Worksheet\nWorksheet Answer Key\nMaterials Needed:"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "elps_strategies",
+          "label": "ELPS / language strategies",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "cte_essentials",
+          "label": "CTE essential unit elements",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "ea8edac5d8da-e1",
+              "excerpt": "--- TABLE ---\nTransportation Career                                                          Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nPresentation Slides\nStudent Worksheet\nWorksheet Answer Key | Resources:\nLesson plan\nPresentation Slides\nStudent Worksheet\nWorksheet Answer Key | Resources:\nLesson plan\nPresentation Slides\nStudent Worksheet\nWorksheet Answer Key\nMaterials Needed:"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 4,
+        "partial": 2,
+        "missing": 2,
+        "coverage": 0.5,
+        "required_total": 5,
+        "required_present": 4,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.625,
+    "s3_curriculum_own": 0.5
+  },
+  "divergence": 0.125
+}

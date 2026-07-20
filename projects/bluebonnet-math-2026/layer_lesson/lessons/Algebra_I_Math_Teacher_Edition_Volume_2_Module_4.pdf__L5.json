@@ -1,0 +1,281 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf__L5",
+  "unit_id": "alg1-mod-4",
+  "title": "Algebra I Math Teacher Edition Volume 2 Module 4 \u2014 Lesson 5",
+  "element_count": 11,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf__L5",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk8of13-e7",
+              "excerpt": "The constant ratio\n\nWhether students are\ndemonstrating proficiencies\nrelated to TEKS A.1A:\n\nis a multiplier. To\n\n\u2022 Do students persevere\n\ndetermine the next\n\nin real-world problem\nsolving?\n\nterm of a geometric\nsequence, you\n\n\u2022 Do students recognize\n\nmultiply by this value.\n\nthey can use (insert math\nbeing used, for example\nratios) outside of the math\nclassroom?"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk8of13-e6",
+              "excerpt": "581\n\nEB STUDENT TIP\n\nTXOER_A1_M04_T01_L05_Student Lesson.indd 581\n\n11/05/24 5:47 PM"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk8of13-e2",
+              "excerpt": "b. Determine the constant ratio and y-intercept. Then, write the\nexponential function that represents the growth of the bacteria\npopulation over time. Show your work.\nConstant ratio: 2\ny-intercept: (0, 1)\nexponential function: f(x) 5 1 ? 2x, or f(x) 5 2x"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk7of13-e10",
+              "excerpt": "The output value, f\u200b\u200b(\u2012\u2012\n\u200bn )\u200b \u200b\u200b, for the exponential function f\u200b (x) 5 2 x\u200bis given by \u200b\u200b2\u200b\u200b\u2012\u2012\u200bn \u200b\u200b,\u200b or\nn\n2 \u200b\u200b.\nin radical form as the nth root of 2, \u221a\n\u200b\u200b \u203e\u203e\n1\n\n579N MODULE 4 \u2022 TOPIC 1 \u2022 LESSON 5"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk8of13-e1",
+              "excerpt": "\nCharacteristics of Exponential\nGrowth"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk7of13-e8",
+              "excerpt": "5. 5\n\nRational Exponents\n\nFacilitation Notes\n1\n\nIn this activity, students expand their understanding of the nth root of a as\u00a0\u200b\u200ba\u200b\u2012\u2012\u200bn \u200b\u200b\u200b\u200b\u200b\nm\nwhen \u200bn 5 2\u200bto rewrite a power in the form \u200b\u200ba\u200b\u2012\u2012\u2012\u200bn \u200b\u200b\u200b as a radical expression. They\ncontinue to use the rules of exponents to make sense of the operations that\ncan then be applied to radicals. Students practice writing radicals as powers\nand writing powe"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk8of13-e5",
+              "excerpt": "\nLesson 5\n3 Assignment\nWrite"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk7of13-e11",
+              "excerpt": "\nGetting Started\nChunking the Activity\n\nSquares and Cubes\n\n\u2022 Read and discuss\n\nWrite an expression to represent the side length, s, of each square\ngiven its area. Then, approximate the value of s.\n\nthe situation.\n\n\u2022 Group students to\n\n1. Area 5 5 ft2\n\ncomplete the activity.\n\ns2 5 5; s 5 \u221a\u203e\u203e\n5 ft\n\n\u2022 Share and summarize.\n\ns\n\n2. Area 5 2 cm2\ns2 5 2; s 5 \u221a\u203e\u203e\n2 cm\ns\n\n3. Area 5 81 in.\n\n2\n\ns2 5 81; s 5 9"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf__L5",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk8of13-e7",
+              "excerpt": "The constant ratio\n\nWhether students are\ndemonstrating proficiencies\nrelated to TEKS A.1A:\n\nis a multiplier. To\n\n\u2022 Do students persevere\n\ndetermine the next\n\nin real-world problem\nsolving?\n\nterm of a geometric\nsequence, you\n\n\u2022 Do students recognize\n\nmultiply by this value.\n\nthey can use (insert math\nbeing used, for example\nratios) outside of the math\nclassroom?"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk8of13-e6",
+              "excerpt": "581\n\nEB STUDENT TIP\n\nTXOER_A1_M04_T01_L05_Student Lesson.indd 581\n\n11/05/24 5:47 PM"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk8of13-e2",
+              "excerpt": "b. Determine the constant ratio and y-intercept. Then, write the\nexponential function that represents the growth of the bacteria\npopulation over time. Show your work.\nConstant ratio: 2\ny-intercept: (0, 1)\nexponential function: f(x) 5 1 ? 2x, or f(x) 5 2x"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk7of13-e10",
+              "excerpt": "The output value, f\u200b\u200b(\u2012\u2012\n\u200bn )\u200b \u200b\u200b, for the exponential function f\u200b (x) 5 2 x\u200bis given by \u200b\u200b2\u200b\u200b\u2012\u2012\u200bn \u200b\u200b,\u200b or\nn\n2 \u200b\u200b.\nin radical form as the nth root of 2, \u221a\n\u200b\u200b \u203e\u203e\n1\n\n579N MODULE 4 \u2022 TOPIC 1 \u2022 LESSON 5"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk8of13-e1",
+              "excerpt": "\nCharacteristics of Exponential\nGrowth"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk7of13-e8",
+              "excerpt": "5. 5\n\nRational Exponents\n\nFacilitation Notes\n1\n\nIn this activity, students expand their understanding of the nth root of a as\u00a0\u200b\u200ba\u200b\u2012\u2012\u200bn \u200b\u200b\u200b\u200b\u200b\nm\nwhen \u200bn 5 2\u200bto rewrite a power in the form \u200b\u200ba\u200b\u2012\u2012\u2012\u200bn \u200b\u200b\u200b as a radical expression. They\ncontinue to use the rules of exponents to make sense of the operations that\ncan then be applied to radicals. Students practice writing radicals as powers\nand writing powe"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk8of13-e5",
+              "excerpt": "\nLesson 5\n3 Assignment\nWrite"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk7of13-e11",
+              "excerpt": "\nGetting Started\nChunking the Activity\n\nSquares and Cubes\n\n\u2022 Read and discuss\n\nWrite an expression to represent the side length, s, of each square\ngiven its area. Then, approximate the value of s.\n\nthe situation.\n\n\u2022 Group students to\n\n1. Area 5 5 ft2\n\ncomplete the activity.\n\ns2 5 5; s 5 \u221a\u203e\u203e\n5 ft\n\n\u2022 Share and summarize.\n\ns\n\n2. Area 5 2 cm2\ns2 5 2; s 5 \u221a\u203e\u203e\n2 cm\ns\n\n3. Area 5 81 in.\n\n2\n\ns2 5 81; s 5 9"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.875,
+    "s3_curriculum_own": 0.875
+  },
+  "divergence": 0.0
+}

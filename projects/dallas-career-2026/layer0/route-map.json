@@ -1,13 +1,45 @@
 {
   "project_id": "dallas-career-2026",
-  "generated_at": "2026-07-14T02:19:40.864802+00:00",
+  "generated_at": "2026-07-20T23:22:59.021851+00:00",
   "counts": {
     "quiz": 30,
     "lesson_plan": 19,
     "general": 62
   },
+  "degraded_count": 25,
+  "degraded_by_type": {
+    "other": 23,
+    "game_activity": 2
+  },
+  "degraded_doc_ids": [
+    "0ffb85afd0ce",
+    "1f0eda900bc5",
+    "28552acaae5a",
+    "29140bd6d6f7",
+    "3369ae8b55a4",
+    "3e56e33fe53c",
+    "54aff8cc2360",
+    "5f0cb47fe1b1",
+    "724f41bf2711",
+    "7896317a42cd",
+    "794d51da5629",
+    "7f0dd1599900",
+    "80f37e7b5807",
+    "82b84c676dfd",
+    "854451cbcfc5",
+    "8efd6fc31270",
+    "a8e8847a5886",
+    "b5e36486805a",
+    "cd8f3755cf17",
+    "d9f8e87d0486",
+    "e2485fe0a73f",
+    "e2f014fb5b00",
+    "e82d217defad",
+    "ea032c71918c",
+    "ff5244c8fa47"
+  ],
   "unrouted_ledger_doc_ids": [],
-  "feedback_path": "projects/dallas-career-2026/_loom_feedback.yaml",
+  "feedback_path": "/home/lenovo/g10-control-center-loom/projects/dallas-career-2026/_loom_feedback.yaml",
   "routes": [
     {
       "doc_id": "041457651819",
@@ -16,6 +48,8 @@
       "path": "B",
       "reason": "mapped from doc_type=exit_ticket",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_041457651819_Professional_Preparedness_-__Exit_Ticket_Day_1.txt",
       "element_count": 2
@@ -27,6 +61,8 @@
       "path": "A",
       "reason": "mapped from doc_type=lesson_plan",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_052a682bd60f_Family_and_Community_Wellness-Human_Services_-_Lesson_Plan.txt",
       "element_count": 7
@@ -38,6 +74,8 @@
       "path": "B",
       "reason": "mapped from doc_type=exit_ticket",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_09bf178d4e7e_Professional_Preparedness_-__Exit_Ticket_Day_3.txt",
       "element_count": 2
@@ -49,6 +87,8 @@
       "path": "C",
       "reason": "mapped from doc_type=project_work",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_0a62e0b9729e_Arts_A_V_Student_Notes.txt",
       "element_count": 3
@@ -60,6 +100,8 @@
       "path": "B",
       "reason": "mapped from doc_type=exit_ticket",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_0a9fe894e4f0_Career_Cluster-__Exit_Ticket_Day_1.txt",
       "element_count": 2
@@ -71,6 +113,8 @@
       "path": "A",
       "reason": "mapped from doc_type=lesson_plan",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_0acbc6d0b180_Engineering_Lesson_Plan.txt",
       "element_count": 8
@@ -82,6 +126,8 @@
       "path": "B",
       "reason": "mapped from doc_type=answer_key",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_0ace9ac9d412_Transportation__Distribution_and_Logistics_Answer_Key.txt",
       "element_count": 3
@@ -93,6 +139,8 @@
       "path": "B",
       "reason": "mapped from doc_type=quiz",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_0b16e1424928_Dallas_ISD_High_School_Options___Quizizz.txt",
       "element_count": 2
@@ -104,6 +152,8 @@
       "path": "C",
       "reason": "mapped from doc_type=rubric",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_0cbd06c7c769_Arts_AV_Technology___Communication_Flyer_Project_Rubric.txt",
       "element_count": 2
@@ -115,6 +165,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.9,
       "source_file": "doc_0ffb85afd0ce_Information_Technology.txt",
       "element_count": 0
@@ -126,6 +178,8 @@
       "path": "B",
       "reason": "mapped from doc_type=exit_ticket",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_1518e9d9d4e5_Health_Science_-__Exit_Ticket.txt",
       "element_count": 7
@@ -137,6 +191,8 @@
       "path": "C",
       "reason": "mapped from doc_type=lesson_content",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_1787e9b5bfde_Career_Clusters_-_Slides.txt",
       "element_count": 18
@@ -148,6 +204,8 @@
       "path": "B",
       "reason": "mapped from doc_type=exit_ticket",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_1b43180b2ba4_Dallas_ISD_High_School_Options_-__Exit_Ticket.txt",
       "element_count": 3
@@ -159,6 +217,8 @@
       "path": "B",
       "reason": "mapped from doc_type=exit_ticket",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_1bd2952ce87b_Information_Technology_-__Exit_Ticket.txt",
       "element_count": 3
@@ -170,6 +230,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_1f0eda900bc5_Culinary-Career-Exploration-curriculum-free-asset.txt",
       "element_count": 30
@@ -181,6 +243,8 @@
       "path": "C",
       "reason": "mapped from doc_type=rubric",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_21d5442f97a2_Hospitality___Tourism_Travel_Agent_Presentation_Project_Rubric.txt",
       "element_count": 2
@@ -192,6 +256,8 @@
       "path": "C",
       "reason": "mapped from doc_type=rubric",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_270bcdd1de81_Health_Science_-_Project_Rubric.txt",
       "element_count": 1
@@ -203,6 +269,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_28552acaae5a_Pricing_a_product_with_example_and_instructions.txt",
       "element_count": 6
@@ -214,6 +282,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_29140bd6d6f7_Teaching_and_Training__Education_and_Training_.txt",
       "element_count": 5
@@ -225,6 +295,8 @@
       "path": "C",
       "reason": "mapped from doc_type=lesson_content",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_2cc1b0ae0c59_Dallas_ISD_High_School_Options_-_Slides.txt",
       "element_count": 5
@@ -236,6 +308,8 @@
       "path": "C",
       "reason": "mapped from doc_type=worksheet",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_2fc999f5e539_Students_Worksheet.txt",
       "element_count": 4
@@ -247,6 +321,8 @@
       "path": "A",
       "reason": "mapped from doc_type=lesson_plan",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_30378c1c95b1_Law_and_Public_Service_Lesson_Plans_.txt",
       "element_count": 5
@@ -258,6 +334,8 @@
       "path": "B",
       "reason": "mapped from doc_type=exit_ticket",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_314d7d0905ca_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_1.txt",
       "element_count": 3
@@ -269,6 +347,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_3369ae8b55a4_Teaching_and_Training__Education_and_Training__1_.txt",
       "element_count": 4
@@ -280,6 +360,8 @@
       "path": "C",
       "reason": "mapped from doc_type=lesson_content",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_38290addde82_Career_Exploration_Slides.txt",
       "element_count": 5
@@ -291,6 +373,8 @@
       "path": "A",
       "reason": "mapped from doc_type=lesson_plan",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_3a729a90b236_Business__Marketing___Finance_Lesson_Plan_.txt",
       "element_count": 2
@@ -302,6 +386,8 @@
       "path": "A",
       "reason": "mapped from doc_type=lesson_plan",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_3dc5933c971d_Teaching_and_Training__Education_and_Training__Lesson_Plan.txt",
       "element_count": 6
@@ -313,6 +399,8 @@
       "path": "C",
       "reason": "mapped from doc_type=game_activity",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'game_activity' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_3e56e33fe53c_Career_Cluster_Bingo_Large.txt",
       "element_count": 191
@@ -324,6 +412,8 @@
       "path": "B",
       "reason": "mapped from doc_type=exit_ticket",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_3f5d5ba70a87_Hospitality___Tourism_Day_2_Exit_Ticket.txt",
       "element_count": 2
@@ -335,6 +425,8 @@
       "path": "B",
       "reason": "mapped from doc_type=quiz",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_3fd5e5bc561c_Manufacturing_exploration___Quizizz.txt",
       "element_count": 3
@@ -346,6 +438,8 @@
       "path": "C",
       "reason": "mapped from doc_type=rubric",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_4092c72a851c_Professional_Preparedness_-_Project_Rubric_.txt",
       "element_count": 2
@@ -357,6 +451,8 @@
       "path": "C",
       "reason": "mapped from doc_type=project_work",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_40c5e0f508f1_Career_Cluster__Student_Feedback-__Project.txt",
       "element_count": 2
@@ -368,6 +464,8 @@
       "path": "C",
       "reason": "mapped from doc_type=lab_activity",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_468be78c578b_Vital_Signs_Lab_Activity.txt",
       "element_count": 3
@@ -379,6 +477,8 @@
       "path": "B",
       "reason": "mapped from doc_type=exit_ticket",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_4736326638c1_Professional_Preparedness_-__Exit_Ticket_Day_2.txt",
       "element_count": 2
@@ -390,6 +490,8 @@
       "path": "A",
       "reason": "mapped from doc_type=lesson_plan",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_48a445a553cc_Career_Cluster_-_Lesson_Plan.txt",
       "element_count": 7
@@ -401,6 +503,8 @@
       "path": "C",
       "reason": "mapped from doc_type=lesson_content",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_4b97944cd264_Engineering_Lesson.txt",
       "element_count": 5
@@ -412,6 +516,8 @@
       "path": "A",
       "reason": "mapped from doc_type=lesson_plan",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_4cc88ad60178_Hospitality___Tourism_-_Lesson_Plan.txt",
       "element_count": 19
@@ -423,6 +529,8 @@
       "path": "B",
       "reason": "mapped from doc_type=exit_ticket",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_51e75ae5f576_Exit_Ticket_Day_3_HOSPITALITY_AND_TOURISM_.txt",
       "element_count": 2
@@ -434,6 +542,8 @@
       "path": "C",
       "reason": "mapped from doc_type=lesson_content",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_545aa2c2190a_Career_Exploration_Project_Slides.txt",
       "element_count": 6
@@ -445,6 +555,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_54aff8cc2360_Financial_Literacy.txt",
       "element_count": 15
@@ -456,6 +568,8 @@
       "path": "C",
       "reason": "mapped from doc_type=project_work",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_56bd08f50ac3_Commercial_Script_Example.txt",
       "element_count": 1
@@ -467,6 +581,8 @@
       "path": "B",
       "reason": "mapped from doc_type=exit_ticket",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_59ddeafc2ad3_Career_Cluster_-__Exit_Ticket_Day_3.txt",
       "element_count": 2
@@ -478,6 +594,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_5f0cb47fe1b1_Interviewing_Role_Play_Scripts.txt",
       "element_count": 2
@@ -489,6 +607,8 @@
       "path": "A",
       "reason": "mapped from doc_type=lesson_plan",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_62fc60052993_Architecture___Construction_Lesson_Plan.txt",
       "element_count": 4
@@ -500,6 +620,8 @@
       "path": "A",
       "reason": "mapped from doc_type=lesson_plan",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_65169778f3e6_Skills_for_Success-Career_Ready__Lesson_Plan.txt",
       "element_count": 4
@@ -511,6 +633,8 @@
       "path": "C",
       "reason": "mapped from doc_type=lesson_content",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_67a41a913430_Manufacturing_Lesson.txt",
       "element_count": 7
@@ -522,6 +646,8 @@
       "path": "C",
       "reason": "mapped from doc_type=project_work",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_6880e9ded029_Commercial_Project_Instructions.txt",
       "element_count": 3
@@ -533,6 +659,8 @@
       "path": "C",
       "reason": "mapped from doc_type=lesson_content",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_6a1919f04824_Transportation__Distribution_and_Logistics_PowerPoint.txt",
       "element_count": 5
@@ -544,6 +672,8 @@
       "path": "C",
       "reason": "mapped from doc_type=rubric",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_6c94424ba260_Information_Technology_-_Project_Rubric.txt",
       "element_count": 1
@@ -555,6 +685,8 @@
       "path": "B",
       "reason": "mapped from doc_type=answer_key",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_6caee441faaf_Dallas_ISD_High_School_Options___Quizizz_Answer_Key.txt",
       "element_count": 6
@@ -566,6 +698,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_724f41bf2711_Middle_School_Resume_Builder.txt",
       "element_count": 2
@@ -577,6 +711,8 @@
       "path": "A",
       "reason": "mapped from doc_type=lesson_plan",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_761e6495bc24_Arts_A_V_Tech__Lesson_Plan_.txt",
       "element_count": 9
@@ -588,6 +724,8 @@
       "path": "C",
       "reason": "mapped from doc_type=rubric",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_769516e58fb5_Business__Marketing___Finance_-_Project_Rubric.txt",
       "element_count": 1
@@ -599,6 +737,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_7896317a42cd_CTSO_Career_Pathway_Letter_of_Intent_.txt",
       "element_count": 5
@@ -610,6 +750,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_794d51da5629_Professional_Preparedness.txt",
       "element_count": 13
@@ -621,6 +763,8 @@
       "path": "C",
       "reason": "mapped from doc_type=lesson_content",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_7f02e4fea0d8_Law_and_Public_Service_Slides.txt",
       "element_count": 8
@@ -632,6 +776,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_7f0dd1599900_Health_Science.txt",
       "element_count": 18
@@ -643,6 +789,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_80f37e7b5807_Knife_Skills_Sponge.txt",
       "element_count": 1
@@ -654,6 +802,8 @@
       "path": "B",
       "reason": "mapped from doc_type=exit_ticket",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_81adda4c10f7_Manufacturing_Lesson_Exit_ticket.txt",
       "element_count": 3
@@ -665,6 +815,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_82b84c676dfd_Professional_Attire_Answers.txt",
       "element_count": 1
@@ -676,6 +828,8 @@
       "path": "C",
       "reason": "mapped from doc_type=lesson_content",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_83154b464163_Skills_for_Success-Career_Ready__-_Slides.txt",
       "element_count": 14
@@ -687,6 +841,8 @@
       "path": "C",
       "reason": "mapped from doc_type=project_work",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.9,
       "source_file": "doc_851a02b17dc9_Non_Profit_Flyer_Examples.txt",
       "element_count": 0
@@ -698,6 +854,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_854451cbcfc5_Health_Science.txt",
       "element_count": 9
@@ -709,6 +867,8 @@
       "path": "B",
       "reason": "mapped from doc_type=exit_ticket",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_85c8ad2c6c50_Day_1_Exit_Ticket__HOSPITALITY_AND_TOURISM_.txt",
       "element_count": 3
@@ -720,6 +880,8 @@
       "path": "B",
       "reason": "mapped from doc_type=answer_key",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_86fff193b91a_Engineering_Lesson_Quiz___Quizizz_Answer_key.txt",
       "element_count": 4
@@ -731,6 +893,8 @@
       "path": "C",
       "reason": "mapped from doc_type=project_work",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_8891b46563ae_Flyer_Project_Instructions.txt",
       "element_count": 2
@@ -742,6 +906,8 @@
       "path": "C",
       "reason": "mapped from doc_type=lesson_content",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt",
       "element_count": 16
@@ -753,6 +919,8 @@
       "path": "B",
       "reason": "mapped from doc_type=exit_ticket",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_8ce965ac1600_Business__Marketing___Finance_-__Exit_Ticket.txt",
       "element_count": 2
@@ -764,6 +932,8 @@
       "path": "C",
       "reason": "mapped from doc_type=game_activity",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'game_activity' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_8efd6fc31270_Career_Cluster_Bingo.txt",
       "element_count": 191
@@ -775,6 +945,8 @@
       "path": "C",
       "reason": "mapped from doc_type=project_work",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_98ed44c5b0af_3_Course_Meal_Menu.txt",
       "element_count": 3
@@ -786,6 +958,8 @@
       "path": "B",
       "reason": "mapped from doc_type=exit_ticket",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_9b49036929a2_Hospitality___Tourism_Day_2_-__Exit_Ticket.txt",
       "element_count": 2
@@ -797,6 +971,8 @@
       "path": "A",
       "reason": "mapped from doc_type=lesson_plan",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_a0327ea48d5e_What_is_Career_Exploration_Lesson_Plan.txt",
       "element_count": 5
@@ -808,6 +984,8 @@
       "path": "B",
       "reason": "mapped from doc_type=answer_key",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_a13c35aa5c4e_Manufacturing_exploration_Answer_keys___Quizizz.txt",
       "element_count": 3
@@ -819,6 +997,8 @@
       "path": "C",
       "reason": "mapped from doc_type=worksheet",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_a8248438c079_Transportation__Distribution_and_Logistics_Student_Worksheet.txt",
       "element_count": 4
@@ -830,6 +1010,8 @@
       "path": "A",
       "reason": "mapped from doc_type=lesson_plan",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_a82b911543f3_Professional_Preparedness_-_Lesson_Plan.txt",
       "element_count": 14
@@ -841,6 +1023,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_a8e8847a5886_Professional_Attire_-_Scenarios.txt",
       "element_count": 2
@@ -852,6 +1036,8 @@
       "path": "C",
       "reason": "mapped from doc_type=worksheet",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_addfb0873806_Community_Problem_Brainstorming_Worksheet.txt",
       "element_count": 2
@@ -863,6 +1049,8 @@
       "path": "C",
       "reason": "mapped from doc_type=rubric",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_af9cf3b04474_Arts_AV_Technology___Communication_Commercial_Project_Rubric.txt",
       "element_count": 2
@@ -874,6 +1062,8 @@
       "path": "C",
       "reason": "mapped from doc_type=lesson_content",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_b05bfe476c76_Family_and_Community_Wellness-Human_Services_-_Slides.txt",
       "element_count": 9
@@ -885,6 +1075,8 @@
       "path": "A",
       "reason": "mapped from doc_type=lesson_plan",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_b2fef8a53002_Week_One_Lesson_Plan.txt",
       "element_count": 4
@@ -896,6 +1088,8 @@
       "path": "A",
       "reason": "mapped from doc_type=lesson_plan",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_b34e8b764732_Manufacturing_Lesson_Plan_.txt",
       "element_count": 6
@@ -907,6 +1101,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt",
       "element_count": 11
@@ -918,6 +1114,8 @@
       "path": "B",
       "reason": "mapped from doc_type=exit_ticket",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_ba8b5c7a6deb_Engineering_Lesson_-__Exit_Ticket.txt",
       "element_count": 3
@@ -929,6 +1127,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_cd8f3755cf17_wilshire-code-cards.txt",
       "element_count": 6
@@ -940,6 +1140,8 @@
       "path": "A",
       "reason": "mapped from doc_type=lesson_plan",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_d2b6b5aacb2c_Copy_of_Law_and_Public_Service_Lesson_Plans_.txt",
       "element_count": 8
@@ -951,6 +1153,8 @@
       "path": "B",
       "reason": "mapped from doc_type=quiz",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_d3fae80ecd3f_Architecture_and_Construction_Quizizz.txt",
       "element_count": 5
@@ -962,6 +1166,8 @@
       "path": "C",
       "reason": "mapped from doc_type=presentation",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_d50f42a8f21e_CTSO_Presentation.txt",
       "element_count": 5
@@ -973,6 +1179,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_d9f8e87d0486_Financial_Literacy.txt",
       "element_count": 34
@@ -984,6 +1192,8 @@
       "path": "A",
       "reason": "mapped from doc_type=lesson_plan",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_e0e7b3e131a1_Dallas_ISD_High_School_Options_-_Lesson_Plan.txt",
       "element_count": 7
@@ -995,6 +1205,8 @@
       "path": "B",
       "reason": "mapped from doc_type=exit_ticket",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_e173d04cd3e3_Architecture___Construction_-__Exit_Ticket.txt",
       "element_count": 2
@@ -1006,6 +1218,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_e2485fe0a73f_runway-pictures.txt",
       "element_count": 1
@@ -1017,6 +1231,8 @@
       "path": "B",
       "reason": "mapped from doc_type=exit_ticket",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_e2c12c61bc5f_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_3.txt",
       "element_count": 2
@@ -1028,6 +1244,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_e2f014fb5b00_What_are_businesses_saying_to_me_and_how.txt",
       "element_count": 1
@@ -1039,6 +1257,8 @@
       "path": "C",
       "reason": "mapped from doc_type=worksheet",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_e31064aba3ae_Writing_Your_Sales_Pitch_Worksheet.txt",
       "element_count": 8
@@ -1050,6 +1270,8 @@
       "path": "C",
       "reason": "mapped from doc_type=rubric",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_e7b2a411cbdc_Financial_Literacy_-_Project_Rubric.txt",
       "element_count": 1
@@ -1061,6 +1283,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_e82d217defad_Carrasco_Brainstorm.txt",
       "element_count": 8
@@ -1072,6 +1296,8 @@
       "path": "A",
       "reason": "mapped from doc_type=lesson_plan",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt",
       "element_count": 6
@@ -1083,6 +1309,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_ea032c71918c_Law_and_Public_Service_KWL.txt",
       "element_count": 1
@@ -1094,6 +1322,8 @@
       "path": "A",
       "reason": "mapped from doc_type=lesson_plan",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_ea8edac5d8da_Transportation__Distribution_and_Logistics_Lesson_Plan.txt",
       "element_count": 155
@@ -1105,6 +1335,8 @@
       "path": "C",
       "reason": "mapped from doc_type=lesson_content",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_eb042af8c066_Architecture___Construction_Slides.txt",
       "element_count": 7
@@ -1116,6 +1348,8 @@
       "path": "B",
       "reason": "mapped from doc_type=answer_key",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_ed1c99b4f5fa_Architecture_and_Construction_Answer_Key_Quizizz.txt",
       "element_count": 5
@@ -1127,6 +1361,8 @@
       "path": "B",
       "reason": "mapped from doc_type=exit_ticket",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_eff81c789b58_Financial_Literacy_-__Exit_Ticket.txt",
       "element_count": 4
@@ -1138,6 +1374,8 @@
       "path": "C",
       "reason": "mapped from doc_type=rubric",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_f1b0566d0274_Career_Cluster__-__Project_Rubric.txt",
       "element_count": 2
@@ -1149,6 +1387,8 @@
       "path": "A",
       "reason": "mapped from doc_type=lesson_plan",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_f3e58b61782a_CTSO_Lesson_Plan_.txt",
       "element_count": 8
@@ -1160,6 +1400,8 @@
       "path": "B",
       "reason": "mapped from doc_type=exit_ticket",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_f52d1bc1c462_Career_Cluster_-__Exit_Ticket_Day_2.txt",
       "element_count": 1
@@ -1171,6 +1413,8 @@
       "path": "C",
       "reason": "mapped from doc_type=lesson_content",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_f85ca6403d8c_Copy_of_Business__Marketing___Finance_-_Slides.txt",
       "element_count": 12
@@ -1182,6 +1426,8 @@
       "path": "C",
       "reason": "mapped from doc_type=lesson_content",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_f96797847d38_Law_and_Public_Service_Project_Slides.txt",
       "element_count": 4
@@ -1193,6 +1439,8 @@
       "path": "C",
       "reason": "mapped from doc_type=worksheet",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_f9710e5e4e97_Career_Exploration_Worksheet-_LAW.txt",
       "element_count": 3
@@ -1204,6 +1452,8 @@
       "path": "B",
       "reason": "mapped from doc_type=quiz",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_fc48920a5ca9_Engineering_Lesson_Quiz___Quizizz.txt",
       "element_count": 3
@@ -1215,6 +1465,8 @@
       "path": "C",
       "reason": "mapped from doc_type=other",
       "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
       "confidence": 0.85,
       "source_file": "doc_ff5244c8fa47_Information_Technology_.txt",
       "element_count": 8
@@ -1226,6 +1478,8 @@
       "path": "B",
       "reason": "mapped from doc_type=exit_ticket",
       "feedback": false,
+      "degraded": false,
+      "degraded_reason": "",
       "confidence": 0.85,
       "source_file": "doc_ff5cd4c0712e_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_2.txt",
       "element_count": 2

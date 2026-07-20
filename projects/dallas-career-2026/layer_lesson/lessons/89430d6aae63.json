@@ -1,0 +1,271 @@
+{
+  "lesson_id": "89430d6aae63",
+  "unit_id": "arts-av-technology",
+  "title": "Arts AV Technology Communication - Slides",
+  "element_count": 16,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "89430d6aae63",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "89430d6aae63-e16",
+              "excerpt": "Arts, A/V Tech & Communication\n\nDay 3 - Presentation\n\nFlyer Presentation Guidelines: Each aspect of the flyer must be presented with the group's reasoning as to why they chose the company name, slogan, problem and solution.\nCommercial Presentation requirements: All members of the group must be in the commercial. A script is allowed when presenting. Speak clearly and slowly so everyone in the class"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "89430d6aae63-e1",
+              "excerpt": "Arts Audio/Video Technology & Communication Career Cluster\n\nDay 1"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "89430d6aae63-e3",
+              "excerpt": "This career deals with:\n\ndesigning, producing, performing, writing and publishing multimedia content."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "89430d6aae63-e13",
+              "excerpt": "Exit Ticket - Day 3\n\nWhat is the main purpose of this cluster?\n\n What career did you find most interesting within this cluster?\n\n What would you like to learn more about this cluster?\n\nArts, A/V Tech & Communication"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "89430d6aae63-e2",
+              "excerpt": "Engage\n\nGuess the Logo"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "89430d6aae63-e10",
+              "excerpt": "Explore\n\nCongratulations!!!\n\nYou have just been given the CEO position of a new nonprofit company that operates in your community.\nThey need you to find a community problem and launch an advertisement campaign to solve the problem.\nThe company needs the ad campaign in a few days\u2026. So get to work!!!\n\nBrainstorm in your groups\u2026\n\nExtend - Campaign for Community Change\n\nWhat is my community?"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "89430d6aae63-e14",
+              "excerpt": "Group Work Day\n\nExit Ticket - Day 2\n\nDid my group communicate well?\n\n Did my group work together to solve the problem?\n\n Did my group use its time well?\n\nDid I contribute to my team\u2019s work?\n\nDid everyone in my group contribute?\n\nArts, A/V Tech & Communication"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 0,
+        "missing": 1,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "curriculum_own_dallas_career_2026",
+      "rubric_version": "v1-dallas-ctat-2026-07",
+      "scoring": "presence",
+      "lesson_id": "89430d6aae63",
+      "criteria": [
+        {
+          "criterion_id": "learning_target",
+          "label": "Learning target / objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "89430d6aae63-e16",
+              "excerpt": "Arts, A/V Tech & Communication\n\nDay 3 - Presentation\n\nFlyer Presentation Guidelines: Each aspect of the flyer must be presented with the group's reasoning as to why they chose the company name, slogan, problem and solution.\nCommercial Presentation requirements: All members of the group must be in the commercial. A script is allowed when presenting. Speak clearly and slowly so everyone in the class"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "teks_alignment",
+          "label": "TEKS listed and aligned to objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "89430d6aae63-e16",
+              "excerpt": "Arts, A/V Tech & Communication\n\nDay 3 - Presentation\n\nFlyer Presentation Guidelines: Each aspect of the flyer must be presented with the group's reasoning as to why they chose the company name, slogan, problem and solution.\nCommercial Presentation requirements: All members of the group must be in the commercial. A script is allowed when presenting. Speak clearly and slowly so everyone in the class"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "materials_prep",
+          "label": "Materials, supplies & teacher prep",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "89430d6aae63-e1",
+              "excerpt": "Arts Audio/Video Technology & Communication Career Cluster\n\nDay 1"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "instructional_activities",
+          "label": "Instructional activities (launch -> activities -> closure)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "89430d6aae63-e2",
+              "excerpt": "Engage\n\nGuess the Logo"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "formative_assessment",
+          "label": "Formative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "89430d6aae63-e13",
+              "excerpt": "Exit Ticket - Day 3\n\nWhat is the main purpose of this cluster?\n\n What career did you find most interesting within this cluster?\n\n What would you like to learn more about this cluster?\n\nArts, A/V Tech & Communication"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "summative_assessment",
+          "label": "Summative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "89430d6aae63-e13",
+              "excerpt": "Exit Ticket - Day 3\n\nWhat is the main purpose of this cluster?\n\n What career did you find most interesting within this cluster?\n\n What would you like to learn more about this cluster?\n\nArts, A/V Tech & Communication"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "elps_strategies",
+          "label": "ELPS / language strategies",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "cte_essentials",
+          "label": "CTE essential unit elements",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "89430d6aae63-e1",
+              "excerpt": "Arts Audio/Video Technology & Communication Career Cluster\n\nDay 1"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 1,
+        "missing": 1,
+        "coverage": 0.75,
+        "required_total": 5,
+        "required_present": 5,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.875,
+    "s3_curriculum_own": 0.75
+  },
+  "divergence": 0.125
+}

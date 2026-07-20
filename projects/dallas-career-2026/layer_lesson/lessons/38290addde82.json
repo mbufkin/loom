@@ -1,0 +1,271 @@
+{
+  "lesson_id": "38290addde82",
+  "unit_id": "career-exploration",
+  "title": "Career Exploration Slides",
+  "element_count": 5,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "38290addde82",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "38290addde82-e5",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "38290addde82-e4",
+              "excerpt": "Action 3\nAction 2\nAction 1\nComplete the career\nexploration project. Start\nby choosing three careers\nfrom the 14 different\ncareer clusters.\nFollow the\ndirections provided\nin the powerpoint.\nBe prepared to present to the\nclass.\n\nPlease complete the exit ticket.\nTHANK\nYOU!\nTHANK\nYOU!"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "38290addde82-e1",
+              "excerpt": "Career\nCLUSTERS\n\nAgenda\nCareer Cluster\n1.\nThe team\n2.\nIce breaker\n3.\nCompetitive analysis\n4.\nConclusions\n5.\nContact\n6."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "38290addde82-e3",
+              "excerpt": "FLYER\nCareer Cluster flyer\nResearch a\n career cluster.\nCreate a flyer.\nShare with the\nclass.\n\nVIDEO 1\nDiscuss what you learned with your group\n and be prepared to share what you learne\nd and be able to explain to the class.\nCAREER CONVERSATIONS\nPlease watch the video with your group, and\n take notes.\nVIDEO 2\nShare with the class.\nVIDEO 3"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "38290addde82-e2",
+              "excerpt": "What is a Career Cluster?\nWatch the video\nCareer Clusters help students investigate\ncareers and design their courses of study to\nadvance their career goals. A Career Cluster is\na grouping of occupations and broad industries\nbased on commonalities. Within each career\ncluster, there are multiple career pathways\nthat represent a common set of skills and\nknowledge, both academic and technical,\nnecessa"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "38290addde82-e2",
+              "excerpt": "What is a Career Cluster?\nWatch the video\nCareer Clusters help students investigate\ncareers and design their courses of study to\nadvance their career goals. A Career Cluster is\na grouping of occupations and broad industries\nbased on commonalities. Within each career\ncluster, there are multiple career pathways\nthat represent a common set of skills and\nknowledge, both academic and technical,\nnecessa"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "38290addde82-e4",
+              "excerpt": "Action 3\nAction 2\nAction 1\nComplete the career\nexploration project. Start\nby choosing three careers\nfrom the 14 different\ncareer clusters.\nFollow the\ndirections provided\nin the powerpoint.\nBe prepared to present to the\nclass.\n\nPlease complete the exit ticket.\nTHANK\nYOU!\nTHANK\nYOU!"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 5,
+        "partial": 2,
+        "missing": 1,
+        "coverage": 0.625,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "curriculum_own_dallas_career_2026",
+      "rubric_version": "v1-dallas-ctat-2026-07",
+      "scoring": "presence",
+      "lesson_id": "38290addde82",
+      "criteria": [
+        {
+          "criterion_id": "learning_target",
+          "label": "Learning target / objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "38290addde82-e5",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "teks_alignment",
+          "label": "TEKS listed and aligned to objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "38290addde82-e5",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "materials_prep",
+          "label": "Materials, supplies & teacher prep",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "38290addde82-e4",
+              "excerpt": "Action 3\nAction 2\nAction 1\nComplete the career\nexploration project. Start\nby choosing three careers\nfrom the 14 different\ncareer clusters.\nFollow the\ndirections provided\nin the powerpoint.\nBe prepared to present to the\nclass.\n\nPlease complete the exit ticket.\nTHANK\nYOU!\nTHANK\nYOU!"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "instructional_activities",
+          "label": "Instructional activities (launch -> activities -> closure)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "38290addde82-e1",
+              "excerpt": "Career\nCLUSTERS\n\nAgenda\nCareer Cluster\n1.\nThe team\n2.\nIce breaker\n3.\nCompetitive analysis\n4.\nConclusions\n5.\nContact\n6."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "formative_assessment",
+          "label": "Formative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "38290addde82-e3",
+              "excerpt": "FLYER\nCareer Cluster flyer\nResearch a\n career cluster.\nCreate a flyer.\nShare with the\nclass.\n\nVIDEO 1\nDiscuss what you learned with your group\n and be prepared to share what you learne\nd and be able to explain to the class.\nCAREER CONVERSATIONS\nPlease watch the video with your group, and\n take notes.\nVIDEO 2\nShare with the class.\nVIDEO 3"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "summative_assessment",
+          "label": "Summative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "38290addde82-e3",
+              "excerpt": "FLYER\nCareer Cluster flyer\nResearch a\n career cluster.\nCreate a flyer.\nShare with the\nclass.\n\nVIDEO 1\nDiscuss what you learned with your group\n and be prepared to share what you learne\nd and be able to explain to the class.\nCAREER CONVERSATIONS\nPlease watch the video with your group, and\n take notes.\nVIDEO 2\nShare with the class.\nVIDEO 3"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "elps_strategies",
+          "label": "ELPS / language strategies",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "cte_essentials",
+          "label": "CTE essential unit elements",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "38290addde82-e1",
+              "excerpt": "Career\nCLUSTERS\n\nAgenda\nCareer Cluster\n1.\nThe team\n2.\nIce breaker\n3.\nCompetitive analysis\n4.\nConclusions\n5.\nContact\n6."
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 1,
+        "missing": 1,
+        "coverage": 0.75,
+        "required_total": 5,
+        "required_present": 5,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.625,
+    "s3_curriculum_own": 0.75
+  },
+  "divergence": 0.125
+}

@@ -1,0 +1,271 @@
+{
+  "lesson_id": "3dc5933c971d",
+  "unit_id": "teaching-and-training",
+  "title": "Teaching and Training Education and Training Lesson Plan",
+  "element_count": 6,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "3dc5933c971d",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "3dc5933c971d-e1",
+              "excerpt": "--- TABLE ---\nTeaching and Training (Education and Training)Career                                                          Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities\nTEKS Student Expectation(s):\n\u00a7127.2. Career and College Exploration.\n(B) explore and des"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "3dc5933c971d-e6",
+              "excerpt": "Question Stems:\nWhat are the requirements to become a teacher?\nWhat are some challenges that a teacher might face?\nWould you consider becoming a teacher? What subject? | Extend: (20-30 Minutes)\nStudents will complete vocabulary and find out the different career paths within the Teaching & Training Pathway.Students will watch a Ted Talk from an educator and review what she spoke about.  Students wi"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "3dc5933c971d-e2",
+              "excerpt": "Question Stems:\nWhat are the requirements to become a teacher?\nWhat are some challenges that a teacher might face?\nWould you consider becoming a teacher? What subject? | Extend: (20-30 Minutes)\nStudents will complete vocabulary and find out the different career paths within the Teaching & Training Pathway.Students will watch a Ted Talk from an educator and review what she spoke about.  Students wi"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "3dc5933c971d-e4",
+              "excerpt": "Materials:\nCopy Paper\nConstruction Paper\nGlue\nScissors\n\nStudents will review their peers book."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "3dc5933c971d-e3",
+              "excerpt": "Question Stems:\nEngagement Question 1: What do you know about this Career Field?\nEngagement Question 2: What do you want to know about this Career Field?\nExplain Activity\nExplore: (20-30 Minutes)\nStudents will explore with hands-on activity in small groups.\nStudent Engagement Strategy / Resource:\nStudents will demonstrate their understanding through the provided activity sheets.\n\nQuestion Stems: |"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "3dc5933c971d-e3",
+              "excerpt": "Question Stems:\nEngagement Question 1: What do you know about this Career Field?\nEngagement Question 2: What do you want to know about this Career Field?\nExplain Activity\nExplore: (20-30 Minutes)\nStudents will explore with hands-on activity in small groups.\nStudent Engagement Strategy / Resource:\nStudents will demonstrate their understanding through the provided activity sheets.\n\nQuestion Stems: |"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "3dc5933c971d-e5",
+              "excerpt": "Question Stems:\nWhat are the requirements to become a teacher?\nWhat are some challenges that a teacher might face?\nWould you consider becoming a teacher? What subject?\nEvaluate Activity\nEvaluate: (5-10 Minutes)\n\n Student Engagement Strategy / Resource:\nPeer Book Review\n\nMaterials:\nCopy Paper\nConstruction Paper\nGlue\nScissors\n\nStudents will review their peers book. | Evaluate: (5-10 Minutes)\n\n Stude"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 1,
+        "missing": 1,
+        "coverage": 0.75,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "curriculum_own_dallas_career_2026",
+      "rubric_version": "v1-dallas-ctat-2026-07",
+      "scoring": "presence",
+      "lesson_id": "3dc5933c971d",
+      "criteria": [
+        {
+          "criterion_id": "learning_target",
+          "label": "Learning target / objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "3dc5933c971d-e1",
+              "excerpt": "--- TABLE ---\nTeaching and Training (Education and Training)Career                                                          Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities\nTEKS Student Expectation(s):\n\u00a7127.2. Career and College Exploration.\n(B) explore and des"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "teks_alignment",
+          "label": "TEKS listed and aligned to objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "3dc5933c971d-e1",
+              "excerpt": "--- TABLE ---\nTeaching and Training (Education and Training)Career                                                          Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities\nTEKS Student Expectation(s):\n\u00a7127.2. Career and College Exploration.\n(B) explore and des"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "materials_prep",
+          "label": "Materials, supplies & teacher prep",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "3dc5933c971d-e6",
+              "excerpt": "Question Stems:\nWhat are the requirements to become a teacher?\nWhat are some challenges that a teacher might face?\nWould you consider becoming a teacher? What subject? | Extend: (20-30 Minutes)\nStudents will complete vocabulary and find out the different career paths within the Teaching & Training Pathway.Students will watch a Ted Talk from an educator and review what she spoke about.  Students wi"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "instructional_activities",
+          "label": "Instructional activities (launch -> activities -> closure)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "3dc5933c971d-e2",
+              "excerpt": "Question Stems:\nWhat are the requirements to become a teacher?\nWhat are some challenges that a teacher might face?\nWould you consider becoming a teacher? What subject? | Extend: (20-30 Minutes)\nStudents will complete vocabulary and find out the different career paths within the Teaching & Training Pathway.Students will watch a Ted Talk from an educator and review what she spoke about.  Students wi"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "formative_assessment",
+          "label": "Formative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "3dc5933c971d-e4",
+              "excerpt": "Materials:\nCopy Paper\nConstruction Paper\nGlue\nScissors\n\nStudents will review their peers book."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "summative_assessment",
+          "label": "Summative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "3dc5933c971d-e4",
+              "excerpt": "Materials:\nCopy Paper\nConstruction Paper\nGlue\nScissors\n\nStudents will review their peers book."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "elps_strategies",
+          "label": "ELPS / language strategies",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "cte_essentials",
+          "label": "CTE essential unit elements",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "3dc5933c971d-e1",
+              "excerpt": "--- TABLE ---\nTeaching and Training (Education and Training)Career                                                          Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities\nTEKS Student Expectation(s):\n\u00a7127.2. Career and College Exploration.\n(B) explore and des"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 1,
+        "missing": 1,
+        "coverage": 0.75,
+        "required_total": 5,
+        "required_present": 5,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.75,
+    "s3_curriculum_own": 0.75
+  },
+  "divergence": 0.0
+}

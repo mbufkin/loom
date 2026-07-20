@@ -1,0 +1,261 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf__L2",
+  "unit_id": "alg1-program",
+  "title": "Algebra I Math Teacher Edition Course and Implementation Guide \u2014 Lesson 2",
+  "element_count": 8,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf__L2",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk2of7-e1",
+              "excerpt": "USE THE MODULE AND TOPIC OVERVIEW\n\nRevisit the Module Overview and annotations created as part of the prework.\nRead the Topic Overview. Identify how the module utilizes the concreterepresentational-abstract (CRA) progression to build student learning from\nlesson to lesson. Identify new key terms and symbols. Use the cognates and\nthe How can you use cognates to support EB students? section in the T"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk1of7-e7",
+              "excerpt": "6\n\nx\n\n8\n\n\u22122\n\n\u22124\n\n\u22124\n\n\u22126\n\n\u22126\n\n\u22128\n\n\u22128\n\nMODULE 5 \u2022 TOPIC 1 \u2022 LESSON 2\n\n681\n\nLook for similar sequences throughout the materials.\nTXOER_A1_M05_T01_L02_Student Lesson.indd 681\n\nFM-12 ALGEBRA I COURSE AND IMPLEMENTATION GUIDE\n\n11/05/24 10:44 PM\n\n\nCourse-Level Documents\nYear-at-a-Glance\n\nThe Year-at-a-Glance highlights the sequence\nof topics and the number of instructional days\nallocated for the course.\n"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk2of7-e2",
+              "excerpt": "relationship between two quantities.\n\n\u2022 Write equations for vertical and horizontal lines.\n\nyou take ownership of\nthe objectives.\n\n2\n\n2\nEssential Question\n\nEach lesson begins with a\n\nYou have used the slope-intercept form to represent linear\nrelationships. Are there other forms of a linear equation that\nyou can use? How do you write equations for horizontal and\nvertical lines?"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk4of7-e6",
+              "excerpt": "using multiple tools\n\nfor construction\nandgroups.\nRecord the following information\nfor each of your\n\ncomposition.\n\u2022 Name each group of graphs.\n\n\u2022 Read and display TEKS\n\n\u2022 List the letters of the graphs in each group.\n\nvarious graphs in te\nthat they visualize\n\nA.1E and explain that this\nSummary\nSTAMP\nTHE\n\u2022 Provide a rationale for why you created each\ngroup.\nactivity is an example\nLEARNING\nGraphs of"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk4of7-e5",
+              "excerpt": "MODULE 1 \u2022 TOPIC\u2022 1Group\n\u2022 LESSON\n2 to\nstudents\n\nsort the graphs into at least\ntwo different\ngroups.\nsupport\nstudents\nbyYou may group\nthe graphs in any way you feel is appropriate.\nStudents may not r\n\nNOTE: This is the first\nlesson where TEKS A.1E is\nhighlighted."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk1of7-e7",
+              "excerpt": "6\n\nx\n\n8\n\n\u22122\n\n\u22124\n\n\u22124\n\n\u22126\n\n\u22126\n\n\u22128\n\n\u22128\n\nMODULE 5 \u2022 TOPIC 1 \u2022 LESSON 2\n\n681\n\nLook for similar sequences throughout the materials.\nTXOER_A1_M05_T01_L02_Student Lesson.indd 681\n\nFM-12 ALGEBRA I COURSE AND IMPLEMENTATION GUIDE\n\n11/05/24 10:44 PM\n\n\nCourse-Level Documents\nYear-at-a-Glance\n\nThe Year-at-a-Glance highlights the sequence\nof topics and the number of instructional days\nallocated for the course.\n"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 4,
+        "partial": 2,
+        "missing": 2,
+        "coverage": 0.5,
+        "required_total": 4,
+        "required_present": 2,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf__L2",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk2of7-e1",
+              "excerpt": "USE THE MODULE AND TOPIC OVERVIEW\n\nRevisit the Module Overview and annotations created as part of the prework.\nRead the Topic Overview. Identify how the module utilizes the concreterepresentational-abstract (CRA) progression to build student learning from\nlesson to lesson. Identify new key terms and symbols. Use the cognates and\nthe How can you use cognates to support EB students? section in the T"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk1of7-e7",
+              "excerpt": "6\n\nx\n\n8\n\n\u22122\n\n\u22124\n\n\u22124\n\n\u22126\n\n\u22126\n\n\u22128\n\n\u22128\n\nMODULE 5 \u2022 TOPIC 1 \u2022 LESSON 2\n\n681\n\nLook for similar sequences throughout the materials.\nTXOER_A1_M05_T01_L02_Student Lesson.indd 681\n\nFM-12 ALGEBRA I COURSE AND IMPLEMENTATION GUIDE\n\n11/05/24 10:44 PM\n\n\nCourse-Level Documents\nYear-at-a-Glance\n\nThe Year-at-a-Glance highlights the sequence\nof topics and the number of instructional days\nallocated for the course.\n"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk2of7-e2",
+              "excerpt": "relationship between two quantities.\n\n\u2022 Write equations for vertical and horizontal lines.\n\nyou take ownership of\nthe objectives.\n\n2\n\n2\nEssential Question\n\nEach lesson begins with a\n\nYou have used the slope-intercept form to represent linear\nrelationships. Are there other forms of a linear equation that\nyou can use? How do you write equations for horizontal and\nvertical lines?"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk4of7-e6",
+              "excerpt": "using multiple tools\n\nfor construction\nandgroups.\nRecord the following information\nfor each of your\n\ncomposition.\n\u2022 Name each group of graphs.\n\n\u2022 Read and display TEKS\n\n\u2022 List the letters of the graphs in each group.\n\nvarious graphs in te\nthat they visualize\n\nA.1E and explain that this\nSummary\nSTAMP\nTHE\n\u2022 Provide a rationale for why you created each\ngroup.\nactivity is an example\nLEARNING\nGraphs of"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk4of7-e5",
+              "excerpt": "MODULE 1 \u2022 TOPIC\u2022 1Group\n\u2022 LESSON\n2 to\nstudents\n\nsort the graphs into at least\ntwo different\ngroups.\nsupport\nstudents\nbyYou may group\nthe graphs in any way you feel is appropriate.\nStudents may not r\n\nNOTE: This is the first\nlesson where TEKS A.1E is\nhighlighted."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk1of7-e7",
+              "excerpt": "6\n\nx\n\n8\n\n\u22122\n\n\u22124\n\n\u22124\n\n\u22126\n\n\u22126\n\n\u22128\n\n\u22128\n\nMODULE 5 \u2022 TOPIC 1 \u2022 LESSON 2\n\n681\n\nLook for similar sequences throughout the materials.\nTXOER_A1_M05_T01_L02_Student Lesson.indd 681\n\nFM-12 ALGEBRA I COURSE AND IMPLEMENTATION GUIDE\n\n11/05/24 10:44 PM\n\n\nCourse-Level Documents\nYear-at-a-Glance\n\nThe Year-at-a-Glance highlights the sequence\nof topics and the number of instructional days\nallocated for the course.\n"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 4,
+        "partial": 2,
+        "missing": 2,
+        "coverage": 0.5,
+        "required_total": 4,
+        "required_present": 2,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.5,
+    "s3_curriculum_own": 0.5
+  },
+  "divergence": 0.0
+}

@@ -1,0 +1,251 @@
+{
+  "lesson_id": "a82b911543f3",
+  "unit_id": "professional-preparedness",
+  "title": "Professional Preparedness - Lesson Plan",
+  "element_count": 14,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "a82b911543f3",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "a82b911543f3-e1",
+              "excerpt": "--- TABLE ---\nProfessional Preparedness                                      Estimated Day(s): 2.5 - 50 minute classes\nResources:\nLesson plan\nMaterials for activities: Teacher Google Slides, Copy of worksheets. | Resources:\nLesson plan\nMaterials for activities: Teacher Google Slides, Copy of worksheets. | Resources:\nLesson plan\nMaterials for activities: Teacher Google Slides, Copy of worksheets.\nT"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "a82b911543f3-e1",
+              "excerpt": "--- TABLE ---\nProfessional Preparedness                                      Estimated Day(s): 2.5 - 50 minute classes\nResources:\nLesson plan\nMaterials for activities: Teacher Google Slides, Copy of worksheets. | Resources:\nLesson plan\nMaterials for activities: Teacher Google Slides, Copy of worksheets. | Resources:\nLesson plan\nMaterials for activities: Teacher Google Slides, Copy of worksheets.\nT"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "a82b911543f3-e1",
+              "excerpt": "--- TABLE ---\nProfessional Preparedness                                      Estimated Day(s): 2.5 - 50 minute classes\nResources:\nLesson plan\nMaterials for activities: Teacher Google Slides, Copy of worksheets. | Resources:\nLesson plan\nMaterials for activities: Teacher Google Slides, Copy of worksheets. | Resources:\nLesson plan\nMaterials for activities: Teacher Google Slides, Copy of worksheets.\nT"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "a82b911543f3-e2",
+              "excerpt": "(7) The student creates professional documents required for employment. The student is expected to:\n(A) write a resume;\nLearning Goals:\nStudents will identify and explore professional attire.\nStudents will demonstrate the ability to write a resume.\nStudents will participate in mock interview | Learning Goals:\nStudents will identify and explore professional attire.\nStudents will demonstrate the abi"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 1,
+        "partial": 3,
+        "missing": 4,
+        "coverage": 0.125,
+        "required_total": 4,
+        "required_present": 1,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "curriculum_own_dallas_career_2026",
+      "rubric_version": "v1-dallas-ctat-2026-07",
+      "scoring": "presence",
+      "lesson_id": "a82b911543f3",
+      "criteria": [
+        {
+          "criterion_id": "learning_target",
+          "label": "Learning target / objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "a82b911543f3-e1",
+              "excerpt": "--- TABLE ---\nProfessional Preparedness                                      Estimated Day(s): 2.5 - 50 minute classes\nResources:\nLesson plan\nMaterials for activities: Teacher Google Slides, Copy of worksheets. | Resources:\nLesson plan\nMaterials for activities: Teacher Google Slides, Copy of worksheets. | Resources:\nLesson plan\nMaterials for activities: Teacher Google Slides, Copy of worksheets.\nT"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "teks_alignment",
+          "label": "TEKS listed and aligned to objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "a82b911543f3-e1",
+              "excerpt": "--- TABLE ---\nProfessional Preparedness                                      Estimated Day(s): 2.5 - 50 minute classes\nResources:\nLesson plan\nMaterials for activities: Teacher Google Slides, Copy of worksheets. | Resources:\nLesson plan\nMaterials for activities: Teacher Google Slides, Copy of worksheets. | Resources:\nLesson plan\nMaterials for activities: Teacher Google Slides, Copy of worksheets.\nT"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "materials_prep",
+          "label": "Materials, supplies & teacher prep",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "a82b911543f3-e1",
+              "excerpt": "--- TABLE ---\nProfessional Preparedness                                      Estimated Day(s): 2.5 - 50 minute classes\nResources:\nLesson plan\nMaterials for activities: Teacher Google Slides, Copy of worksheets. | Resources:\nLesson plan\nMaterials for activities: Teacher Google Slides, Copy of worksheets. | Resources:\nLesson plan\nMaterials for activities: Teacher Google Slides, Copy of worksheets.\nT"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "instructional_activities",
+          "label": "Instructional activities (launch -> activities -> closure)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "a82b911543f3-e2",
+              "excerpt": "(7) The student creates professional documents required for employment. The student is expected to:\n(A) write a resume;\nLearning Goals:\nStudents will identify and explore professional attire.\nStudents will demonstrate the ability to write a resume.\nStudents will participate in mock interview | Learning Goals:\nStudents will identify and explore professional attire.\nStudents will demonstrate the abi"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "formative_assessment",
+          "label": "Formative assessment",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "summative_assessment",
+          "label": "Summative assessment",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "a82b911543f3-e12",
+              "excerpt": "Question Stems:\nEngagement Question 1: Have you ever seen a presentation before?\nEngagement Question 2: How would you feel if you could not hear what the presenter was saying?\nExplain Activity - Day 3\nExplore: (5 Minutes)\nReview the presentation rubric with the students\nStudent Engagement Strategy / Resource:\nInterview Role Play Rubric\n\nQuestion Stems:\nDid I practice during the last class period w"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "elps_strategies",
+          "label": "ELPS / language strategies",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "cte_essentials",
+          "label": "CTE essential unit elements",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "a82b911543f3-e1",
+              "excerpt": "--- TABLE ---\nProfessional Preparedness                                      Estimated Day(s): 2.5 - 50 minute classes\nResources:\nLesson plan\nMaterials for activities: Teacher Google Slides, Copy of worksheets. | Resources:\nLesson plan\nMaterials for activities: Teacher Google Slides, Copy of worksheets. | Resources:\nLesson plan\nMaterials for activities: Teacher Google Slides, Copy of worksheets.\nT"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 2,
+        "partial": 4,
+        "missing": 2,
+        "coverage": 0.25,
+        "required_total": 5,
+        "required_present": 2,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.125,
+    "s3_curriculum_own": 0.25
+  },
+  "divergence": 0.125
+}

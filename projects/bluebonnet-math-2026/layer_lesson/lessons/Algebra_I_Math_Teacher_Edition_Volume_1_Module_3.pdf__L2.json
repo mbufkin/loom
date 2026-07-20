@@ -1,0 +1,281 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L2",
+  "unit_id": "alg1-mod-3",
+  "title": "Algebra I Math Teacher Edition Volume 1 Module 3 \u2014 Lesson 2",
+  "element_count": 20,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L2",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk3of15-e5",
+              "excerpt": "ALGEBRA I TEKS\nMathematical Process Standards\n(1) The student uses mathematical processes to acquire and\ndemonstrate mathematical understanding.\nThe student is expected to:\nA.1A apply mathematics to problems arising in everyday\nlife, society, and the workplace.\nA.1D communicate mathematical ideas, reasoning,\nand their implications using multiple representations,\nincluding symbols, diagrams, graphs"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk3of15-e6",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 2 DAYS\nDAY 1\nENGAGE\nGetting Started: Perimeter Perspectives 15 minutes\nCONNECT TO PRIOR KNOWLEDGE\nStudents think about a scenario from two different perspectives to write two equations that\ncan each be used to determine the specific information needed. They then show that the two\nequations are equivalent.\n\nDEVELOP\nActivity 2.1: Equations in Different Forms 25\u201330 minut"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk4of15-e1",
+              "excerpt": "MODULE 3 \u2022 TOPIC 1 \u2022 LESSON 2\n\nMODULE 3 \u2022 TOPIC 1 \u2022 LESSON 2"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk4of15-e3",
+              "excerpt": "A\n\nC\n\n\u2012\u2012\n4. For the given literal equation Z 5 \u2012\u2012\nB \u200b 1 D \u200b, solve for each variable\ngiven. Justify your solution method.\n\n\u2022 Do students persevere\n\na. A\nBC\nA 5 BZ 2 \u2012\u2012\u2012\nD\n\nin real-world problem\nsolving?\n\nI multiplied both sides of the equation by B. Then I isolated A by\nBC\nsubtracting \u2012\u2012\u2012\u2012\nD from both sides.\n\n\u2022 Do students recognize\n\nthey can use literal\nequations outside of the\nmath classroom?\n\nb"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk3of15-e7",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 2 DAYS\nDAY 1\nENGAGE\nGetting Started: Perimeter Perspectives 15 minutes\nCONNECT TO PRIOR KNOWLEDGE\nStudents think about a scenario from two different perspectives to write two equations that\ncan each be used to determine the specific information needed. They then show that the two\nequations are equivalent.\n\nDEVELOP\nActivity 2.1: Equations in Different Forms 25\u201330 minut"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk4of15-e2",
+              "excerpt": "\n6. Which form of a linear equation is more efficient for determining\neach characteristic?\na. Slope\nSlope-intercept form or point-slope form\nb. a point on the line\npoint-slope form\nc. y-intercept\nSlope-intercept form\n7. If you want to graph an equation using technology, which form is\nmore efficient? Explain your reasoning.\nSlope-intercept form\n8. Rewrite each equation in slope-intercept form.\na. y"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk9of15-e4",
+              "excerpt": "When a system has infinite solutions, the\nequation resulting from the substitution step has\ninfinite solutions.\n\nPractice\n1. Victoria is trying to become more environmentally conscious by\nmaking her own cleaning products. She researches different cleaners\nand decides to make furniture polish using olive oil and lemon juice.\nShe wants to make enough to fill two 24-fluid-ounce bottles.\na. Write an e"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk3of15-e4",
+              "excerpt": "357J\n\nSummary\n\nA formula that includes more than one variable may be rewritten to isolate\nany variable contained in the formula by applying properties of equality and\nnumber properties.\n\nMODULE 3 \u2022 TOPIC 1 \u2022 LESSON 2\n\n\nTalk the Talk\n\nDEMONSTRATE\n\nREARRANGE IT\n\nFacilitation Notes\n\nIn this activity, students convert the formulas for the lateral surface area and\nsurface area of a cylinder to solve fo"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L2",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk3of15-e5",
+              "excerpt": "ALGEBRA I TEKS\nMathematical Process Standards\n(1) The student uses mathematical processes to acquire and\ndemonstrate mathematical understanding.\nThe student is expected to:\nA.1A apply mathematics to problems arising in everyday\nlife, society, and the workplace.\nA.1D communicate mathematical ideas, reasoning,\nand their implications using multiple representations,\nincluding symbols, diagrams, graphs"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk3of15-e6",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 2 DAYS\nDAY 1\nENGAGE\nGetting Started: Perimeter Perspectives 15 minutes\nCONNECT TO PRIOR KNOWLEDGE\nStudents think about a scenario from two different perspectives to write two equations that\ncan each be used to determine the specific information needed. They then show that the two\nequations are equivalent.\n\nDEVELOP\nActivity 2.1: Equations in Different Forms 25\u201330 minut"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk4of15-e1",
+              "excerpt": "MODULE 3 \u2022 TOPIC 1 \u2022 LESSON 2\n\nMODULE 3 \u2022 TOPIC 1 \u2022 LESSON 2"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk4of15-e3",
+              "excerpt": "A\n\nC\n\n\u2012\u2012\n4. For the given literal equation Z 5 \u2012\u2012\nB \u200b 1 D \u200b, solve for each variable\ngiven. Justify your solution method.\n\n\u2022 Do students persevere\n\na. A\nBC\nA 5 BZ 2 \u2012\u2012\u2012\nD\n\nin real-world problem\nsolving?\n\nI multiplied both sides of the equation by B. Then I isolated A by\nBC\nsubtracting \u2012\u2012\u2012\u2012\nD from both sides.\n\n\u2022 Do students recognize\n\nthey can use literal\nequations outside of the\nmath classroom?\n\nb"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk3of15-e7",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 2 DAYS\nDAY 1\nENGAGE\nGetting Started: Perimeter Perspectives 15 minutes\nCONNECT TO PRIOR KNOWLEDGE\nStudents think about a scenario from two different perspectives to write two equations that\ncan each be used to determine the specific information needed. They then show that the two\nequations are equivalent.\n\nDEVELOP\nActivity 2.1: Equations in Different Forms 25\u201330 minut"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk4of15-e2",
+              "excerpt": "\n6. Which form of a linear equation is more efficient for determining\neach characteristic?\na. Slope\nSlope-intercept form or point-slope form\nb. a point on the line\npoint-slope form\nc. y-intercept\nSlope-intercept form\n7. If you want to graph an equation using technology, which form is\nmore efficient? Explain your reasoning.\nSlope-intercept form\n8. Rewrite each equation in slope-intercept form.\na. y"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk9of15-e4",
+              "excerpt": "When a system has infinite solutions, the\nequation resulting from the substitution step has\ninfinite solutions.\n\nPractice\n1. Victoria is trying to become more environmentally conscious by\nmaking her own cleaning products. She researches different cleaners\nand decides to make furniture polish using olive oil and lemon juice.\nShe wants to make enough to fill two 24-fluid-ounce bottles.\na. Write an e"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk3of15-e4",
+              "excerpt": "357J\n\nSummary\n\nA formula that includes more than one variable may be rewritten to isolate\nany variable contained in the formula by applying properties of equality and\nnumber properties.\n\nMODULE 3 \u2022 TOPIC 1 \u2022 LESSON 2\n\n\nTalk the Talk\n\nDEMONSTRATE\n\nREARRANGE IT\n\nFacilitation Notes\n\nIn this activity, students convert the formulas for the lateral surface area and\nsurface area of a cylinder to solve fo"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.875,
+    "s3_curriculum_own": 0.875
+  },
+  "divergence": 0.0
+}

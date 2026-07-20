@@ -1,0 +1,281 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf__L4",
+  "unit_id": "alg1-program",
+  "title": "Algebra I Math Teacher Edition Course and Implementation Guide \u2014 Lesson 4",
+  "element_count": 20,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf__L4",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk3of7-e1",
+              "excerpt": "TEKS Addressed:\nA.2A, A.3C, A.6A, A.7A, A.9A, A.9D, A.12A,\nA.12C, A.12D"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk2of7-e6",
+              "excerpt": "\nLesson 4\n3 Assignment\nASSIGNMENT\n\nAn intentionally designed\nassignment follows each\nlesson. The assignment is\nan additional component\nthat is useful for Tier\n1 instruction.\n\n7\n\nWrite\n\n7\n\n9\n\n8\n\nWrite\n\nRemember\n\nCompare the slopeintercept and point-slope\nforms of a linear equation.\n\nThe point-slope form of a linear equation is y 2 y\u200b1 5 m(x 2 x\u200b1),\nwhere m is the slope of the line and (x1, y\u200b1) is "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk3of7-e3",
+              "excerpt": "The terms power, base of a power, and exponent of a power are defined.\nStudents write and evaluate expressions with positive integer exponents.\nThey begin with a context using the power with a base of 2. Students\nthen investigate positive and negative integer bases, where the\nnegative sign may or may not be raised to a power depending on the\nplacement of parentheses. Some expressions also contain "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk2of7-e4",
+              "excerpt": "ALGEBRA I COURSE AND IMPLEMENTATION GUIDE FM-19\n\n\nLesson 4\n3 Assignment\nASSIGNMENT\n\nAn intentionally designed\nassignment follows each\nlesson. The assignment is\nan additional component\nthat is useful for Tier\n1 instruction.\n\n7\n\nWrite\n\n7\n\n9\n\n8\n\nWrite\n\nRemember\n\nCompare the slopeintercept and point-slope\nforms of a linear equation.\n\nThe point-slope form of a linear equation is y 2 y\u200b1 5 m(x 2 x\u200b1),\nw"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk5of7-e1",
+              "excerpt": "To challenge students:\n6B"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk2of7-e3",
+              "excerpt": "4.1\n\nWriting Equations in\nPoint-Slope Form\n\nIn the previous lesson, you used the slope, the y-intercept, and the\nslope formula to write a linear equation. You can also determine the\nequation of a line without knowing the y-intercept.\n\ndeep understanding of\nmathematics through\na variety of activities\n\nWORKED EXAMPLE\n\nin an environment\n\nTo write an equation of a line from a table of values, you can "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk2of7-e4",
+              "excerpt": "ALGEBRA I COURSE AND IMPLEMENTATION GUIDE FM-19\n\n\nLesson 4\n3 Assignment\nASSIGNMENT\n\nAn intentionally designed\nassignment follows each\nlesson. The assignment is\nan additional component\nthat is useful for Tier\n1 instruction.\n\n7\n\nWrite\n\n7\n\n9\n\n8\n\nWrite\n\nRemember\n\nCompare the slopeintercept and point-slope\nforms of a linear equation.\n\nThe point-slope form of a linear equation is y 2 y\u200b1 5 m(x 2 x\u200b1),\nw"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk2of7-e5",
+              "excerpt": "10 Prepare\nSolve each equation for y.\n\nGet ready for the\n\n1. 22y 5 2x 1 7\n\n3\n2. \u2012\u2012\n4y 5 x 2 6\n\n3. 2x 1 3y 5 6\n\n4. \u2012\u2012\nx 2 4y 5 8\n2\n\n216\n\nnext lesson.\n\n1\n\nThe Prepare section\nprovides spaced retrieval\nof concepts related to\nprevious learning and\nfluency skills important for\nthe course.\n\nMODULE 2 \u2022 TOPIC 1 \u2022 LESSON 4 ASSIGNMENT\n\nTXOER_A1_M02_T01_L04_Student Lesson.indd 216"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf__L4",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk3of7-e1",
+              "excerpt": "TEKS Addressed:\nA.2A, A.3C, A.6A, A.7A, A.9A, A.9D, A.12A,\nA.12C, A.12D"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk2of7-e6",
+              "excerpt": "\nLesson 4\n3 Assignment\nASSIGNMENT\n\nAn intentionally designed\nassignment follows each\nlesson. The assignment is\nan additional component\nthat is useful for Tier\n1 instruction.\n\n7\n\nWrite\n\n7\n\n9\n\n8\n\nWrite\n\nRemember\n\nCompare the slopeintercept and point-slope\nforms of a linear equation.\n\nThe point-slope form of a linear equation is y 2 y\u200b1 5 m(x 2 x\u200b1),\nwhere m is the slope of the line and (x1, y\u200b1) is "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk3of7-e3",
+              "excerpt": "The terms power, base of a power, and exponent of a power are defined.\nStudents write and evaluate expressions with positive integer exponents.\nThey begin with a context using the power with a base of 2. Students\nthen investigate positive and negative integer bases, where the\nnegative sign may or may not be raised to a power depending on the\nplacement of parentheses. Some expressions also contain "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk2of7-e4",
+              "excerpt": "ALGEBRA I COURSE AND IMPLEMENTATION GUIDE FM-19\n\n\nLesson 4\n3 Assignment\nASSIGNMENT\n\nAn intentionally designed\nassignment follows each\nlesson. The assignment is\nan additional component\nthat is useful for Tier\n1 instruction.\n\n7\n\nWrite\n\n7\n\n9\n\n8\n\nWrite\n\nRemember\n\nCompare the slopeintercept and point-slope\nforms of a linear equation.\n\nThe point-slope form of a linear equation is y 2 y\u200b1 5 m(x 2 x\u200b1),\nw"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk5of7-e1",
+              "excerpt": "To challenge students:\n6B"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk2of7-e3",
+              "excerpt": "4.1\n\nWriting Equations in\nPoint-Slope Form\n\nIn the previous lesson, you used the slope, the y-intercept, and the\nslope formula to write a linear equation. You can also determine the\nequation of a line without knowing the y-intercept.\n\ndeep understanding of\nmathematics through\na variety of activities\n\nWORKED EXAMPLE\n\nin an environment\n\nTo write an equation of a line from a table of values, you can "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk2of7-e4",
+              "excerpt": "ALGEBRA I COURSE AND IMPLEMENTATION GUIDE FM-19\n\n\nLesson 4\n3 Assignment\nASSIGNMENT\n\nAn intentionally designed\nassignment follows each\nlesson. The assignment is\nan additional component\nthat is useful for Tier\n1 instruction.\n\n7\n\nWrite\n\n7\n\n9\n\n8\n\nWrite\n\nRemember\n\nCompare the slopeintercept and point-slope\nforms of a linear equation.\n\nThe point-slope form of a linear equation is y 2 y\u200b1 5 m(x 2 x\u200b1),\nw"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk2of7-e5",
+              "excerpt": "10 Prepare\nSolve each equation for y.\n\nGet ready for the\n\n1. 22y 5 2x 1 7\n\n3\n2. \u2012\u2012\n4y 5 x 2 6\n\n3. 2x 1 3y 5 6\n\n4. \u2012\u2012\nx 2 4y 5 8\n2\n\n216\n\nnext lesson.\n\n1\n\nThe Prepare section\nprovides spaced retrieval\nof concepts related to\nprevious learning and\nfluency skills important for\nthe course.\n\nMODULE 2 \u2022 TOPIC 1 \u2022 LESSON 4 ASSIGNMENT\n\nTXOER_A1_M02_T01_L04_Student Lesson.indd 216"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.875,
+    "s3_curriculum_own": 0.875
+  },
+  "divergence": 0.0
+}

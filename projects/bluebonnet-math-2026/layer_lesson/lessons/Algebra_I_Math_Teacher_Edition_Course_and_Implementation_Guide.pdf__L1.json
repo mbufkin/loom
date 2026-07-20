@@ -1,0 +1,281 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf__L1",
+  "unit_id": "alg1-program",
+  "title": "Algebra I Math Teacher Edition Course and Implementation Guide \u2014 Lesson 1",
+  "element_count": 29,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf__L1",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk1of7-e1",
+              "excerpt": "On Learning Together days, you spend time\nfacilitating active learning so that students\nbuild their mathematical understanding and\nconfidence in sharing ideas, listening to one\nanother, and learning together. The Student\nEdition is a consumable resource that contains\nthe student-facing materials for each lesson.\n\nOn Learning Individually days, you spend time\non targeted instruction to meet the nee"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk1of7-e2",
+              "excerpt": "The Course Materials list provides an overall view of the materials required for each\nlesson in the course. Consult the specific Lesson Overview for additional details.\n\nMODULE 1 Searching for Patterns\nTOPIC 1 Quantities and Relationships\nIntroduction Lesson\n1 \u0007Understanding\u0007Quantities\u0007and\u0007\nTheir Relationships\n\n\uf06c\n\n\uf06c\n\n2 Analyzing\u0007and\u0007Sorting\u0007Graphs\n3 \u0007Recognizing\u0007Functions\u0007and\u0007\nFunction\u0007Families\n\n\uf06c"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk1of7-e4",
+              "excerpt": "660\n\nMODULE 5 \u2022 TOPIC 1 \u2022 LESSON 1\n\nTXOER_A1_M05_T01_L01_Student Lesson.indd 660\n\n11/05/24 10:44 PM\n\nALGEBRA I COURSE AND IMPLEMENTATION GUIDE FM-11\n\n\nConnecting Learning Experiences\nh(t) 5 216t 1 128t 1 68\nRepresenting\nthe Concept\nPumpkin Launch\n\ny\n\n2\n\nHeight of Pumpkin (feet)\n\n17\n1\n5 216(t 2 \u2012\u2012\nt 1 \u2012\u2012\n2 )(\n2)\n\nt\n\nh(t)\n\n0\n\n68\n\nIn the next lesson, Key Characteristics of Quadratic\n1\n180 Functions s"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk1of7-e6",
+              "excerpt": "\u2022 Explicit Instruction\n\n\u2022 Writing Task\n\n\u2022 Worked Example\n\n\u2022 Procedure\n\n\u2022 Peer Work Analysis\n\n\u2022 Application\n\n\u2022 Establishing a\nScenario\n\nThe Getting Started for each lesson activates student thinking by\ntapping into prior knowledge and real-world experiences. The Activities\nin each lesson vary in complexity and build a deep understanding of\nthe mathematics. The Talk the Talk for each lesson is an op"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk1of7-e3",
+              "excerpt": "Squaring It Up\nDestiny is using pennies to create a pattern.\nFigure 1\n\nFigure 2\n\nFigure 3\n\nMethods and algorithms\n\nFigure 4\n\nare general and based on\nprinciples of mathematics,\nnot mnemonics or tricks.\n1. Analyze the pattern and explain how to create Figure 5.\nTo create Figure 5, add an additional row and a column of pennies.\n2. How many pennies would Destiny need to create Figure 5? Figure 6?\nFig"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk1of7-e5",
+              "excerpt": "In the next lesson, Key Characteristics of Quadratic\n1\n180 Functions students learn\n240\n2\n260\nthat different forms of 160\nquadratic functions reveal\nspecific key characteristics\n3\n308\n80\nof the graph.\n4\n324\n320\n\n0\n\n2\n\n4\n\n6\n\nx\n\n8\n\nTime (seconds)\n\nAlamo Tours\nr(x) 5 210(x 1 10)(x 2 50)\n5 210x2 1 400x 1 5000\n\ny\n\nRevenue in Dollars\n\n10,000\n\n5000\n\n0\n\n\u201320\n\n20\n\n40"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk4of7-e17",
+              "excerpt": "To prepare for the upcoming lesson, use the\nPrepare section of the assignment from the\nprevious lesson as a diagnostic tool, either as a\nwarm-up or an exit ticket, to assess whether your\nstudents are ready for new learning.\nLesson 1 Assignment\n\nCOMMON MISCONCEPTION\nStudents may think the Worked Example demonstrates the use of the Product\nRule of Powers; however, the Product Rule of Powers applies "
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk3of7-e6",
+              "excerpt": "Have students work with a partner or in a group to complete\nQuestion 1. Note that students are only completing the second\ncolumn of the table. Have students share their strategies for\ncompleting the number of sires and dams in Rickson\u2019s lineage. This\nquestion does not require students to use powers.\n\nStrategies\nTo assist all students,\ninstructional strategies\nare provided that benefit\nthe full ran"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf__L1",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk1of7-e1",
+              "excerpt": "On Learning Together days, you spend time\nfacilitating active learning so that students\nbuild their mathematical understanding and\nconfidence in sharing ideas, listening to one\nanother, and learning together. The Student\nEdition is a consumable resource that contains\nthe student-facing materials for each lesson.\n\nOn Learning Individually days, you spend time\non targeted instruction to meet the nee"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk1of7-e2",
+              "excerpt": "The Course Materials list provides an overall view of the materials required for each\nlesson in the course. Consult the specific Lesson Overview for additional details.\n\nMODULE 1 Searching for Patterns\nTOPIC 1 Quantities and Relationships\nIntroduction Lesson\n1 \u0007Understanding\u0007Quantities\u0007and\u0007\nTheir Relationships\n\n\uf06c\n\n\uf06c\n\n2 Analyzing\u0007and\u0007Sorting\u0007Graphs\n3 \u0007Recognizing\u0007Functions\u0007and\u0007\nFunction\u0007Families\n\n\uf06c"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk1of7-e4",
+              "excerpt": "660\n\nMODULE 5 \u2022 TOPIC 1 \u2022 LESSON 1\n\nTXOER_A1_M05_T01_L01_Student Lesson.indd 660\n\n11/05/24 10:44 PM\n\nALGEBRA I COURSE AND IMPLEMENTATION GUIDE FM-11\n\n\nConnecting Learning Experiences\nh(t) 5 216t 1 128t 1 68\nRepresenting\nthe Concept\nPumpkin Launch\n\ny\n\n2\n\nHeight of Pumpkin (feet)\n\n17\n1\n5 216(t 2 \u2012\u2012\nt 1 \u2012\u2012\n2 )(\n2)\n\nt\n\nh(t)\n\n0\n\n68\n\nIn the next lesson, Key Characteristics of Quadratic\n1\n180 Functions s"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk1of7-e6",
+              "excerpt": "\u2022 Explicit Instruction\n\n\u2022 Writing Task\n\n\u2022 Worked Example\n\n\u2022 Procedure\n\n\u2022 Peer Work Analysis\n\n\u2022 Application\n\n\u2022 Establishing a\nScenario\n\nThe Getting Started for each lesson activates student thinking by\ntapping into prior knowledge and real-world experiences. The Activities\nin each lesson vary in complexity and build a deep understanding of\nthe mathematics. The Talk the Talk for each lesson is an op"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk1of7-e3",
+              "excerpt": "Squaring It Up\nDestiny is using pennies to create a pattern.\nFigure 1\n\nFigure 2\n\nFigure 3\n\nMethods and algorithms\n\nFigure 4\n\nare general and based on\nprinciples of mathematics,\nnot mnemonics or tricks.\n1. Analyze the pattern and explain how to create Figure 5.\nTo create Figure 5, add an additional row and a column of pennies.\n2. How many pennies would Destiny need to create Figure 5? Figure 6?\nFig"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk1of7-e5",
+              "excerpt": "In the next lesson, Key Characteristics of Quadratic\n1\n180 Functions students learn\n240\n2\n260\nthat different forms of 160\nquadratic functions reveal\nspecific key characteristics\n3\n308\n80\nof the graph.\n4\n324\n320\n\n0\n\n2\n\n4\n\n6\n\nx\n\n8\n\nTime (seconds)\n\nAlamo Tours\nr(x) 5 210(x 1 10)(x 2 50)\n5 210x2 1 400x 1 5000\n\ny\n\nRevenue in Dollars\n\n10,000\n\n5000\n\n0\n\n\u201320\n\n20\n\n40"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk4of7-e17",
+              "excerpt": "To prepare for the upcoming lesson, use the\nPrepare section of the assignment from the\nprevious lesson as a diagnostic tool, either as a\nwarm-up or an exit ticket, to assess whether your\nstudents are ready for new learning.\nLesson 1 Assignment\n\nCOMMON MISCONCEPTION\nStudents may think the Worked Example demonstrates the use of the Product\nRule of Powers; however, the Product Rule of Powers applies "
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk3of7-e6",
+              "excerpt": "Have students work with a partner or in a group to complete\nQuestion 1. Note that students are only completing the second\ncolumn of the table. Have students share their strategies for\ncompleting the number of sires and dams in Rickson\u2019s lineage. This\nquestion does not require students to use powers.\n\nStrategies\nTo assist all students,\ninstructional strategies\nare provided that benefit\nthe full ran"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.875,
+    "s3_curriculum_own": 0.875
+  },
+  "divergence": 0.0
+}

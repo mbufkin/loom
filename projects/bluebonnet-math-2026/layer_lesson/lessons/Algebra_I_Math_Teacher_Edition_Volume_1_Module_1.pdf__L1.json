@@ -1,0 +1,281 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf__L1",
+  "unit_id": "alg1-mod-1",
+  "title": "Algebra I Math Teacher Edition Volume 1 Module 1 \u2014 Lesson 1",
+  "element_count": 26,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf__L1",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk2of12-e7",
+              "excerpt": "Chunking the Activity\n\nPROBLEM SOLVING\n\n\u2022 Read and discuss\n\nYou will see this\nNOTICE\n\nREPORT\n\nsymbol throughout\nthe course to remind\n\ncomplete the activity.\n\nyou to use the\nproblem-solving\nORGANIZE\n\nNotice and Wonder\n\nINTERPRET\n\nthe directions.\n\n\u2022 Group students to\n\n\u2022 Share and summarize.\n\nmodel.\n\n\u2022 Have students answer the\n\nEssential Question on the\nlesson opener.\n\n?\nANALYZE\n\nGather information, "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk1of12-e8",
+              "excerpt": "1 DAY PACING = 45-MINUTE SESSION\nDay 1\n\nDay 2\n\nTEKS: A.3C\n\nTEKS: A.3C, A.7A, A.9D\n\nIntroduction to the\nProblem-Solving\nModel and Learning\nResources\n\nLESSON 1"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk3of12-e1",
+              "excerpt": "Understanding Quantities\nand Their Relationships\n\nSetting the Stage\n\u2022 Communicate the\n\nobjectives and new key\nterms to look for.\n\n\u2022 Tap into your student\u2019s\n\nprior learning by reading\nthe narrative statement.\n\n\u2022 Provide a sense of"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk2of12-e4",
+              "excerpt": "Summary\n\nThe mathematical modeling process includes the basic steps: (1) Notice and\nWonder, (2) Organize and Mathematize, (3) Predict and Analyze, (4) Test and\nInterpret, and (5) Report."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk8of12-e3",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 1 DAY\nENGAGE\nGetting Started: A Pyramid of Patterns 10 minutes\nBUILD OFF INTUITION\nStudents explore various patterns in Pascal\u2019s triangle. They first explore patterns on their own\nand then are guided to recognize and explain specific patterns.\n\nDEVELOP\nActivity 1.1: Patterns to Sequences to Tables 15 minutes\nINVESTIGATION\nStudents are given the definitions of sequence"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk2of12-e3",
+              "excerpt": "In this course, you will learn new math concepts by exploring and\ninvestigating ideas, reading, writing, and talking to your classmates. You will\neven learn by making mistakes with concepts you haven\u2019t mastered yet.\nLet\u2019s practice exploring and investigating. You do not need to answer\nthe question yet. You will solve the question as you work through the\nproblem-solving model.\nStudents at East High"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk2of12-e3",
+              "excerpt": "In this course, you will learn new math concepts by exploring and\ninvestigating ideas, reading, writing, and talking to your classmates. You will\neven learn by making mistakes with concepts you haven\u2019t mastered yet.\nLet\u2019s practice exploring and investigating. You do not need to answer\nthe question yet. You will solve the question as you work through the\nproblem-solving model.\nStudents at East High"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk2of12-e5",
+              "excerpt": "The problem-solving model, TEKS mathematical process standards, and\nthe Academic Glossary are resources available to support your learning in\nthis course.\n\nSTAMP THE\nLEARNING"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf__L1",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk2of12-e7",
+              "excerpt": "Chunking the Activity\n\nPROBLEM SOLVING\n\n\u2022 Read and discuss\n\nYou will see this\nNOTICE\n\nREPORT\n\nsymbol throughout\nthe course to remind\n\ncomplete the activity.\n\nyou to use the\nproblem-solving\nORGANIZE\n\nNotice and Wonder\n\nINTERPRET\n\nthe directions.\n\n\u2022 Group students to\n\n\u2022 Share and summarize.\n\nmodel.\n\n\u2022 Have students answer the\n\nEssential Question on the\nlesson opener.\n\n?\nANALYZE\n\nGather information, "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk1of12-e8",
+              "excerpt": "1 DAY PACING = 45-MINUTE SESSION\nDay 1\n\nDay 2\n\nTEKS: A.3C\n\nTEKS: A.3C, A.7A, A.9D\n\nIntroduction to the\nProblem-Solving\nModel and Learning\nResources\n\nLESSON 1"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk3of12-e1",
+              "excerpt": "Understanding Quantities\nand Their Relationships\n\nSetting the Stage\n\u2022 Communicate the\n\nobjectives and new key\nterms to look for.\n\n\u2022 Tap into your student\u2019s\n\nprior learning by reading\nthe narrative statement.\n\n\u2022 Provide a sense of"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk2of12-e4",
+              "excerpt": "Summary\n\nThe mathematical modeling process includes the basic steps: (1) Notice and\nWonder, (2) Organize and Mathematize, (3) Predict and Analyze, (4) Test and\nInterpret, and (5) Report."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk8of12-e3",
+              "excerpt": "\nLESSON STRUCTURE AND PACING: 1 DAY\nENGAGE\nGetting Started: A Pyramid of Patterns 10 minutes\nBUILD OFF INTUITION\nStudents explore various patterns in Pascal\u2019s triangle. They first explore patterns on their own\nand then are guided to recognize and explain specific patterns.\n\nDEVELOP\nActivity 1.1: Patterns to Sequences to Tables 15 minutes\nINVESTIGATION\nStudents are given the definitions of sequence"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk2of12-e3",
+              "excerpt": "In this course, you will learn new math concepts by exploring and\ninvestigating ideas, reading, writing, and talking to your classmates. You will\neven learn by making mistakes with concepts you haven\u2019t mastered yet.\nLet\u2019s practice exploring and investigating. You do not need to answer\nthe question yet. You will solve the question as you work through the\nproblem-solving model.\nStudents at East High"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk2of12-e3",
+              "excerpt": "In this course, you will learn new math concepts by exploring and\ninvestigating ideas, reading, writing, and talking to your classmates. You will\neven learn by making mistakes with concepts you haven\u2019t mastered yet.\nLet\u2019s practice exploring and investigating. You do not need to answer\nthe question yet. You will solve the question as you work through the\nproblem-solving model.\nStudents at East High"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk2of12-e5",
+              "excerpt": "The problem-solving model, TEKS mathematical process standards, and\nthe Academic Glossary are resources available to support your learning in\nthis course.\n\nSTAMP THE\nLEARNING"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.875,
+    "s3_curriculum_own": 0.875
+  },
+  "divergence": 0.0
+}

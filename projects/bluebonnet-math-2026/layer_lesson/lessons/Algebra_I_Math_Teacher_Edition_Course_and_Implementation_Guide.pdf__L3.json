@@ -1,0 +1,251 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf__L3",
+  "unit_id": "alg1-program",
+  "title": "Algebra I Math Teacher Edition Course and Implementation Guide \u2014 Lesson 3",
+  "element_count": 8,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf__L3",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk6of7-e7",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk6of7-e6",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk6of7-e8",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk6of7-e4",
+              "excerpt": "44\n\nMODULE 1 \u2022 TOPIC 1 \u2022 LESSON 3\n\nEB STUDENT TIP\n\nTXOER_A1_M01_T01_L03_Student Lesson.indd 44\n\nFor \u201cIntermediate\u201d and higher proficiency levels\n\n11/02/24 11:37 AM\n\nAsk students to identify what the prefix non- means in non-function. Follow up\nwith additional examples of words with the prefix non-, including nonsmoking,\nnonstop, and nonfat. Define these words and highlight the connection between\nt"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk6of7-e5",
+              "excerpt": "Engaging\n\nTEKS*\n\nE 1 \u2022 TOPIC\n\nE.indd\n\n5390\n\nPROBLEM SOLVING\n\nRylee\n\nMODUL"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 5,
+        "partial": 0,
+        "missing": 3,
+        "coverage": 0.625,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf__L3",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk6of7-e7",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk6of7-e6",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk6of7-e8",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk6of7-e4",
+              "excerpt": "44\n\nMODULE 1 \u2022 TOPIC 1 \u2022 LESSON 3\n\nEB STUDENT TIP\n\nTXOER_A1_M01_T01_L03_Student Lesson.indd 44\n\nFor \u201cIntermediate\u201d and higher proficiency levels\n\n11/02/24 11:37 AM\n\nAsk students to identify what the prefix non- means in non-function. Follow up\nwith additional examples of words with the prefix non-, including nonsmoking,\nnonstop, and nonfat. Define these words and highlight the connection between\nt"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf-chunk6of7-e5",
+              "excerpt": "Engaging\n\nTEKS*\n\nE 1 \u2022 TOPIC\n\nE.indd\n\n5390\n\nPROBLEM SOLVING\n\nRylee\n\nMODUL"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 5,
+        "partial": 0,
+        "missing": 3,
+        "coverage": 0.625,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.625,
+    "s3_curriculum_own": 0.625
+  },
+  "divergence": 0.0
+}

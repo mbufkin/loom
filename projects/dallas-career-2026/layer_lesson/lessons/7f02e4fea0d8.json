@@ -1,0 +1,271 @@
+{
+  "lesson_id": "7f02e4fea0d8",
+  "unit_id": "law-and-public-service",
+  "title": "Law and Public Service Slides",
+  "element_count": 8,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "7f02e4fea0d8",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "7f02e4fea0d8-e1",
+              "excerpt": "TEKS\n\n127.2 Career and College Expoloration (B), (C )"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "7f02e4fea0d8-e7",
+              "excerpt": "Resources\n\nComputer"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "7f02e4fea0d8-e3",
+              "excerpt": "Explain\n\nPlease see the project rubric.\n\nExplore\n\nPlease complete the career exploratins worksheet.\n\nPlease see project rubric.\nAm I interested in any of the career choices that have been presented to me, why or why not?\nIs the law pathway one I want to consider following once I get to high school, why or why not ?\nHave a class discussion summarizing what everyone has learned and if they would hav"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "7f02e4fea0d8-e5",
+              "excerpt": "What I LEARNAED\n\nAt the end we will come back together and discuss what we learned.\n\nExplain and Explore Activity\n\nExplain\n\nPlease see the project rubric.\n\nExplore\n\nPlease complete the career exploratins worksheet.\n\nPlease see project rubric.\nAm I interested in any of the career choices that have been presented to me, why or why not?\nIs the law pathway one I want to consider following once I get t"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "7f02e4fea0d8-e2",
+              "excerpt": "We will be discussing potential careers in law enforcement that you can learn more about in the Law Enforcement Pathway in high school."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "7f02e4fea0d8-e4",
+              "excerpt": "Explain and Explore Activity\n\nExplain\n\nPlease see the project rubric.\n\nExplore\n\nPlease complete the career exploratins worksheet.\n\nPlease see project rubric.\nAm I interested in any of the career choices that have been presented to me, why or why not?\nIs the law pathway one I want to consider following once I get to high school, why or why not ?\nHave a class discussion summarizing what everyone has"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "7f02e4fea0d8-e6",
+              "excerpt": "What I LEARNAED\n\nAt the end we will come back together and discuss what we learned.\n\nExplain and Explore Activity\n\nExplain\n\nPlease see the project rubric.\n\nExplore\n\nPlease complete the career exploratins worksheet.\n\nPlease see project rubric.\nAm I interested in any of the career choices that have been presented to me, why or why not?\nIs the law pathway one I want to consider following once I get t"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 0,
+        "missing": 1,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "curriculum_own_dallas_career_2026",
+      "rubric_version": "v1-dallas-ctat-2026-07",
+      "scoring": "presence",
+      "lesson_id": "7f02e4fea0d8",
+      "criteria": [
+        {
+          "criterion_id": "learning_target",
+          "label": "Learning target / objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "7f02e4fea0d8-e1",
+              "excerpt": "TEKS\n\n127.2 Career and College Expoloration (B), (C )"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "teks_alignment",
+          "label": "TEKS listed and aligned to objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "7f02e4fea0d8-e1",
+              "excerpt": "TEKS\n\n127.2 Career and College Expoloration (B), (C )"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "materials_prep",
+          "label": "Materials, supplies & teacher prep",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "7f02e4fea0d8-e7",
+              "excerpt": "Resources\n\nComputer"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "instructional_activities",
+          "label": "Instructional activities (launch -> activities -> closure)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "7f02e4fea0d8-e2",
+              "excerpt": "We will be discussing potential careers in law enforcement that you can learn more about in the Law Enforcement Pathway in high school."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "formative_assessment",
+          "label": "Formative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "7f02e4fea0d8-e5",
+              "excerpt": "What I LEARNAED\n\nAt the end we will come back together and discuss what we learned.\n\nExplain and Explore Activity\n\nExplain\n\nPlease see the project rubric.\n\nExplore\n\nPlease complete the career exploratins worksheet.\n\nPlease see project rubric.\nAm I interested in any of the career choices that have been presented to me, why or why not?\nIs the law pathway one I want to consider following once I get t"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "summative_assessment",
+          "label": "Summative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "7f02e4fea0d8-e5",
+              "excerpt": "What I LEARNAED\n\nAt the end we will come back together and discuss what we learned.\n\nExplain and Explore Activity\n\nExplain\n\nPlease see the project rubric.\n\nExplore\n\nPlease complete the career exploratins worksheet.\n\nPlease see project rubric.\nAm I interested in any of the career choices that have been presented to me, why or why not?\nIs the law pathway one I want to consider following once I get t"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "elps_strategies",
+          "label": "ELPS / language strategies",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "cte_essentials",
+          "label": "CTE essential unit elements",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "7f02e4fea0d8-e1",
+              "excerpt": "TEKS\n\n127.2 Career and College Expoloration (B), (C )"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 1,
+        "missing": 1,
+        "coverage": 0.75,
+        "required_total": 5,
+        "required_present": 5,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.875,
+    "s3_curriculum_own": 0.75
+  },
+  "divergence": 0.125
+}

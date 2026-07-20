@@ -1,0 +1,271 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L6",
+  "unit_id": "alg1-mod-3",
+  "title": "Algebra I Math Teacher Edition Volume 1 Module 3 \u2014 Lesson 6",
+  "element_count": 22,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L6",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk13of15-e7",
+              "excerpt": "LESSON OVERVIEW\nStudents solve problems in context requiring a system of linear equations.\nWhile most problems can be modeled by a system of two equations, they\nare guided through the process of solving a system of four equations, and\nanother context can be modeled by a system of three equations. Students\nhave the opportunity to solve the systems using any method and sometimes\nmust respond in the "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk13of15-e6",
+              "excerpt": "\nGetting Started\nSystems of Summer Savings\n\nENGAGE\n\nFacilitation Notes\n\nIn this activity, students write a system of linear equations and a system of\nlinear inequalities to determine the solution to a real-world problem.\n\nAsk a student to read the introduction aloud. Discuss as a class.\nHave students work with a partner or in a group to complete\nQuestion 1. Share responses as a class.\nAS STUDENTS "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk14of15-e2",
+              "excerpt": "In a real-world context involving determining the better deal between two\nrelationships modeled by a system of linear equations, the intersection point\nof the lines and the possible input values are helpful in making decisions.\n\nSTAMP THE\nLEARNING"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk14of15-e4",
+              "excerpt": "Summary\n\nIn a real-world context involving determining the better buy between two\nrelationships modeled by a system of linear equations, the intersection point\nof the lines and the possible input values are helpful in making decisions.\n\nMODULE 3 \u2022 TOPIC 2 \u2022 LESSON 6\n\n\nAC TI V IT Y"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk14of15-e1",
+              "excerpt": "a recommendation?\n\u2022 How can you represent your proposal using inequalities?\n\nSummary"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk14of15-e3",
+              "excerpt": "\nAC TI V IT Y\n\n6. 2\n\nDetermining the Better Buy\n\nFacilitation Notes\n\nIn this activity, students write a system of linear equations to model a\nscenario. The best buy must be interpreted using inequalities based upon\nthe input values.\n\nAsk a student to read the introduction aloud. Discuss as a class.\nHave students work with a partner or in a group to complete\nQuestion 1. Share responses as a class.\n"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk15of15-e4",
+              "excerpt": "3. Are there any concepts within this topic that you find challenging\nto understand? How do you plan to improve your understanding\nof these concepts?\nAnswers will vary.\n\nMODULE 3 \u2022 TOPIC 2 \u2022 SELF-REFLECTION"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 0,
+        "missing": 1,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf__L6",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk13of15-e7",
+              "excerpt": "LESSON OVERVIEW\nStudents solve problems in context requiring a system of linear equations.\nWhile most problems can be modeled by a system of two equations, they\nare guided through the process of solving a system of four equations, and\nanother context can be modeled by a system of three equations. Students\nhave the opportunity to solve the systems using any method and sometimes\nmust respond in the "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk13of15-e6",
+              "excerpt": "\nGetting Started\nSystems of Summer Savings\n\nENGAGE\n\nFacilitation Notes\n\nIn this activity, students write a system of linear equations and a system of\nlinear inequalities to determine the solution to a real-world problem.\n\nAsk a student to read the introduction aloud. Discuss as a class.\nHave students work with a partner or in a group to complete\nQuestion 1. Share responses as a class.\nAS STUDENTS "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk14of15-e2",
+              "excerpt": "In a real-world context involving determining the better deal between two\nrelationships modeled by a system of linear equations, the intersection point\nof the lines and the possible input values are helpful in making decisions.\n\nSTAMP THE\nLEARNING"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk14of15-e4",
+              "excerpt": "Summary\n\nIn a real-world context involving determining the better buy between two\nrelationships modeled by a system of linear equations, the intersection point\nof the lines and the possible input values are helpful in making decisions.\n\nMODULE 3 \u2022 TOPIC 2 \u2022 LESSON 6\n\n\nAC TI V IT Y"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk14of15-e1",
+              "excerpt": "a recommendation?\n\u2022 How can you represent your proposal using inequalities?\n\nSummary"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk14of15-e3",
+              "excerpt": "\nAC TI V IT Y\n\n6. 2\n\nDetermining the Better Buy\n\nFacilitation Notes\n\nIn this activity, students write a system of linear equations to model a\nscenario. The best buy must be interpreted using inequalities based upon\nthe input values.\n\nAsk a student to read the introduction aloud. Discuss as a class.\nHave students work with a partner or in a group to complete\nQuestion 1. Share responses as a class.\n"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf-chunk15of15-e4",
+              "excerpt": "3. Are there any concepts within this topic that you find challenging\nto understand? How do you plan to improve your understanding\nof these concepts?\nAnswers will vary.\n\nMODULE 3 \u2022 TOPIC 2 \u2022 SELF-REFLECTION"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 0,
+        "missing": 1,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.875,
+    "s3_curriculum_own": 0.875
+  },
+  "divergence": 0.0
+}

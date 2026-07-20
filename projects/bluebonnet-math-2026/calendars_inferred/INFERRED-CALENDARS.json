@@ -1,15 +1,385 @@
 {
   "project_id": "bluebonnet-math-2026",
   "source": "inferred_from_documents",
-  "generated_at": "2026-07-17T20:56:31.008580+00:00",
+  "generated_at": "2026-07-20T02:10:21.509155+00:00",
   "provisional_rollup": "pacing-plan.yaml remains provisional early spine",
-  "year_note": "The data shows that both the Grade 5 math module and its accompanying program guide have no recorded evidence of lessons on any days, leaving all scheduled days empty. This suggests a complete lack of curriculum pacing information for these resources across the observed period. Consequently, it is impossible to determine whether units are under‑developed or fully stocked based solely on this dataset. Additional evidence would be required to assess instructional coverage and pacing accuracy.",
+  "year_note": "The curriculum shows no evidence of actual instruction across any Grade 5 math module or the overarching program guide—each entry reports zero days with documented activity and a full complement of empty‑day placeholders (13 for each module, five for the program). Consequently, all modules appear completely underpopulated relative to their intended pacing. This suggests that either no lessons have been delivered yet in this reporting period or the documentation system is missing entries. As it stands, there are no units demonstrating sufficient content coverage; every unit is marked as thinly stocked with only placeholder days remaining.",
   "units": {
     "g5-mod-1": {
       "unit_id": "g5-mod-1",
       "title": "Grade 5 Math — Module 1",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-17T20:56:28.715842+00:00",
+      "generated_at": "2026-07-20T02:10:18.334089+00:00",
+      "days": [
+        {
+          "id": "d1",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d2",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d3",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d4",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d5",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d6",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d7",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d8",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d9",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d10",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d11",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d12",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d13",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        }
+      ],
+      "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
+    },
+    "g5-mod-2": {
+      "unit_id": "g5-mod-2",
+      "title": "Grade 5 Math — Module 2",
+      "source": "inferred_from_documents",
+      "generated_at": "2026-07-20T02:10:18.335455+00:00",
+      "days": [
+        {
+          "id": "d1",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d2",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d3",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d4",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d5",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d6",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d7",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d8",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d9",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d10",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d11",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d12",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d13",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        }
+      ],
+      "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
+    },
+    "g5-mod-3": {
+      "unit_id": "g5-mod-3",
+      "title": "Grade 5 Math — Module 3",
+      "source": "inferred_from_documents",
+      "generated_at": "2026-07-20T02:10:18.336803+00:00",
+      "days": [
+        {
+          "id": "d1",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d2",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d3",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d4",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d5",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d6",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d7",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d8",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d9",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d10",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d11",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d12",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d13",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        }
+      ],
+      "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
+    },
+    "g5-mod-4": {
+      "unit_id": "g5-mod-4",
+      "title": "Grade 5 Math — Module 4",
+      "source": "inferred_from_documents",
+      "generated_at": "2026-07-20T02:10:18.338136+00:00",
+      "days": [
+        {
+          "id": "d1",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d2",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d3",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d4",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d5",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d6",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d7",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d8",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d9",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d10",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d11",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d12",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d13",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        }
+      ],
+      "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
+    },
+    "g5-mod-5": {
+      "unit_id": "g5-mod-5",
+      "title": "Grade 5 Math — Module 5",
+      "source": "inferred_from_documents",
+      "generated_at": "2026-07-20T02:10:18.339463+00:00",
+      "days": [
+        {
+          "id": "d1",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d2",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d3",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d4",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d5",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d6",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d7",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d8",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d9",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d10",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d11",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d12",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d13",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        }
+      ],
+      "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
+    },
+    "g5-mod-6": {
+      "unit_id": "g5-mod-6",
+      "title": "Grade 5 Math — Module 6",
+      "source": "inferred_from_documents",
+      "generated_at": "2026-07-20T02:10:18.340782+00:00",
       "days": [
         {
           "id": "d1",
@@ -83,7 +453,7 @@
       "unit_id": "g5-program",
       "title": "Grade 5 Math — program guides",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-17T20:56:28.716498+00:00",
+      "generated_at": "2026-07-20T02:10:18.341452+00:00",
       "days": [
         {
           "id": "d1",

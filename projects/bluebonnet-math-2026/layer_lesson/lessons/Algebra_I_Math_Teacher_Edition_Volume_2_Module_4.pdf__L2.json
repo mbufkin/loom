@@ -1,0 +1,281 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf__L2",
+  "unit_id": "alg1-mod-4",
+  "title": "Algebra I Math Teacher Edition Volume 2 Module 4 \u2014 Lesson 2",
+  "element_count": 44,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf__L2",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk4of13-e7",
+              "excerpt": "You have learned about the properties of powers with\ninteger exponents.\nHow can you use these properties to justify your reasoning when\nsolving problems?\nSample answer:\nI can rewrite an expression with a negative exponent by taking the reciprocal of the power\nand changing the sign of the exponent.\n\nMODULE 4 \u2022 TOPIC 1 \u2022 LESSON 2\n\nTXOER_A1_M04_T01_L02_Student Lesson.indd 537\n\n537\n\n11/05/24 5:39 PM\n\n"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk4of13-e1",
+              "excerpt": "Materials Needed: Poster Paper\n\nOptimizing Learning\n\n\u2022 Set up five stations in the classroom, one for each rule.\n\nThis differentiation\nstrategy provides\noptions for using\nmultiple media for\ncommunication.\n\n\u2022 Provide a poster at each station for students to enlarge the graphic organizer\n\ninstead of using the version in their textbook.\n\u2022 Divide the class into five groups and give each member of the "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk4of13-e2",
+              "excerpt": "\nTalk the Talk\n\nDEMONSTRATE\n\nORGANIZE THE PROPERTIES\n\nFacilitation Notes\n\nIn this activity, students create graphic organizers to organize their thoughts\nregarding the five properties learned in this topic. The properties are the\nproduct of powers rule, the quotient of powers rule, the power of a power rule,\nthe zero power rule, and the negative exponent rule. For each rule, they write\na definitio"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk4of13-e4",
+              "excerpt": "The symbol for \u201cis equal to\u201d is =. The symbol for \u201cis not equal to\u201d\nis \u2260. Write the appropriate symbol in each box to compare the two\nexpressions. Explain your reasoning.\n\n\u2022 Share and summarize.\n\n1. 2 3\n\ncomplete the activity.\n\n\u2260\n\n2 23\n\n5\n\n2 23\n\n5\n\n23\n\n\u2260\n\n2 23\n\nStudent Look-Fors\nWhether students are\ndemonstrating proficiencies\nrelated to TEKS A.1D:\n\u2022 Do students represent"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk4of13-e8",
+              "excerpt": "\nGetting Started\nCompare and Contrast\n\nENGAGE\n\nFacilitation Notes\n\nIn this activity, students review the fact that a geometric sequence has a\nconstant ratio between consecutive terms. They identify terms of a geometric\nsequence given a recursive formula. Students then analyze graphs of geometric\nsequences and are asked to identify similarities and differences among\nthe graphs.\n\nHave students work "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk1of13-e5",
+              "excerpt": "ACTIVITY 4\n\nACTIVITY 6\n\nSkills Practice\nThis is a suggested\nplacement. Move based\non student data and\nindividual needs.\n\nTALK THE TALK\n\nGETTING STARTED\nACTIVITY 1\nACTIVITY 2\nDay 6\n\nDay 7\n\nLEARNING\nINDIVIDUALLY\n\nDay 8\n\nDay 9\n\nLESSON 2\n\nAnalyzing Properties\nof Powers\nGETTING STARTED\nACTIVITY 1\n\nDay 10\n\nTEKS: A.9B, A.9C, A.9D,\n\nTEKS A.11A\n\nA.11B, A.12D, A.12C\n\nLESSON 2 continued\nACTIVITY 2\nTALK THE T"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk11of13-e21",
+              "excerpt": "MODULE 4 \u2022 TOPIC 2 \u2022 LESSON 2\n\n\nLesson 2 Assignment\nWrite\n\nRemember\n\nWrite\n\nExplain how an\nasymptote can be\nidentified from\nan exponential\nequation and\nits graph.\n\nYou can estimate the solution to an exponential equation\ngraphically. First, graph both the exponential function and the\nconstant function for the given y-value. Next, determine the\npoint of intersection of the graph of the exponential "
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk3of13-e11",
+              "excerpt": "ESSENTIAL IDEAS\n\u2022 Equivalent expressions are created by\n\napplying properties of integer exponents.\n\u2022 The properties of integer exponents provide\n\nmathematical justification for rewriting\nexpression with exponents.\n\nMODULE 4 \u2022 TOPIC 1 \u2022 LESSON 2 537A\n\n\nLESSON STRUCTURE AND PACING: 2 DAYS\nDAY 1\nENGAGE\nGetting Started: Are They Equal? 5 minutes\nCONNECT TO PRIOR KNOWLEDGE\nStudents determine whether ex"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf__L2",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk4of13-e7",
+              "excerpt": "You have learned about the properties of powers with\ninteger exponents.\nHow can you use these properties to justify your reasoning when\nsolving problems?\nSample answer:\nI can rewrite an expression with a negative exponent by taking the reciprocal of the power\nand changing the sign of the exponent.\n\nMODULE 4 \u2022 TOPIC 1 \u2022 LESSON 2\n\nTXOER_A1_M04_T01_L02_Student Lesson.indd 537\n\n537\n\n11/05/24 5:39 PM\n\n"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk4of13-e1",
+              "excerpt": "Materials Needed: Poster Paper\n\nOptimizing Learning\n\n\u2022 Set up five stations in the classroom, one for each rule.\n\nThis differentiation\nstrategy provides\noptions for using\nmultiple media for\ncommunication.\n\n\u2022 Provide a poster at each station for students to enlarge the graphic organizer\n\ninstead of using the version in their textbook.\n\u2022 Divide the class into five groups and give each member of the "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk4of13-e2",
+              "excerpt": "\nTalk the Talk\n\nDEMONSTRATE\n\nORGANIZE THE PROPERTIES\n\nFacilitation Notes\n\nIn this activity, students create graphic organizers to organize their thoughts\nregarding the five properties learned in this topic. The properties are the\nproduct of powers rule, the quotient of powers rule, the power of a power rule,\nthe zero power rule, and the negative exponent rule. For each rule, they write\na definitio"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk4of13-e4",
+              "excerpt": "The symbol for \u201cis equal to\u201d is =. The symbol for \u201cis not equal to\u201d\nis \u2260. Write the appropriate symbol in each box to compare the two\nexpressions. Explain your reasoning.\n\n\u2022 Share and summarize.\n\n1. 2 3\n\ncomplete the activity.\n\n\u2260\n\n2 23\n\n5\n\n2 23\n\n5\n\n23\n\n\u2260\n\n2 23\n\nStudent Look-Fors\nWhether students are\ndemonstrating proficiencies\nrelated to TEKS A.1D:\n\u2022 Do students represent"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk4of13-e8",
+              "excerpt": "\nGetting Started\nCompare and Contrast\n\nENGAGE\n\nFacilitation Notes\n\nIn this activity, students review the fact that a geometric sequence has a\nconstant ratio between consecutive terms. They identify terms of a geometric\nsequence given a recursive formula. Students then analyze graphs of geometric\nsequences and are asked to identify similarities and differences among\nthe graphs.\n\nHave students work "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk1of13-e5",
+              "excerpt": "ACTIVITY 4\n\nACTIVITY 6\n\nSkills Practice\nThis is a suggested\nplacement. Move based\non student data and\nindividual needs.\n\nTALK THE TALK\n\nGETTING STARTED\nACTIVITY 1\nACTIVITY 2\nDay 6\n\nDay 7\n\nLEARNING\nINDIVIDUALLY\n\nDay 8\n\nDay 9\n\nLESSON 2\n\nAnalyzing Properties\nof Powers\nGETTING STARTED\nACTIVITY 1\n\nDay 10\n\nTEKS: A.9B, A.9C, A.9D,\n\nTEKS A.11A\n\nA.11B, A.12D, A.12C\n\nLESSON 2 continued\nACTIVITY 2\nTALK THE T"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk11of13-e21",
+              "excerpt": "MODULE 4 \u2022 TOPIC 2 \u2022 LESSON 2\n\n\nLesson 2 Assignment\nWrite\n\nRemember\n\nWrite\n\nExplain how an\nasymptote can be\nidentified from\nan exponential\nequation and\nits graph.\n\nYou can estimate the solution to an exponential equation\ngraphically. First, graph both the exponential function and the\nconstant function for the given y-value. Next, determine the\npoint of intersection of the graph of the exponential "
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk3of13-e11",
+              "excerpt": "ESSENTIAL IDEAS\n\u2022 Equivalent expressions are created by\n\napplying properties of integer exponents.\n\u2022 The properties of integer exponents provide\n\nmathematical justification for rewriting\nexpression with exponents.\n\nMODULE 4 \u2022 TOPIC 1 \u2022 LESSON 2 537A\n\n\nLESSON STRUCTURE AND PACING: 2 DAYS\nDAY 1\nENGAGE\nGetting Started: Are They Equal? 5 minutes\nCONNECT TO PRIOR KNOWLEDGE\nStudents determine whether ex"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.875,
+    "s3_curriculum_own": 0.875
+  },
+  "divergence": 0.0
+}

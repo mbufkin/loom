@@ -1,0 +1,271 @@
+{
+  "lesson_id": "1787e9b5bfde",
+  "unit_id": "career-cluster",
+  "title": "Career Clusters - Slides",
+  "element_count": 18,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "1787e9b5bfde",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "1787e9b5bfde-e7",
+              "excerpt": "The Internet has a Wealth of Information        USE IT\n\nUse these links to get started on your\nCareer Search\n\n\nDay One"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "1787e9b5bfde-e6",
+              "excerpt": "* Graphic designer\n* Animator\n* Actor\n* Broadcaster\n\n* Audio designer\n* Musician\n* Cable TV engineer\n* Journalist"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "1787e9b5bfde-e2-split2",
+              "excerpt": "?\n\nMaybe a career in\n\nis right for you.\n\nAgriculture, Food & Natural Resources\n\nThis career deals with:\n\nplanning, managing, and performing agricultural production, horticulture and landscaping services.\n\nJobs in this area include:\n\n*Greenhouse manager\n* Farm manager\n* Animal trainer\n\n\n* Mining\n* Animal breeder\n* Fish and game warden\n* Groundskeeper\n\nLike making designs or models\nEnjoy beautiful a"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "1787e9b5bfde-e4",
+              "excerpt": "The Internet has a Wealth of Information        USE IT\n\nUse these links to get started on your\nCareer Search\n\n\nDay One\n\nWhat Career Cluster interested you the most?\nWhat Career Cluster were you the least interested in?\nWhich Career Cluster does a Doctor fall under?\n\nExit Ticket"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "1787e9b5bfde-e1",
+              "excerpt": "Career Cluster Overview\n\nDay 1"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "1787e9b5bfde-e3",
+              "excerpt": "Do Now: Day One\n\n?"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "1787e9b5bfde-e5",
+              "excerpt": "Did my group communicate well?\n\n Did my group use its time well?\n\nDid I contribute to my team\u2019s work?\n\nExit Ticket\n\nCareer Cluster Overview\n\nDay 3\n\nDay 3\n\nListed above are simple tips to making a presentation.\n\nWhich three do you think are the most important and why?\n\nDo Now\n\nDay 3 - Presentations!!!\n\nStudent Feedback - Career Cluster  Poster Project\n\n\nListen and evaluate the other groups. Check \u201c"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 1,
+        "missing": 1,
+        "coverage": 0.75,
+        "required_total": 4,
+        "required_present": 3,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "curriculum_own_dallas_career_2026",
+      "rubric_version": "v1-dallas-ctat-2026-07",
+      "scoring": "presence",
+      "lesson_id": "1787e9b5bfde",
+      "criteria": [
+        {
+          "criterion_id": "learning_target",
+          "label": "Learning target / objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "1787e9b5bfde-e7",
+              "excerpt": "The Internet has a Wealth of Information        USE IT\n\nUse these links to get started on your\nCareer Search\n\n\nDay One"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "teks_alignment",
+          "label": "TEKS listed and aligned to objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "1787e9b5bfde-e7",
+              "excerpt": "The Internet has a Wealth of Information        USE IT\n\nUse these links to get started on your\nCareer Search\n\n\nDay One"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "materials_prep",
+          "label": "Materials, supplies & teacher prep",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "1787e9b5bfde-e6",
+              "excerpt": "* Graphic designer\n* Animator\n* Actor\n* Broadcaster\n\n* Audio designer\n* Musician\n* Cable TV engineer\n* Journalist"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "instructional_activities",
+          "label": "Instructional activities (launch -> activities -> closure)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "1787e9b5bfde-e1",
+              "excerpt": "Career Cluster Overview\n\nDay 1"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "formative_assessment",
+          "label": "Formative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "1787e9b5bfde-e4",
+              "excerpt": "The Internet has a Wealth of Information        USE IT\n\nUse these links to get started on your\nCareer Search\n\n\nDay One\n\nWhat Career Cluster interested you the most?\nWhat Career Cluster were you the least interested in?\nWhich Career Cluster does a Doctor fall under?\n\nExit Ticket"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "summative_assessment",
+          "label": "Summative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "1787e9b5bfde-e4",
+              "excerpt": "The Internet has a Wealth of Information        USE IT\n\nUse these links to get started on your\nCareer Search\n\n\nDay One\n\nWhat Career Cluster interested you the most?\nWhat Career Cluster were you the least interested in?\nWhich Career Cluster does a Doctor fall under?\n\nExit Ticket"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "elps_strategies",
+          "label": "ELPS / language strategies",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "cte_essentials",
+          "label": "CTE essential unit elements",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "1787e9b5bfde-e1",
+              "excerpt": "Career Cluster Overview\n\nDay 1"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 1,
+        "missing": 1,
+        "coverage": 0.75,
+        "required_total": 5,
+        "required_present": 5,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.75,
+    "s3_curriculum_own": 0.75
+  },
+  "divergence": 0.0
+}

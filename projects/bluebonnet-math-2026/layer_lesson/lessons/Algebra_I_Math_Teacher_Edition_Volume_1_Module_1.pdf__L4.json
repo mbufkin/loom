@@ -1,0 +1,271 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf__L4",
+  "unit_id": "alg1-mod-1",
+  "title": "Algebra I Math Teacher Edition Volume 1 Module 1 \u2014 Lesson 4",
+  "element_count": 6,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf__L4",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk6of12-e6",
+              "excerpt": "MODULE 1 \u2022 TOPIC 1 \u2022 LESSON 4\n\nESSENTIAL IDEAS\n\u2022 The graph of an exponential or quadratic\n\nfunction is a curve.\n\u2022 The graph of a linear function is a line.\n\u2022 The graph of a linear or exponential function\n\nis either increasing or decreasing.\n\u2022 The graph of a quadratic function has\n\nintervals where it is increasing and intervals\nwhere it is decreasing. Quadratic functions\nalso have an absolute maxim"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk6of12-e5",
+              "excerpt": "59D\n\nSummary\n\n\u2022 Can you draw a quadratic function that doesn\u2019t have\n\nsymmetry? Explain your thinking.\n\nGraphs described as straight lines may be associated with a linear function,\nwhile those described as smooth curves may be associated with an\nexponential or quadratic function. The graph of a linear or exponential\nfunction is either increasing or decreasing, while the graph of a quadratic\nfunctio"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk2of12-e2",
+              "excerpt": "The mathematical modeling process includes the basic steps: (1) Notice and\nWonder, (2) Organize and Mathematize, (3) Predict and Analyze, (4) Test and\nInterpret, and (5) Report.\n\nIL-1H MODULE 1 \u2022 INTRODUCTION TO THE PROBLEM-SOLVING MODEL AND LEARNING RESOURCES\n\n\nINTRODUCTION LESSON\n\nSetting the Stage\n\nIntroduction to the Problem-Solving\nModel and Learning Resources\n\n\u2022 Communicate the\n\nobjectives.\n"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk1of12-e11",
+              "excerpt": "After Topic 1\n\nA.2A\nA.3C\nA.6A\nA.7A\nA.9A\nA.9D\nA.12A\n\n2\n\nSequences\n\nEnd of Topic Assessment\n\nAfter Topic 2\n\nA.12A\nA.12C\nA.12D"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk2of12-e1",
+              "excerpt": "\u2022 Why would Mario need to test his cup?\n\nReflecting and\njustifying"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk1of12-e10",
+              "excerpt": "Recognizing\nFunctions by\nCharacteristics\nGETTING STARTED\nACTIVITY 1\n\nLESSON 4 continued\nACTIVITY 2\nTALK THE TALK\n\nLEARNING\nINDIVIDUALLY"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk2of12-e1",
+              "excerpt": "\u2022 Why would Mario need to test his cup?\n\nReflecting and\njustifying"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 1,
+        "missing": 1,
+        "coverage": 0.75,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf__L4",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk6of12-e6",
+              "excerpt": "MODULE 1 \u2022 TOPIC 1 \u2022 LESSON 4\n\nESSENTIAL IDEAS\n\u2022 The graph of an exponential or quadratic\n\nfunction is a curve.\n\u2022 The graph of a linear function is a line.\n\u2022 The graph of a linear or exponential function\n\nis either increasing or decreasing.\n\u2022 The graph of a quadratic function has\n\nintervals where it is increasing and intervals\nwhere it is decreasing. Quadratic functions\nalso have an absolute maxim"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk6of12-e5",
+              "excerpt": "59D\n\nSummary\n\n\u2022 Can you draw a quadratic function that doesn\u2019t have\n\nsymmetry? Explain your thinking.\n\nGraphs described as straight lines may be associated with a linear function,\nwhile those described as smooth curves may be associated with an\nexponential or quadratic function. The graph of a linear or exponential\nfunction is either increasing or decreasing, while the graph of a quadratic\nfunctio"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk2of12-e2",
+              "excerpt": "The mathematical modeling process includes the basic steps: (1) Notice and\nWonder, (2) Organize and Mathematize, (3) Predict and Analyze, (4) Test and\nInterpret, and (5) Report.\n\nIL-1H MODULE 1 \u2022 INTRODUCTION TO THE PROBLEM-SOLVING MODEL AND LEARNING RESOURCES\n\n\nINTRODUCTION LESSON\n\nSetting the Stage\n\nIntroduction to the Problem-Solving\nModel and Learning Resources\n\n\u2022 Communicate the\n\nobjectives.\n"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk1of12-e11",
+              "excerpt": "After Topic 1\n\nA.2A\nA.3C\nA.6A\nA.7A\nA.9A\nA.9D\nA.12A\n\n2\n\nSequences\n\nEnd of Topic Assessment\n\nAfter Topic 2\n\nA.12A\nA.12C\nA.12D"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk2of12-e1",
+              "excerpt": "\u2022 Why would Mario need to test his cup?\n\nReflecting and\njustifying"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk1of12-e10",
+              "excerpt": "Recognizing\nFunctions by\nCharacteristics\nGETTING STARTED\nACTIVITY 1\n\nLESSON 4 continued\nACTIVITY 2\nTALK THE TALK\n\nLEARNING\nINDIVIDUALLY"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf-chunk2of12-e1",
+              "excerpt": "\u2022 Why would Mario need to test his cup?\n\nReflecting and\njustifying"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 1,
+        "missing": 1,
+        "coverage": 0.75,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.75,
+    "s3_curriculum_own": 0.75
+  },
+  "divergence": 0.0
+}

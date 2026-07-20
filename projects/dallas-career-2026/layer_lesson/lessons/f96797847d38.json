@@ -1,0 +1,246 @@
+{
+  "lesson_id": "f96797847d38",
+  "unit_id": "law-and-public-service",
+  "title": "Law and Public Service Project Slides",
+  "element_count": 4,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "f96797847d38",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "f96797847d38-e1",
+              "excerpt": "LAW\nPATHWAY\nCAREER\nEXPLORATION\nPROJECT\n\n1\n2\n3\nYou will work with a partner on\n researching your assigned career.\nYou will follow the format on the\n next slide to create you\nr presentation.\nYou and your partner will present\n your project.\nINSTRUCTIONS\n\nSLIDE FORMAT\n1\n2\n3\nIntroduction of\n yourself and partner\n/ title page.\nOutline of\n presentation\nYour career choice and\nwhy.\n\nSLIDE FORMAT\n4\n5\n6\n Dut"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "f96797847d38-e2",
+              "excerpt": "1\n2\n3\nYou will work with a partner on\n researching your assigned career.\nYou will follow the format on the\n next slide to create you\nr presentation.\nYou and your partner will present\n your project.\nINSTRUCTIONS\n\nSLIDE FORMAT\n1\n2\n3\nIntroduction of\n yourself and partner\n/ title page.\nOutline of\n presentation\nYour career choice and\nwhy."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "f96797847d38-e4",
+              "excerpt": "WELL DONE!\nYou are now ready to present.\nTHE END"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "f96797847d38-e3",
+              "excerpt": "SLIDE FORMAT\n4\n5\n6\n Duties and\n responsibilities of th\ne position.\nEducation required\n include colleges tha\nt have this course\nof study.\nSkills or previous\n experience require\nd for the employment.\n\nSLIDE FORMAT\n7\n8\n9\nFuture of this\n employment. Will th\ne need for th\nis employment increase\nor decrease?\nReference page- list of\n references an\nd website used to loca\nte the information w\nith links.\nSa"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 4,
+        "partial": 0,
+        "missing": 4,
+        "coverage": 0.5,
+        "required_total": 4,
+        "required_present": 3,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "curriculum_own_dallas_career_2026",
+      "rubric_version": "v1-dallas-ctat-2026-07",
+      "scoring": "presence",
+      "lesson_id": "f96797847d38",
+      "criteria": [
+        {
+          "criterion_id": "learning_target",
+          "label": "Learning target / objective",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "teks_alignment",
+          "label": "TEKS listed and aligned to objective",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "materials_prep",
+          "label": "Materials, supplies & teacher prep",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "f96797847d38-e1",
+              "excerpt": "LAW\nPATHWAY\nCAREER\nEXPLORATION\nPROJECT\n\n1\n2\n3\nYou will work with a partner on\n researching your assigned career.\nYou will follow the format on the\n next slide to create you\nr presentation.\nYou and your partner will present\n your project.\nINSTRUCTIONS\n\nSLIDE FORMAT\n1\n2\n3\nIntroduction of\n yourself and partner\n/ title page.\nOutline of\n presentation\nYour career choice and\nwhy.\n\nSLIDE FORMAT\n4\n5\n6\n Dut"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "instructional_activities",
+          "label": "Instructional activities (launch -> activities -> closure)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "f96797847d38-e2",
+              "excerpt": "1\n2\n3\nYou will work with a partner on\n researching your assigned career.\nYou will follow the format on the\n next slide to create you\nr presentation.\nYou and your partner will present\n your project.\nINSTRUCTIONS\n\nSLIDE FORMAT\n1\n2\n3\nIntroduction of\n yourself and partner\n/ title page.\nOutline of\n presentation\nYour career choice and\nwhy."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "formative_assessment",
+          "label": "Formative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "f96797847d38-e4",
+              "excerpt": "WELL DONE!\nYou are now ready to present.\nTHE END"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "summative_assessment",
+          "label": "Summative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "f96797847d38-e4",
+              "excerpt": "WELL DONE!\nYou are now ready to present.\nTHE END"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "elps_strategies",
+          "label": "ELPS / language strategies",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "cte_essentials",
+          "label": "CTE essential unit elements",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "f96797847d38-e1",
+              "excerpt": "LAW\nPATHWAY\nCAREER\nEXPLORATION\nPROJECT\n\n1\n2\n3\nYou will work with a partner on\n researching your assigned career.\nYou will follow the format on the\n next slide to create you\nr presentation.\nYou and your partner will present\n your project.\nINSTRUCTIONS\n\nSLIDE FORMAT\n1\n2\n3\nIntroduction of\n yourself and partner\n/ title page.\nOutline of\n presentation\nYour career choice and\nwhy.\n\nSLIDE FORMAT\n4\n5\n6\n Dut"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 4,
+        "partial": 1,
+        "missing": 3,
+        "coverage": 0.5,
+        "required_total": 5,
+        "required_present": 3,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.5,
+    "s3_curriculum_own": 0.5
+  },
+  "divergence": 0.0
+}

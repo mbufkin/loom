@@ -1,0 +1,281 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf__L1",
+  "unit_id": "alg1-mod-5",
+  "title": "Algebra I Math Teacher Edition Volume 2 Module 5 \u2014 Lesson 1",
+  "element_count": 75,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf__L1",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk1of23-e5",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk2of23-e20",
+              "excerpt": "In this activity, students examine a pattern of pennies. The function modeling\nthe pattern is \u200bf(x) 5 x2\u200b, and the difference between terms forms the set of odd\nintegers beginning with 3. Note that students were introduced to the quadratic\nfunction family in Module 1: Searching for Patterns, Topic 1: Quantities and\nRelationships. In that topic, they matched graphs to scenarios and equations to\ngra"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk2of23-e2",
+              "excerpt": "DAY 2\nActivity 1.2: Writing and Interpreting a Quadratic Function 15\u201320 minutes\nREAL-WORLD PROBLEM SOLVING, INVESTIGATION\nStudents are given a context involving handshakes and several diagrams to support the context.\nThey complete a table of values and write a function to represent the situation. They then use\ntechnology to graph the function, address the fact that this function has a minimum, and"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk1of23-e4",
+              "excerpt": "Horizontal\nTransformations and ACTIVITY 3\nVertex Form\nGETTING STARTED\nACTIVITY 1\n\nTALK THE TALK\n\nSkills Practice\nThis is a suggested\nplacement. Move based\non student data and\nindividual needs.\n\nDay 16\n\nEND OF TOPIC\nASSESSMENT\n\n*Bold TEKS 5 Readiness Standard\n\nMODULE 5 \u2022 TOPIC 1 \u2022 PACING GUIDE\n\n658I\n\n\nHow can you incorporate Skills Practice with students?\nThere are four Learning Individually days s"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk3of23-e1",
+              "excerpt": "The function is decreasing. As\nthe side length of the storage\nunit increases, the length of the\nenclosure decreases.\n\nThe x-intercept is (50, 0). When\nthe side length of the storage\nunit is 50 feet, the length of the\nenclosure is 0 feet. There would\nbe no enclosure for the dog."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk2of23-e4",
+              "excerpt": "659D MODULE 5 \u2022 TOPIC 2 \u2022 LESSON 1\n\n\nGetting Started\nSquaring It Up"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk1of23-e4",
+              "excerpt": "Horizontal\nTransformations and ACTIVITY 3\nVertex Form\nGETTING STARTED\nACTIVITY 1\n\nTALK THE TALK\n\nSkills Practice\nThis is a suggested\nplacement. Move based\non student data and\nindividual needs.\n\nDay 16\n\nEND OF TOPIC\nASSESSMENT\n\n*Bold TEKS 5 Readiness Standard\n\nMODULE 5 \u2022 TOPIC 1 \u2022 PACING GUIDE\n\n658I\n\n\nHow can you incorporate Skills Practice with students?\nThere are four Learning Individually days s"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk2of23-e17",
+              "excerpt": "\nSTAMP THE\nLEARNING\n\nSummary\n\nA quadratic function can be written in the form f\u200b (x) 5 ax2 1 bx 1 c\u200b, where\na, b, and c are real numbers and a is not equal to zero; therefore, the equation \u200b\ny 5 x2\u200bis an example of a quadratic function. A quadratic function has neither a\nconstant difference nor a constant ratio between consecutive terms.\n\nAC TI V IT Y\n\n1 .1\n\nUsing Area to Introduce Quadratic Funct"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf__L1",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk1of23-e5",
+              "excerpt": ""
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk2of23-e20",
+              "excerpt": "In this activity, students examine a pattern of pennies. The function modeling\nthe pattern is \u200bf(x) 5 x2\u200b, and the difference between terms forms the set of odd\nintegers beginning with 3. Note that students were introduced to the quadratic\nfunction family in Module 1: Searching for Patterns, Topic 1: Quantities and\nRelationships. In that topic, they matched graphs to scenarios and equations to\ngra"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk2of23-e2",
+              "excerpt": "DAY 2\nActivity 1.2: Writing and Interpreting a Quadratic Function 15\u201320 minutes\nREAL-WORLD PROBLEM SOLVING, INVESTIGATION\nStudents are given a context involving handshakes and several diagrams to support the context.\nThey complete a table of values and write a function to represent the situation. They then use\ntechnology to graph the function, address the fact that this function has a minimum, and"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk1of23-e4",
+              "excerpt": "Horizontal\nTransformations and ACTIVITY 3\nVertex Form\nGETTING STARTED\nACTIVITY 1\n\nTALK THE TALK\n\nSkills Practice\nThis is a suggested\nplacement. Move based\non student data and\nindividual needs.\n\nDay 16\n\nEND OF TOPIC\nASSESSMENT\n\n*Bold TEKS 5 Readiness Standard\n\nMODULE 5 \u2022 TOPIC 1 \u2022 PACING GUIDE\n\n658I\n\n\nHow can you incorporate Skills Practice with students?\nThere are four Learning Individually days s"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk3of23-e1",
+              "excerpt": "The function is decreasing. As\nthe side length of the storage\nunit increases, the length of the\nenclosure decreases.\n\nThe x-intercept is (50, 0). When\nthe side length of the storage\nunit is 50 feet, the length of the\nenclosure is 0 feet. There would\nbe no enclosure for the dog."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk2of23-e4",
+              "excerpt": "659D MODULE 5 \u2022 TOPIC 2 \u2022 LESSON 1\n\n\nGetting Started\nSquaring It Up"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk1of23-e4",
+              "excerpt": "Horizontal\nTransformations and ACTIVITY 3\nVertex Form\nGETTING STARTED\nACTIVITY 1\n\nTALK THE TALK\n\nSkills Practice\nThis is a suggested\nplacement. Move based\non student data and\nindividual needs.\n\nDay 16\n\nEND OF TOPIC\nASSESSMENT\n\n*Bold TEKS 5 Readiness Standard\n\nMODULE 5 \u2022 TOPIC 1 \u2022 PACING GUIDE\n\n658I\n\n\nHow can you incorporate Skills Practice with students?\nThere are four Learning Individually days s"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk2of23-e17",
+              "excerpt": "\nSTAMP THE\nLEARNING\n\nSummary\n\nA quadratic function can be written in the form f\u200b (x) 5 ax2 1 bx 1 c\u200b, where\na, b, and c are real numbers and a is not equal to zero; therefore, the equation \u200b\ny 5 x2\u200bis an example of a quadratic function. A quadratic function has neither a\nconstant difference nor a constant ratio between consecutive terms.\n\nAC TI V IT Y\n\n1 .1\n\nUsing Area to Introduce Quadratic Funct"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 1,
+        "missing": 0,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.875,
+    "s3_curriculum_own": 0.875
+  },
+  "divergence": 0.0
+}

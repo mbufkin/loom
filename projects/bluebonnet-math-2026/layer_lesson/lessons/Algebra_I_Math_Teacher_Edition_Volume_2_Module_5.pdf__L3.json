@@ -1,0 +1,281 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf__L3",
+  "unit_id": "alg1-mod-5",
+  "title": "Algebra I Math Teacher Edition Volume 2 Module 5 \u2014 Lesson 3",
+  "element_count": 24,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf__L3",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk6of23-e6",
+              "excerpt": "ALGEBRA I TEKS\nMathematical Process Standards\n(1) The student uses mathematical processes to acquire and\ndemonstrate mathematical understanding.\nThe student is expected to:\nA.1D communicate mathematical ideas, reasoning, and\ntheir implications using multiple representations, including\nsymbols, diagrams, graphs, and language as appropriate.\nA.1F analyze mathematical relationships to connect and\ncom"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk13of23-e7",
+              "excerpt": "\nGetting Started\nThe x 2 r Factor\n\nENGAGE\n\nFacilitation Notes\nIn this activity, students analyze a quadratic function and its graph.\nThey determine from the graph that the function has two zeros. A Worked\nExample demonstrates how to use the factor theorem to determine whether\na linear expression, written from the zero of the graph, is a factor of the\nquadratic function. Students reason about the o"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk6of23-e1",
+              "excerpt": "ALGEBRA I TEKS\nMathematical Process Standards\n(1) The student uses mathematical processes to acquire and\ndemonstrate mathematical understanding.\nThe student is expected to:\nA.1D communicate mathematical ideas, reasoning, and\ntheir implications using multiple representations, including\nsymbols, diagrams, graphs, and language as appropriate.\nA.1F analyze mathematical relationships to connect and\ncom"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk6of23-e4",
+              "excerpt": "Facilitation Notes\nIn this activity, students use their previous knowledge about the\ntransformations of lines. Given the parent function f(x) 5 x, they graph and\ndescribe transformed equations. Students recall that a- and d-values affect\nthe y-values of the function.\n\nHave students work with a partner or in a group to complete\nQuestions 1 and 2. Share responses as a class.\nQUESTIONS TO SUPPORT DIS"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk6of23-e1",
+              "excerpt": "ALGEBRA I TEKS\nMathematical Process Standards\n(1) The student uses mathematical processes to acquire and\ndemonstrate mathematical understanding.\nThe student is expected to:\nA.1D communicate mathematical ideas, reasoning, and\ntheir implications using multiple representations, including\nsymbols, diagrams, graphs, and language as appropriate.\nA.1F analyze mathematical relationships to connect and\ncom"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk6of23-e2",
+              "excerpt": "Chunking the Activity\n\u2022 Read and discuss\n\nConsider the three quadratic functions shown.\ng(x) 5 x\n\nc(x) 5 x 1 3\n\n2\n\nthe directions.\n\n\u2022 Group students to\n\nd(x) 5 x 2 3\n\n2\n\n2\n\ncomplete Questions 1\u20134.\n\n1. Use technology to graph each function. Then, sketch and label the\ngraph of each function.\n\n\u2022 Check in and share.\n\u2022 Group students to\n\ny\n\ncomplete Questions 5\u20137.\n\n8\n6\n4\n\n\u2022 Check in and share.\n\u2022 Group "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk7of23-e8",
+              "excerpt": "\n718\n\nMODULE 5 \u2022 TOPIC 1 \u2022 LESSON 3\n\n\nLesson 3 Assignment\nWrite\n\nWrite\n\nRemember\n\nGiven a parent function y 5 f(x) and\na function written in transformation\nform g(x) 5 a ? f(x 2 c) 1 d,\ndescribe how the transformations\nthat are inside a function affect a\ngraph differently than those on the\noutside of the function.\n\nThe parent quadratic function is f(x) 5 x 2.\n\nThe a- and d-values\nare on the outsid"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk6of23-e5",
+              "excerpt": "Summary\nQuadratic functions can be transformed similar to linear functions. Changing\nthe d-value vertically translates the graph of the function. Changing the\na-value vertically dilates and/or reflects the graph of the function.\nAC TI V IT Y\n\n3. 2\n\nHorizontal Translations of\nQuadratic Functions"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 2,
+        "missing": 0,
+        "coverage": 0.75,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf__L3",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk6of23-e6",
+              "excerpt": "ALGEBRA I TEKS\nMathematical Process Standards\n(1) The student uses mathematical processes to acquire and\ndemonstrate mathematical understanding.\nThe student is expected to:\nA.1D communicate mathematical ideas, reasoning, and\ntheir implications using multiple representations, including\nsymbols, diagrams, graphs, and language as appropriate.\nA.1F analyze mathematical relationships to connect and\ncom"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk13of23-e7",
+              "excerpt": "\nGetting Started\nThe x 2 r Factor\n\nENGAGE\n\nFacilitation Notes\nIn this activity, students analyze a quadratic function and its graph.\nThey determine from the graph that the function has two zeros. A Worked\nExample demonstrates how to use the factor theorem to determine whether\na linear expression, written from the zero of the graph, is a factor of the\nquadratic function. Students reason about the o"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk6of23-e1",
+              "excerpt": "ALGEBRA I TEKS\nMathematical Process Standards\n(1) The student uses mathematical processes to acquire and\ndemonstrate mathematical understanding.\nThe student is expected to:\nA.1D communicate mathematical ideas, reasoning, and\ntheir implications using multiple representations, including\nsymbols, diagrams, graphs, and language as appropriate.\nA.1F analyze mathematical relationships to connect and\ncom"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk6of23-e4",
+              "excerpt": "Facilitation Notes\nIn this activity, students use their previous knowledge about the\ntransformations of lines. Given the parent function f(x) 5 x, they graph and\ndescribe transformed equations. Students recall that a- and d-values affect\nthe y-values of the function.\n\nHave students work with a partner or in a group to complete\nQuestions 1 and 2. Share responses as a class.\nQUESTIONS TO SUPPORT DIS"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk6of23-e1",
+              "excerpt": "ALGEBRA I TEKS\nMathematical Process Standards\n(1) The student uses mathematical processes to acquire and\ndemonstrate mathematical understanding.\nThe student is expected to:\nA.1D communicate mathematical ideas, reasoning, and\ntheir implications using multiple representations, including\nsymbols, diagrams, graphs, and language as appropriate.\nA.1F analyze mathematical relationships to connect and\ncom"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk6of23-e2",
+              "excerpt": "Chunking the Activity\n\u2022 Read and discuss\n\nConsider the three quadratic functions shown.\ng(x) 5 x\n\nc(x) 5 x 1 3\n\n2\n\nthe directions.\n\n\u2022 Group students to\n\nd(x) 5 x 2 3\n\n2\n\n2\n\ncomplete Questions 1\u20134.\n\n1. Use technology to graph each function. Then, sketch and label the\ngraph of each function.\n\n\u2022 Check in and share.\n\u2022 Group students to\n\ny\n\ncomplete Questions 5\u20137.\n\n8\n6\n4\n\n\u2022 Check in and share.\n\u2022 Group "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk7of23-e8",
+              "excerpt": "\n718\n\nMODULE 5 \u2022 TOPIC 1 \u2022 LESSON 3\n\n\nLesson 3 Assignment\nWrite\n\nWrite\n\nRemember\n\nGiven a parent function y 5 f(x) and\na function written in transformation\nform g(x) 5 a ? f(x 2 c) 1 d,\ndescribe how the transformations\nthat are inside a function affect a\ngraph differently than those on the\noutside of the function.\n\nThe parent quadratic function is f(x) 5 x 2.\n\nThe a- and d-values\nare on the outsid"
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf-chunk6of23-e5",
+              "excerpt": "Summary\nQuadratic functions can be transformed similar to linear functions. Changing\nthe d-value vertically translates the graph of the function. Changing the\na-value vertically dilates and/or reflects the graph of the function.\nAC TI V IT Y\n\n3. 2\n\nHorizontal Translations of\nQuadratic Functions"
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 2,
+        "missing": 0,
+        "coverage": 0.75,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.75,
+    "s3_curriculum_own": 0.75
+  },
+  "divergence": 0.0
+}

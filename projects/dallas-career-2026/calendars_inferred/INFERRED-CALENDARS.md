@@ -1,13 +1,9 @@
 # Inferred calendars — `dallas-career-2026`
 
 **source:** `inferred_from_documents`  
-**generated:** 2026-07-14T02:56:09.300671+00:00
+**generated:** 2026-07-20T23:23:08.107978+00:00
 
 Early `rollup.py` / `pacing-plan.yaml` is provisional. This file is the post-assemble evidence calendar.
-
-## Year note
-
-The curriculum shows critical gaps in high-demand clusters: Architecture & Construction, Arts AV Technology, Business Marketing, Career Cluster, Career Exploration, Dallas ISD, Health Science, Hospitality Tourism, Information Technology, Law and Public Service, Professional Preparedness, Teaching and Training, and Transportation Distribution all have zero evidence of content delivery across their allocated days. Engineering, Agriculture, Financial Literacy, Manufacturing each show minimal presence with only one day of evidence but multiple empty days, indicating underutilized instructional time. These clusters represent significant portions of the career readiness framework that appear to lack structured lesson planning or documented implementation within the observed schedule.
 
 ## Agriculture (`agriculture`)
 

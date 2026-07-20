@@ -1,0 +1,251 @@
+{
+  "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf__L4",
+  "unit_id": "alg1-mod-4",
+  "title": "Algebra I Math Teacher Edition Volume 2 Module 4 \u2014 Lesson 4",
+  "element_count": 11,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf__L4",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk6of13-e4",
+              "excerpt": "ALGEBRA I TEKS\nMathematical Process Standards\n(1) The student uses mathematical processes to acquire and\ndemonstrate mathematical understanding.\nThe student is expected to:\n\nELPS\n(1) Learning Strategies\nThe student is expected to:\n(B) monitor oral and written language production and employ\nself-corrective techniques or other resources.\n\nA.1C select tools, including real objects, manipulatives,\npap"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk6of13-e5",
+              "excerpt": "c.\n\n2\n\n\u2012\u2012\u2012\u2012"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk7of13-e2",
+              "excerpt": "DEVELOP\nActivity 5.1: Characteristics of Exponential Growth 10 minutes\nREAL-WORLD PROBLEM SOLVING\nStudents complete a table and graph to represent a situation that models exponential growth.\nThey identify the constant ratio and y-intercept. Students construct the graph of the exponential\nfunction on a large graph, which they will use in the next activity of the lesson.\n\nActivity 5.2: The Square Ro"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk7of13-e1",
+              "excerpt": "Students explore a context modeled by an exponential function, first with\noutput values that are between two integers, then with output values that\nare rational exponents. This helps students make sense of the fact that\n1\na \u200b\u200b5 \u200b\u200ba\u200b\u2012\u2012\u200b2\u200b\u200b.\u200b They then expand upon this idea to learn that the properties of\n\u200b\u200b\u221a\u203e\u203e\npowers apply to expressions with rational exponents, rewrite expressions\nwith rational ex"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk7of13-e3",
+              "excerpt": "Activity 5.2: The Square Root Constant Ratio of an Exponential Function 25 minutes\nINVESTIGATION, WORKED EXAMPLE, PEER WORK ANALYSIS\nStudents explore the idea that when interval between input values is the same, an exponential\nfunction shows a constant multiplier between the corresponding output values, no matter how\nlarge or how small the gap between input values. They use this fact to determine "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 5,
+        "partial": 0,
+        "missing": 3,
+        "coverage": 0.625,
+        "required_total": 4,
+        "required_present": 3,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf__L4",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk6of13-e4",
+              "excerpt": "ALGEBRA I TEKS\nMathematical Process Standards\n(1) The student uses mathematical processes to acquire and\ndemonstrate mathematical understanding.\nThe student is expected to:\n\nELPS\n(1) Learning Strategies\nThe student is expected to:\n(B) monitor oral and written language production and employ\nself-corrective techniques or other resources.\n\nA.1C select tools, including real objects, manipulatives,\npap"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk6of13-e5",
+              "excerpt": "c.\n\n2\n\n\u2012\u2012\u2012\u2012"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk7of13-e2",
+              "excerpt": "DEVELOP\nActivity 5.1: Characteristics of Exponential Growth 10 minutes\nREAL-WORLD PROBLEM SOLVING\nStudents complete a table and graph to represent a situation that models exponential growth.\nThey identify the constant ratio and y-intercept. Students construct the graph of the exponential\nfunction on a large graph, which they will use in the next activity of the lesson.\n\nActivity 5.2: The Square Ro"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk7of13-e1",
+              "excerpt": "Students explore a context modeled by an exponential function, first with\noutput values that are between two integers, then with output values that\nare rational exponents. This helps students make sense of the fact that\n1\na \u200b\u200b5 \u200b\u200ba\u200b\u2012\u2012\u200b2\u200b\u200b.\u200b They then expand upon this idea to learn that the properties of\n\u200b\u200b\u221a\u203e\u203e\npowers apply to expressions with rational exponents, rewrite expressions\nwith rational ex"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf-chunk7of13-e3",
+              "excerpt": "Activity 5.2: The Square Root Constant Ratio of an Exponential Function 25 minutes\nINVESTIGATION, WORKED EXAMPLE, PEER WORK ANALYSIS\nStudents explore the idea that when interval between input values is the same, an exponential\nfunction shows a constant multiplier between the corresponding output values, no matter how\nlarge or how small the gap between input values. They use this fact to determine "
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 5,
+        "partial": 0,
+        "missing": 3,
+        "coverage": 0.625,
+        "required_total": 4,
+        "required_present": 3,
+        "gate_pass": false
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.625,
+    "s3_curriculum_own": 0.625
+  },
+  "divergence": 0.0
+}

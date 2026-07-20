@@ -1,0 +1,271 @@
+{
+  "lesson_id": "67a41a913430",
+  "unit_id": "manufacturing",
+  "title": "Manufacturing Lesson",
+  "element_count": 7,
+  "results": {
+    "s1_completeness": {
+      "scorer_id": "s1_completeness",
+      "rubric_id": "completeness_core8",
+      "rubric_version": "v1-core8-2026-07",
+      "scoring": "presence",
+      "lesson_id": "67a41a913430",
+      "criteria": [
+        {
+          "criterion_id": "standards_objectives",
+          "label": "Standards & objectives",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "67a41a913430-e1",
+              "excerpt": "Learning Objective\n\nExplore a new career, manufacturing, through experiential learning."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "logistics_materials",
+          "label": "Materials & logistics",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "67a41a913430-e7",
+              "excerpt": "\nSoftware Design\n\n3. Technologies in Manufacturing\n\n\nStudents research\n\nYou will conducted research on the mentioned technologies.\nShowcase your findings through visuals (charts, graphs, infographics).\nYou will present your posters."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "direct_instruction",
+          "label": "Direct instruction / input & modeling",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "67a41a913430-e3",
+              "excerpt": "1. The 10-Block Random Model\n\nIn this lesson you will build a 10 blocks random model.\nWhat will be the best way to complete this task (efficiency)\nWhat could be done to improve this process Quality and Quantity.\n\nDefine what a production line is.\n\n2. The Production Line for Mass Production"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "assessment_checkpoint",
+          "label": "Assessment / check for understanding",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "67a41a913430-e5",
+              "excerpt": "You will conducted research on the mentioned technologies.\nShowcase your findings through visuals (charts, graphs, infographics).\nYou will present your posters.\n\n4. Student Research and Findings\n\n\nProduction Line simulator."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "hook_engagement",
+          "label": "Hook / engagement (anticipatory set)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "67a41a913430-e2",
+              "excerpt": "Introduction\n\nLearning Objective\n\nExplore a new career, manufacturing, through experiential learning."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "guided_practice",
+          "label": "Guided practice (we do)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "67a41a913430-e4",
+              "excerpt": "1. The 10-Block Random Model\n\nIn this lesson you will build a 10 blocks random model.\nWhat will be the best way to complete this task (efficiency)\nWhat could be done to improve this process Quality and Quantity.\n\nDefine what a production line is.\n\n2. The Production Line for Mass Production"
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "independent_practice",
+          "label": "Independent practice (you do)",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "reflection_closure",
+          "label": "Reflection / closure",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "67a41a913430-e6",
+              "excerpt": "\nWhat did you learn.\n\nRecap the key points covered in the presentation.\nEncourage students to explore manufacturing technologies further.\nHighlight the value of hands-on activities in understanding production processes."
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": {
+        "present": 7,
+        "partial": 0,
+        "missing": 1,
+        "coverage": 0.875,
+        "required_total": 4,
+        "required_present": 4,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    },
+    "s3_curriculum_own": {
+      "scorer_id": "s3_curriculum_own",
+      "rubric_id": "curriculum_own_dallas_career_2026",
+      "rubric_version": "v1-dallas-ctat-2026-07",
+      "scoring": "presence",
+      "lesson_id": "67a41a913430",
+      "criteria": [
+        {
+          "criterion_id": "learning_target",
+          "label": "Learning target / objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "67a41a913430-e1",
+              "excerpt": "Learning Objective\n\nExplore a new career, manufacturing, through experiential learning."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "teks_alignment",
+          "label": "TEKS listed and aligned to objective",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "67a41a913430-e1",
+              "excerpt": "Learning Objective\n\nExplore a new career, manufacturing, through experiential learning."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "materials_prep",
+          "label": "Materials, supplies & teacher prep",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "67a41a913430-e7",
+              "excerpt": "\nSoftware Design\n\n3. Technologies in Manufacturing\n\n\nStudents research\n\nYou will conducted research on the mentioned technologies.\nShowcase your findings through visuals (charts, graphs, infographics).\nYou will present your posters."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "instructional_activities",
+          "label": "Instructional activities (launch -> activities -> closure)",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "67a41a913430-e2",
+              "excerpt": "Introduction\n\nLearning Objective\n\nExplore a new career, manufacturing, through experiential learning."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "formative_assessment",
+          "label": "Formative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "67a41a913430-e5",
+              "excerpt": "You will conducted research on the mentioned technologies.\nShowcase your findings through visuals (charts, graphs, infographics).\nYou will present your posters.\n\n4. Student Research and Findings\n\n\nProduction Line simulator."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "summative_assessment",
+          "label": "Summative assessment",
+          "scoring": "presence",
+          "verdict": "PRESENT",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "67a41a913430-e5",
+              "excerpt": "You will conducted research on the mentioned technologies.\nShowcase your findings through visuals (charts, graphs, infographics).\nYou will present your posters.\n\n4. Student Research and Findings\n\n\nProduction Line simulator."
+            }
+          ],
+          "note": ""
+        },
+        {
+          "criterion_id": "elps_strategies",
+          "label": "ELPS / language strategies",
+          "scoring": "presence",
+          "verdict": "MISSING",
+          "band": null,
+          "evidence": [],
+          "note": ""
+        },
+        {
+          "criterion_id": "cte_essentials",
+          "label": "CTE essential unit elements",
+          "scoring": "presence",
+          "verdict": "PARTIAL",
+          "band": null,
+          "evidence": [
+            {
+              "element_id": "67a41a913430-e1",
+              "excerpt": "Learning Objective\n\nExplore a new career, manufacturing, through experiential learning."
+            }
+          ],
+          "note": "keyword match only; no element tagged with the expected type"
+        }
+      ],
+      "summary": {
+        "present": 6,
+        "partial": 1,
+        "missing": 1,
+        "coverage": 0.75,
+        "required_total": 5,
+        "required_present": 5,
+        "gate_pass": true
+      },
+      "cost": {
+        "model_calls": 0
+      },
+      "error": null
+    }
+  },
+  "normalized": {
+    "s1_completeness": 0.875,
+    "s3_curriculum_own": 0.75
+  },
+  "divergence": 0.125
+}
