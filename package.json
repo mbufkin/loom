@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "python3 test_schema_validate.py && python3 test_audit.py && python3 test_rollup.py && python3 test_doc_extract.py && python3 test_loom_pipeline.py && python3 test_layer1_organize_batch.py && python3 test_layer0_chunk_resume.py",
+    "test": "python3 test_schema_validate.py && python3 test_audit.py && python3 test_rollup.py && python3 test_doc_extract.py && python3 test_loom_pipeline.py && python3 test_layer1_organize_batch.py && python3 test_layer0_chunk_resume.py && python3 test_layer1_module_placement.py",
     "lint:md": "npx markdownlint '**/*.md' --ignore node_modules"
   },
   "repository": {

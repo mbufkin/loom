@@ -339,6 +339,29 @@ def build_known_overlap_set(manifest: dict) -> set[frozenset]:
     return {frozenset(pair) for pair in manifest.get("known_overlaps") or []}
 
 
+def build_module_internal_numbering_flag(manifest: dict) -> bool:
+    """True when this project's units number their lessons 1..N INTERNALLY (e.g.
+    Bluebonnet/Eureka math modules each restart at Lesson 1), set in manifest.yaml
+    as `placement: {lesson_numbering_is_module_internal: true}`.
+
+    When set, check_placement will NOT reassign an element across two content units
+    on the strength of a bare lesson number or a cross-unit topic alone: the same
+    "Lesson 30" legitimately exists inside several modules, so a Module 2 Teacher
+    Edition chunk reading "Lesson 30" is NOT evidence it belongs to Module 3 — that
+    inference is the single biggest source of false MISMATCH on module-structured
+    corpora. Off by default so subject-cluster corpora (e.g. Dallas CTE), where a
+    cross-unit topic IS a real filing signal, keep their existing behavior."""
+    return bool((manifest.get("placement") or {}).get("lesson_numbering_is_module_internal"))
+
+
+def quote_names_a_module(supporting_quote: str | None) -> bool:
+    """Does the verbatim evidence explicitly name a module (e.g. "Module 3",
+    "the focus of Module 6")? Only an explicit module name — not a bare lesson
+    number or a topic — is strong enough to reassign across content modules when
+    module-internal lesson numbering is in effect."""
+    return bool(re.search(r"\bmodule\s*\d", supporting_quote or "", re.IGNORECASE))
+
+
 def build_day_vocab(project_id: str, manifest: dict) -> list[dict]:
     """Closed vocabulary of every (unit_id, day_id, day_label) in the project,
     loaded straight from each unit's calendar.yaml, plus one unit_supporting
@@ -715,6 +738,7 @@ def check_placement(
     overview_unit_ids: set[str],
     target_counts: Counter,
     known_overlap_pairs: set[frozenset],
+    module_internal_numbering: bool = False,
 ) -> dict:
     """Pure code join: Phase 1's self-declared unit vs manifest's parent-link unit.
     No fuzzy string matching anywhere — Phase 1 already resolved to a clean ID from
@@ -750,6 +774,13 @@ def check_placement(
        EXPECTED_OVERLAP, checked only AFTER rules 1-2 (a hub-unit disagreement
        stays governed by the hub rules regardless of whether it also happens to
        be a listed overlap pair).
+    4. module_internal_numbering is on (build_module_internal_numbering_flag) and
+       the disagreement between two CONTENT units rests only on a lesson number or
+       a shared topic — the quote never names a module explicitly. On corpora where
+       each module restarts lesson numbering at 1 (Bluebonnet/Eureka math), "Lesson
+       30" inside a Module 2 doc is NOT evidence it belongs to Module 3; that
+       inference is the dominant false-MISMATCH source. Recorded UNVERIFIED, not
+       MISMATCH. An explicit "Module 3" in the quote still falls through to MISMATCH.
     """
     doc_id = element["doc_id"]
     parent_unit_id = parent_link_map.get(doc_id)
@@ -810,6 +841,25 @@ def check_placement(
         cross_reference_note = (
             f"'{parent_unit_id}' and '{matched_unit_id}' are a human-confirmed "
             "legitimate overlap pair, not a filing error"
+        )
+    elif (
+        module_internal_numbering
+        and matched_unit_id not in overview_unit_ids
+        and not quote_names_a_module(supporting_quote)
+    ):
+        # docstring rule 4 (module-internal lesson numbering) — a cross-content-unit
+        # self-declaration whose only evidence is a bare lesson number or a shared
+        # topic (the quote never names a module) cannot reassign the element: the
+        # same "Lesson 30" exists inside several modules. Downgrade to UNVERIFIED
+        # rather than assert a misfile. Explicit module naming in the quote still
+        # produces a MISMATCH below. (parent-is-overview cases were already handled.)
+        match_status = "UNVERIFIED"
+        final_unit_id = parent_unit_id
+        placement_basis = "parent_link_only"
+        cross_reference_note = (
+            f"self-declaration of '{matched_unit_id}' rests on module-internal lesson "
+            "numbering / a shared topic, not an explicit module name — not strong "
+            "enough to reassign across content units"
         )
     else:
         match_status = "MISMATCH"
@@ -1061,6 +1111,7 @@ def run_layer1(project_id: str, only_units: list[str] | None = None) -> Path:
     unit_vocab = build_unit_vocab(manifest)
     overview_unit_ids = build_overview_unit_set(manifest)
     known_overlap_pairs = build_known_overlap_set(manifest)
+    module_internal_numbering = build_module_internal_numbering_flag(manifest)
     day_vocab = build_day_vocab(project_id, manifest)
     calendars = load_calendars(project_id, manifest)
 
@@ -1181,6 +1232,7 @@ def run_layer1(project_id: str, only_units: list[str] | None = None) -> Path:
             overview_unit_ids,
             doc_target_counts.get(el["doc_id"], Counter()),
             known_overlap_pairs,
+            module_internal_numbering,
         )
         for el in scoped_ledger
     ]

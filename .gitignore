@@ -22,6 +22,7 @@ projects/*/sources/**
 !projects/*/sources/.gitkeep
 projects/*/_corpus/
 projects/*/_held_out/
+projects/*/_d2_snapshot/
 
 # --- Large download artifacts ---
 projects/*/_download/

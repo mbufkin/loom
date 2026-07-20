@@ -199,11 +199,32 @@ def write_units(files: list[tuple[str, Path]]) -> None:
         cal_path.parent.mkdir(parents=True, exist_ok=True)
         with open(cal_path, "w", encoding="utf-8") as f:
             yaml.dump(cal, f, default_flow_style=False, sort_keys=False)
-        manifest_units[uid] = {
+        unit_entry: dict = {
             "title": title_for(uid),
             "calendar": f"units/{uid}/calendar.yaml",
             "documents": sorted(by_unit[uid]),
         }
+        # Program / course / family / navigation / pacing guides are hub units:
+        # they exist to introduce and cross-reference every module in their subject,
+        # so an element of theirs naming a specific module is expected overview
+        # behavior, not a misfile. Layer 1 reads kind=="overview" to route those
+        # to CROSS_REFERENCE / discount them as placement evidence (Bet 12).
+        if uid.endswith("-program"):
+            unit_entry["kind"] = "overview"
+        manifest_units[uid] = unit_entry
+
+    # A subject's program guide legitimately, expectedly discusses every module in
+    # that subject (a K-5 Course Guide walks module-by-module; the ADSY teacher
+    # edition is extra days of module-aligned lessons). Pre-confirm those hub<->module
+    # pairs as known_overlaps so a chunk that concentrates on one module is recorded
+    # EXPECTED_OVERLAP rather than a corroborated MISMATCH. Modules never overlap each
+    # other — only the program hub overlaps its own modules.
+    known_overlaps: list[list[str]] = []
+    for prog in sorted(u for u in by_unit if u.endswith("-program")):
+        prefix = prog[: -len("program")]  # e.g. "g5-" / "alg1-"
+        for uid in sorted(by_unit):
+            if uid != prog and uid.startswith(prefix) and "-mod-" in uid:
+                known_overlaps.append([prog, uid])
 
     manifest = {
         "project": {
@@ -212,6 +233,12 @@ def write_units(files: list[tuple[str, Path]]) -> None:
         },
         "sources_dir": str(SOURCES.resolve()),
         "units": manifest_units,
+        "known_overlaps": known_overlaps,
+        # Bluebonnet/Eureka modules each restart lesson numbering at Lesson 1, so a
+        # bare "Lesson 30" is not evidence of which module a doc belongs to. Layer 1
+        # reads this to avoid reassigning elements across modules on lesson-number or
+        # shared-topic evidence alone (the dominant false-MISMATCH source here).
+        "placement": {"lesson_numbering_is_module_internal": True},
         "generated_by": "tools/stage_bluebonnet_units.py",
     }
     with open(ROOT / "manifest.yaml", "w", encoding="utf-8") as f:
