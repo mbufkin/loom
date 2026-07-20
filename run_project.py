@@ -34,9 +34,11 @@ INGEST = BASE_DIR / "ingest.py"
 ROLLUP = BASE_DIR / "rollup.py"
 LAYER0 = BASE_DIR / "layer0.py"
 ROUTE = BASE_DIR / "route.py"
+TE_PREPASS = BASE_DIR / "te_prepass.py"
 PATH_WORKFLOWS = BASE_DIR / "workflows" / "run_paths.py"
 LAYER1 = BASE_DIR / "layer1.py"
 LAYER2 = BASE_DIR / "layer2.py"
+LESSON_RUNG = BASE_DIR / "lesson_rung.py"
 CALENDARS = BASE_DIR / "calendars.py"
 SYNTH = BASE_DIR / "synthesize.py"
 PUSH_DRIVE = BASE_DIR / "tools" / "push_drive_reports.py"
@@ -213,6 +215,12 @@ def main() -> int:
             # Loom router — BEFORE unit placement. Writes layer0/route-map.json.
             run_step(ROUTE, ["--project", args.project])
 
+            # Teacher-Edition pre-pass — fan any multi-lesson TE into per-lesson child
+            # records (layer_lesson/te_children/) so a TE's lessons can be reviewed as
+            # discrete lessons. No-op for corpora without multi-lesson TEs.
+            if TE_PREPASS.is_file():
+                run_step(TE_PREPASS, ["--project", args.project])
+
             # Path A/B/C workflows (A = full lesson; B/C stubs until built out).
             if PATH_WORKFLOWS.is_file():
                 run_step(PATH_WORKFLOWS, ["--project", args.project])
@@ -234,6 +242,16 @@ def main() -> int:
             if only_unit:
                 l2_args.extend(["--only-unit", only_unit])
             run_step(LAYER2, l2_args)
+
+            # Lesson rung (locked): the bake-off's winning deterministic scorers over
+            # every lesson (incl. TE children) -> layer_lesson/LESSON-RUNG.json, the
+            # per-unit rollup the future unit rung consumes. Offline, no model calls;
+            # never blocks the run.
+            if LESSON_RUNG.is_file():
+                try:
+                    run_step(LESSON_RUNG, ["--project", args.project])
+                except Exception as e:  # noqa: BLE001
+                    log(f"WARN: lesson-rung skipped: {e}")
 
             # Model calendars after assemble (authoritative inferred map).
             # Early rollup remains provisional year spine only.
@@ -320,6 +338,24 @@ def main() -> int:
             f"  Drive:       gdrive:DISD CTE/Crystallize/{args.project}/"
             " (global PDF + teachers/*.pdf + runs/ archive)"
         )
+    # Honest degradation line: if any docs were routed best-effort (unknown type or
+    # low confidence), say so here instead of implying a clean pass. One line, not
+    # one flag per doc — the same noise-reduction discipline as the reports.
+    try:
+        from route import degraded_summary
+
+        deg = degraded_summary(args.project)
+        if deg["count"]:
+            by_type = ", ".join(
+                f"{t}×{n}"
+                for t, n in sorted(deg["by_type"].items(), key=lambda x: -x[1])
+            )
+            print(
+                f"  DEGRADED:    {deg['count']} doc(s) ran best-effort ({by_type}) — "
+                "output limited, tickets in _loom_feedback.yaml"
+            )
+    except Exception:
+        pass
     print("=" * 60 + "\n")
     return 0
 
