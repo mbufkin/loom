@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "status": "provisional-bootstrap",
+    "scale": "0-1 holistic lesson quality = completeness + backward-design coherence (objective <-> instruction <-> assessment) + richness of the lesson as actually written",
+    "note": "PROVISIONAL. These `quality` values were seeded by an agent reading each lesson's Layer 0 elements — they are a grounded starting point, NOT confirmed human ground truth. A curriculum SME should review each lesson, correct `quality`, and set `needs_confirmation` to false. The bake-off ranks scoring methods by agreement with these values, so corrections here can change which method wins; confirm before the lock-in step.",
+    "seeded_by": "lesson_bakeoff bootstrap read (2026-07-20)",
+    "confirmed_by": null
+  },
+  "67a41a913430": {
+    "title": "Manufacturing Lesson",
+    "quality": 0.8,
+    "needs_confirmation": true,
+    "rationale": "All eight instructional parts present and coherent: clear objective (explore manufacturing via experiential learning), hook, direct instruction + guided build (10-block model), a research-showcase assessment, and a reflection/closure. Rich, aligned lesson."
+  },
+  "89430d6aae63": {
+    "title": "Arts AV Technology Communication - Slides",
+    "quality": 0.82,
+    "needs_confirmation": true,
+    "rationale": "16 elements, full instructional arc, engaging opener (Guess the Logo), substantive content (career definitions, job roles, district pathways) with checks. Strong, complete slide lesson."
+  },
+  "3dc5933c971d": {
+    "title": "Teaching and Training Education and Training Lesson Plan",
+    "quality": 0.6,
+    "needs_confirmation": true,
+    "rationale": "Has objective, instruction, guided practice, a peer-review assessment with materials, and closure — but much of the content is repeated 'Question Stems' text across sections, so it is complete yet thin/repetitive."
+  },
+  "4b97944cd264": {
+    "title": "Engineering Lesson",
+    "quality": 0.6,
+    "needs_confirmation": true,
+    "rationale": "Clear engineering-design objective (paper airplane), strong hook (aircraft carrier), explain (potential/kinetic energy) and a design/explore activity. Coherent and rich, but no explicit assessment or closure element."
+  },
+  "4cc88ad60178": {
+    "title": "Hospitality Tourism - Lesson Plan",
+    "quality": 0.5,
+    "needs_confirmation": true,
+    "rationale": "Lots of material (19 elements) with engaging resources (Masterchef clip, knife-cut video) and some instruction/guided/assessment, but loosely structured — many elements are 'unclear', so coherence is middling."
+  },
+  "48a445a553cc": {
+    "title": "Career Cluster - Lesson Plan",
+    "quality": 0.3,
+    "needs_confirmation": true,
+    "rationale": "Only objective + 'unclear' engagement question stems are identifiable; no clearly structured instruction or assessment. Weak as a standalone teachable lesson."
+  },
+  "3a729a90b236": {
+    "title": "Business Marketing Finance Lesson Plan",
+    "quality": 0.15,
+    "needs_confirmation": true,
+    "rationale": "Essentially a skeleton: a career-table header and a bare 'Day 1 / Day 2 / Day 3' line. Almost no lesson content present."
+  }
+}
