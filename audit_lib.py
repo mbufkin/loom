@@ -371,6 +371,13 @@ VALID_SLOT_ROLES = frozenset(
 def classify_doc_type(filename: str) -> str:
     """Infer artifact type from filename — deterministic, no model."""
     n = filename.lower()
+    # A multi-lesson Teacher Edition is a CONTAINER of many lessons, not a single
+    # artifact — it must be fanned into per-lesson children before Path A can score
+    # it (see te_prepass.py). Detected by name here; the TE pre-pass confirms with a
+    # "Lesson N" density signal from Layer 0. Checked first so a "..._Teacher_Edition"
+    # never mis-buckets as lesson_plan on an incidental keyword.
+    if "teacher_edition" in n or "teacher edition" in n:
+        return "teacher_edition_multi_lesson"
     if "answer_key" in n or "answer key" in n:
         return "answer_key"
     if "exit_ticket" in n or "exit ticket" in n:

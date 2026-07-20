@@ -41,8 +41,21 @@ PATH_BY_WORKFLOW = {
 
 QUIZ_TYPES = frozenset({"quiz", "answer_key", "exit_ticket"})
 LESSON_TYPES = frozenset({"lesson_plan"})
-# Types that should be logged for future Path growth
-FEEDBACK_TYPES = frozenset({"other", "flex_day", "game_activity"})
+# Types that should be logged for future Path growth. teacher_edition_multi_lesson
+# is here deliberately: the TE container has no single-artifact pass of its own, so
+# the parent doc routes to Path C best-effort (degraded + ticketed) while te_prepass
+# fans its per-lesson children into Path A / the bake-off harness separately.
+FEEDBACK_TYPES = frozenset(
+    {"other", "flex_day", "game_activity", "teacher_edition_multi_lesson"}
+)
+
+# Below this routing confidence, a placement is a best-effort GUESS, not a
+# confident route. Such a doc is still processed (never dropped), but is marked
+# `degraded` so the run report says so plainly instead of implying a clean pass.
+# 0.65 sits just under the 0.7 default confidence collect_doc_records assigns to a
+# ledger doc with no stronger signal, so only genuinely weak (0.6 filename-only)
+# routes trip it — the same honest-signal discipline as Layer 1's UNVERIFIED.
+CONFIDENCE_FLOOR = 0.65
 
 
 def doc_type_to_workflow(doc_type: str) -> tuple[str, str, bool]:
@@ -54,6 +67,24 @@ def doc_type_to_workflow(doc_type: str) -> tuple[str, str, bool]:
         return WORKFLOW_QUIZ, "B", False
     needs_fb = dt in FEEDBACK_TYPES or dt == "other"
     return WORKFLOW_GENERAL, "C", needs_fb
+
+
+def assess_degradation(doc_type: str, confidence: float | None) -> tuple[bool, str]:
+    """Decide whether a doc was routed on a best-effort basis (degraded) and why.
+    Pure + standalone so the contract is unit-testable without a project on disk.
+
+    Degraded when EITHER the type has no dedicated pass (falls through to Path C
+    general) OR the routing confidence is below CONFIDENCE_FLOOR. Returns
+    (degraded, reason)."""
+    _, path, needs_fb = doc_type_to_workflow(doc_type)
+    reasons: list[str] = []
+    if needs_fb:
+        reasons.append(
+            f"no dedicated pass for type '{doc_type}' (Path {path} best-effort)"
+        )
+    if confidence is not None and confidence < CONFIDENCE_FLOOR:
+        reasons.append(f"low routing confidence {confidence:.2f} < {CONFIDENCE_FLOOR}")
+    return bool(reasons), "; ".join(reasons)
 
 
 def _load_json(path: Path) -> object:
@@ -169,9 +200,22 @@ def build_route_map(project_id: str) -> dict:
     feedback: list[dict] = []
     counts: Counter[str] = Counter()
 
+    degraded_by_type: Counter[str] = Counter()
     for rec in records:
         wf, path, needs_fb = doc_type_to_workflow(rec["doc_type"])
         counts[wf] += 1
+        # Degradation contract: a doc is `degraded` when we processed it on a
+        # best-effort basis rather than a confident, dedicated route — either its
+        # type has no dedicated pass (fell through to Path C general) or the
+        # routing confidence is below the floor. Degraded docs are STILL processed
+        # (never silently dropped) and ARE ticketed, but the run report names them
+        # so a clean-looking pass never hides a guess. This is the single, honest
+        # "we saw a pattern we don't fully handle" signal the noise-reduction work
+        # asked for — one degraded line, not a flag per unhandled element.
+        conf = rec.get("confidence")
+        degraded, degraded_reason = assess_degradation(rec["doc_type"], conf)
+        if degraded:
+            degraded_by_type[rec["doc_type"]] += 1
         entry = {
             "doc_id": rec["doc_id"],
             "doc_type": rec["doc_type"],
@@ -179,21 +223,29 @@ def build_route_map(project_id: str) -> dict:
             "path": path,
             "reason": f"mapped from doc_type={rec['doc_type']}",
             "feedback": needs_fb,
-            "confidence": rec.get("confidence"),
+            "degraded": degraded,
+            "degraded_reason": degraded_reason,
+            "confidence": conf,
             "source_file": rec.get("source_file"),
             "element_count": len(rec.get("element_ids") or []),
         }
         routes.append(entry)
-        if needs_fb:
+        # Ticket every degraded doc (union of weak/unknown type and low confidence),
+        # not just unknown types — _loom_feedback.yaml stays the single "what to
+        # build/adjust next" queue.
+        if degraded:
             feedback.append(
                 {
                     "doc_id": rec["doc_id"],
                     "doc_type": rec["doc_type"],
                     "suggested_pattern": (
                         f"Consider a dedicated workflow for type '{rec['doc_type']}' "
-                        f"(currently Path C general)."
+                        f"(currently Path {path} best-effort)."
+                        if needs_fb
+                        else f"Low-confidence route for '{rec['doc_type']}'; "
+                        "confirm the type or add a stronger classification signal."
                     ),
-                    "reason": "weak_or_unknown_type",
+                    "reason": degraded_reason or "degraded_route",
                 }
             )
 
@@ -207,10 +259,14 @@ def build_route_map(project_id: str) -> dict:
         log(f"WARN: route soft-gate — {len(missing)} ledger doc_id(s) not in route-map")
 
     fb_path = append_feedback(project_id, feedback)
+    degraded_count = sum(1 for r in routes if r["degraded"])
     out = {
         "project_id": project_id,
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "counts": dict(counts),
+        "degraded_count": degraded_count,
+        "degraded_by_type": dict(degraded_by_type),
+        "degraded_doc_ids": sorted(r["doc_id"] for r in routes if r["degraded"]),
         "unrouted_ledger_doc_ids": missing,
         "feedback_path": str(fb_path) if fb_path else None,
         "routes": routes,
@@ -220,8 +276,18 @@ def build_route_map(project_id: str) -> dict:
     log(
         f"route → {dest} "
         f"(A={counts[WORKFLOW_LESSON]} B={counts[WORKFLOW_QUIZ]} "
-        f"C={counts[WORKFLOW_GENERAL]}; feedback={len(feedback)})"
+        f"C={counts[WORKFLOW_GENERAL]}; feedback={len(feedback)}; "
+        f"degraded={degraded_count})"
     )
+    if degraded_count:
+        # One honest, consolidated line — not one flag per unhandled element.
+        by_type = ", ".join(
+            f"{t}×{n}" for t, n in sorted(degraded_by_type.items(), key=lambda x: -x[1])
+        )
+        log(
+            f"  NOTE: {degraded_count} doc(s) ran DEGRADED (best-effort, ticketed): "
+            f"{by_type}. Output for these is limited; see _loom_feedback.yaml."
+        )
     return out
 
 
@@ -231,6 +297,18 @@ def load_route_map(project_id: str) -> dict:
         return {}
     data = json.loads(path.read_text(encoding="utf-8"))
     return data if isinstance(data, dict) else {}
+
+
+def degraded_summary(project_id: str) -> dict:
+    """Compact degradation snapshot for the run report: how many docs were
+    processed best-effort, and of which types. Empty-safe (missing route-map ->
+    zero) so callers can always render one honest line without a guard."""
+    data = load_route_map(project_id)
+    return {
+        "count": data.get("degraded_count", 0),
+        "by_type": data.get("degraded_by_type", {}) or {},
+        "doc_ids": data.get("degraded_doc_ids", []) or [],
+    }
 
 
 def routed_doc_ids(project_id: str, *, workflow_id: str | None = None) -> set[str]:
