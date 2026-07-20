@@ -39,6 +39,7 @@ PATH_WORKFLOWS = BASE_DIR / "workflows" / "run_paths.py"
 LAYER1 = BASE_DIR / "layer1.py"
 LAYER2 = BASE_DIR / "layer2.py"
 LESSON_RUNG = BASE_DIR / "lesson_rung.py"
+UNIT_RUNG = BASE_DIR / "unit_rung.py"
 CALENDARS = BASE_DIR / "calendars.py"
 SYNTH = BASE_DIR / "synthesize.py"
 PUSH_DRIVE = BASE_DIR / "tools" / "push_drive_reports.py"
@@ -252,6 +253,16 @@ def main() -> int:
                     run_step(LESSON_RUNG, ["--project", args.project])
                 except Exception as e:  # noqa: BLE001
                     log(f"WARN: lesson-rung skipped: {e}")
+
+            # Unit rung: roll the lesson rung + Layer 1/2 + pacing into a per-unit
+            # verdict (layer_unit/UNIT-RUNG.json), the hand-off for the future
+            # curriculum rung. Deterministic, offline; depends on the lesson rung
+            # above so it runs right after, and never blocks the run.
+            if UNIT_RUNG.is_file():
+                try:
+                    run_step(UNIT_RUNG, ["--project", args.project])
+                except Exception as e:  # noqa: BLE001
+                    log(f"WARN: unit-rung skipped: {e}")
 
             # Model calendars after assemble (authoritative inferred map).
             # Early rollup remains provisional year spine only.

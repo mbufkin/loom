@@ -36,3 +36,4 @@ jobs:
           python3 test_route_degradation.py
           python3 test_te_prepass.py
           python3 test_lesson_rung.py
+          python3 test_unit_rung.py
