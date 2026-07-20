@@ -29,8 +29,20 @@ from audit_lib import (
     load_config,
     load_yaml,
     log,
+    normalize_ws,
     project_dir,
 )
+
+# Noise-reduction tuning. A director-facing report must read as "a handful of
+# patterns", never "110 identical flags" — the cross-domain doctrine borrowed from
+# alerting (Alertmanager grouping + inhibition), data validation (Great Expectations'
+# capped partial_unexpected_list + rate), and static analysis (severity tiers /
+# comment caps). See docs/roadmap.md and the plan's noise-reduction workstream.
+EXEMPLAR_CAP = 3  # cited example slots shown per rolled-up finding (rate + sample)
+SYSTEMIC_ABSENCE_RATE = 0.85  # a role missing in >=85% of its expected slots...
+SYSTEMIC_MIN_UNITS = 3  # ...across >=3 distinct units, never fulfilled anywhere,
+#                         reads as an expectation mismatch (the curriculum's SHAPE),
+#                         not N real defects — so it collapses to one prompt.
 
 AUDITOR_RULES = """
 You are a curriculum audit synthesizer. READ-ONLY.
@@ -232,8 +244,179 @@ def _group_mismatches_by_document(
     return docs
 
 
+def load_expectations(project_id: str) -> dict:
+    """Human calibration decisions for THIS curriculum ("silences"), read from an
+    optional, hand-maintained `<project>/expectations.yaml`. Directly analogous to
+    manifest.yaml `known_overlaps` (docs/BETS.md Bet 12): a one-time human call that
+    persists so the report stops re-raising a settled question on every run.
+
+    A role listed under `silenced_roles` has been reviewed and confirmed NOT expected
+    for this curriculum's shape (e.g. a Eureka/Bluebonnet module-pack math corpus that
+    never ships discrete daily exit tickets). Its systemic absence is then reported
+    ONCE as a calibrated expectation instead of as dozens of per-slot MISSING gaps.
+
+    Returns {} when the file is absent, so behavior degrades gracefully: no file means
+    nothing is silenced, and every systemic pattern still surfaces exactly once on its
+    own (the inhibition below does not NEED a human decision to already fire — the
+    silence just records the follow-through)."""
+    path = project_dir(project_id) / "expectations.yaml"
+    if not path.is_file():
+        return {}
+    data = load_yaml(path) or {}
+    raw = data.get("silenced_roles") or {}
+    # Accept either a bare list of role names or a mapping role -> decision dict, so a
+    # human can jot `["exit_ticket"]` quickly or record who/why/when for an audit trail.
+    silenced: dict[str, dict] = {}
+    if isinstance(raw, list):
+        for role in raw:
+            silenced[str(role)] = {}
+    elif isinstance(raw, dict):
+        for role, decision in raw.items():
+            silenced[str(role)] = decision if isinstance(decision, dict) else {}
+    return {"silenced_roles": silenced}
+
+
+def _pick_exemplars(
+    rows: list[dict], unit_titles: dict[str, str], cap: int = EXEMPLAR_CAP
+) -> list[dict]:
+    """Up to `cap` cited example slots for a rolled-up finding, preferring DISTINCT
+    reasons. This is Layer 1's near-duplicate principle (find_near_duplicates, Bet 11)
+    applied to reporting: most MISSING slots carry the identical machine reason ("no
+    candidate elements were routed to this slot"), so collapsing by normalized reason
+    shows one representative instead of printing the same sentence three times. The
+    caller keeps the full population count so the reader still sees the rate and can
+    open the full list (Great Expectations' partial_unexpected_list pattern)."""
+    seen: set[str] = set()
+    exemplars: list[dict] = []
+    # A row with a real, human-meaningful reason is a better exemplar than a bare
+    # "no candidate routed" one, so surface those first.
+    for r in sorted(rows, key=lambda x: not (x.get("reasoning") or "").strip()):
+        reason = (r.get("reasoning") or "").strip()
+        key = normalize_ws(reason)[:200]
+        if key in seen:
+            continue
+        seen.add(key)
+        uid = r.get("unit_id")
+        exemplars.append(
+            {
+                "unit_id": uid,
+                "unit_title": unit_titles.get(uid, uid),
+                "day_id": r.get("day_id"),
+                "reasoning": reason,
+            }
+        )
+        if len(exemplars) >= cap:
+            break
+    return exemplars
+
+
+def aggregate_missing(
+    findings: list[dict],
+    silenced_roles: dict[str, dict] | None = None,
+    unit_titles: dict[str, str] | None = None,
+) -> dict:
+    """Collapse per-slot MISSING findings into one rolled-up line PER ROLE, classified
+    so a director reads patterns, not a flag storm. This is the noise-reduction
+    contract in code (see the plan's finding-aggregation / expectation-calibration
+    workstream): aggregate by (role x scope), report a rate + capped exemplars (Great
+    Expectations), inhibit child symptoms under a parent cause (Alertmanager
+    inhibition), and tier by severity so the ISOLATED gap — the real signal — is not
+    buried under uniform absence.
+
+    Classification per role:
+      - silenced: a human already ruled this role not-expected here (expectations.yaml).
+        Reported once as calibrated and excluded from gap counts.
+      - systemic_absent: never fulfilled anywhere, missing across >=SYSTEMIC_MIN_UNITS
+        units at >=SYSTEMIC_ABSENCE_RATE. Almost always the day grid expecting an
+        artifact this curriculum simply doesn't ship (a taxonomy/expectation mismatch),
+        NOT N real defects -> one "is this expected here?" prompt that inhibits the
+        per-slot flags.
+      - isolated: fulfilled in some slots but missing in others -> these specific misses
+        ARE actionable (why does only this day/unit lack what its siblings have), so
+        they stay surfaced (still capped, with a link to the full list).
+    """
+    silenced_roles = silenced_roles or {}
+    unit_titles = unit_titles or {}
+    by_role: dict[str, list[dict]] = defaultdict(list)
+    for f in findings:
+        # CHECK_FAILED is a failed model call, not a confirmed slot outcome, so it must
+        # never be counted as evidence of an expectation (mirrors layer1.py keeping
+        # CHECK_FAILED deliberately distinct from MISSING).
+        if f.get("status") == "CHECK_FAILED":
+            continue
+        by_role[f.get("role") or "other"].append(f)
+
+    roles_out: list[dict] = []
+    for role, rows in by_role.items():
+        missing_rows = [r for r in rows if r.get("status") == "MISSING"]
+        if not missing_rows:
+            continue  # fully covered role — not a gap, nothing to report
+        fulfilled_rows = [r for r in rows if r.get("status") == "FULFILLED"]
+        expected = len(rows)
+        missing = len(missing_rows)
+        units_missing = {r.get("unit_id") for r in missing_rows}
+        units_fulfilled = {r.get("unit_id") for r in fulfilled_rows}
+        absence_rate = missing / expected if expected else 0.0
+        if role in silenced_roles:
+            classification = "silenced"
+        elif (
+            len(units_missing) >= SYSTEMIC_MIN_UNITS
+            and absence_rate >= SYSTEMIC_ABSENCE_RATE
+        ):
+            # Slot-level absence rate (not a strict "never fulfilled") is the honest
+            # dominance measure: a role satisfied in a handful of slots but empty in
+            # 90%+ of the ones the grid expects is still the grid expecting an artifact
+            # this curriculum mostly doesn't ship — an expectation call, not N defects.
+            classification = "systemic_absent"
+        else:
+            # Mostly present, missing in only a minority of slots -> a genuine, localized
+            # gap worth an individual look (the high-value signal the plan calls out).
+            classification = "isolated"
+        roles_out.append(
+            {
+                "role": role,
+                "expected": expected,
+                "missing": missing,
+                "fulfilled": len(fulfilled_rows),
+                "absence_rate": round(absence_rate, 3),
+                "units_total": len({r.get("unit_id") for r in rows}),
+                "units_missing": len(units_missing),
+                "units_fulfilled": len(units_fulfilled),
+                "classification": classification,
+                "exemplars": _pick_exemplars(missing_rows, unit_titles),
+                "decision": silenced_roles.get(role) or None,
+            }
+        )
+
+    roles_out.sort(key=lambda r: (-r["missing"], r["role"]))
+    silenced = [r for r in roles_out if r["classification"] == "silenced"]
+    systemic = [r for r in roles_out if r["classification"] == "systemic_absent"]
+    isolated = [r for r in roles_out if r["classification"] == "isolated"]
+    return {
+        "roles": roles_out,
+        "silenced": silenced,
+        "systemic_absent": systemic,
+        "isolated": isolated,
+        "counts": {
+            "missing_total": sum(r["missing"] for r in roles_out),
+            "missing_silenced": sum(r["missing"] for r in silenced),
+            "missing_systemic": sum(r["missing"] for r in systemic),
+            "missing_isolated": sum(r["missing"] for r in isolated),
+            # A director's headline: how many things to LOOK AT, not how many blanks.
+            # pattern_count = OPEN expectation mismatches still needing one decision;
+            # silenced_count = patterns a human already settled (informational only).
+            "pattern_count": len(systemic),
+            "silenced_count": len(silenced),
+            "isolated_gap_count": sum(r["missing"] for r in isolated),
+        },
+    }
+
+
 def aggregate_layer1(
-    bucket_rows: list[dict], findings: list[dict], manifest: dict
+    bucket_rows: list[dict],
+    findings: list[dict],
+    manifest: dict,
+    expectations: dict | None = None,
 ) -> dict:
     """Build structured stats without models — same deterministic-first discipline
     as the doc-level version this replaces (model enrichment, if used, only rewrites
@@ -299,6 +482,11 @@ def aggregate_layer1(
         key=lambda x: -x["unit_count"],
     )
 
+    # Noise-reduction rollup: patterns + capped exemplars + human silences. Additive
+    # to the raw per-slot counts above, which stay available for anyone who wants them.
+    silenced_roles = (expectations or {}).get("silenced_roles") or {}
+    missing_rollup = aggregate_missing(findings, silenced_roles, unit_titles)
+
     return {
         "elements_judged": len(bucket_rows),
         "documents_judged": documents_judged,
@@ -313,6 +501,7 @@ def aggregate_layer1(
         "review_queue_pending_pairs": len(review_pairs),
         "finding_status_counts": dict(finding_status_counts),
         "systemic_missing": systemic[:10],
+        "missing_rollup": missing_rollup,
         "unit_rollup": unit_rollup,
     }
 
@@ -395,6 +584,7 @@ def render_glossary_md() -> str:
 
 def render_dashboard(project_id: str, agg: dict, agg2: dict | None = None) -> str:
     confirmed, worth = _split_attention_for_champions(agg)
+    rc = (agg.get("missing_rollup") or {}).get("counts") or {}
     lines = [
         "# Curriculum Review Dashboard",
         "",
@@ -407,7 +597,10 @@ def render_dashboard(project_id: str, agg: dict, agg2: dict | None = None) -> st
         f"| Documents in folder | {agg['documents_judged']} |",
         f"| Filing conflicts to confirm | {len(confirmed)} |",
         f"| Filing flags (weaker / unconfirmed) | {len(worth)} |",
-        f"| Expected materials not in this folder | {agg['finding_status_counts'].get('MISSING', 0)} |",
+        # Split the raw MISSING total into what a director acts on: a few
+        # expectation patterns to decide once, and the isolated gaps to review.
+        f"| Expectation patterns to calibrate | {rc.get('pattern_count', 0)} |",
+        f"| Isolated material gaps to review | {rc.get('isolated_gap_count', agg['finding_status_counts'].get('MISSING', 0))} |",
         f"| Possible duplicate materials | {agg['finding_status_counts'].get('DUPLICATE', 0)} |",
         f"| Overlap pairs awaiting your decision | {agg['review_queue_pending_pairs']} |",
     ]
@@ -431,14 +624,19 @@ def render_dashboard(project_id: str, agg: dict, agg2: dict | None = None) -> st
             f"| {bar} {u['title']} | {u['match']} | {u['mismatch']} | {u['fulfilled']} | {u['missing']} | {u['duplicate']} |"
         )
 
-    lines.extend(["", "## Scope gaps across 3+ units", ""])
-    if agg["systemic_missing"]:
-        for i, p in enumerate(agg["systemic_missing"][:5], 1):
+    lines.extend(["", "## Expectation patterns (grouped, not per-slot)", ""])
+    rollup = agg.get("missing_rollup") or {}
+    patterns = (rollup.get("silenced") or []) + (rollup.get("systemic_absent") or [])
+    if patterns:
+        for i, p in enumerate(patterns[:5], 1):
+            tag = "silenced" if p["classification"] == "silenced" else "decide once"
+            pct = round(p["absence_rate"] * 100)
             lines.append(
-                f"{i}. **{_role_label(p['role'])}** — missing in **{p['unit_count']}** units"
+                f"{i}. **{_role_label(p['role'])}** — missing in {p['missing']} slot(s) "
+                f"across {p['units_missing']} unit(s) ({pct}%) — _{tag}_"
             )
     else:
-        lines.append("- No pattern reached the 3+ unit threshold.")
+        lines.append("- No corpus-wide absence pattern detected.")
 
     return "\n".join(lines) + "\n"
 
@@ -448,6 +646,9 @@ def _verdict_sentence(agg: dict) -> str:
     n_docs = agg["documents_judged"]
     n_misfiled = len(agg["mismatch_docs_high"]) + len(agg["mismatch_docs_low"])
     n_missing = agg["finding_status_counts"].get("MISSING", 0)
+    rc = (agg.get("missing_rollup") or {}).get("counts") or {}
+    n_pat = rc.get("pattern_count", 0)
+    n_iso = rc.get("isolated_gap_count", n_missing)
     if n_misfiled == 0 and n_missing == 0:
         return (
             f"All {n_docs} documents audited appear to be filed where they belong, and no "
@@ -463,9 +664,17 @@ def _verdict_sentence(agg: dict) -> str:
     else:
         parts.append(f"all {n_docs} documents appear correctly filed")
     if n_missing:
-        parts.append(
-            f"**{n_missing} expected materials appear to be missing** across the units"
-        )
+        # Frame the gaps the way a director will act on them — a few patterns to
+        # decide, plus a small number of individual gaps — not one alarming raw total.
+        if n_pat:
+            parts.append(
+                f"the {n_missing} empty material slots reduce to **{n_pat} expectation "
+                f"pattern(s)** to calibrate and **{n_iso} isolated gap(s)** to review"
+            )
+        else:
+            parts.append(
+                f"**{n_iso} expected material gap(s)** to review across the units"
+            )
     return "Bottom line: " + ", and ".join(parts) + ". Details below."
 
 
@@ -591,6 +800,110 @@ def _component_label(component: str) -> str:
     }.get(component, component.replace("_", " "))
 
 
+def _exemplar_where(ex: dict) -> str:
+    """Human 'where' for one cited exemplar slot: unit title + day label."""
+    unit = ex.get("unit_title") or ex.get("unit_id") or "?"
+    day = ex.get("day_id")
+    if day and str(day) != "unit_supporting":
+        m = re.match(r"^d(\d+)$", str(day), re.I)
+        return f"{unit} · " + (f"Day {m.group(1)}" if m else str(day))
+    return str(unit)
+
+
+def _render_missing_rollup(rollup: dict) -> list[str]:
+    """Section 3 body rendered from the noise-reduction rollup: patterns first
+    (calibrated silences + expectation mismatches), then the actionable isolated
+    gaps. This is the 'one notification, not 110 flags' contract in rendered form —
+    each rolled-up line carries a rate and up to EXEMPLAR_CAP cited exemplars, with a
+    pointer to the full per-slot list for anyone who wants it."""
+    counts = rollup.get("counts") or {}
+    silenced = rollup.get("silenced") or []
+    systemic = rollup.get("systemic_absent") or []
+    isolated = rollup.get("isolated") or []
+    if not (silenced or systemic or isolated):
+        return ["- No expected-material gaps detected."]
+
+    grouped_blanks = counts.get("missing_systemic", 0) + counts.get(
+        "missing_silenced", 0
+    )
+    headline = (
+        f"**{counts.get('pattern_count', 0)} expectation pattern(s) to decide**"
+    )
+    if counts.get("silenced_count", 0):
+        headline += f" (plus {counts['silenced_count']} already calibrated)"
+    headline += (
+        f" account for **{grouped_blanks}** per-slot blanks (reported once each below); "
+        f"**{counts.get('isolated_gap_count', 0)} isolated gap(s)** remain to review "
+        "individually."
+    )
+    lines = [headline, ""]
+
+    if silenced:
+        lines += [
+            "**Calibrated — not expected in this curriculum (your prior decision):**",
+            "",
+        ]
+        for r in silenced:
+            reason = (r.get("decision") or {}).get("reason") or ""
+            why = f" — {reason}" if reason else ""
+            lines.append(
+                f"- **{_role_label(r['role'])}** — absent in {r['missing']} slot(s) "
+                f"across {r['units_missing']} unit(s); silenced by decision, not counted "
+                f"as a gap{why}."
+            )
+        lines.append("")
+
+    if systemic:
+        lines += [
+            "**Looks like an expectation mismatch — one decision each (is this artifact "
+            "expected for this curriculum at all?):**",
+            "",
+        ]
+        for r in systemic:
+            pct = round(r["absence_rate"] * 100)
+            lines.append(
+                f"- **{_role_label(r['role'])}** — not found in **{r['missing']} of "
+                f"{r['expected']}** expected slots ({pct}%) across **{r['units_missing']}** "
+                "units, and never fulfilled anywhere. Likely the day grid expects it but "
+                "this curriculum doesn't ship it. Decide once: keep authoring it, drop it "
+                "from the S&S/day grid, or silence it in `expectations.yaml`."
+            )
+            for ex in r["exemplars"]:
+                lines.append(f"  - e.g. {_exemplar_where(ex)}: {ex['reasoning']}")
+            if r["missing"] > len(r["exemplars"]):
+                lines.append(
+                    f"  - …and {r['missing'] - len(r['exemplars'])} more "
+                    "(full list: `layer1/findings.json`)."
+                )
+        lines.append("")
+
+    if isolated:
+        lines += [
+            "**Isolated gaps — present elsewhere but missing here, worth an individual "
+            "look:**",
+            "",
+        ]
+        for r in isolated:
+            present = (
+                f"present in {r['units_fulfilled']} unit(s), so this role IS used here"
+                if r["units_fulfilled"]
+                else "review whether it belongs on the grid"
+            )
+            lines.append(
+                f"- **{_role_label(r['role'])}** — missing in **{r['missing']}** slot(s) "
+                f"({present}):"
+            )
+            for ex in r["exemplars"]:
+                lines.append(f"  - {_exemplar_where(ex)}: {ex['reasoning']}")
+            if r["missing"] > len(r["exemplars"]):
+                lines.append(
+                    f"  - …and {r['missing'] - len(r['exemplars'])} more "
+                    "(full list: `layer1/findings.json`)."
+                )
+        lines.append("")
+    return lines
+
+
 def render_global_audit_deterministic(
     project_id: str,
     agg: dict,
@@ -650,11 +963,23 @@ def render_global_audit_deterministic(
             "(`python3 rollup.py --project … --force`) so a draft map appears here."
         )
     if n_missing:
-        agenda.append(
-            f"**Scope & sequence gaps** — {n_missing} expected material slot(s) have nothing "
-            "in the folder yet (calendar/S&S expectation vs. what was uploaded). Decide "
-            "what to author, what to drop from the day grid, or what still lives elsewhere."
-        )
+        rollup = agg.get("missing_rollup") or {}
+        rc = rollup.get("counts") or {}
+        n_pat = rc.get("pattern_count", 0)
+        n_iso = rc.get("isolated_gap_count", 0)
+        if n_pat or n_iso:
+            agenda.append(
+                f"**Scope & sequence gaps** — the {n_missing} empty slot(s) collapse to "
+                f"**{n_pat} expectation pattern(s)** (decide once whether the day grid "
+                f"should expect that artifact at all) plus **{n_iso} isolated gap(s)** to "
+                "review individually. See section 3 — no need to triage slot-by-slot."
+            )
+        else:
+            agenda.append(
+                f"**Scope & sequence gaps** — {n_missing} expected material slot(s) have "
+                "nothing in the folder yet. Decide what to author, what to drop from the "
+                "day grid, or what still lives elsewhere."
+            )
     if agg2["incomplete_count"]:
         agenda.append(
             f"**Lesson plan templates** — {agg2['incomplete_count']} lesson plan(s) are "
@@ -733,17 +1058,13 @@ def render_global_audit_deterministic(
         f"**Found & verified:** {n_fulfilled}  ·  **Not in this folder:** {n_missing}  ·  "
         f"**Possible duplicates:** {n_dup}",
         "",
+        "Rather than one flag per empty slot, the blanks are grouped into patterns "
+        "below — a role missing everywhere is usually a mismatch between the day grid "
+        "and how this curriculum is actually built (decide it once), while a role "
+        "missing in only a few places is a real gap worth an individual look.",
+        "",
     ]
-    if agg["systemic_missing"]:
-        lines += [
-            "**Patterns across 3+ units** (fix the S&S once, not unit-by-unit):",
-            "",
-        ]
-        for i, p in enumerate(agg["systemic_missing"], 1):
-            lines.append(
-                f"{i}. **{_role_label(p['role'])}** — missing in **{p['unit_count']}** units"
-            )
-        lines.append("")
+    lines += _render_missing_rollup(agg.get("missing_rollup") or {})
     lines += [
         "| Unit | Materials found | Not in folder | Possible duplicates |",
         "|------|-----------------|---------------|---------------------|",

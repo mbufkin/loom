@@ -1,0 +1,40 @@
+# expectations.yaml — human calibration decisions ("silences") for THIS curriculum.
+#
+# WHY THIS FILE EXISTS
+# The auditor checks every unit/day slot for the artifacts the day grid expects
+# (lesson plan, exit ticket, rubric, ...). When a whole artifact type is absent
+# everywhere, that is almost never dozens of real defects — it usually means the
+# day grid expects something this curriculum simply does not ship (e.g. a
+# module-pack math program that has no discrete daily exit tickets). The report
+# already collapses such a pattern into ONE "is this expected here?" prompt instead
+# of one flag per slot.
+#
+# This file is the FOLLOW-THROUGH: once a human answers "no, that artifact isn't
+# expected in this curriculum," record it here so the report stops re-raising the
+# settled question on every run. It is the direct analogue of manifest.yaml
+# `known_overlaps` (a one-time human call that persists), and it is NEVER written by
+# any tool — only by a person. Absent file = nothing silenced (safe default).
+#
+# HOW TO USE
+# List the role(s) you have confirmed are not expected for this curriculum. Either
+# form works:
+#
+#   silenced_roles: [exit_ticket, quiz]        # quick
+#
+# or, with an audit trail (recommended):
+#
+#   silenced_roles:
+#     exit_ticket:
+#       decided_by: "curriculum director"
+#       date: "2026-07-20"
+#       reason: "Module-pack math; no discrete daily exit tickets by design."
+#
+# Valid role keys are the same closed enum Layer 1 uses: lesson_plan,
+# lesson_content, exit_ticket, quiz, answer_key, rubric, worksheet, project_work,
+# presentation, game_activity, lab_activity, flex_day, other.
+#
+# Only SYSTEMIC absence is silenced. An ISOLATED gap (a role present in most units
+# but missing in a few) is still surfaced individually — silencing never hides a
+# real, localized gap.
+
+silenced_roles: {}

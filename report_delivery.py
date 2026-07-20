@@ -271,6 +271,23 @@ def pack_first_pass_context(
         "status_counts": agg.get("status_counts"),
         "finding_status_counts": agg.get("finding_status_counts"),
         "systemic_missing": agg.get("systemic_missing") or [],
+        # Grouped gap patterns (calibrated silences + expectation mismatches) and the
+        # residual isolated-gap count, so the synthesis prioritizes patterns over the
+        # raw per-slot MISSING total (the noise-reduction contract).
+        "missing_rollup_counts": (agg.get("missing_rollup") or {}).get("counts") or {},
+        "expectation_patterns": [
+            {
+                "role": r.get("role"),
+                "classification": r.get("classification"),
+                "missing": r.get("missing"),
+                "expected": r.get("expected"),
+                "units_missing": r.get("units_missing"),
+            }
+            for r in (
+                ((agg.get("missing_rollup") or {}).get("silenced") or [])
+                + ((agg.get("missing_rollup") or {}).get("systemic_absent") or [])
+            )
+        ],
         "review_queue_pending_pairs": agg.get("review_queue_pending_pairs"),
         "top_missing_units": _top_units_by(agg.get("unit_rollup") or [], "missing"),
         "top_mismatch_units": _top_units_by(agg.get("unit_rollup") or [], "mismatch"),

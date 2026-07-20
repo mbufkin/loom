@@ -127,6 +127,7 @@ def load_report_context(
         aggregate_layer1,
         aggregate_layer2,
         build_doc_title_map,
+        load_expectations,
         load_layer1_data,
         load_layer2_data,
         _load_pacing_brief,
@@ -141,7 +142,10 @@ def load_report_context(
     out_dir.mkdir(parents=True, exist_ok=True)
     manifest = load_yaml(root / "manifest.yaml")
     bucket_rows, findings = load_layer1_data(project_id)
-    agg = aggregate_layer1(bucket_rows, findings, manifest)
+    # Human "silences" (expectations.yaml) feed the noise-reduction rollup so a
+    # calibrated role stops re-raising as dozens of per-slot gaps every run.
+    expectations = load_expectations(project_id)
+    agg = aggregate_layer1(bucket_rows, findings, manifest, expectations)
     title_map = build_doc_title_map(manifest)
     agg2 = aggregate_layer2(load_layer2_data(project_id), title_map)
     pacing = _load_pacing_brief(project_id)
