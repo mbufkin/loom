@@ -1,0 +1,27 @@
+# Minimal, self-contained fixture corpus for FAST, OFFLINE pipeline tests.
+#
+# WHY THIS EXISTS
+# Layer 0's ledger-truncation bug (2026-07-21) was only caught by watching a
+# multi-hour, model-bound run on the real Dallas corpus. That is the wrong way to
+# find a deterministic plumbing bug. This tiny corpus lets tests exercise the real
+# Layer 0 code path (scrub -> decompose -> cache-hit resume -> ledger write) with a
+# FAKE model in milliseconds — no GPU, no network, no private data.
+#
+# The three docs below are deliberately tiny and hand-written so their paragraph
+# counts (and therefore expected element counts under the fake model) are known and
+# stable. Keep them small; this is a unit-test fixture, not sample content.
+#
+# NOTE: tests pass the sources dir to run_layer0 explicitly, so `sources_dir` here
+# is only for any tooling that reads the manifest directly.
+project:
+  id: ledger-mini
+  name: Ledger Mini Fixture
+sources_dir: sources
+units:
+  plants:
+    title: Plants Mini Unit
+    documents:
+    - doc_aaaa01_Mini_Lesson_Plan.txt
+    - doc_aaaa02_Mini_Slides.txt
+    - doc_aaaa03_Mini_Exit_Ticket.txt
+generated_by: hand-authored fixture

@@ -1468,6 +1468,19 @@ def run_layer0(
 
     all_rows = all_rows + carry_forward
 
+    # Authoritative final ledger write. The in-loop checkpoint (above) only fires
+    # AFTER a fresh decompose — cache-hit documents `continue` before reaching it.
+    # So on a mostly-cached run, the last checkpoint reflects only the rows
+    # accumulated up to the final *fresh* decompose, and every cache hit after it
+    # grows `all_rows` in memory but is never persisted. That silently truncated
+    # ledger.json (e.g. 1126 elements in memory / REPORT.md, but only ~40 on disk)
+    # whenever the last fresh doc sorted before the last cache hit. ledger.md and
+    # REPORT.md were unaffected because they are written here, post-loop, from the
+    # complete in-memory `all_rows` — which is exactly why the counts disagreed.
+    # Writing the full ledger once here guarantees ledger.json always matches the
+    # in-memory result regardless of cache-hit ordering.
+    atomic_write(ledger_path, json.dumps(all_rows, indent=2))
+
     atomic_write(l0_dir / "ledger.md", build_ledger_md(all_rows, run_stats))
 
     uncited = sum(1 for r in all_rows if not r["cited"])
