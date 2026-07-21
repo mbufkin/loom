@@ -1,0 +1,1220 @@
+{
+  "summary": {
+    "approach": "extractive-2stage",
+    "eval_lessons": 6,
+    "dallas_enumerated": 3,
+    "baseline": {
+      "lessons": 6,
+      "citation_rate": 0.0,
+      "coverage": 0.0,
+      "band_pos_criteria": 20,
+      "valid_cited_band_pos": 0,
+      "avg_calls_per_lesson": 1,
+      "avg_wall_seconds_per_lesson": 13.88,
+      "gold": {
+        "lessons_compared": 0,
+        "mean_abs_error": null,
+        "detail": []
+      }
+    },
+    "extractive": {
+      "lessons": 6,
+      "citation_rate": 1.0,
+      "coverage": 0.306,
+      "band_pos_criteria": 11,
+      "valid_cited_band_pos": 11,
+      "avg_calls_per_lesson": 8.5,
+      "avg_wall_seconds_per_lesson": 12.32,
+      "gold": {
+        "lessons_compared": 0,
+        "mean_abs_error": null,
+        "detail": []
+      }
+    },
+    "citation_rate_lift": 1.0,
+    "example_cited_band": {
+      "lesson_id": "1787e9b5bfde",
+      "lesson_title": "Career Clusters - Slides",
+      "criterion_id": "engagement",
+      "label": "Engagement / relevance",
+      "band": 1,
+      "evidence_element_id": "1787e9b5bfde-e1",
+      "evidence_quote": "when you grow up?\n\nWhat do you want to be\u2026\n\nDo Now: Day One\n\n?\n\nIt's a BIG question\n\nThere\u2019s no better time\nto start thinking about it than\n\nRIGHT NOW",
+      "note": "The opening asks a broad question but lacks specific connection or purpose for students."
+    }
+  },
+  "per_lesson": [
+    {
+      "lesson_id": "1787e9b5bfde",
+      "title": "Career Clusters - Slides",
+      "baseline": {
+        "lesson_id": "1787e9b5bfde",
+        "title": "Career Clusters - Slides",
+        "scorer_id": "s4_quality",
+        "n_criteria": 6,
+        "n_band_pos": 5,
+        "n_valid_cited": 0,
+        "n_band_pos_valid": 0,
+        "citation_rate": 0.0,
+        "coverage": 0.0,
+        "model_calls": 1,
+        "wall_seconds": 19.42,
+        "mean_band": 1,
+        "normalized": 0.333,
+        "error": null
+      },
+      "extractive": {
+        "lesson_id": "1787e9b5bfde",
+        "title": "Career Clusters - Slides",
+        "scorer_id": "s4_quality_extractive",
+        "n_criteria": 6,
+        "n_band_pos": 2,
+        "n_valid_cited": 2,
+        "n_band_pos_valid": 2,
+        "citation_rate": 1.0,
+        "coverage": 0.333,
+        "model_calls": 9,
+        "wall_seconds": 18.03,
+        "mean_band": 0.333,
+        "normalized": 0.111,
+        "error": null
+      },
+      "baseline_result": {
+        "scorer_id": "s4_quality",
+        "rubric_id": "quality_dimensions",
+        "rubric_version": "v1-quality-2026-07",
+        "scoring": "band",
+        "lesson_id": "1787e9b5bfde",
+        "criteria": [
+          {
+            "criterion_id": "objective_clarity",
+            "label": "Clarity of learning objective",
+            "scoring": "band",
+            "verdict": null,
+            "band": 1,
+            "evidence": [],
+            "note": "Objective is vague and not explicitly stated as student-facing.[unevidenced band \u2014 needs review]"
+          },
+          {
+            "criterion_id": "engagement",
+            "label": "Engagement / relevance",
+            "scoring": "band",
+            "verdict": null,
+            "band": 2,
+            "evidence": [],
+            "note": "Hook poses an open, relevant question that can capture interest.[unevidenced band \u2014 needs review]"
+          },
+          {
+            "criterion_id": "checks_for_understanding",
+            "label": "Checks for understanding",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "differentiation_supports",
+            "label": "Differentiation & language supports",
+            "scoring": "band",
+            "verdict": null,
+            "band": 1,
+            "evidence": [],
+            "note": "Some language supports are mentioned but not clearly linked to specific learner needs.[unevidenced band \u2014 needs review]"
+          },
+          {
+            "criterion_id": "cognitive_rigor",
+            "label": "Cognitive rigor",
+            "scoring": "band",
+            "verdict": null,
+            "band": 1,
+            "evidence": [],
+            "note": "Mostly descriptive; limited evidence of higher\u2011order application.[unevidenced band \u2014 needs review]"
+          },
+          {
+            "criterion_id": "coherent_sequence_closure",
+            "label": "Coherent sequence & closure",
+            "scoring": "band",
+            "verdict": null,
+            "band": 1,
+            "evidence": [],
+            "note": "A closing activity is present but lacks explicit consolidation of learning.[unevidenced band \u2014 needs review]"
+          }
+        ],
+        "summary": {
+          "mean_band": 1.0,
+          "max_band": 3,
+          "unevidenced_bands": 5,
+          "criteria_scored": 6
+        },
+        "cost": {
+          "model_calls": 1
+        },
+        "error": null
+      },
+      "extractive_result": {
+        "scorer_id": "s4_quality_extractive",
+        "rubric_id": "quality_dimensions",
+        "rubric_version": "v1-quality-2026-07",
+        "scoring": "band",
+        "lesson_id": "1787e9b5bfde",
+        "criteria": [
+          {
+            "criterion_id": "objective_clarity",
+            "label": "Clarity of learning objective",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          },
+          {
+            "criterion_id": "engagement",
+            "label": "Engagement / relevance",
+            "scoring": "band",
+            "verdict": null,
+            "band": 1,
+            "evidence": [
+              {
+                "element_id": "1787e9b5bfde-e1",
+                "excerpt": "when you grow up?\n\nWhat do you want to be\u2026\n\nDo Now: Day One\n\n?\n\nIt's a BIG question\n\nThere\u2019s no better time\nto start thinking about it than\n\nRIGHT NOW"
+              }
+            ],
+            "note": "The opening asks a broad question but lacks specific connection or purpose for students."
+          },
+          {
+            "criterion_id": "checks_for_understanding",
+            "label": "Checks for understanding",
+            "scoring": "band",
+            "verdict": null,
+            "band": 1,
+            "evidence": [
+              {
+                "element_id": "1787e9b5bfde-e13",
+                "excerpt": "Exit Ticket"
+              }
+            ],
+            "note": "The evidence shows only an 'Exit Ticket' label with no description or content."
+          },
+          {
+            "criterion_id": "differentiation_supports",
+            "label": "Differentiation & language supports",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          },
+          {
+            "criterion_id": "cognitive_rigor",
+            "label": "Cognitive rigor",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          },
+          {
+            "criterion_id": "coherent_sequence_closure",
+            "label": "Coherent sequence & closure",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          }
+        ],
+        "summary": {
+          "mean_band": 0.33,
+          "max_band": 3,
+          "unevidenced_bands": 0,
+          "criteria_scored": 6
+        },
+        "cost": {
+          "model_calls": 9
+        },
+        "error": null
+      }
+    },
+    {
+      "lesson_id": "0acbc6d0b180",
+      "title": "Engineering Lesson Plan",
+      "baseline": {
+        "lesson_id": "0acbc6d0b180",
+        "title": "Engineering Lesson Plan",
+        "scorer_id": "s4_quality",
+        "n_criteria": 6,
+        "n_band_pos": 2,
+        "n_valid_cited": 0,
+        "n_band_pos_valid": 0,
+        "citation_rate": 0.0,
+        "coverage": 0.0,
+        "model_calls": 1,
+        "wall_seconds": 14.03,
+        "mean_band": 0.333,
+        "normalized": 0.111,
+        "error": null
+      },
+      "extractive": {
+        "lesson_id": "0acbc6d0b180",
+        "title": "Engineering Lesson Plan",
+        "scorer_id": "s4_quality_extractive",
+        "n_criteria": 6,
+        "n_band_pos": 2,
+        "n_valid_cited": 2,
+        "n_band_pos_valid": 2,
+        "citation_rate": 1.0,
+        "coverage": 0.333,
+        "model_calls": 8,
+        "wall_seconds": 16.7,
+        "mean_band": 0.667,
+        "normalized": 0.222,
+        "error": null
+      },
+      "baseline_result": {
+        "scorer_id": "s4_quality",
+        "rubric_id": "quality_dimensions",
+        "rubric_version": "v1-quality-2026-07",
+        "scoring": "band",
+        "lesson_id": "0acbc6d0b180",
+        "criteria": [
+          {
+            "criterion_id": "objective_clarity",
+            "label": "Clarity of learning objective",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "engagement",
+            "label": "Engagement / relevance",
+            "scoring": "band",
+            "verdict": null,
+            "band": 1,
+            "evidence": [],
+            "note": "[unevidenced band \u2014 needs review]"
+          },
+          {
+            "criterion_id": "checks_for_understanding",
+            "label": "Checks for understanding",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "differentiation_supports",
+            "label": "Differentiation & language supports",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "cognitive_rigor",
+            "label": "Cognitive rigor",
+            "scoring": "band",
+            "verdict": null,
+            "band": 1,
+            "evidence": [],
+            "note": "[unevidenced band \u2014 needs review]"
+          },
+          {
+            "criterion_id": "coherent_sequence_closure",
+            "label": "Coherent sequence & closure",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": ""
+          }
+        ],
+        "summary": {
+          "mean_band": 0.33,
+          "max_band": 3,
+          "unevidenced_bands": 2,
+          "criteria_scored": 6
+        },
+        "cost": {
+          "model_calls": 1
+        },
+        "error": null
+      },
+      "extractive_result": {
+        "scorer_id": "s4_quality_extractive",
+        "rubric_id": "quality_dimensions",
+        "rubric_version": "v1-quality-2026-07",
+        "scoring": "band",
+        "lesson_id": "0acbc6d0b180",
+        "criteria": [
+          {
+            "criterion_id": "objective_clarity",
+            "label": "Clarity of learning objective",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          },
+          {
+            "criterion_id": "engagement",
+            "label": "Engagement / relevance",
+            "scoring": "band",
+            "verdict": null,
+            "band": 2,
+            "evidence": [
+              {
+                "element_id": "0acbc6d0b180-e2-split3",
+                "excerpt": "Working in pairs, each group of students should make a paper airplane. It is not critical that all students use the same type of airplane for this lesson, so students who have experience making paper airplanes can make their own designs. Less-experienced students can use the paper airplane instructions as a guide.\nStudents should test to make sure that their paper airplane flies well (it goes rela"
+              }
+            ],
+            "note": "The task asks students to build and test paper airplanes in pairs, providing a clear hands\u2011on activity that connects to prior experience."
+          },
+          {
+            "criterion_id": "checks_for_understanding",
+            "label": "Checks for understanding",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          },
+          {
+            "criterion_id": "differentiation_supports",
+            "label": "Differentiation & language supports",
+            "scoring": "band",
+            "verdict": null,
+            "band": 2,
+            "evidence": [
+              {
+                "element_id": "0acbc6d0b180-e2-split3",
+                "excerpt": "Working in pairs, each group of students should make a paper airplane. It is not critical that all students use the same type of airplane for this lesson, so students who have experience making paper airplanes can make their own designs. Less-experienced students can use the paper airplane instructions as a guide.\nStudents should test to make sure that their paper airplane flies well (it goes rela"
+              }
+            ],
+            "note": "The lesson mentions pairing students and offering different airplane options for varying experience levels."
+          },
+          {
+            "criterion_id": "cognitive_rigor",
+            "label": "Cognitive rigor",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          },
+          {
+            "criterion_id": "coherent_sequence_closure",
+            "label": "Coherent sequence & closure",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          }
+        ],
+        "summary": {
+          "mean_band": 0.67,
+          "max_band": 3,
+          "unevidenced_bands": 0,
+          "criteria_scored": 6
+        },
+        "cost": {
+          "model_calls": 8
+        },
+        "error": null
+      }
+    },
+    {
+      "lesson_id": "052a682bd60f",
+      "title": "Family and Community Wellness-Human Services - Lesson Plan",
+      "baseline": {
+        "lesson_id": "052a682bd60f",
+        "title": "Family and Community Wellness-Human Services - Lesson Plan",
+        "scorer_id": "s4_quality",
+        "n_criteria": 6,
+        "n_band_pos": 2,
+        "n_valid_cited": 0,
+        "n_band_pos_valid": 0,
+        "citation_rate": 0.0,
+        "coverage": 0.0,
+        "model_calls": 1,
+        "wall_seconds": 15.36,
+        "mean_band": 0.333,
+        "normalized": 0.111,
+        "error": null
+      },
+      "extractive": {
+        "lesson_id": "052a682bd60f",
+        "title": "Family and Community Wellness-Human Services - Lesson Plan",
+        "scorer_id": "s4_quality_extractive",
+        "n_criteria": 6,
+        "n_band_pos": 0,
+        "n_valid_cited": 0,
+        "n_band_pos_valid": 0,
+        "citation_rate": null,
+        "coverage": 0.0,
+        "model_calls": 6,
+        "wall_seconds": 7.32,
+        "mean_band": 0,
+        "normalized": 0.0,
+        "error": null
+      },
+      "baseline_result": {
+        "scorer_id": "s4_quality",
+        "rubric_id": "quality_dimensions",
+        "rubric_version": "v1-quality-2026-07",
+        "scoring": "band",
+        "lesson_id": "052a682bd60f",
+        "criteria": [
+          {
+            "criterion_id": "objective_clarity",
+            "label": "Clarity of learning objective",
+            "scoring": "band",
+            "verdict": null,
+            "band": 1,
+            "evidence": [],
+            "note": "Objective is not stated or described in student\u2011facing terms.[unevidenced band \u2014 needs review]"
+          },
+          {
+            "criterion_id": "engagement",
+            "label": "Engagement / relevance",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "No engagement element appears in the provided text."
+          },
+          {
+            "criterion_id": "checks_for_understanding",
+            "label": "Checks for understanding",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "Formative checks for understanding are not described."
+          },
+          {
+            "criterion_id": "differentiation_supports",
+            "label": "Differentiation & language supports",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "Differentiation or language supports are absent from the excerpt."
+          },
+          {
+            "criterion_id": "cognitive_rigor",
+            "label": "Cognitive rigor",
+            "scoring": "band",
+            "verdict": null,
+            "band": 1,
+            "evidence": [],
+            "note": "Tasks involve analysis but remain at a basic descriptive level.[unevidenced band \u2014 needs review]"
+          },
+          {
+            "criterion_id": "coherent_sequence_closure",
+            "label": "Coherent sequence & closure",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "No sequence or closure details are provided in the candidates."
+          }
+        ],
+        "summary": {
+          "mean_band": 0.33,
+          "max_band": 3,
+          "unevidenced_bands": 2,
+          "criteria_scored": 6
+        },
+        "cost": {
+          "model_calls": 1
+        },
+        "error": null
+      },
+      "extractive_result": {
+        "scorer_id": "s4_quality_extractive",
+        "rubric_id": "quality_dimensions",
+        "rubric_version": "v1-quality-2026-07",
+        "scoring": "band",
+        "lesson_id": "052a682bd60f",
+        "criteria": [
+          {
+            "criterion_id": "objective_clarity",
+            "label": "Clarity of learning objective",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          },
+          {
+            "criterion_id": "engagement",
+            "label": "Engagement / relevance",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          },
+          {
+            "criterion_id": "checks_for_understanding",
+            "label": "Checks for understanding",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          },
+          {
+            "criterion_id": "differentiation_supports",
+            "label": "Differentiation & language supports",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          },
+          {
+            "criterion_id": "cognitive_rigor",
+            "label": "Cognitive rigor",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          },
+          {
+            "criterion_id": "coherent_sequence_closure",
+            "label": "Coherent sequence & closure",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          }
+        ],
+        "summary": {
+          "mean_band": 0.0,
+          "max_band": 3,
+          "unevidenced_bands": 0,
+          "criteria_scored": 6
+        },
+        "cost": {
+          "model_calls": 6
+        },
+        "error": null
+      }
+    },
+    {
+      "lesson_id": "synthetic-strong",
+      "title": "[synthetic] STRONG photosynthesis lesson",
+      "baseline": {
+        "lesson_id": "synthetic-strong",
+        "title": "[synthetic] STRONG photosynthesis lesson",
+        "scorer_id": "s4_quality",
+        "n_criteria": 6,
+        "n_band_pos": 5,
+        "n_valid_cited": 0,
+        "n_band_pos_valid": 0,
+        "citation_rate": 0.0,
+        "coverage": 0.0,
+        "model_calls": 1,
+        "wall_seconds": 17.39,
+        "mean_band": 2.333,
+        "normalized": 0.778,
+        "error": null
+      },
+      "extractive": {
+        "lesson_id": "synthetic-strong",
+        "title": "[synthetic] STRONG photosynthesis lesson",
+        "scorer_id": "s4_quality_extractive",
+        "n_criteria": 6,
+        "n_band_pos": 4,
+        "n_valid_cited": 4,
+        "n_band_pos_valid": 4,
+        "citation_rate": 1.0,
+        "coverage": 0.667,
+        "model_calls": 13,
+        "wall_seconds": 17.33,
+        "mean_band": 1.5,
+        "normalized": 0.5,
+        "error": null
+      },
+      "baseline_result": {
+        "scorer_id": "s4_quality",
+        "rubric_id": "quality_dimensions",
+        "rubric_version": "v1-quality-2026-07",
+        "scoring": "band",
+        "lesson_id": "synthetic-strong",
+        "criteria": [
+          {
+            "criterion_id": "objective_clarity",
+            "label": "Clarity of learning objective",
+            "scoring": "band",
+            "verdict": null,
+            "band": 3,
+            "evidence": [
+              {
+                "element_id": "strong-e1",
+                "excerpt": "\"Objective: Students will be able to explain how plants convert sunlight, water, and carbon dioxide into glucose and oxygen, and diagram the inputs and outputs of photosynthesis.\""
+              }
+            ],
+            "note": "The objective is explicit, student\u2011facing, and directly tied to a specific skill."
+          },
+          {
+            "criterion_id": "engagement",
+            "label": "Engagement / relevance",
+            "scoring": "band",
+            "verdict": null,
+            "band": 3,
+            "evidence": [
+              {
+                "element_id": "strong-e2",
+                "excerpt": "\"Hook: Show a time-lapse of a bean seed sprouting in a dark closet versus a sunny window, then ask students to predict why one thrived.\""
+              }
+            ],
+            "note": "The hook uses an intriguing visual contrast and prompts immediate prediction."
+          },
+          {
+            "criterion_id": "checks_for_understanding",
+            "label": "Checks for understanding",
+            "scoring": "band",
+            "verdict": null,
+            "band": 3,
+            "evidence": [
+              {
+                "element_id": "strong-e5",
+                "excerpt": "\"Checkpoint: On an exit ticket, each student labels the inputs and outputs on a blank photosynthesis diagram and writes one sentence explaining why plants need sunlight.\""
+              }
+            ],
+            "note": "The checkpoint requires labeling and explanatory writing, providing clear evidence of understanding."
+          },
+          {
+            "criterion_id": "differentiation_supports",
+            "label": "Differentiation & language supports",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "cognitive_rigor",
+            "label": "Cognitive rigor",
+            "scoring": "band",
+            "verdict": null,
+            "band": 2,
+            "evidence": [
+              {
+                "element_id": "strong-e4",
+                "excerpt": "\"Guided practice: In pairs, students trace a carbon atom from the air into a glucose molecule, explaining each step to a partner.\""
+              }
+            ],
+            "note": "The task moves beyond recall by requiring analysis of biochemical pathways."
+          },
+          {
+            "criterion_id": "coherent_sequence_closure",
+            "label": "Coherent sequence & closure",
+            "scoring": "band",
+            "verdict": null,
+            "band": 3,
+            "evidence": [
+              {
+                "element_id": "strong-e6",
+                "excerpt": "\"Closure: Students revisit their opening prediction and write two sentences on what they would now tell a friend about why the plant in the closet died.\""
+              }
+            ],
+            "note": "The closure ties back to the initial hook, reinforcing learning."
+          }
+        ],
+        "summary": {
+          "mean_band": 2.33,
+          "max_band": 3,
+          "unevidenced_bands": 0,
+          "criteria_scored": 6
+        },
+        "cost": {
+          "model_calls": 1
+        },
+        "error": null
+      },
+      "extractive_result": {
+        "scorer_id": "s4_quality_extractive",
+        "rubric_id": "quality_dimensions",
+        "rubric_version": "v1-quality-2026-07",
+        "scoring": "band",
+        "lesson_id": "synthetic-strong",
+        "criteria": [
+          {
+            "criterion_id": "objective_clarity",
+            "label": "Clarity of learning objective",
+            "scoring": "band",
+            "verdict": null,
+            "band": 3,
+            "evidence": [
+              {
+                "element_id": "strong-e1",
+                "excerpt": "Objective: Students will be able to explain how plants convert sunlight, water, and carbon dioxide into glucose and oxygen, and diagram the inputs and outputs of photosynthesis."
+              }
+            ],
+            "note": "The objective explicitly states what students will do and specifies both content (photosynthesis process) and format (explain, diagram inputs/outputs), making it clear, student\u2011facing, and purposeful."
+          },
+          {
+            "criterion_id": "engagement",
+            "label": "Engagement / relevance",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          },
+          {
+            "criterion_id": "checks_for_understanding",
+            "label": "Checks for understanding",
+            "scoring": "band",
+            "verdict": null,
+            "band": 2,
+            "evidence": [
+              {
+                "element_id": "strong-e5",
+                "excerpt": "Checkpoint: On an exit ticket, each student labels the inputs and outputs on a blank photosynthesis diagram and writes one sentence explaining why plants need sunlight."
+              }
+            ],
+            "note": "The exit ticket requires labeling inputs/outputs and writing a specific explanation about sunlight's role."
+          },
+          {
+            "criterion_id": "differentiation_supports",
+            "label": "Differentiation & language supports",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          },
+          {
+            "criterion_id": "cognitive_rigor",
+            "label": "Cognitive rigor",
+            "scoring": "band",
+            "verdict": null,
+            "band": 2,
+            "evidence": [
+              {
+                "element_id": "strong-e5",
+                "excerpt": "Checkpoint: On an exit ticket, each student labels the inputs and outputs on a blank photosynthesis diagram and writes one sentence explaining why plants need sunlight."
+              }
+            ],
+            "note": "The task requires labeling and a brief explanation, showing application but not deeper analysis."
+          },
+          {
+            "criterion_id": "coherent_sequence_closure",
+            "label": "Coherent sequence & closure",
+            "scoring": "band",
+            "verdict": null,
+            "band": 2,
+            "evidence": [
+              {
+                "element_id": "strong-e6",
+                "excerpt": "Closure: Students revisit their opening prediction and write two sentences on what they would now tell a friend about why the plant in the closet died."
+              }
+            ],
+            "note": "The closure explicitly revisits predictions and asks students to articulate a revised explanation."
+          }
+        ],
+        "summary": {
+          "mean_band": 1.5,
+          "max_band": 3,
+          "unevidenced_bands": 0,
+          "criteria_scored": 6
+        },
+        "cost": {
+          "model_calls": 13
+        },
+        "error": null
+      }
+    },
+    {
+      "lesson_id": "synthetic-weak",
+      "title": "[synthetic] WEAK skeletal lesson",
+      "baseline": {
+        "lesson_id": "synthetic-weak",
+        "title": "[synthetic] WEAK skeletal lesson",
+        "scorer_id": "s4_quality",
+        "n_criteria": 6,
+        "n_band_pos": 0,
+        "n_valid_cited": 0,
+        "n_band_pos_valid": 0,
+        "citation_rate": null,
+        "coverage": 0.0,
+        "model_calls": 1,
+        "wall_seconds": 6.35,
+        "mean_band": 0,
+        "normalized": 0.0,
+        "error": null
+      },
+      "extractive": {
+        "lesson_id": "synthetic-weak",
+        "title": "[synthetic] WEAK skeletal lesson",
+        "scorer_id": "s4_quality_extractive",
+        "n_criteria": 6,
+        "n_band_pos": 0,
+        "n_valid_cited": 0,
+        "n_band_pos_valid": 0,
+        "citation_rate": null,
+        "coverage": 0.0,
+        "model_calls": 6,
+        "wall_seconds": 4.65,
+        "mean_band": 0,
+        "normalized": 0.0,
+        "error": null
+      },
+      "baseline_result": {
+        "scorer_id": "s4_quality",
+        "rubric_id": "quality_dimensions",
+        "rubric_version": "v1-quality-2026-07",
+        "scoring": "band",
+        "lesson_id": "synthetic-weak",
+        "criteria": [
+          {
+            "criterion_id": "objective_clarity",
+            "label": "Clarity of learning objective",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "engagement",
+            "label": "Engagement / relevance",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "checks_for_understanding",
+            "label": "Checks for understanding",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "differentiation_supports",
+            "label": "Differentiation & language supports",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "cognitive_rigor",
+            "label": "Cognitive rigor",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "coherent_sequence_closure",
+            "label": "Coherent sequence & closure",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": ""
+          }
+        ],
+        "summary": {
+          "mean_band": 0.0,
+          "max_band": 3,
+          "unevidenced_bands": 0,
+          "criteria_scored": 6
+        },
+        "cost": {
+          "model_calls": 1
+        },
+        "error": null
+      },
+      "extractive_result": {
+        "scorer_id": "s4_quality_extractive",
+        "rubric_id": "quality_dimensions",
+        "rubric_version": "v1-quality-2026-07",
+        "scoring": "band",
+        "lesson_id": "synthetic-weak",
+        "criteria": [
+          {
+            "criterion_id": "objective_clarity",
+            "label": "Clarity of learning objective",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          },
+          {
+            "criterion_id": "engagement",
+            "label": "Engagement / relevance",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          },
+          {
+            "criterion_id": "checks_for_understanding",
+            "label": "Checks for understanding",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          },
+          {
+            "criterion_id": "differentiation_supports",
+            "label": "Differentiation & language supports",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          },
+          {
+            "criterion_id": "cognitive_rigor",
+            "label": "Cognitive rigor",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          },
+          {
+            "criterion_id": "coherent_sequence_closure",
+            "label": "Coherent sequence & closure",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          }
+        ],
+        "summary": {
+          "mean_band": 0.0,
+          "max_band": 3,
+          "unevidenced_bands": 0,
+          "criteria_scored": 6
+        },
+        "cost": {
+          "model_calls": 6
+        },
+        "error": null
+      }
+    },
+    {
+      "lesson_id": "synthetic-elps",
+      "title": "[synthetic] ELPS language-support lesson",
+      "baseline": {
+        "lesson_id": "synthetic-elps",
+        "title": "[synthetic] ELPS language-support lesson",
+        "scorer_id": "s4_quality",
+        "n_criteria": 6,
+        "n_band_pos": 6,
+        "n_valid_cited": 0,
+        "n_band_pos_valid": 0,
+        "citation_rate": 0.0,
+        "coverage": 0.0,
+        "model_calls": 1,
+        "wall_seconds": 10.72,
+        "mean_band": 1.667,
+        "normalized": 0.556,
+        "error": null
+      },
+      "extractive": {
+        "lesson_id": "synthetic-elps",
+        "title": "[synthetic] ELPS language-support lesson",
+        "scorer_id": "s4_quality_extractive",
+        "n_criteria": 6,
+        "n_band_pos": 3,
+        "n_valid_cited": 3,
+        "n_band_pos_valid": 3,
+        "citation_rate": 1.0,
+        "coverage": 0.5,
+        "model_calls": 9,
+        "wall_seconds": 9.88,
+        "mean_band": 1,
+        "normalized": 0.333,
+        "error": null
+      },
+      "baseline_result": {
+        "scorer_id": "s4_quality",
+        "rubric_id": "quality_dimensions",
+        "rubric_version": "v1-quality-2026-07",
+        "scoring": "band",
+        "lesson_id": "synthetic-elps",
+        "criteria": [
+          {
+            "criterion_id": "objective_clarity",
+            "label": "Clarity of learning objective",
+            "scoring": "band",
+            "verdict": null,
+            "band": 2,
+            "evidence": [],
+            "note": "The objective is clear, student\u2011facing, and purposeful.[unevidenced band \u2014 needs review]"
+          },
+          {
+            "criterion_id": "engagement",
+            "label": "Engagement / relevance",
+            "scoring": "band",
+            "verdict": null,
+            "band": 1,
+            "evidence": [],
+            "note": "No explicit engagement activity or opening task is described in the provided elements.[unevidenced band \u2014 needs review]"
+          },
+          {
+            "criterion_id": "checks_for_understanding",
+            "label": "Checks for understanding",
+            "scoring": "band",
+            "verdict": null,
+            "band": 2,
+            "evidence": [],
+            "note": "A formative checkpoint is included to assess understanding.[unevidenced band \u2014 needs review]"
+          },
+          {
+            "criterion_id": "differentiation_supports",
+            "label": "Differentiation & language supports",
+            "scoring": "band",
+            "verdict": null,
+            "band": 2,
+            "evidence": [],
+            "note": "The objective signals support for varied learners, but specific ELPS or SpEd supports are not detailed.[unevidenced band \u2014 needs review]"
+          },
+          {
+            "criterion_id": "cognitive_rigor",
+            "label": "Cognitive rigor",
+            "scoring": "band",
+            "verdict": null,
+            "band": 2,
+            "evidence": [],
+            "note": "The task requires comparison and justification, moving beyond simple recall.[unevidenced band \u2014 needs review]"
+          },
+          {
+            "criterion_id": "coherent_sequence_closure",
+            "label": "Coherent sequence & closure",
+            "scoring": "band",
+            "verdict": null,
+            "band": 1,
+            "evidence": [],
+            "note": "No explicit closure or sequence of activities is described in the provided elements.[unevidenced band \u2014 needs review]"
+          }
+        ],
+        "summary": {
+          "mean_band": 1.67,
+          "max_band": 3,
+          "unevidenced_bands": 6,
+          "criteria_scored": 6
+        },
+        "cost": {
+          "model_calls": 1
+        },
+        "error": null
+      },
+      "extractive_result": {
+        "scorer_id": "s4_quality_extractive",
+        "rubric_id": "quality_dimensions",
+        "rubric_version": "v1-quality-2026-07",
+        "scoring": "band",
+        "lesson_id": "synthetic-elps",
+        "criteria": [
+          {
+            "criterion_id": "objective_clarity",
+            "label": "Clarity of learning objective",
+            "scoring": "band",
+            "verdict": null,
+            "band": 2,
+            "evidence": [
+              {
+                "element_id": "elps-e1",
+                "excerpt": "Objective: Students will compare two career clusters and justify a preference in writing."
+              }
+            ],
+            "note": "The objective is clear and student\u2011facing but remains generic."
+          },
+          {
+            "criterion_id": "engagement",
+            "label": "Engagement / relevance",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          },
+          {
+            "criterion_id": "checks_for_understanding",
+            "label": "Checks for understanding",
+            "scoring": "band",
+            "verdict": null,
+            "band": 2,
+            "evidence": [
+              {
+                "element_id": "elps-e4",
+                "excerpt": "Checkpoint: Collect the written justification and check that each student used at least one comparison word (more, less, better)."
+              }
+            ],
+            "note": "The checkpoint explicitly requires students to use a comparison word (more, less, better) in their written justification."
+          },
+          {
+            "criterion_id": "differentiation_supports",
+            "label": "Differentiation & language supports",
+            "scoring": "band",
+            "verdict": null,
+            "band": 2,
+            "evidence": [
+              {
+                "element_id": "elps-e2",
+                "excerpt": "Language support (ELPS): Provide sentence stems for emergent bilingual students \u2014 'I would choose the ____ cluster because ____' \u2014 and a bilingual glossary of the cluster names."
+              }
+            ],
+            "note": "The lesson provides specific ELPS supports: sentence stems and a bilingual glossary."
+          },
+          {
+            "criterion_id": "cognitive_rigor",
+            "label": "Cognitive rigor",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          },
+          {
+            "criterion_id": "coherent_sequence_closure",
+            "label": "Coherent sequence & closure",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "no verbatim evidence found for this dimension"
+          }
+        ],
+        "summary": {
+          "mean_band": 1.0,
+          "max_band": 3,
+          "unevidenced_bands": 0,
+          "criteria_scored": 6
+        },
+        "cost": {
+          "model_calls": 9
+        },
+        "error": null
+      }
+    }
+  ]
+}

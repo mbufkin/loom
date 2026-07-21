@@ -1,0 +1,210 @@
+{
+  "project": "dallas-career-2026",
+  "offline": false,
+  "dallas_lessons": [
+    "1787e9b5bfde",
+    "0acbc6d0b180",
+    "052a682bd60f"
+  ],
+  "mini_lessons": [
+    "mini_strong",
+    "mini_weak",
+    "mini_elps"
+  ],
+  "gold": {
+    "mini_strong": {
+      "quality": 0.85,
+      "source": "designed mini anchor"
+    },
+    "mini_weak": {
+      "quality": 0.15,
+      "source": "designed mini anchor"
+    },
+    "mini_elps": {
+      "quality": 0.6,
+      "source": "designed mini anchor"
+    },
+    "0acbc6d0b180": {
+      "quality": 0.6,
+      "source": "title-matched to shipped gold ('Engineering Lesson')"
+    }
+  },
+  "per_lesson": [
+    {
+      "lesson_id": "1787e9b5bfde",
+      "title": "Career Clusters - Slides",
+      "elements": 20,
+      "scores": {
+        "s4_quality": {
+          "normalized": 0.11,
+          "mean_band": 0.33,
+          "cited": 0,
+          "nonzero": 2,
+          "on_point_rate": null,
+          "error": null,
+          "seconds": 8.9
+        },
+        "s4_quality_grounded": {
+          "normalized": 0.443,
+          "mean_band": 1.33,
+          "cited": 5,
+          "nonzero": 5,
+          "on_point_rate": 0.167,
+          "error": null,
+          "seconds": 7.0
+        }
+      }
+    },
+    {
+      "lesson_id": "0acbc6d0b180",
+      "title": "Engineering Lesson Plan",
+      "elements": 8,
+      "scores": {
+        "s4_quality": {
+          "normalized": 0.11,
+          "mean_band": 0.33,
+          "cited": 0,
+          "nonzero": 2,
+          "on_point_rate": null,
+          "error": null,
+          "seconds": 8.3
+        },
+        "s4_quality_grounded": {
+          "normalized": 0.333,
+          "mean_band": 1.0,
+          "cited": 4,
+          "nonzero": 4,
+          "on_point_rate": 0.667,
+          "error": null,
+          "seconds": 11.9
+        }
+      }
+    },
+    {
+      "lesson_id": "052a682bd60f",
+      "title": "Family and Community Wellness-Human Services - Lesson Plan",
+      "elements": 7,
+      "scores": {
+        "s4_quality": {
+          "normalized": 0.11,
+          "mean_band": 0.33,
+          "cited": 0,
+          "nonzero": 2,
+          "on_point_rate": null,
+          "error": null,
+          "seconds": 17.1
+        },
+        "s4_quality_grounded": {
+          "normalized": 0.333,
+          "mean_band": 1.0,
+          "cited": 4,
+          "nonzero": 4,
+          "on_point_rate": 0.833,
+          "error": null,
+          "seconds": 6.6
+        }
+      }
+    },
+    {
+      "lesson_id": "mini_strong",
+      "title": "MINI: Strong photosynthesis lesson",
+      "elements": 6,
+      "scores": {
+        "s4_quality": {
+          "normalized": 0.833,
+          "mean_band": 2.5,
+          "cited": 5,
+          "nonzero": 5,
+          "on_point_rate": null,
+          "error": null,
+          "seconds": 10.9
+        },
+        "s4_quality_grounded": {
+          "normalized": 0.723,
+          "mean_band": 2.17,
+          "cited": 6,
+          "nonzero": 6,
+          "on_point_rate": 0.667,
+          "error": null,
+          "seconds": 6.9
+        }
+      }
+    },
+    {
+      "lesson_id": "mini_weak",
+      "title": "MINI: Skeletal marketing lesson",
+      "elements": 2,
+      "scores": {
+        "s4_quality": {
+          "normalized": 0.11,
+          "mean_band": 0.33,
+          "cited": 0,
+          "nonzero": 2,
+          "on_point_rate": null,
+          "error": null,
+          "seconds": 13.8
+        },
+        "s4_quality_grounded": {
+          "normalized": 0.057,
+          "mean_band": 0.17,
+          "cited": 1,
+          "nonzero": 1,
+          "on_point_rate": 1.0,
+          "error": null,
+          "seconds": 16.6
+        }
+      }
+    },
+    {
+      "lesson_id": "mini_elps",
+      "title": "MINI: Lesson with explicit ELPS language support",
+      "elements": 3,
+      "scores": {
+        "s4_quality": {
+          "normalized": 0.333,
+          "mean_band": 1.0,
+          "cited": 2,
+          "nonzero": 4,
+          "on_point_rate": null,
+          "error": null,
+          "seconds": 22.9
+        },
+        "s4_quality_grounded": {
+          "normalized": 0.5,
+          "mean_band": 1.5,
+          "cited": 5,
+          "nonzero": 5,
+          "on_point_rate": 0.333,
+          "error": null,
+          "seconds": 17.7
+        }
+      }
+    }
+  ],
+  "summary": {
+    "s4_quality": {
+      "citation_rate": 0.412,
+      "on_point_rate": null,
+      "gold_mae": 0.203,
+      "gold_lessons_compared": 4,
+      "calls_per_lesson": 1.0,
+      "wall_time_per_lesson_s": 13.6
+    },
+    "s4_quality_grounded": {
+      "citation_rate": 1.0,
+      "on_point_rate": 0.611,
+      "gold_mae": 0.147,
+      "gold_lessons_compared": 4,
+      "calls_per_lesson": 1.0,
+      "wall_time_per_lesson_s": 11.1
+    }
+  },
+  "example_cited_band": {
+    "lesson": "Career Clusters - Slides",
+    "criterion": "Clarity of learning objective",
+    "band": 1,
+    "element_id": "1787e9b5bfde-e20",
+    "quote": "Career Cluster Overview\n\nDay 1",
+    "note": "model_band=1; proxy_floor=1; The objective is only mentioned as a title fragment without being stated clearly or student\u2011facing.; evidence_on_point=True"
+  }
+}

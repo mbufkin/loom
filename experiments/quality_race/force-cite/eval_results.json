@@ -1,0 +1,222 @@
+{
+  "summary": {
+    "lessons_evaluated": 6,
+    "baseline": {
+      "citation_rate": 0.0,
+      "coverage": 0.0,
+      "calls_per_lesson": 1.0,
+      "wall_time_per_lesson": 17.467,
+      "gold_mae": null
+    },
+    "forcecite": {
+      "citation_rate": 1.0,
+      "coverage": 0.389,
+      "calls_per_lesson": 1.167,
+      "wall_time_per_lesson": 16.5,
+      "gold_mae": null
+    },
+    "example_cited_band": {
+      "rubric": "Lesson quality dimensions (EQuIP / Danielson / 5E)",
+      "dimension": "objective_clarity",
+      "label": "Clarity of learning objective",
+      "band": 1,
+      "element_id": "1787e9b5bfde-e1",
+      "quote": "when you grow up?"
+    },
+    "citation_rate_lift": 1.0
+  },
+  "per_lesson": [
+    {
+      "lesson_id": "1787e9b5bfde",
+      "title": "Career Clusters - Slides",
+      "baseline": {
+        "error": null,
+        "calls": 1,
+        "wall_time_s": 25.05,
+        "normalized": 0.5,
+        "gold_quality": null,
+        "abs_error": null,
+        "band_gt0": 5,
+        "valid_cited": 0,
+        "total_criteria": 6,
+        "citation_rate": 0.0,
+        "coverage": 0.0,
+        "forced_zero": null
+      },
+      "forcecite": {
+        "error": null,
+        "calls": 1,
+        "wall_time_s": 21.48,
+        "normalized": 0.277,
+        "gold_quality": null,
+        "abs_error": null,
+        "band_gt0": 4,
+        "valid_cited": 4,
+        "total_criteria": 6,
+        "citation_rate": 1.0,
+        "coverage": 0.667,
+        "forced_zero": 0
+      }
+    },
+    {
+      "lesson_id": "0acbc6d0b180",
+      "title": "Engineering Lesson Plan",
+      "baseline": {
+        "error": null,
+        "calls": 1,
+        "wall_time_s": 22.14,
+        "normalized": 0.11,
+        "gold_quality": null,
+        "abs_error": null,
+        "band_gt0": 2,
+        "valid_cited": 0,
+        "total_criteria": 6,
+        "citation_rate": 0.0,
+        "coverage": 0.0,
+        "forced_zero": null
+      },
+      "forcecite": {
+        "error": null,
+        "calls": 1,
+        "wall_time_s": 10.29,
+        "normalized": 0.11,
+        "gold_quality": null,
+        "abs_error": null,
+        "band_gt0": 2,
+        "valid_cited": 2,
+        "total_criteria": 6,
+        "citation_rate": 1.0,
+        "coverage": 0.333,
+        "forced_zero": 0
+      }
+    },
+    {
+      "lesson_id": "052a682bd60f",
+      "title": "Family and Community Wellness-Human Services - Lesson Plan",
+      "baseline": {
+        "error": null,
+        "calls": 1,
+        "wall_time_s": 8.76,
+        "normalized": 0.11,
+        "gold_quality": null,
+        "abs_error": null,
+        "band_gt0": 2,
+        "valid_cited": 0,
+        "total_criteria": 6,
+        "citation_rate": 0.0,
+        "coverage": 0.0,
+        "forced_zero": null
+      },
+      "forcecite": {
+        "error": null,
+        "calls": 1,
+        "wall_time_s": 6.38,
+        "normalized": 0.0,
+        "gold_quality": null,
+        "abs_error": null,
+        "band_gt0": 0,
+        "valid_cited": 0,
+        "total_criteria": 6,
+        "citation_rate": null,
+        "coverage": 0.0,
+        "forced_zero": 0
+      }
+    },
+    {
+      "lesson_id": "mini_strong",
+      "title": "Mini STRONG lesson (photosynthesis)",
+      "baseline": {
+        "error": null,
+        "calls": 1,
+        "wall_time_s": 16.99,
+        "normalized": 0.723,
+        "gold_quality": null,
+        "abs_error": null,
+        "band_gt0": 5,
+        "valid_cited": 0,
+        "total_criteria": 6,
+        "citation_rate": 0.0,
+        "coverage": 0.0,
+        "forced_zero": null
+      },
+      "forcecite": {
+        "error": null,
+        "calls": 1,
+        "wall_time_s": 25.41,
+        "normalized": 0.723,
+        "gold_quality": null,
+        "abs_error": null,
+        "band_gt0": 5,
+        "valid_cited": 5,
+        "total_criteria": 6,
+        "citation_rate": 1.0,
+        "coverage": 0.833,
+        "forced_zero": 0
+      }
+    },
+    {
+      "lesson_id": "mini_weak",
+      "title": "Mini WEAK lesson (skeleton)",
+      "baseline": {
+        "error": null,
+        "calls": 1,
+        "wall_time_s": 9.97,
+        "normalized": 0.0,
+        "gold_quality": null,
+        "abs_error": null,
+        "band_gt0": 0,
+        "valid_cited": 0,
+        "total_criteria": 6,
+        "citation_rate": null,
+        "coverage": 0.0,
+        "forced_zero": null
+      },
+      "forcecite": {
+        "error": null,
+        "calls": 1,
+        "wall_time_s": 12.62,
+        "normalized": 0.0,
+        "gold_quality": null,
+        "abs_error": null,
+        "band_gt0": 0,
+        "valid_cited": 0,
+        "total_criteria": 6,
+        "citation_rate": null,
+        "coverage": 0.0,
+        "forced_zero": 0
+      }
+    },
+    {
+      "lesson_id": "mini_elps",
+      "title": "Mini ELPS-supported lesson",
+      "baseline": {
+        "error": null,
+        "calls": 1,
+        "wall_time_s": 21.89,
+        "normalized": 0.39,
+        "gold_quality": null,
+        "abs_error": null,
+        "band_gt0": 5,
+        "valid_cited": 0,
+        "total_criteria": 6,
+        "citation_rate": 0.0,
+        "coverage": 0.0,
+        "forced_zero": null
+      },
+      "forcecite": {
+        "error": null,
+        "calls": 2,
+        "wall_time_s": 22.82,
+        "normalized": 0.277,
+        "gold_quality": null,
+        "abs_error": null,
+        "band_gt0": 3,
+        "valid_cited": 3,
+        "total_criteria": 6,
+        "citation_rate": 1.0,
+        "coverage": 0.5,
+        "forced_zero": 0
+      }
+    }
+  ]
+}
