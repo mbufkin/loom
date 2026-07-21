@@ -1,0 +1,418 @@
+/*
+ * Loom Run Review — neo-brutalist tokens adapted from the Fairway draft board.
+ * Thick borders, hard offset shadows, bold banded rows, monospace accents. Tuned
+ * for a local review console (legibility + density over polish).
+ */
+:root {
+  --bg: #f4f1e8;
+  --panel: #fffdf7;
+  --ink: #14110c;
+  --muted: #6b6350;
+  --line: #14110c;
+  --accent: #ff5c38;
+  --accent-2: #2b6cff;
+  --shadow: 4px 4px 0 var(--line);
+  --shadow-sm: 2px 2px 0 var(--line);
+
+  /* Tier / band bands */
+  --band-strong: #b8f0c8;
+  --band-developing: #ffe58a;
+  --band-weak: #ffb3a1;
+  --band-unrated: #e4dccb;
+  --band-golden: #ffd54a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+code,
+pre,
+.mono {
+  font-family: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, monospace;
+}
+
+/* ---- App shell -------------------------------------------------------- */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  border-bottom: 3px solid var(--line);
+  background: var(--panel);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.topbar h1 {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.topbar .spacer {
+  flex: 1;
+}
+
+select,
+button {
+  font: inherit;
+  border: 2px solid var(--line);
+  background: var(--panel);
+  padding: 7px 12px;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  border-radius: 0;
+}
+
+button:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: var(--shadow);
+}
+
+button:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
+
+button.primary {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* ---- Two-column layout ------------------------------------------------ */
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 20px;
+  padding: 20px;
+  align-items: start;
+  flex: 1;
+}
+
+.main {
+  min-width: 0;
+}
+
+.panel {
+  background: var(--panel);
+  border: 3px solid var(--line);
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+.panel > .panel-head {
+  padding: 10px 14px;
+  border-bottom: 2px solid var(--line);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 12px;
+}
+
+.panel > .panel-body {
+  padding: 14px;
+}
+
+/* ---- Output nav ------------------------------------------------------- */
+.nav-group {
+  margin-bottom: 12px;
+}
+
+.nav-group h3 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  padding: 6px 10px;
+  border: 2px solid transparent;
+  background: transparent;
+  box-shadow: none;
+  margin-bottom: 3px;
+}
+
+.nav-item:hover {
+  border-color: var(--line);
+  background: #fff;
+  transform: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-item.active {
+  border-color: var(--line);
+  background: var(--accent-2);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-item .tag {
+  margin-left: auto;
+  font-size: 10px;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  padding: 0 5px;
+  opacity: 0.8;
+}
+
+/* ---- Unit heatmap rows ------------------------------------------------ */
+.unit-row {
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  padding: 9px 12px;
+  border: 2px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 8px;
+}
+
+.unit-row:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: var(--shadow);
+}
+
+.unit-row .swatch {
+  width: 14px;
+  height: 34px;
+  border: 2px solid var(--line);
+}
+
+.unit-row .u-title {
+  font-weight: 700;
+}
+
+.unit-row .u-metrics {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.unit-row .u-band {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  border: 2px solid var(--line);
+  padding: 2px 8px;
+}
+
+.band-strong {
+  background: var(--band-strong);
+}
+.band-developing {
+  background: var(--band-developing);
+}
+.band-weak {
+  background: var(--band-weak);
+}
+.band-unrated {
+  background: var(--band-unrated);
+}
+
+/* ---- Sticky review slip ---------------------------------------------- */
+.slip {
+  position: sticky;
+  top: 84px;
+}
+
+.slip .tier-badge {
+  display: inline-block;
+  font-weight: 800;
+  text-transform: uppercase;
+  border: 2px solid var(--line);
+  padding: 3px 10px;
+  background: var(--band-golden);
+  box-shadow: var(--shadow-sm);
+}
+
+.slip .stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.slip .stat {
+  border: 2px solid var(--line);
+  padding: 8px;
+  background: #fff;
+}
+
+.slip .stat .n {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.slip .stat .l {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.slip .actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.slip .actions button {
+  flex: 1;
+}
+
+.quick-links a {
+  display: block;
+  padding: 5px 0;
+  color: var(--accent-2);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px dashed var(--muted);
+}
+
+.quick-links a:hover {
+  color: var(--accent);
+}
+
+/* ---- Markdown viewer -------------------------------------------------- */
+.md {
+  max-width: 900px;
+}
+
+.md h1,
+.md h2,
+.md h3 {
+  letter-spacing: -0.01em;
+}
+
+.md h1 {
+  border-bottom: 3px solid var(--line);
+  padding-bottom: 6px;
+}
+
+.md h2 {
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 4px;
+  margin-top: 28px;
+}
+
+.md table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 12px 0;
+}
+
+.md th,
+.md td {
+  border: 2px solid var(--line);
+  padding: 6px 10px;
+  text-align: left;
+}
+
+.md th {
+  background: var(--band-golden);
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.md pre {
+  background: #14110c;
+  color: #f4f1e8;
+  padding: 12px;
+  overflow: auto;
+  border: 2px solid var(--line);
+}
+
+.md code {
+  background: #ece7d8;
+  padding: 1px 4px;
+}
+
+.md pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.md blockquote {
+  border-left: 4px solid var(--accent);
+  margin: 12px 0;
+  padding: 4px 14px;
+  background: #fff;
+  color: var(--muted);
+}
+
+/* ---- Run log panel ---------------------------------------------------- */
+.runlog {
+  background: #14110c;
+  color: #b8f0c8;
+  padding: 12px;
+  border: 2px solid var(--line);
+  max-height: 260px;
+  overflow: auto;
+  white-space: pre-wrap;
+  font-size: 12px;
+}
+
+.empty {
+  color: var(--muted);
+  padding: 40px;
+  text-align: center;
+}
+
+.pill {
+  font-size: 11px;
+  padding: 1px 7px;
+  border: 1px solid var(--line);
+  text-transform: uppercase;
+}
+.pill.running {
+  background: var(--band-developing);
+}
+.pill.done {
+  background: var(--band-strong);
+}
+.pill.error {
+  background: var(--band-weak);
+}

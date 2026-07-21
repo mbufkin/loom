@@ -48,6 +48,10 @@ projects/_fixtures/ingest-test/
 # --- Local npm tooling (markdownlint, etc.) — never commit ---
 node_modules/
 
+# --- Loom Run Review UI (local-only build + run artifacts) ---
+ui/dist/
+ui/.runs/
+
 # --- Third-party / partner template packs (licensing) — never public ---
 templates-northwest-isd/
 data/ctat-admin-training/
@@ -71,3 +75,6 @@ experiments/*/out/
 
 # --- Internal R&D review briefs (stays local, like research/) ---
 reviews/
+
+# TypeScript build cache
+ui/*.tsbuildinfo
