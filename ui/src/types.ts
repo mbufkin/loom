@@ -92,6 +92,31 @@ export interface UnitRung {
 
 export type Band = "Strong" | "Developing" | "Weak" | "Unrated";
 
+// Per-lesson quality feedback (output/LESSON-QUALITY-FEEDBACK.json), grouped by
+// unit_id so the heatmap unit panel can list and drill into its own lessons.
+export interface LessonDimension {
+  criterion_id: string;
+  label: string;
+  band: number | null;
+  note: string;
+  evidence: { element_id: string; excerpt: string }[];
+}
+export interface LessonFeedbackLesson {
+  lesson_id: string;
+  title: string;
+  unit_id: string;
+  mean_band: number | null;
+  max_band: number | null;
+  element_count: number;
+  dimensions: LessonDimension[];
+}
+export interface LessonFeedback {
+  generated?: string;
+  project?: string;
+  scorer?: string;
+  units: Record<string, LessonFeedbackLesson[]>;
+}
+
 export interface RunStatus {
   runId: string;
   status: "running" | "done" | "error";

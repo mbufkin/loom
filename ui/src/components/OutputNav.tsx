@@ -6,44 +6,62 @@ interface Props {
   onSelect: (path: string, type?: string) => void;
 }
 
-// Left-rail navigation: course plates, then stage/layer reports, then a Units
-// section (the unit rows themselves render in the main column). Mirrors the
-// review-surface priority order from docs/OUTPUTS.md.
+// Left-rail navigation. Each section is a collapsible <details> so the rail
+// stays readable as the number of plates grows: the primary "Course plates" and
+// "Units" sections stay open by default, while the denser stage/PDF sections
+// start collapsed. Native <details> keeps this accessible and state-free.
 export function OutputNav({ outputs, activePath, onSelect }: Props) {
-  const group = (title: string, files: OutputsTree["plates"]) =>
+  const items = (files: OutputsTree["plates"]) =>
+    files.map((f) => (
+      <button
+        key={f.path}
+        className={`nav-item ${activePath === f.path ? "active" : ""}`}
+        onClick={() => onSelect(f.path, f.type)}
+      >
+        <span>{f.label}</span>
+        {f.type === "pdf" && <span className="tag">pdf</span>}
+      </button>
+    ));
+
+  const section = (
+    title: string,
+    files: OutputsTree["plates"],
+    open: boolean
+  ) =>
     files.length > 0 && (
-      <div className="nav-group">
-        <h3>{title}</h3>
-        {files.map((f) => (
-          <button
-            key={f.path}
-            className={`nav-item ${activePath === f.path ? "active" : ""}`}
-            onClick={() => onSelect(f.path, f.type)}
-          >
-            <span>{f.label}</span>
-            {f.type === "pdf" && <span className="tag">pdf</span>}
-          </button>
-        ))}
-      </div>
+      <details className="nav-group" open={open}>
+        <summary>
+          <span>{title}</span>
+          <span className="tag">{files.length}</span>
+        </summary>
+        {items(files)}
+      </details>
     );
+
+  const hasActivePlateInLayers = outputs.layers.some(
+    (f) => f.path === activePath
+  );
 
   return (
     <div className="panel">
       <div className="panel-head">Outputs</div>
-      <div className="panel-body">
-        {group("Course plates", outputs.plates)}
-        {group("Stage reports", outputs.layers)}
-        {group("PDF", outputs.pdfs)}
-        <div className="nav-group">
-          <h3>Units</h3>
+      <div className="panel-body nav">
+        <details className="nav-group" open>
+          <summary>
+            <span>Units</span>
+            <span className="tag">{outputs.units.length}</span>
+          </summary>
           <button
             className={`nav-item ${activePath === "__units__" ? "active" : ""}`}
             onClick={() => onSelect("__units__")}
           >
             <span>Unit heatmap</span>
-            <span className="tag">{outputs.units.length}</span>
+            <span className="tag">heatmap</span>
           </button>
-        </div>
+        </details>
+        {section("Course plates", outputs.plates, true)}
+        {section("Stage reports", outputs.layers, hasActivePlateInLayers)}
+        {section("PDF", outputs.pdfs, false)}
       </div>
     </div>
   );

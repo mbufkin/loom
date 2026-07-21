@@ -13,8 +13,8 @@ Run: python3 experiments/quality_race/feedback/gen_report.py [project_id]
 
 from __future__ import annotations
 
+import json
 import sys
-import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -57,6 +57,11 @@ def main() -> int:
     lines.append(f"_Generated {stamp} over {len(lessons)} enumerated lessons._")
     lines.append("")
 
+    # Structured mirror for the UI's unit->lesson drill-down. Grouped by unit_id
+    # so the heatmap unit panel can list its own lessons; each lesson carries the
+    # full per-dimension breakdown the LessonDetail view renders.
+    units: dict[str, list[dict]] = {}
+
     for le in lessons:
         res = scorer.score(le, cfg)
         lines.append(f"## {le.title}")
@@ -71,11 +76,24 @@ def main() -> int:
         lines.append("")
         lines.append("| Dimension | Band | Diagnosis |")
         lines.append("|---|---|---|")
+        dims: list[dict] = []
         for c in res.criteria:
-            note = (c.note or "").replace("\n", " ").replace("|", "\\|").strip() or "—"
+            note = (c.note or "").strip()
+            note_md = note.replace("\n", " ").replace("|", "\\|") or "—"
             band_txt = f"{_bar(c.band)} {BAND_LABEL.get(c.band, '—')}"
-            lines.append(f"| {c.label} | {band_txt} | {note} |")
-        # Optional secondary evidence, when the model offered a valid quote.
+            lines.append(f"| {c.label} | {band_txt} | {note_md} |")
+            dims.append(
+                {
+                    "criterion_id": c.criterion_id,
+                    "label": c.label,
+                    "band": c.band,
+                    "note": note,
+                    "evidence": [
+                        {"element_id": ev.element_id, "excerpt": ev.excerpt[:300]}
+                        for ev in (c.evidence or [])
+                    ],
+                }
+            )
         cited = [c for c in res.criteria if c.evidence]
         if cited:
             lines.append("")
@@ -89,11 +107,32 @@ def main() -> int:
             lines.append("</details>")
         lines.append("")
 
+        units.setdefault(le.unit_id, []).append(
+            {
+                "lesson_id": le.lesson_id,
+                "title": le.title,
+                "unit_id": le.unit_id,
+                "mean_band": summ.get("mean_band"),
+                "max_band": summ.get("max_band"),
+                "element_count": len(le.elements),
+                "dimensions": dims,
+            }
+        )
+
     out_dir = project_dir(project) / "output"
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / "LESSON-QUALITY-FEEDBACK.md"
     out_path.write_text("\n".join(lines), encoding="utf-8")
-    log(f"wrote {out_path}")
+
+    json_path = out_dir / "LESSON-QUALITY-FEEDBACK.json"
+    json_path.write_text(
+        json.dumps(
+            {"generated": stamp, "project": project, "scorer": scorer.scorer_id, "units": units},
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+    log(f"wrote {out_path} and {json_path}")
     print(out_path)
     return 0
 

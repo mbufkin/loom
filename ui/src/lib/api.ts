@@ -2,6 +2,7 @@
 // the Vite proxy (/api -> :8770), so no base URL juggling.
 import type {
   ConfigSummary,
+  LessonFeedback,
   OutputsTree,
   Project,
   RunStatus,
@@ -40,6 +41,17 @@ export const api = {
     try {
       const txt = await api.fileText(id, "layer_unit/UNIT-RUNG.json");
       return JSON.parse(txt) as UnitRung;
+    } catch {
+      return null;
+    }
+  },
+
+  // Best-effort: LESSON-QUALITY-FEEDBACK.json only exists once the feedback
+  // report has been generated for a project.
+  async lessonFeedback(id: string): Promise<LessonFeedback | null> {
+    try {
+      const txt = await api.fileText(id, "output/LESSON-QUALITY-FEEDBACK.json");
+      return JSON.parse(txt) as LessonFeedback;
     } catch {
       return null;
     }

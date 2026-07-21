@@ -1,4 +1,10 @@
-import type { Band, OutputFile, UnitRollup, UnitRungUnit } from "../types";
+import type {
+  Band,
+  LessonFeedbackLesson,
+  OutputFile,
+  UnitRollup,
+  UnitRungUnit,
+} from "../types";
 
 interface Props {
   unitId: string;
@@ -13,6 +19,19 @@ interface Props {
   files: OutputFile[];
   band: Band;
   onOpenFile: (path: string, type: string) => void;
+  // Per-lesson quality feedback for THIS unit (from LESSON-QUALITY-FEEDBACK.json);
+  // empty when the feedback report has not been generated or the unit has no
+  // enumerated lessons yet. Clicking one drills into the LessonDetail view.
+  lessons?: LessonFeedbackLesson[];
+  onSelectLesson?: (lessonId: string) => void;
+}
+
+function lessonBandClass(band: number | null | undefined, max = 3): string {
+  if (band == null) return "band-unrated";
+  const pct = band / (max || 3);
+  if (pct >= 0.67) return "band-strong";
+  if (pct >= 0.34) return "band-developing";
+  return "band-weak";
 }
 
 const BAND_CLASS: Record<Band, string> = {
@@ -56,8 +75,33 @@ export function UnitDetail({
   files,
   band,
   onOpenFile,
+  lessons = [],
+  onSelectLesson,
 }: Props) {
   const title = record?.title ?? rollup?.title ?? unitId;
+
+  const lessonsSection =
+    lessons.length > 0 ? (
+      <section>
+        <h4>Lessons ({lessons.length}) — click for the full quality breakdown</h4>
+        <div className="lesson-list">
+          {lessons.map((l) => (
+            <button
+              key={l.lesson_id}
+              className={`lesson-row ${lessonBandClass(l.mean_band, l.max_band ?? 3)}`}
+              onClick={() => onSelectLesson?.(l.lesson_id)}
+            >
+              <span className={`swatch ${lessonBandClass(l.mean_band, l.max_band ?? 3)}`} />
+              <span className="lesson-title">{l.title}</span>
+              <span className="lesson-meta mono">
+                mean {l.mean_band ?? "—"}/{l.max_band ?? 3}
+              </span>
+              <span className="lesson-arrow">→</span>
+            </button>
+          ))}
+        </div>
+      </section>
+    ) : null;
 
   // No rung record: be honest about why, and still offer the raw artifacts.
   if (!record) {
@@ -73,12 +117,16 @@ export function UnitDetail({
           the unit rung, or need a re-run. The band above is derived from Layer 1
           role fulfillment.
         </p>
-        <UnitFileLinks files={files} onOpenFile={onOpenFile} />
+        {lessonsSection}
+        <section>
+          <h4>Deeper reports</h4>
+          <UnitFileLinks files={files} onOpenFile={onOpenFile} />
+        </section>
       </div>
     );
   }
 
-  const lessons = record.lessons;
+  const rungLessons = record.lessons;
   const roles = record.roles;
   const pacing = record.pacing;
   const internal = record.internal;
@@ -93,11 +141,11 @@ export function UnitDetail({
       </div>
 
       <div className="stat-grid">
-        {lessons && (
+        {rungLessons && (
           <>
-            <Stat n={String(lessons.count)} label="Lessons" />
+            <Stat n={String(rungLessons.count)} label="Lessons" />
             <Stat
-              n={`${lessons.gate_pass}/${lessons.count}`}
+              n={`${rungLessons.gate_pass}/${rungLessons.count}`}
               label="Gate pass"
             />
           </>
@@ -116,11 +164,11 @@ export function UnitDetail({
         )}
       </div>
 
-      {lessons?.mean_coverage &&
-        Object.keys(lessons.mean_coverage).length > 0 && (
+      {rungLessons?.mean_coverage &&
+        Object.keys(rungLessons.mean_coverage).length > 0 && (
           <section>
-            <h4>Lesson coverage (mean across {lessons.count} lessons)</h4>
-            {Object.entries(lessons.mean_coverage).map(([scorer, val]) => (
+            <h4>Lesson coverage (mean across {rungLessons.count} lessons)</h4>
+            {Object.entries(rungLessons.mean_coverage).map(([scorer, val]) => (
               <div className="cov" key={scorer}>
                 <span className="cov-label mono">{scorer}</span>
                 <span className="cov-track">
@@ -208,6 +256,8 @@ export function UnitDetail({
           </p>
         </section>
       )}
+
+      {lessonsSection}
 
       <section>
         <h4>Deeper reports</h4>
