@@ -49,6 +49,7 @@ PLATE_FILES = [
     ("First pass", "output/FIRST-PASS.md"),
     ("Summary", "output/SUMMARY.md"),
     ("Review queue", "output/REVIEW-QUEUE.md"),
+    ("Lesson quality feedback", "output/LESSON-QUALITY-FEEDBACK.md"),
     ("Global audit", "output/GLOBAL-AUDIT.md"),
     ("Year calendar map", "output/03-year-calendar-map.md"),
 ]
