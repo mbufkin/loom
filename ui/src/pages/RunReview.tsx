@@ -329,7 +329,7 @@ export function RunReview() {
                   onSelectLesson={openLessonDetail}
                 />
               ) : showLessonDetail ? (
-                <LessonDetail lesson={selectedLesson!} />
+                <LessonDetail lesson={selectedLesson!} projectId={projectId} />
               ) : activeType === "pdf" && activePath ? (
                 <div>
                   <p>

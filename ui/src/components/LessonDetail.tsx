@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { api } from "../lib/api";
 import type { LessonFeedbackLesson } from "../types";
 
 interface Props {
   lesson: LessonFeedbackLesson;
+  // Needed to fetch the lesson's raw source text from the local API.
+  projectId: string;
 }
 
 const BAND_LABEL: Record<number, string> = {
@@ -35,7 +38,7 @@ function Dots({ band }: { band: number | null }) {
 // Lesson drill-down: the per-dimension instructional-coach diagnosis for one
 // lesson, rendered from LESSON-QUALITY-FEEDBACK.json. Pure presentation — it
 // shows exactly what the feedback scorer said, including any cited evidence.
-export function LessonDetail({ lesson }: Props) {
+export function LessonDetail({ lesson, projectId }: Props) {
   return (
     <div className="ldetail">
       <div className="ldetail-meta mono">
@@ -47,7 +50,60 @@ export function LessonDetail({ lesson }: Props) {
           <DimensionRow key={d.criterion_id} d={d} />
         ))}
       </div>
+      <SourceText projectId={projectId} path={lesson.source_file} />
     </div>
+  );
+}
+
+// The actual lesson document beneath the review, so a reviewer can read what the
+// bands are describing without leaving the panel. Lazy-loaded from the local API
+// and open by default (this is the thing the reviewer asked to see).
+function SourceText({
+  projectId,
+  path,
+}: {
+  projectId: string;
+  path?: string | null;
+}) {
+  const [text, setText] = useState<string | null>(null);
+  const [err, setErr] = useState<string>("");
+
+  useEffect(() => {
+    if (!path) return;
+    let alive = true;
+    setText(null);
+    setErr("");
+    api
+      .fileText(projectId, path)
+      .then((t) => alive && setText(t))
+      .catch((e) => alive && setErr(String(e)));
+    return () => {
+      alive = false;
+    };
+  }, [projectId, path]);
+
+  if (!path) {
+    return (
+      <details className="lesson-source" open>
+        <summary>Lesson plan (source text)</summary>
+        <p className="muted-note">No source file recorded for this lesson.</p>
+      </details>
+    );
+  }
+
+  return (
+    <details className="lesson-source" open>
+      <summary>
+        Lesson plan (source text) <span className="mono src-path">{path}</span>
+      </summary>
+      {err ? (
+        <p className="muted-note">Could not load source: {err}</p>
+      ) : text == null ? (
+        <p className="muted-note">Loading…</p>
+      ) : (
+        <pre className="source-pre">{text}</pre>
+      )}
+    </details>
   );
 }
 

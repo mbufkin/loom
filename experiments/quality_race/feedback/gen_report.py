@@ -43,6 +43,17 @@ def main() -> int:
     lessons = enumerate_lessons(project)
     log(f"scoring {len(lessons)} lessons for {project}")
 
+    # Map each lesson (doc_id) to its on-disk source file so the UI can show the
+    # actual lesson text beneath the review. The ledger stores the basename; the
+    # file lives under sources/, which the review API can serve (.txt allowed).
+    ledger_path = project_dir(project) / "layer0" / "ledger.json"
+    doc_source: dict[str, str] = {}
+    if ledger_path.is_file():
+        for row in json.loads(ledger_path.read_text()):
+            did, sf = row.get("doc_id"), row.get("source_file")
+            if did and sf and did not in doc_source:
+                doc_source[did] = f"sources/{sf}"
+
     lines: list[str] = []
     lines.append("# Lesson Quality Feedback")
     lines.append("")
@@ -112,6 +123,7 @@ def main() -> int:
                 "lesson_id": le.lesson_id,
                 "title": le.title,
                 "unit_id": le.unit_id,
+                "source_file": doc_source.get(le.lesson_id),
                 "mean_band": summ.get("mean_band"),
                 "max_band": summ.get("max_band"),
                 "element_count": len(le.elements),

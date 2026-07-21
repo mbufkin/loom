@@ -105,6 +105,9 @@ export interface LessonFeedbackLesson {
   lesson_id: string;
   title: string;
   unit_id: string;
+  // Project-relative path to the lesson's raw source text (e.g.
+  // "sources/doc_…txt"), so the UI can show the actual lesson beneath the review.
+  source_file?: string | null;
   mean_band: number | null;
   max_band: number | null;
   element_count: number;

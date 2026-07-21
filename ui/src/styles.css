@@ -735,3 +735,48 @@ button:disabled {
   font-size: 10px;
   margin-bottom: 2px;
 }
+
+/* ---- Raw lesson source beneath the review ----------------------------- */
+.lesson-source {
+  margin-top: 16px;
+  border: 2px solid var(--line);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.lesson-source summary {
+  cursor: pointer;
+  padding: 8px 12px;
+  font-weight: 700;
+  background: var(--panel);
+  border-bottom: 2px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.lesson-source[open] summary {
+  border-bottom: 2px solid var(--line);
+}
+.lesson-source .src-path {
+  margin-left: auto;
+  font-size: 10px;
+  color: var(--muted);
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 55%;
+}
+.source-pre {
+  margin: 0;
+  padding: 12px 14px;
+  max-height: 480px;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 12px;
+  line-height: 1.5;
+  background: #faf7f0;
+}
+.lesson-source .muted-note {
+  padding: 10px 14px;
+}
