@@ -1,0 +1,270 @@
+{
+  "summary": {
+    "gold_lessons_scored": 7,
+    "gold_lessons_total": 7,
+    "by_scorer": {
+      "s4_quality": {
+        "gold_mae": 0.309,
+        "citation_rate": 0.0,
+        "coverage": 0.0,
+        "calls_per_lesson": 1.0,
+        "wall_per_lesson": 10.376
+      },
+      "s4_quality_forcecite": {
+        "gold_mae": 0.483,
+        "citation_rate": 1.0,
+        "coverage": 0.167,
+        "calls_per_lesson": 1.857,
+        "wall_per_lesson": 11.901
+      },
+      "s4_quality_grounded": {
+        "gold_mae": 0.207,
+        "citation_rate": 0.857,
+        "coverage": 0.643,
+        "calls_per_lesson": 1.0,
+        "wall_per_lesson": 6.833
+      }
+    },
+    "example_cited_band": {
+      "rubric": "Lesson quality dimensions (EQuIP / Danielson / 5E)",
+      "dimension": "engagement",
+      "label": "Engagement / relevance",
+      "band": 1,
+      "element_id": "89430d6aae63-e2",
+      "quote": "Engage\nGuess the Logo\nArts, A/V Technology & Communications"
+    }
+  },
+  "per_lesson": [
+    {
+      "lesson_id": "89430d6aae63",
+      "title": "Arts AV Technology Communication - Slides",
+      "elements": 16,
+      "gold_quality": 0.82,
+      "s4_quality": {
+        "error": null,
+        "normalized": 0.277,
+        "abs_error": 0.543,
+        "calls": 1,
+        "wall_s": 12.41,
+        "citation_rate": 0.0,
+        "coverage": 0.0
+      },
+      "s4_quality_forcecite": {
+        "error": null,
+        "normalized": 0.057,
+        "abs_error": 0.763,
+        "calls": 3,
+        "wall_s": 18.7,
+        "citation_rate": 1.0,
+        "coverage": 0.167
+      },
+      "s4_quality_grounded": {
+        "error": null,
+        "normalized": 0.5,
+        "abs_error": 0.32,
+        "calls": 1,
+        "wall_s": 6.81,
+        "citation_rate": 1.0,
+        "coverage": 1.0
+      }
+    },
+    {
+      "lesson_id": "3a729a90b236",
+      "title": "Business Marketing Finance Lesson Plan",
+      "elements": 2,
+      "gold_quality": 0.15,
+      "s4_quality": {
+        "error": null,
+        "normalized": 0.0,
+        "abs_error": 0.15,
+        "calls": 1,
+        "wall_s": 6.34,
+        "citation_rate": null,
+        "coverage": 0.0
+      },
+      "s4_quality_forcecite": {
+        "error": null,
+        "normalized": 0.0,
+        "abs_error": 0.15,
+        "calls": 1,
+        "wall_s": 6.33,
+        "citation_rate": null,
+        "coverage": 0.0
+      },
+      "s4_quality_grounded": {
+        "error": null,
+        "normalized": 0.057,
+        "abs_error": 0.093,
+        "calls": 1,
+        "wall_s": 5.97,
+        "citation_rate": 0.0,
+        "coverage": 0.0
+      }
+    },
+    {
+      "lesson_id": "48a445a553cc",
+      "title": "Career Cluster - Lesson Plan",
+      "elements": 6,
+      "gold_quality": 0.3,
+      "s4_quality": {
+        "error": null,
+        "normalized": 0.277,
+        "abs_error": 0.023,
+        "calls": 1,
+        "wall_s": 11.03,
+        "citation_rate": 0.0,
+        "coverage": 0.0
+      },
+      "s4_quality_forcecite": {
+        "error": null,
+        "normalized": 0.0,
+        "abs_error": 0.3,
+        "calls": 2,
+        "wall_s": 11.39,
+        "citation_rate": null,
+        "coverage": 0.0
+      },
+      "s4_quality_grounded": {
+        "error": null,
+        "normalized": 0.39,
+        "abs_error": 0.09,
+        "calls": 1,
+        "wall_s": 6.8,
+        "citation_rate": 1.0,
+        "coverage": 0.667
+      }
+    },
+    {
+      "lesson_id": "4b97944cd264",
+      "title": "Engineering Lesson",
+      "elements": 6,
+      "gold_quality": 0.6,
+      "s4_quality": {
+        "error": null,
+        "normalized": 0.277,
+        "abs_error": 0.323,
+        "calls": 1,
+        "wall_s": 11.1,
+        "citation_rate": 0.0,
+        "coverage": 0.0
+      },
+      "s4_quality_forcecite": {
+        "error": null,
+        "normalized": 0.11,
+        "abs_error": 0.49,
+        "calls": 2,
+        "wall_s": 10.22,
+        "citation_rate": 1.0,
+        "coverage": 0.333
+      },
+      "s4_quality_grounded": {
+        "error": null,
+        "normalized": 0.5,
+        "abs_error": 0.1,
+        "calls": 1,
+        "wall_s": 7.92,
+        "citation_rate": 1.0,
+        "coverage": 0.833
+      }
+    },
+    {
+      "lesson_id": "4cc88ad60178",
+      "title": "Hospitality Tourism - Lesson Plan",
+      "elements": 13,
+      "gold_quality": 0.5,
+      "s4_quality": {
+        "error": null,
+        "normalized": 0.11,
+        "abs_error": 0.39,
+        "calls": 1,
+        "wall_s": 7.53,
+        "citation_rate": 0.0,
+        "coverage": 0.0
+      },
+      "s4_quality_forcecite": {
+        "error": null,
+        "normalized": 0.0,
+        "abs_error": 0.5,
+        "calls": 2,
+        "wall_s": 11.78,
+        "citation_rate": null,
+        "coverage": 0.0
+      },
+      "s4_quality_grounded": {
+        "error": null,
+        "normalized": 0.167,
+        "abs_error": 0.333,
+        "calls": 1,
+        "wall_s": 6.38,
+        "citation_rate": 1.0,
+        "coverage": 0.333
+      }
+    },
+    {
+      "lesson_id": "67a41a913430",
+      "title": "Manufacturing Lesson",
+      "elements": 7,
+      "gold_quality": 0.8,
+      "s4_quality": {
+        "error": null,
+        "normalized": 0.39,
+        "abs_error": 0.41,
+        "calls": 1,
+        "wall_s": 12.76,
+        "citation_rate": 0.0,
+        "coverage": 0.0
+      },
+      "s4_quality_forcecite": {
+        "error": null,
+        "normalized": 0.11,
+        "abs_error": 0.69,
+        "calls": 1,
+        "wall_s": 7.37,
+        "citation_rate": 1.0,
+        "coverage": 0.333
+      },
+      "s4_quality_grounded": {
+        "error": null,
+        "normalized": 0.443,
+        "abs_error": 0.357,
+        "calls": 1,
+        "wall_s": 6.7,
+        "citation_rate": 1.0,
+        "coverage": 0.833
+      }
+    },
+    {
+      "lesson_id": "3dc5933c971d",
+      "title": "Teaching and Training Education and Training Lesson Plan",
+      "elements": 5,
+      "gold_quality": 0.6,
+      "s4_quality": {
+        "error": null,
+        "normalized": 0.277,
+        "abs_error": 0.323,
+        "calls": 1,
+        "wall_s": 11.46,
+        "citation_rate": 0.0,
+        "coverage": 0.0
+      },
+      "s4_quality_forcecite": {
+        "error": null,
+        "normalized": 0.11,
+        "abs_error": 0.49,
+        "calls": 2,
+        "wall_s": 17.52,
+        "citation_rate": 1.0,
+        "coverage": 0.333
+      },
+      "s4_quality_grounded": {
+        "error": null,
+        "normalized": 0.443,
+        "abs_error": 0.157,
+        "calls": 1,
+        "wall_s": 7.25,
+        "citation_rate": 1.0,
+        "coverage": 0.833
+      }
+    }
+  ]
+}
