@@ -31,6 +31,7 @@ jobs:
           python3 test_layer1_organize_batch.py
           python3 test_layer0_chunk_resume.py
           python3 test_layer0_ledger_complete.py
+          python3 test_element_type_normalize.py
           python3 test_layer1_module_placement.py
           python3 test_finding_aggregation.py
           python3 test_lesson_bakeoff.py

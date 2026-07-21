@@ -48,6 +48,7 @@ from audit_lib import (
 from schema_validate import (
     ELEMENT_TYPES,
     LAYER0_TAXONOMY_VERSION,
+    normalize_element_type,
     raise_on_errors,
     validate_layer0_elements,
 )
@@ -1143,9 +1144,20 @@ def coerce_element_type(raw: object, element_id: str, errors: list[str]) -> str:
     confidence, and one bad sub-element out of a multi-element split shouldn't
     discard the whole split (the OTHER new elements' citations are still real,
     resolved pointers — see the "Citation mechanism" comment above).
+
+    Before coercing, we first NORMALIZE: the model very often tags elements with
+    5E phase names (explore_activity, evaluate_activity, …) or compound values;
+    normalize_element_type() maps those onto the canonical enum so they are kept
+    as the real component type instead of being flattened to 'unclear' (which was
+    silently starving the rubrics of the guided-practice / assessment elements
+    that were actually present).
     """
     if raw in ELEMENT_TYPES:
         return raw  # type: ignore[return-value]
+    normalized = normalize_element_type(raw)
+    if normalized is not None:
+        log(f"  note: element_type {raw!r} normalized to {normalized!r}")
+        return normalized
     msg = f"{element_id}: invalid element_type {raw!r} — coerced to 'unclear'"
     log(f"  WARN: {msg}")
     errors.append(msg)

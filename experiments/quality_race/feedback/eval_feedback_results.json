@@ -1,16 +1,16 @@
 {
   "s4_quality": {
-    "note_coverage": 0.714,
-    "specificity": 0.148,
-    "avg_note_len": 56.333,
+    "note_coverage": 0.738,
+    "specificity": 0.161,
+    "avg_note_len": 53.81,
     "calls_per_lesson": 1.0,
-    "wall_per_lesson": 10.821
+    "wall_per_lesson": 11.047
   },
   "s4_quality_feedback": {
     "note_coverage": 1.0,
-    "specificity": 0.177,
-    "avg_note_len": 137.857,
+    "specificity": 0.212,
+    "avg_note_len": 126.714,
     "calls_per_lesson": 1.0,
-    "wall_per_lesson": 11.43
+    "wall_per_lesson": 11.521
   }
 }

@@ -49,6 +49,102 @@ ELEMENT_TYPES = frozenset(
     }
 )
 
+# The model (nemotron) frequently tags elements with the vocabulary of the 5E
+# instructional model (Engage/Explore/Explain/Elaborate/Evaluate) or with common
+# lesson-plan surface words, rather than our 8-way component taxonomy. Left
+# unhandled these all collapse to 'unclear', which STARVES every downstream
+# consumer (a rubric's reads_from can no longer find the guided-practice or
+# assessment elements that are genuinely present — see the quality-scorer
+# under-scoring investigation). We map those synonyms ONTO the existing enum
+# instead of expanding it, so this is a lossless normalization, NOT a taxonomy
+# change: ELEMENT_TYPES and LAYER0_TAXONOMY_VERSION are unchanged and every
+# alias resolves to a type the rubrics already read. The 5E->component mapping
+# is a deliberate pedagogical judgement: Engage≈hook, Explore≈guided practice
+# (student investigation), Explain≈direct instruction (concept development),
+# Elaborate/Extend≈independent practice (apply on your own), Evaluate≈assessment.
+ELEMENT_TYPE_ALIASES = {
+    # --- 5E instructional model phases ---
+    "engage": "hook_engagement",
+    "engage_activity": "hook_engagement",
+    "explore": "guided_practice",
+    "explore_activity": "guided_practice",
+    "explain": "direct_instruction",
+    "explain_activity": "direct_instruction",
+    "elaborate": "independent_practice",
+    "elaborate_activity": "independent_practice",
+    "extend": "independent_practice",
+    "extend_activity": "independent_practice",
+    "extension": "independent_practice",
+    "evaluate": "assessment_checkpoint",
+    "evaluate_activity": "assessment_checkpoint",
+    # --- common surface variants the model reaches for ---
+    "hook": "hook_engagement",
+    "engagement": "hook_engagement",
+    "warmup": "hook_engagement",
+    "warm_up": "hook_engagement",
+    "bellringer": "hook_engagement",
+    "objective": "standards_objectives",
+    "objectives": "standards_objectives",
+    "learning_objective": "standards_objectives",
+    "standards": "standards_objectives",
+    "teks": "standards_objectives",
+    "closure": "reflection_closure",
+    "reflection": "reflection_closure",
+    "wrap_up": "reflection_closure",
+    "summary": "reflection_closure",
+    "materials": "logistics_materials",
+    "resources": "logistics_materials",
+    "logistics": "logistics_materials",
+    "assessment": "assessment_checkpoint",
+    "evaluation": "assessment_checkpoint",
+    "check_for_understanding": "assessment_checkpoint",
+    "cfu": "assessment_checkpoint",
+    "exit_ticket": "assessment_checkpoint",
+    "guided": "guided_practice",
+    "guided_activity": "guided_practice",
+    "independent": "independent_practice",
+    "independent_activity": "independent_practice",
+    "practice": "independent_practice",
+    "direct": "direct_instruction",
+    "instruction": "direct_instruction",
+    "lecture": "direct_instruction",
+    "modeling": "direct_instruction",
+}
+
+_COMPOUND_SEPARATORS = ("|", "/", ",", ";", "&", "+")
+
+
+def normalize_element_type(raw: object) -> str | None:
+    """Map a model-emitted element_type onto the canonical ELEMENT_TYPES enum.
+
+    Returns a canonical type (including 'unclear' when the model explicitly said
+    so) or ``None`` when nothing recognizable can be recovered — callers decide
+    whether ``None`` means "coerce to unclear" (ledger enforcement) or "flag as a
+    schema error" (recheck trigger). Handles three cases the raw enum check missed:
+      1. exact canonical types (fast path),
+      2. 5E / surface-word synonyms via ELEMENT_TYPE_ALIASES, and
+      3. compound values like ``"hook_engagement|direct_instruction"`` (the model
+         echoing the pipe-delimited enum list, or genuinely tagging one element
+         with several phases) — we take the FIRST token that resolves to a real
+         component type, i.e. the model's own stated priority.
+    """
+    if not isinstance(raw, str):
+        return None
+    v = raw.strip().lower()
+    if not v:
+        return None
+    if v in ELEMENT_TYPES:
+        return v
+    if v in ELEMENT_TYPE_ALIASES:
+        return ELEMENT_TYPE_ALIASES[v]
+    for sep in _COMPOUND_SEPARATORS:
+        if sep in v:
+            for part in v.split(sep):
+                got = normalize_element_type(part)
+                if got and got != "unclear":
+                    return got
+    return None
+
 
 def raise_on_errors(errors: list[str], context: str) -> None:
     if errors:
@@ -294,7 +390,12 @@ def validate_layer0_elements(data: dict) -> list[str]:
             errors.append(f"{ep} must be a dict")
             continue
         etype = el.get("element_type")
-        if etype not in ELEMENT_TYPES:
+        # Accept anything the normalizer can map onto the enum (5E phases,
+        # compound values, surface synonyms) — only a genuinely unrecognizable
+        # type is a schema error. This stops us from firing an expensive recheck
+        # just because the model said "explore_activity" instead of
+        # "guided_practice"; the ledger-write path normalizes it identically.
+        if normalize_element_type(etype) is None:
             errors.append(f"{ep}.element_type unknown: {etype!r}")
         # Citation is a paragraph RANGE pointer, not generated text — see the
         # "Citation mechanism" / "2026-07-08 update" comments in layer0.py above
