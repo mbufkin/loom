@@ -251,6 +251,149 @@ button:disabled {
   background: var(--band-unrated);
 }
 
+/* ---- Unit detail drill-down ------------------------------------------ */
+.back-link {
+  border: 2px solid var(--line);
+  background: #fff;
+  padding: 1px 8px;
+  margin-right: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.udetail .band-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 3px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 16px;
+}
+
+.udetail .band-head .swatch {
+  width: 16px;
+  height: 30px;
+  border: 2px solid var(--line);
+}
+
+.udetail .band-head .u-title {
+  font-weight: 800;
+  font-size: 16px;
+  flex: 1;
+}
+
+.udetail .band-head .u-band {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  border: 2px solid var(--line);
+  padding: 2px 8px;
+  background: #fff;
+}
+
+.udetail .stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.udetail .stat {
+  border: 2px solid var(--line);
+  padding: 8px 10px;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.udetail .stat .n {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.udetail .stat .l {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.udetail section {
+  margin-top: 20px;
+}
+
+.udetail h4 {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px;
+  border-bottom: 2px solid var(--line);
+  padding-bottom: 4px;
+}
+
+.udetail .sub {
+  margin: 0 0 6px;
+  font-size: 13px;
+}
+
+.udetail .muted-note {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.chip {
+  display: inline-block;
+  border: 2px solid var(--line);
+  padding: 1px 8px;
+  margin: 6px 6px 0 0;
+  font-size: 12px;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.chip.warn {
+  background: var(--band-weak);
+}
+
+.chip.ok {
+  background: var(--band-strong);
+}
+
+/* Mean-coverage mini bars */
+.cov {
+  display: grid;
+  grid-template-columns: 160px 1fr 48px;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.cov-label {
+  font-size: 12px;
+}
+
+.cov-track {
+  height: 14px;
+  border: 2px solid var(--line);
+  background: #fff;
+}
+
+.cov-fill {
+  display: block;
+  height: 100%;
+  background: var(--accent-2);
+}
+
+.cov-val {
+  font-size: 12px;
+  text-align: right;
+  font-weight: 700;
+}
+
 /* ---- Sticky review slip ---------------------------------------------- */
 .slip {
   position: sticky;

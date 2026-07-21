@@ -3,6 +3,7 @@ import { api } from "../lib/api";
 import { MarkdownViewer } from "../components/MarkdownViewer";
 import { OutputNav } from "../components/OutputNav";
 import { ReviewSlip } from "../components/ReviewSlip";
+import { UnitDetail } from "../components/UnitDetail";
 import { UnitOutputRow } from "../components/UnitOutputRow";
 import type {
   Band,
@@ -16,6 +17,7 @@ import type {
 
 const DEFAULT_PROJECT = "dallas-career-2026";
 const UNITS_VIEW = "__units__";
+const UNIT_DETAIL = "__unit_detail__";
 
 // Prefer the real unit-rung band; otherwise derive a heat band from Layer 1 role
 // fulfillment so the heatmap still renders for projects without a unit rung.
@@ -37,6 +39,7 @@ export function RunReview() {
 
   const [activePath, setActivePath] = useState<string | null>(null);
   const [activeType, setActiveType] = useState<string>("md");
+  const [selectedUnitId, setSelectedUnitId] = useState<string | null>(null);
   const [viewerText, setViewerText] = useState<string>("");
   const [error, setError] = useState<string>("");
 
@@ -153,15 +156,24 @@ export function RunReview() {
     [unitRung]
   );
 
-  const openUnitReport = useCallback(
-    (unitId: string) => {
-      const unit = outputs?.units.find((x) => x.unit_id === unitId);
-      const report =
-        unit?.files.find((f) => f.label === "Report") ?? unit?.files[0];
-      if (report) loadDoc(projectId, report.path, report.type);
-    },
-    [outputs, projectId, loadDoc]
-  );
+  // Drill-down now opens the rich unit-rung detail panel (rendered from the
+  // already-loaded UNIT-RUNG.json) instead of the thin per-unit stub. The stub
+  // and other artifacts remain reachable as links inside the panel.
+  const openUnitDetail = useCallback((unitId: string) => {
+    setSelectedUnitId(unitId);
+    setActivePath(UNIT_DETAIL);
+    setActiveType("md");
+  }, []);
+
+  // Per-unit artifact files, minus the thin stub "Report" when richer files
+  // exist, so the detail panel links to the useful reports first.
+  const selectedUnitFiles = useMemo(() => {
+    if (!selectedUnitId) return [];
+    const unit = outputs?.units.find((x) => x.unit_id === selectedUnitId);
+    const files = unit?.files ?? [];
+    const rich = files.filter((f) => f.label !== "Report");
+    return rich.length > 0 ? rich : files;
+  }, [outputs, selectedUnitId]);
 
   const quickLinks = useMemo(
     () => (outputs ? outputs.plates.slice(0, 4) : []),
@@ -169,6 +181,19 @@ export function RunReview() {
   );
 
   const showUnits = activePath === UNITS_VIEW;
+  const showUnitDetail = activePath === UNIT_DETAIL && !!selectedUnitId;
+  const selectedRollup = selectedUnitId
+    ? stats?.unit_rollup?.find((u) => u.unit_id === selectedUnitId)
+    : undefined;
+  const selectedRecord = selectedUnitId
+    ? unitRung?.units?.[selectedUnitId]
+    : undefined;
+
+  let panelTitle: string;
+  if (showUnits) panelTitle = "Unit heatmap";
+  else if (showUnitDetail)
+    panelTitle = `Unit · ${selectedRecord?.title ?? selectedRollup?.title ?? selectedUnitId}`;
+  else panelTitle = activePath ?? "Viewer";
 
   return (
     <div className="app">
@@ -218,7 +243,18 @@ export function RunReview() {
 
           <div className="panel">
             <div className="panel-head">
-              {showUnits ? "Unit heatmap" : activePath ?? "Viewer"}
+              {showUnitDetail && (
+                <button
+                  className="back-link"
+                  onClick={() => {
+                    setActivePath(UNITS_VIEW);
+                    setActiveType("md");
+                  }}
+                >
+                  ← heatmap
+                </button>
+              )}
+              {panelTitle}
             </div>
             <div className="panel-body">
               {showUnits ? (
@@ -230,10 +266,22 @@ export function RunReview() {
                       key={u.unit_id}
                       rollup={u}
                       band={bandFor(u)}
-                      onOpen={() => openUnitReport(u.unit_id)}
+                      onOpen={() => openUnitDetail(u.unit_id)}
                     />
                   ))
                 )
+              ) : showUnitDetail ? (
+                <UnitDetail
+                  unitId={selectedUnitId!}
+                  record={selectedRecord}
+                  rollup={selectedRollup}
+                  files={selectedUnitFiles}
+                  band={
+                    selectedRecord?.band ??
+                    (selectedRollup ? bandFor(selectedRollup) : "Unrated")
+                  }
+                  onOpenFile={(path, type) => loadDoc(projectId, path, type)}
+                />
               ) : activeType === "pdf" && activePath ? (
                 <div>
                   <p>
