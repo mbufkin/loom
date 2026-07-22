@@ -1,0 +1,454 @@
+{
+  "project": "bluebonnet-math-2026",
+  "unit": "alg1-mod-2",
+  "scorer": "s4_quality_decomposed",
+  "lessons": [
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L1",
+      "title": "Algebra I Math Teacher Edition Volume 1 Module 2 \u2014 Lesson 1",
+      "elements": 30,
+      "mean_band": 2.5,
+      "cited": 6,
+      "n_criteria": 6,
+      "model_calls": 6,
+      "dimensions": {
+        "objective_clarity": {
+          "band": 3,
+          "cited": true,
+          "note": "The excerpt explicitly lists objectives that are student-facing, specific to transformations (adding constants and scaling), and directly tied to analyzing graph changes like slope and intercepts, meeting clarity criteria for purposeful learning goals.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk13of17-e5",
+              "excerpt": "OBJECTIVES\n\u2022 Determine the effects on the graph of a linear function when f(x) is replaced by f(x) + d or a\u00b7f(x).\n\u2022 Identify key characteristics of the graphs of linear functions, such as slope and y-intercept, in terms of quantities from a verbal description."
+            }
+          ]
+        },
+        "engagement": {
+          "band": 3,
+          "cited": true,
+          "note": "The opening task directly engages students by linking algebraic transformation practice to an interactive video\u2011game scenario that is relevant to middle school learners, fulfilling the engagement criterion for band assessment.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk13of17-e2",
+              "excerpt": "In this activity, students apply their knowledge of transformations in the context of testing a video game. Students are asked first to transform the default function f(x) = x and consider restricted domains."
+            }
+          ]
+        },
+        "checks_for_understanding": {
+          "band": 2,
+          "cited": true,
+          "note": "This excerpt explicitly defines how translations affect coordinates, directly addressing formative checks on understanding by describing coordinate changes (y+4, y-4) without ambiguity.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk13of17-e1-split2",
+              "excerpt": "The points of the figure move straight up or straight down for a vertical translation. There is no movement left or right."
+            }
+          ]
+        },
+        "differentiation_supports": {
+          "band": 2,
+          "cited": true,
+          "note": "This excerpt explicitly describes a vertical translation of line segment AB up by four units and notes that the resulting image (CD) is parallel to the original, directly showing how translations affect coordinates while maintaining orientation.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk13of17-e1-split2",
+              "excerpt": "The segments are parallel, with CD lying 4 units above AB ."
+            }
+          ]
+        },
+        "cognitive_rigor": {
+          "band": 2,
+          "cited": true,
+          "note": "The prompt asks students to compare placement choices, requiring analysis of reasoning rather than simple recall; however it lacks explicit connection to application or deeper mathematical justification demanded by DOK/TEKS for this standard.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk2of17-e2-split2",
+              "excerpt": "Explain the difference in how Linh and James chose to place their line."
+            }
+          ]
+        },
+        "coherent_sequence_closure": {
+          "band": 3,
+          "cited": true,
+          "note": "This excerpt explicitly outlines how translations are introduced (definition), worked through (example), and reinforced by student interaction, showing purposeful sequencing from explanation to practice that ends with consolidation of understanding.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk13of17-e1-split4",
+              "excerpt": "The definition and Worked Example provide an opportunity for explicit instruction. Interact with this information as a class, and encourage students to restate or explain the information in their own words."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L2",
+      "title": "Algebra I Math Teacher Edition Volume 1 Module 2 \u2014 Lesson 2",
+      "elements": 42,
+      "mean_band": 2.33,
+      "cited": 6,
+      "n_criteria": 6,
+      "model_calls": 6,
+      "dimensions": {
+        "objective_clarity": {
+          "band": 2,
+          "cited": true,
+          "note": "The excerpt explicitly lists objectives that are student-facing (e.g., 'Identify key characteristics...', 'Determine the effects on the graph...') and directly state what students will learn about transformations of linear functions.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk14of17-e2",
+              "excerpt": "OBJECTIVES\n\u2022 Identify key characteristics of linear functions.\n\u2022 Determine the effects on the graph of a linear function when f(x) is replaced by f(x) + d, f(x - c), af(x), and f(bx)."
+            }
+          ]
+        },
+        "engagement": {
+          "band": 3,
+          "cited": true,
+          "note": "The opening task asks students to recall prior knowledge about graphing linear functions and explicitly connects that memory work to the new lesson\u2019s focus on transformations and key characteristics such as intercepts and slopes. This directly engages learners by linking familiar concepts (graphing lines) to upcoming content, meeting the Engage criterion of a purposeful hook.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk14of17-e11",
+              "excerpt": "Hey, I Remember This! In this activity, students graph linear equations and identify key characteristics of each graph, including domain, range, x-intercept/zero, y-intercept, slope, and intervals of increase and decrease."
+            }
+          ]
+        },
+        "checks_for_understanding": {
+          "band": 2,
+          "cited": true,
+          "note": "The excerpt explicitly describes using student assessment responses (from the checkpoint) to decide scheduling of individualized days and assigning a specific practice set focused on writing linear regression functions, directly constituting a formative check that informs instruction about students' understanding of the essential content.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk3of17-e4-split1",
+              "excerpt": "Use student responses to determine when to schedule Learning Individually Days. To provide additional practice writing linear regression functions for data sets presented as tables, assign Skills Practice Set B for this lesson."
+            }
+          ]
+        },
+        "differentiation_supports": {
+          "band": 2,
+          "cited": true,
+          "note": "The excerpt provides concrete, just-in-time support using manipulatives that directly address varied learners' needs for visualizing abstract transformations in algebra, aligning with ELPS/SpEd differentiation requirements.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk14of17-e5-split1",
+              "excerpt": "Use modeling clay or dough to have students visualize horizontally and vertically stretching and compressing an object. Relate this experience to stretching and compressing a function."
+            }
+          ]
+        },
+        "cognitive_rigor": {
+          "band": 3,
+          "cited": true,
+          "note": "Students explicitly use the numerical value of r and its proximity to 1 to justify selecting a linear regression model for real-world data, demonstrating application beyond recall by interpreting statistical output in context.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk4of17-e9-split1",
+              "excerpt": "The value of r \u2248 0.953 . There is a positive correlation; as the number of years increases, the percent increases. A line of best fit is appropriate because the correlation coefficient is close to 1."
+            }
+          ]
+        },
+        "coherent_sequence_closure": {
+          "band": 2,
+          "cited": true,
+          "note": "The excerpt explicitly instructs teachers to have students engage with an essential question at the start of class, establishing a clear opening that sets purpose for learning before moving into practice or closure activities.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk14of17-e7",
+              "excerpt": "Have students read and answer the Essential Question on the lesson opener page."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L3",
+      "title": "Algebra I Math Teacher Edition Volume 1 Module 2 \u2014 Lesson 3",
+      "elements": 50,
+      "mean_band": 2.33,
+      "cited": 6,
+      "n_criteria": 6,
+      "model_calls": 6,
+      "dimensions": {
+        "objective_clarity": {
+          "band": 3,
+          "cited": true,
+          "note": "The objective is stated clearly in student\u2011facing language: it explains how an arithmetic sequence increases (by addition of a constant difference) and that its graph consists of collinear points. This directly addresses what students need to understand about sequences, making the purpose specific and purposeful.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk5of17-e14",
+              "excerpt": "An arithmetic sequence grows by addition of a common difference, and the points on its graph are collinear. A geometric sequence grows by multiplication by a common ratio, and the points on its graph may form a smooth curve."
+            }
+          ]
+        },
+        "engagement": {
+          "band": 2,
+          "cited": true,
+          "note": "The opening task directly asks students to work with sequences, determine their type, formulate them explicitly, and graph them \u2014 a clear engagement that connects prior knowledge of patterns to new algebraic representations.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk5of17-e2",
+              "excerpt": "Students are provided two sequences. They must identify each sequence as arithmetic or geometric, write the explicit formula for the sequence, and graph the sequence."
+            }
+          ]
+        },
+        "checks_for_understanding": {
+          "band": 2,
+          "cited": true,
+          "note": "The excerpt explicitly prompts teachers to assess student understanding of 'consecutive' through discussion, directly serving as a formative check on conceptual grasp needed for arithmetic sequence analysis.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk6of17-e9",
+              "excerpt": "Ask students what is meant by the term consecutive. Discuss how the word consecutive is used in mathematical and non-mathematical situations."
+            }
+          ]
+        },
+        "differentiation_supports": {
+          "band": 2,
+          "cited": true,
+          "note": "The excerpt provides explicit scaffolding instructions (writing y=ax+b) that directly support varied learners by clarifying how to substitute values into linear expressions, addressing ELPS/language needs for arithmetic sequences.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk5of17-e9-split1",
+              "excerpt": "Have students write y = ax + b above the Term Value column of the table and refer to it as they complete their substitutions."
+            }
+          ]
+        },
+        "cognitive_rigor": {
+          "band": 3,
+          "cited": true,
+          "note": "This statement directly links slope (via constant difference) to algebraic reasoning by showing how the common difference relates to the linear function's parameters, requiring students to apply and justify this connection in context.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk6of17-e7",
+              "excerpt": "The y-intercept of a linear function is the same as the first term of an arithmetic sequence."
+            }
+          ]
+        },
+        "coherent_sequence_closure": {
+          "band": 2,
+          "cited": true,
+          "note": "The excerpt explicitly prompts students to consider how tables with or without x=0 affect linear analysis, directly tying into closure by requiring synthesis of constant differences across representations.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk5of17-e8",
+              "excerpt": "Why does one table have an input of 0 and the other table does not?"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L4",
+      "title": "Algebra I Math Teacher Edition Volume 1 Module 2 \u2014 Lesson 4",
+      "elements": 32,
+      "mean_band": 2.17,
+      "cited": 5,
+      "n_criteria": 6,
+      "model_calls": 6,
+      "dimensions": {
+        "objective_clarity": {
+          "band": 3,
+          "cited": true,
+          "note": "The excerpt explicitly lists objectives that are student-facing, specific (e.g., 'Construct an equation in point-slope form'), and purposeful for learning the concept; thus it meets clarity criteria at exemplary level.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk7of17-e6-split4",
+              "excerpt": "OBJECTIVES\n\u2022 Use the slope formula to derive the point-slope form of a linear equation.\n\u2022 Construct an equation in point-slope form to model a linear relationship between two quantities."
+            }
+          ]
+        },
+        "engagement": {
+          "band": 2,
+          "cited": true,
+          "note": "The opening task directly connects draining a swimming pool\u2014a relatable real-world context\u2014to writing linear equations, showing purposeful engagement with students' prior knowledge of rates and initial values before formal instruction begins.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk7of17-e6-split3",
+              "excerpt": "Students write equations to represent the water level as three pools are drained. The rate and initial value are provided for one pool, and the water level at three distinct times are provided for the other pool."
+            }
+          ]
+        },
+        "checks_for_understanding": {
+          "band": 2,
+          "cited": true,
+          "note": "This excerpt explicitly asks students to interpret the origin and identify slope (rate of change) and y\u2011intercept, providing a clear formative check on understanding these concepts.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk17of17-e5-split2",
+              "excerpt": "The y-intercept for Miguel\u2019s bank account is 0. This means he started his bank account with $0."
+            }
+          ]
+        },
+        "differentiation_supports": {
+          "band": 2,
+          "cited": true,
+          "note": "The excerpt explicitly lists materials (graph paper with specific scaling) and a differentiation strategy offering just-in-time support through these visual aids, directly addressing varied learner needs by providing concrete scaffolding for graph interpretation.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk7of17-e4-split4",
+              "excerpt": "Provide six graphs scaled from 212 to 12 on both axes so they can graph the points to help determine or check their answers."
+            }
+          ]
+        },
+        "cognitive_rigor": {
+          "band": 3,
+          "cited": true,
+          "note": "The lesson explicitly requires students to use the slope formula to derive and construct equations in point\u2011slope form, moving beyond recall into application/analysis as demanded by DOK/EQuIP rigor.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk7of17-e6-split4",
+              "excerpt": "Use the slope formula to derive the point-slope form of a linear equation."
+            }
+          ]
+        },
+        "coherent_sequence_closure": {
+          "band": 1,
+          "cited": false,
+          "note": "The lesson lacks a clear closure that consolidates learning; there is no explicit final activity or summary explicitly linking back to objectives, and the provided excerpts end with procedural steps rather than a purposeful consolidation.",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L5",
+      "title": "Algebra I Math Teacher Edition Volume 1 Module 2 \u2014 Lesson 5",
+      "elements": 17,
+      "mean_band": 2.33,
+      "cited": 6,
+      "n_criteria": 6,
+      "model_calls": 6,
+      "dimensions": {
+        "objective_clarity": {
+          "band": 3,
+          "cited": true,
+          "note": "The excerpt explicitly states the objective to write linear equations in standard form (A x + By = C) as part of TEKS A.2B, directly naming 'standard form' and linking it to writing such equations.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk8of17-e9",
+              "excerpt": "write linear equations in two variables given a table of values, a graph, and a verbal description."
+            }
+          ]
+        },
+        "engagement": {
+          "band": 2,
+          "cited": true,
+          "note": "The opening task explicitly asks students to read the introduction aloud and discuss it as a class, directly engaging them with new content before practice.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk8of17-e3",
+              "excerpt": "Using Point-Slope Form to Graph a Line\nFacilitation Notes\nIn this activity, students learn through written steps how to graph equations written in point-slope form. They graph lines from equations written in point-slope form and from a context that can be modeled using point-slope form without creat"
+            }
+          ]
+        },
+        "checks_for_understanding": {
+          "band": 2,
+          "cited": true,
+          "note": "The excerpt explicitly describes using questions as formative checks that inform instruction, aligning with Danielson 3d and the 5E Evaluate dimension by linking assessment evidence to scheduling decisions.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk8of17-e8-split3",
+              "excerpt": "Questions 1\u20133 present an opportunity to assess students\u2019 understanding of the essential content of the lesson. Use student responses to determine when to schedule Learning Individually Days."
+            }
+          ]
+        },
+        "differentiation_supports": {
+          "band": 2,
+          "cited": true,
+          "note": "The excerpt provides explicit instructions for graphing linear equations, including how to plot points and use slope to locate additional points on the coordinate plane, directly supporting varied learners with clear procedural guidance.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk8of17-e5-split1",
+              "excerpt": "Use a straightedge to draw your lines."
+            }
+          ]
+        },
+        "cognitive_rigor": {
+          "band": 3,
+          "cited": true,
+          "note": "The excerpt explicitly lists writing equations in standard form (Ax+By=C) as a required skill aligned with TEKS A.2B, directly addressing the cognitive demand of applying knowledge to produce equations beyond simple recall.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk8of17-e9",
+              "excerpt": "The student is expected to: \n      \u0007A.2B write linear equations in two variables in various forms, including \u200by = mx + b\u200b, \u200bAx + By = C\u200b, and y - y1 = m(x - x1)\u200b, given one point and the slope and given two points."
+            }
+          ]
+        },
+        "coherent_sequence_closure": {
+          "band": 2,
+          "cited": true,
+          "note": "The excerpt explicitly lists closure activities such as communicating objectives, tapping prior knowledge with an essential question, and discussing advantages/disadvantages of forms\u2014directly aligning with Danielson 3c\u2019s requirement for purposeful consolidation ending the lesson.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk8of17-e13",
+              "excerpt": "Using Linear Equations\n\u2022 Communicate the objectives and new key terms to look for.\n\u2022 Tap into your students\u2019 prior learning by reading the narrative statement.\n\u2022 Provide a sense of direction by reading the Essential Question."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "lesson_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf__L6",
+      "title": "Algebra I Math Teacher Edition Volume 1 Module 2 \u2014 Lesson 6",
+      "elements": 23,
+      "mean_band": 2.0,
+      "cited": 4,
+      "n_criteria": 6,
+      "model_calls": 6,
+      "dimensions": {
+        "objective_clarity": {
+          "band": 2,
+          "cited": true,
+          "note": "This excerpt explicitly defines the dimension of clarity by stating that students must use mathematical processes, directly aligning with the purpose of clear learning objectives in EQuIP criteria.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk9of17-e5-split1",
+              "excerpt": "The student uses mathematical processes to acquire and demonstrate mathematical understanding."
+            }
+          ]
+        },
+        "engagement": {
+          "band": 2,
+          "cited": false,
+          "note": "The opening task asks students to analyze scenarios, equations, tables, and graphs to determine whether they represent linear functions. This directly engages them by connecting prior knowledge of patterns and relationships to a concrete mathematical context.",
+          "evidence": []
+        },
+        "checks_for_understanding": {
+          "band": 2,
+          "cited": true,
+          "note": "The excerpt explicitly describes formative checks where students must decide if given tables represent linear functions, directly assessing their understanding through evaluation tasks aligned with the 'Checks for understanding' dimension.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk9of17-e5-split3",
+              "excerpt": "Students determine whether tables of values with non-consecutive input values represent linear functions. They evaluate functions and analyze Worked Examples that demonstrate how to solve equations algebraically and graphically."
+            }
+          ]
+        },
+        "differentiation_supports": {
+          "band": 1,
+          "cited": false,
+          "note": "The lesson text contains no explicit mention of ELPS, SpEd/504 accommodations, GT extensions, or any concrete language supports for varied learners; it only references general differentiation strategies like 'Just in Time Support' without detailing specific scaffolds.",
+          "evidence": []
+        },
+        "cognitive_rigor": {
+          "band": 3,
+          "cited": true,
+          "note": "The excerpt explicitly requires students to analyze graphs of linear functions by identifying intercepts, zeros, and slope\u2014directly demanding interpretation beyond recall toward analysis aligned with DOK expectations for Algebra I standards.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk9of17-e5-split2",
+              "excerpt": "A.3C graph linear functions on the coordinate plane and identify key features, including x-intercept, y-intercept, zeros, and slope, in mathematical and real-world problems."
+            }
+          ]
+        },
+        "coherent_sequence_closure": {
+          "band": 2,
+          "cited": true,
+          "note": "The lesson explicitly instructs students to 'sketch a graph' as part of solving problems, demonstrating purposeful sequencing from practice toward closure by requiring graphical representation that consolidates learning before moving to application questions.",
+          "evidence": [
+            {
+              "element_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf-chunk11of17-e4",
+              "excerpt": "For each scenario, write a linear function in factored form and in general form. Then, sketch a graph and label the x- and y-intercepts."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
