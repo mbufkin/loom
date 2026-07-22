@@ -1,0 +1,48 @@
+# Artifact spec: PROJECT / PERFORMANCE TASK.
+#
+# WHY / PROVENANCE
+# Framework: UbD "authentic performance task" (Wiggins & McTighe) — a project should
+# ask students to APPLY the unit's learning to a genuine task, aligned to the
+# objective/standard. We audit that a task/deliverable is described and (advisory)
+# that it targets the anchored objective.
+#
+# HOW IT SCORES
+# presence GATES on a task being described; alignment ADVISES on objective alignment.
+
+version: "v1-projectwork-2026-07"
+rubric_id: artifact_project_work
+role: project_work
+title: "Project / performance task"
+framework: "UbD authentic performance task"
+scoring: presence
+auditor_only: true
+
+criteria:
+  - id: has_task
+    label: Task / deliverable described
+    description: A clear thing students produce or perform (a product, presentation, build).
+    evidence_element_types: [independent_practice, guided_practice, logistics_materials]
+    keywords: [create, design, build, produce, present, project, deliverable, make, plan]
+    required: true
+
+  - id: has_directions
+    label: Directions / requirements
+    description: Steps, requirements, or constraints so students know what "done" is.
+    evidence_element_types: [logistics_materials, direct_instruction]
+    keywords: [requirements, steps, must include, directions, checklist, due, criteria]
+    required: false
+
+alignment:
+  framework: "UbD performance task alignment"
+  band_scale:
+    0: "Cannot tell / task unrelated to the objective."
+    1: "Task touches the topic but not the specific objective."
+    2: "Task partially applies the objective."
+    3: "Task authentically applies the anchored objective's learning."
+  criteria:
+    - id: task_aligned
+      label: Task applies the objective
+      description: >
+        The deliverable requires the knowledge/skill in the anchor objective (or
+        cited TEKS) — genuine application, not a themed activity beside it.
+      reads_from: [independent_practice, guided_practice, standards_objectives]

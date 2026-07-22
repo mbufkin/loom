@@ -120,6 +120,72 @@ export interface LessonFeedback {
   units: Record<string, LessonFeedbackLesson[]>;
 }
 
+// Artifact rung (layer_artifact/ARTIFACT-RUNG.json) — the Paths B/C non-lesson
+// review, grouped by unit_id so the unit panel can list its own documents and drill
+// into a per-doc review (presence gate + advisory alignment, both evidence-cited).
+export interface ArtifactCriterion {
+  criterion_id: string;
+  label: string;
+  scoring: string;
+  verdict?: string | null;
+  band?: number | null;
+  evidence: { element_id: string; excerpt: string }[];
+  note: string;
+}
+export interface ArtifactDoc {
+  doc_id: string;
+  unit_id: string;
+  title: string;
+  source_file?: string | null;
+  role: string;
+  doc_type: string;
+  is_fallback?: boolean;
+  nursery?: boolean;
+  presence: {
+    gate_pass: boolean;
+    coverage: number | null;
+    missing_required: string[];
+    criteria: ArtifactCriterion[];
+  };
+  alignment?: {
+    applicable: boolean;
+    cannot_assess: boolean;
+    skipped: boolean;
+    mean_band: number | null;
+    max_band: number | null;
+    anchor_kind: string | null;
+    error: string | null;
+    criteria: ArtifactCriterion[];
+  } | null;
+}
+export interface ArtifactUnit {
+  artifact_count: number;
+  gate_pass_count: number;
+  gate_pass_rate: number;
+  roles: Record<string, number>;
+  deterministic_gaps: {
+    doc_id: string;
+    role: string;
+    title: string;
+    missing_required: string[];
+  }[];
+  has_artifact_gap: boolean;
+  cannot_assess_alignment: number;
+  documents: ArtifactDoc[];
+}
+export interface ArtifactRung {
+  project_id?: string;
+  with_model?: boolean;
+  summary?: {
+    artifact_count: number;
+    gate_pass_count: number;
+    unit_count: number;
+    roles: Record<string, number>;
+    nursery_count: number;
+  };
+  units: Record<string, ArtifactUnit>;
+}
+
 export interface RunStatus {
   runId: string;
   status: "running" | "done" | "error";

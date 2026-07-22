@@ -65,6 +65,17 @@ class LessonInput:
     title: str
     elements: list[LessonElement] = field(default_factory=list)
     path_a: dict | None = None
+    # Optional artifact-review context, ignored by the lesson scorers. `doc_type`
+    # selects the per-type artifact spec (workflows/rubrics/artifacts/<type>.yaml)
+    # and `anchor` is the alignment target (the unit's objective/TEKS) resolved by
+    # the artifact rung. Kept on this dataclass so the SAME Scorer interface serves
+    # both lessons and non-lesson artifacts — `ArtifactInput` below is an alias.
+    doc_type: str = ""
+    anchor: dict | None = None
+    # Project-relative path to the raw source text (e.g. "sources/doc_…txt"). Pure
+    # metadata (never scored) — carried so the review UI can show the actual document
+    # beneath a per-doc review, like the lesson source panel.
+    source_file: str | None = None
 
     def element_types(self) -> set[str]:
         """Every instructional-function token present across this lesson (handles
@@ -210,3 +221,84 @@ def summarize_bands(criteria: list[CriterionResult], max_band: int = 3) -> dict:
         "unevidenced_bands": unevidenced,
         "criteria_scored": len(scored),
     }
+
+
+def presence_result(subject: LessonInput, rubric: dict, scorer_id: str) -> ScorerResult:
+    """Generic deterministic presence scoring, shared by the lesson completeness
+    scorers (S1/S3) and the artifact presence scorer. Each criterion is decided
+    PRESENT / PARTIAL / MISSING from the subject's own Layer 0 element types, with a
+    keyword excerpt match as a weaker PARTIAL signal. No model call — completeness is
+    a fact, not a judgment (Bet 0). `subject` is any LessonInput/ArtifactInput.
+
+    A criterion is PRESENT when an element carries one of its `evidence_element_types`;
+    PARTIAL when only a `keywords` hit is found (content hinted but not tagged as the
+    real structural part); MISSING otherwise. `required: true` criteria drive the
+    `gate_pass` boolean a downstream rung can trust."""
+    crits: list[CriterionResult] = []
+    for c in rubric["criteria"]:
+        etypes = c.get("evidence_element_types") or []
+        keywords = [k.lower() for k in (c.get("keywords") or [])]
+        label = c.get("label", c["id"])
+        matched = subject.elements_of_type(*etypes) if etypes else []
+        if matched:
+            crits.append(
+                CriterionResult(
+                    c["id"],
+                    label,
+                    "presence",
+                    verdict=PRESENT,
+                    evidence=[Evidence(matched[0].element_id, matched[0].excerpt)],
+                )
+            )
+            continue
+        kw_hit = None
+        if keywords:
+            for el in subject.elements:
+                ex = (el.excerpt or "").lower()
+                if any(k in ex for k in keywords):
+                    kw_hit = el
+                    break
+        if kw_hit is not None:
+            crits.append(
+                CriterionResult(
+                    c["id"],
+                    label,
+                    "presence",
+                    verdict=PARTIAL,
+                    evidence=[Evidence(kw_hit.element_id, kw_hit.excerpt)],
+                    note="keyword match only; no element tagged with the expected type",
+                )
+            )
+        else:
+            crits.append(CriterionResult(c["id"], label, "presence", verdict=MISSING))
+
+    summary = summarize_presence(crits)
+    by_id = {cr.criterion_id: cr for cr in crits}
+    required = [c["id"] for c in rubric["criteria"] if c.get("required")]
+    summary["required_total"] = len(required)
+    summary["required_present"] = sum(
+        1 for r in required if by_id[r].verdict == PRESENT
+    )
+    # The gate a downstream rung can trust: every REQUIRED part is present. The
+    # labels of the required parts that are NOT fully present are the structural
+    # gaps a rung can name to a reviewer (kept here so callers don't re-derive them).
+    summary["gate_pass"] = all(by_id[r].verdict == PRESENT for r in required)
+    summary["missing_required"] = [
+        by_id[r].label for r in required if by_id[r].verdict != PRESENT
+    ]
+    return ScorerResult(
+        scorer_id=scorer_id,
+        rubric_id=rubric["rubric_id"],
+        rubric_version=rubric["version"],
+        scoring="presence",
+        lesson_id=subject.lesson_id,
+        criteria=crits,
+        summary=summary,
+        cost={"model_calls": 0},
+    )
+
+
+# `ArtifactInput` is the same shape as a lesson input — a doc's Layer 0 elements,
+# its unit, plus the optional doc_type/anchor set for the artifact review. Aliased
+# (not subclassed) so scorers and helpers accept either without isinstance games.
+ArtifactInput = LessonInput

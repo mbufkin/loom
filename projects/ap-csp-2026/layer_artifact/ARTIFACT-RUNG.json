@@ -1,0 +1,95 @@
+{
+  "project_id": "ap-csp-2026",
+  "presence_scorer": "artifact_presence",
+  "alignment_scorer": null,
+  "with_model": false,
+  "summary": {
+    "artifact_count": 1,
+    "gate_pass_count": 1,
+    "gate_pass_rate": 1.0,
+    "unit_count": 1,
+    "roles": {
+      "other": 1
+    },
+    "nursery_count": 1
+  },
+  "units": {
+    "creative-development": {
+      "artifact_count": 1,
+      "gate_pass_count": 1,
+      "gate_pass_rate": 1.0,
+      "roles": {
+        "other": 1
+      },
+      "deterministic_gaps": [],
+      "has_artifact_gap": false,
+      "cannot_assess_alignment": 0,
+      "documents": [
+        {
+          "doc_id": "ap-csp-ced.pdf",
+          "unit_id": "creative-development",
+          "title": "ap-csp-ced",
+          "source_file": "sources/ap-csp-ced.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "ap-csp-ced.pdf-chunk1of7-e1",
+                    "excerpt": "\nDigital Activation\nIn order to teach an AP class and make sure students are registered to take the AP Exam,\nteachers\u0007must\u0007first\u0007complete\u0007the\u0007digital\u0007activation\u0007process.\u0007Digital\u0007activation\u0007gives\u0007students\u0007\nand teachers access to the available resources and gathers students\u2019 exam registration\ninformation online, eliminating most of the answer sheet bubbling that has added to testing\ntime and fatigue"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "artifacts": [
+    {
+      "doc_id": "ap-csp-ced.pdf",
+      "unit_id": "creative-development",
+      "title": "ap-csp-ced",
+      "source_file": "sources/ap-csp-ced.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "ap-csp-ced.pdf-chunk1of7-e1",
+                "excerpt": "\nDigital Activation\nIn order to teach an AP class and make sure students are registered to take the AP Exam,\nteachers\u0007must\u0007first\u0007complete\u0007the\u0007digital\u0007activation\u0007process.\u0007Digital\u0007activation\u0007gives\u0007students\u0007\nand teachers access to the available resources and gathers students\u2019 exam registration\ninformation online, eliminating most of the answer sheet bubbling that has added to testing\ntime and fatigue"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    }
+  ]
+}

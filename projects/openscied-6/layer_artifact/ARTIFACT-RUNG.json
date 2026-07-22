@@ -1,0 +1,95 @@
+{
+  "project_id": "openscied-6",
+  "presence_scorer": "artifact_presence",
+  "alignment_scorer": null,
+  "with_model": false,
+  "summary": {
+    "artifact_count": 1,
+    "gate_pass_count": 1,
+    "gate_pass_rate": 1.0,
+    "unit_count": 1,
+    "roles": {
+      "other": 1
+    },
+    "nursery_count": 1
+  },
+  "units": {
+    "6.2-thermal-energy": {
+      "artifact_count": 1,
+      "gate_pass_count": 1,
+      "gate_pass_rate": 1.0,
+      "roles": {
+        "other": 1
+      },
+      "deterministic_gaps": [],
+      "has_artifact_gap": false,
+      "cannot_assess_alignment": 0,
+      "documents": [
+        {
+          "doc_id": "6.2-te.pdf",
+          "unit_id": "6.2-thermal-energy",
+          "title": "6.2-te",
+          "source_file": "sources/6.2-te.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "6.2-te.pdf-chunk1of15-e1",
+                    "excerpt": "How can containers keep stuff from\nwarming up or cooling down?\nThermal Energy: Cup Design\nOpenSciEd Unit 6.2\n\n\nVersion 1.0 - Copyright \u00a9 2022 OpenSciEd\nLicensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).\nThe OpenSciEd name and logo are not subject to the Creative Commons license and may not be used without the prior and express written consent of OpenSciEd. The\nN"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "artifacts": [
+    {
+      "doc_id": "6.2-te.pdf",
+      "unit_id": "6.2-thermal-energy",
+      "title": "6.2-te",
+      "source_file": "sources/6.2-te.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "6.2-te.pdf-chunk1of15-e1",
+                "excerpt": "How can containers keep stuff from\nwarming up or cooling down?\nThermal Energy: Cup Design\nOpenSciEd Unit 6.2\n\n\nVersion 1.0 - Copyright \u00a9 2022 OpenSciEd\nLicensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).\nThe OpenSciEd name and logo are not subject to the Creative Commons license and may not be used without the prior and express written consent of OpenSciEd. The\nN"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    }
+  ]
+}

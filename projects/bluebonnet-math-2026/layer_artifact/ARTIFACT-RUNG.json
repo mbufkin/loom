@@ -1,0 +1,3583 @@
+{
+  "project_id": "bluebonnet-math-2026",
+  "presence_scorer": "artifact_presence",
+  "alignment_scorer": null,
+  "with_model": false,
+  "summary": {
+    "artifact_count": 56,
+    "gate_pass_count": 56,
+    "gate_pass_rate": 1.0,
+    "unit_count": 7,
+    "roles": {
+      "other": 56
+    },
+    "nursery_count": 56
+  },
+  "units": {
+    "(unlinked)": {
+      "artifact_count": 23,
+      "gate_pass_count": 23,
+      "gate_pass_rate": 1.0,
+      "roles": {
+        "other": 23
+      },
+      "deterministic_gaps": [],
+      "has_artifact_gap": false,
+      "cannot_assess_alignment": 0,
+      "documents": [
+        {
+          "doc_id": "K-5_Math_Component_Navigation_Guide.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Component Navigation Guide",
+          "source_file": "sources/K-5_Math_Component_Navigation_Guide.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Component_Navigation_Guide.pdf-e1",
+                    "excerpt": "Product Design\nAlignment to TEKS and Student Learning Research\nThe K\u20135 Math instructional materials align with the TEKS and the ELPS, as well as with student learning\nresearch. The modules and lessons are strategically and coherently sequenced to build upon learning\nwithin modules and across grades. All students are working on grade-level tasks, and time and effort are\nconcentrated on going deep o"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Family_Guide.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Family Guide",
+          "source_file": "sources/K-5_Math_Family_Guide.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Family_Guide.pdf-e1",
+                    "excerpt": "Tips for Families\nKey Concepts Overview\nFocus TEKS: K.2A, K.2B, K.2C, K.2D, K.2E, K.2F, K.2I, K.8A\nIn Module 1, students observe their world and begin to compare and classify objects. They focus on ordering,\ncounting, and writing numbers to represent up to 10 objects to answer how many questions. Your student\nwill:\n\u2b1c\n\n\u2b1c\n\n\u2b1c\n\n\u2b1c\n\nClassify, count, and sort objects, match pairs of objects according to "
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Grade_5_Course_Guide.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Grade 5 Course Guide",
+          "source_file": "sources/K-5_Math_Grade_5_Course_Guide.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Grade_5_Course_Guide.pdf-chunk1of4-e1",
+                    "excerpt": "GRADE 5 COURSE GUIDE\n\nIntroduction..................................................................................................................... 2\nProfile of a Grade 5 Math Learner....................................................................................2\nCulture of Learning in Grade 5.........................................................................................3\nCollab"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Grade_5_Manipulatives_Kit.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Grade 5 Manipulatives Kit",
+          "source_file": "sources/K-5_Math_Grade_5_Manipulatives_Kit.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Grade_5_Manipulatives_Kit.pdf-e1",
+                    "excerpt": "Two-Color Counters,\nWhole Number Place\nValue Cards, Decimal\nPlace Value Cards,\nCentimeter Cubes, Tape\nMeasure, Graduated\nManipulatives Cylinder, 5 1/2\" x 5 1/2\"\nPatty Paper, Ruler, 6\"\nProtractor, 4\" Protractor,\nOpen Center, Whole\nNumber Place Value\nDisks, Base Ten Blocks,\nInch Tiles, Set Squares.\n\nEach\ncomplet\ne kit\nincludes\nenough\nmaterial\ns for a\nclass of\n24\nstudents\n.\n\nThe complete manipulative"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Grade 5 Module 1 Learn Place Value and Decimals Student Edition",
+          "source_file": "sources/K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition.pdf-chunk1of2-e1",
+                    "excerpt": "Learn, Grade 5, Module 1: Place Value and Decimals, Lesson 1 to 15"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Grade 5 Module 1 Practice Place Value and Decimals Student Edition",
+          "source_file": "sources/K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition.pdf-e1",
+                    "excerpt": "Practice, Grade 5, Module 1: Place Value and Decimals, Lesson 1, 4, 6, 8, 11, 12"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Grade 5 Module 1 Succeed Place Value and Decimals Student Edition",
+          "source_file": "sources/K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition.pdf-chunk1of2-e1",
+                    "excerpt": "Succeed, Grade 5, Module 1: Place Value and Decimals, Lesson 1 to 15\n\nEDITION 1"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Grade_5_Module_2_Learn_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Grade 5 Module 2 Learn Multi-Digit Whole Number and Decimal Operations Student Edition",
+          "source_file": "sources/K-5_Math_Grade_5_Module_2_Learn_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Grade_5_Module_2_Learn_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf-chunk2of3-e1",
+                    "excerpt": "Fluently multiply multi-digit whole numbers using the standard\nalgorithm and using estimation to check for reasonableness of the\nproduct."
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Grade_5_Module_2_Practice_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Grade 5 Module 2 Practice Multi-Digit Whole Number and Decimal Operations Student Edition",
+          "source_file": "sources/K-5_Math_Grade_5_Module_2_Practice_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Grade_5_Module_2_Practice_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf-e1",
+                    "excerpt": "34.\n\n942 \u00d7 1,000 =\n\n13.\n\n3 \u00d7 10 =\n\n35.\n\n74 \u00d7 10 =\n\n14.\n\n20 \u00d7 10 =\n\n36.\n\n269 \u00d7 10 =\n\n15.\n\n23 \u00d7 10 =\n\n37.\n\n49 \u00d7 100 =\n\n16.\n\n5 \u00d7 10 =\n\n38.\n\n328 \u00d7 100 =\n\n17.\n\n40 \u00d7 10 =\n\n39.\n\n37 \u00d7 1,000 =\n\n18.\n\n45 \u00d7 10 =\n\n40.\n\n924 \u00d7 1,000 =\n\n19.\n\n73 \u00d7 10 =\n\n41.\n\n147 \u00d7 100 =\n\n20.\n\n48 \u00d7 10 =\n\n42.\n\n825 \u00d7 1,000 =\n\n21.\n\n48 \u00d7 100 =\n\n43.\n\n651 \u00d7 100 =\n\n22."
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Grade_5_Module_2_Succeed_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Grade 5 Module 2 Succeed Multi-Digit Whole Number and Decimal Operations Student Edition",
+          "source_file": "sources/K-5_Math_Grade_5_Module_2_Succeed_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Grade_5_Module_2_Succeed_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf-chunk1of4-e1",
+                    "excerpt": "Grade 5\nModule 2\n\nSUCCEED\nMULTI-DIGIT WHOLE NUMBER AND\nDECIMAL OPERATIONS\nSTUDENT EDITION"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Grade_5_Module_3_Learn_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Grade 5 Module 3 Learn Addition and Subtraction of Fractions Student Edition",
+          "source_file": "sources/K-5_Math_Grade_5_Module_3_Learn_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Grade_5_Module_3_Learn_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf-e1",
+                    "excerpt": "Learn, Grade 5, Module 3: Addition and Subtraction of Fractions, Lesson 1 to 14"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Grade_5_Module_3_Practice_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Grade 5 Module 3 Practice Addition and Subtraction of Fractions Student Edition",
+          "source_file": "sources/K-5_Math_Grade_5_Module_3_Practice_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Grade_5_Module_3_Practice_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf-e1",
+                    "excerpt": "Practice, Grade 5, Module 3: Addition and Subtraction of Fractions, Lesson 1, 3, 5, 7, 8, 10, 12 and 13"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Grade_5_Module_3_Succeed_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Grade 5 Module 3 Succeed Addition and Subtraction of Fractions Student Edition",
+          "source_file": "sources/K-5_Math_Grade_5_Module_3_Succeed_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Grade_5_Module_3_Succeed_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf-chunk1of2-e1",
+                    "excerpt": "Grade 5\nModule 3\n\nSUCCEED\nADDITION AND SUBTRACTION OF FRACTIONS\nSTUDENT EDITION"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Grade_5_Module_4_Learn_Multiplication_and_Division_of_Fractions_Student_Edition.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Grade 5 Module 4 Learn Multiplication and Division of Fractions Student Edition",
+          "source_file": "sources/K-5_Math_Grade_5_Module_4_Learn_Multiplication_and_Division_of_Fractions_Student_Edition.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Grade_5_Module_4_Learn_Multiplication_and_Division_of_Fractions_Student_Edition.pdf-chunk1of3-e1",
+                    "excerpt": "Grade 5\nModule 4\n\nLEARN\nMULTIPLICATION AND DIVISION OF FRACTIONS\nSTUDENT EDITION\n\n\nLearn\n\nK\u20135 Math\nGrade 5\nModule 4\nMULTIPLICATION AND DIVISION\nOF FRACTIONS\n\n\nAcknowledgment\nThank you to all the Texas educators and stakeholders who supported the review process and provided\nfeedback. These materials are the result of the work of numerous individuals, and we are deeply grateful\nfor their contributio"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Grade_5_Module_4_Practice_Multiplication_and_Division_of_Fractions_Student_Edition.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Grade 5 Module 4 Practice Multiplication and Division of Fractions Student Edition",
+          "source_file": "sources/K-5_Math_Grade_5_Module_4_Practice_Multiplication_and_Division_of_Fractions_Student_Edition.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Grade_5_Module_4_Practice_Multiplication_and_Division_of_Fractions_Student_Edition.pdf-e1",
+                    "excerpt": "Grade 5\nModule 4\n\nPRACTICE\nMULTIPLICATION AND DIVISION OF FRACTIONS\nSTUDENT EDITION"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Grade_5_Module_4_Succeed_Multiplication_and_Division_of_Fractions_Student_Edition.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Grade 5 Module 4 Succeed Multiplication and Division of Fractions Student Edition",
+          "source_file": "sources/K-5_Math_Grade_5_Module_4_Succeed_Multiplication_and_Division_of_Fractions_Student_Edition.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Grade_5_Module_4_Succeed_Multiplication_and_Division_of_Fractions_Student_Edition.pdf-chunk2of3-e1",
+                    "excerpt": "Lesson 11 Homework\n\nName\n\n5\u20224\n\nDate\n\n1. Convert. Show your work using a strip diagram or an equation. The first one is done for you.\n9\na. 14 yard = ________\ninches\n\nb.\n\n1\nyard = 4 \u00d7 1 yard\n4\n1\n\n= 4 \u00d7 36 inches\n36\n\n= 4 inches\n= 9 inches"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Grade_5_Module_5_Learn_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Grade 5 Module 5 Learn Addition and Multiplication with Volume and Area Student Edition",
+          "source_file": "sources/K-5_Math_Grade_5_Module_5_Learn_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Grade_5_Module_5_Learn_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf-chunk1of2-e1",
+                    "excerpt": "Grade 5\nModule 5\n\nLEARN\nADDITION AND MULTIPLICATION WITH\nVOLUME AND AREA\nSTUDENT EDITION"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Grade_5_Module_5_Practice_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Grade 5 Module 5 Practice Addition and Multiplication with Volume and Area Student Edition",
+          "source_file": "sources/K-5_Math_Grade_5_Module_5_Practice_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Grade_5_Module_5_Practice_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf-e1",
+                    "excerpt": "Contents\nModule 5: Addition and Multiplication with Volume and Area\nLesson 17: Divide Whole Numbers by Fractions and Fractions by Whole Numbers Sprint  .  .  .  .  .  .  .  .  .  .\n\n3\n\nLesson 19: Multiply by Multiples of 10 and 100 Sprint  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .\n\n7"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Grade_5_Module_5_Succeed_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Grade 5 Module 5 Succeed Addition and Multiplication with Volume and Area Student Edition",
+          "source_file": "sources/K-5_Math_Grade_5_Module_5_Succeed_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Grade_5_Module_5_Succeed_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf-chunk1of2-e1",
+                    "excerpt": "Grade 5\nModule 5\n\nSUCCEED\nADDITION AND MULTIPLICATION WITH\nVOLUME AND AREA\nSTUDENT EDITION"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Grade_5_Module_6_Learn_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Grade 5 Module 6 Learn Problem Solving with the Coordinate Plane and Data Student Edition",
+          "source_file": "sources/K-5_Math_Grade_5_Module_6_Learn_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Grade_5_Module_6_Learn_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf-chunk1of4-e1",
+                    "excerpt": "Learn, Grade 5, Module 6: Problem Solving with the Coordinate Plane and Data, Lesson 1 to 34"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Grade_5_Module_6_Practice_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Grade 5 Module 6 Practice Problem Solving with the Coordinate Plane and Data Student Edition",
+          "source_file": "sources/K-5_Math_Grade_5_Module_6_Practice_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Grade_5_Module_6_Practice_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf-e1",
+                    "excerpt": "Practice, Grade 5, Module 6: Problem Solving with the Coordinate Plane and Data, Lesson 8, 12, 13, 21, 25 and 29"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Grade_5_Module_6_Succeed_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Grade 5 Module 6 Succeed Problem Solving with the Coordinate Plane and Data Student Edition",
+          "source_file": "sources/K-5_Math_Grade_5_Module_6_Succeed_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Grade_5_Module_6_Succeed_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf-chunk1of3-e1",
+                    "excerpt": "Succeed, Grade 5, Module 6: Problem Solving with the Coordinate Plane and Data, Lesson 1 to 33"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "K-5_Math_Program_and_Implementation_Guide.pdf",
+          "unit_id": "(unlinked)",
+          "title": "K-5 Math Program and Implementation Guide",
+          "source_file": "sources/K-5_Math_Program_and_Implementation_Guide.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "K-5_Math_Program_and_Implementation_Guide.pdf-chunk1of8-e1",
+                    "excerpt": "1\n\n\nBLUEBONNET LEARNING K\u20135 MATH\n\nImplementation Guide\n\nK\u20135\n\nIntroduction\nThe K\u20135 Math instructional materials are a comprehensive and clearly sequenced suite of materials that\nprovides teachers with the knowledge and tools outlined in the Texas Essential Knowledge and Skills (TEKS)\nand guides students to be thinkers and doers of mathematics.\nOne key feature of these high-quality instructional mat"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "alg1-mod-1": {
+      "artifact_count": 1,
+      "gate_pass_count": 1,
+      "gate_pass_rate": 1.0,
+      "roles": {
+        "other": 1
+      },
+      "deterministic_gaps": [],
+      "has_artifact_gap": false,
+      "cannot_assess_alignment": 0,
+      "documents": [
+        {
+          "doc_id": "Algebra_I_Math_Student_Edition_Volume_1_Module_1.pdf",
+          "unit_id": "alg1-mod-1",
+          "title": "Algebra I Math Student Edition Volume 1 Module 1",
+          "source_file": "sources/Algebra_I_Math_Student_Edition_Volume_1_Module_1.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_I_Math_Student_Edition_Volume_1_Module_1.pdf-chunk1of4-e1",
+                    "excerpt": "ALGEBRA I\n\n1"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "alg1-mod-2": {
+      "artifact_count": 1,
+      "gate_pass_count": 1,
+      "gate_pass_rate": 1.0,
+      "roles": {
+        "other": 1
+      },
+      "deterministic_gaps": [],
+      "has_artifact_gap": false,
+      "cannot_assess_alignment": 0,
+      "documents": [
+        {
+          "doc_id": "Algebra_I_Math_Student_Edition_Volume_1_Module_2.pdf",
+          "unit_id": "alg1-mod-2",
+          "title": "Algebra I Math Student Edition Volume 1 Module 2",
+          "source_file": "sources/Algebra_I_Math_Student_Edition_Volume_1_Module_2.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_I_Math_Student_Edition_Volume_1_Module_2.pdf-chunk1of6-e1-split1",
+                    "excerpt": "\nGetting Started\nFrozen Yogurt . . . When It\u2019s Freezing?\nA school\u2019s club for aspiring business leaders is helping a local frozen\nyogurt shop analyze how the business is affected by the weather.\nThe owner is wondering whether there is a relationship between the\ntemperature and the number of customers that buy yogurt during\nthe 2 hours immediately after school. The school\u2019s club collected\nthese data"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "alg1-mod-3": {
+      "artifact_count": 1,
+      "gate_pass_count": 1,
+      "gate_pass_rate": 1.0,
+      "roles": {
+        "other": 1
+      },
+      "deterministic_gaps": [],
+      "has_artifact_gap": false,
+      "cannot_assess_alignment": 0,
+      "documents": [
+        {
+          "doc_id": "Algebra_I_Math_Student_Edition_Volume_1_Module_3.pdf",
+          "unit_id": "alg1-mod-3",
+          "title": "Algebra I Math Student Edition Volume 1 Module 3",
+          "source_file": "sources/Algebra_I_Math_Student_Edition_Volume_1_Module_3.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_I_Math_Student_Edition_Volume_1_Module_3.pdf-chunk2of4-e1",
+                    "excerpt": "c. Graph the function representing this\nsituation on a coordinate plane.\nTotal Cost of Trip (dollars)\n\ny\n320\n240"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "alg1-mod-4": {
+      "artifact_count": 1,
+      "gate_pass_count": 1,
+      "gate_pass_rate": 1.0,
+      "roles": {
+        "other": 1
+      },
+      "deterministic_gaps": [],
+      "has_artifact_gap": false,
+      "cannot_assess_alignment": 0,
+      "documents": [
+        {
+          "doc_id": "Algebra_I_Math_Student_Edition_Volume_2_Module_4.pdf",
+          "unit_id": "alg1-mod-4",
+          "title": "Algebra I Math Student Edition Volume 2 Module 4",
+          "source_file": "sources/Algebra_I_Math_Student_Edition_Volume_2_Module_4.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_I_Math_Student_Edition_Volume_2_Module_4.pdf-chunk1of4-e1",
+                    "excerpt": "512\n\nMODULE 4 \u2022 TOPIC 1 \u2022 LESSON 1\n\n\nAC TI V IT Y\n\n1.1\n\nReview of Powers and Exponents\n\nLucas wants to trace Rickson\u2019s lineage back through all eight\ngenerations. How many sires (male parents) and dams (female\nparents) are there in each generation of Rickson\u2019s lineage?\n1. Complete the second column of the table, Number of Sires and\nDams, to show the total number of dogs in each generation.\nGenerat"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "alg1-mod-5": {
+      "artifact_count": 1,
+      "gate_pass_count": 1,
+      "gate_pass_rate": 1.0,
+      "roles": {
+        "other": 1
+      },
+      "deterministic_gaps": [],
+      "has_artifact_gap": false,
+      "cannot_assess_alignment": 0,
+      "documents": [
+        {
+          "doc_id": "Algebra_I_Math_Student_Edition_Volume_2_Module_5.pdf",
+          "unit_id": "alg1-mod-5",
+          "title": "Algebra I Math Student Edition Volume 2 Module 5",
+          "source_file": "sources/Algebra_I_Math_Student_Edition_Volume_2_Module_5.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_I_Math_Student_Edition_Volume_2_Module_5.pdf-chunk3of7-e1",
+                    "excerpt": "25 50 75 100 125 150\n\n\u221250\n\u221275\n\u2212100"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "alg1-program": {
+      "artifact_count": 28,
+      "gate_pass_count": 28,
+      "gate_pass_rate": 1.0,
+      "roles": {
+        "other": 28
+      },
+      "deterministic_gaps": [],
+      "has_artifact_gap": false,
+      "cannot_assess_alignment": 0,
+      "documents": [
+        {
+          "doc_id": "Algebra_1_Math_Family_Guides.pdf",
+          "unit_id": "alg1-program",
+          "title": "Algebra 1 Math Family Guides",
+          "source_file": "sources/Algebra_1_Math_Family_Guides.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_1_Math_Family_Guides.pdf-chunk2of5-e1",
+                    "excerpt": "OBJECTIVES\n\u2022 Understand quantities and their relationships with each other.\n\u2022 Identify the independent and dependent quantities for\n\nNEW KEY TERMS\n\u2022 dependent quantity\n\u2022 independent quantity\n\na scenario.\n\n1. A builder is designing a rectangular\nparking lot. She has 300 feet of fencing\nto enclose the parking lot around\nthree sides.\n\n2. Aiko is enclosing a new rectangular flower\ngarden with a rabbit"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Algebra_1_Math_Standards_Overview.pdf",
+          "unit_id": "alg1-program",
+          "title": "Algebra 1 Math Standards Overview",
+          "source_file": "sources/Algebra_1_Math_Standards_Overview.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_1_Math_Standards_Overview.pdf-e1",
+                    "excerpt": "\nALGEBRA I STANDARDS OVERVIEW\nTEKS covered at the lesson level are shown in course color. Additional\nTEKS covered in Skills Practice are shown in black.\nLinear Functions,\nEquations, and\nInequalities"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Algebra_I_Math_150-day_Topic_Pacing_Guides.pdf",
+          "unit_id": "alg1-program",
+          "title": "Algebra I Math 150-day Topic Pacing Guides",
+          "source_file": "sources/Algebra_I_Math_150-day_Topic_Pacing_Guides.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_I_Math_150-day_Topic_Pacing_Guides.pdf-chunk1of3-e1",
+                    "excerpt": "1 DAY PACING = 45-MINUTE SESSION\n\nTEKS Mathematical Process Standards: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G\nELPS: 1.A, 1.B, 1.C, 1.E, 1.F, 2.C, 2.E, 2.I, 3.D, 3.E, 3.H, 4.C, 4.E, 4.G, 4.H, 5.B, 5.F\b\n\nIT\nM\nO"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Algebra_I_Math_Assessment_Reflection.pdf",
+          "unit_id": "alg1-program",
+          "title": "Algebra I Math Assessment Reflection",
+          "source_file": "sources/Algebra_I_Math_Assessment_Reflection.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_I_Math_Assessment_Reflection.pdf-e1",
+                    "excerpt": "\nAcknowledgment\nThank you to all the Texas educators and stakeholders who supported\nthe review process and provided feedback. These materials are the\nresult of the work of numerous individuals, and we are deeply grateful\nfor their contributions.\n\nNotice\nThese learning resources have been built for Texas students, aligned to the Texas\nEssential Knowledge and Skills, and are made available pursuant "
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Algebra_I_Math_ELPS_Summary.pdf",
+          "unit_id": "alg1-program",
+          "title": "Algebra I Math ELPS Summary",
+          "source_file": "sources/Algebra_I_Math_ELPS_Summary.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_I_Math_ELPS_Summary.pdf-e1",
+                    "excerpt": "Algebra I\nELPS Summary\n\n\nAcknowledgment\nThank you to all the Texas educators and stakeholders who supported\nthe review process and provided feedback. These materials are the\nresult of the work of numerous individuals, and we are deeply grateful\nfor their contributions.\n\nNotice\nThese learning resources have been built for Texas students, aligned to the Texas\nEssential Knowledge and Skills, and are "
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Algebra_I_Math_Materials_List.pdf",
+          "unit_id": "alg1-program",
+          "title": "Algebra I Math Materials List",
+          "source_file": "sources/Algebra_I_Math_Materials_List.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_I_Math_Materials_List.pdf-e1-split1",
+                    "excerpt": "Algebra Tiles\nCalculators\nChairs\nColored Paper\nColored Pencils\nCourse Guide Resources\nCups\nGlue\nGraph Paper\nHighlighters\nIndex Cards\nLesson-Embedded Resources\nMarkers\nMasking Tape\nMirrors\nModeling Clay\nPatty Paper\nPennies\nPoster Paper\nProblem-Solving Model Graphic Organizer\nScissors\nSticker Dots\nSticky Notes\nStraightedges\nString\nTechnology\nThermometer\nUncooked Pasta\n\nThe Course Materials list prov"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Algebra_I_Math_Problem-Solving_Model_Graphic_Organizer.pdf",
+          "unit_id": "alg1-program",
+          "title": "Algebra I Math Problem-Solving Model Graphic Organizer",
+          "source_file": "sources/Algebra_I_Math_Problem-Solving_Model_Graphic_Organizer.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_I_Math_Problem-Solving_Model_Graphic_Organizer.pdf-e1",
+                    "excerpt": "Algebra I\nProblem-Solving Model\nGraphic Organizer"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Algebra_I_Math_Scope_and_Sequence_150-day.pdf",
+          "unit_id": "alg1-program",
+          "title": "Algebra I Math Scope and Sequence 150-day",
+          "source_file": "sources/Algebra_I_Math_Scope_and_Sequence_150-day.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_I_Math_Scope_and_Sequence_150-day.pdf-chunk2of3-e1",
+                    "excerpt": "Comparing\nLinear\nFunctions\nin Different\nForms\n\nStudents analyze functions represented as tables,\ngraphs, equations, and verbal descriptions.\nThey explore slope with particular attention\nto parallelism and perpendicularity in different\nrepresentations. Students compare properties such\nas slope, y-intercept, and the units for independent\nand dependent quantities, all in terms of the\nsituations they "
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Algebra_I_Math_Scope_and_Sequence_165-day.pdf",
+          "unit_id": "alg1-program",
+          "title": "Algebra I Math Scope and Sequence 165-day",
+          "source_file": "sources/Algebra_I_Math_Scope_and_Sequence_165-day.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_I_Math_Scope_and_Sequence_165-day.pdf-chunk1of3-e1",
+                    "excerpt": "TEKS* Pacing\n\nCreate a classroom of collaboration and establish\nthe learning process as a partnership between you\nand your students.\n\u2022 Communicate continuously with students about\nthe objectives of the lesson to encourage selfmonitoring of their learning.\n\u2022 The problem-solving model involves noticing\npatterns and formulating questions, organizing\ninformation and representing this information\nusing"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Algebra_I_Math_Skills_Practice_Student_Edition.pdf",
+          "unit_id": "alg1-program",
+          "title": "Algebra I Math Skills Practice Student Edition",
+          "source_file": "sources/Algebra_I_Math_Skills_Practice_Student_Edition.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_I_Math_Skills_Practice_Student_Edition.pdf-chunk1of7-e1",
+                    "excerpt": "\nAcknowledgment\nThank you to all the Texas educators and stakeholders who supported\nthe review process and provided feedback. These materials are the\nresult of the work of numerous individuals, and we are deeply grateful\nfor their contributions.\n\nNotice\nThese learning resources have been built for Texas students, aligned to the Texas\nEssential Knowledge and Skills, and are made available pursuant "
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Algebra_I_Math_Student_Edition_Course_Guide.pdf",
+          "unit_id": "alg1-program",
+          "title": "Algebra I Math Student Edition Course Guide",
+          "source_file": "sources/Algebra_I_Math_Student_Edition_Course_Guide.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_I_Math_Student_Edition_Course_Guide.pdf-chunk1of3-e1",
+                    "excerpt": "\nTEKS Mathematical Process Standards\nEffective communication and collaboration are essential skills of\na successful learner. With practice, you can develop the habits of\nmind of a productive mathematical thinker. The \u201cI Can\u201d expectations\nlisted below align with the TEKS mathematical process standards\nand encourage students to develop their mathematical learning\nand understanding.\n\nApply mathematic"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Algebra_I_Math_Student_Edition_Glossary.pdf",
+          "unit_id": "alg1-program",
+          "title": "Algebra I Math Student Edition Glossary",
+          "source_file": "sources/Algebra_I_Math_Student_Edition_Glossary.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_I_Math_Student_Edition_Glossary.pdf-e1",
+                    "excerpt": "absolute minimum\n\nabsolute maximum\nA function has an absolute maximum if there is\na point that has a y-coordinate that is greater\nthan the y-coordinates of every other point on\nthe graph.\nExample\n\nA function has an absolute minimum if there\nis a point that has a y-coordinate that is less\nthan the y-coordinates of every other point on\nthe graph.\nExample\nThe ordered pair (1, 24) is the absolute\nmini"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Algebra_I_Math_Student_Edition_Vol_1.pdf",
+          "unit_id": "alg1-program",
+          "title": "Algebra I Math Student Edition Vol 1",
+          "source_file": "sources/Algebra_I_Math_Student_Edition_Vol_1.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_I_Math_Student_Edition_Vol_1.pdf-chunk1of16-e1",
+                    "excerpt": "\nAcknowledgment\nThank you to all the Texas educators and stakeholders who supported\nthe review process and provided feedback. These materials are the\nresult of the work of numerous individuals, and we are deeply grateful\nfor their contributions.\n\nNotice\nThese learning resources have been built for Texas students, aligned to the Texas\nEssential Knowledge and Skills, and are made available pursuant "
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Algebra_I_Math_Student_Edition_Vol_2.pdf",
+          "unit_id": "alg1-program",
+          "title": "Algebra I Math Student Edition Vol 2",
+          "source_file": "sources/Algebra_I_Math_Student_Edition_Vol_2.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_I_Math_Student_Edition_Vol_2.pdf-chunk1of14-e1",
+                    "excerpt": "\nAcknowledgment\nThank you to all the Texas educators and stakeholders who supported\nthe review process and provided feedback. These materials are the\nresult of the work of numerous individuals, and we are deeply grateful\nfor their contributions.\n\nNotice\nThese learning resources have been built for Texas students, aligned to the Texas\nEssential Knowledge and Skills, and are made available pursuant "
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Algebra_I_Math_TEKS_Summary.pdf",
+          "unit_id": "alg1-program",
+          "title": "Algebra I Math TEKS Summary",
+          "source_file": "sources/Algebra_I_Math_TEKS_Summary.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_I_Math_TEKS_Summary.pdf-e1",
+                    "excerpt": "Algebra I\nTEKS Summary\n\n\nAcknowledgment\nThank you to all the Texas educators and stakeholders who supported\nthe review process and provided feedback. These materials are the\nresult of the work of numerous individuals, and we are deeply grateful\nfor their contributions.\n\nNotice\nThese learning resources have been built for Texas students, aligned to the Texas\nEssential Knowledge and Skills, and are "
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Algebra_I_Math_YAG_150-day.pdf",
+          "unit_id": "alg1-program",
+          "title": "Algebra I Math YAG 150-day",
+          "source_file": "sources/Algebra_I_Math_YAG_150-day.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_I_Math_YAG_150-day.pdf-e1",
+                    "excerpt": "\nALGEBRA I: YEAR-AT-A-GLANCE\nTEKS Mathematical Process Standards are embedded in every module:\nA.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Algebra_I_Math_YAG_165-day.pdf",
+          "unit_id": "alg1-program",
+          "title": "Algebra I Math YAG 165-day",
+          "source_file": "sources/Algebra_I_Math_YAG_165-day.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Algebra_I_Math_YAG_165-day.pdf-e1",
+                    "excerpt": "Algebra I\nYear-at-a-Glance\n165 Day Pacing\n\n\nAcknowledgment\nThank you to all the Texas educators and stakeholders who supported\nthe review process and provided feedback. These materials are the\nresult of the work of numerous individuals, and we are deeply grateful\nfor their contributions.\n\nNotice\nThese learning resources have been built for Texas students, aligned to the Texas\nEssential Knowledge a"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Matematicas_Algebra_I_Gu_a_para_la_Familia_en_espa_ol.pdf",
+          "unit_id": "alg1-program",
+          "title": "Matematicas Algebra I Gu a para la Familia en espa ol",
+          "source_file": "sources/Matematicas_Algebra_I_Gu_a_para_la_Familia_en_espa_ol.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Matematicas_Algebra_I_Gu_a_para_la_Familia_en_espa_ol.pdf-chunk1of6-e1",
+                    "excerpt": "CARTA PARA LA FAMILIA\n\n\u00c1lgebra I\n\nEstimada familia:\nSabemos que aprender fuera del sal\u00f3n de clases es fundamental para el\n\u00e9xito del estudiante en la escuela. Esta carta sirve como introducci\u00f3n a los\nrecursos dise\u00f1ados para ayudarlos a hablar con el estudiante sobre lo que est\u00e1\naprendiendo. Los recursos disponibles incluyen:\n\u2022 La gu\u00eda para la familia del curso\n\u2022 Gu\u00edas para la familia del tema\n\u2022 Res"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Secondary_Mathematics_Coach_Lesson_Internalization_Protocol.pdf",
+          "unit_id": "alg1-program",
+          "title": "Secondary Mathematics Coach Lesson Internalization Protocol",
+          "source_file": "sources/Secondary_Mathematics_Coach_Lesson_Internalization_Protocol.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Secondary_Mathematics_Coach_Lesson_Internalization_Protocol.pdf-e1",
+                    "excerpt": "Read the Lesson Overview, Texas Essential Knowledge and Skills (TEKS),\nTEKS Mathematical Process Standards, English Language Proficiency\nStandards (ELPS), and Essential Ideas. Highlight and/or record your\nunderstanding. Determine the knowledge and skills students will gain as a\nresult of this learning experience. Consider both the Learning Together and\nLearning Individually experiences.\n\nGuidance "
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Secondary_Mathematics_Coach_Module_and_Topic_Internalization_Guide.pdf",
+          "unit_id": "alg1-program",
+          "title": "Secondary Mathematics Coach Module and Topic Internalization Guide",
+          "source_file": "sources/Secondary_Mathematics_Coach_Module_and_Topic_Internalization_Guide.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Secondary_Mathematics_Coach_Module_and_Topic_Internalization_Guide.pdf-e1",
+                    "excerpt": "Notice\nThese learning resources have been built for Texas students, aligned to the Texas\nEssential Knowledge and Skills, and are made available pursuant to Chapter 31,\nSubchapter B-1 of the Texas Education Code.\nIf you have further product questions or to report an error, please\nemail openeducationresources@tea.texas.gov.\n\n\nCoach Module and Topic\nInternalization Protocol\nTEACHER PREWORK\nRead the M"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Secondary_Mathematics_Coach_Student_Work_Analysis_Protocol.pdf",
+          "unit_id": "alg1-program",
+          "title": "Secondary Mathematics Coach Student Work Analysis Protocol",
+          "source_file": "sources/Secondary_Mathematics_Coach_Student_Work_Analysis_Protocol.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Secondary_Mathematics_Coach_Student_Work_Analysis_Protocol.pdf-e1",
+                    "excerpt": "Notice\nThese learning resources have been built for Texas students, aligned to the Texas\nEssential Knowledge and Skills, and are made available pursuant to Chapter 31,\nSubchapter B-1 of the Texas Education Code.\nIf you have further product questions or to report an error, please\nemail openeducationresources@tea.texas.gov.\n\n\nCoach | Student Work\nAnalysis Protocol\nBEFORE THE MEETING\nPrepare for the "
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Secondary_Mathematics_Content_Organization_Document.pdf",
+          "unit_id": "alg1-program",
+          "title": "Secondary Mathematics Content Organization Document",
+          "source_file": "sources/Secondary_Mathematics_Content_Organization_Document.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Secondary_Mathematics_Content_Organization_Document.pdf-chunk1of4-e1",
+                    "excerpt": "\u2022 Grade 6, Module 1: Students work with operations involving positive rational numbers.\n\nProportionality and\nProportional Reasoning\n\n\u2022 Grade 6, Module 2: Students build understanding of ratio and rates.\n\n\u2022 Grade 6, Module 3: Students operate with integers.\n\u2022 Grade 7, Module 3: Students operate with positive and negative rational numbers.\n\u2022 Grade 8, Module 5: Students expand to the real number syst"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Secondary_Mathematics_Materials_Guide.pdf",
+          "unit_id": "alg1-program",
+          "title": "Secondary Mathematics Materials Guide",
+          "source_file": "sources/Secondary_Mathematics_Materials_Guide.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Secondary_Mathematics_Materials_Guide.pdf-e1",
+                    "excerpt": "EDITION 1\n\nGrades 6-8,\nAlgebra I\nMaterials Guide\n\nREAD ME FIRST\n\n\nWelcome!\nThe Bluebonnet Learning Secondary Mathematics Edition 1 has been\nspecifically designed by the Texas Education Agency (TEA) for students\nserved by Texas schools. These Texas-designed instructional materials\nwere thoughtfully crafted around well-defined scope and sequences and\na systematic approach to learning.\nThe materials "
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Secondary_Mathematics_Observation_Tool.pdf",
+          "unit_id": "alg1-program",
+          "title": "Secondary Mathematics Observation Tool",
+          "source_file": "sources/Secondary_Mathematics_Observation_Tool.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Secondary_Mathematics_Observation_Tool.pdf-e1",
+                    "excerpt": "EDITION 1\n\nCoach\nObservation Tool"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Secondary_Mathematics_Program_Implementation_Guide.pdf",
+          "unit_id": "alg1-program",
+          "title": "Secondary Mathematics Program Implementation Guide",
+          "source_file": "sources/Secondary_Mathematics_Program_Implementation_Guide.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Secondary_Mathematics_Program_Implementation_Guide.pdf-chunk1of5-e1",
+                    "excerpt": "The TEKS Summary is a course\u2011level document to show how the TEKS\nare addressed at the lesson, topic, module, and course levels.\n\nCourse Level"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Secondary_Mathematics_Teacher_Lesson_Internalization_Protocol.pdf",
+          "unit_id": "alg1-program",
+          "title": "Secondary Mathematics Teacher Lesson Internalization Protocol",
+          "source_file": "sources/Secondary_Mathematics_Teacher_Lesson_Internalization_Protocol.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Secondary_Mathematics_Teacher_Lesson_Internalization_Protocol.pdf-e1",
+                    "excerpt": "Understand the lesson purpose and objectives.\n\nUse the Facilitation Notes and Topic Overview:\n\nRead the Lesson Overview, Texas Essential Knowledge and Skills (TEKS),\nTEKS Mathematical Process Standards, English Language Proficiency\nStandards (ELPS), and Essential Ideas. Highlight and/or record your\nunderstanding. Determine the knowledge and skills students will gain as a\nresult of this learning ex"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Secondary_Mathematics_Teacher_Module_and_Topic_Internalization_Protocol.pdf",
+          "unit_id": "alg1-program",
+          "title": "Secondary Mathematics Teacher Module and Topic Internalization Protocol",
+          "source_file": "sources/Secondary_Mathematics_Teacher_Module_and_Topic_Internalization_Protocol.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Secondary_Mathematics_Teacher_Module_and_Topic_Internalization_Protocol.pdf-e1",
+                    "excerpt": "Notice\nThese learning resources have been built for Texas students, aligned to the Texas\nEssential Knowledge and Skills, and are made available pursuant to Chapter 31,\nSubchapter B-1 of the Texas Education Code.\nIf you have further product questions or to report an error, please\nemail openeducationresources@tea.texas.gov.\n\n\nTeacher Module and Topic\nInternalization Protocol\nPREWORK\nRead the Module "
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "Secondary_Mathematics_Teacher_Student_Work_Analysis_Protocol.pdf",
+          "unit_id": "alg1-program",
+          "title": "Secondary Mathematics Teacher Student Work Analysis Protocol",
+          "source_file": "sources/Secondary_Mathematics_Teacher_Student_Work_Analysis_Protocol.pdf",
+          "role": "other",
+          "doc_type": "other",
+          "is_fallback": true,
+          "nursery": true,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_content",
+                "label": "Has extractable instructional content",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "Secondary_Mathematics_Teacher_Student_Work_Analysis_Protocol.pdf-e1",
+                    "excerpt": "expected to show proficiency for the entire standard, or are other\naspects of it taught in the current module/topic or later in the year?\n\u2022 For literacy-based tasks, including word problems, what will be\n\nchallenging about this text for students? Where will they likely struggle?\nTEACHER | STUDENT WORK ANALYSIS PROTOCOL\n\n1\n\n\nS TE P\n\n2\n\nDetermine the success criteria for the tasks.\n\n1. Examine the r"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "artifacts": [
+    {
+      "doc_id": "K-5_Math_Component_Navigation_Guide.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Component Navigation Guide",
+      "source_file": "sources/K-5_Math_Component_Navigation_Guide.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Component_Navigation_Guide.pdf-e1",
+                "excerpt": "Product Design\nAlignment to TEKS and Student Learning Research\nThe K\u20135 Math instructional materials align with the TEKS and the ELPS, as well as with student learning\nresearch. The modules and lessons are strategically and coherently sequenced to build upon learning\nwithin modules and across grades. All students are working on grade-level tasks, and time and effort are\nconcentrated on going deep o"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Family_Guide.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Family Guide",
+      "source_file": "sources/K-5_Math_Family_Guide.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Family_Guide.pdf-e1",
+                "excerpt": "Tips for Families\nKey Concepts Overview\nFocus TEKS: K.2A, K.2B, K.2C, K.2D, K.2E, K.2F, K.2I, K.8A\nIn Module 1, students observe their world and begin to compare and classify objects. They focus on ordering,\ncounting, and writing numbers to represent up to 10 objects to answer how many questions. Your student\nwill:\n\u2b1c\n\n\u2b1c\n\n\u2b1c\n\n\u2b1c\n\nClassify, count, and sort objects, match pairs of objects according to "
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Course_Guide.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Grade 5 Course Guide",
+      "source_file": "sources/K-5_Math_Grade_5_Course_Guide.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Grade_5_Course_Guide.pdf-chunk1of4-e1",
+                "excerpt": "GRADE 5 COURSE GUIDE\n\nIntroduction..................................................................................................................... 2\nProfile of a Grade 5 Math Learner....................................................................................2\nCulture of Learning in Grade 5.........................................................................................3\nCollab"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Manipulatives_Kit.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Grade 5 Manipulatives Kit",
+      "source_file": "sources/K-5_Math_Grade_5_Manipulatives_Kit.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Grade_5_Manipulatives_Kit.pdf-e1",
+                "excerpt": "Two-Color Counters,\nWhole Number Place\nValue Cards, Decimal\nPlace Value Cards,\nCentimeter Cubes, Tape\nMeasure, Graduated\nManipulatives Cylinder, 5 1/2\" x 5 1/2\"\nPatty Paper, Ruler, 6\"\nProtractor, 4\" Protractor,\nOpen Center, Whole\nNumber Place Value\nDisks, Base Ten Blocks,\nInch Tiles, Set Squares.\n\nEach\ncomplet\ne kit\nincludes\nenough\nmaterial\ns for a\nclass of\n24\nstudents\n.\n\nThe complete manipulative"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Grade 5 Module 1 Learn Place Value and Decimals Student Edition",
+      "source_file": "sources/K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition.pdf-chunk1of2-e1",
+                "excerpt": "Learn, Grade 5, Module 1: Place Value and Decimals, Lesson 1 to 15"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Grade 5 Module 1 Practice Place Value and Decimals Student Edition",
+      "source_file": "sources/K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition.pdf-e1",
+                "excerpt": "Practice, Grade 5, Module 1: Place Value and Decimals, Lesson 1, 4, 6, 8, 11, 12"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Grade 5 Module 1 Succeed Place Value and Decimals Student Edition",
+      "source_file": "sources/K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition.pdf-chunk1of2-e1",
+                "excerpt": "Succeed, Grade 5, Module 1: Place Value and Decimals, Lesson 1 to 15\n\nEDITION 1"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_2_Learn_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Grade 5 Module 2 Learn Multi-Digit Whole Number and Decimal Operations Student Edition",
+      "source_file": "sources/K-5_Math_Grade_5_Module_2_Learn_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Grade_5_Module_2_Learn_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf-chunk2of3-e1",
+                "excerpt": "Fluently multiply multi-digit whole numbers using the standard\nalgorithm and using estimation to check for reasonableness of the\nproduct."
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_2_Practice_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Grade 5 Module 2 Practice Multi-Digit Whole Number and Decimal Operations Student Edition",
+      "source_file": "sources/K-5_Math_Grade_5_Module_2_Practice_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Grade_5_Module_2_Practice_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf-e1",
+                "excerpt": "34.\n\n942 \u00d7 1,000 =\n\n13.\n\n3 \u00d7 10 =\n\n35.\n\n74 \u00d7 10 =\n\n14.\n\n20 \u00d7 10 =\n\n36.\n\n269 \u00d7 10 =\n\n15.\n\n23 \u00d7 10 =\n\n37.\n\n49 \u00d7 100 =\n\n16.\n\n5 \u00d7 10 =\n\n38.\n\n328 \u00d7 100 =\n\n17.\n\n40 \u00d7 10 =\n\n39.\n\n37 \u00d7 1,000 =\n\n18.\n\n45 \u00d7 10 =\n\n40.\n\n924 \u00d7 1,000 =\n\n19.\n\n73 \u00d7 10 =\n\n41.\n\n147 \u00d7 100 =\n\n20.\n\n48 \u00d7 10 =\n\n42.\n\n825 \u00d7 1,000 =\n\n21.\n\n48 \u00d7 100 =\n\n43.\n\n651 \u00d7 100 =\n\n22."
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_2_Succeed_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Grade 5 Module 2 Succeed Multi-Digit Whole Number and Decimal Operations Student Edition",
+      "source_file": "sources/K-5_Math_Grade_5_Module_2_Succeed_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Grade_5_Module_2_Succeed_Multi-Digit_Whole_Number_and_Decimal_Operations_Student_Edition.pdf-chunk1of4-e1",
+                "excerpt": "Grade 5\nModule 2\n\nSUCCEED\nMULTI-DIGIT WHOLE NUMBER AND\nDECIMAL OPERATIONS\nSTUDENT EDITION"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_3_Learn_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Grade 5 Module 3 Learn Addition and Subtraction of Fractions Student Edition",
+      "source_file": "sources/K-5_Math_Grade_5_Module_3_Learn_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Grade_5_Module_3_Learn_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf-e1",
+                "excerpt": "Learn, Grade 5, Module 3: Addition and Subtraction of Fractions, Lesson 1 to 14"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_3_Practice_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Grade 5 Module 3 Practice Addition and Subtraction of Fractions Student Edition",
+      "source_file": "sources/K-5_Math_Grade_5_Module_3_Practice_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Grade_5_Module_3_Practice_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf-e1",
+                "excerpt": "Practice, Grade 5, Module 3: Addition and Subtraction of Fractions, Lesson 1, 3, 5, 7, 8, 10, 12 and 13"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_3_Succeed_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Grade 5 Module 3 Succeed Addition and Subtraction of Fractions Student Edition",
+      "source_file": "sources/K-5_Math_Grade_5_Module_3_Succeed_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Grade_5_Module_3_Succeed_Addition_and_Subtraction_of_Fractions_Student_Edition.pdf-chunk1of2-e1",
+                "excerpt": "Grade 5\nModule 3\n\nSUCCEED\nADDITION AND SUBTRACTION OF FRACTIONS\nSTUDENT EDITION"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_4_Learn_Multiplication_and_Division_of_Fractions_Student_Edition.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Grade 5 Module 4 Learn Multiplication and Division of Fractions Student Edition",
+      "source_file": "sources/K-5_Math_Grade_5_Module_4_Learn_Multiplication_and_Division_of_Fractions_Student_Edition.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Grade_5_Module_4_Learn_Multiplication_and_Division_of_Fractions_Student_Edition.pdf-chunk1of3-e1",
+                "excerpt": "Grade 5\nModule 4\n\nLEARN\nMULTIPLICATION AND DIVISION OF FRACTIONS\nSTUDENT EDITION\n\n\nLearn\n\nK\u20135 Math\nGrade 5\nModule 4\nMULTIPLICATION AND DIVISION\nOF FRACTIONS\n\n\nAcknowledgment\nThank you to all the Texas educators and stakeholders who supported the review process and provided\nfeedback. These materials are the result of the work of numerous individuals, and we are deeply grateful\nfor their contributio"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_4_Practice_Multiplication_and_Division_of_Fractions_Student_Edition.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Grade 5 Module 4 Practice Multiplication and Division of Fractions Student Edition",
+      "source_file": "sources/K-5_Math_Grade_5_Module_4_Practice_Multiplication_and_Division_of_Fractions_Student_Edition.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Grade_5_Module_4_Practice_Multiplication_and_Division_of_Fractions_Student_Edition.pdf-e1",
+                "excerpt": "Grade 5\nModule 4\n\nPRACTICE\nMULTIPLICATION AND DIVISION OF FRACTIONS\nSTUDENT EDITION"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_4_Succeed_Multiplication_and_Division_of_Fractions_Student_Edition.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Grade 5 Module 4 Succeed Multiplication and Division of Fractions Student Edition",
+      "source_file": "sources/K-5_Math_Grade_5_Module_4_Succeed_Multiplication_and_Division_of_Fractions_Student_Edition.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Grade_5_Module_4_Succeed_Multiplication_and_Division_of_Fractions_Student_Edition.pdf-chunk2of3-e1",
+                "excerpt": "Lesson 11 Homework\n\nName\n\n5\u20224\n\nDate\n\n1. Convert. Show your work using a strip diagram or an equation. The first one is done for you.\n9\na. 14 yard = ________\ninches\n\nb.\n\n1\nyard = 4 \u00d7 1 yard\n4\n1\n\n= 4 \u00d7 36 inches\n36\n\n= 4 inches\n= 9 inches"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_5_Learn_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Grade 5 Module 5 Learn Addition and Multiplication with Volume and Area Student Edition",
+      "source_file": "sources/K-5_Math_Grade_5_Module_5_Learn_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Grade_5_Module_5_Learn_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf-chunk1of2-e1",
+                "excerpt": "Grade 5\nModule 5\n\nLEARN\nADDITION AND MULTIPLICATION WITH\nVOLUME AND AREA\nSTUDENT EDITION"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_5_Practice_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Grade 5 Module 5 Practice Addition and Multiplication with Volume and Area Student Edition",
+      "source_file": "sources/K-5_Math_Grade_5_Module_5_Practice_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Grade_5_Module_5_Practice_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf-e1",
+                "excerpt": "Contents\nModule 5: Addition and Multiplication with Volume and Area\nLesson 17: Divide Whole Numbers by Fractions and Fractions by Whole Numbers Sprint  .  .  .  .  .  .  .  .  .  .\n\n3\n\nLesson 19: Multiply by Multiples of 10 and 100 Sprint  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .\n\n7"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_5_Succeed_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Grade 5 Module 5 Succeed Addition and Multiplication with Volume and Area Student Edition",
+      "source_file": "sources/K-5_Math_Grade_5_Module_5_Succeed_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Grade_5_Module_5_Succeed_Addition_and_Multiplication_with_Volume_and_Area_Student_Edition.pdf-chunk1of2-e1",
+                "excerpt": "Grade 5\nModule 5\n\nSUCCEED\nADDITION AND MULTIPLICATION WITH\nVOLUME AND AREA\nSTUDENT EDITION"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_6_Learn_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Grade 5 Module 6 Learn Problem Solving with the Coordinate Plane and Data Student Edition",
+      "source_file": "sources/K-5_Math_Grade_5_Module_6_Learn_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Grade_5_Module_6_Learn_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf-chunk1of4-e1",
+                "excerpt": "Learn, Grade 5, Module 6: Problem Solving with the Coordinate Plane and Data, Lesson 1 to 34"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_6_Practice_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Grade 5 Module 6 Practice Problem Solving with the Coordinate Plane and Data Student Edition",
+      "source_file": "sources/K-5_Math_Grade_5_Module_6_Practice_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Grade_5_Module_6_Practice_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf-e1",
+                "excerpt": "Practice, Grade 5, Module 6: Problem Solving with the Coordinate Plane and Data, Lesson 8, 12, 13, 21, 25 and 29"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_6_Succeed_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Grade 5 Module 6 Succeed Problem Solving with the Coordinate Plane and Data Student Edition",
+      "source_file": "sources/K-5_Math_Grade_5_Module_6_Succeed_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Grade_5_Module_6_Succeed_Problem_Solving_with_the_Coordinate_Plane_and_Data_Student_Edition.pdf-chunk1of3-e1",
+                "excerpt": "Succeed, Grade 5, Module 6: Problem Solving with the Coordinate Plane and Data, Lesson 1 to 33"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Program_and_Implementation_Guide.pdf",
+      "unit_id": "(unlinked)",
+      "title": "K-5 Math Program and Implementation Guide",
+      "source_file": "sources/K-5_Math_Program_and_Implementation_Guide.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "K-5_Math_Program_and_Implementation_Guide.pdf-chunk1of8-e1",
+                "excerpt": "1\n\n\nBLUEBONNET LEARNING K\u20135 MATH\n\nImplementation Guide\n\nK\u20135\n\nIntroduction\nThe K\u20135 Math instructional materials are a comprehensive and clearly sequenced suite of materials that\nprovides teachers with the knowledge and tools outlined in the Texas Essential Knowledge and Skills (TEKS)\nand guides students to be thinkers and doers of mathematics.\nOne key feature of these high-quality instructional mat"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Student_Edition_Volume_1_Module_1.pdf",
+      "unit_id": "alg1-mod-1",
+      "title": "Algebra I Math Student Edition Volume 1 Module 1",
+      "source_file": "sources/Algebra_I_Math_Student_Edition_Volume_1_Module_1.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_I_Math_Student_Edition_Volume_1_Module_1.pdf-chunk1of4-e1",
+                "excerpt": "ALGEBRA I\n\n1"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Student_Edition_Volume_1_Module_2.pdf",
+      "unit_id": "alg1-mod-2",
+      "title": "Algebra I Math Student Edition Volume 1 Module 2",
+      "source_file": "sources/Algebra_I_Math_Student_Edition_Volume_1_Module_2.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_I_Math_Student_Edition_Volume_1_Module_2.pdf-chunk1of6-e1-split1",
+                "excerpt": "\nGetting Started\nFrozen Yogurt . . . When It\u2019s Freezing?\nA school\u2019s club for aspiring business leaders is helping a local frozen\nyogurt shop analyze how the business is affected by the weather.\nThe owner is wondering whether there is a relationship between the\ntemperature and the number of customers that buy yogurt during\nthe 2 hours immediately after school. The school\u2019s club collected\nthese data"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Student_Edition_Volume_1_Module_3.pdf",
+      "unit_id": "alg1-mod-3",
+      "title": "Algebra I Math Student Edition Volume 1 Module 3",
+      "source_file": "sources/Algebra_I_Math_Student_Edition_Volume_1_Module_3.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_I_Math_Student_Edition_Volume_1_Module_3.pdf-chunk2of4-e1",
+                "excerpt": "c. Graph the function representing this\nsituation on a coordinate plane.\nTotal Cost of Trip (dollars)\n\ny\n320\n240"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Student_Edition_Volume_2_Module_4.pdf",
+      "unit_id": "alg1-mod-4",
+      "title": "Algebra I Math Student Edition Volume 2 Module 4",
+      "source_file": "sources/Algebra_I_Math_Student_Edition_Volume_2_Module_4.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_I_Math_Student_Edition_Volume_2_Module_4.pdf-chunk1of4-e1",
+                "excerpt": "512\n\nMODULE 4 \u2022 TOPIC 1 \u2022 LESSON 1\n\n\nAC TI V IT Y\n\n1.1\n\nReview of Powers and Exponents\n\nLucas wants to trace Rickson\u2019s lineage back through all eight\ngenerations. How many sires (male parents) and dams (female\nparents) are there in each generation of Rickson\u2019s lineage?\n1. Complete the second column of the table, Number of Sires and\nDams, to show the total number of dogs in each generation.\nGenerat"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Student_Edition_Volume_2_Module_5.pdf",
+      "unit_id": "alg1-mod-5",
+      "title": "Algebra I Math Student Edition Volume 2 Module 5",
+      "source_file": "sources/Algebra_I_Math_Student_Edition_Volume_2_Module_5.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_I_Math_Student_Edition_Volume_2_Module_5.pdf-chunk3of7-e1",
+                "excerpt": "25 50 75 100 125 150\n\n\u221250\n\u221275\n\u2212100"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_1_Math_Family_Guides.pdf",
+      "unit_id": "alg1-program",
+      "title": "Algebra 1 Math Family Guides",
+      "source_file": "sources/Algebra_1_Math_Family_Guides.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_1_Math_Family_Guides.pdf-chunk2of5-e1",
+                "excerpt": "OBJECTIVES\n\u2022 Understand quantities and their relationships with each other.\n\u2022 Identify the independent and dependent quantities for\n\nNEW KEY TERMS\n\u2022 dependent quantity\n\u2022 independent quantity\n\na scenario.\n\n1. A builder is designing a rectangular\nparking lot. She has 300 feet of fencing\nto enclose the parking lot around\nthree sides.\n\n2. Aiko is enclosing a new rectangular flower\ngarden with a rabbit"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_1_Math_Standards_Overview.pdf",
+      "unit_id": "alg1-program",
+      "title": "Algebra 1 Math Standards Overview",
+      "source_file": "sources/Algebra_1_Math_Standards_Overview.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_1_Math_Standards_Overview.pdf-e1",
+                "excerpt": "\nALGEBRA I STANDARDS OVERVIEW\nTEKS covered at the lesson level are shown in course color. Additional\nTEKS covered in Skills Practice are shown in black.\nLinear Functions,\nEquations, and\nInequalities"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_150-day_Topic_Pacing_Guides.pdf",
+      "unit_id": "alg1-program",
+      "title": "Algebra I Math 150-day Topic Pacing Guides",
+      "source_file": "sources/Algebra_I_Math_150-day_Topic_Pacing_Guides.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_I_Math_150-day_Topic_Pacing_Guides.pdf-chunk1of3-e1",
+                "excerpt": "1 DAY PACING = 45-MINUTE SESSION\n\nTEKS Mathematical Process Standards: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G\nELPS: 1.A, 1.B, 1.C, 1.E, 1.F, 2.C, 2.E, 2.I, 3.D, 3.E, 3.H, 4.C, 4.E, 4.G, 4.H, 5.B, 5.F\b\n\nIT\nM\nO"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Assessment_Reflection.pdf",
+      "unit_id": "alg1-program",
+      "title": "Algebra I Math Assessment Reflection",
+      "source_file": "sources/Algebra_I_Math_Assessment_Reflection.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_I_Math_Assessment_Reflection.pdf-e1",
+                "excerpt": "\nAcknowledgment\nThank you to all the Texas educators and stakeholders who supported\nthe review process and provided feedback. These materials are the\nresult of the work of numerous individuals, and we are deeply grateful\nfor their contributions.\n\nNotice\nThese learning resources have been built for Texas students, aligned to the Texas\nEssential Knowledge and Skills, and are made available pursuant "
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_ELPS_Summary.pdf",
+      "unit_id": "alg1-program",
+      "title": "Algebra I Math ELPS Summary",
+      "source_file": "sources/Algebra_I_Math_ELPS_Summary.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_I_Math_ELPS_Summary.pdf-e1",
+                "excerpt": "Algebra I\nELPS Summary\n\n\nAcknowledgment\nThank you to all the Texas educators and stakeholders who supported\nthe review process and provided feedback. These materials are the\nresult of the work of numerous individuals, and we are deeply grateful\nfor their contributions.\n\nNotice\nThese learning resources have been built for Texas students, aligned to the Texas\nEssential Knowledge and Skills, and are "
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Materials_List.pdf",
+      "unit_id": "alg1-program",
+      "title": "Algebra I Math Materials List",
+      "source_file": "sources/Algebra_I_Math_Materials_List.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_I_Math_Materials_List.pdf-e1-split1",
+                "excerpt": "Algebra Tiles\nCalculators\nChairs\nColored Paper\nColored Pencils\nCourse Guide Resources\nCups\nGlue\nGraph Paper\nHighlighters\nIndex Cards\nLesson-Embedded Resources\nMarkers\nMasking Tape\nMirrors\nModeling Clay\nPatty Paper\nPennies\nPoster Paper\nProblem-Solving Model Graphic Organizer\nScissors\nSticker Dots\nSticky Notes\nStraightedges\nString\nTechnology\nThermometer\nUncooked Pasta\n\nThe Course Materials list prov"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Problem-Solving_Model_Graphic_Organizer.pdf",
+      "unit_id": "alg1-program",
+      "title": "Algebra I Math Problem-Solving Model Graphic Organizer",
+      "source_file": "sources/Algebra_I_Math_Problem-Solving_Model_Graphic_Organizer.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_I_Math_Problem-Solving_Model_Graphic_Organizer.pdf-e1",
+                "excerpt": "Algebra I\nProblem-Solving Model\nGraphic Organizer"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Scope_and_Sequence_150-day.pdf",
+      "unit_id": "alg1-program",
+      "title": "Algebra I Math Scope and Sequence 150-day",
+      "source_file": "sources/Algebra_I_Math_Scope_and_Sequence_150-day.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_I_Math_Scope_and_Sequence_150-day.pdf-chunk2of3-e1",
+                "excerpt": "Comparing\nLinear\nFunctions\nin Different\nForms\n\nStudents analyze functions represented as tables,\ngraphs, equations, and verbal descriptions.\nThey explore slope with particular attention\nto parallelism and perpendicularity in different\nrepresentations. Students compare properties such\nas slope, y-intercept, and the units for independent\nand dependent quantities, all in terms of the\nsituations they "
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Scope_and_Sequence_165-day.pdf",
+      "unit_id": "alg1-program",
+      "title": "Algebra I Math Scope and Sequence 165-day",
+      "source_file": "sources/Algebra_I_Math_Scope_and_Sequence_165-day.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_I_Math_Scope_and_Sequence_165-day.pdf-chunk1of3-e1",
+                "excerpt": "TEKS* Pacing\n\nCreate a classroom of collaboration and establish\nthe learning process as a partnership between you\nand your students.\n\u2022 Communicate continuously with students about\nthe objectives of the lesson to encourage selfmonitoring of their learning.\n\u2022 The problem-solving model involves noticing\npatterns and formulating questions, organizing\ninformation and representing this information\nusing"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Skills_Practice_Student_Edition.pdf",
+      "unit_id": "alg1-program",
+      "title": "Algebra I Math Skills Practice Student Edition",
+      "source_file": "sources/Algebra_I_Math_Skills_Practice_Student_Edition.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_I_Math_Skills_Practice_Student_Edition.pdf-chunk1of7-e1",
+                "excerpt": "\nAcknowledgment\nThank you to all the Texas educators and stakeholders who supported\nthe review process and provided feedback. These materials are the\nresult of the work of numerous individuals, and we are deeply grateful\nfor their contributions.\n\nNotice\nThese learning resources have been built for Texas students, aligned to the Texas\nEssential Knowledge and Skills, and are made available pursuant "
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Student_Edition_Course_Guide.pdf",
+      "unit_id": "alg1-program",
+      "title": "Algebra I Math Student Edition Course Guide",
+      "source_file": "sources/Algebra_I_Math_Student_Edition_Course_Guide.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_I_Math_Student_Edition_Course_Guide.pdf-chunk1of3-e1",
+                "excerpt": "\nTEKS Mathematical Process Standards\nEffective communication and collaboration are essential skills of\na successful learner. With practice, you can develop the habits of\nmind of a productive mathematical thinker. The \u201cI Can\u201d expectations\nlisted below align with the TEKS mathematical process standards\nand encourage students to develop their mathematical learning\nand understanding.\n\nApply mathematic"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Student_Edition_Glossary.pdf",
+      "unit_id": "alg1-program",
+      "title": "Algebra I Math Student Edition Glossary",
+      "source_file": "sources/Algebra_I_Math_Student_Edition_Glossary.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_I_Math_Student_Edition_Glossary.pdf-e1",
+                "excerpt": "absolute minimum\n\nabsolute maximum\nA function has an absolute maximum if there is\na point that has a y-coordinate that is greater\nthan the y-coordinates of every other point on\nthe graph.\nExample\n\nA function has an absolute minimum if there\nis a point that has a y-coordinate that is less\nthan the y-coordinates of every other point on\nthe graph.\nExample\nThe ordered pair (1, 24) is the absolute\nmini"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Student_Edition_Vol_1.pdf",
+      "unit_id": "alg1-program",
+      "title": "Algebra I Math Student Edition Vol 1",
+      "source_file": "sources/Algebra_I_Math_Student_Edition_Vol_1.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_I_Math_Student_Edition_Vol_1.pdf-chunk1of16-e1",
+                "excerpt": "\nAcknowledgment\nThank you to all the Texas educators and stakeholders who supported\nthe review process and provided feedback. These materials are the\nresult of the work of numerous individuals, and we are deeply grateful\nfor their contributions.\n\nNotice\nThese learning resources have been built for Texas students, aligned to the Texas\nEssential Knowledge and Skills, and are made available pursuant "
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Student_Edition_Vol_2.pdf",
+      "unit_id": "alg1-program",
+      "title": "Algebra I Math Student Edition Vol 2",
+      "source_file": "sources/Algebra_I_Math_Student_Edition_Vol_2.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_I_Math_Student_Edition_Vol_2.pdf-chunk1of14-e1",
+                "excerpt": "\nAcknowledgment\nThank you to all the Texas educators and stakeholders who supported\nthe review process and provided feedback. These materials are the\nresult of the work of numerous individuals, and we are deeply grateful\nfor their contributions.\n\nNotice\nThese learning resources have been built for Texas students, aligned to the Texas\nEssential Knowledge and Skills, and are made available pursuant "
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_TEKS_Summary.pdf",
+      "unit_id": "alg1-program",
+      "title": "Algebra I Math TEKS Summary",
+      "source_file": "sources/Algebra_I_Math_TEKS_Summary.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_I_Math_TEKS_Summary.pdf-e1",
+                "excerpt": "Algebra I\nTEKS Summary\n\n\nAcknowledgment\nThank you to all the Texas educators and stakeholders who supported\nthe review process and provided feedback. These materials are the\nresult of the work of numerous individuals, and we are deeply grateful\nfor their contributions.\n\nNotice\nThese learning resources have been built for Texas students, aligned to the Texas\nEssential Knowledge and Skills, and are "
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_YAG_150-day.pdf",
+      "unit_id": "alg1-program",
+      "title": "Algebra I Math YAG 150-day",
+      "source_file": "sources/Algebra_I_Math_YAG_150-day.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_I_Math_YAG_150-day.pdf-e1",
+                "excerpt": "\nALGEBRA I: YEAR-AT-A-GLANCE\nTEKS Mathematical Process Standards are embedded in every module:\nA.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_YAG_165-day.pdf",
+      "unit_id": "alg1-program",
+      "title": "Algebra I Math YAG 165-day",
+      "source_file": "sources/Algebra_I_Math_YAG_165-day.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Algebra_I_Math_YAG_165-day.pdf-e1",
+                "excerpt": "Algebra I\nYear-at-a-Glance\n165 Day Pacing\n\n\nAcknowledgment\nThank you to all the Texas educators and stakeholders who supported\nthe review process and provided feedback. These materials are the\nresult of the work of numerous individuals, and we are deeply grateful\nfor their contributions.\n\nNotice\nThese learning resources have been built for Texas students, aligned to the Texas\nEssential Knowledge a"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Matematicas_Algebra_I_Gu_a_para_la_Familia_en_espa_ol.pdf",
+      "unit_id": "alg1-program",
+      "title": "Matematicas Algebra I Gu a para la Familia en espa ol",
+      "source_file": "sources/Matematicas_Algebra_I_Gu_a_para_la_Familia_en_espa_ol.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Matematicas_Algebra_I_Gu_a_para_la_Familia_en_espa_ol.pdf-chunk1of6-e1",
+                "excerpt": "CARTA PARA LA FAMILIA\n\n\u00c1lgebra I\n\nEstimada familia:\nSabemos que aprender fuera del sal\u00f3n de clases es fundamental para el\n\u00e9xito del estudiante en la escuela. Esta carta sirve como introducci\u00f3n a los\nrecursos dise\u00f1ados para ayudarlos a hablar con el estudiante sobre lo que est\u00e1\naprendiendo. Los recursos disponibles incluyen:\n\u2022 La gu\u00eda para la familia del curso\n\u2022 Gu\u00edas para la familia del tema\n\u2022 Res"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Secondary_Mathematics_Coach_Lesson_Internalization_Protocol.pdf",
+      "unit_id": "alg1-program",
+      "title": "Secondary Mathematics Coach Lesson Internalization Protocol",
+      "source_file": "sources/Secondary_Mathematics_Coach_Lesson_Internalization_Protocol.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Secondary_Mathematics_Coach_Lesson_Internalization_Protocol.pdf-e1",
+                "excerpt": "Read the Lesson Overview, Texas Essential Knowledge and Skills (TEKS),\nTEKS Mathematical Process Standards, English Language Proficiency\nStandards (ELPS), and Essential Ideas. Highlight and/or record your\nunderstanding. Determine the knowledge and skills students will gain as a\nresult of this learning experience. Consider both the Learning Together and\nLearning Individually experiences.\n\nGuidance "
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Secondary_Mathematics_Coach_Module_and_Topic_Internalization_Guide.pdf",
+      "unit_id": "alg1-program",
+      "title": "Secondary Mathematics Coach Module and Topic Internalization Guide",
+      "source_file": "sources/Secondary_Mathematics_Coach_Module_and_Topic_Internalization_Guide.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Secondary_Mathematics_Coach_Module_and_Topic_Internalization_Guide.pdf-e1",
+                "excerpt": "Notice\nThese learning resources have been built for Texas students, aligned to the Texas\nEssential Knowledge and Skills, and are made available pursuant to Chapter 31,\nSubchapter B-1 of the Texas Education Code.\nIf you have further product questions or to report an error, please\nemail openeducationresources@tea.texas.gov.\n\n\nCoach Module and Topic\nInternalization Protocol\nTEACHER PREWORK\nRead the M"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Secondary_Mathematics_Coach_Student_Work_Analysis_Protocol.pdf",
+      "unit_id": "alg1-program",
+      "title": "Secondary Mathematics Coach Student Work Analysis Protocol",
+      "source_file": "sources/Secondary_Mathematics_Coach_Student_Work_Analysis_Protocol.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Secondary_Mathematics_Coach_Student_Work_Analysis_Protocol.pdf-e1",
+                "excerpt": "Notice\nThese learning resources have been built for Texas students, aligned to the Texas\nEssential Knowledge and Skills, and are made available pursuant to Chapter 31,\nSubchapter B-1 of the Texas Education Code.\nIf you have further product questions or to report an error, please\nemail openeducationresources@tea.texas.gov.\n\n\nCoach | Student Work\nAnalysis Protocol\nBEFORE THE MEETING\nPrepare for the "
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Secondary_Mathematics_Content_Organization_Document.pdf",
+      "unit_id": "alg1-program",
+      "title": "Secondary Mathematics Content Organization Document",
+      "source_file": "sources/Secondary_Mathematics_Content_Organization_Document.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Secondary_Mathematics_Content_Organization_Document.pdf-chunk1of4-e1",
+                "excerpt": "\u2022 Grade 6, Module 1: Students work with operations involving positive rational numbers.\n\nProportionality and\nProportional Reasoning\n\n\u2022 Grade 6, Module 2: Students build understanding of ratio and rates.\n\n\u2022 Grade 6, Module 3: Students operate with integers.\n\u2022 Grade 7, Module 3: Students operate with positive and negative rational numbers.\n\u2022 Grade 8, Module 5: Students expand to the real number syst"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Secondary_Mathematics_Materials_Guide.pdf",
+      "unit_id": "alg1-program",
+      "title": "Secondary Mathematics Materials Guide",
+      "source_file": "sources/Secondary_Mathematics_Materials_Guide.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Secondary_Mathematics_Materials_Guide.pdf-e1",
+                "excerpt": "EDITION 1\n\nGrades 6-8,\nAlgebra I\nMaterials Guide\n\nREAD ME FIRST\n\n\nWelcome!\nThe Bluebonnet Learning Secondary Mathematics Edition 1 has been\nspecifically designed by the Texas Education Agency (TEA) for students\nserved by Texas schools. These Texas-designed instructional materials\nwere thoughtfully crafted around well-defined scope and sequences and\na systematic approach to learning.\nThe materials "
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Secondary_Mathematics_Observation_Tool.pdf",
+      "unit_id": "alg1-program",
+      "title": "Secondary Mathematics Observation Tool",
+      "source_file": "sources/Secondary_Mathematics_Observation_Tool.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Secondary_Mathematics_Observation_Tool.pdf-e1",
+                "excerpt": "EDITION 1\n\nCoach\nObservation Tool"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Secondary_Mathematics_Program_Implementation_Guide.pdf",
+      "unit_id": "alg1-program",
+      "title": "Secondary Mathematics Program Implementation Guide",
+      "source_file": "sources/Secondary_Mathematics_Program_Implementation_Guide.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Secondary_Mathematics_Program_Implementation_Guide.pdf-chunk1of5-e1",
+                "excerpt": "The TEKS Summary is a course\u2011level document to show how the TEKS\nare addressed at the lesson, topic, module, and course levels.\n\nCourse Level"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Secondary_Mathematics_Teacher_Lesson_Internalization_Protocol.pdf",
+      "unit_id": "alg1-program",
+      "title": "Secondary Mathematics Teacher Lesson Internalization Protocol",
+      "source_file": "sources/Secondary_Mathematics_Teacher_Lesson_Internalization_Protocol.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Secondary_Mathematics_Teacher_Lesson_Internalization_Protocol.pdf-e1",
+                "excerpt": "Understand the lesson purpose and objectives.\n\nUse the Facilitation Notes and Topic Overview:\n\nRead the Lesson Overview, Texas Essential Knowledge and Skills (TEKS),\nTEKS Mathematical Process Standards, English Language Proficiency\nStandards (ELPS), and Essential Ideas. Highlight and/or record your\nunderstanding. Determine the knowledge and skills students will gain as a\nresult of this learning ex"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Secondary_Mathematics_Teacher_Module_and_Topic_Internalization_Protocol.pdf",
+      "unit_id": "alg1-program",
+      "title": "Secondary Mathematics Teacher Module and Topic Internalization Protocol",
+      "source_file": "sources/Secondary_Mathematics_Teacher_Module_and_Topic_Internalization_Protocol.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Secondary_Mathematics_Teacher_Module_and_Topic_Internalization_Protocol.pdf-e1",
+                "excerpt": "Notice\nThese learning resources have been built for Texas students, aligned to the Texas\nEssential Knowledge and Skills, and are made available pursuant to Chapter 31,\nSubchapter B-1 of the Texas Education Code.\nIf you have further product questions or to report an error, please\nemail openeducationresources@tea.texas.gov.\n\n\nTeacher Module and Topic\nInternalization Protocol\nPREWORK\nRead the Module "
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "Secondary_Mathematics_Teacher_Student_Work_Analysis_Protocol.pdf",
+      "unit_id": "alg1-program",
+      "title": "Secondary Mathematics Teacher Student Work Analysis Protocol",
+      "source_file": "sources/Secondary_Mathematics_Teacher_Student_Work_Analysis_Protocol.pdf",
+      "role": "other",
+      "doc_type": "other",
+      "is_fallback": true,
+      "nursery": true,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "Secondary_Mathematics_Teacher_Student_Work_Analysis_Protocol.pdf-e1",
+                "excerpt": "expected to show proficiency for the entire standard, or are other\naspects of it taught in the current module/topic or later in the year?\n\u2022 For literacy-based tasks, including word problems, what will be\n\nchallenging about this text for students? Where will they likely struggle?\nTEACHER | STUDENT WORK ANALYSIS PROTOCOL\n\n1\n\n\nS TE P\n\n2\n\nDetermine the success criteria for the tasks.\n\n1. Examine the r"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      }
+    }
+  ]
+}

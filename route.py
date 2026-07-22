@@ -40,7 +40,12 @@ PATH_BY_WORKFLOW = {
 }
 
 QUIZ_TYPES = frozenset({"quiz", "answer_key", "exit_ticket"})
-LESSON_TYPES = frozenset({"lesson_plan"})
+# lesson_content (slide decks, "..._lesson.txt") is a teachable lesson atom the
+# lesson rung already reviews as a lesson (lesson_bakeoff.LESSON_DOC_TYPES), so it
+# routes to Path A — NOT the Path C general fallback. Routing it to C was the
+# "lesson_content contradiction": a doc reviewed as a lesson but ticketed as an
+# unhandled general artifact. Keeping the two in sync here removes that double life.
+LESSON_TYPES = frozenset({"lesson_plan", "lesson_content"})
 # Types that should be logged for future Path growth. teacher_edition_multi_lesson
 # is here deliberately: the TE container has no single-artifact pass of its own, so
 # the parent doc routes to Path C best-effort (degraded + ticketed) while te_prepass

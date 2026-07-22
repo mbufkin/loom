@@ -1,13 +1,13 @@
 # Inferred calendars — `dallas-career-2026`
 
 **source:** `inferred_from_documents`  
-**generated:** 2026-07-20T23:48:18.839958+00:00
+**generated:** 2026-07-21T19:54:48.403428+00:00
 
 Early `rollup.py` / `pacing-plan.yaml` is provisional. This file is the post-assemble evidence calendar.
 
 ## Agriculture (`agriculture`)
 
-- `d1`: **HAS_EVIDENCE** — lesson_content
+- `d1`: **EMPTY** — —
 - `d2`: **EMPTY** — —
 
 ## Architecture & Construction (`architecture-construction`)
@@ -42,7 +42,7 @@ Early `rollup.py` / `pacing-plan.yaml` is provisional. This file is the post-ass
 
 ## Engineering (`engineering`)
 
-- `d1`: **HAS_EVIDENCE** — lesson_content
+- `d1`: **EMPTY** — —
 - `d2`: **EMPTY** — —
 
 ## Family Community (`family-community`)
@@ -52,8 +52,8 @@ Early `rollup.py` / `pacing-plan.yaml` is provisional. This file is the post-ass
 
 ## Financial Literacy (`financial-literacy`)
 
-- `d1`: **HAS_EVIDENCE** — lesson_content
-- `d2`: **HAS_EVIDENCE** — exit_ticket
+- `d1`: **EMPTY** — —
+- `d2`: **EMPTY** — —
 - `d3`: **EMPTY** — —
 
 ## Health Science (`health-science`)
@@ -80,7 +80,7 @@ Early `rollup.py` / `pacing-plan.yaml` is provisional. This file is the post-ass
 
 ## Manufacturing (`manufacturing`)
 
-- `d1`: **HAS_EVIDENCE** — exit_ticket
+- `d1`: **EMPTY** — —
 - `d2`: **EMPTY** — —
 
 ## Professional Preparedness (`professional-preparedness`)

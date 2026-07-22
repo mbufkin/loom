@@ -39,6 +39,7 @@ PATH_WORKFLOWS = BASE_DIR / "workflows" / "run_paths.py"
 LAYER1 = BASE_DIR / "layer1.py"
 LAYER2 = BASE_DIR / "layer2.py"
 LESSON_RUNG = BASE_DIR / "lesson_rung.py"
+ARTIFACT_RUNG = BASE_DIR / "artifact_rung.py"
 UNIT_RUNG = BASE_DIR / "unit_rung.py"
 CALENDARS = BASE_DIR / "calendars.py"
 SYNTH = BASE_DIR / "synthesize.py"
@@ -254,10 +255,22 @@ def main() -> int:
                 except Exception as e:  # noqa: BLE001
                     log(f"WARN: lesson-rung skipped: {e}")
 
-            # Unit rung: roll the lesson rung + Layer 1/2 + pacing into a per-unit
-            # verdict (layer_unit/UNIT-RUNG.json), the hand-off for the future
-            # curriculum rung. Deterministic, offline; depends on the lesson rung
-            # above so it runs right after, and never blocks the run.
+            # Artifact rung (Paths B/C): review every NON-lesson doc (quizzes, exit
+            # tickets, rubrics, worksheets, ...) with its per-type presence spec ->
+            # layer_artifact/ARTIFACT-RUNG.json. Deterministic presence only by
+            # default (offline, gates the unit band); the advisory model alignment is
+            # opt-in (--with-model on artifact_rung.py). Runs BEFORE the unit rung,
+            # which consumes its per-unit gaps. Never blocks the run.
+            if ARTIFACT_RUNG.is_file():
+                try:
+                    run_step(ARTIFACT_RUNG, ["--project", args.project])
+                except Exception as e:  # noqa: BLE001
+                    log(f"WARN: artifact-rung skipped: {e}")
+
+            # Unit rung: roll the lesson rung + artifact rung + Layer 1/2 + pacing
+            # into a per-unit verdict (layer_unit/UNIT-RUNG.json), the hand-off for
+            # the future curriculum rung. Deterministic, offline; depends on the
+            # rungs above so it runs right after, and never blocks the run.
             if UNIT_RUNG.is_file():
                 try:
                     run_step(UNIT_RUNG, ["--project", args.project])

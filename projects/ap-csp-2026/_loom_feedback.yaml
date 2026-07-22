@@ -1,0 +1,7 @@
+# Loom unknown/weak-type feedback — read when growing new paths
+
+- doc_id: "ap-csp-ced.pdf"
+  doc_type: "other"
+  suggested_pattern: "No dedicated review spec for type 'other'; scored with the generic fallback. Add workflows/rubrics/artifacts/other.yaml to grow a real Path."
+  reason: "weak_or_unknown_type"
+  logged_at: "2026-07-21T19:55:07.841400+00:00"

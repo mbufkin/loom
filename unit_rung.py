@@ -106,6 +106,26 @@ def unit_internal_gaps(layer2_rows: list[dict], unit_doc_ids: set[str]) -> dict:
     }
 
 
+def _unit_artifacts(artifact_unit: dict | None) -> dict:
+    """Shape the artifact rung's per-unit block for the unit record. Pure. Separates
+    the DETERMINISTIC signal that gates (presence gaps) from the ADVISORY alignment
+    (which is carried for display only). Absent artifact rung -> an empty,
+    gap-free block so unit_band is unaffected on an older run."""
+    au = artifact_unit or {}
+    gaps = au.get("deterministic_gaps") or []
+    return {
+        "count": au.get("artifact_count", 0),
+        "gate_pass": au.get("gate_pass_count", 0),
+        "gate_pass_rate": au.get("gate_pass_rate", 0.0),
+        "roles": au.get("roles", {}),
+        # Gating signal: at least one artifact is structurally incomplete.
+        "has_gap": bool(gaps),
+        "deterministic_gaps": gaps,
+        # Advisory: how many artifacts could not be aligned (lesson lacked an anchor).
+        "cannot_assess_alignment": au.get("cannot_assess_alignment", 0),
+    }
+
+
 def unit_band(metrics: dict) -> str:
     """Deterministic Strong/Developing/Weak (or Unrated) from the assembled metrics.
     Pure and total — the single place the verdict is decided, so it is trivially
@@ -125,6 +145,11 @@ def unit_band(metrics: dict) -> str:
         and cov is not None
         and cov >= STRONG_COVERAGE
         and metrics.get("pacing_flag") != "UNDER_COVERED"
+        # A structurally-incomplete non-lesson artifact (a quiz with no items, an
+        # answer key with no answers) is a deterministic gap: the unit is not
+        # "hand it to a teacher as-is" Strong. This can only DROP Strong->Developing;
+        # it never fabricates Weak (lesson thinness + systemic role gaps drive Weak).
+        and not metrics.get("has_artifact_gap")
     ):
         return "Strong"
     return "Developing"
@@ -162,6 +187,13 @@ def build_unit_rung(project_id: str) -> Path:
     if lr_path.is_file():
         lesson_units = (json.loads(lr_path.read_text()) or {}).get("units", {})
 
+    # Artifact rung (Paths B/C non-lesson review). Also optional — degrade, don't
+    # crash — so unit_rung still works on a project that has only run the lesson rung.
+    ar_path = root / "layer_artifact" / "ARTIFACT-RUNG.json"
+    artifact_units: dict = {}
+    if ar_path.is_file():
+        artifact_units = (json.loads(ar_path.read_text()) or {}).get("units", {})
+
     # Pacing + inferred calendars.
     pacing = load_yaml(root / "pacing-plan.yaml") if (
         root / "pacing-plan.yaml"
@@ -188,7 +220,7 @@ def build_unit_rung(project_id: str) -> Path:
         findings_by_unit[f["unit_id"]].append(f)
 
     units_out: dict[str, dict] = {}
-    for uid in _unit_ids(units_manifest, unit_rollup, lesson_units):
+    for uid in _unit_ids(units_manifest, unit_rollup, lesson_units, artifact_units):
         title = (
             (units_manifest.get(uid) or {}).get("title")
             or unit_rollup.get(uid, {}).get("title")
@@ -218,6 +250,7 @@ def build_unit_rung(project_id: str) -> Path:
 
         pacing_fit = unit_pacing_fit(pacing_units.get(uid), inferred_units.get(uid))
         internal = unit_internal_gaps(l2_rows, unit_doc_ids.get(uid, set()))
+        artifacts = _unit_artifacts(artifact_units.get(uid))
 
         band = unit_band(
             {
@@ -226,6 +259,8 @@ def build_unit_rung(project_id: str) -> Path:
                 "gate_coverage": gate_cov,
                 "has_systemic_gap": bool(unit_systemic),
                 "pacing_flag": pacing_fit["flag"],
+                # Deterministic artifact gaps GATE (block Strong); alignment advises.
+                "has_artifact_gap": artifacts["has_gap"],
             }
         )
 
@@ -247,8 +282,10 @@ def build_unit_rung(project_id: str) -> Path:
             },
             "pacing": pacing_fit,
             "internal": internal,
+            "artifacts": artifacts,
             "cites": {
                 "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+                "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
                 "layer1_findings": "layer1/findings.json",
                 "unit_id": uid,
             },
@@ -291,8 +328,8 @@ def _render_md(project_id: str, artifact: dict) -> str:
         "`UNIT-RUNG.json`. Standards coverage, skill progression, and rigor are "
         "deliberately out of scope (see `docs/UNIT-RUNG.md`).",
         "",
-        "| Unit | Band | Lessons (gate) | Gate cov | Pacing | Internal gaps |",
-        "|---|---|---|---|---|---|",
+        "| Unit | Band | Lessons (gate) | Gate cov | Pacing | Internal gaps | Artifacts (gate) |",
+        "|---|---|---|---|---|---|---|",
     ]
     for uid, u in artifact["units"].items():
         les = u["lessons"]
@@ -310,9 +347,16 @@ def _render_md(project_id: str, artifact: dict) -> str:
             if intern["docs_judged"]
             else "—"
         )
+        art = u.get("artifacts", {})
+        art_s = (
+            f"{art['gate_pass']}/{art['count']}"
+            + ("  ⚠gap" if art.get("has_gap") else "")
+            if art.get("count")
+            else "—"
+        )
         md.append(
             f"| {uid} | {u['band']} | "
-            f"{les['gate_pass']}/{les['count']} | {cov_s} | {pac_s} | {intern_s} |"
+            f"{les['gate_pass']}/{les['count']} | {cov_s} | {pac_s} | {intern_s} | {art_s} |"
         )
     return "\n".join(md) + "\n"
 

@@ -64,6 +64,14 @@ def test_band_under_covered_pacing_blocks_strong() -> None:
     assert unit_band(_m(pacing_flag="UNDER_COVERED")) == "Developing"
 
 
+def test_band_artifact_gap_blocks_strong_but_not_weak() -> None:
+    # A structurally-incomplete artifact drops an otherwise-Strong unit to Developing
+    # (deterministic gate) ...
+    assert unit_band(_m(has_artifact_gap=True)) == "Developing"
+    # ... but it never fabricates Weak on its own (a healthy-lesson unit stays >= Developing).
+    assert unit_band(_m(has_artifact_gap=True, gate_pass_rate=0.9)) != "Weak"
+
+
 def test_band_missing_coverage_cannot_be_strong() -> None:
     assert unit_band(_m(gate_coverage=None)) == "Developing"
 

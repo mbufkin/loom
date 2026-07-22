@@ -1,4 +1,6 @@
 import type {
+  ArtifactDoc,
+  ArtifactUnit,
   Band,
   LessonFeedbackLesson,
   OutputFile,
@@ -24,6 +26,11 @@ interface Props {
   // enumerated lessons yet. Clicking one drills into the LessonDetail view.
   lessons?: LessonFeedbackLesson[];
   onSelectLesson?: (lessonId: string) => void;
+  // The artifact rung's per-unit block (from ARTIFACT-RUNG.json): every NON-lesson
+  // doc reviewed for this unit. Absent until the artifact rung has run. Clicking a
+  // doc drills into the ArtifactDetail per-doc review.
+  artifacts?: ArtifactUnit;
+  onSelectArtifact?: (docId: string) => void;
 }
 
 function lessonBandClass(band: number | null | undefined, max = 3): string {
@@ -53,6 +60,67 @@ function pct(n: number): string {
   return `${Math.round(n * 100)}%`;
 }
 
+// Human-readable labels for the universal role enum, so a reviewer reads
+// "Exit ticket" rather than the raw `exit_ticket` doc_type. Unknown roles fall back
+// to a title-cased version of whatever the classifier emitted.
+const ROLE_LABEL: Record<string, string> = {
+  exit_ticket: "Exit ticket",
+  quiz: "Quiz",
+  answer_key: "Answer key",
+  rubric: "Rubric",
+  worksheet: "Worksheet",
+  project_work: "Project",
+  presentation: "Slides",
+  game_activity: "Activity",
+  lab_activity: "Lab",
+  flex_day: "Flex day",
+  lesson_content: "Lesson content",
+  other: "Other",
+};
+
+function roleLabel(role: string): string {
+  return (
+    ROLE_LABEL[role] ??
+    role
+      .split("_")
+      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(" ")
+  );
+}
+
+// One document row in the unit's inventory: a type tag, the title, and a plain
+// status (complete, or the specific parts it is missing). Clicking opens the
+// per-doc ArtifactDetail review.
+//
+// NOTE: the model-based ALIGNMENT verdict ("Aligned / Not aligned") is intentionally
+// NOT surfaced here. Presence/completeness is deterministic and trustworthy; the
+// alignment band is still advisory and under-validated, so showing it would make a
+// stronger claim than we can stand behind today. The data still rides along on
+// ArtifactDoc.alignment for when we re-enable it — see docs/ARTIFACT-ALIGNMENT-DEFERRED.md.
+function DocRow({ doc, onClick }: { doc: ArtifactDoc; onClick: () => void }) {
+  const complete = doc.presence.gate_pass;
+  const missing = doc.presence.missing_required ?? [];
+  const statusCls = complete ? "ok" : "bad";
+  const statusText = complete
+    ? "Complete"
+    : missing.length > 0
+    ? `Missing ${missing[0]}${missing.length > 1 ? ` +${missing.length - 1}` : ""}`
+    : "Incomplete";
+  return (
+    <button className={`doc-row ${statusCls}`} onClick={onClick}>
+      <span className="doc-type">{roleLabel(doc.role)}</span>
+      <span className="doc-main">
+        <span className="doc-title">{doc.title}</span>
+        <span className="doc-status">
+          <span className={`dot ${statusCls}`} />
+          {statusText}
+        </span>
+      </span>
+      <span className="doc-arrow">→</span>
+    </button>
+  );
+}
+
 // A single "big number" stat tile, mirroring the review-slip stat styling.
 function Stat({ n, label }: { n: string; label: string }) {
   return (
@@ -77,8 +145,36 @@ export function UnitDetail({
   onOpenFile,
   lessons = [],
   onSelectLesson,
+  artifacts,
+  onSelectArtifact,
 }: Props) {
   const title = record?.title ?? rollup?.title ?? unitId;
+
+  const artifactDocs = artifacts?.documents ?? [];
+  const gapCount = artifactDocs.filter((d) => !d.presence.gate_pass).length;
+  const documentsSection =
+    artifactDocs.length > 0 ? (
+      <section>
+        <div className="section-head">
+          <h4>Documents</h4>
+          <span className="count-tag">{artifactDocs.length}</span>
+          {gapCount > 0 && (
+            <span className="chip warn">
+              {gapCount} incomplete
+            </span>
+          )}
+        </div>
+        <div className="doc-list">
+          {artifactDocs.map((d) => (
+            <DocRow
+              key={d.doc_id}
+              doc={d}
+              onClick={() => onSelectArtifact?.(d.doc_id)}
+            />
+          ))}
+        </div>
+      </section>
+    ) : null;
 
   const lessonsSection =
     lessons.length > 0 ? (
@@ -118,6 +214,7 @@ export function UnitDetail({
           role fulfillment.
         </p>
         {lessonsSection}
+        {documentsSection}
         <section>
           <h4>Deeper reports</h4>
           <UnitFileLinks files={files} onOpenFile={onOpenFile} />
@@ -258,6 +355,7 @@ export function UnitDetail({
       )}
 
       {lessonsSection}
+      {documentsSection}
 
       <section>
         <h4>Deeper reports</h4>

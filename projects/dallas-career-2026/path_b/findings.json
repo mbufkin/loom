@@ -2,7 +2,7 @@
   "project_id": "dallas-career-2026",
   "workflow_id": "quiz",
   "path": "B",
-  "status": "stub",
+  "status": "reviewed",
   "doc_ids": [
     "041457651819",
     "09bf178d4e7e",
@@ -35,516 +35,321 @@
     "fc48920a5ca9",
     "ff5cd4c0712e"
   ],
+  "summary": {
+    "doc_count": 30,
+    "reviewed": 3,
+    "gate_pass": 3
+  },
   "inventory": [
     {
       "doc_id": "041457651819",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "09bf178d4e7e",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "0a9fe894e4f0",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "0ace9ac9d412",
-      "doc_type": "answer_key",
-      "B1": {
-        "has_items": false,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "0b16e1424928",
-      "doc_type": "quiz",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": false,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "1518e9d9d4e5",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": false,
-        "has_answer_key_signal": false,
-        "status": "MISSING"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "1b43180b2ba4",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "1bd2952ce87b",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": false,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "314d7d0905ca",
       "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "arts-av-technology",
+      "title": "Arts AV Technology Communication - Exit Ticket Day 1",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "314d7d0905ca-e2",
+                "excerpt": "Instructions: Watch the youtube video “Non Profit Advertising Spot”\n\nAnswer the Question: What is the message of this Advertisement?\n\nWhat is the message of this Advertisement?\n\n What is the Company Name?\n\n What is the Company Slogan?"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "314d7d0905ca-e2",
+                "excerpt": "Instructions: Watch the youtube video “Non Profit Advertising Spot”\n\nAnswer the Question: What is the message of this Advertisement?\n\nWhat is the message of this Advertisement?\n\n What is the Company Name?\n\n What is the Company Slogan?"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
       "B1": {
         "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "missing_required": []
       },
       "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
       },
       "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
       }
     },
     {
       "doc_id": "3f5d5ba70a87",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "3fd5e5bc561c",
-      "doc_type": "quiz",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": false,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "4736326638c1",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "51e75ae5f576",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "59ddeafc2ad3",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "6caee441faaf",
-      "doc_type": "answer_key",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "81adda4c10f7",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "85c8ad2c6c50",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "86fff193b91a",
-      "doc_type": "answer_key",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "8ce965ac1600",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": false,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "9b49036929a2",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": false,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "a13c35aa5c4e",
-      "doc_type": "answer_key",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "ba8b5c7a6deb",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "d3fae80ecd3f",
-      "doc_type": "quiz",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": false,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "e173d04cd3e3",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "e2c12c61bc5f",
       "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "arts-av-technology",
+      "title": "Arts AV Technology Communication - Exit Ticket Day 3",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "e2c12c61bc5f-e2",
+                "excerpt": "\nWhat is the main purpose of this cluster?\n\n What career did you find most interesting within this cluster?\n\n What would you like to learn more about this cluster?"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "e2c12c61bc5f-e2",
+                "excerpt": "\nWhat is the main purpose of this cluster?\n\n What career did you find most interesting within this cluster?\n\n What would you like to learn more about this cluster?"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
       "B1": {
         "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "missing_required": []
       },
       "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
       },
       "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
       }
     },
     {
       "doc_id": "ed1c99b4f5fa",
-      "doc_type": "answer_key",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "eff81c789b58",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": false,
-        "has_answer_key_signal": false,
-        "status": "MISSING"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "f52d1bc1c462",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": false,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "fc48920a5ca9",
-      "doc_type": "quiz",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": false,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path B but has no Layer 0 elements yet"
     },
     {
       "doc_id": "ff5cd4c0712e",
       "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "arts-av-technology",
+      "title": "Arts AV Technology Communication - Exit Ticket Day 2",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "ff5cd4c0712e-e2",
+                "excerpt": "Instructions: Having had the day to work in your groups, think back on how the group worked together.\n\nDid my group communicate well?\n\n Did my group work together to solve the problem?\n\n Did my group use its time well?\n\n\nDid I contribute to my team’s work?\n\n\nDid everyone in my group contribute?"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "ff5cd4c0712e-e2",
+                "excerpt": "Instructions: Having had the day to work in your groups, think back on how the group worked together.\n\nDid my group communicate well?\n\n Did my group work together to solve the problem?\n\n Did my group use its time well?\n\n\nDid I contribute to my team’s work?\n\n\nDid everyone in my group contribute?"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
       "B1": {
         "has_items": true,
-        "has_answer_key_signal": false,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "missing_required": []
       },
       "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
       },
       "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
       }
     }
-  ]
+  ],
+  "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json"
 }

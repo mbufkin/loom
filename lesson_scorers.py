@@ -21,17 +21,14 @@ import json
 
 from audit_lib import parse_model_json
 from lesson_scoring import (
-    MISSING,
-    PARTIAL,
-    PRESENT,
     CriterionResult,
     Evidence,
     LessonInput,
     Scorer,
     ScorerResult,
+    presence_result,
     register_scorer,
     summarize_bands,
-    summarize_presence,
 )
 from rubrics import (
     COMPLETENESS_RUBRIC,
@@ -51,75 +48,15 @@ AUDITOR_PREAMBLE = (
 
 
 # --- deterministic presence scoring (S1, S3) --------------------------------
+# The presence logic now lives in lesson_scoring.presence_result so the artifact
+# scorers reuse the exact same deterministic gate; this thin wrapper keeps the
+# lesson scorers reading naturally.
 
 
 def _presence_result(
     lesson: LessonInput, rubric: dict, scorer_id: str
 ) -> ScorerResult:
-    """Score a presence rubric from the lesson's own Layer 0 element types, with a
-    keyword excerpt match as a weaker PARTIAL signal. No model call."""
-    crits: list[CriterionResult] = []
-    for c in rubric["criteria"]:
-        etypes = c.get("evidence_element_types") or []
-        keywords = [k.lower() for k in (c.get("keywords") or [])]
-        label = c.get("label", c["id"])
-        matched = lesson.elements_of_type(*etypes) if etypes else []
-        if matched:
-            crits.append(
-                CriterionResult(
-                    c["id"],
-                    label,
-                    "presence",
-                    verdict=PRESENT,
-                    evidence=[Evidence(matched[0].element_id, matched[0].excerpt)],
-                )
-            )
-            continue
-        # No element carries the expected instructional type -> look for a keyword in
-        # any excerpt. A hit is only PARTIAL: the content is hinted at but not tagged
-        # as a real structural part (honest about the weaker evidence).
-        kw_hit = None
-        if keywords:
-            for el in lesson.elements:
-                ex = (el.excerpt or "").lower()
-                if any(k in ex for k in keywords):
-                    kw_hit = el
-                    break
-        if kw_hit is not None:
-            crits.append(
-                CriterionResult(
-                    c["id"],
-                    label,
-                    "presence",
-                    verdict=PARTIAL,
-                    evidence=[Evidence(kw_hit.element_id, kw_hit.excerpt)],
-                    note="keyword match only; no element tagged with the expected type",
-                )
-            )
-        else:
-            crits.append(
-                CriterionResult(c["id"], label, "presence", verdict=MISSING)
-            )
-
-    summary = summarize_presence(crits)
-    by_id = {cr.criterion_id: cr for cr in crits}
-    required = [c["id"] for c in rubric["criteria"] if c.get("required")]
-    summary["required_total"] = len(required)
-    summary["required_present"] = sum(
-        1 for r in required if by_id[r].verdict == PRESENT
-    )
-    # The gate a downstream unit rung can trust: every REQUIRED part is present.
-    summary["gate_pass"] = all(by_id[r].verdict == PRESENT for r in required)
-    return ScorerResult(
-        scorer_id=scorer_id,
-        rubric_id=rubric["rubric_id"],
-        rubric_version=rubric["version"],
-        scoring="presence",
-        lesson_id=lesson.lesson_id,
-        criteria=crits,
-        summary=summary,
-        cost={"model_calls": 0},
-    )
+    return presence_result(lesson, rubric, scorer_id)
 
 
 # --- model band scoring (S2, S4) --------------------------------------------

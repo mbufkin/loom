@@ -22,31 +22,26 @@
         }
       },
       "roles": {
-        "fulfilled": 2,
-        "missing": 7,
+        "fulfilled": 0,
+        "missing": 9,
         "systemic_absent": [
+          "answer_key",
           "exit_ticket",
-          "lesson_content"
+          "lesson_content",
+          "lesson_plan",
+          "rubric"
         ],
         "isolated_gaps": [
-          {
-            "role": "lesson_plan",
-            "day_id": "unit_supporting"
-          },
           {
             "role": "quiz",
             "day_id": "unit_supporting"
           },
           {
-            "role": "answer_key",
-            "day_id": "unit_supporting"
-          },
-          {
-            "role": "rubric",
+            "role": "worksheet",
             "day_id": "unit_supporting"
           }
         ],
-        "isolated_gap_total": 4
+        "isolated_gap_total": 2
       },
       "pacing": {
         "planned_days": 2,
@@ -59,8 +54,18 @@
         "docs_incomplete": 0,
         "top_missing_components": []
       },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
       "cites": {
         "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
         "layer1_findings": "layer1/findings.json",
         "unit_id": "agriculture"
       }
@@ -78,19 +83,26 @@
         }
       },
       "roles": {
-        "fulfilled": 4,
-        "missing": 5,
+        "fulfilled": 0,
+        "missing": 9,
         "systemic_absent": [
+          "answer_key",
           "exit_ticket",
-          "lesson_content"
+          "lesson_content",
+          "lesson_plan",
+          "rubric"
         ],
         "isolated_gaps": [
           {
-            "role": "rubric",
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "worksheet",
             "day_id": "unit_supporting"
           }
         ],
-        "isolated_gap_total": 1
+        "isolated_gap_total": 2
       },
       "pacing": {
         "planned_days": 2,
@@ -99,16 +111,22 @@
         "flag": "UNDER_COVERED"
       },
       "internal": {
-        "docs_judged": 2,
-        "docs_incomplete": 2,
-        "top_missing_components": [
-          "independent_practice",
-          "logistics_materials",
-          "reflection_closure"
-        ]
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
       },
       "cites": {
         "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
         "layer1_findings": "layer1/findings.json",
         "unit_id": "architecture-construction"
       }
@@ -129,20 +147,13 @@
         "fulfilled": 3,
         "missing": 6,
         "systemic_absent": [
+          "answer_key",
           "exit_ticket",
-          "lesson_content"
+          "lesson_content",
+          "lesson_plan"
         ],
-        "isolated_gaps": [
-          {
-            "role": "lesson_plan",
-            "day_id": "unit_supporting"
-          },
-          {
-            "role": "answer_key",
-            "day_id": "unit_supporting"
-          }
-        ],
-        "isolated_gap_total": 2
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
       },
       "pacing": {
         "planned_days": 2,
@@ -155,8 +166,40 @@
         "docs_incomplete": 0,
         "top_missing_components": []
       },
+      "artifacts": {
+        "count": 6,
+        "gate_pass": 4,
+        "gate_pass_rate": 0.667,
+        "roles": {
+          "exit_ticket": 3,
+          "project_work": 1,
+          "rubric": 2
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "af9cf3b04474",
+            "role": "rubric",
+            "title": "Arts AV Technology Communication Commercial Project Rubric",
+            "missing_required": [
+              "Performance levels / scale"
+            ]
+          },
+          {
+            "doc_id": "0cbd06c7c769",
+            "role": "rubric",
+            "title": "Arts AV Technology Communication Flyer Project Rubric",
+            "missing_required": [
+              "Named assessment criteria",
+              "Performance levels / scale"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
       "cites": {
         "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
         "layer1_findings": "layer1/findings.json",
         "unit_id": "arts-av-technology"
       }
@@ -174,11 +217,14 @@
         }
       },
       "roles": {
-        "fulfilled": 2,
-        "missing": 9,
+        "fulfilled": 0,
+        "missing": 11,
         "systemic_absent": [
+          "answer_key",
           "exit_ticket",
-          "lesson_content"
+          "lesson_content",
+          "lesson_plan",
+          "rubric"
         ],
         "isolated_gaps": [
           {
@@ -186,15 +232,11 @@
             "day_id": "unit_supporting"
           },
           {
-            "role": "answer_key",
-            "day_id": "unit_supporting"
-          },
-          {
             "role": "worksheet",
             "day_id": "unit_supporting"
           }
         ],
-        "isolated_gap_total": 3
+        "isolated_gap_total": 2
       },
       "pacing": {
         "planned_days": 3,
@@ -203,16 +245,22 @@
         "flag": "UNDER_COVERED"
       },
       "internal": {
-        "docs_judged": 1,
-        "docs_incomplete": 1,
-        "top_missing_components": [
-          "assessment_checkpoint",
-          "direct_instruction",
-          "guided_practice"
-        ]
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
       },
       "cites": {
         "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
         "layer1_findings": "layer1/findings.json",
         "unit_id": "business-marketing"
       }
@@ -233,24 +281,14 @@
         "fulfilled": 2,
         "missing": 7,
         "systemic_absent": [
+          "answer_key",
           "exit_ticket",
-          "lesson_content"
+          "lesson_content",
+          "lesson_plan",
+          "rubric"
         ],
-        "isolated_gaps": [
-          {
-            "role": "lesson_plan",
-            "day_id": "unit_supporting"
-          },
-          {
-            "role": "answer_key",
-            "day_id": "unit_supporting"
-          },
-          {
-            "role": "worksheet",
-            "day_id": "unit_supporting"
-          }
-        ],
-        "isolated_gap_total": 3
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
       },
       "pacing": {
         "planned_days": 2,
@@ -263,8 +301,18 @@
         "docs_incomplete": 0,
         "top_missing_components": []
       },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
       "cites": {
         "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
         "layer1_findings": "layer1/findings.json",
         "unit_id": "career-cluster"
       }
@@ -282,11 +330,14 @@
         }
       },
       "roles": {
-        "fulfilled": 2,
-        "missing": 6,
+        "fulfilled": 0,
+        "missing": 9,
         "systemic_absent": [
+          "answer_key",
           "exit_ticket",
-          "lesson_content"
+          "lesson_content",
+          "lesson_plan",
+          "rubric"
         ],
         "isolated_gaps": [
           {
@@ -294,7 +345,7 @@
             "day_id": "unit_supporting"
           },
           {
-            "role": "answer_key",
+            "role": "worksheet",
             "day_id": "unit_supporting"
           }
         ],
@@ -307,15 +358,22 @@
         "flag": "UNDER_COVERED"
       },
       "internal": {
-        "docs_judged": 1,
-        "docs_incomplete": 1,
-        "top_missing_components": [
-          "hook_engagement",
-          "independent_practice"
-        ]
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
       },
       "cites": {
         "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
         "layer1_findings": "layer1/findings.json",
         "unit_id": "career-exploration"
       }
@@ -334,22 +392,16 @@
       },
       "roles": {
         "fulfilled": 2,
-        "missing": 4,
+        "missing": 5,
         "systemic_absent": [
+          "answer_key",
           "exit_ticket",
-          "lesson_content"
+          "lesson_content",
+          "lesson_plan",
+          "rubric"
         ],
-        "isolated_gaps": [
-          {
-            "role": "lesson_plan",
-            "day_id": "unit_supporting"
-          },
-          {
-            "role": "rubric",
-            "day_id": "unit_supporting"
-          }
-        ],
-        "isolated_gap_total": 2
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
       },
       "pacing": {
         "planned_days": 1,
@@ -362,8 +414,18 @@
         "docs_incomplete": 0,
         "top_missing_components": []
       },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
       "cites": {
         "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
         "layer1_findings": "layer1/findings.json",
         "unit_id": "dallas-isd"
       }
@@ -381,23 +443,22 @@
         }
       },
       "roles": {
-        "fulfilled": 4,
-        "missing": 5,
+        "fulfilled": 1,
+        "missing": 8,
         "systemic_absent": [
+          "answer_key",
           "exit_ticket",
-          "lesson_content"
+          "lesson_content",
+          "lesson_plan",
+          "rubric"
         ],
         "isolated_gaps": [
           {
-            "role": "answer_key",
-            "day_id": "unit_supporting"
-          },
-          {
-            "role": "rubric",
+            "role": "quiz",
             "day_id": "unit_supporting"
           }
         ],
-        "isolated_gap_total": 2
+        "isolated_gap_total": 1
       },
       "pacing": {
         "planned_days": 2,
@@ -406,16 +467,22 @@
         "flag": "UNDER_COVERED"
       },
       "internal": {
-        "docs_judged": 1,
-        "docs_incomplete": 1,
-        "top_missing_components": [
-          "assessment_checkpoint",
-          "guided_practice",
-          "independent_practice"
-        ]
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
       },
       "cites": {
         "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
         "layer1_findings": "layer1/findings.json",
         "unit_id": "engineering"
       }
@@ -436,24 +503,18 @@
         "fulfilled": 2,
         "missing": 7,
         "systemic_absent": [
+          "answer_key",
           "exit_ticket",
-          "lesson_content"
+          "lesson_content",
+          "rubric"
         ],
         "isolated_gaps": [
           {
             "role": "quiz",
             "day_id": "unit_supporting"
-          },
-          {
-            "role": "answer_key",
-            "day_id": "unit_supporting"
-          },
-          {
-            "role": "rubric",
-            "day_id": "unit_supporting"
           }
         ],
-        "isolated_gap_total": 3
+        "isolated_gap_total": 1
       },
       "pacing": {
         "planned_days": 2,
@@ -470,8 +531,18 @@
           "hook_engagement"
         ]
       },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
       "cites": {
         "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
         "layer1_findings": "layer1/findings.json",
         "unit_id": "family-community"
       }
@@ -486,27 +557,26 @@
         "mean_coverage": {}
       },
       "roles": {
-        "fulfilled": 4,
-        "missing": 7,
+        "fulfilled": 0,
+        "missing": 11,
         "systemic_absent": [
+          "answer_key",
           "exit_ticket",
-          "lesson_content"
+          "lesson_content",
+          "lesson_plan",
+          "rubric"
         ],
         "isolated_gaps": [
           {
-            "role": "lesson_plan",
+            "role": "quiz",
             "day_id": "unit_supporting"
           },
           {
-            "role": "answer_key",
-            "day_id": "unit_supporting"
-          },
-          {
-            "role": "rubric",
+            "role": "worksheet",
             "day_id": "unit_supporting"
           }
         ],
-        "isolated_gap_total": 3
+        "isolated_gap_total": 2
       },
       "pacing": {
         "planned_days": 3,
@@ -519,8 +589,18 @@
         "docs_incomplete": 0,
         "top_missing_components": []
       },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
       "cites": {
         "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
         "layer1_findings": "layer1/findings.json",
         "unit_id": "financial-literacy"
       }
@@ -535,19 +615,18 @@
         "mean_coverage": {}
       },
       "roles": {
-        "fulfilled": 2,
-        "missing": 9,
+        "fulfilled": 0,
+        "missing": 11,
         "systemic_absent": [
+          "answer_key",
           "exit_ticket",
-          "lesson_content"
+          "lesson_content",
+          "lesson_plan",
+          "rubric"
         ],
         "isolated_gaps": [
           {
-            "role": "lesson_plan",
-            "day_id": "unit_supporting"
-          },
-          {
-            "role": "answer_key",
+            "role": "quiz",
             "day_id": "unit_supporting"
           },
           {
@@ -555,7 +634,7 @@
             "day_id": "unit_supporting"
           }
         ],
-        "isolated_gap_total": 3
+        "isolated_gap_total": 2
       },
       "pacing": {
         "planned_days": 3,
@@ -568,8 +647,18 @@
         "docs_incomplete": 0,
         "top_missing_components": []
       },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
       "cites": {
         "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
         "layer1_findings": "layer1/findings.json",
         "unit_id": "health-science"
       }
@@ -587,19 +676,22 @@
         }
       },
       "roles": {
-        "fulfilled": 3,
-        "missing": 6,
+        "fulfilled": 0,
+        "missing": 9,
         "systemic_absent": [
+          "answer_key",
           "exit_ticket",
-          "lesson_content"
+          "lesson_content",
+          "lesson_plan",
+          "rubric"
         ],
         "isolated_gaps": [
           {
-            "role": "lesson_plan",
+            "role": "quiz",
             "day_id": "unit_supporting"
           },
           {
-            "role": "answer_key",
+            "role": "worksheet",
             "day_id": "unit_supporting"
           }
         ],
@@ -616,8 +708,18 @@
         "docs_incomplete": 0,
         "top_missing_components": []
       },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
       "cites": {
         "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
         "layer1_findings": "layer1/findings.json",
         "unit_id": "hospitality-tourism"
       }
@@ -635,24 +737,14 @@
         "fulfilled": 2,
         "missing": 9,
         "systemic_absent": [
+          "answer_key",
           "exit_ticket",
-          "lesson_content"
+          "lesson_content",
+          "lesson_plan",
+          "rubric"
         ],
-        "isolated_gaps": [
-          {
-            "role": "lesson_plan",
-            "day_id": "unit_supporting"
-          },
-          {
-            "role": "answer_key",
-            "day_id": "unit_supporting"
-          },
-          {
-            "role": "worksheet",
-            "day_id": "unit_supporting"
-          }
-        ],
-        "isolated_gap_total": 3
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
       },
       "pacing": {
         "planned_days": 3,
@@ -665,8 +757,18 @@
         "docs_incomplete": 0,
         "top_missing_components": []
       },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
       "cites": {
         "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
         "layer1_findings": "layer1/findings.json",
         "unit_id": "information-technology"
       }
@@ -684,11 +786,14 @@
         }
       },
       "roles": {
-        "fulfilled": 3,
-        "missing": 6,
+        "fulfilled": 0,
+        "missing": 9,
         "systemic_absent": [
+          "answer_key",
           "exit_ticket",
-          "lesson_content"
+          "lesson_content",
+          "lesson_plan",
+          "rubric"
         ],
         "isolated_gaps": [
           {
@@ -696,7 +801,7 @@
             "day_id": "unit_supporting"
           },
           {
-            "role": "answer_key",
+            "role": "worksheet",
             "day_id": "unit_supporting"
           }
         ],
@@ -709,16 +814,22 @@
         "flag": "UNDER_COVERED"
       },
       "internal": {
-        "docs_judged": 2,
-        "docs_incomplete": 2,
-        "top_missing_components": [
-          "reflection_closure",
-          "logistics_materials",
-          "standards_objectives"
-        ]
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
       },
       "cites": {
         "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
         "layer1_findings": "layer1/findings.json",
         "unit_id": "law-and-public-service"
       }
@@ -736,19 +847,26 @@
         }
       },
       "roles": {
-        "fulfilled": 5,
-        "missing": 4,
+        "fulfilled": 0,
+        "missing": 9,
         "systemic_absent": [
+          "answer_key",
           "exit_ticket",
-          "lesson_content"
+          "lesson_content",
+          "lesson_plan",
+          "rubric"
         ],
         "isolated_gaps": [
           {
-            "role": "rubric",
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "worksheet",
             "day_id": "unit_supporting"
           }
         ],
-        "isolated_gap_total": 1
+        "isolated_gap_total": 2
       },
       "pacing": {
         "planned_days": 2,
@@ -757,16 +875,22 @@
         "flag": "UNDER_COVERED"
       },
       "internal": {
-        "docs_judged": 2,
-        "docs_incomplete": 2,
-        "top_missing_components": [
-          "independent_practice",
-          "direct_instruction",
-          "logistics_materials"
-        ]
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
       },
       "cites": {
         "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
         "layer1_findings": "layer1/findings.json",
         "unit_id": "manufacturing"
       }
@@ -785,22 +909,16 @@
       },
       "roles": {
         "fulfilled": 2,
-        "missing": 6,
+        "missing": 7,
         "systemic_absent": [
+          "answer_key",
           "exit_ticket",
-          "lesson_content"
+          "lesson_content",
+          "lesson_plan",
+          "rubric"
         ],
-        "isolated_gaps": [
-          {
-            "role": "lesson_plan",
-            "day_id": "unit_supporting"
-          },
-          {
-            "role": "answer_key",
-            "day_id": "unit_supporting"
-          }
-        ],
-        "isolated_gap_total": 2
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
       },
       "pacing": {
         "planned_days": 2,
@@ -813,8 +931,18 @@
         "docs_incomplete": 0,
         "top_missing_components": []
       },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
       "cites": {
         "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
         "layer1_findings": "layer1/findings.json",
         "unit_id": "professional-preparedness"
       }
@@ -832,11 +960,14 @@
         }
       },
       "roles": {
-        "fulfilled": 3,
-        "missing": 6,
+        "fulfilled": 0,
+        "missing": 9,
         "systemic_absent": [
+          "answer_key",
           "exit_ticket",
-          "lesson_content"
+          "lesson_content",
+          "lesson_plan",
+          "rubric"
         ],
         "isolated_gaps": [
           {
@@ -844,7 +975,7 @@
             "day_id": "unit_supporting"
           },
           {
-            "role": "answer_key",
+            "role": "worksheet",
             "day_id": "unit_supporting"
           }
         ],
@@ -857,15 +988,22 @@
         "flag": "UNDER_COVERED"
       },
       "internal": {
-        "docs_judged": 1,
-        "docs_incomplete": 1,
-        "top_missing_components": [
-          "hook_engagement",
-          "independent_practice"
-        ]
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
       },
       "cites": {
         "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
         "layer1_findings": "layer1/findings.json",
         "unit_id": "teaching-and-training"
       }
@@ -883,31 +1021,26 @@
         }
       },
       "roles": {
-        "fulfilled": 1,
-        "missing": 8,
+        "fulfilled": 0,
+        "missing": 9,
         "systemic_absent": [
+          "answer_key",
           "exit_ticket",
-          "lesson_content"
+          "lesson_content",
+          "lesson_plan",
+          "rubric"
         ],
         "isolated_gaps": [
-          {
-            "role": "lesson_plan",
-            "day_id": "unit_supporting"
-          },
           {
             "role": "quiz",
             "day_id": "unit_supporting"
           },
           {
-            "role": "answer_key",
-            "day_id": "unit_supporting"
-          },
-          {
-            "role": "rubric",
+            "role": "worksheet",
             "day_id": "unit_supporting"
           }
         ],
-        "isolated_gap_total": 4
+        "isolated_gap_total": 2
       },
       "pacing": {
         "planned_days": 2,
@@ -920,8 +1053,18 @@
         "docs_incomplete": 0,
         "top_missing_components": []
       },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
       "cites": {
         "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
         "layer1_findings": "layer1/findings.json",
         "unit_id": "transportation-distribution"
       }

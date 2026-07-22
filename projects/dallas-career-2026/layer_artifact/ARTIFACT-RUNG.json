@@ -1,0 +1,869 @@
+{
+  "project_id": "dallas-career-2026",
+  "presence_scorer": "artifact_presence",
+  "alignment_scorer": "artifact_alignment",
+  "with_model": true,
+  "summary": {
+    "artifact_count": 6,
+    "gate_pass_count": 4,
+    "gate_pass_rate": 0.667,
+    "unit_count": 1,
+    "roles": {
+      "exit_ticket": 3,
+      "project_work": 1,
+      "rubric": 2
+    },
+    "nursery_count": 0
+  },
+  "units": {
+    "arts-av-technology": {
+      "artifact_count": 6,
+      "gate_pass_count": 4,
+      "gate_pass_rate": 0.667,
+      "roles": {
+        "exit_ticket": 3,
+        "project_work": 1,
+        "rubric": 2
+      },
+      "deterministic_gaps": [
+        {
+          "doc_id": "af9cf3b04474",
+          "role": "rubric",
+          "title": "Arts AV Technology Communication Commercial Project Rubric",
+          "missing_required": [
+            "Performance levels / scale"
+          ]
+        },
+        {
+          "doc_id": "0cbd06c7c769",
+          "role": "rubric",
+          "title": "Arts AV Technology Communication Flyer Project Rubric",
+          "missing_required": [
+            "Named assessment criteria",
+            "Performance levels / scale"
+          ]
+        }
+      ],
+      "has_artifact_gap": true,
+      "cannot_assess_alignment": 0,
+      "documents": [
+        {
+          "doc_id": "314d7d0905ca",
+          "unit_id": "arts-av-technology",
+          "title": "Arts AV Technology Communication - Exit Ticket Day 1",
+          "source_file": "sources/doc_314d7d0905ca_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_1.txt",
+          "role": "exit_ticket",
+          "doc_type": "exit_ticket",
+          "is_fallback": false,
+          "nursery": false,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_prompt",
+                "label": "Prompt / question present",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "314d7d0905ca-e2",
+                    "excerpt": "Instructions: Watch the youtube video \u201cNon Profit Advertising Spot\u201d\n\nAnswer the Question: What is the message of this Advertisement?\n\nWhat is the message of this Advertisement?\n\n What is the Company Name?\n\n What is the Company Slogan?"
+                  }
+                ],
+                "note": ""
+              },
+              {
+                "criterion_id": "collects_response",
+                "label": "Space / mechanism to collect a response",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "314d7d0905ca-e2",
+                    "excerpt": "Instructions: Watch the youtube video \u201cNon Profit Advertising Spot\u201d\n\nAnswer the Question: What is the message of this Advertisement?\n\nWhat is the message of this Advertisement?\n\n What is the Company Name?\n\n What is the Company Slogan?"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          },
+          "alignment": {
+            "applicable": true,
+            "cannot_assess": false,
+            "skipped": false,
+            "mean_band": 0.0,
+            "max_band": 3,
+            "anchor_kind": "objective",
+            "error": null,
+            "criteria": [
+              {
+                "criterion_id": "aligned_to_objective",
+                "label": "Aligned to the lesson objective",
+                "scoring": "band",
+                "verdict": null,
+                "band": 0,
+                "evidence": [],
+                "note": ""
+              },
+              {
+                "criterion_id": "actionable",
+                "label": "Actionable for instruction",
+                "scoring": "band",
+                "verdict": null,
+                "band": 0,
+                "evidence": [],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "ff5cd4c0712e",
+          "unit_id": "arts-av-technology",
+          "title": "Arts AV Technology Communication - Exit Ticket Day 2",
+          "source_file": "sources/doc_ff5cd4c0712e_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_2.txt",
+          "role": "exit_ticket",
+          "doc_type": "exit_ticket",
+          "is_fallback": false,
+          "nursery": false,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_prompt",
+                "label": "Prompt / question present",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "ff5cd4c0712e-e2",
+                    "excerpt": "Instructions: Having had the day to work in your groups, think back on how the group worked together.\n\nDid my group communicate well?\n\n Did my group work together to solve the problem?\n\n Did my group use its time well?\n\n\nDid I contribute to my team\u2019s work?\n\n\nDid everyone in my group contribute?"
+                  }
+                ],
+                "note": ""
+              },
+              {
+                "criterion_id": "collects_response",
+                "label": "Space / mechanism to collect a response",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "ff5cd4c0712e-e2",
+                    "excerpt": "Instructions: Having had the day to work in your groups, think back on how the group worked together.\n\nDid my group communicate well?\n\n Did my group work together to solve the problem?\n\n Did my group use its time well?\n\n\nDid I contribute to my team\u2019s work?\n\n\nDid everyone in my group contribute?"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          },
+          "alignment": {
+            "applicable": true,
+            "cannot_assess": false,
+            "skipped": false,
+            "mean_band": 0.0,
+            "max_band": 3,
+            "anchor_kind": "objective",
+            "error": null,
+            "criteria": [
+              {
+                "criterion_id": "aligned_to_objective",
+                "label": "Aligned to the lesson objective",
+                "scoring": "band",
+                "verdict": null,
+                "band": 0,
+                "evidence": [],
+                "note": ""
+              },
+              {
+                "criterion_id": "actionable",
+                "label": "Actionable for instruction",
+                "scoring": "band",
+                "verdict": null,
+                "band": 0,
+                "evidence": [],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "e2c12c61bc5f",
+          "unit_id": "arts-av-technology",
+          "title": "Arts AV Technology Communication - Exit Ticket Day 3",
+          "source_file": "sources/doc_e2c12c61bc5f_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_3.txt",
+          "role": "exit_ticket",
+          "doc_type": "exit_ticket",
+          "is_fallback": false,
+          "nursery": false,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_prompt",
+                "label": "Prompt / question present",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "e2c12c61bc5f-e2",
+                    "excerpt": "\nWhat is the main purpose of this cluster?\n\n What career did you find most interesting within this cluster?\n\n What would you like to learn more about this cluster?"
+                  }
+                ],
+                "note": ""
+              },
+              {
+                "criterion_id": "collects_response",
+                "label": "Space / mechanism to collect a response",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "e2c12c61bc5f-e2",
+                    "excerpt": "\nWhat is the main purpose of this cluster?\n\n What career did you find most interesting within this cluster?\n\n What would you like to learn more about this cluster?"
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          },
+          "alignment": {
+            "applicable": true,
+            "cannot_assess": false,
+            "skipped": false,
+            "mean_band": 0.0,
+            "max_band": 3,
+            "anchor_kind": "objective",
+            "error": null,
+            "criteria": [
+              {
+                "criterion_id": "aligned_to_objective",
+                "label": "Aligned to the lesson objective",
+                "scoring": "band",
+                "verdict": null,
+                "band": 0,
+                "evidence": [],
+                "note": ""
+              },
+              {
+                "criterion_id": "actionable",
+                "label": "Actionable for instruction",
+                "scoring": "band",
+                "verdict": null,
+                "band": 0,
+                "evidence": [],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "0a62e0b9729e",
+          "unit_id": "arts-av-technology",
+          "title": "Arts A V Student Notes",
+          "source_file": "sources/doc_0a62e0b9729e_Arts_A_V_Student_Notes.txt",
+          "role": "project_work",
+          "doc_type": "project_work",
+          "is_fallback": false,
+          "nursery": false,
+          "presence": {
+            "gate_pass": true,
+            "coverage": 1.0,
+            "missing_required": [],
+            "criteria": [
+              {
+                "criterion_id": "has_task",
+                "label": "Task / deliverable described",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "0a62e0b9729e-e1",
+                    "excerpt": "Arts, A/V Technology and Communication\nSlideshow Notes\nFollow the teachers slideshow and answer the questions or fill in the blank."
+                  }
+                ],
+                "note": ""
+              },
+              {
+                "criterion_id": "has_directions",
+                "label": "Directions / requirements",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "0a62e0b9729e-e1",
+                    "excerpt": "Arts, A/V Technology and Communication\nSlideshow Notes\nFollow the teachers slideshow and answer the questions or fill in the blank."
+                  }
+                ],
+                "note": ""
+              }
+            ]
+          },
+          "alignment": {
+            "applicable": true,
+            "cannot_assess": false,
+            "skipped": false,
+            "mean_band": 0.0,
+            "max_band": 3,
+            "anchor_kind": "objective",
+            "error": null,
+            "criteria": [
+              {
+                "criterion_id": "task_aligned",
+                "label": "Task applies the objective",
+                "scoring": "band",
+                "verdict": null,
+                "band": 0,
+                "evidence": [],
+                "note": "The artifact consists of fill\u2011in\u2011the\u2011blank career lists and does not require students to demonstrate the specific TEKS skill of developing personal success through time management."
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "af9cf3b04474",
+          "unit_id": "arts-av-technology",
+          "title": "Arts AV Technology Communication Commercial Project Rubric",
+          "source_file": "sources/doc_af9cf3b04474_Arts_AV_Technology___Communication_Commercial_Project_Rubric.txt",
+          "role": "rubric",
+          "doc_type": "rubric",
+          "is_fallback": false,
+          "nursery": false,
+          "presence": {
+            "gate_pass": false,
+            "coverage": 0.5,
+            "missing_required": [
+              "Performance levels / scale"
+            ],
+            "criteria": [
+              {
+                "criterion_id": "has_criteria",
+                "label": "Named assessment criteria",
+                "scoring": "presence",
+                "verdict": "PRESENT",
+                "band": null,
+                "evidence": [
+                  {
+                    "element_id": "af9cf3b04474-e1",
+                    "excerpt": "Arts, A/V Tech & Comm Cluster  Commercial Project Rubric"
+                  }
+                ],
+                "note": ""
+              },
+              {
+                "criterion_id": "has_levels",
+                "label": "Performance levels / scale",
+                "scoring": "presence",
+                "verdict": "MISSING",
+                "band": null,
+                "evidence": [],
+                "note": ""
+              }
+            ]
+          },
+          "alignment": {
+            "applicable": true,
+            "cannot_assess": false,
+            "skipped": false,
+            "mean_band": 0.0,
+            "max_band": 3,
+            "anchor_kind": "objective",
+            "error": null,
+            "criteria": [
+              {
+                "criterion_id": "criteria_assess_objective",
+                "label": "Criteria measure the objective",
+                "scoring": "band",
+                "verdict": null,
+                "band": 0,
+                "evidence": [],
+                "note": ""
+              }
+            ]
+          }
+        },
+        {
+          "doc_id": "0cbd06c7c769",
+          "unit_id": "arts-av-technology",
+          "title": "Arts AV Technology Communication Flyer Project Rubric",
+          "source_file": "sources/doc_0cbd06c7c769_Arts_AV_Technology___Communication_Flyer_Project_Rubric.txt",
+          "role": "rubric",
+          "doc_type": "rubric",
+          "is_fallback": false,
+          "nursery": false,
+          "presence": {
+            "gate_pass": false,
+            "coverage": 0.0,
+            "missing_required": [
+              "Named assessment criteria",
+              "Performance levels / scale"
+            ],
+            "criteria": [
+              {
+                "criterion_id": "has_criteria",
+                "label": "Named assessment criteria",
+                "scoring": "presence",
+                "verdict": "MISSING",
+                "band": null,
+                "evidence": [],
+                "note": ""
+              },
+              {
+                "criterion_id": "has_levels",
+                "label": "Performance levels / scale",
+                "scoring": "presence",
+                "verdict": "MISSING",
+                "band": null,
+                "evidence": [],
+                "note": ""
+              }
+            ]
+          },
+          "alignment": {
+            "applicable": true,
+            "cannot_assess": false,
+            "skipped": false,
+            "mean_band": 0.0,
+            "max_band": 3,
+            "anchor_kind": "objective",
+            "error": null,
+            "criteria": [
+              {
+                "criterion_id": "criteria_assess_objective",
+                "label": "Criteria measure the objective",
+                "scoring": "band",
+                "verdict": null,
+                "band": 0,
+                "evidence": [],
+                "note": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "artifacts": [
+    {
+      "doc_id": "314d7d0905ca",
+      "unit_id": "arts-av-technology",
+      "title": "Arts AV Technology Communication - Exit Ticket Day 1",
+      "source_file": "sources/doc_314d7d0905ca_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_1.txt",
+      "role": "exit_ticket",
+      "doc_type": "exit_ticket",
+      "is_fallback": false,
+      "nursery": false,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "314d7d0905ca-e2",
+                "excerpt": "Instructions: Watch the youtube video \u201cNon Profit Advertising Spot\u201d\n\nAnswer the Question: What is the message of this Advertisement?\n\nWhat is the message of this Advertisement?\n\n What is the Company Name?\n\n What is the Company Slogan?"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "314d7d0905ca-e2",
+                "excerpt": "Instructions: Watch the youtube video \u201cNon Profit Advertising Spot\u201d\n\nAnswer the Question: What is the message of this Advertisement?\n\nWhat is the message of this Advertisement?\n\n What is the Company Name?\n\n What is the Company Slogan?"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": {
+        "applicable": true,
+        "cannot_assess": false,
+        "skipped": false,
+        "mean_band": 0.0,
+        "max_band": 3,
+        "anchor_kind": "objective",
+        "error": null,
+        "criteria": [
+          {
+            "criterion_id": "aligned_to_objective",
+            "label": "Aligned to the lesson objective",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "actionable",
+            "label": "Actionable for instruction",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "ff5cd4c0712e",
+      "unit_id": "arts-av-technology",
+      "title": "Arts AV Technology Communication - Exit Ticket Day 2",
+      "source_file": "sources/doc_ff5cd4c0712e_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_2.txt",
+      "role": "exit_ticket",
+      "doc_type": "exit_ticket",
+      "is_fallback": false,
+      "nursery": false,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "ff5cd4c0712e-e2",
+                "excerpt": "Instructions: Having had the day to work in your groups, think back on how the group worked together.\n\nDid my group communicate well?\n\n Did my group work together to solve the problem?\n\n Did my group use its time well?\n\n\nDid I contribute to my team\u2019s work?\n\n\nDid everyone in my group contribute?"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "ff5cd4c0712e-e2",
+                "excerpt": "Instructions: Having had the day to work in your groups, think back on how the group worked together.\n\nDid my group communicate well?\n\n Did my group work together to solve the problem?\n\n Did my group use its time well?\n\n\nDid I contribute to my team\u2019s work?\n\n\nDid everyone in my group contribute?"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": {
+        "applicable": true,
+        "cannot_assess": false,
+        "skipped": false,
+        "mean_band": 0.0,
+        "max_band": 3,
+        "anchor_kind": "objective",
+        "error": null,
+        "criteria": [
+          {
+            "criterion_id": "aligned_to_objective",
+            "label": "Aligned to the lesson objective",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "actionable",
+            "label": "Actionable for instruction",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "e2c12c61bc5f",
+      "unit_id": "arts-av-technology",
+      "title": "Arts AV Technology Communication - Exit Ticket Day 3",
+      "source_file": "sources/doc_e2c12c61bc5f_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_3.txt",
+      "role": "exit_ticket",
+      "doc_type": "exit_ticket",
+      "is_fallback": false,
+      "nursery": false,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "e2c12c61bc5f-e2",
+                "excerpt": "\nWhat is the main purpose of this cluster?\n\n What career did you find most interesting within this cluster?\n\n What would you like to learn more about this cluster?"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "e2c12c61bc5f-e2",
+                "excerpt": "\nWhat is the main purpose of this cluster?\n\n What career did you find most interesting within this cluster?\n\n What would you like to learn more about this cluster?"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": {
+        "applicable": true,
+        "cannot_assess": false,
+        "skipped": false,
+        "mean_band": 0.0,
+        "max_band": 3,
+        "anchor_kind": "objective",
+        "error": null,
+        "criteria": [
+          {
+            "criterion_id": "aligned_to_objective",
+            "label": "Aligned to the lesson objective",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "actionable",
+            "label": "Actionable for instruction",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "0a62e0b9729e",
+      "unit_id": "arts-av-technology",
+      "title": "Arts A V Student Notes",
+      "source_file": "sources/doc_0a62e0b9729e_Arts_A_V_Student_Notes.txt",
+      "role": "project_work",
+      "doc_type": "project_work",
+      "is_fallback": false,
+      "nursery": false,
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_task",
+            "label": "Task / deliverable described",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "0a62e0b9729e-e1",
+                "excerpt": "Arts, A/V Technology and Communication\nSlideshow Notes\nFollow the teachers slideshow and answer the questions or fill in the blank."
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_directions",
+            "label": "Directions / requirements",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "0a62e0b9729e-e1",
+                "excerpt": "Arts, A/V Technology and Communication\nSlideshow Notes\nFollow the teachers slideshow and answer the questions or fill in the blank."
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": {
+        "applicable": true,
+        "cannot_assess": false,
+        "skipped": false,
+        "mean_band": 0.0,
+        "max_band": 3,
+        "anchor_kind": "objective",
+        "error": null,
+        "criteria": [
+          {
+            "criterion_id": "task_aligned",
+            "label": "Task applies the objective",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": "The artifact consists of fill\u2011in\u2011the\u2011blank career lists and does not require students to demonstrate the specific TEKS skill of developing personal success through time management."
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "af9cf3b04474",
+      "unit_id": "arts-av-technology",
+      "title": "Arts AV Technology Communication Commercial Project Rubric",
+      "source_file": "sources/doc_af9cf3b04474_Arts_AV_Technology___Communication_Commercial_Project_Rubric.txt",
+      "role": "rubric",
+      "doc_type": "rubric",
+      "is_fallback": false,
+      "nursery": false,
+      "presence": {
+        "gate_pass": false,
+        "coverage": 0.5,
+        "missing_required": [
+          "Performance levels / scale"
+        ],
+        "criteria": [
+          {
+            "criterion_id": "has_criteria",
+            "label": "Named assessment criteria",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "af9cf3b04474-e1",
+                "excerpt": "Arts, A/V Tech & Comm Cluster  Commercial Project Rubric"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_levels",
+            "label": "Performance levels / scale",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": {
+        "applicable": true,
+        "cannot_assess": false,
+        "skipped": false,
+        "mean_band": 0.0,
+        "max_band": 3,
+        "anchor_kind": "objective",
+        "error": null,
+        "criteria": [
+          {
+            "criterion_id": "criteria_assess_objective",
+            "label": "Criteria measure the objective",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": ""
+          }
+        ]
+      }
+    },
+    {
+      "doc_id": "0cbd06c7c769",
+      "unit_id": "arts-av-technology",
+      "title": "Arts AV Technology Communication Flyer Project Rubric",
+      "source_file": "sources/doc_0cbd06c7c769_Arts_AV_Technology___Communication_Flyer_Project_Rubric.txt",
+      "role": "rubric",
+      "doc_type": "rubric",
+      "is_fallback": false,
+      "nursery": false,
+      "presence": {
+        "gate_pass": false,
+        "coverage": 0.0,
+        "missing_required": [
+          "Named assessment criteria",
+          "Performance levels / scale"
+        ],
+        "criteria": [
+          {
+            "criterion_id": "has_criteria",
+            "label": "Named assessment criteria",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_levels",
+            "label": "Performance levels / scale",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": {
+        "applicable": true,
+        "cannot_assess": false,
+        "skipped": false,
+        "mean_band": 0.0,
+        "max_band": 3,
+        "anchor_kind": "objective",
+        "error": null,
+        "criteria": [
+          {
+            "criterion_id": "criteria_assess_objective",
+            "label": "Criteria measure the objective",
+            "scoring": "band",
+            "verdict": null,
+            "band": 0,
+            "evidence": [],
+            "note": ""
+          }
+        ]
+      }
+    }
+  ]
+}

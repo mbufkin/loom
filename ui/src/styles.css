@@ -363,6 +363,126 @@ button:disabled {
   background: var(--band-strong);
 }
 
+/* ---- Documents inventory (unit → non-lesson artifacts) ----------------- */
+/* A calmer header than a jammed sentence: a title, a count tag, and (only when
+   relevant) a single "incomplete" chip. */
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 18px 0 8px;
+}
+.section-head h4 {
+  margin: 0;
+}
+.count-tag {
+  border: 2px solid var(--line);
+  background: #fff;
+  font-size: 11px;
+  padding: 0 7px;
+  box-shadow: var(--shadow-sm);
+}
+
+.doc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.doc-row {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  padding: 9px 12px;
+  border: 2px solid var(--line);
+  border-left-width: 6px;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+.doc-row:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: var(--shadow);
+}
+/* Left accent encodes only completeness — green complete, red incomplete —
+   deliberately just two states so the eye scans "what needs attention". */
+.doc-row.ok {
+  border-left-color: var(--band-strong);
+}
+.doc-row.bad {
+  border-left-color: var(--band-weak);
+}
+
+/* The document TYPE as a distinct, quiet tag — the thing the reviewer reads first. */
+.doc-type {
+  display: inline-block;
+  text-align: center;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  padding: 3px 6px;
+  border: 2px solid var(--line);
+  background: var(--panel);
+  color: var(--line);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.doc-main {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.doc-title {
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.doc-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.doc-status .dot {
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+}
+.doc-status .dot.ok {
+  background: var(--band-strong);
+}
+.doc-status .dot.bad {
+  background: var(--band-weak);
+}
+.doc-arrow {
+  font-weight: 700;
+}
+
+/* Collapsed disclosure for advisory/under-validated sections (e.g. artifact
+   alignment). Deliberately understated so it never reads as a headline claim. */
+.experimental-block {
+  border: 2px dashed var(--line);
+  background: var(--panel);
+  padding: 8px 12px;
+  margin-top: 14px;
+}
+.experimental-block > summary {
+  cursor: pointer;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 /* Mean-coverage mini bars */
 .cov {
   display: grid;

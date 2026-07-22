@@ -2,54 +2,43 @@
   "project_id": "dallas-career-2026",
   "workflow_id": "general",
   "path": "C",
-  "status": "stub",
+  "status": "reviewed",
   "doc_ids": [
     "0a62e0b9729e",
     "0cbd06c7c769",
     "0ffb85afd0ce",
-    "1787e9b5bfde",
     "1f0eda900bc5",
     "21d5442f97a2",
     "270bcdd1de81",
     "28552acaae5a",
     "29140bd6d6f7",
-    "2cc1b0ae0c59",
     "2fc999f5e539",
     "3369ae8b55a4",
-    "38290addde82",
     "3e56e33fe53c",
     "4092c72a851c",
     "40c5e0f508f1",
     "468be78c578b",
-    "4b97944cd264",
-    "545aa2c2190a",
     "54aff8cc2360",
     "56bd08f50ac3",
     "5f0cb47fe1b1",
-    "67a41a913430",
     "6880e9ded029",
-    "6a1919f04824",
     "6c94424ba260",
     "724f41bf2711",
     "769516e58fb5",
     "7896317a42cd",
     "794d51da5629",
-    "7f02e4fea0d8",
     "7f0dd1599900",
     "80f37e7b5807",
     "82b84c676dfd",
-    "83154b464163",
     "851a02b17dc9",
     "854451cbcfc5",
     "8891b46563ae",
-    "89430d6aae63",
     "8efd6fc31270",
     "98ed44c5b0af",
     "a8248438c079",
     "a8e8847a5886",
     "addfb0873806",
     "af9cf3b04474",
-    "b05bfe476c76",
     "b5e36486805a",
     "cd8f3755cf17",
     "d50f42a8f21e",
@@ -60,1006 +49,412 @@
     "e7b2a411cbdc",
     "e82d217defad",
     "ea032c71918c",
-    "eb042af8c066",
     "f1b0566d0274",
-    "f85ca6403d8c",
-    "f96797847d38",
     "f9710e5e4e97",
     "ff5244c8fa47"
   ],
+  "summary": {
+    "doc_count": 48,
+    "reviewed": 3,
+    "gate_pass": 1,
+    "nursery": 0
+  },
   "inventory": [
     {
       "doc_id": "0a62e0b9729e",
       "doc_type": "project_work",
+      "role": "project_work",
+      "unit_id": "arts-av-technology",
+      "title": "Arts A V Student Notes",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_task",
+            "label": "Task / deliverable described",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "0a62e0b9729e-e1",
+                "excerpt": "Arts, A/V Technology and Communication\nSlideshow Notes\nFollow the teachers slideshow and answer the questions or fill in the blank."
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_directions",
+            "label": "Directions / requirements",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "0a62e0b9729e-e1",
+                "excerpt": "Arts, A/V Technology and Communication\nSlideshow Notes\nFollow the teachers slideshow and answer the questions or fill in the blank."
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
       "C1": {
         "status": "PRESENT",
-        "note": "routed to general"
+        "missing_required": []
       },
       "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
       },
       "C3": {
         "status": "OK",
-        "feedback": false
+        "feedback": false,
+        "note": ""
       }
     },
     {
       "doc_id": "0cbd06c7c769",
       "doc_type": "rubric",
+      "role": "rubric",
+      "unit_id": "arts-av-technology",
+      "title": "Arts AV Technology Communication Flyer Project Rubric",
+      "presence": {
+        "gate_pass": false,
+        "coverage": 0.0,
+        "missing_required": [
+          "Named assessment criteria",
+          "Performance levels / scale"
+        ],
+        "criteria": [
+          {
+            "criterion_id": "has_criteria",
+            "label": "Named assessment criteria",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_levels",
+            "label": "Performance levels / scale",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
       "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
+        "status": "PARTIAL_OR_MISSING",
+        "missing_required": [
+          "Named assessment criteria",
+          "Performance levels / scale"
+        ]
       },
       "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
       },
       "C3": {
         "status": "OK",
-        "feedback": false
+        "feedback": false,
+        "note": ""
       }
     },
     {
       "doc_id": "0ffb85afd0ce",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
-    },
-    {
-      "doc_id": "1787e9b5bfde",
-      "doc_type": "lesson_content",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "1f0eda900bc5",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "21d5442f97a2",
-      "doc_type": "rubric",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "270bcdd1de81",
-      "doc_type": "rubric",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "28552acaae5a",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "29140bd6d6f7",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
-    },
-    {
-      "doc_id": "2cc1b0ae0c59",
-      "doc_type": "lesson_content",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "2fc999f5e539",
-      "doc_type": "worksheet",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "3369ae8b55a4",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
-    },
-    {
-      "doc_id": "38290addde82",
-      "doc_type": "lesson_content",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "3e56e33fe53c",
-      "doc_type": "game_activity",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "4092c72a851c",
-      "doc_type": "rubric",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "40c5e0f508f1",
-      "doc_type": "project_work",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "468be78c578b",
-      "doc_type": "lab_activity",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
-    },
-    {
-      "doc_id": "4b97944cd264",
-      "doc_type": "lesson_content",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
-    },
-    {
-      "doc_id": "545aa2c2190a",
-      "doc_type": "lesson_content",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "54aff8cc2360",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "56bd08f50ac3",
-      "doc_type": "project_work",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "5f0cb47fe1b1",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
-    },
-    {
-      "doc_id": "67a41a913430",
-      "doc_type": "lesson_content",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "6880e9ded029",
-      "doc_type": "project_work",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
-    },
-    {
-      "doc_id": "6a1919f04824",
-      "doc_type": "lesson_content",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "6c94424ba260",
-      "doc_type": "rubric",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "724f41bf2711",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "769516e58fb5",
-      "doc_type": "rubric",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "7896317a42cd",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "794d51da5629",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
-    },
-    {
-      "doc_id": "7f02e4fea0d8",
-      "doc_type": "lesson_content",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "7f0dd1599900",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "80f37e7b5807",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "82b84c676dfd",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
-    },
-    {
-      "doc_id": "83154b464163",
-      "doc_type": "lesson_content",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "851a02b17dc9",
-      "doc_type": "project_work",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "854451cbcfc5",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "8891b46563ae",
-      "doc_type": "project_work",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
-    },
-    {
-      "doc_id": "89430d6aae63",
-      "doc_type": "lesson_content",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "8efd6fc31270",
-      "doc_type": "game_activity",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "98ed44c5b0af",
-      "doc_type": "project_work",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "a8248438c079",
-      "doc_type": "worksheet",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "a8e8847a5886",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "addfb0873806",
-      "doc_type": "worksheet",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "af9cf3b04474",
       "doc_type": "rubric",
+      "role": "rubric",
+      "unit_id": "arts-av-technology",
+      "title": "Arts AV Technology Communication Commercial Project Rubric",
+      "presence": {
+        "gate_pass": false,
+        "coverage": 0.5,
+        "missing_required": [
+          "Performance levels / scale"
+        ],
+        "criteria": [
+          {
+            "criterion_id": "has_criteria",
+            "label": "Named assessment criteria",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "af9cf3b04474-e1",
+                "excerpt": "Arts, A/V Tech & Comm Cluster  Commercial Project Rubric"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_levels",
+            "label": "Performance levels / scale",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
       "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
+        "status": "PARTIAL_OR_MISSING",
+        "missing_required": [
+          "Performance levels / scale"
+        ]
       },
       "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
       },
       "C3": {
         "status": "OK",
-        "feedback": false
-      }
-    },
-    {
-      "doc_id": "b05bfe476c76",
-      "doc_type": "lesson_content",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
+        "feedback": false,
+        "note": ""
       }
     },
     {
       "doc_id": "b5e36486805a",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "cd8f3755cf17",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "d50f42a8f21e",
-      "doc_type": "presentation",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "d9f8e87d0486",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "e2485fe0a73f",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "e2f014fb5b00",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "e31064aba3ae",
-      "doc_type": "worksheet",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "e7b2a411cbdc",
-      "doc_type": "rubric",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "e82d217defad",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "ea032c71918c",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
-    },
-    {
-      "doc_id": "eb042af8c066",
-      "doc_type": "lesson_content",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "f1b0566d0274",
-      "doc_type": "rubric",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
-    },
-    {
-      "doc_id": "f85ca6403d8c",
-      "doc_type": "lesson_content",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
-    },
-    {
-      "doc_id": "f96797847d38",
-      "doc_type": "lesson_content",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "f9710e5e4e97",
-      "doc_type": "worksheet",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "OK",
-        "feedback": false
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     },
     {
       "doc_id": "ff5244c8fa47",
-      "doc_type": "other",
-      "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
-      },
-      "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
-      },
-      "C3": {
-        "status": "LOGGED",
-        "feedback": true
-      }
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
     }
   ],
-  "feedback_file": "_loom_feedback.yaml"
+  "feedback_file": "_loom_feedback.yaml",
+  "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json"
 }

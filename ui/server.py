@@ -58,6 +58,7 @@ LAYER_FILES = [
     ("Layer 1 — organize", "layer1/REPORT.md"),
     ("Layer 1 — review queue", "layer1/REVIEW-QUEUE.md"),
     ("Layer 2 — completeness", "layer2/REPORT.md"),
+    ("Artifact rung — Paths B/C", "layer_artifact/ARTIFACT-RUNG.md"),
     ("Unit rung", "layer_unit/UNIT-RUNG.md"),
 ]
 PDF_FILES = [("Global audit PDF", "output/GLOBAL-AUDIT-REPORT.pdf")]

@@ -5,8 +5,10 @@ import { OutputNav } from "../components/OutputNav";
 import { ReviewSlip } from "../components/ReviewSlip";
 import { UnitDetail } from "../components/UnitDetail";
 import { LessonDetail } from "../components/LessonDetail";
+import { ArtifactDetail } from "../components/ArtifactDetail";
 import { UnitOutputRow } from "../components/UnitOutputRow";
 import type {
+  ArtifactRung,
   Band,
   LessonFeedback,
   OutputsTree,
@@ -21,6 +23,7 @@ const DEFAULT_PROJECT = "dallas-career-2026";
 const UNITS_VIEW = "__units__";
 const UNIT_DETAIL = "__unit_detail__";
 const LESSON_DETAIL = "__lesson_detail__";
+const ARTIFACT_DETAIL = "__artifact_detail__";
 
 // Prefer the real unit-rung band; otherwise derive a heat band from Layer 1 role
 // fulfillment so the heatmap still renders for projects without a unit rung.
@@ -42,11 +45,15 @@ export function RunReview() {
   const [lessonFeedback, setLessonFeedback] = useState<LessonFeedback | null>(
     null
   );
+  const [artifactRung, setArtifactRung] = useState<ArtifactRung | null>(null);
 
   const [activePath, setActivePath] = useState<string | null>(null);
   const [activeType, setActiveType] = useState<string>("md");
   const [selectedUnitId, setSelectedUnitId] = useState<string | null>(null);
   const [selectedLessonId, setSelectedLessonId] = useState<string | null>(null);
+  const [selectedArtifactId, setSelectedArtifactId] = useState<string | null>(
+    null
+  );
   const [viewerText, setViewerText] = useState<string>("");
   const [error, setError] = useState<string>("");
 
@@ -99,6 +106,7 @@ export function RunReview() {
       setStats(null);
       setUnitRung(null);
       setLessonFeedback(null);
+      setArtifactRung(null);
       try {
         const tree = await api.outputs(id);
         setOutputs(tree);
@@ -115,6 +123,7 @@ export function RunReview() {
       api.stats(id).then(setStats).catch(() => setStats(null));
       api.unitRung(id).then(setUnitRung);
       api.lessonFeedback(id).then(setLessonFeedback);
+      api.artifactRung(id).then(setArtifactRung);
     },
     [loadDoc]
   );
@@ -171,6 +180,7 @@ export function RunReview() {
   const openUnitDetail = useCallback((unitId: string) => {
     setSelectedUnitId(unitId);
     setSelectedLessonId(null);
+    setSelectedArtifactId(null);
     setActivePath(UNIT_DETAIL);
     setActiveType("md");
   }, []);
@@ -178,6 +188,12 @@ export function RunReview() {
   const openLessonDetail = useCallback((lessonId: string) => {
     setSelectedLessonId(lessonId);
     setActivePath(LESSON_DETAIL);
+    setActiveType("md");
+  }, []);
+
+  const openArtifactDetail = useCallback((docId: string) => {
+    setSelectedArtifactId(docId);
+    setActivePath(ARTIFACT_DETAIL);
     setActiveType("md");
   }, []);
 
@@ -195,6 +211,22 @@ export function RunReview() {
     }
     return undefined;
   }, [selectedLessonId, lessonFeedback]);
+
+  // The artifact rung's per-unit block for the selected unit, and the single doc
+  // record for the artifact drill-down.
+  const selectedUnitArtifacts = useMemo(() => {
+    if (!selectedUnitId || !artifactRung) return undefined;
+    return artifactRung.units[selectedUnitId];
+  }, [selectedUnitId, artifactRung]);
+
+  const selectedArtifact = useMemo(() => {
+    if (!selectedArtifactId || !artifactRung) return undefined;
+    for (const u of Object.values(artifactRung.units)) {
+      const hit = u.documents.find((d) => d.doc_id === selectedArtifactId);
+      if (hit) return hit;
+    }
+    return undefined;
+  }, [selectedArtifactId, artifactRung]);
 
   // Per-unit artifact files, minus the thin stub "Report" when richer files
   // exist, so the detail panel links to the useful reports first.
@@ -214,6 +246,8 @@ export function RunReview() {
   const showUnits = activePath === UNITS_VIEW;
   const showUnitDetail = activePath === UNIT_DETAIL && !!selectedUnitId;
   const showLessonDetail = activePath === LESSON_DETAIL && !!selectedLesson;
+  const showArtifactDetail =
+    activePath === ARTIFACT_DETAIL && !!selectedArtifact;
   const selectedRollup = selectedUnitId
     ? stats?.unit_rollup?.find((u) => u.unit_id === selectedUnitId)
     : undefined;
@@ -226,6 +260,8 @@ export function RunReview() {
   else if (showUnitDetail)
     panelTitle = `Unit · ${selectedRecord?.title ?? selectedRollup?.title ?? selectedUnitId}`;
   else if (showLessonDetail) panelTitle = `Lesson · ${selectedLesson!.title}`;
+  else if (showArtifactDetail)
+    panelTitle = `Artifact · ${selectedArtifact!.title}`;
   else panelTitle = activePath ?? "Viewer";
 
   return (
@@ -287,7 +323,7 @@ export function RunReview() {
                   ← heatmap
                 </button>
               )}
-              {showLessonDetail && (
+              {(showLessonDetail || showArtifactDetail) && (
                 <button
                   className="back-link"
                   onClick={() => {
@@ -327,9 +363,13 @@ export function RunReview() {
                   onOpenFile={(path, type) => loadDoc(projectId, path, type)}
                   lessons={selectedUnitLessons}
                   onSelectLesson={openLessonDetail}
+                  artifacts={selectedUnitArtifacts}
+                  onSelectArtifact={openArtifactDetail}
                 />
               ) : showLessonDetail ? (
                 <LessonDetail lesson={selectedLesson!} projectId={projectId} />
+              ) : showArtifactDetail ? (
+                <ArtifactDetail doc={selectedArtifact!} projectId={projectId} />
               ) : activeType === "pdf" && activePath ? (
                 <div>
                   <p>

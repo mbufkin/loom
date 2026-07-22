@@ -1,6 +1,7 @@
 // Thin fetch wrappers around the local API. Everything is same-origin in dev via
 // the Vite proxy (/api -> :8770), so no base URL juggling.
 import type {
+  ArtifactRung,
   ConfigSummary,
   LessonFeedback,
   OutputsTree,
@@ -52,6 +53,17 @@ export const api = {
     try {
       const txt = await api.fileText(id, "output/LESSON-QUALITY-FEEDBACK.json");
       return JSON.parse(txt) as LessonFeedback;
+    } catch {
+      return null;
+    }
+  },
+
+  // Best-effort: ARTIFACT-RUNG.json only exists once the artifact rung (Paths B/C)
+  // has run for a project.
+  async artifactRung(id: string): Promise<ArtifactRung | null> {
+    try {
+      const txt = await api.fileText(id, "layer_artifact/ARTIFACT-RUNG.json");
+      return JSON.parse(txt) as ArtifactRung;
     } catch {
       return null;
     }
