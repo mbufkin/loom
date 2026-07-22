@@ -1,0 +1,14 @@
+{
+  "project_id": "ap-csp-2026",
+  "workflow_id": "quiz",
+  "path": "B",
+  "status": "skipped",
+  "doc_ids": [],
+  "summary": {
+    "doc_count": 0,
+    "reviewed": 0,
+    "gate_pass": 0
+  },
+  "inventory": [],
+  "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json"
+}

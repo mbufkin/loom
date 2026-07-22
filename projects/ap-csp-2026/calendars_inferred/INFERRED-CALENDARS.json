@@ -1,0 +1,156 @@
+{
+  "project_id": "ap-csp-2026",
+  "source": "inferred_from_documents",
+  "generated_at": "2026-07-22T16:50:41.648366+00:00",
+  "provisional_rollup": "pacing-plan.yaml remains provisional early spine",
+  "year_note": "The curriculum shows significant gaps in coverage across Big Ideas 2, 3 and 4, each with zero days of documented evidence despite having empty slots ranging from three to five. Only one day is recorded for the Impact‑of‑Computing unit (Big Idea 5), which also has a few empty spaces left. In contrast, Creative Development (Big Idea 1) already occupies all four allocated slots and shows no gaps. These patterns suggest that units requiring more instructional time are under‑represented in the current pacing plan.",
+  "units": {
+    "creative-development": {
+      "unit_id": "creative-development",
+      "title": "Creative Development (Big Idea 1)",
+      "source": "inferred_from_documents",
+      "generated_at": "2026-07-22T16:50:38.748735+00:00",
+      "days": [
+        {
+          "id": "d1",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d2",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d3",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d4",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        }
+      ],
+      "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
+    },
+    "data": {
+      "unit_id": "data",
+      "title": "Data (Big Idea 2)",
+      "source": "inferred_from_documents",
+      "generated_at": "2026-07-22T16:50:38.749331+00:00",
+      "days": [
+        {
+          "id": "d1",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d2",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d3",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d4",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        }
+      ],
+      "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
+    },
+    "algorithms-programming": {
+      "unit_id": "algorithms-programming",
+      "title": "Algorithms and Programming (Big Idea 3)",
+      "source": "inferred_from_documents",
+      "generated_at": "2026-07-22T16:50:38.750046+00:00",
+      "days": [
+        {
+          "id": "d1",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d2",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d3",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d4",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d5",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        }
+      ],
+      "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
+    },
+    "systems-networks": {
+      "unit_id": "systems-networks",
+      "title": "Computer Systems and Networks (Big Idea 4)",
+      "source": "inferred_from_documents",
+      "generated_at": "2026-07-22T16:50:38.750543+00:00",
+      "days": [
+        {
+          "id": "d1",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d2",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d3",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        }
+      ],
+      "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
+    },
+    "impact-computing": {
+      "unit_id": "impact-computing",
+      "title": "Impact of Computing (Big Idea 5)",
+      "source": "inferred_from_documents",
+      "generated_at": "2026-07-22T16:50:38.751128+00:00",
+      "days": [
+        {
+          "id": "d1",
+          "expected_roles_found": [
+            "lesson_content"
+          ],
+          "status": "HAS_EVIDENCE"
+        },
+        {
+          "id": "d2",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d3",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d4",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        }
+      ],
+      "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
+    }
+  }
+}

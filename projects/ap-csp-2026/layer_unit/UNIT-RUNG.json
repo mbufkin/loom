@@ -2,16 +2,13 @@
   "project_id": "ap-csp-2026",
   "gate_scorer": "s1_completeness",
   "packet_type": {
-    "id": "full_curriculum",
-    "label": "Full curriculum",
-    "short": "FULL CURRIC",
-    "description": "A complete published packet: lesson plans PLUS the assessments, keys, and supporting materials a teacher would expect to receive in a finished course.",
+    "id": "lesson_plans_only",
+    "label": "Lesson plans only",
+    "short": "LESSON PLANS",
+    "description": "Just lesson plans (optionally with their supporting activities). The job is to organize and review the plans themselves \u2014 no assessment/key expected.",
     "expected_components": [
       "Lesson plan",
-      "Assessment",
-      "Answer key",
-      "Rubric",
-      "Practice / worksheet"
+      "Supporting activity"
     ]
   },
   "summary": {
@@ -25,11 +22,11 @@
       "title": "Creative Development (Big Idea 1)",
       "band": "Unrated",
       "completeness": {
-        "packet_type": "full_curriculum",
-        "label": "Full curriculum",
-        "short": "FULL CURRIC",
+        "packet_type": "lesson_plans_only",
+        "label": "Lesson plans only",
+        "short": "LESSON PLANS",
         "present": 0,
-        "expected": 5,
+        "expected": 2,
         "components": [
           {
             "label": "Lesson plan",
@@ -42,47 +39,21 @@
             ]
           },
           {
-            "label": "Assessment",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "quiz",
-              "exit_ticket"
-            ]
-          },
-          {
-            "label": "Answer key",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "answer_key"
-            ]
-          },
-          {
-            "label": "Rubric",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "rubric"
-            ]
-          },
-          {
-            "label": "Practice / worksheet",
+            "label": "Supporting activity",
             "present": false,
             "matched": null,
             "any_of": [
               "worksheet",
-              "project_work",
-              "lab_activity"
+              "game_activity",
+              "lab_activity",
+              "presentation",
+              "project_work"
             ]
           }
         ],
         "missing": [
           "Lesson plan",
-          "Assessment",
-          "Answer key",
-          "Rubric",
-          "Practice / worksheet"
+          "Supporting activity"
         ]
       },
       "lessons": {
@@ -282,10 +253,11 @@
         "mean_coverage": {}
       },
       "roles": {
-        "fulfilled": 0,
-        "missing": 4,
+        "fulfilled": 1,
+        "missing": 6,
         "systemic_absent": [
-          "lesson_content"
+          "lesson_content",
+          "other"
         ],
         "isolated_gaps": [],
         "isolated_gap_total": 0

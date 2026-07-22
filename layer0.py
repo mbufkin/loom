@@ -1103,18 +1103,52 @@ def get_paragraphs_for_row(record: dict, chunk_id: str | None) -> list[str]:
     return paragraphs
 
 
+def _clamp_span(start: int, end: int, n: int) -> tuple[int, int]:
+    """Clamp a 1-based inclusive paragraph span to [1, n]. Returns (0, 0) when
+    there is nothing to show (no paragraphs, or the whole span sits past the end).
+
+    Why this exists: a stored wide-span row can cite paragraph indices beyond what
+    its chunk reconstructs to (upstream re-chunking can change paragraph counts on
+    unusual documents — the AP-CSP CED is one). Without clamping, indexing the
+    paragraph list raised IndexError and killed the entire run. We degrade to the
+    paragraphs we actually have instead."""
+    if n <= 0:
+        return (0, 0)
+    lo = max(1, int(start))
+    hi = min(int(end), n)
+    if lo > n or hi < lo:
+        # Span begins past the last paragraph (or is degenerate) — no overlap.
+        return (0, 0)
+    return (lo, hi)
+
+
 def build_flagged_span_text(paragraphs: list[str], start: int, end: int) -> str:
-    return "\n\n".join(f"[P{i}] {paragraphs[i - 1]}" for i in range(start, end + 1))
+    lo, hi = _clamp_span(start, end, len(paragraphs))
+    if lo == 0:
+        return ""
+    return "\n\n".join(f"[P{i}] {paragraphs[i - 1]}" for i in range(lo, hi + 1))
 
 
 def resolve_wide_span(cfg: dict, row: dict, paragraphs: list[str]) -> dict:
     start, end = row["excerpt_start_paragraph"], row["excerpt_end_paragraph"]
-    span_text = build_flagged_span_text(paragraphs, start, end)
+    lo, hi = _clamp_span(start, end, len(paragraphs))
+    if lo == 0:
+        # The cited span is entirely outside the reconstructed chunk — there is
+        # nothing safe to show the model, so keep the element as-is rather than
+        # crash or invite a hallucinated split on absent text.
+        return {
+            "decision": "keep",
+            "reasoning": (
+                f"cited span {start}-{end} falls outside the "
+                f"{len(paragraphs)} reconstructed paragraph(s); kept unchanged"
+            ),
+        }
+    span_text = build_flagged_span_text(paragraphs, lo, hi)
     rules = LAYER0B_RULES.format(element_type=row["element_type"])
     prompt = f"""{rules}
-Original citation: paragraphs {start}-{end} ({end - start + 1} paragraphs), element_type={row['element_type']!r}
+Original citation: paragraphs {lo}-{hi} ({hi - lo + 1} paragraphs), element_type={row['element_type']!r}
 
-FLAGGED SPAN TEXT (numbered paragraphs {start}-{end} only — nothing outside this range
+FLAGGED SPAN TEXT (numbered paragraphs {lo}-{hi} only — nothing outside this range
 is shown, because nothing outside it may be cited):
 {span_text}
 
@@ -1221,7 +1255,7 @@ def run_layer0b(project_id: str) -> Path:
         try:
             paragraphs = get_paragraphs(row)
             result = resolve_wide_span(cfg, row, paragraphs)
-        except (RuntimeError, ValueError, FileNotFoundError) as e:
+        except (RuntimeError, ValueError, FileNotFoundError, IndexError) as e:
             log(
                 f"  WARN: {row['element_id']} Layer 0-B review failed, leaving as-is: {e}"
             )

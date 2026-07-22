@@ -1,0 +1,16 @@
+{
+  "project_id": "ap-csp-2026",
+  "scorers": [
+    "s1_completeness",
+    "s3_curriculum_own"
+  ],
+  "gate_scorer": "s1_completeness",
+  "summary": {
+    "lesson_count": 0,
+    "gate_pass_count": 0,
+    "gate_pass_rate": 0.0,
+    "unit_count": 0
+  },
+  "units": {},
+  "lessons": []
+}

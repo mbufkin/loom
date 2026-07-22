@@ -3,6 +3,7 @@ project:
   name: AP Computer Science Principles — Course Framework
 
 sources_dir: projects/ap-csp-2026/sources
+packet_type: lesson_plans_only
 
 units:
   creative-development:

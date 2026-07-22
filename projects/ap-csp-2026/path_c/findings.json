@@ -1,0 +1,63 @@
+{
+  "project_id": "ap-csp-2026",
+  "workflow_id": "general",
+  "path": "C",
+  "status": "reviewed",
+  "doc_ids": [
+    "ap-csp-ced.pdf"
+  ],
+  "summary": {
+    "doc_count": 1,
+    "reviewed": 1,
+    "gate_pass": 1,
+    "nursery": 1
+  },
+  "inventory": [
+    {
+      "doc_id": "ap-csp-ced.pdf",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "creative-development",
+      "title": "ap-csp-ced",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "ap-csp-ced.pdf-chunk1of7-e1",
+                "excerpt": "\nDigital Activation\nIn order to teach an AP class and make sure students are registered to take the AP Exam,\nteachers\u0007must\u0007first\u0007complete\u0007the\u0007digital\u0007activation\u0007process.\u0007Digital\u0007activation\u0007gives\u0007students\u0007\nand teachers access to the available resources and gathers students’ exam registration\ninformation online, eliminating most of the answer sheet bubbling that has added to testing\ntime and fatigue"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    }
+  ],
+  "feedback_file": "_loom_feedback.yaml",
+  "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json"
+}
