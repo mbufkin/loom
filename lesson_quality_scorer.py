@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-decomposed_scorer.py — research-backed redesign of the lesson-quality judge.
+lesson_quality_scorer.py — research-backed redesign of the lesson-quality judge
+(promoted from experiments/quality_race/decomposed/decomposed_scorer.py).
 
 Motivation and citations live in docs/LESSON-QUALITY-RESEARCH.md. In short, the
 baseline `s4_quality_feedback` scorer has four design flaws the LLM-as-judge /
@@ -37,9 +38,9 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-_HERE = Path(__file__).resolve().parent
-_REPO_ROOT = _HERE.parents[2]
-sys.path.insert(0, str(_REPO_ROOT))
+# This module now lives at the repo root (promoted out of experiments/), so its own
+# directory is the import root for the shared scoring package.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from lesson_scoring import (  # noqa: E402
     CriterionResult,

@@ -41,6 +41,7 @@ LAYER2 = BASE_DIR / "layer2.py"
 LESSON_RUNG = BASE_DIR / "lesson_rung.py"
 ARTIFACT_RUNG = BASE_DIR / "artifact_rung.py"
 UNIT_RUNG = BASE_DIR / "unit_rung.py"
+LESSON_QUALITY = BASE_DIR / "lesson_quality.py"
 CALENDARS = BASE_DIR / "calendars.py"
 SYNTH = BASE_DIR / "synthesize.py"
 PUSH_DRIVE = BASE_DIR / "tools" / "push_drive_reports.py"
@@ -276,6 +277,17 @@ def main() -> int:
                     run_step(UNIT_RUNG, ["--project", args.project])
                 except Exception as e:  # noqa: BLE001
                     log(f"WARN: unit-rung skipped: {e}")
+
+            # Lesson-quality plate (advisory): the decomposed, evidence-first quality
+            # scorer over every lesson -> output/LESSON-QUALITY-FEEDBACK.{md,json}, the
+            # per-dimension review the UI drills into. Model-based (6 calls/lesson) so it
+            # runs AFTER the deterministic rungs; advisory-only (never gates a verdict)
+            # and NON-BLOCKING so an offline model or a bad lesson can't sink the audit.
+            if LESSON_QUALITY.is_file():
+                try:
+                    run_step(LESSON_QUALITY, ["--project", args.project])
+                except Exception as e:  # noqa: BLE001
+                    log(f"WARN: lesson-quality plate skipped: {e}")
 
             # Model calendars after assemble (authoritative inferred map).
             # Early rollup remains provisional year spine only.

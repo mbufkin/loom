@@ -23,7 +23,7 @@ _REPO_ROOT = _HERE.parents[2]
 sys.path.insert(0, str(_REPO_ROOT))
 sys.path.insert(0, str(_HERE))
 
-import decomposed_scorer  # noqa: F401,E402 — registers s4_quality_decomposed
+import lesson_quality_scorer  # noqa: F401,E402 — registers s4_quality_decomposed (promoted to repo root)
 from audit_lib import load_config, log  # noqa: E402
 from lesson_bakeoff import enumerate_lessons  # noqa: E402
 from lesson_scoring import build_scorer  # noqa: E402

@@ -28,8 +28,8 @@ sys.path.insert(0, str(_REPO_ROOT))
 sys.path.insert(0, str(_REPO_ROOT / "experiments" / "quality_race" / "feedback"))
 sys.path.insert(0, str(_HERE))
 
-import decomposed_scorer  # noqa: F401,E402 — registers s4_quality_decomposed
 import feedback_scorer  # noqa: F401,E402 — registers s4_quality_feedback
+import lesson_quality_scorer  # noqa: F401,E402 — registers s4_quality_decomposed (promoted to repo root)
 from audit_lib import load_config  # noqa: E402
 from lesson_bakeoff import enumerate_lessons  # noqa: E402
 from lesson_scoring import build_scorer  # noqa: E402
