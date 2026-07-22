@@ -138,9 +138,8 @@ Versioned as `LAYER2_TAXONOMY_VERSION` (`v1-hypothesis`); see `layer2.ROLE_EXPEC
 
 | Tier | Meaning |
 |------|---------|
-| **Golden** | Acceptance / demo corpus (`dallas-career-2026`). |
+| **Active** | Real district / curriculum work in progress (e.g. `dallas-career-2026`). |
 | **Stress** | Hard input shape (e.g. fat framework PDF). |
-| **Active** | Real district work in progress. |
 | **Experiment** | Paired with `experiments/` code paths. |
 | **Fixture** | Tiny ingest smoke projects. |
 

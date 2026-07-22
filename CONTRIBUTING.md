@@ -48,7 +48,7 @@ mkdir -p projects/<project_id>/sources
 
 You MUST then:
 
-1. Create `projects/<project_id>/README.md` with: tier (Golden/Stress/Active/Experiment/Fixture), how to run, and any special calendars.  
+1. Create `projects/<project_id>/README.md` with: tier (Active/Stress/Experiment/Fixture), how to run, and any special calendars.  
 2. Add a row to PROJECT_INDEX §3.  
 3. Use a valid `project_id` slug (`validate_slug_id`).  
 4. Prefer `doc_<hex>_<slug>.*` naming for extracts.  

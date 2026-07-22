@@ -101,7 +101,7 @@ Canonical shelf: [projects/STATUS.md](projects/STATUS.md). Layout: [PROJECT_STRU
 
 | Dataset ID | Tier | README | Layer 0 | Layer 1 | Notes |
 |------------|------|--------|---------|---------|-------|
-| [`dallas-career-2026`](projects/dallas-career-2026/) | **Golden** | Yes | Yes | Yes | Acceptance / demo dataset |
+| [`dallas-career-2026`](projects/dallas-career-2026/) | Active | Yes | Yes | Yes | DISD career / CTE curriculum |
 | [`region10-career-college-2026`](projects/region10-career-college-2026/) | Active | Yes | Yes | Yes | Live district corpus |
 | [`ap-csp-2026`](projects/ap-csp-2026/) | Stress | Yes | Yes | Partial | Framework PDF stress |
 | [`openscied-6`](projects/openscied-6/) | Experiment | Yes | — | — | + `experiments/openscied/` |

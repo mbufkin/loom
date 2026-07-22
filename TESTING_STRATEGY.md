@@ -15,7 +15,7 @@
 | **T2** | Schema validation | On-disk & model-shaped payloads | Ingest, Layer 0/1, calendar edits |
 | **T3** | *(retired)* | Was scrub→place integration | Archived path — use T4 |
 | **T4** | Integration (headline) | Layer 0 → 1 → 2 → synthesize | Layer 0/1/2 / synthesize changes |
-| **T5** | Golden regression | Metrics within expected envelope | Before claiming golden still green |
+| **T5** | Baseline regression | Metrics within expected envelope | Before claiming the reference corpus still green |
 | **T6** | Operator pre-flight | Models up, config sane | Before any live corpus run |
 
 ---
@@ -168,10 +168,10 @@ PY
 
 ---
 
-## 7. T5 — Golden regression
+## 7. T5 — Baseline regression
 
-**Golden project:** `projects/dallas-career-2026/`  
-**Snapshot file:** `layer1/GOLDEN.json` (counts / status histograms)
+**Reference project:** `projects/dallas-career-2026/` (Active CTE corpus — used as a convenient full-pipeline check, not a quality gold standard)  
+**Snapshot file:** `layer1/GOLDEN.json` (counts / status histograms; filename is legacy)
 
 | Check | Pass criteria |
 |-------|---------------|
@@ -180,7 +180,7 @@ PY
 | Review queue | `REVIEW-QUEUE.md` pending pairs understood (not silently ignored) |
 | Globals regenerate | `output/GLOBAL-AUDIT.md` and `DASHBOARD.md` refresh from Layer 1 |
 
-**MUST:** If taxonomy or prompts change, update GOLDEN deliberately — do not “fix” by deleting the snapshot.
+**MUST:** If taxonomy or prompts change, update the snapshot deliberately — do not “fix” by deleting it.
 
 **Tooling:** `tools/snapshot_findings.py` may assist; it is **not** part of production orchestration.
 

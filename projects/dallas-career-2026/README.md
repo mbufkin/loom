@@ -2,7 +2,7 @@
 
 | | |
 |--|--|
-| **Tier** | Golden (acceptance / demo) |
+| **Tier** | Active (DISD career / CTE) |
 | **Program** | Loom at repo root — this folder is **data only** |
 | **Units** | 18 career-cluster / CTE modules (flat `units/<id>/`) |
 | **Run** | `./run-audit dallas-career-2026` |

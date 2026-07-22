@@ -269,7 +269,7 @@ Projects share **code** and **config**, not data.
 
 | Project | Depends on code | Produces |
 |---------|-----------------|----------|
-| `dallas-career-2026` | Full pipeline | Golden dataset |
+| `dallas-career-2026` | Full pipeline | DISD career / CTE (Active) |
 | `region10-career-college-2026` | Full pipeline | Active dataset |
 | `ap-csp-2026` | Layer 0 (+ legacy) | Stress dataset |
 | `openscied-6` | Legacy + `experiments/openscied` | Experiment dataset |

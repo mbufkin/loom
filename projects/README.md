@@ -44,7 +44,7 @@ Supported formats: pdf, docx, pptx, xlsx, odt, txt, md, html, rtf, doc. Nested s
 
 | Folder | Tier | Role |
 |--------|------|------|
-| `dallas-career-2026/` | Golden | Acceptance / demo dataset |
+| `dallas-career-2026/` | Active | DISD career / CTE curriculum |
 | `region10-career-college-2026/` | Active | Live district corpus |
 | `ap-csp-2026/` | Stress | Hard PDF shape |
 | `openscied-6/` | Experiment | Fat TE PDFs (+ `experiments/openscied/`) |

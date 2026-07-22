@@ -1,20 +1,22 @@
 {
   "project_id": "dallas-career-2026",
   "source": "inferred_from_documents",
-  "generated_at": "2026-07-21T19:54:48.403428+00:00",
+  "generated_at": "2026-07-22T03:34:22.957820+00:00",
   "provisional_rollup": "pacing-plan.yaml remains provisional early spine",
-  "year_note": "",
+  "year_note": "The curriculum shows severe gaps in most clusters, with many having zero evidence of instruction despite multiple empty days. Agriculture and Financial Literacy have some presence (1 day each), while Manufacturing has minimal coverage (1 day). Architecture & Construction, Arts AV Technology, Business Marketing, Career Cluster, Career Exploration, Dallas ISD, Engineering, Family Community, Health Science, Hospitality Tourism, Information Technology, Law and Public Service, Professional Preparedness, Teaching and Training, and Transportation Distribution all show no evidence of instruction across multiple empty days. This indicates most career pathway units are not being delivered within the observed timeframe.",
   "units": {
     "agriculture": {
       "unit_id": "agriculture",
       "title": "Agriculture",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-21T19:54:48.395261+00:00",
+      "generated_at": "2026-07-22T03:34:19.770274+00:00",
       "days": [
         {
           "id": "d1",
-          "expected_roles_found": [],
-          "status": "EMPTY"
+          "expected_roles_found": [
+            "lesson_content"
+          ],
+          "status": "HAS_EVIDENCE"
         },
         {
           "id": "d2",
@@ -28,7 +30,7 @@
       "unit_id": "architecture-construction",
       "title": "Architecture & Construction",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-21T19:54:48.395767+00:00",
+      "generated_at": "2026-07-22T03:34:19.770805+00:00",
       "days": [
         {
           "id": "d1",
@@ -47,7 +49,7 @@
       "unit_id": "arts-av-technology",
       "title": "Arts AV Technology",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-21T19:54:48.396246+00:00",
+      "generated_at": "2026-07-22T03:34:19.771317+00:00",
       "days": [
         {
           "id": "d1",
@@ -66,7 +68,7 @@
       "unit_id": "business-marketing",
       "title": "Business Marketing",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-21T19:54:48.396810+00:00",
+      "generated_at": "2026-07-22T03:34:19.771910+00:00",
       "days": [
         {
           "id": "d1",
@@ -90,7 +92,7 @@
       "unit_id": "career-cluster",
       "title": "Career Cluster",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-21T19:54:48.397268+00:00",
+      "generated_at": "2026-07-22T03:34:19.772393+00:00",
       "days": [
         {
           "id": "d1",
@@ -109,7 +111,7 @@
       "unit_id": "career-exploration",
       "title": "Career Exploration",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-21T19:54:48.397734+00:00",
+      "generated_at": "2026-07-22T03:34:19.772869+00:00",
       "days": [
         {
           "id": "d1",
@@ -128,7 +130,7 @@
       "unit_id": "dallas-isd",
       "title": "Dallas ISD",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-21T19:54:48.398103+00:00",
+      "generated_at": "2026-07-22T03:34:19.773248+00:00",
       "days": [
         {
           "id": "d1",
@@ -142,7 +144,7 @@
       "unit_id": "engineering",
       "title": "Engineering",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-21T19:54:48.398558+00:00",
+      "generated_at": "2026-07-22T03:34:19.773727+00:00",
       "days": [
         {
           "id": "d1",
@@ -161,7 +163,7 @@
       "unit_id": "family-community",
       "title": "Family Community",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-21T19:54:48.399014+00:00",
+      "generated_at": "2026-07-22T03:34:19.774203+00:00",
       "days": [
         {
           "id": "d1",
@@ -180,12 +182,14 @@
       "unit_id": "financial-literacy",
       "title": "Financial Literacy",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-21T19:54:48.399569+00:00",
+      "generated_at": "2026-07-22T03:34:19.774781+00:00",
       "days": [
         {
           "id": "d1",
-          "expected_roles_found": [],
-          "status": "EMPTY"
+          "expected_roles_found": [
+            "exit_ticket"
+          ],
+          "status": "HAS_EVIDENCE"
         },
         {
           "id": "d2",
@@ -204,7 +208,7 @@
       "unit_id": "health-science",
       "title": "Health Science",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-21T19:54:48.400119+00:00",
+      "generated_at": "2026-07-22T03:34:19.775366+00:00",
       "days": [
         {
           "id": "d1",
@@ -228,7 +232,7 @@
       "unit_id": "hospitality-tourism",
       "title": "Hospitality Tourism",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-21T19:54:48.400581+00:00",
+      "generated_at": "2026-07-22T03:34:19.775852+00:00",
       "days": [
         {
           "id": "d1",
@@ -247,7 +251,7 @@
       "unit_id": "information-technology",
       "title": "Information Technology",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-21T19:54:48.401129+00:00",
+      "generated_at": "2026-07-22T03:34:19.776425+00:00",
       "days": [
         {
           "id": "d1",
@@ -271,7 +275,7 @@
       "unit_id": "law-and-public-service",
       "title": "Law and Public Service",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-21T19:54:48.401588+00:00",
+      "generated_at": "2026-07-22T03:34:19.776907+00:00",
       "days": [
         {
           "id": "d1",
@@ -290,12 +294,14 @@
       "unit_id": "manufacturing",
       "title": "Manufacturing",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-21T19:54:48.402042+00:00",
+      "generated_at": "2026-07-22T03:34:19.777378+00:00",
       "days": [
         {
           "id": "d1",
-          "expected_roles_found": [],
-          "status": "EMPTY"
+          "expected_roles_found": [
+            "exit_ticket"
+          ],
+          "status": "HAS_EVIDENCE"
         },
         {
           "id": "d2",
@@ -309,7 +315,7 @@
       "unit_id": "professional-preparedness",
       "title": "Professional Preparedness",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-21T19:54:48.402498+00:00",
+      "generated_at": "2026-07-22T03:34:19.777850+00:00",
       "days": [
         {
           "id": "d1",
@@ -328,7 +334,7 @@
       "unit_id": "teaching-and-training",
       "title": "Teaching and Training",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-21T19:54:48.402955+00:00",
+      "generated_at": "2026-07-22T03:34:19.778327+00:00",
       "days": [
         {
           "id": "d1",
@@ -347,7 +353,7 @@
       "unit_id": "transportation-distribution",
       "title": "Transportation Distribution",
       "source": "inferred_from_documents",
-      "generated_at": "2026-07-21T19:54:48.403416+00:00",
+      "generated_at": "2026-07-22T03:34:19.778811+00:00",
       "days": [
         {
           "id": "d1",

@@ -37,49 +37,459 @@
   ],
   "summary": {
     "doc_count": 30,
-    "reviewed": 3,
-    "gate_pass": 3
+    "reviewed": 30,
+    "gate_pass": 29
   },
   "inventory": [
     {
       "doc_id": "041457651819",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "professional-preparedness",
+      "title": "Professional Preparedness - Exit Ticket Day 1",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "041457651819-e2",
+                "excerpt": "Which part of the resume builder did you have the least trouble and the most trouble writing?"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "041457651819-e2",
+                "excerpt": "Which part of the resume builder did you have the least trouble and the most trouble writing?"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "09bf178d4e7e",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "professional-preparedness",
+      "title": "Professional Preparedness - Exit Ticket Day 3",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "09bf178d4e7e-e2",
+                "excerpt": "How well did you feel like you did at the interview?\n(On a scale of 1-5, where 5 is the best.)"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "09bf178d4e7e-e2",
+                "excerpt": "How well did you feel like you did at the interview?\n(On a scale of 1-5, where 5 is the best.)"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "0a9fe894e4f0",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "career-cluster",
+      "title": "Career Cluster- Exit Ticket Day 1",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "0a9fe894e4f0-e3",
+                "excerpt": "What Career Cluster interested you the most?\n\n What Career Cluster were you the least interested in?\n\n Which Career Cluster does a Doctor fall under?"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "0a9fe894e4f0-e3",
+                "excerpt": "What Career Cluster interested you the most?\n\n What Career Cluster were you the least interested in?\n\n Which Career Cluster does a Doctor fall under?"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "0ace9ac9d412",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "answer_key",
+      "role": "answer_key",
+      "unit_id": "transportation-distribution",
+      "title": "Transportation Distribution and Logistics Answer Key",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_answers",
+            "label": "Answers / solutions present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "0ace9ac9d412-e1",
+                "excerpt": "\nDefinitions\n\n• Cockpit vs Flight Deck: A cockpit is the area where the pilot sits to fly the plane. Modern\ncommercial airlines often use the term flight deck, which includes the area for the pilot, co-\npilot, and extra seats for the crew.\n• Fuselage: the complete center body of an airplane, which the wings, tailplane, and fin are all\nattached to.\n• Cabin: the area of a plane where passengers trav"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "0b16e1424928",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "quiz",
+      "role": "quiz",
+      "unit_id": "dallas-isd",
+      "title": "Dallas ISD High School Options Quizizz",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_items",
+            "label": "Assessment items present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "0b16e1424928-e3",
+                "excerpt": ""
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_instructions",
+            "label": "Directions / instructions",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "0b16e1424928-e1",
+                "excerpt": "Worksheets\nDallas ISD High School Options\nTotal questions: 32\nWorksheet time: 16mins\nName\nClass\nDate\n1.\nMatch the following descriptions with the type of courses offered in the STEM program at Dallas ISD\nHigh School:\nBasic courses in arts and humanities\nSTEM program courses\nAdvanced courses in physical\neducation\nNon-STEM program courses\nIntroductory courses in history and\ngeography\nPhysical educat"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "1518e9d9d4e5",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "health-science",
+      "title": "Health Science - Exit Ticket",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "1518e9d9d4e5-e2",
+                "excerpt": "Instructions:\nWrite a paragraph explaining why it is important to follow the daily recommended requirements for nutrition."
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "1518e9d9d4e5-e2",
+                "excerpt": "Instructions:\nWrite a paragraph explaining why it is important to follow the daily recommended requirements for nutrition."
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "1b43180b2ba4",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "dallas-isd",
+      "title": "Dallas ISD High School Options - Exit Ticket",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "1b43180b2ba4-e2",
+                "excerpt": "Which Dallas ISD high school program interests you the most?\n[ ] STEM (Science, Technology, Engineering, and Mathematics)\n[ ] Fine Arts\n[ ] Health Sciences\n[ ] Business and Entrepreneurship\n[ ] Humanities and Social Sciences\n[ ] Career and Technical Education (CTE)\n[ ] Other (please specify): _______________________\nWhy does this program appeal to you?\n\nWhat questions do you still have about high "
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "1b43180b2ba4-e2",
+                "excerpt": "Which Dallas ISD high school program interests you the most?\n[ ] STEM (Science, Technology, Engineering, and Mathematics)\n[ ] Fine Arts\n[ ] Health Sciences\n[ ] Business and Entrepreneurship\n[ ] Humanities and Social Sciences\n[ ] Career and Technical Education (CTE)\n[ ] Other (please specify): _______________________\nWhy does this program appeal to you?\n\nWhat questions do you still have about high "
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "1bd2952ce87b",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "information-technology",
+      "title": "Information Technology - Exit Ticket",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "1bd2952ce87b-e3",
+                "excerpt": "Instructions:\nWrite a paragraph explaining which part was the easiest and which part was the hardest. Why for each question.\n\n\nInformation Technology 3 Exit Ticket\n\nName:                                                                         Date:   _____________________\n\nInstructions:\nYour evaluation will be the end of the Lesson Quiz"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "1bd2952ce87b-e3",
+                "excerpt": "Instructions:\nWrite a paragraph explaining which part was the easiest and which part was the hardest. Why for each question.\n\n\nInformation Technology 3 Exit Ticket\n\nName:                                                                         Date:   _____________________\n\nInstructions:\nYour evaluation will be the end of the Lesson Quiz"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "314d7d0905ca",
@@ -141,78 +551,831 @@
     },
     {
       "doc_id": "3f5d5ba70a87",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "hospitality-tourism",
+      "title": "Hospitality Tourism Day 2 Exit Ticket",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "3f5d5ba70a87-e2",
+                "excerpt": "Instructions:  Watch the video https://www.youtube.com/watch?v=Zy1h49_L8ME&t=1s\nAnswer the questions\n\n\nWhat were  3 things that went wrong with the “Poor Customer Service”\n.\n\n What were  3 things that went right with the “Great Customer Service”\n.\n\nHow do you think the customer left the store feeling in “Poor Customer Service” Vs the “Great Customer Service”?"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "3f5d5ba70a87-e2",
+                "excerpt": "Instructions:  Watch the video https://www.youtube.com/watch?v=Zy1h49_L8ME&t=1s\nAnswer the questions\n\n\nWhat were  3 things that went wrong with the “Poor Customer Service”\n.\n\n What were  3 things that went right with the “Great Customer Service”\n.\n\nHow do you think the customer left the store feeling in “Poor Customer Service” Vs the “Great Customer Service”?"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "3fd5e5bc561c",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "quiz",
+      "role": "quiz",
+      "unit_id": "manufacturing",
+      "title": "Manufacturing exploration Quizizz",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_items",
+            "label": "Assessment items present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "3fd5e5bc561c-e3",
+                "excerpt": ""
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_instructions",
+            "label": "Directions / instructions",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "3fd5e5bc561c-e2",
+                "excerpt": "6.\nWhat is the primary focus of the image related to technologies in manufacturing?\na) Assembly of electronic devices\nb) Use of industrial robots in manufacturing\nc) Storage of manufactured goods\nd) Manual labor in factories\n7.\nWhat type of technology is highlighted in the image related to manufacturing processes?\na) Electrical systems\nb) Pneumatic systems\nc) Hydraulic systems\nd) Thermal systems\n8"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "4736326638c1",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "professional-preparedness",
+      "title": "Professional Preparedness - Exit Ticket Day 2",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "4736326638c1-e2",
+                "excerpt": "Instructions: Answer the following question over the lesson today.\n\nWhat would you wear to an interview?"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "4736326638c1-e2",
+                "excerpt": "Instructions: Answer the following question over the lesson today.\n\nWhat would you wear to an interview?"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "51e75ae5f576",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "hospitality-tourism",
+      "title": "Exit Ticket Day 3 HOSPITALITY AND TOURISM",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "51e75ae5f576-e2",
+                "excerpt": "\nOut of the three pathways, (Culinary Arts/ Lodging and Resort Management/ Travel, Tourism and Attractions) which did you like most ?\n\n What career did you find most interesting within that pathway?\n\n What would you like to learn more about this cluster?"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "51e75ae5f576-e2",
+                "excerpt": "\nOut of the three pathways, (Culinary Arts/ Lodging and Resort Management/ Travel, Tourism and Attractions) which did you like most ?\n\n What career did you find most interesting within that pathway?\n\n What would you like to learn more about this cluster?"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "59ddeafc2ad3",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "career-cluster",
+      "title": "Career Cluster - Exit Ticket Day 3",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "59ddeafc2ad3-e2",
+                "excerpt": "\nOn a scale of 1 - 5 where 5 is the best, how well did my group do on the presentation?\n\nWhat cluster did the best at presenting (cannot choose your own group)?"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "59ddeafc2ad3-e2",
+                "excerpt": "\nOn a scale of 1 - 5 where 5 is the best, how well did my group do on the presentation?\n\nWhat cluster did the best at presenting (cannot choose your own group)?"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "6caee441faaf",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "answer_key",
+      "role": "answer_key",
+      "unit_id": "dallas-isd",
+      "title": "Dallas ISD High School Options Quizizz Answer Key",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_answers",
+            "label": "Answers / solutions present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "6caee441faaf-e2",
+                "excerpt": ""
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "81adda4c10f7",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "manufacturing",
+      "title": "Manufacturing Lesson Exit ticket",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "81adda4c10f7-e2",
+                "excerpt": "\nExit Ticket: Manufacturing Mass-Produced Goods\nInstructions:\nReflect on today’s lesson about manufacturing mass-produced goods.\nAnswer the following questions briefly and honestly.\nHand in this exit ticket before leaving the classroom.\n\nWhat is one key concept you learned about mass production today?\n[ ] Efficient use of assembly lines\n[ ] Importance of quality control\n[ ] Role of automation in m"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "81adda4c10f7-e2",
+                "excerpt": "\nExit Ticket: Manufacturing Mass-Produced Goods\nInstructions:\nReflect on today’s lesson about manufacturing mass-produced goods.\nAnswer the following questions briefly and honestly.\nHand in this exit ticket before leaving the classroom.\n\nWhat is one key concept you learned about mass production today?\n[ ] Efficient use of assembly lines\n[ ] Importance of quality control\n[ ] Role of automation in m"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "85c8ad2c6c50",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "hospitality-tourism",
+      "title": "Day 1 Exit Ticket HOSPITALITY AND TOURISM",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "85c8ad2c6c50-e3",
+                "excerpt": "\nWhich cut is thinner, Julienne or Batonnet?\n\n Which cut is bigger, Dice or Brunoise?\n\n Can you name the first part in a three course meal?"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "85c8ad2c6c50-e3",
+                "excerpt": "\nWhich cut is thinner, Julienne or Batonnet?\n\n Which cut is bigger, Dice or Brunoise?\n\n Can you name the first part in a three course meal?"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "86fff193b91a",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "answer_key",
+      "role": "answer_key",
+      "unit_id": "engineering",
+      "title": "Engineering Lesson Quiz Quizizz Answer key",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_answers",
+            "label": "Answers / solutions present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "86fff193b91a-e2",
+                "excerpt": ""
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "8ce965ac1600",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "business-marketing",
+      "title": "Business Marketing Finance - Exit Ticket",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "8ce965ac1600-e2",
+                "excerpt": "Instructions:\nWrite a paragraph describing the process of creating a new product and the process of working in a group.\n\nBusiness, Marketing & Finance Day 2 Exit Ticket\n\nName:                                                                         Date:   _____________________\n\nInstructions:\nWrite a paragraph explaining if you would be comfortable selling the product at the cost the team decided, "
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "8ce965ac1600-e2",
+                "excerpt": "Instructions:\nWrite a paragraph describing the process of creating a new product and the process of working in a group.\n\nBusiness, Marketing & Finance Day 2 Exit Ticket\n\nName:                                                                         Date:   _____________________\n\nInstructions:\nWrite a paragraph explaining if you would be comfortable selling the product at the cost the team decided, "
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "9b49036929a2",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "hospitality-tourism",
+      "title": "Hospitality Tourism Day 2 - Exit Ticket",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "9b49036929a2-e2",
+                "excerpt": "Instructions: Read each scenario and decide which response gave better customer service.\n\nScenario 1\n\nWhich response gives better customer service?\n\nScenario 2\n\nWhich response gives better customer service?\n\nScenario 3\n\nWhich response gives better customer service?"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "9b49036929a2-e2",
+                "excerpt": "Instructions: Read each scenario and decide which response gave better customer service.\n\nScenario 1\n\nWhich response gives better customer service?\n\nScenario 2\n\nWhich response gives better customer service?\n\nScenario 3\n\nWhich response gives better customer service?"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "a13c35aa5c4e",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "answer_key",
+      "role": "answer_key",
+      "unit_id": "manufacturing",
+      "title": "Manufacturing exploration Answer keys Quizizz",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_answers",
+            "label": "Answers / solutions present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "a13c35aa5c4e-e3",
+                "excerpt": ""
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "ba8b5c7a6deb",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "engineering",
+      "title": "Engineering Lesson - Exit Ticket",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "ba8b5c7a6deb-e3",
+                "excerpt": "What was the main objective of today’s activity?\n[ ] To create a functional paper airplane launcher\n[ ] To explore principles of force and motion\n[ ] To understand how design affects performance\n[ ] Other (please specify): _______________________\nDescribe one modification you made to improve your paper airplane launcher.\n\nWhat challenges did you encounter during the design process?\n\nRate your team"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "ba8b5c7a6deb-e3",
+                "excerpt": "What was the main objective of today’s activity?\n[ ] To create a functional paper airplane launcher\n[ ] To explore principles of force and motion\n[ ] To understand how design affects performance\n[ ] Other (please specify): _______________________\nDescribe one modification you made to improve your paper airplane launcher.\n\nWhat challenges did you encounter during the design process?\n\nRate your team"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "d3fae80ecd3f",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "quiz",
+      "role": "quiz",
+      "unit_id": "architecture-construction",
+      "title": "Architecture and Construction Quizizz",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_items",
+            "label": "Assessment items present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "d3fae80ecd3f-e4",
+                "excerpt": ""
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_instructions",
+            "label": "Directions / instructions",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "d3fae80ecd3f-e4",
+                "excerpt": ""
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "e173d04cd3e3",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "architecture-construction",
+      "title": "Architecture Construction - Exit Ticket",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "e173d04cd3e3-e2",
+                "excerpt": ""
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "e173d04cd3e3-e2",
+                "excerpt": ""
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "e2c12c61bc5f",
@@ -274,23 +1437,225 @@
     },
     {
       "doc_id": "ed1c99b4f5fa",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "answer_key",
+      "role": "answer_key",
+      "unit_id": "architecture-construction",
+      "title": "Architecture and Construction Answer Key Quizizz",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_answers",
+            "label": "Answers / solutions present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "ed1c99b4f5fa-e2",
+                "excerpt": "8.\nCan the tower be taped to the vertical leg of a table or a wall?\na) No, it can only be taped to the horizontal surface\nb) No, it must be free-standing\nc) Yes, it can be taped anywhere\nd) Yes, but only with special permission\n9.\nIs it permissible to use more than one roll of tape while constructing the tower?\na) Yes, but only two rolls\nb) No, only one roll is allowed\nc) Yes, as many as needed\nd)"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "eff81c789b58",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "financial-literacy",
+      "title": "Financial Literacy - Exit Ticket",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "eff81c789b58-e3",
+                "excerpt": "\nFinancial Literacy Day 2 Exit Ticket\n\nName:                                                                         Date:   _____________________\n\nInstructions:\nComplete the post assessment.\n\n\nFinancial Literacy 3 Exit Ticket"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "eff81c789b58-e3",
+                "excerpt": "\nFinancial Literacy Day 2 Exit Ticket\n\nName:                                                                         Date:   _____________________\n\nInstructions:\nComplete the post assessment.\n\n\nFinancial Literacy 3 Exit Ticket"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "f52d1bc1c462",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "career-cluster",
+      "title": "Career Cluster - Exit Ticket Day 2",
+      "presence": {
+        "gate_pass": false,
+        "coverage": 0.0,
+        "missing_required": [
+          "Prompt / question present"
+        ],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PARTIAL",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "f52d1bc1c462-e1",
+                "excerpt": "Career Cluster Exit Ticket - Day 2\n\nName:                                                                         Date:   _____________________\n\nInstructions: Having had the day to work in your groups, think back on how the group worked together.\n\nDid my group communicate well?\n\n\n Did my group use its time well?\n\n\nDid I contribute to my team’s work?"
+              }
+            ],
+            "note": "keyword match only; no element tagged with the expected type"
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PARTIAL",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "f52d1bc1c462-e1",
+                "excerpt": "Career Cluster Exit Ticket - Day 2\n\nName:                                                                         Date:   _____________________\n\nInstructions: Having had the day to work in your groups, think back on how the group worked together.\n\nDid my group communicate well?\n\n\n Did my group use its time well?\n\n\nDid I contribute to my team’s work?"
+              }
+            ],
+            "note": "keyword match only; no element tagged with the expected type"
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": false,
+        "status": "PARTIAL_OR_MISSING",
+        "missing_required": [
+          "Prompt / question present"
+        ]
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "fc48920a5ca9",
-      "status": "NOT_DECOMPOSED",
-      "note": "routed to Path B but has no Layer 0 elements yet"
+      "doc_type": "quiz",
+      "role": "quiz",
+      "unit_id": "engineering",
+      "title": "Engineering Lesson Quiz Quizizz",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_items",
+            "label": "Assessment items present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "fc48920a5ca9-e3",
+                "excerpt": ""
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_instructions",
+            "label": "Directions / instructions",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "fc48920a5ca9-e2",
+                "excerpt": ""
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
     },
     {
       "doc_id": "ff5cd4c0712e",

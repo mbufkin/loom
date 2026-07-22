@@ -18,7 +18,7 @@ projects, slides, …) via two scorers in `artifact_scorers.py`:
   objective / cited TEKS?" Emits a 0–3 band per criterion with cited evidence.
 
 The alignment scorer works, but it is **not yet calibrated against a gold set**. On the
-Dallas golden run every artifact came back `Not aligned` / `Absent` — largely because
+Dallas full run every artifact came back `Not aligned` / `Absent` — largely because
 those units are systemically missing lesson objectives/plans, so the anchor resolver has
 nothing to align against (an honest signal, but a confusing one to display as a verdict).
 Showing "Not aligned" badges reads as a strong, validated claim we can't back up today.

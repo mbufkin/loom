@@ -5,7 +5,7 @@ Maturity = how complete generated artifacts are — not a separate code path.
 
 | Dataset id | Tier | Layer 0 | Layer 1 | Notes |
 |------------|------|---------|---------|-------|
-| `dallas-career-2026` | **Golden** | Yes | Yes | 18 CTE units; acceptance / demo / MVP |
+| `dallas-career-2026` | Active | Yes | Yes | 18 CTE units; DISD career curriculum (full pipeline) |
 | `oklahoma-ag-orientation-2026` | Active | — | — | Public OK CareerTech Orientation to Ag (6 units); sequential calendar |
 | `pathful-planning-guides-2026` | Experiment | Yes | Yes | Pathful WBL/CCE planning guides; Path C; all Weak (planning guides ≠ lesson packs) |
 | `bluebonnet-math-2026` | Active | Yes | In progress | G5+Alg I validation; D1 pass; D2–D4 via `tools/run_bluebonnet_ladder.py` (30k chunks) |
@@ -16,6 +16,6 @@ Maturity = how complete generated artifacts are — not a separate code path.
 | `_fixtures/ingest-test` | Fixture | — | — | Ingest smoke only |
 | `_template` | Template | — | — | Copy to start a new dataset |
 
-**Tiers:** Golden = regression bar · Active = real work · Stress = hard inputs · Experiment = alternate code · Fixture = CI/smoke · Template = blank shelf slot.
+**Tiers:** Active = real curriculum work · Stress = hard inputs · Experiment = alternate code · Fixture = CI/smoke · Template = blank shelf slot.
 
-**MVP scope:** multi-document course packs (golden Dallas). Huge single-framework PDFs are Layer 0 stress only until Layer 1 chunking ships (`docs/roadmap.md`).
+**MVP scope:** multi-document course packs (e.g. Dallas CTE). Huge single-framework PDFs are Layer 0 stress only until Layer 1 chunking ships (`docs/roadmap.md`).

@@ -46,7 +46,7 @@ flowchart LR
     style OUT fill:#fff8e8,stroke:#ca6702
 ```
 
-**Golden path:** `projects/dallas-career-2026/` — 111 source files in → 18 unit folders + global reports out.
+**Reference path:** `projects/dallas-career-2026/` — 111 source files in → 18 unit folders + global reports out.
 
 ---
 
