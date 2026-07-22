@@ -14,7 +14,9 @@ Endpoints (all under /api):
   GET  /api/projects/{id}/file?path=REL   -> raw bytes of one file (guarded)
   GET  /api/projects/{id}/stats           -> output/aggregate-stats.json
   POST /api/projects/{id}/run             -> {runId}  (spawns ./run-audit)
+  POST /api/projects/{id}/packet-type     -> declare packet_type; regen unit rung
   GET  /api/runs/{runId}                  -> {status, exitCode, log}
+  GET  /api/packet-types                  -> declarable packet-type registry
   GET  /api/config                        -> read-only config.yaml summary
 
 Run:  python3 ui/server.py [--port 8770]
@@ -41,6 +43,8 @@ PROJECTS = ROOT / "projects"
 RUN_AUDIT = ROOT / "run-audit"
 CONFIG = ROOT / "config.yaml"
 RUNS_DIR = ROOT / "ui" / ".runs"  # per-run log files (gitignored)
+PACKET_TYPES_SPEC = ROOT / "workflows" / "packet_types.yaml"
+UNIT_RUNG_SCRIPT = ROOT / "unit_rung.py"
 
 # Top-level "course plates" a reviewer wants first, in priority order. Only those
 # that actually exist for a project are surfaced.
@@ -82,7 +86,7 @@ def _status_tiers() -> dict[str, str]:
     status = PROJECTS / "STATUS.md"
     if not status.is_file():
         return tiers
-    # Rows look like: | `dallas-career-2026` | **Golden** | Yes | Yes | ... |
+    # Rows look like: | `dallas-career-2026` | Active | Yes | Yes | ... |
     row = re.compile(r"^\|\s*`([^`]+)`\s*\|\s*\*{0,2}([^*|]+?)\*{0,2}\s*\|")
     for line in status.read_text(encoding="utf-8", errors="replace").splitlines():
         m = row.match(line.strip())
@@ -221,6 +225,78 @@ def _config_summary() -> dict:
     }
 
 
+def _packet_types() -> dict:
+    """The declarable packet-type registry (id/label/short/description/components),
+    read straight from workflows/packet_types.yaml. Powers the start-point selector.
+    Degrades to an error note rather than 500-ing the whole UI."""
+    if not PACKET_TYPES_SPEC.is_file():
+        return {"error": "packet_types.yaml not found", "default": None, "types": []}
+    try:
+        import yaml
+
+        data = yaml.safe_load(PACKET_TYPES_SPEC.read_text()) or {}
+    except Exception as e:  # noqa: BLE001
+        return {"error": f"packet_types.yaml unreadable: {e}", "default": None, "types": []}
+    types = []
+    for tid, spec in (data.get("types") or {}).items():
+        types.append(
+            {
+                "id": tid,
+                "label": spec.get("label", tid),
+                "short": spec.get("short", ""),
+                "description": (spec.get("description") or "").strip(),
+                "expected_components": [
+                    c.get("label") for c in (spec.get("components") or [])
+                ],
+            }
+        )
+    return {"default": data.get("default"), "types": types}
+
+
+def _set_packet_type(pid: str, type_id: str) -> dict:
+    """DECLARE a project's packet type: validate the id, write `packet_type:` into
+    the manifest (preserving comments via a targeted line edit, not a YAML rewrite),
+    then regenerate the deterministic unit rung so the heatmap reflects it at once."""
+    base = _project_dir(pid)
+    valid = {t["id"] for t in _packet_types().get("types", [])}
+    if type_id not in valid:
+        raise ValueError(f"unknown packet_type {type_id!r} (have {sorted(valid)})")
+
+    manifest = base / "manifest.yaml"
+    if not manifest.is_file():
+        raise FileNotFoundError("manifest.yaml")
+    lines = manifest.read_text(encoding="utf-8").splitlines()
+
+    # Replace an existing top-level `packet_type:` line if present, else insert one
+    # after `sources_dir:` (or at the top). A line edit keeps the file's comments.
+    key_re = re.compile(r"^packet_type:\s*.*$")
+    new_line = f"packet_type: {type_id}"
+    for i, line in enumerate(lines):
+        if key_re.match(line):
+            lines[i] = new_line
+            break
+    else:
+        insert_at = next(
+            (i + 1 for i, ln in enumerate(lines) if ln.startswith("sources_dir:")), 0
+        )
+        lines.insert(insert_at, new_line)
+    manifest.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+    # Regenerate the unit rung (fast, deterministic, offline) so completeness +
+    # bands update immediately without a full re-run.
+    proc = subprocess.run(
+        ["python3", str(UNIT_RUNG_SCRIPT), "--project", pid],
+        cwd=str(ROOT),
+        capture_output=True,
+        text=True,
+    )
+    return {
+        "packet_type": type_id,
+        "regenerated": proc.returncode == 0,
+        "detail": (proc.stdout + proc.stderr).strip()[-500:],
+    }
+
+
 def _start_run(pid: str, flags: list[str]) -> str:
     """Spawn ./run-audit <pid> <flags>, streaming combined output to a per-run log.
     Returns a runId the client polls. Flags are whitelisted to a safe few."""
@@ -331,6 +407,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(_list_projects())
             if parts == ["api", "config"]:
                 return self._json(_config_summary())
+            if parts == ["api", "packet-types"]:
+                return self._json(_packet_types())
             if len(parts) == 4 and parts[:2] == ["api", "projects"] and parts[3] == "outputs":
                 return self._json(_outputs_tree(parts[2]))
             if len(parts) == 4 and parts[:2] == ["api", "projects"] and parts[3] == "stats":
@@ -359,6 +437,15 @@ class Handler(BaseHTTPRequestHandler):
                 flags = (json.loads(body or b"{}") or {}).get("flags", [])
                 run_id = _start_run(parts[2], flags)
                 return self._json({"runId": run_id})
+            if (
+                len(parts) == 4
+                and parts[:2] == ["api", "projects"]
+                and parts[3] == "packet-type"
+            ):
+                length = int(self.headers.get("Content-Length") or 0)
+                body = self.rfile.read(length) if length else b"{}"
+                type_id = (json.loads(body or b"{}") or {}).get("packet_type", "")
+                return self._json(_set_packet_type(parts[2], type_id))
             return self._json({"error": "not found"}, 404)
         except (PermissionError, ValueError) as e:
             return self._json({"error": f"forbidden: {e}"}, 403)

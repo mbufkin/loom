@@ -1,27 +1,28 @@
 # Unit rung (deterministic roll-up)
 
 **Dataset:** `dallas-career-2026`  
-**Units:** 18  ·  Weak: 15  ·  Unrated: 3
+**Packet type (declared):** Teacher Edition — expects: Teacher plan / notes, Slides / activities, Check / assessment  
+**Units:** 18  ·  Strong: 2  ·  Developing: 5  ·  Weak: 8  ·  Unrated: 3
 
-Deterministic composition of the lesson rung, Layer 1 role fulfillment, pacing, and Layer 2 completeness. Per-unit detail (with citations) is in `UNIT-RUNG.json`. Standards coverage, skill progression, and rigor are deliberately out of scope (see `docs/UNIT-RUNG.md`).
+Two axes held apart: **Band = QUALITY** (of the material present); **Complete = INVENTORY** (present vs. expected for the declared packet type — descriptive, not a grade). Systemic role gaps + pacing inform inventory, never the quality band. Per-unit detail (with citations) is in `UNIT-RUNG.json`; standards, progression, and rigor stay out of scope (see `docs/UNIT-RUNG.md`).
 
-| Unit | Band | Lessons (gate) | Gate cov | Pacing | Internal gaps | Artifacts (gate) |
-|---|---|---|---|---|---|---|
-| agriculture | Weak | 0/1 | 0.62 | 1/2 (UNDER_COVERED) | — | — |
-| architecture-construction | Weak | 1/2 | 0.62 | 0/2 (UNDER_COVERED) | — | — |
-| arts-av-technology | Weak | 1/2 | 0.69 | 0/2 (UNDER_COVERED) | — | 4/6  ⚠gap |
-| business-marketing | Weak | 0/2 | 0.44 | 0/3 (UNDER_COVERED) | — | — |
-| career-cluster | Weak | 0/4 | 0.41 | 0/2 (UNDER_COVERED) | — | — |
-| career-exploration | Weak | 2/3 | 0.58 | 0/2 (UNDER_COVERED) | — | — |
-| dallas-isd | Weak | 1/2 | 0.44 | 0/1 (UNDER_COVERED) | — | — |
-| engineering | Weak | 0/2 | 0.44 | 1/2 (UNDER_COVERED) | — | — |
-| family-community | Weak | 0/2 | 0.44 | 0/2 (UNDER_COVERED) | 1/1 incomplete | — |
-| financial-literacy | Unrated | 0/0 | — | 2/3 (UNDER_COVERED) | — | — |
-| health-science | Unrated | 0/0 | — | 0/3 (UNDER_COVERED) | — | — |
-| hospitality-tourism | Weak | 0/1 | 0.50 | 0/2 (UNDER_COVERED) | — | — |
-| information-technology | Unrated | 0/0 | — | 0/3 (UNDER_COVERED) | — | — |
-| law-and-public-service | Weak | 1/4 | 0.66 | 0/2 (UNDER_COVERED) | — | — |
-| manufacturing | Weak | 1/2 | 0.69 | 1/2 (UNDER_COVERED) | — | — |
-| professional-preparedness | Weak | 0/3 | 0.42 | 0/2 (UNDER_COVERED) | — | — |
-| teaching-and-training | Weak | 1/1 | 0.75 | 0/2 (UNDER_COVERED) | — | — |
-| transportation-distribution | Weak | 0/2 | 0.50 | 0/2 (UNDER_COVERED) | — | — |
+| Unit | Band | Complete | Lessons (gate) | Gate cov | Pacing | Internal gaps | Artifacts (gate) |
+|---|---|---|---|---|---|---|---|
+| agriculture | Strong | 1/3 | 1/1 | 0.88 | 1/2 (UNDER_COVERED) | — | 1/1 |
+| architecture-construction | Developing | 3/3 | 1/2 | 0.62 | 0/2 (UNDER_COVERED) | 1/1 incomplete | 3/3 |
+| arts-av-technology | Developing | 3/3 | 1/2 | 0.69 | 0/2 (UNDER_COVERED) | — | 4/6  ⚠gap |
+| business-marketing | Developing | 3/3 | 1/2 | 0.62 | 0/3 (UNDER_COVERED) | — | 1/2  ⚠gap |
+| career-cluster | Developing | 3/3 | 2/4 | 0.78 | 0/2 (UNDER_COVERED) | — | 18/22  ⚠gap |
+| career-exploration | Weak | 3/3 | 1/3 | 0.58 | 0/2 (UNDER_COVERED) | 1/1 incomplete | 2/2 |
+| dallas-isd | Developing | 3/3 | 1/2 | 0.62 | 0/1 (UNDER_COVERED) | 1/1 incomplete | 3/3 |
+| engineering | Weak | 3/3 | 0/2 | 0.62 | 0/2 (UNDER_COVERED) | 1/1 incomplete | 3/3 |
+| family-community | Weak | 2/3 | 0/2 | 0.50 | 0/2 (UNDER_COVERED) | — | — |
+| financial-literacy | Unrated | 1/3 | 0/0 | — | 1/3 (UNDER_COVERED) | — | 3/4  ⚠gap |
+| health-science | Unrated | 2/3 | 0/0 | — | 0/3 (UNDER_COVERED) | — | 4/5  ⚠gap |
+| hospitality-tourism | Weak | 2/3 | 0/1 | 0.50 | 0/2 (UNDER_COVERED) | — | 4/5  ⚠gap |
+| information-technology | Unrated | 1/3 | 0/0 | — | 0/3 (UNDER_COVERED) | — | 2/3  ⚠gap |
+| law-and-public-service | Weak | 2/3 | 0/4 | 0.59 | 0/2 (UNDER_COVERED) | — | 1/1 |
+| manufacturing | Weak | 3/3 | 0/2 | 0.44 | 1/2 (UNDER_COVERED) | 2/2 incomplete | 3/3 |
+| professional-preparedness | Weak | 3/3 | 1/3 | 0.71 | 0/2 (UNDER_COVERED) | — | 8/9  ⚠gap |
+| teaching-and-training | Strong | 1/3 | 1/1 | 0.75 | 0/2 (UNDER_COVERED) | 1/1 incomplete | 2/2 |
+| transportation-distribution | Weak | 3/3 | 0/2 | 0.38 | 0/2 (UNDER_COVERED) | — | 2/2 |

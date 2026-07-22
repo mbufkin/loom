@@ -43,10 +43,11 @@ def test_band_strong_requires_all_conditions() -> None:
     assert unit_band(_m()) == "Strong"
 
 
-def test_band_systemic_gap_forces_weak_even_if_otherwise_strong() -> None:
-    # A systemic absence is an expectation mismatch that must not be masked by a
-    # high gate-pass rate (Alertmanager-style: the parent cause dominates).
-    assert unit_band(_m(has_systemic_gap=True)) == "Weak"
+def test_band_systemic_gap_does_not_force_weak() -> None:
+    # A systemic absence is a curriculum-wide packet-type characteristic (surfaced
+    # on the completeness axis), NOT a per-unit quality defect. It must not drag an
+    # otherwise-strong unit to Weak — that was the "everything reads Weak" bug.
+    assert unit_band(_m(has_systemic_gap=True)) == "Strong"
 
 
 def test_band_low_gate_rate_is_weak() -> None:
@@ -60,8 +61,11 @@ def test_band_developing_when_between() -> None:
     assert unit_band(_m(gate_pass_rate=0.5, gate_coverage=0.5)) == "Developing"
 
 
-def test_band_under_covered_pacing_blocks_strong() -> None:
-    assert unit_band(_m(pacing_flag="UNDER_COVERED")) == "Developing"
+def test_band_under_covered_pacing_does_not_block_strong() -> None:
+    # Pacing is an inventory/completeness signal (thin vs. planned days), shown
+    # descriptively — it no longer blocks the QUALITY band. A unit whose present
+    # lessons are strong stays Strong even if the packet is thin.
+    assert unit_band(_m(pacing_flag="UNDER_COVERED")) == "Strong"
 
 
 def test_band_artifact_gap_blocks_strong_but_not_weak() -> None:
@@ -156,10 +160,10 @@ if __name__ == "__main__":
     tests = [
         test_band_unrated_when_no_lessons,
         test_band_strong_requires_all_conditions,
-        test_band_systemic_gap_forces_weak_even_if_otherwise_strong,
+        test_band_systemic_gap_does_not_force_weak,
         test_band_low_gate_rate_is_weak,
         test_band_developing_when_between,
-        test_band_under_covered_pacing_blocks_strong,
+        test_band_under_covered_pacing_does_not_block_strong,
         test_band_missing_coverage_cannot_be_strong,
         test_band_boundaries_use_named_constants,
         test_pacing_unknown_without_planned,

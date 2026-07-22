@@ -2,6 +2,12 @@ project:
   id: dallas-career-2026
   name: Dallas ISD Career Clusters (sample)
 sources_dir: sources
+# Declared curriculum packet type (see workflows/packet_types.yaml). Sets the
+# COMPLETENESS checklist each unit is measured against — it does NOT affect the
+# quality band. Dallas is an activity/slide-based teacher resource, not a fully
+# documented published course, so it is declared a Teacher Edition. Change this
+# via the run-review start-point selector (or here) if a fuller packet is loaded.
+packet_type: teacher_edition
 # Human-confirmed pairs of units that legitimately, expectedly overlap — see
 # docs/BETS.md Bet 12 and layer1/REVIEW-QUEUE.md. Confirmed 2026-07-08 by
 # hand-checking the actual excerpts: both are on-topic engineering-design

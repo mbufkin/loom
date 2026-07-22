@@ -40,3 +40,4 @@ jobs:
           python3 test_lesson_rung.py
           python3 test_unit_rung.py
           python3 test_artifact_rung.py
+          python3 test_packet_types.py

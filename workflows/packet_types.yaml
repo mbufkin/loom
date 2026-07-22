@@ -1,0 +1,80 @@
+# =============================================================================
+# packet_types.yaml — declared curriculum "packet type" definitions.
+#
+# WHY THIS EXISTS
+# A unit's heatmap has to hold TWO independent ideas apart:
+#   1. COMPLETENESS — "what kind of packet is this, and how whole is it FOR THAT
+#      KIND?"  (descriptive; never a grade)
+#   2. QUALITY      — "how good is the material that IS here?"  (the graded band)
+#
+# You cannot judge completeness without first knowing the kind of packet. A
+# Teacher Edition that ships only teacher notes + slides + a check is COMPLETE
+# for a TE — it should not be dinged for "missing" the student workbook, answer
+# key, or formal exit tickets that a full published curriculum would carry.
+#
+# So the human DECLARES the packet type at run start (manifest: `packet_type`),
+# and we measure completeness against THAT type's checklist below. We never try
+# to guess the type from the corpus — declared beats clever.
+#
+# Each `component` is one expected slot on the checklist. `any_of` lists the
+# document roles (schema_validate.ARTIFACT_ROLES + teacher_edition_multi_lesson)
+# that satisfy that slot — presence of ANY one of them fills the slot. This keeps
+# the checklist curriculum-agnostic: it speaks in universal roles, not in one
+# curriculum's specific file names.
+#
+# To add a new packet type: add an entry under `types` with a `label`, a short
+# `description`, and its `components`. No code change required.
+# =============================================================================
+version: v1
+
+# Used when a project's manifest does not declare `packet_type`. We assume a
+# quality, fully-documented curriculum unless told otherwise, so an undeclared
+# project is held to the most demanding checklist (nothing silently passes).
+default: full_curriculum
+
+types:
+  full_curriculum:
+    label: "Full curriculum"
+    short: "FULL CURRIC"
+    description: >
+      A complete published packet: lesson plans PLUS the assessments, keys, and
+      supporting materials a teacher would expect to receive in a finished course.
+    components:
+      - label: "Lesson plan"
+        any_of: [lesson_plan, lesson_content, teacher_edition_multi_lesson]
+      - label: "Assessment"
+        any_of: [quiz, exit_ticket]
+      - label: "Answer key"
+        any_of: [answer_key]
+      - label: "Rubric"
+        any_of: [rubric]
+      - label: "Practice / worksheet"
+        any_of: [worksheet, project_work, lab_activity]
+
+  teacher_edition:
+    label: "Teacher Edition"
+    short: "TEACHER ED"
+    description: >
+      Teacher-facing materials that carry what the teacher needs to run the
+      lesson — typically notes/plan, slides or activities, and some check for
+      understanding. Not expected to ship a full student edition or answer keys.
+    components:
+      - label: "Teacher plan / notes"
+        any_of: [lesson_plan, lesson_content, teacher_edition_multi_lesson]
+      - label: "Slides / activities"
+        any_of:
+          [lesson_content, presentation, game_activity, lab_activity, project_work, worksheet]
+      - label: "Check / assessment"
+        any_of: [quiz, exit_ticket, worksheet]
+
+  lesson_plans_only:
+    label: "Lesson plans only"
+    short: "LESSON PLANS"
+    description: >
+      Just lesson plans (optionally with their supporting activities). The job is
+      to organize and review the plans themselves — no assessment/key expected.
+    components:
+      - label: "Lesson plan"
+        any_of: [lesson_plan, lesson_content, teacher_edition_multi_lesson]
+      - label: "Supporting activity"
+        any_of: [worksheet, game_activity, lab_activity, presentation, project_work]

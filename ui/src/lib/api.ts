@@ -5,11 +5,18 @@ import type {
   ConfigSummary,
   LessonFeedback,
   OutputsTree,
+  PacketType,
   Project,
   RunStatus,
   Stats,
   UnitRung,
 } from "../types";
+
+export interface PacketTypeRegistry {
+  default: string | null;
+  types: PacketType[];
+  error?: string;
+}
 
 async function getJSON<T>(url: string): Promise<T> {
   const res = await fetch(url);
@@ -80,4 +87,22 @@ export const api = {
   },
 
   runStatus: (runId: string) => getJSON<RunStatus>(`/api/runs/${runId}`),
+
+  // Declarable packet-type registry (drives the start-point selector).
+  packetTypes: () => getJSON<PacketTypeRegistry>("/api/packet-types"),
+
+  // DECLARE a project's packet type. Persists to the manifest and regenerates the
+  // unit rung server-side; caller should reload the project to pick up new bands.
+  async setPacketType(
+    id: string,
+    packet_type: string
+  ): Promise<{ packet_type: string; regenerated: boolean; detail: string }> {
+    const res = await fetch(`/api/projects/${id}/packet-type`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ packet_type }),
+    });
+    if (!res.ok) throw new Error(`set packet type failed: ${res.status}`);
+    return res.json();
+  },
 };

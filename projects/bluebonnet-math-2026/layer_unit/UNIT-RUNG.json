@@ -1,17 +1,91 @@
 {
   "project_id": "bluebonnet-math-2026",
   "gate_scorer": "s1_completeness",
+  "packet_type": {
+    "id": "full_curriculum",
+    "label": "Full curriculum",
+    "short": "FULL CURRIC",
+    "description": "A complete published packet: lesson plans PLUS the assessments, keys, and supporting materials a teacher would expect to receive in a finished course.",
+    "expected_components": [
+      "Lesson plan",
+      "Assessment",
+      "Answer key",
+      "Rubric",
+      "Practice / worksheet"
+    ]
+  },
   "summary": {
     "unit_count": 7,
     "band_counts": {
-      "Weak": 6,
+      "Strong": 5,
+      "Developing": 1,
       "Unrated": 1
     }
   },
   "units": {
     "alg1-mod-1": {
       "title": "Algebra I \u2014 Module 1",
-      "band": "Weak",
+      "band": "Strong",
+      "completeness": {
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
+        "present": 1,
+        "expected": 5,
+        "components": [
+          {
+            "label": "Lesson plan",
+            "present": true,
+            "matched": "teacher_edition_multi_lesson",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Assessment",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "quiz",
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
+            ]
+          }
+        ],
+        "missing": [
+          "Assessment",
+          "Answer key",
+          "Rubric",
+          "Practice / worksheet"
+        ]
+      },
       "lessons": {
         "count": 4,
         "gate_pass": 3,
@@ -65,7 +139,67 @@
     },
     "alg1-mod-2": {
       "title": "Algebra I \u2014 Module 2",
-      "band": "Weak",
+      "band": "Strong",
+      "completeness": {
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
+        "present": 1,
+        "expected": 5,
+        "components": [
+          {
+            "label": "Lesson plan",
+            "present": true,
+            "matched": "teacher_edition_multi_lesson",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Assessment",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "quiz",
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
+            ]
+          }
+        ],
+        "missing": [
+          "Assessment",
+          "Answer key",
+          "Rubric",
+          "Practice / worksheet"
+        ]
+      },
       "lessons": {
         "count": 6,
         "gate_pass": 5,
@@ -119,7 +253,67 @@
     },
     "alg1-mod-3": {
       "title": "Algebra I \u2014 Module 3",
-      "band": "Weak",
+      "band": "Developing",
+      "completeness": {
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
+        "present": 1,
+        "expected": 5,
+        "components": [
+          {
+            "label": "Lesson plan",
+            "present": true,
+            "matched": "teacher_edition_multi_lesson",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Assessment",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "quiz",
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
+            ]
+          }
+        ],
+        "missing": [
+          "Assessment",
+          "Answer key",
+          "Rubric",
+          "Practice / worksheet"
+        ]
+      },
       "lessons": {
         "count": 6,
         "gate_pass": 4,
@@ -173,7 +367,67 @@
     },
     "alg1-mod-4": {
       "title": "Algebra I \u2014 Module 4",
-      "band": "Weak",
+      "band": "Strong",
+      "completeness": {
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
+        "present": 1,
+        "expected": 5,
+        "components": [
+          {
+            "label": "Lesson plan",
+            "present": true,
+            "matched": "teacher_edition_multi_lesson",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Assessment",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "quiz",
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
+            ]
+          }
+        ],
+        "missing": [
+          "Assessment",
+          "Answer key",
+          "Rubric",
+          "Practice / worksheet"
+        ]
+      },
       "lessons": {
         "count": 5,
         "gate_pass": 4,
@@ -227,7 +481,67 @@
     },
     "alg1-mod-5": {
       "title": "Algebra I \u2014 Module 5",
-      "band": "Weak",
+      "band": "Strong",
+      "completeness": {
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
+        "present": 1,
+        "expected": 5,
+        "components": [
+          {
+            "label": "Lesson plan",
+            "present": true,
+            "matched": "teacher_edition_multi_lesson",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Assessment",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "quiz",
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
+            ]
+          }
+        ],
+        "missing": [
+          "Assessment",
+          "Answer key",
+          "Rubric",
+          "Practice / worksheet"
+        ]
+      },
       "lessons": {
         "count": 5,
         "gate_pass": 4,
@@ -281,7 +595,67 @@
     },
     "alg1-program": {
       "title": "Algebra I \u2014 program guides",
-      "band": "Weak",
+      "band": "Strong",
+      "completeness": {
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
+        "present": 1,
+        "expected": 5,
+        "components": [
+          {
+            "label": "Lesson plan",
+            "present": true,
+            "matched": "teacher_edition_multi_lesson",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Assessment",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "quiz",
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
+            ]
+          }
+        ],
+        "missing": [
+          "Assessment",
+          "Answer key",
+          "Rubric",
+          "Practice / worksheet"
+        ]
+      },
       "lessons": {
         "count": 4,
         "gate_pass": 3,
@@ -340,6 +714,66 @@
     "(unlinked)": {
       "title": "(unlinked)",
       "band": "Unrated",
+      "completeness": {
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
+        "present": 1,
+        "expected": 5,
+        "components": [
+          {
+            "label": "Lesson plan",
+            "present": true,
+            "matched": "teacher_edition_multi_lesson",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Assessment",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "quiz",
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
+            ]
+          }
+        ],
+        "missing": [
+          "Assessment",
+          "Answer key",
+          "Rubric",
+          "Practice / worksheet"
+        ]
+      },
       "lessons": {
         "count": 0,
         "gate_pass": 0,

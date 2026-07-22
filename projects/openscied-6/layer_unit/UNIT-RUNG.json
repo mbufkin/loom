@@ -1,0 +1,416 @@
+{
+  "project_id": "openscied-6",
+  "gate_scorer": "s1_completeness",
+  "packet_type": {
+    "id": "full_curriculum",
+    "label": "Full curriculum",
+    "short": "FULL CURRIC",
+    "description": "A complete published packet: lesson plans PLUS the assessments, keys, and supporting materials a teacher would expect to receive in a finished course.",
+    "expected_components": [
+      "Lesson plan",
+      "Assessment",
+      "Answer key",
+      "Rubric",
+      "Practice / worksheet"
+    ]
+  },
+  "summary": {
+    "unit_count": 7,
+    "band_counts": {
+      "Unrated": 7
+    }
+  },
+  "units": {
+    "6.2-thermal-energy": {
+      "title": "6.2 Thermal Energy",
+      "band": "Unrated",
+      "completeness": {
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
+        "present": 0,
+        "expected": 5,
+        "components": [
+          {
+            "label": "Lesson plan",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Assessment",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "quiz",
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
+            ]
+          }
+        ],
+        "missing": [
+          "Lesson plan",
+          "Assessment",
+          "Answer key",
+          "Rubric",
+          "Practice / worksheet"
+        ]
+      },
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 0,
+        "missing": 20,
+        "systemic_absent": [],
+        "isolated_gaps": [
+          {
+            "role": "lesson_content",
+            "day_id": "d1"
+          },
+          {
+            "role": "exit_ticket",
+            "day_id": "d1"
+          },
+          {
+            "role": "lesson_content",
+            "day_id": "d2"
+          },
+          {
+            "role": "exit_ticket",
+            "day_id": "d2"
+          },
+          {
+            "role": "lesson_content",
+            "day_id": "d3"
+          }
+        ],
+        "isolated_gap_total": 20
+      },
+      "pacing": {
+        "planned_days": 10,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 1,
+        "gate_pass": 1,
+        "gate_pass_rate": 1.0,
+        "roles": {
+          "other": 1
+        },
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "6.2-thermal-energy"
+      }
+    },
+    "6.3-weather-climate": {
+      "title": "6.3 Weather, Climate & Water Cycling",
+      "band": "Unrated",
+      "completeness": null,
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 0,
+        "missing": 0,
+        "systemic_absent": [],
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
+      },
+      "pacing": {
+        "planned_days": 12,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "6.3-weather-climate"
+      }
+    },
+    "7.1-chemical-reactions-matter": {
+      "title": "7.1 Chemical Reactions & Matter",
+      "band": "Unrated",
+      "completeness": null,
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 0,
+        "missing": 0,
+        "systemic_absent": [],
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
+      },
+      "pacing": {
+        "planned_days": 12,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "7.1-chemical-reactions-matter"
+      }
+    },
+    "7.2-chemical-reactions-energy": {
+      "title": "7.2 Chemical Reactions & Energy",
+      "band": "Unrated",
+      "completeness": null,
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 0,
+        "missing": 0,
+        "systemic_absent": [],
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
+      },
+      "pacing": {
+        "planned_days": 12,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "7.2-chemical-reactions-energy"
+      }
+    },
+    "7.3-metabolic-reactions": {
+      "title": "7.3 Metabolic Reactions",
+      "band": "Unrated",
+      "completeness": null,
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 0,
+        "missing": 0,
+        "systemic_absent": [],
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
+      },
+      "pacing": {
+        "planned_days": 12,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "7.3-metabolic-reactions"
+      }
+    },
+    "7.4-matter-cycling": {
+      "title": "7.4 Matter Cycling & Photosynthesis",
+      "band": "Unrated",
+      "completeness": null,
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 0,
+        "missing": 0,
+        "systemic_absent": [],
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
+      },
+      "pacing": {
+        "planned_days": 12,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "7.4-matter-cycling"
+      }
+    },
+    "8.2-sound-waves": {
+      "title": "8.2 Sound Waves",
+      "band": "Unrated",
+      "completeness": null,
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 0,
+        "missing": 0,
+        "systemic_absent": [],
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
+      },
+      "pacing": {
+        "planned_days": 10,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "8.2-sound-waves"
+      }
+    }
+  }
+}

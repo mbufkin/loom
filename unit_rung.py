@@ -39,6 +39,12 @@ from audit_lib import (
     validate_slug_id,
 )
 from lesson_rung import GATE_SCORER
+from packet_types import (
+    packet_type_spec,
+    present_roles_by_unit,
+    project_packet_type,
+    unit_completeness,
+)
 from synthesize import (
     aggregate_layer1,
     load_expectations,
@@ -47,11 +53,16 @@ from synthesize import (
 )
 
 # --- Band tuning (documented + tunable, mirroring synthesize.py's constant style) ---
-# A unit's band is a deterministic function of signals we can defend with evidence.
-# Thresholds are intentionally forgiving on the low end (a director wants the truly
-# thin units surfaced, not every unit dinged) and demanding on the high end (Strong
-# should mean "I'd hand this to a teacher as-is").
-WEAK_GATE_RATE = 0.34  # <1/3 of lessons clear the completeness gate -> thin unit
+# The band answers ONE question: "how good is the material that IS here?" (QUALITY).
+# It deliberately does NOT answer "is the packet complete?" — that is the separate,
+# descriptive completeness axis (packet_types.unit_completeness), because conflating
+# the two is exactly what made every unit read Weak: a curriculum-wide design choice
+# (e.g. "this Teacher Edition ships no formal exit tickets") is not a per-unit quality
+# defect and must not be smeared across every unit's grade.
+#
+# Thresholds are forgiving on the low end (surface the truly thin units, don't ding
+# everything) and demanding on the high end (Strong ~ "I'd hand this to a teacher").
+WEAK_GATE_RATE = 0.34  # <1/3 of a unit's lessons clear the completeness gate -> Weak
 STRONG_GATE_RATE = 0.67  # >=2/3 clear the gate ...
 STRONG_COVERAGE = 0.70  # ... AND lessons are on average well-covered -> Strong
 # Pacing: evidence days below this fraction of planned days reads as an under-built
@@ -127,28 +138,37 @@ def _unit_artifacts(artifact_unit: dict | None) -> dict:
 
 
 def unit_band(metrics: dict) -> str:
-    """Deterministic Strong/Developing/Weak (or Unrated) from the assembled metrics.
-    Pure and total — the single place the verdict is decided, so it is trivially
-    testable and auditable.
+    """Deterministic Strong/Developing/Weak (or Unrated) QUALITY band from the
+    assembled metrics. Pure and total — the single place the verdict is decided,
+    so it is trivially testable and auditable.
+
+    The band grades ONLY the quality of the material actually present. Two signals
+    that describe the *shape* of the packet rather than the *quality* of what's here
+    are deliberately kept OUT of the verdict and surfaced on their own axes instead:
+
+      - Systemic role gaps (a role missing curriculum-wide, e.g. no exit tickets
+        anywhere) are a packet-type characteristic, shown once in the "decide once"
+        patterns panel + each unit's `systemic_absent` list. They never force Weak.
+      - Pacing under-coverage (thin vs. the planned day count) is a completeness /
+        inventory signal, shown descriptively. It never blocks Strong.
 
     Unrated is honest, not a cop-out: a unit with no lessons found has no lesson
-    evidence to grade, so calling it "Weak" would be a fabricated judgment. Its
-    thinness is still surfaced via the pacing flag instead."""
+    evidence to grade, so calling it "Weak" would be a fabricated judgment."""
     if not metrics.get("lesson_count"):
         return "Unrated"
     gpr = metrics.get("gate_pass_rate") or 0.0
     cov = metrics.get("gate_coverage")
-    if gpr < WEAK_GATE_RATE or metrics.get("has_systemic_gap"):
+    # Weak is driven purely by the unit's OWN lessons being thin — not by a
+    # curriculum-wide pattern the director already sees elsewhere.
+    if gpr < WEAK_GATE_RATE:
         return "Weak"
     if (
         gpr >= STRONG_GATE_RATE
         and cov is not None
         and cov >= STRONG_COVERAGE
-        and metrics.get("pacing_flag") != "UNDER_COVERED"
         # A structurally-incomplete non-lesson artifact (a quiz with no items, an
-        # answer key with no answers) is a deterministic gap: the unit is not
-        # "hand it to a teacher as-is" Strong. This can only DROP Strong->Developing;
-        # it never fabricates Weak (lesson thinness + systemic role gaps drive Weak).
+        # answer key with no answers) is a real quality defect in material that IS
+        # present, so it can DROP Strong->Developing. It never fabricates Weak.
         and not metrics.get("has_artifact_gap")
     ):
         return "Strong"
@@ -171,6 +191,14 @@ def build_unit_rung(project_id: str) -> Path:
     root = project_dir(project_id)
     manifest = load_yaml(root / "manifest.yaml")
     units_manifest = manifest.get("units") or {}
+
+    # Declared packet type (default when absent) + its checklist spec, plus the
+    # roles physically present per unit — the COMPLETENESS axis (descriptive; kept
+    # entirely separate from the quality band below). Absent ledger -> empty map,
+    # so completeness degrades to "unknown" per unit rather than fabricating zeros.
+    declared_type = project_packet_type(project_id)
+    type_spec = packet_type_spec(declared_type)
+    present_roles = present_roles_by_unit(project_id)
 
     # Layer 1 aggregates (same deterministic path synthesize/reports use).
     bucket_rows, findings = load_layer1_data(project_id)
@@ -251,15 +279,19 @@ def build_unit_rung(project_id: str) -> Path:
         pacing_fit = unit_pacing_fit(pacing_units.get(uid), inferred_units.get(uid))
         internal = unit_internal_gaps(l2_rows, unit_doc_ids.get(uid, set()))
         artifacts = _unit_artifacts(artifact_units.get(uid))
+        # Completeness against the DECLARED packet type's checklist (descriptive).
+        # `present_roles.get(uid)` is None when there is no ledger evidence for the
+        # unit -> unit_completeness returns None (honest "unknown", not 0/N).
+        completeness = unit_completeness(present_roles.get(uid), type_spec)
 
         band = unit_band(
             {
                 "lesson_count": lesson_count,
                 "gate_pass_rate": gate_rate,
                 "gate_coverage": gate_cov,
-                "has_systemic_gap": bool(unit_systemic),
-                "pacing_flag": pacing_fit["flag"],
                 # Deterministic artifact gaps GATE (block Strong); alignment advises.
+                # NOTE: systemic role gaps + pacing are intentionally NOT band inputs
+                # — they live on the completeness/inventory axis, not the quality grade.
                 "has_artifact_gap": artifacts["has_gap"],
             }
         )
@@ -267,6 +299,9 @@ def build_unit_rung(project_id: str) -> Path:
         units_out[uid] = {
             "title": title,
             "band": band,
+            # Completeness axis (descriptive) — the heatmap's Chip 1. Separate from
+            # `band` (quality, Chip 2) so a thin-but-good TE reads honestly.
+            "completeness": completeness,
             "lessons": {
                 "count": lesson_count,
                 "gate_pass": gate_pass,
@@ -295,6 +330,14 @@ def build_unit_rung(project_id: str) -> Path:
     artifact = {
         "project_id": project_id,
         "gate_scorer": GATE_SCORER,
+        # Declared packet type governs the completeness checklist for every unit.
+        "packet_type": {
+            "id": type_spec["id"],
+            "label": type_spec.get("label", type_spec["id"]),
+            "short": type_spec.get("short", ""),
+            "description": (type_spec.get("description") or "").strip(),
+            "expected_components": [c["label"] for c in type_spec.get("components", [])],
+        },
         "summary": {
             "unit_count": len(units_out),
             "band_counts": dict(band_counts),
@@ -317,19 +360,26 @@ def build_unit_rung(project_id: str) -> Path:
 def _render_md(project_id: str, artifact: dict) -> str:
     bands = artifact["summary"]["band_counts"]
     band_line = "  ·  ".join(f"{k}: {v}" for k, v in bands.items()) or "(none)"
+    pkt = artifact.get("packet_type") or {}
+    pkt_line = (
+        f"**Packet type (declared):** {pkt.get('label', '—')} "
+        f"— expects: {', '.join(pkt.get('expected_components', [])) or '—'}"
+    )
     md = [
         "# Unit rung (deterministic roll-up)",
         "",
         f"**Dataset:** `{project_id}`  ",
+        f"{pkt_line}  ",
         f"**Units:** {artifact['summary']['unit_count']}  ·  {band_line}",
         "",
-        "Deterministic composition of the lesson rung, Layer 1 role fulfillment, "
-        "pacing, and Layer 2 completeness. Per-unit detail (with citations) is in "
-        "`UNIT-RUNG.json`. Standards coverage, skill progression, and rigor are "
-        "deliberately out of scope (see `docs/UNIT-RUNG.md`).",
+        "Two axes held apart: **Band = QUALITY** (of the material present); "
+        "**Complete = INVENTORY** (present vs. expected for the declared packet type — "
+        "descriptive, not a grade). Systemic role gaps + pacing inform inventory, never "
+        "the quality band. Per-unit detail (with citations) is in `UNIT-RUNG.json`; "
+        "standards, progression, and rigor stay out of scope (see `docs/UNIT-RUNG.md`).",
         "",
-        "| Unit | Band | Lessons (gate) | Gate cov | Pacing | Internal gaps | Artifacts (gate) |",
-        "|---|---|---|---|---|---|---|",
+        "| Unit | Band | Complete | Lessons (gate) | Gate cov | Pacing | Internal gaps | Artifacts (gate) |",
+        "|---|---|---|---|---|---|---|---|",
     ]
     for uid, u in artifact["units"].items():
         les = u["lessons"]
@@ -354,8 +404,10 @@ def _render_md(project_id: str, artifact: dict) -> str:
             if art.get("count")
             else "—"
         )
+        comp = u.get("completeness")
+        comp_s = f"{comp['present']}/{comp['expected']}" if comp else "—"
         md.append(
-            f"| {uid} | {u['band']} | "
+            f"| {uid} | {u['band']} | {comp_s} | "
             f"{les['gate_pass']}/{les['count']} | {cov_s} | {pac_s} | {intern_s} | {art_s} |"
         )
     return "\n".join(md) + "\n"

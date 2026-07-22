@@ -54,9 +54,29 @@ export interface Stats {
 // carry no lesson/pacing detail) and for older runs written before a field
 // existed. The band swatch overlay only needs {title, band}; the drill-down
 // panel renders the rest when present.
+// Descriptive completeness profile (Chip 1) — present vs. expected components for
+// the DECLARED packet type. Never a grade. `null` on the unit means "unknown" (no
+// ledger evidence yet), which the UI renders as an em dash rather than 0/N.
+export interface UnitCompletenessComponent {
+  label: string;
+  present: boolean;
+  matched: string | null;
+  any_of: string[];
+}
+export interface UnitCompleteness {
+  packet_type: string;
+  label: string;
+  short: string;
+  present: number;
+  expected: number;
+  components: UnitCompletenessComponent[];
+  missing: string[];
+}
+
 export interface UnitRungUnit {
   title: string;
   band: "Strong" | "Developing" | "Weak" | "Unrated";
+  completeness?: UnitCompleteness | null;
   lessons?: {
     count: number;
     gate_pass: number;
@@ -85,8 +105,16 @@ export interface UnitRungUnit {
   };
   cites?: Record<string, string>;
 }
+export interface PacketType {
+  id: string;
+  label: string;
+  short: string;
+  description: string;
+  expected_components: string[];
+}
 export interface UnitRung {
   summary?: { unit_count: number; band_counts: Record<string, number> };
+  packet_type?: PacketType;
   units?: Record<string, UnitRungUnit>;
 }
 

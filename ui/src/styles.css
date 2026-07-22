@@ -196,9 +196,18 @@ button:disabled {
 }
 
 /* ---- Unit heatmap rows ------------------------------------------------ */
+/* Shared column template so the heatmap reads like a table: the swatch, title,
+   packet chip, and quality chip each own a fixed column, and the header lines up
+   with the rows. The two chip columns are fixed-width so the TEACHER ED tags form
+   one straight vertical line and the bands form another — only the whitespace
+   after the title varies. */
+:root {
+  --heat-cols: 14px minmax(0, 1fr) 220px 128px;
+}
+
 .unit-row {
   display: grid;
-  grid-template-columns: 14px minmax(0, 1fr) auto;
+  grid-template-columns: var(--heat-cols);
   gap: 10px;
   align-items: center;
   width: 100%;
@@ -208,6 +217,12 @@ button:disabled {
   background: var(--panel);
   box-shadow: var(--shadow-sm);
   margin-bottom: 8px;
+}
+
+/* Chips sit at the LEFT of their fixed columns -> aligned vertical lines. */
+.unit-row .chip-pkt,
+.unit-row .chip-qual {
+  justify-self: start;
 }
 
 .unit-row:hover {
@@ -249,6 +264,173 @@ button:disabled {
 }
 .band-unrated {
   background: var(--band-unrated);
+}
+
+/* ---- Two-chip heatmap: packet+completeness (Chip 1) + quality (Chip 2) ----
+ * The two chips answer DIFFERENT questions and must never blur: Chip 1 is
+ * descriptive inventory (neutral, never red), Chip 2 is the graded quality band
+ * (carries color). Tuned to sit inside the existing .unit-row without changing it. */
+/* Chip 1 — a welded "identity": dark type tag fused to a light completeness meter. */
+.chip-pkt {
+  display: inline-flex;
+  align-items: stretch;
+  box-shadow: var(--shadow-sm);
+}
+.chip-pkt .pkt-type {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  background: var(--ink);
+  color: #fff;
+  padding: 4px 8px;
+  border: 2px solid var(--line);
+  white-space: nowrap;
+}
+.chip-pkt .pkt-comp {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--panel);
+  border: 2px solid var(--line);
+  border-left: 0;
+  padding: 3px 8px;
+}
+.chip-pkt .segs {
+  display: flex;
+  gap: 3px;
+}
+.chip-pkt .segs i {
+  width: 11px;
+  height: 11px;
+  border: 1.5px solid var(--line);
+  background: #fff;
+  display: block;
+}
+.chip-pkt .segs i.on {
+  background: var(--accent-2);
+}
+.chip-pkt .segs i.off {
+  background: repeating-linear-gradient(
+    45deg,
+    #fff,
+    #fff 2px,
+    #e7ddca 2px,
+    #e7ddca 4px
+  );
+}
+.chip-pkt .comp-num {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Chip 2 — the stamped quality verdict; the band class supplies its fill. */
+.chip-qual {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 2px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  padding: 4px 10px 4px 8px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.chip-qual .dot {
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--line);
+}
+.chip-qual.band-unrated {
+  color: var(--muted);
+}
+
+/* Column header above the rows, sharing the exact row grid so labels sit atop
+   their columns (packet tags + bands each in a straight vertical line). */
+.heat-colhead {
+  display: grid;
+  grid-template-columns: var(--heat-cols);
+  gap: 10px;
+  padding: 2px 12px 0;
+}
+.heat-colhead span {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.heat-colhead .hc-pkt {
+  grid-column: 3;
+}
+.heat-colhead .hc-qual {
+  grid-column: 4;
+}
+
+/* ---- Packet-type declaration bar (the "starting point" control) ---------- */
+.packet-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  background: var(--panel);
+  border: 2px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  padding: 10px 12px;
+  margin-bottom: 12px;
+}
+.packet-bar .packet-lead {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.packet-seg {
+  display: inline-flex;
+  border: 2px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  background: var(--bg);
+}
+.packet-seg button {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  padding: 6px 12px;
+  background: transparent;
+  border: 0;
+  border-right: 2px solid var(--line);
+  color: var(--ink);
+  cursor: pointer;
+}
+.packet-seg button:last-child {
+  border-right: 0;
+}
+.packet-seg button[aria-pressed="true"] {
+  background: var(--ink);
+  color: #fff;
+}
+.packet-seg button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.packet-hint {
+  font-size: 12px;
+  color: var(--muted);
+}
+.packet-hint b {
+  color: var(--ink);
+}
+.packet-err {
+  color: var(--accent);
+  font-weight: 700;
 }
 
 /* ---- Unit detail drill-down ------------------------------------------ */

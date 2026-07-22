@@ -1,17 +1,15 @@
 # Unit rung (deterministic roll-up)
 
-**Dataset:** `bluebonnet-math-2026`  
+**Dataset:** `ap-csp-2026`  
 **Packet type (declared):** Full curriculum — expects: Lesson plan, Assessment, Answer key, Rubric, Practice / worksheet  
-**Units:** 7  ·  Strong: 5  ·  Developing: 1  ·  Unrated: 1
+**Units:** 5  ·  Unrated: 5
 
 Two axes held apart: **Band = QUALITY** (of the material present); **Complete = INVENTORY** (present vs. expected for the declared packet type — descriptive, not a grade). Systemic role gaps + pacing inform inventory, never the quality band. Per-unit detail (with citations) is in `UNIT-RUNG.json`; standards, progression, and rigor stay out of scope (see `docs/UNIT-RUNG.md`).
 
 | Unit | Band | Complete | Lessons (gate) | Gate cov | Pacing | Internal gaps | Artifacts (gate) |
 |---|---|---|---|---|---|---|---|
-| alg1-mod-1 | Strong | 1/5 | 3/4 | 0.78 | 0/10 (UNDER_COVERED) | — | 1/1 |
-| alg1-mod-2 | Strong | 1/5 | 5/6 | 0.83 | 0/10 (UNDER_COVERED) | — | 1/1 |
-| alg1-mod-3 | Developing | 1/5 | 4/6 | 0.77 | 0/10 (UNDER_COVERED) | — | 1/1 |
-| alg1-mod-4 | Strong | 1/5 | 4/5 | 0.80 | 0/10 (UNDER_COVERED) | — | 1/1 |
-| alg1-mod-5 | Strong | 1/5 | 4/5 | 0.80 | 0/10 (UNDER_COVERED) | — | 1/1 |
-| alg1-program | Strong | 1/5 | 3/4 | 0.72 | 0/5 (UNDER_COVERED) | — | 28/28 |
-| (unlinked) | Unrated | 1/5 | 0/0 | — | UNKNOWN | — | 23/23 |
+| creative-development | Unrated | 0/5 | 0/0 | — | 0/4 (UNDER_COVERED) | — | 1/1 |
+| data | Unrated | — | 0/0 | — | 0/4 (UNDER_COVERED) | — | — |
+| algorithms-programming | Unrated | — | 0/0 | — | 0/5 (UNDER_COVERED) | — | — |
+| systems-networks | Unrated | — | 0/0 | — | 0/3 (UNDER_COVERED) | — | — |
+| impact-computing | Unrated | — | 0/0 | — | 0/4 (UNDER_COVERED) | — | — |

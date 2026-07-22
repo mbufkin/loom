@@ -1,0 +1,321 @@
+{
+  "project_id": "ap-csp-2026",
+  "gate_scorer": "s1_completeness",
+  "packet_type": {
+    "id": "full_curriculum",
+    "label": "Full curriculum",
+    "short": "FULL CURRIC",
+    "description": "A complete published packet: lesson plans PLUS the assessments, keys, and supporting materials a teacher would expect to receive in a finished course.",
+    "expected_components": [
+      "Lesson plan",
+      "Assessment",
+      "Answer key",
+      "Rubric",
+      "Practice / worksheet"
+    ]
+  },
+  "summary": {
+    "unit_count": 5,
+    "band_counts": {
+      "Unrated": 5
+    }
+  },
+  "units": {
+    "creative-development": {
+      "title": "Creative Development (Big Idea 1)",
+      "band": "Unrated",
+      "completeness": {
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
+        "present": 0,
+        "expected": 5,
+        "components": [
+          {
+            "label": "Lesson plan",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Assessment",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "quiz",
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
+            ]
+          }
+        ],
+        "missing": [
+          "Lesson plan",
+          "Assessment",
+          "Answer key",
+          "Rubric",
+          "Practice / worksheet"
+        ]
+      },
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 0,
+        "missing": 7,
+        "systemic_absent": [
+          "lesson_content",
+          "other"
+        ],
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
+      },
+      "pacing": {
+        "planned_days": 4,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 1,
+        "gate_pass": 1,
+        "gate_pass_rate": 1.0,
+        "roles": {
+          "other": 1
+        },
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "creative-development"
+      }
+    },
+    "data": {
+      "title": "Data (Big Idea 2)",
+      "band": "Unrated",
+      "completeness": null,
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 0,
+        "missing": 7,
+        "systemic_absent": [
+          "lesson_content",
+          "other"
+        ],
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
+      },
+      "pacing": {
+        "planned_days": 4,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "data"
+      }
+    },
+    "algorithms-programming": {
+      "title": "Algorithms and Programming (Big Idea 3)",
+      "band": "Unrated",
+      "completeness": null,
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 0,
+        "missing": 8,
+        "systemic_absent": [
+          "lesson_content",
+          "other"
+        ],
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
+      },
+      "pacing": {
+        "planned_days": 5,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "algorithms-programming"
+      }
+    },
+    "systems-networks": {
+      "title": "Computer Systems and Networks (Big Idea 4)",
+      "band": "Unrated",
+      "completeness": null,
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 0,
+        "missing": 6,
+        "systemic_absent": [
+          "lesson_content",
+          "other"
+        ],
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
+      },
+      "pacing": {
+        "planned_days": 3,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "systems-networks"
+      }
+    },
+    "impact-computing": {
+      "title": "Impact of Computing (Big Idea 5)",
+      "band": "Unrated",
+      "completeness": null,
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 0,
+        "missing": 4,
+        "systemic_absent": [
+          "lesson_content"
+        ],
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
+      },
+      "pacing": {
+        "planned_days": 4,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "impact-computing"
+      }
+    }
+  }
+}

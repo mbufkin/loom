@@ -7,6 +7,7 @@ import { UnitDetail } from "../components/UnitDetail";
 import { LessonDetail } from "../components/LessonDetail";
 import { ArtifactDetail } from "../components/ArtifactDetail";
 import { UnitOutputRow } from "../components/UnitOutputRow";
+import { PacketTypeBar } from "../components/PacketTypeBar";
 import type {
   ArtifactRung,
   Band,
@@ -171,6 +172,13 @@ export function RunReview() {
       const real = unitRung?.units?.[u.unit_id]?.band;
       return real ?? deriveBand(u);
     },
+    [unitRung]
+  );
+
+  // Completeness (Chip 1) comes straight from the unit rung; undefined when the
+  // rung predates the packet-type work, so the chip degrades to "unknown".
+  const completenessFor = useCallback(
+    (u: UnitRollup) => unitRung?.units?.[u.unit_id]?.completeness ?? null,
     [unitRung]
   );
 
@@ -341,14 +349,28 @@ export function RunReview() {
                 (stats?.unit_rollup ?? []).length === 0 ? (
                   <div className="empty">No unit rollup in aggregate-stats.</div>
                 ) : (
-                  stats!.unit_rollup!.map((u) => (
-                    <UnitOutputRow
-                      key={u.unit_id}
-                      rollup={u}
-                      band={bandFor(u)}
-                      onOpen={() => openUnitDetail(u.unit_id)}
+                  <>
+                    <PacketTypeBar
+                      projectId={projectId}
+                      packet={unitRung?.packet_type}
+                      onChanged={() => loadProject(projectId)}
                     />
-                  ))
+                    <div className="heat-colhead">
+                      <span />
+                      <span>Unit</span>
+                      <span className="hc-pkt">Packet &amp; completeness</span>
+                      <span className="hc-qual">Quality</span>
+                    </div>
+                    {stats!.unit_rollup!.map((u) => (
+                      <UnitOutputRow
+                        key={u.unit_id}
+                        rollup={u}
+                        band={bandFor(u)}
+                        completeness={completenessFor(u)}
+                        onOpen={() => openUnitDetail(u.unit_id)}
+                      />
+                    ))}
+                  </>
                 )
               ) : showUnitDetail ? (
                 <UnitDetail
