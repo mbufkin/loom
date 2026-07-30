@@ -148,6 +148,54 @@ export interface LessonFeedback {
   units: Record<string, LessonFeedbackLesson[]>;
 }
 
+// Per-lesson CURRICULUM REVIEW (output/LESSON-CURRICULUM-REVIEW.json), grouped by
+// unit_id like the quality feedback above. This is the two-stage, grounded review
+// (curriculum_review.py): the model slots each pedagogical role to a type-correct
+// element, then judges the through-line + strengths/shortfalls of the MATERIAL, in
+// a reviewer's voice. Every claim cites a real element tag (fabrications dropped).
+export type ReviewVerdict = "CONNECTS" | "BREAKS" | "CANNOT_ASSESS";
+
+export interface ReviewLink {
+  link: string; // e.g. "objective->instruction"
+  verdict: ReviewVerdict;
+  reason?: string;
+  element_ids: string[];
+}
+export interface ReviewPoint {
+  point: string;
+  element_ids: string[];
+}
+export interface ReviewRole {
+  tag: string;
+  element_id: string;
+  excerpt: string;
+}
+export interface ReviewEvidence {
+  element_id: string;
+  excerpt: string;
+  role?: string | null;
+}
+export interface CurriculumReviewLesson {
+  lesson_id: string;
+  title: string;
+  unit_id: string;
+  source_file?: string | null;
+  scorer?: string;
+  seconds?: number;
+  roles_verified: number;
+  roles: Record<string, ReviewRole | null>;
+  through_line: ReviewLink[];
+  does_well: ReviewPoint[];
+  falls_short: ReviewPoint[];
+  evidence: Record<string, ReviewEvidence>;
+}
+export interface CurriculumReview {
+  generated?: string;
+  project?: string;
+  scorer?: string;
+  units: Record<string, CurriculumReviewLesson[]>;
+}
+
 // Artifact rung (layer_artifact/ARTIFACT-RUNG.json) — the Paths B/C non-lesson
 // review, grouped by unit_id so the unit panel can list its own documents and drill
 // into a per-doc review (presence gate + advisory alignment, both evidence-cited).
@@ -225,4 +273,138 @@ export interface ConfigSummary {
   models?: Record<string, string | null>;
   keys?: string[];
   error?: string;
+}
+
+/** Create-after-audit gap queue (docs/NEXT-STEPS-BUILD-SPEC.md). */
+export type GapDecision = "author" | "pull" | "remove" | null;
+
+export interface GapItem {
+  gap_id: string;
+  project_id: string;
+  unit_id: string;
+  unit_title: string;
+  kind: "role" | "component" | "artifact_required" | string;
+  label: string;
+  locus: string;
+  pattern: "systemic" | "isolated" | string;
+  evidence_refs: string[];
+  reasoning?: string;
+  decision: GapDecision;
+  decision_note: string;
+  updated_at?: string | null;
+  has_brief: boolean;
+  has_draft: boolean;
+}
+
+export interface GapsResponse {
+  project_id: string;
+  count: number;
+  gaps: GapItem[];
+}
+
+export interface CreateStatus {
+  cursor_key_source: string;
+  cursor_key_present: boolean;
+  cursor_sdk: boolean;
+  cursor_sdk_error?: string | null;
+  default_model: string;
+  note?: string;
+}
+
+/** L1 — element type row in the create tree (largest missing first). */
+export interface CreateRoleSummary {
+  role: string;
+  label: string;
+  missing: number;
+  fulfilled: number;
+  pattern: "systemic" | "isolated" | string;
+  pending_decisions: number;
+}
+
+export interface CreateTreeResponse {
+  project_id: string;
+  roles: CreateRoleSummary[];
+}
+
+/** L2 — one finding slot (missing or present), shared by both axes. */
+export interface CreateSlot {
+  unit_id: string;
+  unit_title: string;
+  status: "MISSING" | "FULFILLED" | string;
+  locus: string;
+  role: string;
+  role_label?: string;
+  stage?: number;
+  reasoning: string;
+  fulfilled_by: string[];
+  gap_id: string | null;
+  decision: GapDecision;
+  decision_note: string;
+  has_brief: boolean;
+  has_draft: boolean;
+}
+
+export interface CreateRoleTreeResponse {
+  project_id: string;
+  role: string;
+  label: string;
+  pattern: string;
+  missing: number;
+  fulfilled: number;
+  slots: CreateSlot[];
+}
+
+/** By-unit L1 row. */
+export interface CreateUnitSummary {
+  unit_id: string;
+  title: string;
+  missing: number;
+  fulfilled: number;
+  pending_decisions: number;
+  missing_role_labels: string[];
+  missing_role_count: number;
+}
+
+export interface CreateUnitsResponse {
+  project_id: string;
+  units: CreateUnitSummary[];
+}
+
+export interface CreateStageBucket {
+  id: number;
+  key: string;
+  label: string;
+  missing: number;
+  fulfilled: number;
+  pending_decisions: number;
+  slots?: CreateSlot[];
+}
+
+export interface CreateUnitTreeResponse {
+  project_id: string;
+  unit_id: string;
+  title: string;
+  missing: number;
+  fulfilled: number;
+  slots: CreateSlot[];
+  stages?: CreateStageBucket[];
+  stage1_open?: number;
+}
+
+/** Primary Create home — unit matrix with UbD stage rollups. */
+export interface CreateMatrixUnit {
+  unit_id: string;
+  title: string;
+  missing: number;
+  fulfilled: number;
+  pending_decisions: number;
+  stage1_open: number;
+  stages: CreateStageBucket[];
+}
+
+export interface CreateMatrixResponse {
+  project_id: string;
+  doctrine?: string;
+  stage_defs: { id: number; key: string; label: string }[];
+  units: CreateMatrixUnit[];
 }

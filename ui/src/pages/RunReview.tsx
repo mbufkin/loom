@@ -8,9 +8,12 @@ import { LessonDetail } from "../components/LessonDetail";
 import { ArtifactDetail } from "../components/ArtifactDetail";
 import { UnitOutputRow } from "../components/UnitOutputRow";
 import { PacketTypeBar } from "../components/PacketTypeBar";
+import { Overview } from "../components/Overview";
+import { NextSteps } from "../components/NextSteps";
 import type {
   ArtifactRung,
   Band,
+  CurriculumReview,
   LessonFeedback,
   OutputsTree,
   Project,
@@ -38,6 +41,12 @@ function deriveBand(r: UnitRollup): Band {
 }
 
 export function RunReview() {
+  // Top-level view switch. "review" is the untouched console; "overview" /
+  // "next" are presentation decks. Kept as a tiny local flag (no router) so the
+  // existing page and all its state are undisturbed when a deck is showing.
+  const [topView, setTopView] = useState<"review" | "overview" | "next">(
+    "review"
+  );
   const [projects, setProjects] = useState<Project[]>([]);
   const [projectId, setProjectId] = useState<string>(DEFAULT_PROJECT);
   const [outputs, setOutputs] = useState<OutputsTree | null>(null);
@@ -47,6 +56,9 @@ export function RunReview() {
     null
   );
   const [artifactRung, setArtifactRung] = useState<ArtifactRung | null>(null);
+  const [lessonReview, setLessonReview] = useState<CurriculumReview | null>(
+    null
+  );
 
   const [activePath, setActivePath] = useState<string | null>(null);
   const [activeType, setActiveType] = useState<string>("md");
@@ -108,6 +120,7 @@ export function RunReview() {
       setUnitRung(null);
       setLessonFeedback(null);
       setArtifactRung(null);
+      setLessonReview(null);
       try {
         const tree = await api.outputs(id);
         setOutputs(tree);
@@ -125,6 +138,7 @@ export function RunReview() {
       api.unitRung(id).then(setUnitRung);
       api.lessonFeedback(id).then(setLessonFeedback);
       api.artifactRung(id).then(setArtifactRung);
+      api.lessonReview(id).then(setLessonReview);
     },
     [loadDoc]
   );
@@ -220,6 +234,17 @@ export function RunReview() {
     return undefined;
   }, [selectedLessonId, lessonFeedback]);
 
+  // The grounded curriculum review for the selected lesson (if one has been
+  // generated). Matched by lesson_id across units, same as the quality feedback.
+  const selectedLessonReview = useMemo(() => {
+    if (!selectedLessonId || !lessonReview) return undefined;
+    for (const ls of Object.values(lessonReview.units)) {
+      const hit = ls.find((l) => l.lesson_id === selectedLessonId);
+      if (hit) return hit;
+    }
+    return undefined;
+  }, [selectedLessonId, lessonReview]);
+
   // The artifact rung's per-unit block for the selected unit, and the single doc
   // record for the artifact drill-down.
   const selectedUnitArtifacts = useMemo(() => {
@@ -275,23 +300,66 @@ export function RunReview() {
   return (
     <div className="app">
       <div className="topbar">
-        <h1>Loom Run Review</h1>
-        <select
-          value={projectId}
-          onChange={(e) => setProjectId(e.target.value)}
-        >
-          {projects.map((p) => (
-            <option key={p.id} value={p.id}>
-              {p.id} — {p.tier}
-            </option>
-          ))}
-        </select>
+        <h1>Run Review</h1>
+        {/* Top-level page switch: review console vs presentation decks. */}
+        <div className="topnav" role="group" aria-label="page">
+          <button
+            type="button"
+            aria-pressed={topView === "review"}
+            onClick={() => setTopView("review")}
+          >
+            Review
+          </button>
+          <button
+            type="button"
+            aria-pressed={topView === "overview"}
+            onClick={() => setTopView("overview")}
+          >
+            Overview
+          </button>
+          <button
+            type="button"
+            aria-pressed={topView === "next"}
+            onClick={() => setTopView("next")}
+          >
+            Next Steps
+          </button>
+        </div>
+        {(topView === "review" || topView === "next") && (
+          <select
+            value={projectId}
+            onChange={(e) => setProjectId(e.target.value)}
+          >
+            {projects.map((p) => (
+              <option key={p.id} value={p.id}>
+                {p.id} — {p.tier}
+              </option>
+            ))}
+          </select>
+        )}
         <div className="spacer" />
-        <span className="mono" style={{ color: "var(--muted)" }}>
-          local review console
-        </span>
+        {topView === "overview" && (
+          <span className="mono" style={{ color: "var(--muted)" }}>
+            how it works
+          </span>
+        )}
+        {topView === "review" && (
+          <span className="mono" style={{ color: "var(--muted)" }}>
+            local review console
+          </span>
+        )}
+        {topView === "next" && (
+          <span className="mono" style={{ color: "var(--muted)" }}>
+            create-after-audit
+          </span>
+        )}
       </div>
 
+      {topView === "overview" ? (
+        <Overview />
+      ) : topView === "next" ? (
+        <NextSteps projectId={projectId} />
+      ) : (
       <div className="layout">
         <div className="main">
           {error && (
@@ -389,7 +457,11 @@ export function RunReview() {
                   onSelectArtifact={openArtifactDetail}
                 />
               ) : showLessonDetail ? (
-                <LessonDetail lesson={selectedLesson!} projectId={projectId} />
+                <LessonDetail
+                  lesson={selectedLesson!}
+                  review={selectedLessonReview}
+                  projectId={projectId}
+                />
               ) : showArtifactDetail ? (
                 <ArtifactDetail doc={selectedArtifact!} projectId={projectId} />
               ) : activeType === "pdf" && activePath ? (
@@ -453,6 +525,7 @@ export function RunReview() {
           />
         </div>
       </div>
+      )}
     </div>
   );
 }

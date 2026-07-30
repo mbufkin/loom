@@ -1,5 +1,8 @@
 # --- Local / machine config (not public) ---
 config.yaml
+.env
+.env.*
+!.env.example
 **/manifest.local.yaml
 
 # --- One-off local debug scripts ---
@@ -51,6 +54,11 @@ node_modules/
 # --- Loom Run Review UI (local-only build + run artifacts) ---
 ui/dist/
 ui/.runs/
+
+# --- Create-after-audit workspace (drafts may embed curriculum text) ---
+projects/*/create/drafts/
+projects/*/create/logs/
+projects/*/create/briefs/
 
 # --- Third-party / partner template packs (licensing) — never public ---
 templates-northwest-isd/

@@ -8,3 +8,8 @@ PyYAML==6.0.1
 reportlab==4.1.0
 weasyprint==69.0
 Jinja2==3.1.2
+
+# Create-after-audit draft assist (Next Steps Phase 2). Prefer project .venv:
+#   python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+# Auth: CURSOR_API_KEY or ~/.pi/agent/auth.json (Pi cursor key).
+cursor-sdk>=0.1.0

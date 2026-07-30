@@ -3,6 +3,15 @@
 import type {
   ArtifactRung,
   ConfigSummary,
+  CreateMatrixResponse,
+  CreateRoleTreeResponse,
+  CreateStatus,
+  CreateTreeResponse,
+  CreateUnitTreeResponse,
+  CreateUnitsResponse,
+  CurriculumReview,
+  GapItem,
+  GapsResponse,
   LessonFeedback,
   OutputsTree,
   PacketType,
@@ -65,6 +74,17 @@ export const api = {
     }
   },
 
+  // Best-effort: LESSON-CURRICULUM-REVIEW.json only exists once the two-stage
+  // grounded review (curriculum_review.py) has run for a project.
+  async lessonReview(id: string): Promise<CurriculumReview | null> {
+    try {
+      const txt = await api.fileText(id, "output/LESSON-CURRICULUM-REVIEW.json");
+      return JSON.parse(txt) as CurriculumReview;
+    } catch {
+      return null;
+    }
+  },
+
   // Best-effort: ARTIFACT-RUNG.json only exists once the artifact rung (Paths B/C)
   // has run for a project.
   async artifactRung(id: string): Promise<ArtifactRung | null> {
@@ -104,5 +124,119 @@ export const api = {
     });
     if (!res.ok) throw new Error(`set packet type failed: ${res.status}`);
     return res.json();
+  },
+
+  createStatus: () => getJSON<CreateStatus>("/api/create/status"),
+
+  createMatrix: (id: string) =>
+    getJSON<CreateMatrixResponse>(`/api/projects/${id}/create/matrix`),
+
+  createTree: (id: string) =>
+    getJSON<CreateTreeResponse>(`/api/projects/${id}/create/tree`),
+
+  createRoleTree: (id: string, role: string) =>
+    getJSON<CreateRoleTreeResponse>(
+      `/api/projects/${id}/create/tree/${encodeURIComponent(role)}`
+    ),
+
+  createUnits: (id: string) =>
+    getJSON<CreateUnitsResponse>(`/api/projects/${id}/create/units`),
+
+  createUnitTree: (id: string, unitId: string) =>
+    getJSON<CreateUnitTreeResponse>(
+      `/api/projects/${id}/create/units/${encodeURIComponent(unitId)}`
+    ),
+
+  gaps: (id: string) => getJSON<GapsResponse>(`/api/projects/${id}/gaps`),
+
+  async setGapDecision(
+    id: string,
+    gapId: string,
+    decision: GapItem["decision"],
+    note = ""
+  ): Promise<{ gap_id: string; decision: GapItem["decision"]; note: string; updated_at: string }> {
+    const res = await fetch(`/api/projects/${id}/gaps/${gapId}/decision`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ decision, note }),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || `decision failed: ${res.status}`);
+    }
+    return res.json();
+  },
+
+  async makeBrief(
+    id: string,
+    gapId: string
+  ): Promise<{ gap_id: string; path: string; text: string }> {
+    const res = await fetch(`/api/projects/${id}/gaps/${gapId}/brief`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ generate: true }),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || `brief failed: ${res.status}`);
+    }
+    return res.json();
+  },
+
+  async getBrief(id: string, gapId: string): Promise<{ text: string }> {
+    return getJSON(`/api/projects/${id}/gaps/${gapId}/brief`);
+  },
+
+  async makeDraft(
+    id: string,
+    gapId: string,
+    context = ""
+  ): Promise<{
+    gap_id: string;
+    path: string;
+    model: string;
+    run_id: string | null;
+    text: string;
+    key_source: string;
+    chars: number;
+  }> {
+    const res = await fetch(`/api/projects/${id}/gaps/${gapId}/draft`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ context, generate: true }),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || `draft failed: ${res.status}`);
+    }
+    return res.json();
+  },
+
+  async getDraft(id: string, gapId: string): Promise<{ text: string }> {
+    return getJSON(`/api/projects/${id}/gaps/${gapId}/draft`);
+  },
+
+  async saveBrief(id: string, gapId: string, text: string): Promise<void> {
+    const res = await fetch(`/api/projects/${id}/gaps/${gapId}/brief`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text }),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || `save brief failed: ${res.status}`);
+    }
+  },
+
+  async saveDraft(id: string, gapId: string, text: string): Promise<void> {
+    const res = await fetch(`/api/projects/${id}/gaps/${gapId}/draft`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text }),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.error || `save draft failed: ${res.status}`);
+    }
   },
 };

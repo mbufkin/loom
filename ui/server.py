@@ -2,11 +2,11 @@
 """
 ui/server.py — Loom Run Review, local-only API.
 
-A deliberately tiny, dependency-light (stdlib-only) HTTP server that lets a local
-browser review the artifacts a completed Loom run wrote under projects/<id>/. It
-does NOT run the model or interpret curriculum; it just lists, serves, and (on
-request) launches a local `./run-audit`. Local-only by design: no auth, binds to
-127.0.0.1, and every file read is confined to the requested project directory.
+A deliberately tiny, dependency-light HTTP server that lets a local browser
+review the artifacts a completed Loom run wrote under projects/<id>/. It does
+NOT invent curriculum in the auditor path; create-after-audit endpoints live
+alongside and write only under projects/<id>/create/. Local-only by design:
+no auth, binds to 127.0.0.1, and every file read is confined to the project dir.
 
 Endpoints (all under /api):
   GET  /api/projects                      -> [{id, tier, has_output, ...}]
@@ -15,11 +15,23 @@ Endpoints (all under /api):
   GET  /api/projects/{id}/stats           -> output/aggregate-stats.json
   POST /api/projects/{id}/run             -> {runId}  (spawns ./run-audit)
   POST /api/projects/{id}/packet-type     -> declare packet_type; regen unit rung
+  GET  /api/projects/{id}/gaps            -> GapItem work queue (create chapter)
+  GET  /api/projects/{id}/create/matrix   -> Unit matrix + UbD stage rollups (primary)
+  GET  /api/projects/{id}/create/tree     -> Systemic patterns by role (secondary)
+  GET  /api/projects/{id}/create/tree/{role} -> By-element L2 unit inventory
+  GET  /api/projects/{id}/create/units    -> By-unit L1 (legacy)
+  GET  /api/projects/{id}/create/units/{unit_id} -> Unit detail + UbD stages
+  POST /api/projects/{id}/gaps/{gid}/decision
+  POST /api/projects/{id}/gaps/{gid}/brief
+  GET  /api/projects/{id}/gaps/{gid}/brief
+  POST /api/projects/{id}/gaps/{gid}/draft  -> Cursor SDK supervised draft
+  GET  /api/projects/{id}/gaps/{gid}/draft
+  GET  /api/create/status                 -> Cursor key source / sdk ready
   GET  /api/runs/{runId}                  -> {status, exitCode, log}
   GET  /api/packet-types                  -> declarable packet-type registry
   GET  /api/config                        -> read-only config.yaml summary
 
-Run:  python3 ui/server.py [--port 8770]
+Run:  .venv/bin/python ui/server.py [--port 8770]
 """
 
 from __future__ import annotations
@@ -30,6 +42,7 @@ import mimetypes
 import os
 import re
 import subprocess
+import sys
 import threading
 import time
 import uuid
@@ -39,6 +52,8 @@ from urllib.parse import parse_qs, urlparse
 
 # Repo root = parent of this ui/ directory. Everything is resolved against it.
 ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 PROJECTS = ROOT / "projects"
 RUN_AUDIT = ROOT / "run-audit"
 CONFIG = ROOT / "config.yaml"
@@ -339,6 +354,41 @@ def _start_run(pid: str, flags: list[str]) -> str:
     return run_id
 
 
+def _read_json_body(handler: BaseHTTPRequestHandler) -> dict:
+    length = int(handler.headers.get("Content-Length") or 0)
+    raw = handler.rfile.read(length) if length else b"{}"
+    try:
+        data = json.loads(raw or b"{}") or {}
+    except json.JSONDecodeError as e:
+        raise ValueError(f"invalid JSON body: {e}") from e
+    if not isinstance(data, dict):
+        raise ValueError("JSON body must be an object")
+    return data
+
+
+def _create_status() -> dict:
+    """Health for the create chapter's Cursor draft path (never returns the key)."""
+    from create.auth import key_source
+
+    sdk_ok = False
+    sdk_error = None
+    try:
+        import cursor_sdk  # noqa: F401
+
+        sdk_ok = True
+    except ImportError as e:
+        sdk_error = str(e)
+    src = key_source()
+    return {
+        "cursor_key_source": src,
+        "cursor_key_present": src != "none",
+        "cursor_sdk": sdk_ok,
+        "cursor_sdk_error": sdk_error,
+        "default_model": "composer-2.5",
+        "note": "Draft assist uses Pi ~/.pi/agent/auth.json or CURSOR_API_KEY for now.",
+    }
+
+
 def _run_status(run_id: str, tail_bytes: int = 16000) -> dict | None:
     with _RUNS_LOCK:
         rec = _RUNS.get(run_id)
@@ -409,10 +459,85 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(_config_summary())
             if parts == ["api", "packet-types"]:
                 return self._json(_packet_types())
+            if parts == ["api", "create", "status"]:
+                return self._json(_create_status())
             if len(parts) == 4 and parts[:2] == ["api", "projects"] and parts[3] == "outputs":
                 return self._json(_outputs_tree(parts[2]))
             if len(parts) == 4 and parts[:2] == ["api", "projects"] and parts[3] == "stats":
                 return self._bytes(_safe_file(parts[2], "output/aggregate-stats.json"))
+            if (
+                len(parts) == 5
+                and parts[:2] == ["api", "projects"]
+                and parts[3:5] == ["create", "matrix"]
+            ):
+                from create.tree import list_matrix
+
+                pid = parts[2]
+                return self._json(list_matrix(pid, _project_dir(pid)))
+            if (
+                len(parts) == 5
+                and parts[:2] == ["api", "projects"]
+                and parts[3:5] == ["create", "tree"]
+            ):
+                from create.tree import list_roles
+
+                pid = parts[2]
+                return self._json(list_roles(pid, _project_dir(pid)))
+            if (
+                len(parts) == 6
+                and parts[:2] == ["api", "projects"]
+                and parts[3:5] == ["create", "tree"]
+            ):
+                from create.tree import list_role_units
+
+                pid, role = parts[2], parts[5]
+                if not re.fullmatch(r"[A-Za-z0-9._-]+", role or ""):
+                    raise ValueError("invalid role")
+                return self._json(list_role_units(pid, _project_dir(pid), role))
+            if (
+                len(parts) == 5
+                and parts[:2] == ["api", "projects"]
+                and parts[3:5] == ["create", "units"]
+            ):
+                from create.tree import list_units
+
+                pid = parts[2]
+                return self._json(list_units(pid, _project_dir(pid)))
+            if (
+                len(parts) == 6
+                and parts[:2] == ["api", "projects"]
+                and parts[3:5] == ["create", "units"]
+            ):
+                from create.tree import list_unit_slots
+
+                pid, unit_id = parts[2], parts[5]
+                if not re.fullmatch(r"[A-Za-z0-9._-]+", unit_id or ""):
+                    raise ValueError("invalid unit id")
+                return self._json(list_unit_slots(pid, _project_dir(pid), unit_id))
+            if len(parts) == 4 and parts[:2] == ["api", "projects"] and parts[3] == "gaps":
+                from create.gaps import list_gaps
+
+                pid = parts[2]
+                gaps = list_gaps(pid, _project_dir(pid))
+                return self._json({"project_id": pid, "count": len(gaps), "gaps": gaps})
+            if (
+                len(parts) == 6
+                and parts[:2] == ["api", "projects"]
+                and parts[3] == "gaps"
+                and parts[5] in ("brief", "draft")
+            ):
+                from create.brief import read_brief
+                from create.draft import read_draft
+                from create.gaps import get_gap
+
+                pid, gid, kind = parts[2], parts[4], parts[5]
+                base = _project_dir(pid)
+                if not get_gap(pid, base, gid):
+                    return self._json({"error": f"unknown gap {gid}"}, 404)
+                text = read_brief(base, gid) if kind == "brief" else read_draft(base, gid)
+                if text is None:
+                    return self._json({"error": f"no {kind} yet"}, 404)
+                return self._json({"gap_id": gid, "kind": kind, "text": text})
             if len(parts) == 4 and parts[:2] == ["api", "projects"] and parts[3] == "file":
                 rel = (qs.get("path") or [""])[0]
                 return self._bytes(_safe_file(parts[2], rel))
@@ -432,20 +557,108 @@ class Handler(BaseHTTPRequestHandler):
         parts = [p for p in parsed.path.split("/") if p]
         try:
             if len(parts) == 4 and parts[:2] == ["api", "projects"] and parts[3] == "run":
-                length = int(self.headers.get("Content-Length") or 0)
-                body = self.rfile.read(length) if length else b"{}"
-                flags = (json.loads(body or b"{}") or {}).get("flags", [])
-                run_id = _start_run(parts[2], flags)
+                body = _read_json_body(self)
+                run_id = _start_run(parts[2], body.get("flags", []))
                 return self._json({"runId": run_id})
             if (
                 len(parts) == 4
                 and parts[:2] == ["api", "projects"]
                 and parts[3] == "packet-type"
             ):
-                length = int(self.headers.get("Content-Length") or 0)
-                body = self.rfile.read(length) if length else b"{}"
-                type_id = (json.loads(body or b"{}") or {}).get("packet_type", "")
+                body = _read_json_body(self)
+                type_id = body.get("packet_type", "")
                 return self._json(_set_packet_type(parts[2], type_id))
+            if (
+                len(parts) == 6
+                and parts[:2] == ["api", "projects"]
+                and parts[3] == "gaps"
+                and parts[5] == "decision"
+            ):
+                from create.decisions import save_decision
+                from create.gaps import get_gap
+
+                pid, gid = parts[2], parts[4]
+                base = _project_dir(pid)
+                if not get_gap(pid, base, gid):
+                    return self._json({"error": f"unknown gap {gid}"}, 404)
+                body = _read_json_body(self)
+                decision = body.get("decision", None)
+                if decision == "":
+                    decision = None
+                row = save_decision(
+                    base,
+                    gid,
+                    decision,
+                    note=str(body.get("note") or ""),
+                    actor=str(body.get("actor") or "operator"),
+                )
+                return self._json(row)
+            if (
+                len(parts) == 6
+                and parts[:2] == ["api", "projects"]
+                and parts[3] == "gaps"
+                and parts[5] == "brief"
+            ):
+                from create.brief import read_brief, save_brief_text, write_brief
+                from create.gaps import get_gap
+
+                pid, gid = parts[2], parts[4]
+                base = _project_dir(pid)
+                gap = get_gap(pid, base, gid)
+                if not gap:
+                    return self._json({"error": f"unknown gap {gid}"}, 404)
+                body = _read_json_body(self)
+                # { "text": "..." } saves edits; omit text (or generate:true) to rebuild.
+                if "text" in body and body.get("generate") is not True:
+                    path = save_brief_text(base, gid, str(body.get("text") or ""))
+                    return self._json(
+                        {
+                            "gap_id": gid,
+                            "path": str(path.relative_to(base)),
+                            "text": read_brief(base, gid),
+                            "saved": True,
+                        }
+                    )
+                path = write_brief(base, gap)
+                return self._json(
+                    {
+                        "gap_id": gid,
+                        "path": str(path.relative_to(base)),
+                        "text": read_brief(base, gid),
+                    }
+                )
+            if (
+                len(parts) == 6
+                and parts[:2] == ["api", "projects"]
+                and parts[3] == "gaps"
+                and parts[5] == "draft"
+            ):
+                from create.draft import draft_gap, save_draft_text
+                from create.gaps import get_gap
+
+                pid, gid = parts[2], parts[4]
+                base = _project_dir(pid)
+                gap = get_gap(pid, base, gid)
+                if not gap:
+                    return self._json({"error": f"unknown gap {gid}"}, 404)
+                body = _read_json_body(self)
+                # { "text": "..." } saves operator edits; otherwise generate.
+                if "text" in body and body.get("generate") is not True:
+                    path = save_draft_text(base, gid, str(body.get("text") or ""))
+                    return self._json(
+                        {
+                            "gap_id": gid,
+                            "path": str(path.relative_to(base)),
+                            "saved": True,
+                        }
+                    )
+                result = draft_gap(
+                    base,
+                    gap,
+                    context=str(body.get("context") or ""),
+                    model=str(body.get("model") or "composer-2.5"),
+                )
+                return self._json(result)
             return self._json({"error": "not found"}, 404)
         except (PermissionError, ValueError) as e:
             return self._json({"error": f"forbidden: {e}"}, 403)
