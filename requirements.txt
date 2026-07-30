@@ -8,3 +8,6 @@ PyYAML==6.0.1
 reportlab==4.1.0
 weasyprint==69.0
 Jinja2==3.1.2
+
+# Optional: Cursor SDK backend (LOOM_CONFIG=config.cursor.yaml)
+cursor-sdk>=0.1.0
