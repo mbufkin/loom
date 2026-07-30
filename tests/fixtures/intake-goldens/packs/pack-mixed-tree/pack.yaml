@@ -1,0 +1,14 @@
+id: pack-mixed-tree
+shape: mixed-tree
+seed_globs:
+  - "**/*"
+required_formats:
+  - md
+  - html
+  - pdf
+  - docx
+  - pptx
+  - xlsx
+stages:
+  - extract
+mock_plan_ref: mock_plan.yaml

@@ -1,0 +1,11 @@
+{
+  "pack_id": "pack-mixed-tree",
+  "candidates": [
+    {"path": "unit/week1/lesson.md", "kind": "seed"},
+    {"path": "unit/week1/exit.html", "kind": "seed"},
+    {"path": "generated-day1.docx", "kind": "generated"},
+    {"path": "generated-day1.pptx", "kind": "generated"},
+    {"path": "generated-day1.xlsx", "kind": "generated"},
+    {"path": "generated-day1.pdf", "kind": "generated"}
+  ]
+}

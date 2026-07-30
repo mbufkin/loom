@@ -1,0 +1,14 @@
+{
+  "pack_id": "pack-many-little",
+  "files": {
+    "UNIT-OVERVIEW.md": {"status": "extract_ok"},
+    "LESSON-01.md": {"status": "extract_ok"},
+    "LESSON-02.md": {"status": "extract_ok"},
+    "EXIT-TICKET.md": {"status": "extract_ok"},
+    "handout.html": {"status": "extract_ok"},
+    "generated-day1.docx": {"status": "extract_ok"},
+    "generated-day1.pptx": {"status": "extract_ok"},
+    "generated-day1.xlsx": {"status": "extract_ok"},
+    "generated-day1.pdf": {"status": "extract_ok"}
+  }
+}

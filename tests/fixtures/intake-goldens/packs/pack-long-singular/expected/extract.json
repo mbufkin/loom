@@ -1,0 +1,11 @@
+{
+  "pack_id": "pack-long-singular",
+  "files": {
+    "UNIT-ALL-IN-ONE.md": {"status": "extract_ok"},
+    "UNIT-ALL-IN-ONE.html": {"status": "extract_ok"},
+    "generated-day1.docx": {"status": "extract_ok"},
+    "generated-day1.pptx": {"status": "extract_ok"},
+    "generated-day1.xlsx": {"status": "extract_ok"},
+    "generated-day1.pdf": {"status": "extract_ok"}
+  }
+}

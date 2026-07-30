@@ -1,0 +1,5 @@
+# Stub for later ingest-mock stages — not used by extract-only CI slice.
+units:
+  - unit_id: UNIT-LOOPS
+    title: Intro to Loops
+    source_files: []  # filled by harness when ingest stage is asserted

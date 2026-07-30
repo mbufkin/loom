@@ -1,0 +1,14 @@
+{
+  "pack_id": "pack-many-little",
+  "candidates": [
+    {"path": "UNIT-OVERVIEW.md", "kind": "seed"},
+    {"path": "LESSON-01.md", "kind": "seed"},
+    {"path": "LESSON-02.md", "kind": "seed"},
+    {"path": "EXIT-TICKET.md", "kind": "seed"},
+    {"path": "handout.html", "kind": "seed"},
+    {"path": "generated-day1.docx", "kind": "generated"},
+    {"path": "generated-day1.pptx", "kind": "generated"},
+    {"path": "generated-day1.xlsx", "kind": "generated"},
+    {"path": "generated-day1.pdf", "kind": "generated"}
+  ]
+}
