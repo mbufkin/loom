@@ -1,0 +1,32 @@
+{
+  "pack_id": "pack-many-little",
+  "files": {
+    "UNIT-OVERVIEW.md": {
+      "status": "routed"
+    },
+    "LESSON-01.md": {
+      "status": "routed"
+    },
+    "LESSON-02.md": {
+      "status": "routed"
+    },
+    "EXIT-TICKET.md": {
+      "status": "routed"
+    },
+    "handout.html": {
+      "status": "routed"
+    },
+    "generated-day1.docx": {
+      "status": "routed"
+    },
+    "generated-day1.pptx": {
+      "status": "routed"
+    },
+    "generated-day1.xlsx": {
+      "status": "routed"
+    },
+    "generated-day1.pdf": {
+      "status": "routed"
+    }
+  }
+}

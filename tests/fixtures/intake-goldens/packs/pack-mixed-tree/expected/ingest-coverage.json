@@ -1,0 +1,23 @@
+{
+  "pack_id": "pack-mixed-tree",
+  "files": {
+    "unit/week1/lesson.md": {
+      "status": "assigned"
+    },
+    "unit/week1/exit.html": {
+      "status": "assigned"
+    },
+    "generated-day1.docx": {
+      "status": "assigned"
+    },
+    "generated-day1.pptx": {
+      "status": "assigned"
+    },
+    "generated-day1.xlsx": {
+      "status": "assigned"
+    },
+    "generated-day1.pdf": {
+      "status": "assigned"
+    }
+  }
+}

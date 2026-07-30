@@ -1,0 +1,19 @@
+id: pack-many-little
+shape: many-little
+seed_globs:
+  - "**/*"
+required_formats:
+  - md
+  - html
+  - pdf
+  - docx
+  - pptx
+  - xlsx
+stages:
+  - extract
+  - ingest
+  - l0
+  - route
+  - l1
+  # ingest / l0 / route / l1 land when mock harness expands
+mock_plan_ref: mock_plan.yaml

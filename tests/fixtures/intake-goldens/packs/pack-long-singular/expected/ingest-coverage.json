@@ -1,0 +1,23 @@
+{
+  "pack_id": "pack-long-singular",
+  "files": {
+    "UNIT-ALL-IN-ONE.md": {
+      "status": "assigned"
+    },
+    "UNIT-ALL-IN-ONE.html": {
+      "status": "assigned"
+    },
+    "generated-day1.docx": {
+      "status": "assigned"
+    },
+    "generated-day1.pptx": {
+      "status": "assigned"
+    },
+    "generated-day1.xlsx": {
+      "status": "assigned"
+    },
+    "generated-day1.pdf": {
+      "status": "assigned"
+    }
+  }
+}

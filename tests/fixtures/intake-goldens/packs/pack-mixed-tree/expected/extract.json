@@ -1,0 +1,11 @@
+{
+  "pack_id": "pack-mixed-tree",
+  "files": {
+    "unit/week1/lesson.md": {"status": "extract_ok"},
+    "unit/week1/exit.html": {"status": "extract_ok"},
+    "generated-day1.docx": {"status": "extract_ok"},
+    "generated-day1.pptx": {"status": "extract_ok"},
+    "generated-day1.xlsx": {"status": "extract_ok"},
+    "generated-day1.pdf": {"status": "extract_ok"}
+  }
+}

@@ -1,0 +1,18 @@
+id: pack-long-singular
+shape: long-singular
+seed_globs:
+  - "**/*"
+required_formats:
+  - md
+  - pdf
+  - docx
+  - pptx
+  - xlsx
+  - html
+stages:
+  - extract
+  - ingest
+  - l0
+  - route
+  - l1
+mock_plan_ref: mock_plan.yaml

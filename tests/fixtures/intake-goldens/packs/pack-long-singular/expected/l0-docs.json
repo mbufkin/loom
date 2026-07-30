@@ -1,0 +1,29 @@
+{
+  "pack_id": "pack-long-singular",
+  "files": {
+    "UNIT-ALL-IN-ONE.md": {
+      "status": "decomposed",
+      "element_count": 1
+    },
+    "UNIT-ALL-IN-ONE.html": {
+      "status": "decomposed",
+      "element_count": 1
+    },
+    "generated-day1.docx": {
+      "status": "decomposed",
+      "element_count": 1
+    },
+    "generated-day1.pptx": {
+      "status": "decomposed",
+      "element_count": 1
+    },
+    "generated-day1.xlsx": {
+      "status": "decomposed",
+      "element_count": 1
+    },
+    "generated-day1.pdf": {
+      "status": "decomposed",
+      "element_count": 1
+    }
+  }
+}

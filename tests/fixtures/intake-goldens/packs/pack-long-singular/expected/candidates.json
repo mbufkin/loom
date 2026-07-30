@@ -1,0 +1,11 @@
+{
+  "pack_id": "pack-long-singular",
+  "candidates": [
+    {"path": "UNIT-ALL-IN-ONE.md", "kind": "seed"},
+    {"path": "UNIT-ALL-IN-ONE.html", "kind": "seed"},
+    {"path": "generated-day1.docx", "kind": "generated"},
+    {"path": "generated-day1.pptx", "kind": "generated"},
+    {"path": "generated-day1.xlsx", "kind": "generated"},
+    {"path": "generated-day1.pdf", "kind": "generated"}
+  ]
+}
