@@ -11,5 +11,9 @@ required_formats:
   - xlsx
 stages:
   - extract
+  - ingest
+  - l0
+  - route
+  - l1
   # ingest / l0 / route / l1 land when mock harness expands
 mock_plan_ref: mock_plan.yaml

@@ -11,4 +11,8 @@ required_formats:
   - html
 stages:
   - extract
+  - ingest
+  - l0
+  - route
+  - l1
 mock_plan_ref: mock_plan.yaml

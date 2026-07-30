@@ -1,0 +1,29 @@
+{
+  "pack_id": "pack-mixed-tree",
+  "files": {
+    "unit/week1/lesson.md": {
+      "status": "decomposed",
+      "element_count": 1
+    },
+    "unit/week1/exit.html": {
+      "status": "decomposed",
+      "element_count": 1
+    },
+    "generated-day1.docx": {
+      "status": "decomposed",
+      "element_count": 1
+    },
+    "generated-day1.pptx": {
+      "status": "decomposed",
+      "element_count": 1
+    },
+    "generated-day1.xlsx": {
+      "status": "decomposed",
+      "element_count": 1
+    },
+    "generated-day1.pdf": {
+      "status": "decomposed",
+      "element_count": 1
+    }
+  }
+}

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Extract/catalog accountability for intake golden packs (wayfinder #6 / #7 / #12).
+"""Intake golden accountability (wayfinder #6 / #7 / #10 / #12).
 
-Offline: real scrub/extract, no models. Materializes office binaries via
-tests/fixtures/intake-goldens/generate.py into a temp sources/ tree.
+Offline: real scrub/extract; mocked ingest organize via validate_coverage +
+synthetic L0/route/L1 ledgers. No live models.
 """
 
 from __future__ import annotations
@@ -26,18 +26,16 @@ def _load_account():
     return mod
 
 
-def test_all_packs_extract_accountability() -> None:
+def test_all_packs_stage_accountability() -> None:
     account = _load_account()
     packs = account.discover_packs()
     assert packs, "expected at least one pack under tests/fixtures/intake-goldens/packs/"
     for pack_dir in packs:
         cfg = account.load_pack(pack_dir)
-        if "extract" not in (cfg.get("stages") or []):
-            continue
         with tempfile.TemporaryDirectory(prefix=f"intake-{cfg['id']}-") as td:
             sources = Path(td) / "sources"
             account.materialize_sources(pack_dir, sources)
-            account.assert_extract_accountability(pack_dir, sources)
+            account.run_pack_accountability(pack_dir, sources)
 
 
 def test_pack_many_little_has_volume() -> None:
@@ -49,9 +47,34 @@ def test_pack_many_little_has_volume() -> None:
     assert len(seed_files) >= 4
 
 
+def test_ingest_fails_closed_when_file_unassigned() -> None:
+    """Accountability contract: an extract_ok file omitted from the plan must fail."""
+    account = _load_account()
+    pack = BASE / "tests/fixtures/intake-goldens/packs/pack-many-little"
+    with tempfile.TemporaryDirectory(prefix="intake-unassigned-") as td:
+        sources = Path(td) / "sources"
+        account.materialize_sources(pack, sources)
+        extract = account.classify_extract(sources)
+        # Drop one extract_ok path from the mock plan on purpose.
+        plan = account.build_mock_ingest_plan(pack, extract)
+        victim = plan["units"][0]["source_files"].pop()
+        records = [
+            {"source_file": rel, "char_count_clean": row["char_count_clean"]}
+            for rel, row in extract.items()
+            if row["status"] == "extract_ok"
+        ]
+        from ingest import validate_coverage
+
+        errors = validate_coverage(records, plan)
+        assert errors, f"expected coverage error after dropping {victim}"
+        assert any("unassigned" in e for e in errors)
+
+
 if __name__ == "__main__":
     test_pack_many_little_has_volume()
     print("ok  test_pack_many_little_has_volume")
-    test_all_packs_extract_accountability()
-    print("ok  test_all_packs_extract_accountability")
-    print("ALL intake golden extract TESTS PASSED")
+    test_all_packs_stage_accountability()
+    print("ok  test_all_packs_stage_accountability")
+    test_ingest_fails_closed_when_file_unassigned()
+    print("ok  test_ingest_fails_closed_when_file_unassigned")
+    print("ALL intake golden TESTS PASSED")

@@ -28,6 +28,18 @@ binaries are not committed.
 
 ## Harness (v1)
 
-- Default CI: real extract/catalog; mocked ingest / Layer 0 / Layer 1
+- Default CI: real extract/scrub; mocked ingest organize (`validate_coverage` +
+  mock plan); synthetic L0 / route / L1 ledgers asserted via `expected/*.json`
 - Optional `@slow` live smoke — not default CI
 - `data/cs-loops-unit/` is an authoring template / optional smoke only — not a pack here
+
+### Expected sidecars
+
+| File | Stage |
+|------|--------|
+| `candidates.json` | Inventory of curriculum candidates |
+| `extract.json` | S1 extract status |
+| `ingest-coverage.json` | S2 assigned / labeled_not_in_manifest |
+| `l0-docs.json` | S3 doc terminal status |
+| `route.json` | S5 routed / not_in_ledger |
+| `l1-placement.json` | S6 placed / not_in_scope |

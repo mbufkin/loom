@@ -1,0 +1,41 @@
+{
+  "pack_id": "pack-many-little",
+  "files": {
+    "UNIT-OVERVIEW.md": {
+      "status": "decomposed",
+      "element_count": 1
+    },
+    "LESSON-01.md": {
+      "status": "decomposed",
+      "element_count": 1
+    },
+    "LESSON-02.md": {
+      "status": "decomposed",
+      "element_count": 1
+    },
+    "EXIT-TICKET.md": {
+      "status": "decomposed",
+      "element_count": 1
+    },
+    "handout.html": {
+      "status": "decomposed",
+      "element_count": 1
+    },
+    "generated-day1.docx": {
+      "status": "decomposed",
+      "element_count": 1
+    },
+    "generated-day1.pptx": {
+      "status": "decomposed",
+      "element_count": 1
+    },
+    "generated-day1.xlsx": {
+      "status": "decomposed",
+      "element_count": 1
+    },
+    "generated-day1.pdf": {
+      "status": "decomposed",
+      "element_count": 1
+    }
+  }
+}

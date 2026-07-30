@@ -1,0 +1,41 @@
+{
+  "pack_id": "pack-many-little",
+  "files": {
+    "UNIT-OVERVIEW.md": {
+      "status": "placed",
+      "quarantine": false
+    },
+    "LESSON-01.md": {
+      "status": "placed",
+      "quarantine": false
+    },
+    "LESSON-02.md": {
+      "status": "placed",
+      "quarantine": false
+    },
+    "EXIT-TICKET.md": {
+      "status": "placed",
+      "quarantine": false
+    },
+    "handout.html": {
+      "status": "placed",
+      "quarantine": false
+    },
+    "generated-day1.docx": {
+      "status": "placed",
+      "quarantine": false
+    },
+    "generated-day1.pptx": {
+      "status": "placed",
+      "quarantine": false
+    },
+    "generated-day1.xlsx": {
+      "status": "placed",
+      "quarantine": false
+    },
+    "generated-day1.pdf": {
+      "status": "placed",
+      "quarantine": false
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "pack_id": "pack-long-singular",
+  "files": {
+    "UNIT-ALL-IN-ONE.md": {
+      "status": "placed",
+      "quarantine": false
+    },
+    "UNIT-ALL-IN-ONE.html": {
+      "status": "placed",
+      "quarantine": false
+    },
+    "generated-day1.docx": {
+      "status": "placed",
+      "quarantine": false
+    },
+    "generated-day1.pptx": {
+      "status": "placed",
+      "quarantine": false
+    },
+    "generated-day1.xlsx": {
+      "status": "placed",
+      "quarantine": false
+    },
+    "generated-day1.pdf": {
+      "status": "placed",
+      "quarantine": false
+    }
+  }
+}
