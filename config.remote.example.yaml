@@ -1,0 +1,138 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Remote-backend template — point Loom at ANY OpenAI-Chat-Completions-compatible API.
+#
+# Loom is backend-portable: the whole pipeline talks to one `/v1/chat/completions`
+# endpoint, chosen entirely by config. Copy a preset below into your own file and
+# select it WITHOUT editing config.yaml (keeps the local-model default intact):
+#
+#   cp config.remote.example.yaml config.remote.yaml   # then edit
+#   export MY_API_KEY=sk-...                            # the key (never committed)
+#   LOOM_CONFIG=config.remote.yaml python3 experiments/zen_smoke.py   # prove it
+#   LOOM_CONFIG=config.remote.yaml ./run-audit <project-id>           # real run
+#
+# Config names only the ENV VAR that holds the key (api_key_env) — the secret itself
+# is never stored here. `analyst` and `verifier` roles can point at different
+# providers/models; set both the same for the single-strong-model doctrine.
+#
+# Auth is fully configurable so it fits every provider:
+#   api_key_env   env var holding the token (omit entirely for a no-auth local server)
+#   auth_header   header name        (default "Authorization")
+#   auth_scheme   token prefix       (default "Bearer"; "" = send the raw key)
+#   extra_headers static headers     (some gateways require them)
+#   send_repeat_penalty  keep false for hosted APIs (it's a llama.cpp-only field that
+#                        strict gateways reject); true only for a local llama-server.
+#   max_rpm              sliding-window rate gate (e.g. 35 under NVIDIA's ~40 RPM free
+#                        tier). Unset/omit for local llama — the gate is a no-op then.
+#                        On HTTP 429 the client also backs off (honors Retry-After).
+#
+# SCOPE: this covers OpenAI Chat Completions-compatible endpoints (OpenAI, OpenRouter,
+# Groq, Together, Fireworks, OpenCode Zen non-GPT models, vLLM, llama.cpp, LM Studio,
+# Ollama's /v1, …). It does NOT speak the OpenAI *Responses* API or native Anthropic
+# Messages API — those need a small adapter (not built yet).
+#
+# PRIVACY: any hosted provider means data leaves the building. Some free/stealth models
+# (e.g. OpenCode Zen "big-pickle") also TRAIN on what you send. Use sample/non-sensitive
+# curriculum with those; keep real district corpora on the local backend.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# === ACTIVE preset: OpenCode Zen · Big Pickle (free, for testing) ==============
+models:
+  analyst_url: "https://opencode.ai/zen/v1/chat/completions"
+  verifier_url: "https://opencode.ai/zen/v1/chat/completions"
+  analyst_model: "big-pickle"
+  verifier_model: "big-pickle"
+  timeout_seconds: 300
+  api_key_env: "OPENCODE_API_KEY"
+  send_repeat_penalty: false
+  # Stay under typical free-tier ceilings (NVIDIA NIM ~40 RPM). Leave headroom.
+  max_rpm: 35
+
+paths:
+  base_dir: "/home/lenovo/g10-control-center-loom"
+  default_sources_dir: "/home/lenovo/g10-control-center-loom/data/career-curriculum/osint"
+
+policy:
+  auditor_only: true
+
+# ─────────────────────────────────────────────────────────────────────────────
+# OTHER PRESETS — copy the `models:` block you want over the one above.
+#
+# --- NVIDIA NIM (build.nvidia.com free ~40 RPM — leave headroom) ----------------
+# models:
+#   analyst_url: "https://integrate.api.nvidia.com/v1/chat/completions"
+#   verifier_url: "https://integrate.api.nvidia.com/v1/chat/completions"
+#   analyst_model: "nvidia/nemotron-3-nano-30b-a3b"
+#   verifier_model: "nvidia/nemotron-3-nano-30b-a3b"
+#   timeout_seconds: 300
+#   api_key_env: "NVIDIA_API_KEY"
+#   send_repeat_penalty: false
+#   max_rpm: 35
+#
+# --- OpenAI --------------------------------------------------------------------
+# models:
+#   analyst_url: "https://api.openai.com/v1/chat/completions"
+#   verifier_url: "https://api.openai.com/v1/chat/completions"
+#   analyst_model: "gpt-4o"
+#   verifier_model: "gpt-4o"
+#   timeout_seconds: 300
+#   api_key_env: "OPENAI_API_KEY"
+#   send_repeat_penalty: false
+#
+# --- OpenRouter (needs the two extra headers) ----------------------------------
+# models:
+#   analyst_url: "https://openrouter.ai/api/v1/chat/completions"
+#   verifier_url: "https://openrouter.ai/api/v1/chat/completions"
+#   analyst_model: "anthropic/claude-3.5-sonnet"
+#   verifier_model: "anthropic/claude-3.5-sonnet"
+#   timeout_seconds: 300
+#   api_key_env: "OPENROUTER_API_KEY"
+#   send_repeat_penalty: false
+#   extra_headers:
+#     HTTP-Referer: "https://your-project.example"
+#     X-Title: "Loom curriculum audit"
+#
+# --- Groq ----------------------------------------------------------------------
+# models:
+#   analyst_url: "https://api.groq.com/openai/v1/chat/completions"
+#   verifier_url: "https://api.groq.com/openai/v1/chat/completions"
+#   analyst_model: "llama-3.3-70b-versatile"
+#   verifier_model: "llama-3.3-70b-versatile"
+#   timeout_seconds: 300
+#   api_key_env: "GROQ_API_KEY"
+#   send_repeat_penalty: false
+#
+# --- Azure OpenAI (raw key in an `api-key` header, not Bearer) ------------------
+# models:
+#   analyst_url: "https://<resource>.openai.azure.com/openai/deployments/<deployment>/chat/completions?api-version=2024-06-01"
+#   verifier_url: "https://<resource>.openai.azure.com/openai/deployments/<deployment>/chat/completions?api-version=2024-06-01"
+#   analyst_model: "<deployment-name>"
+#   verifier_model: "<deployment-name>"
+#   timeout_seconds: 300
+#   api_key_env: "AZURE_OPENAI_KEY"
+#   auth_header: "api-key"
+#   auth_scheme: ""          # send the raw key, no "Bearer " prefix
+#   send_repeat_penalty: false
+#
+# --- Another local server (no auth at all) -------------------------------------
+# models:
+#   analyst_url: "http://localhost:8080/v1/chat/completions"
+#   verifier_url: "http://localhost:8080/v1/chat/completions"
+#   analyst_model: "/path/to/model.gguf"
+#   verifier_model: "/path/to/model.gguf"
+#   timeout_seconds: 300
+#   send_repeat_penalty: true   # llama.cpp accepts (and benefits from) this field
+#
+# --- Cursor SDK (Agent API — NOT chat/completions; see config.cursor.example.yaml) ---
+# models:
+#   provider: cursor_sdk
+#   analyst_url: "cursor://sdk"          # ignored; required only for human clarity
+#   verifier_url: "cursor://sdk"
+#   analyst_model: "grok-4.5"            # swap freely: composer-2.5, etc.
+#   verifier_model: "grok-4.5"
+#   model_params:
+#     effort: high                       # low | medium | high
+#     fast: true
+#   timeout_seconds: 600
+#   api_key_env: "CURSOR_API_KEY"        # or Pi ~/.pi/agent/auth.json fallback
+#   send_repeat_penalty: false
+#   max_rpm: 20

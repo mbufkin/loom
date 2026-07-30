@@ -67,3 +67,6 @@ experiments/*/out/
 
 # --- Internal R&D review briefs (stays local, like research/) ---
 reviews/
+
+# Local Cursor backend selection (copy from config.cursor.example.yaml)
+config.cursor.yaml
