@@ -18,6 +18,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install system deps (PDF extract for intake goldens)
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+
       - name: Install dependencies
         run: pip install -r requirements.txt
 
@@ -28,3 +31,4 @@ jobs:
           python3 test_rollup.py
           python3 test_doc_extract.py
           python3 test_loom_pipeline.py
+          python3 test_intake_goldens_extract.py
