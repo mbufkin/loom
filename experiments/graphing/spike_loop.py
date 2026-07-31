@@ -259,8 +259,13 @@ def rebuild(provisional: dict, findings: dict) -> dict:
             edge_rel = f.get("edge") or "hasPart"
             if edge_rel == "hasPart":
                 graph["edges"].append({"rel": "hasPart", "from": lesson_id, "to": mid})
+            elif edge_rel == "spanIn":
+                # spanIn: Lesson → Material (matches code_first / P1×D polarity)
+                graph["edges"].append({"rel": "spanIn", "from": lesson_id, "to": mid})
+                # Keep Material under unit for inventory discoverability
+                graph["edges"].append({"rel": "hasPart", "from": unit_node, "to": mid})
             else:
-                # describes / spanIn: Material → Lesson (plan describes; slides spanIn)
+                # describes: Material → Lesson (plan describes the Lesson)
                 graph["edges"].append({"rel": edge_rel, "from": mid, "to": lesson_id})
                 # Keep Material under unit for inventory discoverability
                 graph["edges"].append({"rel": "hasPart", "from": unit_node, "to": mid})
@@ -451,9 +456,13 @@ def run_spike(project_root: Path) -> dict[str, Any]:
         "rebuilt_lessons": lesson_ids_in(rebuilt),
         "raw_files": [str(p.relative_to(project_root)) for p in raw_paths],
         "out": {
-            "provisional": str(graph_dir / "HAS-PART.provisional.json"),
-            "rebuilt": str(graph_dir / "HAS-PART.json"),
-            "findings": str(graph_dir / "review-findings.json"),
+            "provisional": str(
+                (graph_dir / "HAS-PART.provisional.json").relative_to(project_root)
+            ),
+            "rebuilt": str((graph_dir / "HAS-PART.json").relative_to(project_root)),
+            "findings": str(
+                (graph_dir / "review-findings.json").relative_to(project_root)
+            ),
         },
     }
     (graph_dir / "SPIKE-SUMMARY.json").write_text(

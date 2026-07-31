@@ -73,8 +73,8 @@
     },
     {
       "rel": "spanIn",
-      "from": "material:aaaa02",
-      "to": "lesson:plants:d1"
+      "from": "lesson:plants:d1",
+      "to": "material:aaaa02"
     },
     {
       "rel": "hasPart",
