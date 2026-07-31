@@ -25,6 +25,7 @@ Reference for the Loom curriculum auditor (router + Path A/B/C workflows).
 | [PR-REVIEW-FINDINGS-PROMPT.md](PR-REVIEW-FINDINGS-PROMPT.md) | AI agents | Copy-paste agent prompt for read-only PR review findings |
 | [PRODUCT-OVERVIEW.md](PRODUCT-OVERVIEW.md) | Directors, partners | What the system does |
 | [PIPELINE.md](PIPELINE.md) | Engineers | End-to-end flow |
+| [GRAPHING.md](GRAPHING.md) | Engineers / research | hasPart graphing step — contract + A/B options (not wired yet) |
 | [DATA-FLOW.md](DATA-FLOW.md) | Presenters, engineers | Data transformation canvases (Mermaid) |
 | [FILE-FLOW.md](FILE-FLOW.md) | Presenters, operators | Directory & artifact map (Mermaid) |
 | [STRUCTURAL-FILL.md](STRUCTURAL-FILL.md) | Curriculum leads | Maps vs content — the core boundary |

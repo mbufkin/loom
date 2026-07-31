@@ -1,0 +1,24 @@
+project:
+  id: lab-ag-arts-mix
+  name: lab-ag-arts-mix
+sources_dir: /home/lenovo/g10-control-center-loom/projects/lab-ag-arts-mix/sources
+units:
+  arts-av-technology-communication:
+    title: Arts, A/V Technology and Communication
+    calendar: units/arts-av-technology-communication/calendar.yaml
+    documents:
+    - doc_0a62e0b9729e_Arts_A_V_Student_Notes.txt
+    - doc_0cbd06c7c769_Arts_AV_Technology___Communication_Flyer_Project_Rubric.txt
+    - doc_314d7d0905ca_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_1.txt
+    - doc_761e6495bc24_Arts_A_V_Tech__Lesson_Plan_.txt
+    - doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt
+    - doc_af9cf3b04474_Arts_AV_Technology___Communication_Commercial_Project_Rubric.txt
+    - doc_e2c12c61bc5f_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_3.txt
+    - doc_ff5cd4c0712e_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_2.txt
+  agriculture-plant-science:
+    title: "Agriculture Food and Natural Resources \u2014 Plant Science"
+    calendar: units/agriculture-plant-science/calendar.yaml
+    documents:
+    - doc_b5e36486805a_Agriculture-_Plant_Science.txt
+    - doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt
+generated_by: ingest.py

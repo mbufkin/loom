@@ -1,0 +1,76 @@
+{
+  "school_calendar_hint": {
+    "school_year": null,
+    "notes": null,
+    "grading_periods": []
+  },
+  "units": [
+    {
+      "unit_id": "agri_plant_science",
+      "title": "Agriculture Plant Science Unit",
+      "source_files": [
+        "doc_b5e36486805a_Agriculture-_Plant_Science.txt",
+        "doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt"
+      ],
+      "calendar": {
+        "unit_length_days": 2,
+        "days": [
+          {
+            "id": "d1",
+            "label": "Day 1",
+            "expected": [
+              "lesson_content"
+            ]
+          },
+          {
+            "id": "d2",
+            "label": "Day 2",
+            "expected": [
+              "rubric"
+            ]
+          }
+        ],
+        "unit_supporting": []
+      }
+    },
+    {
+      "unit_id": "arts_av_communication_cluster",
+      "title": "Arts A/V Technology and Communication Cluster Unit",
+      "source_files": [
+        "doc_0a62e0b9729e_Arts_A_V_Student_Notes.txt",
+        "doc_0cbd06c7c769_Arts_AV_Technology___Communication_Flyer_Project_Rubric.txt",
+        "doc_e2c12c61bc5f_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_3.txt",
+        "doc_ff5cd4c0712e_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_2.txt"
+      ],
+      "calendar": {
+        "unit_length_days": 3,
+        "days": [
+          {
+            "id": "d1",
+            "label": "Day 1",
+            "expected": [
+              "lesson_content"
+            ]
+          },
+          {
+            "id": "d2",
+            "label": "Day 2",
+            "expected": [
+              "exit_ticket"
+            ]
+          },
+          {
+            "id": "d3",
+            "label": "Day 3",
+            "expected": [
+              "rubric"
+            ]
+          }
+        ],
+        "unit_supporting": [
+          "lesson_plan"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+project:
+  id: lab-dallas-ag
+  name: lab-dallas-ag
+sources_dir: /home/lenovo/g10-control-center-loom/projects/lab-dallas-ag/sources
+units:
+  plant-science:
+    title: "Agriculture Food and Natural Resources Career Cluster \u2014 Plant Science"
+    calendar: units/plant-science/calendar.yaml
+    documents:
+    - doc_b5e36486805a_Agriculture-_Plant_Science.txt
+    - doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt
+generated_by: ingest.py

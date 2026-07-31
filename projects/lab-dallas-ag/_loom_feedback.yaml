@@ -1,0 +1,7 @@
+# Loom unknown/weak-type feedback — read when growing new paths
+
+- doc_id: "b5e36486805a"
+  doc_type: "other"
+  suggested_pattern: "Consider a dedicated workflow for type 'other' (currently Path C best-effort)."
+  reason: "no dedicated pass for type 'other' (Path C best-effort)"
+  logged_at: "2026-07-30T22:46:24.262813+00:00"
