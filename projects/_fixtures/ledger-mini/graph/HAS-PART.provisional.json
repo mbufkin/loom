@@ -1,0 +1,70 @@
+{
+  "project_id": "ledger-mini",
+  "unit_id": "plants",
+  "stage": "provisional",
+  "model": "code-first-spike-v0",
+  "method": "spike-loop-v0",
+  "nodes": [
+    {
+      "id": "course:ledger-mini",
+      "type": "Course",
+      "name": "ledger-mini"
+    },
+    {
+      "id": "unit:plants",
+      "type": "LessonGrouping",
+      "name": "plants",
+      "groupName": "unit"
+    },
+    {
+      "id": "material:aaaa01",
+      "type": "Material",
+      "role": "lesson_plan",
+      "name": "doc_aaaa01_Mini_Lesson_Plan.txt",
+      "source_file": "doc_aaaa01_Mini_Lesson_Plan.txt"
+    },
+    {
+      "id": "material:aaaa02",
+      "type": "Material",
+      "role": "slides",
+      "name": "doc_aaaa02_Mini_Slides.txt",
+      "source_file": "doc_aaaa02_Mini_Slides.txt"
+    },
+    {
+      "id": "material:aaaa03",
+      "type": "Material",
+      "role": "exit_ticket",
+      "name": "doc_aaaa03_Mini_Exit_Ticket.txt",
+      "source_file": "doc_aaaa03_Mini_Exit_Ticket.txt"
+    }
+  ],
+  "edges": [
+    {
+      "rel": "hasPart",
+      "from": "course:ledger-mini",
+      "to": "unit:plants"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:plants",
+      "to": "material:aaaa01"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:plants",
+      "to": "material:aaaa02"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:plants",
+      "to": "material:aaaa03"
+    }
+  ],
+  "coverage": {
+    "source_files": [
+      "doc_aaaa01_Mini_Lesson_Plan.txt",
+      "doc_aaaa02_Mini_Slides.txt",
+      "doc_aaaa03_Mini_Exit_Ticket.txt"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "project_id": "ledger-mini",
+  "unit_id": "plants",
+  "lesson_id": "lesson:plants:d1",
+  "create_lesson": {
+    "id": "lesson:plants:d1",
+    "type": "Lesson",
+    "name": "Day 1"
+  },
+  "findings": [
+    {
+      "source_file": "doc_aaaa01_Mini_Lesson_Plan.txt",
+      "action": "attach_material",
+      "lesson_id": "lesson:plants:d1",
+      "role": "lesson_plan",
+      "node_type": "Material",
+      "edge": "describes"
+    },
+    {
+      "source_file": "doc_aaaa02_Mini_Slides.txt",
+      "action": "attach_material",
+      "lesson_id": "lesson:plants:d1",
+      "role": "slides",
+      "node_type": "Material",
+      "edge": "spanIn"
+    },
+    {
+      "source_file": "doc_aaaa03_Mini_Exit_Ticket.txt",
+      "action": "attach_assessment",
+      "lesson_id": "lesson:plants:d1",
+      "role": "exit_ticket",
+      "node_type": "Assessment"
+    }
+  ],
+  "note": "Spike findings: simulated unit review close (all Materials reviewed)."
+}

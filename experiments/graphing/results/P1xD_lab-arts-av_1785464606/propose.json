@@ -1,0 +1,358 @@
+{
+  "project_id": "lab-arts-av",
+  "model": "code-first-v0",
+  "method": "P1xD-propose",
+  "nodes": [
+    {
+      "id": "course:lab-arts-av",
+      "type": "Course",
+      "name": "lab-arts-av"
+    },
+    {
+      "id": "unit:arts-av-technology",
+      "type": "LessonGrouping",
+      "name": "Arts AV Technology",
+      "groupName": "unit"
+    },
+    {
+      "id": "material:0a62e0b9729e",
+      "type": "Material",
+      "role": "worksheet",
+      "name": "doc_0a62e0b9729e_Arts_A_V_Student_Notes.txt",
+      "source_file": "doc_0a62e0b9729e_Arts_A_V_Student_Notes.txt",
+      "doc_id": "0a62e0b9729e"
+    },
+    {
+      "id": "material:0cbd06c7c769",
+      "type": "Material",
+      "role": "rubric",
+      "name": "doc_0cbd06c7c769_Arts_AV_Technology___Communication_Flyer_Project_Rubric.txt",
+      "source_file": "doc_0cbd06c7c769_Arts_AV_Technology___Communication_Flyer_Project_Rubric.txt",
+      "doc_id": "0cbd06c7c769"
+    },
+    {
+      "id": "material:314d7d0905ca",
+      "type": "Material",
+      "role": "exit_ticket",
+      "name": "doc_314d7d0905ca_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_1.txt",
+      "source_file": "doc_314d7d0905ca_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_1.txt",
+      "doc_id": "314d7d0905ca"
+    },
+    {
+      "id": "material:761e6495bc24",
+      "type": "Material",
+      "role": "lesson_plan",
+      "name": "doc_761e6495bc24_Arts_A_V_Tech__Lesson_Plan_.txt",
+      "source_file": "doc_761e6495bc24_Arts_A_V_Tech__Lesson_Plan_.txt",
+      "doc_id": "761e6495bc24"
+    },
+    {
+      "id": "material:89430d6aae63",
+      "type": "Material",
+      "role": "lesson_content",
+      "name": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt",
+      "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt",
+      "doc_id": "89430d6aae63"
+    },
+    {
+      "id": "material:af9cf3b04474",
+      "type": "Material",
+      "role": "rubric",
+      "name": "doc_af9cf3b04474_Arts_AV_Technology___Communication_Commercial_Project_Rubric.txt",
+      "source_file": "doc_af9cf3b04474_Arts_AV_Technology___Communication_Commercial_Project_Rubric.txt",
+      "doc_id": "af9cf3b04474"
+    },
+    {
+      "id": "material:e2c12c61bc5f",
+      "type": "Material",
+      "role": "exit_ticket",
+      "name": "doc_e2c12c61bc5f_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_3.txt",
+      "source_file": "doc_e2c12c61bc5f_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_3.txt",
+      "doc_id": "e2c12c61bc5f"
+    },
+    {
+      "id": "material:ff5cd4c0712e",
+      "type": "Material",
+      "role": "exit_ticket",
+      "name": "doc_ff5cd4c0712e_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_2.txt",
+      "source_file": "doc_ff5cd4c0712e_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_2.txt",
+      "doc_id": "ff5cd4c0712e"
+    },
+    {
+      "id": "lesson:arts-av-technology:d1",
+      "type": "Lesson",
+      "name": "Day 1",
+      "span": {
+        "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt",
+        "doc_id": "89430d6aae63",
+        "paragraphs": [
+          1,
+          62
+        ],
+        "element_ids": [
+          "89430d6aae63-e1",
+          "89430d6aae63-e2",
+          "89430d6aae63-e3",
+          "89430d6aae63-e4",
+          "89430d6aae63-e5",
+          "89430d6aae63-e6",
+          "89430d6aae63-e7",
+          "89430d6aae63-e8",
+          "89430d6aae63-e9",
+          "89430d6aae63-e10",
+          "89430d6aae63-e11"
+        ]
+      }
+    },
+    {
+      "id": "assessment:arts-av-technology:d1:89430d6aae63-e11",
+      "type": "Assessment",
+      "name": "In your groups, follow your rubric for either the commercial or flyer advertisem",
+      "element_ids": [
+        "89430d6aae63-e11"
+      ],
+      "embedded_in": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+    },
+    {
+      "id": "lesson:arts-av-technology:d2",
+      "type": "Lesson",
+      "name": "Day 2",
+      "span": {
+        "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt",
+        "doc_id": "89430d6aae63",
+        "paragraphs": [
+          63,
+          71
+        ],
+        "element_ids": [
+          "89430d6aae63-e11",
+          "89430d6aae63-e13"
+        ]
+      }
+    },
+    {
+      "id": "assessment:arts-av-technology:d2:89430d6aae63-e11",
+      "type": "Assessment",
+      "name": "In your groups, follow your rubric for either the commercial or flyer advertisem",
+      "element_ids": [
+        "89430d6aae63-e11"
+      ],
+      "embedded_in": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+    },
+    {
+      "id": "assessment:arts-av-technology:d2:89430d6aae63-e13",
+      "type": "Assessment",
+      "name": "Exit Ticket - Day 2\n\nDid my group communicate well?\n\n Did my group work together",
+      "element_ids": [
+        "89430d6aae63-e13"
+      ],
+      "embedded_in": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+    },
+    {
+      "id": "lesson:arts-av-technology:d3",
+      "type": "Lesson",
+      "name": "Day 3",
+      "span": {
+        "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt",
+        "doc_id": "89430d6aae63",
+        "paragraphs": [
+          72,
+          83
+        ],
+        "element_ids": [
+          "89430d6aae63-e12",
+          "89430d6aae63-e14"
+        ]
+      }
+    },
+    {
+      "id": "assessment:d1:exit-ticket",
+      "type": "Assessment",
+      "name": "Exit Ticket Day 1",
+      "source_file": "doc_314d7d0905ca_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_1.txt",
+      "doc_id": "314d7d0905ca",
+      "span": {
+        "element_ids": [
+          "314d7d0905ca-e1",
+          "314d7d0905ca-e2"
+        ]
+      }
+    },
+    {
+      "id": "assessment:d3:exit-ticket",
+      "type": "Assessment",
+      "name": "Exit Ticket Day 3",
+      "source_file": "doc_e2c12c61bc5f_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_3.txt",
+      "doc_id": "e2c12c61bc5f",
+      "span": {
+        "element_ids": [
+          "e2c12c61bc5f-e1",
+          "e2c12c61bc5f-e2"
+        ]
+      }
+    },
+    {
+      "id": "assessment:d2:exit-ticket",
+      "type": "Assessment",
+      "name": "Exit Ticket Day 2",
+      "source_file": "doc_ff5cd4c0712e_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_2.txt",
+      "doc_id": "ff5cd4c0712e",
+      "span": {
+        "element_ids": [
+          "ff5cd4c0712e-e1",
+          "ff5cd4c0712e-e2"
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "rel": "hasPart",
+      "from": "course:lab-arts-av",
+      "to": "unit:arts-av-technology"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:arts-av-technology",
+      "to": "material:0a62e0b9729e"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:arts-av-technology",
+      "to": "material:0cbd06c7c769"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:arts-av-technology",
+      "to": "material:314d7d0905ca"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:arts-av-technology",
+      "to": "material:761e6495bc24"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:arts-av-technology",
+      "to": "material:89430d6aae63"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:arts-av-technology",
+      "to": "material:af9cf3b04474"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:arts-av-technology",
+      "to": "material:e2c12c61bc5f"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:arts-av-technology",
+      "to": "material:ff5cd4c0712e"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:arts-av-technology",
+      "to": "lesson:arts-av-technology:d1"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:arts-av-technology:d1",
+      "to": "material:89430d6aae63"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:arts-av-technology:d1",
+      "to": "assessment:arts-av-technology:d1:89430d6aae63-e11"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:arts-av-technology",
+      "to": "lesson:arts-av-technology:d2"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:arts-av-technology:d2",
+      "to": "material:89430d6aae63"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:arts-av-technology:d2",
+      "to": "assessment:arts-av-technology:d2:89430d6aae63-e11"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:arts-av-technology:d2",
+      "to": "assessment:arts-av-technology:d2:89430d6aae63-e13"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:arts-av-technology",
+      "to": "lesson:arts-av-technology:d3"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:arts-av-technology:d3",
+      "to": "material:89430d6aae63"
+    },
+    {
+      "rel": "describes",
+      "from": "material:761e6495bc24",
+      "to": "lesson:arts-av-technology:d1"
+    },
+    {
+      "rel": "describes",
+      "from": "material:761e6495bc24",
+      "to": "lesson:arts-av-technology:d2"
+    },
+    {
+      "rel": "describes",
+      "from": "material:761e6495bc24",
+      "to": "lesson:arts-av-technology:d3"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:arts-av-technology:d1",
+      "to": "assessment:d1:exit-ticket"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:arts-av-technology:d3",
+      "to": "assessment:d3:exit-ticket"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:arts-av-technology:d2",
+      "to": "assessment:d2:exit-ticket"
+    },
+    {
+      "rel": "uses",
+      "from": "lesson:arts-av-technology:d2",
+      "to": "material:0cbd06c7c769"
+    },
+    {
+      "rel": "uses",
+      "from": "lesson:arts-av-technology:d2",
+      "to": "material:af9cf3b04474"
+    },
+    {
+      "rel": "uses",
+      "from": "lesson:arts-av-technology:d1",
+      "to": "material:0a62e0b9729e"
+    }
+  ],
+  "coverage": {
+    "source_files_seen": 8,
+    "source_files": [
+      "doc_0a62e0b9729e_Arts_A_V_Student_Notes.txt",
+      "doc_0cbd06c7c769_Arts_AV_Technology___Communication_Flyer_Project_Rubric.txt",
+      "doc_314d7d0905ca_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_1.txt",
+      "doc_761e6495bc24_Arts_A_V_Tech__Lesson_Plan_.txt",
+      "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt",
+      "doc_af9cf3b04474_Arts_AV_Technology___Communication_Commercial_Project_Rubric.txt",
+      "doc_e2c12c61bc5f_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_3.txt",
+      "doc_ff5cd4c0712e_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_2.txt"
+    ]
+  }
+}

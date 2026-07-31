@@ -1,0 +1,35 @@
+{
+  "material_coverage": 1.0,
+  "pred_materials": [
+    "doc_b5e36486805a_Agriculture-_Plant_Science.txt",
+    "doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt"
+  ],
+  "missing_materials": [],
+  "extra_materials": [],
+  "n_gold_lessons": 2,
+  "n_pred_lessons": 2,
+  "lesson_mean_iou": 1.014,
+  "lesson_recall_at_0.5": 1.0,
+  "lesson_pairs": [
+    {
+      "gold": "lesson:plant-science:d1",
+      "pred": "lesson:plant-science:d1",
+      "iou": 0.979
+    },
+    {
+      "gold": "lesson:plant-science:d2",
+      "pred": "lesson:plant-science:d2",
+      "iou": 1.05
+    }
+  ],
+  "assessment_attach": 1.0,
+  "assessment_attach_counts": {
+    "ok": 1,
+    "total": 1
+  },
+  "describes_recall": 1.0,
+  "edge_precision": 0.9,
+  "edge_recall": 0.692,
+  "edge_f1": 0.783,
+  "pass_provisional": true
+}

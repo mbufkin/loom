@@ -1,0 +1,4500 @@
+{
+  "title": "P1\u00d7D HAS-PART graph lab",
+  "generated_from": "/home/lenovo/g10-control-center-loom/experiments/graphing/results",
+  "gold": {
+    "lab-dallas-ag": {
+      "nodes": [
+        {
+          "id": "course:lab-dallas-ag",
+          "type": "Course",
+          "name": "course:lab-dallas-ag",
+          "role": null,
+          "element_ids": [],
+          "paragraphs": []
+        },
+        {
+          "id": "unit:plant-science",
+          "type": "LessonGrouping",
+          "name": "Plant Science",
+          "role": null,
+          "element_ids": [],
+          "paragraphs": []
+        },
+        {
+          "id": "lesson:plant-science:d1",
+          "type": "Lesson",
+          "name": "Day 1 \u2014 pathways + plant careers",
+          "role": null,
+          "element_ids": [
+            "b5e36486805a-e1",
+            "b5e36486805a-e2",
+            "b5e36486805a-e3",
+            "b5e36486805a-e4",
+            "b5e36486805a-e5",
+            "b5e36486805a-e6",
+            "b5e36486805a-e7",
+            "b5e36486805a-e8",
+            "b5e36486805a-e9",
+            "b5e36486805a-e10",
+            "b5e36486805a-e11",
+            "b5e36486805a-e12",
+            "b5e36486805a-e13"
+          ],
+          "paragraphs": [
+            1,
+            31
+          ]
+        },
+        {
+          "id": "lesson:plant-science:d2",
+          "type": "Lesson",
+          "name": "Day 2 \u2014 soil lab + exit",
+          "role": null,
+          "element_ids": [
+            "b5e36486805a-e14",
+            "b5e36486805a-e15",
+            "b5e36486805a-e16",
+            "b5e36486805a-e17",
+            "b5e36486805a-e18",
+            "b5e36486805a-e19"
+          ],
+          "paragraphs": [
+            32,
+            47
+          ]
+        },
+        {
+          "id": "material:b5e36486805a",
+          "type": "Material",
+          "name": "material:b5e36486805a",
+          "role": "lesson_content",
+          "element_ids": [],
+          "paragraphs": []
+        },
+        {
+          "id": "material:e9e6ac00ce09",
+          "type": "Material",
+          "name": "material:e9e6ac00ce09",
+          "role": "lesson_plan",
+          "element_ids": [
+            "e9e6ac00ce09-e1",
+            "e9e6ac00ce09-e2",
+            "e9e6ac00ce09-e3",
+            "e9e6ac00ce09-e4",
+            "e9e6ac00ce09-e5",
+            "e9e6ac00ce09-e6",
+            "e9e6ac00ce09-e7",
+            "e9e6ac00ce09-e8",
+            "e9e6ac00ce09-e9",
+            "e9e6ac00ce09-e10"
+          ],
+          "paragraphs": []
+        },
+        {
+          "id": "activity:d2:soil-lab",
+          "type": "Activity",
+          "name": "activity:d2:soil-lab",
+          "role": null,
+          "element_ids": [
+            "b5e36486805a-e17"
+          ],
+          "paragraphs": []
+        },
+        {
+          "id": "assessment:d2:exit-ticket",
+          "type": "Assessment",
+          "name": "assessment:d2:exit-ticket",
+          "role": null,
+          "element_ids": [
+            "b5e36486805a-e18"
+          ],
+          "paragraphs": []
+        },
+        {
+          "id": "material:missing:note-sheet",
+          "type": "Material",
+          "name": "Plant Systems Career Pathways Note Sheet",
+          "role": null,
+          "element_ids": [],
+          "paragraphs": []
+        },
+        {
+          "id": "material:missing:soil-handout",
+          "type": "Material",
+          "name": "Let's Find Out About Soil handout",
+          "role": null,
+          "element_ids": [],
+          "paragraphs": []
+        }
+      ],
+      "edges": [
+        {
+          "rel": "hasPart",
+          "from": "course:lab-dallas-ag",
+          "to": "unit:plant-science"
+        },
+        {
+          "rel": "hasPart",
+          "from": "unit:plant-science",
+          "to": "lesson:plant-science:d1"
+        },
+        {
+          "rel": "hasPart",
+          "from": "unit:plant-science",
+          "to": "lesson:plant-science:d2"
+        },
+        {
+          "rel": "hasPart",
+          "from": "unit:plant-science",
+          "to": "material:e9e6ac00ce09"
+        },
+        {
+          "rel": "hasPart",
+          "from": "unit:plant-science",
+          "to": "material:b5e36486805a"
+        },
+        {
+          "rel": "spanIn",
+          "from": "lesson:plant-science:d1",
+          "to": "material:b5e36486805a"
+        },
+        {
+          "rel": "spanIn",
+          "from": "lesson:plant-science:d2",
+          "to": "material:b5e36486805a"
+        },
+        {
+          "rel": "describes",
+          "from": "material:e9e6ac00ce09",
+          "to": "lesson:plant-science:d1"
+        },
+        {
+          "rel": "describes",
+          "from": "material:e9e6ac00ce09",
+          "to": "lesson:plant-science:d2"
+        },
+        {
+          "rel": "hasPart",
+          "from": "lesson:plant-science:d2",
+          "to": "activity:d2:soil-lab"
+        },
+        {
+          "rel": "hasPart",
+          "from": "lesson:plant-science:d2",
+          "to": "assessment:d2:exit-ticket"
+        },
+        {
+          "rel": "uses",
+          "from": "lesson:plant-science:d1",
+          "to": "material:missing:note-sheet"
+        },
+        {
+          "rel": "uses",
+          "from": "activity:d2:soil-lab",
+          "to": "material:missing:soil-handout"
+        }
+      ]
+    },
+    "lab-arts-av": {
+      "nodes": [
+        {
+          "id": "course:lab-arts-av",
+          "type": "Course",
+          "name": "lab-arts-av",
+          "role": null,
+          "element_ids": [],
+          "paragraphs": []
+        },
+        {
+          "id": "unit:arts-av-technology",
+          "type": "LessonGrouping",
+          "name": "Arts, A/V Technology and Communication",
+          "role": null,
+          "element_ids": [],
+          "paragraphs": []
+        },
+        {
+          "id": "lesson:arts-av:d1",
+          "type": "Lesson",
+          "name": "Day 1 \u2014 Engage pathways + community campaign kickoff",
+          "role": null,
+          "element_ids": [
+            "89430d6aae63-e1",
+            "89430d6aae63-e2",
+            "89430d6aae63-e3",
+            "89430d6aae63-e4",
+            "89430d6aae63-e5",
+            "89430d6aae63-e6",
+            "89430d6aae63-e7",
+            "89430d6aae63-e8",
+            "89430d6aae63-e9",
+            "89430d6aae63-e10",
+            "89430d6aae63-e11"
+          ],
+          "paragraphs": [
+            2,
+            62
+          ]
+        },
+        {
+          "id": "lesson:arts-av:d2",
+          "type": "Lesson",
+          "name": "Day 2 \u2014 Create campaign (flyer/commercial) + teamwork exit",
+          "role": null,
+          "element_ids": [
+            "89430d6aae63-e13"
+          ],
+          "paragraphs": [
+            63,
+            71
+          ]
+        },
+        {
+          "id": "lesson:arts-av:d3",
+          "type": "Lesson",
+          "name": "Day 3 \u2014 Presentations + cluster reflection exit",
+          "role": null,
+          "element_ids": [
+            "89430d6aae63-e12",
+            "89430d6aae63-e14"
+          ],
+          "paragraphs": [
+            72,
+            78
+          ]
+        },
+        {
+          "id": "material:89430d6aae63",
+          "type": "Material",
+          "name": "Arts A/V teacher slideshow / deck",
+          "role": "lesson_content",
+          "element_ids": [],
+          "paragraphs": []
+        },
+        {
+          "id": "material:761e6495bc24",
+          "type": "Material",
+          "name": "Arts A/V lesson plan template",
+          "role": "lesson_plan",
+          "element_ids": [
+            "761e6495bc24-e1",
+            "761e6495bc24-e2",
+            "761e6495bc24-e3-split1",
+            "761e6495bc24-e3-split2",
+            "761e6495bc24-e4",
+            "761e6495bc24-e5-split1",
+            "761e6495bc24-e5-split2",
+            "761e6495bc24-e6",
+            "761e6495bc24-e7",
+            "761e6495bc24-e8"
+          ],
+          "paragraphs": []
+        },
+        {
+          "id": "material:0a62e0b9729e",
+          "type": "Material",
+          "name": "Student slideshow notes",
+          "role": "worksheet",
+          "element_ids": [
+            "0a62e0b9729e-e1",
+            "0a62e0b9729e-e2",
+            "0a62e0b9729e-e3"
+          ],
+          "paragraphs": []
+        },
+        {
+          "id": "material:0cbd06c7c769",
+          "type": "Material",
+          "name": "Flyer project rubric",
+          "role": "rubric",
+          "element_ids": [
+            "0cbd06c7c769-e1"
+          ],
+          "paragraphs": []
+        },
+        {
+          "id": "material:af9cf3b04474",
+          "type": "Material",
+          "name": "Commercial project rubric",
+          "role": "rubric",
+          "element_ids": [
+            "af9cf3b04474-e1",
+            "af9cf3b04474-e2"
+          ],
+          "paragraphs": []
+        },
+        {
+          "id": "assessment:d1:exit-ticket",
+          "type": "Assessment",
+          "name": "Exit Ticket Day 1 \u2014 nonprofit ad message",
+          "role": null,
+          "element_ids": [
+            "314d7d0905ca-e1",
+            "314d7d0905ca-e2"
+          ],
+          "paragraphs": []
+        },
+        {
+          "id": "assessment:d2:exit-ticket",
+          "type": "Assessment",
+          "name": "Exit Ticket Day 2 \u2014 group teamwork reflection",
+          "role": null,
+          "element_ids": [
+            "ff5cd4c0712e-e1",
+            "ff5cd4c0712e-e2"
+          ],
+          "paragraphs": []
+        },
+        {
+          "id": "assessment:d3:exit-ticket",
+          "type": "Assessment",
+          "name": "Exit Ticket Day 3 \u2014 cluster learning reflection",
+          "role": null,
+          "element_ids": [
+            "e2c12c61bc5f-e1",
+            "e2c12c61bc5f-e2"
+          ],
+          "paragraphs": []
+        },
+        {
+          "id": "activity:d1:guess-logo",
+          "type": "Activity",
+          "name": "Engage \u2014 Guess the Logo",
+          "role": null,
+          "element_ids": [
+            "89430d6aae63-e2"
+          ],
+          "paragraphs": []
+        },
+        {
+          "id": "activity:d1:community-brainstorm",
+          "type": "Activity",
+          "name": "Explore/Extend \u2014 Campaign for Community Change brainstorm",
+          "role": null,
+          "element_ids": [
+            "89430d6aae63-e9",
+            "89430d6aae63-e10"
+          ],
+          "paragraphs": []
+        },
+        {
+          "id": "activity:d2:create-campaign",
+          "type": "Activity",
+          "name": "Create flyer or commercial (rubric-guided)",
+          "role": null,
+          "element_ids": [
+            "89430d6aae63-e11",
+            "761e6495bc24-e7"
+          ],
+          "paragraphs": []
+        },
+        {
+          "id": "activity:d3:presentations",
+          "type": "Activity",
+          "name": "Group presentations (flyer or commercial)",
+          "role": null,
+          "element_ids": [
+            "89430d6aae63-e12",
+            "761e6495bc24-e8"
+          ],
+          "paragraphs": []
+        },
+        {
+          "id": "material:missing:commercial-script-example",
+          "type": "Material",
+          "name": "Commercial Script Example (referenced in plan)",
+          "role": null,
+          "element_ids": [],
+          "paragraphs": []
+        },
+        {
+          "id": "material:missing:flyer-example",
+          "type": "Material",
+          "name": "Flyer Example (referenced in plan)",
+          "role": null,
+          "element_ids": [],
+          "paragraphs": []
+        }
+      ],
+      "edges": [
+        {
+          "rel": "hasPart",
+          "from": "course:lab-arts-av",
+          "to": "unit:arts-av-technology"
+        },
+        {
+          "rel": "hasPart",
+          "from": "unit:arts-av-technology",
+          "to": "lesson:arts-av:d1"
+        },
+        {
+          "rel": "hasPart",
+          "from": "unit:arts-av-technology",
+          "to": "lesson:arts-av:d2"
+        },
+        {
+          "rel": "hasPart",
+          "from": "unit:arts-av-technology",
+          "to": "lesson:arts-av:d3"
+        },
+        {
+          "rel": "hasPart",
+          "from": "unit:arts-av-technology",
+          "to": "material:761e6495bc24"
+        },
+        {
+          "rel": "hasPart",
+          "from": "unit:arts-av-technology",
+          "to": "material:89430d6aae63"
+        },
+        {
+          "rel": "hasPart",
+          "from": "unit:arts-av-technology",
+          "to": "material:0a62e0b9729e"
+        },
+        {
+          "rel": "hasPart",
+          "from": "unit:arts-av-technology",
+          "to": "material:0cbd06c7c769"
+        },
+        {
+          "rel": "hasPart",
+          "from": "unit:arts-av-technology",
+          "to": "material:af9cf3b04474"
+        },
+        {
+          "rel": "spanIn",
+          "from": "lesson:arts-av:d1",
+          "to": "material:89430d6aae63"
+        },
+        {
+          "rel": "spanIn",
+          "from": "lesson:arts-av:d2",
+          "to": "material:89430d6aae63"
+        },
+        {
+          "rel": "spanIn",
+          "from": "lesson:arts-av:d3",
+          "to": "material:89430d6aae63"
+        },
+        {
+          "rel": "describes",
+          "from": "material:761e6495bc24",
+          "to": "lesson:arts-av:d1"
+        },
+        {
+          "rel": "describes",
+          "from": "material:761e6495bc24",
+          "to": "lesson:arts-av:d2"
+        },
+        {
+          "rel": "describes",
+          "from": "material:761e6495bc24",
+          "to": "lesson:arts-av:d3"
+        },
+        {
+          "rel": "hasPart",
+          "from": "lesson:arts-av:d1",
+          "to": "activity:d1:guess-logo"
+        },
+        {
+          "rel": "hasPart",
+          "from": "lesson:arts-av:d1",
+          "to": "activity:d1:community-brainstorm"
+        },
+        {
+          "rel": "hasPart",
+          "from": "lesson:arts-av:d1",
+          "to": "assessment:d1:exit-ticket"
+        },
+        {
+          "rel": "hasPart",
+          "from": "lesson:arts-av:d2",
+          "to": "activity:d2:create-campaign"
+        },
+        {
+          "rel": "hasPart",
+          "from": "lesson:arts-av:d2",
+          "to": "assessment:d2:exit-ticket"
+        },
+        {
+          "rel": "hasPart",
+          "from": "lesson:arts-av:d3",
+          "to": "activity:d3:presentations"
+        },
+        {
+          "rel": "hasPart",
+          "from": "lesson:arts-av:d3",
+          "to": "assessment:d3:exit-ticket"
+        },
+        {
+          "rel": "uses",
+          "from": "activity:d2:create-campaign",
+          "to": "material:0cbd06c7c769"
+        },
+        {
+          "rel": "uses",
+          "from": "activity:d2:create-campaign",
+          "to": "material:af9cf3b04474"
+        },
+        {
+          "rel": "uses",
+          "from": "lesson:arts-av:d1",
+          "to": "material:0a62e0b9729e"
+        },
+        {
+          "rel": "uses",
+          "from": "activity:d2:create-campaign",
+          "to": "material:missing:commercial-script-example"
+        },
+        {
+          "rel": "uses",
+          "from": "activity:d2:create-campaign",
+          "to": "material:missing:flyer-example"
+        }
+      ]
+    }
+  },
+  "runs": [
+    {
+      "id": "P1xD_lab-arts-av_1785464539",
+      "project": "lab-arts-av",
+      "stage": "propose_only",
+      "method": "P1xD",
+      "model": "/home/lenovo/llama.cpp/models/nemotron3-nano-30b.gguf",
+      "out_dir": "/home/lenovo/g10-control-center-loom/experiments/graphing/results/P1xD_lab-arts-av_1785464539",
+      "propose": {
+        "graph": {
+          "nodes": [
+            {
+              "id": "course:lab-arts-av",
+              "type": "Course",
+              "name": "lab-arts-av",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "unit:arts-av-technology",
+              "type": "LessonGrouping",
+              "name": "Arts AV Technology",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:0a62e0b9729e",
+              "type": "Material",
+              "name": "doc_0a62e0b9729e_Arts_A_V_Student_Notes.txt",
+              "role": "worksheet",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:0cbd06c7c769",
+              "type": "Material",
+              "name": "doc_0cbd06c7c769_Arts_AV_Technology___Communication_Flyer_Project_Rubric.txt",
+              "role": "rubric",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:314d7d0905ca",
+              "type": "Material",
+              "name": "doc_314d7d0905ca_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_1.txt",
+              "role": "exit_ticket",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:761e6495bc24",
+              "type": "Material",
+              "name": "doc_761e6495bc24_Arts_A_V_Tech__Lesson_Plan_.txt",
+              "role": "lesson_plan",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:89430d6aae63",
+              "type": "Material",
+              "name": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt",
+              "role": "lesson_content",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:af9cf3b04474",
+              "type": "Material",
+              "name": "doc_af9cf3b04474_Arts_AV_Technology___Communication_Commercial_Project_Rubric.txt",
+              "role": "rubric",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:e2c12c61bc5f",
+              "type": "Material",
+              "name": "doc_e2c12c61bc5f_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_3.txt",
+              "role": "exit_ticket",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:ff5cd4c0712e",
+              "type": "Material",
+              "name": "doc_ff5cd4c0712e_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_2.txt",
+              "role": "exit_ticket",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "lesson:arts-av-technology:d1",
+              "type": "Lesson",
+              "name": "Day 1",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e2",
+                "89430d6aae63-e3",
+                "89430d6aae63-e4",
+                "89430d6aae63-e5",
+                "89430d6aae63-e6",
+                "89430d6aae63-e7",
+                "89430d6aae63-e8",
+                "89430d6aae63-e9",
+                "89430d6aae63-e10",
+                "89430d6aae63-e11"
+              ],
+              "paragraphs": [
+                2,
+                62
+              ]
+            },
+            {
+              "id": "lesson:arts-av-technology:d2",
+              "type": "Lesson",
+              "name": "Day 2",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e11",
+                "89430d6aae63-e13"
+              ],
+              "paragraphs": [
+                63,
+                71
+              ]
+            },
+            {
+              "id": "lesson:arts-av-technology:d3",
+              "type": "Lesson",
+              "name": "Day 3",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e12",
+                "89430d6aae63-e14"
+              ],
+              "paragraphs": [
+                72,
+                83
+              ]
+            },
+            {
+              "id": "assessment:d1:exit-ticket",
+              "type": "Assessment",
+              "name": "Exit Ticket Day 1",
+              "role": null,
+              "element_ids": [
+                "314d7d0905ca-e1",
+                "314d7d0905ca-e2"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "assessment:d3:exit-ticket",
+              "type": "Assessment",
+              "name": "Exit Ticket Day 3",
+              "role": null,
+              "element_ids": [
+                "e2c12c61bc5f-e1",
+                "e2c12c61bc5f-e2"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "assessment:d2:exit-ticket",
+              "type": "Assessment",
+              "name": "Exit Ticket Day 2",
+              "role": null,
+              "element_ids": [
+                "ff5cd4c0712e-e1",
+                "ff5cd4c0712e-e2"
+              ],
+              "paragraphs": []
+            }
+          ],
+          "edges": [
+            {
+              "rel": "hasPart",
+              "from": "course:lab-arts-av",
+              "to": "unit:arts-av-technology"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:0a62e0b9729e"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:0cbd06c7c769"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:314d7d0905ca"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:761e6495bc24"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:af9cf3b04474"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:e2c12c61bc5f"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:ff5cd4c0712e"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "lesson:arts-av-technology:d1"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "lesson:arts-av-technology:d2"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "lesson:arts-av-technology:d3"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:arts-av-technology:d3",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "describes",
+              "from": "material:761e6495bc24",
+              "to": "lesson:arts-av-technology:d1"
+            },
+            {
+              "rel": "describes",
+              "from": "material:761e6495bc24",
+              "to": "lesson:arts-av-technology:d2"
+            },
+            {
+              "rel": "describes",
+              "from": "material:761e6495bc24",
+              "to": "lesson:arts-av-technology:d3"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "assessment:d1:exit-ticket"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d3",
+              "to": "assessment:d3:exit-ticket"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "assessment:d2:exit-ticket"
+            },
+            {
+              "rel": "uses",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "material:0cbd06c7c769"
+            },
+            {
+              "rel": "uses",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "material:af9cf3b04474"
+            },
+            {
+              "rel": "uses",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "material:0a62e0b9729e"
+            }
+          ]
+        },
+        "lessons": [
+          {
+            "id": "lesson:arts-av-technology:d1",
+            "name": "Day 1",
+            "paragraphs": [
+              2,
+              62
+            ],
+            "element_ids": [
+              "89430d6aae63-e2",
+              "89430d6aae63-e3",
+              "89430d6aae63-e4",
+              "89430d6aae63-e5",
+              "89430d6aae63-e6",
+              "89430d6aae63-e7",
+              "89430d6aae63-e8",
+              "89430d6aae63-e9",
+              "89430d6aae63-e10",
+              "89430d6aae63-e11"
+            ],
+            "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+          },
+          {
+            "id": "lesson:arts-av-technology:d2",
+            "name": "Day 2",
+            "paragraphs": [
+              63,
+              71
+            ],
+            "element_ids": [
+              "89430d6aae63-e11",
+              "89430d6aae63-e13"
+            ],
+            "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+          },
+          {
+            "id": "lesson:arts-av-technology:d3",
+            "name": "Day 3",
+            "paragraphs": [
+              72,
+              83
+            ],
+            "element_ids": [
+              "89430d6aae63-e12",
+              "89430d6aae63-e14"
+            ],
+            "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+          }
+        ],
+        "score": {
+          "pass": true,
+          "material_coverage": 1.0,
+          "lesson_mean_iou": 0.803,
+          "assessment_attach": 1.0,
+          "edge_f1": 0.745,
+          "n_gold_lessons": 3,
+          "n_pred_lessons": 3,
+          "lesson_pairs": [
+            {
+              "gold": "lesson:arts-av:d1",
+              "pred": "lesson:arts-av-technology:d1",
+              "iou": 0.909
+            },
+            {
+              "gold": "lesson:arts-av:d2",
+              "pred": "lesson:arts-av-technology:d2",
+              "iou": 0.5
+            },
+            {
+              "gold": "lesson:arts-av:d3",
+              "pred": "lesson:arts-av-technology:d3",
+              "iou": 1.0
+            }
+          ],
+          "assessment_attach_counts": {
+            "ok": 3,
+            "total": 3
+          }
+        }
+      },
+      "final": {
+        "graph": {
+          "nodes": [
+            {
+              "id": "course:lab-arts-av",
+              "type": "Course",
+              "name": "lab-arts-av",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "unit:arts-av-technology",
+              "type": "LessonGrouping",
+              "name": "Arts AV Technology",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:0a62e0b9729e",
+              "type": "Material",
+              "name": "doc_0a62e0b9729e_Arts_A_V_Student_Notes.txt",
+              "role": "worksheet",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:0cbd06c7c769",
+              "type": "Material",
+              "name": "doc_0cbd06c7c769_Arts_AV_Technology___Communication_Flyer_Project_Rubric.txt",
+              "role": "rubric",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:314d7d0905ca",
+              "type": "Material",
+              "name": "doc_314d7d0905ca_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_1.txt",
+              "role": "exit_ticket",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:761e6495bc24",
+              "type": "Material",
+              "name": "doc_761e6495bc24_Arts_A_V_Tech__Lesson_Plan_.txt",
+              "role": "lesson_plan",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:89430d6aae63",
+              "type": "Material",
+              "name": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt",
+              "role": "lesson_content",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:af9cf3b04474",
+              "type": "Material",
+              "name": "doc_af9cf3b04474_Arts_AV_Technology___Communication_Commercial_Project_Rubric.txt",
+              "role": "rubric",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:e2c12c61bc5f",
+              "type": "Material",
+              "name": "doc_e2c12c61bc5f_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_3.txt",
+              "role": "exit_ticket",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:ff5cd4c0712e",
+              "type": "Material",
+              "name": "doc_ff5cd4c0712e_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_2.txt",
+              "role": "exit_ticket",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "lesson:arts-av-technology:d1",
+              "type": "Lesson",
+              "name": "Day 1",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e2",
+                "89430d6aae63-e3",
+                "89430d6aae63-e4",
+                "89430d6aae63-e5",
+                "89430d6aae63-e6",
+                "89430d6aae63-e7",
+                "89430d6aae63-e8",
+                "89430d6aae63-e9",
+                "89430d6aae63-e10",
+                "89430d6aae63-e11"
+              ],
+              "paragraphs": [
+                2,
+                62
+              ]
+            },
+            {
+              "id": "lesson:arts-av-technology:d2",
+              "type": "Lesson",
+              "name": "Day 2",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e11",
+                "89430d6aae63-e13"
+              ],
+              "paragraphs": [
+                63,
+                71
+              ]
+            },
+            {
+              "id": "lesson:arts-av-technology:d3",
+              "type": "Lesson",
+              "name": "Day 3",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e12",
+                "89430d6aae63-e14"
+              ],
+              "paragraphs": [
+                72,
+                83
+              ]
+            },
+            {
+              "id": "assessment:d1:exit-ticket",
+              "type": "Assessment",
+              "name": "Exit Ticket Day 1",
+              "role": null,
+              "element_ids": [
+                "314d7d0905ca-e1",
+                "314d7d0905ca-e2"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "assessment:d3:exit-ticket",
+              "type": "Assessment",
+              "name": "Exit Ticket Day 3",
+              "role": null,
+              "element_ids": [
+                "e2c12c61bc5f-e1",
+                "e2c12c61bc5f-e2"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "assessment:d2:exit-ticket",
+              "type": "Assessment",
+              "name": "Exit Ticket Day 2",
+              "role": null,
+              "element_ids": [
+                "ff5cd4c0712e-e1",
+                "ff5cd4c0712e-e2"
+              ],
+              "paragraphs": []
+            }
+          ],
+          "edges": [
+            {
+              "rel": "hasPart",
+              "from": "course:lab-arts-av",
+              "to": "unit:arts-av-technology"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:0a62e0b9729e"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:0cbd06c7c769"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:314d7d0905ca"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:761e6495bc24"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:af9cf3b04474"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:e2c12c61bc5f"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:ff5cd4c0712e"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "lesson:arts-av-technology:d1"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "lesson:arts-av-technology:d2"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "lesson:arts-av-technology:d3"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:arts-av-technology:d3",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "describes",
+              "from": "material:761e6495bc24",
+              "to": "lesson:arts-av-technology:d1"
+            },
+            {
+              "rel": "describes",
+              "from": "material:761e6495bc24",
+              "to": "lesson:arts-av-technology:d2"
+            },
+            {
+              "rel": "describes",
+              "from": "material:761e6495bc24",
+              "to": "lesson:arts-av-technology:d3"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "assessment:d1:exit-ticket"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d3",
+              "to": "assessment:d3:exit-ticket"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "assessment:d2:exit-ticket"
+            },
+            {
+              "rel": "uses",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "material:0cbd06c7c769"
+            },
+            {
+              "rel": "uses",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "material:af9cf3b04474"
+            },
+            {
+              "rel": "uses",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "material:0a62e0b9729e"
+            }
+          ]
+        },
+        "lessons": [
+          {
+            "id": "lesson:arts-av-technology:d1",
+            "name": "Day 1",
+            "paragraphs": [
+              2,
+              62
+            ],
+            "element_ids": [
+              "89430d6aae63-e2",
+              "89430d6aae63-e3",
+              "89430d6aae63-e4",
+              "89430d6aae63-e5",
+              "89430d6aae63-e6",
+              "89430d6aae63-e7",
+              "89430d6aae63-e8",
+              "89430d6aae63-e9",
+              "89430d6aae63-e10",
+              "89430d6aae63-e11"
+            ],
+            "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+          },
+          {
+            "id": "lesson:arts-av-technology:d2",
+            "name": "Day 2",
+            "paragraphs": [
+              63,
+              71
+            ],
+            "element_ids": [
+              "89430d6aae63-e11",
+              "89430d6aae63-e13"
+            ],
+            "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+          },
+          {
+            "id": "lesson:arts-av-technology:d3",
+            "name": "Day 3",
+            "paragraphs": [
+              72,
+              83
+            ],
+            "element_ids": [
+              "89430d6aae63-e12",
+              "89430d6aae63-e14"
+            ],
+            "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+          }
+        ],
+        "score": {
+          "pass": true,
+          "material_coverage": 1.0,
+          "lesson_mean_iou": 0.803,
+          "assessment_attach": 1.0,
+          "edge_f1": 0.745,
+          "n_gold_lessons": 3,
+          "n_pred_lessons": 3,
+          "lesson_pairs": [
+            {
+              "gold": "lesson:arts-av:d1",
+              "pred": "lesson:arts-av-technology:d1",
+              "iou": 0.909
+            },
+            {
+              "gold": "lesson:arts-av:d2",
+              "pred": "lesson:arts-av-technology:d2",
+              "iou": 0.5
+            },
+            {
+              "gold": "lesson:arts-av:d3",
+              "pred": "lesson:arts-av-technology:d3",
+              "iou": 1.0
+            }
+          ],
+          "assessment_attach_counts": {
+            "ok": 3,
+            "total": 3
+          }
+        }
+      },
+      "gold_lessons": [
+        {
+          "id": "lesson:arts-av:d1",
+          "name": "Day 1 \u2014 Engage pathways + community campaign kickoff",
+          "paragraphs": [
+            2,
+            62
+          ],
+          "element_ids": [
+            "89430d6aae63-e1",
+            "89430d6aae63-e2",
+            "89430d6aae63-e3",
+            "89430d6aae63-e4",
+            "89430d6aae63-e5",
+            "89430d6aae63-e6",
+            "89430d6aae63-e7",
+            "89430d6aae63-e8",
+            "89430d6aae63-e9",
+            "89430d6aae63-e10",
+            "89430d6aae63-e11"
+          ],
+          "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+        },
+        {
+          "id": "lesson:arts-av:d2",
+          "name": "Day 2 \u2014 Create campaign (flyer/commercial) + teamwork exit",
+          "paragraphs": [
+            63,
+            71
+          ],
+          "element_ids": [
+            "89430d6aae63-e13"
+          ],
+          "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+        },
+        {
+          "id": "lesson:arts-av:d3",
+          "name": "Day 3 \u2014 Presentations + cluster reflection exit",
+          "paragraphs": [
+            72,
+            78
+          ],
+          "element_ids": [
+            "89430d6aae63-e12",
+            "89430d6aae63-e14"
+          ],
+          "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+        }
+      ],
+      "break_story": null,
+      "highlight": false
+    },
+    {
+      "id": "P1xD_lab-arts-av_1785464568",
+      "project": "lab-arts-av",
+      "stage": "propose_only",
+      "method": "P1xD",
+      "model": "/home/lenovo/llama.cpp/models/nemotron3-nano-30b.gguf",
+      "out_dir": "/home/lenovo/g10-control-center-loom/experiments/graphing/results/P1xD_lab-arts-av_1785464568",
+      "propose": {
+        "graph": {
+          "nodes": [
+            {
+              "id": "course:lab-arts-av",
+              "type": "Course",
+              "name": "lab-arts-av",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "unit:arts-av-technology",
+              "type": "LessonGrouping",
+              "name": "Arts AV Technology",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:0a62e0b9729e",
+              "type": "Material",
+              "name": "doc_0a62e0b9729e_Arts_A_V_Student_Notes.txt",
+              "role": "worksheet",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:0cbd06c7c769",
+              "type": "Material",
+              "name": "doc_0cbd06c7c769_Arts_AV_Technology___Communication_Flyer_Project_Rubric.txt",
+              "role": "rubric",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:314d7d0905ca",
+              "type": "Material",
+              "name": "doc_314d7d0905ca_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_1.txt",
+              "role": "exit_ticket",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:761e6495bc24",
+              "type": "Material",
+              "name": "doc_761e6495bc24_Arts_A_V_Tech__Lesson_Plan_.txt",
+              "role": "lesson_plan",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:89430d6aae63",
+              "type": "Material",
+              "name": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt",
+              "role": "lesson_content",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:af9cf3b04474",
+              "type": "Material",
+              "name": "doc_af9cf3b04474_Arts_AV_Technology___Communication_Commercial_Project_Rubric.txt",
+              "role": "rubric",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:e2c12c61bc5f",
+              "type": "Material",
+              "name": "doc_e2c12c61bc5f_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_3.txt",
+              "role": "exit_ticket",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:ff5cd4c0712e",
+              "type": "Material",
+              "name": "doc_ff5cd4c0712e_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_2.txt",
+              "role": "exit_ticket",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "lesson:arts-av-technology:d1",
+              "type": "Lesson",
+              "name": "Day 1",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e1",
+                "89430d6aae63-e2",
+                "89430d6aae63-e3",
+                "89430d6aae63-e4",
+                "89430d6aae63-e5",
+                "89430d6aae63-e6",
+                "89430d6aae63-e7",
+                "89430d6aae63-e8",
+                "89430d6aae63-e9",
+                "89430d6aae63-e10",
+                "89430d6aae63-e11"
+              ],
+              "paragraphs": [
+                1,
+                62
+              ]
+            },
+            {
+              "id": "assessment:arts-av-technology:d1:89430d6aae63-e11",
+              "type": "Assessment",
+              "name": "In your groups, follow your rubric for either the commercial or flyer advertisem",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e11"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "lesson:arts-av-technology:d2",
+              "type": "Lesson",
+              "name": "Day 2",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e11",
+                "89430d6aae63-e13"
+              ],
+              "paragraphs": [
+                63,
+                71
+              ]
+            },
+            {
+              "id": "assessment:arts-av-technology:d2:89430d6aae63-e11",
+              "type": "Assessment",
+              "name": "In your groups, follow your rubric for either the commercial or flyer advertisem",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e11"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "assessment:arts-av-technology:d2:89430d6aae63-e13",
+              "type": "Assessment",
+              "name": "Exit Ticket - Day 2\n\nDid my group communicate well?\n\n Did my group work together",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e13"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "lesson:arts-av-technology:d3",
+              "type": "Lesson",
+              "name": "Day 3",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e12",
+                "89430d6aae63-e14"
+              ],
+              "paragraphs": [
+                72,
+                83
+              ]
+            },
+            {
+              "id": "assessment:d1:exit-ticket",
+              "type": "Assessment",
+              "name": "Exit Ticket Day 1",
+              "role": null,
+              "element_ids": [
+                "314d7d0905ca-e1",
+                "314d7d0905ca-e2"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "assessment:d3:exit-ticket",
+              "type": "Assessment",
+              "name": "Exit Ticket Day 3",
+              "role": null,
+              "element_ids": [
+                "e2c12c61bc5f-e1",
+                "e2c12c61bc5f-e2"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "assessment:d2:exit-ticket",
+              "type": "Assessment",
+              "name": "Exit Ticket Day 2",
+              "role": null,
+              "element_ids": [
+                "ff5cd4c0712e-e1",
+                "ff5cd4c0712e-e2"
+              ],
+              "paragraphs": []
+            }
+          ],
+          "edges": [
+            {
+              "rel": "hasPart",
+              "from": "course:lab-arts-av",
+              "to": "unit:arts-av-technology"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:0a62e0b9729e"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:0cbd06c7c769"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:314d7d0905ca"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:761e6495bc24"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:af9cf3b04474"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:e2c12c61bc5f"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:ff5cd4c0712e"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "lesson:arts-av-technology:d1"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "assessment:arts-av-technology:d1:89430d6aae63-e11"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "lesson:arts-av-technology:d2"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "assessment:arts-av-technology:d2:89430d6aae63-e11"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "assessment:arts-av-technology:d2:89430d6aae63-e13"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "lesson:arts-av-technology:d3"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:arts-av-technology:d3",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "describes",
+              "from": "material:761e6495bc24",
+              "to": "lesson:arts-av-technology:d1"
+            },
+            {
+              "rel": "describes",
+              "from": "material:761e6495bc24",
+              "to": "lesson:arts-av-technology:d2"
+            },
+            {
+              "rel": "describes",
+              "from": "material:761e6495bc24",
+              "to": "lesson:arts-av-technology:d3"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "assessment:d1:exit-ticket"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d3",
+              "to": "assessment:d3:exit-ticket"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "assessment:d2:exit-ticket"
+            },
+            {
+              "rel": "uses",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "material:0cbd06c7c769"
+            },
+            {
+              "rel": "uses",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "material:af9cf3b04474"
+            },
+            {
+              "rel": "uses",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "material:0a62e0b9729e"
+            }
+          ]
+        },
+        "lessons": [
+          {
+            "id": "lesson:arts-av-technology:d1",
+            "name": "Day 1",
+            "paragraphs": [
+              1,
+              62
+            ],
+            "element_ids": [
+              "89430d6aae63-e1",
+              "89430d6aae63-e2",
+              "89430d6aae63-e3",
+              "89430d6aae63-e4",
+              "89430d6aae63-e5",
+              "89430d6aae63-e6",
+              "89430d6aae63-e7",
+              "89430d6aae63-e8",
+              "89430d6aae63-e9",
+              "89430d6aae63-e10",
+              "89430d6aae63-e11"
+            ],
+            "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+          },
+          {
+            "id": "lesson:arts-av-technology:d2",
+            "name": "Day 2",
+            "paragraphs": [
+              63,
+              71
+            ],
+            "element_ids": [
+              "89430d6aae63-e11",
+              "89430d6aae63-e13"
+            ],
+            "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+          },
+          {
+            "id": "lesson:arts-av-technology:d3",
+            "name": "Day 3",
+            "paragraphs": [
+              72,
+              83
+            ],
+            "element_ids": [
+              "89430d6aae63-e12",
+              "89430d6aae63-e14"
+            ],
+            "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+          }
+        ],
+        "score": {
+          "pass": true,
+          "material_coverage": 1.0,
+          "lesson_mean_iou": 0.883,
+          "assessment_attach": 1.0,
+          "edge_f1": 0.704,
+          "n_gold_lessons": 3,
+          "n_pred_lessons": 3,
+          "lesson_pairs": [
+            {
+              "gold": "lesson:arts-av:d1",
+              "pred": "lesson:arts-av-technology:d1",
+              "iou": 1.05
+            },
+            {
+              "gold": "lesson:arts-av:d2",
+              "pred": "lesson:arts-av-technology:d2",
+              "iou": 0.55
+            },
+            {
+              "gold": "lesson:arts-av:d3",
+              "pred": "lesson:arts-av-technology:d3",
+              "iou": 1.05
+            }
+          ],
+          "assessment_attach_counts": {
+            "ok": 3,
+            "total": 3
+          }
+        }
+      },
+      "final": {
+        "graph": {
+          "nodes": [
+            {
+              "id": "course:lab-arts-av",
+              "type": "Course",
+              "name": "lab-arts-av",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "unit:arts-av-technology",
+              "type": "LessonGrouping",
+              "name": "Arts AV Technology",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:0a62e0b9729e",
+              "type": "Material",
+              "name": "doc_0a62e0b9729e_Arts_A_V_Student_Notes.txt",
+              "role": "worksheet",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:0cbd06c7c769",
+              "type": "Material",
+              "name": "doc_0cbd06c7c769_Arts_AV_Technology___Communication_Flyer_Project_Rubric.txt",
+              "role": "rubric",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:314d7d0905ca",
+              "type": "Material",
+              "name": "doc_314d7d0905ca_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_1.txt",
+              "role": "exit_ticket",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:761e6495bc24",
+              "type": "Material",
+              "name": "doc_761e6495bc24_Arts_A_V_Tech__Lesson_Plan_.txt",
+              "role": "lesson_plan",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:89430d6aae63",
+              "type": "Material",
+              "name": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt",
+              "role": "lesson_content",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:af9cf3b04474",
+              "type": "Material",
+              "name": "doc_af9cf3b04474_Arts_AV_Technology___Communication_Commercial_Project_Rubric.txt",
+              "role": "rubric",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:e2c12c61bc5f",
+              "type": "Material",
+              "name": "doc_e2c12c61bc5f_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_3.txt",
+              "role": "exit_ticket",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:ff5cd4c0712e",
+              "type": "Material",
+              "name": "doc_ff5cd4c0712e_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_2.txt",
+              "role": "exit_ticket",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "lesson:arts-av-technology:d1",
+              "type": "Lesson",
+              "name": "Day 1",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e1",
+                "89430d6aae63-e2",
+                "89430d6aae63-e3",
+                "89430d6aae63-e4",
+                "89430d6aae63-e5",
+                "89430d6aae63-e6",
+                "89430d6aae63-e7",
+                "89430d6aae63-e8",
+                "89430d6aae63-e9",
+                "89430d6aae63-e10",
+                "89430d6aae63-e11"
+              ],
+              "paragraphs": [
+                1,
+                62
+              ]
+            },
+            {
+              "id": "assessment:arts-av-technology:d1:89430d6aae63-e11",
+              "type": "Assessment",
+              "name": "In your groups, follow your rubric for either the commercial or flyer advertisem",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e11"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "lesson:arts-av-technology:d2",
+              "type": "Lesson",
+              "name": "Day 2",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e11",
+                "89430d6aae63-e13"
+              ],
+              "paragraphs": [
+                63,
+                71
+              ]
+            },
+            {
+              "id": "assessment:arts-av-technology:d2:89430d6aae63-e11",
+              "type": "Assessment",
+              "name": "In your groups, follow your rubric for either the commercial or flyer advertisem",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e11"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "assessment:arts-av-technology:d2:89430d6aae63-e13",
+              "type": "Assessment",
+              "name": "Exit Ticket - Day 2\n\nDid my group communicate well?\n\n Did my group work together",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e13"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "lesson:arts-av-technology:d3",
+              "type": "Lesson",
+              "name": "Day 3",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e12",
+                "89430d6aae63-e14"
+              ],
+              "paragraphs": [
+                72,
+                83
+              ]
+            },
+            {
+              "id": "assessment:d1:exit-ticket",
+              "type": "Assessment",
+              "name": "Exit Ticket Day 1",
+              "role": null,
+              "element_ids": [
+                "314d7d0905ca-e1",
+                "314d7d0905ca-e2"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "assessment:d3:exit-ticket",
+              "type": "Assessment",
+              "name": "Exit Ticket Day 3",
+              "role": null,
+              "element_ids": [
+                "e2c12c61bc5f-e1",
+                "e2c12c61bc5f-e2"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "assessment:d2:exit-ticket",
+              "type": "Assessment",
+              "name": "Exit Ticket Day 2",
+              "role": null,
+              "element_ids": [
+                "ff5cd4c0712e-e1",
+                "ff5cd4c0712e-e2"
+              ],
+              "paragraphs": []
+            }
+          ],
+          "edges": [
+            {
+              "rel": "hasPart",
+              "from": "course:lab-arts-av",
+              "to": "unit:arts-av-technology"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:0a62e0b9729e"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:0cbd06c7c769"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:314d7d0905ca"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:761e6495bc24"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:af9cf3b04474"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:e2c12c61bc5f"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:ff5cd4c0712e"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "lesson:arts-av-technology:d1"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "assessment:arts-av-technology:d1:89430d6aae63-e11"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "lesson:arts-av-technology:d2"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "assessment:arts-av-technology:d2:89430d6aae63-e11"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "assessment:arts-av-technology:d2:89430d6aae63-e13"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "lesson:arts-av-technology:d3"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:arts-av-technology:d3",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "describes",
+              "from": "material:761e6495bc24",
+              "to": "lesson:arts-av-technology:d1"
+            },
+            {
+              "rel": "describes",
+              "from": "material:761e6495bc24",
+              "to": "lesson:arts-av-technology:d2"
+            },
+            {
+              "rel": "describes",
+              "from": "material:761e6495bc24",
+              "to": "lesson:arts-av-technology:d3"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "assessment:d1:exit-ticket"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d3",
+              "to": "assessment:d3:exit-ticket"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "assessment:d2:exit-ticket"
+            },
+            {
+              "rel": "uses",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "material:0cbd06c7c769"
+            },
+            {
+              "rel": "uses",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "material:af9cf3b04474"
+            },
+            {
+              "rel": "uses",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "material:0a62e0b9729e"
+            }
+          ]
+        },
+        "lessons": [
+          {
+            "id": "lesson:arts-av-technology:d1",
+            "name": "Day 1",
+            "paragraphs": [
+              1,
+              62
+            ],
+            "element_ids": [
+              "89430d6aae63-e1",
+              "89430d6aae63-e2",
+              "89430d6aae63-e3",
+              "89430d6aae63-e4",
+              "89430d6aae63-e5",
+              "89430d6aae63-e6",
+              "89430d6aae63-e7",
+              "89430d6aae63-e8",
+              "89430d6aae63-e9",
+              "89430d6aae63-e10",
+              "89430d6aae63-e11"
+            ],
+            "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+          },
+          {
+            "id": "lesson:arts-av-technology:d2",
+            "name": "Day 2",
+            "paragraphs": [
+              63,
+              71
+            ],
+            "element_ids": [
+              "89430d6aae63-e11",
+              "89430d6aae63-e13"
+            ],
+            "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+          },
+          {
+            "id": "lesson:arts-av-technology:d3",
+            "name": "Day 3",
+            "paragraphs": [
+              72,
+              83
+            ],
+            "element_ids": [
+              "89430d6aae63-e12",
+              "89430d6aae63-e14"
+            ],
+            "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+          }
+        ],
+        "score": {
+          "pass": true,
+          "material_coverage": 1.0,
+          "lesson_mean_iou": 0.883,
+          "assessment_attach": 1.0,
+          "edge_f1": 0.704,
+          "n_gold_lessons": 3,
+          "n_pred_lessons": 3,
+          "lesson_pairs": [
+            {
+              "gold": "lesson:arts-av:d1",
+              "pred": "lesson:arts-av-technology:d1",
+              "iou": 1.05
+            },
+            {
+              "gold": "lesson:arts-av:d2",
+              "pred": "lesson:arts-av-technology:d2",
+              "iou": 0.55
+            },
+            {
+              "gold": "lesson:arts-av:d3",
+              "pred": "lesson:arts-av-technology:d3",
+              "iou": 1.05
+            }
+          ],
+          "assessment_attach_counts": {
+            "ok": 3,
+            "total": 3
+          }
+        }
+      },
+      "gold_lessons": [
+        {
+          "id": "lesson:arts-av:d1",
+          "name": "Day 1 \u2014 Engage pathways + community campaign kickoff",
+          "paragraphs": [
+            2,
+            62
+          ],
+          "element_ids": [
+            "89430d6aae63-e1",
+            "89430d6aae63-e2",
+            "89430d6aae63-e3",
+            "89430d6aae63-e4",
+            "89430d6aae63-e5",
+            "89430d6aae63-e6",
+            "89430d6aae63-e7",
+            "89430d6aae63-e8",
+            "89430d6aae63-e9",
+            "89430d6aae63-e10",
+            "89430d6aae63-e11"
+          ],
+          "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+        },
+        {
+          "id": "lesson:arts-av:d2",
+          "name": "Day 2 \u2014 Create campaign (flyer/commercial) + teamwork exit",
+          "paragraphs": [
+            63,
+            71
+          ],
+          "element_ids": [
+            "89430d6aae63-e13"
+          ],
+          "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+        },
+        {
+          "id": "lesson:arts-av:d3",
+          "name": "Day 3 \u2014 Presentations + cluster reflection exit",
+          "paragraphs": [
+            72,
+            78
+          ],
+          "element_ids": [
+            "89430d6aae63-e12",
+            "89430d6aae63-e14"
+          ],
+          "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+        }
+      ],
+      "break_story": null,
+      "highlight": false
+    },
+    {
+      "id": "P1xD_lab-arts-av_1785464606",
+      "project": "lab-arts-av",
+      "stage": "repaired",
+      "method": "P1xD",
+      "model": "/home/lenovo/llama.cpp/models/nemotron3-nano-30b.gguf",
+      "out_dir": "/home/lenovo/g10-control-center-loom/experiments/graphing/results/P1xD_lab-arts-av_1785464606",
+      "propose": {
+        "graph": {
+          "nodes": [
+            {
+              "id": "course:lab-arts-av",
+              "type": "Course",
+              "name": "lab-arts-av",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "unit:arts-av-technology",
+              "type": "LessonGrouping",
+              "name": "Arts AV Technology",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:0a62e0b9729e",
+              "type": "Material",
+              "name": "doc_0a62e0b9729e_Arts_A_V_Student_Notes.txt",
+              "role": "worksheet",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:0cbd06c7c769",
+              "type": "Material",
+              "name": "doc_0cbd06c7c769_Arts_AV_Technology___Communication_Flyer_Project_Rubric.txt",
+              "role": "rubric",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:314d7d0905ca",
+              "type": "Material",
+              "name": "doc_314d7d0905ca_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_1.txt",
+              "role": "exit_ticket",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:761e6495bc24",
+              "type": "Material",
+              "name": "doc_761e6495bc24_Arts_A_V_Tech__Lesson_Plan_.txt",
+              "role": "lesson_plan",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:89430d6aae63",
+              "type": "Material",
+              "name": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt",
+              "role": "lesson_content",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:af9cf3b04474",
+              "type": "Material",
+              "name": "doc_af9cf3b04474_Arts_AV_Technology___Communication_Commercial_Project_Rubric.txt",
+              "role": "rubric",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:e2c12c61bc5f",
+              "type": "Material",
+              "name": "doc_e2c12c61bc5f_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_3.txt",
+              "role": "exit_ticket",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:ff5cd4c0712e",
+              "type": "Material",
+              "name": "doc_ff5cd4c0712e_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_2.txt",
+              "role": "exit_ticket",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "lesson:arts-av-technology:d1",
+              "type": "Lesson",
+              "name": "Day 1",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e1",
+                "89430d6aae63-e2",
+                "89430d6aae63-e3",
+                "89430d6aae63-e4",
+                "89430d6aae63-e5",
+                "89430d6aae63-e6",
+                "89430d6aae63-e7",
+                "89430d6aae63-e8",
+                "89430d6aae63-e9",
+                "89430d6aae63-e10",
+                "89430d6aae63-e11"
+              ],
+              "paragraphs": [
+                1,
+                62
+              ]
+            },
+            {
+              "id": "assessment:arts-av-technology:d1:89430d6aae63-e11",
+              "type": "Assessment",
+              "name": "In your groups, follow your rubric for either the commercial or flyer advertisem",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e11"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "lesson:arts-av-technology:d2",
+              "type": "Lesson",
+              "name": "Day 2",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e11",
+                "89430d6aae63-e13"
+              ],
+              "paragraphs": [
+                63,
+                71
+              ]
+            },
+            {
+              "id": "assessment:arts-av-technology:d2:89430d6aae63-e11",
+              "type": "Assessment",
+              "name": "In your groups, follow your rubric for either the commercial or flyer advertisem",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e11"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "assessment:arts-av-technology:d2:89430d6aae63-e13",
+              "type": "Assessment",
+              "name": "Exit Ticket - Day 2\n\nDid my group communicate well?\n\n Did my group work together",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e13"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "lesson:arts-av-technology:d3",
+              "type": "Lesson",
+              "name": "Day 3",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e12",
+                "89430d6aae63-e14"
+              ],
+              "paragraphs": [
+                72,
+                83
+              ]
+            },
+            {
+              "id": "assessment:d1:exit-ticket",
+              "type": "Assessment",
+              "name": "Exit Ticket Day 1",
+              "role": null,
+              "element_ids": [
+                "314d7d0905ca-e1",
+                "314d7d0905ca-e2"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "assessment:d3:exit-ticket",
+              "type": "Assessment",
+              "name": "Exit Ticket Day 3",
+              "role": null,
+              "element_ids": [
+                "e2c12c61bc5f-e1",
+                "e2c12c61bc5f-e2"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "assessment:d2:exit-ticket",
+              "type": "Assessment",
+              "name": "Exit Ticket Day 2",
+              "role": null,
+              "element_ids": [
+                "ff5cd4c0712e-e1",
+                "ff5cd4c0712e-e2"
+              ],
+              "paragraphs": []
+            }
+          ],
+          "edges": [
+            {
+              "rel": "hasPart",
+              "from": "course:lab-arts-av",
+              "to": "unit:arts-av-technology"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:0a62e0b9729e"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:0cbd06c7c769"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:314d7d0905ca"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:761e6495bc24"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:af9cf3b04474"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:e2c12c61bc5f"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:ff5cd4c0712e"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "lesson:arts-av-technology:d1"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "assessment:arts-av-technology:d1:89430d6aae63-e11"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "lesson:arts-av-technology:d2"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "assessment:arts-av-technology:d2:89430d6aae63-e11"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "assessment:arts-av-technology:d2:89430d6aae63-e13"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "lesson:arts-av-technology:d3"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:arts-av-technology:d3",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "describes",
+              "from": "material:761e6495bc24",
+              "to": "lesson:arts-av-technology:d1"
+            },
+            {
+              "rel": "describes",
+              "from": "material:761e6495bc24",
+              "to": "lesson:arts-av-technology:d2"
+            },
+            {
+              "rel": "describes",
+              "from": "material:761e6495bc24",
+              "to": "lesson:arts-av-technology:d3"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "assessment:d1:exit-ticket"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d3",
+              "to": "assessment:d3:exit-ticket"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "assessment:d2:exit-ticket"
+            },
+            {
+              "rel": "uses",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "material:0cbd06c7c769"
+            },
+            {
+              "rel": "uses",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "material:af9cf3b04474"
+            },
+            {
+              "rel": "uses",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "material:0a62e0b9729e"
+            }
+          ]
+        },
+        "lessons": [
+          {
+            "id": "lesson:arts-av-technology:d1",
+            "name": "Day 1",
+            "paragraphs": [
+              1,
+              62
+            ],
+            "element_ids": [
+              "89430d6aae63-e1",
+              "89430d6aae63-e2",
+              "89430d6aae63-e3",
+              "89430d6aae63-e4",
+              "89430d6aae63-e5",
+              "89430d6aae63-e6",
+              "89430d6aae63-e7",
+              "89430d6aae63-e8",
+              "89430d6aae63-e9",
+              "89430d6aae63-e10",
+              "89430d6aae63-e11"
+            ],
+            "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+          },
+          {
+            "id": "lesson:arts-av-technology:d2",
+            "name": "Day 2",
+            "paragraphs": [
+              63,
+              71
+            ],
+            "element_ids": [
+              "89430d6aae63-e11",
+              "89430d6aae63-e13"
+            ],
+            "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+          },
+          {
+            "id": "lesson:arts-av-technology:d3",
+            "name": "Day 3",
+            "paragraphs": [
+              72,
+              83
+            ],
+            "element_ids": [
+              "89430d6aae63-e12",
+              "89430d6aae63-e14"
+            ],
+            "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+          }
+        ],
+        "score": {
+          "pass": true,
+          "material_coverage": 1.0,
+          "lesson_mean_iou": 0.833,
+          "assessment_attach": 1.0,
+          "edge_f1": 0.704,
+          "n_gold_lessons": 3,
+          "n_pred_lessons": 3,
+          "lesson_pairs": [
+            {
+              "gold": "lesson:arts-av:d1",
+              "pred": "lesson:arts-av-technology:d1",
+              "iou": 1.0
+            },
+            {
+              "gold": "lesson:arts-av:d2",
+              "pred": "lesson:arts-av-technology:d2",
+              "iou": 0.5
+            },
+            {
+              "gold": "lesson:arts-av:d3",
+              "pred": "lesson:arts-av-technology:d3",
+              "iou": 1.0
+            }
+          ],
+          "assessment_attach_counts": {
+            "ok": 3,
+            "total": 3
+          }
+        }
+      },
+      "final": {
+        "graph": {
+          "nodes": [
+            {
+              "id": "course:lab-arts-av",
+              "type": "Course",
+              "name": "lab-arts-av",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "unit:arts-av-technology",
+              "type": "LessonGrouping",
+              "name": "Arts AV Technology",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:0a62e0b9729e",
+              "type": "Material",
+              "name": "doc_0a62e0b9729e_Arts_A_V_Student_Notes.txt",
+              "role": "worksheet",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:0cbd06c7c769",
+              "type": "Material",
+              "name": "doc_0cbd06c7c769_Arts_AV_Technology___Communication_Flyer_Project_Rubric.txt",
+              "role": "rubric",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:314d7d0905ca",
+              "type": "Material",
+              "name": "doc_314d7d0905ca_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_1.txt",
+              "role": "exit_ticket",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:761e6495bc24",
+              "type": "Material",
+              "name": "doc_761e6495bc24_Arts_A_V_Tech__Lesson_Plan_.txt",
+              "role": "lesson_plan",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:89430d6aae63",
+              "type": "Material",
+              "name": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt",
+              "role": "lesson_content",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:af9cf3b04474",
+              "type": "Material",
+              "name": "doc_af9cf3b04474_Arts_AV_Technology___Communication_Commercial_Project_Rubric.txt",
+              "role": "rubric",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:e2c12c61bc5f",
+              "type": "Material",
+              "name": "doc_e2c12c61bc5f_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_3.txt",
+              "role": "exit_ticket",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:ff5cd4c0712e",
+              "type": "Material",
+              "name": "doc_ff5cd4c0712e_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_2.txt",
+              "role": "exit_ticket",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "lesson:arts-av-technology:d1",
+              "type": "Lesson",
+              "name": "Day 1",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e1",
+                "89430d6aae63-e2",
+                "89430d6aae63-e3",
+                "89430d6aae63-e4",
+                "89430d6aae63-e5",
+                "89430d6aae63-e6",
+                "89430d6aae63-e7",
+                "89430d6aae63-e8",
+                "89430d6aae63-e9",
+                "89430d6aae63-e10",
+                "89430d6aae63-e11"
+              ],
+              "paragraphs": [
+                1,
+                62
+              ]
+            },
+            {
+              "id": "lesson:arts-av-technology:d2",
+              "type": "Lesson",
+              "name": "Day 2",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e11",
+                "89430d6aae63-e13"
+              ],
+              "paragraphs": [
+                63,
+                71
+              ]
+            },
+            {
+              "id": "lesson:arts-av-technology:d3",
+              "type": "Lesson",
+              "name": "Day 3",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e12",
+                "89430d6aae63-e14"
+              ],
+              "paragraphs": [
+                72,
+                83
+              ]
+            },
+            {
+              "id": "assessment:arts-av-technology:d1:exit-ticket",
+              "type": "Assessment",
+              "name": "Exit Ticket Day 1",
+              "role": null,
+              "element_ids": [
+                "314d7d0905ca-e1",
+                "314d7d0905ca-e2"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "assessment:arts-av-technology:d2:exit-ticket",
+              "type": "Assessment",
+              "name": "Exit Ticket Day 2",
+              "role": null,
+              "element_ids": [
+                "ff5cd4c0712e-e1",
+                "ff5cd4c0712e-e2"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "assessment:arts-av-technology:d3:exit-ticket",
+              "type": "Assessment",
+              "name": "Exit Ticket Day 3",
+              "role": null,
+              "element_ids": [
+                "e2c12c61bc5f-e1",
+                "e2c12c61bc5f-e2"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "assessment:arts-av-technology:d1:89430d6aae63-e11",
+              "type": "Assessment",
+              "name": "In your groups, follow your rubric for either the commercial or flyer advertisem",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e11"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "assessment:arts-av-technology:d2:89430d6aae63-e11",
+              "type": "Assessment",
+              "name": "In your groups, follow your rubric for either the commercial or flyer advertisem",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e11"
+              ],
+              "paragraphs": []
+            },
+            {
+              "id": "assessment:arts-av-technology:d2:89430d6aae63-e13",
+              "type": "Assessment",
+              "name": "Exit Ticket - Day 2\n\nDid my group communicate well?\n\n Did my group work together",
+              "role": null,
+              "element_ids": [
+                "89430d6aae63-e13"
+              ],
+              "paragraphs": []
+            }
+          ],
+          "edges": [
+            {
+              "rel": "hasPart",
+              "from": "course:lab-arts-av",
+              "to": "unit:arts-av-technology"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:0a62e0b9729e"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:0cbd06c7c769"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:314d7d0905ca"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:761e6495bc24"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:af9cf3b04474"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:e2c12c61bc5f"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:arts-av-technology",
+              "to": "material:ff5cd4c0712e"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "assessment:arts-av-technology:d1:89430d6aae63-e11"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "assessment:arts-av-technology:d2:89430d6aae63-e11"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "assessment:arts-av-technology:d2:89430d6aae63-e13"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:arts-av-technology:d3",
+              "to": "material:89430d6aae63"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "assessment:arts-av-technology:d1:exit-ticket"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d3",
+              "to": "assessment:arts-av-technology:d3:exit-ticket"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "assessment:arts-av-technology:d2:exit-ticket"
+            },
+            {
+              "rel": "describes",
+              "from": "material:761e6495bc24",
+              "to": "lesson:arts-av-technology:d1"
+            },
+            {
+              "rel": "describes",
+              "from": "material:761e6495bc24",
+              "to": "lesson:arts-av-technology:d2"
+            },
+            {
+              "rel": "describes",
+              "from": "material:761e6495bc24",
+              "to": "lesson:arts-av-technology:d3"
+            },
+            {
+              "rel": "uses",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "material:0cbd06c7c769"
+            },
+            {
+              "rel": "uses",
+              "from": "lesson:arts-av-technology:d2",
+              "to": "material:af9cf3b04474"
+            },
+            {
+              "rel": "uses",
+              "from": "lesson:arts-av-technology:d1",
+              "to": "material:0a62e0b9729e"
+            }
+          ]
+        },
+        "lessons": [
+          {
+            "id": "lesson:arts-av-technology:d1",
+            "name": "Day 1",
+            "paragraphs": [
+              1,
+              62
+            ],
+            "element_ids": [
+              "89430d6aae63-e1",
+              "89430d6aae63-e2",
+              "89430d6aae63-e3",
+              "89430d6aae63-e4",
+              "89430d6aae63-e5",
+              "89430d6aae63-e6",
+              "89430d6aae63-e7",
+              "89430d6aae63-e8",
+              "89430d6aae63-e9",
+              "89430d6aae63-e10",
+              "89430d6aae63-e11"
+            ],
+            "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+          },
+          {
+            "id": "lesson:arts-av-technology:d2",
+            "name": "Day 2",
+            "paragraphs": [
+              63,
+              71
+            ],
+            "element_ids": [
+              "89430d6aae63-e11",
+              "89430d6aae63-e13"
+            ],
+            "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+          },
+          {
+            "id": "lesson:arts-av-technology:d3",
+            "name": "Day 3",
+            "paragraphs": [
+              72,
+              83
+            ],
+            "element_ids": [
+              "89430d6aae63-e12",
+              "89430d6aae63-e14"
+            ],
+            "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+          }
+        ],
+        "score": {
+          "pass": true,
+          "material_coverage": 1.0,
+          "lesson_mean_iou": 0.833,
+          "assessment_attach": 1.0,
+          "edge_f1": 0.627,
+          "n_gold_lessons": 3,
+          "n_pred_lessons": 3,
+          "lesson_pairs": [
+            {
+              "gold": "lesson:arts-av:d1",
+              "pred": "lesson:arts-av-technology:d1",
+              "iou": 1.0
+            },
+            {
+              "gold": "lesson:arts-av:d2",
+              "pred": "lesson:arts-av-technology:d2",
+              "iou": 0.5
+            },
+            {
+              "gold": "lesson:arts-av:d3",
+              "pred": "lesson:arts-av-technology:d3",
+              "iou": 1.0
+            }
+          ],
+          "assessment_attach_counts": {
+            "ok": 3,
+            "total": 3
+          }
+        }
+      },
+      "gold_lessons": [
+        {
+          "id": "lesson:arts-av:d1",
+          "name": "Day 1 \u2014 Engage pathways + community campaign kickoff",
+          "paragraphs": [
+            2,
+            62
+          ],
+          "element_ids": [
+            "89430d6aae63-e1",
+            "89430d6aae63-e2",
+            "89430d6aae63-e3",
+            "89430d6aae63-e4",
+            "89430d6aae63-e5",
+            "89430d6aae63-e6",
+            "89430d6aae63-e7",
+            "89430d6aae63-e8",
+            "89430d6aae63-e9",
+            "89430d6aae63-e10",
+            "89430d6aae63-e11"
+          ],
+          "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+        },
+        {
+          "id": "lesson:arts-av:d2",
+          "name": "Day 2 \u2014 Create campaign (flyer/commercial) + teamwork exit",
+          "paragraphs": [
+            63,
+            71
+          ],
+          "element_ids": [
+            "89430d6aae63-e13"
+          ],
+          "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+        },
+        {
+          "id": "lesson:arts-av:d3",
+          "name": "Day 3 \u2014 Presentations + cluster reflection exit",
+          "paragraphs": [
+            72,
+            78
+          ],
+          "element_ids": [
+            "89430d6aae63-e12",
+            "89430d6aae63-e14"
+          ],
+          "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt"
+        }
+      ],
+      "break_story": null,
+      "highlight": false
+    },
+    {
+      "id": "P1xD_lab-dallas-ag_1785464539",
+      "project": "lab-dallas-ag",
+      "stage": "propose_only",
+      "method": "P1xD",
+      "model": "/home/lenovo/llama.cpp/models/nemotron3-nano-30b.gguf",
+      "out_dir": "/home/lenovo/g10-control-center-loom/experiments/graphing/results/P1xD_lab-dallas-ag_1785464539",
+      "propose": {
+        "graph": {
+          "nodes": [
+            {
+              "id": "course:lab-dallas-ag",
+              "type": "Course",
+              "name": "lab-dallas-ag",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "unit:plant-science",
+              "type": "LessonGrouping",
+              "name": "Agriculture Food and Natural Resources Career Cluster \u2014 Plant Science",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:b5e36486805a",
+              "type": "Material",
+              "name": "doc_b5e36486805a_Agriculture-_Plant_Science.txt",
+              "role": "other",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:e9e6ac00ce09",
+              "type": "Material",
+              "name": "doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt",
+              "role": "lesson_plan",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "lesson:plant-science:d1",
+              "type": "Lesson",
+              "name": "Day 1",
+              "role": null,
+              "element_ids": [
+                "b5e36486805a-e1",
+                "b5e36486805a-e2",
+                "b5e36486805a-e3",
+                "b5e36486805a-e4",
+                "b5e36486805a-e5",
+                "b5e36486805a-e6",
+                "b5e36486805a-e7",
+                "b5e36486805a-e8",
+                "b5e36486805a-e9",
+                "b5e36486805a-e10",
+                "b5e36486805a-e11",
+                "b5e36486805a-e12",
+                "b5e36486805a-e13",
+                "b5e36486805a-e14"
+              ],
+              "paragraphs": [
+                2,
+                32
+              ]
+            },
+            {
+              "id": "lesson:plant-science:d2",
+              "type": "Lesson",
+              "name": "Day 2",
+              "role": null,
+              "element_ids": [
+                "b5e36486805a-e14",
+                "b5e36486805a-e15",
+                "b5e36486805a-e16",
+                "b5e36486805a-e17",
+                "b5e36486805a-e18",
+                "b5e36486805a-e19"
+              ],
+              "paragraphs": [
+                33,
+                47
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "rel": "hasPart",
+              "from": "course:lab-dallas-ag",
+              "to": "unit:plant-science"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "material:b5e36486805a"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "material:e9e6ac00ce09"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "lesson:plant-science:d1"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:plant-science:d1",
+              "to": "material:b5e36486805a"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "lesson:plant-science:d2"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:plant-science:d2",
+              "to": "material:b5e36486805a"
+            },
+            {
+              "rel": "describes",
+              "from": "material:e9e6ac00ce09",
+              "to": "lesson:plant-science:d1"
+            },
+            {
+              "rel": "describes",
+              "from": "material:e9e6ac00ce09",
+              "to": "lesson:plant-science:d2"
+            }
+          ]
+        },
+        "lessons": [
+          {
+            "id": "lesson:plant-science:d1",
+            "name": "Day 1",
+            "paragraphs": [
+              2,
+              32
+            ],
+            "element_ids": [
+              "b5e36486805a-e1",
+              "b5e36486805a-e2",
+              "b5e36486805a-e3",
+              "b5e36486805a-e4",
+              "b5e36486805a-e5",
+              "b5e36486805a-e6",
+              "b5e36486805a-e7",
+              "b5e36486805a-e8",
+              "b5e36486805a-e9",
+              "b5e36486805a-e10",
+              "b5e36486805a-e11",
+              "b5e36486805a-e12",
+              "b5e36486805a-e13",
+              "b5e36486805a-e14"
+            ],
+            "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt"
+          },
+          {
+            "id": "lesson:plant-science:d2",
+            "name": "Day 2",
+            "paragraphs": [
+              33,
+              47
+            ],
+            "element_ids": [
+              "b5e36486805a-e14",
+              "b5e36486805a-e15",
+              "b5e36486805a-e16",
+              "b5e36486805a-e17",
+              "b5e36486805a-e18",
+              "b5e36486805a-e19"
+            ],
+            "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt"
+          }
+        ],
+        "score": {
+          "pass": false,
+          "material_coverage": 1.0,
+          "lesson_mean_iou": 0.526,
+          "assessment_attach": 0.0,
+          "edge_f1": 0.818,
+          "n_gold_lessons": 2,
+          "n_pred_lessons": 2,
+          "lesson_pairs": [
+            {
+              "gold": "lesson:plant-science:d1",
+              "pred": "lesson:plant-science:d2",
+              "iou": 1.0
+            },
+            {
+              "gold": "lesson:plant-science:d2",
+              "pred": "lesson:plant-science:d1",
+              "iou": 0.053
+            }
+          ],
+          "assessment_attach_counts": {
+            "ok": 0,
+            "total": 1
+          }
+        }
+      },
+      "final": {
+        "graph": {
+          "nodes": [
+            {
+              "id": "course:lab-dallas-ag",
+              "type": "Course",
+              "name": "lab-dallas-ag",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "unit:plant-science",
+              "type": "LessonGrouping",
+              "name": "Agriculture Food and Natural Resources Career Cluster \u2014 Plant Science",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:b5e36486805a",
+              "type": "Material",
+              "name": "doc_b5e36486805a_Agriculture-_Plant_Science.txt",
+              "role": "other",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:e9e6ac00ce09",
+              "type": "Material",
+              "name": "doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt",
+              "role": "lesson_plan",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "lesson:plant-science:d1",
+              "type": "Lesson",
+              "name": "Day 1",
+              "role": null,
+              "element_ids": [
+                "b5e36486805a-e1",
+                "b5e36486805a-e2",
+                "b5e36486805a-e3",
+                "b5e36486805a-e4",
+                "b5e36486805a-e5",
+                "b5e36486805a-e6",
+                "b5e36486805a-e7",
+                "b5e36486805a-e8",
+                "b5e36486805a-e9",
+                "b5e36486805a-e10",
+                "b5e36486805a-e11",
+                "b5e36486805a-e12",
+                "b5e36486805a-e13",
+                "b5e36486805a-e14"
+              ],
+              "paragraphs": [
+                2,
+                32
+              ]
+            },
+            {
+              "id": "lesson:plant-science:d2",
+              "type": "Lesson",
+              "name": "Day 2",
+              "role": null,
+              "element_ids": [
+                "b5e36486805a-e14",
+                "b5e36486805a-e15",
+                "b5e36486805a-e16",
+                "b5e36486805a-e17",
+                "b5e36486805a-e18",
+                "b5e36486805a-e19"
+              ],
+              "paragraphs": [
+                33,
+                47
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "rel": "hasPart",
+              "from": "course:lab-dallas-ag",
+              "to": "unit:plant-science"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "material:b5e36486805a"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "material:e9e6ac00ce09"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "lesson:plant-science:d1"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:plant-science:d1",
+              "to": "material:b5e36486805a"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "lesson:plant-science:d2"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:plant-science:d2",
+              "to": "material:b5e36486805a"
+            },
+            {
+              "rel": "describes",
+              "from": "material:e9e6ac00ce09",
+              "to": "lesson:plant-science:d1"
+            },
+            {
+              "rel": "describes",
+              "from": "material:e9e6ac00ce09",
+              "to": "lesson:plant-science:d2"
+            }
+          ]
+        },
+        "lessons": [
+          {
+            "id": "lesson:plant-science:d1",
+            "name": "Day 1",
+            "paragraphs": [
+              2,
+              32
+            ],
+            "element_ids": [
+              "b5e36486805a-e1",
+              "b5e36486805a-e2",
+              "b5e36486805a-e3",
+              "b5e36486805a-e4",
+              "b5e36486805a-e5",
+              "b5e36486805a-e6",
+              "b5e36486805a-e7",
+              "b5e36486805a-e8",
+              "b5e36486805a-e9",
+              "b5e36486805a-e10",
+              "b5e36486805a-e11",
+              "b5e36486805a-e12",
+              "b5e36486805a-e13",
+              "b5e36486805a-e14"
+            ],
+            "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt"
+          },
+          {
+            "id": "lesson:plant-science:d2",
+            "name": "Day 2",
+            "paragraphs": [
+              33,
+              47
+            ],
+            "element_ids": [
+              "b5e36486805a-e14",
+              "b5e36486805a-e15",
+              "b5e36486805a-e16",
+              "b5e36486805a-e17",
+              "b5e36486805a-e18",
+              "b5e36486805a-e19"
+            ],
+            "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt"
+          }
+        ],
+        "score": {
+          "pass": false,
+          "material_coverage": 1.0,
+          "lesson_mean_iou": 0.526,
+          "assessment_attach": 0.0,
+          "edge_f1": 0.818,
+          "n_gold_lessons": 2,
+          "n_pred_lessons": 2,
+          "lesson_pairs": [
+            {
+              "gold": "lesson:plant-science:d1",
+              "pred": "lesson:plant-science:d2",
+              "iou": 1.0
+            },
+            {
+              "gold": "lesson:plant-science:d2",
+              "pred": "lesson:plant-science:d1",
+              "iou": 0.053
+            }
+          ],
+          "assessment_attach_counts": {
+            "ok": 0,
+            "total": 1
+          }
+        }
+      },
+      "gold_lessons": [
+        {
+          "id": "lesson:plant-science:d1",
+          "name": "Day 1 \u2014 pathways + plant careers",
+          "paragraphs": [
+            1,
+            31
+          ],
+          "element_ids": [
+            "b5e36486805a-e1",
+            "b5e36486805a-e2",
+            "b5e36486805a-e3",
+            "b5e36486805a-e4",
+            "b5e36486805a-e5",
+            "b5e36486805a-e6",
+            "b5e36486805a-e7",
+            "b5e36486805a-e8",
+            "b5e36486805a-e9",
+            "b5e36486805a-e10",
+            "b5e36486805a-e11",
+            "b5e36486805a-e12",
+            "b5e36486805a-e13"
+          ],
+          "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt"
+        },
+        {
+          "id": "lesson:plant-science:d2",
+          "name": "Day 2 \u2014 soil lab + exit",
+          "paragraphs": [
+            32,
+            47
+          ],
+          "element_ids": [
+            "b5e36486805a-e14",
+            "b5e36486805a-e15",
+            "b5e36486805a-e16",
+            "b5e36486805a-e17",
+            "b5e36486805a-e18",
+            "b5e36486805a-e19"
+          ],
+          "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt"
+        }
+      ],
+      "break_story": "Propose failed provisional gates (IoU / assessment / coverage).",
+      "highlight": false
+    },
+    {
+      "id": "P1xD_lab-dallas-ag_1785464568",
+      "project": "lab-dallas-ag",
+      "stage": "propose_only",
+      "method": "P1xD",
+      "model": "/home/lenovo/llama.cpp/models/nemotron3-nano-30b.gguf",
+      "out_dir": "/home/lenovo/g10-control-center-loom/experiments/graphing/results/P1xD_lab-dallas-ag_1785464568",
+      "propose": {
+        "graph": {
+          "nodes": [
+            {
+              "id": "course:lab-dallas-ag",
+              "type": "Course",
+              "name": "lab-dallas-ag",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "unit:plant-science",
+              "type": "LessonGrouping",
+              "name": "Agriculture Food and Natural Resources Career Cluster \u2014 Plant Science",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:b5e36486805a",
+              "type": "Material",
+              "name": "doc_b5e36486805a_Agriculture-_Plant_Science.txt",
+              "role": "other",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:e9e6ac00ce09",
+              "type": "Material",
+              "name": "doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt",
+              "role": "lesson_plan",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "lesson:plant-science:d1",
+              "type": "Lesson",
+              "name": "Day 1",
+              "role": null,
+              "element_ids": [
+                "b5e36486805a-e1",
+                "b5e36486805a-e2",
+                "b5e36486805a-e3",
+                "b5e36486805a-e4",
+                "b5e36486805a-e5",
+                "b5e36486805a-e6",
+                "b5e36486805a-e7",
+                "b5e36486805a-e8",
+                "b5e36486805a-e9",
+                "b5e36486805a-e10",
+                "b5e36486805a-e11",
+                "b5e36486805a-e12",
+                "b5e36486805a-e13",
+                "b5e36486805a-e14"
+              ],
+              "paragraphs": [
+                1,
+                32
+              ]
+            },
+            {
+              "id": "lesson:plant-science:d2",
+              "type": "Lesson",
+              "name": "Day 2",
+              "role": null,
+              "element_ids": [
+                "b5e36486805a-e14",
+                "b5e36486805a-e15",
+                "b5e36486805a-e16",
+                "b5e36486805a-e17",
+                "b5e36486805a-e18",
+                "b5e36486805a-e19"
+              ],
+              "paragraphs": [
+                33,
+                47
+              ]
+            },
+            {
+              "id": "assessment:plant-science:d2:b5e36486805a-e18",
+              "type": "Assessment",
+              "name": "Exit Ticket",
+              "role": null,
+              "element_ids": [
+                "b5e36486805a-e18"
+              ],
+              "paragraphs": []
+            }
+          ],
+          "edges": [
+            {
+              "rel": "hasPart",
+              "from": "course:lab-dallas-ag",
+              "to": "unit:plant-science"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "material:b5e36486805a"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "material:e9e6ac00ce09"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "lesson:plant-science:d1"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:plant-science:d1",
+              "to": "material:b5e36486805a"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "lesson:plant-science:d2"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:plant-science:d2",
+              "to": "material:b5e36486805a"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:plant-science:d2",
+              "to": "assessment:plant-science:d2:b5e36486805a-e18"
+            },
+            {
+              "rel": "describes",
+              "from": "material:e9e6ac00ce09",
+              "to": "lesson:plant-science:d1"
+            },
+            {
+              "rel": "describes",
+              "from": "material:e9e6ac00ce09",
+              "to": "lesson:plant-science:d2"
+            }
+          ]
+        },
+        "lessons": [
+          {
+            "id": "lesson:plant-science:d1",
+            "name": "Day 1",
+            "paragraphs": [
+              1,
+              32
+            ],
+            "element_ids": [
+              "b5e36486805a-e1",
+              "b5e36486805a-e2",
+              "b5e36486805a-e3",
+              "b5e36486805a-e4",
+              "b5e36486805a-e5",
+              "b5e36486805a-e6",
+              "b5e36486805a-e7",
+              "b5e36486805a-e8",
+              "b5e36486805a-e9",
+              "b5e36486805a-e10",
+              "b5e36486805a-e11",
+              "b5e36486805a-e12",
+              "b5e36486805a-e13",
+              "b5e36486805a-e14"
+            ],
+            "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt"
+          },
+          {
+            "id": "lesson:plant-science:d2",
+            "name": "Day 2",
+            "paragraphs": [
+              33,
+              47
+            ],
+            "element_ids": [
+              "b5e36486805a-e14",
+              "b5e36486805a-e15",
+              "b5e36486805a-e16",
+              "b5e36486805a-e17",
+              "b5e36486805a-e18",
+              "b5e36486805a-e19"
+            ],
+            "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt"
+          }
+        ],
+        "score": {
+          "pass": true,
+          "material_coverage": 1.0,
+          "lesson_mean_iou": 1.014,
+          "assessment_attach": 1.0,
+          "edge_f1": 0.783,
+          "n_gold_lessons": 2,
+          "n_pred_lessons": 2,
+          "lesson_pairs": [
+            {
+              "gold": "lesson:plant-science:d1",
+              "pred": "lesson:plant-science:d1",
+              "iou": 0.979
+            },
+            {
+              "gold": "lesson:plant-science:d2",
+              "pred": "lesson:plant-science:d2",
+              "iou": 1.05
+            }
+          ],
+          "assessment_attach_counts": {
+            "ok": 1,
+            "total": 1
+          }
+        }
+      },
+      "final": {
+        "graph": {
+          "nodes": [
+            {
+              "id": "course:lab-dallas-ag",
+              "type": "Course",
+              "name": "lab-dallas-ag",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "unit:plant-science",
+              "type": "LessonGrouping",
+              "name": "Agriculture Food and Natural Resources Career Cluster \u2014 Plant Science",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:b5e36486805a",
+              "type": "Material",
+              "name": "doc_b5e36486805a_Agriculture-_Plant_Science.txt",
+              "role": "other",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:e9e6ac00ce09",
+              "type": "Material",
+              "name": "doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt",
+              "role": "lesson_plan",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "lesson:plant-science:d1",
+              "type": "Lesson",
+              "name": "Day 1",
+              "role": null,
+              "element_ids": [
+                "b5e36486805a-e1",
+                "b5e36486805a-e2",
+                "b5e36486805a-e3",
+                "b5e36486805a-e4",
+                "b5e36486805a-e5",
+                "b5e36486805a-e6",
+                "b5e36486805a-e7",
+                "b5e36486805a-e8",
+                "b5e36486805a-e9",
+                "b5e36486805a-e10",
+                "b5e36486805a-e11",
+                "b5e36486805a-e12",
+                "b5e36486805a-e13",
+                "b5e36486805a-e14"
+              ],
+              "paragraphs": [
+                1,
+                32
+              ]
+            },
+            {
+              "id": "lesson:plant-science:d2",
+              "type": "Lesson",
+              "name": "Day 2",
+              "role": null,
+              "element_ids": [
+                "b5e36486805a-e14",
+                "b5e36486805a-e15",
+                "b5e36486805a-e16",
+                "b5e36486805a-e17",
+                "b5e36486805a-e18",
+                "b5e36486805a-e19"
+              ],
+              "paragraphs": [
+                33,
+                47
+              ]
+            },
+            {
+              "id": "assessment:plant-science:d2:b5e36486805a-e18",
+              "type": "Assessment",
+              "name": "Exit Ticket",
+              "role": null,
+              "element_ids": [
+                "b5e36486805a-e18"
+              ],
+              "paragraphs": []
+            }
+          ],
+          "edges": [
+            {
+              "rel": "hasPart",
+              "from": "course:lab-dallas-ag",
+              "to": "unit:plant-science"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "material:b5e36486805a"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "material:e9e6ac00ce09"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "lesson:plant-science:d1"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:plant-science:d1",
+              "to": "material:b5e36486805a"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "lesson:plant-science:d2"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:plant-science:d2",
+              "to": "material:b5e36486805a"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:plant-science:d2",
+              "to": "assessment:plant-science:d2:b5e36486805a-e18"
+            },
+            {
+              "rel": "describes",
+              "from": "material:e9e6ac00ce09",
+              "to": "lesson:plant-science:d1"
+            },
+            {
+              "rel": "describes",
+              "from": "material:e9e6ac00ce09",
+              "to": "lesson:plant-science:d2"
+            }
+          ]
+        },
+        "lessons": [
+          {
+            "id": "lesson:plant-science:d1",
+            "name": "Day 1",
+            "paragraphs": [
+              1,
+              32
+            ],
+            "element_ids": [
+              "b5e36486805a-e1",
+              "b5e36486805a-e2",
+              "b5e36486805a-e3",
+              "b5e36486805a-e4",
+              "b5e36486805a-e5",
+              "b5e36486805a-e6",
+              "b5e36486805a-e7",
+              "b5e36486805a-e8",
+              "b5e36486805a-e9",
+              "b5e36486805a-e10",
+              "b5e36486805a-e11",
+              "b5e36486805a-e12",
+              "b5e36486805a-e13",
+              "b5e36486805a-e14"
+            ],
+            "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt"
+          },
+          {
+            "id": "lesson:plant-science:d2",
+            "name": "Day 2",
+            "paragraphs": [
+              33,
+              47
+            ],
+            "element_ids": [
+              "b5e36486805a-e14",
+              "b5e36486805a-e15",
+              "b5e36486805a-e16",
+              "b5e36486805a-e17",
+              "b5e36486805a-e18",
+              "b5e36486805a-e19"
+            ],
+            "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt"
+          }
+        ],
+        "score": {
+          "pass": true,
+          "material_coverage": 1.0,
+          "lesson_mean_iou": 1.014,
+          "assessment_attach": 1.0,
+          "edge_f1": 0.783,
+          "n_gold_lessons": 2,
+          "n_pred_lessons": 2,
+          "lesson_pairs": [
+            {
+              "gold": "lesson:plant-science:d1",
+              "pred": "lesson:plant-science:d1",
+              "iou": 0.979
+            },
+            {
+              "gold": "lesson:plant-science:d2",
+              "pred": "lesson:plant-science:d2",
+              "iou": 1.05
+            }
+          ],
+          "assessment_attach_counts": {
+            "ok": 1,
+            "total": 1
+          }
+        }
+      },
+      "gold_lessons": [
+        {
+          "id": "lesson:plant-science:d1",
+          "name": "Day 1 \u2014 pathways + plant careers",
+          "paragraphs": [
+            1,
+            31
+          ],
+          "element_ids": [
+            "b5e36486805a-e1",
+            "b5e36486805a-e2",
+            "b5e36486805a-e3",
+            "b5e36486805a-e4",
+            "b5e36486805a-e5",
+            "b5e36486805a-e6",
+            "b5e36486805a-e7",
+            "b5e36486805a-e8",
+            "b5e36486805a-e9",
+            "b5e36486805a-e10",
+            "b5e36486805a-e11",
+            "b5e36486805a-e12",
+            "b5e36486805a-e13"
+          ],
+          "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt"
+        },
+        {
+          "id": "lesson:plant-science:d2",
+          "name": "Day 2 \u2014 soil lab + exit",
+          "paragraphs": [
+            32,
+            47
+          ],
+          "element_ids": [
+            "b5e36486805a-e14",
+            "b5e36486805a-e15",
+            "b5e36486805a-e16",
+            "b5e36486805a-e17",
+            "b5e36486805a-e18",
+            "b5e36486805a-e19"
+          ],
+          "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt"
+        }
+      ],
+      "break_story": null,
+      "highlight": false
+    },
+    {
+      "id": "P1xD_lab-dallas-ag_1785464580",
+      "project": "lab-dallas-ag",
+      "stage": "repaired",
+      "method": "P1xD",
+      "model": "/home/lenovo/llama.cpp/models/nemotron3-nano-30b.gguf",
+      "out_dir": "/home/lenovo/g10-control-center-loom/experiments/graphing/results/P1xD_lab-dallas-ag_1785464580",
+      "propose": {
+        "graph": {
+          "nodes": [
+            {
+              "id": "course:lab-dallas-ag",
+              "type": "Course",
+              "name": "lab-dallas-ag",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "unit:plant-science",
+              "type": "LessonGrouping",
+              "name": "Agriculture Food and Natural Resources Career Cluster \u2014 Plant Science",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:b5e36486805a",
+              "type": "Material",
+              "name": "doc_b5e36486805a_Agriculture-_Plant_Science.txt",
+              "role": "other",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:e9e6ac00ce09",
+              "type": "Material",
+              "name": "doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt",
+              "role": "lesson_plan",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "lesson:plant-science:d1",
+              "type": "Lesson",
+              "name": "Day 1",
+              "role": null,
+              "element_ids": [
+                "b5e36486805a-e1",
+                "b5e36486805a-e2",
+                "b5e36486805a-e3",
+                "b5e36486805a-e4",
+                "b5e36486805a-e5",
+                "b5e36486805a-e6",
+                "b5e36486805a-e7",
+                "b5e36486805a-e8",
+                "b5e36486805a-e9",
+                "b5e36486805a-e10",
+                "b5e36486805a-e11",
+                "b5e36486805a-e12",
+                "b5e36486805a-e13",
+                "b5e36486805a-e14"
+              ],
+              "paragraphs": [
+                1,
+                32
+              ]
+            },
+            {
+              "id": "lesson:plant-science:d2",
+              "type": "Lesson",
+              "name": "Day 2",
+              "role": null,
+              "element_ids": [
+                "b5e36486805a-e14",
+                "b5e36486805a-e15",
+                "b5e36486805a-e16",
+                "b5e36486805a-e17",
+                "b5e36486805a-e18",
+                "b5e36486805a-e19"
+              ],
+              "paragraphs": [
+                33,
+                47
+              ]
+            },
+            {
+              "id": "assessment:plant-science:d2:b5e36486805a-e18",
+              "type": "Assessment",
+              "name": "Exit Ticket",
+              "role": null,
+              "element_ids": [
+                "b5e36486805a-e18"
+              ],
+              "paragraphs": []
+            }
+          ],
+          "edges": [
+            {
+              "rel": "hasPart",
+              "from": "course:lab-dallas-ag",
+              "to": "unit:plant-science"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "material:b5e36486805a"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "material:e9e6ac00ce09"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "lesson:plant-science:d1"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:plant-science:d1",
+              "to": "material:b5e36486805a"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "lesson:plant-science:d2"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:plant-science:d2",
+              "to": "material:b5e36486805a"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:plant-science:d2",
+              "to": "assessment:plant-science:d2:b5e36486805a-e18"
+            },
+            {
+              "rel": "describes",
+              "from": "material:e9e6ac00ce09",
+              "to": "lesson:plant-science:d1"
+            },
+            {
+              "rel": "describes",
+              "from": "material:e9e6ac00ce09",
+              "to": "lesson:plant-science:d2"
+            }
+          ]
+        },
+        "lessons": [
+          {
+            "id": "lesson:plant-science:d1",
+            "name": "Day 1",
+            "paragraphs": [
+              1,
+              32
+            ],
+            "element_ids": [
+              "b5e36486805a-e1",
+              "b5e36486805a-e2",
+              "b5e36486805a-e3",
+              "b5e36486805a-e4",
+              "b5e36486805a-e5",
+              "b5e36486805a-e6",
+              "b5e36486805a-e7",
+              "b5e36486805a-e8",
+              "b5e36486805a-e9",
+              "b5e36486805a-e10",
+              "b5e36486805a-e11",
+              "b5e36486805a-e12",
+              "b5e36486805a-e13",
+              "b5e36486805a-e14"
+            ],
+            "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt"
+          },
+          {
+            "id": "lesson:plant-science:d2",
+            "name": "Day 2",
+            "paragraphs": [
+              33,
+              47
+            ],
+            "element_ids": [
+              "b5e36486805a-e14",
+              "b5e36486805a-e15",
+              "b5e36486805a-e16",
+              "b5e36486805a-e17",
+              "b5e36486805a-e18",
+              "b5e36486805a-e19"
+            ],
+            "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt"
+          }
+        ],
+        "score": {
+          "pass": true,
+          "material_coverage": 1.0,
+          "lesson_mean_iou": 0.964,
+          "assessment_attach": 1.0,
+          "edge_f1": 0.783,
+          "n_gold_lessons": 2,
+          "n_pred_lessons": 2,
+          "lesson_pairs": [
+            {
+              "gold": "lesson:plant-science:d1",
+              "pred": "lesson:plant-science:d1",
+              "iou": 0.929
+            },
+            {
+              "gold": "lesson:plant-science:d2",
+              "pred": "lesson:plant-science:d2",
+              "iou": 1.0
+            }
+          ],
+          "assessment_attach_counts": {
+            "ok": 1,
+            "total": 1
+          }
+        }
+      },
+      "final": {
+        "graph": {
+          "nodes": [
+            {
+              "id": "course:lab-dallas-ag",
+              "type": "Course",
+              "name": "lab-dallas-ag",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "unit:plant-science",
+              "type": "LessonGrouping",
+              "name": "Agriculture Food and Natural Resources Career Cluster \u2014 Plant Science",
+              "role": null,
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:b5e36486805a",
+              "type": "Material",
+              "name": "doc_b5e36486805a_Agriculture-_Plant_Science.txt",
+              "role": "lesson_plan",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "material:e9e6ac00ce09",
+              "type": "Material",
+              "name": "doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt",
+              "role": "lesson_plan",
+              "element_ids": [],
+              "paragraphs": []
+            },
+            {
+              "id": "lesson:plant-science:d1",
+              "type": "Lesson",
+              "name": "Day 1",
+              "role": null,
+              "element_ids": [
+                "b5e36486805a-e1",
+                "b5e36486805a-e2"
+              ],
+              "paragraphs": [
+                1,
+                2
+              ]
+            },
+            {
+              "id": "lesson:plant-science:d2",
+              "type": "Lesson",
+              "name": "Day 2",
+              "role": null,
+              "element_ids": [
+                "b5e36486805a-e3",
+                "b5e36486805a-e4"
+              ],
+              "paragraphs": [
+                3,
+                19
+              ]
+            },
+            {
+              "id": "assessment:plant-science:d2_exit_ticket",
+              "type": "Assessment",
+              "name": "Exit Ticket",
+              "role": null,
+              "element_ids": [
+                "b5e36486805a-e19"
+              ],
+              "paragraphs": []
+            }
+          ],
+          "edges": [
+            {
+              "rel": "hasPart",
+              "from": "course:lab-dallas-ag",
+              "to": "unit:plant-science"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "material:b5e36486805a"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "material:e9e6ac00ce09"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:plant-science:d1",
+              "to": "material:b5e36486805a"
+            },
+            {
+              "rel": "hasPart",
+              "from": "unit:plant-science",
+              "to": "lesson:plant-science:d2"
+            },
+            {
+              "rel": "spanIn",
+              "from": "lesson:plant-science:d2",
+              "to": "material:b5e36486805a"
+            },
+            {
+              "rel": "hasPart",
+              "from": "lesson:plant-science:d2",
+              "to": "assessment:plant-science:d2_exit_ticket"
+            },
+            {
+              "rel": "describes",
+              "from": "material:e9e6ac00ce09",
+              "to": "lesson:plant-science:d1"
+            },
+            {
+              "rel": "describes",
+              "from": "material:e9e6ac00ce09",
+              "to": "lesson:plant-science:d2"
+            }
+          ]
+        },
+        "lessons": [
+          {
+            "id": "lesson:plant-science:d1",
+            "name": "Day 1",
+            "paragraphs": [
+              1,
+              2
+            ],
+            "element_ids": [
+              "b5e36486805a-e1",
+              "b5e36486805a-e2"
+            ],
+            "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt"
+          },
+          {
+            "id": "lesson:plant-science:d2",
+            "name": "Day 2",
+            "paragraphs": [
+              3,
+              19
+            ],
+            "element_ids": [
+              "b5e36486805a-e3",
+              "b5e36486805a-e4"
+            ],
+            "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt"
+          }
+        ],
+        "score": {
+          "pass": false,
+          "material_coverage": 1.0,
+          "lesson_mean_iou": 0.077,
+          "assessment_attach": 0.0,
+          "edge_f1": 0.727,
+          "n_gold_lessons": 2,
+          "n_pred_lessons": 2,
+          "lesson_pairs": [
+            {
+              "gold": "lesson:plant-science:d1",
+              "pred": "lesson:plant-science:d1",
+              "iou": 0.154
+            },
+            {
+              "gold": "lesson:plant-science:d2",
+              "pred": "lesson:plant-science:d2",
+              "iou": 0.0
+            }
+          ],
+          "assessment_attach_counts": {
+            "ok": 0,
+            "total": 1
+          }
+        }
+      },
+      "gold_lessons": [
+        {
+          "id": "lesson:plant-science:d1",
+          "name": "Day 1 \u2014 pathways + plant careers",
+          "paragraphs": [
+            1,
+            31
+          ],
+          "element_ids": [
+            "b5e36486805a-e1",
+            "b5e36486805a-e2",
+            "b5e36486805a-e3",
+            "b5e36486805a-e4",
+            "b5e36486805a-e5",
+            "b5e36486805a-e6",
+            "b5e36486805a-e7",
+            "b5e36486805a-e8",
+            "b5e36486805a-e9",
+            "b5e36486805a-e10",
+            "b5e36486805a-e11",
+            "b5e36486805a-e12",
+            "b5e36486805a-e13"
+          ],
+          "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt"
+        },
+        {
+          "id": "lesson:plant-science:d2",
+          "name": "Day 2 \u2014 soil lab + exit",
+          "paragraphs": [
+            32,
+            47
+          ],
+          "element_ids": [
+            "b5e36486805a-e14",
+            "b5e36486805a-e15",
+            "b5e36486805a-e16",
+            "b5e36486805a-e17",
+            "b5e36486805a-e18",
+            "b5e36486805a-e19"
+          ],
+          "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt"
+        }
+      ],
+      "break_story": "Model repair wrecked a good propose \u2014 lesson:plant-science:d1: 14\u21922 elements, paras [1, 32]\u2192[1, 2]; lesson:plant-science:d2: 6\u21922 elements, paras [33, 47]\u2192[3, 19].",
+      "highlight": true
+    }
+  ]
+}
