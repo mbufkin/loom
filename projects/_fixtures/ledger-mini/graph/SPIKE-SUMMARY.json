@@ -1,0 +1,30 @@
+{
+  "project_id": "ledger-mini",
+  "unit_id": "plants",
+  "gate_a": "Gate A pass",
+  "soft_queue": [
+    "doc_aaaa01_Mini_Lesson_Plan.txt",
+    "doc_aaaa02_Mini_Slides.txt",
+    "doc_aaaa03_Mini_Exit_Ticket.txt"
+  ],
+  "review_order": [
+    "doc_aaaa01_Mini_Lesson_Plan.txt",
+    "doc_aaaa02_Mini_Slides.txt",
+    "doc_aaaa03_Mini_Exit_Ticket.txt"
+  ],
+  "n_sources": 3,
+  "provisional_lessons": [],
+  "rebuilt_lessons": [
+    "lesson:plants:d1"
+  ],
+  "raw_files": [
+    "graph/.raw/doc_aaaa01_Mini_Lesson_Plan.json",
+    "graph/.raw/doc_aaaa02_Mini_Slides.json",
+    "graph/.raw/doc_aaaa03_Mini_Exit_Ticket.json"
+  ],
+  "out": {
+    "provisional": "/home/lenovo/g10-control-center-loom/projects/_fixtures/ledger-mini/graph/HAS-PART.provisional.json",
+    "rebuilt": "/home/lenovo/g10-control-center-loom/projects/_fixtures/ledger-mini/graph/HAS-PART.json",
+    "findings": "/home/lenovo/g10-control-center-loom/projects/_fixtures/ledger-mini/graph/review-findings.json"
+  }
+}

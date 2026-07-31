@@ -1,0 +1,38 @@
+{
+  "source_file": "doc_aaaa01_Mini_Lesson_Plan.txt",
+  "stage": "rebuild",
+  "provisional_choice": {
+    "role": "lesson_plan",
+    "node_type": "Material",
+    "lesson_id": null,
+    "edges_proposed": [
+      {
+        "rel": "hasPart",
+        "from": "unit:plants",
+        "to": "material:aaaa01"
+      }
+    ],
+    "queued": true
+  },
+  "rebuild_choice": {
+    "role": "lesson_plan",
+    "node_type": "Material",
+    "lesson_id": "lesson:plants:d1",
+    "edges_proposed": [
+      {
+        "rel": "describes",
+        "from": "material:aaaa01",
+        "to": "lesson:plants:d1"
+      },
+      {
+        "rel": "hasPart",
+        "from": "unit:plants",
+        "to": "material:aaaa01"
+      }
+    ],
+    "queued": false
+  },
+  "model": "code-first-spike-v0",
+  "prompt_ref": "experiments/graphing/spike_loop.py",
+  "ts": "2026-07-31T11:19:25.509803+00:00"
+}

@@ -1,0 +1,38 @@
+{
+  "source_file": "doc_aaaa03_Mini_Exit_Ticket.txt",
+  "stage": "rebuild",
+  "provisional_choice": {
+    "role": "exit_ticket",
+    "node_type": "Material",
+    "lesson_id": null,
+    "edges_proposed": [
+      {
+        "rel": "hasPart",
+        "from": "unit:plants",
+        "to": "material:aaaa03"
+      }
+    ],
+    "queued": true
+  },
+  "rebuild_choice": {
+    "role": "exit_ticket",
+    "node_type": "Assessment",
+    "lesson_id": "lesson:plants:d1",
+    "edges_proposed": [
+      {
+        "rel": "hasPart",
+        "from": "lesson:plants:d1",
+        "to": "assessment:aaaa03:exit-ticket"
+      },
+      {
+        "rel": "uses",
+        "from": "assessment:aaaa03:exit-ticket",
+        "to": "material:aaaa03"
+      }
+    ],
+    "queued": false
+  },
+  "model": "code-first-spike-v0",
+  "prompt_ref": "experiments/graphing/spike_loop.py",
+  "ts": "2026-07-31T11:19:25.509803+00:00"
+}
