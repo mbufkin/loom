@@ -255,6 +255,8 @@ def rebuild(provisional: dict, findings: dict) -> dict:
             graph["edges"].append({"rel": "hasPart", "from": lesson_id, "to": aid})
             # Material remains inventory; Assessment references its file via material_id
             graph["edges"].append({"rel": "uses", "from": aid, "to": mid})
+            # Keep Material under unit for inventory discoverability
+            graph["edges"].append({"rel": "hasPart", "from": unit_node, "to": mid})
         else:
             edge_rel = f.get("edge") or "hasPart"
             if edge_rel == "hasPart":

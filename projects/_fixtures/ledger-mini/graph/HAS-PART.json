@@ -90,6 +90,11 @@
       "rel": "uses",
       "from": "assessment:aaaa03:exit-ticket",
       "to": "material:aaaa03"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:plants",
+      "to": "material:aaaa03"
     }
   ],
   "coverage": {

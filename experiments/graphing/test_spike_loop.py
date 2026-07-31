@@ -67,6 +67,15 @@ class TestSpikeLoop(unittest.TestCase):
         # Material inventory preserved (one Material per source)
         mats = [n for n in out["nodes"] if n["type"] == "Material"]
         self.assertEqual({m["source_file"] for m in mats}, set(sources))
+        # Exit-ticket Material stays under unit inventory hang
+        exit_mid = next(
+            m["id"] for m in mats if "Exit_Ticket" in m.get("source_file", "")
+        )
+        unit_id = next(n["id"] for n in out["nodes"] if n["type"] == "LessonGrouping")
+        self.assertIn(
+            {"rel": "hasPart", "from": unit_id, "to": exit_mid},
+            out["edges"],
+        )
 
     def test_run_spike_writes_raw_before_after(self):
         with tempfile.TemporaryDirectory() as tmp:
