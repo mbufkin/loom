@@ -1,0 +1,2122 @@
+{
+  "project_id": "lab-dallas-career",
+  "gate_scorer": "s1_completeness",
+  "packet_type": {
+    "id": "teacher_edition",
+    "label": "Teacher Edition",
+    "short": "TEACHER ED",
+    "description": "Teacher-facing materials that carry what the teacher needs to run the lesson \u2014 typically notes/plan, slides or activities, and some check for understanding. Not expected to ship a full student edition or answer keys.",
+    "expected_components": [
+      "Teacher plan / notes",
+      "Slides / activities",
+      "Check / assessment"
+    ]
+  },
+  "summary": {
+    "unit_count": 18,
+    "band_counts": {
+      "Weak": 9,
+      "Developing": 5,
+      "Unrated": 3,
+      "Strong": 1
+    }
+  },
+  "units": {
+    "agriculture": {
+      "title": "Agriculture",
+      "band": "Weak",
+      "completeness": {
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
+        "present": 1,
+        "expected": 3,
+        "components": [
+          {
+            "label": "Teacher plan / notes",
+            "present": true,
+            "matched": "lesson_plan",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Slides / activities",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "quiz",
+              "exit_ticket",
+              "worksheet"
+            ]
+          }
+        ],
+        "missing": [
+          "Slides / activities",
+          "Check / assessment"
+        ]
+      },
+      "lessons": {
+        "count": 1,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.75,
+          "s3_curriculum_own": 0.75
+        }
+      },
+      "roles": {
+        "fulfilled": 2,
+        "missing": 7,
+        "systemic_absent": [
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "exit_ticket",
+            "day_id": "d1"
+          },
+          {
+            "role": "exit_ticket",
+            "day_id": "d2"
+          },
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "worksheet",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 5
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 1,
+        "top_missing_components": [
+          "logistics_materials",
+          "reflection_closure"
+        ]
+      },
+      "artifacts": {
+        "count": 1,
+        "gate_pass": 1,
+        "gate_pass_rate": 1.0,
+        "roles": {
+          "other": 1
+        },
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "agriculture"
+      }
+    },
+    "architecture-construction": {
+      "title": "Architecture & Construction",
+      "band": "Developing",
+      "completeness": {
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
+        "present": 3,
+        "expected": 3,
+        "components": [
+          {
+            "label": "Teacher plan / notes",
+            "present": true,
+            "matched": "lesson_plan",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Slides / activities",
+            "present": true,
+            "matched": "lesson_content",
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
+            "present": true,
+            "matched": "quiz",
+            "any_of": [
+              "quiz",
+              "exit_ticket",
+              "worksheet"
+            ]
+          }
+        ],
+        "missing": []
+      },
+      "lessons": {
+        "count": 2,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.5,
+        "mean_coverage": {
+          "s1_completeness": 0.812,
+          "s3_curriculum_own": 0.812
+        }
+      },
+      "roles": {
+        "fulfilled": 3,
+        "missing": 5,
+        "systemic_absent": [
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "exit_ticket",
+            "day_id": "d1"
+          },
+          {
+            "role": "exit_ticket",
+            "day_id": "d2"
+          },
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 3
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 1,
+        "top_missing_components": [
+          "independent_practice"
+        ]
+      },
+      "artifacts": {
+        "count": 3,
+        "gate_pass": 3,
+        "gate_pass_rate": 1.0,
+        "roles": {
+          "answer_key": 1,
+          "exit_ticket": 1,
+          "quiz": 1
+        },
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "architecture-construction"
+      }
+    },
+    "arts-av-technology": {
+      "title": "Arts AV Technology",
+      "band": "Weak",
+      "completeness": {
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
+        "present": 3,
+        "expected": 3,
+        "components": [
+          {
+            "label": "Teacher plan / notes",
+            "present": true,
+            "matched": "lesson_plan",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Slides / activities",
+            "present": true,
+            "matched": "lesson_content",
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
+            "present": true,
+            "matched": "exit_ticket",
+            "any_of": [
+              "quiz",
+              "exit_ticket",
+              "worksheet"
+            ]
+          }
+        ],
+        "missing": []
+      },
+      "lessons": {
+        "count": 2,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.875,
+          "s3_curriculum_own": 0.875
+        }
+      },
+      "roles": {
+        "fulfilled": 7,
+        "missing": 2,
+        "systemic_absent": [
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 1
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 1,
+        "top_missing_components": [
+          "logistics_materials"
+        ]
+      },
+      "artifacts": {
+        "count": 6,
+        "gate_pass": 3,
+        "gate_pass_rate": 0.5,
+        "roles": {
+          "exit_ticket": 3,
+          "project_work": 1,
+          "rubric": 2
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "ff5cd4c0712e",
+            "role": "exit_ticket",
+            "title": "Arts AV Technology Communication - Exit Ticket Day 2",
+            "missing_required": [
+              "Prompt / question present"
+            ]
+          },
+          {
+            "doc_id": "af9cf3b04474",
+            "role": "rubric",
+            "title": "Arts AV Technology Communication Commercial Project Rubric",
+            "missing_required": [
+              "Named assessment criteria",
+              "Performance levels / scale"
+            ]
+          },
+          {
+            "doc_id": "0cbd06c7c769",
+            "role": "rubric",
+            "title": "Arts AV Technology Communication Flyer Project Rubric",
+            "missing_required": [
+              "Named assessment criteria",
+              "Performance levels / scale"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "arts-av-technology"
+      }
+    },
+    "business-marketing": {
+      "title": "Business Marketing",
+      "band": "Weak",
+      "completeness": {
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
+        "present": 3,
+        "expected": 3,
+        "components": [
+          {
+            "label": "Teacher plan / notes",
+            "present": true,
+            "matched": "lesson_plan",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Slides / activities",
+            "present": true,
+            "matched": "lesson_content",
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
+            "present": true,
+            "matched": "exit_ticket",
+            "any_of": [
+              "quiz",
+              "exit_ticket",
+              "worksheet"
+            ]
+          }
+        ],
+        "missing": []
+      },
+      "lessons": {
+        "count": 2,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.75,
+          "s3_curriculum_own": 0.75
+        }
+      },
+      "roles": {
+        "fulfilled": 6,
+        "missing": 5,
+        "systemic_absent": [
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 2
+      },
+      "pacing": {
+        "planned_days": 3,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 1,
+        "top_missing_components": [
+          "logistics_materials",
+          "reflection_closure"
+        ]
+      },
+      "artifacts": {
+        "count": 2,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.5,
+        "roles": {
+          "exit_ticket": 1,
+          "rubric": 1
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "769516e58fb5",
+            "role": "rubric",
+            "title": "Business Marketing Finance - Project Rubric",
+            "missing_required": [
+              "Named assessment criteria",
+              "Performance levels / scale"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "business-marketing"
+      }
+    },
+    "career-cluster": {
+      "title": "Career Cluster",
+      "band": "Weak",
+      "completeness": {
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
+        "present": 3,
+        "expected": 3,
+        "components": [
+          {
+            "label": "Teacher plan / notes",
+            "present": true,
+            "matched": "lesson_plan",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Slides / activities",
+            "present": true,
+            "matched": "lesson_content",
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
+            "present": true,
+            "matched": "exit_ticket",
+            "any_of": [
+              "quiz",
+              "exit_ticket",
+              "worksheet"
+            ]
+          }
+        ],
+        "missing": []
+      },
+      "lessons": {
+        "count": 4,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.781,
+          "s3_curriculum_own": 0.781
+        }
+      },
+      "roles": {
+        "fulfilled": 7,
+        "missing": 0,
+        "systemic_absent": [],
+        "isolated_gaps": [],
+        "isolated_gap_total": 0
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 2,
+        "docs_incomplete": 2,
+        "top_missing_components": [
+          "logistics_materials",
+          "direct_instruction",
+          "reflection_closure"
+        ]
+      },
+      "artifacts": {
+        "count": 22,
+        "gate_pass": 19,
+        "gate_pass_rate": 0.864,
+        "roles": {
+          "exit_ticket": 3,
+          "other": 9,
+          "presentation": 1,
+          "project_work": 5,
+          "rubric": 1,
+          "worksheet": 3
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "f52d1bc1c462",
+            "role": "exit_ticket",
+            "title": "Career Cluster - Exit Ticket Day 2",
+            "missing_required": [
+              "Prompt / question present"
+            ]
+          },
+          {
+            "doc_id": "40c5e0f508f1",
+            "role": "project_work",
+            "title": "Career Cluster Student Feedback- Project",
+            "missing_required": [
+              "Task / deliverable described"
+            ]
+          },
+          {
+            "doc_id": "f1b0566d0274",
+            "role": "rubric",
+            "title": "Career Cluster - Project Rubric",
+            "missing_required": [
+              "Named assessment criteria",
+              "Performance levels / scale"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "career-cluster"
+      }
+    },
+    "career-exploration": {
+      "title": "Career Exploration",
+      "band": "Weak",
+      "completeness": {
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
+        "present": 3,
+        "expected": 3,
+        "components": [
+          {
+            "label": "Teacher plan / notes",
+            "present": true,
+            "matched": "lesson_plan",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Slides / activities",
+            "present": true,
+            "matched": "lesson_content",
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
+            "present": true,
+            "matched": "worksheet",
+            "any_of": [
+              "quiz",
+              "exit_ticket",
+              "worksheet"
+            ]
+          }
+        ],
+        "missing": []
+      },
+      "lessons": {
+        "count": 3,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.333,
+        "mean_coverage": {
+          "s1_completeness": 0.667,
+          "s3_curriculum_own": 0.667
+        }
+      },
+      "roles": {
+        "fulfilled": 3,
+        "missing": 6,
+        "systemic_absent": [
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "exit_ticket",
+            "day_id": "d1"
+          },
+          {
+            "role": "exit_ticket",
+            "day_id": "d2"
+          },
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 4
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 2,
+        "docs_incomplete": 1,
+        "top_missing_components": [
+          "reflection_closure"
+        ]
+      },
+      "artifacts": {
+        "count": 2,
+        "gate_pass": 2,
+        "gate_pass_rate": 1.0,
+        "roles": {
+          "other": 1,
+          "worksheet": 1
+        },
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "career-exploration"
+      }
+    },
+    "dallas-isd": {
+      "title": "Dallas ISD",
+      "band": "Developing",
+      "completeness": {
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
+        "present": 3,
+        "expected": 3,
+        "components": [
+          {
+            "label": "Teacher plan / notes",
+            "present": true,
+            "matched": "lesson_plan",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Slides / activities",
+            "present": true,
+            "matched": "lesson_content",
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
+            "present": true,
+            "matched": "quiz",
+            "any_of": [
+              "quiz",
+              "exit_ticket",
+              "worksheet"
+            ]
+          }
+        ],
+        "missing": []
+      },
+      "lessons": {
+        "count": 2,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.5,
+        "mean_coverage": {
+          "s1_completeness": 0.75,
+          "s3_curriculum_own": 0.75
+        }
+      },
+      "roles": {
+        "fulfilled": 2,
+        "missing": 4,
+        "systemic_absent": [
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "exit_ticket",
+            "day_id": "d1"
+          },
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 3
+      },
+      "pacing": {
+        "planned_days": 1,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 3,
+        "gate_pass": 3,
+        "gate_pass_rate": 1.0,
+        "roles": {
+          "answer_key": 1,
+          "exit_ticket": 1,
+          "quiz": 1
+        },
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "dallas-isd"
+      }
+    },
+    "engineering": {
+      "title": "Engineering",
+      "band": "Developing",
+      "completeness": {
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
+        "present": 3,
+        "expected": 3,
+        "components": [
+          {
+            "label": "Teacher plan / notes",
+            "present": true,
+            "matched": "lesson_plan",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Slides / activities",
+            "present": true,
+            "matched": "lesson_content",
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
+            "present": true,
+            "matched": "quiz",
+            "any_of": [
+              "quiz",
+              "exit_ticket",
+              "worksheet"
+            ]
+          }
+        ],
+        "missing": []
+      },
+      "lessons": {
+        "count": 2,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.5,
+        "mean_coverage": {
+          "s1_completeness": 0.812,
+          "s3_curriculum_own": 0.812
+        }
+      },
+      "roles": {
+        "fulfilled": 2,
+        "missing": 5,
+        "systemic_absent": [
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "exit_ticket",
+            "day_id": "d1"
+          },
+          {
+            "role": "exit_ticket",
+            "day_id": "d2"
+          },
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 3
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 1,
+        "top_missing_components": [
+          "reflection_closure"
+        ]
+      },
+      "artifacts": {
+        "count": 3,
+        "gate_pass": 3,
+        "gate_pass_rate": 1.0,
+        "roles": {
+          "answer_key": 1,
+          "exit_ticket": 1,
+          "quiz": 1
+        },
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "engineering"
+      }
+    },
+    "family-community": {
+      "title": "Family Community",
+      "band": "Weak",
+      "completeness": {
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
+        "present": 2,
+        "expected": 3,
+        "components": [
+          {
+            "label": "Teacher plan / notes",
+            "present": true,
+            "matched": "lesson_plan",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Slides / activities",
+            "present": true,
+            "matched": "lesson_content",
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "quiz",
+              "exit_ticket",
+              "worksheet"
+            ]
+          }
+        ],
+        "missing": [
+          "Check / assessment"
+        ]
+      },
+      "lessons": {
+        "count": 2,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.688,
+          "s3_curriculum_own": 0.688
+        }
+      },
+      "roles": {
+        "fulfilled": 1,
+        "missing": 8,
+        "systemic_absent": [
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "exit_ticket",
+            "day_id": "d1"
+          },
+          {
+            "role": "exit_ticket",
+            "day_id": "d2"
+          },
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 6
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 1,
+        "top_missing_components": [
+          "logistics_materials",
+          "reflection_closure"
+        ]
+      },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "family-community"
+      }
+    },
+    "financial-literacy": {
+      "title": "Financial Literacy",
+      "band": "Unrated",
+      "completeness": {
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
+        "present": 1,
+        "expected": 3,
+        "components": [
+          {
+            "label": "Teacher plan / notes",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Slides / activities",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
+            "present": true,
+            "matched": "exit_ticket",
+            "any_of": [
+              "quiz",
+              "exit_ticket",
+              "worksheet"
+            ]
+          }
+        ],
+        "missing": [
+          "Teacher plan / notes",
+          "Slides / activities"
+        ]
+      },
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 5,
+        "missing": 4,
+        "systemic_absent": [
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 1
+      },
+      "pacing": {
+        "planned_days": 3,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 4,
+        "gate_pass": 4,
+        "gate_pass_rate": 1.0,
+        "roles": {
+          "exit_ticket": 1,
+          "other": 2,
+          "rubric": 1
+        },
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "financial-literacy"
+      }
+    },
+    "health-science": {
+      "title": "Health Science",
+      "band": "Unrated",
+      "completeness": {
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
+        "present": 2,
+        "expected": 3,
+        "components": [
+          {
+            "label": "Teacher plan / notes",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Slides / activities",
+            "present": true,
+            "matched": "lab_activity",
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
+            "present": true,
+            "matched": "exit_ticket",
+            "any_of": [
+              "quiz",
+              "exit_ticket",
+              "worksheet"
+            ]
+          }
+        ],
+        "missing": [
+          "Teacher plan / notes"
+        ]
+      },
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 5,
+        "missing": 6,
+        "systemic_absent": [
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "exit_ticket",
+            "day_id": "d3"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 3
+      },
+      "pacing": {
+        "planned_days": 3,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 1,
+        "top_missing_components": [
+          "reflection_closure"
+        ]
+      },
+      "artifacts": {
+        "count": 5,
+        "gate_pass": 4,
+        "gate_pass_rate": 0.8,
+        "roles": {
+          "exit_ticket": 1,
+          "other": 3,
+          "rubric": 1
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "270bcdd1de81",
+            "role": "rubric",
+            "title": "Health Science - Project Rubric",
+            "missing_required": [
+              "Named assessment criteria",
+              "Performance levels / scale"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "health-science"
+      }
+    },
+    "hospitality-tourism": {
+      "title": "Hospitality Tourism",
+      "band": "Weak",
+      "completeness": {
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
+        "present": 2,
+        "expected": 3,
+        "components": [
+          {
+            "label": "Teacher plan / notes",
+            "present": true,
+            "matched": "lesson_plan",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Slides / activities",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
+            "present": true,
+            "matched": "exit_ticket",
+            "any_of": [
+              "quiz",
+              "exit_ticket",
+              "worksheet"
+            ]
+          }
+        ],
+        "missing": [
+          "Slides / activities"
+        ]
+      },
+      "lessons": {
+        "count": 1,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.75,
+          "s3_curriculum_own": 0.75
+        }
+      },
+      "roles": {
+        "fulfilled": 5,
+        "missing": 4,
+        "systemic_absent": [
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 3
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 5,
+        "gate_pass": 4,
+        "gate_pass_rate": 0.8,
+        "roles": {
+          "exit_ticket": 4,
+          "rubric": 1
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "21d5442f97a2",
+            "role": "rubric",
+            "title": "Hospitality Tourism Travel Agent Presentation Project Rubric",
+            "missing_required": [
+              "Named assessment criteria",
+              "Performance levels / scale"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "hospitality-tourism"
+      }
+    },
+    "information-technology": {
+      "title": "Information Technology",
+      "band": "Unrated",
+      "completeness": {
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
+        "present": 1,
+        "expected": 3,
+        "components": [
+          {
+            "label": "Teacher plan / notes",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Slides / activities",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
+            "present": true,
+            "matched": "exit_ticket",
+            "any_of": [
+              "quiz",
+              "exit_ticket",
+              "worksheet"
+            ]
+          }
+        ],
+        "missing": [
+          "Teacher plan / notes",
+          "Slides / activities"
+        ]
+      },
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 4,
+        "missing": 7,
+        "systemic_absent": [
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "exit_ticket",
+            "day_id": "d3"
+          },
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 4
+      },
+      "pacing": {
+        "planned_days": 3,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 1,
+        "top_missing_components": [
+          "logistics_materials"
+        ]
+      },
+      "artifacts": {
+        "count": 4,
+        "gate_pass": 3,
+        "gate_pass_rate": 0.75,
+        "roles": {
+          "exit_ticket": 1,
+          "other": 2,
+          "rubric": 1
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "6c94424ba260",
+            "role": "rubric",
+            "title": "Information Technology - Project Rubric",
+            "missing_required": [
+              "Performance levels / scale"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "information-technology"
+      }
+    },
+    "law-and-public-service": {
+      "title": "Law and Public Service",
+      "band": "Strong",
+      "completeness": {
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
+        "present": 2,
+        "expected": 3,
+        "components": [
+          {
+            "label": "Teacher plan / notes",
+            "present": true,
+            "matched": "lesson_plan",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Slides / activities",
+            "present": true,
+            "matched": "lesson_content",
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "quiz",
+              "exit_ticket",
+              "worksheet"
+            ]
+          }
+        ],
+        "missing": [
+          "Check / assessment"
+        ]
+      },
+      "lessons": {
+        "count": 4,
+        "gate_pass": 3,
+        "gate_pass_rate": 0.75,
+        "mean_coverage": {
+          "s1_completeness": 0.812,
+          "s3_curriculum_own": 0.812
+        }
+      },
+      "roles": {
+        "fulfilled": 1,
+        "missing": 7,
+        "systemic_absent": [
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "exit_ticket",
+            "day_id": "d1"
+          },
+          {
+            "role": "exit_ticket",
+            "day_id": "d2"
+          },
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 5
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 1,
+        "gate_pass": 1,
+        "gate_pass_rate": 1.0,
+        "roles": {
+          "other": 1
+        },
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "law-and-public-service"
+      }
+    },
+    "manufacturing": {
+      "title": "Manufacturing",
+      "band": "Weak",
+      "completeness": {
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
+        "present": 3,
+        "expected": 3,
+        "components": [
+          {
+            "label": "Teacher plan / notes",
+            "present": true,
+            "matched": "lesson_plan",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Slides / activities",
+            "present": true,
+            "matched": "lesson_content",
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
+            "present": true,
+            "matched": "quiz",
+            "any_of": [
+              "quiz",
+              "exit_ticket",
+              "worksheet"
+            ]
+          }
+        ],
+        "missing": []
+      },
+      "lessons": {
+        "count": 2,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.875,
+          "s3_curriculum_own": 0.875
+        }
+      },
+      "roles": {
+        "fulfilled": 2,
+        "missing": 5,
+        "systemic_absent": [
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "exit_ticket",
+            "day_id": "d1"
+          },
+          {
+            "role": "exit_ticket",
+            "day_id": "d2"
+          },
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 3
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 1,
+        "top_missing_components": [
+          "direct_instruction"
+        ]
+      },
+      "artifacts": {
+        "count": 3,
+        "gate_pass": 3,
+        "gate_pass_rate": 1.0,
+        "roles": {
+          "answer_key": 1,
+          "exit_ticket": 1,
+          "quiz": 1
+        },
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "manufacturing"
+      }
+    },
+    "professional-preparedness": {
+      "title": "Professional Preparedness",
+      "band": "Developing",
+      "completeness": {
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
+        "present": 3,
+        "expected": 3,
+        "components": [
+          {
+            "label": "Teacher plan / notes",
+            "present": true,
+            "matched": "lesson_plan",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Slides / activities",
+            "present": true,
+            "matched": "lesson_content",
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
+            "present": true,
+            "matched": "exit_ticket",
+            "any_of": [
+              "quiz",
+              "exit_ticket",
+              "worksheet"
+            ]
+          }
+        ],
+        "missing": []
+      },
+      "lessons": {
+        "count": 3,
+        "gate_pass": 2,
+        "gate_pass_rate": 0.667,
+        "mean_coverage": {
+          "s1_completeness": 0.875,
+          "s3_curriculum_own": 0.875
+        }
+      },
+      "roles": {
+        "fulfilled": 5,
+        "missing": 4,
+        "systemic_absent": [
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 2
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 2,
+        "docs_incomplete": 2,
+        "top_missing_components": [
+          "reflection_closure",
+          "logistics_materials"
+        ]
+      },
+      "artifacts": {
+        "count": 9,
+        "gate_pass": 7,
+        "gate_pass_rate": 0.778,
+        "roles": {
+          "exit_ticket": 3,
+          "other": 5,
+          "rubric": 1
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "82b84c676dfd",
+            "role": "other",
+            "title": "Professional Attire Answers",
+            "missing_required": [
+              "Has extractable instructional content"
+            ]
+          },
+          {
+            "doc_id": "4092c72a851c",
+            "role": "rubric",
+            "title": "Professional Preparedness - Project Rubric",
+            "missing_required": [
+              "Named assessment criteria",
+              "Performance levels / scale"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "professional-preparedness"
+      }
+    },
+    "teaching-and-training": {
+      "title": "Teaching and Training",
+      "band": "Weak",
+      "completeness": {
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
+        "present": 1,
+        "expected": 3,
+        "components": [
+          {
+            "label": "Teacher plan / notes",
+            "present": true,
+            "matched": "lesson_plan",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Slides / activities",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "quiz",
+              "exit_ticket",
+              "worksheet"
+            ]
+          }
+        ],
+        "missing": [
+          "Slides / activities",
+          "Check / assessment"
+        ]
+      },
+      "lessons": {
+        "count": 1,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.75,
+          "s3_curriculum_own": 0.75
+        }
+      },
+      "roles": {
+        "fulfilled": 2,
+        "missing": 7,
+        "systemic_absent": [
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "exit_ticket",
+            "day_id": "d1"
+          },
+          {
+            "role": "exit_ticket",
+            "day_id": "d2"
+          },
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "worksheet",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 5
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 1,
+        "top_missing_components": [
+          "logistics_materials",
+          "reflection_closure"
+        ]
+      },
+      "artifacts": {
+        "count": 2,
+        "gate_pass": 2,
+        "gate_pass_rate": 1.0,
+        "roles": {
+          "other": 2
+        },
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "teaching-and-training"
+      }
+    },
+    "transportation-distribution": {
+      "title": "Transportation Distribution",
+      "band": "Developing",
+      "completeness": {
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
+        "present": 3,
+        "expected": 3,
+        "components": [
+          {
+            "label": "Teacher plan / notes",
+            "present": true,
+            "matched": "lesson_plan",
+            "any_of": [
+              "lesson_plan",
+              "lesson_content",
+              "teacher_edition_multi_lesson"
+            ]
+          },
+          {
+            "label": "Slides / activities",
+            "present": true,
+            "matched": "lesson_content",
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
+            "present": true,
+            "matched": "worksheet",
+            "any_of": [
+              "quiz",
+              "exit_ticket",
+              "worksheet"
+            ]
+          }
+        ],
+        "missing": []
+      },
+      "lessons": {
+        "count": 2,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.5,
+        "mean_coverage": {
+          "s1_completeness": 0.688,
+          "s3_curriculum_own": 0.688
+        }
+      },
+      "roles": {
+        "fulfilled": 2,
+        "missing": 7,
+        "systemic_absent": [
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "exit_ticket",
+            "day_id": "d1"
+          },
+          {
+            "role": "exit_ticket",
+            "day_id": "d2"
+          },
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "answer_key",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 5
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 2,
+        "gate_pass": 2,
+        "gate_pass_rate": 1.0,
+        "roles": {
+          "answer_key": 1,
+          "worksheet": 1
+        },
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "transportation-distribution"
+      }
+    }
+  }
+}

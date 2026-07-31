@@ -1,0 +1,15 @@
+unit_id: dallas-isd
+title: Dallas ISD
+unit_length_days: 1
+days:
+- id: d1
+  label: Day 1
+  expected:
+  - lesson_content
+  - exit_ticket
+unit_supporting:
+- lesson_plan
+- quiz
+- answer_key
+- rubric
+- worksheet

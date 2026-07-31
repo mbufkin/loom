@@ -1,0 +1,22 @@
+# NVIDIA NIM hosted API (build.nvidia.com free tier, ~40 RPM).
+#   cp config.nvidia.example.yaml config.nvidia.yaml
+#   export NVIDIA_API_KEY=nvapi-...
+#   LOOM_CONFIG=config.nvidia.yaml python3 experiments/zen_smoke.py
+
+models:
+  analyst_url: "https://integrate.api.nvidia.com/v1/chat/completions"
+  verifier_url: "https://integrate.api.nvidia.com/v1/chat/completions"
+  # Pick any chat model id from https://build.nvidia.com / the NIM catalog.
+  analyst_model: "nvidia/nemotron-3-nano-30b-a3b"
+  verifier_model: "nvidia/nemotron-3-nano-30b-a3b"
+  timeout_seconds: 300
+  api_key_env: "NVIDIA_API_KEY"
+  send_repeat_penalty: false
+  max_rpm: 35
+
+paths:
+  base_dir: "/home/lenovo/g10-control-center-loom"
+  default_sources_dir: "/home/lenovo/g10-control-center-loom/data/career-curriculum/osint"
+
+policy:
+  auditor_only: true

@@ -1,0 +1,37 @@
+# Loom unknown/weak-type feedback — read when growing new paths
+
+- doc_id: "LESSON-01-VERY-HIGH-QUALITY.md"
+  doc_type: "other"
+  suggested_pattern: "Consider a dedicated workflow for type 'other' (currently Path C best-effort)."
+  reason: "no dedicated pass for type 'other' (Path C best-effort)"
+  logged_at: "2026-07-30T22:36:47.174373+00:00"
+
+- doc_id: "LESSON-02-VERY-HIGH-QUALITY.md"
+  doc_type: "other"
+  suggested_pattern: "Consider a dedicated workflow for type 'other' (currently Path C best-effort)."
+  reason: "no dedicated pass for type 'other' (Path C best-effort)"
+  logged_at: "2026-07-30T22:36:47.174373+00:00"
+
+- doc_id: "LESSON-03-VERY-HIGH-QUALITY.md"
+  doc_type: "other"
+  suggested_pattern: "Consider a dedicated workflow for type 'other' (currently Path C best-effort)."
+  reason: "no dedicated pass for type 'other' (Path C best-effort)"
+  logged_at: "2026-07-30T22:36:47.174373+00:00"
+
+- doc_id: "LESSON-04-MEDIUM-QUALITY.md"
+  doc_type: "other"
+  suggested_pattern: "Consider a dedicated workflow for type 'other' (currently Path C best-effort)."
+  reason: "no dedicated pass for type 'other' (Path C best-effort)"
+  logged_at: "2026-07-30T22:36:47.174373+00:00"
+
+- doc_id: "LESSON-05-BAD-QUALITY.md"
+  doc_type: "other"
+  suggested_pattern: "Consider a dedicated workflow for type 'other' (currently Path C best-effort)."
+  reason: "no dedicated pass for type 'other' (Path C best-effort)"
+  logged_at: "2026-07-30T22:36:47.174373+00:00"
+
+- doc_id: "UNIT-OVERVIEW.md"
+  doc_type: "other"
+  suggested_pattern: "Consider a dedicated workflow for type 'other' (currently Path C best-effort)."
+  reason: "no dedicated pass for type 'other' (Path C best-effort)"
+  logged_at: "2026-07-30T22:36:47.174373+00:00"

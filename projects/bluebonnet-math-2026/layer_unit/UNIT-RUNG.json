@@ -2,16 +2,14 @@
   "project_id": "bluebonnet-math-2026",
   "gate_scorer": "s1_completeness",
   "packet_type": {
-    "id": "full_curriculum",
-    "label": "Full curriculum",
-    "short": "FULL CURRIC",
-    "description": "A complete published packet: lesson plans PLUS the assessments, keys, and supporting materials a teacher would expect to receive in a finished course.",
+    "id": "teacher_edition",
+    "label": "Teacher Edition",
+    "short": "TEACHER ED",
+    "description": "Teacher-facing materials that carry what the teacher needs to run the lesson \u2014 typically notes/plan, slides or activities, and some check for understanding. Not expected to ship a full student edition or answer keys.",
     "expected_components": [
-      "Lesson plan",
-      "Assessment",
-      "Answer key",
-      "Rubric",
-      "Practice / worksheet"
+      "Teacher plan / notes",
+      "Slides / activities",
+      "Check / assessment"
     ]
   },
   "summary": {
@@ -27,14 +25,14 @@
       "title": "Algebra I \u2014 Module 1",
       "band": "Strong",
       "completeness": {
-        "packet_type": "full_curriculum",
-        "label": "Full curriculum",
-        "short": "FULL CURRIC",
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
         "present": 1,
-        "expected": 5,
+        "expected": 3,
         "components": [
           {
-            "label": "Lesson plan",
+            "label": "Teacher plan / notes",
             "present": true,
             "matched": "teacher_edition_multi_lesson",
             "any_of": [
@@ -44,46 +42,32 @@
             ]
           },
           {
-            "label": "Assessment",
+            "label": "Slides / activities",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
             "present": false,
             "matched": null,
             "any_of": [
               "quiz",
-              "exit_ticket"
-            ]
-          },
-          {
-            "label": "Answer key",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "answer_key"
-            ]
-          },
-          {
-            "label": "Rubric",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "rubric"
-            ]
-          },
-          {
-            "label": "Practice / worksheet",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "worksheet",
-              "project_work",
-              "lab_activity"
+              "exit_ticket",
+              "worksheet"
             ]
           }
         ],
         "missing": [
-          "Assessment",
-          "Answer key",
-          "Rubric",
-          "Practice / worksheet"
+          "Slides / activities",
+          "Check / assessment"
         ]
       },
       "lessons": {
@@ -141,14 +125,14 @@
       "title": "Algebra I \u2014 Module 2",
       "band": "Strong",
       "completeness": {
-        "packet_type": "full_curriculum",
-        "label": "Full curriculum",
-        "short": "FULL CURRIC",
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
         "present": 1,
-        "expected": 5,
+        "expected": 3,
         "components": [
           {
-            "label": "Lesson plan",
+            "label": "Teacher plan / notes",
             "present": true,
             "matched": "teacher_edition_multi_lesson",
             "any_of": [
@@ -158,46 +142,32 @@
             ]
           },
           {
-            "label": "Assessment",
+            "label": "Slides / activities",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
             "present": false,
             "matched": null,
             "any_of": [
               "quiz",
-              "exit_ticket"
-            ]
-          },
-          {
-            "label": "Answer key",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "answer_key"
-            ]
-          },
-          {
-            "label": "Rubric",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "rubric"
-            ]
-          },
-          {
-            "label": "Practice / worksheet",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "worksheet",
-              "project_work",
-              "lab_activity"
+              "exit_ticket",
+              "worksheet"
             ]
           }
         ],
         "missing": [
-          "Assessment",
-          "Answer key",
-          "Rubric",
-          "Practice / worksheet"
+          "Slides / activities",
+          "Check / assessment"
         ]
       },
       "lessons": {
@@ -255,14 +225,14 @@
       "title": "Algebra I \u2014 Module 3",
       "band": "Developing",
       "completeness": {
-        "packet_type": "full_curriculum",
-        "label": "Full curriculum",
-        "short": "FULL CURRIC",
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
         "present": 1,
-        "expected": 5,
+        "expected": 3,
         "components": [
           {
-            "label": "Lesson plan",
+            "label": "Teacher plan / notes",
             "present": true,
             "matched": "teacher_edition_multi_lesson",
             "any_of": [
@@ -272,46 +242,32 @@
             ]
           },
           {
-            "label": "Assessment",
+            "label": "Slides / activities",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
             "present": false,
             "matched": null,
             "any_of": [
               "quiz",
-              "exit_ticket"
-            ]
-          },
-          {
-            "label": "Answer key",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "answer_key"
-            ]
-          },
-          {
-            "label": "Rubric",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "rubric"
-            ]
-          },
-          {
-            "label": "Practice / worksheet",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "worksheet",
-              "project_work",
-              "lab_activity"
+              "exit_ticket",
+              "worksheet"
             ]
           }
         ],
         "missing": [
-          "Assessment",
-          "Answer key",
-          "Rubric",
-          "Practice / worksheet"
+          "Slides / activities",
+          "Check / assessment"
         ]
       },
       "lessons": {
@@ -369,14 +325,14 @@
       "title": "Algebra I \u2014 Module 4",
       "band": "Strong",
       "completeness": {
-        "packet_type": "full_curriculum",
-        "label": "Full curriculum",
-        "short": "FULL CURRIC",
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
         "present": 1,
-        "expected": 5,
+        "expected": 3,
         "components": [
           {
-            "label": "Lesson plan",
+            "label": "Teacher plan / notes",
             "present": true,
             "matched": "teacher_edition_multi_lesson",
             "any_of": [
@@ -386,46 +342,32 @@
             ]
           },
           {
-            "label": "Assessment",
+            "label": "Slides / activities",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
             "present": false,
             "matched": null,
             "any_of": [
               "quiz",
-              "exit_ticket"
-            ]
-          },
-          {
-            "label": "Answer key",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "answer_key"
-            ]
-          },
-          {
-            "label": "Rubric",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "rubric"
-            ]
-          },
-          {
-            "label": "Practice / worksheet",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "worksheet",
-              "project_work",
-              "lab_activity"
+              "exit_ticket",
+              "worksheet"
             ]
           }
         ],
         "missing": [
-          "Assessment",
-          "Answer key",
-          "Rubric",
-          "Practice / worksheet"
+          "Slides / activities",
+          "Check / assessment"
         ]
       },
       "lessons": {
@@ -483,14 +425,14 @@
       "title": "Algebra I \u2014 Module 5",
       "band": "Strong",
       "completeness": {
-        "packet_type": "full_curriculum",
-        "label": "Full curriculum",
-        "short": "FULL CURRIC",
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
         "present": 1,
-        "expected": 5,
+        "expected": 3,
         "components": [
           {
-            "label": "Lesson plan",
+            "label": "Teacher plan / notes",
             "present": true,
             "matched": "teacher_edition_multi_lesson",
             "any_of": [
@@ -500,46 +442,32 @@
             ]
           },
           {
-            "label": "Assessment",
+            "label": "Slides / activities",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
             "present": false,
             "matched": null,
             "any_of": [
               "quiz",
-              "exit_ticket"
-            ]
-          },
-          {
-            "label": "Answer key",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "answer_key"
-            ]
-          },
-          {
-            "label": "Rubric",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "rubric"
-            ]
-          },
-          {
-            "label": "Practice / worksheet",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "worksheet",
-              "project_work",
-              "lab_activity"
+              "exit_ticket",
+              "worksheet"
             ]
           }
         ],
         "missing": [
-          "Assessment",
-          "Answer key",
-          "Rubric",
-          "Practice / worksheet"
+          "Slides / activities",
+          "Check / assessment"
         ]
       },
       "lessons": {
@@ -597,14 +525,14 @@
       "title": "Algebra I \u2014 program guides",
       "band": "Strong",
       "completeness": {
-        "packet_type": "full_curriculum",
-        "label": "Full curriculum",
-        "short": "FULL CURRIC",
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
         "present": 1,
-        "expected": 5,
+        "expected": 3,
         "components": [
           {
-            "label": "Lesson plan",
+            "label": "Teacher plan / notes",
             "present": true,
             "matched": "teacher_edition_multi_lesson",
             "any_of": [
@@ -614,46 +542,32 @@
             ]
           },
           {
-            "label": "Assessment",
+            "label": "Slides / activities",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
             "present": false,
             "matched": null,
             "any_of": [
               "quiz",
-              "exit_ticket"
-            ]
-          },
-          {
-            "label": "Answer key",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "answer_key"
-            ]
-          },
-          {
-            "label": "Rubric",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "rubric"
-            ]
-          },
-          {
-            "label": "Practice / worksheet",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "worksheet",
-              "project_work",
-              "lab_activity"
+              "exit_ticket",
+              "worksheet"
             ]
           }
         ],
         "missing": [
-          "Assessment",
-          "Answer key",
-          "Rubric",
-          "Practice / worksheet"
+          "Slides / activities",
+          "Check / assessment"
         ]
       },
       "lessons": {
@@ -715,14 +629,14 @@
       "title": "(unlinked)",
       "band": "Unrated",
       "completeness": {
-        "packet_type": "full_curriculum",
-        "label": "Full curriculum",
-        "short": "FULL CURRIC",
+        "packet_type": "teacher_edition",
+        "label": "Teacher Edition",
+        "short": "TEACHER ED",
         "present": 1,
-        "expected": 5,
+        "expected": 3,
         "components": [
           {
-            "label": "Lesson plan",
+            "label": "Teacher plan / notes",
             "present": true,
             "matched": "teacher_edition_multi_lesson",
             "any_of": [
@@ -732,46 +646,32 @@
             ]
           },
           {
-            "label": "Assessment",
+            "label": "Slides / activities",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "lesson_content",
+              "presentation",
+              "game_activity",
+              "lab_activity",
+              "project_work",
+              "worksheet"
+            ]
+          },
+          {
+            "label": "Check / assessment",
             "present": false,
             "matched": null,
             "any_of": [
               "quiz",
-              "exit_ticket"
-            ]
-          },
-          {
-            "label": "Answer key",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "answer_key"
-            ]
-          },
-          {
-            "label": "Rubric",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "rubric"
-            ]
-          },
-          {
-            "label": "Practice / worksheet",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "worksheet",
-              "project_work",
-              "lab_activity"
+              "exit_ticket",
+              "worksheet"
             ]
           }
         ],
         "missing": [
-          "Assessment",
-          "Answer key",
-          "Rubric",
-          "Practice / worksheet"
+          "Slides / activities",
+          "Check / assessment"
         ]
       },
       "lessons": {

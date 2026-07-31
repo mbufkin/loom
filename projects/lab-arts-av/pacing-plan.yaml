@@ -1,0 +1,65 @@
+project_id: lab-arts-av
+school_year: 2026-2027
+district: Dallas Independent School District
+source: inferred_from_documents
+disclaimer: Inferred projected map — reconstructed from available documents. Not official
+  district curriculum. Does not replace missing lesson materials.
+source_school_calendar: school-calendar.yaml
+generated_at: '2026-07-23T14:12:10Z'
+generated_by: rollup.py
+mode: dated
+summary:
+  units_total: 1
+  units_placed: 1
+  units_unplaced: 0
+  instructional_days_available: 175
+  instructional_days_consumed: 2
+  instructional_days_remaining: 173
+year_at_a_glance:
+  grading_period_columns:
+  - id: fall-1
+    label: Fall — Nine Weeks 1
+    begin: '2026-08-11'
+    end: '2026-10-07'
+    unit_ids:
+    - arts-av-technology
+    unit_count: 1
+  - id: fall-2
+    label: Fall — Nine Weeks 2
+    begin: '2026-10-13'
+    end: '2026-12-18'
+    unit_ids: []
+    unit_count: 0
+  - id: spring-1
+    label: Spring — Nine Weeks 3
+    begin: '2027-01-06'
+    end: '2027-03-12'
+    unit_ids: []
+    unit_count: 0
+  - id: spring-2
+    label: Spring — Nine Weeks 4
+    begin: '2027-03-22'
+    end: '2027-05-26'
+    unit_ids: []
+    unit_count: 0
+  unit_rows:
+  - unit_id: arts-av-technology
+    title: Arts AV Technology
+    start_date: '2026-08-11'
+    end_date: '2026-08-12'
+    unit_length_days: 2
+    grading_periods_spanned:
+    - fall-1
+units:
+- unit_id: arts-av-technology
+  title: Arts AV Technology
+  calendar: units/arts-av-technology/calendar.yaml
+  unit_length_days: 2
+  source: inferred_from_documents
+  day_map:
+    d1: '2026-08-11'
+    d2: '2026-08-12'
+  start_date: '2026-08-11'
+  end_date: '2026-08-12'
+  grading_period_id: fall-1
+warnings: []

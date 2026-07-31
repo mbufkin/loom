@@ -1,0 +1,2383 @@
+{
+  "project_id": "lab-dallas-career",
+  "workflow_id": "general",
+  "path": "C",
+  "status": "reviewed",
+  "doc_ids": [
+    "0a62e0b9729e",
+    "0cbd06c7c769",
+    "0ffb85afd0ce",
+    "1f0eda900bc5",
+    "21d5442f97a2",
+    "270bcdd1de81",
+    "28552acaae5a",
+    "29140bd6d6f7",
+    "2fc999f5e539",
+    "3369ae8b55a4",
+    "3e56e33fe53c",
+    "4092c72a851c",
+    "40c5e0f508f1",
+    "468be78c578b",
+    "54aff8cc2360",
+    "56bd08f50ac3",
+    "5f0cb47fe1b1",
+    "6880e9ded029",
+    "6c94424ba260",
+    "724f41bf2711",
+    "769516e58fb5",
+    "7896317a42cd",
+    "794d51da5629",
+    "7f0dd1599900",
+    "80f37e7b5807",
+    "82b84c676dfd",
+    "851a02b17dc9",
+    "854451cbcfc5",
+    "8891b46563ae",
+    "8efd6fc31270",
+    "98ed44c5b0af",
+    "a8248438c079",
+    "a8e8847a5886",
+    "addfb0873806",
+    "af9cf3b04474",
+    "b5e36486805a",
+    "cd8f3755cf17",
+    "d50f42a8f21e",
+    "d9f8e87d0486",
+    "e2485fe0a73f",
+    "e2f014fb5b00",
+    "e31064aba3ae",
+    "e7b2a411cbdc",
+    "e82d217defad",
+    "ea032c71918c",
+    "f1b0566d0274",
+    "f9710e5e4e97",
+    "ff5244c8fa47"
+  ],
+  "summary": {
+    "doc_count": 48,
+    "reviewed": 47,
+    "gate_pass": 37,
+    "nursery": 26
+  },
+  "inventory": [
+    {
+      "doc_id": "0a62e0b9729e",
+      "doc_type": "project_work",
+      "role": "project_work",
+      "unit_id": "arts-av-technology",
+      "title": "Arts A V Student Notes",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_task",
+            "label": "Task / deliverable described",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "0a62e0b9729e-e1",
+                "excerpt": "Arts, A/V Technology and Communication\nSlideshow Notes\nFollow the teachers slideshow and answer the questions or fill in the blank."
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_directions",
+            "label": "Directions / requirements",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "0a62e0b9729e-e1",
+                "excerpt": "Arts, A/V Technology and Communication\nSlideshow Notes\nFollow the teachers slideshow and answer the questions or fill in the blank."
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "OK",
+        "feedback": false,
+        "note": ""
+      }
+    },
+    {
+      "doc_id": "0cbd06c7c769",
+      "doc_type": "rubric",
+      "role": "rubric",
+      "unit_id": "arts-av-technology",
+      "title": "Arts AV Technology Communication Flyer Project Rubric",
+      "presence": {
+        "gate_pass": false,
+        "coverage": 0.0,
+        "missing_required": [
+          "Named assessment criteria",
+          "Performance levels / scale"
+        ],
+        "criteria": [
+          {
+            "criterion_id": "has_criteria",
+            "label": "Named assessment criteria",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_levels",
+            "label": "Performance levels / scale",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
+      "C1": {
+        "status": "PARTIAL_OR_MISSING",
+        "missing_required": [
+          "Named assessment criteria",
+          "Performance levels / scale"
+        ]
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "OK",
+        "feedback": false,
+        "note": ""
+      }
+    },
+    {
+      "doc_id": "0ffb85afd0ce",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "information-technology",
+      "title": "Information Technology",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "0ffb85afd0ce-e1",
+                "excerpt": "Information Technology"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "1f0eda900bc5",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "career-exploration",
+      "title": "Culinary-Career-Exploration-curriculum-free-asset",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "1f0eda900bc5-chunk1of2-e1",
+                "excerpt": "Rea lityworks®            www.rea lityworks.com                       1\n\n\nLesson – Careers in Hospitality & Tourism\nRestaurants & Food/Beverage Services\nLesson Objectives\nAfter completing this lesson, participants will be able to:\n• Identify career opportunities relating to Restaurants & Food/Beverage Services\n• Articulate the educational requirements, typical job duties, occupational outlook, and"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "21d5442f97a2",
+      "doc_type": "rubric",
+      "role": "rubric",
+      "unit_id": "hospitality-tourism",
+      "title": "Hospitality Tourism Travel Agent Presentation Project Rubric",
+      "presence": {
+        "gate_pass": false,
+        "coverage": 0.0,
+        "missing_required": [
+          "Named assessment criteria",
+          "Performance levels / scale"
+        ],
+        "criteria": [
+          {
+            "criterion_id": "has_criteria",
+            "label": "Named assessment criteria",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_levels",
+            "label": "Performance levels / scale",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
+      "C1": {
+        "status": "PARTIAL_OR_MISSING",
+        "missing_required": [
+          "Named assessment criteria",
+          "Performance levels / scale"
+        ]
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "OK",
+        "feedback": false,
+        "note": ""
+      }
+    },
+    {
+      "doc_id": "270bcdd1de81",
+      "doc_type": "rubric",
+      "role": "rubric",
+      "unit_id": "health-science",
+      "title": "Health Science - Project Rubric",
+      "presence": {
+        "gate_pass": false,
+        "coverage": 0.0,
+        "missing_required": [
+          "Named assessment criteria",
+          "Performance levels / scale"
+        ],
+        "criteria": [
+          {
+            "criterion_id": "has_criteria",
+            "label": "Named assessment criteria",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_levels",
+            "label": "Performance levels / scale",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
+      "C1": {
+        "status": "PARTIAL_OR_MISSING",
+        "missing_required": [
+          "Named assessment criteria",
+          "Performance levels / scale"
+        ]
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "OK",
+        "feedback": false,
+        "note": ""
+      }
+    },
+    {
+      "doc_id": "28552acaae5a",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "career-cluster",
+      "title": "Pricing a product with example and instructions",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "28552acaae5a-e1",
+                "excerpt": "INSTRUCTIONS:\nUsing the following handout, students will determine the cost of making one product and setting their sales price. After they create their list of items needed, they will look up online how much they can buy them for. (search as “wholesale price for ______) If they cannot find it they can use retail but marking up an already marked up price will cause their product to be unnecessaril"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "29140bd6d6f7",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "teaching-and-training",
+      "title": "Teaching and Training Education and Training",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "29140bd6d6f7-e1",
+                "excerpt": "Exploring Careers: Teaching & Training Pathway\n\nDay 1"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "2fc999f5e539",
+      "doc_type": "worksheet",
+      "role": "worksheet",
+      "unit_id": "career-cluster",
+      "title": "Students Worksheet",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 0.5,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_tasks",
+            "label": "Practice tasks / problems present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "2fc999f5e539-e1",
+                "excerpt": "Paper airplane launcher\nTeam name:\nDate:\nRecord how far your airplane flew. As a scientific please state the measurement units."
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_directions",
+            "label": "Directions",
+            "scoring": "presence",
+            "verdict": "PARTIAL",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "2fc999f5e539-e3",
+                "excerpt": "Please draw the best airplane design. Include instructions on how to build your airplane and a list of materials BOM (bill of Materials)."
+              }
+            ],
+            "note": "keyword match only; no element tagged with the expected type"
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "OK",
+        "feedback": false,
+        "note": ""
+      }
+    },
+    {
+      "doc_id": "3369ae8b55a4",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "teaching-and-training",
+      "title": "Teaching and Training Education and Training 1",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "3369ae8b55a4-e1",
+                "excerpt": "The Teaching and Training program of study prepares CTE learners for careers related to teaching, instruction, and creation of instructional and enrichment materials.\n\nThe program of study introduces CTE learners to a wide variety of student groups and their corresponding needs. It familiarizes them with the processes for developing curriculum, coordinating educational content, and coaching groups"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "3e56e33fe53c",
+      "doc_type": "game_activity",
+      "role": "other",
+      "unit_id": "career-cluster",
+      "title": "Career Cluster Bingo Large",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "3e56e33fe53c-e1",
+                "excerpt": "Career Cluster Bingo\nmyfreebingocards.com\nSafety First!\nBefore you print all your bingo cards, please print a test page to check they come out the right size and color.\nYour bingo cards start on Page 3 of this PDF.\nIf your bingo cards have words then please check the spelling carefully.\nIf you need to make any changes go to mfbc.us/e/ek36vp2\nPlay\nOnce you've checked they are printing correctly, pr"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "4092c72a851c",
+      "doc_type": "rubric",
+      "role": "rubric",
+      "unit_id": "professional-preparedness",
+      "title": "Professional Preparedness - Project Rubric",
+      "presence": {
+        "gate_pass": false,
+        "coverage": 0.0,
+        "missing_required": [
+          "Named assessment criteria",
+          "Performance levels / scale"
+        ],
+        "criteria": [
+          {
+            "criterion_id": "has_criteria",
+            "label": "Named assessment criteria",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_levels",
+            "label": "Performance levels / scale",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
+      "C1": {
+        "status": "PARTIAL_OR_MISSING",
+        "missing_required": [
+          "Named assessment criteria",
+          "Performance levels / scale"
+        ]
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "OK",
+        "feedback": false,
+        "note": ""
+      }
+    },
+    {
+      "doc_id": "40c5e0f508f1",
+      "doc_type": "project_work",
+      "role": "project_work",
+      "unit_id": "career-cluster",
+      "title": "Career Cluster Student Feedback- Project",
+      "presence": {
+        "gate_pass": false,
+        "coverage": 0.0,
+        "missing_required": [
+          "Task / deliverable described"
+        ],
+        "criteria": [
+          {
+            "criterion_id": "has_task",
+            "label": "Task / deliverable described",
+            "scoring": "presence",
+            "verdict": "PARTIAL",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "40c5e0f508f1-e1",
+                "excerpt": "Student Feedback - Career Cluster  Poster Project\nListen and evaluate the other groups. Check “Yes” or “No” if the criteria was met in each category.\n\n\nGROUP MEMBERS:  ________________________________________________________________\n\n\t\t          ________________________________________________________________"
+              }
+            ],
+            "note": "keyword match only; no element tagged with the expected type"
+          },
+          {
+            "criterion_id": "has_directions",
+            "label": "Directions / requirements",
+            "scoring": "presence",
+            "verdict": "PARTIAL",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "40c5e0f508f1-e1",
+                "excerpt": "Student Feedback - Career Cluster  Poster Project\nListen and evaluate the other groups. Check “Yes” or “No” if the criteria was met in each category.\n\n\nGROUP MEMBERS:  ________________________________________________________________\n\n\t\t          ________________________________________________________________"
+              }
+            ],
+            "note": "keyword match only; no element tagged with the expected type"
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
+      "C1": {
+        "status": "PARTIAL_OR_MISSING",
+        "missing_required": [
+          "Task / deliverable described"
+        ]
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "OK",
+        "feedback": false,
+        "note": ""
+      }
+    },
+    {
+      "doc_id": "468be78c578b",
+      "doc_type": "lab_activity",
+      "role": "other",
+      "unit_id": "health-science",
+      "title": "Vital Signs Lab Activity",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "468be78c578b-e1",
+                "excerpt": "Students will practice taking vital signs on their group members.\n\nClassmate #1: (Do not write the name of the student)\nPulse\nRespiratory Rate\nTemperature\n\nClassmate #2: (Do not write the name of the student)\nPulse\nRespiratory Rate\nTemperature\n\nClassmate #3: (Do not write the name of the student)\nPulse\nRespiratory Rate\nTemperature\nAFTER PHYSICAL ACTIVITY\nClassmate #1: (Do not write the name of the"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "54aff8cc2360",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "financial-literacy",
+      "title": "Financial Literacy",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "54aff8cc2360-e1",
+                "excerpt": "Financial Literacy\n\nDay 1\n\nDay 1"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "56bd08f50ac3",
+      "doc_type": "project_work",
+      "role": "project_work",
+      "unit_id": "career-cluster",
+      "title": "Commercial Script Example",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_task",
+            "label": "Task / deliverable described",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "56bd08f50ac3-e1",
+                "excerpt": "Commercial Script Example\n\nThis is meant to be a template. All the steps can be rearranged in any order to send a message.\n\n\nStep 1: Say the Problem\n“Have you noticed that in this community we have a big problem with _______________ (community problem)”.\n\nStep 2: Give Example of Problem\nWrite down dialogue giving an example of the problem. Maybe a skit of people not being able to purchase new clot"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_directions",
+            "label": "Directions / requirements",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "56bd08f50ac3-e1",
+                "excerpt": "Commercial Script Example\n\nThis is meant to be a template. All the steps can be rearranged in any order to send a message.\n\n\nStep 1: Say the Problem\n“Have you noticed that in this community we have a big problem with _______________ (community problem)”.\n\nStep 2: Give Example of Problem\nWrite down dialogue giving an example of the problem. Maybe a skit of people not being able to purchase new clot"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "OK",
+        "feedback": false,
+        "note": ""
+      }
+    },
+    {
+      "doc_id": "5f0cb47fe1b1",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "professional-preparedness",
+      "title": "Interviewing Role Play Scripts",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "5f0cb47fe1b1-e1",
+                "excerpt": "Interviewing Role Play Scripts\n1). Title: Interviewing for a Summer Camp Counselor Position\nCharacters:\nInterviewer (INT): Represents the summer camp director or hiring manager.\nApplicant (APP): Represents the middle school student interviewing for the camp counselor position.\nScript:\nINT: Welcome, [Applicant's Name]. Thank you for coming in today for the interview. Let's get started.\nAPP: Thank y"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "6880e9ded029",
+      "doc_type": "project_work",
+      "role": "project_work",
+      "unit_id": "career-cluster",
+      "title": "Commercial Project Instructions",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_task",
+            "label": "Task / deliverable described",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "6880e9ded029-e4",
+                "excerpt": "You have just been given the CEO position of a new nonprofit company that operates in your community.They need you to find a community problem and launch an advertisement campaign to solve the problem. The company needs the ad campaign in a few days…. So get to work!!!\nCommercial script must haves:\nCompany name\nSlogan for Advertisement (Must represent the solution to the problem)\nDialogue addressi"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_directions",
+            "label": "Directions / requirements",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "6880e9ded029-e3",
+                "excerpt": "You have just been given the CEO position of a new nonprofit company that operates in your community.They need you to find a community problem and launch an advertisement campaign to solve the problem. The company needs the ad campaign in a few days…. So get to work!!!\nCommercial script must haves:\nCompany name\nSlogan for Advertisement (Must represent the solution to the problem)\nDialogue addressi"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "OK",
+        "feedback": false,
+        "note": ""
+      }
+    },
+    {
+      "doc_id": "6c94424ba260",
+      "doc_type": "rubric",
+      "role": "rubric",
+      "unit_id": "information-technology",
+      "title": "Information Technology - Project Rubric",
+      "presence": {
+        "gate_pass": false,
+        "coverage": 0.5,
+        "missing_required": [
+          "Performance levels / scale"
+        ],
+        "criteria": [
+          {
+            "criterion_id": "has_criteria",
+            "label": "Named assessment criteria",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "6c94424ba260-e1",
+                "excerpt": "Business, Marketing & Finance Project Rubric"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_levels",
+            "label": "Performance levels / scale",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
+      "C1": {
+        "status": "PARTIAL_OR_MISSING",
+        "missing_required": [
+          "Performance levels / scale"
+        ]
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "OK",
+        "feedback": false,
+        "note": ""
+      }
+    },
+    {
+      "doc_id": "724f41bf2711",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "professional-preparedness",
+      "title": "Middle School Resume Builder",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "724f41bf2711-e1",
+                "excerpt": "[Your Name]\nContact Information:\nAddress: [Your Address]\nPhone: [Your Phone Number]\nEmail: [Your Email Address]\nObjective (Optional):\n[Write a brief statement about your goals and what you hope to achieve with the resume. For example: \"To utilize my skills and interests to contribute to [specific goal or opportunity].\"]\nEducation:\nSchool: [Your Middle School Name]\nLocation: [City, State]\nDates Att"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "769516e58fb5",
+      "doc_type": "rubric",
+      "role": "rubric",
+      "unit_id": "business-marketing",
+      "title": "Business Marketing Finance - Project Rubric",
+      "presence": {
+        "gate_pass": false,
+        "coverage": 0.0,
+        "missing_required": [
+          "Named assessment criteria",
+          "Performance levels / scale"
+        ],
+        "criteria": [
+          {
+            "criterion_id": "has_criteria",
+            "label": "Named assessment criteria",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_levels",
+            "label": "Performance levels / scale",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
+      "C1": {
+        "status": "PARTIAL_OR_MISSING",
+        "missing_required": [
+          "Named assessment criteria",
+          "Performance levels / scale"
+        ]
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "OK",
+        "feedback": false,
+        "note": ""
+      }
+    },
+    {
+      "doc_id": "7896317a42cd",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "career-cluster",
+      "title": "CTSO Career Pathway Letter of Intent",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "7896317a42cd-e1",
+                "excerpt": "CAREER PATHWAY LETTER OF INTENT\n\n\n[APPLICANT NAME]\n[APPLICANT ADDRESS]\n[APPLICANT CITY, STATE, ZIP CODE]\n\nDate: [DATE]\n\n[SCHOOL NAME]\n[SCHOOL ADDRESS]\n[SCHOOL CITY, STATE, ZIP CODE]\n\nDear SCHOOL NAME THAT YOU WILL BE ATTENDING,\n\n         PLEASE PROVIDE THE PATHWAY YOU HAVE CHOSEN AND THE ALIGNED CTSO AND WHY YOU HAVE CHOSEN THIS.\n\nPROVIDE WHAT YOU PROMISE TO YOURSELF THAT YOU WILL DO TO PREPARE FO"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "794d51da5629",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "professional-preparedness",
+      "title": "Professional Preparedness",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "794d51da5629-e1",
+                "excerpt": "Do Now\n\nDo you think there's a connection between feeling good about yourself and dressing nicely? Why or why not?"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "7f0dd1599900",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "health-science",
+      "title": "Health Science",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "7f0dd1599900-e1",
+                "excerpt": "--- TABLE ---\nHealth Science\nEstimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class | Health Science\n Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class\nResources:\nLesson plan\nArticle from website\nNutrition labels from various foods (ask students to bring them in or teacher can bring some from home) | Resources:\nLesson plan\nArticle from website\nNutrition labels from vario"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "80f37e7b5807",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "career-cluster",
+      "title": "Knife Skills Sponge",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "80f37e7b5807-e1",
+                "excerpt": "Knife Skills - Demonstration of Knife Cuts Using Sponges\n\n\n--- TABLE ---\nLarge Dice / Chop  (4 pieces all the same size) | Medium Dice   (4 pieces all the same size) | Small Dice   (4 pieces all the same size)\nBâtonnet  (4 pieces all the same size) | Julienne   (4 pieces all the same size) | brunoise   (4 pieces all the same size)"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "82b84c676dfd",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "professional-preparedness",
+      "title": "Professional Attire Answers",
+      "presence": {
+        "gate_pass": false,
+        "coverage": 0.0,
+        "missing_required": [
+          "Has extractable instructional content"
+        ],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PARTIAL_OR_MISSING",
+        "missing_required": [
+          "Has extractable instructional content"
+        ]
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "851a02b17dc9",
+      "status": "NOT_DECOMPOSED",
+      "note": "routed to Path C but has no Layer 0 elements yet"
+    },
+    {
+      "doc_id": "854451cbcfc5",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "health-science",
+      "title": "Health Science",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "854451cbcfc5-e1",
+                "excerpt": "Health Science"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "8891b46563ae",
+      "doc_type": "project_work",
+      "role": "project_work",
+      "unit_id": "career-cluster",
+      "title": "Flyer Project Instructions",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_task",
+            "label": "Task / deliverable described",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "8891b46563ae-e1",
+                "excerpt": "Flyer Rubric - Nonprofit company advertisement to fix community problem.\nYou have just been given the CEO position of a new nonprofit company that operates in your community.They need you to find a community problem and launch an advertisement campaign to solve the problem. The company needs the ad campaign in a few days…. So get to work!!!\nFlyer Must Haves:\nCompany Name\nCompany Logo\nProblem and s"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_directions",
+            "label": "Directions / requirements",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "8891b46563ae-e1",
+                "excerpt": "Flyer Rubric - Nonprofit company advertisement to fix community problem.\nYou have just been given the CEO position of a new nonprofit company that operates in your community.They need you to find a community problem and launch an advertisement campaign to solve the problem. The company needs the ad campaign in a few days…. So get to work!!!\nFlyer Must Haves:\nCompany Name\nCompany Logo\nProblem and s"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "OK",
+        "feedback": false,
+        "note": ""
+      }
+    },
+    {
+      "doc_id": "8efd6fc31270",
+      "doc_type": "game_activity",
+      "role": "other",
+      "unit_id": "career-cluster",
+      "title": "Career Cluster Bingo",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "8efd6fc31270-e1",
+                "excerpt": "Career Cluster Bingo\nmyfreebingocards.com\nSafety First!\nBefore you print all your bingo cards, please print a test page to check they come out the right size and color.\nYour bingo cards start on Page 3 of this PDF.\nIf your bingo cards have words then please check the spelling carefully.\nIf you need to make any changes go to mfbc.us/e/h32rcj9\nPlay\nOnce you've checked they are printing correctly, pr"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "98ed44c5b0af",
+      "doc_type": "project_work",
+      "role": "project_work",
+      "unit_id": "career-cluster",
+      "title": "3 Course Meal Menu",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_task",
+            "label": "Task / deliverable described",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "98ed44c5b0af-e1",
+                "excerpt": "3 Course Meal Menu"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_directions",
+            "label": "Directions / requirements",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "98ed44c5b0af-e1",
+                "excerpt": "3 Course Meal Menu"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "OK",
+        "feedback": false,
+        "note": ""
+      }
+    },
+    {
+      "doc_id": "a8248438c079",
+      "doc_type": "worksheet",
+      "role": "worksheet",
+      "unit_id": "transportation-distribution",
+      "title": "Transportation Distribution and Logistics Student Worksheet",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 0.5,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_tasks",
+            "label": "Practice tasks / problems present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "a8248438c079-e1",
+                "excerpt": "PARTS OF AN AIRPLANE\n\nUse the vocabulary terms below to label the parts of the airplane above.\n\nflight deck\n/ cockpit\nhorizontal stabilizer\n/ tailplane\nvertical stabilizer / fin elevator cabin\nfuselage rudder engine aileron flaps"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_directions",
+            "label": "Directions",
+            "scoring": "presence",
+            "verdict": "PARTIAL",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "a8248438c079-e1",
+                "excerpt": "PARTS OF AN AIRPLANE\n\nUse the vocabulary terms below to label the parts of the airplane above.\n\nflight deck\n/ cockpit\nhorizontal stabilizer\n/ tailplane\nvertical stabilizer / fin elevator cabin\nfuselage rudder engine aileron flaps"
+              }
+            ],
+            "note": "keyword match only; no element tagged with the expected type"
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "OK",
+        "feedback": false,
+        "note": ""
+      }
+    },
+    {
+      "doc_id": "a8e8847a5886",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "professional-preparedness",
+      "title": "Professional Attire - Scenarios",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "a8e8847a5886-e1",
+                "excerpt": "Professional Attire - Scenarios\nRead the different scenarios and circle the attire you would wear to each event.\nJob Interview: Imagine you're applying for a part-time job at your favorite local bookstore. You want to make a good impression on the manager. What would you wear to the interview?\n\nLunch with a Mentor: As part of a mentorship program, you're meeting with a professional from your commu"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "addfb0873806",
+      "doc_type": "worksheet",
+      "role": "worksheet",
+      "unit_id": "career-cluster",
+      "title": "Community Problem Brainstorming Worksheet",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 0.5,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_tasks",
+            "label": "Practice tasks / problems present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "addfb0873806-e1",
+                "excerpt": "Community Problem\nBrainstorming Worksheet\n\n\n--- TABLE ---\nWhat sort of problems do you see your community facing? | What is a small step that could take place to deal with this problem or issue?\nIf you had a nonprofit company to tackle this community problem, what would you name that company if you had the opportunity to? | Choose one of the Media Platforms that you and your group will use to crea"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_directions",
+            "label": "Directions",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "OK",
+        "feedback": false,
+        "note": ""
+      }
+    },
+    {
+      "doc_id": "af9cf3b04474",
+      "doc_type": "rubric",
+      "role": "rubric",
+      "unit_id": "arts-av-technology",
+      "title": "Arts AV Technology Communication Commercial Project Rubric",
+      "presence": {
+        "gate_pass": false,
+        "coverage": 0.0,
+        "missing_required": [
+          "Named assessment criteria",
+          "Performance levels / scale"
+        ],
+        "criteria": [
+          {
+            "criterion_id": "has_criteria",
+            "label": "Named assessment criteria",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_levels",
+            "label": "Performance levels / scale",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
+      "C1": {
+        "status": "PARTIAL_OR_MISSING",
+        "missing_required": [
+          "Named assessment criteria",
+          "Performance levels / scale"
+        ]
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "OK",
+        "feedback": false,
+        "note": ""
+      }
+    },
+    {
+      "doc_id": "b5e36486805a",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "agriculture",
+      "title": "Agriculture- Plant Science",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "b5e36486805a-e1",
+                "excerpt": "Day 1"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "cd8f3755cf17",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "career-cluster",
+      "title": "wilshire-code-cards",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "cd8f3755cf17-e1",
+                "excerpt": "Wilshire Baptist Church\nGreek Alphabet Code Cards -- Reference Sheet\nUse  the  pre-deciphering  sheet  (Greek  alphabet)  to  decode  each  message  below.  Each  card  has  an\nencoded message, a hint, and the decoded answer (for the teacher). The kids receive only the encoded\nmessage + hint.\nGreek Alphabet Reference (Letter-for-Letter Substitution)\nA = Alpha\nα\n   N = Nu\nν\nB = Beta\nβ\n   X = Xi\nξ\nG"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "d50f42a8f21e",
+      "doc_type": "presentation",
+      "role": "presentation",
+      "unit_id": "career-cluster",
+      "title": "CTSO Presentation",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Instructional content present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "d50f42a8f21e-e2",
+                "excerpt": " The students will understand how a CTSO can\n enhance their career path and their educationa\nl journey.\nThe students will understand the process on how to\n pick a CTSO that will match their career path.\nThe students will understand that being engaged in\n activities outside of school will help them b\ne more successful in their journey.\n01\n12\n07\nBack to\nAgenda Page\nESSENTIAL\nUNDERSTANDING"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "OK",
+        "feedback": false,
+        "note": ""
+      }
+    },
+    {
+      "doc_id": "d9f8e87d0486",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "financial-literacy",
+      "title": "Financial Literacy",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "d9f8e87d0486-e1",
+                "excerpt": "--- TABLE ---\nFinancial Literacy\nEstimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class | Financial Literacy\n Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class\nResources:\nLesson plan\nBooklets from Banzai.com (free if an financial institution picks up your school…if not, you can set up your free account and then go to toolkit, workbooks and “Middle School Personal Finance"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "e2485fe0a73f",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "career-cluster",
+      "title": "runway-pictures",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "e2485fe0a73f-e1",
+                "excerpt": "Image credits\n• https://commons.wikimedia.org/wiki/File:French_aircraft_carrier_Ch\narles_de_Gaulle_(R91)_underway_on_24_April_2019_(190424-M-\nBP588-1005).jpg\n• https://commons.wikimedia.org/wiki/File:Palm_Springs_International\n_Airport_photo_D_Ramey_Logan.jpg"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "e2f014fb5b00",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "career-cluster",
+      "title": "What are businesses saying to me and how",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "e2f014fb5b00-e1",
+                "excerpt": "What are businesses saying to me and how?\nWe are being communicated to all the time through advertisements on social media, billboards, commercials and flyers. Take a few minutes to think about a message you received from a company. What was the company? What did they say? How did you get the message? Maybe you were scrolling through TikTok and Coca Cola put in an advertisement trying to get you t"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "e31064aba3ae",
+      "doc_type": "worksheet",
+      "role": "worksheet",
+      "unit_id": "career-cluster",
+      "title": "Writing Your Sales Pitch Worksheet",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_tasks",
+            "label": "Practice tasks / problems present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "e31064aba3ae-e2",
+                "excerpt": "I. The Hook (3-5 sentences): There are 3 options listed below. Choose ONE or combine TWO at most.\n\nRhetorical Question with Answer:  Write a question that you will answer where the problem is introduced. Be sure that to start with \"what if\" or \"have you ever\" to create a sincere connection with your audience. Then give your answer to the question, using your product or service as the solution. Use"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_directions",
+            "label": "Directions",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "e31064aba3ae-e1",
+                "excerpt": "Crafting Your Elevator Pitch\n\nDirections:  The Elevator Pitch is meant to grab the attention of the audience and create interest in your product. A good pitch is memorable and will give your presentation an energy that will bring your business plan to life. Use the space below to create the various parts of your 30-Second Pitch. An example elevator pitch is on the last page."
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "OK",
+        "feedback": false,
+        "note": ""
+      }
+    },
+    {
+      "doc_id": "e7b2a411cbdc",
+      "doc_type": "rubric",
+      "role": "rubric",
+      "unit_id": "financial-literacy",
+      "title": "Financial Literacy - Project Rubric",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_criteria",
+            "label": "Named assessment criteria",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "e7b2a411cbdc-e1",
+                "excerpt": "Financial Literacy Project Rubric"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_levels",
+            "label": "Performance levels / scale",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "e7b2a411cbdc-e1",
+                "excerpt": "Financial Literacy Project Rubric"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "OK",
+        "feedback": false,
+        "note": ""
+      }
+    },
+    {
+      "doc_id": "e82d217defad",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "career-cluster",
+      "title": "Carrasco Brainstorm",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "e82d217defad-e1",
+                "excerpt": "Hospitality & Tourism\nhttps://txcte.org/course-binder/principles-hospitality-and-tourism"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "ea032c71918c",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "law-and-public-service",
+      "title": "Law and Public Service KWL",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "ea032c71918c-e1",
+                "excerpt": "www.timvandevall.com | Copyright © 2014 Dutch Renaissance Press LLC.\nK.W.L Chart\nTopic\nName\nDate\nWhat I Know\nWhat I Want to Know\nWhat I Have Learned"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    },
+    {
+      "doc_id": "f1b0566d0274",
+      "doc_type": "rubric",
+      "role": "rubric",
+      "unit_id": "career-cluster",
+      "title": "Career Cluster - Project Rubric",
+      "presence": {
+        "gate_pass": false,
+        "coverage": 0.0,
+        "missing_required": [
+          "Named assessment criteria",
+          "Performance levels / scale"
+        ],
+        "criteria": [
+          {
+            "criterion_id": "has_criteria",
+            "label": "Named assessment criteria",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_levels",
+            "label": "Performance levels / scale",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
+      "C1": {
+        "status": "PARTIAL_OR_MISSING",
+        "missing_required": [
+          "Named assessment criteria",
+          "Performance levels / scale"
+        ]
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "OK",
+        "feedback": false,
+        "note": ""
+      }
+    },
+    {
+      "doc_id": "f9710e5e4e97",
+      "doc_type": "worksheet",
+      "role": "worksheet",
+      "unit_id": "career-exploration",
+      "title": "Career Exploration Worksheet- LAW",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 0.5,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_tasks",
+            "label": "Practice tasks / problems present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "f9710e5e4e97-e1",
+                "excerpt": "Career Exploration Worksheet\n\n Job/ Career:\n\nWhat are some of the job responsibilities. Please least at least 3. How would I spend a typical day at work?\nWhat can I expect in terms of salary? What is the starting salary and the full range?\nEducation/ Training Requirements: List college majors that would be needed to be successful, or any additional licensing or training that would be needed.\nWhat "
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_directions",
+            "label": "Directions",
+            "scoring": "presence",
+            "verdict": "MISSING",
+            "band": null,
+            "evidence": [],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": false,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "OK",
+        "feedback": false,
+        "note": ""
+      }
+    },
+    {
+      "doc_id": "ff5244c8fa47",
+      "doc_type": "other",
+      "role": "other",
+      "unit_id": "information-technology",
+      "title": "Information Technology",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_content",
+            "label": "Has extractable instructional content",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "ff5244c8fa47-e1",
+                "excerpt": "--- TABLE ---\nInformation Technology                                                                                                           Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class\nResources:\nLesson plan\nBricks “like Legos”; divide in small ziplocs for each student to have no more than 20 pieces each\nCreate a free account on Common Sense Media\nSlideshow for all 3 days |"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "is_fallback": true,
+      "C1": {
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "C2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null
+      },
+      "C3": {
+        "status": "LOGGED",
+        "feedback": true,
+        "note": "unknown type -> feedback nursery"
+      }
+    }
+  ],
+  "feedback_file": "_loom_feedback.yaml",
+  "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json"
+}

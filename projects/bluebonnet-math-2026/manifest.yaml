@@ -2,6 +2,7 @@ project:
   id: bluebonnet-math-2026
   name: "TEA Bluebonnet Math \u2014 Grade 5 + Algebra I validation"
 sources_dir: /home/lenovo/g10-control-center-loom/projects/bluebonnet-math-2026/sources
+packet_type: teacher_edition
 units:
   alg1-mod-1:
     title: "Algebra I \u2014 Module 1"

@@ -2,14 +2,16 @@
   "project_id": "dallas-career-2026",
   "gate_scorer": "s1_completeness",
   "packet_type": {
-    "id": "teacher_edition",
-    "label": "Teacher Edition",
-    "short": "TEACHER ED",
-    "description": "Teacher-facing materials that carry what the teacher needs to run the lesson \u2014 typically notes/plan, slides or activities, and some check for understanding. Not expected to ship a full student edition or answer keys.",
+    "id": "full_curriculum",
+    "label": "Full curriculum",
+    "short": "FULL CURRIC",
+    "description": "A complete published packet: lesson plans PLUS the assessments, keys, and supporting materials a teacher would expect to receive in a finished course.",
     "expected_components": [
-      "Teacher plan / notes",
-      "Slides / activities",
-      "Check / assessment"
+      "Lesson plan",
+      "Assessment",
+      "Answer key",
+      "Rubric",
+      "Practice / worksheet"
     ]
   },
   "summary": {
@@ -26,14 +28,14 @@
       "title": "Agriculture",
       "band": "Strong",
       "completeness": {
-        "packet_type": "teacher_edition",
-        "label": "Teacher Edition",
-        "short": "TEACHER ED",
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
         "present": 1,
-        "expected": 3,
+        "expected": 5,
         "components": [
           {
-            "label": "Teacher plan / notes",
+            "label": "Lesson plan",
             "present": true,
             "matched": "lesson_plan",
             "any_of": [
@@ -43,32 +45,46 @@
             ]
           },
           {
-            "label": "Slides / activities",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "lesson_content",
-              "presentation",
-              "game_activity",
-              "lab_activity",
-              "project_work",
-              "worksheet"
-            ]
-          },
-          {
-            "label": "Check / assessment",
+            "label": "Assessment",
             "present": false,
             "matched": null,
             "any_of": [
               "quiz",
-              "exit_ticket",
-              "worksheet"
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
             ]
           }
         ],
         "missing": [
-          "Slides / activities",
-          "Check / assessment"
+          "Assessment",
+          "Answer key",
+          "Rubric",
+          "Practice / worksheet"
         ]
       },
       "lessons": {
@@ -137,14 +153,14 @@
       "title": "Architecture & Construction",
       "band": "Developing",
       "completeness": {
-        "packet_type": "teacher_edition",
-        "label": "Teacher Edition",
-        "short": "TEACHER ED",
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
         "present": 3,
-        "expected": 3,
+        "expected": 5,
         "components": [
           {
-            "label": "Teacher plan / notes",
+            "label": "Lesson plan",
             "present": true,
             "matched": "lesson_plan",
             "any_of": [
@@ -154,30 +170,45 @@
             ]
           },
           {
-            "label": "Slides / activities",
-            "present": true,
-            "matched": "lesson_content",
-            "any_of": [
-              "lesson_content",
-              "presentation",
-              "game_activity",
-              "lab_activity",
-              "project_work",
-              "worksheet"
-            ]
-          },
-          {
-            "label": "Check / assessment",
+            "label": "Assessment",
             "present": true,
             "matched": "quiz",
             "any_of": [
               "quiz",
-              "exit_ticket",
-              "worksheet"
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": true,
+            "matched": "answer_key",
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
             ]
           }
         ],
-        "missing": []
+        "missing": [
+          "Rubric",
+          "Practice / worksheet"
+        ]
       },
       "lessons": {
         "count": 2,
@@ -242,14 +273,14 @@
       "title": "Arts AV Technology",
       "band": "Developing",
       "completeness": {
-        "packet_type": "teacher_edition",
-        "label": "Teacher Edition",
-        "short": "TEACHER ED",
-        "present": 3,
-        "expected": 3,
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
+        "present": 4,
+        "expected": 5,
         "components": [
           {
-            "label": "Teacher plan / notes",
+            "label": "Lesson plan",
             "present": true,
             "matched": "lesson_plan",
             "any_of": [
@@ -259,30 +290,44 @@
             ]
           },
           {
-            "label": "Slides / activities",
-            "present": true,
-            "matched": "lesson_content",
-            "any_of": [
-              "lesson_content",
-              "presentation",
-              "game_activity",
-              "lab_activity",
-              "project_work",
-              "worksheet"
-            ]
-          },
-          {
-            "label": "Check / assessment",
+            "label": "Assessment",
             "present": true,
             "matched": "exit_ticket",
             "any_of": [
               "quiz",
-              "exit_ticket",
-              "worksheet"
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": true,
+            "matched": "rubric",
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": true,
+            "matched": "project_work",
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
             ]
           }
         ],
-        "missing": []
+        "missing": [
+          "Answer key"
+        ]
       },
       "lessons": {
         "count": 2,
@@ -361,14 +406,14 @@
       "title": "Business Marketing",
       "band": "Developing",
       "completeness": {
-        "packet_type": "teacher_edition",
-        "label": "Teacher Edition",
-        "short": "TEACHER ED",
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
         "present": 3,
-        "expected": 3,
+        "expected": 5,
         "components": [
           {
-            "label": "Teacher plan / notes",
+            "label": "Lesson plan",
             "present": true,
             "matched": "lesson_plan",
             "any_of": [
@@ -378,30 +423,45 @@
             ]
           },
           {
-            "label": "Slides / activities",
-            "present": true,
-            "matched": "lesson_content",
-            "any_of": [
-              "lesson_content",
-              "presentation",
-              "game_activity",
-              "lab_activity",
-              "project_work",
-              "worksheet"
-            ]
-          },
-          {
-            "label": "Check / assessment",
+            "label": "Assessment",
             "present": true,
             "matched": "exit_ticket",
             "any_of": [
               "quiz",
-              "exit_ticket",
-              "worksheet"
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": true,
+            "matched": "rubric",
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
             ]
           }
         ],
-        "missing": []
+        "missing": [
+          "Answer key",
+          "Practice / worksheet"
+        ]
       },
       "lessons": {
         "count": 2,
@@ -479,14 +539,14 @@
       "title": "Career Cluster",
       "band": "Developing",
       "completeness": {
-        "packet_type": "teacher_edition",
-        "label": "Teacher Edition",
-        "short": "TEACHER ED",
-        "present": 3,
-        "expected": 3,
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
+        "present": 4,
+        "expected": 5,
         "components": [
           {
-            "label": "Teacher plan / notes",
+            "label": "Lesson plan",
             "present": true,
             "matched": "lesson_plan",
             "any_of": [
@@ -496,30 +556,44 @@
             ]
           },
           {
-            "label": "Slides / activities",
-            "present": true,
-            "matched": "lesson_content",
-            "any_of": [
-              "lesson_content",
-              "presentation",
-              "game_activity",
-              "lab_activity",
-              "project_work",
-              "worksheet"
-            ]
-          },
-          {
-            "label": "Check / assessment",
+            "label": "Assessment",
             "present": true,
             "matched": "exit_ticket",
             "any_of": [
               "quiz",
-              "exit_ticket",
-              "worksheet"
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": true,
+            "matched": "rubric",
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": true,
+            "matched": "worksheet",
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
             ]
           }
         ],
-        "missing": []
+        "missing": [
+          "Answer key"
+        ]
       },
       "lessons": {
         "count": 4,
@@ -617,14 +691,14 @@
       "title": "Career Exploration",
       "band": "Weak",
       "completeness": {
-        "packet_type": "teacher_edition",
-        "label": "Teacher Edition",
-        "short": "TEACHER ED",
-        "present": 3,
-        "expected": 3,
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
+        "present": 2,
+        "expected": 5,
         "components": [
           {
-            "label": "Teacher plan / notes",
+            "label": "Lesson plan",
             "present": true,
             "matched": "lesson_plan",
             "any_of": [
@@ -634,30 +708,46 @@
             ]
           },
           {
-            "label": "Slides / activities",
-            "present": true,
-            "matched": "lesson_content",
+            "label": "Assessment",
+            "present": false,
+            "matched": null,
             "any_of": [
-              "lesson_content",
-              "presentation",
-              "game_activity",
-              "lab_activity",
-              "project_work",
-              "worksheet"
+              "quiz",
+              "exit_ticket"
             ]
           },
           {
-            "label": "Check / assessment",
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
             "present": true,
             "matched": "worksheet",
             "any_of": [
-              "quiz",
-              "exit_ticket",
-              "worksheet"
+              "worksheet",
+              "project_work",
+              "lab_activity"
             ]
           }
         ],
-        "missing": []
+        "missing": [
+          "Assessment",
+          "Answer key",
+          "Rubric"
+        ]
       },
       "lessons": {
         "count": 3,
@@ -720,14 +810,14 @@
       "title": "Dallas ISD",
       "band": "Developing",
       "completeness": {
-        "packet_type": "teacher_edition",
-        "label": "Teacher Edition",
-        "short": "TEACHER ED",
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
         "present": 3,
-        "expected": 3,
+        "expected": 5,
         "components": [
           {
-            "label": "Teacher plan / notes",
+            "label": "Lesson plan",
             "present": true,
             "matched": "lesson_plan",
             "any_of": [
@@ -737,30 +827,45 @@
             ]
           },
           {
-            "label": "Slides / activities",
-            "present": true,
-            "matched": "lesson_content",
-            "any_of": [
-              "lesson_content",
-              "presentation",
-              "game_activity",
-              "lab_activity",
-              "project_work",
-              "worksheet"
-            ]
-          },
-          {
-            "label": "Check / assessment",
+            "label": "Assessment",
             "present": true,
             "matched": "quiz",
             "any_of": [
               "quiz",
-              "exit_ticket",
-              "worksheet"
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": true,
+            "matched": "answer_key",
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
             ]
           }
         ],
-        "missing": []
+        "missing": [
+          "Rubric",
+          "Practice / worksheet"
+        ]
       },
       "lessons": {
         "count": 2,
@@ -830,14 +935,14 @@
       "title": "Engineering",
       "band": "Weak",
       "completeness": {
-        "packet_type": "teacher_edition",
-        "label": "Teacher Edition",
-        "short": "TEACHER ED",
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
         "present": 3,
-        "expected": 3,
+        "expected": 5,
         "components": [
           {
-            "label": "Teacher plan / notes",
+            "label": "Lesson plan",
             "present": true,
             "matched": "lesson_plan",
             "any_of": [
@@ -847,30 +952,45 @@
             ]
           },
           {
-            "label": "Slides / activities",
-            "present": true,
-            "matched": "lesson_content",
-            "any_of": [
-              "lesson_content",
-              "presentation",
-              "game_activity",
-              "lab_activity",
-              "project_work",
-              "worksheet"
-            ]
-          },
-          {
-            "label": "Check / assessment",
+            "label": "Assessment",
             "present": true,
             "matched": "quiz",
             "any_of": [
               "quiz",
-              "exit_ticket",
-              "worksheet"
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": true,
+            "matched": "answer_key",
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
             ]
           }
         ],
-        "missing": []
+        "missing": [
+          "Rubric",
+          "Practice / worksheet"
+        ]
       },
       "lessons": {
         "count": 2,
@@ -936,14 +1056,14 @@
       "title": "Family Community",
       "band": "Weak",
       "completeness": {
-        "packet_type": "teacher_edition",
-        "label": "Teacher Edition",
-        "short": "TEACHER ED",
-        "present": 2,
-        "expected": 3,
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
+        "present": 1,
+        "expected": 5,
         "components": [
           {
-            "label": "Teacher plan / notes",
+            "label": "Lesson plan",
             "present": true,
             "matched": "lesson_plan",
             "any_of": [
@@ -953,31 +1073,46 @@
             ]
           },
           {
-            "label": "Slides / activities",
-            "present": true,
-            "matched": "lesson_content",
-            "any_of": [
-              "lesson_content",
-              "presentation",
-              "game_activity",
-              "lab_activity",
-              "project_work",
-              "worksheet"
-            ]
-          },
-          {
-            "label": "Check / assessment",
+            "label": "Assessment",
             "present": false,
             "matched": null,
             "any_of": [
               "quiz",
-              "exit_ticket",
-              "worksheet"
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
             ]
           }
         ],
         "missing": [
-          "Check / assessment"
+          "Assessment",
+          "Answer key",
+          "Rubric",
+          "Practice / worksheet"
         ]
       },
       "lessons": {
@@ -1044,14 +1179,14 @@
       "title": "Financial Literacy",
       "band": "Unrated",
       "completeness": {
-        "packet_type": "teacher_edition",
-        "label": "Teacher Edition",
-        "short": "TEACHER ED",
-        "present": 1,
-        "expected": 3,
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
+        "present": 2,
+        "expected": 5,
         "components": [
           {
-            "label": "Teacher plan / notes",
+            "label": "Lesson plan",
             "present": false,
             "matched": null,
             "any_of": [
@@ -1061,32 +1196,45 @@
             ]
           },
           {
-            "label": "Slides / activities",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "lesson_content",
-              "presentation",
-              "game_activity",
-              "lab_activity",
-              "project_work",
-              "worksheet"
-            ]
-          },
-          {
-            "label": "Check / assessment",
+            "label": "Assessment",
             "present": true,
             "matched": "exit_ticket",
             "any_of": [
               "quiz",
-              "exit_ticket",
-              "worksheet"
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": true,
+            "matched": "rubric",
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
             ]
           }
         ],
         "missing": [
-          "Teacher plan / notes",
-          "Slides / activities"
+          "Lesson plan",
+          "Answer key",
+          "Practice / worksheet"
         ]
       },
       "lessons": {
@@ -1155,14 +1303,14 @@
       "title": "Health Science",
       "band": "Unrated",
       "completeness": {
-        "packet_type": "teacher_edition",
-        "label": "Teacher Edition",
-        "short": "TEACHER ED",
-        "present": 2,
-        "expected": 3,
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
+        "present": 3,
+        "expected": 5,
         "components": [
           {
-            "label": "Teacher plan / notes",
+            "label": "Lesson plan",
             "present": false,
             "matched": null,
             "any_of": [
@@ -1172,31 +1320,44 @@
             ]
           },
           {
-            "label": "Slides / activities",
-            "present": true,
-            "matched": "lab_activity",
-            "any_of": [
-              "lesson_content",
-              "presentation",
-              "game_activity",
-              "lab_activity",
-              "project_work",
-              "worksheet"
-            ]
-          },
-          {
-            "label": "Check / assessment",
+            "label": "Assessment",
             "present": true,
             "matched": "exit_ticket",
             "any_of": [
               "quiz",
-              "exit_ticket",
-              "worksheet"
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": true,
+            "matched": "rubric",
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": true,
+            "matched": "lab_activity",
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
             ]
           }
         ],
         "missing": [
-          "Teacher plan / notes"
+          "Lesson plan",
+          "Answer key"
         ]
       },
       "lessons": {
@@ -1269,14 +1430,14 @@
       "title": "Hospitality Tourism",
       "band": "Weak",
       "completeness": {
-        "packet_type": "teacher_edition",
-        "label": "Teacher Edition",
-        "short": "TEACHER ED",
-        "present": 2,
-        "expected": 3,
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
+        "present": 3,
+        "expected": 5,
         "components": [
           {
-            "label": "Teacher plan / notes",
+            "label": "Lesson plan",
             "present": true,
             "matched": "lesson_plan",
             "any_of": [
@@ -1286,31 +1447,44 @@
             ]
           },
           {
-            "label": "Slides / activities",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "lesson_content",
-              "presentation",
-              "game_activity",
-              "lab_activity",
-              "project_work",
-              "worksheet"
-            ]
-          },
-          {
-            "label": "Check / assessment",
+            "label": "Assessment",
             "present": true,
             "matched": "exit_ticket",
             "any_of": [
               "quiz",
-              "exit_ticket",
-              "worksheet"
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": true,
+            "matched": "rubric",
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
             ]
           }
         ],
         "missing": [
-          "Slides / activities"
+          "Answer key",
+          "Practice / worksheet"
         ]
       },
       "lessons": {
@@ -1385,14 +1559,14 @@
       "title": "Information Technology",
       "band": "Unrated",
       "completeness": {
-        "packet_type": "teacher_edition",
-        "label": "Teacher Edition",
-        "short": "TEACHER ED",
-        "present": 1,
-        "expected": 3,
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
+        "present": 2,
+        "expected": 5,
         "components": [
           {
-            "label": "Teacher plan / notes",
+            "label": "Lesson plan",
             "present": false,
             "matched": null,
             "any_of": [
@@ -1402,32 +1576,45 @@
             ]
           },
           {
-            "label": "Slides / activities",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "lesson_content",
-              "presentation",
-              "game_activity",
-              "lab_activity",
-              "project_work",
-              "worksheet"
-            ]
-          },
-          {
-            "label": "Check / assessment",
+            "label": "Assessment",
             "present": true,
             "matched": "exit_ticket",
             "any_of": [
               "quiz",
-              "exit_ticket",
-              "worksheet"
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": true,
+            "matched": "rubric",
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
             ]
           }
         ],
         "missing": [
-          "Teacher plan / notes",
-          "Slides / activities"
+          "Lesson plan",
+          "Answer key",
+          "Practice / worksheet"
         ]
       },
       "lessons": {
@@ -1501,14 +1688,14 @@
       "title": "Law and Public Service",
       "band": "Weak",
       "completeness": {
-        "packet_type": "teacher_edition",
-        "label": "Teacher Edition",
-        "short": "TEACHER ED",
-        "present": 2,
-        "expected": 3,
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
+        "present": 1,
+        "expected": 5,
         "components": [
           {
-            "label": "Teacher plan / notes",
+            "label": "Lesson plan",
             "present": true,
             "matched": "lesson_plan",
             "any_of": [
@@ -1518,31 +1705,46 @@
             ]
           },
           {
-            "label": "Slides / activities",
-            "present": true,
-            "matched": "lesson_content",
-            "any_of": [
-              "lesson_content",
-              "presentation",
-              "game_activity",
-              "lab_activity",
-              "project_work",
-              "worksheet"
-            ]
-          },
-          {
-            "label": "Check / assessment",
+            "label": "Assessment",
             "present": false,
             "matched": null,
             "any_of": [
               "quiz",
-              "exit_ticket",
-              "worksheet"
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
             ]
           }
         ],
         "missing": [
-          "Check / assessment"
+          "Assessment",
+          "Answer key",
+          "Rubric",
+          "Practice / worksheet"
         ]
       },
       "lessons": {
@@ -1611,14 +1813,14 @@
       "title": "Manufacturing",
       "band": "Weak",
       "completeness": {
-        "packet_type": "teacher_edition",
-        "label": "Teacher Edition",
-        "short": "TEACHER ED",
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
         "present": 3,
-        "expected": 3,
+        "expected": 5,
         "components": [
           {
-            "label": "Teacher plan / notes",
+            "label": "Lesson plan",
             "present": true,
             "matched": "lesson_plan",
             "any_of": [
@@ -1628,30 +1830,45 @@
             ]
           },
           {
-            "label": "Slides / activities",
-            "present": true,
-            "matched": "lesson_content",
-            "any_of": [
-              "lesson_content",
-              "presentation",
-              "game_activity",
-              "lab_activity",
-              "project_work",
-              "worksheet"
-            ]
-          },
-          {
-            "label": "Check / assessment",
+            "label": "Assessment",
             "present": true,
             "matched": "quiz",
             "any_of": [
               "quiz",
-              "exit_ticket",
-              "worksheet"
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": true,
+            "matched": "answer_key",
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
             ]
           }
         ],
-        "missing": []
+        "missing": [
+          "Rubric",
+          "Practice / worksheet"
+        ]
       },
       "lessons": {
         "count": 2,
@@ -1717,14 +1934,14 @@
       "title": "Professional Preparedness",
       "band": "Weak",
       "completeness": {
-        "packet_type": "teacher_edition",
-        "label": "Teacher Edition",
-        "short": "TEACHER ED",
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
         "present": 3,
-        "expected": 3,
+        "expected": 5,
         "components": [
           {
-            "label": "Teacher plan / notes",
+            "label": "Lesson plan",
             "present": true,
             "matched": "lesson_plan",
             "any_of": [
@@ -1734,30 +1951,45 @@
             ]
           },
           {
-            "label": "Slides / activities",
-            "present": true,
-            "matched": "lesson_content",
-            "any_of": [
-              "lesson_content",
-              "presentation",
-              "game_activity",
-              "lab_activity",
-              "project_work",
-              "worksheet"
-            ]
-          },
-          {
-            "label": "Check / assessment",
+            "label": "Assessment",
             "present": true,
             "matched": "exit_ticket",
             "any_of": [
               "quiz",
-              "exit_ticket",
-              "worksheet"
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": true,
+            "matched": "rubric",
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
             ]
           }
         ],
-        "missing": []
+        "missing": [
+          "Answer key",
+          "Practice / worksheet"
+        ]
       },
       "lessons": {
         "count": 3,
@@ -1828,14 +2060,14 @@
       "title": "Teaching and Training",
       "band": "Strong",
       "completeness": {
-        "packet_type": "teacher_edition",
-        "label": "Teacher Edition",
-        "short": "TEACHER ED",
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
         "present": 1,
-        "expected": 3,
+        "expected": 5,
         "components": [
           {
-            "label": "Teacher plan / notes",
+            "label": "Lesson plan",
             "present": true,
             "matched": "lesson_plan",
             "any_of": [
@@ -1845,32 +2077,46 @@
             ]
           },
           {
-            "label": "Slides / activities",
-            "present": false,
-            "matched": null,
-            "any_of": [
-              "lesson_content",
-              "presentation",
-              "game_activity",
-              "lab_activity",
-              "project_work",
-              "worksheet"
-            ]
-          },
-          {
-            "label": "Check / assessment",
+            "label": "Assessment",
             "present": false,
             "matched": null,
             "any_of": [
               "quiz",
-              "exit_ticket",
-              "worksheet"
+              "exit_ticket"
+            ]
+          },
+          {
+            "label": "Answer key",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "worksheet",
+              "project_work",
+              "lab_activity"
             ]
           }
         ],
         "missing": [
-          "Slides / activities",
-          "Check / assessment"
+          "Assessment",
+          "Answer key",
+          "Rubric",
+          "Practice / worksheet"
         ]
       },
       "lessons": {
@@ -1935,14 +2181,14 @@
       "title": "Transportation Distribution",
       "band": "Weak",
       "completeness": {
-        "packet_type": "teacher_edition",
-        "label": "Teacher Edition",
-        "short": "TEACHER ED",
+        "packet_type": "full_curriculum",
+        "label": "Full curriculum",
+        "short": "FULL CURRIC",
         "present": 3,
-        "expected": 3,
+        "expected": 5,
         "components": [
           {
-            "label": "Teacher plan / notes",
+            "label": "Lesson plan",
             "present": true,
             "matched": "lesson_plan",
             "any_of": [
@@ -1952,30 +2198,45 @@
             ]
           },
           {
-            "label": "Slides / activities",
-            "present": true,
-            "matched": "lesson_content",
+            "label": "Assessment",
+            "present": false,
+            "matched": null,
             "any_of": [
-              "lesson_content",
-              "presentation",
-              "game_activity",
-              "lab_activity",
-              "project_work",
-              "worksheet"
+              "quiz",
+              "exit_ticket"
             ]
           },
           {
-            "label": "Check / assessment",
+            "label": "Answer key",
+            "present": true,
+            "matched": "answer_key",
+            "any_of": [
+              "answer_key"
+            ]
+          },
+          {
+            "label": "Rubric",
+            "present": false,
+            "matched": null,
+            "any_of": [
+              "rubric"
+            ]
+          },
+          {
+            "label": "Practice / worksheet",
             "present": true,
             "matched": "worksheet",
             "any_of": [
-              "quiz",
-              "exit_ticket",
-              "worksheet"
+              "worksheet",
+              "project_work",
+              "lab_activity"
             ]
           }
         ],
-        "missing": []
+        "missing": [
+          "Assessment",
+          "Rubric"
+        ]
       },
       "lessons": {
         "count": 2,

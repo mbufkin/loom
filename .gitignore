@@ -86,3 +86,6 @@ reviews/
 
 # TypeScript build cache
 ui/*.tsbuildinfo
+
+# Wiki manifest
+wiki-manifest.json

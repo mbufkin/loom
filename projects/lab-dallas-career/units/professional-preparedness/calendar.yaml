@@ -1,0 +1,20 @@
+unit_id: professional-preparedness
+title: Professional Preparedness
+unit_length_days: 2
+days:
+- id: d1
+  label: Day 1
+  expected:
+  - lesson_content
+  - exit_ticket
+- id: d2
+  label: Day 2
+  expected:
+  - lesson_content
+  - exit_ticket
+unit_supporting:
+- lesson_plan
+- quiz
+- answer_key
+- rubric
+- worksheet

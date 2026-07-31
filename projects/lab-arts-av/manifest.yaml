@@ -1,0 +1,16 @@
+project_id: lab-arts-av
+title: "Lab \xB7 Dallas Arts AV Technology (full-pipeline model compare)"
+packet_type: teacher_edition
+units:
+  arts-av-technology:
+    title: Arts AV Technology
+    calendar: units/arts-av-technology/calendar.yaml
+    documents:
+    - doc_0a62e0b9729e_Arts_A_V_Student_Notes.txt
+    - doc_0cbd06c7c769_Arts_AV_Technology___Communication_Flyer_Project_Rubric.txt
+    - doc_314d7d0905ca_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_1.txt
+    - doc_761e6495bc24_Arts_A_V_Tech__Lesson_Plan_.txt
+    - doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt
+    - doc_af9cf3b04474_Arts_AV_Technology___Communication_Commercial_Project_Rubric.txt
+    - doc_e2c12c61bc5f_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_3.txt
+    - doc_ff5cd4c0712e_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_2.txt

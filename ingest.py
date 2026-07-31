@@ -24,6 +24,7 @@ import yaml
 from audit_lib import (
     BASE_DIR,
     atomic_write,
+    extract_content,
     iter_source_files,
     load_config,
     log,
@@ -89,10 +90,6 @@ def model_call(
 
 def parse_json(text: str, *, step: str = "ingest") -> dict:
     return parse_model_json(text, context=step)
-
-
-def extract_content(response: dict) -> str:
-    return response["choices"][0]["message"]["content"]
 
 
 def build_catalog(sources: Path) -> tuple[list[dict], list[Path]]:

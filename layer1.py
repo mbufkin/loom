@@ -47,8 +47,10 @@ from pathlib import Path
 
 from audit_lib import (
     CONCENTRATION_MIN_COUNT,
+    LARGE_CALL_TIMEOUT_SECONDS,
     atomic_write,
     doc_id_from_filename,
+    extract_content,
     is_corroborated,
     load_config,
     load_manifest,
@@ -80,9 +82,9 @@ UNIT_SUPPORTING_SLOT = (
 # isolation discipline).
 ORGANIZE_BATCH_SIZE = 40
 
-# Longer wall-clock for multi-element ORGANIZE batches (and Layer 0 chunks via
-# the same constant). Global config stays at 300s for small calls.
-LARGE_CALL_TIMEOUT_SECONDS = 900
+# Longer wall-clock for multi-element ORGANIZE batches uses the shared
+# LARGE_CALL_TIMEOUT_SECONDS (imported from audit_lib — single source of truth,
+# F025). Global config stays at 300s for small calls.
 
 
 def model_call(
@@ -108,10 +110,6 @@ def model_call(
         max_tokens=16384,
         timeout_seconds=timeout_seconds,
     )
-
-
-def extract_content(response: dict) -> str:
-    return response["choices"][0]["message"]["content"]
 
 
 # Map the confidence tokens a model actually emits (which drift once you swap the
@@ -1103,6 +1101,79 @@ legitimately teaching engineering design methodologies, per Texas CTE's own TEKS
 # --- Orchestration -----------------------------------------------------------
 
 
+def render_layer1_report(
+    project_id: str,
+    only_units: list[str] | None,
+    all_bucket_rows: list[dict],
+    all_findings: list[dict],
+    newly_judged: int,
+    carried_forward: int,
+) -> str:
+    """Render Layer 1 REPORT.md from the finished bucket rows + findings.
+
+    Pure presentation, extracted verbatim from run_layer1 so the orchestrator stays
+    about sequencing/checkpointing rather than string-building — and so the report
+    can be unit-tested against a fixed set of rows without running the pipeline. The
+    count aggregations below feed ONLY this report, which is why they live here now.
+
+    `newly_judged` / `carried_forward` are element counts (this run vs carried from
+    untouched units on a --only-unit run) used purely for the header note.
+    """
+    missing = sum(1 for f in all_findings if f["status"] == "MISSING")
+    duplicate = sum(1 for f in all_findings if f["status"] == "DUPLICATE")
+    check_failed = sum(1 for f in all_findings if f["status"] == "CHECK_FAILED")
+    mismatch_rows = [r for r in all_bucket_rows if r["match_status"] == "MISMATCH"]
+    cross_reference = sum(
+        1 for r in all_bucket_rows if r["match_status"] == "CROSS_REFERENCE"
+    )
+    expected_overlap = sum(
+        1 for r in all_bucket_rows if r["match_status"] == "EXPECTED_OVERLAP"
+    )
+    orphan = sum(1 for r in all_bucket_rows if r["match_status"] == "ORPHAN")
+
+    # Shared with synthesize.py via audit_lib.is_corroborated (includes recheck
+    # demotion) so Layer 1 REPORT.md and GLOBAL-AUDIT.md never disagree on HIGH.
+    high_conf = [r for r in mismatch_rows if is_corroborated(r)]
+    low_conf = [r for r in mismatch_rows if not is_corroborated(r)]
+
+    return f"""# Layer 1 Report
+
+**Status:** {"SUCCESS" if check_failed == 0 else "SUCCESS WITH CHECK FAILURES"}
+**Project:** {project_id}
+**Scope:** {','.join(only_units) if only_units else "all units"}
+**Elements judged:** {len(all_bucket_rows)}{f" ({newly_judged} newly judged this run, {carried_forward} carried forward from other units)" if carried_forward else ""}
+**MATCH:** {sum(1 for r in all_bucket_rows if r['match_status'] == 'MATCH')}
+**MISMATCH:** {len(mismatch_rows)}
+  - corroborated ({CONCENTRATION_MIN_COUNT}+ elements of the same document agree): {len(high_conf)} — high-confidence, likely real misfiles
+  - single/low-corroboration: {len(low_conf)} — needs individual review, not yet strong enough to act on alone
+**CROSS_REFERENCE (hub/overview unit's own element names another unit — expected, not a misfile):** {cross_reference}
+**EXPECTED_OVERLAP (human-confirmed legitimate overlap pair, see manifest.yaml known_overlaps — not a misfile):** {expected_overlap}
+**ORPHAN:** {orphan}
+**UNVERIFIED (no self-declaration, parent-link only, or a discounted hub-unit self-declaration):** {sum(1 for r in all_bucket_rows if r['match_status'] == 'UNVERIFIED')}
+**MISSING role findings:** {missing}
+**DUPLICATE role findings:** {duplicate}
+**CHECK_FAILED role findings (Phase 3 model call failed — NOT a real finding, needs re-run):** {check_failed}
+
+## Artifacts
+- `bucket-ledger.json` — one row per Layer 0 element, with Phase 1-2 placement judgment
+  (plus `fulfills_role`/`fulfillment_confidence` backfilled from Phase 3, if any)
+- `findings.json` — one row per (unit, day, expected role), with Phase 3 fulfillment judgment
+- `REVIEW-QUEUE.md` — remaining MISMATCH findings grouped by unit-pair, for a human to
+  confirm as either a genuine error or an expected overlap (see manifest.yaml known_overlaps)
+- `.raw/<doc_id>-phase1.json` — raw Phase 1 model responses
+- `.raw/<unit_id>-<day_id>-phase3.json` — raw Phase 3 model responses
+
+## MISMATCH detail (sorted by corroboration strength)
+{chr(10).join(
+    f"- [{'HIGH' if is_corroborated(r) else 'low'}] {r['element_id']} (doc {r['doc_id']}): "
+    f"filed under '{r['parent_link_unit_id']}', self-declares '{r['matched_unit_id']}' "
+    f"({(r['mismatch_corroboration'] or {}).get('same_target_count', 0)}/"
+    f"{(r['mismatch_corroboration'] or {}).get('total_self_declarations_in_doc', 0)} of this doc's own elements agree)"
+    for r in sorted(mismatch_rows, key=lambda r: -(r['mismatch_corroboration'] or {}).get('same_target_count', 0))
+) if mismatch_rows else "(none)"}
+"""
+
+
 def run_layer1(project_id: str, only_units: list[str] | None = None) -> Path:
     root = project_dir(project_id)
     manifest = load_manifest(root / "manifest.yaml")
@@ -1386,59 +1457,14 @@ def run_layer1(project_id: str, only_units: list[str] | None = None) -> Path:
     atomic_write(l1_dir / "bucket-ledger.json", json.dumps(all_bucket_rows, indent=2))
     atomic_write(l1_dir / "findings.json", json.dumps(all_findings, indent=2))
 
-    missing = sum(1 for f in all_findings if f["status"] == "MISSING")
-    duplicate = sum(1 for f in all_findings if f["status"] == "DUPLICATE")
-    check_failed = sum(1 for f in all_findings if f["status"] == "CHECK_FAILED")
-    mismatch_rows = [r for r in all_bucket_rows if r["match_status"] == "MISMATCH"]
-    cross_reference = sum(
-        1 for r in all_bucket_rows if r["match_status"] == "CROSS_REFERENCE"
+    report = render_layer1_report(
+        project_id,
+        only_units,
+        all_bucket_rows,
+        all_findings,
+        newly_judged=len(bucket_rows),
+        carried_forward=len(carry_forward_bucket_rows),
     )
-    expected_overlap = sum(
-        1 for r in all_bucket_rows if r["match_status"] == "EXPECTED_OVERLAP"
-    )
-    orphan = sum(1 for r in all_bucket_rows if r["match_status"] == "ORPHAN")
-
-    # Shared with synthesize.py via audit_lib.is_corroborated (includes recheck
-    # demotion) so Layer 1 REPORT.md and GLOBAL-AUDIT.md never disagree on HIGH.
-    high_conf = [r for r in mismatch_rows if is_corroborated(r)]
-    low_conf = [r for r in mismatch_rows if not is_corroborated(r)]
-
-    report = f"""# Layer 1 Report
-
-**Status:** {"SUCCESS" if check_failed == 0 else "SUCCESS WITH CHECK FAILURES"}
-**Project:** {project_id}
-**Scope:** {','.join(only_units) if only_units else "all units"}
-**Elements judged:** {len(all_bucket_rows)}{f" ({len(bucket_rows)} newly judged this run, {len(carry_forward_bucket_rows)} carried forward from other units)" if carry_forward_bucket_rows else ""}
-**MATCH:** {sum(1 for r in all_bucket_rows if r['match_status'] == 'MATCH')}
-**MISMATCH:** {len(mismatch_rows)}
-  - corroborated ({CONCENTRATION_MIN_COUNT}+ elements of the same document agree): {len(high_conf)} — high-confidence, likely real misfiles
-  - single/low-corroboration: {len(low_conf)} — needs individual review, not yet strong enough to act on alone
-**CROSS_REFERENCE (hub/overview unit's own element names another unit — expected, not a misfile):** {cross_reference}
-**EXPECTED_OVERLAP (human-confirmed legitimate overlap pair, see manifest.yaml known_overlaps — not a misfile):** {expected_overlap}
-**ORPHAN:** {orphan}
-**UNVERIFIED (no self-declaration, parent-link only, or a discounted hub-unit self-declaration):** {sum(1 for r in all_bucket_rows if r['match_status'] == 'UNVERIFIED')}
-**MISSING role findings:** {missing}
-**DUPLICATE role findings:** {duplicate}
-**CHECK_FAILED role findings (Phase 3 model call failed — NOT a real finding, needs re-run):** {check_failed}
-
-## Artifacts
-- `bucket-ledger.json` — one row per Layer 0 element, with Phase 1-2 placement judgment
-  (plus `fulfills_role`/`fulfillment_confidence` backfilled from Phase 3, if any)
-- `findings.json` — one row per (unit, day, expected role), with Phase 3 fulfillment judgment
-- `REVIEW-QUEUE.md` — remaining MISMATCH findings grouped by unit-pair, for a human to
-  confirm as either a genuine error or an expected overlap (see manifest.yaml known_overlaps)
-- `.raw/<doc_id>-phase1.json` — raw Phase 1 model responses
-- `.raw/<unit_id>-<day_id>-phase3.json` — raw Phase 3 model responses
-
-## MISMATCH detail (sorted by corroboration strength)
-{chr(10).join(
-    f"- [{'HIGH' if is_corroborated(r) else 'low'}] {r['element_id']} (doc {r['doc_id']}): "
-    f"filed under '{r['parent_link_unit_id']}', self-declares '{r['matched_unit_id']}' "
-    f"({(r['mismatch_corroboration'] or {}).get('same_target_count', 0)}/"
-    f"{(r['mismatch_corroboration'] or {}).get('total_self_declarations_in_doc', 0)} of this doc's own elements agree)"
-    for r in sorted(mismatch_rows, key=lambda r: -(r['mismatch_corroboration'] or {}).get('same_target_count', 0))
-) if mismatch_rows else "(none)"}
-"""
     atomic_write(l1_dir / "REPORT.md", report)
     atomic_write(
         l1_dir / "REVIEW-QUEUE.md", build_review_queue_md(all_bucket_rows, manifest)

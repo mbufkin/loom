@@ -32,9 +32,11 @@ import sys
 from pathlib import Path
 
 from audit_lib import (
+    LARGE_CALL_TIMEOUT_SECONDS,
     atomic_write,
     doc_id_from_filename,
     excerpt_cited_in,
+    extract_content,
     iter_source_files,
     load_config,
     log,
@@ -70,9 +72,9 @@ CHUNK_THRESHOLD_CHARS = 40_000
 CHUNK_SIZE_CHARS = 30_000
 OVERLAP_PARAGRAPHS = 2  # trailing paragraphs repeated at the start of the next chunk
 
-# Overnight TE runs: give decompose more wall-clock without raising the global
-# config timeout for small Dallas-shaped calls elsewhere.
-LARGE_CALL_TIMEOUT_SECONDS = 900
+# Overnight TE runs need more wall-clock than small Dallas-shaped calls, so decompose
+# uses the shared LARGE_CALL_TIMEOUT_SECONDS (imported from audit_lib — single source
+# of truth, F025) rather than the global config timeout.
 DECOMPOSE_PARSE_RETRIES = 2  # was 1; Bluebonnet truncations often succeed on retry
 
 # --- Citation mechanism: pointers, not generated text -----------------------
@@ -420,10 +422,6 @@ def model_call(
     )
 
 
-def extract_content(response: dict) -> str:
-    return response["choices"][0]["message"]["content"]
-
-
 def _decompose_text_with_retry(
     cfg: dict,
     role: str,
@@ -715,15 +713,43 @@ def _decompose_with_recheck(
     # (Practice/Succeed SE). Use the large timeout for every decompose call;
     # Dallas-sized docs usually finish well under 300s anyway.
     call_timeout = LARGE_CALL_TIMEOUT_SECONDS
-    primary, p_paragraphs = decompose_text(
-        cfg,
-        priors_block,
-        text,
-        char_label,
-        f"{step_prefix}-pass1",
-        timeout_seconds=call_timeout,
-    )
-    atomic_write(raw_dir / f"{step_prefix}-pass1.json", json.dumps(primary, indent=2))
+    # Durable mid-doc resume (lab / overnight kills): if pass1 already landed on
+    # disk from a prior attempt that died during pass2, reuse it. Paragraphs are
+    # recomputed locally (deterministic from `text`) — we only skip the LLM call.
+    # See experiments/model-output-lab/DURABILITY.md (Crab / ALAS-style step reuse).
+    pass1_path = raw_dir / f"{step_prefix}-pass1.json"
+    primary: dict | None = None
+    p_paragraphs: list[str] | None = None
+    if pass1_path.is_file():
+        try:
+            cached = json.loads(pass1_path.read_text(encoding="utf-8"))
+            if isinstance(cached, dict) and isinstance(cached.get("elements"), list):
+                _, p_paragraphs = number_paragraphs(text)
+                schema_try = validate_layer0_elements(cached)
+                if not schema_try:
+                    primary = cached
+                    log(
+                        f"  pass1 resume cache hit {pass1_path.name} "
+                        f"({len(primary.get('elements') or [])} elements)"
+                    )
+                else:
+                    log(
+                        f"WARN: ignoring invalid pass1 cache {pass1_path.name}: "
+                        f"{'; '.join(schema_try)}"
+                    )
+        except (OSError, json.JSONDecodeError, ValueError) as e:
+            log(f"WARN: could not load pass1 cache {pass1_path.name}: {e}")
+    if primary is None:
+        primary, p_paragraphs = decompose_text(
+            cfg,
+            priors_block,
+            text,
+            char_label,
+            f"{step_prefix}-pass1",
+            timeout_seconds=call_timeout,
+        )
+        atomic_write(pass1_path, json.dumps(primary, indent=2))
+    assert p_paragraphs is not None
     schema_errors = validate_layer0_elements(primary)
     if schema_errors:
         errors.append(f"primary schema: {'; '.join(schema_errors)}")

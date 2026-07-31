@@ -1,0 +1,26 @@
+unit_id: introduction-to-loops
+title: Introduction to Loops in Computer Science
+unit_length_days: 5
+days:
+- id: d1
+  label: "Lesson 1: Introduction to Loops \u2014 The `for` Loop"
+  expected:
+  - lesson_content
+- id: d2
+  label: "Lesson 2: Condition-Controlled Loops \u2014 The `while` Loop"
+  expected:
+  - lesson_content
+- id: d3
+  label: 'Lesson 3: Nested Loops and Loop Patterns'
+  expected:
+  - lesson_content
+- id: d4
+  label: 'Lesson 4: Loop Applications in Data Processing'
+  expected:
+  - lesson_content
+- id: d5
+  label: 'Lesson 5: Loops Review'
+  expected:
+  - lesson_content
+unit_supporting:
+- lesson_plan

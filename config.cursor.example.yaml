@@ -1,0 +1,51 @@
+# Cursor SDK backend — run the FULL Loom pipeline through Cursor Agent models.
+#
+# OpenCode does NOT store the Cursor key. Loom resolves credentials as:
+#   1) env CURSOR_API_KEY  (or whatever api_key_env names)
+#   2) ~/.pi/agent/auth.json → cursor.key
+#
+# Use without touching config.yaml:
+#   cp config.cursor.example.yaml config.cursor.yaml   # optional local copy
+#   export CURSOR_API_KEY=...                          # if not already set
+#   LOOM_CONFIG=config.cursor.yaml python3 experiments/zen_smoke.py
+#   LOOM_CONFIG=config.cursor.yaml ./run-audit <project-id>
+#
+# SWAP MODELS (no Python edits):
+#   - change analyst_model / verifier_model (e.g. composer-2.5, grok-4.5, …)
+#   - change model_params.effort: low | medium | high
+#   - change model_params.fast: true | false
+#   Or set analyst_model to a dict: {id: grok-4.5, params: {effort: high, fast: true}}
+#
+# ⚠️  PRIVACY: prompts leave the machine via Cursor cloud. Sample curriculum only
+# unless your Cursor org policy allows district data.
+
+models:
+  # Selects the Cursor Agent transport (not OpenAI chat/completions URLs).
+  provider: cursor_sdk
+
+  # Dummy URLs kept for humans / tools that expect the keys — ignored when
+  # provider is cursor_sdk.
+  analyst_url: "cursor://sdk"
+  verifier_url: "cursor://sdk"
+
+  # Default: Grok 4.5 · fast · high effort (Cursor model catalog).
+  analyst_model: "grok-4.5"
+  verifier_model: "grok-4.5"
+  model_params:
+    effort: high
+    fast: true
+
+  timeout_seconds: 600
+  api_key_env: "CURSOR_API_KEY"
+  send_repeat_penalty: false
+  # Cursor cloud RPM is unknown; keep a gentle gate so bursts don't 429.
+  max_rpm: 20
+  # Optional: pin agent cwd (defaults to a throwaway temp dir).
+  # cursor_cwd: "/tmp/loom-cursor-scratch"
+
+paths:
+  base_dir: "."
+  default_sources_dir: "projects/my-district/sources"
+
+policy:
+  auditor_only: true

@@ -1,0 +1,1724 @@
+{
+  "project_id": "lab-dallas-career",
+  "workflow_id": "quiz",
+  "path": "B",
+  "status": "reviewed",
+  "doc_ids": [
+    "041457651819",
+    "09bf178d4e7e",
+    "0a9fe894e4f0",
+    "0ace9ac9d412",
+    "0b16e1424928",
+    "1518e9d9d4e5",
+    "1b43180b2ba4",
+    "1bd2952ce87b",
+    "314d7d0905ca",
+    "3f5d5ba70a87",
+    "3fd5e5bc561c",
+    "4736326638c1",
+    "51e75ae5f576",
+    "59ddeafc2ad3",
+    "6caee441faaf",
+    "81adda4c10f7",
+    "85c8ad2c6c50",
+    "86fff193b91a",
+    "8ce965ac1600",
+    "9b49036929a2",
+    "a13c35aa5c4e",
+    "ba8b5c7a6deb",
+    "d3fae80ecd3f",
+    "e173d04cd3e3",
+    "e2c12c61bc5f",
+    "ed1c99b4f5fa",
+    "eff81c789b58",
+    "f52d1bc1c462",
+    "fc48920a5ca9",
+    "ff5cd4c0712e"
+  ],
+  "summary": {
+    "doc_count": 30,
+    "reviewed": 30,
+    "gate_pass": 28
+  },
+  "inventory": [
+    {
+      "doc_id": "041457651819",
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "professional-preparedness",
+      "title": "Professional Preparedness - Exit Ticket Day 1",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "041457651819-e1",
+                "excerpt": "Professional Preparedness Exit Ticket - Day 1\n\nName:                                                                         Date:   _____________________\n\nInstructions: Answer the following question over the lesson today.\n\nWhich part of the resume builder did you have the least trouble and the most trouble writing?"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "041457651819-e1",
+                "excerpt": "Professional Preparedness Exit Ticket - Day 1\n\nName:                                                                         Date:   _____________________\n\nInstructions: Answer the following question over the lesson today.\n\nWhich part of the resume builder did you have the least trouble and the most trouble writing?"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "09bf178d4e7e",
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "professional-preparedness",
+      "title": "Professional Preparedness - Exit Ticket Day 3",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "09bf178d4e7e-e1",
+                "excerpt": "Professional Preparedness Exit Ticket - Day 3\n\nName:                                                                         Date:   _____________________\n\nInstructions: Answer the following question over the lesson today.\n\nHow well did you feel like you did at the interview?\n(On a scale of 1-5, where 5 is the best.)"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "09bf178d4e7e-e1",
+                "excerpt": "Professional Preparedness Exit Ticket - Day 3\n\nName:                                                                         Date:   _____________________\n\nInstructions: Answer the following question over the lesson today.\n\nHow well did you feel like you did at the interview?\n(On a scale of 1-5, where 5 is the best.)"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "0a9fe894e4f0",
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "career-cluster",
+      "title": "Career Cluster- Exit Ticket Day 1",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "0a9fe894e4f0-e1",
+                "excerpt": "Career Cluster Exit Ticket - Day 1\n\nName:                                                                         Date:   _____________________\n\nInstructions: Answer the questions for what you learned about the Career Clusters\n\nWhat Career Cluster interested you the most?\n\n What Career Cluster were you the least interested in?\n\n Which Career Cluster does a Doctor fall under?"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "0a9fe894e4f0-e1",
+                "excerpt": "Career Cluster Exit Ticket - Day 1\n\nName:                                                                         Date:   _____________________\n\nInstructions: Answer the questions for what you learned about the Career Clusters\n\nWhat Career Cluster interested you the most?\n\n What Career Cluster were you the least interested in?\n\n Which Career Cluster does a Doctor fall under?"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "0ace9ac9d412",
+      "doc_type": "answer_key",
+      "role": "answer_key",
+      "unit_id": "transportation-distribution",
+      "title": "Transportation Distribution and Logistics Answer Key",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_answers",
+            "label": "Answers / solutions present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "0ace9ac9d412-e1",
+                "excerpt": "PARTS OF AN AIRPLANE\n\n\nwing\naileron\n\nflaps\nvertical stabilizer / fin\n\n\nfuselage\n\nrudder\nelevator\n\n\nflight deck\n/ cockpit\n\ncabin\n\nengine\n\n\nhorizontal stabilizer\n/ tailplane"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "0b16e1424928",
+      "doc_type": "quiz",
+      "role": "quiz",
+      "unit_id": "dallas-isd",
+      "title": "Dallas ISD High School Options Quizizz",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_items",
+            "label": "Assessment items present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "0b16e1424928-e1",
+                "excerpt": "Worksheets\nDallas ISD High School Options\nTotal questions: 32\nWorksheet time: 16mins\nName\nClass\nDate\n1.\nMatch the following descriptions with the type of courses offered in the STEM program at Dallas ISD\nHigh School:\nBasic courses in arts and humanities\nSTEM program courses\nAdvanced courses in physical\neducation\nNon-STEM program courses\nIntroductory courses in history and\ngeography\nPhysical educat"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_instructions",
+            "label": "Directions / instructions",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "0b16e1424928-e1",
+                "excerpt": "Worksheets\nDallas ISD High School Options\nTotal questions: 32\nWorksheet time: 16mins\nName\nClass\nDate\n1.\nMatch the following descriptions with the type of courses offered in the STEM program at Dallas ISD\nHigh School:\nBasic courses in arts and humanities\nSTEM program courses\nAdvanced courses in physical\neducation\nNon-STEM program courses\nIntroductory courses in history and\ngeography\nPhysical educat"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "1518e9d9d4e5",
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "health-science",
+      "title": "Health Science - Exit Ticket",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "1518e9d9d4e5-e1",
+                "excerpt": "Health Science Day 1 Exit Ticket\n\nName:                                                                         Date:   _____________________\n\nInstructions:\nWrite a paragraph explaining why it is important to follow the daily recommended requirements for nutrition."
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "1518e9d9d4e5-e1",
+                "excerpt": "Health Science Day 1 Exit Ticket\n\nName:                                                                         Date:   _____________________\n\nInstructions:\nWrite a paragraph explaining why it is important to follow the daily recommended requirements for nutrition."
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "1b43180b2ba4",
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "dallas-isd",
+      "title": "Dallas ISD High School Options - Exit Ticket",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "1b43180b2ba4-e1",
+                "excerpt": "Dallas ISD High School Programs Exit Ticket\n\n\nExit Ticket: Dallas ISD High School Programs Exploration\nName: ___________________________\nInstructions:\nReflect on today’s lesson about Dallas ISD high school programs.\nAnswer the following questions briefly and thoughtfully.\nHand in this exit ticket before leaving the classroom.\n\nWhich Dallas ISD high school program interests you the most?\n[ ] STEM ("
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "1b43180b2ba4-e1",
+                "excerpt": "Dallas ISD High School Programs Exit Ticket\n\n\nExit Ticket: Dallas ISD High School Programs Exploration\nName: ___________________________\nInstructions:\nReflect on today’s lesson about Dallas ISD high school programs.\nAnswer the following questions briefly and thoughtfully.\nHand in this exit ticket before leaving the classroom.\n\nWhich Dallas ISD high school program interests you the most?\n[ ] STEM ("
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "1bd2952ce87b",
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "information-technology",
+      "title": "Information Technology - Exit Ticket",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "1bd2952ce87b-e1",
+                "excerpt": "Information Technology Day 1 Exit Ticket\n\nName:                                                                         Date:   _____________________\n\nInstructions:\nUse the quiz through Common Sense Media to check for understanding."
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "1bd2952ce87b-e1",
+                "excerpt": "Information Technology Day 1 Exit Ticket\n\nName:                                                                         Date:   _____________________\n\nInstructions:\nUse the quiz through Common Sense Media to check for understanding."
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "314d7d0905ca",
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "arts-av-technology",
+      "title": "Arts AV Technology Communication - Exit Ticket Day 1",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "314d7d0905ca-e1",
+                "excerpt": "Arts, A/V TEch & Comm Cluster Exit Ticket - Day 1\n\nName:                                                                         Date:   _____________________\n\nInstructions: Watch the youtube video “Non Profit Advertising Spot”\n\nAnswer the Question: What is the message of this Advertisement?\n\nWhat is the message of this Advertisement?\n\n What is the Company Name?\n\n What is the Company Slogan?"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "314d7d0905ca-e1",
+                "excerpt": "Arts, A/V TEch & Comm Cluster Exit Ticket - Day 1\n\nName:                                                                         Date:   _____________________\n\nInstructions: Watch the youtube video “Non Profit Advertising Spot”\n\nAnswer the Question: What is the message of this Advertisement?\n\nWhat is the message of this Advertisement?\n\n What is the Company Name?\n\n What is the Company Slogan?"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "3f5d5ba70a87",
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "hospitality-tourism",
+      "title": "Hospitality Tourism Day 2 Exit Ticket",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "3f5d5ba70a87-e1",
+                "excerpt": "Customer Service - “Poor” Vs “Great” Video Questions\n\nName:                                                                         Date:   _____________________\n\nInstructions:  Watch the video https://www.youtube.com/watch?v=Zy1h49_L8ME&t=1s\nAnswer the questions\n\n\nWhat were  3 things that went wrong with the “Poor Customer Service”\n.\n\n What were  3 things that went right with the “Great Customer "
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "3f5d5ba70a87-e1",
+                "excerpt": "Customer Service - “Poor” Vs “Great” Video Questions\n\nName:                                                                         Date:   _____________________\n\nInstructions:  Watch the video https://www.youtube.com/watch?v=Zy1h49_L8ME&t=1s\nAnswer the questions\n\n\nWhat were  3 things that went wrong with the “Poor Customer Service”\n.\n\n What were  3 things that went right with the “Great Customer "
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "3fd5e5bc561c",
+      "doc_type": "quiz",
+      "role": "quiz",
+      "unit_id": "manufacturing",
+      "title": "Manufacturing exploration Quizizz",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_items",
+            "label": "Assessment items present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "3fd5e5bc561c-e1",
+                "excerpt": "Worksheets\nManufacturing exploration\nTotal questions: 11\nWorksheet time: 6mins\nName\nClass\nDate\n1.\nWhat is the primary focus of the learning objective titled \"Manufacturing exploration\"?\na) To study historical aspects of manufacturing\nb) To learn about manufacturing theories\nc) To understand the economic impact of manufacturing\nd) To explore a new career in manufacturing through experiential\nlearni"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_instructions",
+            "label": "Directions / instructions",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "3fd5e5bc561c-e1",
+                "excerpt": "Worksheets\nManufacturing exploration\nTotal questions: 11\nWorksheet time: 6mins\nName\nClass\nDate\n1.\nWhat is the primary focus of the learning objective titled \"Manufacturing exploration\"?\na) To study historical aspects of manufacturing\nb) To learn about manufacturing theories\nc) To understand the economic impact of manufacturing\nd) To explore a new career in manufacturing through experiential\nlearni"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "4736326638c1",
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "professional-preparedness",
+      "title": "Professional Preparedness - Exit Ticket Day 2",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "4736326638c1-e1",
+                "excerpt": "Professional Preparedness Exit Ticket - Day 2\n\nName:                                                                         Date:   _____________________\n\nInstructions: Answer the following question over the lesson today.\n\nWhat would you wear to an interview?"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "4736326638c1-e1",
+                "excerpt": "Professional Preparedness Exit Ticket - Day 2\n\nName:                                                                         Date:   _____________________\n\nInstructions: Answer the following question over the lesson today.\n\nWhat would you wear to an interview?"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "51e75ae5f576",
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "hospitality-tourism",
+      "title": "Exit Ticket Day 3 HOSPITALITY AND TOURISM",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "51e75ae5f576-e1",
+                "excerpt": "Hospitality and Tourism Exit Ticket - Day 3\n\nName:                                                                         Date:   _____________________\n\nInstructions: Answer the questions for what you learned about Hospitality and Tourism\n\n\nOut of the three pathways, (Culinary Arts/ Lodging and Resort Management/ Travel, Tourism and Attractions) which did you like most ?\n\n What career did you fin"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "51e75ae5f576-e1",
+                "excerpt": "Hospitality and Tourism Exit Ticket - Day 3\n\nName:                                                                         Date:   _____________________\n\nInstructions: Answer the questions for what you learned about Hospitality and Tourism\n\n\nOut of the three pathways, (Culinary Arts/ Lodging and Resort Management/ Travel, Tourism and Attractions) which did you like most ?\n\n What career did you fin"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "59ddeafc2ad3",
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "career-cluster",
+      "title": "Career Cluster - Exit Ticket Day 3",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "59ddeafc2ad3-e1",
+                "excerpt": "Career Cluster Exit Ticket - Day 3\n\nName:                                                                         Date:   _____________________\n\nInstructions: Answer the questions for what you learned about the presentations from today.\n\n\nOn a scale of 1 - 5 where 5 is the best, how well did my group do on the presentation?\n\nWhat cluster did the best at presenting (cannot choose your own group)?"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "59ddeafc2ad3-e1",
+                "excerpt": "Career Cluster Exit Ticket - Day 3\n\nName:                                                                         Date:   _____________________\n\nInstructions: Answer the questions for what you learned about the presentations from today.\n\n\nOn a scale of 1 - 5 where 5 is the best, how well did my group do on the presentation?\n\nWhat cluster did the best at presenting (cannot choose your own group)?"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "6caee441faaf",
+      "doc_type": "answer_key",
+      "role": "answer_key",
+      "unit_id": "dallas-isd",
+      "title": "Dallas ISD High School Options Quizizz Answer Key",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_answers",
+            "label": "Answers / solutions present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "6caee441faaf-e1",
+                "excerpt": "Worksheets\nDallas ISD High School Options\nTotal questions: 32\nWorksheet time: 16mins\nName\nClass\nDate\n1.\nMatch the following descriptions with the type of courses offered in the STEM program at Dallas ISD\nHigh School:\nBasic courses in arts and humanities\nSTEM program courses\nAdvanced courses in physical\neducation\nNon-STEM program courses\nIntroductory courses in history and\ngeography\nPhysical educat"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "81adda4c10f7",
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "manufacturing",
+      "title": "Manufacturing Lesson Exit ticket",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "81adda4c10f7-e1",
+                "excerpt": "Manufacturing Exit Ticket\n\nName:                                                                         Date:   _____________________\n\n\nExit Ticket: Manufacturing Mass-Produced Goods\nInstructions:\nReflect on today’s lesson about manufacturing mass-produced goods.\nAnswer the following questions briefly and honestly.\nHand in this exit ticket before leaving the classroom.\n\nWhat is one key concept yo"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "81adda4c10f7-e1",
+                "excerpt": "Manufacturing Exit Ticket\n\nName:                                                                         Date:   _____________________\n\n\nExit Ticket: Manufacturing Mass-Produced Goods\nInstructions:\nReflect on today’s lesson about manufacturing mass-produced goods.\nAnswer the following questions briefly and honestly.\nHand in this exit ticket before leaving the classroom.\n\nWhat is one key concept yo"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "85c8ad2c6c50",
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "hospitality-tourism",
+      "title": "Day 1 Exit Ticket HOSPITALITY AND TOURISM",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "85c8ad2c6c50-e1",
+                "excerpt": "Hospitality and Tourism Exit Ticket - Day 1\n\nName:                                                                         Date:   _____________________\n\nInstructions: Answer the questions for what you learned about Culinary.\n\n\nWhich cut is thinner, Julienne or Batonnet?\n\n Which cut is bigger, Dice or Brunoise?\n\n Can you name the first part in a three course meal?"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "85c8ad2c6c50-e1",
+                "excerpt": "Hospitality and Tourism Exit Ticket - Day 1\n\nName:                                                                         Date:   _____________________\n\nInstructions: Answer the questions for what you learned about Culinary.\n\n\nWhich cut is thinner, Julienne or Batonnet?\n\n Which cut is bigger, Dice or Brunoise?\n\n Can you name the first part in a three course meal?"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "86fff193b91a",
+      "doc_type": "answer_key",
+      "role": "answer_key",
+      "unit_id": "engineering",
+      "title": "Engineering Lesson Quiz Quizizz Answer key",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_answers",
+            "label": "Answers / solutions present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "86fff193b91a-e1",
+                "excerpt": "Worksheets\nEngineering Design Process Quiz\nTotal questions: 10\nWorksheet time: 9mins\nName\nClass\nDate\n1.\nWhat is the primary objective of using the engineering design process in the context provided?\na) To design, build, and test a paper airplane launcher\nb) To study the properties of different materials\nc) To create a new type of paper\nd) To learn about weather patterns\n2.\nWhat type of energy conv"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "8ce965ac1600",
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "business-marketing",
+      "title": "Business Marketing Finance - Exit Ticket",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "8ce965ac1600-e1",
+                "excerpt": "Business, Marketing & Finance Day 1 Exit Ticket\n\nName:                                                                         Date:   _____________________\n\nInstructions:\nWrite a paragraph describing the process of creating a new product and the process of working in a group."
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "8ce965ac1600-e1",
+                "excerpt": "Business, Marketing & Finance Day 1 Exit Ticket\n\nName:                                                                         Date:   _____________________\n\nInstructions:\nWrite a paragraph describing the process of creating a new product and the process of working in a group."
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "9b49036929a2",
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "hospitality-tourism",
+      "title": "Hospitality Tourism Day 2 - Exit Ticket",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "9b49036929a2-e1",
+                "excerpt": "Hospitality and Tourism Cluster Day 2 Exit Ticket\n\nName:                                                                         Date:   _____________________\n\nInstructions: Read each scenario and decide which response gave better customer service.\n\nScenario 1\n\nWhich response gives better customer service?\n\nScenario 2\n\nWhich response gives better customer service?\n\nScenario 3\n\nWhich response gives"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "9b49036929a2-e1",
+                "excerpt": "Hospitality and Tourism Cluster Day 2 Exit Ticket\n\nName:                                                                         Date:   _____________________\n\nInstructions: Read each scenario and decide which response gave better customer service.\n\nScenario 1\n\nWhich response gives better customer service?\n\nScenario 2\n\nWhich response gives better customer service?\n\nScenario 3\n\nWhich response gives"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "a13c35aa5c4e",
+      "doc_type": "answer_key",
+      "role": "answer_key",
+      "unit_id": "manufacturing",
+      "title": "Manufacturing exploration Answer keys Quizizz",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_answers",
+            "label": "Answers / solutions present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "a13c35aa5c4e-e1",
+                "excerpt": "Worksheets\nManufacturing exploration\nTotal questions: 11\nWorksheet time: 6mins\nName\nClass\nDate\n1.\nWhat is the primary focus of the learning objective titled \"Manufacturing exploration\"?\na) To study historical aspects of manufacturing\nb) To learn about manufacturing theories\nc) To understand the economic impact of manufacturing\nd) To explore a new career in manufacturing through experiential\nlearni"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "ba8b5c7a6deb",
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "engineering",
+      "title": "Engineering Lesson - Exit Ticket",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "ba8b5c7a6deb-e1",
+                "excerpt": "Engineering Exit Ticket\n\n\nExit Ticket: Design a Paper Airplane Launcher\nName: ___________________________\nInstructions:\nReflect on today’s lesson about designing and building a paper airplane launcher.\nAnswer the following questions briefly and thoughtfully.\nHand in this exit ticket before leaving the classroom.\n\nWhat was the main objective of today’s activity?\n[ ] To create a functional paper air"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "ba8b5c7a6deb-e1",
+                "excerpt": "Engineering Exit Ticket\n\n\nExit Ticket: Design a Paper Airplane Launcher\nName: ___________________________\nInstructions:\nReflect on today’s lesson about designing and building a paper airplane launcher.\nAnswer the following questions briefly and thoughtfully.\nHand in this exit ticket before leaving the classroom.\n\nWhat was the main objective of today’s activity?\n[ ] To create a functional paper air"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "d3fae80ecd3f",
+      "doc_type": "quiz",
+      "role": "quiz",
+      "unit_id": "architecture-construction",
+      "title": "Architecture and Construction Quizizz",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_items",
+            "label": "Assessment items present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "d3fae80ecd3f-e1",
+                "excerpt": "Worksheets\nLearning Activity on Building Paper Towers\nTotal questions: 10\nWorksheet time: 5mins\nName\nClass\nDate\n1.\nWhat is the primary objective of the learning activity described in the document?\na) To design and build a paper tower based on specific criteria\nb) To create a digital model of a building\nc) To study the history of architectural design\nd) To write an essay about paper towers\n2.\nWhat "
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_instructions",
+            "label": "Directions / instructions",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "d3fae80ecd3f-e1",
+                "excerpt": "Worksheets\nLearning Activity on Building Paper Towers\nTotal questions: 10\nWorksheet time: 5mins\nName\nClass\nDate\n1.\nWhat is the primary objective of the learning activity described in the document?\na) To design and build a paper tower based on specific criteria\nb) To create a digital model of a building\nc) To study the history of architectural design\nd) To write an essay about paper towers\n2.\nWhat "
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "e173d04cd3e3",
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "architecture-construction",
+      "title": "Architecture Construction - Exit Ticket",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "e173d04cd3e3-e1",
+                "excerpt": "Architecture and Construction Exit Ticket\n\nExit Ticket: Tallest Paper Tower Challenge\nName: ___________________________\nInstructions:\nReflect on today’s lesson about designing and building paper towers.\nAnswer the following questions briefly and thoughtfully.\nHand in this exit ticket before leaving the classroom.\n\nWhat was the main objective of today’s activity?\n[ ] To build the tallest paper towe"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "e173d04cd3e3-e1",
+                "excerpt": "Architecture and Construction Exit Ticket\n\nExit Ticket: Tallest Paper Tower Challenge\nName: ___________________________\nInstructions:\nReflect on today’s lesson about designing and building paper towers.\nAnswer the following questions briefly and thoughtfully.\nHand in this exit ticket before leaving the classroom.\n\nWhat was the main objective of today’s activity?\n[ ] To build the tallest paper towe"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "e2c12c61bc5f",
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "arts-av-technology",
+      "title": "Arts AV Technology Communication - Exit Ticket Day 3",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "e2c12c61bc5f-e1",
+                "excerpt": "Arts, A/V Tech & Comm Cluster Exit Ticket - Day 3\n\nName:                                                                         Date:   _____________________\n\nInstructions: Answer the questions for what you learned about Arts, A/V Technology & Communication\n\n\nWhat is the main purpose of this cluster?\n\n What career did you find most interesting within this cluster?\n\n What would you like to learn m"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "e2c12c61bc5f-e1",
+                "excerpt": "Arts, A/V Tech & Comm Cluster Exit Ticket - Day 3\n\nName:                                                                         Date:   _____________________\n\nInstructions: Answer the questions for what you learned about Arts, A/V Technology & Communication\n\n\nWhat is the main purpose of this cluster?\n\n What career did you find most interesting within this cluster?\n\n What would you like to learn m"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "ed1c99b4f5fa",
+      "doc_type": "answer_key",
+      "role": "answer_key",
+      "unit_id": "architecture-construction",
+      "title": "Architecture and Construction Answer Key Quizizz",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_answers",
+            "label": "Answers / solutions present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "ed1c99b4f5fa-e1",
+                "excerpt": "Worksheets\nLearning Activity on Building Paper Towers\nTotal questions: 10\nWorksheet time: 5mins\nName\nClass\nDate\n1.\nWhat is the primary objective of the learning activity described in the document?\na) To design and build a paper tower based on specific criteria\nb) To create a digital model of a building\nc) To study the history of architectural design\nd) To write an essay about paper towers\n2.\nWhat "
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "eff81c789b58",
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "financial-literacy",
+      "title": "Financial Literacy - Exit Ticket",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "eff81c789b58-e1",
+                "excerpt": "Financial Literacy Day 1 Exit Ticket\n\nName:                                                                         Date:   _____________________\n\nInstructions:\nComplete the mini-quizzes throughout the scenarios."
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "eff81c789b58-e1",
+                "excerpt": "Financial Literacy Day 1 Exit Ticket\n\nName:                                                                         Date:   _____________________\n\nInstructions:\nComplete the mini-quizzes throughout the scenarios."
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "f52d1bc1c462",
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "career-cluster",
+      "title": "Career Cluster - Exit Ticket Day 2",
+      "presence": {
+        "gate_pass": false,
+        "coverage": 0.0,
+        "missing_required": [
+          "Prompt / question present"
+        ],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PARTIAL",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "f52d1bc1c462-e1",
+                "excerpt": "Career Cluster Exit Ticket - Day 2\n\nName:                                                                         Date:   _____________________\n\nInstructions: Having had the day to work in your groups, think back on how the group worked together.\n\nDid my group communicate well?\n\n\n Did my group use its time well?\n\n\nDid I contribute to my team’s work?"
+              }
+            ],
+            "note": "keyword match only; no element tagged with the expected type"
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PARTIAL",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "f52d1bc1c462-e1",
+                "excerpt": "Career Cluster Exit Ticket - Day 2\n\nName:                                                                         Date:   _____________________\n\nInstructions: Having had the day to work in your groups, think back on how the group worked together.\n\nDid my group communicate well?\n\n\n Did my group use its time well?\n\n\nDid I contribute to my team’s work?"
+              }
+            ],
+            "note": "keyword match only; no element tagged with the expected type"
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": false,
+        "status": "PARTIAL_OR_MISSING",
+        "missing_required": [
+          "Prompt / question present"
+        ]
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "fc48920a5ca9",
+      "doc_type": "quiz",
+      "role": "quiz",
+      "unit_id": "engineering",
+      "title": "Engineering Lesson Quiz Quizizz",
+      "presence": {
+        "gate_pass": true,
+        "coverage": 1.0,
+        "missing_required": [],
+        "criteria": [
+          {
+            "criterion_id": "has_items",
+            "label": "Assessment items present",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "fc48920a5ca9-e1",
+                "excerpt": "Worksheets\nEngineering Design Process Quiz\nTotal questions: 10\nWorksheet time: 9mins\nName\nClass\nDate\n1.\nWhat is the primary objective of using the engineering design process in the context provided?\na) To design, build, and test a paper airplane launcher\nb) To study the properties of different materials\nc) To create a new type of paper\nd) To learn about weather patterns\n2.\nWhat type of energy conv"
+              }
+            ],
+            "note": ""
+          },
+          {
+            "criterion_id": "has_instructions",
+            "label": "Directions / instructions",
+            "scoring": "presence",
+            "verdict": "PRESENT",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "fc48920a5ca9-e1",
+                "excerpt": "Worksheets\nEngineering Design Process Quiz\nTotal questions: 10\nWorksheet time: 9mins\nName\nClass\nDate\n1.\nWhat is the primary objective of using the engineering design process in the context provided?\na) To design, build, and test a paper airplane launcher\nb) To study the properties of different materials\nc) To create a new type of paper\nd) To learn about weather patterns\n2.\nWhat type of energy conv"
+              }
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": true,
+        "status": "PRESENT",
+        "missing_required": []
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    },
+    {
+      "doc_id": "ff5cd4c0712e",
+      "doc_type": "exit_ticket",
+      "role": "exit_ticket",
+      "unit_id": "arts-av-technology",
+      "title": "Arts AV Technology Communication - Exit Ticket Day 2",
+      "presence": {
+        "gate_pass": false,
+        "coverage": 0.0,
+        "missing_required": [
+          "Prompt / question present"
+        ],
+        "criteria": [
+          {
+            "criterion_id": "has_prompt",
+            "label": "Prompt / question present",
+            "scoring": "presence",
+            "verdict": "PARTIAL",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "ff5cd4c0712e-e1",
+                "excerpt": "Arts, A/V Tech & Comm Cluster Exit Ticket - Day 2\n\nName:                                                                         Date:   _____________________\n\nInstructions: Having had the day to work in your groups, think back on how the group worked together.\n\nDid my group communicate well?\n\n Did my group work together to solve the problem?\n\n Did my group use its time well?\n\n\nDid I contribute to"
+              }
+            ],
+            "note": "keyword match only; no element tagged with the expected type"
+          },
+          {
+            "criterion_id": "collects_response",
+            "label": "Space / mechanism to collect a response",
+            "scoring": "presence",
+            "verdict": "PARTIAL",
+            "band": null,
+            "evidence": [
+              {
+                "element_id": "ff5cd4c0712e-e1",
+                "excerpt": "Arts, A/V Tech & Comm Cluster Exit Ticket - Day 2\n\nName:                                                                         Date:   _____________________\n\nInstructions: Having had the day to work in your groups, think back on how the group worked together.\n\nDid my group communicate well?\n\n Did my group work together to solve the problem?\n\n Did my group use its time well?\n\n\nDid I contribute to"
+              }
+            ],
+            "note": "keyword match only; no element tagged with the expected type"
+          }
+        ]
+      },
+      "alignment": null,
+      "B1": {
+        "has_items": false,
+        "status": "PARTIAL_OR_MISSING",
+        "missing_required": [
+          "Prompt / question present"
+        ]
+      },
+      "B2": {
+        "status": "NOT_RUN",
+        "cannot_assess": false,
+        "mean_band": null,
+        "note": "objective/TEKS alignment (model, advisory)"
+      },
+      "B3": {
+        "status": "OK",
+        "note": "auditor-only — correctness never asserted"
+      }
+    }
+  ],
+  "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json"
+}

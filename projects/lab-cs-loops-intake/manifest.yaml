@@ -1,0 +1,16 @@
+project:
+  id: lab-cs-loops-intake
+  name: lab-cs-loops-intake
+sources_dir: /home/lenovo/g10-control-center-loom/projects/lab-cs-loops-intake/sources
+units:
+  introduction-to-loops:
+    title: Introduction to Loops in Computer Science
+    calendar: units/introduction-to-loops/calendar.yaml
+    documents:
+    - LESSON-01-VERY-HIGH-QUALITY.md
+    - LESSON-02-VERY-HIGH-QUALITY.md
+    - LESSON-03-VERY-HIGH-QUALITY.md
+    - LESSON-04-MEDIUM-QUALITY.md
+    - LESSON-05-BAD-QUALITY.md
+    - UNIT-OVERVIEW.md
+generated_by: ingest.py

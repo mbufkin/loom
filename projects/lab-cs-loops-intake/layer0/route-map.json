@@ -1,0 +1,101 @@
+{
+  "project_id": "lab-cs-loops-intake",
+  "generated_at": "2026-07-30T22:36:47.177144+00:00",
+  "counts": {
+    "general": 6
+  },
+  "degraded_count": 6,
+  "degraded_by_type": {
+    "other": 6
+  },
+  "degraded_doc_ids": [
+    "LESSON-01-VERY-HIGH-QUALITY.md",
+    "LESSON-02-VERY-HIGH-QUALITY.md",
+    "LESSON-03-VERY-HIGH-QUALITY.md",
+    "LESSON-04-MEDIUM-QUALITY.md",
+    "LESSON-05-BAD-QUALITY.md",
+    "UNIT-OVERVIEW.md"
+  ],
+  "unrouted_ledger_doc_ids": [],
+  "feedback_path": "/home/lenovo/g10-control-center-loom/projects/lab-cs-loops-intake/_loom_feedback.yaml",
+  "routes": [
+    {
+      "doc_id": "LESSON-01-VERY-HIGH-QUALITY.md",
+      "doc_type": "other",
+      "workflow_id": "general",
+      "path": "C",
+      "reason": "mapped from doc_type=other",
+      "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
+      "confidence": 0.85,
+      "source_file": "LESSON-01-VERY-HIGH-QUALITY.md",
+      "element_count": 18
+    },
+    {
+      "doc_id": "LESSON-02-VERY-HIGH-QUALITY.md",
+      "doc_type": "other",
+      "workflow_id": "general",
+      "path": "C",
+      "reason": "mapped from doc_type=other",
+      "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
+      "confidence": 0.85,
+      "source_file": "LESSON-02-VERY-HIGH-QUALITY.md",
+      "element_count": 12
+    },
+    {
+      "doc_id": "LESSON-03-VERY-HIGH-QUALITY.md",
+      "doc_type": "other",
+      "workflow_id": "general",
+      "path": "C",
+      "reason": "mapped from doc_type=other",
+      "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
+      "confidence": 0.85,
+      "source_file": "LESSON-03-VERY-HIGH-QUALITY.md",
+      "element_count": 18
+    },
+    {
+      "doc_id": "LESSON-04-MEDIUM-QUALITY.md",
+      "doc_type": "other",
+      "workflow_id": "general",
+      "path": "C",
+      "reason": "mapped from doc_type=other",
+      "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
+      "confidence": 0.85,
+      "source_file": "LESSON-04-MEDIUM-QUALITY.md",
+      "element_count": 18
+    },
+    {
+      "doc_id": "LESSON-05-BAD-QUALITY.md",
+      "doc_type": "other",
+      "workflow_id": "general",
+      "path": "C",
+      "reason": "mapped from doc_type=other",
+      "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
+      "confidence": 0.85,
+      "source_file": "LESSON-05-BAD-QUALITY.md",
+      "element_count": 10
+    },
+    {
+      "doc_id": "UNIT-OVERVIEW.md",
+      "doc_type": "other",
+      "workflow_id": "general",
+      "path": "C",
+      "reason": "mapped from doc_type=other",
+      "feedback": true,
+      "degraded": true,
+      "degraded_reason": "no dedicated pass for type 'other' (Path C best-effort)",
+      "confidence": 0.85,
+      "source_file": "UNIT-OVERVIEW.md",
+      "element_count": 5
+    }
+  ]
+}

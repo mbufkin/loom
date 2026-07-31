@@ -59,6 +59,12 @@ def preflight_models() -> None:
     """Health-check analyst/verifier endpoints from config.yaml (not hardcoded ports)."""
     cfg = load_config()
     models = cfg.get("models") or {}
+    # Hosted OpenAI-compatible APIs (NVIDIA NIM, OpenCode Zen, …) usually have no
+    # llama.cpp-style /health route. Lab / remote configs set skip_health_check: true
+    # and rely on the first real model_chat to surface auth/reachability errors.
+    if models.get("skip_health_check"):
+        log("models: skip_health_check=true — not probing /health (hosted API)")
+        return
     checks: list[tuple[str, str]] = []
     for role in ("analyst", "verifier"):
         url = models.get(f"{role}_url")
