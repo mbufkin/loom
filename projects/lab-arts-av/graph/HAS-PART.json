@@ -1,0 +1,401 @@
+{
+  "project_id": "lab-arts-av",
+  "unit_id": "arts-av-technology",
+  "model": "learning-commons-hasPart-v0",
+  "tier": "T1",
+  "status": "gold_hand_built",
+  "built_at": "2026-07-31T02:18:55.918168+00:00",
+  "note": "Hand-built gold for graphing experiments. Lesson count follows materials (Day 1/2/3 in slides + plan Estimated ~2.5\u20133), not the thin lab calendar (unit_length_days=2). Separate exit-ticket/rubric files are Assessment/Material nodes under the matching Lesson \u2014 not Path peers.",
+  "nodes": [
+    {
+      "id": "course:lab-arts-av",
+      "type": "Course",
+      "name": "lab-arts-av"
+    },
+    {
+      "id": "unit:arts-av-technology",
+      "type": "LessonGrouping",
+      "name": "Arts, A/V Technology and Communication",
+      "groupName": "unit",
+      "calendar_note": "lab calendar says 2 days; gold uses 3 Lessons per source Day markers"
+    },
+    {
+      "id": "lesson:arts-av:d1",
+      "type": "Lesson",
+      "name": "Day 1 \u2014 Engage pathways + community campaign kickoff",
+      "span": {
+        "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt",
+        "doc_id": "89430d6aae63",
+        "paragraphs": [
+          2,
+          62
+        ],
+        "element_ids": [
+          "89430d6aae63-e1",
+          "89430d6aae63-e2",
+          "89430d6aae63-e3",
+          "89430d6aae63-e4",
+          "89430d6aae63-e5",
+          "89430d6aae63-e6",
+          "89430d6aae63-e7",
+          "89430d6aae63-e8",
+          "89430d6aae63-e9",
+          "89430d6aae63-e10",
+          "89430d6aae63-e11"
+        ]
+      }
+    },
+    {
+      "id": "lesson:arts-av:d2",
+      "type": "Lesson",
+      "name": "Day 2 \u2014 Create campaign (flyer/commercial) + teamwork exit",
+      "span": {
+        "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt",
+        "doc_id": "89430d6aae63",
+        "paragraphs": [
+          63,
+          71
+        ],
+        "element_ids": [
+          "89430d6aae63-e13"
+        ]
+      }
+    },
+    {
+      "id": "lesson:arts-av:d3",
+      "type": "Lesson",
+      "name": "Day 3 \u2014 Presentations + cluster reflection exit",
+      "span": {
+        "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt",
+        "doc_id": "89430d6aae63",
+        "paragraphs": [
+          72,
+          78
+        ],
+        "element_ids": [
+          "89430d6aae63-e12",
+          "89430d6aae63-e14"
+        ]
+      }
+    },
+    {
+      "id": "material:89430d6aae63",
+      "type": "Material",
+      "role": "lesson_content",
+      "name": "Arts A/V teacher slideshow / deck",
+      "source_file": "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt",
+      "doc_id": "89430d6aae63"
+    },
+    {
+      "id": "material:761e6495bc24",
+      "type": "Material",
+      "role": "lesson_plan",
+      "name": "Arts A/V lesson plan template",
+      "source_file": "doc_761e6495bc24_Arts_A_V_Tech__Lesson_Plan_.txt",
+      "doc_id": "761e6495bc24",
+      "span": {
+        "element_ids": [
+          "761e6495bc24-e1",
+          "761e6495bc24-e2",
+          "761e6495bc24-e3-split1",
+          "761e6495bc24-e3-split2",
+          "761e6495bc24-e4",
+          "761e6495bc24-e5-split1",
+          "761e6495bc24-e5-split2",
+          "761e6495bc24-e6",
+          "761e6495bc24-e7",
+          "761e6495bc24-e8"
+        ]
+      }
+    },
+    {
+      "id": "material:0a62e0b9729e",
+      "type": "Material",
+      "role": "worksheet",
+      "name": "Student slideshow notes",
+      "source_file": "doc_0a62e0b9729e_Arts_A_V_Student_Notes.txt",
+      "doc_id": "0a62e0b9729e",
+      "span": {
+        "element_ids": [
+          "0a62e0b9729e-e1",
+          "0a62e0b9729e-e2",
+          "0a62e0b9729e-e3"
+        ]
+      },
+      "primarily_for_lesson": "lesson:arts-av:d1"
+    },
+    {
+      "id": "material:0cbd06c7c769",
+      "type": "Material",
+      "role": "rubric",
+      "name": "Flyer project rubric",
+      "source_file": "doc_0cbd06c7c769_Arts_AV_Technology___Communication_Flyer_Project_Rubric.txt",
+      "doc_id": "0cbd06c7c769",
+      "span": {
+        "element_ids": [
+          "0cbd06c7c769-e1"
+        ]
+      }
+    },
+    {
+      "id": "material:af9cf3b04474",
+      "type": "Material",
+      "role": "rubric",
+      "name": "Commercial project rubric",
+      "source_file": "doc_af9cf3b04474_Arts_AV_Technology___Communication_Commercial_Project_Rubric.txt",
+      "doc_id": "af9cf3b04474",
+      "span": {
+        "element_ids": [
+          "af9cf3b04474-e1",
+          "af9cf3b04474-e2"
+        ]
+      }
+    },
+    {
+      "id": "assessment:d1:exit-ticket",
+      "type": "Assessment",
+      "name": "Exit Ticket Day 1 \u2014 nonprofit ad message",
+      "source_file": "doc_314d7d0905ca_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_1.txt",
+      "doc_id": "314d7d0905ca",
+      "span": {
+        "element_ids": [
+          "314d7d0905ca-e1",
+          "314d7d0905ca-e2"
+        ]
+      }
+    },
+    {
+      "id": "assessment:d2:exit-ticket",
+      "type": "Assessment",
+      "name": "Exit Ticket Day 2 \u2014 group teamwork reflection",
+      "source_file": "doc_ff5cd4c0712e_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_2.txt",
+      "doc_id": "ff5cd4c0712e",
+      "span": {
+        "element_ids": [
+          "ff5cd4c0712e-e1",
+          "ff5cd4c0712e-e2"
+        ]
+      }
+    },
+    {
+      "id": "assessment:d3:exit-ticket",
+      "type": "Assessment",
+      "name": "Exit Ticket Day 3 \u2014 cluster learning reflection",
+      "source_file": "doc_e2c12c61bc5f_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_3.txt",
+      "doc_id": "e2c12c61bc5f",
+      "span": {
+        "element_ids": [
+          "e2c12c61bc5f-e1",
+          "e2c12c61bc5f-e2"
+        ]
+      }
+    },
+    {
+      "id": "activity:d1:guess-logo",
+      "type": "Activity",
+      "name": "Engage \u2014 Guess the Logo",
+      "element_ids": [
+        "89430d6aae63-e2"
+      ]
+    },
+    {
+      "id": "activity:d1:community-brainstorm",
+      "type": "Activity",
+      "name": "Explore/Extend \u2014 Campaign for Community Change brainstorm",
+      "element_ids": [
+        "89430d6aae63-e9",
+        "89430d6aae63-e10"
+      ]
+    },
+    {
+      "id": "activity:d2:create-campaign",
+      "type": "Activity",
+      "name": "Create flyer or commercial (rubric-guided)",
+      "element_ids": [
+        "89430d6aae63-e11",
+        "761e6495bc24-e7"
+      ]
+    },
+    {
+      "id": "activity:d3:presentations",
+      "type": "Activity",
+      "name": "Group presentations (flyer or commercial)",
+      "element_ids": [
+        "89430d6aae63-e12",
+        "761e6495bc24-e8"
+      ]
+    },
+    {
+      "id": "material:missing:commercial-script-example",
+      "type": "Material",
+      "name": "Commercial Script Example (referenced in plan)",
+      "status": "referenced_missing"
+    },
+    {
+      "id": "material:missing:flyer-example",
+      "type": "Material",
+      "name": "Flyer Example (referenced in plan)",
+      "status": "referenced_missing"
+    }
+  ],
+  "edges": [
+    {
+      "rel": "hasPart",
+      "from": "course:lab-arts-av",
+      "to": "unit:arts-av-technology"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:arts-av-technology",
+      "to": "lesson:arts-av:d1"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:arts-av-technology",
+      "to": "lesson:arts-av:d2"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:arts-av-technology",
+      "to": "lesson:arts-av:d3"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:arts-av-technology",
+      "to": "material:761e6495bc24"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:arts-av-technology",
+      "to": "material:89430d6aae63"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:arts-av-technology",
+      "to": "material:0a62e0b9729e"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:arts-av-technology",
+      "to": "material:0cbd06c7c769"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:arts-av-technology",
+      "to": "material:af9cf3b04474"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:arts-av:d1",
+      "to": "material:89430d6aae63"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:arts-av:d2",
+      "to": "material:89430d6aae63"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:arts-av:d3",
+      "to": "material:89430d6aae63"
+    },
+    {
+      "rel": "describes",
+      "from": "material:761e6495bc24",
+      "to": "lesson:arts-av:d1"
+    },
+    {
+      "rel": "describes",
+      "from": "material:761e6495bc24",
+      "to": "lesson:arts-av:d2"
+    },
+    {
+      "rel": "describes",
+      "from": "material:761e6495bc24",
+      "to": "lesson:arts-av:d3"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:arts-av:d1",
+      "to": "activity:d1:guess-logo"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:arts-av:d1",
+      "to": "activity:d1:community-brainstorm"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:arts-av:d1",
+      "to": "assessment:d1:exit-ticket"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:arts-av:d2",
+      "to": "activity:d2:create-campaign"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:arts-av:d2",
+      "to": "assessment:d2:exit-ticket"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:arts-av:d3",
+      "to": "activity:d3:presentations"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:arts-av:d3",
+      "to": "assessment:d3:exit-ticket"
+    },
+    {
+      "rel": "uses",
+      "from": "activity:d2:create-campaign",
+      "to": "material:0cbd06c7c769"
+    },
+    {
+      "rel": "uses",
+      "from": "activity:d2:create-campaign",
+      "to": "material:af9cf3b04474"
+    },
+    {
+      "rel": "uses",
+      "from": "lesson:arts-av:d1",
+      "to": "material:0a62e0b9729e"
+    },
+    {
+      "rel": "uses",
+      "from": "activity:d2:create-campaign",
+      "to": "material:missing:commercial-script-example"
+    },
+    {
+      "rel": "uses",
+      "from": "activity:d2:create-campaign",
+      "to": "material:missing:flyer-example"
+    }
+  ],
+  "coverage": {
+    "source_files_seen": 8,
+    "source_files": [
+      "doc_0a62e0b9729e_Arts_A_V_Student_Notes.txt",
+      "doc_0cbd06c7c769_Arts_AV_Technology___Communication_Flyer_Project_Rubric.txt",
+      "doc_314d7d0905ca_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_1.txt",
+      "doc_761e6495bc24_Arts_A_V_Tech__Lesson_Plan_.txt",
+      "doc_89430d6aae63_Arts_AV_Technology___Communication_-_Slides.txt",
+      "doc_af9cf3b04474_Arts_AV_Technology___Communication_Commercial_Project_Rubric.txt",
+      "doc_e2c12c61bc5f_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_3.txt",
+      "doc_ff5cd4c0712e_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_2.txt"
+    ],
+    "ledger_elements_referenced": 36,
+    "lessons": 3,
+    "assessments_as_separate_files": 3,
+    "rubrics": 2,
+    "referenced_missing_materials": 2,
+    "known_tensions": [
+      "lab calendar unit_length_days=2 vs materials Day 1/2/3 \u2014 gold prefers materials",
+      "Exit tickets also echoed inside slides; separate files are canonical Assessment nodes",
+      "Plan Estimated Day(s): 2.5 \u2014 modeled as 3 Lesson nodes"
+    ]
+  }
+}

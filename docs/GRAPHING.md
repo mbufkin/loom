@@ -333,6 +333,8 @@ No production claim without a **dual-model** T1 row (or written waiver).
 | 2026-07-31 | This doc created as the SoT for the graphing research thread. |
 | 2026-07-31 | Ag too small for scale verdict; dallas `agriculture` ≠ new fixture (same 2 docs). **Score on Arts AV (T1).** |
 | 2026-07-31 | Grok≠30B risk: RESULTS must record model; dual-model T1 required before a winner; prefer option D for local survival. |
+| 2026-07-31 | T1 Arts AV gold hand-built at `projects/lab-arts-av/graph/HAS-PART.json` (3 Lessons; separate exit tickets under days; calendar says 2 — materials win). |
+| 2026-07-31 | T0 Ag gold persisted at `projects/lab-dallas-ag/graph/HAS-PART.json`. |
 
 ---
 

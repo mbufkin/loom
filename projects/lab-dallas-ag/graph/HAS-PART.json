@@ -1,0 +1,188 @@
+{
+  "project_id": "lab-dallas-ag",
+  "unit_id": "plant-science",
+  "model": "learning-commons-hasPart-v0",
+  "tier": "T0",
+  "status": "gold_hand_built",
+  "built_at": "2026-07-31T02:18:55.934789+00:00",
+  "note": "T0 shape gold \u2014 Day split at Day 2 header (e14); plan describes both lessons.",
+  "nodes": [
+    {
+      "id": "course:lab-dallas-ag",
+      "type": "Course"
+    },
+    {
+      "id": "unit:plant-science",
+      "type": "LessonGrouping",
+      "name": "Plant Science"
+    },
+    {
+      "id": "lesson:plant-science:d1",
+      "type": "Lesson",
+      "name": "Day 1 \u2014 pathways + plant careers",
+      "span": {
+        "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt",
+        "doc_id": "b5e36486805a",
+        "paragraphs": [
+          1,
+          31
+        ],
+        "element_ids": [
+          "b5e36486805a-e1",
+          "b5e36486805a-e2",
+          "b5e36486805a-e3",
+          "b5e36486805a-e4",
+          "b5e36486805a-e5",
+          "b5e36486805a-e6",
+          "b5e36486805a-e7",
+          "b5e36486805a-e8",
+          "b5e36486805a-e9",
+          "b5e36486805a-e10",
+          "b5e36486805a-e11",
+          "b5e36486805a-e12",
+          "b5e36486805a-e13"
+        ]
+      }
+    },
+    {
+      "id": "lesson:plant-science:d2",
+      "type": "Lesson",
+      "name": "Day 2 \u2014 soil lab + exit",
+      "span": {
+        "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt",
+        "doc_id": "b5e36486805a",
+        "paragraphs": [
+          32,
+          47
+        ],
+        "element_ids": [
+          "b5e36486805a-e14",
+          "b5e36486805a-e15",
+          "b5e36486805a-e16",
+          "b5e36486805a-e17",
+          "b5e36486805a-e18",
+          "b5e36486805a-e19"
+        ]
+      }
+    },
+    {
+      "id": "material:b5e36486805a",
+      "type": "Material",
+      "role": "lesson_content",
+      "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt"
+    },
+    {
+      "id": "material:e9e6ac00ce09",
+      "type": "Material",
+      "role": "lesson_plan",
+      "source_file": "doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt",
+      "span": {
+        "element_ids": [
+          "e9e6ac00ce09-e1",
+          "e9e6ac00ce09-e2",
+          "e9e6ac00ce09-e3",
+          "e9e6ac00ce09-e4",
+          "e9e6ac00ce09-e5",
+          "e9e6ac00ce09-e6",
+          "e9e6ac00ce09-e7",
+          "e9e6ac00ce09-e8",
+          "e9e6ac00ce09-e9",
+          "e9e6ac00ce09-e10"
+        ]
+      }
+    },
+    {
+      "id": "activity:d2:soil-lab",
+      "type": "Activity",
+      "element_ids": [
+        "b5e36486805a-e17"
+      ]
+    },
+    {
+      "id": "assessment:d2:exit-ticket",
+      "type": "Assessment",
+      "element_ids": [
+        "b5e36486805a-e18"
+      ]
+    },
+    {
+      "id": "material:missing:note-sheet",
+      "type": "Material",
+      "status": "referenced_missing",
+      "name": "Plant Systems Career Pathways Note Sheet"
+    },
+    {
+      "id": "material:missing:soil-handout",
+      "type": "Material",
+      "status": "referenced_missing",
+      "name": "Let's Find Out About Soil handout"
+    }
+  ],
+  "edges": [
+    {
+      "rel": "hasPart",
+      "from": "course:lab-dallas-ag",
+      "to": "unit:plant-science"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:plant-science",
+      "to": "lesson:plant-science:d1"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:plant-science",
+      "to": "lesson:plant-science:d2"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:plant-science",
+      "to": "material:e9e6ac00ce09"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:plant-science",
+      "to": "material:b5e36486805a"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:plant-science:d1",
+      "to": "material:b5e36486805a"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:plant-science:d2",
+      "to": "material:b5e36486805a"
+    },
+    {
+      "rel": "describes",
+      "from": "material:e9e6ac00ce09",
+      "to": "lesson:plant-science:d1"
+    },
+    {
+      "rel": "describes",
+      "from": "material:e9e6ac00ce09",
+      "to": "lesson:plant-science:d2"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:plant-science:d2",
+      "to": "activity:d2:soil-lab"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:plant-science:d2",
+      "to": "assessment:d2:exit-ticket"
+    },
+    {
+      "rel": "uses",
+      "from": "lesson:plant-science:d1",
+      "to": "material:missing:note-sheet"
+    },
+    {
+      "rel": "uses",
+      "from": "activity:d2:soil-lab",
+      "to": "material:missing:soil-handout"
+    }
+  ]
+}
