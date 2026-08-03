@@ -28,10 +28,49 @@ Examples on this box:
 
 - `projects/dallas-career-2026/e2e/runs/grok-4.5/`
 - `projects/dallas-career-2026/e2e/runs/nemotron3-nano-30b/`
+- `projects/bluebonnet-math-2026/e2e/runs/grok-4.5/`
 
 `<model>` is the run id (`--graph-run` or a slug of the configured analyst model).
 `run_project` auto-sets `LOOM_E2E_RUN` and prepares the tree via
 `tools/e2e_run_lib.py`.
+
+## Run cost notes (Grok)
+
+E2E trees often stay **local** (ledgers quote curriculum). Cost math is documented
+here from `USAGE-SUMMARY.json` + xAI list rates — not as a commit of the corpus.
+
+### Bluebonnet · `grok-4.5` (finished 2026-08-03T18:49Z)
+
+| Meter | Value |
+|-------|--------|
+| Path | `projects/bluebonnet-math-2026/e2e/runs/grok-4.5/` |
+| Calls | 446 ok / 0 error (~4.0 h wall) |
+| Metered tokens | 2,711,287 prompt · 2,353,792 cached · 60,975 completion |
+| Token coverage | **6** Cursor SDK graph calls only; **440** bridge `:8788` API calls logged `0` tokens |
+
+**xAI Grok 4.5 list rates** (per 1M tokens): under 200k prompt → $2 input / $0.30 cached / $6 output; at or above 200k prompt → $4 / $0.60 / $12 for the whole request.
+
+| Piece | Estimate |
+|-------|----------|
+| Graph SDK (metered; all six calls ≥200k prompt) | **$3.57** |
+| Layer 0 + Layer 1 + synth (unmetered; reconstructed from docs/steps) | ~$9–$22 |
+| **Full-run list-price equivalent** | **~$13–$25 (mid ~$16)** |
+
+**Caveats:** this run used the Cursor OpenAI-compatible bridge (`:8788`), so real
+spend may be **Cursor plan quota**, not a direct xAI invoice. Treat **$3.57** as
+the hard metered floor; **~$16** as the best full-run reconstruction until bridge
+API calls record usage.
+
+### Dallas · `grok-4.5` (finished 2026-08-03T12:51Z)
+
+| Meter | Value |
+|-------|--------|
+| Path | `projects/dallas-career-2026/e2e/runs/grok-4.5/` |
+| Calls | 1,022 ok |
+| Metered tokens | 799,076 prompt · 680,512 cached · 21,043 completion (2 SDK calls only) |
+
+Same metering gap (most `:8788` API rows untokened). Do not treat
+`USAGE-SUMMARY.json` totals alone as full-run spend.
 
 ## Review UI
 

@@ -49,6 +49,7 @@ Supported formats: pdf, docx, pptx, xlsx, odt, txt, md, html, rtf, doc. Nested s
 | Folder | Tier | Role |
 |--------|------|------|
 | `dallas-career-2026/` | Golden | Acceptance / demo dataset |
+| `bluebonnet-math-2026/` | Active | TX Bluebonnet Math (Alg1 + Grade 5) |
 | `region10-career-college-2026/` | Active | Live district corpus |
 | `ap-csp-2026/` | Stress | Hard PDF shape |
 | `openscied-6/` | Stress | Fat TE PDFs |
