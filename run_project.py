@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
 """
-run_project.py — One command: any curriculum in → solid audit report out.
+run_project.py — The one E2E program: curriculum + model → common review folder.
 
-Program (this repo) + data (projects/<id>/). Drop files in sources/, run once.
+Program (this repo) + data (projects/<curriculum>/). Preferred CLI: ./run-audit.
+
+Canonical output (default):
+  projects/<curriculum>/e2e/runs/<model>/
+    layer0/… layer1/… output/… graph/runs/<model>/…
+Review UI picks curriculum, then E2E · <model>. See docs/E2E.md.
 
   preflight → ingest (if needed) → rollup (provisional; calendars authoritative after assemble)
            → layer0 (0-A decompose → 0-B resolve-wide-spans)
@@ -14,14 +19,15 @@ Program (this repo) + data (projects/<id>/). Drop files in sources/, run once.
            → push reports to Google Drive (default; --skip-drive-push to opt out)
 
 Usage:
-  python3 run_project.py --project my-district
-  python3 run_project.py --project my-district --force
-  python3 run_project.py --project my-district --skip-layer01   # rollup + ingest only; Layer 0/1/2 + conformance globals skipped
+  ./run-audit my-district --with-graph --graph-run nemotron3-nano-30b
+  python3 run_project.py --project my-district --with-graph
+  python3 run_project.py --project my-district --allow-live-root   # golden tree only
 """
 
 from __future__ import annotations
 
 import argparse
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -30,6 +36,7 @@ from urllib.parse import urlparse
 import requests
 
 from audit_lib import BASE_DIR, load_config, log, project_dir, validate_slug_id
+from tools.e2e_run_lib import ensure_e2e_env, slugify_run_id
 from usage_lib import set_usage_project, write_usage_summary
 
 INGEST = BASE_DIR / "ingest.py"
@@ -180,7 +187,7 @@ def main() -> int:
         action="store_true",
         help=(
             "Run opt-in graph phase after Layer 0-B (HAS-PART belonging under "
-            "projects/<id>/graph/runs/<model>/). See docs/GRAPH-PHASE.md."
+            "e2e/runs/<run>/graph/runs/<model>/). See docs/GRAPH-PHASE.md."
         ),
     )
     parser.add_argument(
@@ -191,7 +198,10 @@ def main() -> int:
     )
     parser.add_argument(
         "--graph-run",
-        help="Graph A/B run id (default: slug of model name under graph/runs/)",
+        help=(
+            "E2E + graph run id (default: slug of analyst model). "
+            "Writes under projects/<id>/e2e/runs/<id>/."
+        ),
     )
     parser.add_argument(
         "--graph-cursor-model",
@@ -202,8 +212,17 @@ def main() -> int:
         "--graph-only",
         action="store_true",
         help=(
-            "Run only the graph phase (requires existing layer0/ledger.json). "
-            "Does not overwrite Path A/B/C, Layer 1/2, or reports."
+            "Run only the graph phase under an E2E tree (requires layer0/ledger.json; "
+            "graph-only may symlink curriculum layer0). Does not overwrite Path A/B/C, "
+            "Layer 1/2, or reports."
+        ),
+    )
+    parser.add_argument(
+        "--allow-live-root",
+        action="store_true",
+        help=(
+            "Write into the golden projects/<id>/ tree instead of e2e/runs/. "
+            "Escape hatch for overnight/golden refresh only — default is E2E."
         ),
     )
     args = parser.parse_args()
@@ -216,6 +235,34 @@ def main() -> int:
     except ValueError as e:
         log(f"ERROR: {e}")
         return 2
+
+    # E2E-only default: isolate every pipeline write under e2e/runs/<run_id>/.
+    # Best practice: derive the run id from --graph-run or the configured model
+    # so operators cannot accidentally clobber the golden curriculum root.
+    cfg_models = (load_config().get("models") or {})
+    if args.graph_backend == "cursor":
+        default_model = args.graph_cursor_model or "grok-4.5"
+    else:
+        default_model = str(
+            cfg_models.get("analyst_model")
+            or cfg_models.get("verifier_model")
+            or "local-model"
+        )
+    run_hint = args.graph_run or slugify_run_id(default_model)
+    e2e_id = ensure_e2e_env(
+        args.project,
+        run_id=run_hint,
+        model=default_model,
+        backend=args.graph_backend,
+        graph_only=bool(args.graph_only),
+        allow_live_root=bool(args.allow_live_root),
+    )
+    if e2e_id:
+        log(f"e2e: LOOM_E2E_RUN={e2e_id} → projects/{args.project}/e2e/runs/{e2e_id}/")
+        if not args.graph_run:
+            args.graph_run = e2e_id
+    else:
+        log("e2e: --allow-live-root — writing into golden projects/ tree")
 
     root = project_dir(args.project)
     manifest = root / "manifest.yaml"
@@ -248,7 +295,10 @@ def main() -> int:
             print("\n" + "=" * 60)
             print("DONE — graph-only run")
             print("=" * 60)
-            print(f"  Dataset:     projects/{args.project}/")
+            if e2e_id:
+                print(f"  E2E root:    projects/{args.project}/e2e/runs/{e2e_id}/")
+            else:
+                print(f"  Dataset:     projects/{args.project}/  (live root)")
             print(f"  Graph runs:  {root / 'graph' / 'runs'}/")
             print(f"  Active:      {root / 'graph' / 'ACTIVE'}")
             print(

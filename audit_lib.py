@@ -298,9 +298,10 @@ def atomic_write(path: Path, content: str) -> None:
 def project_dir(project_id: str) -> Path:
     """Resolve the writable project root.
 
-    Best practice: set LOOM_E2E_RUN=<run_id> for full-pipeline A/B so Layer 0 /
+    Best practice: E2E is canonical. ``run_project`` sets LOOM_E2E_RUN so Layer 0 /
     output / graph land under projects/<id>/e2e/runs/<run_id>/ and never clobber
-    the golden curriculum tree (see tools/e2e_run_lib.py).
+    the golden curriculum tree (see tools/e2e_run_lib.py). Bare projects/<id>/
+    is for --allow-live-root / overnight golden refresh only.
     """
     base = BASE_DIR / "projects" / project_id
     run = (os.environ.get("LOOM_E2E_RUN") or "").strip()

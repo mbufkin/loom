@@ -58,6 +58,9 @@ flowchart TB
 
 ## Quick start
 
+**One E2E program** (`./run-audit` → `run_project.py`). Output lands in a
+**common review folder** by curriculum and model — see [docs/E2E.md](docs/E2E.md).
+
 ```bash
 # 1. Configure your local model endpoint
 cp config.example.yaml config.yaml   # edit model URLs for your box
@@ -66,10 +69,12 @@ cp config.example.yaml config.yaml   # edit model URLs for your box
 cp -a projects/_template projects/my-district
 # copy curriculum files into projects/my-district/sources/
 
-# 3. Run the pipeline
-./run-audit my-district
-# equivalent: python3 run_project.py --project my-district
+# 3. Run the pipeline (writes projects/my-district/e2e/runs/<model>/)
+./run-audit my-district --with-graph --graph-run my-model
+# equivalent: python3 run_project.py --project my-district --with-graph --graph-run my-model
 ```
+
+Review in the UI: pick curriculum → **E2E · \<model\>**.
 
 Loom runs against any OpenAI-compatible chat/completions endpoint
 (llama.cpp `llama-server`, vLLM, etc.). See [OPERATORS.md](OPERATORS.md) for

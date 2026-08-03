@@ -1,8 +1,17 @@
 // Shared shapes between the local API (ui/server.py) and the review UI.
 
+/** How the Curriculum picker should treat this projects/ folder. */
+export type ProjectKind = "curriculum" | "lab" | "other";
+
 export interface Project {
   id: string;
   tier: string;
+  /** Human label from manifest when present. */
+  title?: string;
+  kind?: ProjectKind;
+  in_status?: boolean;
+  /** 0=Golden … 9=unknown — API already sorts by this. */
+  sort_tier?: number;
   has_output: boolean;
   has_stats: boolean;
   has_unit_rung: boolean;
@@ -26,6 +35,7 @@ export interface OutputsTree {
   layers: OutputFile[];
   pdfs: OutputFile[];
   units: UnitOutputs[];
+  e2e_run?: string | null;
 }
 
 // Subset of output/aggregate-stats.json the UI actually reads.
@@ -409,7 +419,21 @@ export interface CreateMatrixResponse {
   units: CreateMatrixUnit[];
 }
 
-/** Model-namespaced graph run under projects/<id>/graph/runs/<run_id>/ */
+/** Full-pipeline snapshot under projects/<id>/e2e/runs/<run_id>/ */
+export interface E2ERunInfo {
+  run_id: string;
+  has_dashboard: boolean;
+  has_quality: boolean;
+  n_output_units: number;
+  n_graph_runs: number;
+}
+
+export interface E2ERunsResponse {
+  project_id: string;
+  runs: E2ERunInfo[];
+}
+
+/** Nested graph run under e2e/runs/<e2e>/graph/runs/<run_id>/ (or legacy bare graph/runs). */
 export interface GraphRunInfo {
   run_id: string;
   model: string;
@@ -424,6 +448,7 @@ export interface GraphRunInfo {
 export interface GraphRunsResponse {
   project_id: string;
   active: string | null;
+  e2e_run?: string | null;
   runs: GraphRunInfo[];
 }
 

@@ -1,9 +1,9 @@
 """Model-namespaced graph run directories for A/B comparisons.
 
-Educational note: keep each model's graph artifacts under
-``projects/<id>/graph/runs/<run_id>/`` so a Grok run never overwrites a
-local-30B run. ``graph/ACTIVE`` records which run is current; ``graph/units``
-is a convenience symlink to that run's units (legacy path consumers).
+Educational note: with LOOM_E2E_RUN set, paths resolve under
+``projects/<id>/e2e/runs/<e2e_id>/graph/runs/<run_id>/`` (canonical). Bare
+``projects/<id>/graph/runs/`` is a legacy archive. ``graph/ACTIVE`` records
+which nested run is current; ``graph/units`` is a convenience symlink.
 """
 
 from __future__ import annotations

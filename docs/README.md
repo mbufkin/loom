@@ -24,6 +24,7 @@ Reference for the Loom curriculum auditor (router + Path A/B/C workflows).
 | [DOCUMENTATION-OVERHAUL-PROMPT.md](DOCUMENTATION-OVERHAUL-PROMPT.md) | AI agents | Copy-paste agent prompt for a prioritized docs pass |
 | [PR-REVIEW-FINDINGS-PROMPT.md](PR-REVIEW-FINDINGS-PROMPT.md) | AI agents | Copy-paste agent prompt for read-only PR review findings |
 | [PRODUCT-OVERVIEW.md](PRODUCT-OVERVIEW.md) | Directors, partners | What the system does |
+| [E2E.md](E2E.md) | Operators / engineers | **One program** + `e2e/runs/<model>/` review contract |
 | [PIPELINE.md](PIPELINE.md) | Engineers | End-to-end flow |
 | [DATA-FLOW.md](DATA-FLOW.md) | Presenters, engineers | Data transformation canvases (Mermaid) |
 | [FILE-FLOW.md](FILE-FLOW.md) | Presenters, operators | Directory & artifact map (Mermaid) |
