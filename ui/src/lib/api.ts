@@ -10,6 +10,7 @@ import type {
   CreateUnitTreeResponse,
   CreateUnitsResponse,
   CurriculumReview,
+  E2ERunsResponse,
   GapItem,
   GapsResponse,
   GraphOverview,
@@ -30,6 +31,13 @@ export interface PacketTypeRegistry {
   error?: string;
 }
 
+/** Append ?e2e_run= when reviewing a full-pipeline snapshot workspace. */
+function withE2e(url: string, e2eRun?: string): string {
+  if (!e2eRun) return url;
+  const sep = url.includes("?") ? "&" : "?";
+  return `${url}${sep}e2e_run=${encodeURIComponent(e2eRun)}`;
+}
+
 async function getJSON<T>(url: string): Promise<T> {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`${res.status} ${res.statusText} for ${url}`);
@@ -47,27 +55,43 @@ async function getJSON<T>(url: string): Promise<T> {
 export const api = {
   projects: () => getJSON<Project[]>("/api/projects"),
 
-  outputs: (id: string) =>
-    getJSON<OutputsTree>(`/api/projects/${id}/outputs`),
+  /** Full-pipeline snapshots under e2e/runs/* (Dashboard, layers, teachers…). */
+  e2eRuns: (id: string) =>
+    getJSON<E2ERunsResponse>(`/api/projects/${id}/e2e/runs`),
 
-  stats: (id: string) => getJSON<Stats>(`/api/projects/${id}/stats`),
+  outputs: (id: string, e2eRun?: string) =>
+    getJSON<OutputsTree>(withE2e(`/api/projects/${id}/outputs`, e2eRun)),
+
+  stats: (id: string, e2eRun?: string) =>
+    getJSON<Stats>(withE2e(`/api/projects/${id}/stats`, e2eRun)),
 
   config: () => getJSON<ConfigSummary>("/api/config"),
 
   // Absolute URL so <a href> / <embed src> for PDFs work directly.
-  fileUrl: (id: string, path: string) =>
-    `/api/projects/${id}/file?path=${encodeURIComponent(path)}`,
+  fileUrl: (id: string, path: string, e2eRun?: string) =>
+    withE2e(
+      `/api/projects/${id}/file?path=${encodeURIComponent(path)}`,
+      e2eRun
+    ),
 
-  async fileText(id: string, path: string): Promise<string> {
-    const res = await fetch(api.fileUrl(id, path));
+  async fileText(
+    id: string,
+    path: string,
+    e2eRun?: string
+  ): Promise<string> {
+    const res = await fetch(api.fileUrl(id, path, e2eRun));
     if (!res.ok) throw new Error(`${res.status} for ${path}`);
     return res.text();
   },
 
   // Best-effort: UNIT-RUNG.json may not exist for every project.
-  async unitRung(id: string): Promise<UnitRung | null> {
+  async unitRung(id: string, e2eRun?: string): Promise<UnitRung | null> {
     try {
-      const txt = await api.fileText(id, "layer_unit/UNIT-RUNG.json");
+      const txt = await api.fileText(
+        id,
+        "layer_unit/UNIT-RUNG.json",
+        e2eRun
+      );
       return JSON.parse(txt) as UnitRung;
     } catch {
       return null;
@@ -75,22 +99,25 @@ export const api = {
   },
 
   // Best-effort quality / curriculum-review plates.
-  // Prefer per-model E2E tree (e2e/runs/<runId>/output/…) when a graph A/B
-  // model is selected so the heatmap tracks the same model as belonging.
-  // Fall back to the curriculum-root plate for older single-tree runs.
+  // When an E2E workspace is selected, read plates from that tree.
+  // Otherwise prefer e2e/runs/<graphRunId>/… so graph A/B still tracks quality,
+  // then fall back to the curriculum-root plate.
   async lessonFeedback(
     id: string,
-    runId?: string
+    graphRunId?: string,
+    e2eRun?: string
   ): Promise<LessonFeedback | null> {
-    const paths = [
-      ...(runId
-        ? [`e2e/runs/${runId}/output/LESSON-QUALITY-FEEDBACK.json`]
-        : []),
-      "output/LESSON-QUALITY-FEEDBACK.json",
-    ];
+    const paths = e2eRun
+      ? ["output/LESSON-QUALITY-FEEDBACK.json"]
+      : [
+          ...(graphRunId
+            ? [`e2e/runs/${graphRunId}/output/LESSON-QUALITY-FEEDBACK.json`]
+            : []),
+          "output/LESSON-QUALITY-FEEDBACK.json",
+        ];
     for (const path of paths) {
       try {
-        const txt = await api.fileText(id, path);
+        const txt = await api.fileText(id, path, e2eRun);
         return JSON.parse(txt) as LessonFeedback;
       } catch {
         /* try next */
@@ -101,17 +128,20 @@ export const api = {
 
   async lessonReview(
     id: string,
-    runId?: string
+    graphRunId?: string,
+    e2eRun?: string
   ): Promise<CurriculumReview | null> {
-    const paths = [
-      ...(runId
-        ? [`e2e/runs/${runId}/output/LESSON-CURRICULUM-REVIEW.json`]
-        : []),
-      "output/LESSON-CURRICULUM-REVIEW.json",
-    ];
+    const paths = e2eRun
+      ? ["output/LESSON-CURRICULUM-REVIEW.json"]
+      : [
+          ...(graphRunId
+            ? [`e2e/runs/${graphRunId}/output/LESSON-CURRICULUM-REVIEW.json`]
+            : []),
+          "output/LESSON-CURRICULUM-REVIEW.json",
+        ];
     for (const path of paths) {
       try {
-        const txt = await api.fileText(id, path);
+        const txt = await api.fileText(id, path, e2eRun);
         return JSON.parse(txt) as CurriculumReview;
       } catch {
         /* try next */
@@ -122,9 +152,16 @@ export const api = {
 
   // Best-effort: ARTIFACT-RUNG.json only exists once the artifact rung (Paths B/C)
   // has run for a project.
-  async artifactRung(id: string): Promise<ArtifactRung | null> {
+  async artifactRung(
+    id: string,
+    e2eRun?: string
+  ): Promise<ArtifactRung | null> {
     try {
-      const txt = await api.fileText(id, "layer_artifact/ARTIFACT-RUNG.json");
+      const txt = await api.fileText(
+        id,
+        "layer_artifact/ARTIFACT-RUNG.json",
+        e2eRun
+      );
       return JSON.parse(txt) as ArtifactRung;
     } catch {
       return null;
@@ -276,16 +313,29 @@ export const api = {
   },
 
   /** Model graph runs for a curriculum (A/B trees under graph/runs/). */
-  graphRuns: (id: string) =>
-    getJSON<GraphRunsResponse>(`/api/projects/${id}/graph/runs`),
-
-  graphOverview: (id: string, runId: string) =>
-    getJSON<GraphOverview>(
-      `/api/projects/${id}/graph/runs/${encodeURIComponent(runId)}/overview`
+  graphRuns: (id: string, e2eRun?: string) =>
+    getJSON<GraphRunsResponse>(
+      withE2e(`/api/projects/${id}/graph/runs`, e2eRun)
     ),
 
-  graphUnit: (id: string, runId: string, unitId: string) =>
+  graphOverview: (id: string, runId: string, e2eRun?: string) =>
+    getJSON<GraphOverview>(
+      withE2e(
+        `/api/projects/${id}/graph/runs/${encodeURIComponent(runId)}/overview`,
+        e2eRun
+      )
+    ),
+
+  graphUnit: (
+    id: string,
+    runId: string,
+    unitId: string,
+    e2eRun?: string
+  ) =>
     getJSON<GraphUnitDetail>(
-      `/api/projects/${id}/graph/runs/${encodeURIComponent(runId)}/units/${encodeURIComponent(unitId)}`
+      withE2e(
+        `/api/projects/${id}/graph/runs/${encodeURIComponent(runId)}/units/${encodeURIComponent(unitId)}`,
+        e2eRun
+      )
     ),
 };

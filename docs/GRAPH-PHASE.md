@@ -2,7 +2,7 @@
 
 **Status:** decisions locked; **first merge wired** (`graph_inventory.py`, `graph_assemble.py`, `graph_phase.py`, `run_project.py --with-graph`)  
 **Map:** [.plan/graph-into-loom/map.md](../.plan/graph-into-loom/map.md)  
-**Prior spike:** [experiments/graphing/SPIKE.md](../experiments/graphing/SPIKE.md)
+**Prior spike (archived off-repo):** see `~/archive/loom-experiments-*/experiments/graphing/SPIKE.md` — not runnable from this workspace.
 
 This file is the implementer-facing merge spec. Do not reopen insert-slot, promote, contract, or prerequisite decisions here — change them only by resolving a new Wayfinder ticket.
 
@@ -16,7 +16,7 @@ Educational note: graph answers **belonging** (Materials → Lessons → Assessm
 
 - Opt-in graph phase in `run_project.py` (`--with-graph`)
 - Promote assembler + inventory primitives from `experiments/graphing`
-- Write artifacts under `projects/<id>/graph/` only
+- Write artifacts under the **E2E run root** (`projects/<id>/e2e/runs/<run_id>/graph/…`); bare `projects/<id>/graph/` is legacy archive
 - Narrow-steps review → code merge → `rebuild_multi`
 
 **Out of scope (this merge)**
@@ -105,25 +105,30 @@ No route-map required. Locked ticket: [Unit prerequisites before graph may run](
 
 ## Artifact contract, gates, CLI
 
-### Layout (prefer always)
+### Layout (canonical — E2E only)
 
 ```text
-projects/<id>/graph/
-  ACTIVE                         # current run id (text)
-  units -> runs/<run_id>/units   # convenience symlink
-  runs/<run_id>/                 # one dir per model for A/B (never clobber)
-    RUN.json
-    PHASE-SUMMARY.json
-    units/<unit_id>/
-      HAS-PART.provisional.json
-      HAS-PART.json
-      review-findings.json
-      SUMMARY.json
-      .raw/<source_stem>.json
+projects/<id>/e2e/runs/<run_id>/     # LOOM_E2E_RUN (auto-set by run_project)
+  sources -> ../../../sources        # shared inputs
+  layer0/ … output/ …                # full pipeline plates
+  graph/
+    ACTIVE                           # current nested graph run id
+    units -> runs/<run_id>/units
+    runs/<run_id>/                   # usually same id as e2e run
+      RUN.json
+      PHASE-SUMMARY.json
+      units/<unit_id>/
+        HAS-PART.provisional.json
+        HAS-PART.json
+        review-findings.json
+        SUMMARY.json
+        .raw/<source_stem>.json
 ```
 
 `run_id` defaults to a slug of the model name (`grok-4.5`, `nemotron3-nano-30b`, …).
-Pass `--graph-run <id>` to override.
+Pass `--graph-run <id>` (also becomes `LOOM_E2E_RUN` when unset).
+
+**Legacy:** `projects/<id>/graph/runs/*` from pre-E2E queues — read-only archive; do not start new writes there. Golden curriculum refresh uses `--allow-live-root`.
 
 ### Gates
 
@@ -138,15 +143,19 @@ Pass `--graph-run <id>` to override.
 ### CLI
 
 ```bash
-python3 run_project.py --project <id> --with-graph
-python3 run_project.py --project <id> --with-graph --graph-backend cursor --graph-cursor-model grok-4.5
-python3 run_project.py --project <id> --graph-only --with-graph --graph-backend cursor   # preserve Path A/L1
-python3 run_project.py --project <id> --with-graph --only <unit>
-python3 run_project.py --project <id> --with-graph --force   # overwrite inside this run id only
+# Full E2E (default write root = e2e/runs/<model-slug>/)
+python3 run_project.py --project <id> --with-graph --graph-run nemotron3-nano-30b
+python3 run_project.py --project <id> --with-graph --graph-backend cursor --graph-cursor-model grok-4.5 --graph-run grok-4.5
+
+# Graph-only under E2E (symlinks curriculum layer0 when needed)
+python3 run_project.py --project <id> --graph-only --with-graph --graph-run <model-slug>
+
+# Escape hatch: write golden projects/<id>/ (overnight only)
+python3 run_project.py --project <id> --allow-live-root --layer0-no-resume
 ```
 
-Default without `--with-graph`: no graph phase.  
-Direct: `python3 graph_phase.py --project <id> [--backend local|cursor] [--graph-run …] [--only-unit …] [--force]`.
+Default without `--with-graph`: no graph phase (still E2E-isolated unless `--allow-live-root`).  
+Direct: `LOOM_E2E_RUN=<id> python3 graph_phase.py --project <id> […]`.
 
 Locked ticket: [Project artifact and gate contract](../.plan/graph-into-loom/tickets/05-project-artifact-gate-contract.md).
 
@@ -157,9 +166,9 @@ Locked ticket: [Project artifact and gate contract](../.plan/graph-into-loom/tic
 1. ✅ `graph_inventory.py` + `graph_assemble.py` at repo root; spike keeps ledger-mini heuristics.
 2. ✅ `graph_phase.py` — narrow-steps + writes `graph/units/<unit_id>/`.
 3. ✅ `run_project.py --with-graph` after Layer 0-B.
-4. ✅ Pointers from `experiments/graphing/README.md` / `SPIKE.md`.
+4. ✅ Spike/experiment runners archived off-repo (`experiments/` stub only).
 
-Experiment runners (`run_bluebonnet_slice_*.py`, `run_pd.py`, viz) remain wrappers.
+Experiment runners (`run_bluebonnet_slice_*.py`, `run_pd.py`, viz) are **not** in-tree — do not recreate them here.
 
 ---
 

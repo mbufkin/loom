@@ -1,6 +1,6 @@
 # Loom — Operator Reference
 
-**One program, curricula as data.** Overview: [README.md](README.md) · Datasets: [projects/STATUS.md](projects/STATUS.md)
+**One E2E program, curricula as data.** Contract: [docs/E2E.md](docs/E2E.md) · Overview: [README.md](README.md) · Datasets: [projects/STATUS.md](projects/STATUS.md)
 
 ---
 
@@ -8,12 +8,15 @@
 
 ```bash
 cd loom
-./run-audit <dataset-id>
+./run-audit <curriculum-id> --with-graph --graph-run <model-slug>
+# → projects/<curriculum-id>/e2e/runs/<model-slug>/
 ```
 
-Equivalent: `python3 run_project.py --project <dataset-id>`.
+Equivalent: `python3 run_project.py --project <curriculum-id> …`.
 
-This runs: preflight → ingest (if needed) → rollup → **Layer 0 → Layer 1 → Layer 2 → synthesize --report all --delivery model** (hybrid first-pass + teacher narrative; dashboard + review-queue code-only).
+Review UI: pick curriculum → **E2E · \<model\>**.
+
+This runs: preflight → ingest (if needed) → rollup → **Layer 0 → (graph) → Layer 1 → Layer 2 → synthesize --report all --delivery model** into the E2E folder (unless `--allow-live-root`).
 
 ### First-time dataset
 

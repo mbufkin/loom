@@ -4,8 +4,8 @@
 Uses the local rate-limited proxy (nvidia-nim-proxy on :8787) which already
 enforces ~20 RPM / heavy ~4 RPM against integrate.api.nvidia.com.
 
-Each model writes an isolated A/B tree:
-  projects/<id>/graph/runs/<slug>/
+Each model writes under the canonical E2E root (not bare graph/runs/):
+  projects/<id>/e2e/runs/<slug>/graph/runs/<slug>/
 
 Usage:
   python3 tools/queue_nvidia_free_graph_runs.py --project dallas-career-2026
@@ -14,6 +14,7 @@ Usage:
 
 Best practice: one model at a time (shared API key RPM). Soft-skips docs with
 no ledger evidence. Resumable — skips units that already have HAS-PART.json.
+Graph-only under E2E symlinks curriculum layer0/ for the ledger.
 """
 
 from __future__ import annotations
@@ -137,9 +138,13 @@ def run_model_graph(project: str, model: str, *, force: bool = False) -> int:
     run_id = slugify(model)
     log_path = LOG_DIR / f"{run_id}.log"
     LOG_DIR.mkdir(parents=True, exist_ok=True)
+    # E2E-only: LOOM_E2E_RUN isolates writes under e2e/runs/<slug>/ (run_project
+    # also auto-ensures this; set here so logs/state stay explicit).
     env = os.environ.copy()
     env["LOOM_CONFIG"] = str(cfg)
     env["LOOM_USAGE_PROJECT"] = project
+    env["LOOM_E2E_RUN"] = run_id
+    env.pop("LOOM_ALLOW_LIVE_ROOT", None)
     cmd = [
         sys.executable,
         str(ROOT / "run_project.py"),
@@ -154,9 +159,14 @@ def run_model_graph(project: str, model: str, *, force: bool = False) -> int:
     ]
     if force:
         cmd.append("--force")
-    print(f"\n=== QUEUE model={model} run_id={run_id} log={log_path} ===", flush=True)
+    print(
+        f"\n=== QUEUE model={model} e2e_run={run_id} "
+        f"out=projects/{project}/e2e/runs/{run_id}/ log={log_path} ===",
+        flush=True,
+    )
     with log_path.open("a", encoding="utf-8") as logf:
         logf.write(f"\n# start {time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())} {model}\n")
+        logf.write(f"# LOOM_E2E_RUN={run_id}\n")
         logf.flush()
         proc = subprocess.run(cmd, cwd=str(ROOT), env=env, stdout=logf, stderr=subprocess.STDOUT)
     print(f"=== DONE model={model} exit={proc.returncode} ===", flush=True)
