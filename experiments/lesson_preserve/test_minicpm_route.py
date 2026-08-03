@@ -96,7 +96,42 @@ def classify_with_minicpm(tok, model, *, filename: str, snippet: str, device: st
             do_sample=False,
             pad_token_id=tok.eos_token_id,
         )
-    gen = out[0][inputs["input_ids"].shape[1] :]
+    prompt_n = int(inputs["input_ids"].shape[1])
+    gen = out[0][prompt_n:]
+    # HF .generate has no OpenAI usage object — count tensor lengths and label
+    # source=estimate so research rollups stay honest vs llama.cpp API usage.
+    try:
+        import sys
+        from pathlib import Path
+
+        _root = Path(__file__).resolve().parents[2]
+        if str(_root) not in sys.path:
+            sys.path.insert(0, str(_root))
+        from usage_lib import record_model_call, set_usage_project
+
+        set_usage_project(
+            os.environ.get("LOOM_USAGE_PROJECT") or "lesson-preserve-hf"
+        )
+        completion_n = int(gen.shape[0])
+        record_model_call(
+            role="analyst",
+            step="lesson_preserve.hf_generate",
+            model=str(getattr(model, "name_or_path", "hf-local")),
+            messages=messages,
+            # Fake an OpenAI usage block from real token-id counts.
+            resp={
+                "usage": {
+                    "prompt_tokens": prompt_n,
+                    "completion_tokens": completion_n,
+                    "total_tokens": prompt_n + completion_n,
+                }
+            },
+            elapsed_ms=0.0,
+            ok=True,
+            extra={"backend": "transformers.generate"},
+        )
+    except Exception:
+        pass
     text = tok.decode(gen, skip_special_tokens=True).strip().lower()
     # Drop thinking traces if model still emits them
     if "</think>" in text:

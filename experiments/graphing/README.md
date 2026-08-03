@@ -3,6 +3,8 @@
 Code-first Day-header proposal + optional local model repair, scored against
 hand-built gold in `projects/lab-*/graph/HAS-PART.json`.
 
+**Loom merge handoff (opt-in graph phase):** [docs/GRAPH-PHASE.md](../../docs/GRAPH-PHASE.md).
+
 ## Spike: provisional → review → rebuild (`ledger-mini`)
 
 Handoff: [SPIKE.md](SPIKE.md). Runner (no LLM):

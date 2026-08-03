@@ -3,7 +3,8 @@
 **Status:** implemented — `python3 experiments/graphing/spike_loop.py` (+ `test_spike_loop.py`)  
 
 **Fixture:** `projects/_fixtures/ledger-mini/` only  
-**Map:** [.plan/graph-review-rebuild-spike/map.md](../../.plan/graph-review-rebuild-spike/map.md)
+**Map:** [.plan/graph-review-rebuild-spike/map.md](../../.plan/graph-review-rebuild-spike/map.md)  
+**Loom merge handoff (next):** [docs/GRAPH-PHASE.md](../../docs/GRAPH-PHASE.md)
 
 This file locks decisions so an implementer can build the spike without re-opening them. It is not a cookbook (no sample CLI/JSON dumps beyond the per-doc log contract).
 

@@ -20,8 +20,6 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
-import requests
-
 from audit_lib import (
     atomic_write,
     doc_id_from_filename,
@@ -882,22 +880,19 @@ do not restate the raw data as a list, write connected prose. No lesson fixes.
 DATA:
 {summary_input}
 """
-    url = cfg["models"]["analyst_url"]
-    model = cfg["models"]["analyst_model"]
-    timeout = cfg["models"]["timeout_seconds"]
+    # Route through model_chat so token usage is metered like every other Loom call.
     try:
-        resp = requests.post(
-            url,
-            json={
-                "model": model,
-                "messages": [{"role": "user", "content": prompt}],
-                "temperature": 0.1,
-                "max_tokens": 4096,
-            },
-            timeout=timeout,
+        from audit_lib import model_chat
+
+        resp = model_chat(
+            cfg,
+            "analyst",
+            [{"role": "user", "content": prompt}],
+            step="synthesize-global-summary",
+            temperature=0.1,
+            max_tokens=4096,
         )
-        resp.raise_for_status()
-        return resp.json()["choices"][0]["message"]["content"]
+        return resp["choices"][0]["message"]["content"]
     except Exception as e:
         log(f"WARN: model synthesis skipped: {e}")
         return None

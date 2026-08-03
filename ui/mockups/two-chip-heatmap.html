@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Loom — two-chip unit heatmap (mockup)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  /* ------------------------------------------------------------------ *
+   * Tokens lifted from ui/src/styles.css, then pushed a touch premium:
+   * a slightly deeper ink, a warmer paper, and a real type scale so the
+   * neo-brutalist bones read "confident" rather than "rough".
+   * ------------------------------------------------------------------ */
+  :root {
+    --bg: #f1ede1;
+    --paper: #fffdf7;
+    --paper-2: #faf6ec;
+    --ink: #14110c;
+    --muted: #6b6350;
+    --line: #14110c;
+    --accent: #ff5c38;
+    --accent-2: #2b6cff;
+    --shadow: 4px 4px 0 var(--line);
+    --shadow-sm: 2px 2px 0 var(--line);
+    --shadow-lg: 6px 6px 0 var(--line);
+
+    --band-strong: #a6ecbc;
+    --band-developing: #ffe07a;
+    --band-weak: #ff9f89;
+    --band-unrated: #e2d9c6;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background:
+      radial-gradient(circle at 1px 1px, rgba(20,17,12,.05) 1px, transparent 0) 0 0 / 22px 22px,
+      var(--bg);
+    color: var(--ink);
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+  }
+  .mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
+
+  .wrap { max-width: 940px; margin: 0 auto; padding: 28px 24px 80px; }
+
+  /* ---- Header ---------------------------------------------------------- */
+  .masthead { display: flex; align-items: flex-end; gap: 14px; margin-bottom: 4px; }
+  .masthead h1 {
+    font-size: 26px; font-weight: 900; letter-spacing: -0.03em;
+    text-transform: uppercase; margin: 0;
+  }
+  .masthead .tag {
+    font-family: "JetBrains Mono", monospace; font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .04em;
+    border: 2px solid var(--line); background: var(--accent); color: #fff;
+    padding: 2px 8px; box-shadow: var(--shadow-sm); transform: translateY(-3px);
+  }
+  .sub { color: var(--muted); font-size: 13px; margin: 6px 0 22px; max-width: 620px; }
+
+  /* ---- Declaration bar (the "starting point" selector) ---------------- */
+  .declare {
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    background: var(--paper); border: 3px solid var(--line);
+    box-shadow: var(--shadow); padding: 14px 16px; margin-bottom: 10px;
+  }
+  .declare .lead {
+    font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: .08em; color: var(--muted);
+  }
+  .seg {
+    display: inline-flex; border: 2px solid var(--line); box-shadow: var(--shadow-sm);
+    background: var(--paper-2);
+  }
+  .seg button {
+    font-family: "Inter", sans-serif; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .03em;
+    padding: 7px 13px; background: transparent; border: 0; cursor: pointer;
+    border-right: 2px solid var(--line); color: var(--ink);
+  }
+  .seg button:last-child { border-right: 0; }
+  .seg button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+  .declare .hint { font-size: 12px; color: var(--muted); }
+  .declare .hint b { color: var(--ink); }
+
+  /* ---- Legend ---------------------------------------------------------- */
+  .legend {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 18px 0 14px;
+  }
+  .legend .card {
+    border: 2px solid var(--line); background: var(--paper); box-shadow: var(--shadow-sm);
+    padding: 12px 14px;
+  }
+  .legend .card h3 {
+    margin: 0 0 4px; font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+  }
+  .legend .card p { margin: 0; font-size: 12px; color: var(--muted); }
+  .legend .card .k {
+    font-family: "JetBrains Mono", monospace; font-weight: 700; color: var(--ink);
+  }
+
+  /* ---- Heatmap table --------------------------------------------------- */
+  .rows { display: flex; flex-direction: column; gap: 9px; }
+  .colhead {
+    display: grid; grid-template-columns: 8px minmax(0,1fr) 210px 148px;
+    gap: 14px; padding: 0 14px; margin-bottom: 2px;
+  }
+  .colhead span {
+    font-size: 10px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .colhead .c-pkt { text-align: left; }
+  .colhead .c-qual { text-align: left; }
+
+  .row {
+    display: grid; grid-template-columns: 8px minmax(0,1fr) 210px 148px;
+    gap: 14px; align-items: center;
+    background: var(--paper); border: 2px solid var(--line);
+    box-shadow: var(--shadow-sm); padding: 12px 14px; cursor: pointer;
+    transition: transform .08s ease, box-shadow .08s ease;
+  }
+  .row:hover { transform: translate(-2px,-2px); box-shadow: var(--shadow); }
+
+  .qbar { width: 8px; height: 42px; border: 2px solid var(--line); }
+  .q-strong    { background: var(--band-strong); }
+  .q-developing{ background: var(--band-developing); }
+  .q-weak      { background: var(--band-weak); }
+  .q-unrated   { background: var(--band-unrated); }
+
+  .u-title { font-weight: 800; font-size: 15px; letter-spacing: -0.01em; }
+  .u-sub { font-size: 12px; color: var(--muted); margin-top: 1px; }
+
+  /* ---- CHIP 1: packet + completeness (descriptive, never shames) ------- */
+  .chip-pkt { display: flex; align-items: center; gap: 0; }
+  .pkt-type {
+    font-family: "JetBrains Mono", monospace; font-size: 10px; font-weight: 700;
+    letter-spacing: .04em; text-transform: uppercase;
+    background: var(--ink); color: #fff; padding: 5px 8px;
+    border: 2px solid var(--line); white-space: nowrap;
+  }
+  .pkt-comp {
+    display: flex; align-items: center; gap: 7px;
+    background: var(--paper-2); border: 2px solid var(--line); border-left: 0;
+    padding: 4px 9px 4px 8px;
+  }
+  .segs { display: flex; gap: 3px; }
+  .segs i {
+    width: 12px; height: 12px; border: 1.5px solid var(--line); background: #fff;
+    display: block;
+  }
+  .segs i.on { background: var(--accent-2); }
+  .segs i.off { background: repeating-linear-gradient(45deg,#fff,#fff 2px,#eadfca 2px,#eadfca 4px); }
+  .comp-num { font-family: "JetBrains Mono", monospace; font-size: 12px; font-weight: 700; }
+
+  /* ---- CHIP 2: quality band (the grade, carries color) ----------------- */
+  .chip-qual {
+    display: inline-flex; align-items: center; gap: 7px; justify-self: start;
+    border: 2px solid var(--line); box-shadow: var(--shadow-sm);
+    padding: 5px 11px 5px 9px; font-weight: 800; font-size: 12px;
+    text-transform: uppercase; letter-spacing: .04em;
+  }
+  .chip-qual .dot { width: 10px; height: 10px; border: 2px solid var(--line); }
+  .cq-strong    { background: var(--band-strong); }
+  .cq-developing{ background: var(--band-developing); }
+  .cq-weak      { background: var(--band-weak); }
+  .cq-unrated   { background: var(--band-unrated); color: var(--muted); }
+
+  /* ---- Tooltip --------------------------------------------------------- */
+  [data-tip] { position: relative; }
+  [data-tip]:hover::after {
+    content: attr(data-tip);
+    position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%);
+    background: var(--ink); color: #fff; font-family: "Inter", sans-serif;
+    font-size: 11px; font-weight: 500; letter-spacing: 0; text-transform: none;
+    padding: 7px 10px; width: max-content; max-width: 260px; white-space: normal;
+    border: 2px solid var(--line); box-shadow: var(--shadow-sm); z-index: 30; line-height: 1.35;
+  }
+
+  .note {
+    margin-top: 26px; font-size: 12px; color: var(--muted);
+    border-top: 2px dashed var(--line); padding-top: 12px;
+  }
+  .note b { color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <h1>Unit Heatmap</h1>
+    <span class="tag">Mockup</span>
+  </div>
+  <p class="sub">
+    Two things held apart on purpose: <b>what kind of packet this is &amp; how whole it
+    is</b> (descriptive), and <b>how good the material that's here actually is</b> (the grade).
+  </p>
+
+  <!-- Declaration: the "starting point" control you asked for -->
+  <div class="declare">
+    <span class="lead">Curriculum packet type</span>
+    <div class="seg" role="group" aria-label="packet type">
+      <button aria-pressed="false">Full curriculum</button>
+      <button aria-pressed="true">Teacher Edition</button>
+      <button aria-pressed="false">Lesson plans only</button>
+    </div>
+    <span class="hint">Declared by you at run start &middot; sets the completeness checklist
+      (<b>Teacher Edition &rarr; 3 expected components</b>). Never guessed.</span>
+  </div>
+
+  <!-- Legend: name the two chips -->
+  <div class="legend">
+    <div class="card">
+      <h3>Chip 1 &middot; Packet &amp; completeness</h3>
+      <p>Descriptive, never red. <span class="k">TEACHER EDITION</span> = declared type;
+        the blocks show components present vs. expected <i>for that type</i>.</p>
+    </div>
+    <div class="card">
+      <h3>Chip 2 &middot; Quality</h3>
+      <p>The graded band, scoped only to what's present. This is what carries the row color
+        &mdash; <span class="k">Strong / Developing / Weak / Unrated</span>.</p>
+    </div>
+  </div>
+
+  <div class="colhead">
+    <span></span>
+    <span>Unit</span>
+    <span class="c-pkt">Packet &amp; completeness</span>
+    <span class="c-qual">Quality</span>
+  </div>
+
+  <div class="rows" id="rows"></div>
+
+  <p class="note">
+    <b>Illustrative numbers</b> — the layout &amp; interaction are real; the per-unit values are
+    plausible Dallas figures for review of the look. Under the new logic these 9 units would read
+    <b>0 Strong · 5 Developing · 3 Weak · 1 Unrated</b> instead of today's all-Weak. Hover any chip
+    for its meaning.
+  </p>
+</div>
+
+<script>
+  // TE checklist = 3 expected components. present<3 => neutral "incomplete", not a grade.
+  const TE = ["Teacher plan / notes", "Slides / activities", "Assessment / check"];
+  const rows = [
+    { title: "Agriculture, Food & Natural Resources", sub: "1 lesson · gate 1.0 · coverage 0.88", present: 3, q: "developing" },
+    { title: "Teaching & Training",                    sub: "1 lesson · gate 1.0 · coverage 0.75", present: 3, q: "developing" },
+    { title: "Career Cluster",                         sub: "4 lessons · gate 0.5 · coverage 0.78", present: 2, q: "developing" },
+    { title: "Arts, A/V Technology & Communications",  sub: "2 lessons · gate 0.5 · coverage 0.69", present: 2, q: "developing" },
+    { title: "Business, Marketing & Finance",          sub: "2 lessons · gate 0.5 · coverage 0.62", present: 2, q: "developing" },
+    { title: "Engineering",                            sub: "2 lessons · gate 0.0 · coverage 0.62", present: 2, q: "weak" },
+    { title: "Manufacturing",                          sub: "2 lessons · gate 0.0 · coverage 0.44", present: 1, q: "weak" },
+    { title: "Transportation, Distribution & Logistics", sub: "2 lessons · gate 0.0 · coverage 0.38", present: 1, q: "weak" },
+    { title: "Financial Literacy",                     sub: "no lessons decomposed yet", present: 0, q: "unrated" },
+  ];
+  const QLABEL = { strong:"Strong", developing:"Developing", weak:"Weak", unrated:"Unrated" };
+
+  const el = document.getElementById("rows");
+  for (const r of rows) {
+    const segs = TE.map((name,i) => {
+      const on = i < r.present;
+      return `<i class="${on?'on':'off'}" data-tip="${name}: ${on?'present':'not found in this unit'}"></i>`;
+    }).join("");
+    const compTip = `Teacher Edition expects ${TE.length} components. This unit has ${r.present} of ${TE.length}. Descriptive — it does not lower the grade.`;
+    const qTip = `Quality of the material that IS here (decomposed scorer + coverage). Systemic curriculum-wide gaps do NOT push this down.`;
+    el.insertAdjacentHTML("beforeend", `
+      <div class="row">
+        <span class="qbar q-${r.q}"></span>
+        <span>
+          <div class="u-title">${r.title}</div>
+          <div class="u-sub mono">${r.sub}</div>
+        </span>
+        <span class="chip-pkt">
+          <span class="pkt-type" data-tip="Declared packet type for the whole curriculum.">TEACHER ED</span>
+          <span class="pkt-comp" data-tip="${compTip}">
+            <span class="segs">${segs}</span>
+            <span class="comp-num">${r.present}/${TE.length}</span>
+          </span>
+        </span>
+        <span class="chip-qual cq-${r.q}" data-tip="${qTip}">
+          <span class="dot q-${r.q}"></span>${QLABEL[r.q]}
+        </span>
+      </div>`);
+  }
+</script>
+</body>
+</html>

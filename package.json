@@ -1,20 +1,29 @@
 {
   "name": "loom",
   "version": "0.1.0",
-  "description": "Loom — local-first curriculum auditor with type-specific workflows.",
+  "description": "Loom \u2014 local-first curriculum auditor with type-specific workflows.",
   "private": true,
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "test": "python3 test_schema_validate.py && python3 test_audit.py && python3 test_rollup.py && python3 test_doc_extract.py && python3 test_loom_pipeline.py",
-    "lint:md": "npx markdownlint '**/*.md' --ignore node_modules"
+    "test": "python3 test_schema_validate.py && python3 test_audit.py && python3 test_rollup.py && python3 test_doc_extract.py && python3 test_loom_pipeline.py && python3 test_usage.py && python3 experiments/graphing/test_graph_assemble.py",
+    "lint:md": "npx markdownlint '**/*.md' --ignore node_modules",
+    "ui:dev": "cd ui && npm run dev",
+    "ui:api": "python3 ui/server.py",
+    "ui:build": "cd ui && npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mbufkin/loom.git"
   },
-  "keywords": ["curriculum", "audit", "education", "cte", "llm"],
+  "keywords": [
+    "curriculum",
+    "audit",
+    "education",
+    "cte",
+    "llm"
+  ],
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
     "url": "https://github.com/mbufkin/loom/issues"

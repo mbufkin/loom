@@ -6,6 +6,7 @@ Program (this repo) + data (projects/<id>/). Drop files in sources/, run once.
 
   preflight → ingest (if needed) → rollup (provisional; calendars authoritative after assemble)
            → layer0 (0-A decompose → 0-B resolve-wide-spans)
+           → graph_phase.py (opt-in --with-graph: HAS-PART belonging)
            → route.py (Loom Path A/B/C map — BEFORE unit placement)
            → path workflows (A lesson / B quiz stub / C general stub)
            → layer1 → layer2 → calendars.py (model day/year after assemble)
@@ -29,10 +30,12 @@ from urllib.parse import urlparse
 import requests
 
 from audit_lib import BASE_DIR, load_config, log, project_dir, validate_slug_id
+from usage_lib import set_usage_project, write_usage_summary
 
 INGEST = BASE_DIR / "ingest.py"
 ROLLUP = BASE_DIR / "rollup.py"
 LAYER0 = BASE_DIR / "layer0.py"
+GRAPH_PHASE = BASE_DIR / "graph_phase.py"
 ROUTE = BASE_DIR / "route.py"
 PATH_WORKFLOWS = BASE_DIR / "workflows" / "run_paths.py"
 LAYER1 = BASE_DIR / "layer1.py"
@@ -42,16 +45,25 @@ SYNTH = BASE_DIR / "synthesize.py"
 PUSH_DRIVE = BASE_DIR / "tools" / "push_drive_reports.py"
 
 
-def _health_url(chat_completions_url: str) -> str:
-    """Derive a /health URL from an OpenAI-compatible chat completions endpoint."""
+def _health_candidates(chat_completions_url: str) -> list[str]:
+    """Possible health endpoints for an OpenAI-compatible chat URL.
+
+    llama.cpp serves /health; the Cursor bridge serves /healthz.
+    """
     parsed = urlparse(chat_completions_url)
     if not parsed.scheme or not parsed.netloc:
         raise ValueError(f"invalid model URL: {chat_completions_url!r}")
-    return f"{parsed.scheme}://{parsed.netloc}/health"
+    base = f"{parsed.scheme}://{parsed.netloc}"
+    # Prefer /healthz first on the Cursor bridge port.
+    if ":8788" in parsed.netloc or parsed.netloc.endswith("8788"):
+        return [f"{base}/healthz", f"{base}/health"]
+    return [f"{base}/health", f"{base}/healthz"]
 
 
 def preflight_models() -> None:
     """Health-check analyst/verifier endpoints from config.yaml (not hardcoded ports)."""
+    import os
+
     cfg = load_config()
     models = cfg.get("models") or {}
     checks: list[tuple[str, str]] = []
@@ -61,21 +73,34 @@ def preflight_models() -> None:
             raise RuntimeError(f"config.yaml missing models.{role}_url")
         checks.append((role, str(url)))
 
+    headers = {}
+    key = models.get("api_key") or os.environ.get("CURSOR_API_KEY") or ""
+    if key:
+        headers["Authorization"] = f"Bearer {key}"
+
     # Deduplicate when both roles point at the same server (single-model doctrine).
     seen: set[str] = set()
     for role, url in checks:
-        health = _health_url(url)
-        if health in seen:
-            continue
-        seen.add(health)
-        try:
-            r = requests.get(health, timeout=10)
-            r.raise_for_status()
-        except Exception as e:
+        ok = False
+        last_err: Exception | None = None
+        for health in _health_candidates(url):
+            if health in seen:
+                ok = True
+                break
+            try:
+                r = requests.get(health, headers=headers or None, timeout=10)
+                r.raise_for_status()
+                seen.add(health)
+                ok = True
+                break
+            except Exception as e:  # noqa: BLE001
+                last_err = e
+                continue
+        if not ok:
             raise RuntimeError(
-                f"{role} not reachable at {health}: {e}\n"
-                "  Check models.*_url in config.yaml and start your local server."
-            ) from e
+                f"{role} not reachable for {url}: {last_err}\n"
+                "  Check models.*_url in config (and CURSOR_API_KEY for :8788)."
+            )
     log(f"models: OK ({', '.join(sorted(seen))})")
 
 
@@ -145,6 +170,37 @@ def main() -> int:
         action="store_true",
         help="Do not upload GLOBAL-AUDIT-REPORT.pdf to Google Drive after the run",
     )
+    parser.add_argument(
+        "--with-graph",
+        action="store_true",
+        help=(
+            "Run opt-in graph phase after Layer 0-B (HAS-PART belonging under "
+            "projects/<id>/graph/runs/<model>/). See docs/GRAPH-PHASE.md."
+        ),
+    )
+    parser.add_argument(
+        "--graph-backend",
+        choices=("local", "cursor"),
+        default="local",
+        help="Graph model backend: local=config.yaml model_chat; cursor=Cursor SDK (Grok)",
+    )
+    parser.add_argument(
+        "--graph-run",
+        help="Graph A/B run id (default: slug of model name under graph/runs/)",
+    )
+    parser.add_argument(
+        "--graph-cursor-model",
+        default="grok-4.5",
+        help="Cursor model id when --graph-backend cursor",
+    )
+    parser.add_argument(
+        "--graph-only",
+        action="store_true",
+        help=(
+            "Run only the graph phase (requires existing layer0/ledger.json). "
+            "Does not overwrite Path A/B/C, Layer 1/2, or reports."
+        ),
+    )
     args = parser.parse_args()
 
     try:
@@ -159,8 +215,45 @@ def main() -> int:
     root = project_dir(args.project)
     manifest = root / "manifest.yaml"
     sources = args.sources or (root / "sources")
+    # Propagate to every subprocess (layer0/1/2, graph, synthesize, …) so
+    # model_chat can append to projects/<id>/usage.jsonl without each script
+    # wiring its own meter.
+    set_usage_project(args.project)
 
     try:
+        if args.graph_only:
+            if not args.with_graph:
+                args.with_graph = True
+            # Graph-only: preserve Path A/L1/reports; only write namespaced graph runs.
+            g_args = ["--project", args.project, "--backend", args.graph_backend]
+            if only_unit:
+                g_args.extend(["--only-unit", only_unit])
+            if args.force:
+                g_args.append("--force")
+            if args.graph_run:
+                g_args.extend(["--graph-run", args.graph_run])
+            if args.graph_backend == "cursor":
+                g_args.extend(["--cursor-model", args.graph_cursor_model])
+            # Cursor backend talks to Cursor cloud — local llama health optional.
+            if args.graph_backend == "local":
+                preflight_models()
+            run_step(GRAPH_PHASE, g_args)
+            usage_summary = write_usage_summary(args.project)
+            usage_totals = usage_summary.get("totals") or {}
+            print("\n" + "=" * 60)
+            print("DONE — graph-only run")
+            print("=" * 60)
+            print(f"  Dataset:     projects/{args.project}/")
+            print(f"  Graph runs:  {root / 'graph' / 'runs'}/")
+            print(f"  Active:      {root / 'graph' / 'ACTIVE'}")
+            print(
+                f"  Token usage: {root / 'USAGE-SUMMARY.json'} "
+                f"(calls={usage_totals.get('n_calls', 0)} "
+                f"total_tokens={usage_totals.get('total_tokens', 0)})"
+            )
+            print("=" * 60 + "\n")
+            return 0
+
         preflight_models()
 
         if args.ingest or not manifest.is_file():
@@ -209,6 +302,21 @@ def main() -> int:
             # This pass reviews only those flagged rows and splits them, so Layer 1
             # sorts real single-purpose elements instead of lumped ones.
             run_step(LAYER0, ["--project", args.project, "--resolve-wide-spans"])
+
+            # Opt-in graph phase (docs/GRAPH-PHASE.md): belonging tree under
+            # projects/<id>/graph/runs/<model>/ — before route so Path typing
+            # does not freeze org. Each model keeps its own run dir for A/B.
+            if args.with_graph:
+                g_args = ["--project", args.project, "--backend", args.graph_backend]
+                if only_unit:
+                    g_args.extend(["--only-unit", only_unit])
+                if args.force:
+                    g_args.append("--force")
+                if args.graph_run:
+                    g_args.extend(["--graph-run", args.graph_run])
+                if args.graph_backend == "cursor":
+                    g_args.extend(["--cursor-model", args.graph_cursor_model])
+                run_step(GRAPH_PHASE, g_args)
 
             # Loom router — BEFORE unit placement. Writes layer0/route-map.json.
             run_step(ROUTE, ["--project", args.project])
@@ -293,6 +401,9 @@ def main() -> int:
     else:
         log("skip-drive-push: Google Drive upload skipped")
 
+    usage_summary = write_usage_summary(args.project)
+    usage_totals = usage_summary.get("totals") or {}
+
     out = root / "output"
     print("\n" + "=" * 60)
     print("DONE — reports ready")
@@ -307,6 +418,9 @@ def main() -> int:
         print(f"  Teachers:    {teachers}/<unit>/TEACHER-PACKET.md")
     print(f"  Summary:     {out / 'SUMMARY.md'}")
     print(f"  Layer 0:     {root / 'layer0' / 'ledger.json'}")
+    graph_summary = root / "graph" / "PHASE-SUMMARY.json"
+    if graph_summary.is_file():
+        print(f"  Graph:       {graph_summary}")
     print(f"  Layer 1:     {root / 'layer1' / 'bucket-ledger.json'}")
     l2_findings = root / "layer2" / "findings.json"
     if l2_findings.is_file():
@@ -315,6 +429,11 @@ def main() -> int:
     if pacing.is_file():
         print(f"  Pacing plan: {pacing}")
         print(f"  Year map:    {out / '03-year-calendar-map.md'}")
+    print(
+        f"  Token usage: {root / 'USAGE-SUMMARY.json'} "
+        f"(calls={usage_totals.get('n_calls', 0)} "
+        f"total_tokens={usage_totals.get('total_tokens', 0)})"
+    )
     if not args.skip_drive_push:
         print(
             f"  Drive:       gdrive:DISD CTE/Crystallize/{args.project}/"

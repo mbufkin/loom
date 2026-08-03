@@ -189,6 +189,29 @@ def classify_local(
             data = json.loads(resp.read().decode())
     except urllib.error.URLError as e:
         raise SystemExit(f"Local model unreachable at {base_url}: {e}") from e
+    # Best practice: even experiment bypasses of model_chat should meter tokens
+    # so research comparisons stay apples-to-apples. Failures here must not abort.
+    try:
+        import sys
+        from pathlib import Path
+
+        _root = Path(__file__).resolve().parents[2]
+        if str(_root) not in sys.path:
+            sys.path.insert(0, str(_root))
+        from usage_lib import record_model_call, set_usage_project
+
+        set_usage_project(os.environ.get("LOOM_USAGE_PROJECT") or "lesson-preserve-minicpm")
+        record_model_call(
+            role="analyst",
+            step="lesson_preserve.minicpm_route",
+            model=str(data.get("model") or model),
+            messages=payload["messages"],
+            resp=data,
+            elapsed_ms=0.0,
+            ok=True,
+        )
+    except Exception:
+        pass
     msg = data["choices"][0]["message"]
     reasoning = (msg.get("reasoning_content") or "").strip()
     content = (msg.get("content") or "").strip()
