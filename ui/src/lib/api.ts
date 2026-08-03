@@ -74,26 +74,50 @@ export const api = {
     }
   },
 
-  // Best-effort: LESSON-QUALITY-FEEDBACK.json only exists once the feedback
-  // report has been generated for a project.
-  async lessonFeedback(id: string): Promise<LessonFeedback | null> {
-    try {
-      const txt = await api.fileText(id, "output/LESSON-QUALITY-FEEDBACK.json");
-      return JSON.parse(txt) as LessonFeedback;
-    } catch {
-      return null;
+  // Best-effort quality / curriculum-review plates.
+  // Prefer per-model E2E tree (e2e/runs/<runId>/output/…) when a graph A/B
+  // model is selected so the heatmap tracks the same model as belonging.
+  // Fall back to the curriculum-root plate for older single-tree runs.
+  async lessonFeedback(
+    id: string,
+    runId?: string
+  ): Promise<LessonFeedback | null> {
+    const paths = [
+      ...(runId
+        ? [`e2e/runs/${runId}/output/LESSON-QUALITY-FEEDBACK.json`]
+        : []),
+      "output/LESSON-QUALITY-FEEDBACK.json",
+    ];
+    for (const path of paths) {
+      try {
+        const txt = await api.fileText(id, path);
+        return JSON.parse(txt) as LessonFeedback;
+      } catch {
+        /* try next */
+      }
     }
+    return null;
   },
 
-  // Best-effort: LESSON-CURRICULUM-REVIEW.json only exists once the two-stage
-  // grounded review (curriculum_review.py) has run for a project.
-  async lessonReview(id: string): Promise<CurriculumReview | null> {
-    try {
-      const txt = await api.fileText(id, "output/LESSON-CURRICULUM-REVIEW.json");
-      return JSON.parse(txt) as CurriculumReview;
-    } catch {
-      return null;
+  async lessonReview(
+    id: string,
+    runId?: string
+  ): Promise<CurriculumReview | null> {
+    const paths = [
+      ...(runId
+        ? [`e2e/runs/${runId}/output/LESSON-CURRICULUM-REVIEW.json`]
+        : []),
+      "output/LESSON-CURRICULUM-REVIEW.json",
+    ];
+    for (const path of paths) {
+      try {
+        const txt = await api.fileText(id, path);
+        return JSON.parse(txt) as CurriculumReview;
+      } catch {
+        /* try next */
+      }
     }
+    return null;
   },
 
   // Best-effort: ARTIFACT-RUNG.json only exists once the artifact rung (Paths B/C)

@@ -1,0 +1,43 @@
+# Artifact spec: GENERIC FALLBACK for any doc type without a dedicated spec.
+#
+# WHY / PROVENANCE
+# Paths B/C must be curriculum-agnostic: a corpus we've never seen (an unknown
+# `other` type, a district-specific handout) must still get a real, honest review
+# instead of a crash or silence. This fallback is the "graceful degradation" tier
+# — it makes the ONE universal claim we can always defend (the artifact carries
+# some instructional content) and otherwise routes the type into the feedback
+# nursery (_loom_feedback.yaml) so a future Path can be grown for it. Mirrors the
+# routing degradation contract in route.py.
+#
+# HOW IT SCORES
+# scoring: presence -> deterministic PRESENT / PARTIAL / MISSING from the doc's own
+# Layer 0 elements. No alignment block: without knowing the type we will not fake a
+# model alignment judgment (auditor honesty). Unknown types are logged, not graded
+# on invented criteria.
+
+version: "v1-fallback-2026-07"
+rubric_id: artifact_fallback
+role: other
+title: "Unknown artifact (generic inventory + feedback nursery)"
+framework: "Loom routing degradation contract (graceful degradation)"
+scoring: presence
+auditor_only: true
+nursery: true  # feeds _loom_feedback.yaml so a real per-type spec can be grown later
+
+criteria:
+  - id: has_content
+    label: Has extractable instructional content
+    description: >
+      The artifact decomposed into at least one real instructional element (any of
+      the Layer 0 types) — i.e. it is a usable document, not an empty/broken export.
+    evidence_element_types:
+      - standards_objectives
+      - direct_instruction
+      - guided_practice
+      - independent_practice
+      - assessment_checkpoint
+      - hook_engagement
+      - reflection_closure
+      - logistics_materials
+    keywords: [student, activity, question, task, learn, practice]
+    required: true

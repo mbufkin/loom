@@ -40,6 +40,11 @@ ROUTE = BASE_DIR / "route.py"
 PATH_WORKFLOWS = BASE_DIR / "workflows" / "run_paths.py"
 LAYER1 = BASE_DIR / "layer1.py"
 LAYER2 = BASE_DIR / "layer2.py"
+LESSON_RUNG = BASE_DIR / "lesson_rung.py"
+ARTIFACT_RUNG = BASE_DIR / "artifact_rung.py"
+UNIT_RUNG = BASE_DIR / "unit_rung.py"
+LESSON_QUALITY = BASE_DIR / "lesson_quality.py"
+CURRICULUM_REVIEW = BASE_DIR / "curriculum_review.py"
 CALENDARS = BASE_DIR / "calendars.py"
 SYNTH = BASE_DIR / "synthesize.py"
 PUSH_DRIVE = BASE_DIR / "tools" / "push_drive_reports.py"
@@ -342,6 +347,36 @@ def main() -> int:
             if only_unit:
                 l2_args.extend(["--only-unit", only_unit])
             run_step(LAYER2, l2_args)
+
+            # Deterministic rungs (offline) + advisory quality/review (model).
+            # Educational note: rungs never block; quality is ~6 calls/lesson and
+            # writes the UI heatmap plate under project_dir()/output/ (honors
+            # LOOM_E2E_RUN so per-model A/B trees stay isolated).
+            if LESSON_RUNG.is_file():
+                try:
+                    run_step(LESSON_RUNG, ["--project", args.project])
+                except Exception as e:  # noqa: BLE001
+                    log(f"WARN: lesson-rung skipped: {e}")
+            if ARTIFACT_RUNG.is_file():
+                try:
+                    run_step(ARTIFACT_RUNG, ["--project", args.project])
+                except Exception as e:  # noqa: BLE001
+                    log(f"WARN: artifact-rung skipped: {e}")
+            if UNIT_RUNG.is_file():
+                try:
+                    run_step(UNIT_RUNG, ["--project", args.project])
+                except Exception as e:  # noqa: BLE001
+                    log(f"WARN: unit-rung skipped: {e}")
+            if LESSON_QUALITY.is_file():
+                try:
+                    run_step(LESSON_QUALITY, ["--project", args.project])
+                except Exception as e:  # noqa: BLE001
+                    log(f"WARN: lesson-quality plate skipped: {e}")
+            if CURRICULUM_REVIEW.is_file():
+                try:
+                    run_step(CURRICULUM_REVIEW, ["--project", args.project])
+                except Exception as e:  # noqa: BLE001
+                    log(f"WARN: curriculum-review skipped: {e}")
 
             # Model calendars after assemble (authoritative inferred map).
             # Early rollup remains provisional year spine only.
