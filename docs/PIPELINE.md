@@ -1,4 +1,4 @@
-# Pipeline — Crystallize
+# Pipeline — Loom
 
 **Program:** one orchestrator. **Data:** any `projects/<id>/`.
 
@@ -22,14 +22,24 @@ sources/                    ← curriculum DATA (any supported format)
     ▼  ingest.py            organize + infer unit calendars (models → YAML)
     │
     ▼  rollup.py            unit calendars → pacing-plan / year map (code)
+    │                       (provisional early spine only)
     │
     ▼  layer0.py            0-A: element extraction, cited (models)     ← headline
     │
     ▼  layer0.py            0-B: --resolve-wide-spans (models)          ← citation precision
     │
+    ▼  route.py             Loom router: unit → Path A/B/C map (models) ← headline
+    │                       writes layer0/route-map.json
+    │
+    ▼  workflows/run_paths.py  run Path A (lesson plans) / B (quiz) / C (general)
+    │
     ▼  layer1.py            placement conformance (models)              ← headline
+    │                       (only docs present in route-map)
     │
     ▼  layer2.py            lesson structural completeness (code)       ← no new model calls
+    │
+    ▼  calendars.py         authoritative inferred model calendars      ← after assemble
+    │                       (writes calendars_inferred/)
     │
     ▼  synthesize.py        FIRST-PASS / teachers / dashboard
     │                       (default --delivery model = hybrid narrative)
@@ -43,7 +53,7 @@ sources/                    ← curriculum DATA (any supported format)
 
 | Flag | Effect |
 |------|--------|
-| `--skip-layer01` | Omit Layer 0, 1, **and** 2 (globals / completeness not refreshed) |
+| `--skip-layer01` | Omit the whole headline conformance block — Layer 0 (A+B), Loom router, Path A/B/C, Layer 1, Layer 2, model calendars (globals / completeness not refreshed) |
 | `--only UNIT` | Scope Layer 0 filename filter + Layer 1/2 `--only-unit` |
 | `--skip-drive-push` | Keep reports local only (no Google Drive upload) |
 | `--layer0-no-resume` | Full Layer 0 re-extract |
@@ -57,7 +67,10 @@ Doc-level scrub→place lived under `archive/legacy-unit-audit/` and is **not** 
 |------|--------|
 | Extract, rollup, Layer 2, PDF, dashboard / review-queue plates | **Code** |
 | Organize documents, infer unit structure | **Models** |
+| Loom router — Path A/B/C assignment per unit | **Models** |
+| Path A lesson plans / Path B quiz / Path C general | **Models** (writes `path_a/`, `path_b/`, `path_c/`) |
 | Layer 0 / Layer 1 conformance | **Models** |
+| Model calendars (authoritative inferred map) | **Models** |
 | First-pass / teacher narrative (`--delivery model`) | **Models** (hybrid; see [REPORT-DELIVERY.md](REPORT-DELIVERY.md)) |
 
 Configure endpoints in `config.yaml`. **Single-model doctrine:** analyst and verifier may share one endpoint (second-pass framing of the same model). This repo does not ship models.
@@ -69,7 +82,11 @@ Configure endpoints in `config.yaml`. **Single-model doctrine:** analyst and ver
 | `manifest.yaml` | Unit ↔ document registry |
 | `school-calendar.yaml` | District year spine (optional) |
 | `units/<id>/calendar.yaml` | Day grid + expected roles |
-| `pacing-plan.yaml` | Inferred year map (`rollup.py`) |
+| `pacing-plan.yaml` | Provisional early year map (`rollup.py`; superseded by model calendars) |
+| `layer0/route-map.json` | Loom router output — unit → Path A/B/C assignments |
+| `path_a/` `path_b/` `path_c/` | Path workflow outputs (lesson plans / quiz / general) |
+| `calendars_inferred/` | Authoritative model-calendar map (`calendars.py`) |
+| `_loom_feedback.yaml` | Loom feedback from path runs |
 | `layer0/` / `layer1/` / `layer2/` | Extraction, conformance, completeness ledgers |
 | `output/**` | Deliverable reports (see [OUTPUTS.md](OUTPUTS.md)) |
 
