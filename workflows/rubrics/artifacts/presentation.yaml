@@ -1,0 +1,41 @@
+# Artifact spec: PRESENTATION / SLIDES (instructional content delivery).
+#
+# WHY / PROVENANCE
+# Slides/presentations are the delivery vehicle for direct instruction. As an
+# artifact we audit that they carry real instructional content and (advisory) that
+# the content serves the anchored objective — not that they are visually polished.
+#
+# HOW IT SCORES
+# presence GATES on instructional content being present; alignment ADVISES on whether
+# the content teaches toward the objective.
+
+version: "v1-presentation-2026-07"
+rubric_id: artifact_presentation
+role: presentation
+title: "Presentation / slides"
+framework: "Direct instruction delivery; UbD alignment"
+scoring: presence
+auditor_only: true
+
+criteria:
+  - id: has_content
+    label: Instructional content present
+    description: The slides teach or model content (not just a title/agenda deck).
+    evidence_element_types: [direct_instruction, guided_practice, standards_objectives]
+    keywords: [explain, define, example, model, vocabulary, concept, step, review]
+    required: true
+
+alignment:
+  framework: "UbD Stage 3 alignment (learning events serve the objective)"
+  band_scale:
+    0: "Cannot tell / content unrelated to the objective."
+    1: "Content touches the topic but not the specific objective."
+    2: "Content partially develops the objective."
+    3: "Content directly teaches toward the anchored objective."
+  criteria:
+    - id: content_aligned
+      label: Content serves the objective
+      description: >
+        The slides develop the knowledge/skill in the anchor objective (or cited
+        TEKS), building toward what the lesson set out to teach.
+      reads_from: [direct_instruction, guided_practice, standards_objectives]

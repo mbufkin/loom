@@ -159,9 +159,9 @@ export function RunReview() {
       }
       api.stats(id).then(setStats).catch(() => setStats(null));
       api.unitRung(id).then(setUnitRung);
-      api.lessonFeedback(id).then(setLessonFeedback);
+      // Quality plates reload when graphRunId settles (see effect below) so the
+      // heatmap follows the selected model’s e2e/runs/<id>/ tree when present.
       api.artifactRung(id).then(setArtifactRung);
-      api.lessonReview(id).then(setLessonReview);
       // Curriculum → model runs: list A/B graph trees for the picker.
       setGraphLoading(true);
       api
@@ -205,6 +205,27 @@ export function RunReview() {
       })
       .finally(() => {
         if (!cancelled) setGraphLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [projectId, graphRunId]);
+
+  // Model picker also swaps the quality heatmap + curriculum review plates.
+  useEffect(() => {
+    if (!projectId) return;
+    let cancelled = false;
+    const rid = graphRunId || undefined;
+    Promise.all([api.lessonFeedback(projectId, rid), api.lessonReview(projectId, rid)])
+      .then(([fb, rev]) => {
+        if (cancelled) return;
+        setLessonFeedback(fb);
+        setLessonReview(rev);
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setLessonFeedback(null);
+        setLessonReview(null);
       });
     return () => {
       cancelled = true;

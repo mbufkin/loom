@@ -1,0 +1,43 @@
+# Artifact spec: ANSWER KEY / SOLUTIONS.
+#
+# WHY / PROVENANCE
+# An answer key's job is coverage, not correctness: does a key EXIST and does it
+# cover the items it is meant to score? We deliberately do NOT verify that the
+# provided answers are right — asserting domain truth is out of the auditor's remit
+# (locked decision) and would hallucinate authority. Its real value in the waterfall
+# is completeness: a quiz WITHOUT a key is a gap the unit should surface.
+#
+# HOW IT SCORES
+# presence GATES on a key being present; alignment ADVISES only on coverage (does the
+# key appear to cover the item set), never on whether answers are correct.
+
+version: "v1-answerkey-2026-07"
+rubric_id: artifact_answer_key
+role: answer_key
+title: "Answer key / solutions"
+framework: "Assessment completeness (coverage, not correctness)"
+scoring: presence
+auditor_only: true
+
+criteria:
+  - id: has_answers
+    label: Answers / solutions present
+    description: The key states answers or worked solutions (not just a blank template).
+    evidence_element_types: [assessment_checkpoint, direct_instruction]
+    keywords: [answer, key, solution, correct, rationale, ans, "= "]
+    required: true
+
+alignment:
+  framework: "Assessment completeness (coverage only)"
+  band_scale:
+    0: "Cannot tell / no items apparent to cover."
+    1: "Key covers only a few of the apparent items."
+    2: "Key covers most items; some appear unanswered."
+    3: "Key appears to cover the full set of items it scores."
+  criteria:
+    - id: key_covers_items
+      label: Key covers the items (coverage, not correctness)
+      description: >
+        The number/spread of answers appears to match the item set it scores. This
+        is a COVERAGE observation only — never a judgment that the answers are right.
+      reads_from: [assessment_checkpoint]
