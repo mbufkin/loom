@@ -6,6 +6,7 @@ Maturity = how complete generated artifacts are — not a separate code path.
 | Dataset id | Tier | Layer 0 | Layer 1 | Notes |
 |------------|------|---------|---------|-------|
 | `dallas-career-2026` | **Golden** | Yes | Yes | 18 CTE units; acceptance / demo / MVP |
+| `bluebonnet-math-2026` | Active | Yes | Yes | TX Bluebonnet Math (Alg1 + G5); E2E `grok-4.5` finished 2026-08-03 — cost notes in [docs/E2E.md](../docs/E2E.md); run artifacts stay local |
 | `oklahoma-ag-orientation-2026` | Active | — | — | Public OK CareerTech Orientation to Ag (6 units); sequential calendar |
 | `region10-career-college-2026` | Active | Yes | Yes | Region 10 career/college |
 | `ap-csp-2026` | Stress | Yes | **Blocked** | Layer 0 OK; Layer 1 ORGANIZE exceeds 65k ctx on single CED (~113k) — see dataset README; deferred roadmap |
