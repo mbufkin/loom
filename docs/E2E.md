@@ -74,8 +74,8 @@ Same metering gap (most `:8788` API rows untokened). Do not treat
 
 ## Review paths
 
-Six review lenses (A–F) and the router cascade are defined in
-[PATHS.md](PATHS.md). E2E trees keep `path_a/`…`path_f/` under the run root.
+Seven review lenses (A–G) and the router cascade are defined in
+[PATHS.md](PATHS.md). E2E trees keep `path_a/`…`path_g/` under the run root.
 
 ## Review UI
 

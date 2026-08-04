@@ -41,7 +41,8 @@ B quiz — assessment evidence (quiz, exit ticket, answer key, rubric used to sc
 C general — catch-all / coach tools / unclear
 D teacher_support — teacher edition, educator guide, facilitation support
 E student_practice — student edition, learn/practice/succeed, worksheet
-F standards_pacing — scope/sequence, pacing, standards overview, TEKS/ELPS summaries"""
+F standards_pacing — scope/sequence, pacing, standards overview, TEKS/ELPS summaries
+G sylibuis — sylibuis-named review materials"""
 
 
 def _api_key() -> str:
@@ -154,8 +155,8 @@ Document content (excerpts / extract; may be truncated):
 
 Return JSON:
 {{
-  "path": "A"|"B"|"C"|"D"|"E"|"F",
-  "workflow_id": "lesson_plan"|"quiz"|"general"|"teacher_support"|"student_practice"|"standards_pacing",
+  "path": "A"|"B"|"C"|"D"|"E"|"F"|"G",
+  "workflow_id": "lesson_plan"|"quiz"|"general"|"teacher_support"|"student_practice"|"standards_pacing"|"sylibuis",
   "confidence": "high"|"medium"|"low",
   "reason": "one short sentence from content evidence"
 }}

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-test_route_lenses.py — Unit tests for Path A–F router cascade (no corpus required).
+test_route_lenses.py — Unit tests for Path A–G router cascade (no corpus required).
 
 Best practice: keep router tests offline with tiny fake ledgers + HAS-PART so
 CI does not need Dallas/Bluebonnet source trees.
@@ -23,14 +23,15 @@ from route import (  # noqa: E402
 )
 
 
-def test_path_letters_cover_six_lenses() -> None:
-    assert set(PATH_BY_WORKFLOW.values()) == {"A", "B", "C", "D", "E", "F"}
+def test_path_letters_cover_seven_lenses() -> None:
+    assert set(PATH_BY_WORKFLOW.values()) == {"A", "B", "C", "D", "E", "F", "G"}
     assert PATH_BY_WORKFLOW["lesson_plan"] == "A"
     assert PATH_BY_WORKFLOW["quiz"] == "B"
     assert PATH_BY_WORKFLOW["general"] == "C"
     assert PATH_BY_WORKFLOW["teacher_support"] == "D"
     assert PATH_BY_WORKFLOW["student_practice"] == "E"
     assert PATH_BY_WORKFLOW["standards_pacing"] == "F"
+    assert PATH_BY_WORKFLOW["sylibuis"] == "G"
 
 
 def test_dallas_style_lesson_plan_filename() -> None:
@@ -92,6 +93,31 @@ def test_filename_standards_prior() -> None:
     )
     assert (wf, path) == ("standards_pacing", "F")
     assert "standards" in reason
+
+
+def test_filename_sylibuis_prior() -> None:
+    assert filename_lens_prior("Unit_1_sylibuis_guide.pdf")
+    wf, path, fb, reason = resolve_workflow(
+        doc_type="other",
+        source_file="Unit_1_sylibuis_guide.pdf",
+        graph_hint=None,
+    )
+    assert (wf, path, fb) == ("sylibuis", "G", False)
+    assert "sylibuis" in reason
+
+
+def test_sylibuis_filename_beats_graph_te() -> None:
+    hint = {
+        "role": "teacher_edition",
+        "workflow_id": "teacher_support",
+        "reason": "graph Material.role=teacher_edition",
+    }
+    wf, path, _, _ = resolve_workflow(
+        doc_type="other",
+        source_file="Module_sylibuis_Teacher_Edition.pdf",
+        graph_hint=hint,
+    )
+    assert (wf, path) == ("sylibuis", "G")
 
 
 def test_standards_filename_beats_graph_te() -> None:
@@ -163,12 +189,14 @@ def test_bluebonnet_e2e_route_smoke_if_present() -> None:
 
 def main() -> int:
     tests = [
-        test_path_letters_cover_six_lenses,
+        test_path_letters_cover_seven_lenses,
         test_dallas_style_lesson_plan_filename,
         test_assessment_filename_and_rubric,
         test_graph_teacher_edition_overrides_other,
         test_graph_student_role,
         test_filename_standards_prior,
+        test_filename_sylibuis_prior,
+        test_sylibuis_filename_beats_graph_te,
         test_lesson_plan_filename_beats_graph_te,
         test_norm_source_key_joins_pdf_and_stem,
         test_bluebonnet_e2e_route_smoke_if_present,

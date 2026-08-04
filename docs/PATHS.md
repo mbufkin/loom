@@ -1,4 +1,4 @@
-# Review paths — six lenses (A–F)
+# Review paths — seven lenses (A–G)
 
 **Product contract:** Loom does **not** invent one review path per filename.
 It uses a **small set of review lenses** (paths). Filename types, Layer 0
@@ -14,7 +14,7 @@ Research anchors (keep the set small):
 | UbD (Wiggins & McTighe) | Three design stages; review = alignment, not artifact sprawl |
 | EdReports | 2–3 gateways of criteria, not hundreds of file-type checklists |
 
-## The six lenses
+## The seven lenses
 
 | Path | Lens | `workflow_id` | Reviews | Primary signals |
 |------|------|---------------|---------|-----------------|
@@ -24,9 +24,10 @@ Research anchors (keep the set small):
 | **D** | Teacher support | `teacher_support` | Teacher edition / implementation / educator guide | Graph role `teacher_edition`; filename Teacher_Edition / implementation guide |
 | **E** | Student practice | `student_practice` | Learn / practice / succeed / worksheet | Graph roles `learn_student`, `practice_student`; student edition / worksheet names |
 | **F** | Standards & pacing | `standards_pacing` | Scope/sequence, pacing, standards overviews | Filename / program docs (scope, pacing, TEKS/ELPS summary, …) |
+| **G** | Sylibuis | `sylibuis` | Sylibuis-named review materials | Filename / `doc_type` contains `sylibuis` |
 
 Path letters stay stable for UI and `route-map.json`. Deeper checklists live
-*inside* a lens (A1–A8, B1–…), not as new top-level paths.
+*inside* a lens (A1–A8, B1–…, G1–…), not as new top-level paths.
 
 ## Router (assign-path step)
 
@@ -57,21 +58,24 @@ replace `route-map.json`; it feeds it.
 | A | Deep (A1–A8) — see [PATH-A-LESSON-PLAN.md](PATH-A-LESSON-PLAN.md) |
 | B | Light stub today — see [PATH-B-QUIZ.md](PATH-B-QUIZ.md); lens name is **Assessment** |
 | C | Stub + feedback log — see [PATH-C-GENERAL.md](PATH-C-GENERAL.md) |
-| D / E / F | Stub inventory + feedback hooks — grow checklists without adding Path G…Z |
+| D / E / F | Stub inventory + feedback hooks — grow checklists without adding Path H…Z |
+| G | Stub inventory — see [PATH-G-SYLIBUIS.md](PATH-G-SYLIBUIS.md); grow G1–Gn inside the lens |
 
 ## Feedback loop
 
 Unknown or weak routing still appends `_loom_feedback.yaml`. Read that file
 when deciding whether a recurring pattern deserves a **checklist inside** an
-existing lens — not a seventh top-level path by default.
+existing lens — not a new top-level path by default (Path G is the one
+intentional addition for `sylibuis`).
 
-## Bluebonnet vs Dallas (why six)
+## Bluebonnet vs Dallas (why A–G)
 
 - **Dallas** often has discrete `*Lesson_Plan*` files → Path A by filename works.
 - **Bluebonnet** ships TE / SE / practice modules with **no** `Lesson_Plan` in
   the name → filename-only routing dumped everything to C. Graph already emits
   `Lesson` nodes and `teacher_edition` / `learn_student` roles; the router must
   use those signals so D/E (and later lesson-level A) receive real reviews.
+- **Sylibuis** filenames / `doc_type=sylibuis` route to Path G (stub until checklist depth lands).
 
 ## Related
 

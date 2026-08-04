@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-workflows/run_paths.py — Run Path A–F after route-map exists.
+workflows/run_paths.py — Run Path A–G after route-map exists.
 
 Also refreshes unit LESSON-PLAN plates after Path A.
-See docs/PATHS.md for the six-lens contract.
+See docs/PATHS.md for the A–G lens contract.
 """
 
 from __future__ import annotations
@@ -33,6 +33,7 @@ from workflows.lesson_plan import (
 from workflows.quiz import run_path_b_for_project
 from workflows.standards_pacing import run_path_f_for_project
 from workflows.student_practice import run_path_e_for_project
+from workflows.sylibuis import run_path_g_for_project
 from workflows.teacher_support import run_path_d_for_project
 
 
@@ -55,7 +56,7 @@ def _title_map(project_id: str) -> dict[str, str]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Run Loom Path A–F review lenses")
+    parser = argparse.ArgumentParser(description="Run Loom Path A–G review lenses")
     parser.add_argument("--project", required=True)
     parser.add_argument(
         "--no-model",
@@ -75,6 +76,7 @@ def main() -> int:
     d = run_path_d_for_project(args.project)
     e = run_path_e_for_project(args.project)
     f = run_path_f_for_project(args.project)
+    g = run_path_g_for_project(args.project)
 
     # Handoff aggregate for place-into-units / UI
     handoff = {
@@ -140,6 +142,16 @@ def main() -> int:
                 "emit_paths": ["path_f/findings.json"],
                 "summary": {"doc_count": len(f.get("doc_ids") or [])},
             },
+            {
+                "doc_id": "*",
+                "workflow_id": "sylibuis",
+                "path": "G",
+                "lens": "Sylibuis",
+                "status": g.get("status"),
+                "findings_path": "path_g/findings.json",
+                "emit_paths": ["path_g/findings.json"],
+                "summary": {"doc_count": len(g.get("doc_ids") or [])},
+            },
         ],
     }
     dest = root / "layer0" / "workflow-handoff.json"
@@ -154,7 +166,7 @@ def main() -> int:
     except Exception as e:
         log(f"WARN: unit LESSON-PLAN refresh skipped: {e}")
 
-    log("path workflows done (A–F)")
+    log("path workflows done (A–G)")
     return 0
 
 
