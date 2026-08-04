@@ -1,0 +1,155 @@
+{
+  "project_id": "dallas-career-2026",
+  "workflow_id": "teacher_support",
+  "path": "D",
+  "lens": "Teacher support",
+  "status": "stub",
+  "doc_ids": [
+    "0ffb85afd0ce",
+    "1f0eda900bc5",
+    "4092c72a851c",
+    "82b84c676dfd",
+    "cd8f3755cf17",
+    "e2485fe0a73f",
+    "e82d217defad",
+    "ff5244c8fa47"
+  ],
+  "inventory": [
+    {
+      "doc_id": "0ffb85afd0ce",
+      "doc_type": "other",
+      "graph_role": "teacher_edition",
+      "D1": {
+        "status": "PRESENT",
+        "note": "routed to teacher_support (TE / educator guide)"
+      },
+      "D2": {
+        "status": "STUB",
+        "note": "facilitation / misconception supports TBD"
+      },
+      "D3": {
+        "status": "STUB",
+        "note": "alignment to graph Lesson nodes TBD"
+      }
+    },
+    {
+      "doc_id": "1f0eda900bc5",
+      "doc_type": "other",
+      "graph_role": "teacher_edition",
+      "D1": {
+        "status": "PRESENT",
+        "note": "routed to teacher_support (TE / educator guide)"
+      },
+      "D2": {
+        "status": "STUB",
+        "note": "facilitation / misconception supports TBD"
+      },
+      "D3": {
+        "status": "STUB",
+        "note": "alignment to graph Lesson nodes TBD"
+      }
+    },
+    {
+      "doc_id": "4092c72a851c",
+      "doc_type": "rubric",
+      "graph_role": "teacher_edition",
+      "D1": {
+        "status": "PRESENT",
+        "note": "routed to teacher_support (TE / educator guide)"
+      },
+      "D2": {
+        "status": "STUB",
+        "note": "facilitation / misconception supports TBD"
+      },
+      "D3": {
+        "status": "STUB",
+        "note": "alignment to graph Lesson nodes TBD"
+      }
+    },
+    {
+      "doc_id": "82b84c676dfd",
+      "doc_type": "other",
+      "graph_role": "teacher_edition",
+      "D1": {
+        "status": "PRESENT",
+        "note": "routed to teacher_support (TE / educator guide)"
+      },
+      "D2": {
+        "status": "STUB",
+        "note": "facilitation / misconception supports TBD"
+      },
+      "D3": {
+        "status": "STUB",
+        "note": "alignment to graph Lesson nodes TBD"
+      }
+    },
+    {
+      "doc_id": "cd8f3755cf17",
+      "doc_type": "other",
+      "graph_role": "teacher_edition",
+      "D1": {
+        "status": "PRESENT",
+        "note": "routed to teacher_support (TE / educator guide)"
+      },
+      "D2": {
+        "status": "STUB",
+        "note": "facilitation / misconception supports TBD"
+      },
+      "D3": {
+        "status": "STUB",
+        "note": "alignment to graph Lesson nodes TBD"
+      }
+    },
+    {
+      "doc_id": "e2485fe0a73f",
+      "doc_type": "other",
+      "graph_role": "teacher_edition",
+      "D1": {
+        "status": "PRESENT",
+        "note": "routed to teacher_support (TE / educator guide)"
+      },
+      "D2": {
+        "status": "STUB",
+        "note": "facilitation / misconception supports TBD"
+      },
+      "D3": {
+        "status": "STUB",
+        "note": "alignment to graph Lesson nodes TBD"
+      }
+    },
+    {
+      "doc_id": "e82d217defad",
+      "doc_type": "other",
+      "graph_role": "teacher_edition",
+      "D1": {
+        "status": "PRESENT",
+        "note": "routed to teacher_support (TE / educator guide)"
+      },
+      "D2": {
+        "status": "STUB",
+        "note": "facilitation / misconception supports TBD"
+      },
+      "D3": {
+        "status": "STUB",
+        "note": "alignment to graph Lesson nodes TBD"
+      }
+    },
+    {
+      "doc_id": "ff5244c8fa47",
+      "doc_type": "other",
+      "graph_role": "teacher_edition",
+      "D1": {
+        "status": "PRESENT",
+        "note": "routed to teacher_support (TE / educator guide)"
+      },
+      "D2": {
+        "status": "STUB",
+        "note": "facilitation / misconception supports TBD"
+      },
+      "D3": {
+        "status": "STUB",
+        "note": "alignment to graph Lesson nodes TBD"
+      }
+    }
+  ]
+}

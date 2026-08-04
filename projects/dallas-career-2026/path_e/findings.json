@@ -1,0 +1,659 @@
+{
+  "project_id": "dallas-career-2026",
+  "workflow_id": "student_practice",
+  "path": "E",
+  "lens": "Student practice",
+  "status": "stub",
+  "doc_ids": [
+    "0a62e0b9729e",
+    "1787e9b5bfde",
+    "28552acaae5a",
+    "29140bd6d6f7",
+    "2cc1b0ae0c59",
+    "3369ae8b55a4",
+    "38290addde82",
+    "3e56e33fe53c",
+    "468be78c578b",
+    "4b97944cd264",
+    "545aa2c2190a",
+    "54aff8cc2360",
+    "56bd08f50ac3",
+    "5f0cb47fe1b1",
+    "67a41a913430",
+    "6a1919f04824",
+    "724f41bf2711",
+    "794d51da5629",
+    "7f02e4fea0d8",
+    "7f0dd1599900",
+    "80f37e7b5807",
+    "83154b464163",
+    "854451cbcfc5",
+    "89430d6aae63",
+    "8efd6fc31270",
+    "98ed44c5b0af",
+    "a8248438c079",
+    "a8e8847a5886",
+    "b05bfe476c76",
+    "b5e36486805a",
+    "d50f42a8f21e",
+    "d9f8e87d0486",
+    "ea032c71918c",
+    "eb042af8c066",
+    "f85ca6403d8c",
+    "f96797847d38"
+  ],
+  "inventory": [
+    {
+      "doc_id": "0a62e0b9729e",
+      "doc_type": "project_work",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "1787e9b5bfde",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "28552acaae5a",
+      "doc_type": "other",
+      "graph_role": "practice_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "29140bd6d6f7",
+      "doc_type": "other",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "2cc1b0ae0c59",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "3369ae8b55a4",
+      "doc_type": "other",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "38290addde82",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "3e56e33fe53c",
+      "doc_type": "game_activity",
+      "graph_role": "practice_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "468be78c578b",
+      "doc_type": "lab_activity",
+      "graph_role": "practice_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "4b97944cd264",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "545aa2c2190a",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "54aff8cc2360",
+      "doc_type": "other",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "56bd08f50ac3",
+      "doc_type": "project_work",
+      "graph_role": "practice_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "5f0cb47fe1b1",
+      "doc_type": "other",
+      "graph_role": "practice_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "67a41a913430",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "6a1919f04824",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "724f41bf2711",
+      "doc_type": "other",
+      "graph_role": "practice_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "794d51da5629",
+      "doc_type": "other",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "7f02e4fea0d8",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "7f0dd1599900",
+      "doc_type": "other",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "80f37e7b5807",
+      "doc_type": "other",
+      "graph_role": "practice_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "83154b464163",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "854451cbcfc5",
+      "doc_type": "other",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "89430d6aae63",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "8efd6fc31270",
+      "doc_type": "game_activity",
+      "graph_role": "practice_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "98ed44c5b0af",
+      "doc_type": "project_work",
+      "graph_role": "practice_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "a8248438c079",
+      "doc_type": "worksheet",
+      "graph_role": "practice_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "a8e8847a5886",
+      "doc_type": "other",
+      "graph_role": "practice_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "b05bfe476c76",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "b5e36486805a",
+      "doc_type": "other",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "d50f42a8f21e",
+      "doc_type": "presentation",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "d9f8e87d0486",
+      "doc_type": "other",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "ea032c71918c",
+      "doc_type": "other",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "eb042af8c066",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "f85ca6403d8c",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    },
+    {
+      "doc_id": "f96797847d38",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "E1": {
+        "status": "PRESENT",
+        "note": "routed to student_practice"
+      },
+      "E2": {
+        "status": "STUB",
+        "note": "practice ↔ lesson objective alignment TBD"
+      },
+      "E3": {
+        "status": "STUB",
+        "note": "answer key / succeed pairing TBD"
+      }
+    }
+  ]
+}

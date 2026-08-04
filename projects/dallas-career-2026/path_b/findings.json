@@ -9,29 +9,46 @@
     "0a9fe894e4f0",
     "0ace9ac9d412",
     "0b16e1424928",
+    "0cbd06c7c769",
     "1518e9d9d4e5",
     "1b43180b2ba4",
     "1bd2952ce87b",
+    "21d5442f97a2",
+    "270bcdd1de81",
+    "2fc999f5e539",
     "314d7d0905ca",
     "3f5d5ba70a87",
     "3fd5e5bc561c",
+    "40c5e0f508f1",
     "4736326638c1",
     "51e75ae5f576",
     "59ddeafc2ad3",
+    "6880e9ded029",
+    "6c94424ba260",
     "6caee441faaf",
+    "769516e58fb5",
+    "7896317a42cd",
     "81adda4c10f7",
     "85c8ad2c6c50",
     "86fff193b91a",
+    "8891b46563ae",
     "8ce965ac1600",
     "9b49036929a2",
     "a13c35aa5c4e",
+    "addfb0873806",
+    "af9cf3b04474",
     "ba8b5c7a6deb",
     "d3fae80ecd3f",
     "e173d04cd3e3",
     "e2c12c61bc5f",
+    "e2f014fb5b00",
+    "e31064aba3ae",
+    "e7b2a411cbdc",
     "ed1c99b4f5fa",
     "eff81c789b58",
+    "f1b0566d0274",
     "f52d1bc1c462",
+    "f9710e5e4e97",
     "fc48920a5ca9",
     "ff5cd4c0712e"
   ],
@@ -122,6 +139,23 @@
       }
     },
     {
+      "doc_id": "0cbd06c7c769",
+      "doc_type": "rubric",
+      "B1": {
+        "has_items": false,
+        "has_answer_key_signal": false,
+        "status": "MISSING"
+      },
+      "B2": {
+        "status": "MISSING",
+        "note": "stub — TEKS string presence only"
+      },
+      "B3": {
+        "status": "STUB",
+        "note": "formative vs summative TBD"
+      }
+    },
+    {
       "doc_id": "1518e9d9d4e5",
       "doc_type": "exit_ticket",
       "B1": {
@@ -161,6 +195,57 @@
       "B1": {
         "has_items": true,
         "has_answer_key_signal": false,
+        "status": "PRESENT"
+      },
+      "B2": {
+        "status": "MISSING",
+        "note": "stub — TEKS string presence only"
+      },
+      "B3": {
+        "status": "STUB",
+        "note": "formative vs summative TBD"
+      }
+    },
+    {
+      "doc_id": "21d5442f97a2",
+      "doc_type": "rubric",
+      "B1": {
+        "has_items": false,
+        "has_answer_key_signal": false,
+        "status": "MISSING"
+      },
+      "B2": {
+        "status": "MISSING",
+        "note": "stub — TEKS string presence only"
+      },
+      "B3": {
+        "status": "STUB",
+        "note": "formative vs summative TBD"
+      }
+    },
+    {
+      "doc_id": "270bcdd1de81",
+      "doc_type": "rubric",
+      "B1": {
+        "has_items": false,
+        "has_answer_key_signal": false,
+        "status": "MISSING"
+      },
+      "B2": {
+        "status": "MISSING",
+        "note": "stub — TEKS string presence only"
+      },
+      "B3": {
+        "status": "STUB",
+        "note": "formative vs summative TBD"
+      }
+    },
+    {
+      "doc_id": "2fc999f5e539",
+      "doc_type": "worksheet",
+      "B1": {
+        "has_items": true,
+        "has_answer_key_signal": true,
         "status": "PRESENT"
       },
       "B2": {
@@ -224,6 +309,23 @@
       }
     },
     {
+      "doc_id": "40c5e0f508f1",
+      "doc_type": "project_work",
+      "B1": {
+        "has_items": false,
+        "has_answer_key_signal": false,
+        "status": "MISSING"
+      },
+      "B2": {
+        "status": "MISSING",
+        "note": "stub — TEKS string presence only"
+      },
+      "B3": {
+        "status": "STUB",
+        "note": "formative vs summative TBD"
+      }
+    },
+    {
       "doc_id": "4736326638c1",
       "doc_type": "exit_ticket",
       "B1": {
@@ -275,12 +377,80 @@
       }
     },
     {
+      "doc_id": "6880e9ded029",
+      "doc_type": "project_work",
+      "B1": {
+        "has_items": false,
+        "has_answer_key_signal": false,
+        "status": "MISSING"
+      },
+      "B2": {
+        "status": "MISSING",
+        "note": "stub — TEKS string presence only"
+      },
+      "B3": {
+        "status": "STUB",
+        "note": "formative vs summative TBD"
+      }
+    },
+    {
+      "doc_id": "6c94424ba260",
+      "doc_type": "rubric",
+      "B1": {
+        "has_items": false,
+        "has_answer_key_signal": false,
+        "status": "MISSING"
+      },
+      "B2": {
+        "status": "MISSING",
+        "note": "stub — TEKS string presence only"
+      },
+      "B3": {
+        "status": "STUB",
+        "note": "formative vs summative TBD"
+      }
+    },
+    {
       "doc_id": "6caee441faaf",
       "doc_type": "answer_key",
       "B1": {
         "has_items": true,
         "has_answer_key_signal": true,
         "status": "PRESENT"
+      },
+      "B2": {
+        "status": "MISSING",
+        "note": "stub — TEKS string presence only"
+      },
+      "B3": {
+        "status": "STUB",
+        "note": "formative vs summative TBD"
+      }
+    },
+    {
+      "doc_id": "769516e58fb5",
+      "doc_type": "rubric",
+      "B1": {
+        "has_items": false,
+        "has_answer_key_signal": false,
+        "status": "MISSING"
+      },
+      "B2": {
+        "status": "MISSING",
+        "note": "stub — TEKS string presence only"
+      },
+      "B3": {
+        "status": "STUB",
+        "note": "formative vs summative TBD"
+      }
+    },
+    {
+      "doc_id": "7896317a42cd",
+      "doc_type": "other",
+      "B1": {
+        "has_items": false,
+        "has_answer_key_signal": false,
+        "status": "MISSING"
       },
       "B2": {
         "status": "MISSING",
@@ -343,6 +513,23 @@
       }
     },
     {
+      "doc_id": "8891b46563ae",
+      "doc_type": "project_work",
+      "B1": {
+        "has_items": false,
+        "has_answer_key_signal": false,
+        "status": "MISSING"
+      },
+      "B2": {
+        "status": "MISSING",
+        "note": "stub — TEKS string presence only"
+      },
+      "B3": {
+        "status": "STUB",
+        "note": "formative vs summative TBD"
+      }
+    },
+    {
       "doc_id": "8ce965ac1600",
       "doc_type": "exit_ticket",
       "B1": {
@@ -383,6 +570,40 @@
         "has_items": true,
         "has_answer_key_signal": true,
         "status": "PRESENT"
+      },
+      "B2": {
+        "status": "MISSING",
+        "note": "stub — TEKS string presence only"
+      },
+      "B3": {
+        "status": "STUB",
+        "note": "formative vs summative TBD"
+      }
+    },
+    {
+      "doc_id": "addfb0873806",
+      "doc_type": "worksheet",
+      "B1": {
+        "has_items": true,
+        "has_answer_key_signal": false,
+        "status": "PRESENT"
+      },
+      "B2": {
+        "status": "MISSING",
+        "note": "stub — TEKS string presence only"
+      },
+      "B3": {
+        "status": "STUB",
+        "note": "formative vs summative TBD"
+      }
+    },
+    {
+      "doc_id": "af9cf3b04474",
+      "doc_type": "rubric",
+      "B1": {
+        "has_items": false,
+        "has_answer_key_signal": false,
+        "status": "MISSING"
       },
       "B2": {
         "status": "MISSING",
@@ -462,6 +683,57 @@
       }
     },
     {
+      "doc_id": "e2f014fb5b00",
+      "doc_type": "other",
+      "B1": {
+        "has_items": true,
+        "has_answer_key_signal": false,
+        "status": "PRESENT"
+      },
+      "B2": {
+        "status": "MISSING",
+        "note": "stub — TEKS string presence only"
+      },
+      "B3": {
+        "status": "STUB",
+        "note": "formative vs summative TBD"
+      }
+    },
+    {
+      "doc_id": "e31064aba3ae",
+      "doc_type": "worksheet",
+      "B1": {
+        "has_items": true,
+        "has_answer_key_signal": true,
+        "status": "PRESENT"
+      },
+      "B2": {
+        "status": "MISSING",
+        "note": "stub — TEKS string presence only"
+      },
+      "B3": {
+        "status": "STUB",
+        "note": "formative vs summative TBD"
+      }
+    },
+    {
+      "doc_id": "e7b2a411cbdc",
+      "doc_type": "rubric",
+      "B1": {
+        "has_items": false,
+        "has_answer_key_signal": false,
+        "status": "MISSING"
+      },
+      "B2": {
+        "status": "MISSING",
+        "note": "stub — TEKS string presence only"
+      },
+      "B3": {
+        "status": "STUB",
+        "note": "formative vs summative TBD"
+      }
+    },
+    {
       "doc_id": "ed1c99b4f5fa",
       "doc_type": "answer_key",
       "B1": {
@@ -496,8 +768,42 @@
       }
     },
     {
+      "doc_id": "f1b0566d0274",
+      "doc_type": "rubric",
+      "B1": {
+        "has_items": false,
+        "has_answer_key_signal": false,
+        "status": "MISSING"
+      },
+      "B2": {
+        "status": "MISSING",
+        "note": "stub — TEKS string presence only"
+      },
+      "B3": {
+        "status": "STUB",
+        "note": "formative vs summative TBD"
+      }
+    },
+    {
       "doc_id": "f52d1bc1c462",
       "doc_type": "exit_ticket",
+      "B1": {
+        "has_items": true,
+        "has_answer_key_signal": false,
+        "status": "PRESENT"
+      },
+      "B2": {
+        "status": "MISSING",
+        "note": "stub — TEKS string presence only"
+      },
+      "B3": {
+        "status": "STUB",
+        "note": "formative vs summative TBD"
+      }
+    },
+    {
+      "doc_id": "f9710e5e4e97",
+      "doc_type": "worksheet",
       "B1": {
         "has_items": true,
         "has_answer_key_signal": false,

@@ -72,6 +72,11 @@ API calls record usage.
 Same metering gap (most `:8788` API rows untokened). Do not treat
 `USAGE-SUMMARY.json` totals alone as full-run spend.
 
+## Review paths
+
+Six review lenses (A–F) and the router cascade are defined in
+[PATHS.md](PATHS.md). E2E trees keep `path_a/`…`path_f/` under the run root.
+
 ## Review UI
 
 1. Pick **curriculum** (project id)

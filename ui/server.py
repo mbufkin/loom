@@ -557,7 +557,9 @@ def _outputs_tree(pid: str, e2e_run: str | None = None) -> dict:
         teacher_dir = teachers_dir / unit_id
         if teacher_dir.is_dir():
             for tf in sorted(teacher_dir.iterdir()):
-                if tf.is_file() and tf.suffix in (".md", ".pdf", ".json"):
+                # Include .html so usefulness-test one-pagers can open in-browser
+                # with their own contrast styles (not forced through the MD viewer).
+                if tf.is_file() and tf.suffix in (".md", ".pdf", ".json", ".html"):
                     teacher_files.append(
                         {
                             "label": tf.name,
