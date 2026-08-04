@@ -1,6 +1,9 @@
-# Path C — General / unknown workflow (stub)
+# Path C — General feedback workflow (stub)
 
-Entry: Loom router typed the document as `general` (slides, worksheet, rubric, unknown, …).
+**Lens name:** General feedback (Path C). Taxonomy: [PATHS.md](PATHS.md).
+
+Entry: Loom router typed the document as `general` after A/B/D/E/F did not
+claim it. Prefer growing checklists **inside** those lenses over new path letters.
 
 ## Steps (placeholders)
 

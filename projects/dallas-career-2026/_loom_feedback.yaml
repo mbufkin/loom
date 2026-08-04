@@ -1,4 +1,4 @@
-# Loom unknown/weak-type feedback — read when growing new paths
+# Loom unknown/weak-type feedback — read when growing lens checklists
 
 - doc_id: "0ffb85afd0ce"
   doc_type: "other"
@@ -449,3 +449,9 @@
   suggested_pattern: "Consider a dedicated workflow for type 'other' (currently Path C general)."
   reason: "weak_or_unknown_type"
   logged_at: "2026-07-14T02:19:40.864482+00:00"
+
+- doc_id: "851a02b17dc9"
+  doc_type: "project_work"
+  suggested_pattern: "Still on Path C (general). Prefer a checklist inside Lesson/Assessment/Teacher/Student/Standards rather than a new path letter (see docs/PATHS.md). type='project_work'"
+  reason: "weak_or_unknown_type"
+  logged_at: "2026-08-03T19:13:10.690880+00:00"

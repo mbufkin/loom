@@ -177,7 +177,8 @@ export function RunReview() {
     async (id: string, path: string, type = "md", e2eRun?: string) => {
       setActivePath(path);
       setActiveType(type);
-      if (type === "pdf") {
+      // PDF and HTML are shown via embed/iframe (own contrast styles); skip MD parse.
+      if (type === "pdf" || type === "html") {
         setViewerText("");
         return;
       }
@@ -849,6 +850,36 @@ export function RunReview() {
                     width="100%"
                     height="720px"
                     style={{ border: "2px solid var(--line)" }}
+                  />
+                </div>
+              ) : activeType === "html" && activePath ? (
+                <div>
+                  <p>
+                    <a
+                      href={api.fileUrl(
+                        projectId,
+                        activePath,
+                        e2eRunId || undefined
+                      )}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Open HTML in new tab ↗
+                    </a>
+                  </p>
+                  <iframe
+                    title={activePath}
+                    src={api.fileUrl(
+                      projectId,
+                      activePath,
+                      e2eRunId || undefined
+                    )}
+                    width="100%"
+                    height="860px"
+                    style={{
+                      border: "2px solid var(--line)",
+                      background: "#f3efe6",
+                    }}
                   />
                 </div>
               ) : viewerText ? (

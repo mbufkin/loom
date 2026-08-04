@@ -1,0 +1,29 @@
+unit_id: alg1-program
+title: "Algebra I \u2014 program guides"
+unit_length_days: 5
+days:
+- id: d1
+  label: Day 1
+  expected:
+  - lesson_content
+- id: d2
+  label: Day 2
+  expected:
+  - lesson_content
+- id: d3
+  label: Day 3
+  expected:
+  - lesson_content
+- id: d4
+  label: Day 4
+  expected:
+  - lesson_content
+- id: d5
+  label: Day 5
+  expected:
+  - exit_ticket
+unit_supporting:
+- lesson_plan
+- quiz
+- worksheet
+- answer_key

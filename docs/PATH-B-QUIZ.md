@@ -1,6 +1,9 @@
-# Path B — Quiz / assessment workflow (stub)
+# Path B — Assessment workflow (stub)
 
-Entry: Loom router typed the document as `quiz` (or closely related assessment).
+**Lens name:** Assessment (Path B). Taxonomy: [PATHS.md](PATHS.md).
+
+Entry: Loom router typed the document as `quiz` / assessment-bearing
+(exit ticket, answer key, and related evidence fold here).
 
 ## Steps (placeholders until Path B is built out)
 

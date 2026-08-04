@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Path A one-pager — Engineering</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <style>
+    /* Five-zone Path A one-pager — softer hierarchy after Gemini layout critique */
+    :root {
+      --ink: #1a1714;
+      --ink-soft: #3d3832;
+      --muted: #5c564e;
+      --paper: #f3efe6;
+      --card: #fffcf7;
+      --line: #d4cdc0;
+      --line-strong: #2a241c;
+      --gap: #b33b1a;
+      --gap-bg: #fff1eb;
+      --ok: #14532d;
+      --ok-bg: #dcfce7;
+      --mid: #854d0e;
+      --mid-bg: #fef3c7;
+      --weak: #9a3412;
+      --weak-bg: #ffedd5;
+      --missing-bg: #fee2e2;
+      --missing: #991b1b;
+      --pass: #14532d;
+      --pass-bg: #dcfce7;
+      --zone-label: #7a7268;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 28px 22px 64px;
+    }
+
+    .zone { margin: 0 0 28px; }
+
+    .zone-label {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin: 0 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .zone-label .n {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--zone-label);
+      white-space: nowrap;
+    }
+
+    .zone-label h2 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 1.22rem;
+      font-weight: 700;
+      margin: 0;
+      color: var(--ink);
+      border: none;
+      padding: 0;
+    }
+
+    header.hero {
+      background: var(--card);
+      border-bottom: 3px solid var(--line-strong);
+      padding: 0 0 18px;
+      margin-bottom: 28px;
+    }
+
+    .kicker {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 8px;
+    }
+
+    h1 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: clamp(1.55rem, 3vw, 1.95rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin: 0 0 10px;
+      color: var(--ink);
+    }
+
+    .meta {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .meta strong { color: var(--ink); }
+
+    .rules {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      background: #ebe4d6;
+      color: var(--ink-soft);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 11px;
+      border-radius: 999px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 999px;
+      vertical-align: middle;
+      line-height: 1.3;
+    }
+
+    .badge.missing { background: var(--missing-bg); color: var(--missing); }
+    .badge.misaligned { background: var(--weak-bg); color: var(--weak); }
+    .badge.present-weak { background: var(--weak-bg); color: var(--weak); }
+    .badge.strong { background: var(--ok-bg); color: var(--ok); }
+    .badge.adequate { background: var(--mid-bg); color: var(--mid); }
+    .badge.weak { background: var(--weak-bg); color: var(--weak); }
+    .badge.pass { background: var(--pass-bg); color: var(--pass); }
+
+    .gap {
+      background: var(--gap-bg);
+      border-left: 5px solid var(--gap);
+      padding: 14px 16px;
+      margin: 0 0 10px;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .gap h3 {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+      color: var(--ink);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .gap h3 .num {
+      color: var(--gap);
+      font-weight: 700;
+    }
+
+    .gap p {
+      margin: 5px 0;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+
+    .gap p strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 6px;
+      background: var(--card);
+      box-shadow: 0 0 0 1px var(--line);
+    }
+
+    table.status {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      min-width: 520px;
+    }
+
+    table.status th,
+    table.status td {
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    table.status th {
+      background: #ebe4d6;
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+    }
+
+    table.status tbody tr:last-child td { border-bottom: none; }
+    table.status td.pass-id {
+      font-weight: 600;
+      color: var(--ink-soft);
+      white-space: nowrap;
+      width: 3.2rem;
+    }
+
+    .hunter {
+      background: transparent;
+      border-left: 3px solid var(--line-strong);
+      padding: 4px 0 4px 14px;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+
+    .hunter strong { color: var(--ink); }
+
+    ul.evidence {
+      margin: 0;
+      padding-left: 1.15rem;
+      color: var(--ink-soft);
+    }
+
+    ul.evidence li { margin: 0.35rem 0; }
+
+    code {
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 0.86em;
+      background: #ebe4d6;
+      color: var(--ink);
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    .never {
+      color: var(--muted);
+      font-size: 0.9rem;
+      padding: 2px 0;
+      border: none;
+      background: transparent;
+    }
+
+    .never::before {
+      content: "— ";
+      color: var(--line-strong);
+    }
+
+    .score {
+      margin-top: 8px;
+      background: var(--card);
+      padding: 18px 18px 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 0 1px var(--line);
+    }
+
+    .score .zone-label { border-bottom-color: var(--ok); }
+
+    .banner {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 0 0 14px;
+    }
+
+    .score h3 {
+      margin: 16px 0 8px;
+      font-size: 0.95rem;
+      color: var(--ink);
+    }
+
+    .score table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    .score th,
+    .score td {
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .score th {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .score td.yes {
+      font-weight: 700;
+      color: var(--pass);
+      white-space: nowrap;
+    }
+
+    footer.note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    a { color: #0b4f8a; }
+
+    @media (max-width: 560px) {
+      .page { padding: 20px 14px 48px; }
+      .gap h3 { font-size: 0.98rem; }
+    }
+
+    @media print {
+      html, body { background: #fff; color: #000; font-size: 11pt; }
+      .page { max-width: none; padding: 0; }
+      header.hero { border-bottom: 1.5pt solid #333; }
+      .gap { background: #fff; border-left: 3pt solid #666; }
+      .badge { background: #eee !important; color: #000 !important; border: 0.5pt solid #999; }
+      .table-wrap, .score { box-shadow: none; border: 0.5pt solid #999; }
+      table.status th { background: #f0f0f0; }
+      .chip { background: #f0f0f0; }
+      .score { break-inside: avoid; }
+      a { color: #000; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <p class="kicker">Path A usefulness test · feedback given</p>
+      <h1>Engineering — Paper Airplane Launcher</h1>
+      <p class="meta">
+        <strong>Unit:</strong> <code>engineering</code> · Grades 6–8 ·
+        Dallas career golden · shared page for teacher · coach · auditor
+      </p>
+      <div class="rules">
+        <span class="chip">Useful, not long</span>
+        <span class="chip">Auditor-only (no invented lesson text)</span>
+        <span class="chip">LP in → feedback → review</span>
+      </div>
+    </header>
+
+    <section class="zone" id="zone-1" aria-labelledby="z1">
+      <div class="zone-label">
+        <span class="n">Zone 1</span>
+        <h2 id="z1">Top gaps (act on these first)</h2>
+      </div>
+
+      <article class="gap">
+        <h3>
+          <span class="num">1.</span> ELPS / language supports
+          <span class="badge missing">Missing</span>
+        </h3>
+        <p><strong>Why:</strong> No language objective, sentence stems, or linguistic supports appear in the Engineering Lesson Plan, Day-1 lesson sheet, quiz, or exit ticket.</p>
+        <p><strong>Improve:</strong> Add a short language objective and 1–2 supports tied to the day’s talk/write (e.g. explaining PE→KE or design decisions).</p>
+      </article>
+
+      <article class="gap">
+        <h3>
+          <span class="num">2.</span> Accommodations / access notes
+          <span class="badge misaligned">Misaligned</span>
+        </h3>
+        <p><strong>Why:</strong> No SpEd/504/GT scaffolds are written in the LP. The plate marks accommodations PRESENT from exit-ticket reflection prompts (“challenges… teamwork…”) — that is not an access plan.</p>
+        <p><strong>Improve:</strong> Add planned scaffolds (or an explicit “none noted in materials”) so reviewers are not misled by the plate.</p>
+      </article>
+
+      <article class="gap">
+        <h3>
+          <span class="num">3.</span> Modeling (I do)
+          <span class="badge present-weak">Present · Weak</span>
+        </h3>
+        <p><strong>Why:</strong> Engage + Explore build/test path is clear; a distinct teacher demonstration of <em>how</em> to build/launch before pairs work is thin — plate “modeling” leans on materials/table and student pair text.</p>
+        <p><strong>Improve:</strong> Clarify one short teacher model step (show one launcher move or design sketch) before student build.</p>
+      </article>
+    </section>
+
+    <section class="zone" id="zone-2" aria-labelledby="z2">
+      <div class="zone-label">
+        <span class="n">Zone 2</span>
+        <h2 id="z2">What’s working (PRESENT)</h2>
+      </div>
+      <div class="table-wrap">
+        <table class="status">
+          <thead>
+            <tr>
+              <th>Pass</th>
+              <th>Item</th>
+              <th>Quality</th>
+              <th>Why (short)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="pass-id">A2</td>
+              <td>Learning intention</td>
+              <td><span class="badge strong">Strong</span></td>
+              <td>Day-1 objective names EDP build/test + PE→KE conversion in student-facing language.</td>
+            </tr>
+            <tr>
+              <td class="pass-id">A2</td>
+              <td>TEKS / standards</td>
+              <td><span class="badge adequate">Adequate</span></td>
+              <td>Plan lists engineering-design TEKS; not restated on the short Day-1 sheet.</td>
+            </tr>
+            <tr>
+              <td class="pass-id">A3</td>
+              <td>Goal → do → check</td>
+              <td><span class="badge strong">Strong</span></td>
+              <td>Objective, Explore build/test, Evaluate poster/presentation, and exit ticket share the same launcher aim.</td>
+            </tr>
+            <tr>
+              <td class="pass-id">A4</td>
+              <td>Formative / summative path</td>
+              <td><span class="badge adequate">Adequate</span></td>
+              <td>Energy checks + Design Process quiz + exit ticket exist; success criteria for “good launcher” stay light.</td>
+            </tr>
+            <tr>
+              <td class="pass-id">A5</td>
+              <td>Hook / engage</td>
+              <td><span class="badge strong">Strong</span></td>
+              <td>Aircraft-carrier vs runway engage + engagement question opens the PE/KE problem.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="zone" id="zone-3" aria-labelledby="z3">
+      <div class="zone-label">
+        <span class="n">Zone 3</span>
+        <h2 id="z3">Hunter at a glance (A5)</h2>
+      </div>
+      <div class="hunter">
+        Unit plate: PRESENT <strong>8/8</strong> · focus improve on
+        <strong>modeling clarity</strong> (slot filled, quality weak).
+        Do <strong>not</strong> trust project-level <code>path_a</code> hunter cites (cross-unit bleed).
+      </div>
+    </section>
+
+    <section class="zone" id="zone-4" aria-labelledby="z4">
+      <div class="zone-label">
+        <span class="n">Zone 4</span>
+        <h2 id="z4">Evidence pointers</h2>
+      </div>
+      <ul class="evidence">
+        <li>Objective: “Use the engineering design process to design, build, and test a paper airplane launcher…” (<code>Engineering Lesson</code>)</li>
+        <li>Hook: Engage — aircraft carrier vs airport runway (<code>Engineering Lesson Plan</code>)</li>
+        <li>Standards: “TEKS Student Expectation(s): (7) The student uses engineering design methodologies…” (<code>Engineering Lesson Plan</code>)</li>
+        <li>Check: PE/KE quiz items + exit ticket on launcher objective</li>
+        <li>Explore/evaluate: pair build/test + poster/presentation</li>
+      </ul>
+    </section>
+
+    <section class="zone" id="zone-5" aria-labelledby="z5">
+      <div class="zone-label">
+        <span class="n">Zone 5</span>
+        <h2 id="z5">Never on this page</h2>
+      </div>
+      <p class="never">
+        Essay narrative · drafted lesson rewrite · observation / T-TESS teaching scores ·
+        new path letters · project-scoped Path A cites from other careers
+      </p>
+    </section>
+
+    <section class="score" id="review">
+      <div class="zone-label">
+        <span class="n">Review</span>
+        <h2>Proposed feedback review</h2>
+      </div>
+      <div class="banner">
+        <span class="badge pass">Fidelity PASS</span>
+        <span class="badge pass">Trust PASS</span>
+        <span class="badge pass">Sample PASS</span>
+      </div>
+      <p class="meta" style="margin-bottom:14px">
+        Scored by Cursor as draft author — <strong>your accept/reject still required</strong>.
+        Not a production Path A model run.
+      </p>
+
+      <h3>(a) Fidelity to actual LP</h3>
+      <table>
+        <thead>
+          <tr><th>Check</th><th>Result</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Top gaps match Engineering LP sources</td>
+            <td class="yes">YES</td>
+            <td>ELPS absent; accommodations absent (exit ticket ≠ access); modeling thin vs Explore</td>
+          </tr>
+          <tr>
+            <td>Evidence from engineering docs only</td>
+            <td class="yes">YES</td>
+            <td>Did not use project <code>path_a</code> hunter cites (Family/Culinary/Teaching bleed)</td>
+          </tr>
+          <tr>
+            <td>No invented lesson text in Improve</td>
+            <td class="yes">YES</td>
+            <td>Auditor cues only</td>
+          </tr>
+          <tr>
+            <td>Plate false signals called out</td>
+            <td class="yes">YES</td>
+            <td>Gap #2 names accommodations PRESENT as misaligned</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>(b) Trust gates</h3>
+      <table>
+        <thead>
+          <tr><th>Gate</th><th>Meaning</th><th>Result</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>C1</td><td>Top gaps first; each has Why + Improve</td><td class="yes">YES</td></tr>
+          <tr><td>C2</td><td>~one page / ~2 min read</td><td class="yes">YES</td></tr>
+          <tr><td>C3</td><td>Improve = auditor cues only</td><td class="yes">YES</td></tr>
+          <tr><td>C4</td><td>No essays / observation / invented content</td><td class="yes">YES</td></tr>
+          <tr><td>X5</td><td>Order: gaps → working → Hunter → evidence</td><td class="yes">YES</td></tr>
+          <tr><td>X6</td><td>Strong/Adequate/Weak only on PRESENT</td><td class="yes">YES</td></tr>
+          <tr><td>X7</td><td>Evidence pointers short (no table dumps)</td><td class="yes">YES</td></tr>
+          <tr><td>G8</td><td>≤3 Top gaps</td><td class="yes">YES</td></tr>
+        </tbody>
+      </table>
+
+      <p class="meta" style="margin:14px 0 8px">
+        <strong>Known tension (not a fail):</strong> plate says Hunter 8/8 and accommodations PRESENT;
+        this page trusts the LP over the plate for accommodations and flags modeling quality.
+      </p>
+    </section>
+
+    <footer class="note">
+      Also on disk as markdown:
+      <code>output/teachers/engineering/PATH-A-ONE-PAGER.md</code> ·
+      plan asset:
+      <code>.plan/world-class-path-reviews/assets/05-one-pager-engineering.md</code>
+      · Layout: five-zone redesign (Gemini critique applied).
+    </footer>
+  </div>
+</body>
+</html>
