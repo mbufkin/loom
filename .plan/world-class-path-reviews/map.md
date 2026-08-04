@@ -27,6 +27,7 @@ A locked **Path A quality bar**: multi-pass review (presence first, then a short
 
 ## Decisions so far
 
+- [Syllabus quality research (Path G)](./tickets/10-syllabus-quality-research.md) — Path G is its own **course syllabus** lens (not Path A/Hunter): G1–G9 for DISD/Texas CTE HS first; lens renamed **Syllabus** (`workflow_id: syllabus`). Spec in `docs/PATH-G-SYLLABUS.md`; presence extractors next.
 - [Current Path A output inventory](./tickets/01-current-path-a-output-inventory.md) — Dallas emits A1–A8 + plates (~22KB findings; useful PRESENT/MISSING + mismatch signals; noise = cite bleed, false Hunter PRESENT, non-doc-scoped per-doc JSON); Bluebonnet Path A empty without `lesson_plan` routing.
 - [Path A pass set for world-class review](./tickets/02-path-a-pass-set.md) — Keep A1–A8; add why+improve on A2–A7 only (A1/A8 structural); improve = auditor cues, never draft lesson text.
 - [Quality-call rubric on PRESENT elements](./tickets/03-quality-call-rubric.md) — PRESENT only: Strong/Adequate/Weak = usable teaching path (not cite density); MISSING/MISALIGNED get why+improve only; why/improve up to a short paragraph, auditor cues, no drafting.
@@ -46,7 +47,7 @@ A locked **Path A quality bar**: multi-pass review (presence first, then a short
 ## Out of scope
 
 - Implementing world-class B–F runners before A’s bar is locked.
-- New top-level path letters (G…Z) — grow checklists inside A–F.
+- Further top-level path letters (H…Z) — grow checklists inside A–G (Path G syllabus already added).
 - Classroom-observation rubrics (live T-TESS Domains 2–3 / walkthroughs) as primary Path A logic.
 - Inventing lesson content (auditor-only stays).
 - Full multi-module Bluebonnet corpus runs as a requirement of this map.

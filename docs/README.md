@@ -36,7 +36,7 @@ Reference for the Loom curriculum auditor (router + Path A/B/C workflows).
 | [PATH-A-LESSON-PLAN.md](PATH-A-LESSON-PLAN.md) | Curriculum leads | Path A (Lesson) workflow depth |
 | [PATH-B-QUIZ.md](PATH-B-QUIZ.md) | Curriculum leads | Path B (Assessment) workflow |
 | [PATH-C-GENERAL.md](PATH-C-GENERAL.md) | Curriculum leads | Path C (General feedback) workflow |
-| [PATH-G-SYLIBUIS.md](PATH-G-SYLIBUIS.md) | Curriculum leads | Path G (Sylibuis) workflow stub |
+| [PATH-G-SYLLABUS.md](PATH-G-SYLLABUS.md) | Curriculum leads | Path G (Syllabus) workflow — G1–G9 |
 | [CHAMPION-REVIEW-MAP.md](CHAMPION-REVIEW-MAP.md) | Reviewers | Champion review workflow |
 | [curriculum-first-plan.md](curriculum-first-plan.md) | Planners | Early curriculum-first planning notes (historical) |
 | [roadmap.md](roadmap.md) | Engineers | Build plan / open work |

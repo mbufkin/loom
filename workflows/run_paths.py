@@ -33,7 +33,7 @@ from workflows.lesson_plan import (
 from workflows.quiz import run_path_b_for_project
 from workflows.standards_pacing import run_path_f_for_project
 from workflows.student_practice import run_path_e_for_project
-from workflows.sylibuis import run_path_g_for_project
+from workflows.syllabus import run_path_g_for_project
 from workflows.teacher_support import run_path_d_for_project
 
 
@@ -144,9 +144,9 @@ def main() -> int:
             },
             {
                 "doc_id": "*",
-                "workflow_id": "sylibuis",
+                "workflow_id": "syllabus",
                 "path": "G",
-                "lens": "Sylibuis",
+                "lens": "Syllabus",
                 "status": g.get("status"),
                 "findings_path": "path_g/findings.json",
                 "emit_paths": ["path_g/findings.json"],

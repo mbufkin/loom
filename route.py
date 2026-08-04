@@ -42,7 +42,7 @@ WORKFLOW_GENERAL = "general"  # Path C — General feedback
 WORKFLOW_TEACHER = "teacher_support"  # Path D
 WORKFLOW_STUDENT = "student_practice"  # Path E
 WORKFLOW_STANDARDS = "standards_pacing"  # Path F
-WORKFLOW_SYLIBUIS = "sylibuis"  # Path G
+WORKFLOW_SYLLABUS = "syllabus"  # Path G
 
 PATH_BY_WORKFLOW = {
     WORKFLOW_LESSON: "A",
@@ -51,7 +51,7 @@ PATH_BY_WORKFLOW = {
     WORKFLOW_TEACHER: "D",
     WORKFLOW_STUDENT: "E",
     WORKFLOW_STANDARDS: "F",
-    WORKFLOW_SYLIBUIS: "G",
+    WORKFLOW_SYLLABUS: "G",
 }
 
 LENS_LABEL = {
@@ -61,7 +61,7 @@ LENS_LABEL = {
     WORKFLOW_TEACHER: "Teacher support",
     WORKFLOW_STUDENT: "Student practice",
     WORKFLOW_STANDARDS: "Standards & pacing",
-    WORKFLOW_SYLIBUIS: "Sylibuis",
+    WORKFLOW_SYLLABUS: "Syllabus",
 }
 
 QUIZ_TYPES = frozenset({"quiz", "answer_key", "exit_ticket"})
@@ -69,7 +69,8 @@ LESSON_TYPES = frozenset({"lesson_plan"})
 # Assessment-bearing types that are not quiz filenames
 ASSESSMENT_EXTRA = frozenset({"rubric"})
 STUDENT_TYPES = frozenset({"worksheet"})
-SYLIBUIS_TYPES = frozenset({"sylibuis"})
+# Primary type + legacy typo alias from early Path G stub naming.
+SYLLABUS_TYPES = frozenset({"syllabus", "sylibuis"})
 # Types that should be logged for future checklist growth inside a lens
 FEEDBACK_TYPES = frozenset({"other", "flex_day", "game_activity", "lesson_content", "project_work", "presentation", "lab_activity"})
 
@@ -88,7 +89,8 @@ _STANDARDS_RE = re.compile(
     r"family[_\s.-]?guide|materials[_\s.-]?list",
     re.I,
 )
-_SYLIBUIS_RE = re.compile(r"sylibuis", re.I)
+# Match correct spelling first; keep "sylibuis" as typo alias only.
+_SYLLABUS_RE = re.compile(r"syllabus|sylibuis", re.I)
 
 
 def doc_type_to_workflow(doc_type: str) -> tuple[str, str, bool]:
@@ -98,8 +100,8 @@ def doc_type_to_workflow(doc_type: str) -> tuple[str, str, bool]:
         return WORKFLOW_LESSON, "A", False
     if dt in QUIZ_TYPES or dt in ASSESSMENT_EXTRA:
         return WORKFLOW_ASSESSMENT, "B", False
-    if dt in SYLIBUIS_TYPES:
-        return WORKFLOW_SYLIBUIS, "G", False
+    if dt in SYLLABUS_TYPES:
+        return WORKFLOW_SYLLABUS, "G", False
     if dt in STUDENT_TYPES:
         return WORKFLOW_STUDENT, "E", False
     needs_fb = dt in FEEDBACK_TYPES or dt == "other"
@@ -204,8 +206,8 @@ def load_graph_routing_hints(project_id: str) -> dict[str, dict]:
 def filename_lens_prior(source_file: str) -> tuple[str, str] | None:
     """Optional Path D/E/F/G prior from filename when classify_doc_type is coarse."""
     name = source_file or ""
-    if _SYLIBUIS_RE.search(name):
-        return WORKFLOW_SYLIBUIS, "filename prior → sylibuis"
+    if _SYLLABUS_RE.search(name):
+        return WORKFLOW_SYLLABUS, "filename prior → syllabus"
     if _STANDARDS_RE.search(name):
         return WORKFLOW_STANDARDS, "filename prior → standards_pacing"
     if _TE_RE.search(name):
@@ -233,14 +235,14 @@ def resolve_workflow(
     if dt in QUIZ_TYPES:
         return WORKFLOW_ASSESSMENT, "B", False, f"filename doc_type={dt}"
 
-    # Explicit sylibuis type or name beats graph TE mis-tags.
-    if dt in SYLIBUIS_TYPES or _SYLIBUIS_RE.search(source_file or ""):
+    # Explicit syllabus type or name beats graph TE mis-tags.
+    if dt in SYLLABUS_TYPES or _SYLLABUS_RE.search(source_file or ""):
         return (
-            WORKFLOW_SYLIBUIS,
+            WORKFLOW_SYLLABUS,
             "G",
             False,
-            "filename prior → sylibuis"
-            if _SYLIBUIS_RE.search(source_file or "")
+            "filename prior → syllabus"
+            if _SYLLABUS_RE.search(source_file or "")
             else f"filename doc_type={dt}",
         )
 
@@ -466,7 +468,7 @@ def build_route_map(project_id: str) -> dict:
         f"(A={counts[WORKFLOW_LESSON]} B={counts[WORKFLOW_ASSESSMENT]} "
         f"C={counts[WORKFLOW_GENERAL]} D={counts[WORKFLOW_TEACHER]} "
         f"E={counts[WORKFLOW_STUDENT]} F={counts[WORKFLOW_STANDARDS]} "
-        f"G={counts[WORKFLOW_SYLIBUIS]}; "
+        f"G={counts[WORKFLOW_SYLLABUS]}; "
         f"graph_hints={len(graph_hints)} feedback={len(feedback)})"
     )
     return out

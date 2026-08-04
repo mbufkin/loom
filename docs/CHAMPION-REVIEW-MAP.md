@@ -27,7 +27,7 @@ Without the YAML, `rollup.py` cannot produce a **dated** pacing / YAG map.
 | **Year-at-a-Glance (YAG)** | **Structural fill** — inferred map from unit calendars + school calendar | `pacing-plan.yaml`, `output/03-year-calendar-map.md` |
 | **Pacing guide** | Same family as YAG; dates skip PD/holidays/fall break from school calendar | same |
 | **Scope & sequence / unit frameworks** | Manifest + `units/*/calendar.yaml` (expected day roles) | ingest / human-curated YAML |
-| **Course syllabus** | Out of scope as a document type today (report on presence only if filed as a source) | — |
+| **Course syllabus** | **Path G** — course-level student/family contract audit (G1–G9; presence extractors landing) | `path_g/findings.json` — see [PATH-G-SYLLABUS.md](PATH-G-SYLLABUS.md) |
 | **Lesson plan templates** | **Layer 2** — structural completeness of fulfilled `lesson_plan` docs (standards, materials, instruction, assessment) | `layer2/findings.json`, first-pass §4 / teacher §3 |
 | **Instructional resources / supports** | Layer 1 role fulfillment (worksheet, rubric, slides, …) + MISSING | `layer1/findings.json` |
 | **Assessments / performance tasks** | Layer 1 roles (`quiz`, `exit_ticket`, `rubric`, …) | same |

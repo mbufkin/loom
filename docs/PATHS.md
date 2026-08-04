@@ -24,7 +24,7 @@ Research anchors (keep the set small):
 | **D** | Teacher support | `teacher_support` | Teacher edition / implementation / educator guide | Graph role `teacher_edition`; filename Teacher_Edition / implementation guide |
 | **E** | Student practice | `student_practice` | Learn / practice / succeed / worksheet | Graph roles `learn_student`, `practice_student`; student edition / worksheet names |
 | **F** | Standards & pacing | `standards_pacing` | Scope/sequence, pacing, standards overviews | Filename / program docs (scope, pacing, TEKS/ELPS summary, …) |
-| **G** | Sylibuis | `sylibuis` | Sylibuis-named review materials | Filename / `doc_type` contains `sylibuis` |
+| **G** | Syllabus | `syllabus` | Course syllabus / student-facing course contract | Filename / `doc_type` contains `syllabus` (typo alias `sylibuis`) |
 
 Path letters stay stable for UI and `route-map.json`. Deeper checklists live
 *inside* a lens (A1–A8, B1–…, G1–…), not as new top-level paths.
@@ -59,14 +59,14 @@ replace `route-map.json`; it feeds it.
 | B | Light stub today — see [PATH-B-QUIZ.md](PATH-B-QUIZ.md); lens name is **Assessment** |
 | C | Stub + feedback log — see [PATH-C-GENERAL.md](PATH-C-GENERAL.md) |
 | D / E / F | Stub inventory + feedback hooks — grow checklists without adding Path H…Z |
-| G | Stub inventory — see [PATH-G-SYLIBUIS.md](PATH-G-SYLIBUIS.md); grow G1–Gn inside the lens |
+| G | Spec locked (G1–G9) — see [PATH-G-SYLLABUS.md](PATH-G-SYLLABUS.md); presence extractors still stub |
 
 ## Feedback loop
 
 Unknown or weak routing still appends `_loom_feedback.yaml`. Read that file
 when deciding whether a recurring pattern deserves a **checklist inside** an
 existing lens — not a new top-level path by default (Path G is the one
-intentional addition for `sylibuis`).
+intentional addition for course syllabi).
 
 ## Bluebonnet vs Dallas (why A–G)
 
@@ -75,7 +75,7 @@ intentional addition for `sylibuis`).
   the name → filename-only routing dumped everything to C. Graph already emits
   `Lesson` nodes and `teacher_edition` / `learn_student` roles; the router must
   use those signals so D/E (and later lesson-level A) receive real reviews.
-- **Sylibuis** filenames / `doc_type=sylibuis` route to Path G (stub until checklist depth lands).
+- **Syllabus** filenames / `doc_type=syllabus` route to Path G (G1–G9 spec locked; runners grow inside the lens).
 
 ## Related
 

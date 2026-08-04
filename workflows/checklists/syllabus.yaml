@@ -1,0 +1,283 @@
+# Course syllabus plate → Loom checklist (Path G).
+# Grain: whole-course student/family contract — not Hunter daily structure.
+# PRESENT = evidence found in Layer 0 excerpts; MISSING = not found. Never invent.
+#
+# Primary context: DISD / Texas CTE high school (TEKS timeline, grading, safety, WBL).
+# optional: true → NOT_SIGNALED when the doc has no CTE cues (avoids false fails).
+
+version: "v1-syllabus-cte"
+role: syllabus
+framework: learner_centered_cte
+source_template: docs/PATH-G-SYLLABUS.md
+
+sections:
+  g2_identity:
+    label: G2 Course identity & logistics
+    step: G2
+    fields:
+      - id: course_identity
+        label: Course name / number / credit
+        element_types: [logistics_materials, standards_objectives]
+        keywords:
+          - course title
+          - course name
+          - course number
+          - PEIMS
+          - credit
+          - one credit
+          - grade level
+          - grades 9
+          - grades 10
+          - grades 11
+          - grades 12
+      - id: instructor_contact
+        label: Teacher / instructor contact
+        element_types: [logistics_materials]
+        keywords:
+          - instructor
+          - teacher
+          - email
+          - conference period
+          - office hours
+          - room
+          - phone
+      - id: meeting_pattern
+        label: Meeting pattern / schedule block
+        element_types: [logistics_materials]
+        keywords:
+          - class period
+          - meeting time
+          - schedule
+          - period
+          - block
+          - days of the week
+      - id: prerequisites
+        label: Prerequisites / recommended prior courses
+        element_types: [logistics_materials, standards_objectives]
+        keywords:
+          - prerequisite
+          - recommended prerequisite
+          - prior course
+          - required course
+
+  g3_outcomes:
+    label: G3 Purpose & learning outcomes
+    step: G3
+    fields:
+      - id: course_purpose
+        label: Course description / why this course matters
+        element_types: [standards_objectives, logistics_materials]
+        keywords:
+          - course description
+          - course overview
+          - in this course
+          - students will explore
+          - prepare students
+          - career
+      - id: learning_outcomes
+        label: Measurable course outcomes / learning objectives
+        element_types: [standards_objectives]
+        keywords:
+          - learning objective
+          - learning outcome
+          - students will be able
+          - students will
+          - SWBAT
+          - by the end of this course
+          - competencies
+      - id: teks_goals
+        label: TEKS / standards goals named on syllabus
+        element_types: [standards_objectives]
+        keywords:
+          - TEKS
+          - student expectation
+          - Texas Essential Knowledge
+          - §
+          - employability skills
+
+  g4_grading:
+    label: G4 Assessment & grading transparency
+    step: G4
+    fields:
+      - id: grade_categories
+        label: Graded categories / assignment types
+        element_types: [assessment_checkpoint, logistics_materials]
+        keywords:
+          - grading
+          - grade categories
+          - weighted
+          - daily work
+          - major grade
+          - minor grade
+          - quiz
+          - exam
+          - project
+          - internship
+          - participation
+      - id: grade_weights
+        label: Weights or points toward final grade
+        element_types: [assessment_checkpoint, logistics_materials]
+        keywords:
+          - "%"
+          - percent
+          - percentage
+          - weighted
+          - points
+          - worth
+          - of your grade
+          - of the grade
+      - id: grading_scale
+        label: Grading scale
+        element_types: [logistics_materials, assessment_checkpoint]
+        keywords:
+          - grading scale
+          - 90-100
+          - 90–100
+          - A:
+          - B:
+          - C:
+          - failing
+          - below 70
+      - id: late_makeup
+        label: Late work / makeup policy
+        element_types: [logistics_materials]
+        keywords:
+          - late work
+          - make up
+          - makeup
+          - make-up
+          - missing work
+          - redo
+          - retake
+
+  g5_timeline:
+    label: G5 Course map / TEKS timeline
+    step: G5
+    fields:
+      - id: unit_topics
+        label: Units / topics sequence
+        element_types: [logistics_materials, standards_objectives, direct_instruction]
+        keywords:
+          - unit 1
+          - unit 2
+          - course outline
+          - topics
+          - scope
+          - year at a glance
+          - YAG
+          - pacing
+          - calendar of topics
+      - id: due_dates
+        label: Major dates / due dates
+        element_types: [logistics_materials, assessment_checkpoint]
+        keywords:
+          - due date
+          - deadline
+          - week of
+          - semester
+          - midterm
+          - final exam
+          - timeline
+      - id: teks_timeline
+        label: TEKS / content coverage timeline claim
+        element_types: [standards_objectives, logistics_materials]
+        keywords:
+          - TEKS
+          - cover
+          - covered
+          - throughout the year
+          - sequence
+          - pacing
+          - all TEKS
+
+  g6_policies:
+    label: G6 Policies & communication
+    step: G6
+    fields:
+      - id: attendance
+        label: Attendance expectations
+        element_types: [logistics_materials]
+        keywords:
+          - attendance
+          - tardy
+          - absent
+          - truancy
+          - present in class
+      - id: integrity
+        label: Academic integrity / honesty
+        element_types: [logistics_materials]
+        keywords:
+          - academic integrity
+          - academic honesty
+          - plagiarism
+          - cheating
+          - AI policy
+          - artificial intelligence
+      - id: communication
+        label: Communication channels / response norms
+        element_types: [logistics_materials]
+        keywords:
+          - email
+          - contact
+          - Schoology
+          - Google Classroom
+          - Canvas
+          - LMS
+          - respond within
+          - office hours
+          - conference
+
+  g7_cte_access:
+    label: G7 Access, safety, CTE/WBL
+    step: G7
+    fields:
+      - id: accommodations
+        label: Accommodations / supports / how to succeed
+        element_types: [logistics_materials, standards_objectives]
+        keywords:
+          - accommodation
+          - modification
+          - IEP
+          - 504
+          - ELPS
+          - tutoring
+          - support
+          - how to succeed
+          - resources
+      - id: safety
+        label: Safety rules (lab/shop/clinical)
+        element_types: [logistics_materials]
+        keywords:
+          - safety
+          - PPE
+          - lab safety
+          - shop safety
+          - hazard
+          - emergency
+        optional: true
+        cte_signal: true
+      - id: wbl_internship
+        label: Work-based learning / internship requirements
+        element_types: [logistics_materials, assessment_checkpoint]
+        keywords:
+          - internship
+          - work-based
+          - work based
+          - WBL
+          - training plan
+          - practicum hours
+          - industry partner
+        optional: true
+        cte_signal: true
+      - id: acknowledgment
+        label: Student / parent acknowledgment or signature
+        element_types: [logistics_materials]
+        keywords:
+          - signature
+          - acknowledge
+          - parent/guardian
+          - parent guardian
+          - I have read
+          - permission slip
+        optional: true
+        cte_signal: true
