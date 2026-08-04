@@ -443,6 +443,9 @@ VALID_SLOT_ROLES = frozenset(
 def classify_doc_type(filename: str) -> str:
     """Infer artifact type from filename — deterministic, no model."""
     n = filename.lower()
+    # Path G lens — match early so "sylibuis" filenames don't fall through to other.
+    if "sylibuis" in n:
+        return "sylibuis"
     if "answer_key" in n or "answer key" in n:
         return "answer_key"
     if "exit_ticket" in n or "exit ticket" in n:

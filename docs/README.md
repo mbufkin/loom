@@ -32,10 +32,11 @@ Reference for the Loom curriculum auditor (router + Path A/B/C workflows).
 | [OUTPUTS.md](OUTPUTS.md) | Operators | Reports and artifacts |
 | [SAMPLE-PROJECT.md](SAMPLE-PROJECT.md) | Evaluators | Dallas sample walkthrough |
 | [REORG-2026-07.md](REORG-2026-07.md) | Everyone | Path changes after repo cleanup |
-| [PATHS.md](PATHS.md) | Everyone | **Six review lenses A–F** — taxonomy + router cascade |
+| [PATHS.md](PATHS.md) | Everyone | **Seven review lenses A–G** — taxonomy + router cascade |
 | [PATH-A-LESSON-PLAN.md](PATH-A-LESSON-PLAN.md) | Curriculum leads | Path A (Lesson) workflow depth |
 | [PATH-B-QUIZ.md](PATH-B-QUIZ.md) | Curriculum leads | Path B (Assessment) workflow |
 | [PATH-C-GENERAL.md](PATH-C-GENERAL.md) | Curriculum leads | Path C (General feedback) workflow |
+| [PATH-G-SYLIBUIS.md](PATH-G-SYLIBUIS.md) | Curriculum leads | Path G (Sylibuis) workflow stub |
 | [CHAMPION-REVIEW-MAP.md](CHAMPION-REVIEW-MAP.md) | Reviewers | Champion review workflow |
 | [curriculum-first-plan.md](curriculum-first-plan.md) | Planners | Early curriculum-first planning notes (historical) |
 | [roadmap.md](roadmap.md) | Engineers | Build plan / open work |
