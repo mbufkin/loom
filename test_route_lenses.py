@@ -31,7 +31,7 @@ def test_path_letters_cover_seven_lenses() -> None:
     assert PATH_BY_WORKFLOW["teacher_support"] == "D"
     assert PATH_BY_WORKFLOW["student_practice"] == "E"
     assert PATH_BY_WORKFLOW["standards_pacing"] == "F"
-    assert PATH_BY_WORKFLOW["sylibuis"] == "G"
+    assert PATH_BY_WORKFLOW["syllabus"] == "G"
 
 
 def test_dallas_style_lesson_plan_filename() -> None:
@@ -95,18 +95,18 @@ def test_filename_standards_prior() -> None:
     assert "standards" in reason
 
 
-def test_filename_sylibuis_prior() -> None:
-    assert filename_lens_prior("Unit_1_sylibuis_guide.pdf")
+def test_filename_syllabus_prior() -> None:
+    assert filename_lens_prior("Unit_1_Course_Syllabus.pdf")
     wf, path, fb, reason = resolve_workflow(
         doc_type="other",
-        source_file="Unit_1_sylibuis_guide.pdf",
+        source_file="Unit_1_Course_Syllabus.pdf",
         graph_hint=None,
     )
-    assert (wf, path, fb) == ("sylibuis", "G", False)
-    assert "sylibuis" in reason
+    assert (wf, path, fb) == ("syllabus", "G", False)
+    assert "syllabus" in reason
 
 
-def test_sylibuis_filename_beats_graph_te() -> None:
+def test_syllabus_filename_beats_graph_te() -> None:
     hint = {
         "role": "teacher_edition",
         "workflow_id": "teacher_support",
@@ -114,10 +114,21 @@ def test_sylibuis_filename_beats_graph_te() -> None:
     }
     wf, path, _, _ = resolve_workflow(
         doc_type="other",
-        source_file="Module_sylibuis_Teacher_Edition.pdf",
+        source_file="Module_Syllabus_Teacher_Edition.pdf",
         graph_hint=hint,
     )
-    assert (wf, path) == ("sylibuis", "G")
+    assert (wf, path) == ("syllabus", "G")
+
+
+def test_sylibuis_typo_alias_still_routes() -> None:
+    """Legacy misspelling from early Path G stub still lands on Syllabus."""
+    wf, path, fb, reason = resolve_workflow(
+        doc_type="other",
+        source_file="Unit_1_sylibuis_guide.pdf",
+        graph_hint=None,
+    )
+    assert (wf, path, fb) == ("syllabus", "G", False)
+    assert "syllabus" in reason
 
 
 def test_standards_filename_beats_graph_te() -> None:
@@ -195,8 +206,9 @@ def main() -> int:
         test_graph_teacher_edition_overrides_other,
         test_graph_student_role,
         test_filename_standards_prior,
-        test_filename_sylibuis_prior,
-        test_sylibuis_filename_beats_graph_te,
+        test_filename_syllabus_prior,
+        test_syllabus_filename_beats_graph_te,
+        test_sylibuis_typo_alias_still_routes,
         test_lesson_plan_filename_beats_graph_te,
         test_norm_source_key_joins_pdf_and_stem,
         test_bluebonnet_e2e_route_smoke_if_present,

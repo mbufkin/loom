@@ -80,7 +80,7 @@ _VALID_WORKFLOWS = {
     "teacher_support",
     "student_practice",
     "standards_pacing",
-    "sylibuis",
+    "syllabus",
 }
 _VALID_PATHS = {"A", "B", "C", "D", "E", "F", "G"}
 
@@ -134,7 +134,7 @@ def test_path_workflows_a1_a8() -> None:
         ("d", "teacher_support"),
         ("e", "student_practice"),
         ("f", "standards_pacing"),
-        ("g", "sylibuis"),
+        ("g", "syllabus"),
     ):
         pf = json.loads(
             (root / f"path_{letter}" / "findings.json").read_text(encoding="utf-8")
