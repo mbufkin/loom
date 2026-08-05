@@ -1,0 +1,402 @@
+{
+  "project_id": "lab-teacher-support-path-d",
+  "workflow_id": "teacher_support",
+  "path": "D",
+  "lens": "Teacher support",
+  "status": "ok",
+  "doc_ids": [
+    "doc_dmixed_Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide",
+    "doc_dstrong_K-5_Math_Grade_5_Module_1_Place_Value_and_Decimals_Teacher_Edition",
+    "doc_dweak_Module_Placeholder_Teacher_Edition_Stub"
+  ],
+  "checklist": "workflows/checklists/teacher_support.yaml",
+  "inventory": [
+    {
+      "doc_id": "doc_dmixed_Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 1,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "D3": {
+        "status": "PARTIAL",
+        "note": "2/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "doc_dstrong_K-5_Math_Grade_5_Module_1_Place_Value_and_Decimals_Teacher_Edition",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 1,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "D3": {
+        "status": "PARTIAL",
+        "note": "1/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "doc_dweak_Module_Placeholder_Teacher_Edition_Stub",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 1,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "D3": {
+        "status": "MISSING",
+        "note": "0/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    }
+  ],
+  "steps_by_doc": {
+    "doc_dmixed_Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 1,
+        "by_element_type": {
+          "teacher_support": 1
+        },
+        "doc_id": "doc_dmixed_Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "On Learning Together days, you spend time facilitating active learning so that students build their mathematical understanding and confidence in sharing ideas, listening to one another, and learning together. The Student Edition is a consumable resource that contains the student-facing materials for each lesson.  On Learning Individually days, you spend time on targeted instruction to meet the needs of each student. Skills Practice offers students the opportunity to engage with problems…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "On Learning Together days, you spend time facilitating active learning so that students build their mathematical understanding and confidence in sharing ideas, listening to one another, and learning together. The Student Edition is a consumable resource that contains the student-facing materials for each lesson.  On Learning Individually days, you spend time on targeted instruction to meet the needs of each student. Skills Practice offers students the opportunity to engage with problems…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "PARTIAL",
+        "present": 2,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "On Learning Together days, you spend time facilitating active learning so that students build their mathematical understanding and confidence in sharing ideas, listening to one another, and learning together. The Student Edition is a consumable resource that contains the student-facing materials for each lesson.  On Learning Individually days, you spend time on targeted instruction to meet the needs of each student. Skills Practice offers students the opportunity to engage with problems…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "On Learning Together days, you spend time facilitating active learning so that students build their mathematical understanding and confidence in sharing ideas, listening to one another, and learning together. The Student Edition is a consumable resource that contains the student-facing materials for each lesson.  On Learning Individually days, you spend time on targeted instruction to meet the needs of each student. Skills Practice offers students the opportunity to engage with problems…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "On Learning Together days, you spend time facilitating active learning so that students build their mathematical understanding and confidence in sharing ideas, listening to one another, and learning together. The Student Edition is a consumable resource that contains the student-facing materials for each lesson.  On Learning Individually days, you spend time on targeted instruction to meet the needs of each student. Skills Practice offers students the opportunity to engage with problems…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "doc_dstrong_K-5_Math_Grade_5_Module_1_Place_Value_and_Decimals_Teacher_Edition": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 1,
+        "by_element_type": {
+          "teacher_support": 1
+        },
+        "doc_id": "doc_dstrong_K-5_Math_Grade_5_Module_1_Place_Value_and_Decimals_Teacher_Edition"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "GRADE 5 • MODULE 1 Place Value and Decimals Module Overview ........................................................................................................... 3 Topic A: Multiplicative Patterns on the Place Value Chart........................................... 17 Topic B: Decimals and Place Value Patterns ................................................................ 62 Topic C: Place Value and Rounding Decimals............................................................... 89…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "GRADE 5 • MODULE 1 Place Value and Decimals Module Overview ........................................................................................................... 3 Topic A: Multiplicative Patterns on the Place Value Chart........................................... 17 Topic B: Decimals and Place Value Patterns ................................................................ 62 Topic C: Place Value and Rounding Decimals............................................................... 89…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "GRADE 5 • MODULE 1 Place Value and Decimals Module Overview ........................................................................................................... 3 Topic A: Multiplicative Patterns on the Place Value Chart........................................... 17 Topic B: Decimals and Place Value Patterns ................................................................ 62 Topic C: Place Value and Rounding Decimals............................................................... 89…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "GRADE 5 • MODULE 1 Place Value and Decimals Module Overview ........................................................................................................... 3 Topic A: Multiplicative Patterns on the Place Value Chart........................................... 17 Topic B: Decimals and Place Value Patterns ................................................................ 62 Topic C: Place Value and Rounding Decimals............................................................... 89…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "doc_dweak_Module_Placeholder_Teacher_Edition_Stub": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 1,
+        "by_element_type": {
+          "teacher_support": 1
+        },
+        "doc_id": "doc_dweak_Module_Placeholder_Teacher_Edition_Stub"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Teacher Edition stub Module placeholder — empty body for negative control."
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Teacher Edition stub Module placeholder — empty body for negative control."
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    }
+  }
+}

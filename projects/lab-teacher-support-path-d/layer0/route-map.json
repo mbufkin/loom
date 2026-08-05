@@ -1,0 +1,61 @@
+{
+  "project_id": "lab-teacher-support-path-d",
+  "generated_at": "2026-08-05T15:52:27.653866+00:00",
+  "lenses": {
+    "lesson_plan": "Lesson",
+    "quiz": "Assessment",
+    "general": "General feedback",
+    "teacher_support": "Teacher support",
+    "student_practice": "Student practice",
+    "standards_pacing": "Standards & pacing",
+    "syllabus": "Syllabus",
+    "exit_ticket": "Exit ticket"
+  },
+  "counts": {
+    "teacher_support": 3
+  },
+  "unrouted_ledger_doc_ids": [],
+  "feedback_path": null,
+  "graph_hints": 0,
+  "routes": [
+    {
+      "doc_id": "doc_dmixed_Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide",
+      "doc_type": "other",
+      "workflow_id": "teacher_support",
+      "path": "D",
+      "lens": "Teacher support",
+      "reason": "filename prior → teacher_support",
+      "feedback": false,
+      "confidence": 0.9,
+      "source_file": "doc_dmixed_Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.txt",
+      "element_count": 0,
+      "graph_role": null
+    },
+    {
+      "doc_id": "doc_dstrong_K-5_Math_Grade_5_Module_1_Place_Value_and_Decimals_Teacher_Edition",
+      "doc_type": "other",
+      "workflow_id": "teacher_support",
+      "path": "D",
+      "lens": "Teacher support",
+      "reason": "filename prior → teacher_support",
+      "feedback": false,
+      "confidence": 0.9,
+      "source_file": "doc_dstrong_K-5_Math_Grade_5_Module_1_Place_Value_and_Decimals_Teacher_Edition.txt",
+      "element_count": 0,
+      "graph_role": null
+    },
+    {
+      "doc_id": "doc_dweak_Module_Placeholder_Teacher_Edition_Stub",
+      "doc_type": "other",
+      "workflow_id": "teacher_support",
+      "path": "D",
+      "lens": "Teacher support",
+      "reason": "filename prior → teacher_support",
+      "feedback": false,
+      "confidence": 0.9,
+      "source_file": "doc_dweak_Module_Placeholder_Teacher_Edition_Stub.txt",
+      "element_count": 0,
+      "graph_role": null
+    }
+  ]
+}
