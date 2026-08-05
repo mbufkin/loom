@@ -91,7 +91,8 @@ _STUDENT_RE = re.compile(
     re.I,
 )
 _STANDARDS_RE = re.compile(
-    r"scope[_\s.-]?and[_\s.-]?sequence|pacing|standards[_\s.-]?overview|"
+    r"scope[_\s.-]?and[_\s.-]?sequence|pacing|yag|"
+    r"year[_\s.-]?at[_\s.-]?a[_\s.-]?glance|standards[_\s.-]?overview|"
     r"teks[_\s.-]?summary|elps[_\s.-]?summary|program[_\s.-]?and[_\s.-]?implementation|"
     r"family[_\s.-]?guide|materials[_\s.-]?list",
     re.I,

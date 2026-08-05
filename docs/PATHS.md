@@ -23,7 +23,7 @@ Research anchors (keep the set small):
 | **C** | General feedback | `general` | Catch-all + growth queue | Weak/unknown types → `_loom_feedback.yaml` |
 | **D** | Teacher support | `teacher_support` | Teacher edition / implementation / educator guide | Graph role `teacher_edition`; filename Teacher_Edition / implementation guide |
 | **E** | Student practice | `student_practice` | Learn / practice / succeed / worksheet | Graph roles `learn_student`, `practice_student`; student edition / worksheet names |
-| **F** | Standards & pacing | `standards_pacing` | Scope/sequence, pacing, standards overviews | Filename / program docs (scope, pacing, TEKS/ELPS summary, …) |
+| **F** | Standards & pacing | `standards_pacing` | Scope/sequence, pacing, YAG, standards overviews | Filename / program docs (scope, pacing, yag, TEKS/ELPS summary, …) |
 | **G** | Syllabus | `syllabus` | Course syllabus / student-facing course contract | Filename / `doc_type` contains `syllabus` (typo alias `sylibuis`) |
 | **H** | Exit ticket | `exit_ticket` | Standalone formative end-of-lesson check | Filename / `doc_type` `exit_ticket` |
 
@@ -59,11 +59,12 @@ replace `route-map.json`; it feeds it.
 | Path | Status |
 |------|--------|
 | A | Deep (A1–A8) — see [PATH-A-LESSON-PLAN.md](PATH-A-LESSON-PLAN.md) |
-| B | Light stub — quiz↔key — see [PATH-B-QUIZ.md](PATH-B-QUIZ.md) |
+| B | Presence (B1–B6) — quiz↔key — see [PATH-B-QUIZ.md](PATH-B-QUIZ.md) |
 | C | Stub + feedback log — see [PATH-C-GENERAL.md](PATH-C-GENERAL.md) |
-| D / E / F | Stub inventory + feedback hooks — grow checklists without adding Path I…Z |
+| D / E | Stub inventory + feedback hooks — grow checklists without adding Path I…Z |
+| F | Presence (F1–F5) — see [PATH-F-STANDARDS-PACING.md](PATH-F-STANDARDS-PACING.md) |
 | G | Spec locked (G1–G9) — see [PATH-G-SYLLABUS.md](PATH-G-SYLLABUS.md); presence extractors landing |
-| H | Stub (H1–H3) — see [PATH-H-EXIT-TICKET.md](PATH-H-EXIT-TICKET.md) |
+| H | Presence (H1–H5) — see [PATH-H-EXIT-TICKET.md](PATH-H-EXIT-TICKET.md) |
 
 ## Feedback loop
 

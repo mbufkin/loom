@@ -1,0 +1,13 @@
+project:
+  id: lab-standards-path-f
+  name: lab-standards-path-f
+sources_dir: /home/lenovo/g10-control-center-loom/projects/lab-standards-path-f/sources
+units:
+  curriculum:
+    title: Curriculum
+    calendar: units/curriculum/calendar.yaml
+    documents:
+    - doc_fmixed_Algebra_I_Math_YAG_150-day.txt
+    - doc_fstrong_Algebra_I_Math_150-day_Topic_Pacing_Guides.txt
+    - doc_fweak_Activity_Sequence_Pacing_Stub.txt
+generated_by: ingest.py

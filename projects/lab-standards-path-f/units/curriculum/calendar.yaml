@@ -1,0 +1,30 @@
+unit_id: curriculum
+title: Curriculum
+unit_length_days: 4
+days:
+- id: d1
+  label: Day 1
+  expected:
+  - lesson_content
+  - exit_ticket
+- id: d2
+  label: Day 2
+  expected:
+  - lesson_content
+  - exit_ticket
+- id: d3
+  label: Day 3
+  expected:
+  - lesson_content
+  - exit_ticket
+- id: d4
+  label: Day 4
+  expected:
+  - lesson_content
+  - exit_ticket
+unit_supporting:
+- lesson_plan
+- quiz
+- answer_key
+- rubric
+- worksheet

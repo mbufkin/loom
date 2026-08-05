@@ -1,0 +1,404 @@
+{
+  "project_id": "lab-standards-path-f",
+  "workflow_id": "standards_pacing",
+  "path": "F",
+  "lens": "Standards & pacing",
+  "status": "ok",
+  "doc_ids": [
+    "doc_fmixed_Algebra_I_Math_YAG_150-day",
+    "doc_fstrong_Algebra_I_Math_150-day_Topic_Pacing_Guides",
+    "doc_fweak_Activity_Sequence_Pacing_Stub"
+  ],
+  "checklist": "workflows/checklists/standards_pacing.yaml",
+  "inventory": [
+    {
+      "doc_id": "doc_fmixed_Algebra_I_Math_YAG_150-day",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 1,
+      "F1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc"
+      },
+      "F2": {
+        "status": "PARTIAL",
+        "note": "2/3 fields present"
+      },
+      "F3": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "F4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "F5": {
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "doc_fstrong_Algebra_I_Math_150-day_Topic_Pacing_Guides",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 1,
+      "F1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc"
+      },
+      "F2": {
+        "status": "PARTIAL",
+        "note": "2/3 fields present"
+      },
+      "F3": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "F4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "F5": {
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "doc_fweak_Activity_Sequence_Pacing_Stub",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 1,
+      "F1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc"
+      },
+      "F2": {
+        "status": "PARTIAL",
+        "note": "1/3 fields present"
+      },
+      "F3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "F4": {
+        "status": "MISSING",
+        "note": "0/0 fields present"
+      },
+      "F5": {
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    }
+  ],
+  "steps_by_doc": {
+    "doc_fmixed_Algebra_I_Math_YAG_150-day": {
+      "F1": {
+        "step": "F1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc",
+        "element_count": 1,
+        "by_element_type": {
+          "standards_objectives": 1
+        },
+        "doc_id": "doc_fmixed_Algebra_I_Math_YAG_150-day"
+      },
+      "F2": {
+        "step": "F2",
+        "status": "PARTIAL",
+        "present": 2,
+        "required": 3,
+        "fields": [
+          {
+            "id": "pacing_or_yag",
+            "label": "Pacing / YAG framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "ALGEBRA I: YEAR-AT-A-GLANCE TEKS Mathematical Process Standards are embedded in every module: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G  Algebra I Year-at-a-Glance 150-Day Pacing   Acknowledgment Thank you to all the Texas educators and stakeholders who supported the review process and provided feedback. These materials are the result of the work of numerous individuals, and we are deeply grateful for their contributions.  Notice These learning resources have been built for Texas students,…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "scope_or_sequence",
+            "label": "Scope and sequence framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "standards_overview",
+            "label": "Standards overview framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "ALGEBRA I: YEAR-AT-A-GLANCE TEKS Mathematical Process Standards are embedded in every module: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G  Algebra I Year-at-a-Glance 150-Day Pacing   Acknowledgment Thank you to all the Texas educators and stakeholders who supported the review process and provided feedback. These materials are the result of the work of numerous individuals, and we are deeply grateful for their contributions.  Notice These learning resources have been built for Texas students,…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F3": {
+        "step": "F3",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "day_or_calendar_spine",
+            "label": "Day / week / calendar spine",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "ALGEBRA I: YEAR-AT-A-GLANCE TEKS Mathematical Process Standards are embedded in every module: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G  Algebra I Year-at-a-Glance 150-Day Pacing   Acknowledgment Thank you to all the Texas educators and stakeholders who supported the review process and provided feedback. These materials are the result of the work of numerous individuals, and we are deeply grateful for their contributions.  Notice These learning resources have been built for Texas students,…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "unit_or_module_spine",
+            "label": "Unit / module / topic order",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "ALGEBRA I: YEAR-AT-A-GLANCE TEKS Mathematical Process Standards are embedded in every module: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G  Algebra I Year-at-a-Glance 150-Day Pacing   Acknowledgment Thank you to all the Texas educators and stakeholders who supported the review process and provided feedback. These materials are the result of the work of numerous individuals, and we are deeply grateful for their contributions.  Notice These learning resources have been built for Texas students,…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F4": {
+        "step": "F4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "teks_or_elps_or_codes",
+            "label": "TEKS / ELPS / standard-code cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "ALGEBRA I: YEAR-AT-A-GLANCE TEKS Mathematical Process Standards are embedded in every module: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G  Algebra I Year-at-a-Glance 150-Day Pacing   Acknowledgment Thank you to all the Texas educators and stakeholders who supported the review process and provided feedback. These materials are the result of the work of numerous individuals, and we are deeply grateful for their contributions.  Notice These learning resources have been built for Texas students,…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "F5": {
+        "step": "F5",
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    "doc_fstrong_Algebra_I_Math_150-day_Topic_Pacing_Guides": {
+      "F1": {
+        "step": "F1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc",
+        "element_count": 1,
+        "by_element_type": {
+          "standards_objectives": 1
+        },
+        "doc_id": "doc_fstrong_Algebra_I_Math_150-day_Topic_Pacing_Guides"
+      },
+      "F2": {
+        "step": "F2",
+        "status": "PARTIAL",
+        "present": 2,
+        "required": 3,
+        "fields": [
+          {
+            "id": "pacing_or_yag",
+            "label": "Pacing / YAG framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "1 DAY PACING = 45-MINUTE SESSION  TEKS Mathematical Process Standards: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G ELPS: 1.A, 1.B, 1.C, 1.E, 1.F, 2.C, 2.E, 2.I, 3.D, 3.E, 3.H, 4.C, 4.E, 4.G, 4.H, 5.B, 5.F\b  IT M O  Students are presented with various scenarios and identify the independent and dependent quantities for each. They then match a graph to the appropriate scenario, label the axes using the independent and dependent quantities, and create the scale for the axes. Students make basic…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "scope_or_sequence",
+            "label": "Scope and sequence framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "standards_overview",
+            "label": "Standards overview framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "1 DAY PACING = 45-MINUTE SESSION  TEKS Mathematical Process Standards: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G ELPS: 1.A, 1.B, 1.C, 1.E, 1.F, 2.C, 2.E, 2.I, 3.D, 3.E, 3.H, 4.C, 4.E, 4.G, 4.H, 5.B, 5.F\b  IT M O  Students are presented with various scenarios and identify the independent and dependent quantities for each. They then match a graph to the appropriate scenario, label the axes using the independent and dependent quantities, and create the scale for the axes. Students make basic…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F3": {
+        "step": "F3",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "day_or_calendar_spine",
+            "label": "Day / week / calendar spine",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "1 DAY PACING = 45-MINUTE SESSION  TEKS Mathematical Process Standards: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G ELPS: 1.A, 1.B, 1.C, 1.E, 1.F, 2.C, 2.E, 2.I, 3.D, 3.E, 3.H, 4.C, 4.E, 4.G, 4.H, 5.B, 5.F\b  IT M O  Students are presented with various scenarios and identify the independent and dependent quantities for each. They then match a graph to the appropriate scenario, label the axes using the independent and dependent quantities, and create the scale for the axes. Students make basic…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "unit_or_module_spine",
+            "label": "Unit / module / topic order",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "1 DAY PACING = 45-MINUTE SESSION  TEKS Mathematical Process Standards: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G ELPS: 1.A, 1.B, 1.C, 1.E, 1.F, 2.C, 2.E, 2.I, 3.D, 3.E, 3.H, 4.C, 4.E, 4.G, 4.H, 5.B, 5.F\b  IT M O  Students are presented with various scenarios and identify the independent and dependent quantities for each. They then match a graph to the appropriate scenario, label the axes using the independent and dependent quantities, and create the scale for the axes. Students make basic…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F4": {
+        "step": "F4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "teks_or_elps_or_codes",
+            "label": "TEKS / ELPS / standard-code cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "1 DAY PACING = 45-MINUTE SESSION  TEKS Mathematical Process Standards: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G ELPS: 1.A, 1.B, 1.C, 1.E, 1.F, 2.C, 2.E, 2.I, 3.D, 3.E, 3.H, 4.C, 4.E, 4.G, 4.H, 5.B, 5.F\b  IT M O  Students are presented with various scenarios and identify the independent and dependent quantities for each. They then match a graph to the appropriate scenario, label the axes using the independent and dependent quantities, and create the scale for the axes. Students make basic…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "F5": {
+        "step": "F5",
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    "doc_fweak_Activity_Sequence_Pacing_Stub": {
+      "F1": {
+        "step": "F1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc",
+        "element_count": 1,
+        "by_element_type": {
+          "standards_objectives": 1
+        },
+        "doc_id": "doc_fweak_Activity_Sequence_Pacing_Stub"
+      },
+      "F2": {
+        "step": "F2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 3,
+        "fields": [
+          {
+            "id": "pacing_or_yag",
+            "label": "Pacing / YAG framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "scope_or_sequence",
+            "label": "Scope and sequence framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "# Planning Guide Activity Sequence Flowchart  Source: https://resources.pathful.com/flip-book/469665/1530547 Pages extracted: 1  Activity Sequence Flowchart Watch Pathful and Industry Presents Sessions to Discover New Interests and Careers View and Reflect on Your Assessment Results. Check out Suggested content and careers Career: Career Profiles Favorite Careers or add to Career Comparison Select a Career profile to explore Schedule Work-Based Learning sessions with industry pros to gain…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "standards_overview",
+            "label": "Standards overview framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "F3": {
+        "step": "F3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "day_or_calendar_spine",
+            "label": "Day / week / calendar spine",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "unit_or_module_spine",
+            "label": "Unit / module / topic order",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "# Planning Guide Activity Sequence Flowchart  Source: https://resources.pathful.com/flip-book/469665/1530547 Pages extracted: 1  Activity Sequence Flowchart Watch Pathful and Industry Presents Sessions to Discover New Interests and Careers View and Reflect on Your Assessment Results. Check out Suggested content and careers Career: Career Profiles Favorite Careers or add to Career Comparison Select a Career profile to explore Schedule Work-Based Learning sessions with industry pros to gain…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F4": {
+        "step": "F4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "teks_or_elps_or_codes",
+            "label": "TEKS / ELPS / standard-code cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional standards cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "F5": {
+        "step": "F5",
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    }
+  }
+}

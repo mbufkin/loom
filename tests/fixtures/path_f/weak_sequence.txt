@@ -1,0 +1,3 @@
+Activity sequence flowchart
+Step A → Step B → Step C
+Thin stub with no codes and no calendar grid.

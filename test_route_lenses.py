@@ -112,6 +112,13 @@ def test_filename_standards_prior() -> None:
     )
     assert (wf, path) == ("standards_pacing", "F")
     assert "standards" in reason
+    # YAG is a Path F spine doc (not general catch-all).
+    wf, path, _, _ = resolve_workflow(
+        doc_type="other",
+        source_file="Algebra_I_Math_YAG_150-day.pdf",
+        graph_hint=None,
+    )
+    assert (wf, path) == ("standards_pacing", "F")
 
 
 def test_filename_syllabus_prior() -> None:
