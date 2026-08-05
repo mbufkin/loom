@@ -1,0 +1,13 @@
+project:
+  id: lab-exit-ticket-path-h
+  name: lab-exit-ticket-path-h
+sources_dir: /home/lenovo/g10-control-center-loom/projects/lab-exit-ticket-path-h/sources
+units:
+  curriculum:
+    title: Curriculum
+    calendar: units/curriculum/calendar.yaml
+    documents:
+    - doc_314d7d0905ca_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_1.txt
+    - doc_4736326638c1_Professional_Preparedness_-__Exit_Ticket_Day_2.txt
+    - doc_ba8b5c7a6deb_Engineering_Lesson_-__Exit_Ticket.txt
+generated_by: ingest.py

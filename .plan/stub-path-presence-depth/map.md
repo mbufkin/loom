@@ -28,13 +28,14 @@ Locked **G-style presence depth** for every stub lens — presence extractors, o
 - [Offline corpus inventory for stub-path labs](./tickets/02-offline-corpus-inventory-stub-labs.md) — B/H seed from Dallas (4 quiz↔key pairs, 21 exit tickets); F/D/E from `bluebonnet-math-2026/_corpus` (+ OpenSciEd TE); full-grok/g5-m1 sources are stubs; Desktop culinary adds no B–E.
 - [Shared path-lab harness contract](./tickets/01-shared-path-lab-harness.md) — `lab-<lens>-path-<letter>/`; CI = `tests/fixtures/path_X/` synthetics + temp integration; labs manual smoke via ingest→layer0→route→run_paths `--no-model`; culinary commit contract; copy named seeds (no corpus symlinks).
 - [Path B presence plate and fixtures](./tickets/03-path-b-presence-plate-and-fixtures.md) — B1–B6; two-doc stem pairing; CI synthetics + `lab-assessment-path-b` Dallas seeds; runner shipped.
+- [Path H presence plate and fixtures](./tickets/04-path-h-presence-plate-and-fixtures.md) — H1–H5 formative-only; light H4 cues; CI synthetics + `lab-exit-ticket-path-h` Dallas seeds; runner shipped.
 
 ## Not yet specified
 
-- How deep TEKS/target matching goes at presence-only depth (string/prior vs model) beyond B4 optional keywords.
+- How deep TEKS/target matching goes at presence-only depth (string/prior vs model) beyond B4/H3 optional keywords.
 - Whether Path C keeps growing only via `_loom_feedback.yaml` patterns or gets a fixed C1–Cn plate like others.
 - When (if ever) quality/one-pager layers graduate from World-class path reviews into these lenses after presence ships.
-- Map Notes said plan-first; this effort began implementing Path B after harness lock — confirm whether later paths implement in-map or hand off after each plate ticket.
+- In-map implement vs handoff after each plate: current sessions implement after plate lock (B, H); confirm for F→C.
 
 ## Out of scope
 

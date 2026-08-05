@@ -1,24 +1,66 @@
 # Exit ticket plate → Loom checklist (Path H).
-# Educational note: formative end-of-lesson check — not a quiz↔key pair (Path B).
+# Grain: standalone formative end-of-lesson check — not quiz↔key (Path B).
+# PRESENT = evidence in Layer 0 excerpts or source fallback; never invent.
 
-lens: Exit ticket
+version: "v1-exit-ticket-formative"
+role: exit_ticket
+framework: formative_check
+source_template: docs/PATH-H-EXIT-TICKET.md
 path: H
 workflow_id: exit_ticket
 
-steps:
-  - id: H1
-    label: Formative prompt present
-    intent: Short student-facing prompt / stem teachers can collect in minutes
+sections:
+  h2_prompt:
+    label: H2 Formative prompt / stems
+    step: H2
     fields:
-      - prompt_or_stem
-  - id: H2
-    label: Learning target signal
-    intent: Ties to today's objective / TEKS (presence only at stub depth)
+      - id: exit_label
+        label: Exit ticket framing
+        keywords:
+          - exit ticket
+          - exit ticket:
+          - hand in
+          - before leaving
+      - id: prompt_or_question
+        label: Student-facing prompt / question
+        keywords:
+          - "?"
+          - what
+          - describe
+          - reflect
+          - rate
+          - how
+
+  h3_targets:
+    label: H3 Learning target cue
+    step: H3
     fields:
-      - objective_or_teks
-  - id: H3
-    label: Actionable next-day use
-    intent: Teacher can see who got it / who needs reteach (quality later)
+      - id: objective_or_teks
+        label: Objective / today’s lesson / TEKS cue
+        keywords:
+          - objective
+          - today’s lesson
+          - todays lesson
+          - today
+          - teks
+          - "§"
+          - learning target
+          - students will
+        optional: true
+
+  h4_signal:
+    label: H4 Next-day formative signal
+    step: H4
     fields:
-      - actionable_signal
-    status: stub
+      - id: formative_signal
+        label: Light actionable cue (rate / learn / challenge / checkbox)
+        keywords:
+          - rate
+          - rating
+          - what did you learn
+          - challenge
+          - one thing
+          - checkbox
+          - "[ ]"
+          - hand in
+          - briefly
