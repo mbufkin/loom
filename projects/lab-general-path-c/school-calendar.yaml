@@ -1,0 +1,6 @@
+school_year: null
+notes: null
+grading_periods: []
+units:
+- unit_id: curriculum
+  title: Curriculum

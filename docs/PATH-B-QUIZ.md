@@ -1,22 +1,39 @@
-# Path B — Quiz / assessment workflow (stub)
+# Path B — Assessment workflow — quiz ↔ key
 
-Entry: Loom router typed the document as `quiz` (or closely related assessment).
+**Lens name:** Assessment (Path B). Taxonomy: [PATHS.md](PATHS.md).
 
-## Steps (placeholders until Path B is built out)
+Entry: Loom router typed the document as `quiz` / `answer_key` (or rubric
+when assessment-bearing). **Exit tickets are Path H.**
+
+## Steps (B1 → B6)
 
 | Step | Name | Intent |
 |------|------|--------|
-| **B1** | Quiz inventory | Items, stems, answer key present? |
-| **B2** | Standards coverage | Items ↔ TEKS / learning targets |
-| **B3** | Role on day grid | Formative vs summative — TBD |
+| **B1** | Inventory | Layer 0 / source excerpts for this doc |
+| **B2** | Item stems | Numbered questions + choice options |
+| **B3** | Answer key signal | “Answer key(s)” section / keyed answers |
+| **B4** | Targets | Optional objective / TEKS cue |
+| **B5** | Pairing | Quiz↔key match by normalized filename stem |
+| **B6** | Emit | Stub — short one-pager later |
+
+## Pairing
+
+Two routed docs share a **pair key** (hash prefix + `quiz` / `answer_key` /
+`quizizz` noise stripped). Matched quiz+key → B5 PRESENT. Orphan quiz or key
+→ B5 PARTIAL. Rubrics alone → NOT_APPLICABLE.
 
 ## Guardrails
 
 - Auditor-only: blank = not found.
-- No Hunter plate (that is Path A only).
-- Deep academic Path B logic is **out of scope** until Path A ships.
+- No Hunter plate (Path A). No exit-ticket checks (Path H).
+- Never invent items or keys.
 
-## Outputs (stub)
+## Lab + tests
 
-- `path_b/findings.json` rows with inventory presence
-- No invented answer keys or items
+- Lab smoke: `projects/lab-assessment-path-b/`
+- Offline: `test_path_b_assessment.py` + `tests/fixtures/path_b/`
+- Checklist: `workflows/checklists/assessment.yaml`
+
+## Outputs
+
+- `path_b/findings.json` — `inventory` + `steps_by_doc`

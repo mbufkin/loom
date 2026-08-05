@@ -1,0 +1,373 @@
+{
+  "project_id": "lab-student-practice-path-e",
+  "workflow_id": "student_practice",
+  "path": "E",
+  "lens": "Student practice",
+  "status": "ok",
+  "doc_ids": [
+    "doc_emixed_K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition",
+    "doc_estrong_K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition",
+    "doc_eweak_K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition"
+  ],
+  "checklist": "workflows/checklists/student_practice.yaml",
+  "inventory": [
+    {
+      "doc_id": "doc_emixed_K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 1,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "E4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "doc_estrong_K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 1,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "E4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "doc_eweak_K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 1,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    }
+  ],
+  "steps_by_doc": {
+    "doc_emixed_K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 1,
+        "by_element_type": {
+          "student_practice": 1
+        },
+        "doc_id": "doc_emixed_K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Succeed, Grade 5, Module 1: Place Value and Decimals, Lesson 1 to 15  EDITION 1  Acknowledgment Thank you to all the Texas educators and stakeholders who supported the review process and provided feedback. These materials are the result of the work of numerous individuals, and we are deeply grateful for their contributions. Notice These learning resources have been built for Texas students, aligned to the Texas Essential Knowledge and Skills, and are made available pursuant to Chapter 31,…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Succeed, Grade 5, Module 1: Place Value and Decimals, Lesson 1 to 15  EDITION 1  Acknowledgment Thank you to all the Texas educators and stakeholders who supported the review process and provided feedback. These materials are the result of the work of numerous individuals, and we are deeply grateful for their contributions. Notice These learning resources have been built for Texas students, aligned to the Texas Essential Knowledge and Skills, and are made available pursuant to Chapter 31,…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Succeed, Grade 5, Module 1: Place Value and Decimals, Lesson 1 to 15  EDITION 1  Acknowledgment Thank you to all the Texas educators and stakeholders who supported the review process and provided feedback. These materials are the result of the work of numerous individuals, and we are deeply grateful for their contributions. Notice These learning resources have been built for Texas students, aligned to the Texas Essential Knowledge and Skills, and are made available pursuant to Chapter 31,…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Succeed, Grade 5, Module 1: Place Value and Decimals, Lesson 1 to 15  EDITION 1  Acknowledgment Thank you to all the Texas educators and stakeholders who supported the review process and provided feedback. These materials are the result of the work of numerous individuals, and we are deeply grateful for their contributions. Notice These learning resources have been built for Texas students, aligned to the Texas Essential Knowledge and Skills, and are made available pursuant to Chapter 31,…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "doc_estrong_K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 1,
+        "by_element_type": {
+          "student_practice": 1
+        },
+        "doc_id": "doc_estrong_K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Learn, Grade 5, Module 1: Place Value and Decimals, Lesson 1 to 15  EDITION 1  ENGLISH  Read–Draw–Write (RDW) Process The K–5 Math materials support students as they problem solve by using a simple, repeatable process introduced by the teacher. The Read–Draw–Write (RDW) process calls for students to 1. Read the problem. 2. Draw and label. 3. Write a number sentence (equation). 4. Write a word sentence (statement). Families may support the process by encouraging their students to ask themselves…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Learn, Grade 5, Module 1: Place Value and Decimals, Lesson 1 to 15  EDITION 1  ENGLISH  Read–Draw–Write (RDW) Process The K–5 Math materials support students as they problem solve by using a simple, repeatable process introduced by the teacher. The Read–Draw–Write (RDW) process calls for students to 1. Read the problem. 2. Draw and label. 3. Write a number sentence (equation). 4. Write a word sentence (statement). Families may support the process by encouraging their students to ask themselves…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Learn, Grade 5, Module 1: Place Value and Decimals, Lesson 1 to 15  EDITION 1  ENGLISH  Read–Draw–Write (RDW) Process The K–5 Math materials support students as they problem solve by using a simple, repeatable process introduced by the teacher. The Read–Draw–Write (RDW) process calls for students to 1. Read the problem. 2. Draw and label. 3. Write a number sentence (equation). 4. Write a word sentence (statement). Families may support the process by encouraging their students to ask themselves…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Learn, Grade 5, Module 1: Place Value and Decimals, Lesson 1 to 15  EDITION 1  ENGLISH  Read–Draw–Write (RDW) Process The K–5 Math materials support students as they problem solve by using a simple, repeatable process introduced by the teacher. The Read–Draw–Write (RDW) process calls for students to 1. Read the problem. 2. Draw and label. 3. Write a number sentence (equation). 4. Write a word sentence (statement). Families may support the process by encouraging their students to ask themselves…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "doc_eweak_K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 1,
+        "by_element_type": {
+          "student_practice": 1
+        },
+        "doc_id": "doc_eweak_K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Practice, Grade 5, Module 1: Place Value and Decimals, Lesson 1, 4, 6, 8, 11, 12  3.  62.3 × 1,000 =  29 × 10 =  36.  565 × 10 =  15.  30 × 10 =  37.  960 × 10 =  16.  40 × 10 =  38.  10 × 960 =  17.  50 × 10 =  39.  17 × 10 =  18.  90 × 10 =  40.  10 × 70 =  19.  10 × 90 =  41.  582 × 10 =  20.  10 × 20 =  29 × 10 =  36.  565 × 10 =  15.  30 × 10 =  37.  960 × 10 =  16.  40 × 10 =  38.  10 × 960 =  17.  50 × 10 =  39.  17 × 10 =  18.  90 × 10 =  40.  10 × 70 =  19.  10 × 90 =  41.  582 × 10 =…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Practice, Grade 5, Module 1: Place Value and Decimals, Lesson 1, 4, 6, 8, 11, 12  3.  62.3 × 1,000 =  29 × 10 =  36.  565 × 10 =  15.  30 × 10 =  37.  960 × 10 =  16.  40 × 10 =  38.  10 × 960 =  17.  50 × 10 =  39.  17 × 10 =  18.  90 × 10 =  40.  10 × 70 =  19.  10 × 90 =  41.  582 × 10 =  20.  10 × 20 =  29 × 10 =  36.  565 × 10 =  15.  30 × 10 =  37.  960 × 10 =  16.  40 × 10 =  38.  10 × 960 =  17.  50 × 10 =  39.  17 × 10 =  18.  90 × 10 =  40.  10 × 70 =  19.  10 × 90 =  41.  582 × 10 =…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    }
+  }
+}

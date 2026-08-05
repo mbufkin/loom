@@ -24,6 +24,7 @@ Reference for the Loom curriculum auditor (router + Path A/B/C workflows).
 | [DOCUMENTATION-OVERHAUL-PROMPT.md](DOCUMENTATION-OVERHAUL-PROMPT.md) | AI agents | Copy-paste agent prompt for a prioritized docs pass |
 | [PR-REVIEW-FINDINGS-PROMPT.md](PR-REVIEW-FINDINGS-PROMPT.md) | AI agents | Copy-paste agent prompt for read-only PR review findings |
 | [PRODUCT-OVERVIEW.md](PRODUCT-OVERVIEW.md) | Directors, partners | What the system does |
+| [E2E.md](E2E.md) | Operators / engineers | **One program** + `e2e/runs/<model>/` review contract |
 | [PIPELINE.md](PIPELINE.md) | Engineers | End-to-end flow |
 | [DATA-FLOW.md](DATA-FLOW.md) | Presenters, engineers | Data transformation canvases (Mermaid) |
 | [FILE-FLOW.md](FILE-FLOW.md) | Presenters, operators | Directory & artifact map (Mermaid) |
@@ -31,9 +32,15 @@ Reference for the Loom curriculum auditor (router + Path A/B/C workflows).
 | [OUTPUTS.md](OUTPUTS.md) | Operators | Reports and artifacts |
 | [SAMPLE-PROJECT.md](SAMPLE-PROJECT.md) | Evaluators | Dallas sample walkthrough |
 | [REORG-2026-07.md](REORG-2026-07.md) | Everyone | Path changes after repo cleanup |
-| [PATH-A-LESSON-PLAN.md](PATH-A-LESSON-PLAN.md) | Curriculum leads | Path A (lesson plans) workflow |
-| [PATH-B-QUIZ.md](PATH-B-QUIZ.md) | Curriculum leads | Path B (quiz / assessment) workflow |
-| [PATH-C-GENERAL.md](PATH-C-GENERAL.md) | Curriculum leads | Path C (general) workflow |
+| [PATHS.md](PATHS.md) | Everyone | **Eight review lenses A–H** — taxonomy + router cascade |
+| [PATH-A-LESSON-PLAN.md](PATH-A-LESSON-PLAN.md) | Curriculum leads | Path A (Lesson) workflow depth |
+| [PATH-B-QUIZ.md](PATH-B-QUIZ.md) | Curriculum leads | Path B (Assessment) — quiz ↔ key |
+| [PATH-C-GENERAL.md](PATH-C-GENERAL.md) | Curriculum leads | Path C (General feedback) — nursery / catch-all |
+| [PATH-D-TEACHER-SUPPORT.md](PATH-D-TEACHER-SUPPORT.md) | Curriculum leads | Path D (Teacher support) — TE / guides |
+| [PATH-E-STUDENT-PRACTICE.md](PATH-E-STUDENT-PRACTICE.md) | Curriculum leads | Path E (Student practice) — Learn / Practice / Succeed |
+| [PATH-F-STANDARDS-PACING.md](PATH-F-STANDARDS-PACING.md) | Curriculum leads | Path F (Standards & pacing) — YAG / S&S |
+| [PATH-G-SYLLABUS.md](PATH-G-SYLLABUS.md) | Curriculum leads | Path G (Syllabus) workflow — G1–G9 |
+| [PATH-H-EXIT-TICKET.md](PATH-H-EXIT-TICKET.md) | Curriculum leads | Path H (Exit ticket) — formative check |
 | [CHAMPION-REVIEW-MAP.md](CHAMPION-REVIEW-MAP.md) | Reviewers | Champion review workflow |
 | [curriculum-first-plan.md](curriculum-first-plan.md) | Planners | Early curriculum-first planning notes (historical) |
 | [roadmap.md](roadmap.md) | Engineers | Build plan / open work |

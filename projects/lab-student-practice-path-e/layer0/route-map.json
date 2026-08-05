@@ -1,0 +1,61 @@
+{
+  "project_id": "lab-student-practice-path-e",
+  "generated_at": "2026-08-05T15:59:20.718662+00:00",
+  "lenses": {
+    "lesson_plan": "Lesson",
+    "quiz": "Assessment",
+    "general": "General feedback",
+    "teacher_support": "Teacher support",
+    "student_practice": "Student practice",
+    "standards_pacing": "Standards & pacing",
+    "syllabus": "Syllabus",
+    "exit_ticket": "Exit ticket"
+  },
+  "counts": {
+    "student_practice": 3
+  },
+  "unrouted_ledger_doc_ids": [],
+  "feedback_path": null,
+  "graph_hints": 0,
+  "routes": [
+    {
+      "doc_id": "doc_emixed_K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition",
+      "doc_type": "other",
+      "workflow_id": "student_practice",
+      "path": "E",
+      "lens": "Student practice",
+      "reason": "filename prior → student_practice",
+      "feedback": false,
+      "confidence": 0.9,
+      "source_file": "doc_emixed_K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition.txt",
+      "element_count": 0,
+      "graph_role": null
+    },
+    {
+      "doc_id": "doc_estrong_K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition",
+      "doc_type": "other",
+      "workflow_id": "student_practice",
+      "path": "E",
+      "lens": "Student practice",
+      "reason": "filename prior → student_practice",
+      "feedback": false,
+      "confidence": 0.9,
+      "source_file": "doc_estrong_K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition.txt",
+      "element_count": 0,
+      "graph_role": null
+    },
+    {
+      "doc_id": "doc_eweak_K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition",
+      "doc_type": "other",
+      "workflow_id": "student_practice",
+      "path": "E",
+      "lens": "Student practice",
+      "reason": "filename prior → student_practice",
+      "feedback": false,
+      "confidence": 0.9,
+      "source_file": "doc_eweak_K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition.txt",
+      "element_count": 0,
+      "graph_role": null
+    }
+  ]
+}

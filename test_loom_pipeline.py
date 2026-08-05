@@ -73,8 +73,21 @@ def test_tiers_math() -> None:
     assert weak["tier"] == "Weak"
 
 
+_VALID_WORKFLOWS = {
+    "lesson_plan",
+    "quiz",
+    "general",
+    "teacher_support",
+    "student_practice",
+    "standards_pacing",
+    "syllabus",
+    "exit_ticket",
+}
+_VALID_PATHS = {"A", "B", "C", "D", "E", "F", "G", "H"}
+
+
 def test_route_map_covers_docs() -> None:
-    """Every Dallas run should produce route-map.json with A/B/C counts."""
+    """Every Dallas run should produce route-map.json with A–H lens assignments."""
     if not _dallas_ready():
         print("SKIP test_route_map_covers_docs (no local Dallas corpus/ledger)")
         return
@@ -86,11 +99,12 @@ def test_route_map_covers_docs() -> None:
     routes = rm.get("routes") or []
     assert len(routes) >= 1
     counts = rm.get("counts") or {}
+    # Starter lenses still expected on Dallas; D/E/F may be zero without graph/TE names.
     assert "lesson_plan" in counts and "quiz" in counts and "general" in counts
     for r in routes:
         assert r.get("doc_id")
-        assert r.get("workflow_id") in {"lesson_plan", "quiz", "general"}
-        assert r.get("path") in {"A", "B", "C"}
+        assert r.get("workflow_id") in _VALID_WORKFLOWS
+        assert r.get("path") in _VALID_PATHS
     assert (root / "_loom_feedback.yaml").is_file() or counts.get("general", 0) == 0
 
 
@@ -116,6 +130,18 @@ def test_path_workflows_a1_a8() -> None:
     pc = json.loads((root / "path_c" / "findings.json").read_text(encoding="utf-8"))
     assert pb.get("path") == "B" or pb.get("workflow_id") == "quiz"
     assert pc.get("path") == "C" or pc.get("workflow_id") == "general"
+    # D/E/F/G/H stubs always write findings (status skipped when empty).
+    for letter, wf in (
+        ("d", "teacher_support"),
+        ("e", "student_practice"),
+        ("f", "standards_pacing"),
+        ("g", "syllabus"),
+        ("h", "exit_ticket"),
+    ):
+        pf = json.loads(
+            (root / f"path_{letter}" / "findings.json").read_text(encoding="utf-8")
+        )
+        assert pf.get("path") == letter.upper() or pf.get("workflow_id") == wf
 
     if routed_doc_ids(PROJECT, workflow_id="lesson_plan"):
         teachers = root / "output" / "teachers"

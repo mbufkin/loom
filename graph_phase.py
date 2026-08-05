@@ -2,8 +2,9 @@
 """Loom graph phase: provisional → narrow-steps review → code rebuild.
 
 Opt-in from ``run_project.py --with-graph``. Inserts after Layer 0-B, before
-route. Writes under ``projects/<id>/graph/runs/<run_id>/units/<unit_id>/``
-so each model keeps an isolated A/B tree (see graph_run_lib.py).
+route. Writes under the E2E workspace
+``…/e2e/runs/<e2e_id>/graph/runs/<run_id>/units/<unit_id>/``
+(see graph_run_lib.py + tools/e2e_run_lib.py).
 
 Educational note (Bet 3): the model answers per document (role / lessons /
 assessment). Code owns ``merge_narrow_step_findings`` + ``rebuild_multi``.

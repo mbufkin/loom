@@ -1,0 +1,16 @@
+project:
+  id: lab-assessment-path-b
+  name: lab-assessment-path-b
+sources_dir: /home/lenovo/g10-control-center-loom/projects/lab-assessment-path-b/sources
+units:
+  curriculum:
+    title: Curriculum
+    calendar: units/curriculum/calendar.yaml
+    documents:
+    - doc_3fd5e5bc561c_Manufacturing_exploration___Quizizz.txt
+    - doc_86fff193b91a_Engineering_Lesson_Quiz___Quizizz_Answer_key.txt
+    - doc_d3fae80ecd3f_Architecture_and_Construction_Quizizz.txt
+    - doc_ed1c99b4f5fa_Architecture_and_Construction_Answer_Key_Quizizz.txt
+    - doc_fc48920a5ca9_Engineering_Lesson_Quiz___Quizizz.txt
+    - doc_weak01_Blank_Quiz_Placeholder.txt
+generated_by: ingest.py

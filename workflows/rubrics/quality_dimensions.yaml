@@ -1,0 +1,68 @@
+# Rubric: lesson quality dimensions (LLM-as-judge, scorer S4).
+#
+# WHY / PROVENANCE
+# REUSED from three established instructional-materials rubrics rather than a
+# home-grown scale:
+#   - EQuIP (Achieve) — clarity of purpose, rigor, assessment.
+#   - Danielson Framework for Teaching, Domains 1 & 3 — designing coherent
+#     instruction, engaging students, using assessment in instruction.
+#   - The 5E instructional model — Engage / Explore / Explain / Elaborate / Evaluate.
+# These are the "subject-agnostic bar" the plan asks for: they judge whether a
+# lesson is WELL WRITTEN, not just whether parts exist. This is the only scorer
+# that necessarily costs model calls, so it runs LAST, after the completeness gate.
+#
+# HOW IT SCORES
+# scoring: band 0-3 per dimension, each REQUIRING a verbatim cited excerpt for the
+# band assigned (auditor-only: no evidence -> band is invalid, report as 0/needs-review).
+# The model judges the lesson's OWN words; it may never rewrite or suggest content.
+
+version: "v1-quality-2026-07"
+rubric_id: quality_dimensions
+title: "Lesson quality dimensions (EQuIP / Danielson / 5E)"
+framework: "EQuIP + Danielson D1/D3 + 5E"
+scoring: band
+band_scale:
+  0: "Absent / not evidenced."
+  1: "Emerging — present but weak, generic, or unclear."
+  2: "Proficient — solid and clear."
+  3: "Exemplary — specific, purposeful, and strong."
+auditor_only: true
+requires_evidence: true
+
+criteria:
+  - id: objective_clarity
+    label: Clarity of learning objective
+    description: Is the objective clear, student-facing, and purposeful (EQuIP purpose)?
+    reads_from: [standards_objectives]
+
+  - id: engagement
+    label: Engagement / relevance
+    description: Does the opening or task genuinely engage and connect to students (5E Engage; Danielson 3c)?
+    reads_from: [hook_engagement, direct_instruction]
+
+  - id: checks_for_understanding
+    label: Checks for understanding
+    description: Are there meaningful formative checks that inform instruction (Danielson 3d; 5E Evaluate)?
+    reads_from: [assessment_checkpoint, guided_practice]
+
+  - id: differentiation_supports
+    label: Differentiation & language supports
+    description: >
+      Evidence of supports for varied learners — ELPS/language, SpEd/504, GT/extension
+      (Danielson 1b/3e).
+    reads_from: [direct_instruction, guided_practice, independent_practice]
+    keywords: [ELPS, language objective, sentence stem, accommodation, modification, IEP, "504", gifted, extension, scaffold]
+
+  - id: cognitive_rigor
+    label: Cognitive rigor
+    description: >
+      Does the lesson move beyond recall toward application/analysis at the level the
+      standard demands (EQuIP rigor; DOK)?
+    reads_from: [direct_instruction, guided_practice, independent_practice, assessment_checkpoint]
+
+  - id: coherent_sequence_closure
+    label: Coherent sequence & closure
+    description: >
+      Does the lesson flow purposefully from open to practice to close, ending with real
+      consolidation (5E Explain/Elaborate; Danielson 3c)?
+    reads_from: [hook_engagement, guided_practice, independent_practice, reflection_closure]

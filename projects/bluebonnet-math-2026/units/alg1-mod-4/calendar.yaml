@@ -1,0 +1,49 @@
+unit_id: alg1-mod-4
+title: "Algebra I \u2014 Module 4"
+unit_length_days: 10
+days:
+- id: d1
+  label: Day 1
+  expected:
+  - lesson_content
+- id: d2
+  label: Day 2
+  expected:
+  - lesson_content
+- id: d3
+  label: Day 3
+  expected:
+  - lesson_content
+- id: d4
+  label: Day 4
+  expected:
+  - lesson_content
+- id: d5
+  label: Day 5
+  expected:
+  - lesson_content
+- id: d6
+  label: Day 6
+  expected:
+  - lesson_content
+- id: d7
+  label: Day 7
+  expected:
+  - lesson_content
+- id: d8
+  label: Day 8
+  expected:
+  - lesson_content
+- id: d9
+  label: Day 9
+  expected:
+  - lesson_content
+- id: d10
+  label: Day 10
+  expected:
+  - exit_ticket
+unit_supporting:
+- lesson_plan
+- quiz
+- worksheet
+- answer_key

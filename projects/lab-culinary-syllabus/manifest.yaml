@@ -1,0 +1,14 @@
+project:
+  id: lab-culinary-syllabus
+  name: lab-culinary-syllabus
+sources_dir: /home/lenovo/g10-control-center-loom/projects/lab-culinary-syllabus/sources
+units:
+  curriculum:
+    title: Curriculum
+    calendar: units/curriculum/calendar.yaml
+    documents:
+    - 2025-26 Dallasisd Culinary Commercial Equipment Training Sheet.docx
+    - Advanced Culinary Uniform .pdf
+    - Culinary I Syllabus.docx
+    - Culinary Prac Syllabus.docx
+generated_by: ingest.py

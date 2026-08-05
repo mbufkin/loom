@@ -1,0 +1,89 @@
+# Rubric: lesson completeness (the deterministic gate, scorer S1).
+#
+# WHY / PROVENANCE
+# This is a REUSED rubric, not a new invention: its criteria are the eight
+# instructional-function parts Loom's Layer 0 already tags on every element
+# (schema_validate.ELEMENT_TYPES), which in turn mirror the Madeline Hunter
+# lesson-cycle plate (workflows/checklists/daily_lesson_plan.yaml) and the
+# CTAT / Northwest ISD unit plate (workflows/checklists/lesson_plan.yaml) that
+# layer2.py already scores against. Extracting them here as versioned data lets
+# the bake-off harness run this bar as one pluggable scorer beside the others,
+# with the SAME evidence-cited output shape (see scorer schema).
+#
+# HOW IT SCORES
+# scoring: presence -> each criterion is PRESENT / PARTIAL / MISSING, decided
+# deterministically from whether a lesson's own Layer 0 elements carry the
+# criterion's element_type (keywords are a secondary signal only). This is the
+# cheap gate that must pass before any model spend on subjective quality
+# (EdReports/IMET gateway discipline) — completeness is a fact, not a judgment.
+# required: true criteria are the "core four" a plan cannot be complete without.
+
+version: "v1-core8-2026-07"
+rubric_id: completeness_core8
+title: "Lesson completeness (8 instructional-function parts)"
+framework: "Hunter lesson cycle + CTAT/NW ISD; Loom Layer 0 taxonomy"
+scoring: presence
+auditor_only: true
+
+criteria:
+  - id: standards_objectives
+    label: Standards & objectives
+    description: >
+      A stated learning objective / target and/or the standard (TEKS) the lesson
+      addresses. Stage 1 of backward design — what students should know or do.
+    evidence_element_types: [standards_objectives]
+    keywords: [objective, learning target, students will, SWBAT, purpose, TEKS, standard]
+    required: true
+
+  - id: logistics_materials
+    label: Materials & logistics
+    description: Materials, supplies, prep, timing, or grouping needed to run the lesson.
+    evidence_element_types: [logistics_materials]
+    keywords: [materials, supplies, needed, prepare, handout, minutes, grouping]
+    required: true
+
+  - id: direct_instruction
+    label: Direct instruction / input & modeling
+    description: >
+      Content is taught and/or modeled (I do) — explanation, vocabulary, worked
+      example, think-aloud.
+    evidence_element_types: [direct_instruction]
+    keywords: [direct instruction, teach, explain, model, demonstrate, example, mini-lesson]
+    required: true
+
+  - id: assessment_checkpoint
+    label: Assessment / check for understanding
+    description: >
+      A way to check whether students met the objective — formative CFU, exit
+      ticket, quiz, or graded task. Stage 2 of backward design.
+    evidence_element_types: [assessment_checkpoint]
+    keywords: [check for understanding, CFU, formative, exit ticket, quiz, assess]
+    required: true
+
+  - id: hook_engagement
+    label: Hook / engagement (anticipatory set)
+    description: An opening that engages students or activates prior knowledge (5E Engage).
+    evidence_element_types: [hook_engagement]
+    keywords: [anticipatory, do now, engage, hook, warm-up, bell work]
+    required: false
+
+  - id: guided_practice
+    label: Guided practice (we do)
+    description: Students practice with teacher support / scaffolding before independence.
+    evidence_element_types: [guided_practice]
+    keywords: [guided practice, we do, together, with support, scaffold]
+    required: false
+
+  - id: independent_practice
+    label: Independent practice (you do)
+    description: Students apply the skill on their own.
+    evidence_element_types: [independent_practice]
+    keywords: [independent practice, you do, on your own, independently, assignment]
+    required: false
+
+  - id: reflection_closure
+    label: Reflection / closure
+    description: A close that consolidates learning — summary, reflection, debrief, exit.
+    evidence_element_types: [reflection_closure]
+    keywords: [closure, wrap up, summarize, reflect, debrief, exit ticket]
+    required: false

@@ -28,10 +28,12 @@ sources/                    ← curriculum DATA (any supported format)
     │
     ▼  layer0.py            0-B: --resolve-wide-spans (models)          ← citation precision
     │
-    ▼  route.py             Loom router: unit → Path A/B/C map (models) ← headline
+    ▼  route.py             Loom router: doc → Path A–G lenses          ← headline
+    │                       (filename prior → graph override → model TBD)
     │                       writes layer0/route-map.json
+    │                       see docs/PATHS.md
     │
-    ▼  workflows/run_paths.py  run Path A (lesson plans) / B (quiz) / C (general)
+    ▼  workflows/run_paths.py  Path A–G review lenses (A deep; B–G stubs)
     │
     ▼  layer1.py            placement conformance (models)              ← headline
     │                       (only docs present in route-map)
@@ -67,8 +69,8 @@ Doc-level scrub→place lived under `archive/legacy-unit-audit/` and is **not** 
 |------|--------|
 | Extract, rollup, Layer 2, PDF, dashboard / review-queue plates | **Code** |
 | Organize documents, infer unit structure | **Models** |
-| Loom router — Path A/B/C assignment per unit | **Models** |
-| Path A lesson plans / Path B quiz / Path C general | **Models** (writes `path_a/`, `path_b/`, `path_c/`) |
+| Loom router — Path A–G assignment | **Code cascade today** (filename + graph); **model tip planned** — [PATHS.md](PATHS.md) |
+| Path A–G review lenses | **Mixed** — A deep / B–G stubs grow into checklists (writes `path_a/`…`path_g/`) |
 | Layer 0 / Layer 1 conformance | **Models** |
 | Model calendars (authoritative inferred map) | **Models** |
 | First-pass / teacher narrative (`--delivery model`) | **Models** (hybrid; see [REPORT-DELIVERY.md](REPORT-DELIVERY.md)) |
@@ -83,8 +85,8 @@ Configure endpoints in `config.yaml`. **Single-model doctrine:** analyst and ver
 | `school-calendar.yaml` | District year spine (optional) |
 | `units/<id>/calendar.yaml` | Day grid + expected roles |
 | `pacing-plan.yaml` | Provisional early year map (`rollup.py`; superseded by model calendars) |
-| `layer0/route-map.json` | Loom router output — unit → Path A/B/C assignments |
-| `path_a/` `path_b/` `path_c/` | Path workflow outputs (lesson plans / quiz / general) |
+| `layer0/route-map.json` | Loom router output — doc → Path A–G lens assignments |
+| `path_a/` … `path_g/` | Path workflow outputs (seven lenses — [PATHS.md](PATHS.md)) |
 | `calendars_inferred/` | Authoritative model-calendar map (`calendars.py`) |
 | `_loom_feedback.yaml` | Loom feedback from path runs |
 | `layer0/` / `layer1/` / `layer2/` | Extraction, conformance, completeness ledgers |

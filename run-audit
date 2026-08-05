@@ -1,13 +1,15 @@
 #!/usr/bin/env bash
-# Crystallize — one program, any curriculum dataset.
-# Usage: ./run-audit <project-id> [run_project.py flags...]
-# Example: ./run-audit my-district
+# Loom E2E — one program; output → projects/<curriculum>/e2e/runs/<model>/
+# Usage: ./run-audit <curriculum-id> [run_project.py flags...]
+# Example: ./run-audit dallas-career-2026 --with-graph --graph-run nemotron3-nano-30b
 #          ./run-audit dallas-career-2026 --only engineering
+# Review: UI curriculum picker → E2E · <model>  (see docs/E2E.md)
 set -euo pipefail
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 if [[ $# -lt 1 ]]; then
-  echo "Usage: $0 <project-id> [flags...]" >&2
-  echo "  project-id = folder under projects/ (curriculum data)" >&2
+  echo "Usage: $0 <curriculum-id> [flags...]" >&2
+  echo "  curriculum-id = folder under projects/" >&2
+  echo "  writes → projects/<id>/e2e/runs/<model>/  (unless --allow-live-root)" >&2
   exit 2
 fi
 PROJECT="$1"

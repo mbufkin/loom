@@ -298,9 +298,10 @@ def atomic_write(path: Path, content: str) -> None:
 def project_dir(project_id: str) -> Path:
     """Resolve the writable project root.
 
-    Best practice: set LOOM_E2E_RUN=<run_id> for full-pipeline A/B so Layer 0 /
+    Best practice: E2E is canonical. ``run_project`` sets LOOM_E2E_RUN so Layer 0 /
     output / graph land under projects/<id>/e2e/runs/<run_id>/ and never clobber
-    the golden curriculum tree (see tools/e2e_run_lib.py).
+    the golden curriculum tree (see tools/e2e_run_lib.py). Bare projects/<id>/
+    is for --allow-live-root / overnight golden refresh only.
     """
     base = BASE_DIR / "projects" / project_id
     run = (os.environ.get("LOOM_E2E_RUN") or "").strip()
@@ -442,6 +443,10 @@ VALID_SLOT_ROLES = frozenset(
 def classify_doc_type(filename: str) -> str:
     """Infer artifact type from filename — deterministic, no model."""
     n = filename.lower()
+    # Path G lens — match early so syllabus filenames don't fall through to other.
+    # Keep "sylibuis" as typo alias for early stub filenames.
+    if "syllabus" in n or "sylibuis" in n:
+        return "syllabus"
     if "answer_key" in n or "answer key" in n:
         return "answer_key"
     if "exit_ticket" in n or "exit ticket" in n:
