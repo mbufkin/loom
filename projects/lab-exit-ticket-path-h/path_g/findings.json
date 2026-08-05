@@ -1,0 +1,11 @@
+{
+  "project_id": "lab-exit-ticket-path-h",
+  "workflow_id": "syllabus",
+  "path": "G",
+  "lens": "Syllabus",
+  "status": "skipped",
+  "doc_ids": [],
+  "checklist": "workflows/checklists/syllabus.yaml",
+  "inventory": [],
+  "steps_by_doc": {}
+}

@@ -1,4 +1,4 @@
-# Path H — Exit ticket workflow (stub)
+# Path H — Exit ticket workflow
 
 **Lens name:** Exit ticket (Path H). Taxonomy: [PATHS.md](PATHS.md).
 
@@ -7,25 +7,31 @@ Entry: Loom router typed the document as `exit_ticket` (filename / prior).
 ## Why not Path B?
 
 Quizzes and answer keys are a **paired** assessment artifact (items ↔ key).
-Exit tickets are a **standalone formative check** at the end of a lesson —
-different length, purpose, and quality bar. They get their own lens so the
-checklist does not pretend every assessment needs a key.
+Exit tickets are a **standalone formative check** — different length, purpose,
+and quality bar. No key required.
 
-## Steps (placeholders until Path H is built out)
+## Steps (H1 → H5)
 
 | Step | Name | Intent |
 |------|------|--------|
-| **H1** | Formative prompt | Stem / prompt present for a short check |
-| **H2** | Learning target signal | Objective / TEKS string presence |
-| **H3** | Next-day use | Actionable formative signal — TBD |
+| **H1** | Inventory | Layer 0 / source excerpts |
+| **H2** | Formative prompt | Exit framing + student-facing question |
+| **H3** | Target cue | Optional objective / today’s lesson / TEKS |
+| **H4** | Next-day signal | Light formative cues (rate / learn / challenge / checkbox / hand in) |
+| **H5** | Emit | Stub — short one-pager later |
 
 ## Guardrails
 
 - Auditor-only: blank = not found.
-- No Hunter plate (that is Path A only).
-- Do not require an answer key (that is Path B pairing).
+- No Hunter plate (Path A). No answer-key requirement (Path B).
 - No invented student responses or reteach scripts.
 
-## Outputs (stub)
+## Lab + tests
 
-- `path_h/findings.json` rows with inventory presence
+- Lab smoke: `projects/lab-exit-ticket-path-h/`
+- Offline: `test_path_h_exit_ticket.py` + `tests/fixtures/path_h/`
+- Checklist: `workflows/checklists/exit_ticket.yaml`
+
+## Outputs
+
+- `path_h/findings.json` — `inventory` + `steps_by_doc`

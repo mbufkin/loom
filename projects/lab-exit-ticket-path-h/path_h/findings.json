@@ -1,0 +1,344 @@
+{
+  "project_id": "lab-exit-ticket-path-h",
+  "workflow_id": "exit_ticket",
+  "path": "H",
+  "lens": "Exit ticket",
+  "status": "ok",
+  "doc_ids": [
+    "314d7d0905ca",
+    "4736326638c1",
+    "ba8b5c7a6deb"
+  ],
+  "checklist": "workflows/checklists/exit_ticket.yaml",
+  "inventory": [
+    {
+      "doc_id": "314d7d0905ca",
+      "doc_type": "exit_ticket",
+      "graph_role": null,
+      "element_count": 1,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "H3": {
+        "status": "MISSING",
+        "note": "0/0 fields present"
+      },
+      "H4": {
+        "status": "MISSING",
+        "note": "0/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "4736326638c1",
+      "doc_type": "exit_ticket",
+      "graph_role": null,
+      "element_count": 1,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "H3": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "H4": {
+        "status": "MISSING",
+        "note": "0/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "ba8b5c7a6deb",
+      "doc_type": "exit_ticket",
+      "graph_role": null,
+      "element_count": 1,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "H3": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "H4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    }
+  ],
+  "steps_by_doc": {
+    "314d7d0905ca": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 1,
+        "by_element_type": {
+          "exit_ticket": 1
+        },
+        "doc_id": "314d7d0905ca"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Arts, A/V TEch & Comm Cluster Exit Ticket - Day 1  Name:                                                                         Date:   _____________________                                 Instructions: Watch the youtube video “Non Profit Advertising Spot”  Answer the Question: What is the message of this Advertisement?  What is the message of this Advertisement?      What is the Company Name?      What is the Company Slogan?"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Arts, A/V TEch & Comm Cluster Exit Ticket - Day 1  Name:                                                                         Date:   _____________________                                 Instructions: Watch the youtube video “Non Profit Advertising Spot”  Answer the Question: What is the message of this Advertisement?  What is the message of this Advertisement?      What is the Company Name?      What is the Company Slogan?"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "4736326638c1": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 1,
+        "by_element_type": {
+          "exit_ticket": 1
+        },
+        "doc_id": "4736326638c1"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Professional Preparedness Exit Ticket - Day 2  Name:                                                                         Date:   _____________________                                 Instructions: Answer the following question over the lesson today.  What would you wear to an interview?"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Professional Preparedness Exit Ticket - Day 2  Name:                                                                         Date:   _____________________                                 Instructions: Answer the following question over the lesson today.  What would you wear to an interview?"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Professional Preparedness Exit Ticket - Day 2  Name:                                                                         Date:   _____________________                                 Instructions: Answer the following question over the lesson today.  What would you wear to an interview?"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "ba8b5c7a6deb": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 1,
+        "by_element_type": {
+          "exit_ticket": 1
+        },
+        "doc_id": "ba8b5c7a6deb"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Engineering Exit Ticket   Exit Ticket: Design a Paper Airplane Launcher Name: ___________________________ Instructions: Reflect on today’s lesson about designing and building a paper airplane launcher. Answer the following questions briefly and thoughtfully. Hand in this exit ticket before leaving the classroom.  What was the main objective of today’s activity? [ ] To create a functional paper airplane launcher [ ] To explore principles of force and motion [ ] To understand how design affects…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Engineering Exit Ticket   Exit Ticket: Design a Paper Airplane Launcher Name: ___________________________ Instructions: Reflect on today’s lesson about designing and building a paper airplane launcher. Answer the following questions briefly and thoughtfully. Hand in this exit ticket before leaving the classroom.  What was the main objective of today’s activity? [ ] To create a functional paper airplane launcher [ ] To explore principles of force and motion [ ] To understand how design affects…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Engineering Exit Ticket   Exit Ticket: Design a Paper Airplane Launcher Name: ___________________________ Instructions: Reflect on today’s lesson about designing and building a paper airplane launcher. Answer the following questions briefly and thoughtfully. Hand in this exit ticket before leaving the classroom.  What was the main objective of today’s activity? [ ] To create a functional paper airplane launcher [ ] To explore principles of force and motion [ ] To understand how design affects…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Engineering Exit Ticket   Exit Ticket: Design a Paper Airplane Launcher Name: ___________________________ Instructions: Reflect on today’s lesson about designing and building a paper airplane launcher. Answer the following questions briefly and thoughtfully. Hand in this exit ticket before leaving the classroom.  What was the main objective of today’s activity? [ ] To create a functional paper airplane launcher [ ] To explore principles of force and motion [ ] To understand how design affects…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    }
+  }
+}
