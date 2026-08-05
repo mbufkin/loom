@@ -62,7 +62,7 @@ replace `route-map.json`; it feeds it.
 | B | Presence (B1–B6) — quiz↔key — see [PATH-B-QUIZ.md](PATH-B-QUIZ.md) |
 | C | Stub + feedback log — see [PATH-C-GENERAL.md](PATH-C-GENERAL.md) |
 | D | Presence (D1–D5) — see [PATH-D-TEACHER-SUPPORT.md](PATH-D-TEACHER-SUPPORT.md) |
-| E | Stub inventory + feedback hooks — grow checklists without adding Path I…Z |
+| E | Presence (E1–E5) — see [PATH-E-STUDENT-PRACTICE.md](PATH-E-STUDENT-PRACTICE.md) |
 | F | Presence (F1–F5) — see [PATH-F-STANDARDS-PACING.md](PATH-F-STANDARDS-PACING.md) |
 | G | Spec locked (G1–G9) — see [PATH-G-SYLLABUS.md](PATH-G-SYLLABUS.md); presence extractors landing |
 | H | Presence (H1–H5) — see [PATH-H-EXIT-TICKET.md](PATH-H-EXIT-TICKET.md) |

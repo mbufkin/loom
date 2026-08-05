@@ -1,0 +1,71 @@
+# Student practice plate → Loom checklist (Path E).
+# Grain: Learn / Practice / Succeed / worksheet / student edition — not TE (D), not quiz↔key (B).
+# PRESENT = evidence in Layer 0 excerpts or source fallback; never invent.
+
+version: "v1-student-practice"
+role: student_practice
+framework: learn_practice_succeed_presence
+source_template: docs/PATH-E-STUDENT-PRACTICE.md
+path: E
+workflow_id: student_practice
+
+sections:
+  e2_role:
+    label: E2 Document role cues
+    step: E2
+    fields:
+      - id: learn_practice_succeed
+        label: Learn / Practice / Succeed framing
+        keywords:
+          - learn
+          - practice
+          - succeed
+          - student edition
+          - "student edition"
+      - id: worksheet_or_se
+        label: Worksheet / student-edition framing
+        keywords:
+          - worksheet
+          - student worksheet
+          - skills practice
+          - student-facing
+
+  e3_tasks:
+    label: E3 Student task cues
+    step: E3
+    fields:
+      - id: problems_or_prompts
+        label: Problems / prompts / questions
+        keywords:
+          - problem
+          - problems
+          - question
+          - "?"
+          - exercise
+          - complete
+          - solve
+      - id: work_process
+        label: Student work process cue
+        keywords:
+          - read–draw–write
+          - read-draw-write
+          - rdw
+          - number sentence
+          - draw and label
+          - show your work
+
+  e4_targets:
+    label: E4 Learning target cue
+    step: E4
+    fields:
+      - id: objective_or_teks
+        label: Objective / TEKS / lesson cue
+        keywords:
+          - objective
+          - teks
+          - "§"
+          - students will
+          - learning target
+          - lesson
+          - standard
+        optional: true
