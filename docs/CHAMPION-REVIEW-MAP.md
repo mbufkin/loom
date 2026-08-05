@@ -30,7 +30,9 @@ Without the YAML, `rollup.py` cannot produce a **dated** pacing / YAG map.
 | **Course syllabus** | **Path G** — course-level student/family contract audit (G1–G9; presence extractors landing) | `path_g/findings.json` — see [PATH-G-SYLLABUS.md](PATH-G-SYLLABUS.md) |
 | **Lesson plan templates** | **Layer 2** — structural completeness of fulfilled `lesson_plan` docs (standards, materials, instruction, assessment) | `layer2/findings.json`, first-pass §4 / teacher §3 |
 | **Instructional resources / supports** | Layer 1 role fulfillment (worksheet, rubric, slides, …) + MISSING | `layer1/findings.json` |
-| **Assessments / performance tasks** | Layer 1 roles (`quiz`, `exit_ticket`, `rubric`, …) | same |
+| **Quizzes / answer keys** | **Path B** — quiz↔key assessment stub | `path_b/findings.json` — see [PATH-B-QUIZ.md](PATH-B-QUIZ.md) |
+| **Exit tickets** | **Path H** — standalone formative check (not quiz↔key) | `path_h/findings.json` — see [PATH-H-EXIT-TICKET.md](PATH-H-EXIT-TICKET.md) |
+| **Other assessments / performance tasks** | Layer 1 roles (`rubric`, …) + Path B when assessment-bearing | `layer1/findings.json` |
 | **TEKS / industry / CCMR alignment** | Not adjudicated as “aligned”; Layer 0 may tag `standards_objectives` text when present | excerpts in ledger |
 | **Vertical / horizontal alignment across two courses** | Cross-unit MISMATCH / EXPECTED_OVERLAP / REVIEW-QUEUE | `FIRST-PASS.md`, `layer1/REVIEW-QUEUE.md` |
 | **Identify gaps, redundancies, program improvements** | MISSING, DUPLICATE, INCOMPLETE, MISMATCH | first-pass PDF + teacher packets |

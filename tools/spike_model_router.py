@@ -37,12 +37,13 @@ N = int(os.environ.get("LOOM_ROUTER_SPIKE_N", "18"))
 
 LENSES = """Path letters / lenses (exactly one):
 A lesson_plan — one instructional episode / daily lesson plan
-B quiz — assessment evidence (quiz, exit ticket, answer key, rubric used to score)
+B quiz — quiz ↔ answer key (paired assessment); rubric used to score
 C general — catch-all / coach tools / unclear
 D teacher_support — teacher edition, educator guide, facilitation support
 E student_practice — student edition, learn/practice/succeed, worksheet
 F standards_pacing — scope/sequence, pacing, standards overview, TEKS/ELPS summaries
-G syllabus — course syllabus / student-facing course contract"""
+G syllabus — course syllabus / student-facing course contract
+H exit_ticket — standalone formative end-of-lesson check (not quiz↔key)"""
 
 
 def _api_key() -> str:
@@ -156,7 +157,7 @@ Document content (excerpts / extract; may be truncated):
 Return JSON:
 {{
   "path": "A"|"B"|"C"|"D"|"E"|"F"|"G",
-  "workflow_id": "lesson_plan"|"quiz"|"general"|"teacher_support"|"student_practice"|"standards_pacing"|"syllabus",
+  "workflow_id": "lesson_plan"|"quiz"|"general"|"teacher_support"|"student_practice"|"standards_pacing"|"syllabus"|"exit_ticket",
   "confidence": "high"|"medium"|"low",
   "reason": "one short sentence from content evidence"
 }}

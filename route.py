@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 route.py — Loom router: after Layer 0 (+ optional graph), map each document
-to a Path A–G review lens.
+to a Path A–H review lens.
 
 Writes:
   layer0/route-map.json   — doc_id → workflow handoff
@@ -35,14 +35,15 @@ from audit_lib import (
     validate_slug_id,
 )
 
-# Review lenses A–G (docs/PATHS.md)
+# Review lenses A–H (docs/PATHS.md)
 WORKFLOW_LESSON = "lesson_plan"  # Path A — Lesson
-WORKFLOW_ASSESSMENT = "quiz"  # Path B — Assessment (id kept for compat)
+WORKFLOW_ASSESSMENT = "quiz"  # Path B — Quiz ↔ answer key (id kept for compat)
 WORKFLOW_GENERAL = "general"  # Path C — General feedback
 WORKFLOW_TEACHER = "teacher_support"  # Path D
 WORKFLOW_STUDENT = "student_practice"  # Path E
 WORKFLOW_STANDARDS = "standards_pacing"  # Path F
 WORKFLOW_SYLLABUS = "syllabus"  # Path G
+WORKFLOW_EXIT = "exit_ticket"  # Path H — Exit ticket (standalone formative)
 
 PATH_BY_WORKFLOW = {
     WORKFLOW_LESSON: "A",
@@ -52,6 +53,7 @@ PATH_BY_WORKFLOW = {
     WORKFLOW_STUDENT: "E",
     WORKFLOW_STANDARDS: "F",
     WORKFLOW_SYLLABUS: "G",
+    WORKFLOW_EXIT: "H",
 }
 
 LENS_LABEL = {
@@ -62,17 +64,22 @@ LENS_LABEL = {
     WORKFLOW_STUDENT: "Student practice",
     WORKFLOW_STANDARDS: "Standards & pacing",
     WORKFLOW_SYLLABUS: "Syllabus",
+    WORKFLOW_EXIT: "Exit ticket",
 }
 
-QUIZ_TYPES = frozenset({"quiz", "answer_key", "exit_ticket"})
+# Path B: quiz items paired with keys. Exit tickets are Path H (own lens).
+QUIZ_TYPES = frozenset({"quiz", "answer_key"})
+EXIT_TICKET_TYPES = frozenset({"exit_ticket"})
 LESSON_TYPES = frozenset({"lesson_plan"})
-# Assessment-bearing types that are not quiz filenames
+# Assessment-bearing types that are not quiz filenames (still Path B)
 ASSESSMENT_EXTRA = frozenset({"rubric"})
 STUDENT_TYPES = frozenset({"worksheet"})
 # Primary type + legacy typo alias from early Path G stub naming.
 SYLLABUS_TYPES = frozenset({"syllabus", "sylibuis"})
 # Types that should be logged for future checklist growth inside a lens
 FEEDBACK_TYPES = frozenset({"other", "flex_day", "game_activity", "lesson_content", "project_work", "presentation", "lab_activity"})
+
+_EXIT_TICKET_RE = re.compile(r"exit[_\s.-]?ticket", re.I)
 
 # Filename patterns when graph is missing or silent (priors only).
 _TE_RE = re.compile(
@@ -98,6 +105,8 @@ def doc_type_to_workflow(doc_type: str) -> tuple[str, str, bool]:
     dt = (doc_type or "other").strip().lower()
     if dt in LESSON_TYPES:
         return WORKFLOW_LESSON, "A", False
+    if dt in EXIT_TICKET_TYPES:
+        return WORKFLOW_EXIT, "H", False
     if dt in QUIZ_TYPES or dt in ASSESSMENT_EXTRA:
         return WORKFLOW_ASSESSMENT, "B", False
     if dt in SYLLABUS_TYPES:
@@ -106,6 +115,11 @@ def doc_type_to_workflow(doc_type: str) -> tuple[str, str, bool]:
         return WORKFLOW_STUDENT, "E", False
     needs_fb = dt in FEEDBACK_TYPES or dt == "other"
     return WORKFLOW_GENERAL, "C", needs_fb
+
+
+def _is_exit_ticket_name(name: str) -> bool:
+    """True when filename/source looks like an exit ticket (Path H)."""
+    return bool(_EXIT_TICKET_RE.search(name or ""))
 
 
 def _load_json(path: Path) -> object:
@@ -194,6 +208,15 @@ def load_graph_routing_hints(project_id: str) -> dict[str, dict]:
             prev = hints.get(key)
             if prev and prev.get("workflow_id") == WORKFLOW_TEACHER:
                 continue
+            # Exit tickets stay on Path H even when graph tags Assessment.
+            if _is_exit_ticket_name(sf) or classify_doc_type(sf) == "exit_ticket":
+                hints[key] = {
+                    "role": "exit_ticket",
+                    "workflow_id": WORKFLOW_EXIT,
+                    "reason": "graph Assessment link → exit_ticket filename",
+                    "source_file": sf,
+                }
+                continue
             hints[key] = {
                 "role": "assessment",
                 "workflow_id": WORKFLOW_ASSESSMENT,
@@ -223,31 +246,42 @@ def resolve_workflow(
     source_file: str,
     graph_hint: dict | None,
 ) -> tuple[str, str, bool, str]:
-    """Cascade: lesson/quiz filename → G/F priors → graph → D/E → general.
+    """Cascade: lesson/quiz/exit filename → G/F priors → graph → D/E → general.
 
     Returns (workflow_id, path, needs_feedback, reason).
     """
     dt = (doc_type or "other").strip().lower()
+    sf = source_file or ""
 
-    # Hard filename wins for explicit lesson plans / quizzes (Dallas).
+    # Hard filename wins for explicit lesson plans / quizzes / exit tickets.
     if dt in LESSON_TYPES:
         return WORKFLOW_LESSON, "A", False, f"filename doc_type={dt}"
+    # Exit ticket is its own lens (Path H) — not folded into quiz↔key (Path B).
+    if dt in EXIT_TICKET_TYPES or _is_exit_ticket_name(sf):
+        return (
+            WORKFLOW_EXIT,
+            "H",
+            False,
+            "filename prior → exit_ticket"
+            if _is_exit_ticket_name(sf)
+            else f"filename doc_type={dt}",
+        )
     if dt in QUIZ_TYPES:
         return WORKFLOW_ASSESSMENT, "B", False, f"filename doc_type={dt}"
 
     # Explicit syllabus type or name beats graph TE mis-tags.
-    if dt in SYLLABUS_TYPES or _SYLLABUS_RE.search(source_file or ""):
+    if dt in SYLLABUS_TYPES or _SYLLABUS_RE.search(sf):
         return (
             WORKFLOW_SYLLABUS,
             "G",
             False,
             "filename prior → syllabus"
-            if _SYLLABUS_RE.search(source_file or "")
+            if _SYLLABUS_RE.search(sf)
             else f"filename doc_type={dt}",
         )
 
     # Standards/pacing names beat graph TE mis-tags (scope/sequence ≠ teacher edition).
-    if _STANDARDS_RE.search(source_file or ""):
+    if _STANDARDS_RE.search(sf):
         return (
             WORKFLOW_STANDARDS,
             "F",
@@ -255,7 +289,7 @@ def resolve_workflow(
             "filename prior → standards_pacing",
         )
 
-    # Graph override (Bluebonnet TE/SE, assessments). Do not let graph steal G.
+    # Graph override (Bluebonnet TE/SE, assessments). Do not let graph steal G/H.
     if graph_hint and graph_hint.get("workflow_id") in PATH_BY_WORKFLOW:
         wf = graph_hint["workflow_id"]
         return (
@@ -265,12 +299,12 @@ def resolve_workflow(
             graph_hint.get("reason") or "graph hint",
         )
 
-    # Rubric → Assessment lens
+    # Rubric → Assessment lens (Path B quiz family)
     if dt in ASSESSMENT_EXTRA:
         return WORKFLOW_ASSESSMENT, "B", False, f"filename doc_type={dt}"
 
-    # Filename D/E priors (F/G already handled above)
-    prior = filename_lens_prior(source_file)
+    # Filename D/E priors (F/G/H already handled above)
+    prior = filename_lens_prior(sf)
     if prior:
         wf, reason = prior
         return wf, PATH_BY_WORKFLOW[wf], False, reason
@@ -468,7 +502,7 @@ def build_route_map(project_id: str) -> dict:
         f"(A={counts[WORKFLOW_LESSON]} B={counts[WORKFLOW_ASSESSMENT]} "
         f"C={counts[WORKFLOW_GENERAL]} D={counts[WORKFLOW_TEACHER]} "
         f"E={counts[WORKFLOW_STUDENT]} F={counts[WORKFLOW_STANDARDS]} "
-        f"G={counts[WORKFLOW_SYLLABUS]}; "
+        f"G={counts[WORKFLOW_SYLLABUS]} H={counts[WORKFLOW_EXIT]}; "
         f"graph_hints={len(graph_hints)} feedback={len(feedback)})"
     )
     return out
@@ -501,7 +535,7 @@ def routed_doc_ids(project_id: str, *, workflow_id: str | None = None) -> set[st
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Loom router — map docs to Path A–G review lenses"
+        description="Loom router — map docs to Path A–H review lenses"
     )
     parser.add_argument("--project", required=True)
     args = parser.parse_args()

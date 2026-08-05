@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-workflows/run_paths.py — Run Path A–G after route-map exists.
+workflows/run_paths.py — Run Path A–H after route-map exists.
 
 Also refreshes unit LESSON-PLAN plates after Path A.
-See docs/PATHS.md for the A–G lens contract.
+See docs/PATHS.md for the A–H lens contract.
 """
 
 from __future__ import annotations
@@ -25,6 +25,7 @@ from audit_lib import (
     project_dir,
     validate_slug_id,
 )
+from workflows.exit_ticket import run_path_h_for_project
 from workflows.general import run_path_c_for_project
 from workflows.lesson_plan import (
     run_path_a_for_project,
@@ -56,7 +57,7 @@ def _title_map(project_id: str) -> dict[str, str]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Run Loom Path A–G review lenses")
+    parser = argparse.ArgumentParser(description="Run Loom Path A–H review lenses")
     parser.add_argument("--project", required=True)
     parser.add_argument(
         "--no-model",
@@ -77,6 +78,7 @@ def main() -> int:
     e = run_path_e_for_project(args.project)
     f = run_path_f_for_project(args.project)
     g = run_path_g_for_project(args.project)
+    h = run_path_h_for_project(args.project)
 
     # Handoff aggregate for place-into-units / UI
     handoff = {
@@ -152,6 +154,16 @@ def main() -> int:
                 "emit_paths": ["path_g/findings.json"],
                 "summary": {"doc_count": len(g.get("doc_ids") or [])},
             },
+            {
+                "doc_id": "*",
+                "workflow_id": "exit_ticket",
+                "path": "H",
+                "lens": "Exit ticket",
+                "status": h.get("status"),
+                "findings_path": "path_h/findings.json",
+                "emit_paths": ["path_h/findings.json"],
+                "summary": {"doc_count": len(h.get("doc_ids") or [])},
+            },
         ],
     }
     dest = root / "layer0" / "workflow-handoff.json"
@@ -166,7 +178,7 @@ def main() -> int:
     except Exception as e:
         log(f"WARN: unit LESSON-PLAN refresh skipped: {e}")
 
-    log("path workflows done (A–G)")
+    log("path workflows done (A–H)")
     return 0
 
 
