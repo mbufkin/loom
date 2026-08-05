@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-test_route_lenses.py — Unit tests for Path A–G router cascade (no corpus required).
+test_route_lenses.py — Unit tests for Path A–H router cascade (no corpus required).
 
 Best practice: keep router tests offline with tiny fake ledgers + HAS-PART so
 CI does not need Dallas/Bluebonnet source trees.
@@ -23,8 +23,8 @@ from route import (  # noqa: E402
 )
 
 
-def test_path_letters_cover_seven_lenses() -> None:
-    assert set(PATH_BY_WORKFLOW.values()) == {"A", "B", "C", "D", "E", "F", "G"}
+def test_path_letters_cover_eight_lenses() -> None:
+    assert set(PATH_BY_WORKFLOW.values()) == {"A", "B", "C", "D", "E", "F", "G", "H"}
     assert PATH_BY_WORKFLOW["lesson_plan"] == "A"
     assert PATH_BY_WORKFLOW["quiz"] == "B"
     assert PATH_BY_WORKFLOW["general"] == "C"
@@ -32,6 +32,7 @@ def test_path_letters_cover_seven_lenses() -> None:
     assert PATH_BY_WORKFLOW["student_practice"] == "E"
     assert PATH_BY_WORKFLOW["standards_pacing"] == "F"
     assert PATH_BY_WORKFLOW["syllabus"] == "G"
+    assert PATH_BY_WORKFLOW["exit_ticket"] == "H"
 
 
 def test_dallas_style_lesson_plan_filename() -> None:
@@ -44,9 +45,27 @@ def test_dallas_style_lesson_plan_filename() -> None:
     assert "filename" in reason
 
 
-def test_assessment_filename_and_rubric() -> None:
-    wf, path, _, _ = resolve_workflow(
+def test_exit_ticket_is_path_h_not_quiz() -> None:
+    """Exit tickets are Path H; quizzes/keys stay on Path B."""
+    wf, path, _, reason = resolve_workflow(
         doc_type="exit_ticket", source_file="x_Exit_Ticket.txt", graph_hint=None
+    )
+    assert (wf, path) == ("exit_ticket", "H")
+    assert "exit_ticket" in reason
+    # Filename prior wins even if doc_type was coarse "other"
+    wf, path, _, _ = resolve_workflow(
+        doc_type="other", source_file="Day3_Exit_Ticket.pdf", graph_hint=None
+    )
+    assert (wf, path) == ("exit_ticket", "H")
+
+
+def test_quiz_and_rubric_stay_path_b() -> None:
+    wf, path, _, _ = resolve_workflow(
+        doc_type="quiz", source_file="Unit1_Quiz.txt", graph_hint=None
+    )
+    assert (wf, path) == ("quiz", "B")
+    wf, path, _, _ = resolve_workflow(
+        doc_type="answer_key", source_file="Unit1_Answer_Key.txt", graph_hint=None
     )
     assert (wf, path) == ("quiz", "B")
     wf, path, _, _ = resolve_workflow(
@@ -200,9 +219,10 @@ def test_bluebonnet_e2e_route_smoke_if_present() -> None:
 
 def main() -> int:
     tests = [
-        test_path_letters_cover_seven_lenses,
+        test_path_letters_cover_eight_lenses,
         test_dallas_style_lesson_plan_filename,
-        test_assessment_filename_and_rubric,
+        test_exit_ticket_is_path_h_not_quiz,
+        test_quiz_and_rubric_stay_path_b,
         test_graph_teacher_edition_overrides_other,
         test_graph_student_role,
         test_filename_standards_prior,

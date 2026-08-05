@@ -1,0 +1,100 @@
+{
+  "project_id": "lab-assessment-path-b",
+  "generated_at": "2026-08-05T15:06:30.804278+00:00",
+  "lenses": {
+    "lesson_plan": "Lesson",
+    "quiz": "Assessment",
+    "general": "General feedback",
+    "teacher_support": "Teacher support",
+    "student_practice": "Student practice",
+    "standards_pacing": "Standards & pacing",
+    "syllabus": "Syllabus",
+    "exit_ticket": "Exit ticket"
+  },
+  "counts": {
+    "quiz": 6
+  },
+  "unrouted_ledger_doc_ids": [],
+  "feedback_path": null,
+  "graph_hints": 0,
+  "routes": [
+    {
+      "doc_id": "3fd5e5bc561c",
+      "doc_type": "quiz",
+      "workflow_id": "quiz",
+      "path": "B",
+      "lens": "Assessment",
+      "reason": "filename doc_type=quiz",
+      "feedback": false,
+      "confidence": 0.9,
+      "source_file": "doc_3fd5e5bc561c_Manufacturing_exploration___Quizizz.txt",
+      "element_count": 0,
+      "graph_role": null
+    },
+    {
+      "doc_id": "86fff193b91a",
+      "doc_type": "answer_key",
+      "workflow_id": "quiz",
+      "path": "B",
+      "lens": "Assessment",
+      "reason": "filename doc_type=answer_key",
+      "feedback": false,
+      "confidence": 0.9,
+      "source_file": "doc_86fff193b91a_Engineering_Lesson_Quiz___Quizizz_Answer_key.txt",
+      "element_count": 0,
+      "graph_role": null
+    },
+    {
+      "doc_id": "d3fae80ecd3f",
+      "doc_type": "quiz",
+      "workflow_id": "quiz",
+      "path": "B",
+      "lens": "Assessment",
+      "reason": "filename doc_type=quiz",
+      "feedback": false,
+      "confidence": 0.9,
+      "source_file": "doc_d3fae80ecd3f_Architecture_and_Construction_Quizizz.txt",
+      "element_count": 0,
+      "graph_role": null
+    },
+    {
+      "doc_id": "doc_weak01_Blank_Quiz_Placeholder",
+      "doc_type": "quiz",
+      "workflow_id": "quiz",
+      "path": "B",
+      "lens": "Assessment",
+      "reason": "filename doc_type=quiz",
+      "feedback": false,
+      "confidence": 0.9,
+      "source_file": "doc_weak01_Blank_Quiz_Placeholder.txt",
+      "element_count": 0,
+      "graph_role": null
+    },
+    {
+      "doc_id": "ed1c99b4f5fa",
+      "doc_type": "answer_key",
+      "workflow_id": "quiz",
+      "path": "B",
+      "lens": "Assessment",
+      "reason": "filename doc_type=answer_key",
+      "feedback": false,
+      "confidence": 0.9,
+      "source_file": "doc_ed1c99b4f5fa_Architecture_and_Construction_Answer_Key_Quizizz.txt",
+      "element_count": 0,
+      "graph_role": null
+    },
+    {
+      "doc_id": "fc48920a5ca9",
+      "doc_type": "quiz",
+      "workflow_id": "quiz",
+      "path": "B",
+      "lens": "Assessment",
+      "reason": "filename doc_type=quiz",
+      "feedback": false,
+      "confidence": 0.9,
+      "source_file": "doc_fc48920a5ca9_Engineering_Lesson_Quiz___Quizizz.txt",
+      "element_count": 0,
+      "graph_role": null
+    }
+  ]
+}

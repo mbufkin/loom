@@ -81,12 +81,13 @@ _VALID_WORKFLOWS = {
     "student_practice",
     "standards_pacing",
     "syllabus",
+    "exit_ticket",
 }
-_VALID_PATHS = {"A", "B", "C", "D", "E", "F", "G"}
+_VALID_PATHS = {"A", "B", "C", "D", "E", "F", "G", "H"}
 
 
 def test_route_map_covers_docs() -> None:
-    """Every Dallas run should produce route-map.json with A–G lens assignments."""
+    """Every Dallas run should produce route-map.json with A–H lens assignments."""
     if not _dallas_ready():
         print("SKIP test_route_map_covers_docs (no local Dallas corpus/ledger)")
         return
@@ -129,12 +130,13 @@ def test_path_workflows_a1_a8() -> None:
     pc = json.loads((root / "path_c" / "findings.json").read_text(encoding="utf-8"))
     assert pb.get("path") == "B" or pb.get("workflow_id") == "quiz"
     assert pc.get("path") == "C" or pc.get("workflow_id") == "general"
-    # D/E/F/G stubs always write findings (status skipped when empty).
+    # D/E/F/G/H stubs always write findings (status skipped when empty).
     for letter, wf in (
         ("d", "teacher_support"),
         ("e", "student_practice"),
         ("f", "standards_pacing"),
         ("g", "syllabus"),
+        ("h", "exit_ticket"),
     ):
         pf = json.loads(
             (root / f"path_{letter}" / "findings.json").read_text(encoding="utf-8")

@@ -47,7 +47,7 @@ A locked **Path A quality bar**: multi-pass review (presence first, then a short
 ## Out of scope
 
 - Implementing world-class B–F runners before A’s bar is locked.
-- Further top-level path letters (H…Z) — grow checklists inside A–G (Path G syllabus already added).
+- Further top-level path letters (I…Z) — grow checklists inside A–H (Path G syllabus + Path H exit ticket intentionally added; quiz↔key stays B).
 - Classroom-observation rubrics (live T-TESS Domains 2–3 / walkthroughs) as primary Path A logic.
 - Inventing lesson content (auditor-only stays).
 - Full multi-module Bluebonnet corpus runs as a requirement of this map.

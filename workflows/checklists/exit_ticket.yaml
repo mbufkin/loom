@@ -1,0 +1,24 @@
+# Exit ticket plate → Loom checklist (Path H).
+# Educational note: formative end-of-lesson check — not a quiz↔key pair (Path B).
+
+lens: Exit ticket
+path: H
+workflow_id: exit_ticket
+
+steps:
+  - id: H1
+    label: Formative prompt present
+    intent: Short student-facing prompt / stem teachers can collect in minutes
+    fields:
+      - prompt_or_stem
+  - id: H2
+    label: Learning target signal
+    intent: Ties to today's objective / TEKS (presence only at stub depth)
+    fields:
+      - objective_or_teks
+  - id: H3
+    label: Actionable next-day use
+    intent: Teacher can see who got it / who needs reteach (quality later)
+    fields:
+      - actionable_signal
+    status: stub
