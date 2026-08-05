@@ -1,0 +1,32 @@
+# General feedback / nursery plate → Loom checklist (Path C).
+# Grain: catch-all + growth queue — NOT a junk drawer of A/B/D/E/F/H checks.
+# PRESENT = route identity / feedback log / light growth-bucket cues; never invent.
+
+version: "v1-general-nursery"
+role: general
+framework: feedback_nursery
+source_template: docs/PATH-C-GENERAL.md
+path: C
+workflow_id: general
+
+sections:
+  c4_growth:
+    label: C4 Growth-bucket cue
+    step: C4
+    fields:
+      - id: nursery_bucket
+        label: Nursery growth-bucket keyword
+        keywords:
+          - coach
+          - protocol
+          - presentation
+          - flex day
+          - flex_day
+          - game
+          - lab activity
+          - project work
+          - observation
+          - internalization
+          - manipulatives
+          - navigation guide
+        optional: true

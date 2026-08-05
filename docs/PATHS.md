@@ -60,7 +60,7 @@ replace `route-map.json`; it feeds it.
 |------|--------|
 | A | Deep (A1–A8) — see [PATH-A-LESSON-PLAN.md](PATH-A-LESSON-PLAN.md) |
 | B | Presence (B1–B6) — quiz↔key — see [PATH-B-QUIZ.md](PATH-B-QUIZ.md) |
-| C | Stub + feedback log — see [PATH-C-GENERAL.md](PATH-C-GENERAL.md) |
+| C | Presence nursery (C1–C5) — see [PATH-C-GENERAL.md](PATH-C-GENERAL.md) |
 | D | Presence (D1–D5) — see [PATH-D-TEACHER-SUPPORT.md](PATH-D-TEACHER-SUPPORT.md) |
 | E | Presence (E1–E5) — see [PATH-E-STUDENT-PRACTICE.md](PATH-E-STUDENT-PRACTICE.md) |
 | F | Presence (F1–F5) — see [PATH-F-STANDARDS-PACING.md](PATH-F-STANDARDS-PACING.md) |

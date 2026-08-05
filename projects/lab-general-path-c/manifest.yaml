@@ -1,0 +1,13 @@
+project:
+  id: lab-general-path-c
+  name: lab-general-path-c
+sources_dir: /home/lenovo/g10-control-center-loom/projects/lab-general-path-c/sources
+units:
+  curriculum:
+    title: Curriculum
+    calendar: units/curriculum/calendar.yaml
+    documents:
+    - doc_cmixed_CTSO_Presentation.txt
+    - doc_cstrong_Secondary_Mathematics_Coach_Lesson_Internalization_Protocol.txt
+    - doc_cweak_Other_Handout_Stub.txt
+generated_by: ingest.py

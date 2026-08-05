@@ -35,7 +35,7 @@ Reference for the Loom curriculum auditor (router + Path A/B/C workflows).
 | [PATHS.md](PATHS.md) | Everyone | **Eight review lenses A–H** — taxonomy + router cascade |
 | [PATH-A-LESSON-PLAN.md](PATH-A-LESSON-PLAN.md) | Curriculum leads | Path A (Lesson) workflow depth |
 | [PATH-B-QUIZ.md](PATH-B-QUIZ.md) | Curriculum leads | Path B (Assessment) — quiz ↔ key |
-| [PATH-C-GENERAL.md](PATH-C-GENERAL.md) | Curriculum leads | Path C (General feedback) workflow |
+| [PATH-C-GENERAL.md](PATH-C-GENERAL.md) | Curriculum leads | Path C (General feedback) — nursery / catch-all |
 | [PATH-D-TEACHER-SUPPORT.md](PATH-D-TEACHER-SUPPORT.md) | Curriculum leads | Path D (Teacher support) — TE / guides |
 | [PATH-E-STUDENT-PRACTICE.md](PATH-E-STUDENT-PRACTICE.md) | Curriculum leads | Path E (Student practice) — Learn / Practice / Succeed |
 | [PATH-F-STANDARDS-PACING.md](PATH-F-STANDARDS-PACING.md) | Curriculum leads | Path F (Standards & pacing) — YAG / S&S |
