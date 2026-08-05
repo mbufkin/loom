@@ -36,6 +36,7 @@ Reference for the Loom curriculum auditor (router + Path A/B/C workflows).
 | [PATH-A-LESSON-PLAN.md](PATH-A-LESSON-PLAN.md) | Curriculum leads | Path A (Lesson) workflow depth |
 | [PATH-B-QUIZ.md](PATH-B-QUIZ.md) | Curriculum leads | Path B (Assessment) — quiz ↔ key |
 | [PATH-C-GENERAL.md](PATH-C-GENERAL.md) | Curriculum leads | Path C (General feedback) workflow |
+| [PATH-F-STANDARDS-PACING.md](PATH-F-STANDARDS-PACING.md) | Curriculum leads | Path F (Standards & pacing) — YAG / S&S |
 | [PATH-G-SYLLABUS.md](PATH-G-SYLLABUS.md) | Curriculum leads | Path G (Syllabus) workflow — G1–G9 |
 | [PATH-H-EXIT-TICKET.md](PATH-H-EXIT-TICKET.md) | Curriculum leads | Path H (Exit ticket) — formative check |
 | [CHAMPION-REVIEW-MAP.md](CHAMPION-REVIEW-MAP.md) | Reviewers | Champion review workflow |

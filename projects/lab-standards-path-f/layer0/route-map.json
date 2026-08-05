@@ -1,0 +1,61 @@
+{
+  "project_id": "lab-standards-path-f",
+  "generated_at": "2026-08-05T15:30:43.306969+00:00",
+  "lenses": {
+    "lesson_plan": "Lesson",
+    "quiz": "Assessment",
+    "general": "General feedback",
+    "teacher_support": "Teacher support",
+    "student_practice": "Student practice",
+    "standards_pacing": "Standards & pacing",
+    "syllabus": "Syllabus",
+    "exit_ticket": "Exit ticket"
+  },
+  "counts": {
+    "standards_pacing": 3
+  },
+  "unrouted_ledger_doc_ids": [],
+  "feedback_path": null,
+  "graph_hints": 0,
+  "routes": [
+    {
+      "doc_id": "doc_fmixed_Algebra_I_Math_YAG_150-day",
+      "doc_type": "other",
+      "workflow_id": "standards_pacing",
+      "path": "F",
+      "lens": "Standards & pacing",
+      "reason": "filename prior → standards_pacing",
+      "feedback": false,
+      "confidence": 0.9,
+      "source_file": "doc_fmixed_Algebra_I_Math_YAG_150-day.txt",
+      "element_count": 0,
+      "graph_role": null
+    },
+    {
+      "doc_id": "doc_fstrong_Algebra_I_Math_150-day_Topic_Pacing_Guides",
+      "doc_type": "other",
+      "workflow_id": "standards_pacing",
+      "path": "F",
+      "lens": "Standards & pacing",
+      "reason": "filename prior → standards_pacing",
+      "feedback": false,
+      "confidence": 0.9,
+      "source_file": "doc_fstrong_Algebra_I_Math_150-day_Topic_Pacing_Guides.txt",
+      "element_count": 0,
+      "graph_role": null
+    },
+    {
+      "doc_id": "doc_fweak_Activity_Sequence_Pacing_Stub",
+      "doc_type": "other",
+      "workflow_id": "standards_pacing",
+      "path": "F",
+      "lens": "Standards & pacing",
+      "reason": "filename prior → standards_pacing",
+      "feedback": false,
+      "confidence": 0.9,
+      "source_file": "doc_fweak_Activity_Sequence_Pacing_Stub.txt",
+      "element_count": 0,
+      "graph_role": null
+    }
+  ]
+}
