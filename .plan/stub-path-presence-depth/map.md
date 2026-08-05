@@ -32,10 +32,11 @@ Locked **G-style presence depth** for every stub lens — presence extractors, o
 - [Path H presence plate and fixtures](./tickets/04-path-h-presence-plate-and-fixtures.md) — H1–H5 formative-only; light H4 cues; CI synthetics + `lab-exit-ticket-path-h` Dallas seeds; runner shipped.
 - [Path F presence plate and fixtures](./tickets/05-path-f-presence-plate-and-fixtures.md) — F1–F5; YAG router fix; CI synthetics + `lab-standards-path-f` evidence text seeds; runner shipped.
 - [Path D presence plate and fixtures](./tickets/06-path-d-presence-plate-and-fixtures.md) — D1–D5; F/D boundary unchanged; CI synthetics + `lab-teacher-support-path-d` evidence text seeds; runner shipped.
+- [Path E presence plate and fixtures](./tickets/07-path-e-presence-plate-and-fixtures.md) — E1–E5; no key/LPS pairing; CI synthetics + `lab-student-practice-path-e` G5 Learn/Succeed/Practice seeds; runner shipped.
 
 ## Not yet specified
 
-- How deep TEKS/target matching goes at presence-only depth (string/prior vs model) beyond B4/H3/F4/D4 optional keywords.
+- How deep TEKS/target matching goes at presence-only depth (string/prior vs model) beyond B4/H3/F4/D4/E4 optional keywords.
 - Whether Path C keeps growing only via `_loom_feedback.yaml` patterns or gets a fixed C1–Cn plate like others.
 - When (if ever) quality/one-pager layers graduate from World-class path reviews into these lenses after presence ships.
 
