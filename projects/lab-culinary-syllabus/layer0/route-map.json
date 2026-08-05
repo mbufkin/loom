@@ -1,0 +1,47 @@
+{
+  "project_id": "lab-culinary-syllabus",
+  "generated_at": "2026-08-05T14:06:51.441364+00:00",
+  "lenses": {
+    "lesson_plan": "Lesson",
+    "quiz": "Assessment",
+    "general": "General feedback",
+    "teacher_support": "Teacher support",
+    "student_practice": "Student practice",
+    "standards_pacing": "Standards & pacing",
+    "syllabus": "Syllabus"
+  },
+  "counts": {
+    "syllabus": 2
+  },
+  "unrouted_ledger_doc_ids": [],
+  "feedback_path": null,
+  "graph_hints": 0,
+  "routes": [
+    {
+      "doc_id": "Culinary I Syllabus.docx",
+      "doc_type": "syllabus",
+      "workflow_id": "syllabus",
+      "path": "G",
+      "lens": "Syllabus",
+      "reason": "filename prior → syllabus",
+      "feedback": false,
+      "confidence": 0.85,
+      "source_file": "Culinary I Syllabus.docx",
+      "element_count": 6,
+      "graph_role": null
+    },
+    {
+      "doc_id": "Culinary Prac Syllabus.docx",
+      "doc_type": "syllabus",
+      "workflow_id": "syllabus",
+      "path": "G",
+      "lens": "Syllabus",
+      "reason": "filename prior → syllabus",
+      "feedback": false,
+      "confidence": 0.85,
+      "source_file": "Culinary Prac Syllabus.docx",
+      "element_count": 5,
+      "graph_role": null
+    }
+  ]
+}
