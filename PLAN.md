@@ -6,7 +6,9 @@
 
 ```
 sources → extract → Layer 0 (decompose + classify)
-       → Loom router (BEFORE units) → Path A / B / C
+       → Loom router (BEFORE units) → Path A–H
+         (A lesson / B assessment / C general / D teacher support /
+          E student practice / F standards & pacing / G syllabus / H exit ticket)
        → place into units → unit assemble
        → model calendars + year map
        → education plates + teacher packet → Drive
@@ -38,9 +40,11 @@ Crystallize classifies then runs the same analysis for everything. Loom **routes
 
 ## Path docs
 
+Eight lenses (A–H) — see [`docs/PATHS.md`](docs/PATHS.md). Per-path deep docs:
+
 - [`docs/PATH-A-LESSON-PLAN.md`](docs/PATH-A-LESSON-PLAN.md) — A1–A8
-- [`docs/PATH-B-QUIZ.md`](docs/PATH-B-QUIZ.md) — B1–B3 stubs
-- [`docs/PATH-C-GENERAL.md`](docs/PATH-C-GENERAL.md) — C1–C3 stubs
+- [`docs/PATH-B-QUIZ.md`](docs/PATH-B-QUIZ.md) — assessment (Path B)
+- [`docs/PATH-C-GENERAL.md`](docs/PATH-C-GENERAL.md) — general feedback (Path C)
 
 ## Handoffs
 
@@ -53,6 +57,6 @@ See [`TEMPLATE_WORKFLOW_MAP.md`](TEMPLATE_WORKFLOW_MAP.md) and checklists under 
 ## Out of scope (for now)
 
 - Delivery/role router
-- Full Path B/C academic depth
+- Full academic depth across Paths B–H (presence lenses run; deeper rubric work remains)
 - Inventing content to fill blanks
 - Rewriting decompose/classify models

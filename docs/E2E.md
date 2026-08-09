@@ -74,8 +74,10 @@ Same metering gap (most `:8788` API rows untokened). Do not treat
 
 ## Review paths
 
-Seven review lenses (A–G) and the router cascade are defined in
-[PATHS.md](PATHS.md). E2E trees keep `path_a/`…`path_g/` under the run root.
+Eight review lenses (A lesson, B assessment, C general, D teacher support,
+E student practice, F standards & pacing, G syllabus, H exit ticket) and the
+router cascade are defined in [PATHS.md](PATHS.md). E2E trees keep
+`path_a/`…`path_h/` under the run root.
 
 ## Review UI
 

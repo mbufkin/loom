@@ -101,14 +101,24 @@ projects/<dataset_id>/
 │   ├── ledger.json
 │   ├── REPORT.md
 │   ├── LAYER0B-REPORT.md     ← if Layer 0B run
-│   ├── route-map.json        ← Loom router: unit → Path A/B/C map
+│   ├── route-map.json        ← Loom router: doc → Path A–H map
 │   ├── workflow-handoff.json ← router → path workflows handoff
 │   └── .raw/
 ├── path_a/                   ← Path A workflow (lesson plans) — Loom
 │   └── findings.json
-├── path_b/                   ← Path B workflow (quiz / assessment) — Loom
+├── path_b/                   ← Path B workflow (assessment) — Loom
 │   └── findings.json
-├── path_c/                   ← Path C workflow (general) — Loom
+├── path_c/                   ← Path C workflow (general feedback) — Loom
+│   └── findings.json
+├── path_d/                   ← Path D workflow (teacher support) — Loom
+│   └── findings.json
+├── path_e/                   ← Path E workflow (student practice) — Loom
+│   └── findings.json
+├── path_f/                   ← Path F workflow (standards & pacing) — Loom
+│   └── findings.json
+├── path_g/                   ← Path G workflow (syllabus) — Loom
+│   └── findings.json
+├── path_h/                   ← Path H workflow (exit ticket) — Loom
 │   └── findings.json
 ├── calendars_inferred/       ← Authoritative model-calendar map (calendars.py)
 │   ├── INFERRED-CALENDARS.json
@@ -184,8 +194,8 @@ Dataset shelf / tiers: [projects/STATUS.md](projects/STATUS.md). Same shape for 
 | Path | Default in `./run-audit` | Grain | Writes |
 |------|--------------------------|-------|--------|
 | **Layer 0 / Layer 1** | Yes (unless `--skip-layer01`) | Instructional element | `layer0/`, `layer1/` |
-| **Loom router** | Yes (unless `--skip-layer01`) | Unit → Path A/B/C | `layer0/route-map.json`, `workflow-handoff.json` |
-| **Path A / B / C** | Yes (unless `--skip-layer01`) | Document (lesson plan / quiz / general) | `path_a/`, `path_b/`, `path_c/` |
+| **Loom router** | Yes (unless `--skip-layer01`) | Doc → Path A–H | `layer0/route-map.json`, `workflow-handoff.json` |
+| **Path A–H** | Yes (unless `--skip-layer01`) | Document (A lesson / B assessment / C general / D teacher support / E student practice / F standards & pacing / G syllabus / H exit ticket) | `path_a/` … `path_h/` |
 | **Model calendars** | Yes (unless `--skip-layer01`) | Unit → inferred day/year map | `calendars_inferred/` |
 | **Layer 2** | Yes (unless `--skip-layer01`) | Document × role (no new model calls) | `layer2/` |
 | **Reports** | Yes (`synthesize --report all`) | Project / unit plates | `output/FIRST-PASS.md`, `teachers/`, `DASHBOARD.md`; refreshes `layer1/REVIEW-QUEUE.md` |

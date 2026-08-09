@@ -976,7 +976,7 @@ def run_layer1(project_id: str, only_units: list[str] | None = None) -> Path:
     else:
         scoped_ledger = ledger
 
-    # Loom soft gate: only place elements whose documents were routed (Path A/B/C).
+    # Loom soft gate: only place elements whose documents were routed (Path A–H).
     # Unrouted docs are quarantined — never silently dropped without a log.
     route_map_path = root / "layer0" / "route-map.json"
     if route_map_path.is_file():

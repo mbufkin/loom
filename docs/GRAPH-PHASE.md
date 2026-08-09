@@ -44,7 +44,7 @@ preflight → ingest? → rollup?
 | May consume | Must not consume | Must not mutate |
 |-------------|------------------|-----------------|
 | `layer0/ledger.json` | `route-map.json` | ledger, route-map |
-| `manifest.yaml` → `units.*.documents` | path A/B/C findings | `layer1/*`, `layer2/*` |
+| `manifest.yaml` → `units.*.documents` | path A–H findings | `layer1/*`, `layer2/*` |
 | `sources/` | Layer 1/2, calendars | unit calendars, pacing |
 
 Locked ticket: [Pipeline insert slot for graph phase](../.plan/graph-into-loom/tickets/03-pipeline-insert-slot.md).
