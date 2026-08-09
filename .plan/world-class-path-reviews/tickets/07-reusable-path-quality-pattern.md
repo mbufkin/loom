@@ -5,8 +5,8 @@ blocked_by:
   - 03-quality-call-rubric
   - 04-one-page-path-a-artifact
   - 06-path-a-trust-scorecard
-claimed_by:
-claimed_at:
+claimed_by: cursor
+claimed_at: 2026-08-05T18:35:00Z
 resolved_at:
 assets: []
 ---

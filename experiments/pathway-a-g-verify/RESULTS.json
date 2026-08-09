@@ -1,0 +1,1013 @@
+{
+  "goal": "Acceptance evidence for the Path B-H rollout",
+  "reviewed": "2026-08-09",
+  "review_doc": "docs/PATHWAY-ROLLOUT-REVIEW.md",
+  "regression": {
+    "verdict": "no regression",
+    "pre_existing_tests": {
+      "names": [
+        "test_schema_validate",
+        "test_audit",
+        "test_rollup",
+        "test_doc_extract",
+        "test_loom_pipeline",
+        "test_usage",
+        "test_intake_goldens_extract"
+      ],
+      "passed": 7,
+      "failed": 0
+    },
+    "new_path_tests": {
+      "names": [
+        "test_route_lenses",
+        "test_path_b_assessment",
+        "test_path_c_general",
+        "test_path_d_teacher_support",
+        "test_path_e_student_practice",
+        "test_path_f_standards_pacing",
+        "test_path_g_syllabus",
+        "test_path_h_exit_ticket"
+      ],
+      "passed": 8,
+      "failed": 0
+    },
+    "gating": {
+      "ci_workflow": ".github/workflows/ci.yml",
+      "npm_scripts": [
+        "test",
+        "test:core",
+        "test:paths"
+      ],
+      "note": "Lens tests existed but were ungated before this review; now in CI and npm test."
+    }
+  },
+  "icev": {
+    "available": false,
+    "note": "No ICEV project or files under /home/lenovo (searched); single-corpus A-H run blocked until ingest."
+  },
+  "corpora": {
+    "dallas_live_root": {
+      "root": "projects/dallas-career-2026",
+      "note": "Live Dallas tree; rewritten by test_loom_pipeline.py",
+      "route_hist": {
+        "A": 19,
+        "B": 26,
+        "C": 1,
+        "D": 8,
+        "E": 36,
+        "H": 21
+      },
+      "paths": {
+        "A": {
+          "status": "n/a",
+          "routed": 19,
+          "n_docs": 19
+        },
+        "B": {
+          "status": "ok",
+          "routed": 26,
+          "n_docs": 26,
+          "steps": {
+            "B1": {
+              "PRESENT": 26
+            },
+            "B2": {
+              "MISSING": 16,
+              "PARTIAL": 3,
+              "PRESENT": 7
+            },
+            "B3": {
+              "MISSING": 25,
+              "PRESENT": 1
+            },
+            "B4": {
+              "MISSING": 20,
+              "PRESENT": 6
+            },
+            "B5": {
+              "MISSING": 9,
+              "NOT_APPLICABLE": 8,
+              "PARTIAL": 1,
+              "PRESENT": 8
+            },
+            "B6": {
+              "STUB": 26
+            }
+          }
+        },
+        "C": {
+          "status": "ok",
+          "routed": 1,
+          "n_docs": 1,
+          "steps": {
+            "C1": {
+              "MISSING": 1
+            },
+            "C2": {
+              "PRESENT": 1
+            },
+            "C3": {
+              "PRESENT": 1
+            },
+            "C4": {
+              "MISSING": 1
+            },
+            "C5": {
+              "STUB": 1
+            }
+          }
+        },
+        "D": {
+          "status": "ok",
+          "routed": 8,
+          "n_docs": 8,
+          "steps": {
+            "D1": {
+              "PRESENT": 8
+            },
+            "D2": {
+              "MISSING": 8
+            },
+            "D3": {
+              "MISSING": 5,
+              "PARTIAL": 3
+            },
+            "D4": {
+              "MISSING": 3,
+              "PRESENT": 5
+            },
+            "D5": {
+              "STUB": 8
+            }
+          }
+        },
+        "E": {
+          "status": "ok",
+          "routed": 36,
+          "n_docs": 36,
+          "steps": {
+            "E1": {
+              "PRESENT": 36
+            },
+            "E2": {
+              "MISSING": 15,
+              "PARTIAL": 17,
+              "PRESENT": 4
+            },
+            "E3": {
+              "MISSING": 8,
+              "PARTIAL": 27,
+              "PRESENT": 1
+            },
+            "E4": {
+              "MISSING": 23,
+              "PRESENT": 13
+            },
+            "E5": {
+              "STUB": 36
+            }
+          }
+        },
+        "F": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "G": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "H": {
+          "status": "ok",
+          "routed": 21,
+          "n_docs": 21,
+          "steps": {
+            "H1": {
+              "PRESENT": 21
+            },
+            "H2": {
+              "PARTIAL": 4,
+              "PRESENT": 17
+            },
+            "H3": {
+              "MISSING": 16,
+              "PRESENT": 5
+            },
+            "H4": {
+              "MISSING": 17,
+              "PRESENT": 4
+            },
+            "H5": {
+              "STUB": 21
+            }
+          }
+        }
+      }
+    },
+    "dallas_e2e_ah": {
+      "root": "projects/dallas-career-2026/e2e/runs/grok-4.5-ah-20260805",
+      "note": "Post-rollout A-H reference run",
+      "route_hist": {
+        "A": 19,
+        "B": 20,
+        "C": 5,
+        "D": 12,
+        "E": 34,
+        "H": 21
+      },
+      "paths": {
+        "A": {
+          "status": "n/a",
+          "routed": 19,
+          "n_docs": 19
+        },
+        "B": {
+          "status": "ok",
+          "routed": 20,
+          "n_docs": 20,
+          "steps": {
+            "B1": {
+              "PRESENT": 20
+            },
+            "B2": {
+              "MISSING": 11,
+              "PARTIAL": 1,
+              "PRESENT": 8
+            },
+            "B3": {
+              "MISSING": 16,
+              "PRESENT": 4
+            },
+            "B4": {
+              "MISSING": 14,
+              "PRESENT": 6
+            },
+            "B5": {
+              "MISSING": 4,
+              "NOT_APPLICABLE": 7,
+              "PARTIAL": 1,
+              "PRESENT": 8
+            },
+            "B6": {
+              "STUB": 20
+            }
+          }
+        },
+        "C": {
+          "status": "ok",
+          "routed": 5,
+          "n_docs": 5,
+          "steps": {
+            "C1": {
+              "MISSING": 1,
+              "PRESENT": 4
+            },
+            "C2": {
+              "PRESENT": 5
+            },
+            "C3": {
+              "PRESENT": 5
+            },
+            "C4": {
+              "MISSING": 2,
+              "PRESENT": 3
+            },
+            "C5": {
+              "STUB": 5
+            }
+          }
+        },
+        "D": {
+          "status": "ok",
+          "routed": 12,
+          "n_docs": 12,
+          "steps": {
+            "D1": {
+              "PRESENT": 12
+            },
+            "D2": {
+              "MISSING": 12
+            },
+            "D3": {
+              "MISSING": 6,
+              "PARTIAL": 6
+            },
+            "D4": {
+              "MISSING": 2,
+              "PRESENT": 10
+            },
+            "D5": {
+              "STUB": 12
+            }
+          }
+        },
+        "E": {
+          "status": "ok",
+          "routed": 34,
+          "n_docs": 34,
+          "steps": {
+            "E1": {
+              "PRESENT": 34
+            },
+            "E2": {
+              "MISSING": 15,
+              "PARTIAL": 15,
+              "PRESENT": 4
+            },
+            "E3": {
+              "MISSING": 7,
+              "PARTIAL": 25,
+              "PRESENT": 2
+            },
+            "E4": {
+              "MISSING": 24,
+              "PRESENT": 10
+            },
+            "E5": {
+              "STUB": 34
+            }
+          }
+        },
+        "F": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "G": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "H": {
+          "status": "ok",
+          "routed": 21,
+          "n_docs": 21,
+          "steps": {
+            "H1": {
+              "PRESENT": 21
+            },
+            "H2": {
+              "PARTIAL": 4,
+              "PRESENT": 17
+            },
+            "H3": {
+              "MISSING": 13,
+              "PRESENT": 8
+            },
+            "H4": {
+              "MISSING": 17,
+              "PRESENT": 4
+            },
+            "H5": {
+              "STUB": 21
+            }
+          }
+        }
+      }
+    },
+    "dallas_e2e_pre_ah": {
+      "root": "projects/dallas-career-2026/e2e/runs/grok-4.5",
+      "note": "Pre-rollout baseline: only A/B/C existed",
+      "route_hist": {
+        "A": 19,
+        "B": 30,
+        "C": 62
+      },
+      "paths": {
+        "A": {
+          "status": "n/a",
+          "routed": 19,
+          "n_docs": 19
+        },
+        "B": {
+          "status": "stub",
+          "routed": 30,
+          "n_docs": 30,
+          "steps": {
+            "B1": {
+              "MISSING": 2,
+              "PRESENT": 28
+            },
+            "B2": {
+              "MISSING": 30
+            },
+            "B3": {
+              "STUB": 30
+            }
+          }
+        },
+        "C": {
+          "status": "stub",
+          "routed": 62,
+          "n_docs": 62,
+          "steps": {
+            "C1": {
+              "PRESENT": 62
+            },
+            "C2": {
+              "STUB": 62
+            },
+            "C3": {
+              "LOGGED": 25,
+              "OK": 37
+            }
+          }
+        }
+      }
+    },
+    "bluebonnet_e2e": {
+      "root": "projects/bluebonnet-math-2026/e2e/runs/grok-4.5",
+      "note": "Path F real-corpus proof; B-E still stale stubs",
+      "route_hist": {
+        "B": 1,
+        "C": 10,
+        "D": 18,
+        "E": 29,
+        "F": 12
+      },
+      "paths": {
+        "A": {
+          "status": "n/a",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "B": {
+          "status": "stub",
+          "routed": 1,
+          "n_docs": 1,
+          "steps": {
+            "B1": {
+              "MISSING": 1
+            },
+            "B2": {
+              "MISSING": 1
+            },
+            "B3": {
+              "STUB": 1
+            }
+          }
+        },
+        "C": {
+          "status": "stub",
+          "routed": 10,
+          "n_docs": 10,
+          "steps": {
+            "C1": {
+              "PRESENT": 10
+            },
+            "C2": {
+              "STUB": 10
+            },
+            "C3": {
+              "LOGGED": 10
+            }
+          }
+        },
+        "D": {
+          "status": "stub",
+          "routed": 18,
+          "n_docs": 20,
+          "steps": {
+            "D1": {
+              "PRESENT": 20
+            },
+            "D2": {
+              "STUB": 20
+            },
+            "D3": {
+              "STUB": 20
+            }
+          }
+        },
+        "E": {
+          "status": "stub",
+          "routed": 29,
+          "n_docs": 29,
+          "steps": {
+            "E1": {
+              "PRESENT": 29
+            },
+            "E2": {
+              "STUB": 29
+            },
+            "E3": {
+              "STUB": 29
+            }
+          }
+        },
+        "F": {
+          "status": "ok",
+          "routed": 12,
+          "n_docs": 12,
+          "steps": {
+            "F1": {
+              "PRESENT": 12
+            },
+            "F2": {
+              "MISSING": 1,
+              "PARTIAL": 8,
+              "PRESENT": 3
+            },
+            "F3": {
+              "MISSING": 1,
+              "PARTIAL": 4,
+              "PRESENT": 7
+            },
+            "F4": {
+              "MISSING": 1,
+              "PRESENT": 11
+            },
+            "F5": {
+              "STUB": 12
+            }
+          }
+        }
+      }
+    },
+    "lab_culinary_syllabus": {
+      "root": "projects/lab-culinary-syllabus",
+      "note": "Path G seed",
+      "route_hist": {
+        "G": 2
+      },
+      "paths": {
+        "A": {
+          "status": "n/a",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "B": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "C": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "D": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "E": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "F": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "G": {
+          "status": "ok",
+          "routed": 2,
+          "n_docs": 2,
+          "steps": {
+            "G1": {
+              "PRESENT": 2
+            },
+            "G2": {
+              "PARTIAL": 2
+            },
+            "G3": {
+              "PRESENT": 2
+            },
+            "G4": {
+              "PARTIAL": 2
+            },
+            "G5": {
+              "PARTIAL": 2
+            },
+            "G6": {
+              "PARTIAL": 2
+            },
+            "G7": {
+              "PARTIAL": 2
+            },
+            "G8": {
+              "STUB": 2
+            },
+            "G9": {
+              "STUB": 2
+            }
+          }
+        }
+      }
+    },
+    "lab_standards_path_f": {
+      "root": "projects/lab-standards-path-f",
+      "note": "Path F lab",
+      "route_hist": {
+        "F": 3
+      },
+      "paths": {
+        "A": {
+          "status": "n/a",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "B": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "C": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "D": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "E": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "F": {
+          "status": "ok",
+          "routed": 3,
+          "n_docs": 3,
+          "steps": {
+            "F1": {
+              "PRESENT": 3
+            },
+            "F2": {
+              "PARTIAL": 3
+            },
+            "F3": {
+              "PARTIAL": 1,
+              "PRESENT": 2
+            },
+            "F4": {
+              "MISSING": 1,
+              "PRESENT": 2
+            },
+            "F5": {
+              "STUB": 3
+            }
+          }
+        },
+        "G": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "H": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        }
+      }
+    },
+    "lab_assessment_path_b": {
+      "root": "projects/lab-assessment-path-b",
+      "note": "Path B lab",
+      "route_hist": {
+        "B": 6
+      },
+      "paths": {
+        "A": {
+          "status": "n/a",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "B": {
+          "status": "ok",
+          "routed": 6,
+          "n_docs": 6,
+          "steps": {
+            "B1": {
+              "PRESENT": 6
+            },
+            "B2": {
+              "MISSING": 1,
+              "PRESENT": 5
+            },
+            "B3": {
+              "MISSING": 4,
+              "PRESENT": 2
+            },
+            "B4": {
+              "MISSING": 1,
+              "PRESENT": 5
+            },
+            "B5": {
+              "PARTIAL": 2,
+              "PRESENT": 4
+            },
+            "B6": {
+              "STUB": 6
+            }
+          }
+        },
+        "C": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "D": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "E": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "F": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "G": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "H": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        }
+      }
+    },
+    "lab_general_path_c": {
+      "root": "projects/lab-general-path-c",
+      "note": "Path C lab",
+      "route_hist": {
+        "C": 3
+      },
+      "paths": {
+        "A": {
+          "status": "n/a",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "B": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "C": {
+          "status": "ok",
+          "routed": 3,
+          "n_docs": 3,
+          "steps": {
+            "C1": {
+              "PRESENT": 3
+            },
+            "C2": {
+              "PRESENT": 3
+            },
+            "C3": {
+              "PRESENT": 3
+            },
+            "C4": {
+              "MISSING": 1,
+              "PRESENT": 2
+            },
+            "C5": {
+              "STUB": 3
+            }
+          }
+        },
+        "D": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "E": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "F": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "G": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "H": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        }
+      }
+    },
+    "lab_teacher_support_path_d": {
+      "root": "projects/lab-teacher-support-path-d",
+      "note": "Path D lab",
+      "route_hist": {
+        "D": 3
+      },
+      "paths": {
+        "A": {
+          "status": "n/a",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "B": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "C": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "D": {
+          "status": "ok",
+          "routed": 3,
+          "n_docs": 3,
+          "steps": {
+            "D1": {
+              "PRESENT": 3
+            },
+            "D2": {
+              "PARTIAL": 1,
+              "PRESENT": 2
+            },
+            "D3": {
+              "MISSING": 1,
+              "PARTIAL": 2
+            },
+            "D4": {
+              "PRESENT": 3
+            },
+            "D5": {
+              "STUB": 3
+            }
+          }
+        },
+        "E": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "F": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "G": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "H": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        }
+      }
+    },
+    "lab_student_practice_path_e": {
+      "root": "projects/lab-student-practice-path-e",
+      "note": "Path E lab",
+      "route_hist": {
+        "E": 3
+      },
+      "paths": {
+        "A": {
+          "status": "n/a",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "B": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "C": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "D": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "E": {
+          "status": "ok",
+          "routed": 3,
+          "n_docs": 3,
+          "steps": {
+            "E1": {
+              "PRESENT": 3
+            },
+            "E2": {
+              "PARTIAL": 3
+            },
+            "E3": {
+              "MISSING": 1,
+              "PRESENT": 2
+            },
+            "E4": {
+              "PRESENT": 3
+            },
+            "E5": {
+              "STUB": 3
+            }
+          }
+        },
+        "F": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "G": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "H": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        }
+      }
+    },
+    "lab_exit_ticket_path_h": {
+      "root": "projects/lab-exit-ticket-path-h",
+      "note": "Path H lab",
+      "route_hist": {
+        "H": 3
+      },
+      "paths": {
+        "A": {
+          "status": "n/a",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "B": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "C": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "D": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "E": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "F": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "G": {
+          "status": "skipped",
+          "routed": 0,
+          "n_docs": 0
+        },
+        "H": {
+          "status": "ok",
+          "routed": 3,
+          "n_docs": 3,
+          "steps": {
+            "H1": {
+              "PRESENT": 3
+            },
+            "H2": {
+              "PRESENT": 3
+            },
+            "H3": {
+              "MISSING": 1,
+              "PRESENT": 2
+            },
+            "H4": {
+              "MISSING": 2,
+              "PRESENT": 1
+            },
+            "H5": {
+              "STUB": 3
+            }
+          }
+        }
+      }
+    }
+  }
+}
