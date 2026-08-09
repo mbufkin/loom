@@ -1,0 +1,28 @@
+{
+  "project_id": "lab-dallas-ag",
+  "source": "inferred_from_documents",
+  "generated_at": "2026-08-09T00:47:55.906803+00:00",
+  "provisional_rollup": "pacing-plan.yaml remains provisional early spine",
+  "year_note": "The curriculum looks thinly stocked overall: **0** days show evidence of content and **2** days are empty. With no unit-level counts provided, nothing reads as stocked—coverage is effectively absent across the recorded days. Pacing cannot be judged beyond that gap; the signal is simply that planned days lack supported material.",
+  "units": {
+    "curriculum": {
+      "unit_id": "curriculum",
+      "title": "Curriculum",
+      "source": "inferred_from_documents",
+      "generated_at": "2026-08-09T00:47:52.978072+00:00",
+      "days": [
+        {
+          "id": "d1",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        },
+        {
+          "id": "d2",
+          "expected_roles_found": [],
+          "status": "EMPTY"
+        }
+      ],
+      "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
+    }
+  }
+}

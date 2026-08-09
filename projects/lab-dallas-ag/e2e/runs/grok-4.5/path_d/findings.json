@@ -1,0 +1,11 @@
+{
+  "project_id": "lab-dallas-ag",
+  "workflow_id": "teacher_support",
+  "path": "D",
+  "lens": "Teacher support",
+  "status": "skipped",
+  "doc_ids": [],
+  "checklist": "workflows/checklists/teacher_support.yaml",
+  "inventory": [],
+  "steps_by_doc": {}
+}

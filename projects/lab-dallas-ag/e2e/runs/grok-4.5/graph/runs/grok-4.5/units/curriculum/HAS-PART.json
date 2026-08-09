@@ -1,0 +1,67 @@
+{
+  "project_id": "lab-dallas-ag",
+  "unit_id": "curriculum",
+  "stage": "rebuilt",
+  "model": "grok-4.5",
+  "method": "graph-assemble-from-steps+grok-4.5",
+  "nodes": [
+    {
+      "id": "course:lab-dallas-ag",
+      "type": "Course",
+      "name": "lab-dallas-ag"
+    },
+    {
+      "id": "unit:curriculum",
+      "type": "LessonGrouping",
+      "name": "curriculum",
+      "groupName": "unit"
+    },
+    {
+      "id": "material:b5e36486805a",
+      "type": "Material",
+      "role": "other",
+      "name": "doc_b5e36486805a_Agriculture-_Plant_Science.txt",
+      "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt"
+    },
+    {
+      "id": "material:e9e6ac00ce09",
+      "type": "Material",
+      "role": "teacher_edition",
+      "name": "doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt",
+      "source_file": "doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt"
+    }
+  ],
+  "edges": [
+    {
+      "rel": "hasPart",
+      "from": "course:lab-dallas-ag",
+      "to": "unit:curriculum"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:curriculum:l1",
+      "to": "material:b5e36486805a"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:curriculum",
+      "to": "material:b5e36486805a"
+    },
+    {
+      "rel": "describes",
+      "from": "material:e9e6ac00ce09",
+      "to": "lesson:curriculum:l1"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:curriculum",
+      "to": "material:e9e6ac00ce09"
+    }
+  ],
+  "coverage": {
+    "source_files": [
+      "doc_b5e36486805a_Agriculture-_Plant_Science.txt",
+      "doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt"
+    ]
+  }
+}
