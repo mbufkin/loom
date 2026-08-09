@@ -3,6 +3,7 @@ import type { OutputsTree } from "../types";
 /** Synthetic paths handled by RunReview (not real files). */
 export const VIEW_UNITS = "__units__";
 export const VIEW_GRAPH = "__graph__";
+export const VIEW_PATHS = "__paths__";
 
 interface Props {
   outputs: OutputsTree;
@@ -11,6 +12,8 @@ interface Props {
   /** When true, show Curriculum graph as an available View option. */
   hasGraph?: boolean;
   graphLabel?: string;
+  /** Lenses that actually ran here — drives the Paths A–H badge. */
+  nPathsRan?: number;
 }
 
 // Left-rail navigation. Course plates (incl. Global audit) come first; a
@@ -22,6 +25,7 @@ export function OutputNav({
   onSelect,
   hasGraph = false,
   graphLabel = "Curriculum graph",
+  nPathsRan = 0,
 }: Props) {
   const items = (files: OutputsTree["plates"]) =>
     files.map((f) => (
@@ -68,7 +72,7 @@ export function OutputNav({
           <summary>
             <span>View</span>
             <span className="tag">
-              {2 + (hasGraph ? 1 : 0) + (nTeachers > 0 ? 1 : 0)}
+              {3 + (hasGraph ? 1 : 0) + (nTeachers > 0 ? 1 : 0)}
             </span>
           </summary>
           <button
@@ -78,6 +82,16 @@ export function OutputNav({
           >
             <span>Unit heatmap</span>
             <span className="tag">heatmap</span>
+          </button>
+          <button
+            className={`nav-item ${activePath === VIEW_PATHS ? "active" : ""}`}
+            onClick={() => onSelect(VIEW_PATHS)}
+            title="The eight review lenses: what each path caught in this corpus"
+          >
+            <span>Paths A–H</span>
+            <span className="tag">
+              {nPathsRan > 0 ? `${nPathsRan}/8` : "lenses"}
+            </span>
           </button>
           <button
             className={`nav-item ${activePath === VIEW_GRAPH ? "active" : ""}`}
