@@ -100,7 +100,7 @@ python3 test_loom_pipeline.py
 ## Docs
 
 - [OPERATORS.md](OPERATORS.md) — commands, flags, pipeline stages
-- [PLAN.md](PLAN.md) — router + Path A/B/C build order
+- [PLAN.md](PLAN.md) — router + Path A–H build order
 - [docs/README.md](docs/README.md) — full documentation index (includes Context Layer)
 - [CONTRIBUTING.md](CONTRIBUTING.md) — rules of engagement
 

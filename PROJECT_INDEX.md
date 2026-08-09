@@ -31,7 +31,7 @@
 
 | File | Role | Downstream consumers |
 |------|------|----------------------|
-| [`run_project.py`](run_project.py) | **One-command program entry** | ingest → rollup → **layer0 → route → path A/B/C → layer1 → layer2 → synthesize** |
+| [`run_project.py`](run_project.py) | **One-command program entry** | ingest → rollup → **layer0 → route → path A–H → layer1 → layer2 → synthesize** |
 | [`run-audit`](run-audit) | Shell wrapper: `./run-audit <dataset-id>` | Operators |
 | [`inbox-watch.py`](inbox-watch.py) | Watch folder → copy into `sources/` | Ingest inputs |
 
@@ -40,7 +40,7 @@
 | File | Role | Primary outputs |
 |------|------|-----------------|
 | [`layer0.py`](layer0.py) | Element-level extraction with verbatim citations (+ `--resolve-wide-spans`) | `projects/<id>/layer0/ledger.json`, `REPORT.md` |
-| [`route.py`](route.py) | Route-map builder (decides Path A / B / C per unit) | `projects/<id>/route-map.json` (drives `workflows/`) |
+| [`route.py`](route.py) | Route-map builder (decides Path A–H per document) | `projects/<id>/layer0/route-map.json` (drives `workflows/`) |
 | [`layer1.py`](layer1.py) | Placement conformance (MATCH / MISMATCH / …) | `projects/<id>/layer1/bucket-ledger.json`, `findings.json`, `REPORT.md`, `REVIEW-QUEUE.md` |
 | [`layer2.py`](layer2.py) | Lesson structural completeness (code-only; no new model calls) | `projects/<id>/layer2/findings.json`, `REPORT.md` |
 
@@ -59,10 +59,15 @@
 
 | File | Role |
 |------|------|
-| [`workflows/run_paths.py`](workflows/run_paths.py) | Entry: run Path A/B/C after route-map exists |
+| [`workflows/run_paths.py`](workflows/run_paths.py) | Entry: run Path A–H after route-map exists |
 | [`workflows/lesson_plan.py`](workflows/lesson_plan.py) | Path A — lesson plans |
-| [`workflows/quiz.py`](workflows/quiz.py) | Path B — quiz / assessment |
-| [`workflows/general.py`](workflows/general.py) | Path C — general 
+| [`workflows/quiz.py`](workflows/quiz.py) | Path B — assessment |
+| [`workflows/general.py`](workflows/general.py) | Path C — general feedback |
+| [`workflows/teacher_support.py`](workflows/teacher_support.py) | Path D — teacher support |
+| [`workflows/student_practice.py`](workflows/student_practice.py) | Path E — student practice |
+| [`workflows/standards_pacing.py`](workflows/standards_pacing.py) | Path F — standards & pacing |
+| [`workflows/syllabus.py`](workflows/syllabus.py) | Path G — syllabus |
+| [`workflows/exit_ticket.py`](workflows/exit_ticket.py) | Path H — exit ticket |
 
 ### 2.4 Reporting
 

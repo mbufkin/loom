@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Loom — Why we are not in the tuning phase yet</title>
+<style>
+  :root{
+    --bg:#f4f1e8; --panel:#fffdf7; --ink:#14110c; --muted:#6b6350;
+    --line:#14110c; --accent:#ff5c38; --accent-2:#2b6cff;
+    --good:#b8f0c8; --warn:#ffe58a; --bad:#ffb3a1; --none:#e4dccb; --stub:#d7d2f0;
+    --shadow:4px 4px 0 var(--line); --shadow-sm:2px 2px 0 var(--line);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:36px 24px 80px}
+  .mono{font-family:"JetBrains Mono","SF Mono",ui-monospace,Menlo,monospace}
+
+  header.hero{border:3px solid var(--line);background:var(--panel);box-shadow:var(--shadow);padding:26px 28px;margin-bottom:28px}
+  .kicker{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  h1{font-size:32px;line-height:1.15;margin:8px 0 10px;letter-spacing:-.01em}
+  .sub{font-size:17px;color:var(--muted);margin:0}
+  .meta{margin-top:16px;padding-top:14px;border-top:2px solid var(--line);display:flex;flex-wrap:wrap;gap:22px;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+
+  h2{font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin:0 0 4px}
+  h3{font-size:17px;margin:26px 0 8px}
+  section{border:3px solid var(--line);background:var(--panel);box-shadow:var(--shadow);margin-bottom:24px}
+  .sec-head{padding:10px 16px;border-bottom:2px solid var(--line);display:flex;align-items:baseline;gap:12px}
+  .sec-n{font-family:"JetBrains Mono",monospace;font-weight:800;background:var(--ink);color:var(--bg);padding:1px 8px;font-size:12px}
+  .sec-body{padding:20px 24px}
+  p{margin:0 0 14px}
+  .lede{font-size:17px}
+  strong{font-weight:700}
+  code{font-family:"JetBrains Mono",monospace;font-size:.88em;background:rgba(20,17,12,.07);padding:1px 5px;border-radius:2px}
+
+  .callout{border:3px solid var(--line);padding:16px 18px;margin:18px 0;box-shadow:var(--shadow-sm)}
+  .callout.bad{background:var(--bad)}
+  .callout.good{background:var(--good)}
+  .callout.warn{background:var(--warn)}
+  .callout p:last-child{margin-bottom:0}
+  .callout .lbl{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:6px}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:14px 0}
+  th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:2px solid var(--line);padding:6px 10px 6px 0;font-weight:800;vertical-align:bottom}
+  td{padding:8px 10px 8px 0;border-bottom:1px solid rgba(20,17,12,.13);vertical-align:top}
+  td.num{text-align:right;font-family:"JetBrains Mono",monospace}
+  tr.hl td{background:rgba(255,92,56,.09)}
+
+  .pill{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border:1.5px solid var(--line);white-space:nowrap}
+  .p-ok{background:var(--good)} .p-bad{background:var(--bad)} .p-warn{background:var(--warn)} .p-none{background:var(--none)} .p-stub{background:var(--stub)}
+
+  figure{margin:22px 0}
+  figcaption{font-size:12px;color:var(--muted);margin-top:8px;padding-left:2px}
+  svg{display:block;max-width:100%;height:auto;border:2px solid var(--line);background:#fff}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:860px){.two{grid-template-columns:1fr}}
+  .card{border:2px solid var(--line);padding:14px 16px;box-shadow:var(--shadow-sm);background:#fff}
+  .card h4{margin:0 0 4px;font-size:14px}
+  .card .src{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--muted);margin-bottom:10px;word-break:break-all}
+  .card ul{margin:0;padding-left:18px;font-size:13px}
+  .card li{margin-bottom:3px}
+
+  pre{background:var(--ink);color:#f4f1e8;padding:14px 16px;overflow-x:auto;font-family:"JetBrains Mono",monospace;font-size:12px;line-height:1.55;border:2px solid var(--line);margin:14px 0}
+  pre .dim{color:#8a8474}
+  pre .hot{color:#ff9b7d}
+  pre .ok{color:#9be8b0}
+
+  ol.steps{padding-left:0;list-style:none;counter-reset:s;margin:16px 0}
+  ol.steps li{counter-increment:s;position:relative;padding-left:42px;margin-bottom:16px}
+  ol.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:26px;height:26px;background:var(--ink);color:var(--bg);display:flex;align-items:center;justify-content:center;font-family:"JetBrains Mono",monospace;font-weight:800;font-size:13px}
+  ol.steps li h4{margin:2px 0 5px;font-size:15px}
+  ol.steps li p{margin:0;font-size:14px}
+
+  .rec{border:3px solid var(--line);background:var(--good);padding:18px 20px;box-shadow:var(--shadow)}
+  .rec h3{margin-top:0}
+  footer{font-size:12px;color:var(--muted);text-align:center;padding-top:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="kicker">Loom · Architecture readiness</div>
+  <h1>The structure isn't set yet — and the reason isn't design, it's that two stages silently don't run</h1>
+  <p class="sub">A walkthrough of what happens to your data today, why nobody noticed, and what to do about it.</p>
+  <div class="meta">
+    <span>Assessed 9 Aug 2026</span>
+    <span>Branch <span class="mono">feature/lesson-quality-ui-wiring</span></span>
+    <span>Corpus: dallas-career-2026 · 111 documents</span>
+  </div>
+</header>
+
+<!-- ─────────────────────────────────────────────────────────── -->
+<section>
+  <div class="sec-head"><span class="sec-n">01</span><h2>The one-paragraph version</h2></div>
+  <div class="sec-body">
+    <p class="lede">
+      You asked whether the structure is set. It nearly is — the routing layer is genuinely
+      solid. But when I ran each pipeline stage individually, <strong>two of the ten crash on
+      import</strong>. They are wrapped in <code>try/except</code>, so the pipeline logs a warning
+      and reports success. One of the two is the stage that grades every non-lesson document.
+      Because it never runs, the quality gate that is supposed to stop a unit being called
+      "Strong" when its quizzes have no answer keys <strong>can never fire</strong>.
+    </p>
+    <p class="lede">
+      Meanwhile Paths B–H compute exactly that missing information, in more detail than the
+      broken stage ever did, and write it to disk where nothing reads it. So this is not a
+      choice between two competing designs. It is <strong>one working scorer with no consumer,
+      and one consumer whose scorer is gone.</strong>
+    </p>
+    <div class="callout bad">
+      <span class="lbl">Why this blocks tuning</span>
+      <p>Tuning means adjusting how documents get rated and watching the numbers move. Right now
+      the richest ratings you have reach no report, and the report has a hole where they should
+      be. You would be tuning a signal that nothing consumes, against a dashboard that cannot
+      respond to it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────────────────── -->
+<section>
+  <div class="sec-head"><span class="sec-n">02</span><h2>What actually happens when you run the pipeline</h2></div>
+  <div class="sec-body">
+    <p>Here is the real flow for <code>./run-audit dallas-career-2026</code>. Green is working and
+    connected. Red is broken. The dashed line is the connection that should exist and doesn't.</p>
+
+    <figure>
+      <svg viewBox="0 0 1000 470" role="img" aria-label="Loom pipeline data flow showing two broken stages">
+        <defs>
+          <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#14110c"/>
+          </marker>
+          <marker id="arDim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#6b6350"/>
+          </marker>
+        </defs>
+        <style>
+          .bx{stroke:#14110c;stroke-width:2}
+          .lb{font:600 12px -apple-system,sans-serif;fill:#14110c}
+          .lbs{font:11px ui-monospace,monospace;fill:#6b6350}
+          .ln{stroke:#14110c;stroke-width:2;fill:none;marker-end:url(#ar)}
+          .lnd{stroke:#6b6350;stroke-width:2;fill:none;stroke-dasharray:6 5;marker-end:url(#arDim)}
+          .ttl{font:800 11px -apple-system,sans-serif;fill:#6b6350;letter-spacing:.09em}
+        </style>
+
+        <!-- lane labels -->
+        <text x="20" y="26" class="ttl">INGEST &amp; EXTRACT</text>
+        <text x="20" y="150" class="ttl">ROUTE &amp; SCORE</text>
+        <text x="20" y="330" class="ttl">ROLL UP &amp; REPORT</text>
+
+        <!-- row 1 -->
+        <rect x="20" y="38" width="120" height="42" class="bx" fill="#b8f0c8"/>
+        <text x="80" y="58" class="lb" text-anchor="middle">Layer 0</text>
+        <text x="80" y="72" class="lbs" text-anchor="middle">ledger.json</text>
+
+        <rect x="180" y="38" width="120" height="42" class="bx" fill="#b8f0c8"/>
+        <text x="240" y="58" class="lb" text-anchor="middle">route.py</text>
+        <text x="240" y="72" class="lbs" text-anchor="middle">route-map.json</text>
+        <path d="M140,59 H176" class="ln"/>
+
+        <!-- row 2: paths -->
+        <rect x="180" y="168" width="230" height="72" class="bx" fill="#b8f0c8"/>
+        <text x="295" y="192" class="lb" text-anchor="middle">Paths A–H · run_paths.py</text>
+        <text x="295" y="209" class="lbs" text-anchor="middle">workflows/checklists/*.yaml</text>
+        <text x="295" y="226" class="lbs" text-anchor="middle">→ path_*/findings.json</text>
+        <path d="M240,82 V164" class="ln"/>
+
+        <!-- artifact rung broken -->
+        <rect x="470" y="168" width="230" height="72" class="bx" fill="#ffb3a1"/>
+        <text x="585" y="190" class="lb" text-anchor="middle">artifact_rung.py</text>
+        <text x="585" y="207" class="lbs" text-anchor="middle">workflows/rubrics/artifacts/*.yaml</text>
+        <text x="585" y="224" class="lbs" text-anchor="middle" style="fill:#a03018;font-weight:700">CRASHES ON IMPORT</text>
+        <path d="M300,59 H585 V164" class="ln"/>
+
+        <!-- X over artifact rung output -->
+        <path d="M585,240 V286" class="lnd"/>
+        <text x="600" y="268" class="lbs" style="fill:#a03018">no ARTIFACT-RUNG.json</text>
+
+        <!-- unit rung broken -->
+        <rect x="470" y="290" width="230" height="60" class="bx" fill="#ffb3a1"/>
+        <text x="585" y="313" class="lb" text-anchor="middle">unit_rung.py</text>
+        <text x="585" y="330" class="lbs" text-anchor="middle" style="fill:#a03018;font-weight:700">CRASHES ON IMPORT</text>
+
+        <!-- lesson rung ok -->
+        <rect x="180" y="290" width="230" height="60" class="bx" fill="#b8f0c8"/>
+        <text x="295" y="313" class="lb" text-anchor="middle">lesson_rung.py</text>
+        <text x="295" y="330" class="lbs" text-anchor="middle">33 lessons · 15 units · OK</text>
+        <path d="M140,59 C90,59 90,300 176,300" class="ln"/>
+
+        <!-- the missing link -->
+        <path d="M410,204 H466" class="lnd"/>
+        <text x="438" y="196" class="lbs" text-anchor="middle" style="fill:#ff5c38;font-weight:700">✕</text>
+
+        <!-- reports -->
+        <rect x="760" y="290" width="215" height="60" class="bx" fill="#ffe58a"/>
+        <text x="867" y="313" class="lb" text-anchor="middle">synthesize.py → reports</text>
+        <text x="867" y="330" class="lbs" text-anchor="middle">DASHBOARD · GLOBAL-AUDIT</text>
+        <path d="M700,320 H756" class="ln"/>
+        <path d="M410,320 C600,380 640,380 780,354" class="ln"/>
+
+        <!-- UI dead end -->
+        <rect x="180" y="392" width="230" height="56" class="bx" fill="#d7d2f0"/>
+        <text x="295" y="414" class="lb" text-anchor="middle">UI Paths panel</text>
+        <text x="295" y="430" class="lbs" text-anchor="middle">the only reader of B–H</text>
+        <path d="M295,240 V388" class="ln"/>
+
+        <text x="440" y="425" class="lbs" style="fill:#a03018;font-weight:700">Paths B–H terminate here.</text>
+        <text x="440" y="441" class="lbs">Nothing downstream reads them.</text>
+      </svg>
+      <figcaption>
+        Verified by running each stage individually and by exhaustive grep for readers of
+        <code>path_b</code>…<code>path_h</code>. No root-level Python module reads them.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────────────────── -->
+<section>
+  <div class="sec-head"><span class="sec-n">03</span><h2>The evidence</h2></div>
+  <div class="sec-body">
+    <h3>Every stage, import-checked</h3>
+    <p>I imported each pipeline module in isolation. Two fail outright:</p>
+    <table>
+      <thead><tr><th>Stage</th><th>Result</th><th>Failure</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">route</td><td><span class="pill p-ok">ok</span></td><td></td></tr>
+        <tr><td class="mono">rollup</td><td><span class="pill p-ok">ok</span></td><td></td></tr>
+        <tr><td class="mono">layer2</td><td><span class="pill p-ok">ok</span></td><td></td></tr>
+        <tr><td class="mono">lesson_rung</td><td><span class="pill p-ok">ok</span></td><td>runs clean: 33 lessons, 10 passed gate, 15 units</td></tr>
+        <tr><td class="mono">lesson_quality</td><td><span class="pill p-ok">ok</span></td><td></td></tr>
+        <tr><td class="mono">curriculum_review</td><td><span class="pill p-ok">ok</span></td><td></td></tr>
+        <tr><td class="mono">calendars</td><td><span class="pill p-ok">ok</span></td><td></td></tr>
+        <tr><td class="mono">synthesize</td><td><span class="pill p-ok">ok</span></td><td></td></tr>
+        <tr class="hl"><td class="mono">artifact_rung</td><td><span class="pill p-bad">fails</span></td><td class="mono">ModuleNotFoundError: No module named 'artifact_scorers'</td></tr>
+        <tr class="hl"><td class="mono">unit_rung</td><td><span class="pill p-bad">fails</span></td><td class="mono">ImportError: cannot import name 'load_expectations' from 'synthesize'</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Why nobody noticed</h3>
+    <p>All three rungs are called inside a best-effort band in <code>run_project.py</code>. A crash
+    becomes a one-line warning in a long log, and the run still reports success:</p>
+<pre><span class="dim">run_project.py:410</span>
+if ARTIFACT_RUNG.is_file():
+    try:
+        run_step(ARTIFACT_RUNG, [<span class="ok">"--project"</span>, args.project])
+    except Exception as e:
+        log(f<span class="hot">"WARN: artifact-rung skipped: {e}"</span>)   <span class="hot">← swallowed, run continues</span></pre>
+
+    <p>Nothing afterwards asserts that <code>ARTIFACT-RUNG.json</code> exists. There is no
+    <code>ARTIFACT-RUNG.json</code> anywhere on disk in this repository — not in any project, not
+    in any E2E run. The stage has produced nothing for a long time.</p>
+
+    <h3>Where the scorer went</h3>
+    <p><code>artifact_scorers.py</code> was committed in
+    <code>a13d3a3 "Paths B/C: curriculum-agnostic artifact review + UI"</code>, along with working
+    <code>ARTIFACT-RUNG.json</code> outputs for three projects. It is <strong>not in HEAD</strong>
+    and there is no commit that records deleting it. The only trace left on disk is a stale
+    bytecode cache dated 23 July 2026. That signature — a file present in an old commit, absent
+    from HEAD, with no deletion commit — is what a history rewrite looks like, and there is a
+    plausible candidate in the log: <code>7a3252b "Polish public Loom for a cared-for first
+    impression"</code>. The same commit's <code>ARTIFACT-RUNG.json</code> outputs are also gone.</p>
+
+    <div class="callout warn">
+      <span class="lbl">The consequence, precisely</span>
+      <p><code>unit_rung.py</code> decides a unit's band. Being "Strong" requires
+      <code>not metrics.get("has_artifact_gap")</code>. That flag comes from
+      <code>_unit_artifacts()</code>, which is explicitly written to return a
+      <em>gap-free block</em> when the artifact rung is absent. So with the rung dead,
+      <strong>the flag is always False and the gate is inert</strong> — a unit can be rated
+      Strong while containing 25 quizzes with no answer key.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────────────────── -->
+<section>
+  <div class="sec-head"><span class="sec-n">04</span><h2>The two spec formats, side by side</h2></div>
+  <div class="sec-body">
+    <p>Both systems were built to answer "is this quiz complete?" They ask different questions,
+    and the better one is the orphan.</p>
+
+    <div class="two">
+      <div class="card" style="border-color:#2b6cff;border-width:3px">
+        <h4>Paths B–H · works, no consumer</h4>
+        <div class="src">workflows/checklists/assessment.yaml<br/>v1-assessment-quiz-key</div>
+        <ul>
+          <li><strong>B2</strong> Item stems — numbered_items, choice_stems</li>
+          <li><strong>B3</strong> Answer key signal — answer_key_header, keyed_answers</li>
+          <li><strong>B4</strong> Learning targets — objective_or_teks</li>
+          <li><strong>B5</strong> quiz ↔ key pairing <em>(code)</em></li>
+        </ul>
+        <p style="margin:12px 0 0;font-size:13px">On Dallas this found <strong>25 of 26 assessments
+        with no answer-key signal</strong> and <strong>9 orphaned quizzes</strong>.</p>
+      </div>
+
+      <div class="card">
+        <h4>Artifact rung · has the consumer, doesn't run</h4>
+        <div class="src">workflows/rubrics/artifacts/quiz.yaml<br/>v1-quiz-2026-07</div>
+        <ul>
+          <li><strong>has_items</strong> — Assessment items present</li>
+          <li><strong>has_instructions</strong> — Directions / instructions</li>
+        </ul>
+        <p style="margin:12px 0 0;font-size:13px">No pairing concept, no answer-key check, no
+        standards check. And it has produced <strong>zero output</strong>.</p>
+      </div>
+    </div>
+
+    <h3>What Paths B–H are producing right now</h3>
+    <p>All of this is on disk today, and only the UI panel can see it:</p>
+    <table>
+      <thead><tr><th>Path</th><th>Lens</th><th class="num">Docs</th><th class="num">Gaps flagged</th><th>The finding</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">B</td><td>Assessment</td><td class="num">26</td><td class="num">70</td><td>25 with no answer key · 9 orphaned quizzes</td></tr>
+        <tr><td class="mono">C</td><td>General</td><td class="num">1</td><td class="num">2</td><td>catch-all, down from 62 pre-rollout</td></tr>
+        <tr><td class="mono">D</td><td>Teacher support</td><td class="num">8</td><td class="num">16</td><td>all 8 lack TE/guide role cues</td></tr>
+        <tr><td class="mono">E</td><td>Student practice</td><td class="num">36</td><td class="num">46</td><td>23 with no learning-target cue</td></tr>
+        <tr><td class="mono">H</td><td>Exit ticket</td><td class="num">21</td><td class="num">33</td><td>17 give no next-day formative signal</td></tr>
+        <tr><td class="mono">F / G</td><td>Standards · Syllabus</td><td class="num">0</td><td class="num">0</td><td><span class="pill p-none">skipped</span> correctly — no such docs in corpus</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;color:var(--muted)">
+      Conservation checks out: 111 documents routed, and the per-path counts sum to exactly 111.
+      Nothing is dropped or double-counted.
+    </p>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────────────────── -->
+<section>
+  <div class="sec-head"><span class="sec-n">05</span><h2>What I recommend, and why</h2></div>
+  <div class="sec-body">
+    <p>When I first mapped this I framed it as a design choice between two scorers. That framing
+    was wrong, and the correction matters: <strong>there is no live competitor.</strong> One
+    system works and has no consumer; the other has a consumer and no working code. That collapses
+    the decision.</p>
+
+    <figure>
+      <svg viewBox="0 0 1000 200" role="img" aria-label="Before and after wiring diagram">
+        <style>
+          .bx2{stroke:#14110c;stroke-width:2}
+          .l2{font:600 12px -apple-system,sans-serif;fill:#14110c}
+          .s2{font:10.5px ui-monospace,monospace;fill:#6b6350}
+          .a2{stroke:#14110c;stroke-width:2;fill:none;marker-end:url(#ar)}
+          .d2{stroke:#6b6350;stroke-width:2;fill:none;stroke-dasharray:6 5}
+          .h2t{font:800 11px -apple-system,sans-serif;fill:#6b6350;letter-spacing:.09em}
+        </style>
+        <text x="20" y="22" class="h2t">TODAY</text>
+        <rect x="20" y="34" width="150" height="44" class="bx2" fill="#b8f0c8"/>
+        <text x="95" y="52" class="l2" text-anchor="middle">Paths B–H</text>
+        <text x="95" y="67" class="s2" text-anchor="middle">findings.json</text>
+        <rect x="230" y="34" width="120" height="44" class="bx2" fill="#d7d2f0"/>
+        <text x="290" y="60" class="l2" text-anchor="middle">UI only</text>
+        <path d="M170,56 H226" class="a2"/>
+        <rect x="230" y="112" width="120" height="44" class="bx2" fill="#ffb3a1"/>
+        <text x="290" y="131" class="l2" text-anchor="middle">artifact rung</text>
+        <text x="290" y="146" class="s2" text-anchor="middle">crashes</text>
+        <rect x="410" y="112" width="130" height="44" class="bx2" fill="#e4dccb"/>
+        <text x="475" y="131" class="l2" text-anchor="middle">unit rung</text>
+        <text x="475" y="146" class="s2" text-anchor="middle">gate inert</text>
+        <path d="M350,134 H406" class="d2"/>
+        <rect x="600" y="112" width="130" height="44" class="bx2" fill="#ffe58a"/>
+        <text x="665" y="138" class="l2" text-anchor="middle">Dashboard</text>
+        <path d="M540,134 H596" class="a2"/>
+        <text x="760" y="132" class="s2" style="fill:#a03018;font-weight:700">no non-lesson</text>
+        <text x="760" y="147" class="s2" style="fill:#a03018;font-weight:700">quality signal</text>
+
+        <line x1="20" y1="176" x2="980" y2="176" stroke="#14110c" stroke-width="1" stroke-dasharray="3 3"/>
+      </svg>
+      <svg viewBox="0 0 1000 120" role="img" aria-label="Proposed wiring" style="margin-top:-2px">
+        <style>
+          .bx3{stroke:#14110c;stroke-width:2}
+          .l3{font:600 12px -apple-system,sans-serif;fill:#14110c}
+          .s3{font:10.5px ui-monospace,monospace;fill:#6b6350}
+          .a3{stroke:#14110c;stroke-width:2.5;fill:none;marker-end:url(#ar)}
+          .h3t{font:800 11px -apple-system,sans-serif;fill:#6b6350;letter-spacing:.09em}
+        </style>
+        <text x="20" y="20" class="h3t">PROPOSED</text>
+        <rect x="20" y="34" width="150" height="44" class="bx3" fill="#b8f0c8"/>
+        <text x="95" y="52" class="l3" text-anchor="middle">Paths B–H</text>
+        <text x="95" y="67" class="s3" text-anchor="middle">findings.json</text>
+        <rect x="230" y="34" width="150" height="44" class="bx3" fill="#b8f0c8"/>
+        <text x="305" y="52" class="l3" text-anchor="middle">rollup shim</text>
+        <text x="305" y="67" class="s3" text-anchor="middle">ARTIFACT-RUNG.json</text>
+        <path d="M170,56 H226" class="a3"/>
+        <rect x="440" y="34" width="130" height="44" class="bx3" fill="#b8f0c8"/>
+        <text x="505" y="52" class="l3" text-anchor="middle">unit rung</text>
+        <text x="505" y="67" class="s3" text-anchor="middle">gate live</text>
+        <path d="M380,56 H436" class="a3"/>
+        <rect x="630" y="34" width="130" height="44" class="bx3" fill="#b8f0c8"/>
+        <text x="695" y="60" class="l3" text-anchor="middle">Dashboard</text>
+        <path d="M570,56 H626" class="a3"/>
+        <rect x="230" y="-8" width="150" height="0" fill="none"/>
+        <text x="800" y="52" class="s3">one scorer, one number,</text>
+        <text x="800" y="67" class="s3">B–H stop dead-ending</text>
+      </svg>
+      <figcaption>The fix is a rollup shim, not a rewrite. The scoring already exists and is richer than what it replaces.</figcaption>
+    </figure>
+
+    <div class="rec">
+      <h3>Recommendation: make Paths B–H the single non-lesson scorer</h3>
+      <p style="margin-bottom:10px">Replace the body of <code>artifact_rung.py</code> so that instead
+      of re-deriving presence from a second spec format, it reads <code>path_*/findings.json</code>
+      and rolls them up per unit into the <code>ARTIFACT-RUNG.json</code> shape
+      <code>unit_rung.py</code> already expects.</p>
+      <p style="margin-bottom:0">The consumer contract is already documented and stable
+      (<code>artifact_count</code>, <code>gate_pass_count</code>, <code>deterministic_gaps</code>,
+      <code>roles</code>). You are filling an empty socket with a better plug — not choosing between
+      two designs, and not rewriting the reporting layer.</p>
+    </div>
+
+    <h3>Why not the alternatives</h3>
+    <table>
+      <thead><tr><th>Option</th><th>Verdict</th><th>Reasoning</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Restore <code>artifact_scorers.py</code></strong> from commit <code>a13d3a3</code></td>
+          <td><span class="pill p-warn">no</span></td>
+          <td>Recoverable, and it would light the dashboard back up. But it reinstates the weaker
+          of two scorers and permanently locks in two spec formats for the same job — the exact
+          thing you would then have to tune twice.</td>
+        </tr>
+        <tr>
+          <td><strong>Keep both with a documented boundary</strong></td>
+          <td><span class="pill p-warn">no</span></td>
+          <td>Defensible if both worked. One doesn't. "Boundary" would be documentation over a
+          crash.</td>
+        </tr>
+        <tr>
+          <td><strong>Point <code>unit_rung.py</code> straight at path findings</strong></td>
+          <td><span class="pill p-none">maybe</span></td>
+          <td>Skips the shim, slightly less code. But it couples the reporting layer directly to
+          the findings format, so freezing that contract becomes urgent rather than merely
+          important. The shim gives you one place to absorb format change.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────────────────── -->
+<section>
+  <div class="sec-head"><span class="sec-n">06</span><h2>The checks that would have caught this</h2></div>
+  <div class="sec-body">
+    <p>This is the part that matters more than the individual bug. The bug is cheap to fix. The
+    reason it survived for weeks is that <strong>nothing in the system asserts that a stage
+    produced anything</strong>.</p>
+
+    <ol class="steps">
+      <li>
+        <h4>Import-check every stage in CI</h4>
+        <p>A three-line test that imports all ten pipeline modules would have caught both failures
+        the day they appeared. This is the single highest-value check on the list and takes minutes
+        to write.</p>
+      </li>
+      <li>
+        <h4>Assert expected artifacts after a run</h4>
+        <p>A full run should declare what it produces and fail if a file is missing. Today a stage
+        can vanish and the run still says success.</p>
+      </li>
+      <li>
+        <h4>Make "best-effort" mean something narrower</h4>
+        <p>The <code>try/except</code> band is appropriate for a stage that needs a model that
+        might be offline. It is not appropriate for an <code>ImportError</code>, which is always a
+        bug. Let import and syntax errors through; swallow only what is genuinely optional.</p>
+      </li>
+      <li>
+        <h4>Freeze the findings contract</h4>
+        <p>Write a schema for <code>path_*/findings.json</code>, make Path A conform to it — today
+        it alone lacks <code>status</code>, <code>lens</code>, <code>checklist</code> and
+        <code>inventory</code> — and validate at write time.</p>
+      </li>
+      <li>
+        <h4>Golden-pin the findings</h4>
+        <p>This is what makes the tuning phase reviewable. With findings pinned, changing a keyword
+        in <code>assessment.yaml</code> produces a readable diff — "23 documents moved from MISSING
+        to PARTIAL" — instead of an invisible shift. <code>tools/snapshot_findings.py</code>
+        already does this for Layer 1 and isn't in CI; extend the pattern and normalize the
+        <code>generated_at</code> timestamp.</p>
+      </li>
+    </ol>
+
+    <div class="callout good">
+      <span class="lbl">Already verified working</span>
+      <p>Routing is deterministic — I re-ran route plus paths on a lab project and
+      <code>findings.json</code> was byte-identical, with the route map differing only in its
+      timestamp. All eight paths genuinely run in production. Absent document types degrade to
+      <code>skipped</code> rather than erroring, confirmed across six workspaces. The router
+      cascade has explicit precedence with fourteen tests pinning it. Paths B–H all emit the same
+      nine top-level keys. The offline suite is green at 84 assertions and now gated in CI.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Companion to <code>docs/ARCHITECTURE-READINESS.md</code> · every claim verified against the repo on 9 Aug 2026
+</footer>
+
+</div>
+</body>
+</html>

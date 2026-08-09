@@ -1,6 +1,6 @@
 # Loom — Documentation
 
-Reference for the Loom curriculum auditor (router + Path A/B/C workflows).
+Reference for the Loom curriculum auditor (router + Path A–H workflows).
 
 > Built on the design doctrine in [BETS.md](BETS.md): full-document model reading,
 > regex-as-hint-only, narrow repeated tasks, citations + "unknown", **single strong
@@ -42,6 +42,7 @@ Reference for the Loom curriculum auditor (router + Path A/B/C workflows).
 | [PATH-G-SYLLABUS.md](PATH-G-SYLLABUS.md) | Curriculum leads | Path G (Syllabus) workflow — G1–G9 |
 | [PATH-H-EXIT-TICKET.md](PATH-H-EXIT-TICKET.md) | Curriculum leads | Path H (Exit ticket) — formative check |
 | [PATHWAY-ROLLOUT-REVIEW.md](PATHWAY-ROLLOUT-REVIEW.md) | Leads / engineers | **Acceptance record for B–H** — value of each path + regression proof |
+| [ARCHITECTURE-READINESS.md](ARCHITECTURE-READINESS.md) | Engineers | **Structure-freeze gate** — what blocks the tuning phase, with 9 checks |
 | [CHAMPION-REVIEW-MAP.md](CHAMPION-REVIEW-MAP.md) | Reviewers | Champion review workflow |
 | [CURRICULUM-ACCEPTANCE-REVIEW.md](CURRICULUM-ACCEPTANCE-REVIEW.md) | Leads / auditors | **CAR** — formal accept/reject of pack + run intent |
 | [curriculum-first-plan.md](curriculum-first-plan.md) | Planners | Early curriculum-first planning notes (historical) |
