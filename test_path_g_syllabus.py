@@ -219,6 +219,131 @@ def test_run_path_g_writes_findings() -> None:
             shutil.rmtree(proj)
 
 
+# A syllabus made only of the phrases that used to produce false hits. Every
+# line is shaped after the real Waxahachie culinary syllabi; none of it states
+# the section the old matcher claimed it did. Kept as text, not .docx, because
+# the source corpus is deliberately not committed - what CI needs is the trap,
+# not the curriculum.
+DECOY_ONLY = """Culinary Arts Department
+
+Required Materials:
+Fingernail Clippers
+Clear dividers (recipe cover to protect from food)
+Hair ties
+
+Behavior and Consequences
+Students are expected to follow all school rules.
+
+Extra credit
+There will be a couple of opportunities throughout the year for extra credit.
+
+Locker Areas
+All items put in a locker must leave at the end of the class period.
+"""
+
+# The same document with the sections a syllabus is supposed to have.
+REAL_SECTIONS = (
+    DECOY_ONLY
+    + """
+Instructor: Chef Hamilton
+Course: Culinary Arts I
+Email: chef@example.org
+Appointment Times: (B DAY) 2:21-3:55
+
+1st 6 Weeks
+ServSafe Certification training
+
+Grading
+Lab Presentations 60% of the grade.
+All computer assignments are due by their perspective due dates.
+"""
+)
+
+
+def _run_g_on_text(pid: str, text: str) -> dict:
+    """Write a one-document project whose source is text, then run Path G."""
+    import shutil
+
+    proj = BASE / "projects" / pid
+    try:
+        (proj / "layer0").mkdir(parents=True, exist_ok=True)
+        (proj / "sources").mkdir(parents=True, exist_ok=True)
+        doc_id = "Syllabus.txt"
+        (proj / "sources" / doc_id).write_text(text, encoding="utf-8")
+        route = {
+            "project_id": pid,
+            "routes": [
+                {
+                    "doc_id": doc_id,
+                    "doc_type": "syllabus",
+                    "workflow_id": "syllabus",
+                    "path": "G",
+                    "lens": "Syllabus",
+                    "source_file": doc_id,
+                }
+            ],
+        }
+        (proj / "layer0" / "route-map.json").write_text(
+            json.dumps(route), encoding="utf-8"
+        )
+        (proj / "layer0" / "ledger.json").write_text("[]", encoding="utf-8")
+        out = run_path_g_for_project(pid)
+        return out["steps_by_doc"][doc_id]
+    finally:
+        if proj.is_dir():
+            shutil.rmtree(proj)
+
+
+def _statuses(step: dict) -> dict[str, str]:
+    return {f["id"]: f["status"] for f in step.get("fields") or []}
+
+
+def test_decoy_phrases_do_not_report_sections() -> None:
+    """The regression that matters: absent sections must read absent.
+
+    Under substring matching this document scored lab safety (Clippers),
+    a course credit statement (extra credit), a TEKS coverage claim (recipe
+    cover) and a meeting pattern (locker rules) - four sections it does not
+    contain. A false PRESENT is a gap the auditor never reports.
+    """
+    steps = _run_g_on_text("_tmp_path_g_decoys", DECOY_ONLY)
+    assert _statuses(steps["G2"])["course_identity"] == "MISSING"
+    assert _statuses(steps["G2"])["meeting_pattern"] == "MISSING"
+    assert _statuses(steps["G5"])["teks_timeline"] == "MISSING"
+    assert _statuses(steps["G7"])["safety"] in {"MISSING", "NOT_SIGNALED"}
+
+
+def test_real_sections_are_found_with_checkable_cites() -> None:
+    """The other half: present sections must read present, and the citation
+    must quote the text that caused the hit."""
+    steps = _run_g_on_text("_tmp_path_g_real", REAL_SECTIONS)
+    g2 = _statuses(steps["G2"])
+    assert g2["course_identity"] == "PRESENT"
+    assert g2["instructor_contact"] == "PRESENT"
+    assert g2["meeting_pattern"] == "PRESENT"
+    # The six-weeks course map is how Texas syllabi lay out the year; it was
+    # read as absent until "six weeks" became a unit_topics keyword.
+    assert _statuses(steps["G5"])["unit_topics"] == "PRESENT"
+    assert _statuses(steps["G5"])["due_dates"] == "PRESENT"
+    assert _statuses(steps["G7"])["safety"] == "PRESENT"
+    # ...and still no TEKS timeline, even with real sections present.
+    assert _statuses(steps["G5"])["teks_timeline"] == "MISSING"
+
+    safety_cite = [
+        f["cites"][0] for f in steps["G7"]["fields"] if f["id"] == "safety"
+    ][0]
+    assert "ServSafe" in safety_cite, safety_cite
+    assert "Clippers" not in safety_cite
+
+
+def test_source_text_beats_a_thin_ledger() -> None:
+    """Layer 0 samples a syllabus rather than covering it. When the header is
+    missing from the ledger, reading the document is what keeps instructor,
+    email and room from reading MISSING on a document that states all three."""
+    steps = _run_g_on_text("_tmp_path_g_evidence", REAL_SECTIONS)
+    assert _statuses(steps["G2"])["instructor_contact"] == "PRESENT"
+
+
 def main() -> int:
     tests = [
         test_checklist_loads_g2_g7,
@@ -226,6 +351,9 @@ def main() -> int:
         test_empty_doc_missing_required_fields,
         test_cte_signaled_makes_optional_fields_required,
         test_run_path_g_writes_findings,
+        test_decoy_phrases_do_not_report_sections,
+        test_real_sections_are_found_with_checkable_cites,
+        test_source_text_beats_a_thin_ledger,
     ]
     for t in tests:
         t()

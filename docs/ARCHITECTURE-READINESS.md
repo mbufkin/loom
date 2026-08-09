@@ -34,14 +34,22 @@ full pipeline run.
 | D teacher support | 26 | bluebonnet, dallas |
 | E student practice | 72 | bluebonnet, dallas |
 | F standards & pacing | 15 | bluebonnet |
-| G syllabus | 2 | **none — fixture only** |
+| G syllabus | 2 | waxahachie culinary |
 | H exit ticket | 45 | dallas |
 
-**The one real gap left is Path G.** Its only pinned documents are the two synthetic
-files in `lab-culinary-syllabus`; no genuine syllabus corpus has ever run through Loom.
-That lens is also the one whose scorer diverged (§2.5) precisely because its code path
-never executed on real input. Treat Path G's ratings as unproven until a real syllabus
-corpus is added, and expect the first one to surface findings the fixture cannot.
+**Path G was recorded here as fixture-only. That was wrong**, and the error is worth
+keeping visible: `lab-culinary-syllabus` holds two genuine Waxahachie ISD documents
+(Culinary I and Culinary Practicum), so the lens had real input all along and nobody
+had read what it said about them. Its thin corpus was mistaken for a synthetic one.
+
+Reading them is what surfaced the defect described in §11: presence was matched as a
+plain substring, so `PPE` matched "Cli**ppe**rs" and the lens reported lab safety
+rules on a syllabus that had none. Path G is now checked against those two documents
+field by field, and its ratings are pinned at field level.
+
+Two documents is still a thin corpus, and both come from one teacher, so the
+checklist is tuned to one author's phrasing. The next syllabus from a different
+district should be expected to move ratings again.
 
 What was already solid is listed in §5.
 
@@ -515,3 +523,53 @@ and pinned like the other eight.
 Steps 2 and 3 are still the ones that convert "we think data flows consistently" into
 "CI fails if it does not." Step 2 is now the critical path: §2.5 is a live correctness
 bug that a patch is currently masking.
+
+## 11. Presence was matched as a substring — PARTIALLY RESOLVED 2026-08-09
+
+The first thing found by actually reading a lens's output against its documents.
+Every path tested checklist keywords with `keyword in text.lower()`. A substring
+match ignores word edges, so on the two culinary syllabi:
+
+| keyword | matched | reported |
+| --- | --- | --- |
+| `PPE` | Cli**ppe**rs, ha**ppe**n, dro**ppe**d | lab safety rules present |
+| `credit` | extra credit | course credit stated |
+| `cover` | recipe **cover** to protect from food | TEKS coverage claim |
+| `sequence` | Con**sequence**s | scope and sequence present |
+| `cte` | expe**cte**d, prote**cte**d | document is CTE-shaped |
+
+The last one disabled a feature outright: `_doc_has_cte_signals` decides whether the
+optional safety/WBL/acknowledgment fields are required, and because almost every
+document contains "expected", the soft gate never once softened anything.
+
+These are all false *positives*, which is the dangerous direction. A false MISSING
+is noise a teacher ignores; a false PRESENT is a gap the audit never reports, and
+presence feeds the rung rollups, so it becomes a passing grade nobody questions.
+
+Fixed for Path G by `workflows/keyword_match.py`: boundary-anchored matching, an
+optional trailing plural, punctuation-shaped keywords matched literally, whitespace
+inside a phrase allowed to stretch (extraction splits runs — "A bsences"), and an
+`exclude:` list for the residue, since "extra credit" contains "credit" at a clean
+boundary. Citations now quote the matched sentence rather than the head of the
+excerpt, which is what makes a rating reviewable at all.
+
+Path G also now reads the source document for G2–G7 instead of the Layer 0 ledger.
+Layer 0 excerpting is tuned for lesson plates and samples a syllabus rather than
+covering it; the practicum syllabus lost its whole header block, so instructor,
+email, phone and room read MISSING on a document that states all four on line
+three. G1 still reports the ledger, because G1 is a claim about Layer 0 coverage.
+`evidence_base` in the findings records which text was read.
+
+**Still open for the other seven paths.** 60 keywords across all eight checklists
+currently fire only as substrings on the real corpora — `teach` inside "teacher",
+`unit` inside "opport**unit**y", `ELPS` inside "h**elps**", `how` inside "s**how**",
+`rate` inside "accu**rate**". This is not a mechanical switch, which is why it was
+not done here: some of those keywords are deliberate stems (`facilitat`, `vocab`,
+`scaffold`) that a boundary would break, and telling the two apart needs a per-
+keyword reading of each checklist against its corpus. Doing it path by path also
+keeps each ratings shift reviewable on its own.
+
+Field-level golden pinning landed alongside this, and was prompted by it: the Path G
+correction turned two false PRESENTs into MISSING and one false MISSING into PRESENT,
+yet the step rolled up to PARTIAL either way and the pin showed a single changed cell.
+Tuning happens at the field, so the pin records the field.

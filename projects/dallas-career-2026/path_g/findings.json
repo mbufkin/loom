@@ -6,6 +6,7 @@
   "status": "skipped",
   "doc_ids": [],
   "checklist": "workflows/checklists/syllabus.yaml",
+  "evidence_base": {},
   "inventory": [],
   "steps_by_doc": {}
 }

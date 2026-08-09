@@ -13,14 +13,17 @@ G8 (cross-artifact) and G9 (one-pager) stay stubbed until presence is trusted.
 from __future__ import annotations
 
 import json
+import re
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
 from audit_lib import load_yaml, log, project_dir
+from doc_extract import extract_text
 from route import load_route_map, routed_doc_ids
 from unit_plan_fill import _trunc
 from workflows.findings_io import write_path_findings
+from workflows.keyword_match import match_context, matches
 
 CHECKLIST_PATH = (
     Path(__file__).resolve().parent / "checklists" / "syllabus.yaml"
@@ -63,6 +66,49 @@ def _elements_for_doc(ledger: list, doc_id: str) -> list[dict]:
     return [e for e in ledger if e.get("doc_id") == doc_id]
 
 
+def _source_elements(root: Path, doc_id: str, source_file: str) -> list[dict]:
+    """Paragraph elements read from the source document itself.
+
+    Educational note: Layer 0 excerpting is tuned for lesson plates, and on a
+    syllabus it samples rather than covers - the practicum syllabus lost its
+    entire header block, so instructor, email, phone and room all read MISSING
+    on a document that states all four on line three. A syllabus is a whole-
+    document contract, so Path G reads the document.
+
+    Paragraphs rather than one blob: the paragraph that matched becomes the
+    citation, and a reviewer can check it without opening the .docx.
+    """
+    sources = root / "sources"
+    candidates: list[Path] = []
+    for name in (source_file, doc_id):
+        if name:
+            candidates.append(sources / Path(name).name)
+    candidates.extend(sorted(sources.glob(f"*{doc_id}*")))
+    for path in candidates:
+        if not path.is_file():
+            continue
+        try:
+            text, _method = extract_text(path)
+        except Exception:
+            # Unreadable or unsupported source is not a Path G failure; the
+            # ledger fallback still produces a rating.
+            continue
+        paras = [p.strip() for p in re.split(r"\n\s*\n|\n", text or "") if p.strip()]
+        if not paras:
+            continue
+        return [
+            {
+                "doc_id": doc_id,
+                "element_id": f"{doc_id}:src:{i}",
+                "element_type": "syllabus_text",
+                "excerpt": para,
+                "source_file": path.name,
+            }
+            for i, para in enumerate(paras)
+        ]
+    return []
+
+
 def _by_type(elements: list[dict]) -> dict[str, list[dict]]:
     out: defaultdict[str, list[dict]] = defaultdict(list)
     for e in elements:
@@ -81,16 +127,20 @@ def _field_hits(elements: list[dict], field: dict) -> list[dict]:
     tags daily lesson slots. Syllabus sections rarely get distinct types, so
     type-alone PRESENT would false-hit nearly every logistics excerpt. Require
     a keyword match when keywords are listed; fall back to types only when not.
+
+    Matching is word-boundary aware (see workflows/keyword_match.py). Plain
+    substring matching read "Clippers" as PPE and "extra credit" as a course
+    credit statement, which reported syllabus sections that do not exist.
     """
     keywords = [str(k) for k in (field.get("keywords") or [])]
+    exclude = [str(x) for x in (field.get("exclude") or [])]
     etypes = set(field.get("element_types") or [])
     hits: list[dict] = []
     seen: set[str] = set()
     for e in elements:
         ex = e.get("excerpt") or ""
-        low = ex.lower()
         if keywords:
-            if not any(k.lower() in low for k in keywords):
+            if not matches(ex, keywords, exclude):
                 continue
         else:
             et = e.get("element_type") or ""
@@ -105,8 +155,14 @@ def _field_hits(elements: list[dict], field: dict) -> list[dict]:
 
 
 def _doc_has_cte_signals(elements: list[dict]) -> bool:
-    blob = " ".join((e.get("excerpt") or "") for e in elements).lower()
-    return any(sig in blob for sig in CTE_DOC_SIGNALS)
+    """Does this syllabus look CTE-shaped, so safety/WBL/ack become required?
+
+    Boundary-matched deliberately: as a substring, "cte" sits inside
+    "expe(cte)d" and "prote(cte)d", so the soft gate used to fire on nearly
+    every document and the optional CTE fields were never actually optional.
+    """
+    blob = " ".join((e.get("excerpt") or "") for e in elements)
+    return matches(blob, CTE_DOC_SIGNALS)
 
 
 def g1_inventory(elements: list[dict], doc_id: str) -> dict:
@@ -167,13 +223,23 @@ def g_presence_for_step(
             status = "MISSING"
             required += 1
             note = "not found in Layer 0 excerpts"
+        keywords = [str(k) for k in (field.get("keywords") or [])]
+        exclude = [str(x) for x in (field.get("exclude") or [])]
+        cites = []
+        for h in hits[:3]:
+            excerpt = h.get("excerpt") or ""
+            # Quote the sentence that matched; fall back to the excerpt head
+            # for type-only fields, which have no keyword span to centre on.
+            cites.append(
+                match_context(excerpt, keywords, exclude) or _trunc(excerpt)
+            )
         fields_out.append(
             {
                 "id": field.get("id"),
                 "label": field.get("label") or field.get("id"),
                 "status": status,
                 "count": len(hits),
-                "cites": [_trunc(h.get("excerpt") or "") for h in hits[:3]],
+                "cites": cites,
                 "note": note,
             }
         )
@@ -199,12 +265,24 @@ def g_presence_for_step(
     }
 
 
-def _steps_for_doc(elements: list[dict], checklist: dict, doc_id: str) -> dict:
-    cte = _doc_has_cte_signals(elements)
+def _steps_for_doc(
+    elements: list[dict],
+    checklist: dict,
+    doc_id: str,
+    scan: list[dict] | None = None,
+) -> dict:
+    """G1 inventories what Layer 0 saw; G2–G7 score the document text.
+
+    The two evidence bases are deliberately different. G1 is a claim about
+    Layer 0 coverage, so it must keep reading the ledger. G2–G7 are claims
+    about the syllabus, so they read the syllabus.
+    """
+    scan = scan or elements
+    cte = _doc_has_cte_signals(scan)
     steps = {"G1": g1_inventory(elements, doc_id)}
     for step in ("G2", "G3", "G4", "G5", "G6", "G7"):
         steps[step] = g_presence_for_step(
-            elements, checklist, step, cte_signaled=cte
+            scan, checklist, step, cte_signaled=cte
         )
     steps["G8"] = {
         "step": "G8",
@@ -232,10 +310,13 @@ def run_path_g_for_project(project_id: str) -> dict:
 
     inventory = []
     steps_by_doc: dict[str, dict] = {}
+    evidence_bases: dict[str, str] = {}
     for did in sorted(doc_ids):
         r = by_id.get(did) or {}
         elements = _elements_for_doc(ledger, did)
-        steps = _steps_for_doc(elements, checklist, did)
+        scan = _source_elements(root, did, r.get("source_file") or "")
+        evidence_bases[did] = "source_text" if scan else "layer0_excerpts"
+        steps = _steps_for_doc(elements, checklist, did, scan=scan or elements)
         steps_by_doc[did] = steps
         # Compact inventory row mirrors prior stub shape for handoffs.
         row = {
@@ -243,6 +324,7 @@ def run_path_g_for_project(project_id: str) -> dict:
             "doc_type": r.get("doc_type"),
             "graph_role": r.get("graph_role"),
             "element_count": steps["G1"].get("element_count", 0),
+            "evidence_base": evidence_bases[did],
         }
         for step in ("G1", "G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9"):
             s = steps[step]
@@ -265,6 +347,10 @@ def run_path_g_for_project(project_id: str) -> dict:
         "status": "ok" if doc_ids else "skipped",
         "doc_ids": sorted(doc_ids),
         "checklist": "workflows/checklists/syllabus.yaml",
+        # Which text G2–G7 actually read. A rating carries different weight when
+        # it came from sampled excerpts than from the whole document, and
+        # sources are not always present at audit time.
+        "evidence_base": evidence_bases,
         "inventory": inventory,
         "steps_by_doc": steps_by_doc,
     }

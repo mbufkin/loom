@@ -42,6 +42,7 @@
         "ap-csp-ced.pdf:C2": "PRESENT",
         "ap-csp-ced.pdf:C3": "PRESENT",
         "ap-csp-ced.pdf:C4": "PRESENT",
+        "ap-csp-ced.pdf:C4.nursery_bucket": "PRESENT",
         "ap-csp-ced.pdf:C5": "STUB"
       },
       "checklist": "workflows/checklists/general.yaml",
@@ -52,7 +53,7 @@
       "n_docs": 1,
       "status": "ok",
       "status_counts": {
-        "PRESENT": 4,
+        "PRESENT": 5,
         "STUB": 1
       },
       "workflow_id": "general"

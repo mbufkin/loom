@@ -9,12 +9,17 @@
     "Culinary Prac Syllabus.docx"
   ],
   "checklist": "workflows/checklists/syllabus.yaml",
+  "evidence_base": {
+    "Culinary I Syllabus.docx": "source_text",
+    "Culinary Prac Syllabus.docx": "source_text"
+  },
   "inventory": [
     {
       "doc_id": "Culinary I Syllabus.docx",
       "doc_type": "syllabus",
       "graph_role": null,
       "element_count": 6,
+      "evidence_base": "source_text",
       "G1": {
         "status": "PRESENT",
         "note": "Layer 0 excerpt inventory for this syllabus doc"
@@ -24,8 +29,8 @@
         "note": "3/4 fields present"
       },
       "G3": {
-        "status": "PRESENT",
-        "note": "3/3 fields present"
+        "status": "PARTIAL",
+        "note": "1/3 fields present"
       },
       "G4": {
         "status": "PARTIAL",
@@ -57,6 +62,7 @@
       "doc_type": "syllabus",
       "graph_role": null,
       "element_count": 5,
+      "evidence_base": "source_text",
       "G1": {
         "status": "PRESENT",
         "note": "Layer 0 excerpt inventory for this syllabus doc"
@@ -66,8 +72,8 @@
         "note": "3/4 fields present"
       },
       "G3": {
-        "status": "PRESENT",
-        "note": "3/3 fields present"
+        "status": "PARTIAL",
+        "note": "2/3 fields present"
       },
       "G4": {
         "status": "PARTIAL",
@@ -83,7 +89,7 @@
       },
       "G7": {
         "status": "PARTIAL",
-        "note": "2/4 fields present"
+        "note": "3/4 fields present"
       },
       "G8": {
         "status": "STUB",
@@ -121,7 +127,7 @@
             "status": "PRESENT",
             "count": 1,
             "cites": [
-              "Late work is not acceptable in my class! Instead, I will drop the two lowest grades per Six  W eeks. In addition to class work, each student will do a lab presentation to me on a g iven topic from the current Six  W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for…"
+              "Course:"
             ],
             "note": ""
           },
@@ -129,11 +135,11 @@
             "id": "instructor_contact",
             "label": "Teacher / instructor contact",
             "status": "PRESENT",
-            "count": 4,
+            "count": 5,
             "cites": [
-              "Waxahachie High School  Culinary Arts Department 2021-2022  Syllabus Instructor :  Chef  Jason Hamilton Course: Culinary Arts I Room: Kitchen  Office: Kitchen Appointment Times:  (B DAY )  2:21-3:55 or Set Appointment Phone: 972-923-1617(Kitchen) Email: Jashamilton@wisd.org",
-              "1 st  6  Weeks ServSafe  Certification training *** (About 7 Weeks) 2nd 6 Weeks ServSafe  Certification training *** (About 7 Weeks) Professionalism Food Service Equipment Weights and Measurements Baking and Pastry 3rd  6  Weeks Fundamentals of Baking Cookies Quick Breads Pies Yeast Breads Cakes and Icing 4th  6  Weeks Kitchen Staples Knife Skills Stocks & Sauces Soups Poultry Beef Veal, & Lamb 5th  6  Weeks Pork Deep Frying Eggs Omelet Station Extravaganza 6 th  6  Weeks Potatoes Grains and…",
-              "Late work is not acceptable in my class! Instead, I will drop the two lowest grades per Six  W eeks. In addition to class work, each student will do a lab presentation to me on a g iven topic from the current Six  W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for…"
+              "Instructor",
+              "Room:",
+              "Phone:"
             ],
             "note": ""
           },
@@ -141,9 +147,10 @@
             "id": "meeting_pattern",
             "label": "Meeting pattern / schedule block",
             "status": "PRESENT",
-            "count": 1,
+            "count": 2,
             "cites": [
-              "Late work is not acceptable in my class! Instead, I will drop the two lowest grades per Six  W eeks. In addition to class work, each student will do a lab presentation to me on a g iven topic from the current Six  W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for…"
+              "Appointment Times:",
+              "(B DAY"
             ],
             "note": ""
           },
@@ -159,30 +166,25 @@
       },
       "G3": {
         "step": "G3",
-        "status": "PRESENT",
-        "present": 3,
+        "status": "PARTIAL",
+        "present": 1,
         "required": 3,
         "fields": [
           {
             "id": "course_purpose",
             "label": "Course description / why this course matters",
-            "status": "PRESENT",
-            "count": 1,
-            "cites": [
-              "Late work is not acceptable in my class! Instead, I will drop the two lowest grades per Six  W eeks. In addition to class work, each student will do a lab presentation to me on a g iven topic from the current Six  W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for…"
-            ],
-            "note": ""
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in Layer 0 excerpts"
           },
           {
             "id": "learning_outcomes",
             "label": "Measurable course outcomes / learning objectives",
-            "status": "PRESENT",
-            "count": 2,
-            "cites": [
-              "Late work is not acceptable in my class! Instead, I will drop the two lowest grades per Six  W eeks. In addition to class work, each student will do a lab presentation to me on a g iven topic from the current Six  W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for…",
-              "In order to provide focus and definition for employability skills, we have defined an assessment in terms FIVE  behavior characteristics. Each characteristic is assessed on a 5 point scale.  Keeps appointments on time  5. Is always in attendance and on time. (No absences/ tardies )     4. Is consistently in attendance and on time. (1 to 2 absences/ tardies )     3. Is usually in attendance and on time. (2 to 3 absences/ tardies )     2. Is occasionally in attendance and on time.  (3 to 4…"
-            ],
-            "note": ""
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in Layer 0 excerpts"
           },
           {
             "id": "teks_goals",
@@ -190,9 +192,9 @@
             "status": "PRESENT",
             "count": 3,
             "cites": [
-              "1 st  6  Weeks ServSafe  Certification training *** (About 7 Weeks) 2nd 6 Weeks ServSafe  Certification training *** (About 7 Weeks) Professionalism Food Service Equipment Weights and Measurements Baking and Pastry 3rd  6  Weeks Fundamentals of Baking Cookies Quick Breads Pies Yeast Breads Cakes and Icing 4th  6  Weeks Kitchen Staples Knife Skills Stocks & Sauces Soups Poultry Beef Veal, & Lamb 5th  6  Weeks Pork Deep Frying Eggs Omelet Station Extravaganza 6 th  6  Weeks Potatoes Grains and…",
-              "Students are required to d ownload  the app. You may also receive reminds through text within the application if downloading the app is not your thing. We will also set up a Group Me so that questions and culinary related conversations may occur as well as updates! Foul language in the kitchen will not be accepted. Uniform ***I will always be in uniform and I expect the same from my students. The full uniform needed to function in my kitchen is as follows: Non Slip Black Shoes Black Calf…",
-              "In order to provide focus and definition for employability skills, we have defined an assessment in terms FIVE  behavior characteristics. Each characteristic is assessed on a 5 point scale.  Keeps appointments on time  5. Is always in attendance and on time. (No absences/ tardies )     4. Is consistently in attendance and on time. (1 to 2 absences/ tardies )     3. Is usually in attendance and on time. (2 to 3 absences/ tardies )     2. Is occasionally in attendance and on time.  (3 to 4…"
+              "Show Employability Skills(See attached Rubric)",
+              "is employability skills. These skills include attendance, on-time arrival, meeting deadlines, working toward personal/team...",
+              "In order to provide focus and definition for employability skills, we have defined an assessment in terms"
             ],
             "note": ""
           }
@@ -208,10 +210,11 @@
             "id": "grade_categories",
             "label": "Graded categories / assignment types",
             "status": "PRESENT",
-            "count": 2,
+            "count": 4,
             "cites": [
-              "1 st  6  Weeks ServSafe  Certification training *** (About 7 Weeks) 2nd 6 Weeks ServSafe  Certification training *** (About 7 Weeks) Professionalism Food Service Equipment Weights and Measurements Baking and Pastry 3rd  6  Weeks Fundamentals of Baking Cookies Quick Breads Pies Yeast Breads Cakes and Icing 4th  6  Weeks Kitchen Staples Knife Skills Stocks & Sauces Soups Poultry Beef Veal, & Lamb 5th  6  Weeks Pork Deep Frying Eggs Omelet Station Extravaganza 6 th  6  Weeks Potatoes Grains and…",
-              "Late work is not acceptable in my class! Instead, I will drop the two lowest grades per Six  W eeks. In addition to class work, each student will do a lab presentation to me on a g iven topic from the current Six  W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for…"
+              "All projects and paper based assignments are due at the beginning of class. All computer assignments are due by...",
+              "This will be a major grade",
+              "Grading"
             ],
             "note": ""
           },
@@ -219,10 +222,11 @@
             "id": "grade_weights",
             "label": "Weights or points toward final grade",
             "status": "PRESENT",
-            "count": 2,
+            "count": 3,
             "cites": [
-              "Late work is not acceptable in my class! Instead, I will drop the two lowest grades per Six  W eeks. In addition to class work, each student will do a lab presentation to me on a g iven topic from the current Six  W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for…",
-              "In order to provide focus and definition for employability skills, we have defined an assessment in terms FIVE  behavior characteristics. Each characteristic is assessed on a 5 point scale.  Keeps appointments on time  5. Is always in attendance and on time. (No absences/ tardies )     4. Is consistently in attendance and on time. (1 to 2 absences/ tardies )     3. Is usually in attendance and on time. (2 to 3 absences/ tardies )     2. Is occasionally in attendance and on time.  (3 to 4…"
+              "ab Presentations 60%",
+              "40%",
+              "To calculate the grade: Total points from each Category x 4 = Grade"
             ],
             "note": ""
           },
@@ -238,9 +242,10 @@
             "id": "late_makeup",
             "label": "Late work / makeup policy",
             "status": "PRESENT",
-            "count": 1,
+            "count": 2,
             "cites": [
-              "Late work is not acceptable in my class! Instead, I will drop the two lowest grades per Six  W eeks. In addition to class work, each student will do a lab presentation to me on a g iven topic from the current Six  W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for…"
+              "Late work is not acceptable in my class! Instead, I will drop the two lowest grades per",
+              "...ty to check your calendar for missed assignments. Make up assig"
             ],
             "note": ""
           }
@@ -255,10 +260,14 @@
           {
             "id": "unit_topics",
             "label": "Units / topics sequence",
-            "status": "MISSING",
-            "count": 0,
-            "cites": [],
-            "note": "not found in Layer 0 excerpts"
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "2nd 6 Weeks",
+              "*Outline is subject to change with prior notice*",
+              "...tudents will be given one employability grade per six weeks that will count as a summative assessment in each C"
+            ],
+            "note": ""
           },
           {
             "id": "due_dates",
@@ -266,21 +275,18 @@
             "status": "PRESENT",
             "count": 2,
             "cites": [
-              "1 st  6  Weeks ServSafe  Certification training *** (About 7 Weeks) 2nd 6 Weeks ServSafe  Certification training *** (About 7 Weeks) Professionalism Food Service Equipment Weights and Measurements Baking and Pastry 3rd  6  Weeks Fundamentals of Baking Cookies Quick Breads Pies Yeast Breads Cakes and Icing 4th  6  Weeks Kitchen Staples Knife Skills Stocks & Sauces Soups Poultry Beef Veal, & Lamb 5th  6  Weeks Pork Deep Frying Eggs Omelet Station Extravaganza 6 th  6  Weeks Potatoes Grains and…",
-              "Students are required to d ownload  the app. You may also receive reminds through text within the application if downloading the app is not your thing. We will also set up a Group Me so that questions and culinary related conversations may occur as well as updates! Foul language in the kitchen will not be accepted. Uniform ***I will always be in uniform and I expect the same from my students. The full uniform needed to function in my kitchen is as follows: Non Slip Black Shoes Black Calf…"
+              "...beginning of class. All computer assignments are due by their perspective due dates and times.*",
+              "...ills include attendance, on-time arrival, meeting deadlines, working toward personal/team goals every day, and ethical use of technology. Dress code requireme..."
             ],
             "note": ""
           },
           {
             "id": "teks_timeline",
             "label": "TEKS / content coverage timeline claim",
-            "status": "PRESENT",
-            "count": 2,
-            "cites": [
-              "1 st  6  Weeks ServSafe  Certification training *** (About 7 Weeks) 2nd 6 Weeks ServSafe  Certification training *** (About 7 Weeks) Professionalism Food Service Equipment Weights and Measurements Baking and Pastry 3rd  6  Weeks Fundamentals of Baking Cookies Quick Breads Pies Yeast Breads Cakes and Icing 4th  6  Weeks Kitchen Staples Knife Skills Stocks & Sauces Soups Poultry Beef Veal, & Lamb 5th  6  Weeks Pork Deep Frying Eggs Omelet Station Extravaganza 6 th  6  Weeks Potatoes Grains and…",
-              "Late work is not acceptable in my class! Instead, I will drop the two lowest grades per Six  W eeks. In addition to class work, each student will do a lab presentation to me on a g iven topic from the current Six  W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for…"
-            ],
-            "note": ""
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in Layer 0 excerpts"
           }
         ]
       },
@@ -294,11 +300,11 @@
             "id": "attendance",
             "label": "Attendance expectations",
             "status": "PRESENT",
-            "count": 3,
+            "count": 9,
             "cites": [
-              "Students are required to d ownload  the app. You may also receive reminds through text within the application if downloading the app is not your thing. We will also set up a Group Me so that questions and culinary related conversations may occur as well as updates! Foul language in the kitchen will not be accepted. Uniform ***I will always be in uniform and I expect the same from my students. The full uniform needed to function in my kitchen is as follows: Non Slip Black Shoes Black Calf…",
-              "Late work is not acceptable in my class! Instead, I will drop the two lowest grades per Six  W eeks. In addition to class work, each student will do a lab presentation to me on a g iven topic from the current Six  W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for…",
-              "In order to provide focus and definition for employability skills, we have defined an assessment in terms FIVE  behavior characteristics. Each characteristic is assessed on a 5 point scale.  Keeps appointments on time  5. Is always in attendance and on time. (No absences/ tardies )     4. Is consistently in attendance and on time. (1 to 2 absences/ tardies )     3. Is usually in attendance and on time. (2 to 3 absences/ tardies )     2. Is occasionally in attendance and on time.  (3 to 4…"
+              "When you are absent, it is your responsibility to check your calendar for missed assignments. Make up assig",
+              "Tardy",
+              "I will not call roll ever! I will check attendance by my seating chart; so if you are standing when class starts, you’re tardy when you sit!"
             ],
             "note": ""
           },
@@ -316,9 +322,9 @@
             "status": "PRESENT",
             "count": 3,
             "cites": [
-              "Waxahachie High School  Culinary Arts Department 2021-2022  Syllabus Instructor :  Chef  Jason Hamilton Course: Culinary Arts I Room: Kitchen  Office: Kitchen Appointment Times:  (B DAY )  2:21-3:55 or Set Appointment Phone: 972-923-1617(Kitchen) Email: Jashamilton@wisd.org",
-              "Late work is not acceptable in my class! Instead, I will drop the two lowest grades per Six  W eeks. In addition to class work, each student will do a lab presentation to me on a g iven topic from the current Six  W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for…",
-              "Communication My main source of communication to m y students is through Remind  and Google Classroom."
+              "Email:",
+              "Google classroom",
+              "and Google Classroom."
             ],
             "note": ""
           }
@@ -342,10 +348,11 @@
             "id": "safety",
             "label": "Safety rules (lab/shop/clinical)",
             "status": "PRESENT",
-            "count": 2,
+            "count": 4,
             "cites": [
-              "1 st  6  Weeks ServSafe  Certification training *** (About 7 Weeks) 2nd 6 Weeks ServSafe  Certification training *** (About 7 Weeks) Professionalism Food Service Equipment Weights and Measurements Baking and Pastry 3rd  6  Weeks Fundamentals of Baking Cookies Quick Breads Pies Yeast Breads Cakes and Icing 4th  6  Weeks Kitchen Staples Knife Skills Stocks & Sauces Soups Poultry Beef Veal, & Lamb 5th  6  Weeks Pork Deep Frying Eggs Omelet Station Extravaganza 6 th  6  Weeks Potatoes Grains and…",
-              "Late work is not acceptable in my class! Instead, I will drop the two lowest grades per Six  W eeks. In addition to class work, each student will do a lab presentation to me on a g iven topic from the current Six  W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for…"
+              "ServSafe",
+              "ServSafe",
+              "..., white shirt, black calf length socks, and Black non-skid shoes)"
             ],
             "note": ""
           },
@@ -403,7 +410,7 @@
             "status": "PRESENT",
             "count": 1,
             "cites": [
-              "work, each student will do a lab presentation to me on a g iven topic from the current Six W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for someone that was not present . When you are absent, it is you r responsibility to check your calendar for missed assignments.…"
+              "Course:"
             ],
             "note": ""
           },
@@ -411,10 +418,11 @@
             "id": "instructor_contact",
             "label": "Teacher / instructor contact",
             "status": "PRESENT",
-            "count": 2,
+            "count": 4,
             "cites": [
-              "This course is a unique practicum that provides occupationally specific opportunities for students to participate in a learning experience that combines classroom instruction with actual business and industry career experiences. Practicum in Culinary Arts integrates academic and career and technical education with the goal of preparing students with a variety of skills in a fast-changing workplace. The students are actually major participants in operating a restaurant , menu creation,  and…",
-              "work, each student will do a lab presentation to me on a g iven topic from the current Six W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for someone that was not present . When you are absent, it is you r responsibility to check your calendar for missed assignments.…"
+              "Instructor",
+              "Room:",
+              "Phone:"
             ],
             "note": ""
           },
@@ -422,9 +430,11 @@
             "id": "meeting_pattern",
             "label": "Meeting pattern / schedule block",
             "status": "PRESENT",
-            "count": 1,
+            "count": 3,
             "cites": [
-              "work, each student will do a lab presentation to me on a g iven topic from the current Six W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for someone that was not present . When you are absent, it is you r responsibility to check your calendar for missed assignments.…"
+              "Appointment Times:",
+              "A DAY",
+              "(B DAY)"
             ],
             "note": ""
           },
@@ -440,39 +450,37 @@
       },
       "G3": {
         "step": "G3",
-        "status": "PRESENT",
-        "present": 3,
+        "status": "PARTIAL",
+        "present": 2,
         "required": 3,
         "fields": [
           {
             "id": "course_purpose",
             "label": "Course description / why this course matters",
             "status": "PRESENT",
-            "count": 2,
+            "count": 1,
             "cites": [
-              "This course is a unique practicum that provides occupationally specific opportunities for students to participate in a learning experience that combines classroom instruction with actual business and industry career experiences. Practicum in Culinary Arts integrates academic and career and technical education with the goal of preparing students with a variety of skills in a fast-changing workplace. The students are actually major participants in operating a restaurant , menu creation,  and…",
-              "work, each student will do a lab presentation to me on a g iven topic from the current Six W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for someone that was not present . When you are absent, it is you r responsibility to check your calendar for missed assignments.…"
+              "This course is a unique practicum that provides occupationally specific opportunities for students to participa..."
             ],
             "note": ""
           },
           {
             "id": "learning_outcomes",
             "label": "Measurable course outcomes / learning objectives",
-            "status": "PRESENT",
-            "count": 2,
-            "cites": [
-              "work, each student will do a lab presentation to me on a g iven topic from the current Six W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for someone that was not present . When you are absent, it is you r responsibility to check your calendar for missed assignments.…",
-              "In order to provide focus and definition for employability skills, we have defined an assessment in terms FIVE  behavior characteristics. Each characteristic is assessed on a 5 point scale.  Keeps appointments on time  5. Is always in attendance and on time. (No absences/ tardies )     4. Is consistently in attendance and on time. (1 to 2 absences/ tardies )     3. Is usually in attendance and on time. (2 to 3 absences/ tardies )     2. Is occasionally in attendance and on time.  (3 to 4…"
-            ],
-            "note": ""
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in Layer 0 excerpts"
           },
           {
             "id": "teks_goals",
             "label": "TEKS / standards goals named on syllabus",
             "status": "PRESENT",
-            "count": 1,
+            "count": 3,
             "cites": [
-              "In order to provide focus and definition for employability skills, we have defined an assessment in terms FIVE  behavior characteristics. Each characteristic is assessed on a 5 point scale.  Keeps appointments on time  5. Is always in attendance and on time. (No absences/ tardies )     4. Is consistently in attendance and on time. (1 to 2 absences/ tardies )     3. Is usually in attendance and on time. (2 to 3 absences/ tardies )     2. Is occasionally in attendance and on time.  (3 to 4…"
+              "Show Employability Skills(See attached Rubric)",
+              "is employability skills. These skills include attendance, on-time arrival, meeting deadlines, working toward personal/team...",
+              "In order to provide focus and definition for employability skills, we have defined an assessment in terms"
             ],
             "note": ""
           }
@@ -488,9 +496,11 @@
             "id": "grade_categories",
             "label": "Graded categories / assignment types",
             "status": "PRESENT",
-            "count": 1,
+            "count": 4,
             "cites": [
-              "work, each student will do a lab presentation to me on a g iven topic from the current Six W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for someone that was not present . When you are absent, it is you r responsibility to check your calendar for missed assignments.…"
+              "All projects and paper based assignments are due at the beginning of class. All computer assignments are due by...",
+              "This will be a major grade",
+              "Grading"
             ],
             "note": ""
           },
@@ -498,10 +508,11 @@
             "id": "grade_weights",
             "label": "Weights or points toward final grade",
             "status": "PRESENT",
-            "count": 2,
+            "count": 3,
             "cites": [
-              "work, each student will do a lab presentation to me on a g iven topic from the current Six W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for someone that was not present . When you are absent, it is you r responsibility to check your calendar for missed assignments.…",
-              "In order to provide focus and definition for employability skills, we have defined an assessment in terms FIVE  behavior characteristics. Each characteristic is assessed on a 5 point scale.  Keeps appointments on time  5. Is always in attendance and on time. (No absences/ tardies )     4. Is consistently in attendance and on time. (1 to 2 absences/ tardies )     3. Is usually in attendance and on time. (2 to 3 absences/ tardies )     2. Is occasionally in attendance and on time.  (3 to 4…"
+              "%",
+              "30%-15%",
+              "To calculate the grade: Total points from each Category x 4 = Grade"
             ],
             "note": ""
           },
@@ -517,9 +528,10 @@
             "id": "late_makeup",
             "label": "Late work / makeup policy",
             "status": "PRESENT",
-            "count": 1,
+            "count": 2,
             "cites": [
-              "work, each student will do a lab presentation to me on a g iven topic from the current Six W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for someone that was not present . When you are absent, it is you r responsibility to check your calendar for missed assignments.…"
+              "Late work is not acceptable in my class! Instead, I will drop the two lowest grades per",
+              "Make up"
             ],
             "note": ""
           }
@@ -534,30 +546,33 @@
           {
             "id": "unit_topics",
             "label": "Units / topics sequence",
-            "status": "MISSING",
-            "count": 0,
-            "cites": [],
-            "note": "not found in Layer 0 excerpts"
+            "status": "PRESENT",
+            "count": 5,
+            "cites": [
+              "Course Outline:",
+              "Six Weeks",
+              "Six Weeks"
+            ],
+            "note": ""
           },
           {
             "id": "due_dates",
             "label": "Major dates / due dates",
             "status": "PRESENT",
-            "count": 1,
+            "count": 2,
             "cites": [
-              "Six  Weeks Job Application, W-2, and I-9 Resume Writing Interviews for Restaurant Positions Operation Training Front of House Training Coffee Bar Training POS Training Inventory 2 nd  Six  Weeks Salads,  Dressings , and Sandwiches Beef and Pork Potatoes ,  Grains , and P asta Fall/ Winter Holiday Menu Sale Deep Frying Plate Presentation Restaurant Operations 3 rd  Six  Weeks Restaurant Operations American Regional Menu Creation/Costing Portfolio Design FAFSA Application Semester Deep Cleaning…"
+              "...beginning of class. All computer assignments are due by their perspective due dates and times.*",
+              "...ills include attendance, on-time arrival, meeting deadlines, working toward personal/team goals every day, and ethical use of technology. Dress code requireme..."
             ],
             "note": ""
           },
           {
             "id": "teks_timeline",
             "label": "TEKS / content coverage timeline claim",
-            "status": "PRESENT",
-            "count": 1,
-            "cites": [
-              "work, each student will do a lab presentation to me on a g iven topic from the current Six W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for someone that was not present . When you are absent, it is you r responsibility to check your calendar for missed assignments.…"
-            ],
-            "note": ""
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in Layer 0 excerpts"
           }
         ]
       },
@@ -571,10 +586,11 @@
             "id": "attendance",
             "label": "Attendance expectations",
             "status": "PRESENT",
-            "count": 2,
+            "count": 9,
             "cites": [
-              "work, each student will do a lab presentation to me on a g iven topic from the current Six W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for someone that was not present . When you are absent, it is you r responsibility to check your calendar for missed assignments.…",
-              "In order to provide focus and definition for employability skills, we have defined an assessment in terms FIVE  behavior characteristics. Each characteristic is assessed on a 5 point scale.  Keeps appointments on time  5. Is always in attendance and on time. (No absences/ tardies )     4. Is consistently in attendance and on time. (1 to 2 absences/ tardies )     3. Is usually in attendance and on time. (2 to 3 absences/ tardies )     2. Is occasionally in attendance and on time.  (3 to 4…"
+              "When you are absent, it is you",
+              "Tardy",
+              "will check attendance by my seating chart; so if you are standing when class starts, you’re tardy when you sit!"
             ],
             "note": ""
           },
@@ -590,9 +606,10 @@
             "id": "communication",
             "label": "Communication channels / response norms",
             "status": "PRESENT",
-            "count": 1,
+            "count": 2,
             "cites": [
-              "work, each student will do a lab presentation to me on a g iven topic from the current Six W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for someone that was not present . When you are absent, it is you r responsibility to check your calendar for missed assignments.…"
+              "Email:",
+              "Canvas"
             ],
             "note": ""
           }
@@ -601,7 +618,7 @@
       "G7": {
         "step": "G7",
         "status": "PARTIAL",
-        "present": 2,
+        "present": 3,
         "required": 4,
         "fields": [
           {
@@ -610,7 +627,7 @@
             "status": "PRESENT",
             "count": 1,
             "cites": [
-              "In order to provide focus and definition for employability skills, we have defined an assessment in terms FIVE  behavior characteristics. Each characteristic is assessed on a 5 point scale.  Keeps appointments on time  5. Is always in attendance and on time. (No absences/ tardies )     4. Is consistently in attendance and on time. (1 to 2 absences/ tardies )     3. Is usually in attendance and on time. (2 to 3 absences/ tardies )     2. Is occasionally in attendance and on time.  (3 to 4…"
+              "...; Title IX of the Educational Amendments of 1972; Section 504 of the Rehabilitation Act of 1973, as amended; Age Discrimination Act of 1975; Title II of the Amer..."
             ],
             "note": ""
           },
@@ -618,19 +635,25 @@
             "id": "safety",
             "label": "Safety rules (lab/shop/clinical)",
             "status": "PRESENT",
-            "count": 1,
+            "count": 3,
             "cites": [
-              "work, each student will do a lab presentation to me on a g iven topic from the current Six W eeks. (You will be graded on your effectiveness, cleanliness, time, presentation, visual, texture and taste). This will be a major grade !! A bsences It is very important that you are in class every  day. My class is very hands on; there is no time for me to do a lesson over for someone that was not present . When you are absent, it is you r responsibility to check your calendar for missed assignments.…"
+              "non-skid shoes)",
+              "***Students are responsible to purchase non slip shoes***",
+              "Non Slip Black Shoes"
             ],
             "note": ""
           },
           {
             "id": "wbl_internship",
             "label": "Work-based learning / internship requirements",
-            "status": "MISSING",
-            "count": 0,
-            "cites": [],
-            "note": "not found in Layer 0 excerpts"
+            "status": "PRESENT",
+            "count": 5,
+            "cites": [
+              "/Practicum",
+              "Practicum",
+              "This course is a unique practicum that provides occupationally specific opportunities for students to participate in a learning exper..."
+            ],
+            "note": ""
           },
           {
             "id": "acknowledgment",

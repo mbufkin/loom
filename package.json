@@ -9,7 +9,7 @@
   "scripts": {
     "test": "npm run test:core && npm run test:paths",
     "test:core": "python3 test_schema_validate.py && python3 test_audit.py && python3 test_rollup.py && python3 test_doc_extract.py && python3 test_loom_pipeline.py && python3 test_usage.py",
-    "test:paths": "python3 test_route_lenses.py && python3 test_path_a_lesson_plan.py && python3 test_path_b_assessment.py && python3 test_path_c_general.py && python3 test_path_d_teacher_support.py && python3 test_path_e_student_practice.py && python3 test_path_f_standards_pacing.py && python3 test_path_g_syllabus.py && python3 test_path_h_exit_ticket.py && python3 test_artifact_rung.py",
+    "test:paths": "python3 test_keyword_match.py && python3 test_route_lenses.py && python3 test_path_a_lesson_plan.py && python3 test_path_b_assessment.py && python3 test_path_c_general.py && python3 test_path_d_teacher_support.py && python3 test_path_e_student_practice.py && python3 test_path_f_standards_pacing.py && python3 test_path_g_syllabus.py && python3 test_path_h_exit_ticket.py && python3 test_artifact_rung.py",
     "lint:md": "npx markdownlint '**/*.md' --ignore node_modules",
     "ui:dev": "cd ui && npm run dev",
     "ui:api": "python3 ui/server.py",

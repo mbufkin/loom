@@ -232,6 +232,33 @@ def _inventory_cells(inventory: list) -> dict[str, str]:
     return cells
 
 
+def _field_cells(steps_by_doc: dict) -> dict[str, str]:
+    """doc_id:step_id.field_id → status, one level below the step rollup.
+
+    Educational note: step status alone is too coarse to review a keyword
+    change. Correcting Path G turned two false PRESENTs into MISSING and one
+    false MISSING into PRESENT, and because the step rolled up to PARTIAL
+    either way, the pin showed almost nothing. Tuning happens at the field, so
+    the pin has to record the field.
+    """
+    cells: dict[str, str] = {}
+    if not isinstance(steps_by_doc, dict):
+        return cells
+    for doc_id, steps in steps_by_doc.items():
+        if not isinstance(steps, dict):
+            continue
+        for step_id, step in steps.items():
+            if not isinstance(step, dict):
+                continue
+            for field in step.get("fields") or []:
+                if not isinstance(field, dict):
+                    continue
+                fid, status = field.get("id"), field.get("status")
+                if fid and status is not None:
+                    cells[f"{doc_id}:{step_id}.{fid}"] = str(status)
+    return cells
+
+
 def compute_paths_snapshot(project_id: str) -> dict:
     """Distilled path + route-map snapshot. generated_at is dropped so two
     consecutive route.py runs do not defeat the diff; everything else the
@@ -257,6 +284,7 @@ def compute_paths_snapshot(project_id: str) -> dict:
         if not isinstance(findings, dict):
             continue
         cells = _inventory_cells(findings.get("inventory") or [])
+        cells.update(_field_cells(findings.get("steps_by_doc") or {}))
         # Path A has no per-doc checklist cells; pin the aggregate step statuses
         # that curriculum-tier and LESSON-PLAN fill depend on, so a silent A3/A5
         # regression still shows up in --check.
