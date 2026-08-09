@@ -1,0 +1,2337 @@
+{
+  "project_id": "dallas-career-2026",
+  "workflow_id": "exit_ticket",
+  "path": "H",
+  "lens": "Exit ticket",
+  "status": "ok",
+  "doc_ids": [
+    "041457651819",
+    "09bf178d4e7e",
+    "0a9fe894e4f0",
+    "1518e9d9d4e5",
+    "1b43180b2ba4",
+    "1bd2952ce87b",
+    "314d7d0905ca",
+    "3f5d5ba70a87",
+    "4736326638c1",
+    "51e75ae5f576",
+    "59ddeafc2ad3",
+    "81adda4c10f7",
+    "85c8ad2c6c50",
+    "8ce965ac1600",
+    "9b49036929a2",
+    "ba8b5c7a6deb",
+    "e173d04cd3e3",
+    "e2c12c61bc5f",
+    "eff81c789b58",
+    "f52d1bc1c462",
+    "ff5cd4c0712e"
+  ],
+  "checklist": "workflows/checklists/exit_ticket.yaml",
+  "inventory": [
+    {
+      "doc_id": "041457651819",
+      "doc_type": "exit_ticket",
+      "graph_role": "exit_ticket",
+      "element_count": 2,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "H3": {
+        "status": "MISSING",
+        "note": "0/0 fields present"
+      },
+      "H4": {
+        "status": "MISSING",
+        "note": "0/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "09bf178d4e7e",
+      "doc_type": "exit_ticket",
+      "graph_role": "exit_ticket",
+      "element_count": 2,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "H3": {
+        "status": "MISSING",
+        "note": "0/0 fields present"
+      },
+      "H4": {
+        "status": "MISSING",
+        "note": "0/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "0a9fe894e4f0",
+      "doc_type": "exit_ticket",
+      "graph_role": "exit_ticket",
+      "element_count": 3,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "H3": {
+        "status": "MISSING",
+        "note": "0/0 fields present"
+      },
+      "H4": {
+        "status": "MISSING",
+        "note": "0/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "1518e9d9d4e5",
+      "doc_type": "exit_ticket",
+      "graph_role": "exit_ticket",
+      "element_count": 6,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "H3": {
+        "status": "MISSING",
+        "note": "0/0 fields present"
+      },
+      "H4": {
+        "status": "MISSING",
+        "note": "0/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "1b43180b2ba4",
+      "doc_type": "exit_ticket",
+      "graph_role": "exit_ticket",
+      "element_count": 2,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "H3": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "H4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "1bd2952ce87b",
+      "doc_type": "exit_ticket",
+      "graph_role": "exit_ticket",
+      "element_count": 3,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "H3": {
+        "status": "MISSING",
+        "note": "0/0 fields present"
+      },
+      "H4": {
+        "status": "MISSING",
+        "note": "0/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "314d7d0905ca",
+      "doc_type": "exit_ticket",
+      "graph_role": "exit_ticket",
+      "element_count": 2,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "H3": {
+        "status": "MISSING",
+        "note": "0/0 fields present"
+      },
+      "H4": {
+        "status": "MISSING",
+        "note": "0/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "3f5d5ba70a87",
+      "doc_type": "exit_ticket",
+      "graph_role": "exit_ticket",
+      "element_count": 2,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "H3": {
+        "status": "MISSING",
+        "note": "0/0 fields present"
+      },
+      "H4": {
+        "status": "MISSING",
+        "note": "0/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "4736326638c1",
+      "doc_type": "exit_ticket",
+      "graph_role": "exit_ticket",
+      "element_count": 2,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "H3": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "H4": {
+        "status": "MISSING",
+        "note": "0/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "51e75ae5f576",
+      "doc_type": "exit_ticket",
+      "graph_role": "exit_ticket",
+      "element_count": 2,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "H3": {
+        "status": "MISSING",
+        "note": "0/0 fields present"
+      },
+      "H4": {
+        "status": "MISSING",
+        "note": "0/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "59ddeafc2ad3",
+      "doc_type": "exit_ticket",
+      "graph_role": "exit_ticket",
+      "element_count": 2,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "H3": {
+        "status": "MISSING",
+        "note": "0/0 fields present"
+      },
+      "H4": {
+        "status": "MISSING",
+        "note": "0/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "81adda4c10f7",
+      "doc_type": "exit_ticket",
+      "graph_role": "exit_ticket",
+      "element_count": 3,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "H3": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "H4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "85c8ad2c6c50",
+      "doc_type": "exit_ticket",
+      "graph_role": "exit_ticket",
+      "element_count": 3,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "H3": {
+        "status": "MISSING",
+        "note": "0/0 fields present"
+      },
+      "H4": {
+        "status": "MISSING",
+        "note": "0/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "8ce965ac1600",
+      "doc_type": "exit_ticket",
+      "graph_role": "exit_ticket",
+      "element_count": 2,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "H3": {
+        "status": "MISSING",
+        "note": "0/0 fields present"
+      },
+      "H4": {
+        "status": "MISSING",
+        "note": "0/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "9b49036929a2",
+      "doc_type": "exit_ticket",
+      "graph_role": "exit_ticket",
+      "element_count": 2,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "H3": {
+        "status": "MISSING",
+        "note": "0/0 fields present"
+      },
+      "H4": {
+        "status": "MISSING",
+        "note": "0/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "ba8b5c7a6deb",
+      "doc_type": "exit_ticket",
+      "graph_role": "exit_ticket",
+      "element_count": 3,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "H3": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "H4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "e173d04cd3e3",
+      "doc_type": "exit_ticket",
+      "graph_role": "exit_ticket",
+      "element_count": 2,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "H3": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "H4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "e2c12c61bc5f",
+      "doc_type": "exit_ticket",
+      "graph_role": "exit_ticket",
+      "element_count": 2,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "H3": {
+        "status": "MISSING",
+        "note": "0/0 fields present"
+      },
+      "H4": {
+        "status": "MISSING",
+        "note": "0/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "eff81c789b58",
+      "doc_type": "exit_ticket",
+      "graph_role": "exit_ticket",
+      "element_count": 3,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "H3": {
+        "status": "MISSING",
+        "note": "0/0 fields present"
+      },
+      "H4": {
+        "status": "MISSING",
+        "note": "0/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "f52d1bc1c462",
+      "doc_type": "exit_ticket",
+      "graph_role": "exit_ticket",
+      "element_count": 1,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "H3": {
+        "status": "MISSING",
+        "note": "0/0 fields present"
+      },
+      "H4": {
+        "status": "MISSING",
+        "note": "0/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "ff5cd4c0712e",
+      "doc_type": "exit_ticket",
+      "graph_role": "exit_ticket",
+      "element_count": 2,
+      "H1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket"
+      },
+      "H2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "H3": {
+        "status": "MISSING",
+        "note": "0/0 fields present"
+      },
+      "H4": {
+        "status": "MISSING",
+        "note": "0/1 fields present"
+      },
+      "H5": {
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    }
+  ],
+  "steps_by_doc": {
+    "041457651819": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 2,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "041457651819"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Which part of the resume builder did you have the least trouble and the most trouble writing?"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "09bf178d4e7e": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 2,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "09bf178d4e7e"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Professional Preparedness Exit Ticket - Day 3  Name:                                                                         Date:   _____________________"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "How well did you feel like you did at the interview? (On a scale of 1-5, where 5 is the best.)"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "0a9fe894e4f0": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 3,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "standards_objectives": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "0a9fe894e4f0"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Career Cluster Exit Ticket - Day 1  Name:                                                                         Date:   _____________________"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Instructions: Answer the questions for what you learned about the Career Clusters",
+              "What Career Cluster interested you the most?   What Career Cluster were you the least interested in?   Which Career Cluster does a Doctor fall under?"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "1518e9d9d4e5": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 6,
+        "by_element_type": {
+          "standards_objectives": 3,
+          "assessment_checkpoint": 3
+        },
+        "doc_id": "1518e9d9d4e5"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Health Science Day 1 Exit Ticket",
+              "Health Science Day 2 Exit Ticket",
+              "Health Science 3 Exit Ticket"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Instructions: Choose 3 posters and list what you like and what youy don’t like about each one."
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "1b43180b2ba4": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 2,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "1b43180b2ba4"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Dallas ISD High School Programs Exit Ticket   Exit Ticket: Dallas ISD High School Programs Exploration Name: ___________________________ Instructions: Reflect on today’s lesson about Dallas ISD high school programs. Answer the following questions briefly and thoughtfully. Hand in this exit ticket before leaving the classroom."
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Dallas ISD High School Programs Exit Ticket   Exit Ticket: Dallas ISD High School Programs Exploration Name: ___________________________ Instructions: Reflect on today’s lesson about Dallas ISD high school programs. Answer the following questions briefly and thoughtfully. Hand in this exit ticket before leaving the classroom.",
+              "Which Dallas ISD high school program interests you the most? [ ] STEM (Science, Technology, Engineering, and Mathematics) [ ] Fine Arts [ ] Health Sciences [ ] Business and Entrepreneurship [ ] Humanities and Social Sciences [ ] Career and Technical Education (CTE) [ ] Other (please specify): _______________________ Why does this program appeal to you?  What questions do you still have about high school programs?  Rate your excitement level about transitioning to high school (1 = Not excited,…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Dallas ISD High School Programs Exit Ticket   Exit Ticket: Dallas ISD High School Programs Exploration Name: ___________________________ Instructions: Reflect on today’s lesson about Dallas ISD high school programs. Answer the following questions briefly and thoughtfully. Hand in this exit ticket before leaving the classroom."
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Dallas ISD High School Programs Exit Ticket   Exit Ticket: Dallas ISD High School Programs Exploration Name: ___________________________ Instructions: Reflect on today’s lesson about Dallas ISD high school programs. Answer the following questions briefly and thoughtfully. Hand in this exit ticket before leaving the classroom.",
+              "Which Dallas ISD high school program interests you the most? [ ] STEM (Science, Technology, Engineering, and Mathematics) [ ] Fine Arts [ ] Health Sciences [ ] Business and Entrepreneurship [ ] Humanities and Social Sciences [ ] Career and Technical Education (CTE) [ ] Other (please specify): _______________________ Why does this program appeal to you?  What questions do you still have about high school programs?  Rate your excitement level about transitioning to high school (1 = Not excited,…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "1bd2952ce87b": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 3,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "1bd2952ce87b"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Information Technology Day 1 Exit Ticket",
+              "Name:                                                                         Date:   _____________________  Instructions: Use the quiz through Common Sense Media to check for understanding.   Information Technology Day 2 Exit Ticket  Name:                                                                         Date:   _____________________",
+              "Instructions: Write a paragraph explaining which part was the easiest and which part was the hardest. Why for each question.   Information Technology 3 Exit Ticket  Name:                                                                         Date:   _____________________  Instructions: Your evaluation will be the end of the Lesson Quiz"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "314d7d0905ca": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 2,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "314d7d0905ca"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Arts, A/V TEch & Comm Cluster Exit Ticket - Day 1  Name:                                                                         Date:   _____________________"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Instructions: Watch the youtube video “Non Profit Advertising Spot”  Answer the Question: What is the message of this Advertisement?  What is the message of this Advertisement?   What is the Company Name?   What is the Company Slogan?"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "3f5d5ba70a87": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 2,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "3f5d5ba70a87"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Instructions:  Watch the video https://www.youtube.com/watch?v=Zy1h49_L8ME&t=1s Answer the questions   What were  3 things that went wrong with the “Poor Customer Service” .   What were  3 things that went right with the “Great Customer Service” .  How do you think the customer left the store feeling in “Poor Customer Service” Vs the “Great Customer Service”?"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "4736326638c1": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 2,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "4736326638c1"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Professional Preparedness Exit Ticket - Day 2  Name:                                                                         Date:   _____________________"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Instructions: Answer the following question over the lesson today.  What would you wear to an interview?"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Instructions: Answer the following question over the lesson today.  What would you wear to an interview?"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "51e75ae5f576": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 2,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "51e75ae5f576"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Hospitality and Tourism Exit Ticket - Day 3  Name:                                                                         Date:   _____________________"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Out of the three pathways, (Culinary Arts/ Lodging and Resort Management/ Travel, Tourism and Attractions) which did you like most ?   What career did you find most interesting within that pathway?   What would you like to learn more about this cluster?"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "59ddeafc2ad3": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 2,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "59ddeafc2ad3"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Career Cluster Exit Ticket - Day 3  Name:                                                                         Date:   _____________________"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "On a scale of 1 - 5 where 5 is the best, how well did my group do on the presentation?  What cluster did the best at presenting (cannot choose your own group)?"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "81adda4c10f7": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 3,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "81adda4c10f7"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Exit Ticket: Manufacturing Mass-Produced Goods Instructions: Reflect on today’s lesson about manufacturing mass-produced goods. Answer the following questions briefly and honestly. Hand in this exit ticket before leaving the classroom.  What is one key concept you learned about mass production today? [ ] Efficient use of assembly lines [ ] Importance of quality control [ ] Role of automation in manufacturing [ ] Other (please specify): _______________________ Why is standardization essential…",
+              "Exit Ticket: Manufacturing Mass-Produced Goods Instructions: Reflect on today’s lesson about manufacturing mass-produced goods. Answer the following questions briefly and honestly. Hand in this exit ticket before leaving the classroom.  What is one key concept you learned about mass production today? [ ] Efficient use of assembly lines [ ] Importance of quality control [ ] Role of automation in manufacturing [ ] Other (please specify): _______________________ Why is standardization essential…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Exit Ticket: Manufacturing Mass-Produced Goods Instructions: Reflect on today’s lesson about manufacturing mass-produced goods. Answer the following questions briefly and honestly. Hand in this exit ticket before leaving the classroom.  What is one key concept you learned about mass production today? [ ] Efficient use of assembly lines [ ] Importance of quality control [ ] Role of automation in manufacturing [ ] Other (please specify): _______________________ Why is standardization essential…",
+              "Exit Ticket: Manufacturing Mass-Produced Goods Instructions: Reflect on today’s lesson about manufacturing mass-produced goods. Answer the following questions briefly and honestly. Hand in this exit ticket before leaving the classroom.  What is one key concept you learned about mass production today? [ ] Efficient use of assembly lines [ ] Importance of quality control [ ] Role of automation in manufacturing [ ] Other (please specify): _______________________ Why is standardization essential…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Exit Ticket: Manufacturing Mass-Produced Goods Instructions: Reflect on today’s lesson about manufacturing mass-produced goods. Answer the following questions briefly and honestly. Hand in this exit ticket before leaving the classroom.  What is one key concept you learned about mass production today? [ ] Efficient use of assembly lines [ ] Importance of quality control [ ] Role of automation in manufacturing [ ] Other (please specify): _______________________ Why is standardization essential…",
+              "Exit Ticket: Manufacturing Mass-Produced Goods Instructions: Reflect on today’s lesson about manufacturing mass-produced goods. Answer the following questions briefly and honestly. Hand in this exit ticket before leaving the classroom.  What is one key concept you learned about mass production today? [ ] Efficient use of assembly lines [ ] Importance of quality control [ ] Role of automation in manufacturing [ ] Other (please specify): _______________________ Why is standardization essential…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Exit Ticket: Manufacturing Mass-Produced Goods Instructions: Reflect on today’s lesson about manufacturing mass-produced goods. Answer the following questions briefly and honestly. Hand in this exit ticket before leaving the classroom.  What is one key concept you learned about mass production today? [ ] Efficient use of assembly lines [ ] Importance of quality control [ ] Role of automation in manufacturing [ ] Other (please specify): _______________________ Why is standardization essential…",
+              "Exit Ticket: Manufacturing Mass-Produced Goods Instructions: Reflect on today’s lesson about manufacturing mass-produced goods. Answer the following questions briefly and honestly. Hand in this exit ticket before leaving the classroom.  What is one key concept you learned about mass production today? [ ] Efficient use of assembly lines [ ] Importance of quality control [ ] Role of automation in manufacturing [ ] Other (please specify): _______________________ Why is standardization essential…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "85c8ad2c6c50": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 3,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "standards_objectives": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "85c8ad2c6c50"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Hospitality and Tourism Exit Ticket - Day 1  Name:                                                                         Date:   _____________________"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Instructions: Answer the questions for what you learned about Culinary.",
+              "Which cut is thinner, Julienne or Batonnet?   Which cut is bigger, Dice or Brunoise?   Can you name the first part in a three course meal?"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "8ce965ac1600": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 2,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "8ce965ac1600"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Business, Marketing & Finance Day 1 Exit Ticket  Name:                                                                         Date:   _____________________",
+              "Instructions: Write a paragraph describing the process of creating a new product and the process of working in a group.  Business, Marketing & Finance Day 2 Exit Ticket  Name:                                                                         Date:   _____________________  Instructions: Write a paragraph explaining if you would be comfortable selling the product at the cost the team decided, why or why not? Also, would you buy the product for the price your team decided? Why or why not?  …"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Instructions: Write a paragraph describing the process of creating a new product and the process of working in a group.  Business, Marketing & Finance Day 2 Exit Ticket  Name:                                                                         Date:   _____________________  Instructions: Write a paragraph explaining if you would be comfortable selling the product at the cost the team decided, why or why not? Also, would you buy the product for the price your team decided? Why or why not?  …"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "9b49036929a2": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 2,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "9b49036929a2"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Hospitality and Tourism Cluster Day 2 Exit Ticket  Name:                                                                         Date:   _____________________"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Instructions: Read each scenario and decide which response gave better customer service.  Scenario 1  Which response gives better customer service?  Scenario 2  Which response gives better customer service?  Scenario 3  Which response gives better customer service?"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "ba8b5c7a6deb": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 3,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "ba8b5c7a6deb"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Engineering Exit Ticket",
+              "Exit Ticket: Design a Paper Airplane Launcher Name: ___________________________ Instructions: Reflect on today’s lesson about designing and building a paper airplane launcher. Answer the following questions briefly and thoughtfully. Hand in this exit ticket before leaving the classroom."
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Exit Ticket: Design a Paper Airplane Launcher Name: ___________________________ Instructions: Reflect on today’s lesson about designing and building a paper airplane launcher. Answer the following questions briefly and thoughtfully. Hand in this exit ticket before leaving the classroom.",
+              "What was the main objective of today’s activity? [ ] To create a functional paper airplane launcher [ ] To explore principles of force and motion [ ] To understand how design affects performance [ ] Other (please specify): _______________________ Describe one modification you made to improve your paper airplane launcher.  What challenges did you encounter during the design process?  Rate your teamwork skills during the activity (1 = Low, 5 = High): [ ] 1 [ ] 2 [ ] 3 [ ] 4 [ ] 5 What did you…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Exit Ticket: Design a Paper Airplane Launcher Name: ___________________________ Instructions: Reflect on today’s lesson about designing and building a paper airplane launcher. Answer the following questions briefly and thoughtfully. Hand in this exit ticket before leaving the classroom.",
+              "What was the main objective of today’s activity? [ ] To create a functional paper airplane launcher [ ] To explore principles of force and motion [ ] To understand how design affects performance [ ] Other (please specify): _______________________ Describe one modification you made to improve your paper airplane launcher.  What challenges did you encounter during the design process?  Rate your teamwork skills during the activity (1 = Low, 5 = High): [ ] 1 [ ] 2 [ ] 3 [ ] 4 [ ] 5 What did you…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Exit Ticket: Design a Paper Airplane Launcher Name: ___________________________ Instructions: Reflect on today’s lesson about designing and building a paper airplane launcher. Answer the following questions briefly and thoughtfully. Hand in this exit ticket before leaving the classroom.",
+              "What was the main objective of today’s activity? [ ] To create a functional paper airplane launcher [ ] To explore principles of force and motion [ ] To understand how design affects performance [ ] Other (please specify): _______________________ Describe one modification you made to improve your paper airplane launcher.  What challenges did you encounter during the design process?  Rate your teamwork skills during the activity (1 = Low, 5 = High): [ ] 1 [ ] 2 [ ] 3 [ ] 4 [ ] 5 What did you…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "e173d04cd3e3": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 2,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "e173d04cd3e3"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Architecture and Construction Exit Ticket  Exit Ticket: Tallest Paper Tower Challenge Name: ___________________________ Instructions: Reflect on today’s lesson about designing and building paper towers. Answer the following questions briefly and thoughtfully. Hand in this exit ticket before leaving the classroom."
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Architecture and Construction Exit Ticket  Exit Ticket: Tallest Paper Tower Challenge Name: ___________________________ Instructions: Reflect on today’s lesson about designing and building paper towers. Answer the following questions briefly and thoughtfully. Hand in this exit ticket before leaving the classroom."
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Architecture and Construction Exit Ticket  Exit Ticket: Tallest Paper Tower Challenge Name: ___________________________ Instructions: Reflect on today’s lesson about designing and building paper towers. Answer the following questions briefly and thoughtfully. Hand in this exit ticket before leaving the classroom."
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Architecture and Construction Exit Ticket  Exit Ticket: Tallest Paper Tower Challenge Name: ___________________________ Instructions: Reflect on today’s lesson about designing and building paper towers. Answer the following questions briefly and thoughtfully. Hand in this exit ticket before leaving the classroom."
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "e2c12c61bc5f": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 2,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "e2c12c61bc5f"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Arts, A/V Tech & Comm Cluster Exit Ticket - Day 3  Name:                                                                         Date:   _____________________"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "What is the main purpose of this cluster?   What career did you find most interesting within this cluster?   What would you like to learn more about this cluster?"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "eff81c789b58": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 3,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "eff81c789b58"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Financial Literacy Day 1 Exit Ticket",
+              "Name:                                                                         Date:   _____________________  Instructions: Complete the mini-quizzes throughout the scenarios.   Financial Literacy Day 2 Exit Ticket  Name:                                                                         Date:   _____________________",
+              "Financial Literacy Day 2 Exit Ticket  Name:                                                                         Date:   _____________________  Instructions: Complete the post assessment.   Financial Literacy 3 Exit Ticket"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "f52d1bc1c462": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 1,
+        "by_element_type": {
+          "reflection_closure": 1
+        },
+        "doc_id": "f52d1bc1c462"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Career Cluster Exit Ticket - Day 2  Name:                                                                         Date:   _____________________  Instructions: Having had the day to work in your groups, think back on how the group worked together.  Did my group communicate well?    Did my group use its time well?   Did I contribute to my team’s work?"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Career Cluster Exit Ticket - Day 2  Name:                                                                         Date:   _____________________  Instructions: Having had the day to work in your groups, think back on how the group worked together.  Did my group communicate well?    Did my group use its time well?   Did I contribute to my team’s work?"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    },
+    "ff5cd4c0712e": {
+      "H1": {
+        "step": "H1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this exit ticket",
+        "element_count": 2,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "ff5cd4c0712e"
+      },
+      "H2": {
+        "step": "H2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "exit_label",
+            "label": "Exit ticket framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Arts, A/V Tech & Comm Cluster Exit Ticket - Day 2  Name:                                                                         Date:   _____________________"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "prompt_or_question",
+            "label": "Student-facing prompt / question",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Instructions: Having had the day to work in your groups, think back on how the group worked together.  Did my group communicate well?   Did my group work together to solve the problem?   Did my group use its time well?   Did I contribute to my team’s work?   Did everyone in my group contribute?"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "H3": {
+        "step": "H3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / today’s lesson / TEKS cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "H4": {
+        "step": "H4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 1,
+        "fields": [
+          {
+            "id": "formative_signal",
+            "label": "Light actionable cue (rate / learn / challenge / checkbox)",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "H5": {
+        "step": "H5",
+        "status": "STUB",
+        "note": "emit Path H one-pager TBD"
+      }
+    }
+  }
+}

@@ -455,3 +455,15 @@
   suggested_pattern: "Still on Path C (general). Prefer a checklist inside Lesson/Assessment/Teacher/Student/Standards rather than a new path letter (see docs/PATHS.md). type='project_work'"
   reason: "weak_or_unknown_type"
   logged_at: "2026-08-03T19:13:10.690880+00:00"
+
+- doc_id: "851a02b17dc9"
+  doc_type: "project_work"
+  suggested_pattern: "Still on Path C (general). Prefer a checklist inside Lesson/Assessment/Teacher/Student/Standards rather than a new path letter (see docs/PATHS.md). type='project_work'"
+  reason: "weak_or_unknown_type"
+  logged_at: "2026-08-09T13:33:21.131368+00:00"
+
+- doc_id: "851a02b17dc9"
+  doc_type: "project_work"
+  suggested_pattern: "Still on Path C (general). Prefer a checklist inside Lesson/Assessment/Teacher/Student/Standards rather than a new path letter (see docs/PATHS.md). type='project_work'"
+  reason: "weak_or_unknown_type"
+  logged_at: "2026-08-09T13:42:17.243381+00:00"
