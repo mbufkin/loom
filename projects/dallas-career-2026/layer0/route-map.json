@@ -1,18 +1,21 @@
 {
   "project_id": "dallas-career-2026",
-  "generated_at": "2026-08-03T19:13:10.691455+00:00",
+  "generated_at": "2026-08-09T13:42:17.243687+00:00",
   "lenses": {
     "lesson_plan": "Lesson",
     "quiz": "Assessment",
     "general": "General feedback",
     "teacher_support": "Teacher support",
     "student_practice": "Student practice",
-    "standards_pacing": "Standards & pacing"
+    "standards_pacing": "Standards & pacing",
+    "syllabus": "Syllabus",
+    "exit_ticket": "Exit ticket"
   },
   "counts": {
-    "quiz": 47,
+    "exit_ticket": 21,
     "lesson_plan": 19,
     "student_practice": 36,
+    "quiz": 26,
     "teacher_support": 8,
     "general": 1
   },
@@ -23,15 +26,15 @@
     {
       "doc_id": "041457651819",
       "doc_type": "exit_ticket",
-      "workflow_id": "quiz",
-      "path": "B",
-      "lens": "Assessment",
-      "reason": "filename doc_type=exit_ticket",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "reason": "filename prior → exit_ticket",
       "feedback": false,
       "confidence": 0.85,
       "source_file": "doc_041457651819_Professional_Preparedness_-__Exit_Ticket_Day_1.txt",
       "element_count": 2,
-      "graph_role": "assessment"
+      "graph_role": "exit_ticket"
     },
     {
       "doc_id": "052a682bd60f",
@@ -49,15 +52,15 @@
     {
       "doc_id": "09bf178d4e7e",
       "doc_type": "exit_ticket",
-      "workflow_id": "quiz",
-      "path": "B",
-      "lens": "Assessment",
-      "reason": "filename doc_type=exit_ticket",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "reason": "filename prior → exit_ticket",
       "feedback": false,
       "confidence": 0.85,
       "source_file": "doc_09bf178d4e7e_Professional_Preparedness_-__Exit_Ticket_Day_3.txt",
       "element_count": 2,
-      "graph_role": "assessment"
+      "graph_role": "exit_ticket"
     },
     {
       "doc_id": "0a62e0b9729e",
@@ -75,15 +78,15 @@
     {
       "doc_id": "0a9fe894e4f0",
       "doc_type": "exit_ticket",
-      "workflow_id": "quiz",
-      "path": "B",
-      "lens": "Assessment",
-      "reason": "filename doc_type=exit_ticket",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "reason": "filename prior → exit_ticket",
       "feedback": false,
       "confidence": 0.85,
       "source_file": "doc_0a9fe894e4f0_Career_Cluster-__Exit_Ticket_Day_1.txt",
       "element_count": 3,
-      "graph_role": "assessment"
+      "graph_role": "exit_ticket"
     },
     {
       "doc_id": "0acbc6d0b180",
@@ -153,15 +156,15 @@
     {
       "doc_id": "1518e9d9d4e5",
       "doc_type": "exit_ticket",
-      "workflow_id": "quiz",
-      "path": "B",
-      "lens": "Assessment",
-      "reason": "filename doc_type=exit_ticket",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "reason": "filename prior → exit_ticket",
       "feedback": false,
       "confidence": 0.85,
       "source_file": "doc_1518e9d9d4e5_Health_Science_-__Exit_Ticket.txt",
       "element_count": 6,
-      "graph_role": "assessment"
+      "graph_role": "exit_ticket"
     },
     {
       "doc_id": "1787e9b5bfde",
@@ -179,28 +182,28 @@
     {
       "doc_id": "1b43180b2ba4",
       "doc_type": "exit_ticket",
-      "workflow_id": "quiz",
-      "path": "B",
-      "lens": "Assessment",
-      "reason": "filename doc_type=exit_ticket",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "reason": "filename prior → exit_ticket",
       "feedback": false,
       "confidence": 0.85,
       "source_file": "doc_1b43180b2ba4_Dallas_ISD_High_School_Options_-__Exit_Ticket.txt",
       "element_count": 2,
-      "graph_role": "assessment"
+      "graph_role": "exit_ticket"
     },
     {
       "doc_id": "1bd2952ce87b",
       "doc_type": "exit_ticket",
-      "workflow_id": "quiz",
-      "path": "B",
-      "lens": "Assessment",
-      "reason": "filename doc_type=exit_ticket",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "reason": "filename prior → exit_ticket",
       "feedback": false,
       "confidence": 0.85,
       "source_file": "doc_1bd2952ce87b_Information_Technology_-__Exit_Ticket.txt",
       "element_count": 3,
-      "graph_role": "assessment"
+      "graph_role": "exit_ticket"
     },
     {
       "doc_id": "1f0eda900bc5",
@@ -309,15 +312,15 @@
     {
       "doc_id": "314d7d0905ca",
       "doc_type": "exit_ticket",
-      "workflow_id": "quiz",
-      "path": "B",
-      "lens": "Assessment",
-      "reason": "filename doc_type=exit_ticket",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "reason": "filename prior → exit_ticket",
       "feedback": false,
       "confidence": 0.85,
       "source_file": "doc_314d7d0905ca_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_1.txt",
       "element_count": 2,
-      "graph_role": "assessment"
+      "graph_role": "exit_ticket"
     },
     {
       "doc_id": "3369ae8b55a4",
@@ -387,15 +390,15 @@
     {
       "doc_id": "3f5d5ba70a87",
       "doc_type": "exit_ticket",
-      "workflow_id": "quiz",
-      "path": "B",
-      "lens": "Assessment",
-      "reason": "filename doc_type=exit_ticket",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "reason": "filename prior → exit_ticket",
       "feedback": false,
       "confidence": 0.85,
       "source_file": "doc_3f5d5ba70a87_Hospitality___Tourism_Day_2_Exit_Ticket.txt",
       "element_count": 2,
-      "graph_role": "assessment"
+      "graph_role": "exit_ticket"
     },
     {
       "doc_id": "3fd5e5bc561c",
@@ -452,15 +455,15 @@
     {
       "doc_id": "4736326638c1",
       "doc_type": "exit_ticket",
-      "workflow_id": "quiz",
-      "path": "B",
-      "lens": "Assessment",
-      "reason": "filename doc_type=exit_ticket",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "reason": "filename prior → exit_ticket",
       "feedback": false,
       "confidence": 0.85,
       "source_file": "doc_4736326638c1_Professional_Preparedness_-__Exit_Ticket_Day_2.txt",
       "element_count": 2,
-      "graph_role": "assessment"
+      "graph_role": "exit_ticket"
     },
     {
       "doc_id": "48a445a553cc",
@@ -504,15 +507,15 @@
     {
       "doc_id": "51e75ae5f576",
       "doc_type": "exit_ticket",
-      "workflow_id": "quiz",
-      "path": "B",
-      "lens": "Assessment",
-      "reason": "filename doc_type=exit_ticket",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "reason": "filename prior → exit_ticket",
       "feedback": false,
       "confidence": 0.85,
       "source_file": "doc_51e75ae5f576_Exit_Ticket_Day_3_HOSPITALITY_AND_TOURISM_.txt",
       "element_count": 2,
-      "graph_role": "assessment"
+      "graph_role": "exit_ticket"
     },
     {
       "doc_id": "545aa2c2190a",
@@ -556,15 +559,15 @@
     {
       "doc_id": "59ddeafc2ad3",
       "doc_type": "exit_ticket",
-      "workflow_id": "quiz",
-      "path": "B",
-      "lens": "Assessment",
-      "reason": "filename doc_type=exit_ticket",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "reason": "filename prior → exit_ticket",
       "feedback": false,
       "confidence": 0.85,
       "source_file": "doc_59ddeafc2ad3_Career_Cluster_-__Exit_Ticket_Day_3.txt",
       "element_count": 2,
-      "graph_role": "assessment"
+      "graph_role": "exit_ticket"
     },
     {
       "doc_id": "5f0cb47fe1b1",
@@ -777,15 +780,15 @@
     {
       "doc_id": "81adda4c10f7",
       "doc_type": "exit_ticket",
-      "workflow_id": "quiz",
-      "path": "B",
-      "lens": "Assessment",
-      "reason": "filename doc_type=exit_ticket",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "reason": "filename prior → exit_ticket",
       "feedback": false,
       "confidence": 0.85,
       "source_file": "doc_81adda4c10f7_Manufacturing_Lesson_Exit_ticket.txt",
       "element_count": 3,
-      "graph_role": "assessment"
+      "graph_role": "exit_ticket"
     },
     {
       "doc_id": "82b84c676dfd",
@@ -842,15 +845,15 @@
     {
       "doc_id": "85c8ad2c6c50",
       "doc_type": "exit_ticket",
-      "workflow_id": "quiz",
-      "path": "B",
-      "lens": "Assessment",
-      "reason": "filename doc_type=exit_ticket",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "reason": "filename prior → exit_ticket",
       "feedback": false,
       "confidence": 0.85,
       "source_file": "doc_85c8ad2c6c50_Day_1_Exit_Ticket__HOSPITALITY_AND_TOURISM_.txt",
       "element_count": 3,
-      "graph_role": "assessment"
+      "graph_role": "exit_ticket"
     },
     {
       "doc_id": "86fff193b91a",
@@ -894,15 +897,15 @@
     {
       "doc_id": "8ce965ac1600",
       "doc_type": "exit_ticket",
-      "workflow_id": "quiz",
-      "path": "B",
-      "lens": "Assessment",
-      "reason": "filename doc_type=exit_ticket",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "reason": "filename prior → exit_ticket",
       "feedback": false,
       "confidence": 0.85,
       "source_file": "doc_8ce965ac1600_Business__Marketing___Finance_-__Exit_Ticket.txt",
       "element_count": 2,
-      "graph_role": "assessment"
+      "graph_role": "exit_ticket"
     },
     {
       "doc_id": "8efd6fc31270",
@@ -933,15 +936,15 @@
     {
       "doc_id": "9b49036929a2",
       "doc_type": "exit_ticket",
-      "workflow_id": "quiz",
-      "path": "B",
-      "lens": "Assessment",
-      "reason": "filename doc_type=exit_ticket",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "reason": "filename prior → exit_ticket",
       "feedback": false,
       "confidence": 0.85,
       "source_file": "doc_9b49036929a2_Hospitality___Tourism_Day_2_-__Exit_Ticket.txt",
       "element_count": 2,
-      "graph_role": "assessment"
+      "graph_role": "exit_ticket"
     },
     {
       "doc_id": "a0327ea48d5e",
@@ -1089,15 +1092,15 @@
     {
       "doc_id": "ba8b5c7a6deb",
       "doc_type": "exit_ticket",
-      "workflow_id": "quiz",
-      "path": "B",
-      "lens": "Assessment",
-      "reason": "filename doc_type=exit_ticket",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "reason": "filename prior → exit_ticket",
       "feedback": false,
       "confidence": 0.85,
       "source_file": "doc_ba8b5c7a6deb_Engineering_Lesson_-__Exit_Ticket.txt",
       "element_count": 3,
-      "graph_role": "assessment"
+      "graph_role": "exit_ticket"
     },
     {
       "doc_id": "cd8f3755cf17",
@@ -1180,15 +1183,15 @@
     {
       "doc_id": "e173d04cd3e3",
       "doc_type": "exit_ticket",
-      "workflow_id": "quiz",
-      "path": "B",
-      "lens": "Assessment",
-      "reason": "filename doc_type=exit_ticket",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "reason": "filename prior → exit_ticket",
       "feedback": false,
       "confidence": 0.85,
       "source_file": "doc_e173d04cd3e3_Architecture___Construction_-__Exit_Ticket.txt",
       "element_count": 2,
-      "graph_role": "assessment"
+      "graph_role": "exit_ticket"
     },
     {
       "doc_id": "e2485fe0a73f",
@@ -1206,15 +1209,15 @@
     {
       "doc_id": "e2c12c61bc5f",
       "doc_type": "exit_ticket",
-      "workflow_id": "quiz",
-      "path": "B",
-      "lens": "Assessment",
-      "reason": "filename doc_type=exit_ticket",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "reason": "filename prior → exit_ticket",
       "feedback": false,
       "confidence": 0.85,
       "source_file": "doc_e2c12c61bc5f_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_3.txt",
       "element_count": 2,
-      "graph_role": "assessment"
+      "graph_role": "exit_ticket"
     },
     {
       "doc_id": "e2f014fb5b00",
@@ -1336,15 +1339,15 @@
     {
       "doc_id": "eff81c789b58",
       "doc_type": "exit_ticket",
-      "workflow_id": "quiz",
-      "path": "B",
-      "lens": "Assessment",
-      "reason": "filename doc_type=exit_ticket",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "reason": "filename prior → exit_ticket",
       "feedback": false,
       "confidence": 0.85,
       "source_file": "doc_eff81c789b58_Financial_Literacy_-__Exit_Ticket.txt",
       "element_count": 3,
-      "graph_role": "assessment"
+      "graph_role": "exit_ticket"
     },
     {
       "doc_id": "f1b0566d0274",
@@ -1375,15 +1378,15 @@
     {
       "doc_id": "f52d1bc1c462",
       "doc_type": "exit_ticket",
-      "workflow_id": "quiz",
-      "path": "B",
-      "lens": "Assessment",
-      "reason": "filename doc_type=exit_ticket",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "reason": "filename prior → exit_ticket",
       "feedback": false,
       "confidence": 0.85,
       "source_file": "doc_f52d1bc1c462_Career_Cluster_-__Exit_Ticket_Day_2.txt",
       "element_count": 1,
-      "graph_role": "assessment"
+      "graph_role": "exit_ticket"
     },
     {
       "doc_id": "f85ca6403d8c",
@@ -1453,15 +1456,15 @@
     {
       "doc_id": "ff5cd4c0712e",
       "doc_type": "exit_ticket",
-      "workflow_id": "quiz",
-      "path": "B",
-      "lens": "Assessment",
-      "reason": "filename doc_type=exit_ticket",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "reason": "filename prior → exit_ticket",
       "feedback": false,
       "confidence": 0.85,
       "source_file": "doc_ff5cd4c0712e_Arts_AV_Technology___Communication_-__Exit_Ticket_Day_2.txt",
       "element_count": 2,
-      "graph_role": "assessment"
+      "graph_role": "exit_ticket"
     }
   ]
 }

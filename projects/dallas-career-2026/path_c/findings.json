@@ -2,27 +2,90 @@
   "project_id": "dallas-career-2026",
   "workflow_id": "general",
   "path": "C",
-  "status": "stub",
+  "lens": "General feedback",
+  "status": "ok",
   "doc_ids": [
     "851a02b17dc9"
   ],
+  "checklist": "workflows/checklists/general.yaml",
   "inventory": [
     {
       "doc_id": "851a02b17dc9",
       "doc_type": "project_work",
+      "element_count": 0,
+      "feedback": true,
       "C1": {
-        "status": "PRESENT",
-        "note": "routed to general"
+        "status": "MISSING",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
       },
       "C2": {
-        "status": "STUB",
-        "note": "generic checks TBD"
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
       },
       "C3": {
-        "status": "LOGGED",
-        "feedback": true
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "MISSING",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
       }
     }
   ],
+  "steps_by_doc": {
+    "851a02b17dc9": {
+      "C1": {
+        "step": "C1",
+        "status": "MISSING",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 0,
+        "by_element_type": {},
+        "doc_id": "851a02b17dc9"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "851a02b17dc9",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "project_work",
+        "reason": "mapped from doc_type=project_work (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    }
+  },
   "feedback_file": "_loom_feedback.yaml"
 }

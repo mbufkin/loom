@@ -5,5 +5,7 @@
   "lens": "Standards & pacing",
   "status": "skipped",
   "doc_ids": [],
-  "inventory": []
+  "checklist": "workflows/checklists/standards_pacing.yaml",
+  "inventory": [],
+  "steps_by_doc": {}
 }
