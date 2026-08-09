@@ -12,8 +12,10 @@ Review UI picks curriculum, then E2E · <model>. See docs/E2E.md.
   preflight → ingest (if needed) → rollup (provisional; calendars authoritative after assemble)
            → layer0 (0-A decompose → 0-B resolve-wide-spans)
            → graph_phase.py (opt-in --with-graph: HAS-PART belonging)
-           → route.py (Loom Path A/B/C map — BEFORE unit placement)
-           → path workflows (A lesson / B quiz stub / C general stub)
+           → route.py (Loom Path A–H map — BEFORE unit placement)
+           → path workflows (A lesson / B assessment / C general / D teacher
+             support / E student practice / F standards & pacing / G syllabus /
+             H exit ticket)
            → layer1 → layer2 → calendars.py (model day/year after assemble)
            → synthesize --report all --delivery model (+ first-pass PDF)
            → push reports to Google Drive (default; --skip-drive-push to opt out)
@@ -55,6 +57,89 @@ CURRICULUM_REVIEW = BASE_DIR / "curriculum_review.py"
 CALENDARS = BASE_DIR / "calendars.py"
 SYNTH = BASE_DIR / "synthesize.py"
 PUSH_DRIVE = BASE_DIR / "tools" / "push_drive_reports.py"
+
+# Markers that mean the child failed before it could do real work — always a bug
+# in the stage module (or its imports), never a soft "model offline" skip.
+_STAGE_BROKEN_MARKERS = ("ModuleNotFoundError", "ImportError", "SyntaxError")
+
+
+class StageBrokenError(RuntimeError):
+    """A pipeline stage crashed on import/syntax — fail the run, do not soft-skip.
+
+    `run_step` shells out, so the child's ImportError becomes a non-zero exit. We
+    recover the failure class from stderr so best-effort bands can still warn on
+    model/runtime issues without swallowing packaging bugs again.
+    """
+
+
+class StageOutputError(RuntimeError):
+    """A stage exited zero but left a declared artifact missing — fail the run.
+
+    The quiet twin of StageBrokenError: the child imported and returned success,
+    yet wrote nothing the orchestrator contracted for. Best-effort bands re-raise
+    this class (model/runtime skips stay soft); only a genuine non-contract
+    failure is warned past.
+    """
+
+
+# Artifacts each stage must leave under project_dir(project_id) when it runs to
+# completion. Relative paths keep the contract honest next to the stage Path
+# constants; resolution always goes through project_dir so LOOM_E2E_RUN trees
+# are checked at the same root the child wrote. Stages absent from this map are
+# intentionally unchecked (opt-in graph, Drive push). Path lenses that emit
+# status: skipped still write findings.json — presence, not content, is the gate.
+STAGE_EXPECTED_OUTPUTS: dict[Path, tuple[str, ...]] = {
+    INGEST: ("manifest.yaml",),
+    ROLLUP: ("pacing-plan.yaml",),
+    LAYER0: ("layer0/ledger.json",),
+    ROUTE: ("layer0/route-map.json",),
+    PATH_WORKFLOWS: (
+        "path_a/findings.json",
+        "path_b/findings.json",
+        "path_c/findings.json",
+        "path_d/findings.json",
+        "path_e/findings.json",
+        "path_f/findings.json",
+        "path_g/findings.json",
+        "path_h/findings.json",
+    ),
+    LAYER1: ("layer1/bucket-ledger.json",),
+    LAYER2: ("layer2/findings.json",),
+    LESSON_RUNG: ("layer_lesson/LESSON-RUNG.json",),
+    ARTIFACT_RUNG: ("layer_artifact/ARTIFACT-RUNG.json",),
+    UNIT_RUNG: ("layer_unit/UNIT-RUNG.json",),
+    LESSON_QUALITY: ("output/LESSON-QUALITY-FEEDBACK.json",),
+    CURRICULUM_REVIEW: ("output/LESSON-CURRICULUM-REVIEW.json",),
+    CALENDARS: ("calendars_inferred/INFERRED-CALENDARS.json",),
+    SYNTH: ("output/GLOBAL-AUDIT.md",),
+}
+
+
+def assert_stage_outputs(script: Path, project_id: str) -> None:
+    """Fail when a finished stage left a declared artifact absent.
+
+    Call only after a successful run_step for that script. Stages gated by
+    `if script.is_file()` never reach this when the module is missing — that is
+    the legitimate skip path. Undeclared scripts are a no-op so opt-in steps do
+    not need special cases in main().
+    """
+    expected = STAGE_EXPECTED_OUTPUTS.get(script)
+    if not expected:
+        return
+    root = project_dir(project_id)
+    missing = [rel for rel in expected if not (root / rel).is_file()]
+    if not missing:
+        return
+    detail = "; ".join(f"{rel} (checked {root / rel})" for rel in missing)
+    raise StageOutputError(
+        f"stage {script.name} produced no output for: {detail}"
+    )
+
+
+def run_stage(script: Path, args: list[str], project_id: str) -> None:
+    """Shell out to a stage, then enforce its declared output contract."""
+    run_step(script, args)
+    assert_stage_outputs(script, project_id)
 
 
 def _health_candidates(chat_completions_url: str) -> list[str]:
@@ -119,8 +204,30 @@ def preflight_models() -> None:
 def run_step(script: Path, args: list[str]) -> None:
     cmd = [sys.executable, str(script), *args]
     log(f"→ {' '.join(cmd)}")
-    rc = subprocess.call(cmd, cwd=BASE_DIR)
+    # Pipe stderr so we can classify import/syntax crashes, but tee every line to
+    # the console — operators still need the live traceback when a stage fails.
+    proc = subprocess.Popen(
+        cmd,
+        cwd=BASE_DIR,
+        stderr=subprocess.PIPE,
+        text=True,
+    )
+    stderr_chunks: list[str] = []
+    assert proc.stderr is not None
+    for line in proc.stderr:
+        sys.stderr.write(line)
+        stderr_chunks.append(line)
+    rc = proc.wait()
     if rc != 0:
+        err = "".join(stderr_chunks)
+        if any(marker in err for marker in _STAGE_BROKEN_MARKERS):
+            last = next(
+                (ln.strip() for ln in reversed(err.splitlines()) if ln.strip()),
+                f"exit {rc}",
+            )
+            raise StageBrokenError(
+                f"broken import/syntax in {script.name} (exit {rc}): {last}"
+            )
         raise RuntimeError(f"failed: {script.name} (exit {rc})")
 
 
@@ -213,7 +320,7 @@ def main() -> int:
         action="store_true",
         help=(
             "Run only the graph phase under an E2E tree (requires layer0/ledger.json; "
-            "graph-only may symlink curriculum layer0). Does not overwrite Path A/B/C, "
+            "graph-only may symlink curriculum layer0). Does not overwrite Path A–H, "
             "Layer 1/2, or reports."
         ),
     )
@@ -289,7 +396,7 @@ def main() -> int:
             # Cursor backend talks to Cursor cloud — local llama health optional.
             if args.graph_backend == "local":
                 preflight_models()
-            run_step(GRAPH_PHASE, g_args)
+            run_stage(GRAPH_PHASE, g_args, args.project)
             usage_summary = write_usage_summary(args.project)
             usage_totals = usage_summary.get("totals") or {}
             print("\n" + "=" * 60)
@@ -322,14 +429,14 @@ def main() -> int:
                     f"No manifest and no sources at {sources}. "
                     "Drop documents in projects/<id>/sources/ or pass --sources"
                 )
-            run_step(INGEST, ingest_args)
+            run_stage(INGEST, ingest_args, args.project)
 
         if not args.skip_rollup:
             log("rollup: provisional early spine (authoritative calendars run after assemble)")
             rollup_args = ["--project", args.project]
             if args.force:
                 rollup_args.append("--force")
-            run_step(ROLLUP, rollup_args)
+            run_stage(ROLLUP, rollup_args, args.project)
 
         # Headline path: element-level extraction → placement conformance → globals.
         if not args.skip_layer01:
@@ -349,14 +456,16 @@ def main() -> int:
                 l0_args.extend(["--only", only_unit])
             if args.layer0_no_resume:
                 l0_args.append("--no-resume")
-            run_step(LAYER0, l0_args)
+            run_stage(LAYER0, l0_args, args.project)
 
             # Layer 0-B (citation precision): Layer 0-A guarantees every excerpt is a
             # verbatim, contiguous span, but a span wider than WIDE_SPAN_PARAGRAPHS can
             # still be several distinct elements merged under one over-broad citation.
             # This pass reviews only those flagged rows and splits them, so Layer 1
             # sorts real single-purpose elements instead of lumped ones.
-            run_step(LAYER0, ["--project", args.project, "--resolve-wide-spans"])
+            run_stage(
+                LAYER0, ["--project", args.project, "--resolve-wide-spans"], args.project
+            )
 
             # Opt-in graph phase (docs/GRAPH-PHASE.md): belonging tree under
             # projects/<id>/graph/runs/<model>/ — before route so Path typing
@@ -371,14 +480,15 @@ def main() -> int:
                     g_args.extend(["--graph-run", args.graph_run])
                 if args.graph_backend == "cursor":
                     g_args.extend(["--cursor-model", args.graph_cursor_model])
-                run_step(GRAPH_PHASE, g_args)
+                run_stage(GRAPH_PHASE, g_args, args.project)
 
             # Loom router — BEFORE unit placement. Writes layer0/route-map.json.
-            run_step(ROUTE, ["--project", args.project])
+            run_stage(ROUTE, ["--project", args.project], args.project)
 
-            # Path A/B/C workflows (A = full lesson; B/C stubs until built out).
+            # Path A–H workflows (lesson / assessment / general / teacher support /
+            # student practice / standards & pacing / syllabus / exit ticket).
             if PATH_WORKFLOWS.is_file():
-                run_step(PATH_WORKFLOWS, ["--project", args.project])
+                run_stage(PATH_WORKFLOWS, ["--project", args.project], args.project)
             else:
                 log(f"WARN: path workflows missing: {PATH_WORKFLOWS}")
 
@@ -386,7 +496,7 @@ def main() -> int:
             if only_unit:
                 l1_args.extend(["--only-unit", only_unit])
             # Soft gate: Layer 1 only considers docs present in route-map (see layer1).
-            run_step(LAYER1, l1_args)
+            run_stage(LAYER1, l1_args, args.project)
 
             # Layer 2 (lesson structural completeness): zero new model calls — reads
             # Layer 0's element ledger + Layer 1's just-written FULFILLED findings and
@@ -396,53 +506,72 @@ def main() -> int:
             l2_args = ["--project", args.project]
             if only_unit:
                 l2_args.extend(["--only-unit", only_unit])
-            run_step(LAYER2, l2_args)
+            run_stage(LAYER2, l2_args, args.project)
 
             # Deterministic rungs (offline) + advisory quality/review (model).
             # Educational note: rungs never block; quality is ~6 calls/lesson and
             # writes the UI heatmap plate under project_dir()/output/ (honors
             # LOOM_E2E_RUN so per-model A/B trees stay isolated).
+            # StageOutputError is re-raised with StageBrokenError: a stage that
+            # "succeeds" while writing nothing must not soft-skip into a green run.
             if LESSON_RUNG.is_file():
                 try:
-                    run_step(LESSON_RUNG, ["--project", args.project])
+                    run_stage(LESSON_RUNG, ["--project", args.project], args.project)
+                except (StageBrokenError, StageOutputError):
+                    raise
                 except Exception as e:  # noqa: BLE001
                     log(f"WARN: lesson-rung skipped: {e}")
             if ARTIFACT_RUNG.is_file():
                 try:
-                    run_step(ARTIFACT_RUNG, ["--project", args.project])
+                    run_stage(ARTIFACT_RUNG, ["--project", args.project], args.project)
+                except (StageBrokenError, StageOutputError):
+                    raise
                 except Exception as e:  # noqa: BLE001
                     log(f"WARN: artifact-rung skipped: {e}")
             if UNIT_RUNG.is_file():
                 try:
-                    run_step(UNIT_RUNG, ["--project", args.project])
+                    run_stage(UNIT_RUNG, ["--project", args.project], args.project)
+                except (StageBrokenError, StageOutputError):
+                    raise
                 except Exception as e:  # noqa: BLE001
                     log(f"WARN: unit-rung skipped: {e}")
             if LESSON_QUALITY.is_file():
                 try:
-                    run_step(LESSON_QUALITY, ["--project", args.project])
+                    run_stage(LESSON_QUALITY, ["--project", args.project], args.project)
+                except (StageBrokenError, StageOutputError):
+                    raise
                 except Exception as e:  # noqa: BLE001
                     log(f"WARN: lesson-quality plate skipped: {e}")
             if CURRICULUM_REVIEW.is_file():
                 try:
-                    run_step(CURRICULUM_REVIEW, ["--project", args.project])
+                    run_stage(
+                        CURRICULUM_REVIEW, ["--project", args.project], args.project
+                    )
+                except (StageBrokenError, StageOutputError):
+                    raise
                 except Exception as e:  # noqa: BLE001
                     log(f"WARN: curriculum-review skipped: {e}")
 
             # Model calendars after assemble (authoritative inferred map).
             # Early rollup remains provisional year spine only.
             if CALENDARS.is_file():
-                run_step(CALENDARS, ["--project", args.project, "--model-note"])
+                run_stage(
+                    CALENDARS,
+                    ["--project", args.project, "--model-note"],
+                    args.project,
+                )
             else:
                 log(f"WARN: calendars.py missing: {CALENDARS}")
 
-            run_step(
+            run_stage(
                 SYNTH,
                 ["--project", args.project, "--report", "all", "--delivery", "model"],
+                args.project,
             )
         else:
             log("skip-layer01: conformance globals not refreshed")
             try:
-                run_step(
+                run_stage(
                     SYNTH,
                     [
                         "--project",
@@ -452,7 +581,10 @@ def main() -> int:
                         "--delivery",
                         "model",
                     ],
+                    args.project,
                 )
+            except (StageBrokenError, StageOutputError):
+                raise
             except RuntimeError as e:
                 log(f"WARN: cross-unit synthesis skipped: {e}")
                 log(

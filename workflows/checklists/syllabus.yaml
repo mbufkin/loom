@@ -9,6 +9,8 @@ version: "v1-syllabus-cte"
 role: syllabus
 framework: learner_centered_cte
 source_template: docs/PATH-G-SYLLABUS.md
+path: G
+workflow_id: syllabus
 
 sections:
   g2_identity:

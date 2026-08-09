@@ -17,9 +17,10 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
-from audit_lib import atomic_write, load_yaml, log, project_dir
+from audit_lib import load_yaml, log, project_dir
 from route import load_route_map, routed_doc_ids
 from unit_plan_fill import _trunc
+from workflows.findings_io import write_path_findings
 
 CHECKLIST_PATH = (
     Path(__file__).resolve().parent / "checklists" / "syllabus.yaml"
@@ -144,7 +145,8 @@ def g_presence_for_step(
     *,
     cte_signaled: bool,
 ) -> dict:
-    """Run one G2–G7 step: PRESENT/MISSING/(NOT_SIGNALED for optional CTE)."""
+    """Run one G2–G7 step: PRESENT/PARTIAL/MISSING/OPTIONAL_ABSENT
+    (field-level NOT_SIGNALED for optional CTE when the doc has no CTE cues)."""
     fields_out = []
     present = 0
     required = 0
@@ -175,9 +177,13 @@ def g_presence_for_step(
                 "note": note,
             }
         )
-    # Rollup: all required fields present → PRESENT; some → PARTIAL; none → MISSING
+    # Rollup: all required fields present → PRESENT; some → PARTIAL; none → MISSING.
+    # required == 0 means every field was soft-gated (optional CTE + no CTE cues in
+    # the doc) — that is OPTIONAL_ABSENT, not a finding. The shared step-status
+    # vocabulary has no separate "not run" token for this case.
     if required == 0:
-        rollup = "SKIPPED"
+        opt_hits = sum(1 for f in fields_out if f["status"] == "PRESENT")
+        rollup = "PRESENT" if opt_hits else "OPTIONAL_ABSENT"
     elif present == required:
         rollup = "PRESENT"
     elif present == 0:
@@ -264,7 +270,6 @@ def run_path_g_for_project(project_id: str) -> dict:
     }
 
     dest = root / "path_g" / "findings.json"
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    atomic_write(dest, json.dumps(out, indent=2, ensure_ascii=False))
+    write_path_findings(dest, out)
     log(f"path G → {len(doc_ids)} syllabus doc(s); G2–G7 presence extract")
     return out

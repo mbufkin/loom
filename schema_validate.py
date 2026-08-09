@@ -406,3 +406,161 @@ def validate_layer1_fulfillment(data: dict) -> list[str]:
             errors.append(f"{fp}.reasoning required (non-empty string)")
 
     return errors
+
+
+# Path findings (path_*/findings.json) and the router handoff (route-map.json).
+# Same shallow discipline as the Layer 0/1 validators above: shape and closed
+# vocabularies only. Presence scoring correctness is the path modules' job;
+# this stops a half-written or drifted file from reaching the dashboard quietly.
+PATH_LETTERS = frozenset({"A", "B", "C", "D", "E", "F", "G", "H"})
+PATH_FINDINGS_STATUSES = frozenset({"ok", "skipped"})
+# Inventory / steps_by_doc cell vocabulary. Path A's aggregate `steps` tree may
+# carry path-specific words (COHERENT, emitted) and is not checked here — those
+# keys are additive extras, not the shared presence contract.
+PATH_STEP_STATUSES = frozenset(
+    {
+        "PRESENT",
+        "PARTIAL",
+        "MISSING",
+        "OPTIONAL_ABSENT",
+        "NOT_APPLICABLE",
+        "STUB",
+    }
+)
+_PATH_STEP_ID_RE = re.compile(r"^[A-H]\d+$")
+
+# Shared top-level keys every path must emit. Path A keeps steps / a6_fields /
+# emit_paths alongside these; B–H may add lens-specific extras (e.g. feedback_file).
+PATH_FINDINGS_REQUIRED = (
+    "project_id",
+    "workflow_id",
+    "path",
+    "lens",
+    "status",
+    "doc_ids",
+    "checklist",
+    "inventory",
+    "steps_by_doc",
+)
+
+
+def validate_path_findings(data: dict) -> list[str]:
+    """Validate path_<letter>/findings.json before it is written or consumed."""
+    errors: list[str] = []
+    if not isinstance(data, dict):
+        return ["path findings must be a dict"]
+
+    for key in PATH_FINDINGS_REQUIRED:
+        if key not in data:
+            errors.append(f"missing required key {key!r}")
+
+    if not _is_str(data.get("project_id")):
+        errors.append("project_id required (non-empty string)")
+    if not _is_str(data.get("workflow_id")):
+        errors.append("workflow_id required (non-empty string)")
+    if not _is_str(data.get("lens")):
+        errors.append("lens required (non-empty string)")
+    if not _is_str(data.get("checklist")):
+        errors.append("checklist required (non-empty string)")
+
+    path = data.get("path")
+    if path not in PATH_LETTERS:
+        errors.append(f"path must be one of A–H, got {path!r}")
+
+    status = data.get("status")
+    if status not in PATH_FINDINGS_STATUSES:
+        errors.append(f"status must be ok|skipped, got {status!r}")
+
+    doc_ids = data.get("doc_ids")
+    if not isinstance(doc_ids, list) or not all(_is_str(d) for d in doc_ids):
+        errors.append("doc_ids must be a list of non-empty strings")
+
+    inventory = data.get("inventory")
+    if not isinstance(inventory, list):
+        errors.append("inventory must be a list")
+    else:
+        for i, row in enumerate(inventory):
+            prefix = f"inventory[{i}]"
+            if not isinstance(row, dict):
+                errors.append(f"{prefix} must be a dict")
+                continue
+            if not _is_str(row.get("doc_id")):
+                errors.append(f"{prefix}.doc_id required")
+            for key, val in row.items():
+                if not _PATH_STEP_ID_RE.match(str(key)):
+                    continue
+                if not isinstance(val, dict):
+                    errors.append(f"{prefix}.{key} must be a dict")
+                    continue
+                st = val.get("status")
+                if st not in PATH_STEP_STATUSES:
+                    errors.append(
+                        f"{prefix}.{key}.status unknown: {st!r} "
+                        f"(expected one of {sorted(PATH_STEP_STATUSES)})"
+                    )
+
+    steps_by_doc = data.get("steps_by_doc")
+    if not isinstance(steps_by_doc, dict):
+        errors.append("steps_by_doc must be a dict")
+    else:
+        for did, steps in steps_by_doc.items():
+            prefix = f"steps_by_doc[{did}]"
+            if not isinstance(steps, dict):
+                errors.append(f"{prefix} must be a dict")
+                continue
+            for step_id, payload in steps.items():
+                if not isinstance(payload, dict):
+                    errors.append(f"{prefix}.{step_id} must be a dict")
+                    continue
+                st = payload.get("status")
+                # Some step payloads are structural (pairing notes) and always
+                # carry status; reject only when a status is present but unknown.
+                if st is not None and st not in PATH_STEP_STATUSES:
+                    errors.append(
+                        f"{prefix}.{step_id}.status unknown: {st!r} "
+                        f"(expected one of {sorted(PATH_STEP_STATUSES)})"
+                    )
+
+    return errors
+
+
+def validate_route_map(data: dict) -> list[str]:
+    """Validate layer0/route-map.json — every route must land on Path A–H."""
+    errors: list[str] = []
+    if not isinstance(data, dict):
+        return ["route map must be a dict"]
+
+    if not _is_str(data.get("project_id")):
+        errors.append("project_id required (non-empty string)")
+
+    routes = data.get("routes")
+    if not isinstance(routes, list):
+        errors.append("routes must be a list")
+        return errors
+
+    seen: set[str] = set()
+    for i, row in enumerate(routes):
+        prefix = f"routes[{i}]"
+        if not isinstance(row, dict):
+            errors.append(f"{prefix} must be a dict")
+            continue
+        did = row.get("doc_id")
+        if not _is_str(did):
+            errors.append(f"{prefix}.doc_id required")
+        elif did in seen:
+            errors.append(f"duplicate doc_id in routes: {did}")
+        else:
+            seen.add(did)
+        path = row.get("path")
+        if path not in PATH_LETTERS:
+            errors.append(f"{prefix}.path must be one of A–H, got {path!r}")
+        if not _is_str(row.get("workflow_id")):
+            errors.append(f"{prefix}.workflow_id required")
+
+    unrouted = data.get("unrouted_ledger_doc_ids")
+    if unrouted is not None and (
+        not isinstance(unrouted, list) or not all(_is_str(x) for x in unrouted)
+    ):
+        errors.append("unrouted_ledger_doc_ids must be a list of strings")
+
+    return errors

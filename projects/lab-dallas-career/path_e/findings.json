@@ -1,0 +1,603 @@
+{
+  "project_id": "lab-dallas-career",
+  "workflow_id": "student_practice",
+  "path": "E",
+  "lens": "Student practice",
+  "status": "ok",
+  "doc_ids": [
+    "2fc999f5e539",
+    "a8248438c079",
+    "addfb0873806",
+    "e31064aba3ae",
+    "f9710e5e4e97"
+  ],
+  "checklist": "workflows/checklists/student_practice.yaml",
+  "inventory": [
+    {
+      "doc_id": "2fc999f5e539",
+      "doc_type": "worksheet",
+      "graph_role": null,
+      "element_count": 7,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "a8248438c079",
+      "doc_type": "worksheet",
+      "graph_role": null,
+      "element_count": 4,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "addfb0873806",
+      "doc_type": "worksheet",
+      "graph_role": null,
+      "element_count": 1,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "e31064aba3ae",
+      "doc_type": "worksheet",
+      "graph_role": null,
+      "element_count": 7,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "f9710e5e4e97",
+      "doc_type": "worksheet",
+      "graph_role": null,
+      "element_count": 1,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    }
+  ],
+  "steps_by_doc": {
+    "2fc999f5e539": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 7,
+        "by_element_type": {
+          "independent_practice": 5,
+          "guided_practice": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "2fc999f5e539"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "If you can marge your design whit your partner's design what would be the winner's design? Draw a final design and include a list of materials.",
+              "Team up with your partners and answer the following questions in complete sentences using journals.  What part of the launcher store potential energy?  Where does your airplane get its kinetic energy?  What was the challenging part of this exercise?  What could be an improvement can be made in your design?"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "a8248438c079": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 4,
+        "by_element_type": {
+          "guided_practice": 3,
+          "unclear": 1
+        },
+        "doc_id": "a8248438c079"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "ENGINEERING DESIGN PROCESS  Identify a Problem Design an airplane that can stay in the air for the longest time.  Design an airplane that can travel the farthest distance. Brainstorm, Imagine, Plan Features Considerations Design Sketch 1 Sketch 2   Create Materials Notes Test Successes Notes Evaluate, Improve Changes Notes Share Presentation Evaluation"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "addfb0873806": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 1,
+        "by_element_type": {
+          "guided_practice": 1
+        },
+        "doc_id": "addfb0873806"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Community Problem Brainstorming Worksheet   --- TABLE --- What sort of problems do you see your community facing? | What is a small step that could take place to deal with this problem or issue? If you had a nonprofit company to tackle this community problem, what would you name that company if you had the opportunity to? | Choose one of the Media Platforms that you and your group will use to create an Advertisement."
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Community Problem Brainstorming Worksheet   --- TABLE --- What sort of problems do you see your community facing? | What is a small step that could take place to deal with this problem or issue? If you had a nonprofit company to tackle this community problem, what would you name that company if you had the opportunity to? | Choose one of the Media Platforms that you and your group will use to create an Advertisement."
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "e31064aba3ae": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 7,
+        "by_element_type": {
+          "direct_instruction": 2,
+          "guided_practice": 4,
+          "independent_practice": 1
+        },
+        "doc_id": "e31064aba3ae"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Example Elevator Pitch  Did you know most people give up learning the guitar within two weeks? It’s equal parts frustration and pain. Fingers are especially sensitive, and it can take time to get used to the feeling. At StringSerenade Guitars, we’ve taken the pain out of the equation. Our guitars are designed for a painless and comfortable learning period, making them the best options for beginners and guitar enthusiasts.  They’re more than jus instruments. They’re a unique experience, and our…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "I. The Hook (3-5 sentences): There are 3 options listed below. Choose ONE or combine TWO at most.  Rhetorical Question with Answer:  Write a question that you will answer where the problem is introduced. Be sure that to start with \"what if\" or \"have you ever\" to create a sincere connection with your audience. Then give your answer to the question, using your product or service as the solution. Use humor if possible. Ex: Have you ever wished you could come home to a clean house without spending…",
+              "State the Problem(s): Explain the consumer problem in detail and how you can relate/sympathize with it.  __________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________…",
+              "Example Elevator Pitch  Did you know most people give up learning the guitar within two weeks? It’s equal parts frustration and pain. Fingers are especially sensitive, and it can take time to get used to the feeling. At StringSerenade Guitars, we’ve taken the pain out of the equation. Our guitars are designed for a painless and comfortable learning period, making them the best options for beginners and guitar enthusiasts.  They’re more than jus instruments. They’re a unique experience, and our…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "f9710e5e4e97": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 1,
+        "by_element_type": {
+          "independent_practice": 1
+        },
+        "doc_id": "f9710e5e4e97"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Career Exploration Worksheet   Job/ Career:  What are some of the job responsibilities. Please least at least 3. How would I spend a typical day at work? What can I expect in terms of salary? What is the starting salary and the full range? Education/ Training Requirements: List college majors that would be needed to be successful, or any additional licensing or training that would be needed. What can I expect for the job market in the future? Is there a percentage increase or decrease? What…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Career Exploration Worksheet   Job/ Career:  What are some of the job responsibilities. Please least at least 3. How would I spend a typical day at work? What can I expect in terms of salary? What is the starting salary and the full range? Education/ Training Requirements: List college majors that would be needed to be successful, or any additional licensing or training that would be needed. What can I expect for the job market in the future? Is there a percentage increase or decrease? What…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    }
+  }
+}

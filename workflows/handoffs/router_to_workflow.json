@@ -16,13 +16,15 @@
         "general",
         "teacher_support",
         "student_practice",
-        "standards_pacing"
+        "standards_pacing",
+        "syllabus",
+        "exit_ticket"
       ]
     },
     "path": {
       "type": "string",
-      "enum": ["A", "B", "C", "D", "E", "F"],
-      "description": "Review lens letter — see docs/PATHS.md"
+      "enum": ["A", "B", "C", "D", "E", "F", "G", "H"],
+      "description": "Review lens letter — see docs/PATHS.md. Positionally paired with workflow_id above: A=lesson_plan … H=exit_ticket."
     },
     "lens": {
       "type": "string",

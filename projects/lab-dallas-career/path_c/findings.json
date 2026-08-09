@@ -1,0 +1,3955 @@
+{
+  "project_id": "lab-dallas-career",
+  "workflow_id": "general",
+  "path": "C",
+  "lens": "General feedback",
+  "status": "ok",
+  "doc_ids": [
+    "0a62e0b9729e",
+    "0ffb85afd0ce",
+    "1787e9b5bfde",
+    "1f0eda900bc5",
+    "28552acaae5a",
+    "29140bd6d6f7",
+    "2cc1b0ae0c59",
+    "3369ae8b55a4",
+    "38290addde82",
+    "3e56e33fe53c",
+    "40c5e0f508f1",
+    "468be78c578b",
+    "4b97944cd264",
+    "545aa2c2190a",
+    "54aff8cc2360",
+    "56bd08f50ac3",
+    "5f0cb47fe1b1",
+    "67a41a913430",
+    "6880e9ded029",
+    "6a1919f04824",
+    "724f41bf2711",
+    "7896317a42cd",
+    "794d51da5629",
+    "7f02e4fea0d8",
+    "7f0dd1599900",
+    "80f37e7b5807",
+    "82b84c676dfd",
+    "83154b464163",
+    "851a02b17dc9",
+    "854451cbcfc5",
+    "8891b46563ae",
+    "89430d6aae63",
+    "8efd6fc31270",
+    "98ed44c5b0af",
+    "a8e8847a5886",
+    "b05bfe476c76",
+    "b5e36486805a",
+    "cd8f3755cf17",
+    "d50f42a8f21e",
+    "d9f8e87d0486",
+    "e2485fe0a73f",
+    "e2f014fb5b00",
+    "e82d217defad",
+    "ea032c71918c",
+    "eb042af8c066",
+    "f85ca6403d8c",
+    "f96797847d38",
+    "ff5244c8fa47"
+  ],
+  "checklist": "workflows/checklists/general.yaml",
+  "inventory": [
+    {
+      "doc_id": "0a62e0b9729e",
+      "doc_type": "project_work",
+      "element_count": 2,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "0ffb85afd0ce",
+      "doc_type": "other",
+      "element_count": 34,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "1787e9b5bfde",
+      "doc_type": "lesson_content",
+      "element_count": 28,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "1f0eda900bc5",
+      "doc_type": "other",
+      "element_count": 28,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "28552acaae5a",
+      "doc_type": "other",
+      "element_count": 1,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "29140bd6d6f7",
+      "doc_type": "other",
+      "element_count": 11,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "2cc1b0ae0c59",
+      "doc_type": "lesson_content",
+      "element_count": 43,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "3369ae8b55a4",
+      "doc_type": "other",
+      "element_count": 5,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "38290addde82",
+      "doc_type": "lesson_content",
+      "element_count": 8,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "3e56e33fe53c",
+      "doc_type": "game_activity",
+      "element_count": 3,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "40c5e0f508f1",
+      "doc_type": "project_work",
+      "element_count": 1,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "468be78c578b",
+      "doc_type": "lab_activity",
+      "element_count": 1,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "4b97944cd264",
+      "doc_type": "lesson_content",
+      "element_count": 7,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "545aa2c2190a",
+      "doc_type": "lesson_content",
+      "element_count": 9,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "54aff8cc2360",
+      "doc_type": "other",
+      "element_count": 14,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "56bd08f50ac3",
+      "doc_type": "project_work",
+      "element_count": 1,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "5f0cb47fe1b1",
+      "doc_type": "other",
+      "element_count": 5,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "67a41a913430",
+      "doc_type": "lesson_content",
+      "element_count": 11,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "6880e9ded029",
+      "doc_type": "project_work",
+      "element_count": 5,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "6a1919f04824",
+      "doc_type": "lesson_content",
+      "element_count": 4,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "724f41bf2711",
+      "doc_type": "other",
+      "element_count": 1,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "7896317a42cd",
+      "doc_type": "other",
+      "element_count": 1,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "794d51da5629",
+      "doc_type": "other",
+      "element_count": 21,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "7f02e4fea0d8",
+      "doc_type": "lesson_content",
+      "element_count": 13,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "7f0dd1599900",
+      "doc_type": "other",
+      "element_count": 21,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "80f37e7b5807",
+      "doc_type": "other",
+      "element_count": 1,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "82b84c676dfd",
+      "doc_type": "other",
+      "element_count": 1,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "83154b464163",
+      "doc_type": "lesson_content",
+      "element_count": 12,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "851a02b17dc9",
+      "doc_type": "project_work",
+      "element_count": 0,
+      "feedback": true,
+      "C1": {
+        "status": "MISSING",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "854451cbcfc5",
+      "doc_type": "other",
+      "element_count": 22,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "8891b46563ae",
+      "doc_type": "project_work",
+      "element_count": 1,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "89430d6aae63",
+      "doc_type": "lesson_content",
+      "element_count": 17,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "8efd6fc31270",
+      "doc_type": "game_activity",
+      "element_count": 3,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "98ed44c5b0af",
+      "doc_type": "project_work",
+      "element_count": 4,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "a8e8847a5886",
+      "doc_type": "other",
+      "element_count": 1,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "b05bfe476c76",
+      "doc_type": "lesson_content",
+      "element_count": 9,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "b5e36486805a",
+      "doc_type": "other",
+      "element_count": 16,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "cd8f3755cf17",
+      "doc_type": "other",
+      "element_count": 3,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "d50f42a8f21e",
+      "doc_type": "presentation",
+      "element_count": 11,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "d9f8e87d0486",
+      "doc_type": "other",
+      "element_count": 21,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "e2485fe0a73f",
+      "doc_type": "other",
+      "element_count": 1,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "e2f014fb5b00",
+      "doc_type": "other",
+      "element_count": 1,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "e82d217defad",
+      "doc_type": "other",
+      "element_count": 13,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "ea032c71918c",
+      "doc_type": "other",
+      "element_count": 1,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "eb042af8c066",
+      "doc_type": "lesson_content",
+      "element_count": 10,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "f85ca6403d8c",
+      "doc_type": "lesson_content",
+      "element_count": 18,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "f96797847d38",
+      "doc_type": "lesson_content",
+      "element_count": 4,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "ff5244c8fa47",
+      "doc_type": "other",
+      "element_count": 18,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    }
+  ],
+  "steps_by_doc": {
+    "0a62e0b9729e": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 2,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "guided_practice": 1
+        },
+        "doc_id": "0a62e0b9729e"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "0a62e0b9729e",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "project_work",
+        "reason": "mapped from doc_type=project_work (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "0ffb85afd0ce": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 34,
+        "by_element_type": {
+          "logistics_materials": 9,
+          "hook_engagement": 2,
+          "direct_instruction": 11,
+          "guided_practice": 6,
+          "standards_objectives": 1,
+          "independent_practice": 3,
+          "assessment_checkpoint": 2
+        },
+        "doc_id": "0ffb85afd0ce"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "0ffb85afd0ce",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "1787e9b5bfde": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 28,
+        "by_element_type": {
+          "hook_engagement": 2,
+          "direct_instruction": 15,
+          "logistics_materials": 5,
+          "assessment_checkpoint": 2,
+          "guided_practice": 2,
+          "reflection_closure": 2
+        },
+        "doc_id": "1787e9b5bfde"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "1787e9b5bfde",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "lesson_content",
+        "reason": "mapped from doc_type=lesson_content (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 6,
+            "cites": [
+              "Do you…  ?  Maybe a career in  is right for you.  Agriculture, Food & Natural Resources  This career deals with:  planning, managing, and performing agricultural production, horticulture and landscaping services.  Jobs in this area include:  *Greenhouse manager * Farm manager * Animal trainer   * Mining * Animal breeder * Fish and game warden * Groundskeeper",
+              "Enjoy working with computers Have a fascination for technology Do well in math Create your own computer program or video game  Do you…  ?  Maybe a career in  is right for you.  Information Technology  This career deals with:  the design, development, support and management of hardware, software and multimedia.  Jobs in this area include:  * Software engineer * Programmer * Digital media specialist   * Network administrator * Webmaster * Data analyst * Technical writer",
+              "The following 2 websites were used as resources  for this presentation www.career clusters.org http://www.glencoe.com/sec/careers/cclusters/student/introclusters.shtml"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "1f0eda900bc5": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 28,
+        "by_element_type": {
+          "standards_objectives": 6,
+          "direct_instruction": 2,
+          "hook_engagement": 4,
+          "independent_practice": 4,
+          "logistics_materials": 5,
+          "assessment_checkpoint": 2,
+          "guided_practice": 2,
+          "reflection_closure": 3
+        },
+        "doc_id": "1f0eda900bc5"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "1f0eda900bc5",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Lesson – Careers in Hospitality & Tourism REVIEW: Restaurant & Food/Beverage Services Employment Self-Assessment 5-10 minutes (optional activity 60-90 minutes) Purpose: To review what students have learned about career opportunities relating to restaurant and food/beverage services and see if they possess the qualities to succeed in this occupational area. Materials: • Restaurant & Food/Beverage Services Employment Self-Assessment Facilitation Steps: 1. Give each student the Restaurant &…",
+              "Lesson – Career Opportunities in Agriculture, Food & Natural Resources LEARN: Research Project 30-90 minutes Purpose: The purpose of this activity is to have participants take a closer look at related food products and processing systems career options. Participants will research an occupation of their choice. Information learned from the research will be shared with the group via a brief presentation. Materials: • Library and internet resources • Career Exploration Research Summary handout …",
+              "Lesson – A Day in the Life of a Health Science Professional LEARN: Research Project 30-90 minutes Purpose: The purpose of this activity is to have participants take a closer look at health science (wellness or nutrition) as a pathway. Participants will research one specific field of occupation and prepare a class presentation. Materials: • Library and internet resources • Sample List of Health Science Occupations Relating to Nutrition and Wellness • Career Exploration Research Summary handout…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "28552acaae5a": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 1,
+        "by_element_type": {
+          "logistics_materials": 1
+        },
+        "doc_id": "28552acaae5a"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "28552acaae5a",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "29140bd6d6f7": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 11,
+        "by_element_type": {
+          "logistics_materials": 3,
+          "direct_instruction": 5,
+          "hook_engagement": 2,
+          "guided_practice": 1
+        },
+        "doc_id": "29140bd6d6f7"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "29140bd6d6f7",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Teaching & Training Pathway  Teacher Assistant Elementary, Middle or High School Teacher Preschool Teacher College/University Professor Coach Childcare worker   Careers  Early Childhood Aide Nanny Childcare Director Child Life Specialist Special Education Teacher Training Manager Director Recreation Worker"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "2cc1b0ae0c59": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 43,
+        "by_element_type": {
+          "hook_engagement": 1,
+          "direct_instruction": 31,
+          "logistics_materials": 2,
+          "unclear": 8,
+          "standards_objectives": 1
+        },
+        "doc_id": "2cc1b0ae0c59"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "2cc1b0ae0c59",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "lesson_content",
+        "reason": "mapped from doc_type=lesson_content (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Game Design and E-Sports  The Game Design & eSports program will introduce students to the programming and design skills required to create fully functional video games.  Students will learn the process of developing a game from start to finish.  Students will use computer programming, 2D and 3D polygon modeling, and apply textures and materials to prepare for a career in the game design industry"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "3369ae8b55a4": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 5,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "direct_instruction": 1,
+          "hook_engagement": 1,
+          "reflection_closure": 1,
+          "logistics_materials": 1
+        },
+        "doc_id": "3369ae8b55a4"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "3369ae8b55a4",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "The Teaching and Training program of study prepares CTE learners for careers related to teaching, instruction, and creation of instructional and enrichment materials.  The program of study introduces CTE learners to a wide variety of student groups and their corresponding needs. It familiarizes them with the processes for developing curriculum, coordinating educational content, and coaching groups and individuals."
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "38290addde82": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 8,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "direct_instruction": 1,
+          "guided_practice": 2,
+          "independent_practice": 2,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "38290addde82"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "38290addde82",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "lesson_content",
+        "reason": "mapped from doc_type=lesson_content (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "3e56e33fe53c": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 3,
+        "by_element_type": {
+          "logistics_materials": 2,
+          "independent_practice": 1
+        },
+        "doc_id": "3e56e33fe53c"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "3e56e33fe53c",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "game_activity",
+        "reason": "mapped from doc_type=game_activity (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Bingo Caller's Card Use your Bingo Caller's Card to call the bingo and keep track of which words you have already called. Print two copies of the caller's card. Cut one copy up, fold the squares in half, and put them in a hat. To call the bingo, pull a square out of the hat, unfold it and read it out. When you have called a word/number, tick it off on the second copy of the caller's card. You can use the second copy of the caller's card to check if a player has a winning card during a game.…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "40c5e0f508f1": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 1,
+        "by_element_type": {
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "40c5e0f508f1"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "40c5e0f508f1",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "project_work",
+        "reason": "mapped from doc_type=project_work (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "468be78c578b": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 1,
+        "by_element_type": {
+          "guided_practice": 1
+        },
+        "doc_id": "468be78c578b"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "468be78c578b",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "lab_activity",
+        "reason": "mapped from doc_type=lab_activity (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "4b97944cd264": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 7,
+        "by_element_type": {
+          "logistics_materials": 2,
+          "standards_objectives": 1,
+          "hook_engagement": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "independent_practice": 1
+        },
+        "doc_id": "4b97944cd264"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "4b97944cd264",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "lesson_content",
+        "reason": "mapped from doc_type=lesson_content (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "545aa2c2190a": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 9,
+        "by_element_type": {
+          "hook_engagement": 1,
+          "independent_practice": 6,
+          "reflection_closure": 2
+        },
+        "doc_id": "545aa2c2190a"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "545aa2c2190a",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "lesson_content",
+        "reason": "mapped from doc_type=lesson_content (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "54aff8cc2360": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 14,
+        "by_element_type": {
+          "logistics_materials": 2,
+          "hook_engagement": 1,
+          "independent_practice": 3,
+          "assessment_checkpoint": 3,
+          "guided_practice": 3,
+          "direct_instruction": 2
+        },
+        "doc_id": "54aff8cc2360"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "54aff8cc2360",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "56bd08f50ac3": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 1,
+        "by_element_type": {
+          "logistics_materials": 1
+        },
+        "doc_id": "56bd08f50ac3"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "56bd08f50ac3",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "project_work",
+        "reason": "mapped from doc_type=project_work (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "5f0cb47fe1b1": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 5,
+        "by_element_type": {
+          "guided_practice": 5
+        },
+        "doc_id": "5f0cb47fe1b1"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "5f0cb47fe1b1",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "3). Title: Interviewing for a Student Library Assistant Position Characters: Interviewer (INT): Represents the librarian or library manager. Applicant (APP): Represents the middle school student interviewing for the student library assistant position. Script: INT: Good afternoon, [Applicant's Name]. Thank you for coming in for the interview. Let's begin. APP: Good afternoon. Thank you for having me. I'm excited to be here. INT: Excellent. Can you start by telling me a little bit about yourself…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "67a41a913430": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 11,
+        "by_element_type": {
+          "hook_engagement": 1,
+          "standards_objectives": 1,
+          "direct_instruction": 3,
+          "guided_practice": 3,
+          "independent_practice": 1,
+          "reflection_closure": 1,
+          "logistics_materials": 1
+        },
+        "doc_id": "67a41a913430"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "67a41a913430",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "lesson_content",
+        "reason": "mapped from doc_type=lesson_content (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "What did you learn.  Recap the key points covered in the presentation. Encourage students to explore manufacturing technologies further. Highlight the value of hands-on activities in understanding production processes.  Conclusion"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "6880e9ded029": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 5,
+        "by_element_type": {
+          "assessment_checkpoint": 2,
+          "hook_engagement": 1,
+          "direct_instruction": 1,
+          "logistics_materials": 1
+        },
+        "doc_id": "6880e9ded029"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "6880e9ded029",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "project_work",
+        "reason": "mapped from doc_type=project_work (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 4,
+            "cites": [
+              "You have just been given the CEO position of a new nonprofit company that operates in your community.They need you to find a community problem and launch an advertisement campaign to solve the problem. The company needs the ad campaign in a few days…. So get to work!!! Commercial script must haves: Company name Slogan for Advertisement (Must represent the solution to the problem) Dialogue addressing the community problem and the solution to fix it. A statement encouraging community…",
+              "You have just been given the CEO position of a new nonprofit company that operates in your community.They need you to find a community problem and launch an advertisement campaign to solve the problem. The company needs the ad campaign in a few days…. So get to work!!! Commercial script must haves: Company name Slogan for Advertisement (Must represent the solution to the problem) Dialogue addressing the community problem and the solution to fix it. A statement encouraging community…",
+              "You have just been given the CEO position of a new nonprofit company that operates in your community.They need you to find a community problem and launch an advertisement campaign to solve the problem. The company needs the ad campaign in a few days…. So get to work!!! Commercial script must haves: Company name Slogan for Advertisement (Must represent the solution to the problem) Dialogue addressing the community problem and the solution to fix it. A statement encouraging community…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "6a1919f04824": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 4,
+        "by_element_type": {
+          "unclear": 1,
+          "hook_engagement": 1,
+          "direct_instruction": 1,
+          "independent_practice": 1
+        },
+        "doc_id": "6a1919f04824"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "6a1919f04824",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "lesson_content",
+        "reason": "mapped from doc_type=lesson_content (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "724f41bf2711": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 1,
+        "by_element_type": {
+          "logistics_materials": 1
+        },
+        "doc_id": "724f41bf2711"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "724f41bf2711",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "7896317a42cd": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 1,
+        "by_element_type": {
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "7896317a42cd"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "7896317a42cd",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "794d51da5629": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 21,
+        "by_element_type": {
+          "hook_engagement": 3,
+          "direct_instruction": 8,
+          "guided_practice": 2,
+          "independent_practice": 2,
+          "assessment_checkpoint": 4,
+          "reflection_closure": 1,
+          "logistics_materials": 1
+        },
+        "doc_id": "794d51da5629"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "794d51da5629",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Professional Attire - Scenarios Practice   Going to an interview Lunch with a Mentor Birthday Party Class Presentation Parent-Teacher Conference Assistant",
+              "Do Now   \"What do you think makes a presentation memorable and engaging for an audience, and how can we incorporate those elements into our own presentations?\"",
+              "Interview Role Play Presentations!!!  Rubric for Interview Role Play  Students are well-prepared,  ready to ask and answer questions confidently.  Students speak clearly, maintain eye contact, and use appropriate language throughout the interview.  Students actively engage with each other, and demonstrate enthusiasm for the interview topic.  Students present themselves in a professional manner, and demonstrate respect for the interview.  Graded on Four Categories"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "7f02e4fea0d8": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 13,
+        "by_element_type": {
+          "hook_engagement": 3,
+          "logistics_materials": 2,
+          "standards_objectives": 1,
+          "guided_practice": 2,
+          "direct_instruction": 2,
+          "independent_practice": 1,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "7f02e4fea0d8"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "7f02e4fea0d8",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "lesson_content",
+        "reason": "mapped from doc_type=lesson_content (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "7f0dd1599900": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 21,
+        "by_element_type": {
+          "standards_objectives": 3,
+          "logistics_materials": 3,
+          "hook_engagement": 3,
+          "direct_instruction": 3,
+          "guided_practice": 3,
+          "independent_practice": 3,
+          "assessment_checkpoint": 3
+        },
+        "doc_id": "7f0dd1599900"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "7f0dd1599900",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "80f37e7b5807": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 1,
+        "by_element_type": {
+          "guided_practice": 1
+        },
+        "doc_id": "80f37e7b5807"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "80f37e7b5807",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "82b84c676dfd": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 1,
+        "by_element_type": {
+          "unclear": 1
+        },
+        "doc_id": "82b84c676dfd"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "82b84c676dfd",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "83154b464163": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 12,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "hook_engagement": 1,
+          "direct_instruction": 4,
+          "guided_practice": 3,
+          "assessment_checkpoint": 1,
+          "independent_practice": 1,
+          "logistics_materials": 1
+        },
+        "doc_id": "83154b464163"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "83154b464163",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "lesson_content",
+        "reason": "mapped from doc_type=lesson_content (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "851a02b17dc9": {
+      "C1": {
+        "step": "C1",
+        "status": "MISSING",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 0,
+        "by_element_type": {},
+        "doc_id": "851a02b17dc9"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "851a02b17dc9",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "project_work",
+        "reason": "mapped from doc_type=project_work (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "854451cbcfc5": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 22,
+        "by_element_type": {
+          "logistics_materials": 5,
+          "hook_engagement": 3,
+          "direct_instruction": 4,
+          "guided_practice": 4,
+          "independent_practice": 2,
+          "assessment_checkpoint": 4
+        },
+        "doc_id": "854451cbcfc5"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "854451cbcfc5",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "8891b46563ae": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 1,
+        "by_element_type": {
+          "logistics_materials": 1
+        },
+        "doc_id": "8891b46563ae"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "8891b46563ae",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "project_work",
+        "reason": "mapped from doc_type=project_work (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Flyer Rubric - Nonprofit company advertisement to fix community problem. You have just been given the CEO position of a new nonprofit company that operates in your community.They need you to find a community problem and launch an advertisement campaign to solve the problem. The company needs the ad campaign in a few days…. So get to work!!! Flyer Must Haves: Company Name Company Logo Problem and solution explanation Slogan for Advertisement (Must represent the solution to the problem) Images…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "89430d6aae63": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 17,
+        "by_element_type": {
+          "hook_engagement": 2,
+          "direct_instruction": 7,
+          "guided_practice": 1,
+          "independent_practice": 1,
+          "assessment_checkpoint": 1,
+          "logistics_materials": 3,
+          "reflection_closure": 2
+        },
+        "doc_id": "89430d6aae63"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "89430d6aae63",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "lesson_content",
+        "reason": "mapped from doc_type=lesson_content (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 4,
+            "cites": [
+              "This program of study explores designing or creating graphics, designing clothing and accessories, and creating special effects, animation, or other visual images using film, video, computers, or other electronic tools and media, for use in computer games, movies, music videos, and commercials  Design and Multimedia Arts...  Graphic Designers Video Game Designers Video Game Programmer Animator Fashion Design Commercial Photography  Careers",
+              "What is the purpose of Arts, A/V Technology & Communications??  All pathways in this cluster have a common goal…..  Send Messages  Whether it's with creating advertisements, the next new fashion trends or entertainment with video games; sending a message is a vital part of all Arts, Audio/Visual Technology and Communication.  All aspects of this cluster is in the power to  Target Audience  A target audience is a group of people defined by certain demographics and behavior.  Who are you trying…",
+              "Evaluate -  In your groups, follow your rubric for either the commercial or flyer advertisement. Have it finished and prepare to make your presentation at the start of the next class day. *You will do a group work evaluation form at the end of class."
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "8efd6fc31270": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 3,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "hook_engagement": 1,
+          "guided_practice": 1
+        },
+        "doc_id": "8efd6fc31270"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "8efd6fc31270",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "game_activity",
+        "reason": "mapped from doc_type=game_activity (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Bingo Caller's Card Use your Bingo Caller's Card to call the bingo and keep track of which words you have already called. Print two copies of the caller's card. Cut one copy up, fold the squares in half, and put them in a hat. To call the bingo, pull a square out of the hat, unfold it and read it out. When you have called a word/number, tick it off on the second copy of the caller's card. You can use the second copy of the caller's card to check if a player has a winning card during a game.…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "98ed44c5b0af": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 4,
+        "by_element_type": {
+          "logistics_materials": 2,
+          "direct_instruction": 1,
+          "independent_practice": 1
+        },
+        "doc_id": "98ed44c5b0af"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "98ed44c5b0af",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "project_work",
+        "reason": "mapped from doc_type=project_work (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "a8e8847a5886": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 1,
+        "by_element_type": {
+          "independent_practice": 1
+        },
+        "doc_id": "a8e8847a5886"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "a8e8847a5886",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Professional Attire - Scenarios Read the different scenarios and circle the attire you would wear to each event. Job Interview: Imagine you're applying for a part-time job at your favorite local bookstore. You want to make a good impression on the manager. What would you wear to the interview?  Lunch with a Mentor: As part of a mentorship program, you're meeting with a professional from your community over lunch to discuss your career interests and goals. The meeting is informal but still…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "b05bfe476c76": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 9,
+        "by_element_type": {
+          "hook_engagement": 2,
+          "direct_instruction": 3,
+          "guided_practice": 1,
+          "independent_practice": 2,
+          "logistics_materials": 1
+        },
+        "doc_id": "b05bfe476c76"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "b05bfe476c76",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "lesson_content",
+        "reason": "mapped from doc_type=lesson_content (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "b5e36486805a": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 16,
+        "by_element_type": {
+          "logistics_materials": 4,
+          "direct_instruction": 5,
+          "guided_practice": 3,
+          "hook_engagement": 2,
+          "assessment_checkpoint": 2
+        },
+        "doc_id": "b5e36486805a"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "b5e36486805a",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Lab Activity  Let’s check out what is in our soil on our campus. Please take out your Let’s Find Out About Soil handout. You will need the following items: 1 spoon 1 ziplock sandwich baggie We will go outside and fill our bags ⅓ of the way full. Please make sure you take soil samples where the soil is soft and not hard. It could break your spoon.  After our soil collection  Place your bag flat on the table so that the soil can take up most of the bag. Do not open the bag, you will feel and see…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "cd8f3755cf17": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 3,
+        "by_element_type": {
+          "direct_instruction": 1,
+          "independent_practice": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "cd8f3755cf17"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "cd8f3755cf17",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "d50f42a8f21e": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 11,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "standards_objectives": 2,
+          "hook_engagement": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "independent_practice": 1,
+          "assessment_checkpoint": 2,
+          "unclear": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "d50f42a8f21e"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "d50f42a8f21e",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "presentation",
+        "reason": "mapped from doc_type=presentation (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Tip: Use links to go to a different page inside your presentation. How: Highlight text, click on the link symbol on the toolbar, and select  the page in your presentation  you want to connect. 01 12 07 CAREER AND TECHNICAL EDUCATION STUDENT ORGANIZATIONS (CTSO) What is a CTSO Create a Brochure signing day exit survey AGENDA"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "d9f8e87d0486": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 21,
+        "by_element_type": {
+          "standards_objectives": 3,
+          "logistics_materials": 3,
+          "hook_engagement": 3,
+          "direct_instruction": 3,
+          "guided_practice": 2,
+          "independent_practice": 4,
+          "assessment_checkpoint": 3
+        },
+        "doc_id": "d9f8e87d0486"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "d9f8e87d0486",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "e2485fe0a73f": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 1,
+        "by_element_type": {
+          "logistics_materials": 1
+        },
+        "doc_id": "e2485fe0a73f"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "e2485fe0a73f",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "e2f014fb5b00": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 1,
+        "by_element_type": {
+          "hook_engagement": 1
+        },
+        "doc_id": "e2f014fb5b00"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "e2f014fb5b00",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "e82d217defad": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 13,
+        "by_element_type": {
+          "standards_objectives": 2,
+          "hook_engagement": 2,
+          "direct_instruction": 2,
+          "guided_practice": 2,
+          "independent_practice": 2,
+          "assessment_checkpoint": 2,
+          "unclear": 1
+        },
+        "doc_id": "e82d217defad"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "e82d217defad",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Day 3: Present Brochure Gallery Walk / Presentation"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "ea032c71918c": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 1,
+        "by_element_type": {
+          "logistics_materials": 1
+        },
+        "doc_id": "ea032c71918c"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "ea032c71918c",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "eb042af8c066": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 10,
+        "by_element_type": {
+          "logistics_materials": 3,
+          "hook_engagement": 2,
+          "standards_objectives": 1,
+          "guided_practice": 2,
+          "direct_instruction": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "eb042af8c066"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "eb042af8c066",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "lesson_content",
+        "reason": "mapped from doc_type=lesson_content (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Throughout the world, engineers have designed a wide variety of observation towers in different shapes and sizes  Space Needle, USA  Pitampura TV tower, India  Swan Bells Observation Tower, Australia  Swan Bells Observation Tower, Australia  Eiffel Tower, France  Radio towers.  Fire lookout tower, USA  Fire lookout tower, Poland"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "f85ca6403d8c": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 18,
+        "by_element_type": {
+          "hook_engagement": 3,
+          "direct_instruction": 3,
+          "guided_practice": 5,
+          "independent_practice": 3,
+          "assessment_checkpoint": 3,
+          "logistics_materials": 1
+        },
+        "doc_id": "f85ca6403d8c"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "f85ca6403d8c",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "lesson_content",
+        "reason": "mapped from doc_type=lesson_content (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "f96797847d38": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 4,
+        "by_element_type": {
+          "hook_engagement": 1,
+          "logistics_materials": 1,
+          "direct_instruction": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "f96797847d38"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "f96797847d38",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "lesson_content",
+        "reason": "mapped from doc_type=lesson_content (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "1 2 3 You will work with a partner on  researching your assigned career. You will follow the format on the  next slide to create you r presentation. You and your partner will present  your project. INSTRUCTIONS",
+              "SLIDE FORMAT 1 2 3 Introduction of  yourself and partner / title page. Outline of  presentation Your career choice and why.  SLIDE FORMAT 4 5 6  Duties and  responsibilities of th e position. Education required  include colleges tha t have this course of study. Skills or previous  experience require d for the employment.  SLIDE FORMAT 7 8 9 Future of this  employment. Will th e need for th is employment increase or decrease? Reference page- list of  references an d website used to loca te the…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "ff5244c8fa47": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 18,
+        "by_element_type": {
+          "standards_objectives": 3,
+          "hook_engagement": 3,
+          "guided_practice": 3,
+          "independent_practice": 5,
+          "assessment_checkpoint": 2,
+          "direct_instruction": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "ff5244c8fa47"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "ff5244c8fa47",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    }
+  },
+  "feedback_file": "_loom_feedback.yaml"
+}

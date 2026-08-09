@@ -1,0 +1,7 @@
+# Loom unknown/weak-type feedback — read when growing lens checklists
+
+- doc_id: "ap-csp-ced.pdf"
+  doc_type: "other"
+  suggested_pattern: "Still on Path C (general). Prefer a checklist inside Lesson/Assessment/Teacher/Student/Standards rather than a new path letter (see docs/PATHS.md). type='other'"
+  reason: "weak_or_unknown_type"
+  logged_at: "2026-08-09T16:45:18.607451+00:00"

@@ -9,6 +9,8 @@
 version: "v1-ctat-unit-plan"
 role: lesson_plan
 source_template: workflows/checklists/lesson_plan.yaml
+path: A
+workflow_id: lesson_plan
 
 sections:
   unit_overview:

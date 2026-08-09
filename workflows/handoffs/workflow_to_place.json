@@ -9,12 +9,24 @@
     "doc_id": { "type": "string", "minLength": 1 },
     "workflow_id": {
       "type": "string",
-      "enum": ["lesson_plan", "quiz", "general"]
+      "enum": [
+        "lesson_plan",
+        "quiz",
+        "general",
+        "teacher_support",
+        "student_practice",
+        "standards_pacing",
+        "syllabus",
+        "exit_ticket"
+      ]
     },
-    "path": { "type": "string", "enum": ["A", "B", "C"] },
+    "path": {
+      "type": "string",
+      "enum": ["A", "B", "C", "D", "E", "F", "G", "H"]
+    },
     "status": {
       "type": "string",
-      "enum": ["ready", "stub", "failed", "skipped"]
+      "enum": ["ok", "stub", "failed", "skipped"]
     },
     "findings_path": {
       "type": "string",

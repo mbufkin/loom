@@ -1,0 +1,427 @@
+{
+  "project_id": "dallas-career-2026",
+  "workflow_id": "lesson_plan",
+  "path": "A",
+  "lens": "Lesson",
+  "status": "ok",
+  "doc_ids": [
+    "052a682bd60f",
+    "0acbc6d0b180",
+    "30378c1c95b1",
+    "3a729a90b236",
+    "3dc5933c971d",
+    "48a445a553cc",
+    "4cc88ad60178",
+    "62fc60052993",
+    "65169778f3e6",
+    "761e6495bc24",
+    "a0327ea48d5e",
+    "a82b911543f3",
+    "b2fef8a53002",
+    "b34e8b764732",
+    "d2b6b5aacb2c",
+    "e0e7b3e131a1",
+    "e9e6ac00ce09",
+    "ea8edac5d8da",
+    "f3e58b61782a"
+  ],
+  "checklist": "workflows/checklists/daily_lesson_plan.yaml",
+  "inventory": [
+    {
+      "doc_id": "052a682bd60f",
+      "doc_type": "lesson_plan",
+      "element_count": 5
+    },
+    {
+      "doc_id": "0acbc6d0b180",
+      "doc_type": "lesson_plan",
+      "element_count": 7
+    },
+    {
+      "doc_id": "30378c1c95b1",
+      "doc_type": "lesson_plan",
+      "element_count": 5
+    },
+    {
+      "doc_id": "3a729a90b236",
+      "doc_type": "lesson_plan",
+      "element_count": 62
+    },
+    {
+      "doc_id": "3dc5933c971d",
+      "doc_type": "lesson_plan",
+      "element_count": 6
+    },
+    {
+      "doc_id": "48a445a553cc",
+      "doc_type": "lesson_plan",
+      "element_count": 14
+    },
+    {
+      "doc_id": "4cc88ad60178",
+      "doc_type": "lesson_plan",
+      "element_count": 5
+    },
+    {
+      "doc_id": "62fc60052993",
+      "doc_type": "lesson_plan",
+      "element_count": 4
+    },
+    {
+      "doc_id": "65169778f3e6",
+      "doc_type": "lesson_plan",
+      "element_count": 5
+    },
+    {
+      "doc_id": "761e6495bc24",
+      "doc_type": "lesson_plan",
+      "element_count": 10
+    },
+    {
+      "doc_id": "a0327ea48d5e",
+      "doc_type": "lesson_plan",
+      "element_count": 5
+    },
+    {
+      "doc_id": "a82b911543f3",
+      "doc_type": "lesson_plan",
+      "element_count": 13
+    },
+    {
+      "doc_id": "b2fef8a53002",
+      "doc_type": "lesson_plan",
+      "element_count": 5
+    },
+    {
+      "doc_id": "b34e8b764732",
+      "doc_type": "lesson_plan",
+      "element_count": 1
+    },
+    {
+      "doc_id": "d2b6b5aacb2c",
+      "doc_type": "lesson_plan",
+      "element_count": 5
+    },
+    {
+      "doc_id": "e0e7b3e131a1",
+      "doc_type": "lesson_plan",
+      "element_count": 10
+    },
+    {
+      "doc_id": "e9e6ac00ce09",
+      "doc_type": "lesson_plan",
+      "element_count": 10
+    },
+    {
+      "doc_id": "ea8edac5d8da",
+      "doc_type": "lesson_plan",
+      "element_count": 3
+    },
+    {
+      "doc_id": "f3e58b61782a",
+      "doc_type": "lesson_plan",
+      "element_count": 7
+    }
+  ],
+  "steps_by_doc": {},
+  "steps": {
+    "A1": {
+      "step": "A1",
+      "element_count": 182,
+      "by_element_type": {
+        "standards_objectives": 14,
+        "hook_engagement": 31,
+        "guided_practice": 27,
+        "assessment_checkpoint": 25,
+        "direct_instruction": 21,
+        "independent_practice": 6,
+        "logistics_materials": 5,
+        "unclear": 49,
+        "reflection_closure": 4
+      },
+      "doc_ids": [
+        "052a682bd60f",
+        "0acbc6d0b180",
+        "30378c1c95b1",
+        "3a729a90b236",
+        "3dc5933c971d",
+        "48a445a553cc",
+        "4cc88ad60178",
+        "62fc60052993",
+        "65169778f3e6",
+        "761e6495bc24",
+        "a0327ea48d5e",
+        "a82b911543f3",
+        "b2fef8a53002",
+        "b34e8b764732",
+        "d2b6b5aacb2c",
+        "e0e7b3e131a1",
+        "e9e6ac00ce09",
+        "ea8edac5d8da",
+        "f3e58b61782a"
+      ]
+    },
+    "A2": {
+      "step": "A2",
+      "teks": {
+        "status": "PRESENT",
+        "count": 14,
+        "cites": [
+          "--- TABLE --- Family and Community Wellness- Human Services Career                                                          Estimated Day(s): 2 - 45 minute classes Resources: Lesson plan Materials for activities | Resources: Lesson plan Materials for activities | Resources: Lesson plan Materials for activities TEKS Student Expectation(s): §127.2. Career and College Exploration. (B) explore and describe the CTE career clusters (C) identify various career opportunities within one or more career…",
+          "--- TABLE --- Law and Public Service Career                                                          Estimated Day(s): 2 - 45 minute classes Resources: Lesson plan Computer Promethean board Internet access | Resources: Lesson plan Computer Promethean board Internet access | Resources: Lesson plan Computer Promethean board Internet access TEKS Student Expectation(s): §127.2. Career and College Exploration. (B) explore and describe the CTE career clusters (C) identify various career…",
+          "--- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days | Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days |…"
+        ]
+      },
+      "objective": {
+        "status": "PRESENT",
+        "count": 8,
+        "cites": [
+          "--- TABLE --- Law and Public Service Career                                                          Estimated Day(s): 2 - 45 minute classes Resources: Lesson plan Computer Promethean board Internet access | Resources: Lesson plan Computer Promethean board Internet access | Resources: Lesson plan Computer Promethean board Internet access TEKS Student Expectation(s): §127.2. Career and College Exploration. (B) explore and describe the CTE career clusters (C) identify various career…",
+          "--- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days | Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days |…",
+          "--- TABLE --- Skills for Success-Career Ready                                Estimated Day(s): 2 - 45 minute classes Resources: Lesson plan Materials for activities | Resources: Lesson plan Materials for activities | Resources: Lesson plan Materials for activities TEKS Student Expectation(s): §127.2. Career and College Exploration. (B) explore and describe the CTE career clusters (C) identify various career opportunities within one or more career clusters | TEKS Student Expectation(s): §127.2.…"
+        ]
+      }
+    },
+    "A3": {
+      "step": "A3",
+      "has_objective": true,
+      "has_activities": true,
+      "has_assessment": true,
+      "mismatches": [],
+      "status": "COHERENT"
+    },
+    "A4": {
+      "step": "A4",
+      "formative": {
+        "status": "PRESENT",
+        "items": [
+          {
+            "element_id": "052a682bd60f-e4",
+            "excerpt": "Student Engagement Strategy / Resource: PDF PresentationPeerFeedbackForm-1 (3).pdf | Evaluate: (5-10 Minutes) Have students give each other feedback on their peer pennant presentations.  Student Engagement Strategy / Resource: PDF PresentationPeerFeedbackForm-1 (3).pdf | Evaluate: (5-10 Minutes) Have students give each other feedback on their peer pennant presentations.  Student Engagement Strategy / Resource: PDF PresentationPeerFeedbackForm-1 (3).pdf"
+          },
+          {
+            "element_id": "0acbc6d0b180-e5",
+            "excerpt": ""
+          },
+          {
+            "element_id": "30378c1c95b1-e5",
+            "excerpt": ""
+          },
+          {
+            "element_id": "3dc5933c971d-e4",
+            "excerpt": "Materials: Copy Paper Construction Paper Glue Scissors  Students will review their peers book."
+          },
+          {
+            "element_id": "48a445a553cc-e6",
+            "excerpt": "Question Stems: Engagement Question 1: What did you want to be when you were a little kid? Has it changed? Engagement Question 2: What type of things are you interested in now? Is there a career similar to your interest? Explain/ Explore Activity- Day 1 Explain: (20-30 Minutes) Students will review the 13 Career Clusters offered in DISD while participating in a Bingo Activity Student Engagement Strategy / Resource: Lesson Slide show and Bingo Cards  Question Stems: Which Career Cluster would…"
+          }
+        ]
+      },
+      "summative": {
+        "status": "PRESENT",
+        "items": [
+          {
+            "element_id": "48a445a553cc-e13",
+            "excerpt": "Student Engagement Strategy / Resource:  Student Feedback - Poster Project Rubric  Question Stems: Did each group meet the guidelines for the Career Poster Project. Evaluate Activity - Day 3 Evaluate: (5-10 Minutes) Students will evaluate and answer the following questions over group presentations.   On a scale of 1 - 5 where 5 is the best, how well did my group do on the presentation?  What cluster did the best at presenting (cannot choose own group) ? | Evaluate: (5-10 Minutes) Students will…"
+          },
+          {
+            "element_id": "a82b911543f3-e13",
+            "excerpt": "Student Engagement Strategy / Resource: Interview Role Playing Rubric Evaluate Activity - Day 3 Evaluate: (5-10 Minutes) How well did you feel like you did at the interview?  On a scale of 1-5, where 5 is the best. | Evaluate: (5-10 Minutes) How well did you feel like you did at the interview?  On a scale of 1-5, where 5 is the best. | Evaluate: (5-10 Minutes) How well did you feel like you did at the interview?  On a scale of 1-5, where 5 is the best."
+          },
+          {
+            "element_id": "d2b6b5aacb2c-e5",
+            "excerpt": "Question Stems: Why is it important to know salary and education requirements for employment? Are there any clubs you can join at high school that could further your law enforcement interests? (example mock trial for those interested in being a judge or a lawyer) Are you bilingual or interested in learning another language? How could being bilingual provide you an edge in the job market? Is there an employment you did not know about that you are now interested in because you have presented it…"
+          }
+        ]
+      }
+    },
+    "A5": {
+      "step": "A5",
+      "hunter_core_present": 8,
+      "hunter_core_total": 8,
+      "matrix": [
+        {
+          "id": "anticipatory_set",
+          "label": "1. Anticipatory set (hook / Do Now / Engage)",
+          "status": "PRESENT",
+          "cite": "Prompt: What do you think of when you hear Family and Community Wellness-Human Services?  Have the students share in their groups and then with each other.  Question Stems: Engagement Question 1: What do you know about this Career Field? Engagement Question 2: How does social work benefit our community? | Engage: (5-10 minutes) Bell Ringer Students will answer the following bellwork prompt using the Bell Work Template  Prompt: What do you think of when you hear Family and Community…"
+        },
+        {
+          "id": "objective_purpose",
+          "label": "2. Objective & purpose (stated to students)",
+          "status": "PRESENT",
+          "cite": "--- TABLE --- Family and Community Wellness- Human Services Career                                                          Estimated Day(s): 2 - 45 minute classes Resources: Lesson plan Materials for activities | Resources: Lesson plan Materials for activities | Resources: Lesson plan Materials for activities TEKS Student Expectation(s): §127.2. Career and College Exploration. (B) explore and describe the CTE career clusters (C) identify various career opportunities within one or more career…"
+        },
+        {
+          "id": "input",
+          "label": "3. Input (teach content / vocabulary)",
+          "status": "PRESENT",
+          "cite": "Question Stems: Engagement Question 1: How do airplanes take off from aircraft carriers if they are so much shorter than regular runways? Explain Activity Explain: (10-15 Minutes)   Student Engagement Strategy / Resource: Show the video to the students and have them ask questions for possible activity clarification. Splain students that Aircraft that take off from airport runways accelerate under their own power. The planes must get going fast enough to generate enough lift to get off the…"
+        },
+        {
+          "id": "modeling",
+          "label": "4. Modeling (I do / demonstrate)",
+          "status": "PRESENT",
+          "cite": "Student Engagement Strategy / Resource: https://docs.google.com/presentation/d/1EYo4tUJUrzmLWJI3dpMVElT2nC9Mc1mc3M8WTJlN3_0/edit?usp=copy   Question Stems: Engagement Question 1: What do you know about this Career Field? Engagement Question 2: What do you want to know about this Career Field? | Explain: (10-15 Minutes) Slides 3 -7 in google slides) Students review careers and skills needed for Culinary Arts.  Student Engagement Strategy / Resource:…"
+        },
+        {
+          "id": "check_for_understanding",
+          "label": "5. Check for understanding",
+          "status": "PRESENT",
+          "cite": "Student Engagement Strategy / Resource: PDF PresentationPeerFeedbackForm-1 (3).pdf | Evaluate: (5-10 Minutes) Have students give each other feedback on their peer pennant presentations.  Student Engagement Strategy / Resource: PDF PresentationPeerFeedbackForm-1 (3).pdf | Evaluate: (5-10 Minutes) Have students give each other feedback on their peer pennant presentations.  Student Engagement Strategy / Resource: PDF PresentationPeerFeedbackForm-1 (3).pdf"
+        },
+        {
+          "id": "guided_practice",
+          "label": "6. Guided practice (We do)",
+          "status": "PRESENT",
+          "cite": "When done with the activity the Career Advocate will complete the KWL chart, What did you Learn Section.   Student Engagement Strategy / Resource:  • Social Worker for a Day handout  kwl • Internet access   Question Stems: What do you know about this career? What do you want to know about this career? What have you learned about this career? | Explore: (20-30 Minutes) Career Advocate will explain the Career using the interactive lesson.   When done with the activity the Career Advocate will…"
+        },
+        {
+          "id": "independent_practice",
+          "label": "7. Independent practice (You do)",
+          "status": "PRESENT",
+          "cite": "Question Stems: What did you observe when you threw the plane with only your wrist compared to throwing with your entire arm? How could we make the planes fly farther if we can only launch them over a short distance, like on an aircraft carrier? Extend Activity Extend: (20-30 Minutes)  You can use paper airplanes to teach even more about the engineering design process, for example defining an engineering problem. Can students build a paper airplane launcher with a focus on accuracy instead of…"
+        },
+        {
+          "id": "closure",
+          "label": "8. Closure",
+          "status": "PRESENT",
+          "cite": "Question Stems: What are the requirements to become a teacher? What are some challenges that a teacher might face? Would you consider becoming a teacher? What subject? Evaluate Activity Evaluate: (5-10 Minutes)   Student Engagement Strategy / Resource: Peer Book Review  Materials: Copy Paper Construction Paper Glue Scissors  Students will review their peers book. | Evaluate: (5-10 Minutes)   Student Engagement Strategy / Resource: Peer Book Review  Materials: Copy Paper Construction Paper Glue…"
+        }
+      ]
+    },
+    "A6": {
+      "method": "code_fallback",
+      "present": 11
+    },
+    "A7": {
+      "step": "A7",
+      "elps": {
+        "status": "MISSING",
+        "cites": []
+      },
+      "accommodations": {
+        "status": "MISSING",
+        "cites": []
+      }
+    },
+    "A8": {
+      "step": "A8",
+      "emit_paths": [
+        "path_a/findings.json"
+      ],
+      "status": "emitted"
+    }
+  },
+  "a6_fields": {
+    "lesson_title": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "learning_objective": {
+      "status": "PRESENT",
+      "text": "--- TABLE --- Family and Community Wellness- Human Services Career                                                          Estimated Day(s): 2 - 45 minute classes Resources: Lesson plan Materials for activities | Resources: Lesson plan Materials for activities | Resources: Lesson plan Materials for activities TEKS Student Expectation(s): §127.2. Career and College Exploration. (B) explore and describe the CTE career clusters (C) identify various career opportunities within one or more career…",
+      "sources": [
+        "052a682bd60f"
+      ],
+      "element_id": "052a682bd60f-e1"
+    },
+    "teks": {
+      "status": "PRESENT",
+      "text": "--- TABLE --- Family and Community Wellness- Human Services Career                                                          Estimated Day(s): 2 - 45 minute classes Resources: Lesson plan Materials for activities | Resources: Lesson plan Materials for activities | Resources: Lesson plan Materials for activities TEKS Student Expectation(s): §127.2. Career and College Exploration. (B) explore and describe the CTE career clusters (C) identify various career opportunities within one or more career…",
+      "sources": [
+        "052a682bd60f"
+      ],
+      "element_id": "052a682bd60f-e1"
+    },
+    "materials": {
+      "status": "PRESENT",
+      "text": "--- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days | Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days |…",
+      "sources": [
+        "3a729a90b236"
+      ],
+      "element_id": "3a729a90b236-e2"
+    },
+    "anticipatory_set": {
+      "status": "PRESENT",
+      "text": "Prompt: What do you think of when you hear Family and Community Wellness-Human Services?  Have the students share in their groups and then with each other.  Question Stems: Engagement Question 1: What do you know about this Career Field? Engagement Question 2: How does social work benefit our community? | Engage: (5-10 minutes) Bell Ringer Students will answer the following bellwork prompt using the Bell Work Template  Prompt: What do you think of when you hear Family and Community…",
+      "sources": [
+        "052a682bd60f"
+      ],
+      "element_id": "052a682bd60f-e2"
+    },
+    "objective_purpose": {
+      "status": "PRESENT",
+      "text": "--- TABLE --- Law and Public Service Career                                                          Estimated Day(s): 2 - 45 minute classes Resources: Lesson plan Computer Promethean board Internet access | Resources: Lesson plan Computer Promethean board Internet access | Resources: Lesson plan Computer Promethean board Internet access TEKS Student Expectation(s): §127.2. Career and College Exploration. (B) explore and describe the CTE career clusters (C) identify various career…",
+      "sources": [
+        "30378c1c95b1"
+      ],
+      "element_id": "30378c1c95b1-e1"
+    },
+    "input": {
+      "status": "PRESENT",
+      "text": "Question Stems: Engagement Question 1: How do airplanes take off from aircraft carriers if they are so much shorter than regular runways? Explain Activity Explain: (10-15 Minutes)   Student Engagement Strategy / Resource: Show the video to the students and have them ask questions for possible activity clarification. Splain students that Aircraft that take off from airport runways accelerate under their own power. The planes must get going fast enough to generate enough lift to get off the…",
+      "sources": [
+        "0acbc6d0b180"
+      ],
+      "element_id": "0acbc6d0b180-e2"
+    },
+    "modeling": {
+      "status": "PRESENT",
+      "text": "Question Stems: What are the requirements to become a teacher? What are some challenges that a teacher might face? Would you consider becoming a teacher? What subject? | Extend: (20-30 Minutes) Students will complete vocabulary and find out the different career paths within the Teaching & Training Pathway.Students will watch a Ted Talk from an educator and review what she spoke about.  Students will listen to their own teacher’s experience on how they became a teacher.  Students will fill in…",
+      "sources": [
+        "3dc5933c971d"
+      ],
+      "element_id": "3dc5933c971d-e2"
+    },
+    "check_for_understanding": {
+      "status": "PRESENT",
+      "text": "Student Engagement Strategy / Resource: PDF PresentationPeerFeedbackForm-1 (3).pdf | Evaluate: (5-10 Minutes) Have students give each other feedback on their peer pennant presentations.  Student Engagement Strategy / Resource: PDF PresentationPeerFeedbackForm-1 (3).pdf | Evaluate: (5-10 Minutes) Have students give each other feedback on their peer pennant presentations.  Student Engagement Strategy / Resource: PDF PresentationPeerFeedbackForm-1 (3).pdf",
+      "sources": [
+        "052a682bd60f"
+      ],
+      "element_id": "052a682bd60f-e4"
+    },
+    "guided_practice": {
+      "status": "PRESENT",
+      "text": "When done with the activity the Career Advocate will complete the KWL chart, What did you Learn Section.   Student Engagement Strategy / Resource:  • Social Worker for a Day handout  kwl • Internet access   Question Stems: What do you know about this career? What do you want to know about this career? What have you learned about this career? | Explore: (20-30 Minutes) Career Advocate will explain the Career using the interactive lesson.   When done with the activity the Career Advocate will…",
+      "sources": [
+        "052a682bd60f"
+      ],
+      "element_id": "052a682bd60f-e3-split1"
+    },
+    "independent_practice": {
+      "status": "PRESENT",
+      "text": "Question Stems: What did you observe when you threw the plane with only your wrist compared to throwing with your entire arm? How could we make the planes fly farther if we can only launch them over a short distance, like on an aircraft carrier? Extend Activity Extend: (20-30 Minutes)  You can use paper airplanes to teach even more about the engineering design process, for example defining an engineering problem. Can students build a paper airplane launcher with a focus on accuracy instead of…",
+      "sources": [
+        "0acbc6d0b180"
+      ],
+      "element_id": "0acbc6d0b180-e4"
+    },
+    "closure": {
+      "status": "PRESENT",
+      "text": "Question Stems: What is the importance of soil? What are the properties of soil? What is the difference between soil and dirt? Evaluate Activity Evaluate: (5-10 Minutes) Upon completion, have students complete the 3-2-1 Reflection handout over this lesson.  Reference Worksheet:  3-2-1 Reflection | Evaluate: (5-10 Minutes) Upon completion, have students complete the 3-2-1 Reflection handout over this lesson.  Reference Worksheet:  3-2-1 Reflection | Evaluate: (5-10 Minutes) Upon completion,…",
+      "sources": [
+        "e9e6ac00ce09"
+      ],
+      "element_id": "e9e6ac00ce09-e9"
+    },
+    "elps_language": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "accommodations": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    }
+  },
+  "emit_paths": [
+    "path_a/findings.json"
+  ]
+}
