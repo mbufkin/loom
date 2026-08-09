@@ -1,0 +1,17 @@
+# Grok full-run overlay (used via LOOM_CONFIG=config.grok.yaml).
+# Points BOTH analyst + verifier layer calls at the local Cursor->OpenAI bridge
+# (:8788) serving Cursor Grok 4.5. Golden local config.yaml is left untouched.
+# Graph phase is driven separately by --graph-backend cursor (Cursor SDK).
+models:
+  analyst_url: "http://127.0.0.1:8788/v1/chat/completions"
+  verifier_url: "http://127.0.0.1:8788/v1/chat/completions"
+  analyst_model: "grok-4.5"
+  verifier_model: "grok-4.5"
+  timeout_seconds: 600
+
+paths:
+  base_dir: "/home/lenovo/g10-control-center-loom"
+  default_sources_dir: "/home/lenovo/g10-control-center-loom/data/career-curriculum/osint"
+
+policy:
+  auditor_only: true  # never generate or fix curriculum content

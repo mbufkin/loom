@@ -1,0 +1,92 @@
+{
+  "generated": "2026-08-09 00:46 UTC",
+  "project": "lab-dallas-ag",
+  "scorer": "s4_quality_decomposed",
+  "units": {
+    "curriculum": [
+      {
+        "lesson_id": "e9e6ac00ce09",
+        "title": "Agriculture- Plant Science Alternate Lesson Plan Template",
+        "unit_id": "curriculum",
+        "source_file": "sources/doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt",
+        "mean_band": 1.5,
+        "max_band": 3,
+        "element_count": 9,
+        "dimensions": [
+          {
+            "criterion_id": "objective_clarity",
+            "label": "Clarity of learning objective",
+            "band": 1,
+            "note": "Student-facing \u201cwill be able to\u201d goals appear, but they stay generic (define/explain agriculture and its components) and do not state a clear, purposeful outcome tied to plant science, soil, or career exploration shown elsewhere.",
+            "evidence": [
+              {
+                "element_id": "e9e6ac00ce09-e3",
+                "excerpt": "The students will be able to: Define agriculture and explain agriculture industry. Describe the various components of the agriculture industry."
+              }
+            ]
+          },
+          {
+            "criterion_id": "engagement",
+            "label": "Engagement / relevance",
+            "band": 2,
+            "note": "The opening Engage uses a timed sticky-note prompt (\u201cHow do we grow Plants?\u201d), peer sharing, and posting notes as tree leaves to activate prior knowledge\u2014a clear, interactive hook. The task engages students but the prompt stays generic, without a strong personal or local relevance tie, so it is solid rather than exemplary.",
+            "evidence": [
+              {
+                "element_id": "e9e6ac00ce09-e4",
+                "excerpt": "Activate prior knowledge: Pass around a sticky note to each student and place the prompt on slide two of the Agriculture- Plant Science Alternate Lesson Plan Slides"
+              }
+            ]
+          },
+          {
+            "criterion_id": "checks_for_understanding",
+            "label": "Checks for understanding",
+            "band": 2,
+            "note": "The lesson includes an explicit Evaluate check\u2014a 3-2-1 Reflection handout\u2014plus related question stems on soil, which is a clear formative close. It is solid but generic: the text does not show criteria, sampling, or how responses will adjust instruction.",
+            "evidence": [
+              {
+                "element_id": "e9e6ac00ce09-e9",
+                "excerpt": "Upon completion, have students complete the 3-2-1 Reflection handout over this lesson."
+              }
+            ]
+          },
+          {
+            "criterion_id": "differentiation_supports",
+            "label": "Differentiation & language supports",
+            "band": 1,
+            "note": "The lesson shows only generic access moves\u2014small-group note-taking and guided notes\u2014without ELPS/language objectives, SpEd/504 accommodations, or GT/extension options. Supports for varied learners are therefore weak and undifferentiated.",
+            "evidence": [
+              {
+                "element_id": "e9e6ac00ce09-e5",
+                "excerpt": "Students will take notes and collaborate in small groups. Students will document their understanding through the provided guided notes."
+              }
+            ]
+          },
+          {
+            "criterion_id": "cognitive_rigor",
+            "label": "Cognitive rigor",
+            "band": 2,
+            "note": "The soil lab has students collect, flatten, and closely examine real soil samples before answering property-focused questions, which is clear application beyond recall. The paired stems stay mostly factual (importance/properties/soil vs. dirt), so rigor is solid but not deeply analytical.",
+            "evidence": [
+              {
+                "element_id": "e9e6ac00ce09-e8",
+                "excerpt": "the student can have a better look at their soil and answer the questions on their Let\u2019s Find Out About Soil handout."
+              }
+            ]
+          },
+          {
+            "criterion_id": "coherent_sequence_closure",
+            "label": "Coherent sequence & closure",
+            "band": 1,
+            "note": "E1 shows a timed Evaluate close via a 3-2-1 Reflection, so some end-of-lesson consolidation is present. It remains generic (\u201cover this lesson\u201d) and does not itself evidence a purposeful open-to-practice-to-close arc or specific synthesis of the lesson\u2019s learning.",
+            "evidence": [
+              {
+                "element_id": "e9e6ac00ce09-e9",
+                "excerpt": "Upon completion, have students complete the 3-2-1 Reflection handout over this lesson."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "project_id": "lab-dallas-ag",
+  "unit_id": "curriculum",
+  "create_lessons": [],
+  "findings": [
+    {
+      "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt",
+      "action": "attach_material",
+      "lesson_id": "lesson:curriculum:l1",
+      "role": "other",
+      "node_type": "Material",
+      "edge": "spanIn",
+      "covers_lessons": [],
+      "note": "CTE Plant Science instructional sequence (AFNR pathways, horticulture vs floriculture, soil lab, exit ticket). Evidence excerpts contain no explicit Lesson N numbering; covers_lesson_numbers left empty.",
+      "model_steps": {
+        "role": {
+          "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt",
+          "role": "other",
+          "citation_element_id": "b5e36486805a-e1",
+          "excerpt_head": "The Agriculture, Food, and Natural Resources (AFNR) Career Cluster focuses on the essential elements of life food, water, land, and air. This career cluster includes a diverse spectrum of occupations, ranging from farmer, rancher, and veterinarian to geologist, land conservation."
+        },
+        "lessons": {
+          "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt",
+          "covers_lesson_numbers": [],
+          "citations": [],
+          "notes": "CTE Plant Science instructional sequence (AFNR pathways, horticulture vs floriculture, soil lab, exit ticket). Evidence excerpts contain no explicit Lesson N numbering; covers_lesson_numbers left empty."
+        },
+        "assessment": {
+          "source_file": "doc_b5e36486805a_Agriculture-_Plant_Science.txt",
+          "is_assessment_bearing": false,
+          "assessment_lesson_numbers": [],
+          "assessment_name": null,
+          "citations": [],
+          "notes": "Includes a brief formative assessment_checkpoint labeled Exit Ticket (b5e36486805a-e16) and embedded checks (e.g. Venn commonalities), but the source is a CTE lesson/slides sequence, not a dedicated quiz or practice assessment artifact."
+        }
+      }
+    },
+    {
+      "source_file": "doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt",
+      "action": "attach_material",
+      "lesson_id": "lesson:curriculum:l1",
+      "role": "teacher_edition",
+      "node_type": "Material",
+      "edge": "describes",
+      "covers_lessons": [],
+      "note": "Single alternate lesson-plan template for Agriculture Career\u2013Plant Science (Estimated Day(s): 2 \u00d7 45-minute classes; 5E Engage/Explore/Explain/Extend/Evaluate). No explicit Lesson N numbers appear in evidence; covers_lesson_numbers left empty.",
+      "model_steps": {
+        "role": {
+          "source_file": "doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt",
+          "role": "teacher_edition",
+          "citation_element_id": "e9e6ac00ce09-e1",
+          "excerpt_head": "Agriculture Career-Plant Science Program of study Estimated Day(s): 2 - 45 minute classes Resources: Lesson plan Materials for activities TEKS Student Expectation(s): \u00a7127.2. Career and College Exploration."
+        },
+        "lessons": {
+          "source_file": "doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt",
+          "covers_lesson_numbers": [],
+          "citations": [],
+          "notes": "Single alternate lesson-plan template for Agriculture Career\u2013Plant Science (Estimated Day(s): 2 \u00d7 45-minute classes; 5E Engage/Explore/Explain/Extend/Evaluate). No explicit Lesson N numbers appear in evidence; covers_lesson_numbers left empty."
+        },
+        "assessment": {
+          "source_file": "doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt",
+          "is_assessment_bearing": false,
+          "assessment_lesson_numbers": [],
+          "assessment_name": null,
+          "citations": [],
+          "notes": "Evaluate closes with a formative 3-2-1 Reflection handout (e9e6ac00ce09-e9). Source is a teacher lesson-plan template with embedded formative closure, not a dedicated assessment/practice book."
+        }
+      }
+    }
+  ],
+  "model": "grok-4.5",
+  "spine_policy": {
+    "mode": "contiguous_from_1",
+    "min_module_size": 10
+  },
+  "note": "Narrow steps + code rebuild_multi (Bet 3); spine from unit union."
+}

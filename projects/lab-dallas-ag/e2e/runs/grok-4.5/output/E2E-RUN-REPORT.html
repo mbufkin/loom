@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Loom E2E report — lab-dallas-ag / grok-4.5</title>
+<style>
+  :root {
+    --ink: #1a211c;
+    --muted: #5c6b61;
+    --line: #c9d2cb;
+    --paper: #f3f0e8;
+    --panel: rgba(255,252,246,0.92);
+    --accent: #0f6b4c;
+    --accent-2: #b45309;
+    --weak: #9a3412;
+    --dev: #a16207;
+    --strong: #166534;
+    --abs: #57534e;
+    --shadow: 0 18px 50px rgba(26,33,28,0.08);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, #dfece4 0%, transparent 55%),
+      radial-gradient(900px 500px at 100% 0%, #efe2c8 0%, transparent 50%),
+      linear-gradient(180deg, #ebe6da 0%, var(--paper) 40%, #e7eee9 100%);
+    min-height: 100vh;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 48px 28px 80px; }
+  header {
+    margin-bottom: 36px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 28px;
+  }
+  .brand {
+    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    line-height: 1.1;
+    margin: 0 0 12px;
+    font-weight: 600;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--muted);
+    max-width: 42em;
+    margin: 0;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    margin-top: 18px;
+    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .meta strong { color: var(--ink); font-weight: 600; }
+  section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    padding: 26px 28px;
+    margin: 22px 0;
+  }
+  h2 {
+    font-size: 1.35rem;
+    margin: 0 0 6px;
+    font-weight: 600;
+  }
+  h3 { margin: 0; font-size: 1.05rem; font-weight: 600; }
+  .section-note {
+    color: var(--muted);
+    margin: 0 0 18px;
+    font-size: 0.98rem;
+  }
+  .kpis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 800px) {
+    .kpis { grid-template-columns: repeat(2, 1fr); }
+  }
+  .kpi {
+    border: 1px solid var(--line);
+    background: #fffdf8;
+    padding: 14px 16px;
+  }
+  .kpi .label {
+    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+  }
+  .kpi .value {
+    font-size: 1.8rem;
+    margin-top: 4px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  .kpi .sub { font-size: 0.85rem; color: var(--muted); margin-top: 2px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 10px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  code {
+    font-family: "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.86em;
+    background: #eef3ef;
+    padding: 1px 5px;
+  }
+  .pill {
+    display: inline-block;
+    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    font-size: 12px;
+    padding: 4px 9px;
+    border: 1px solid var(--line);
+    background: #fff;
+  }
+  .b-strong { color: var(--strong); border-color: #86efac; background: #f0fdf4; }
+  .b-dev { color: var(--dev); border-color: #fde68a; background: #fffbeb; }
+  .b-weak { color: var(--weak); border-color: #fdba74; background: #fff7ed; }
+  .b-abs, .b-na { color: var(--abs); }
+  .timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  }
+  .timeline li {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .timeline .when { color: var(--muted); font-size: 13px; }
+  .muted { color: var(--muted); }
+  .mono { font-family: "IBM Plex Mono", Menlo, Consolas, monospace; font-size: 12px; }
+  .two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+  @media (max-width: 800px) {
+    .two { grid-template-columns: 1fr; }
+    .timeline li { grid-template-columns: 1fr; gap: 4px; }
+  }
+  ul.files {
+    margin: 0;
+    padding-left: 1.1em;
+    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    font-size: 13px;
+  }
+  .dim-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+  }
+  @media (max-width: 700px) { .dim-grid { grid-template-columns: 1fr; } }
+  .dim {
+    border: 1px solid var(--line);
+    padding: 12px 14px;
+    background: #fffdf8;
+  }
+  .dim-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  .dim p { margin: 0; font-size: 0.92rem; color: var(--muted); }
+  .qual-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  footer {
+    margin-top: 36px;
+    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .verdict {
+    border-left: 4px solid var(--accent-2);
+    padding: 4px 0 4px 16px;
+    margin: 8px 0 0;
+    font-size: 1.05rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="brand">Loom · E2E run report</p>
+      <h1>lab-dallas-ag · grok-4.5</h1>
+      <p class="lede">Full-pipeline snapshot of the overnight Agriculture / Plant Science pack — structure inventory, graph belonging, and lesson-quality scores.</p>
+      <div class="meta">
+        <span>Finished <strong>2026-08-09 00:49 UTC</strong></span>
+        <span>Backend <strong>cursor · grok-4.5</strong></span>
+        <span>Wall time <strong>5.9 min</strong></span>
+        <span>Tokens <strong>512,196</strong> (20 calls)</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>Verdict</h2>
+      <p class="section-note">Single-unit, two-document corpus. Pipeline completed cleanly; audit content is sparse by design of the input folder.</p>
+      <p class="verdict">Unit tier <strong>Weak</strong> — 0 materials verified, <strong>8 missing slots</strong>, 1 lesson-plan duplicate, graph found <strong>0 numbered lessons</strong>. Useful as a thin-pack smoke test; not a full CTE cluster review.</p>
+    </section>
+
+    <section>
+      <h2>At a glance</h2>
+      <div class="kpis">
+        <div class="kpi"><div class="label">Documents</div><div class="value">2</div><div class="sub">26 Layer 0 elements</div></div>
+        <div class="kpi"><div class="label">Missing slots</div><div class="value">8</div><div class="sub">calendar vs folder</div></div>
+        <div class="kpi"><div class="label">Duplicates</div><div class="value">1</div><div class="sub">lesson_plan role</div></div>
+        <div class="kpi"><div class="label">Graph lessons</div><div class="value">0</div><div class="sub">2 sources reviewed</div></div>
+      </div>
+      <div class="kpis" style="margin-top:12px">
+        <div class="kpi"><div class="label">MATCH</div><div class="value">0</div><div class="sub">filing confirmed</div></div>
+        <div class="kpi"><div class="label">MISMATCH</div><div class="value">0</div><div class="sub">review queue empty</div></div>
+        <div class="kpi"><div class="label">UNVERIFIED</div><div class="value">26</div><div class="sub">all elements</div></div>
+        <div class="kpi"><div class="label">Layer 2 judged</div><div class="value">0</div><div class="sub">no confirmed LPs</div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>How the run went</h2>
+      <p class="section-note">Chronology from the E2E log — all stages succeeded; Drive push completed.</p>
+      <ul class="timeline">
+        <li><span class="when">Layer 0</span><span>Cache hits on both sources → <strong>26 elements</strong>. Layer 0-B: 0 wide spans.</span></li>
+        <li><span class="when">Graph</span><span>Cursor agent <code>grok-4.5</code> on unit <code>curriculum</code> (~38s). Roles: <code>other</code> + <code>teacher_edition</code>; no Lesson N spine.</span></li>
+        <li><span class="when">Layer 1 / 2</span><span>No filing conflicts. 8 MISSING role findings. Layer 2 completeness empty (nothing FULFILLED as lesson_plan).</span></li>
+        <li><span class="when">Quality</span><span>Scored alternate lesson-plan template only — mean band <strong>1.5</strong>.</span></li>
+        <li><span class="when">Synthesize</span><span>Dashboard, first-pass, teacher packet PDFs written under <code>e2e/runs/grok-4.5/output/</code>.</span></li>
+        <li><span class="when">Drive</span><span>Push OK — 6 files to <code>gdrive:Loom/lab-dallas-ag/</code>.</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Sources &amp; graph belonging</h2>
+      <p class="section-note">Narrow-step graph judgments. Neither source carried explicit Lesson N numbering, so the spine stayed empty.</p>
+      <table>
+        <thead><tr><th>Source</th><th>Role</th><th>Lessons</th><th>Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>doc_b5e36486805a_Agriculture-_Plant_Science.txt</td><td><code>other</code></td><td>0</td><td>no</td></tr>
+<tr><td>doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt</td><td><code>teacher_edition</code></td><td>0</td><td>no</td></tr>
+
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Missing materials</h2>
+      <p class="section-note">Day-grid / S&amp;S expectations with no routed candidates in the folder.</p>
+      <table>
+        <thead><tr><th>Role</th><th>Day / slot</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td><code>lesson_content</code></td><td>d1</td><td>no candidate elements were routed to this slot</td></tr>
+<tr><td><code>exit_ticket</code></td><td>d1</td><td>no candidate elements were routed to this slot</td></tr>
+<tr><td><code>lesson_content</code></td><td>d2</td><td>no candidate elements were routed to this slot</td></tr>
+<tr><td><code>exit_ticket</code></td><td>d2</td><td>no candidate elements were routed to this slot</td></tr>
+<tr><td><code>quiz</code></td><td>unit_supporting</td><td>No candidate contains an actual set of scored assessment items; &#x27;Exit Ticket&#x27; is only a title, and other questions are discussion/engagement</td></tr>
+<tr><td><code>answer_key</code></td><td>unit_supporting</td><td>No candidate provides correct answers or keyed solutions for any assessment.</td></tr>
+<tr><td><code>rubric</code></td><td>unit_supporting</td><td>No candidate states scoring criteria, performance levels, or evaluation dimensions.</td></tr>
+<tr><td><code>worksheet</code></td><td>unit_supporting</td><td>Named student handouts (Note Sheet, soil handout, 3-2-1 Reflection, web diagram) are only referenced; no excerpt itself is the student work </td></tr>
+
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Duplicates</h2>
+      <table>
+        <thead><tr><th>Role</th><th>Reasoning</th></tr></thead>
+        <tbody>
+          <tr><td><code>lesson_plan</code></td><td>These excerpts together supply teacher-facing planning: pacing, TEKS, learning goals, essential questions, materials, and timed 5E Engage–Explore–Explain–Extend–Evaluate procedures.</td></tr>
+
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Lesson quality</h2>
+      <p class="section-note">Instructional-coach bands 0–3 on the one scorable lesson-shaped document.</p>
+      
+    <div class="qual-block">
+      <div class="qual-head">
+        <h3>Agriculture- Plant Science Alternate Lesson Plan Template</h3>
+        <span class="pill b-dev">mean 1.5 · Developing</span>
+      </div>
+      <p class="muted mono">sources/doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt · 9 elements</p>
+      <div class="dim-grid">
+        <div class="dim b-weak">
+          <div class="dim-top"><span>Clarity of learning objective</span><strong>1</strong></div>
+          <p>Student-facing “will be able to” goals appear, but they stay generic (define/explain agriculture and its components) and do not state a clear, purposeful outcome tied to plant science, soil, or career exploration shown e</p>
+        </div>
+        <div class="dim b-dev">
+          <div class="dim-top"><span>Engagement / relevance</span><strong>2</strong></div>
+          <p>The opening Engage uses a timed sticky-note prompt (“How do we grow Plants?”), peer sharing, and posting notes as tree leaves to activate prior knowledge—a clear, interactive hook. The task engages students but the promp</p>
+        </div>
+        <div class="dim b-dev">
+          <div class="dim-top"><span>Checks for understanding</span><strong>2</strong></div>
+          <p>The lesson includes an explicit Evaluate check—a 3-2-1 Reflection handout—plus related question stems on soil, which is a clear formative close. It is solid but generic: the text does not show criteria, sampling, or how </p>
+        </div>
+        <div class="dim b-weak">
+          <div class="dim-top"><span>Differentiation &amp; language supports</span><strong>1</strong></div>
+          <p>The lesson shows only generic access moves—small-group note-taking and guided notes—without ELPS/language objectives, SpEd/504 accommodations, or GT/extension options. Supports for varied learners are therefore weak and </p>
+        </div>
+        <div class="dim b-dev">
+          <div class="dim-top"><span>Cognitive rigor</span><strong>2</strong></div>
+          <p>The soil lab has students collect, flatten, and closely examine real soil samples before answering property-focused questions, which is clear application beyond recall. The paired stems stay mostly factual (importance/pr</p>
+        </div>
+        <div class="dim b-weak">
+          <div class="dim-top"><span>Coherent sequence &amp; closure</span><strong>1</strong></div>
+          <p>E1 shows a timed Evaluate close via a 3-2-1 Reflection, so some end-of-lesson consolidation is present. It remains generic (“over this lesson”) and does not itself evidence a purposeful open-to-practice-to-close arc or s</p>
+        </div></div>
+    </div>
+    </section>
+
+    <section>
+      <div class="two">
+        <div>
+          <h2>Teacher packet outputs</h2>
+          <p class="section-note">Generated under <code>output/teachers/curriculum/</code>.</p>
+          <ul class="files"><li><code>LESSON-PLAN.json</code></li><li><code>LESSON-PLAN.md</code></li><li><code>LESSON-PLAN.pdf</code></li><li><code>TEACHER-PACKET.md</code></li><li><code>TEACHER-PACKET.pdf</code></li><li><code>UNIT-PLAN.json</code></li><li><code>UNIT-PLAN.md</code></li><li><code>UNIT-PLAN.pdf</code></li></ul>
+          <p class="muted" style="margin-top:12px;font-family:Segoe UI,sans-serif;font-size:13px">
+            UNIT-PLAN: 19 present / 12 missing slots from folder evidence.<br/>
+            LESSON-PLAN: test-draft structure 8/8; 12 present / 2 missing.
+          </p>
+        </div>
+        <div>
+          <h2>Corpus files</h2>
+          <p class="section-note">Inputs in this E2E pack.</p>
+          <ul class="files"><li><code>doc_b5e36486805a_Agriculture-_Plant_Science.txt</code></li><li><code>doc_e9e6ac00ce09_Agriculture-_Plant_Science_Alternate_Lesson_Plan_Template.txt</code></li></ul>
+          <p class="muted" style="margin-top:12px;font-family:Segoe UI,sans-serif;font-size:13px">
+            Pacing: sequential 2-day inferred map (no dated grading periods applied).<br/>
+            Token usage: 269,117 in / 6,151 out · cache read 236,928.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Recommended next session</h2>
+      <ol style="margin:0;padding-left:1.2em;font-family:'Segoe UI','Helvetica Neue',sans-serif;line-height:1.55">
+        <li>Author, pull, or drop the <strong>8 missing slots</strong> (lesson content + exit tickets on d1/d2; quiz / key / rubric / worksheet).</li>
+        <li>Resolve the <strong>lesson_plan duplicate</strong> (keep one canonical plan or declare expected overlap in the manifest).</li>
+        <li>Wire a real <code>school-calendar.yaml</code> if you want dated YAG instead of a sequential sketch.</li>
+        <li>Re-run after materials land — Layer 2 completeness and mismatch queues only become useful then.</li>
+      </ol>
+    </section>
+
+    <footer>
+      Generated from <code>projects/lab-dallas-ag/e2e/runs/grok-4.5/</code>
+      · artifacts: DASHBOARD, FIRST-PASS, aggregate-stats, graph PHASE-SUMMARY, layer1 findings, LESSON-QUALITY-FEEDBACK, USAGE-SUMMARY
+    </footer>
+  </div>
+</body>
+</html>
