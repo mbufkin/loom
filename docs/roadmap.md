@@ -722,11 +722,30 @@ expensive.*
 
 Per-lens document counts now pinned: A 38, B 50, C 75, D 26, E 72, F 15, G 2, H 45.
 
-**The remaining gap is Path G.** Its only pinned documents are the two synthetic files
-in `lab-culinary-syllabus` — no real syllabus corpus has ever run through Loom. That is
-the same lens whose scorer had silently diverged from the other six (issue #14), and it
-diverged precisely because the code path never ran on real input. Path G's ratings
-should be treated as unproven until a genuine syllabus corpus exists.
+**Path G's two documents turned out to be real, and reading them found a bug in every
+lens.** `lab-culinary-syllabus` was recorded above as synthetic; it is not. It holds two
+genuine Waxahachie ISD syllabi that had been sitting in the corpus unread, which is a
+reminder that "unproven" and "no corpus" are different problems — this one only needed
+somebody to look.
+
+What the reading found was that presence had been matched as a plain substring since
+the beginning. `PPE` matched "Cli**ppe**rs", so a culinary syllabus scored lab safety
+present; `credit` matched "extra credit"; `cover` matched "recipe cover to protect from
+food", reporting a TEKS coverage claim in a document that never says TEKS. Worst of the
+set, `cte` matched "expe**cte**d", so the CTE soft gate fired on nearly every document
+and the optional safety/WBL/acknowledgment fields were never actually optional.
+
+Path G is fixed and pinned field by field against both documents (see
+`docs/ARCHITECTURE-READINESS.md` §11). It also now reads the source document rather
+than the Layer 0 ledger, which samples a syllabus rather than covering it.
+
+**Open: the same substring bug in the other seven lenses.** 60 keywords across the
+eight checklists fire only as substrings on the real corpora — `teach` inside
+"teacher", `unit` inside "opport**unit**y", `ELPS` inside "h**elps**". It was left
+scoped to G deliberately: some of those keywords are intentional stems (`facilitat`,
+`vocab`, `scaffold`) that boundary matching would break, so each checklist needs a
+per-keyword read against its corpus, and one lens at a time keeps each ratings shift
+reviewable.
 
 ---
 

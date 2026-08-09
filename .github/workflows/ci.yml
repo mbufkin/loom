@@ -39,6 +39,7 @@ jobs:
       # an existing one. All are corpus-free (synthetic fixtures).
       - name: Run Path A-H lens suite
         run: |
+          python3 test_keyword_match.py
           python3 test_route_lenses.py
           python3 test_path_a_lesson_plan.py
           python3 test_path_b_assessment.py

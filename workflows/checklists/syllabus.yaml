@@ -4,6 +4,12 @@
 #
 # Primary context: DISD / Texas CTE high school (TEKS timeline, grading, safety, WBL).
 # optional: true → NOT_SIGNALED when the doc has no CTE cues (avoids false fails).
+# exclude: → phrases that must not count as a hit ("extra credit" is not credit).
+#
+# Keywords are matched on word boundaries, so a keyword may be a whole word or a
+# phrase but never a fragment. Keep them specific enough to name the section they
+# claim: a generic word that appears anywhere in a syllabus reports a section the
+# document does not have, and an unreported gap is one nobody fixes.
 
 version: "v1-syllabus-cte"
 role: syllabus
@@ -20,18 +26,25 @@ sections:
       - id: course_identity
         label: Course name / number / credit
         element_types: [logistics_materials, standards_objectives]
+        # "credit" alone fired on "extra credit" in both culinary syllabi, so the
+        # credit wording is anchored and the extra-credit sense excluded.
         keywords:
+          - "course:"
           - course title
           - course name
           - course number
           - PEIMS
-          - credit
           - one credit
+          - half credit
+          - course credit
+          - credit hours
           - grade level
           - grades 9
           - grades 10
           - grades 11
           - grades 12
+        exclude:
+          - extra credit
       - id: instructor_contact
         label: Teacher / instructor contact
         element_types: [logistics_materials]
@@ -46,13 +59,21 @@ sections:
       - id: meeting_pattern
         label: Meeting pattern / schedule block
         element_types: [logistics_materials]
+        # Bare "period" matched locker rules ("end of the class period") and an
+        # exasperated "Period!", neither of which states when the class meets.
         keywords:
-          - class period
+          - appointment times
           - meeting time
-          - schedule
-          - period
-          - block
+          - class time
+          - class meets
+          - meets period
+          - class schedule
+          - bell schedule
+          - block schedule
+          - a day
+          - b day
           - days of the week
+          - meets daily
       - id: prerequisites
         label: Prerequisites / recommended prior courses
         element_types: [logistics_materials, standards_objectives]
@@ -69,23 +90,31 @@ sections:
       - id: course_purpose
         label: Course description / why this course matters
         element_types: [standards_objectives, logistics_materials]
+        # "career" alone fired on the CTSO club name in a syllabus with no course
+        # description at all; the phrases below require description-shaped prose.
         keywords:
           - course description
           - course overview
+          - this course
+          - course is designed
           - in this course
           - students will explore
           - prepare students
-          - career
+          - prepares students
+          - provides opportunities
       - id: learning_outcomes
         label: Measurable course outcomes / learning objectives
         element_types: [standards_objectives]
+        # "students will" is too weak to carry an outcomes claim - it matched a
+        # SkillsUSA recruitment blurb. Outcome wording has to be explicit.
         keywords:
           - learning objective
           - learning outcome
+          - course objective
           - students will be able
-          - students will
           - SWBAT
           - by the end of this course
+          - by the end of the course
           - competencies
       - id: teks_goals
         label: TEKS / standards goals named on syllabus
@@ -159,12 +188,23 @@ sections:
       - id: unit_topics
         label: Units / topics sequence
         element_types: [logistics_materials, standards_objectives, direct_instruction]
+        # Texas syllabi lay the course map out by grading period ("1st 6 Weeks ...
+        # 6th 6 Weeks"), which none of the unit/YAG wording caught - the clearest
+        # course map in the corpus was being reported as absent.
         keywords:
           - unit 1
           - unit 2
           - course outline
+          - outline
+          - six weeks
+          - 6 weeks
+          - nine weeks
+          - 9 weeks
+          - grading period
+          - marking period
+          - quarter
           - topics
-          - scope
+          - scope and sequence
           - year at a glance
           - YAG
           - pacing
@@ -172,25 +212,33 @@ sections:
       - id: due_dates
         label: Major dates / due dates
         element_types: [logistics_materials, assessment_checkpoint]
+        # "semester" on its own is not a date - it cited "Semester Deep Cleaning".
         keywords:
           - due date
+          - due by
           - deadline
           - week of
-          - semester
+          - end of semester
           - midterm
           - final exam
+          - exam date
           - timeline
       - id: teks_timeline
         label: TEKS / content coverage timeline claim
         element_types: [standards_objectives, logistics_materials]
+        # This step claims the syllabus says *when* the standards get taught, so
+        # the evidence has to mention standards. "cover" matched "recipe cover to
+        # protect from food" and "sequence" matched "Consequences"; both reported
+        # a TEKS coverage claim in a syllabus that never mentions TEKS.
         keywords:
           - TEKS
-          - cover
-          - covered
-          - throughout the year
-          - sequence
-          - pacing
           - all TEKS
+          - TEKS covered
+          - standards covered
+          - standards are covered
+          - aligned to the TEKS
+          - scope and sequence
+          - Texas Essential Knowledge
 
   g6_policies:
     label: G6 Policies & communication
@@ -240,7 +288,8 @@ sections:
           - accommodation
           - modification
           - IEP
-          - 504
+          - "504"
+          - Section 504
           - ELPS
           - tutoring
           - support
@@ -249,11 +298,23 @@ sections:
       - id: safety
         label: Safety rules (lab/shop/clinical)
         element_types: [logistics_materials]
+        # Boundary matching is what makes "PPE" usable here: as a substring it hit
+        # Clippers, happen and dropped, so a culinary syllabus scored lab safety
+        # present without one safety sentence. Food-safety terms added because
+        # that is how a culinary lab actually states this.
         keywords:
           - safety
           - PPE
           - lab safety
           - shop safety
+          - food safety
+          - sanitation
+          - ServSafe
+          - first aid
+          - knife safety
+          - non-skid
+          - non slip
+          - closed toe
           - hazard
           - emergency
         optional: true
@@ -261,14 +322,22 @@ sections:
       - id: wbl_internship
         label: Work-based learning / internship requirements
         element_types: [logistics_materials, assessment_checkpoint]
+        # A practicum syllabus is work-based learning, but "practicum hours" was
+        # the only practicum wording listed and the hiring-cycle vocabulary
+        # (job application, resume, interviews) was absent entirely.
         keywords:
           - internship
           - work-based
           - work based
           - WBL
+          - practicum
           - training plan
           - practicum hours
           - industry partner
+          - job application
+          - resume
+          - work site
+          - employer
         optional: true
         cte_signal: true
       - id: acknowledgment

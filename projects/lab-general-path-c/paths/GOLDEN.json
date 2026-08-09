@@ -42,16 +42,19 @@
         "doc_cmixed_CTSO_Presentation:C2": "PRESENT",
         "doc_cmixed_CTSO_Presentation:C3": "PRESENT",
         "doc_cmixed_CTSO_Presentation:C4": "PRESENT",
+        "doc_cmixed_CTSO_Presentation:C4.nursery_bucket": "PRESENT",
         "doc_cmixed_CTSO_Presentation:C5": "STUB",
         "doc_cstrong_Secondary_Mathematics_Coach_Lesson_Internalization_Protocol:C1": "PRESENT",
         "doc_cstrong_Secondary_Mathematics_Coach_Lesson_Internalization_Protocol:C2": "PRESENT",
         "doc_cstrong_Secondary_Mathematics_Coach_Lesson_Internalization_Protocol:C3": "PRESENT",
         "doc_cstrong_Secondary_Mathematics_Coach_Lesson_Internalization_Protocol:C4": "PRESENT",
+        "doc_cstrong_Secondary_Mathematics_Coach_Lesson_Internalization_Protocol:C4.nursery_bucket": "PRESENT",
         "doc_cstrong_Secondary_Mathematics_Coach_Lesson_Internalization_Protocol:C5": "STUB",
         "doc_cweak_Other_Handout_Stub:C1": "PRESENT",
         "doc_cweak_Other_Handout_Stub:C2": "PRESENT",
         "doc_cweak_Other_Handout_Stub:C3": "PRESENT",
         "doc_cweak_Other_Handout_Stub:C4": "MISSING",
+        "doc_cweak_Other_Handout_Stub:C4.nursery_bucket": "MISSING",
         "doc_cweak_Other_Handout_Stub:C5": "STUB"
       },
       "checklist": "workflows/checklists/general.yaml",
@@ -64,8 +67,8 @@
       "n_docs": 3,
       "status": "ok",
       "status_counts": {
-        "MISSING": 1,
-        "PRESENT": 11,
+        "MISSING": 2,
+        "PRESENT": 13,
         "STUB": 3
       },
       "workflow_id": "general"
