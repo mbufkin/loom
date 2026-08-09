@@ -1,0 +1,217 @@
+{
+  "project_id": "lab-general-path-c",
+  "workflow_id": "lesson_plan",
+  "path": "A",
+  "lens": "Lesson",
+  "status": "skipped",
+  "doc_ids": [],
+  "checklist": "workflows/checklists/daily_lesson_plan.yaml",
+  "inventory": [],
+  "steps_by_doc": {},
+  "steps": {
+    "A1": {
+      "step": "A1",
+      "element_count": 0,
+      "by_element_type": {},
+      "doc_ids": []
+    },
+    "A2": {
+      "step": "A2",
+      "teks": {
+        "status": "MISSING",
+        "count": 0,
+        "cites": []
+      },
+      "objective": {
+        "status": "MISSING",
+        "count": 0,
+        "cites": []
+      }
+    },
+    "A3": {
+      "step": "A3",
+      "has_objective": false,
+      "has_activities": false,
+      "has_assessment": false,
+      "mismatches": [],
+      "status": "MISSING"
+    },
+    "A4": {
+      "step": "A4",
+      "formative": {
+        "status": "MISSING",
+        "items": []
+      },
+      "summative": {
+        "status": "MISSING",
+        "items": []
+      }
+    },
+    "A5": {
+      "step": "A5",
+      "hunter_core_present": 0,
+      "hunter_core_total": 8,
+      "matrix": [
+        {
+          "id": "anticipatory_set",
+          "label": "1. Anticipatory set (hook / Do Now / Engage)",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "objective_purpose",
+          "label": "2. Objective & purpose (stated to students)",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "input",
+          "label": "3. Input (teach content / vocabulary)",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "modeling",
+          "label": "4. Modeling (I do / demonstrate)",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "check_for_understanding",
+          "label": "5. Check for understanding",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "guided_practice",
+          "label": "6. Guided practice (We do)",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "independent_practice",
+          "label": "7. Independent practice (You do)",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "closure",
+          "label": "8. Closure",
+          "status": "MISSING",
+          "cite": ""
+        }
+      ]
+    },
+    "A6": {
+      "method": "code_fallback",
+      "present": 0
+    },
+    "A7": {
+      "step": "A7",
+      "elps": {
+        "status": "MISSING",
+        "cites": []
+      },
+      "accommodations": {
+        "status": "MISSING",
+        "cites": []
+      }
+    },
+    "A8": {
+      "step": "A8",
+      "emit_paths": [
+        "path_a/findings.json"
+      ],
+      "status": "emitted"
+    }
+  },
+  "a6_fields": {
+    "lesson_title": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "learning_objective": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "teks": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "materials": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "anticipatory_set": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "objective_purpose": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "input": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "modeling": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "check_for_understanding": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "guided_practice": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "independent_practice": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "closure": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "elps_language": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "accommodations": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    }
+  },
+  "emit_paths": [
+    "path_a/findings.json"
+  ]
+}

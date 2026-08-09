@@ -2,21 +2,23 @@
 """
 artifact_rung.py — the NON-lesson artifact rung of the curriculum waterfall.
 
-Path A reviews lesson plans. This rung reviews everything else — quizzes, exit
-tickets, rubrics, worksheets, answer keys, projects, slides, and unknown types —
-so a curriculum's ~80% non-lesson documents get a real review instead of a stub.
+lesson_rung.py owns lesson atoms (lesson_plan / lesson_content). This rung
+reviews everything else by rolling up the Path B–H findings that
+workflows/run_paths.py already wrote — quizzes, exit tickets, rubrics,
+worksheets, answer keys, projects, slides, syllabi, and catch-all types. It
+does NOT re-score documents and does NOT call a model; the Paths lenses are
+the presence signal. Path findings files B–H are the input source; lesson-typed
+docs that Path E also inventorizes are skipped here so a unit cannot pick up an
+artifact gap on a document lesson_rung already judged (the lesson_content
+contradiction fix).
 
-It mirrors lesson_rung.py exactly one artifact at a time:
-  1. enumerate every NON-lesson doc from the Layer 0 ledger, map it to its unit;
-  2. run the DETERMINISTIC PresenceScorer from that doc's per-type spec (gates);
-  3. optionally run the model AlignmentScorer (advisory) against the unit's anchor
-     (lesson objective -> cited TEKS -> "cannot assess", rolled up as a lesson gap);
-  4. roll up per unit and emit layer_artifact/ARTIFACT-RUNG.json (+ .md) — the stable
-     hand-off unit_rung.py consumes (deterministic gaps GATE, alignment ADVISES).
-
-Unknown/`other` types get the generic fallback spec and are appended to
-_loom_feedback.yaml (the feedback nursery) so a future dedicated Path can be grown —
-curriculum-agnostic by construction, no per-curriculum code.
+Per document, a MISSING checklist step is a deterministic structural gap
+(STUB and NOT_APPLICABLE are ignored; PARTIAL and OPTIONAL_ABSENT are advisory
+only — the scorers emit OPTIONAL_ABSENT when an all-optional step finds no
+signal). Per-unit roll-up lands in layer_artifact/ARTIFACT-RUNG.json (+ .md) —
+the stable hand-off unit_rung.py consumes. Alignment scoring is intentionally
+absent: the contract keeps the fields so consumers stay stable, with honest
+"no alignment ran" values.
 """
 
 from __future__ import annotations
@@ -28,192 +30,326 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-import artifact_scorers  # noqa: F401 — import registers the presence/alignment scorers
-from artifact_scorers import ANCHOR_OBJECTIVE, ANCHOR_TEKS
 from audit_lib import (
+    BASE_DIR,
     atomic_write,
-    classify_doc_type,
     doc_id_from_filename,
-    load_config,
     load_yaml,
     log,
     project_dir,
     validate_slug_id,
 )
-from lesson_scoring import ArtifactInput, LessonElement, build_scorer
+# LESSON_DOC_TYPES is the living set lesson_rung / enumerate_lessons uses. The
+# pre-rewrite module called this LESSON_ROLES (plus teacher_edition_multi_lesson);
+# that name no longer exists — import the bake-off constant so the two rungs
+# cannot drift on what counts as a lesson atom.
+from lesson_bakeoff import LESSON_DOC_TYPES
+from synthesize import readable_title_from_filename
 
-# Doc roles that ARE lessons (reviewed by the lesson rung / Path A) and so are NOT
-# artifacts. teacher_edition_multi_lesson is a lesson CONTAINER fanned by te_prepass
-# — also not a standalone artifact. Everything else is an artifact this rung reviews.
-LESSON_ROLES = {"lesson_plan", "lesson_content", "teacher_edition_multi_lesson"}
+# Paths B–H are the findings files we read. Lesson atoms inside those files are
+# still excluded via LESSON_DOC_TYPES (see collect_path_records).
+ARTIFACT_PATHS: tuple[str, ...] = ("b", "c", "d", "e", "f", "g", "h")
 
-PRESENCE_SCORER = "artifact_presence"
-ALIGNMENT_SCORER = "artifact_alignment"
+# Honest identity for this rollup. Kept as a stable string so ARTIFACT-RUNG.json
+# readers can tell path-findings provenance from the deleted presence scorer.
+PRESENCE_SCORER = "path_b_h_rollup"
 
-# A permissive cited-standard detector for the TEKS fallback anchor. We are not
-# validating the code, only detecting that the lesson names a standard we can use as
-# the alignment target when it has no prose objective. Matches "TEKS 130.362",
-# "§130.42(c)(1)(A)", "126.6(c)(2)" etc. Curriculum-agnostic (any dotted-number
-# standard or explicit TEKS/standard mention).
-_TEKS_RE = re.compile(
-    r"(?:TEKS|standard[s]?)\b[^.\n]{0,60}|§?\s*\d{2,3}\.\d{1,3}[A-Za-z]?(?:\([^)]*\))*",
-    re.IGNORECASE,
-)
+# Step ids in inventory rows look like B3 / H4 — letter matches the path, digit
+# is the checklist section. Anything else on the row is metadata (doc_id, …).
+_STEP_RE = re.compile(r"^[A-H]\d+$")
 
-
-# --- anchor resolution (shared) ---------------------------------------------
-
-
-def _find_teks(elements: list[LessonElement]) -> str | None:
-    """First cited-standard mention across a lesson's elements, or None."""
-    for el in elements:
-        m = _TEKS_RE.search(el.excerpt or "")
-        if m:
-            snippet = (el.excerpt or "")[max(0, m.start() - 20) : m.end() + 80].strip()
-            return snippet
-    return None
+# Statuses that never gate and never count as coverage denominators. STUB is the
+# unimplemented emit step every path ships; NOT_APPLICABLE means the lens does
+# not apply to this doc_type (e.g. rubric↔key pairing).
+_IGNORED_STATUSES = frozenset({"STUB", "NOT_APPLICABLE"})
 
 
-def resolve_unit_anchors(project_id: str, lessons=None) -> dict[str, dict]:
-    """Per-unit alignment anchor, resolved the way a human reviewer would:
+# --- checklist metadata -----------------------------------------------------
 
-      1. the unit's lesson OBJECTIVE (a standards_objectives element) — preferred;
-      2. else a cited TEKS/standard found anywhere in the unit's lesson text;
-      3. else NONE — recorded so the artifact rung can emit "cannot assess alignment"
-         and roll it up as a lesson-level gap (the lesson has no objective/standard).
 
-    Pure w.r.t. the model (reads only Layer 0 elements). Returns unit_id -> anchor
-    dict {kind, text, lesson_id, element_id?}. A unit with no lessons gets no entry
-    (its artifacts then resolve to the NONE anchor -> lesson gap)."""
-    if lessons is None:
-        from lesson_bakeoff import enumerate_lessons
+def load_checklist(checklist_rel: str | None) -> dict[str, str]:
+    """Load step labels from one checklist YAML.
 
-        lessons = enumerate_lessons(project_id)
-
-    anchors: dict[str, dict] = {}
-    for le in lessons:
-        uid = le.unit_id
-        # Keep the first strong OBJECTIVE anchor per unit; don't let a later weaker
-        # TEKS anchor overwrite it.
-        if anchors.get(uid, {}).get("kind") == ANCHOR_OBJECTIVE:
+    Labels mirror the Paths panel helper in ui/server.py (B3 -> "Answer key
+    signal"). Structural steps (pairing, inventory) live in ``sections`` with a
+    label and no fields so this loader and the UI share one source. Returns {}
+    when the checklist is missing or unreadable — an older findings file without
+    a checklist path still rolls up, just with bare step ids in the gap chips.
+    """
+    if not checklist_rel:
+        return {}
+    # Resolve under the repo root and refuse path escape (findings name a relative
+    # path like workflows/checklists/assessment.yaml — never trust it blindly).
+    spec = (BASE_DIR / checklist_rel).resolve()
+    try:
+        spec.relative_to(BASE_DIR)
+    except ValueError:
+        return {}
+    if not spec.is_file():
+        return {}
+    try:
+        data = load_yaml(spec)
+    except Exception:  # noqa: BLE001 — bad checklist must not kill the rung
+        return {}
+    labels: dict[str, str] = {}
+    for section in (data.get("sections") or {}).values():
+        step = section.get("step")
+        if not step:
             continue
-        obj = le.elements_of_type("standards_objectives")
-        if obj and (obj[0].excerpt or "").strip():
-            anchors[uid] = {
-                "kind": ANCHOR_OBJECTIVE,
-                "text": obj[0].excerpt.strip(),
-                "lesson_id": le.lesson_id,
-                "element_id": obj[0].element_id,
-            }
-            continue
-        if uid not in anchors:
-            teks = _find_teks(le.elements)
-            if teks:
-                anchors[uid] = {
-                    "kind": ANCHOR_TEKS,
-                    "text": teks,
-                    "lesson_id": le.lesson_id,
-                }
-    return anchors
+        sid = str(step)
+        label = section.get("label")
+        if label:
+            # Labels are stored as "B3 Answer key signal"; drop the redundant id.
+            labels[sid] = str(label).removeprefix(f"{step} ").strip()
+    return labels
 
 
-# --- enumeration ------------------------------------------------------------
+def checklist_labels(checklist_rel: str | None) -> dict[str, str]:
+    """Step id -> human label. Alias kept for callers that prefer the name."""
+    return load_checklist(checklist_rel)
 
 
-def enumerate_artifacts(project_id: str) -> list[ArtifactInput]:
-    """One ArtifactInput per NON-lesson document from the Layer 0 ledger, mapped to
-    its unit via the manifest and carrying its classified doc_type. Deterministic +
-    offline (mirrors lesson_bakeoff.enumerate_lessons)."""
+def _gap_label(step: str, labels: dict[str, str]) -> str:
+    """Chip-friendly missing-part string: keep the step id so a reviewer can
+    jump to the same cell the Paths panel shows."""
+    human = labels.get(step) or step
+    if human == step:
+        return step
+    return f"{step} {human}"
+
+
+# --- enumeration / route metadata -------------------------------------------
+
+
+def doc_unit_map(project_id: str) -> dict[str, str]:
+    """doc_id -> unit_id from the project's manifest. Unmapped docs fall through
+    to the caller, which uses the '(unlinked)' bucket — same fallback the
+    original ledger enumeration used when a file was outside every unit."""
     root = project_dir(project_id)
     manifest = load_yaml(root / "manifest.yaml")
-    ledger_path = root / "layer0" / "ledger.json"
-    if not ledger_path.is_file():
-        raise FileNotFoundError(f"no Layer 0 ledger at {ledger_path} — run layer0 first")
-    ledger = json.loads(ledger_path.read_text())
-
     doc_unit: dict[str, str] = {}
     for uid, unit in (manifest.get("units") or {}).items():
         for rel in unit.get("documents") or unit.get("source_files") or []:
             doc_unit.setdefault(doc_id_from_filename(rel), uid)
+    return doc_unit
 
-    by_doc: dict[str, list[dict]] = defaultdict(list)
-    for el in ledger:
-        by_doc[el["doc_id"]].append(el)
 
-    from synthesize import readable_title_from_filename
+def _route_by_doc(project_id: str) -> dict[str, dict]:
+    """doc_id -> route-map row (source_file, doc_type, …). Soft-absent: a project
+    that has path findings but no route-map still rolls up; titles then degrade
+    to the bare doc_id rather than crashing the rung."""
+    path = project_dir(project_id) / "layer0" / "route-map.json"
+    if not path.is_file():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8")) or {}
+    except (OSError, json.JSONDecodeError):
+        return {}
+    out: dict[str, dict] = {}
+    for row in data.get("routes") or []:
+        did = row.get("doc_id")
+        if did:
+            out[str(did)] = row
+    return out
 
-    artifacts: list[ArtifactInput] = []
-    for doc_id, els in by_doc.items():
-        source_file = els[0].get("source_file", doc_id)
-        dtype = classify_doc_type(source_file)
-        # Lessons (and TE containers) are reviewed by the lesson rung — never
-        # double-reviewed here (this is the lesson_content contradiction fix).
-        if dtype in LESSON_ROLES:
+
+def _load_path_findings(project_id: str, letter: str) -> dict | None:
+    """Read path_<letter>/findings.json. None when absent or unreadable — a path
+    that has not been run yet contributes nothing (same as status: skipped)."""
+    path = project_dir(project_id) / f"path_{letter}" / "findings.json"
+    if not path.is_file():
+        return None
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as e:
+        log(f"WARN: ignoring unreadable {path}: {e}")
+        return None
+
+
+# --- per-doc scoring from path inventory ------------------------------------
+
+
+def _inventory_steps(item: dict) -> list[tuple[str, dict]]:
+    """(step_id, step_payload) pairs from one inventory row, sorted for stable
+    criteria order. Inventory nests steps as sibling keys alongside doc_id /
+    doc_type — we key off the step-id pattern rather than a fixed schema so a
+    new B7/H6 does not require a code change here."""
+    steps: list[tuple[str, dict]] = []
+    for key, val in item.items():
+        if not _STEP_RE.match(key):
             continue
-        elements = [
-            LessonElement(
-                e["element_id"], e.get("element_type", ""), e.get("excerpt", "")
-            )
-            for e in els
-        ]
-        artifacts.append(
-            ArtifactInput(
-                project_id=project_id,
-                lesson_id=doc_id,
-                unit_id=doc_unit.get(doc_id, "(unlinked)"),
-                title=readable_title_from_filename(source_file),
-                elements=elements,
-                doc_type=dtype,
-                # sources/<basename> — served by the review API so the UI can show
-                # the raw document beneath its per-doc review.
-                source_file=f"sources/{source_file}" if source_file else None,
-            )
+        if not isinstance(val, dict):
+            continue
+        steps.append((key, val))
+    steps.sort(key=lambda kv: (kv[0][0], int(kv[0][1:])))
+    return steps
+
+
+def score_inventory_item(
+    item: dict,
+    labels: dict[str, str],
+    *,
+    path: str,
+    lens: str,
+) -> dict:
+    """Turn one Path inventory row into a presence block. Pure.
+
+    Gate rule (deliberate, not a soft heuristic): among steps that are neither
+    STUB nor NOT_APPLICABLE, MISSING fails the gate. PARTIAL and OPTIONAL_ABSENT
+    advise only — the path scorers emit OPTIONAL_ABSENT when every field on the
+    step is optional and none hit, so this gate does not re-derive optionality
+    from the checklist YAML.
+
+    Coverage counts only PRESENT toward the numerator so PARTIAL /
+    OPTIONAL_ABSENT do not inflate the rate.
+    """
+    criteria: list[dict] = []
+    missing_required: list[str] = []
+    scored = 0
+    present = 0
+    for step, payload in _inventory_steps(item):
+        status = str(payload.get("status") or "").upper()
+        if status in _IGNORED_STATUSES:
+            continue
+        scored += 1
+        label = labels.get(step) or step
+        note = str(payload.get("note") or "")
+        criteria.append(
+            {
+                "criterion_id": step,
+                "label": label,
+                "scoring": "presence",
+                "verdict": status,
+                "band": None,
+                "evidence": [],
+                "note": note,
+                # Provenance for drill-down: which lens produced this verdict.
+                "path": path,
+                "lens": lens,
+            }
         )
-    artifacts.sort(key=lambda a: (a.unit_id, a.doc_type, a.title))
-    return artifacts
-
-
-# --- per-doc + per-unit rollup ----------------------------------------------
-
-
-def artifact_record(artifact: ArtifactInput, presence, alignment=None) -> dict:
-    """One artifact's rung record: role, unit, presence verdicts + gate, and (when
-    run) the advisory alignment block. Every verdict keeps its cited evidence."""
-    rec = {
-        "doc_id": artifact.lesson_id,
-        "unit_id": artifact.unit_id,
-        "title": artifact.title,
-        "source_file": artifact.source_file,
-        "role": presence.summary.get("role", artifact.doc_type),
-        "doc_type": artifact.doc_type,
-        "is_fallback": presence.summary.get("is_fallback", False),
-        "nursery": presence.summary.get("nursery", False),
-        "presence": {
-            "gate_pass": presence.summary.get("gate_pass", False),
-            "coverage": presence.summary.get("coverage"),
-            # Required parts not fully present — the structural gaps that gate.
-            "missing_required": presence.summary.get("missing_required", []),
-            "criteria": [c.to_dict() for c in presence.criteria],
-        },
+        if status == "PRESENT":
+            present += 1
+        elif status == "MISSING":
+            missing_required.append(_gap_label(step, labels))
+        # PARTIAL / OPTIONAL_ABSENT: counted in denominator, not present, not a gap.
+    gate_pass = not missing_required
+    coverage = round(present / scored, 3) if scored else 0.0
+    return {
+        "gate_pass": gate_pass,
+        "coverage": coverage,
+        "missing_required": missing_required,
+        "criteria": criteria,
     }
-    if alignment is not None:
-        rec["alignment"] = {
-            "applicable": alignment.summary.get("applicable", False),
-            "cannot_assess": alignment.summary.get("cannot_assess", False),
-            "skipped": alignment.summary.get("skipped", False),
-            "mean_band": alignment.summary.get("mean_band"),
-            "max_band": alignment.summary.get("max_band"),
-            "anchor_kind": alignment.summary.get("anchor_kind"),
-            "error": alignment.error,
-            "criteria": [c.to_dict() for c in alignment.criteria],
-        }
-    return rec
+
+
+def artifact_record_from_path(
+    item: dict,
+    *,
+    unit_id: str,
+    title: str,
+    source_file: str | None,
+    labels: dict[str, str],
+    path: str,
+    lens: str,
+) -> dict:
+    """One artifact's rung record — same outer shape the UI ArtifactDoc type
+    expects, filled from a Path inventory row instead of a presence scorer."""
+    doc_id = str(item.get("doc_id") or "")
+    doc_type = str(item.get("doc_type") or "other")
+    presence = score_inventory_item(
+        item,
+        labels,
+        path=path,
+        lens=lens,
+    )
+    return {
+        "doc_id": doc_id,
+        "unit_id": unit_id,
+        "title": title,
+        "source_file": source_file,
+        "role": doc_type,
+        "doc_type": doc_type,
+        # Paths B–H are dedicated lenses, not the old generic fallback rubric.
+        "is_fallback": False,
+        "nursery": False,
+        "path": path,
+        "lens": lens,
+        "presence": presence,
+    }
+
+
+# --- rollup -----------------------------------------------------------------
+
+
+def collect_path_records(project_id: str) -> list[dict]:
+    """Walk Paths B–H findings and emit one record per inventoried document.
+
+    A path with status 'skipped' (or a missing findings.json) contributes
+    nothing — the router deliberately writes skipped files when a lens has no
+    routed docs, and treating those as empty keeps the rollup honest. The first
+    path that claims a doc_id wins if routing ever double-emits (it should not).
+
+    Documents whose doc_type is in LESSON_DOC_TYPES are skipped even when a
+    Path B–H inventory lists them (Path E routinely inventorizes lesson_content).
+    lesson_rung owns those atoms; double-counting them here would let an artifact
+    gap override a lesson already judged on its merits.
+    """
+    doc_unit = doc_unit_map(project_id)
+    routes = _route_by_doc(project_id)
+    records: list[dict] = []
+    seen: set[str] = set()
+
+    for letter in ARTIFACT_PATHS:
+        findings = _load_path_findings(project_id, letter)
+        if not findings:
+            continue
+        if str(findings.get("status") or "").lower() == "skipped":
+            continue
+        labels = load_checklist(findings.get("checklist"))
+        path = str(findings.get("path") or letter.upper())
+        lens = str(findings.get("lens") or path)
+        for item in findings.get("inventory") or []:
+            if not isinstance(item, dict):
+                continue
+            doc_id = str(item.get("doc_id") or "")
+            if not doc_id or doc_id in seen:
+                continue
+            seen.add(doc_id)
+            route = routes.get(doc_id) or {}
+            # Prefer inventory doc_type; fall back to the route-map's classification.
+            doc_type = str(item.get("doc_type") or route.get("doc_type") or "other")
+            if doc_type in LESSON_DOC_TYPES:
+                continue
+            if not item.get("doc_type") and route.get("doc_type"):
+                item = {**item, "doc_type": route["doc_type"]}
+            source = route.get("source_file") or ""
+            title = (
+                readable_title_from_filename(source)
+                if source
+                else doc_id
+            )
+            source_file = f"sources/{source}" if source else None
+            records.append(
+                artifact_record_from_path(
+                    item,
+                    unit_id=doc_unit.get(doc_id, "(unlinked)"),
+                    title=title,
+                    source_file=source_file,
+                    labels=labels,
+                    path=path,
+                    lens=lens,
+                )
+            )
+
+    records.sort(key=lambda r: (r["unit_id"], r["doc_type"], r["title"], r["doc_id"]))
+    return records
 
 
 def rollup_units(records: list[dict]) -> dict:
-    """Compose per-artifact records into a per-unit summary — the hand-off the unit
-    rung reads. Pure (no I/O). Deterministic presence drives the gate signals; any
-    alignment is carried as advisory only."""
+    """Compose per-artifact records into a per-unit summary — the hand-off the
+    unit rung reads. Pure (no I/O). Deterministic presence gaps GATE; alignment
+    fields stay at the honest zero because this rollup never runs a model."""
     by_unit: dict[str, list[dict]] = defaultdict(list)
     for r in records:
         by_unit[r["unit_id"]].append(r)
@@ -222,8 +358,9 @@ def rollup_units(records: list[dict]) -> dict:
     for uid, rows in sorted(by_unit.items()):
         n = len(rows)
         gate_pass = sum(1 for r in rows if r["presence"]["gate_pass"])
-        # Deterministic structural gaps: artifacts that failed their presence gate,
-        # named by role + what they lack. These are what GATE the unit band.
+        # Structural gaps: every artifact that failed its presence gate, named by
+        # role + the checklist steps it lacks. unit_rung gates Strong on a
+        # non-empty deterministic_gaps list (via bool(gaps)), not has_artifact_gap.
         gaps = [
             {
                 "doc_id": r["doc_id"],
@@ -234,9 +371,6 @@ def rollup_units(records: list[dict]) -> dict:
             for r in rows
             if not r["presence"]["gate_pass"]
         ]
-        cannot_assess = sum(
-            1 for r in rows if r.get("alignment", {}).get("cannot_assess")
-        )
         role_counts: dict[str, int] = defaultdict(int)
         for r in rows:
             role_counts[r["role"]] += 1
@@ -247,68 +381,30 @@ def rollup_units(records: list[dict]) -> dict:
             "roles": dict(role_counts),
             "deterministic_gaps": gaps,
             "has_artifact_gap": bool(gaps),
-            "cannot_assess_alignment": cannot_assess,
+            "cannot_assess_alignment": 0,
             "documents": rows,
         }
     return units
 
 
-def _nursery_entries(records: list[dict]) -> list[dict]:
-    """Feedback-nursery tickets for unknown/`other` (fallback) types — one per doc,
-    the "grow a real Path for this type" signal, matching route.append_feedback's
-    shape."""
-    entries = []
-    for r in records:
-        if r.get("nursery"):
-            entries.append(
-                {
-                    "doc_id": r["doc_id"],
-                    "doc_type": r["doc_type"],
-                    "suggested_pattern": (
-                        f"No dedicated review spec for type '{r['doc_type']}'; scored "
-                        f"with the generic fallback. Add workflows/rubrics/artifacts/"
-                        f"{r['doc_type']}.yaml to grow a real Path."
-                    ),
-                    "reason": "weak_or_unknown_type",
-                }
-            )
-    return entries
-
-
 # --- build ------------------------------------------------------------------
 
 
-def score_artifacts(
-    project_id: str, doc_ids: set[str] | None = None, with_model: bool = False
-) -> list[dict]:
-    """Score non-lesson artifacts and return their per-doc records. When `doc_ids` is
-    given, only those docs are scored (so the router paths B/C can score just their
-    own routed subset while reusing the exact same engine as the rung). Presence
-    always runs (deterministic); alignment runs only with_model (advisory).
-
-    Shared by build_artifact_rung and workflows/quiz.py + general.py so there is ONE
-    engine — no divergent per-path logic."""
-    artifacts = enumerate_artifacts(project_id)
-    if doc_ids is not None:
-        artifacts = [a for a in artifacts if a.lesson_id in doc_ids]
-    anchors = resolve_unit_anchors(project_id)
-    presence = build_scorer(PRESENCE_SCORER)
-    aligner = build_scorer(ALIGNMENT_SCORER) if with_model else None
-    cfg = load_config() if with_model else None
-
-    records: list[dict] = []
-    for art in artifacts:
-        art.anchor = anchors.get(art.unit_id)
-        pres = presence.score(art, None)
-        align = aligner.score(art, cfg) if aligner else None
-        records.append(artifact_record(art, pres, align))
-    return records
-
-
 def build_artifact_rung(project_id: str, with_model: bool = False) -> Path:
-    """Score every non-lesson artifact and write ARTIFACT-RUNG.json (+ .md). Presence
-    always runs (deterministic); alignment runs only with_model (advisory)."""
-    records = score_artifacts(project_id, doc_ids=None, with_model=with_model)
+    """Roll up Path B–H findings into ARTIFACT-RUNG.json (+ .md).
+
+    `with_model` is accepted for CLI compatibility with the pre-rewrite stage
+    (run_project still passes nothing; operators may pass --with-model). This
+    rollup never invokes a model — alignment stays null/zero so the contract
+    fields remain honest rather than inventing advisory bands.
+    """
+    if with_model:
+        log(
+            "artifact-rung: --with-model accepted but unused "
+            "(alignment pass is not part of the path-findings rollup)"
+        )
+
+    records = collect_path_records(project_id)
     units = rollup_units(records)
     total = len(records)
     gate_pass = sum(1 for r in records if r["presence"]["gate_pass"])
@@ -316,25 +412,20 @@ def build_artifact_rung(project_id: str, with_model: bool = False) -> Path:
     for r in records:
         role_totals[r["role"]] += 1
 
-    # Feedback nursery: append unknown/other types so a future Path can be grown.
-    nursery = _nursery_entries(records)
-    if nursery:
-        from route import append_feedback
-
-        append_feedback(project_id, nursery)
-
     artifact = {
         "project_id": project_id,
         "presence_scorer": PRESENCE_SCORER,
-        "alignment_scorer": ALIGNMENT_SCORER if with_model else None,
-        "with_model": with_model,
+        # Alignment is not implemented on the path-findings rollup; keep the key
+        # so consumers that read alignment_scorer / with_model do not KeyError.
+        "alignment_scorer": None,
+        "with_model": False,
         "summary": {
             "artifact_count": total,
             "gate_pass_count": gate_pass,
             "gate_pass_rate": round(gate_pass / total, 3) if total else 0.0,
             "unit_count": len(units),
             "roles": dict(sorted(role_totals.items())),
-            "nursery_count": len(nursery),
+            "nursery_count": 0,
         },
         "units": units,
         "artifacts": records,
@@ -347,7 +438,7 @@ def build_artifact_rung(project_id: str, with_model: bool = False) -> Path:
     atomic_write(out_dir / "ARTIFACT-RUNG.md", _render_md(project_id, artifact))
     log(
         f"artifact-rung → {dest} ({total} artifacts, {gate_pass} passed presence "
-        f"gate, {len(units)} units, {len(nursery)} nursery tickets)"
+        f"gate, {len(units)} units)"
     )
     return dest
 
@@ -356,17 +447,17 @@ def _render_md(project_id: str, artifact: dict) -> str:
     s = artifact["summary"]
     roles = "  ·  ".join(f"{k}×{v}" for k, v in s["roles"].items()) or "(none)"
     md = [
-        "# Artifact rung (Paths B/C — non-lesson review)",
+        "# Artifact rung (Paths B–H — non-lesson review)",
         "",
         f"**Dataset:** `{project_id}`  ",
         f"**Artifacts:** {s['artifact_count']}  ·  "
         f"**Passed presence gate:** {s['gate_pass_count']} "
         f"({s['gate_pass_rate']:.0%})  ·  **Units:** {s['unit_count']}",
         f"**Roles:** {roles}  ",
-        f"**Feedback-nursery tickets (unknown types):** {s['nursery_count']}",
+        f"**Presence source:** `{artifact['presence_scorer']}` (Path B–H findings rollup)",
         "",
-        "Deterministic presence GATES the unit band; model alignment (with `--with-model`) "
-        "ADVISES only. Per-doc, evidence-cited detail is in `ARTIFACT-RUNG.json`.",
+        "Deterministic Path checklist gaps GATE the unit band. Model alignment is "
+        "not run by this rollup. Per-doc detail is in `ARTIFACT-RUNG.json`.",
         "",
         "| Unit | Artifacts | Presence gate | Structural gaps | Cannot-assess |",
         "|---|---|---|---|---|",
@@ -383,13 +474,17 @@ def _render_md(project_id: str, artifact: dict) -> str:
 
 def main() -> int:
     ap = argparse.ArgumentParser(
-        description="Artifact rung (Paths B/C non-lesson review; feeds the unit rung)"
+        description=(
+            "Artifact rung (Paths B–H findings rollup; feeds the unit rung)"
+        )
     )
     ap.add_argument("--project", required=True)
     ap.add_argument(
         "--with-model",
         action="store_true",
-        help="also run the advisory alignment audit (one model call per artifact)",
+        help=(
+            "accepted for CLI compatibility; alignment is not run by this rollup"
+        ),
     )
     args = ap.parse_args()
     validate_slug_id(args.project, "project id")

@@ -67,3 +67,10 @@ sections:
           - students will
           - standard
         optional: true
+
+  # Structural pairing step — scored in workflows/quiz.py (_pair_status), not
+  # by keyword fields. Listed here so label loaders (Paths panel, artifact rung)
+  # resolve "B5" to a human name the same way they resolve B2–B4.
+  b5_pairing:
+    label: B5 Quiz ↔ key pairing
+    step: B5

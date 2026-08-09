@@ -1,0 +1,2234 @@
+{
+  "project_id": "bluebonnet-math-2026",
+  "workflow_id": "teacher_support",
+  "path": "D",
+  "lens": "Teacher support",
+  "status": "ok",
+  "doc_ids": [
+    "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf",
+    "Algebra_I_Math_Teacher_Edition_Glossary.pdf",
+    "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf",
+    "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf",
+    "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf",
+    "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf",
+    "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf",
+    "K-5_Math_Grade_5_Additional_Days_School_Year_ADSY_Teacher_Edition.pdf",
+    "K-5_Math_Grade_5_Module_1_Place_Value_and_Decimals_Teacher_Edition.pdf",
+    "K-5_Math_Grade_5_Module_2_Multi-Digit_Whole_Number_and_Decimal_Operations_Teacher_Edition.pdf",
+    "K-5_Math_Grade_5_Module_3_Addition_and_Subtraction_of_Fractions_Teacher_Edition.pdf",
+    "K-5_Math_Grade_5_Module_4_Multiplication_and_Division_of_Fractions_Teacher_Edition.pdf",
+    "K-5_Math_Grade_5_Module_5_Addition_and_Multiplication_with_Volume_and_Area_Teacher_Edition.pdf",
+    "K-5_Math_Grade_5_Module_6_Problem_Solving_with_the_Coordinate_Plane_and_Data_Teacher_Edition.pdf",
+    "Secondary_Mathematics_Program_Implementation_Guide.pdf"
+  ],
+  "checklist": "workflows/checklists/teacher_support.yaml",
+  "inventory": [
+    {
+      "doc_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 96,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "D3": {
+        "status": "PRESENT",
+        "note": "3/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Teacher_Edition_Glossary.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 8,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "D3": {
+        "status": "MISSING",
+        "note": "0/3 fields present"
+      },
+      "D4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 133,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "D3": {
+        "status": "PRESENT",
+        "note": "3/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 197,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "D3": {
+        "status": "PRESENT",
+        "note": "3/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 146,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "D3": {
+        "status": "PRESENT",
+        "note": "3/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 155,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "D3": {
+        "status": "PRESENT",
+        "note": "3/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 295,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "D3": {
+        "status": "PRESENT",
+        "note": "3/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Additional_Days_School_Year_ADSY_Teacher_Edition.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 114,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "D3": {
+        "status": "PRESENT",
+        "note": "3/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_1_Place_Value_and_Decimals_Teacher_Edition.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 122,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "D3": {
+        "status": "PRESENT",
+        "note": "3/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_2_Multi-Digit_Whole_Number_and_Decimal_Operations_Teacher_Edition.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 212,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "D3": {
+        "status": "PRESENT",
+        "note": "3/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_3_Addition_and_Subtraction_of_Fractions_Teacher_Edition.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 324,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "D3": {
+        "status": "PRESENT",
+        "note": "3/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_4_Multiplication_and_Division_of_Fractions_Teacher_Edition.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 159,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "D3": {
+        "status": "PRESENT",
+        "note": "3/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_5_Addition_and_Multiplication_with_Volume_and_Area_Teacher_Edition.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 161,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "D3": {
+        "status": "PRESENT",
+        "note": "3/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Module_6_Problem_Solving_with_the_Coordinate_Plane_and_Data_Teacher_Edition.pdf",
+      "doc_type": "teacher_edition_multi_lesson",
+      "graph_role": null,
+      "element_count": 204,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "D3": {
+        "status": "PRESENT",
+        "note": "3/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "Secondary_Mathematics_Program_Implementation_Guide.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 95,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "D3": {
+        "status": "PRESENT",
+        "note": "3/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    }
+  ],
+  "steps_by_doc": {
+    "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 96,
+        "by_element_type": {
+          "standards_objectives": 28,
+          "logistics_materials": 9,
+          "hook_engagement": 3,
+          "direct_instruction": 9,
+          "guided_practice": 27,
+          "assessment_checkpoint": 8,
+          "unclear": 5,
+          "reflection_closure": 7
+        },
+        "doc_id": "Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Algebra I Volume 1  Topic Practice A. Determine the independent and dependent quantities in each scenario. Be sure to include the appropriate units of measure for each quantity. 2. Jamal works at a printing company. He is making T-shirts for a high school volleyball team. The press he runs can print three T-shirts per minute with the school’s mascot.  3. On her way to work each morning, Tiara purchases a small cup of coffee for $4.25 from the coffee shop.  4. Matthew enjoys rock climbing on…",
+              "USE THE MODULE AND TOPIC OVERVIEW  Revisit the Module Overview and annotations created as part of the prework. Read the Topic Overview. Identify how the module utilizes the concreterepresentational-abstract (CRA) progression to build student learning from lesson to lesson. Identify new key terms and symbols. Use the cognates and the How can you use cognates to support EB students? section in the Topic Overview to start planning supports for emergent bilingual students."
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "PRESENT",
+            "count": 22,
+            "cites": [
+              "On Learning Together days, you spend time facilitating active learning so that students build their mathematical understanding and confidence in sharing ideas, listening to one another, and learning together. The Student Edition is a consumable resource that contains the student-facing materials for each lesson.  On Learning Individually days, you spend time on targeted instruction to meet the needs of each student. Skills Practice offers students the opportunity to engage with problems…",
+              "MODULE 1 • TOPIC 1 • SKILLS PRACTICE  TXOER_A1_M01_T01_SP_TE.indd 3  STUDENT EDITION  I am a record of student thinking, reasoning, and problem solving. My lessons allow students to build new knowledge based upon prior knowledge and experiences, apply math to real-world situations, and learn together in a collaborative classroom. My purpose is to create mathematical thinkers who are active learners that participate in class.  3  11/05/24 10:03 PM  SKILLS PRACTICE  I am targeted practice of…",
+              "Intentional Mathematics Design Mathematical Coherence: The arc of mathematics develops coherently, building understanding by linking together within and across grades, so students can learn concepts more deeply and apply what they’ve learned to more complex problems going forward. TEKS Mathematical Process Standards: The instructional materials embody the TEKS mathematical process standards as they encourage experimentation, creativity, and various solution strategies. These mathematical…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "PRESENT",
+        "present": 3,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "PRESENT",
+            "count": 4,
+            "cites": [
+              "ENGAGE  Three Generations  10 DIFFERENTIATION STRATEGY Access for All  an activity overview,  common misconceptions,  If students look at the sequence of numbers without the context, they might recognize the pattern of repeated addition of the previous number. Acknowledge that this is a correct pattern, but it is not as useful as the pattern of multiplication by 2; it is easier to write and use a pattern where the number stays constant instead of being based upon a previous term. …",
+              "Let’s Sort Some Graphs  Probing  You will need them in the introduction. Optimizing Learning These notes indicate Mathematics is the science of patterns and relationships. Looking for the next lesson. patterns and sorting patterns Optimizing into different groups based on similarities Learning opportunities for purposeful learning. These and differences can provide valuable insights. In this lesson, you will complete the activity. This common analyze many different graphs and sort them into…",
+              "To prepare for the upcoming lesson, use the Prepare section of the assignment from the previous lesson as a diagnostic tool, either as a warm-up or an exit ticket, to assess whether your students are ready for new learning. Lesson 1 Assignment  COMMON MISCONCEPTION Students may think the Worked Example demonstrates the use of the Product Rule of Powers; however, the Product Rule of Powers applies when the bases are the same. In this case, the exponents are the same, and the bases can be…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "PRESENT",
+            "count": 18,
+            "cites": [
+              "On Learning Together days, you spend time facilitating active learning so that students build their mathematical understanding and confidence in sharing ideas, listening to one another, and learning together. The Student Edition is a consumable resource that contains the student-facing materials for each lesson.  On Learning Individually days, you spend time on targeted instruction to meet the needs of each student. Skills Practice offers students the opportunity to engage with problems…",
+              "MODULE 1 • TOPIC 1 • SKILLS PRACTICE  TXOER_A1_M01_T01_SP_TE.indd 3  STUDENT EDITION  I am a record of student thinking, reasoning, and problem solving. My lessons allow students to build new knowledge based upon prior knowledge and experiences, apply math to real-world situations, and learn together in a collaborative classroom. My purpose is to create mathematical thinkers who are active learners that participate in class.  3  11/05/24 10:03 PM  SKILLS PRACTICE  I am targeted practice of…",
+              "Intentional Mathematics Design Mathematical Coherence: The arc of mathematics develops coherently, building understanding by linking together within and across grades, so students can learn concepts more deeply and apply what they’ve learned to more complex problems going forward. TEKS Mathematical Process Standards: The instructional materials embody the TEKS mathematical process standards as they encourage experimentation, creativity, and various solution strategies. These mathematical…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "PRESENT",
+            "count": 15,
+            "cites": [
+              "On Learning Together days, you spend time facilitating active learning so that students build their mathematical understanding and confidence in sharing ideas, listening to one another, and learning together. The Student Edition is a consumable resource that contains the student-facing materials for each lesson.  On Learning Individually days, you spend time on targeted instruction to meet the needs of each student. Skills Practice offers students the opportunity to engage with problems…",
+              "MODULE 1 • TOPIC 1 • SKILLS PRACTICE  TXOER_A1_M01_T01_SP_TE.indd 3  STUDENT EDITION  I am a record of student thinking, reasoning, and problem solving. My lessons allow students to build new knowledge based upon prior knowledge and experiences, apply math to real-world situations, and learn together in a collaborative classroom. My purpose is to create mathematical thinkers who are active learners that participate in class.  3  11/05/24 10:03 PM  SKILLS PRACTICE  I am targeted practice of…",
+              "• Explicit Instruction  • Writing Task  • Worked Example  • Procedure  • Peer Work Analysis  • Application  • Establishing a Scenario  The Getting Started for each lesson activates student thinking by tapping into prior knowledge and real-world experiences. The Activities in each lesson vary in complexity and build a deep understanding of the mathematics. The Talk the Talk for each lesson is an opportunity to engage students in reflection and assess their learning. FM-6 ALGEBRA I COURSE AND…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 57,
+            "cites": [
+              "On Learning Together days, you spend time facilitating active learning so that students build their mathematical understanding and confidence in sharing ideas, listening to one another, and learning together. The Student Edition is a consumable resource that contains the student-facing materials for each lesson.  On Learning Individually days, you spend time on targeted instruction to meet the needs of each student. Skills Practice offers students the opportunity to engage with problems…",
+              "Algebra I Volume 1  Topic Practice A. Determine the independent and dependent quantities in each scenario. Be sure to include the appropriate units of measure for each quantity. 2. Jamal works at a printing company. He is making T-shirts for a high school volleyball team. The press he runs can print three T-shirts per minute with the school’s mascot.  3. On her way to work each morning, Tiara purchases a small cup of coffee for $4.25 from the coffee shop.  4. Matthew enjoys rock climbing on…",
+              "MODULE 1 • TOPIC 1 • SKILLS PRACTICE  TXOER_A1_M01_T01_SP_TE.indd 3  STUDENT EDITION  I am a record of student thinking, reasoning, and problem solving. My lessons allow students to build new knowledge based upon prior knowledge and experiences, apply math to real-world situations, and learn together in a collaborative classroom. My purpose is to create mathematical thinkers who are active learners that participate in class.  3  11/05/24 10:03 PM  SKILLS PRACTICE  I am targeted practice of…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "Algebra_I_Math_Teacher_Edition_Glossary.pdf": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 8,
+        "by_element_type": {
+          "direct_instruction": 2,
+          "guided_practice": 3,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1,
+          "standards_objectives": 1
+        },
+        "doc_id": "Algebra_I_Math_Teacher_Edition_Glossary.pdf"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional spine cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 133,
+        "by_element_type": {
+          "standards_objectives": 14,
+          "logistics_materials": 17,
+          "direct_instruction": 22,
+          "guided_practice": 20,
+          "assessment_checkpoint": 16,
+          "reflection_closure": 8,
+          "hook_engagement": 5,
+          "unclear": 31
+        },
+        "doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "PRESENT",
+            "count": 4,
+            "cites": [
+              "Introduction to the Problem-Solving Model and Learning Resources MATERIALS  LESSON OVERVIEW  (located in the Course Guide)  Students reflect on learning a new skill and the variety of ways they learn. The problem-solving model, TEKS mathematical process standards, and the Academic Glossary help students complete a problem-solving activity. Students reflect on and summarize the problem-solving model. Since the intent of this lesson is to introduce the problem-solving model and review the TEKS…",
+              "TEKS Mathematical Process Standards: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G ELPS: 1.A, 1.B, 1.C, 1.E, 1.F, 2.C, 2.E, 2.I, 3.D, 3.E, 3.H, 4.C, 4.E, 4.G, 4.H, 5.B, 5.F\b  Lesson  Lesson Title  Introduction to the Problem-Solving Model and Learning Resources  Topic Pacing: 14 Days  Highlights  Students reflect on learning a new skill and the variety of ways they learn. The problem-solving model, TEKS mathematical process standards, and the Academic Glossary help students complete a…",
+              "In this course, you will learn new math concepts by exploring and investigating ideas, reading, writing, and talking to your classmates. You will even learn by making mistakes with concepts you haven’t mastered yet. Let’s practice exploring and investigating. You do not need to answer the question yet. You will solve the question as you work through the problem-solving model. Students at East High School are designing ceramic drinking cups for an art project. The students can choose from a…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "PRESENT",
+        "present": 3,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "ALGEBRA I TEKS Mathematical Process Standards (1) The student uses mathematical processes to acquire and demonstrate mathematical understanding. The student is expected to:  Graph Cards (located at the end of the lesson)  ELPS (1) Learning Strategies The student is expected to: (A) use prior knowledge and experiences to understand meanings in English.  A.1E create and use representations to organize, record, and communicate mathematical ideas.  (B) monitor oral and written language production…",
+              "Gathering  • What would this mapping look like as a table of values?  Probing  represent a function? • Is this relation still a function when two students have  the same birthday? Explain your thinking.  MODULE 1 • TOPIC 1 • LESSON 3  37G   DIFFERENTIATION STRATEGY Challenge Opportunity Have students create tables, mappings, and verbal representations that are functions. Then, ask students to modify each function to create a non-function. COMMON MISCONCEPTION Students may connect the math term…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "PRESENT",
+            "count": 14,
+            "cites": [
+              "Introduction to the Problem-Solving Model and Learning Resources MATERIALS  LESSON OVERVIEW  (located in the Course Guide)  Students reflect on learning a new skill and the variety of ways they learn. The problem-solving model, TEKS mathematical process standards, and the Academic Glossary help students complete a problem-solving activity. Students reflect on and summarize the problem-solving model. Since the intent of this lesson is to introduce the problem-solving model and review the TEKS…",
+              "3  Lesson Title  Recognizing Functions and Function Families  Highlights  TEKS*  The definitions function and function notation are introduced in this lesson. For the remainder of the lesson, students use graphing technology to connect equations written in function forms to their graphs and then identify the function family to which they belong. The terms increasing function, decreasing function, and constant function are defined, and students sort the graphs from the previous lesson into…",
+              "Recognizing Functions by Characteristics  Given characteristics describing the graphical behavior of specific functions, students name the possible function family/families that fit each description. Students revisit the scenarios and graphs from the first lesson, name the function family associated with each scenario, identify the domain, and describe the graph. Students then write equations and sketch graphs to satisfy a list of characteristics. They conclude by determining that a function…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "PRESENT",
+            "count": 19,
+            "cites": [
+              "In this course, you will learn new math concepts by exploring and investigating ideas, reading, writing, and talking to your classmates. You will even learn by making mistakes with concepts you haven’t mastered yet. Let’s practice exploring and investigating. You do not need to answer the question yet. You will solve the question as you work through the problem-solving model. Students at East High School are designing ceramic drinking cups for an art project. The students can choose from a…",
+              "Chunking the Activity  PROBLEM SOLVING  • Read and discuss  You will see this NOTICE  REPORT  symbol throughout the course to remind  complete the activity.  you to use the problem-solving ORGANIZE  Notice and Wonder  INTERPRET  the directions.  • Group students to  • Share and summarize.  model.  • Have students answer the  Essential Question on the lesson opener.  ? ANALYZE  Gather information, notice patterns, and formulate mathematical questions about what you notice. Organize and…",
+              "Chunking the Activity  PROBLEM SOLVING  • Read and discuss  You will see this NOTICE  REPORT  symbol throughout the course to remind  complete the activity.  you to use the problem-solving ORGANIZE  Notice and Wonder  INTERPRET  the directions.  • Group students to  • Share and summarize.  model.  • Have students answer the  Essential Question on the lesson opener.  ? ANALYZE  Gather information, notice patterns, and formulate mathematical questions about what you notice. Organize and…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 88,
+            "cites": [
+              "Introduction to the Problem-Solving Model and Learning Resources MATERIALS  LESSON OVERVIEW  (located in the Course Guide)  Students reflect on learning a new skill and the variety of ways they learn. The problem-solving model, TEKS mathematical process standards, and the Academic Glossary help students complete a problem-solving activity. Students reflect on and summarize the problem-solving model. Since the intent of this lesson is to introduce the problem-solving model and review the TEKS…",
+              "3  Lesson Title  Recognizing Functions and Function Families  Highlights  TEKS*  The definitions function and function notation are introduced in this lesson. For the remainder of the lesson, students use graphing technology to connect equations written in function forms to their graphs and then identify the function family to which they belong. The terms increasing function, decreasing function, and constant function are defined, and students sort the graphs from the previous lesson into…",
+              "Recognizing Functions by Characteristics  Given characteristics describing the graphical behavior of specific functions, students name the possible function family/families that fit each description. Students revisit the scenarios and graphs from the first lesson, name the function family associated with each scenario, identify the domain, and describe the graph. Students then write equations and sketch graphs to satisfy a list of characteristics. They conclude by determining that a function…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 197,
+        "by_element_type": {
+          "standards_objectives": 27,
+          "logistics_materials": 23,
+          "direct_instruction": 36,
+          "hook_engagement": 10,
+          "guided_practice": 52,
+          "assessment_checkpoint": 28,
+          "reflection_closure": 17,
+          "unclear": 4
+        },
+        "doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Question 3 presents an opportunity to assess students’ understanding of the essential content of the lesson. Use student responses to determine when to schedule Learning Individually Days. To provide additional practice writing linear regression functions for data sets presented as tables, assign Skills Practice Set B for this lesson.  Ask Yourself . . . What is the appropriate level of accuracy needed for this linear regression function?  3. Use technology to determine whether a line of best…",
+              "2  Materials Needed: Patty Paper, Straightedges, Problem-Solving Model Graphic Organizer *Bold TEKS = Readiness Standard  268D MODULE 2 • TOPIC 2 • OVERVIEW   Lesson  4  Lesson Title  Comparing Linear Functions in Different Forms  Highlights  TEKS*  Students analyze functions represented as tables, graphs, equations, and verbal descriptions. They explore slope with particular attention to parallelism and perpendicularity in different representations. Students compare properties, such as slope,…",
+              "END OF TOPIC ASSESSMENT  Skills Practice This is a suggested placement. Move based on student data and individual needs. *Bold TEKS = Readiness Standard  How can you incorporate Skills Practice with students? There are four Learning Individually days scheduled within this topic. The placement of these days within the topic is flexible. The intent is to distribute spaced and interleaved practice throughout a topic and throughout the year. It is not necessary for students to complete all Skills…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "PRESENT",
+        "present": 3,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "PRESENT",
+            "count": 15,
+            "cites": [
+              "DEVELOP  In this activity, students informally determine a line of best fit by visual approximation of a hand-drawn line and use their equation to make predictions. They are introduced to a formal method to determine the linear regression function of a data set using graphing technology; the mathematics behind the calculator function is explained using the related terms Least Squares Method, linear regression function, and centroid. Students calculate the linear regression function via…",
+              "Have students work with a partner or in a group to complete Questions 6 through 10. Share responses as a class. QUESTIONS TO SUPPORT DISCOURSE • How did you know which value to substitute into  Probing  the equation? • Does your prediction make sense? Why or why not?  DIFFERENTIATION STRATEGIES Just in Time Support • Create additional word boxes for students to use. Depending on students’ needs, create a word box for the units or a word box for the contextual meaning. Challenge Opportunity •…",
+              "Facilitation Notes  In this activity, students match the explicit formulas for arithmetic sequences and their graphs and conjecture that arithmetic sequences belong to the linear function family. The explicit form of a sequence is provided, along with its graph and table of values. Through the table, students relate the terms of the sequence and coordinate pairs of the line. Graphically, they build connections between arithmetic sequences and linear functions by connecting the points on the…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "PRESENT",
+            "count": 18,
+            "cites": [
+              "MODULE 2 • TOPIC 1 • PACING GUIDE   1  Least Squares Regression MATERIALS  LESSON OVERVIEW Students informally determine a line of best fit by visual approximation of a hand-drawn line. They are then introduced to a formal method to determine the linear regression line of a data set using graphing technology; the mathematics behind the calculator function is explained using the related terms Least Squares Method, linear regression function, and centroid. Students then use the line of best fit…",
+              "1 2 3 4 5 6 7 8 9 Years Since 1999  x  2. A teacher claims that students who study will receive good grades. a. Do you think that studying is a necessary condition for a student to receive good grades? No. It may be possible for a student to receive good grades without studying. b. Do you think that studying is a sufficient condition for a student to receive good grades? No. Not every student who studies receives good grades. c. Do you think that there is a correlation between students who…",
+              "Sets of data can frequently be modeled by using a linear function called a linear regression function. A value called the correlation coefficient can also be calculated to assist in determining how well the regression model fits the data.  1. A correlation is a necessary condition for causation, but a correlation is not a sufficient condition for causation. 2. A common response the same result. 3.  Causation  is when some other reason may cause is when one event causes a second event. …"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "PRESENT",
+            "count": 28,
+            "cites": [
+              "• Explain the difference in how Linh and James chose to  place their line.  DIFFERENTIATION STRATEGY Challenge Opportunity • Have students create a graph modeling Linh’s and James’s thinking.  To close the Day 1 session, have students reread the Essential Question and reach the activity summaries to the class. STAMP THE LEARNING  147F  Summary  Graphing technology uses the Least Squares Method to determine the line of best fit. The line of best fit can be used to model data and predict the…",
+              "Have students work with a partner or in a group to complete Questions 6 through 10. Share responses as a class. QUESTIONS TO SUPPORT DISCOURSE • How did you know which value to substitute into  Probing  the equation? • Does your prediction make sense? Why or why not?  DIFFERENTIATION STRATEGIES Just in Time Support • Create additional word boxes for students to use. Depending on students’ needs, create a word box for the units or a word box for the contextual meaning. Challenge Opportunity •…",
+              "• Which ordered pair did you use to represent the  data point? • Why is this question considered an  interpolation question? • What value did you use to represent 2013 in  Gathering  your equation? • Why is this question considered an extrapolation? • What value did you use to represent 2004 in  your equation? • Does a y-value greater than 100 make sense in this  Probing  situation? Explain your reasoning. • Does a negative y-value make sense in this problem  situation? Explain your reasoning.…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 130,
+            "cites": [
+              "Lesson",
+              "How do the activities in Linear Functions promote student expertise in the TEKS mathematical process standards? Every topic is written with the goal of creating mathematical thinkers who are active participants in class discourse, so elements of the TEKS mathematical process standards should be evident in all lessons. Students are expected to make sense of problems and work towards solutions, reason using concrete and abstract ideas, and communicate their thinking while providing a critical…",
+              "MODULE 2 • TOPIC 1 • PACING GUIDE   1  Least Squares Regression MATERIALS  LESSON OVERVIEW Students informally determine a line of best fit by visual approximation of a hand-drawn line. They are then introduced to a formal method to determine the linear regression line of a data set using graphing technology; the mathematics behind the calculator function is explained using the related terms Least Squares Method, linear regression function, and centroid. Students then use the line of best fit…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 146,
+        "by_element_type": {
+          "standards_objectives": 19,
+          "logistics_materials": 16,
+          "direct_instruction": 20,
+          "guided_practice": 35,
+          "assessment_checkpoint": 23,
+          "reflection_closure": 12,
+          "hook_engagement": 7,
+          "unclear": 14
+        },
+        "doc_id": "Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Getting Started Chunking the Activity  A River Runs Through It  • Read and discuss  the introduction.  Noah is an experienced whitewater rafter who guides groups of adults and children out on the water for amazing adventures. The raft he uses can hold 800 pounds of weight. Any weight greater than 800 pounds can cause the raft to sink, hit more rocks, and/or maneuver more slowly.  • Group students to  complete the activity.  • Share and summarize. Think About . . . Does Chase count  This…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "PRESENT",
+        "present": 3,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "PRESENT",
+            "count": 10,
+            "cites": [
+              "LESSON STRUCTURE AND PACING: 2 DAYS DAY 1 ENGAGE Getting Started: Equation Creation 15 minutes CONNECT TO PRIOR KNOWLEDGE Students start with a simple solution statement and create more complex equations by performing the same operation on each side of the equation. They then exchange the equations they created with a partner to verify correct solutions.  DEVELOP Activity 1.1: Using Properties to Justify Solutions 15–20 minutes PEER WORK ANALYSIS, MATHEMATICAL PROBLEM SOLVING Students use peer…",
+              "LESSON STRUCTURE AND PACING: 2 DAYS DAY 1 ENGAGE Getting Started: Equation Creation 15 minutes CONNECT TO PRIOR KNOWLEDGE Students start with a simple solution statement and create more complex equations by performing the same operation on each side of the equation. They then exchange the equations they created with a partner to verify correct solutions.  DEVELOP Activity 1.1: Using Properties to Justify Solutions 15–20 minutes PEER WORK ANALYSIS, MATHEMATICAL PROBLEM SOLVING Students use peer…",
+              "LESSON STRUCTURE AND PACING: 2 DAYS DAY 1 ENGAGE Getting Started: Equation Creation 15 minutes CONNECT TO PRIOR KNOWLEDGE Students start with a simple solution statement and create more complex equations by performing the same operation on each side of the equation. They then exchange the equations they created with a partner to verify correct solutions.  DEVELOP Activity 1.1: Using Properties to Justify Solutions 15–20 minutes PEER WORK ANALYSIS, MATHEMATICAL PROBLEM SOLVING Students use peer…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "PRESENT",
+            "count": 19,
+            "cites": [
+              "Students start with a simple solution statement and create more complex equations by performing the same operation on each side of the equation. They then analyze different equations created by two students and reason about how to verify that the equations have the same solution as the original equation. The properties of equality and some basic number properties are reviewed before students practice solving linear equations and justifying their steps. They also compare the different…",
+              "LESSON STRUCTURE AND PACING: 2 DAYS DAY 1 ENGAGE Getting Started: Equation Creation 15 minutes CONNECT TO PRIOR KNOWLEDGE Students start with a simple solution statement and create more complex equations by performing the same operation on each side of the equation. They then exchange the equations they created with a partner to verify correct solutions.  DEVELOP Activity 1.1: Using Properties to Justify Solutions 15–20 minutes PEER WORK ANALYSIS, MATHEMATICAL PROBLEM SOLVING Students use peer…",
+              "LESSON STRUCTURE AND PACING: 2 DAYS DAY 1 ENGAGE Getting Started: Equation Creation 15 minutes CONNECT TO PRIOR KNOWLEDGE Students start with a simple solution statement and create more complex equations by performing the same operation on each side of the equation. They then exchange the equations they created with a partner to verify correct solutions.  DEVELOP Activity 1.1: Using Properties to Justify Solutions 15–20 minutes PEER WORK ANALYSIS, MATHEMATICAL PROBLEM SOLVING Students use peer…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "PRESENT",
+            "count": 29,
+            "cites": [
+              "Linear Functions, Equations, and Inequalities (5) The student applies the mathematical process standards to solve, with and without technology, linear equations and evaluate the reasonableness of their solutions. The student is expected to:  Expression Cards (located at the end of these Facilitation Notes)  ELPS (1) Learning Strategies The student is expected to: (H) develop and expand repertoire of learning strategies such as reasoning inductively or deductively, looking for patterns in…",
+              "LESSON STRUCTURE AND PACING: 2 DAYS DAY 1 ENGAGE Getting Started: Equation Creation 15 minutes CONNECT TO PRIOR KNOWLEDGE Students start with a simple solution statement and create more complex equations by performing the same operation on each side of the equation. They then exchange the equations they created with a partner to verify correct solutions.  DEVELOP Activity 1.1: Using Properties to Justify Solutions 15–20 minutes PEER WORK ANALYSIS, MATHEMATICAL PROBLEM SOLVING Students use peer…",
+              "LESSON STRUCTURE AND PACING: 2 DAYS DAY 1 ENGAGE Getting Started: Equation Creation 15 minutes CONNECT TO PRIOR KNOWLEDGE Students start with a simple solution statement and create more complex equations by performing the same operation on each side of the equation. They then exchange the equations they created with a partner to verify correct solutions.  DEVELOP Activity 1.1: Using Properties to Justify Solutions 15–20 minutes PEER WORK ANALYSIS, MATHEMATICAL PROBLEM SOLVING Students use peer…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 108,
+            "cites": [
+              "MODULE 3 OVERVIEW  TEKS* Addressed: A.2A, A.2B, A.2C, A.2H, A.2I, A.3A, A.3D, A.3F, A.3G, A.3H, A.5A, A.5B, A.5C, A.12E",
+              "Linear Functions, Equations, and Inequalities (5) The student applies the mathematical process standards to solve, with and without technology, linear equations and evaluate the reasonableness of their solutions. The student is expected to:  Expression Cards (located at the end of these Facilitation Notes)  ELPS (1) Learning Strategies The student is expected to: (H) develop and expand repertoire of learning strategies such as reasoning inductively or deductively, looking for patterns in…",
+              "Students start with a simple solution statement and create more complex equations by performing the same operation on each side of the equation. They then analyze different equations created by two students and reason about how to verify that the equations have the same solution as the original equation. The properties of equality and some basic number properties are reviewed before students practice solving linear equations and justifying their steps. They also compare the different…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 155,
+        "by_element_type": {
+          "hook_engagement": 8,
+          "direct_instruction": 24,
+          "logistics_materials": 17,
+          "unclear": 11,
+          "guided_practice": 60,
+          "standards_objectives": 11,
+          "assessment_checkpoint": 16,
+          "reflection_closure": 8
+        },
+        "doc_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "PRESENT",
+            "count": 7,
+            "cites": [
+              "Materials Needed: None End of Topic Assessment  1  Learning Individually with Skills Practice Schedule these days strategically throughout the topic to support student learning.  3 *Bold TEKS = Readiness Standard  510F  MODULE 4 • TOPIC 1 • PACING GUIDE   MODULE 4, TOPIC 1 PACING GUIDE  165-Day Pacing  1 DAY PACING = 45-MINUTE SESSION Day 1  Day 2  Day 3  Day 4  Day 5  TEKS: A.11B  LESSON 1  Properties of Powers with Integer Exponents  TEKS: A.11B  LESSON 1 continued  LESSON 1 continued …",
+              "Geometric Sequences and Exponential Functions  In Module 2, Topic 1, Lesson 3: Making Connections Between Arithmetic Sequences and Linear Functions, students rewrote the explicit form of an arithmetic sequence as a linear function and proved algebraically that the common difference in a linear function is the slope of the line. This lesson follows a similar process, where they revisit geometric sequences as a launch to exponential functions. Students know that all geometric sequences are…",
+              "Analyzing Properties of Powers GETTING STARTED ACTIVITY 1  Day 10  TEKS: A.9B, A.9C, A.9D,  TEKS A.11A  A.11B, A.12D, A.12C  LESSON 2 continued ACTIVITY 2 TALK THE TALK  LESSON 3  LESSON 3 continued  Geometric Sequences ACTIVITY 3 and Exponential ACTIVITY 4 Functions GETTING STARTED  Skills Practice This is a suggested placement. Move based on student data and individual needs.  TALK THE TALK  ACTIVITY 1 ACTIVITY 2 Day 11  LEARNING INDIVIDUALLY  Day 12  Day 13  Day 14  LESSON 5 continued …"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "PRESENT",
+        "present": 3,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "PRESENT",
+            "count": 8,
+            "cites": [
+              "In this activity, students complete a table detailing the puppy’s lineage back seven generations, continuing work from the previous activity. They express the number of sires and dams for each generation in expanded notation and power notation and answer related questions.  Have students work with a partner or in a group to complete Question 1. Note that students are only completing the second column of the table. Have students share their strategies for completing the number of sires and dams…",
+              "5. 5  Rational Exponents  Facilitation Notes 1  In this activity, students expand their understanding of the nth root of a as ​​a​‒‒​n ​​​​​ m when ​n 5 2​to rewrite a power in the form ​​a​‒‒‒​n ​​​ as a radical expression. They continue to use the rules of exponents to make sense of the operations that can then be applied to radicals. Students practice writing radicals as powers and writing powers as radicals. They then multiply radicals and rewrite complex expressions using rules of…",
+              "MODULE 4 • TOPIC 2 • LESSON 1 609E   COMMON MISCONCEPTION • Students may believe the function for simple interest is not increasing  because the values in the table in Question 3 are constant. Remind them that the $400 indicates the amount the function increases over each interval. QUESTIONS TO SUPPORT DISCOURSE • What does s(5) represent in the situation?  Gathering  • Why is it necessary to use the term average rate of  change for exponential functions? • How did you calculate each value? •…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "PRESENT",
+            "count": 14,
+            "cites": [
+              "When will students use knowledge from Investigating Growth and Decay in future learning? Exponential functions are the first nonlinear functions that students have studied in depth. Throughout this module, students recognize the characteristics that exponential functions and linear functions share. However, they also start to differentiate functions by recognizing that an exponential function grows or decays at a rate much faster than a linear function, that the average rate of change between…",
+              "What is the entry point for students? Students have learned to write and evaluate numeric and algebraic expressions with whole number exponents in Grade 6. They have also learned to estimate the square roots of non-perfect squares. In this topic, students expand on this knowledge as they learn and apply properties of exponents to simplify numeric and algebraic expressions. Math Representation The recursive formula to determine the nth term of a geometric sequence is: nth term  common ratio  gn…",
+              "Materials Needed: None End of Topic Assessment  1  Learning Individually with Skills Practice Schedule these days strategically throughout the topic to support student learning.  3 *Bold TEKS = Readiness Standard  510F  MODULE 4 • TOPIC 1 • PACING GUIDE   MODULE 4, TOPIC 1 PACING GUIDE  165-Day Pacing  1 DAY PACING = 45-MINUTE SESSION Day 1  Day 2  Day 3  Day 4  Day 5  TEKS: A.11B  LESSON 1  Properties of Powers with Integer Exponents  TEKS: A.11B  LESSON 1 continued  LESSON 1 continued …"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "PRESENT",
+            "count": 17,
+            "cites": [
+              "Facilitation Notes  DEVELOP",
+              "A power is an expression used to represent the product of a repeated multiplication. The base of a power is the expression that is used as a factor in the repeated multiplication, and the exponent of a power is the number of times that the base is used as a factor in the repeated multiplication. AC TI V IT Y  1.2  Practice with Powers  Facilitation Notes  In this activity, students investigate the role of parentheses in expressions containing exponents, including negative integers raised to an…",
+              "LESSON STRUCTURE AND PACING: 2 DAYS DAY 1 ENGAGE Getting Started: Are They Equal? 5 minutes CONNECT TO PRIOR KNOWLEDGE Students determine whether expressions containing positive and negative exponents are equivalent.  DEVELOP Activity 2.1: Using Properties of Powers to Justify Steps in Simplifying 15–20 minutes WORKED EXAMPLE, MATHEMATICAL PROBLEM SOLVING Students are provided with expressions that have been rewritten using the properties of powers. They examine the work and provide the…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 85,
+            "cites": [
+              "When will students use knowledge from Investigating Growth and Decay in future learning? Exponential functions are the first nonlinear functions that students have studied in depth. Throughout this module, students recognize the characteristics that exponential functions and linear functions share. However, they also start to differentiate functions by recognizing that an exponential function grows or decays at a rate much faster than a linear function, that the average rate of change between…",
+              "You can recognize the graph of an exponential equation because it increasingly increases (or decreasingly decreases).  Introduction to Exponential Functions LESSON 1 Properties of Powers with Integer Exponents.  .  .  .  .  . 511 LESSON 2 \u0007Analyzing Properties of Powers\b���������������������������������� 537 LESSON 3 \u0007Geometric Sequences and Exponential Functions \b���� 551 LESSON 4 Rewriting Square Roots\b������������������������������������������������ 567 LESSON 5 \u0007Rational Exponents and…",
+              "Introduction to Exponential Functions How are the key concepts of Introduction to Exponential Functions organized? In Introduction to Exponential Functions, students learn and apply properties of integer and rational exponents to simplify numeric and algebraic expressions. First, students review their knowledge of powers and broaden the set of numbers they use as bases to include negative integers. Students differentiate between cases where there is a negative in the base and cases where the…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 295,
+        "by_element_type": {
+          "hook_engagement": 12,
+          "direct_instruction": 47,
+          "guided_practice": 84,
+          "logistics_materials": 32,
+          "assessment_checkpoint": 55,
+          "standards_objectives": 26,
+          "reflection_closure": 24,
+          "unclear": 15
+        },
+        "doc_id": "Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "PRESENT",
+            "count": 6,
+            "cites": [
+              "*Bold TEKS 5 Readiness Standard  MODULE 5 • TOPIC 1 • PACING GUIDE  658I   How can you incorporate Skills Practice with students? There are four Learning Individually days scheduled within this topic. The placement of these days within the topic is flexible. The intent is to distribute spaced and interleaved practice throughout a topic and throughout the year. It is not necessary for students to complete all Skills Practice for the topic and different students may complete different problem…",
+              "Polynomial Division  Highlights  Students analyze the graph of a quadratic function that appears to have two real zeros. The factor theorem is stated, and a Worked Example demonstrates how to determine whether a linear expression is a factor of the quadratic function. Polynomial long division is introduced, and a Worked Example is provided. They perform polynomial long division to determine the linear function that is the other factor and use this information to determine the zeros and rewrite…",
+              "MODULE 5 • TOPIC 2 • TOPIC SUMMARY  TXOER_A1_M05_T02_Topic Summary.indd 823  823  11/05/24 5:18 PM  MODULE 5 • TOPIC 2 • TOPIC SUMMARY  823   824  MODULE 5 • TOPIC 2 • TOPIC SUMMARY   3  ALGEBRA I  TOPIC  The supports on this bridge in Austin, Texas, are shaped like parabolas. You can translate a parabola horizontally by subtracting a constant before squaring—for example, (x 2 2)2 .  Solving Quadratic Equations LESSON 1 Representing Solutions to Quadratic Equations .  .  .  . 827 LESSON 2…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "PRESENT",
+        "present": 3,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "PRESENT",
+            "count": 14,
+            "cites": [
+              "and the context?  Have students work with a partner or in a group to complete Questions 4 through 7. Share responses as a class. Note that for Question 4, students are expected to write the equation for area as the product of two factors. They may use the distributive property to change the form of the equation, but it is not required. Students should use technology to graph the function. COMMON MISCONCEPTION Students may not recognize the function as a quadratic function because when you…",
+              "Have a student read the definition following Question 7 aloud. Have students work with a partner or in a group to complete Questions 8 through 10. Share responses as a class. COMMON MISCONCEPTION Students may not understand the difference between the domain and range of the function and the domain and range of the problem situation. Explain that one is a subset of the other, and have them identify any factors mentioned in the situation that limit the domain and range. QUESTIONS TO SUPPORT…",
+              "Probing  Seeing structure  • How did you determine the domain and range of  the situation? • How can you identify the slope from the graph? • How can you determine the x-intercept from the function? • Why does a decreasing line model this context? • What is the relationship between the x- and y-intercepts  and the context?  Have students work with a partner or in a group to complete Questions 4 through 7. Share responses as a class. Note that for Question 4, students are expected to write the…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "PRESENT",
+            "count": 30,
+            "cites": [
+              "*Bold TEKS 5 Readiness Standard  MODULE 5 • TOPIC 1 • PACING GUIDE  658I   How can you incorporate Skills Practice with students? There are four Learning Individually days scheduled within this topic. The placement of these days within the topic is flexible. The intent is to distribute spaced and interleaved practice throughout a topic and throughout the year. It is not necessary for students to complete all Skills Practice for the topic and different students may complete different problem…",
+              "Have students work with a partner or in a group to complete Questions 1 through 5. Share responses as a class. DIFFERENTIATION STRATEGY Just in Time Support Materials Needed: Pennies Provide pennies for students to act out the activity or suggest students use graph paper with each block representing one penny to demonstrate the pattern.  Have students list the number of pennies/blocks used in the bottom row of each figure. AS STUDENTS WORK, LOOK FOR • The need to draw Figures 5, 6, and 7. •…",
+              "In this activity, students examine a pattern of pennies. The function modeling the pattern is ​f(x) 5 x2​, and the difference between terms forms the set of odd integers beginning with 3. Note that students were introduced to the quadratic function family in Module 1: Searching for Patterns, Topic 1: Quantities and Relationships. In that topic, they matched graphs to scenarios and equations to graphs. The quadratic function family was defined as a function of the form ​f(x) 5 ax2 1 bx 1 c​,…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "PRESENT",
+            "count": 34,
+            "cites": [
+              "Using Area to Introduce Quadratic Functions  Facilitation Notes",
+              "659H MODULE 5 • TOPIC 1 • LESSON 1   AC TI V IT Y  1.2  Writing and Interpreting a Quadratic Function  Facilitation Notes In this activity, students are given a scenario involving handshakes and several diagrams to support the context. They complete a table of values and write a function to represent the situation. They then use technology to graph the function, recognize that this function has a minimum, and explain how the orientation of a parabola can be identified from its equation. Next,…",
+              "659H MODULE 5 • TOPIC 1 • LESSON 1   AC TI V IT Y  1.2  Writing and Interpreting a Quadratic Function  Facilitation Notes In this activity, students are given a scenario involving handshakes and several diagrams to support the context. They complete a table of values and write a function to represent the situation. They then use technology to graph the function, recognize that this function has a minimum, and explain how the orientation of a parabola can be identified from its equation. Next,…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 180,
+            "cites": [
+              "LESSON STRUCTURE AND PACING: 3 DAYS DAY 1 ENGAGE Getting Started: Squaring It Up 10–15 minutes CONNECT TO PRIOR KNOWLEDGE Students examine a pattern of pennies. The function modeling the pattern is f(x) 5 x2, and the difference between terms forms the set of odd integers beginning with 3.  DEVELOP Activity 1.1: Using Area to Introduce Quadratic Functions 25–30 minutes REAL-WORLD PROBLEM SOLVING, INVESTIGATION Students are given a context involving the area of a rectangle, where the length of…",
+              "Horizontal Transformations and ACTIVITY 3 Vertex Form GETTING STARTED ACTIVITY 1  TALK THE TALK  Skills Practice This is a suggested placement. Move based on student data and individual needs.  Day 16  END OF TOPIC ASSESSMENT",
+              "*Bold TEKS 5 Readiness Standard  MODULE 5 • TOPIC 1 • PACING GUIDE  658I   How can you incorporate Skills Practice with students? There are four Learning Individually days scheduled within this topic. The placement of these days within the topic is flexible. The intent is to distribute spaced and interleaved practice throughout a topic and throughout the year. It is not necessary for students to complete all Skills Practice for the topic and different students may complete different problem…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "K-5_Math_Grade_5_Additional_Days_School_Year_ADSY_Teacher_Edition.pdf": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 114,
+        "by_element_type": {
+          "standards_objectives": 19,
+          "direct_instruction": 14,
+          "guided_practice": 15,
+          "assessment_checkpoint": 17,
+          "logistics_materials": 7,
+          "reflection_closure": 11,
+          "independent_practice": 1,
+          "unclear": 27,
+          "hook_engagement": 3
+        },
+        "doc_id": "K-5_Math_Grade_5_Additional_Days_School_Year_ADSY_Teacher_Edition.pdf"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "ADSY:  Post-Test Rubric   Answer key pages intentionally removed.   This page is blank.   ISBN 979-8-89072-330-7  Copyright © 2024–2026 Texas Education Agency. This work based on or adapted from materials contained in Great Minds’ Eureka Math® K–5 PDF Files.  This work is licensed under a Creative Commons Attribution‐NonCommercial‐ShareAlike 4.0 International License. You are free: to Share—to copy, distribute, and transmit the work to Remix—to adapt the work Under the following conditions:…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "PRESENT",
+        "present": 3,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "PRESENT",
+            "count": 22,
+            "cites": [
+              "Problem Set (10 minutes) Students should do their personal best to complete the Problem Set within the allotted 10 minutes. For some classes, it may be appropriate to adjust the assignment by specifying which problems they work on first.  Student Debrief (10 minutes) Lesson Objective: Represent and solve multiplication of a whole number and a fraction using objects. The Student Debrief is intended to invite reflection and active processing of the total lesson experience. Invite students to…",
+              "What do you notice about the models and equations on our chart? Why do you think that’s true? How is multiplying a whole number by a fraction like multiplying two whole numbers? How is it different? NOTES ON MULTIPLE MEANS OF REPRESENTATION:  Part 3: Model multiplying a whole number by a fraction using an area model. T:  Nora is making a quilt and wants to use some of the scrap fabric she has. She needs to know how many square feet of each type of fabric she has. Use the inch grid paper…",
+              "(Display [38 – (5 + 3)] ÷ 6 for all to see.) What is the first step?  S: 5 + 3 because it is in parentheses, which is inside the brackets. T:  What is the next step?  S: 38 − 8. We need to subtract what’s in the parentheses from 38 since it is in the brackets. T:  What is the next step?  S: Divide the 30 by 6. T:  (Students complete the following problems one at a time. Pause to discuss as a whole class before moving to the next problem. Problems: 10[(6 + 5) – (5 + 2)]; [50 + (7 − 7)] ÷ 2; 75…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "PRESENT",
+            "count": 29,
+            "cites": [
+              "A Progression Toward Proficiency Option A is correct. Option B is incorrect. The student may or may not understand how to use data (with fractions or decimals) from a scatterplot to solve problems. The student may have identified the height of the sunflower 1 week after it was planted. Or, the student may have determined that the data point representing week 4 is 3 points away from the data point representing week 1. 4 5.9C  Option C is incorrect. The student may or may not understand how to…",
+              "Count by Equivalent Fractions (4 minutes) Note: This activity prepares students for today’s lesson. The progression builds in complexity. Work toward increasing the complexity based on your class. T:  Count by halves starting at 0.  S: Zero-halves, one-half, two-halves, three-halves, four-halves, five-halves, six-halves. T:  Count by threes to 15, starting at 0. (Write as students count.)  S:  0, 3, 6, 9, 12, 15.  T:  Count by 3 fifths to 15 fifths, starting at 0 fifths. (Turn each whole…",
+              "Represent and solve multiplication of a whole number and a fraction using objects.  53   BLUEBONNET LEARNING K–5 MATH  Lesson 2  5  S: 15 fifths. T:  (Beneath fifteen-fifths, write 3.) Count by fifths again. This time, when you come to the whole number, say the whole number. Start at zero. (Write as students count.)  S: Count (zero, three-fifths, six-fifths, nine-fifths, twelve-fifths, three). T:  (Point to six-fifths.) Say six-fifths as a mixed number.  S: One and one-fifth. Continue the…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "PRESENT",
+            "count": 15,
+            "cites": [
+              "Problem Set (10 minutes) Students should do their personal best to complete the Problem Set within the allotted 10 minutes. For some classes, it may be appropriate to adjust the assignment by specifying which problems they work on first.  Student Debrief (10 minutes) Lesson Objective: Represent and solve multiplication of a whole number and a fraction using objects. The Student Debrief is intended to invite reflection and active processing of the total lesson experience. Invite students to…",
+              "What do you notice about the models and equations on our chart? Why do you think that’s true? How is multiplying a whole number by a fraction like multiplying two whole numbers? How is it different? NOTES ON MULTIPLE MEANS OF REPRESENTATION:  Part 3: Model multiplying a whole number by a fraction using an area model. T:  Nora is making a quilt and wants to use some of the scrap fabric she has. She needs to know how many square feet of each type of fabric she has. Use the inch grid paper…",
+              "Share.  S: We found that each step in the area model is also in the partial products strategy. Have students demonstrate by pointing to each step in the area model and finding that step in the partial products strategy.  Problem 2: Connect the standard algorithm to other methods. 314 × 48 T:  Write 314 × 48 to solve using the standard algorithm.  S:  (Students write 314 × 48 vertically.)  T:  First, we will find the value of 8 units of three hundred fourteen by multiplying 8 times 314. We will…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 89,
+            "cites": [
+              "TEKS Mathematical Process Standards The student uses mathematical processes to acquire and demonstrate mathematical understanding. The student is expected to: 5.1A 5.1B  5.1C  5.1D 5.1E 5.1F 5.1G  apply mathematics to problems arising in everyday life, society, and the workplace; use a problem-solving model that incorporates analyzing given information, formulating a plan or strategy, determining a solution, justifying the solution, and evaluating the problemsolving process and the…",
+              "5.3I  1.D  A  5.4B  1.F  5.4F  2.C  5.4H  2.I 3.B 3.D 3.E 3.G 3.H 4.D  Representing Word Problems and Multiplying Fractions Lesson 1:  Represent and solve real-world problems involving area and perimeter.  Lesson 2:",
+              "4.F 4.G 5.3B  1.D  5.3E  1.F  5.4H  2.C 2.I 3.B  B  Multiplication of Whole Numbers and Decimals Lesson 8:  Fluently multiply a three-digit number by a two-digit number by connecting area models and the partial product method to the standard algorithm.  Lesson 9:  Fluently multiply a three-digit number by a two-digit number using the standard algorithm. Use estimation to check for reasonableness of the product.  Lesson 10:  Solve for products of decimals to the hundredths, when one factor is a…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "K-5_Math_Grade_5_Module_1_Place_Value_and_Decimals_Teacher_Edition.pdf": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 122,
+        "by_element_type": {
+          "standards_objectives": 18,
+          "logistics_materials": 12,
+          "direct_instruction": 20,
+          "guided_practice": 21,
+          "assessment_checkpoint": 19,
+          "unclear": 13,
+          "reflection_closure": 16,
+          "hook_engagement": 3
+        },
+        "doc_id": "K-5_Math_Grade_5_Module_1_Place_Value_and_Decimals_Teacher_Edition.pdf"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "GRADE 5 • MODULE 1 Place Value and Decimals Module Overview ........................................................................................................... 3 Topic A: Multiplicative Patterns on the Place Value Chart........................................... 17 Topic B: Decimals and Place Value Patterns ................................................................ 62 Topic C: Place Value and Rounding Decimals............................................................... 89…",
+              "Place Value and Decimals  15   BLUEBONNET LEARNING K–5 MATH  Module Overview  5•1  Module 1 Lesson Overview Materials List Student Materials All counts are per student unless otherwise indicated.  Lesson Teacher Materials 1  2 3  Millions through thousandths place value chart (T) Thousands to thousandths place value chart (T)  4 5 6 7 8 9 10 11 12 13  Millions to thousandths place value chart (T)  14 15  Personal white board Unlabeled hundreds through thousandths place value chart (T)* Place…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Lesson 1 Objective: Use place value patterns to understand the thousandths place. Suggested Lesson Structure ■ Fluency Practice  ■ Student Debrief  (12 minutes) (8 minutes) (30 minutes) (10 minutes)  Total Time  (60 minutes)  ■ Application Problem ■ Concept Development  NOTES ON FLUENCY: Throughout the module, teachers are encouraged to make appropriate adjustments to fluency activities to account for varying student needs.  NOTES ON MULTIPLE MEANS OF ACTION AND EXPRESSION:  Fluency Practice…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "PRESENT",
+        "present": 3,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "PRESENT",
+            "count": 11,
+            "cites": [
+              "Name  Judea  Date  1. Use the place value chart and arrows to show how the value of the each digit changes. Describe the value of the digit 5 in the product in both unit form and standard form. The first one has been done for you.  For some classes, it may be appropriate to adjust the assignment by specifying which problems students should work on first. With this option, let the purposeful sequencing of the Problem Set guide the selections so that problems continue to be scaffolded. Balance…",
+              "Student Debrief (10 minutes) Lesson Objective: Use place value patterns to understand the thousandths place. The Student Debrief is intended to invite reflection and active processing of the total lesson experience. Invite students to review their solutions for the Problem Set. They should check work by comparing answers with a partner. Look for misconceptions or misunderstandings that can be addressed in the Debrief. Guide students in a conversation to debrief the Problem Set and process the…",
+              "Student Debrief (10 minutes) Lesson Objective: Use place value understanding to reason abstractly about values of digits in decimals. The Student Debrief is intended to invite reflection and active processing of the total lesson experience. Invite students to review their solutions for the Problem Set. They should check work by comparing answers with a partner. Look for misconceptions or misunderstandings that can be addressed in the Debrief. Guide students in a conversation to debrief the…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "PRESENT",
+            "count": 27,
+            "cites": [
+              "Place Value and Decimals  15   BLUEBONNET LEARNING K–5 MATH  Module Overview  5•1  Module 1 Lesson Overview Materials List Student Materials All counts are per student unless otherwise indicated.  Lesson Teacher Materials 1  2 3  Millions through thousandths place value chart (T) Thousands to thousandths place value chart (T)  4 5 6 7 8 9 10 11 12 13  Millions to thousandths place value chart (T)  14 15  Personal white board Unlabeled hundreds through thousandths place value chart (T)* Place…",
+              "Lesson 1 Objective: Use place value patterns to understand the thousandths place. Suggested Lesson Structure ■ Fluency Practice  ■ Student Debrief  (12 minutes) (8 minutes) (30 minutes) (10 minutes)  Total Time  (60 minutes)  ■ Application Problem ■ Concept Development  NOTES ON FLUENCY: Throughout the module, teachers are encouraged to make appropriate adjustments to fluency activities to account for varying student needs.  NOTES ON MULTIPLE MEANS OF ACTION AND EXPRESSION:  Fluency Practice…",
+              "5•1  Lesson 1  Decimal Place Value (2 minutes) Materials: (S) Personal white board, unlabeled hundreds through thousandths place value chart (Fluency Template) Note: Reviewing this Grade 4 topic lays a foundation for students to better understand place value to bigger and smaller units. T: (Project unlabeled hundreds to thousandths place value chart. Draw 3 ten disks in the tens column.) How many tens do you see? S: 3 tens. T: (Write 3 underneath the disks.) There are 3 tens and how many ones?…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "PRESENT",
+            "count": 11,
+            "cites": [
+              "NOTES ON MULTIPLE MEANS OF ENGAGEMENT: Students who have limited experience with decimals may be supported by a return to Grade 4’s Module 6 to review decimal place value and symmetry with respect to the ones place. Conversely, student understanding of decimal place value units may be extended by asking for predictions of units one-tenth as large as the thousandths place and those beyond.  NOTES ON MULTIPLE MEANS OF ENGAGEMENT: Proportional materials such as base ten blocks can help emergent…",
+              "Name  Judea  Date  1. Use the place value chart and arrows to show how the value of the each digit changes. Describe the value of the digit 5 in the product in both unit form and standard form. The first one has been done for you.  For some classes, it may be appropriate to adjust the assignment by specifying which problems students should work on first. With this option, let the purposeful sequencing of the Problem Set guide the selections so that problems continue to be scaffolded. Balance…",
+              "Student Debrief (10 minutes) Lesson Objective: Use place value patterns to understand the thousandths place. The Student Debrief is intended to invite reflection and active processing of the total lesson experience. Invite students to review their solutions for the Problem Set. They should check work by comparing answers with a partner. Look for misconceptions or misunderstandings that can be addressed in the Debrief. Guide students in a conversation to debrief the Problem Set and process the…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 90,
+            "cites": [
+              "GRADE 5 • MODULE 1 Place Value and Decimals Module Overview ........................................................................................................... 3 Topic A: Multiplicative Patterns on the Place Value Chart........................................... 17 Topic B: Decimals and Place Value Patterns ................................................................ 62 Topic C: Place Value and Rounding Decimals............................................................... 89…",
+              "Place Value and Decimals  15   BLUEBONNET LEARNING K–5 MATH  Module Overview  5•1  Module 1 Lesson Overview Materials List Student Materials All counts are per student unless otherwise indicated.  Lesson Teacher Materials 1  2 3  Millions through thousandths place value chart (T) Thousands to thousandths place value chart (T)  4 5 6 7 8 9 10 11 12 13  Millions to thousandths place value chart (T)  14 15  Personal white board Unlabeled hundreds through thousandths place value chart (T)* Place…",
+              "Use place value patterns to understand the thousandths place.  Lesson 2:  Use place value understanding to reason abstractly about values of digits in decimals.  Lesson 3:  Use place value understanding to convert metric units.  Decimals and Place Value Patterns Lesson 4:  Name decimals in expanded notation, unit form, and word form by applying place value reasoning.  Lesson 5:  Compare and order decimals to the thousandths using like units, and express comparisons with >, <, and =."
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "K-5_Math_Grade_5_Module_2_Multi-Digit_Whole_Number_and_Decimal_Operations_Teacher_Edition.pdf": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 212,
+        "by_element_type": {
+          "standards_objectives": 24,
+          "logistics_materials": 21,
+          "assessment_checkpoint": 37,
+          "reflection_closure": 29,
+          "direct_instruction": 34,
+          "guided_practice": 50,
+          "unclear": 11,
+          "hook_engagement": 6
+        },
+        "doc_id": "K-5_Math_Grade_5_Module_2_Multi-Digit_Whole_Number_and_Decimal_Operations_Teacher_Edition.pdf"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "PRESENT",
+            "count": 5,
+            "cites": [
+              "multiply with fluency a three-digit number by a two-digit number using the standard algorithm;  5.3C​  solve with proficiency for quotients of up to a four-digit dividend by a two-digit divisor using strategies and the standard algorithm;  5.3D​  represent multiplication of decimals with products to the hundredths using objects and pictorial models, including area models;  5.3E​  solve for products of decimals to the hundredths, including situations involving money, using strategies based on…",
+              "Student Materials All counts are per student unless otherwise indicated. Personal white board  Chart  Personal white board 100 inch tiles or grid paper per pair of students  3  Personal white board Millions to thousandths place value chart (T)*  4 5  Personal white board  6  Personal white board  7  Personal white board  8  Personal white board  9 10  20  Module 2:  Multi-Digit Whole Number and Decimal Operations   BLUEBONNET LEARNING K–5 MATH  5•2  Student Materials All counts are per student…",
+              "BLUEBONNET LEARNING K–5 MATH  Module Overview  5•2  Foundational Standards The student is expected to: 3.5C  describe a multiplication expression as a comparison such as 3 × 24 represents 3 times as much as 24;  4.2A  interpret the value of each place-value position as 10 times the position to the right and as one-tenth of the value of the place to its left;  4.4A  add and subtract whole numbers and decimals to the hundredths place using the standard algorithm;  4.4C  represent the product of…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "PRESENT",
+        "present": 3,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "PRESENT",
+            "count": 28,
+            "cites": [
+              "Personal white board  13  Personal white board  14  Personal white board  15  Hundredths grid area model (T) 2 markers of different colors  Personal white board Hundredths grid area model (T) 2 markers or colored pencils of different colors  16  Hundredths grid area model (T) Extra Practice (T)  Personal white board Hundredths grid area model (T) Extra Practice (T) 2 markers or colored pencils of different colors  17  Personal white board Meter strip (T) 1 string  18  Personal white board…",
+              "Student Debrief (10 minutes) Lesson Objective: Multiply multi-digit whole numbers and multiples of 10 using place value patterns and the distributive and associative properties. The Student Debrief is intended to invite reflection and active processing of the total lesson experience. Invite students to review their solutions for the Problem Set. They should check work by comparing answers with a partner. Look for misconceptions or misunderstandings that can be addressed in the Debrief. Guide…",
+              "(Work and share.) What is the value of 49 × 20? 980. Work with a partner to create an equivalent expression that you can use to help you solve 20 × 51 mentally. Write the equivalent expression and its value on your personal white board. As before, you may draw a strip diagram if you choose. (Work and share.) (Circulate and assess for understanding. Be receptive to any valid mental approach.)  Problems 5–6 101 × 12 12 × 98 T:  S:  Work independently to evaluate these two expressions mentally.…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "PRESENT",
+            "count": 31,
+            "cites": [
+              "Student Materials All counts are per student unless otherwise indicated. Personal white board  Chart  Personal white board 100 inch tiles or grid paper per pair of students  3  Personal white board Millions to thousandths place value chart (T)*  4 5  Personal white board  6  Personal white board  7  Personal white board  8  Personal white board  9 10  20  Module 2:  Multi-Digit Whole Number and Decimal Operations   BLUEBONNET LEARNING K–5 MATH  5•2  Student Materials All counts are per student…",
+              "Personal white board  13  Personal white board  14  Personal white board  15  Hundredths grid area model (T) 2 markers of different colors  Personal white board Hundredths grid area model (T) 2 markers or colored pencils of different colors  16  Hundredths grid area model (T) Extra Practice (T)  Personal white board Hundredths grid area model (T) Extra Practice (T) 2 markers or colored pencils of different colors  17  Personal white board Meter strip (T) 1 string  18  Personal white board…",
+              "Multiply multi-digit whole numbers and multiples of 10 using place value patterns and the distributive and associative properties.  47   BLUEBONNET LEARNING K–5 MATH  T: S: T: S:  Lesson 3  5•2  (Write 4 underneath the disks.) There are 4 tens and how many ones? Zero ones. (Write 0 in the ones column. Below it, write 4 tens = .) Fill in the blank. 4 tens = 40.  Repeat the process for 4 ten thousands, 4 hundred thousands, 7 millions, and 2 thousands. T: S:  (Write 5 hundreds = .) Show the…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "PRESENT",
+            "count": 22,
+            "cites": [
+              "Personal white board  13  Personal white board  14  Personal white board  15  Hundredths grid area model (T) 2 markers of different colors  Personal white board Hundredths grid area model (T) 2 markers or colored pencils of different colors  16  Hundredths grid area model (T) Extra Practice (T)  Personal white board Hundredths grid area model (T) Extra Practice (T) 2 markers or colored pencils of different colors  17  Personal white board Meter strip (T) 1 string  18  Personal white board…",
+              "Student Debrief (10 minutes) Lesson Objective: Multiply multi-digit whole numbers and multiples of 10 using place value patterns and the distributive and associative properties. The Student Debrief is intended to invite reflection and active processing of the total lesson experience. Invite students to review their solutions for the Problem Set. They should check work by comparing answers with a partner. Look for misconceptions or misunderstandings that can be addressed in the Debrief. Guide…",
+              "(Work and share.) What is the value of 49 × 20? 980. Work with a partner to create an equivalent expression that you can use to help you solve 20 × 51 mentally. Write the equivalent expression and its value on your personal white board. As before, you may draw a strip diagram if you choose. (Work and share.) (Circulate and assess for understanding. Be receptive to any valid mental approach.)  Problems 5–6 101 × 12 12 × 98 T:  S:  Work independently to evaluate these two expressions mentally.…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 165,
+            "cites": [
+              "multiply with fluency a three-digit number by a two-digit number using the standard algorithm;  5.3C​  solve with proficiency for quotients of up to a four-digit dividend by a two-digit divisor using strategies and the standard algorithm;  5.3D​  represent multiplication of decimals with products to the hundredths using objects and pictorial models, including area models;  5.3E​  solve for products of decimals to the hundredths, including situations involving money, using strategies based on…",
+              "Student Materials All counts are per student unless otherwise indicated. Personal white board  Chart  Personal white board 100 inch tiles or grid paper per pair of students  3  Personal white board Millions to thousandths place value chart (T)*  4 5  Personal white board  6  Personal white board  7  Personal white board  8  Personal white board  9 10  20  Module 2:  Multi-Digit Whole Number and Decimal Operations   BLUEBONNET LEARNING K–5 MATH  5•2  Student Materials All counts are per student…",
+              "BLUEBONNET LEARNING K–5 MATH  Module Overview  5•2  Foundational Standards The student is expected to: 3.5C  describe a multiplication expression as a comparison such as 3 × 24 represents 3 times as much as 24;  4.2A  interpret the value of each place-value position as 10 times the position to the right and as one-tenth of the value of the place to its left;  4.4A  add and subtract whole numbers and decimals to the hundredths place using the standard algorithm;  4.4C  represent the product of…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "K-5_Math_Grade_5_Module_3_Addition_and_Subtraction_of_Fractions_Teacher_Edition.pdf": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 324,
+        "by_element_type": {
+          "standards_objectives": 119,
+          "logistics_materials": 18,
+          "direct_instruction": 17,
+          "guided_practice": 106,
+          "assessment_checkpoint": 17,
+          "reflection_closure": 16,
+          "unclear": 30,
+          "hook_engagement": 1
+        },
+        "doc_id": "K-5_Math_Grade_5_Module_3_Addition_and_Subtraction_of_Fractions_Teacher_Edition.pdf"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Module 3 Lesson Overview Materials List Lesson  Student Materials All counts are per student unless otherwise indicated.  Teacher Materials  1  Personal white board 1 2 pieces of 4 \" × 4 \" paper 2  2  Personal white board 1 2 pieces of 4 \" × 4 \" paper 2  3  *  2 fraction strips  2  2 fraction strips per student Personal white board  4  Personal white board  5  Personal white board  6  Personal white board Empty number line (T)* or lined paper  7  Personal white board  8  Personal white board …"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "PRESENT",
+        "present": 3,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "PRESENT",
+            "count": 48,
+            "cites": [
+              "Analyze the following problems. How are they related? Problem 1 (a) and (b) Problem 1 (a) and (c) Problem 1(b) and (d) Problem 1 (d) and (f) Which common unit did you choose to use for Problem 3? How did your choice of common unit affect simplifying your answer at the end?  Date  1. Represent each fraction by folding paper. Then, draw a rectangular fraction model to find the sum.  Invite students to review their solutions for the Problem Set. They should check work by comparing answers with a…",
+              "Problem Set (10 minutes)  Name  Jacqueline  Date  1. For the following problems, represent each fraction by folding paper. Then, draw a model to help solve. When possible, write your answer as a mixed number. a.  2 3  1 7 3 4 + = 1 = 6  1 2  6  1  1  1  }2 3 4  1 11 6 5 = 1 = + 10  3 5  1  1  •  When thinking about Problem 3, how did you decide how many minutes Carlos needed to practice to meet his goal?  3 5 7  18 20 38 14 7 + = = 1 24 12  5 6  f.  2 3  1  1 2  }  3 7  14 9 23 2 + = = 1 21  3…",
+              "2 1 − 3 2 4 3 1 = − = 6  2 4 = 3 6  1 − 3 4 3 1 4 − = 12  c. 6 − 4 = 12  1  }  } =  Invite students to review their solutions for the Problem Set. They should check work by comparing answers with a partner. Look for misconceptions or misunderstandings that can be addressed in the Debrief. Guide students in a conversation to debrief the Problem Set and process the lesson.  S: T:  1  X X X  3 1 } 4 = 12  1 4 = 3 12  5  1  1  1  X  The Student Debrief is intended to invite reflection and active…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "PRESENT",
+            "count": 24,
+            "cites": [
+              "Module 3 Lesson Overview Materials List Lesson  Student Materials All counts are per student unless otherwise indicated.  Teacher Materials  1  Personal white board 1 2 pieces of 4 \" × 4 \" paper 2  2  Personal white board 1 2 pieces of 4 \" × 4 \" paper 2  3  *  2 fraction strips  2  2 fraction strips per student Personal white board  4  Personal white board  5  Personal white board  6  Personal white board Empty number line (T)* or lined paper  7  Personal white board  8  Personal white board …",
+              "Lesson 1  5•3  Lesson 1 Objective: Add fractions with unlike units using the strategy of creating equivalent fractions. Suggested Lesson Structure ■ Fluency Practice  ■ Student Debrief  (12 minutes) (5 minutes) (33 minutes) (10 minutes)  Total Time  (60 minutes)​  ■ Application Problem ■ Concept Development  Fluency Practice (12 minutes) ⬛  Sprint: Find the Missing Numerator or Denominator 5.3H, 5.3K  (8 minutes)  ⬛  Adding Like Fractions 5.3H, 5.3K  (2 minutes)  ⬛  Rename the Fractions 4.3C …",
+              "1 5  1  1 9  Add fractions with unlike units using the strategy of creating equivalent fractions.  31   BLUEBONNET LEARNING K–5 MATH  1  e. 4  Lesson 1 Homework  2 5  3  f. 5  3 7  Solve the following problems. Draw a picture, and write the number sentence that proves the answer. Simplify your answer, if possible. 2. Rajesh jogged 3 mile and then walked 1 mile to cool down. How far did he travel? 4  32  6  Lesson 1:  Add fractions with unlike units using the strategy of creating equivalent…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "PRESENT",
+            "count": 44,
+            "cites": [
+              "Analyze the following problems. How are they related? Problem 1 (a) and (b) Problem 1 (a) and (c) Problem 1(b) and (d) Problem 1 (d) and (f) Which common unit did you choose to use for Problem 3? How did your choice of common unit affect simplifying your answer at the end?  Date  1. Represent each fraction by folding paper. Then, draw a rectangular fraction model to find the sum.  Invite students to review their solutions for the Problem Set. They should check work by comparing answers with a…",
+              "Problem Set (10 minutes)  Name  Jacqueline  Date  1. For the following problems, represent each fraction by folding paper. Then, draw a model to help solve. When possible, write your answer as a mixed number. a.  2 3  1 7 3 4 + = 1 = 6  1 2  6  1  1  1  }2 3 4  1 11 6 5 = 1 = + 10  3 5  1  1  •  When thinking about Problem 3, how did you decide how many minutes Carlos needed to practice to meet his goal?  3 5 7  18 20 38 14 7 + = = 1 24 12  5 6  f.  2 3  1  1 2  }  3 7  14 9 23 2 + = = 1 21  3…",
+              "2 1 − 3 2 4 3 1 = − = 6  2 4 = 3 6  1 − 3 4 3 1 4 − = 12  c. 6 − 4 = 12  1  }  } =  Invite students to review their solutions for the Problem Set. They should check work by comparing answers with a partner. Look for misconceptions or misunderstandings that can be addressed in the Debrief. Guide students in a conversation to debrief the Problem Set and process the lesson.  S: T:  1  X X X  3 1 } 4 = 12  1 4 = 3 12  5  1  1  1  X  The Student Debrief is intended to invite reflection and active…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 258,
+            "cites": [
+              "Module 3 Lesson Overview Materials List Lesson  Student Materials All counts are per student unless otherwise indicated.  Teacher Materials  1  Personal white board 1 2 pieces of 4 \" × 4 \" paper 2  2  Personal white board 1 2 pieces of 4 \" × 4 \" paper 2  3  *  2 fraction strips  2  2 fraction strips per student Personal white board  4  Personal white board  5  Personal white board  6  Personal white board Empty number line (T)* or lined paper  7  Personal white board  8  Personal white board …",
+              "Lesson 1  5•3  Lesson 1 Objective: Add fractions with unlike units using the strategy of creating equivalent fractions. Suggested Lesson Structure ■ Fluency Practice  ■ Student Debrief  (12 minutes) (5 minutes) (33 minutes) (10 minutes)  Total Time  (60 minutes)​  ■ Application Problem ■ Concept Development  Fluency Practice (12 minutes) ⬛  Sprint: Find the Missing Numerator or Denominator 5.3H, 5.3K  (8 minutes)  ⬛  Adding Like Fractions 5.3H, 5.3K  (2 minutes)  ⬛  Rename the Fractions 4.3C …",
+              "4  Lesson 1:"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "K-5_Math_Grade_5_Module_4_Multiplication_and_Division_of_Fractions_Teacher_Edition.pdf": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 159,
+        "by_element_type": {
+          "standards_objectives": 16,
+          "direct_instruction": 20,
+          "guided_practice": 41,
+          "assessment_checkpoint": 17,
+          "reflection_closure": 16,
+          "logistics_materials": 16,
+          "unclear": 29,
+          "independent_practice": 1,
+          "hook_engagement": 3
+        },
+        "doc_id": "K-5_Math_Grade_5_Module_4_Multiplication_and_Division_of_Fractions_Teacher_Edition.pdf"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "PRESENT",
+            "count": 6,
+            "cites": [
+              "Table of Contents  GRADE 5 • MODULE 4 Multiplication and Division of Fractions Module Overview .................................................................................................... 2 Topic A: Repeated Addition of Fractions as Multiplication ......................................... 24 Topic B: Multiplication of a Whole Number by a Fraction ........................................ 107 Topic C: Fraction Expressions and Word Problems…",
+              "Module 4﻿:  Multiplication and Division of Fractions  1   BLUEBONNET LEARNING K–5 MATH  Module Overview  5•4  Grade 5 • Module 4  Multiplication and Division of Fractions OVERVIEW In Module 4, students learn to multiply fractions and begin working with fraction division. Students begin Topic A by decomposing non-unit fractions and representing these decompositions as repeated addition sentences. They build on this concept by representing addition sentences as multiplication, just as they did 1…",
+              "Module 4﻿:  Multiplication and Division of Fractions  1   BLUEBONNET LEARNING K–5 MATH  Module Overview  5•4  Grade 5 • Module 4  Multiplication and Division of Fractions OVERVIEW In Module 4, students learn to multiply fractions and begin working with fraction division. Students begin Topic A by decomposing non-unit fractions and representing these decompositions as repeated addition sentences. They build on this concept by representing addition sentences as multiplication, just as they did 1…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "PRESENT",
+            "count": 6,
+            "cites": [
+              "Table of Contents  GRADE 5 • MODULE 4 Multiplication and Division of Fractions Module Overview .................................................................................................... 2 Topic A: Repeated Addition of Fractions as Multiplication ......................................... 24 Topic B: Multiplication of a Whole Number by a Fraction ........................................ 107 Topic C: Fraction Expressions and Word Problems…",
+              "Module 4﻿:  Multiplication and Division of Fractions  1   BLUEBONNET LEARNING K–5 MATH  Module Overview  5•4  Grade 5 • Module 4  Multiplication and Division of Fractions OVERVIEW In Module 4, students learn to multiply fractions and begin working with fraction division. Students begin Topic A by decomposing non-unit fractions and representing these decompositions as repeated addition sentences. They build on this concept by representing addition sentences as multiplication, just as they did 1…",
+              "Module 4﻿:  Multiplication and Division of Fractions  1   BLUEBONNET LEARNING K–5 MATH  Module Overview  5•4  Grade 5 • Module 4  Multiplication and Division of Fractions OVERVIEW In Module 4, students learn to multiply fractions and begin working with fraction division. Students begin Topic A by decomposing non-unit fractions and representing these decompositions as repeated addition sentences. They build on this concept by representing addition sentences as multiplication, just as they did 1…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "PRESENT",
+        "present": 3,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "PRESENT",
+            "count": 18,
+            "cites": [
+              "Table of Contents  GRADE 5 • MODULE 4 Multiplication and Division of Fractions Module Overview .................................................................................................... 2 Topic A: Repeated Addition of Fractions as Multiplication ......................................... 24 Topic B: Multiplication of a Whole Number by a Fraction ........................................ 107 Topic C: Fraction Expressions and Word Problems…",
+              "Module 4﻿:  Multiplication and Division of Fractions  1   BLUEBONNET LEARNING K–5 MATH  Module Overview  5•4  Grade 5 • Module 4  Multiplication and Division of Fractions OVERVIEW In Module 4, students learn to multiply fractions and begin working with fraction division. Students begin Topic A by decomposing non-unit fractions and representing these decompositions as repeated addition sentences. They build on this concept by representing addition sentences as multiplication, just as they did 1…",
+              "Module 4﻿:  Multiplication and Division of Fractions  1   BLUEBONNET LEARNING K–5 MATH  Module Overview  5•4  Grade 5 • Module 4  Multiplication and Division of Fractions OVERVIEW In Module 4, students learn to multiply fractions and begin working with fraction division. Students begin Topic A by decomposing non-unit fractions and representing these decompositions as repeated addition sentences. They build on this concept by representing addition sentences as multiplication, just as they did 1…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "PRESENT",
+            "count": 33,
+            "cites": [
+              "Lesson 1 Objective: Decompose non-unit fractions and represent them as a whole number times a unit fraction using strip diagrams. Suggested Lesson Structure ■ Fluency Practice  ■ Student Debrief  (12 minutes) (8 minutes) (30 minutes) (10 minutes)  Total Time  (60 minutes)  ■ Application Problem ■ Concept Development  NOTE ON FLUENCY: Throughout the module, teachers are encouraged to make appropriate adjustments to fluency activities to account for varying student needs.  Fluency Practice (12…",
+              "Application Problem (8 minutes) Mrs. Beach prepared copies for 4 reading groups. She made 6 copies for each group. How many copies did Mrs. Beach make? a. Draw a strip diagram. b. Write both an addition and a multiplication sentence to solve. Discuss with a partner why you are able to add or multiply to solve this problem. c. What fraction of the copies is needed for 3 groups? To show that, shade the strip diagram.  Note: This Application Problem builds from Grade 4 knowledge of interpreting…",
+              "Add and Subtract (4 minutes) Materials: (S) Personal white board Note: This fluency activity reviews adding and subtracting using the standard algorithm. T: S: T: S:  (Write 676 thousands 696 ones.) On your personal white boards, write this number in standard form. (Write 676,696.) (Write 153 thousands 884 ones.) Add this number to 676,696 using the standard algorithm. (Write 676,696 + 153,884 = 830,580 using the standard algorithm.)  Continue the process for 678,717 + 274,867. T: S: T: S: …"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "PRESENT",
+            "count": 19,
+            "cites": [
+              "Table of Contents  GRADE 5 • MODULE 4 Multiplication and Division of Fractions Module Overview .................................................................................................... 2 Topic A: Repeated Addition of Fractions as Multiplication ......................................... 24 Topic B: Multiplication of a Whole Number by a Fraction ........................................ 107 Topic C: Fraction Expressions and Word Problems…",
+              "Module 4﻿:  Multiplication and Division of Fractions  1   BLUEBONNET LEARNING K–5 MATH  Module Overview  5•4  Grade 5 • Module 4  Multiplication and Division of Fractions OVERVIEW In Module 4, students learn to multiply fractions and begin working with fraction division. Students begin Topic A by decomposing non-unit fractions and representing these decompositions as repeated addition sentences. They build on this concept by representing addition sentences as multiplication, just as they did 1…",
+              "Module 4﻿:  Multiplication and Division of Fractions  1   BLUEBONNET LEARNING K–5 MATH  Module Overview  5•4  Grade 5 • Module 4  Multiplication and Division of Fractions OVERVIEW In Module 4, students learn to multiply fractions and begin working with fraction division. Students begin Topic A by decomposing non-unit fractions and representing these decompositions as repeated addition sentences. They build on this concept by representing addition sentences as multiplication, just as they did 1…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 125,
+            "cites": [
+              "Table of Contents  GRADE 5 • MODULE 4 Multiplication and Division of Fractions Module Overview .................................................................................................... 2 Topic A: Repeated Addition of Fractions as Multiplication ......................................... 24 Topic B: Multiplication of a Whole Number by a Fraction ........................................ 107 Topic C: Fraction Expressions and Word Problems…",
+              "Module 4﻿:  Multiplication and Division of Fractions  1   BLUEBONNET LEARNING K–5 MATH  Module Overview  5•4  Grade 5 • Module 4  Multiplication and Division of Fractions OVERVIEW In Module 4, students learn to multiply fractions and begin working with fraction division. Students begin Topic A by decomposing non-unit fractions and representing these decompositions as repeated addition sentences. They build on this concept by representing addition sentences as multiplication, just as they did 1…",
+              "Module 4﻿:  Multiplication and Division of Fractions  1   BLUEBONNET LEARNING K–5 MATH  Module Overview  5•4  Grade 5 • Module 4  Multiplication and Division of Fractions OVERVIEW In Module 4, students learn to multiply fractions and begin working with fraction division. Students begin Topic A by decomposing non-unit fractions and representing these decompositions as repeated addition sentences. They build on this concept by representing addition sentences as multiplication, just as they did 1…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "K-5_Math_Grade_5_Module_5_Addition_and_Multiplication_with_Volume_and_Area_Teacher_Edition.pdf": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 161,
+        "by_element_type": {
+          "standards_objectives": 24,
+          "logistics_materials": 20,
+          "hook_engagement": 7,
+          "direct_instruction": 27,
+          "guided_practice": 22,
+          "assessment_checkpoint": 25,
+          "reflection_closure": 21,
+          "unclear": 15
+        },
+        "doc_id": "K-5_Math_Grade_5_Module_5_Addition_and_Multiplication_with_Volume_and_Area_Teacher_Edition.pdf"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Draw rectangles and rhombuses to clarify their attributes, and define rectangles and rhombuses based on those attributes.  5•5  Days 7  Lessons 18 -19: Classify two-dimensional figures in a hierarchy based on properties. End-of-Module Assessment Task: Topics A–D Total Number of Instructional Days  12  Module 5:  Addition and Multiplication with Volume and Area  2 23   Module Overview  BLUEBONNET LEARNING K–5 MATH  5•5  Terminology A Spanish cognate is included when the term has a similar…",
+              "Topic D  5.5A  Students do not understand the inverse relationship between two-dimensional figures (e.g., “All trapezoids are quadrilaterals, so all quadrilaterals are trapezoids”).  Notice how Debrief prompts engage students with thinking about and describing the relationships between figures from both directions. For example, students are asked to respond to the following statements as true or false and explain their reasoning. ⬛  All trapezoids are quadrilaterals.  ⬛  All quadrilaterals are…",
+              "ADDITION AND MULTIPLICATION WITH VOLUME AND AREA  MODULE 5 | TEACHER EDITION 9  798890 722577"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "PRESENT",
+        "present": 3,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "PRESENT",
+            "count": 19,
+            "cites": [
+              "Student Debrief (10 minutes) Lesson Objective: Compose and decompose right rectangular prisms using layers.  444 444  b.  Number of Layers  3 4 2  The Student Debrief is intended to invite reflection and active processing of the total lesson experience. Invite students to review their solutions for the Problem Set. They should check work by comparing answers with a partner. Look for misconceptions or misunderstandings that can be addressed in the Debrief. Guide students in a conversation to…",
+              "Problem Set (10 minutes) Students should do their personal best to complete the Problem Set within the allotted 10 minutes. For some classes, it may be appropriate to adjust the assignment by specifying which problems they work on first. Some problems do not specify a method for solving. Students should solve these problems using the RDW approach used for Application Problems. 72  Lesson 4:  Use multiplication to calculate volume.   BLUEBONNET LEARNING K–5 MATH  Lesson 4  5•5  Student Debrief…",
+              "Problem Set (10 minutes) Students should do their personal best to complete the Problem Set within the allotted 10 minutes. For some classes, it may be appropriate to adjust the assignment by specifying which problems they work on first. Some problems do not specify a method for solving. Students should solve these problems using the RDW approach used for Application Problems.  Student Debrief (10 minutes) Lesson Objective: Find the total volume of solid figures composed of two non-overlapping…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "PRESENT",
+            "count": 37,
+            "cites": [
+              "Lesson 1  5•5  Find the Area (5 minutes) Materials: (S) Personal white board Note: Reviewing this Grade 4 concept prepares students to explore volume. T: S: T:  S: T: S: T: S: T: S:  (Project a 4-inch by 2-inch rectangle.) Name the shape. Rectangle.  Parallelogram.  Quadrilateral. (Write __ in × __ in = __ in2.) This shape is a rectangle, though we could also call it a quadrilateral​ or parallelogram. On your personal white boards, write the area of the rectangle as a multiplication sentence…",
+              "■ Application Problem ■ Concept Development  Fluency Practice (12 minutes) ⬛  Multiply a Fraction and a Whole Number 5.3I  (4 minutes)  ⬛  Find the Area 4.5C, 4.5D  (4 minutes)  ⬛  Find the Volume 5.6A  (4 minutes)  Multiply a Fraction and a Whole Number (4 minutes) Materials: (S) Personal white board 15  Note: This fluency activity reviews Module 4 Lessons 7–9. T: S: T:  S: T: S: T:  40  (Write 15 ÷ 3 = ____.) Say the complete division sentence. 15 ÷ 3 = 5.  1 3  1  2  3  4  5  6  7  8  1  9 …",
+              "Lesson 1  5•5  Find the Area (5 minutes) Materials: (S) Personal white board Note: Reviewing this Grade 4 concept prepares students to explore volume. T: S: T:  S: T: S: T: S: T: S:  (Project a 4-inch by 2-inch rectangle.) Name the shape. Rectangle.  Parallelogram.  Quadrilateral. (Write __ in × __ in = __ in2.) This shape is a rectangle, though we could also call it a quadrilateral​ or parallelogram. On your personal white boards, write the area of the rectangle as a multiplication sentence…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "PRESENT",
+            "count": 19,
+            "cites": [
+              "Student Debrief (10 minutes) Lesson Objective: Compose and decompose right rectangular prisms using layers.  444 444  b.  Number of Layers  3 4 2  The Student Debrief is intended to invite reflection and active processing of the total lesson experience. Invite students to review their solutions for the Problem Set. They should check work by comparing answers with a partner. Look for misconceptions or misunderstandings that can be addressed in the Debrief. Guide students in a conversation to…",
+              "Problem Set (10 minutes) Students should do their personal best to complete the Problem Set within the allotted 10 minutes. For some classes, it may be appropriate to adjust the assignment by specifying which problems they work on first. Some problems do not specify a method for solving. Students should solve these problems using the RDW approach used for Application Problems. 72  Lesson 4:  Use multiplication to calculate volume.   BLUEBONNET LEARNING K–5 MATH  Lesson 4  5•5  Student Debrief…",
+              "Problem Set (10 minutes) Students should do their personal best to complete the Problem Set within the allotted 10 minutes. For some classes, it may be appropriate to adjust the assignment by specifying which problems they work on first. Some problems do not specify a method for solving. Students should solve these problems using the RDW approach used for Application Problems.  Student Debrief (10 minutes) Lesson Objective: Find the total volume of solid figures composed of two non-overlapping…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 128,
+            "cites": [
+              "Focus Grade Level Standards Number and Operations The student applies mathematical process standards to develop and use strategies and methods for positive rational number computations in order to solve problems with efficiency and accuracy. The student is expected to: 5.3I  represent and solve multiplication of a whole number and a fraction that refers to the same whole using objects and pictorial models, including area models.  Algebraic Reasoning The student applies mathematical process…",
+              "Days  5.4G 5.6A 5.6B  1.F 2.C 2.E 3.J 5.G  A  Concepts of Volume  3  5.4G 5.4H 5.6A 5.6B  5.3I 5.4H  1.E 2.C 2.E 3.E 3.F 5.G  2.C 2.E 3.B 3.E 3.F 3.G 3.J 5.B 5.G  B  C  Lesson 1:",
+              "5.5A  2.C 2.D 2.E 3.B 3.C 3.D 3.E 3.H 4.F 4.G 5.G  D  Drawing, Analysis, and Classification of Two-Dimensional Shapes Lesson 13:  Analyze and classify triangles based on side length, angle measure, or both.  Lesson 14:  Define and construct triangles from given criteria.  Lesson 15:  Draw trapezoids to clarify their attributes, and define trapezoids based on those attributes.  Lesson 16:  Draw parallelograms to clarify their attributes, and define parallelograms based on those attributes. …"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "K-5_Math_Grade_5_Module_6_Problem_Solving_with_the_Coordinate_Plane_and_Data_Teacher_Edition.pdf": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 204,
+        "by_element_type": {
+          "standards_objectives": 29,
+          "direct_instruction": 35,
+          "guided_practice": 30,
+          "assessment_checkpoint": 29,
+          "reflection_closure": 23,
+          "logistics_materials": 23,
+          "unclear": 30,
+          "hook_engagement": 2,
+          "independent_practice": 3
+        },
+        "doc_id": "K-5_Math_Grade_5_Module_6_Problem_Solving_with_the_Coordinate_Plane_and_Data_Teacher_Edition.pdf"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "5.8A 5.8B 5.8C  1.A 1.E 2.E 3.E 3.H 5.G  A  5.4C 5.4D 5.8C 5.4E 5.8A 5.8B  5.9A 5.9B 5.9C  1.A 1.D 1.E 2.E 3.E 3.G 5.B 5.G  1.A 1.E 2.C 2.E 3.E 3.G 3.H 5.G  B  C  Coordinate Systems Lesson 1: Describe the key attributes of the coordinate plane. Lesson 2:  Construct a coordinate system on a plane.  Lessons 3–4:  Name points using coordinate pairs, and use the coordinate pairs to plot points.  Lessons 5–6:  Investigate patterns in vertical and horizontal lines, and interpret points on the plane…",
+              "Module 6 Lesson Overview Materials List Student Materials All counts are per student unless otherwise indicated.  Lesson Teacher Materials 1  Graphs A, B, and C (T)*  Personal white board Straightedge or ruler  2  Personal white board Ruler Coordinate plane (T)  3  Coordinate plane (T) Coordinate grid (T)  Personal white board Straightedge or ruler Unlabeled coordinate plane (T)  4  Coordinate plane (T) Coordinate grid (T)  Personal white board Red pencil or crayon Black pencil or crayon 1…",
+              "Collection of pine cones and flowers  24  Protractor White paper Ruler Personal white board Red crayon Ruler or straight edge 1 Calculator per student or pair Personal white board  32  Module 6:  5•6  Problem Solving with the Coordinate Plane and Data   Module Overview  BLUEBONNET LEARNING K–5 MATH  5•6  Student Materials All counts are per student unless otherwise indicated.  Lesson Teacher Materials 33  Personal white board 3 pieces of 8 12 \" × 11\" cardstock paper Scissors Tape Ruler Summer…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "PRESENT",
+        "present": 3,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "PRESENT",
+            "count": 21,
+            "cites": [
+              "Student Debrief (10 minutes) Lesson Objective: Describe the key attributes of the coordinate plane. The Student Debrief is intended to invite reflection and active processing of the total lesson experience. Invite students to review their solutions for the Problem Set. They should check work by comparing answers with a partner. Look for misconceptions or misunderstandings that can be addressed in the Debrief. Guide students in a conversation to debrief the Problem Set and process the lesson. …",
+              "ad  e Ro stur p Pa  ee Sh  Main Street Stony Brook Road  ee Sh  Elm street  e stur p Pa  2.  East Main Street wer Lo  Students should do their personal best to complete the Problem Set within the allotted 10 minutes. For some classes, it may be appropriate to adjust the assignment by specifying which problems they work on first. Some problems do not specify a method for solving. Students should solve these problems using the RDW approach used for Application Problems.  5•6  Lesson 2  Create a…",
+              "5•6  Lesson 6  2. Construct line f such that the y-coordinate of every point is 3 2 , and construct line ℊ such that the 1  x-coordinate of every point is 4 2 . 1  3 1/2 units from the x-axis. a. Line f is ________  Lesson Objective: Investigate patterns in vertical and horizontal lines, and interpret points on the plane as distances from the axes.  y  g  6  b. Give the coordinates of the point on line f  (1/2, 3 1/2) that is 2 unit from the y-axis. ________ 1  5  c. With a blue pencil, shade…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "PRESENT",
+            "count": 63,
+            "cites": [
+              "Module 6 Lesson Overview Materials List Student Materials All counts are per student unless otherwise indicated.  Lesson Teacher Materials 1  Graphs A, B, and C (T)*  Personal white board Straightedge or ruler  2  Personal white board Ruler Coordinate plane (T)  3  Coordinate plane (T) Coordinate grid (T)  Personal white board Straightedge or ruler Unlabeled coordinate plane (T)  4  Coordinate plane (T) Coordinate grid (T)  Personal white board Red pencil or crayon Black pencil or crayon 1…",
+              "Collection of pine cones and flowers  24  Protractor White paper Ruler Personal white board Red crayon Ruler or straight edge 1 Calculator per student or pair Personal white board  32  Module 6:  5•6  Problem Solving with the Coordinate Plane and Data   Module Overview  BLUEBONNET LEARNING K–5 MATH  5•6  Student Materials All counts are per student unless otherwise indicated.  Lesson Teacher Materials 33  Personal white board 3 pieces of 8 12 \" × 11\" cardstock paper Scissors Tape Ruler Summer…",
+              "T:  (Beneath 2, write 2.) 3 ones is the same as how many halves?  S:  6 halves.  28  2  4  Lesson 1:  NOTES ON MULTIPLE MEANS OF REPRESENTATION: The Count by Equivalent Fractions fluency activity supports language acquisition for emergent bilingual students as it offers valuable practice speaking fraction names, such as fourths. Model and assist students’ enunciation of the ending digraph /th/. Couple the counting with prepared visuals to increase comprehension.  Describe the key attributes of…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "PRESENT",
+            "count": 22,
+            "cites": [
+              "Student Debrief (10 minutes) Lesson Objective: Describe the key attributes of the coordinate plane. The Student Debrief is intended to invite reflection and active processing of the total lesson experience. Invite students to review their solutions for the Problem Set. They should check work by comparing answers with a partner. Look for misconceptions or misunderstandings that can be addressed in the Debrief. Guide students in a conversation to debrief the Problem Set and process the lesson. …",
+              "ad  e Ro stur p Pa  ee Sh  Main Street Stony Brook Road  ee Sh  Elm street  e stur p Pa  2.  East Main Street wer Lo  Students should do their personal best to complete the Problem Set within the allotted 10 minutes. For some classes, it may be appropriate to adjust the assignment by specifying which problems they work on first. Some problems do not specify a method for solving. Students should solve these problems using the RDW approach used for Application Problems.  5•6  Lesson 2  Create a…",
+              "Draw a black  on the coordinate if your opponent says, “Miss.” Draw a blue ✓ on the coordinate if your opponent says, “Hit.” Draw a circle around the coordinates of a sunken ship.  y  Name points using coordinate pairs, and use the coordinate pairs to plot points.  x  79   BLUEBONNET LEARNING K–5 MATH  Lesson 4 Exit Ticket  Date  Name  Fatima and Rihana are playing Don't Sink My Ship. They labeled their axes using just whole numbers. a. Fatima’s first guess is (2, 2). Rihana says, “Hit!” Give…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 167,
+            "cites": [
+              "5.8A 5.8B 5.8C  1.A 1.E 2.E 3.E 3.H 5.G  A  5.4C 5.4D 5.8C 5.4E 5.8A 5.8B  5.9A 5.9B 5.9C  1.A 1.D 1.E 2.E 3.E 3.G 5.B 5.G  1.A 1.E 2.C 2.E 3.E 3.G 3.H 5.G  B  C  Coordinate Systems Lesson 1: Describe the key attributes of the coordinate plane. Lesson 2:  Construct a coordinate system on a plane.  Lessons 3–4:  Name points using coordinate pairs, and use the coordinate pairs to plot points.  Lessons 5–6:  Investigate patterns in vertical and horizontal lines, and interpret points on the plane…",
+              "BLUEBONNET LEARNING K–5 MATH  5•6  Overview of Module Topics and Lesson Objectives TEKS  ELPS  Topics and Objectives  5.8A 5.8B 5.8C  1.A 1.E 2.E 3.E 3.H 5.G  A  5.4C 5.4D 5.8C 5.4E 5.8A 5.8B  5.9A 5.9B 5.9C  1.A 1.D 1.E 2.E 3.E 3.G 5.B 5.G  1.A 1.E 2.C 2.E 3.E 3.G 3.H 5.G  B  C  Coordinate Systems Lesson 1: Describe the key attributes of the coordinate plane. Lesson 2:  Construct a coordinate system on a plane.  Lessons 3–4:  Name points using coordinate pairs, and use the coordinate pairs to…",
+              "BLUEBONNET LEARNING K–5 MATH  5•6  Overview of Module Topics and Lesson Objectives TEKS  ELPS  Topics and Objectives  5.8A 5.8B 5.8C  1.A 1.E 2.E 3.E 3.H 5.G  A  5.4C 5.4D 5.8C 5.4E 5.8A 5.8B  5.9A 5.9B 5.9C  1.A 1.D 1.E 2.E 3.E 3.G 5.B 5.G  1.A 1.E 2.C 2.E 3.E 3.G 3.H 5.G  B  C  Coordinate Systems Lesson 1: Describe the key attributes of the coordinate plane. Lesson 2:  Construct a coordinate system on a plane.  Lessons 3–4:  Name points using coordinate pairs, and use the coordinate pairs to…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "Secondary_Mathematics_Program_Implementation_Guide.pdf": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 95,
+        "by_element_type": {
+          "standards_objectives": 8,
+          "logistics_materials": 66,
+          "direct_instruction": 5,
+          "guided_practice": 4,
+          "assessment_checkpoint": 4,
+          "reflection_closure": 5,
+          "unclear": 2,
+          "hook_engagement": 1
+        },
+        "doc_id": "Secondary_Mathematics_Program_Implementation_Guide.pdf"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "PRESENT",
+            "count": 8,
+            "cites": [
+              "Module and Topic-Level Components Component  Description  Use  For Whom?  Module Overview  The Module Overview describes the reasoning behind the name of the module, the mathematics developed throughout the module, how the module connects to prior learning, and how it connects to future learning. The Module Overview also includes an Assessment Summary, which explains when to administer the summative assessments available in the module and identifies the TEKS covered in each assessment.  Module…",
+              "Lesson-Level Components Component  Description  Use  For Whom?  Facilitation Notes  The Facilitation Notes within the Teacher Edition of the materials provide detailed notes to support the teacher in their planning process. This resource includes a Lesson Overview, as well as pointof-use supports that serve as the teacher’s primary resource for planning, guiding, and facilitating student learning. Student Lesson and Assignment pages are embedded within the Facilitation Notes, with answer keys…",
+              "Description  Use  For Whom?  Module Overview  The Module Overview describes the reasoning behind the name of the module, the mathematics developed throughout the module, how the module connects to prior learning, and how it connects to future learning. The Module Overview also includes an Assessment Summary, which explains when to administer the summative assessments available in the module and identifies the TEKS covered in each assessment.  Module Level  Teacher  Topic Level  Teacher  Topic…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "PRESENT",
+            "count": 68,
+            "cites": [
+              "The Course Guide is a student‑facing resource. It provides information about the course to students. Students should continually reference certain components found in the course guide including the Academic Glossary, and the Problem‑Solving Model Graphic Organizer.  Course Level  Student  Scope and Sequence  The Scope and Sequence provides you with the Lesson Overview and the Essential Ideas for each lesson. It also provides you with lesson pacing, suggested placement for Learning Individually…",
+              "Each course in the program consists of a variety of Course Components. The table lists each Course-level component, a description for the component, the frequency of use, and for whom the component is designed.  Course Components Component  Description  Use  For Whom?  Course and Implementation Guide  The Course and Implementation Guide is a course‑level document that provides an overview of the instructional approach, pedagogy, features, and course components. It also includes support for the…",
+              "Welcome The Bluebonnet Learning Secondary Mathematics Edition 1 has been specifically designed by the Texas Education Agency (TEA) for students served by Texas schools. These Texas-designed instructional materials were thoughtfully crafted around well-defined scope and sequences and a systematic approach to learning. The materials focus on active learning, which engages students dynamically, encourages discourse and collaboration, and addresses personalized learning approaches. The Bluebonnet…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "PRESENT",
+        "present": 3,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Assessment  Type  Description and Purpose  How to Utilize the Evidence  Questions to Support Discourse; Student Look-Fors  Formative  • To provide checks for  Worked Examples; Thumb Up/Thumbs Down Problems; Who’s Correct Problems  Formative  • Worked Examples  Allows teachers to check for • Refer to the lesson Facilitation Notes understanding and common for strategies to help misconceptions during the students interact with lesson as: the Worked Example. • students interact with • Prepare a…",
+              "Questions 1–3 present an opportunity to assess students’ understanding of the essential content of the lesson. Use student responses to determine when to schedule Learning Individually Days. To provide additional practice identifying dependent and independent quantities, assign Skills Practice Set A for this lesson.  2. Name the quantities that remain constant. The quantities that remain constant are Ms. Patel’s rate of $25 per page and the $325 initial fee to manage the project.  Just as…",
+              "2. Name the quantities that remain constant. The quantities that remain constant are Ms. Patel’s rate of $25 per page and the $325 initial fee to manage the project.  Just as teachers learn from analyzing student students learn from peer 3. Which quantitywork, depends on the other? The amount of money earned depends on the number of work analysis. Who’s Correct, Thumbspages Up, and Thumbs Down problems translated. throughout the courses allow students to analyze peer work. Viewing the correct…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "PRESENT",
+            "count": 10,
+            "cites": [
+              "Welcome The Bluebonnet Learning Secondary Mathematics Edition 1 has been specifically designed by the Texas Education Agency (TEA) for students served by Texas schools. These Texas-designed instructional materials were thoughtfully crafted around well-defined scope and sequences and a systematic approach to learning. The materials focus on active learning, which engages students dynamically, encourages discourse and collaboration, and addresses personalized learning approaches. The Bluebonnet…",
+              "Lesson-Level Components Component  Description  Use  For Whom?  Facilitation Notes  The Facilitation Notes within the Teacher Edition of the materials provide detailed notes to support the teacher in their planning process. This resource includes a Lesson Overview, as well as pointof-use supports that serve as the teacher’s primary resource for planning, guiding, and facilitating student learning. Student Lesson and Assignment pages are embedded within the Facilitation Notes, with answer keys…",
+              "Program Components Component  Description  Use  Program and Implementation Guide  The Program and Implementation Guide is a program-level document that provides an overview of what is included in the program and details the organization of the program. The guide includes implementation support for teachers, instructional coaches, and administrators.  Program Level Teacher Administrator Instructional Coach  For Whom?  Content Organization  The Content Organization is a program-level document…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "PRESENT",
+            "count": 8,
+            "cites": [
+              "Lesson-Level Components Component  Description  Use  For Whom?  Facilitation Notes  The Facilitation Notes within the Teacher Edition of the materials provide detailed notes to support the teacher in their planning process. This resource includes a Lesson Overview, as well as pointof-use supports that serve as the teacher’s primary resource for planning, guiding, and facilitating student learning. Student Lesson and Assignment pages are embedded within the Facilitation Notes, with answer keys…",
+              "Assessment  Type  Description and Purpose  How to Utilize the Evidence  Questions to Support Discourse; Student Look-Fors  Formative  • To provide checks for  Worked Examples; Thumb Up/Thumbs Down Problems; Who’s Correct Problems  Formative  • Worked Examples  Allows teachers to check for • Refer to the lesson Facilitation Notes understanding and common for strategies to help misconceptions during the students interact with lesson as: the Worked Example. • students interact with • Prepare a…",
+              "FM-30 PROGRAM AND IMPLEMENTATION GUIDE   Data Analysis and Guidance Data is what drives instruction. There are many opportunities throughout this program to gather data and the data comes in many forms. A summative assessment is not the only way to gather data. Educators can also gather data by analyzing student work and facilitating discourse. As students work through the lesson, the activities in the lesson and the Questions to Support Discourse are provided to assist teachers in gathering…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 85,
+            "cites": [
+              "The TEKS Summary is a course‑level document to show how the TEKS are addressed at the lesson, topic, module, and course levels.  Course Level",
+              "The Course Guide is a student‑facing resource. It provides information about the course to students. Students should continually reference certain components found in the course guide including the Academic Glossary, and the Problem‑Solving Model Graphic Organizer.  Course Level  Student  Scope and Sequence  The Scope and Sequence provides you with the Lesson Overview and the Essential Ideas for each lesson. It also provides you with lesson pacing, suggested placement for Learning Individually…",
+              "Welcome The Bluebonnet Learning Secondary Mathematics Edition 1 has been specifically designed by the Texas Education Agency (TEA) for students served by Texas schools. These Texas-designed instructional materials were thoughtfully crafted around well-defined scope and sequences and a systematic approach to learning. The materials focus on active learning, which engages students dynamically, encourages discourse and collaboration, and addresses personalized learning approaches. The Bluebonnet…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    }
+  }
+}

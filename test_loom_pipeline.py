@@ -56,6 +56,61 @@ def test_handoff_schemas_exist() -> None:
         json.loads((handoffs / name).read_text(encoding="utf-8"))
 
 
+def _enum(schema: dict, prop: str) -> set[str]:
+    return set(((schema.get("properties") or {}).get(prop) or {}).get("enum") or [])
+
+
+def test_handoff_schema_enums_cover_every_path() -> None:
+    """The schemas drifted to a six-path world once and nothing caught it.
+
+    Asserting against the checklist YAMLs rather than a literal list means adding
+    Path I updates this test by adding the lens, not by remembering to edit it.
+    """
+    checklists = sorted((BASE / "workflows" / "checklists").glob("*.yaml"))
+    live_paths, live_workflows = set(), set()
+    for path in checklists:
+        text = path.read_text(encoding="utf-8")
+        for line, bucket in (("path:", live_paths), ("workflow_id:", live_workflows)):
+            for row in text.splitlines():
+                if row.startswith(line):
+                    bucket.add(row.split(":", 1)[1].strip())
+
+    handoffs = BASE / "workflows" / "handoffs"
+    for name in ("router_to_workflow.json", "workflow_to_place.json"):
+        schema = json.loads((handoffs / name).read_text(encoding="utf-8"))
+        assert live_paths <= _enum(schema, "path"), (
+            f"{name} path enum is missing {sorted(live_paths - _enum(schema, 'path'))}"
+        )
+        missing = live_workflows - _enum(schema, "workflow_id")
+        assert not missing, f"{name} workflow_id enum is missing {sorted(missing)}"
+
+
+def test_emitted_handoff_matches_its_schema() -> None:
+    """Validate a real emitted handoff, not just that the schema parses.
+
+    Skipped rather than failed when Dallas has not been run in this checkout —
+    the always-on tests must stay corpus-free.
+    """
+    emitted = project_dir(PROJECT) / "layer0" / "workflow-handoff.json"
+    if not emitted.is_file():
+        return
+    schema = json.loads(
+        (BASE / "workflows" / "handoffs" / "workflow_to_place.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    rows = json.loads(emitted.read_text(encoding="utf-8")).get("workflows") or []
+    assert rows, "workflow-handoff.json has no workflows"
+    for row in rows:
+        for prop in ("workflow_id", "path", "status"):
+            allowed = _enum(schema, prop)
+            value = row.get(prop)
+            assert value in allowed, (
+                f"path {row.get('path')}: {prop}={value!r} not in schema enum "
+                f"{sorted(allowed)}"
+            )
+
+
 def test_tiers_math() -> None:
     """Honest Strong when Hunter is solid — calendar GAPS must not block it."""
     strong = compute_curriculum_tier(
@@ -109,7 +164,7 @@ def test_route_map_covers_docs() -> None:
 
 
 def test_path_workflows_a1_a8() -> None:
-    """Path A emits A1–A8; B/C stubs write findings; no invented curriculum required."""
+    """Path A emits A1–A8; Paths B–H write findings; no invented curriculum required."""
     if not _dallas_ready():
         print("SKIP test_path_workflows_a1_a8 (no local Dallas corpus/ledger)")
         return
@@ -188,6 +243,8 @@ def test_route_gate_helpers() -> None:
 if __name__ == "__main__":
     tests = [
         test_handoff_schemas_exist,
+        test_handoff_schema_enums_cover_every_path,
+        test_emitted_handoff_matches_its_schema,
         test_tiers_math,
         test_route_map_covers_docs,
         test_path_workflows_a1_a8,

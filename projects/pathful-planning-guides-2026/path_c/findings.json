@@ -1,0 +1,601 @@
+{
+  "project_id": "pathful-planning-guides-2026",
+  "workflow_id": "general",
+  "path": "C",
+  "lens": "General feedback",
+  "status": "ok",
+  "doc_ids": [
+    "doc_pathful_1424833_Planning_Guide_WBL_High_School",
+    "doc_pathful_1424838_Planning_Guide_WBL_Middle_School",
+    "doc_pathful_1424840_Planning_Guide_CCE_Middle_School",
+    "doc_pathful_1424841_Planning_Guide_CCE_High_School",
+    "doc_pathful_1424890_Planning_Guide_Special_Education_Transition",
+    "doc_pathful_1454298_Planning_Guide_PreETS_Roadmap",
+    "doc_pathful_1530547_Planning_Guide_Activity_Sequence_Flowchart"
+  ],
+  "checklist": "workflows/checklists/general.yaml",
+  "inventory": [
+    {
+      "doc_id": "doc_pathful_1424833_Planning_Guide_WBL_High_School",
+      "doc_type": "other",
+      "element_count": 6,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "doc_pathful_1424838_Planning_Guide_WBL_Middle_School",
+      "doc_type": "other",
+      "element_count": 32,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "doc_pathful_1424840_Planning_Guide_CCE_Middle_School",
+      "doc_type": "other",
+      "element_count": 10,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "doc_pathful_1424841_Planning_Guide_CCE_High_School",
+      "doc_type": "other",
+      "element_count": 6,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "doc_pathful_1424890_Planning_Guide_Special_Education_Transition",
+      "doc_type": "other",
+      "element_count": 4,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "doc_pathful_1454298_Planning_Guide_PreETS_Roadmap",
+      "doc_type": "other",
+      "element_count": 6,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "doc_pathful_1530547_Planning_Guide_Activity_Sequence_Flowchart",
+      "doc_type": "other",
+      "element_count": 2,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    }
+  ],
+  "steps_by_doc": {
+    "doc_pathful_1424833_Planning_Guide_WBL_High_School": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 6,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "direct_instruction": 1,
+          "assessment_checkpoint": 1,
+          "guided_practice": 1,
+          "reflection_closure": 1,
+          "logistics_materials": 1
+        },
+        "doc_id": "doc_pathful_1424833_Planning_Guide_WBL_High_School"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "doc_pathful_1424833_Planning_Guide_WBL_High_School",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "This Planning Guide for Pathful provides a sample sequence of career exploration learning activities across grades 9-12. WBL High School Planning Guide Overview This Planning Guide offers just one way that you can use Pathful for career exploration. We know that district and state requirements may vary, so feel free to make changes to meet your needs by using additional lesson content, customizing lessons, or changing the grade levels in which activities are completed. Pathful offers hundreds…",
+              "---  Lessons: Careers 1. Financial Literacy 2. Understanding Failure 3. Problem-Solving 4. Understanding Patience 5. Handling Constructive Criticism 6. Time Management 7. My First Job 8. Leadership 9. Employability Skills Videos: 3 Financial Literacy Employability Skills Videos, including: Control Your Future by Creating a Financial Game Plan and How Spending Can Get You Into Trouble if You Aren’t Budgeting 1. 30 Overcoming Obstacles Employability Skills Videos, including: Failure is Success…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "doc_pathful_1424838_Planning_Guide_WBL_Middle_School": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 32,
+        "by_element_type": {
+          "standards_objectives": 2,
+          "direct_instruction": 10,
+          "assessment_checkpoint": 10,
+          "logistics_materials": 10
+        },
+        "doc_id": "doc_pathful_1424838_Planning_Guide_WBL_Middle_School"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "doc_pathful_1424838_Planning_Guide_WBL_Middle_School",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "This Planning Guide for Pathful provides a sample sequence of career exploration learning activities across grades 6-8. WBL Middle School Planning Guide Overview This Planning Guide offers just one way that you can use Pathful for career exploration. We know that district and state requirements may vary, so feel free to make changes to meet your needs by using additional lesson content, customizing lessons, or changing the grade levels in which activities are completed. Pathful offers hundreds…",
+              "Understanding Myself & Building Soft Skills How can collaboration improve the quality of work and help you develop new ideas? Teacher View Lessons: My Plan Outline 1. Communication 2. Collaboration 3. Soft and Hard Skills 4. Leadership 5. Handling Constructive Criticism 6. Understanding Patience 7. Understanding Failure 8. Understanding Flexibility 9. Time Management 10. Understanding Problem Solving 11. Workplace Readiness Skills 12. Personal Presentation is the Key to Making a Good First…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "doc_pathful_1424840_Planning_Guide_CCE_Middle_School": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 10,
+        "by_element_type": {
+          "standards_objectives": 4,
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1,
+          "logistics_materials": 1,
+          "unclear": 1
+        },
+        "doc_id": "doc_pathful_1424840_Planning_Guide_CCE_Middle_School"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "doc_pathful_1424840_Planning_Guide_CCE_Middle_School",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "This Planning Guide for Pathful provides a sample sequence of career exploration learning activities across grades 6-8. CCE Middle School Planning Guide Overview This Planning Guide offers just one way that you can use Pathful for career exploration. We know that district and state requirements may vary, so feel free to make changes to meet your needs by using additional lesson content, customizing lessons, or changing the grade levels in which activities are completed. Pathful offers hundreds…",
+              "Teacher View Lessons: Postsecondary Education 1. Postsecondary Planning 2. A Guide to the FAFSA and/or FAFSA 101 3. My Plan Outline 4. Soft and Hard Skills 5. Understanding Flexibility 6. The STEM Career Cluster 7. Communication 8. Collaboration 9. Personal Presentation is the Key to Making a Good First Impression 10. Employability Skills Videos: 27 Other Ways to Learn Employability Skills Videos including: All the Benefits of Career Technical Education and How to Get the Most Out of Your…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "doc_pathful_1424841_Planning_Guide_CCE_High_School": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 6,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1,
+          "logistics_materials": 1
+        },
+        "doc_id": "doc_pathful_1424841_Planning_Guide_CCE_High_School"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "doc_pathful_1424841_Planning_Guide_CCE_High_School",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "This Planning Guide for Pathful provides a sample sequence of career exploration learning activities across grades 9-12. CCE High School Planning Guide Overview This Planning Guide offers just one way that you can use Pathful for career exploration. We know that district and state requirements may vary, so feel free to make changes to meet your needs by using additional lesson content, customizing lessons, or changing the grade levels in which activities are completed. Pathful offers hundreds…",
+              "Teacher View Lessons: Postsecondary Education 1. Postsecondary Planning 2. FAFSA 101 and/or A Guide to the FAFSA 3. My Plan Outline 4. Soft and Hard Skills 5. Understanding Flexibility 6. The STEM Career Cluster 7. Communication 8. Collaboration 9. Personal Presentation is the Key to Making a Good First Impression 10. Employability Skills Videos: Careers and YOUR Interests Academics/Major Employability Videos, including: How to Choose an Area of Study and Look at What’s in Your Heart When…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "doc_pathful_1424890_Planning_Guide_Special_Education_Transition": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 4,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "logistics_materials": 1,
+          "hook_engagement": 1,
+          "direct_instruction": 1
+        },
+        "doc_id": "doc_pathful_1424890_Planning_Guide_Special_Education_Transition"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "doc_pathful_1424890_Planning_Guide_Special_Education_Transition",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "doc_pathful_1454298_Planning_Guide_PreETS_Roadmap": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 6,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "direct_instruction": 1,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1,
+          "logistics_materials": 1,
+          "unclear": 1
+        },
+        "doc_id": "doc_pathful_1454298_Planning_Guide_PreETS_Roadmap"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "doc_pathful_1454298_Planning_Guide_PreETS_Roadmap",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "doc_pathful_1530547_Planning_Guide_Activity_Sequence_Flowchart": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 2,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "logistics_materials": 1
+        },
+        "doc_id": "doc_pathful_1530547_Planning_Guide_Activity_Sequence_Flowchart"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "doc_pathful_1530547_Planning_Guide_Activity_Sequence_Flowchart",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    }
+  },
+  "feedback_file": "_loom_feedback.yaml"
+}

@@ -1,0 +1,200 @@
+{
+  "paths": {
+    "A": {
+      "cells": {
+        "*:A2.objective": "MISSING",
+        "*:A2.teks": "MISSING",
+        "*:A3": "MISSING",
+        "*:A4.formative": "MISSING",
+        "*:A4.summative": "MISSING",
+        "*:A5.hunter_core_present": "0",
+        "*:A5.hunter_core_total": "8",
+        "*:A7.accommodations": "MISSING",
+        "*:A7.elps": "MISSING",
+        "*:A8": "emitted"
+      },
+      "checklist": "workflows/checklists/daily_lesson_plan.yaml",
+      "doc_ids": [],
+      "lens": "Lesson",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {
+        "0": 1,
+        "8": 1,
+        "MISSING": 7,
+        "emitted": 1
+      },
+      "workflow_id": "lesson_plan"
+    },
+    "B": {
+      "cells": {
+        "3fd5e5bc561c:B1": "PRESENT",
+        "3fd5e5bc561c:B2": "PRESENT",
+        "3fd5e5bc561c:B3": "MISSING",
+        "3fd5e5bc561c:B4": "PRESENT",
+        "3fd5e5bc561c:B5": "PARTIAL",
+        "3fd5e5bc561c:B6": "STUB",
+        "86fff193b91a:B1": "PRESENT",
+        "86fff193b91a:B2": "PRESENT",
+        "86fff193b91a:B3": "PRESENT",
+        "86fff193b91a:B4": "PRESENT",
+        "86fff193b91a:B5": "PRESENT",
+        "86fff193b91a:B6": "STUB",
+        "d3fae80ecd3f:B1": "PRESENT",
+        "d3fae80ecd3f:B2": "PRESENT",
+        "d3fae80ecd3f:B3": "MISSING",
+        "d3fae80ecd3f:B4": "PRESENT",
+        "d3fae80ecd3f:B5": "PRESENT",
+        "d3fae80ecd3f:B6": "STUB",
+        "doc_weak01_Blank_Quiz_Placeholder:B1": "PRESENT",
+        "doc_weak01_Blank_Quiz_Placeholder:B2": "MISSING",
+        "doc_weak01_Blank_Quiz_Placeholder:B3": "MISSING",
+        "doc_weak01_Blank_Quiz_Placeholder:B4": "MISSING",
+        "doc_weak01_Blank_Quiz_Placeholder:B5": "PARTIAL",
+        "doc_weak01_Blank_Quiz_Placeholder:B6": "STUB",
+        "ed1c99b4f5fa:B1": "PRESENT",
+        "ed1c99b4f5fa:B2": "PRESENT",
+        "ed1c99b4f5fa:B3": "PRESENT",
+        "ed1c99b4f5fa:B4": "PRESENT",
+        "ed1c99b4f5fa:B5": "PRESENT",
+        "ed1c99b4f5fa:B6": "STUB",
+        "fc48920a5ca9:B1": "PRESENT",
+        "fc48920a5ca9:B2": "PRESENT",
+        "fc48920a5ca9:B3": "MISSING",
+        "fc48920a5ca9:B4": "PRESENT",
+        "fc48920a5ca9:B5": "PRESENT",
+        "fc48920a5ca9:B6": "STUB"
+      },
+      "checklist": "workflows/checklists/assessment.yaml",
+      "doc_ids": [
+        "3fd5e5bc561c",
+        "86fff193b91a",
+        "d3fae80ecd3f",
+        "doc_weak01_Blank_Quiz_Placeholder",
+        "ed1c99b4f5fa",
+        "fc48920a5ca9"
+      ],
+      "lens": "Assessment",
+      "n_docs": 6,
+      "status": "ok",
+      "status_counts": {
+        "MISSING": 6,
+        "PARTIAL": 2,
+        "PRESENT": 22,
+        "STUB": 6
+      },
+      "workflow_id": "quiz"
+    },
+    "C": {
+      "cells": {},
+      "checklist": null,
+      "doc_ids": [],
+      "lens": null,
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "general"
+    },
+    "D": {
+      "cells": {},
+      "checklist": null,
+      "doc_ids": [],
+      "lens": "Teacher support",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "teacher_support"
+    },
+    "E": {
+      "cells": {},
+      "checklist": null,
+      "doc_ids": [],
+      "lens": "Student practice",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "student_practice"
+    },
+    "F": {
+      "cells": {},
+      "checklist": null,
+      "doc_ids": [],
+      "lens": "Standards & pacing",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "standards_pacing"
+    },
+    "G": {
+      "cells": {},
+      "checklist": "workflows/checklists/syllabus.yaml",
+      "doc_ids": [],
+      "lens": "Syllabus",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "syllabus"
+    },
+    "H": {
+      "cells": {},
+      "checklist": null,
+      "doc_ids": [],
+      "lens": "Exit ticket",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "exit_ticket"
+    }
+  },
+  "project_id": "lab-assessment-path-b",
+  "route_map": {
+    "counts": {
+      "quiz": 6
+    },
+    "routes": [
+      {
+        "doc_id": "3fd5e5bc561c",
+        "doc_type": "quiz",
+        "path": "B",
+        "reason": "filename doc_type=quiz",
+        "workflow_id": "quiz"
+      },
+      {
+        "doc_id": "86fff193b91a",
+        "doc_type": "answer_key",
+        "path": "B",
+        "reason": "filename doc_type=answer_key",
+        "workflow_id": "quiz"
+      },
+      {
+        "doc_id": "d3fae80ecd3f",
+        "doc_type": "quiz",
+        "path": "B",
+        "reason": "filename doc_type=quiz",
+        "workflow_id": "quiz"
+      },
+      {
+        "doc_id": "doc_weak01_Blank_Quiz_Placeholder",
+        "doc_type": "quiz",
+        "path": "B",
+        "reason": "filename doc_type=quiz",
+        "workflow_id": "quiz"
+      },
+      {
+        "doc_id": "ed1c99b4f5fa",
+        "doc_type": "answer_key",
+        "path": "B",
+        "reason": "filename doc_type=answer_key",
+        "workflow_id": "quiz"
+      },
+      {
+        "doc_id": "fc48920a5ca9",
+        "doc_type": "quiz",
+        "path": "B",
+        "reason": "filename doc_type=quiz",
+        "workflow_id": "quiz"
+      }
+    ],
+    "unrouted_ledger_doc_ids": []
+  }
+}

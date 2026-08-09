@@ -17,7 +17,6 @@ from pathlib import Path
 from typing import Any
 
 from audit_lib import (
-    atomic_write,
     classify_doc_type,
     load_yaml,
     log,
@@ -25,6 +24,7 @@ from audit_lib import (
 )
 from route import load_route_map, routed_doc_ids
 from unit_plan_fill import _trunc
+from workflows.findings_io import write_path_findings
 
 CHECKLIST_PATH = (
     Path(__file__).resolve().parent / "checklists" / "standards_pacing.yaml"
@@ -110,7 +110,7 @@ def f1_inventory(elements: list[dict], doc_id: str) -> dict:
 def f_presence_for_step(
     elements: list[dict], checklist: dict, step: str
 ) -> dict:
-    """Run one F2–F4 step: PRESENT/PARTIAL/MISSING (+ optional soft-miss)."""
+    """Run one F2–F4 step: PRESENT/PARTIAL/MISSING/OPTIONAL_ABSENT."""
     fields_out = []
     present = 0
     required = 0
@@ -141,9 +141,12 @@ def f_presence_for_step(
             }
         )
     if required == 0:
-        # All optional (F4): PRESENT if any optional hit, else MISSING.
+        # All-optional step (F4): a hit is still good news (PRESENT), but finding
+        # nothing is not a gap. OPTIONAL_ABSENT keeps MISSING reserved for
+        # required fields that failed — otherwise the Paths panel and the
+        # artifact gate cannot tell "nice-to-have absent" from a real finding.
         opt_hits = sum(1 for f in fields_out if f["status"] == "PRESENT")
-        rollup = "PRESENT" if opt_hits else "MISSING"
+        rollup = "PRESENT" if opt_hits else "OPTIONAL_ABSENT"
     elif present == required:
         rollup = "PRESENT"
     elif present == 0:
@@ -251,7 +254,6 @@ def run_path_f_for_project(project_id: str) -> dict:
         "steps_by_doc": steps_by_doc,
     }
     dest = root / "path_f" / "findings.json"
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    atomic_write(dest, json.dumps(out, indent=2, ensure_ascii=False))
+    write_path_findings(dest, out)
     log(f"path F → {len(doc_ids)} standards_pacing doc(s); F1–F4 presence extract")
     return out

@@ -97,7 +97,8 @@ def test_weak_other_lacks_growth_bucket() -> None:
     elements = _elements_from_text("c2", text, "Other_Handout_Stub.txt")
     cl = load_general_checklist()
     c4 = c_presence_for_step(elements, cl, "C4")
-    assert c4["status"] == "MISSING"
+    # C4 is all-optional — no growth-bucket cue is OPTIONAL_ABSENT, not MISSING.
+    assert c4["status"] == "OPTIONAL_ABSENT"
 
 
 def test_run_path_c_writes_findings() -> None:

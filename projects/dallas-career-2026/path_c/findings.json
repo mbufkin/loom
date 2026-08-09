@@ -27,7 +27,7 @@
         "note": "feedback flagged on route-map"
       },
       "C4": {
-        "status": "MISSING",
+        "status": "OPTIONAL_ABSENT",
         "note": "0/0 fields present"
       },
       "C5": {
@@ -65,7 +65,7 @@
       },
       "C4": {
         "step": "C4",
-        "status": "MISSING",
+        "status": "OPTIONAL_ABSENT",
         "present": 0,
         "required": 0,
         "fields": [

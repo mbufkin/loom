@@ -70,7 +70,8 @@ def test_weak_sequence_lacks_standards() -> None:
     elements = _elements_from_text("f2", text)
     cl = load_standards_pacing_checklist()
     f4 = f_presence_for_step(elements, cl, "F4")
-    assert f4["status"] == "MISSING"
+    # F4 is all-optional — no standards cue is OPTIONAL_ABSENT, not MISSING.
+    assert f4["status"] == "OPTIONAL_ABSENT"
 
 
 def test_run_path_f_writes_findings() -> None:

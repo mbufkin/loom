@@ -1,0 +1,206 @@
+{
+  "paths": {
+    "A": {
+      "cells": {
+        "*:A2.objective": "MISSING",
+        "*:A2.teks": "MISSING",
+        "*:A3": "MISSING",
+        "*:A4.formative": "MISSING",
+        "*:A4.summative": "MISSING",
+        "*:A5.hunter_core_present": "0",
+        "*:A5.hunter_core_total": "8",
+        "*:A7.accommodations": "MISSING",
+        "*:A7.elps": "MISSING",
+        "*:A8": "emitted"
+      },
+      "checklist": "workflows/checklists/daily_lesson_plan.yaml",
+      "doc_ids": [],
+      "lens": "Lesson",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {
+        "0": 1,
+        "8": 1,
+        "MISSING": 7,
+        "emitted": 1
+      },
+      "workflow_id": "lesson_plan"
+    },
+    "B": {
+      "cells": {},
+      "checklist": "workflows/checklists/assessment.yaml",
+      "doc_ids": [],
+      "lens": "Assessment",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "quiz"
+    },
+    "C": {
+      "cells": {
+        "doc_pathful_1424833_Planning_Guide_WBL_High_School:C1": "PRESENT",
+        "doc_pathful_1424833_Planning_Guide_WBL_High_School:C2": "PRESENT",
+        "doc_pathful_1424833_Planning_Guide_WBL_High_School:C3": "PRESENT",
+        "doc_pathful_1424833_Planning_Guide_WBL_High_School:C4": "PRESENT",
+        "doc_pathful_1424833_Planning_Guide_WBL_High_School:C5": "STUB",
+        "doc_pathful_1424838_Planning_Guide_WBL_Middle_School:C1": "PRESENT",
+        "doc_pathful_1424838_Planning_Guide_WBL_Middle_School:C2": "PRESENT",
+        "doc_pathful_1424838_Planning_Guide_WBL_Middle_School:C3": "PRESENT",
+        "doc_pathful_1424838_Planning_Guide_WBL_Middle_School:C4": "PRESENT",
+        "doc_pathful_1424838_Planning_Guide_WBL_Middle_School:C5": "STUB",
+        "doc_pathful_1424840_Planning_Guide_CCE_Middle_School:C1": "PRESENT",
+        "doc_pathful_1424840_Planning_Guide_CCE_Middle_School:C2": "PRESENT",
+        "doc_pathful_1424840_Planning_Guide_CCE_Middle_School:C3": "PRESENT",
+        "doc_pathful_1424840_Planning_Guide_CCE_Middle_School:C4": "PRESENT",
+        "doc_pathful_1424840_Planning_Guide_CCE_Middle_School:C5": "STUB",
+        "doc_pathful_1424841_Planning_Guide_CCE_High_School:C1": "PRESENT",
+        "doc_pathful_1424841_Planning_Guide_CCE_High_School:C2": "PRESENT",
+        "doc_pathful_1424841_Planning_Guide_CCE_High_School:C3": "PRESENT",
+        "doc_pathful_1424841_Planning_Guide_CCE_High_School:C4": "PRESENT",
+        "doc_pathful_1424841_Planning_Guide_CCE_High_School:C5": "STUB",
+        "doc_pathful_1424890_Planning_Guide_Special_Education_Transition:C1": "PRESENT",
+        "doc_pathful_1424890_Planning_Guide_Special_Education_Transition:C2": "PRESENT",
+        "doc_pathful_1424890_Planning_Guide_Special_Education_Transition:C3": "PRESENT",
+        "doc_pathful_1424890_Planning_Guide_Special_Education_Transition:C4": "OPTIONAL_ABSENT",
+        "doc_pathful_1424890_Planning_Guide_Special_Education_Transition:C5": "STUB",
+        "doc_pathful_1454298_Planning_Guide_PreETS_Roadmap:C1": "PRESENT",
+        "doc_pathful_1454298_Planning_Guide_PreETS_Roadmap:C2": "PRESENT",
+        "doc_pathful_1454298_Planning_Guide_PreETS_Roadmap:C3": "PRESENT",
+        "doc_pathful_1454298_Planning_Guide_PreETS_Roadmap:C4": "OPTIONAL_ABSENT",
+        "doc_pathful_1454298_Planning_Guide_PreETS_Roadmap:C5": "STUB",
+        "doc_pathful_1530547_Planning_Guide_Activity_Sequence_Flowchart:C1": "PRESENT",
+        "doc_pathful_1530547_Planning_Guide_Activity_Sequence_Flowchart:C2": "PRESENT",
+        "doc_pathful_1530547_Planning_Guide_Activity_Sequence_Flowchart:C3": "PRESENT",
+        "doc_pathful_1530547_Planning_Guide_Activity_Sequence_Flowchart:C4": "OPTIONAL_ABSENT",
+        "doc_pathful_1530547_Planning_Guide_Activity_Sequence_Flowchart:C5": "STUB"
+      },
+      "checklist": "workflows/checklists/general.yaml",
+      "doc_ids": [
+        "doc_pathful_1424833_Planning_Guide_WBL_High_School",
+        "doc_pathful_1424838_Planning_Guide_WBL_Middle_School",
+        "doc_pathful_1424840_Planning_Guide_CCE_Middle_School",
+        "doc_pathful_1424841_Planning_Guide_CCE_High_School",
+        "doc_pathful_1424890_Planning_Guide_Special_Education_Transition",
+        "doc_pathful_1454298_Planning_Guide_PreETS_Roadmap",
+        "doc_pathful_1530547_Planning_Guide_Activity_Sequence_Flowchart"
+      ],
+      "lens": "General feedback",
+      "n_docs": 7,
+      "status": "ok",
+      "status_counts": {
+        "OPTIONAL_ABSENT": 3,
+        "PRESENT": 25,
+        "STUB": 7
+      },
+      "workflow_id": "general"
+    },
+    "D": {
+      "cells": {},
+      "checklist": "workflows/checklists/teacher_support.yaml",
+      "doc_ids": [],
+      "lens": "Teacher support",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "teacher_support"
+    },
+    "E": {
+      "cells": {},
+      "checklist": "workflows/checklists/student_practice.yaml",
+      "doc_ids": [],
+      "lens": "Student practice",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "student_practice"
+    },
+    "F": {
+      "cells": {},
+      "checklist": "workflows/checklists/standards_pacing.yaml",
+      "doc_ids": [],
+      "lens": "Standards & pacing",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "standards_pacing"
+    },
+    "G": {
+      "cells": {},
+      "checklist": "workflows/checklists/syllabus.yaml",
+      "doc_ids": [],
+      "lens": "Syllabus",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "syllabus"
+    },
+    "H": {
+      "cells": {},
+      "checklist": "workflows/checklists/exit_ticket.yaml",
+      "doc_ids": [],
+      "lens": "Exit ticket",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "exit_ticket"
+    }
+  },
+  "project_id": "pathful-planning-guides-2026",
+  "route_map": {
+    "counts": {
+      "general": 7
+    },
+    "routes": [
+      {
+        "doc_id": "doc_pathful_1424833_Planning_Guide_WBL_High_School",
+        "doc_type": "other",
+        "path": "C",
+        "reason": "mapped from doc_type=other (general feedback lens)",
+        "workflow_id": "general"
+      },
+      {
+        "doc_id": "doc_pathful_1424838_Planning_Guide_WBL_Middle_School",
+        "doc_type": "other",
+        "path": "C",
+        "reason": "mapped from doc_type=other (general feedback lens)",
+        "workflow_id": "general"
+      },
+      {
+        "doc_id": "doc_pathful_1424840_Planning_Guide_CCE_Middle_School",
+        "doc_type": "other",
+        "path": "C",
+        "reason": "mapped from doc_type=other (general feedback lens)",
+        "workflow_id": "general"
+      },
+      {
+        "doc_id": "doc_pathful_1424841_Planning_Guide_CCE_High_School",
+        "doc_type": "other",
+        "path": "C",
+        "reason": "mapped from doc_type=other (general feedback lens)",
+        "workflow_id": "general"
+      },
+      {
+        "doc_id": "doc_pathful_1424890_Planning_Guide_Special_Education_Transition",
+        "doc_type": "other",
+        "path": "C",
+        "reason": "mapped from doc_type=other (general feedback lens)",
+        "workflow_id": "general"
+      },
+      {
+        "doc_id": "doc_pathful_1454298_Planning_Guide_PreETS_Roadmap",
+        "doc_type": "other",
+        "path": "C",
+        "reason": "mapped from doc_type=other (general feedback lens)",
+        "workflow_id": "general"
+      },
+      {
+        "doc_id": "doc_pathful_1530547_Planning_Guide_Activity_Sequence_Flowchart",
+        "doc_type": "other",
+        "path": "C",
+        "reason": "mapped from doc_type=other (general feedback lens)",
+        "workflow_id": "general"
+      }
+    ],
+    "unrouted_ledger_doc_ids": []
+  }
+}

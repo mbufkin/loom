@@ -1,0 +1,113 @@
+{
+  "project_id": "pathful-planning-guides-2026",
+  "generated_at": "2026-08-09T16:45:18.777214+00:00",
+  "lenses": {
+    "lesson_plan": "Lesson",
+    "quiz": "Assessment",
+    "general": "General feedback",
+    "teacher_support": "Teacher support",
+    "student_practice": "Student practice",
+    "standards_pacing": "Standards & pacing",
+    "syllabus": "Syllabus",
+    "exit_ticket": "Exit ticket"
+  },
+  "counts": {
+    "general": 7
+  },
+  "unrouted_ledger_doc_ids": [],
+  "feedback_path": "/home/lenovo/g10-control-center-loom/projects/pathful-planning-guides-2026/_loom_feedback.yaml",
+  "graph_hints": 0,
+  "routes": [
+    {
+      "doc_id": "doc_pathful_1424833_Planning_Guide_WBL_High_School",
+      "doc_type": "other",
+      "workflow_id": "general",
+      "path": "C",
+      "lens": "General feedback",
+      "reason": "mapped from doc_type=other (general feedback lens)",
+      "feedback": true,
+      "confidence": 0.85,
+      "source_file": "doc_pathful_1424833_Planning_Guide_WBL_High_School.txt",
+      "element_count": 6,
+      "graph_role": null
+    },
+    {
+      "doc_id": "doc_pathful_1424838_Planning_Guide_WBL_Middle_School",
+      "doc_type": "other",
+      "workflow_id": "general",
+      "path": "C",
+      "lens": "General feedback",
+      "reason": "mapped from doc_type=other (general feedback lens)",
+      "feedback": true,
+      "confidence": 0.85,
+      "source_file": "doc_pathful_1424838_Planning_Guide_WBL_Middle_School.txt",
+      "element_count": 32,
+      "graph_role": null
+    },
+    {
+      "doc_id": "doc_pathful_1424840_Planning_Guide_CCE_Middle_School",
+      "doc_type": "other",
+      "workflow_id": "general",
+      "path": "C",
+      "lens": "General feedback",
+      "reason": "mapped from doc_type=other (general feedback lens)",
+      "feedback": true,
+      "confidence": 0.85,
+      "source_file": "doc_pathful_1424840_Planning_Guide_CCE_Middle_School.txt",
+      "element_count": 10,
+      "graph_role": null
+    },
+    {
+      "doc_id": "doc_pathful_1424841_Planning_Guide_CCE_High_School",
+      "doc_type": "other",
+      "workflow_id": "general",
+      "path": "C",
+      "lens": "General feedback",
+      "reason": "mapped from doc_type=other (general feedback lens)",
+      "feedback": true,
+      "confidence": 0.85,
+      "source_file": "doc_pathful_1424841_Planning_Guide_CCE_High_School.txt",
+      "element_count": 6,
+      "graph_role": null
+    },
+    {
+      "doc_id": "doc_pathful_1424890_Planning_Guide_Special_Education_Transition",
+      "doc_type": "other",
+      "workflow_id": "general",
+      "path": "C",
+      "lens": "General feedback",
+      "reason": "mapped from doc_type=other (general feedback lens)",
+      "feedback": true,
+      "confidence": 0.85,
+      "source_file": "doc_pathful_1424890_Planning_Guide_Special_Education_Transition.txt",
+      "element_count": 4,
+      "graph_role": null
+    },
+    {
+      "doc_id": "doc_pathful_1454298_Planning_Guide_PreETS_Roadmap",
+      "doc_type": "other",
+      "workflow_id": "general",
+      "path": "C",
+      "lens": "General feedback",
+      "reason": "mapped from doc_type=other (general feedback lens)",
+      "feedback": true,
+      "confidence": 0.85,
+      "source_file": "doc_pathful_1454298_Planning_Guide_PreETS_Roadmap.txt",
+      "element_count": 6,
+      "graph_role": null
+    },
+    {
+      "doc_id": "doc_pathful_1530547_Planning_Guide_Activity_Sequence_Flowchart",
+      "doc_type": "other",
+      "workflow_id": "general",
+      "path": "C",
+      "lens": "General feedback",
+      "reason": "mapped from doc_type=other (general feedback lens)",
+      "feedback": true,
+      "confidence": 0.85,
+      "source_file": "doc_pathful_1530547_Planning_Guide_Activity_Sequence_Flowchart.txt",
+      "element_count": 2,
+      "graph_role": null
+    }
+  ]
+}

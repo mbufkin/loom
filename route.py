@@ -34,6 +34,7 @@ from audit_lib import (
     project_dir,
     validate_slug_id,
 )
+from schema_validate import raise_on_errors, validate_route_map
 
 # Review lenses A–H (docs/PATHS.md)
 WORKFLOW_LESSON = "lesson_plan"  # Path A — Lesson
@@ -99,23 +100,6 @@ _STANDARDS_RE = re.compile(
 )
 # Match correct spelling first; keep "sylibuis" as typo alias only.
 _SYLLABUS_RE = re.compile(r"syllabus|sylibuis", re.I)
-
-
-def doc_type_to_workflow(doc_type: str) -> tuple[str, str, bool]:
-    """Return (workflow_id, path, needs_feedback) from filename/prior type alone."""
-    dt = (doc_type or "other").strip().lower()
-    if dt in LESSON_TYPES:
-        return WORKFLOW_LESSON, "A", False
-    if dt in EXIT_TICKET_TYPES:
-        return WORKFLOW_EXIT, "H", False
-    if dt in QUIZ_TYPES or dt in ASSESSMENT_EXTRA:
-        return WORKFLOW_ASSESSMENT, "B", False
-    if dt in SYLLABUS_TYPES:
-        return WORKFLOW_SYLLABUS, "G", False
-    if dt in STUDENT_TYPES:
-        return WORKFLOW_STUDENT, "E", False
-    needs_fb = dt in FEEDBACK_TYPES or dt == "other"
-    return WORKFLOW_GENERAL, "C", needs_fb
 
 
 def _is_exit_ticket_name(name: str) -> bool:
@@ -495,6 +479,7 @@ def build_route_map(project_id: str) -> dict:
         "graph_hints": len(graph_hints),
         "routes": routes,
     }
+    raise_on_errors(validate_route_map(out), f"route map {project_id}")
     dest = root / "layer0" / "route-map.json"
     dest.parent.mkdir(parents=True, exist_ok=True)
     atomic_write(dest, json.dumps(out, indent=2, ensure_ascii=False))

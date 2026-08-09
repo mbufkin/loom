@@ -10,6 +10,13 @@ path: C
 workflow_id: general
 
 sections:
+  # Structural inventory step — scored in workflows/general.py (c1_inventory),
+  # not by keyword fields. Listed here so label loaders (Paths panel, artifact
+  # rung) resolve "C1" to a human name the same way they resolve C4.
+  c1_inventory:
+    label: C1 Inventory
+    step: C1
+
   c4_growth:
     label: C4 Growth-bucket cue
     step: C4
