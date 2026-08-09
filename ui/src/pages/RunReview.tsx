@@ -1,7 +1,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { api } from "../lib/api";
 import { MarkdownViewer } from "../components/MarkdownViewer";
-import { OutputNav, VIEW_GRAPH, VIEW_UNITS } from "../components/OutputNav";
+import {
+  OutputNav,
+  VIEW_GRAPH,
+  VIEW_PATHS,
+  VIEW_UNITS,
+} from "../components/OutputNav";
 import { ReviewSlip } from "../components/ReviewSlip";
 import { UnitDetail } from "../components/UnitDetail";
 import { LessonDetail } from "../components/LessonDetail";
@@ -11,6 +16,7 @@ import { PacketTypeBar } from "../components/PacketTypeBar";
 import { Overview } from "../components/Overview";
 import { NextSteps } from "../components/NextSteps";
 import { GraphBelongingPanel } from "../components/GraphBelongingPanel";
+import { PathsPanel } from "../components/PathsPanel";
 import type {
   ArtifactRung,
   Band,
@@ -21,6 +27,7 @@ import type {
   GraphUnitDetail,
   LessonFeedback,
   OutputsTree,
+  PathsSummary,
   Project,
   RunStatus,
   Stats,
@@ -31,6 +38,7 @@ import type {
 const DEFAULT_PROJECT = "dallas-career-2026";
 const UNITS_VIEW = VIEW_UNITS;
 const GRAPH_VIEW = VIEW_GRAPH;
+const PATHS_VIEW = VIEW_PATHS;
 const UNIT_DETAIL = "__unit_detail__";
 const LESSON_DETAIL = "__lesson_detail__";
 const ARTIFACT_DETAIL = "__artifact_detail__";
@@ -98,6 +106,9 @@ export function RunReview() {
   const [graphUnitDetail, setGraphUnitDetail] =
     useState<GraphUnitDetail | null>(null);
   const [graphLoading, setGraphLoading] = useState(false);
+  // Paths A–H: the router's eight review lenses for the current workspace.
+  const [pathsSummary, setPathsSummary] = useState<PathsSummary | null>(null);
+  const [pathsLoading, setPathsLoading] = useState(false);
 
   const [activePath, setActivePath] = useState<string | null>(null);
   const [activeType, setActiveType] = useState<string>("md");
@@ -208,6 +219,7 @@ export function RunReview() {
       setLessonFeedback(null);
       setArtifactRung(null);
       setLessonReview(null);
+      setPathsSummary(null);
       try {
         const tree = await api.outputs(id, e2e);
         setOutputs(tree);
@@ -232,6 +244,14 @@ export function RunReview() {
       api.stats(id, e2e).then(setStats).catch(() => setStats(null));
       api.unitRung(id, e2e).then(setUnitRung);
       api.artifactRung(id, e2e).then(setArtifactRung);
+      // Paths A–H. Reads route-map + path_*/findings.json, which exist well
+      // before the output plates do, so this is safe on a partial workspace.
+      setPathsLoading(true);
+      api
+        .paths(id, e2e)
+        .then(setPathsSummary)
+        .catch(() => setPathsSummary(null))
+        .finally(() => setPathsLoading(false));
       // Graph A/B (or nested graph under the E2E mirror).
       setGraphLoading(true);
       api
@@ -511,10 +531,14 @@ export function RunReview() {
 
   const showGraph = activePath === GRAPH_VIEW;
   const hasGraph = !!graphOverview || sortedGraphRuns.length > 0;
+  const showPaths = activePath === PATHS_VIEW;
+  const nPathsRan =
+    pathsSummary?.paths.filter((p) => p.status === "ok").length ?? 0;
 
   let panelTitle: string;
   if (showUnits) panelTitle = "Unit heatmap";
   else if (showGraph) panelTitle = "Curriculum graph";
+  else if (showPaths) panelTitle = "Paths A–H · review lenses";
   else if (showUnitDetail)
     panelTitle = `Unit · ${selectedRecord?.title ?? selectedRollup?.title ?? selectedUnitId}`;
   else if (showLessonDetail) panelTitle = `Lesson · ${selectedLesson!.title}`;
@@ -770,6 +794,14 @@ export function RunReview() {
                     </>
                   )}
                 </>
+              ) : showPaths ? (
+                <PathsPanel
+                  summary={pathsSummary}
+                  loading={pathsLoading}
+                  onOpenFindings={(p) =>
+                    loadDoc(projectId, p, "md", e2eRunId || undefined)
+                  }
+                />
               ) : showGraph ? (
                 <GraphBelongingPanel
                   overview={graphOverview}
@@ -915,8 +947,13 @@ export function RunReview() {
                     )}`
                   : "Curriculum graph"
               }
+              nPathsRan={nPathsRan}
               onSelect={(path, type) => {
-                if (path === UNITS_VIEW || path === GRAPH_VIEW) {
+                if (
+                  path === UNITS_VIEW ||
+                  path === GRAPH_VIEW ||
+                  path === PATHS_VIEW
+                ) {
                   setSelectedUnitId(null);
                   setSelectedLessonId(null);
                   setSelectedArtifactId(null);

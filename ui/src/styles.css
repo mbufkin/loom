@@ -3681,3 +3681,312 @@ button:disabled {
     grid-template-columns: 1fr;
   }
 }
+
+/* ---- Paths A–H panel -------------------------------------------------- */
+/* Presence statuses reuse the unit-rung band palette so a reviewer reads the
+   same colour language across the heatmap and the lens grid. */
+:root {
+  --st-present: var(--band-strong);
+  --st-partial: var(--band-developing);
+  --st-missing: var(--band-weak);
+  /* Cool slate — neutral, not the warm unrated tan and not the weak red. */
+  --st-optional-absent: #c5d0db;
+  --st-na: var(--band-unrated);
+  --st-stub: #d7d2f0;
+}
+
+.pp-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+  border-bottom: 2px solid var(--line);
+}
+.pp-summary strong {
+  font-size: 15px;
+}
+.pp-flag {
+  color: var(--accent);
+}
+
+.pp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+@media (max-width: 1100px) {
+  .pp-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.pp-card {
+  text-align: left;
+  background: var(--panel);
+  border: 2px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  padding: 8px 10px;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  transition: transform 0.05s ease;
+}
+.pp-card:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--line);
+}
+.pp-card.active {
+  background: var(--ink);
+  color: var(--bg);
+}
+.pp-card.active .pp-letter {
+  background: var(--bg);
+  color: var(--ink);
+}
+/* A path with nothing routed is still shown — just recessed. */
+.pp-card.dim {
+  opacity: 0.55;
+  box-shadow: none;
+}
+.pp-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+.pp-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: var(--ink);
+  color: var(--bg);
+  font-weight: 800;
+  font-size: 12px;
+}
+.pp-letter.lg {
+  width: 26px;
+  height: 26px;
+  font-size: 15px;
+  margin-right: 9px;
+}
+.pp-status {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 1px 5px;
+  border: 1px solid var(--line);
+  background: var(--st-na);
+  color: var(--ink);
+}
+.pp-st-ok {
+  background: var(--st-present);
+}
+.pp-st-stub,
+.pp-st-emitted {
+  background: var(--st-stub);
+}
+.pp-card-label {
+  font-weight: 700;
+  font-size: 13px;
+  margin: 6px 0 3px;
+  line-height: 1.2;
+}
+.pp-card-nums {
+  display: flex;
+  gap: 8px;
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.pp-detail {
+  margin-top: 18px;
+  border-top: 2px solid var(--line);
+  padding-top: 14px;
+}
+.pp-detail-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.pp-detail-title {
+  font-weight: 800;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.pp-detail-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pp-reasons {
+  font-size: 10px;
+  color: var(--muted);
+}
+.pp-link {
+  background: none;
+  border: 0;
+  font: inherit;
+  font-size: 11px;
+  color: var(--accent-2);
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.pp-legend {
+  display: flex;
+  gap: 14px;
+  font-size: 10px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.pp-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.pp-swatch {
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--line);
+  display: inline-block;
+}
+
+.pp-steps,
+.pp-doctable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.pp-steps th,
+.pp-doctable th {
+  text-align: left;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  border-bottom: 2px solid var(--line);
+  padding: 4px 8px 4px 0;
+  font-weight: 800;
+}
+.pp-steps td,
+.pp-doctable td {
+  padding: 6px 8px 6px 0;
+  border-bottom: 1px solid rgba(20, 17, 12, 0.12);
+  vertical-align: middle;
+}
+.pp-step-id {
+  width: 42px;
+  font-weight: 700;
+}
+.pp-step-label {
+  width: 34%;
+}
+.pp-num {
+  text-align: right;
+  width: 64px;
+}
+.pp-steps tr.has-missing .pp-num {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.pp-bar {
+  display: flex;
+  height: 14px;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  min-width: 120px;
+}
+.pp-seg {
+  display: block;
+  height: 100%;
+}
+.pp-present,
+.pp-seg.pp-present {
+  background: var(--st-present);
+}
+.pp-partial,
+.pp-seg.pp-partial {
+  background: var(--st-partial);
+}
+.pp-missing,
+.pp-seg.pp-missing {
+  background: var(--st-missing);
+}
+.pp-optional_absent,
+.pp-seg.pp-optional_absent {
+  background: var(--st-optional-absent);
+}
+.pp-not_applicable,
+.pp-seg.pp-not_applicable {
+  background: var(--st-na);
+}
+.pp-stub,
+.pp-seg.pp-stub {
+  background: var(--st-stub);
+}
+.pp-unknown,
+.pp-seg.pp-unknown {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--st-na),
+    var(--st-na) 3px,
+    var(--panel) 3px,
+    var(--panel) 6px
+  );
+}
+
+.pp-docs {
+  margin-top: 16px;
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+.pp-docs summary {
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.pp-doctable {
+  margin-top: 10px;
+}
+.pp-doc-name {
+  max-width: 380px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pp-doc-type {
+  font-size: 10px;
+  color: var(--muted);
+  width: 130px;
+}
+.pp-doc-steps {
+  display: flex;
+  gap: 3px;
+  flex-wrap: wrap;
+}
+/* One pip per checklist step: number inside, colour = status. */
+.pp-pip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  border: 1px solid var(--line);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9px;
+  font-weight: 700;
+}

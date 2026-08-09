@@ -50,6 +50,7 @@ import sys
 import threading
 import time
 import uuid
+from collections import Counter
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
@@ -81,7 +82,7 @@ LAYER_FILES = [
     ("Layer 1 — organize", "layer1/REPORT.md"),
     ("Layer 1 — review queue", "layer1/REVIEW-QUEUE.md"),
     ("Layer 2 — completeness", "layer2/REPORT.md"),
-    ("Artifact rung — Paths B/C", "layer_artifact/ARTIFACT-RUNG.md"),
+    ("Artifact rung — Paths B–H", "layer_artifact/ARTIFACT-RUNG.md"),
     ("Unit rung", "layer_unit/UNIT-RUNG.md"),
 ]
 PDF_FILES = [("Global audit PDF", "output/GLOBAL-AUDIT-REPORT.pdf")]
@@ -91,6 +92,33 @@ UNIT_FILE_SPECS = [
     ("Gap report", "02-gap-report.md", "md"),
     ("Calendar map", "01-calendar-map.md", "md"),
     ("Audit PDF", "AUDIT-REPORT.pdf", "pdf"),
+]
+
+# The eight review lenses, in router-cascade order. Labels mirror docs/PATHS.md;
+# route-map.json also ships its own `lenses` map, which wins when present so a
+# renamed lens does not need a UI change.
+PATH_LETTERS = ["A", "B", "C", "D", "E", "F", "G", "H"]
+PATH_LENSES = {
+    "A": ("Lesson", "lesson_plan"),
+    "B": ("Assessment", "quiz"),
+    "C": ("General feedback", "general"),
+    "D": ("Teacher support", "teacher_support"),
+    "E": ("Student practice", "student_practice"),
+    "F": ("Standards & pacing", "standards_pacing"),
+    "G": ("Syllabus", "syllabus"),
+    "H": ("Exit ticket", "exit_ticket"),
+}
+# Ordered so the UI can render a stable status legend / stacked bar. STUB marks
+# the *5/*6 one-pager emit steps that are deliberately not implemented yet.
+# OPTIONAL_ABSENT is an all-optional checklist step with no hit — advisory, not
+# a finding (distinct from MISSING, which means a required field failed).
+STEP_STATUSES = [
+    "PRESENT",
+    "PARTIAL",
+    "MISSING",
+    "OPTIONAL_ABSENT",
+    "NOT_APPLICABLE",
+    "STUB",
 ]
 
 # In-memory run registry. Local single-user tool, so a dict + lock is plenty.
@@ -508,6 +536,153 @@ def _exists(pid_dir: Path, rel: str) -> bool:
     return (pid_dir / rel).is_file()
 
 
+# Per-document notes on presence steps are field tallies ("0/2 fields present"),
+# which are meaningless as a column header. Structural steps (inventory, pairing,
+# emit) carry a real description, so those are worth keeping as a fallback label.
+_FIELD_TALLY_NOTE = re.compile(r"^\d+/\d+ fields present$")
+
+
+def _checklist_labels(checklist_rel: str | None) -> dict[str, str]:
+    """Step -> human label from a workflow checklist, e.g. 'B3 Answer key signal'.
+
+    Only covers the presence steps a checklist defines; structural steps fall back
+    to their finding note. Returns {} when the checklist is missing or unreadable
+    so an older run without one still renders.
+    """
+    if not checklist_rel:
+        return {}
+    spec = (ROOT / checklist_rel).resolve()
+    if ROOT not in spec.parents or not spec.is_file():
+        return {}
+    try:
+        import yaml
+
+        data = yaml.safe_load(spec.read_text()) or {}
+    except Exception:  # noqa: BLE001 - a bad checklist must not break the panel
+        return {}
+    labels: dict[str, str] = {}
+    for section in (data.get("sections") or {}).values():
+        step, label = section.get("step"), section.get("label")
+        if step and label:
+            # Labels are stored as "B3 Answer key signal"; drop the redundant id.
+            labels[step] = str(label).removeprefix(f"{step} ").strip()
+    return labels
+
+
+def _path_step_rollup(inventory: list, checklist_rel: str | None = None) -> list[dict]:
+    """Collapse a findings inventory into per-step status counts.
+
+    Each inventory row is one document carrying a `<LETTER><N>` key per checklist
+    step (e.g. B3) whose value is `{"status": ..., "note": ...}`. Reviewers care
+    about the shape of the column, not the individual cells, so count statuses per
+    step. Steps come back in checklist order.
+    """
+    counts: dict[str, Counter] = {}
+    notes: dict[str, str] = {}
+    for row in inventory:
+        if not isinstance(row, dict):
+            continue
+        for key, val in row.items():
+            if not (isinstance(val, dict) and "status" in val):
+                continue
+            # Step keys look like B3 / G12 — a lens letter plus a number.
+            if not (len(key) >= 2 and key[0].isalpha() and key[1:].isdigit()):
+                continue
+            counts.setdefault(key, Counter())[val.get("status") or "UNKNOWN"] += 1
+            note = str(val.get("note") or "")
+            if key not in notes and note and not _FIELD_TALLY_NOTE.match(note):
+                notes[key] = note
+
+    labels = _checklist_labels(checklist_rel)
+    return [
+        {
+            "step": sid,
+            "label": labels.get(sid) or notes.get(sid, ""),
+            "total": sum(counts[sid].values()),
+            "counts": {
+                s: counts[sid].get(s, 0) for s in STEP_STATUSES if counts[sid].get(s)
+            },
+            # The headline number: how many documents lack this element entirely.
+            "missing": counts[sid].get("MISSING", 0),
+        }
+        for sid in sorted(counts, key=lambda k: (k[0], int(k[1:])))
+    ]
+
+
+def _paths_summary(pid: str, e2e_run: str | None = None) -> dict:
+    """A-H review lenses for one workspace: routing, findings status, step rollups.
+
+    Reads only artifacts already on disk (layer0/route-map.json and each
+    path_<letter>/findings.json), so it works for a live project tree and for a
+    frozen e2e/runs/<id>/ snapshot alike. Paths with no routed documents are
+    reported rather than hidden — a `skipped` path is a meaningful result.
+    """
+    base = _workspace(pid, e2e_run)
+    route_map = _read_json(base / "layer0" / "route-map.json") or {}
+    routes = route_map.get("routes") or []
+    lens_names = route_map.get("lenses") or {}
+
+    routed: dict[str, list[dict]] = {L: [] for L in PATH_LETTERS}
+    reasons: dict[str, Counter] = {L: Counter() for L in PATH_LETTERS}
+    for r in routes:
+        letter = (r.get("path") or "").upper()
+        if letter not in routed:
+            continue
+        routed[letter].append(
+            {
+                "doc_id": r.get("doc_id"),
+                "doc_type": r.get("doc_type"),
+                "source_file": r.get("source_file"),
+                "confidence": r.get("confidence"),
+                "reason": r.get("reason"),
+                "element_count": r.get("element_count"),
+            }
+        )
+        # Group reasons by their prefix ("filename prior", "graph Assessment link")
+        # so the UI can show *why* the router chose this lens without a long tail.
+        reasons[letter][str(r.get("reason") or "unknown").split(" \u2192")[0]] += 1
+
+    paths = []
+    for letter in PATH_LETTERS:
+        label, workflow_id = PATH_LENSES[letter]
+        findings = _read_json(base / f"path_{letter.lower()}" / "findings.json")
+        inventory = (findings or {}).get("inventory") or []
+        steps = _path_step_rollup(inventory, (findings or {}).get("checklist"))
+        docs = (findings or {}).get("doc_ids") or []
+        # Every path findings file carries status (ok|skipped). Absent means
+        # the lens has not run in this workspace yet.
+        status = (findings or {}).get("status") if findings is not None else None
+        paths.append(
+            {
+                "letter": letter,
+                "label": lens_names.get(workflow_id) or label,
+                "workflow_id": workflow_id,
+                "has_findings": findings is not None,
+                "status": status or "absent",
+                "routed": len(routed[letter]),
+                "n_docs": len(docs),
+                "findings_path": f"path_{letter.lower()}/findings.json",
+                "steps": steps,
+                "missing_total": sum(s["missing"] for s in steps),
+                "top_reasons": [
+                    {"reason": k, "count": v} for k, v in reasons[letter].most_common(4)
+                ],
+                "docs": routed[letter],
+                "inventory": inventory,
+            }
+        )
+
+    return {
+        "project_id": pid,
+        "e2e_run": e2e_run,
+        "generated_at": route_map.get("generated_at"),
+        "total_routed": len(routes),
+        "unrouted": len(route_map.get("unrouted_ledger_doc_ids") or []),
+        "step_statuses": STEP_STATUSES,
+        "paths": paths,
+    }
+
+
 def _outputs_tree(pid: str, e2e_run: str | None = None) -> dict:
     base = _workspace(pid, e2e_run)
     plates = [
@@ -834,6 +1009,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(_create_status())
             if len(parts) == 4 and parts[:2] == ["api", "projects"] and parts[3] == "outputs":
                 return self._json(_outputs_tree(parts[2], e2e_run))
+            if len(parts) == 4 and parts[:2] == ["api", "projects"] and parts[3] == "paths":
+                return self._json(_paths_summary(parts[2], e2e_run))
             if len(parts) == 4 and parts[:2] == ["api", "projects"] and parts[3] == "stats":
                 return self._bytes(
                     _safe_file(parts[2], "output/aggregate-stats.json", e2e_run)

@@ -482,3 +482,67 @@ export interface GraphUnitDetail {
   has_part?: Record<string, unknown>;
   findings?: Record<string, unknown> | null;
 }
+
+/* ---- Paths A–H (review lenses) ---------------------------------------- */
+
+/** Presence outcome for one checklist step on one document. */
+export type PathStepStatus =
+  | "PRESENT"
+  | "PARTIAL"
+  | "MISSING"
+  | "OPTIONAL_ABSENT"
+  | "NOT_APPLICABLE"
+  | "STUB"
+  | "UNKNOWN";
+
+/** One checklist step rolled up across every document routed to the path. */
+export interface PathStep {
+  step: string;
+  label: string;
+  total: number;
+  counts: Partial<Record<PathStepStatus, number>>;
+  missing: number;
+}
+
+/** A document the router assigned to this lens, with the reason it chose it. */
+export interface PathDoc {
+  doc_id?: string;
+  doc_type?: string;
+  source_file?: string;
+  confidence?: number | null;
+  reason?: string;
+  element_count?: number;
+}
+
+/** Per-document findings row: `<STEP>` keys plus identity fields. */
+export type PathInventoryRow = Record<
+  string,
+  string | number | null | { status?: string; note?: string }
+>;
+
+export interface PathSummary {
+  letter: string;
+  label: string;
+  workflow_id: string;
+  has_findings: boolean;
+  /** ok | skipped | stub | absent */
+  status: string;
+  routed: number;
+  n_docs: number;
+  findings_path: string;
+  steps: PathStep[];
+  missing_total: number;
+  top_reasons: { reason: string; count: number }[];
+  docs: PathDoc[];
+  inventory: PathInventoryRow[];
+}
+
+export interface PathsSummary {
+  project_id: string;
+  e2e_run?: string | null;
+  generated_at?: string | null;
+  total_routed: number;
+  unrouted: number;
+  step_statuses: PathStepStatus[];
+  paths: PathSummary[];
+}

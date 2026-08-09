@@ -19,6 +19,7 @@ import type {
   LessonFeedback,
   OutputsTree,
   PacketType,
+  PathsSummary,
   Project,
   RunStatus,
   Stats,
@@ -64,6 +65,10 @@ export const api = {
 
   stats: (id: string, e2eRun?: string) =>
     getJSON<Stats>(withE2e(`/api/projects/${id}/stats`, e2eRun)),
+
+  /** A–H review lenses: routing, findings status, and per-step presence rollups. */
+  paths: (id: string, e2eRun?: string) =>
+    getJSON<PathsSummary>(withE2e(`/api/projects/${id}/paths`, e2eRun)),
 
   config: () => getJSON<ConfigSummary>("/api/config"),
 
