@@ -202,7 +202,12 @@ def _workspace(project_id: str, e2e_run: str | None = None) -> Path:
 
 
 def _list_e2e_runs(project_id: str) -> dict:
-    """List full-pipeline snapshots under e2e/runs/* for the review picker."""
+    """List reviewable E2E snapshots under e2e/runs/* (never e2e/archive/).
+
+    Educational note: the Review UI only lists runs with REVIEW-READY.json so
+    incomplete / other-model trees never appear as the product surface. Ops can
+    still inspect archived or in-flight folders on disk.
+    """
     root = _project_dir(project_id)
     runs_root = root / "e2e" / "runs"
     runs: list[dict] = []
@@ -210,19 +215,16 @@ def _list_e2e_runs(project_id: str) -> dict:
         for d in sorted(runs_root.iterdir()):
             if not d.is_dir():
                 continue
+            # Archive lives under e2e/archive/; never treat nested junk as a run.
+            if d.name.startswith("."):
+                continue
             out = d / "output"
-            # Reviewable when plates exist, or the run was prepared (RUN.json) /
-            # Layer 0 started — so in-flight E2E shows in the picker.
+            review_ready = (d / "REVIEW-READY.json").is_file()
+            # Website contract: only completed runs are listed.
+            if not review_ready:
+                continue
             has_dashboard = (out / "DASHBOARD.md").is_file()
             has_quality = (out / "LESSON-QUALITY-FEEDBACK.json").is_file()
-            has_layer0 = (d / "layer0" / "REPORT.md").is_file() or (
-                d / "layer0"
-            ).is_dir()
-            has_meta = (d / "RUN.json").is_file()
-            if not (
-                has_dashboard or has_quality or has_layer0 or out.is_dir() or has_meta
-            ):
-                continue
             # Nested graph run (often same id) for belonging panel wiring.
             nested_graph = d / "graph" / "runs"
             n_graph = 0
@@ -245,6 +247,7 @@ def _list_e2e_runs(project_id: str) -> dict:
                     "run_id": d.name,
                     "has_dashboard": has_dashboard,
                     "has_quality": has_quality,
+                    "review_ready": True,
                     "n_output_units": n_units,
                     "n_graph_runs": n_graph,
                 }
@@ -681,6 +684,7 @@ def _paths_summary(pid: str, e2e_run: str | None = None) -> dict:
         "step_statuses": STEP_STATUSES,
         "paths": paths,
     }
+
 
 
 def _outputs_tree(pid: str, e2e_run: str | None = None) -> dict:

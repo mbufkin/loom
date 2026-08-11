@@ -21,7 +21,8 @@ hallucinate:
 
 Output (mirrors the lesson-quality plate so the UI reads it the same way):
 
-  projects/<id>/output/LESSON-CURRICULUM-REVIEW.json   (grouped by unit_id)
+  projects/<id>/[e2e/runs/<run>/]output/LESSON-CURRICULUM-REVIEW.json
+  (grouped by unit_id; honors LOOM_E2E_RUN via project_dir)
 
 WHY A SEPARATE STAGE
 Like lesson_quality.py this is ADVISORY (model-based, never gates a verdict) and
@@ -44,7 +45,13 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from audit_lib import load_config, log, model_chat, parse_model_json  # noqa: E402
+from audit_lib import (  # noqa: E402
+    load_config,
+    log,
+    model_chat,
+    parse_model_json,
+    project_dir,
+)
 from lesson_bakeoff import enumerate_lessons  # noqa: E402
 
 SCORER_ID = "curriculum_review_2stage_v1"
@@ -322,8 +329,12 @@ def review_lesson(cfg, lesson, source_file=None, *, verbose: bool = False) -> di
 
 def _doc_source_map(project: str) -> dict[str, str]:
     """doc_id -> sources/<file> so the UI can show raw lesson text (same convention
-    as the lesson-quality plate)."""
-    ledger = Path("projects") / project / "layer0" / "ledger.json"
+    as the lesson-quality plate).
+
+    Educational note: honor project_dir() so LOOM_E2E_RUN trees get the same
+    ledger the rest of the pipeline wrote — never hardcode live projects/<id>/.
+    """
+    ledger = project_dir(project) / "layer0" / "ledger.json"
     out: dict[str, str] = {}
     if ledger.is_file():
         for row in json.loads(ledger.read_text()):
@@ -365,7 +376,8 @@ def generate(project: str, unit: str | None = None) -> Path:
         units.setdefault(le.unit_id, []).append(rec)
         log(f"reviewed {le.title} ({rec['roles_verified']}/4 roles, {rec['seconds']}s)")
 
-    out_dir = Path("projects") / project / "output"
+    # Same e2e isolation as lesson_quality: write under project_dir()/output/.
+    out_dir = project_dir(project) / "output"
     out_dir.mkdir(parents=True, exist_ok=True)
     json_path = out_dir / "LESSON-CURRICULUM-REVIEW.json"
 

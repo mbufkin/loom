@@ -1,0 +1,1085 @@
+{
+  "project_id": "lab-graph-cte-cattle",
+  "stage": "rebuilt-cte-spike",
+  "method": "spike-graph-cte-v0-multi",
+  "model": "cte-artifact-kind",
+  "unit_ids": [
+    "breeds-of-livestock-cattle",
+    "external-anatomy-of-livestock-terms-terminology"
+  ],
+  "nodes": [
+    {
+      "id": "course:lab-graph-cte-cattle",
+      "type": "Course",
+      "name": "lab-graph-cte-cattle"
+    },
+    {
+      "id": "unit:breeds-of-livestock-cattle",
+      "type": "LessonGrouping",
+      "name": "breeds-of-livestock-cattle",
+      "groupName": "unit"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__action-plan",
+      "type": "Material",
+      "role": "student_practice",
+      "name": "023-breeds-of-livestock-cattle__action-plan.html",
+      "source_file": "023-breeds-of-livestock-cattle__action-plan.html",
+      "artifact_kind": "student_practice",
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__activity-career-connections",
+      "type": "Material",
+      "role": "student_practice",
+      "name": "023-breeds-of-livestock-cattle__activity-career-connections.html",
+      "source_file": "023-breeds-of-livestock-cattle__activity-career-connections.html",
+      "artifact_kind": "student_practice",
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards",
+      "type": "Material",
+      "role": "student_practice",
+      "name": "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html",
+      "source_file": "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html",
+      "artifact_kind": "student_practice",
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds",
+      "type": "Material",
+      "role": "assessment",
+      "name": "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html",
+      "source_file": "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html",
+      "artifact_kind": "assessment",
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__final-assessment-answer-key",
+      "type": "Material",
+      "role": "assessment",
+      "name": "023-breeds-of-livestock-cattle__final-assessment-answer-key.html",
+      "source_file": "023-breeds-of-livestock-cattle__final-assessment-answer-key.html",
+      "artifact_kind": "assessment",
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__final-assessment",
+      "type": "Material",
+      "role": "assessment",
+      "name": "023-breeds-of-livestock-cattle__final-assessment.html",
+      "source_file": "023-breeds-of-livestock-cattle__final-assessment.html",
+      "artifact_kind": "assessment",
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__horizontal-alignments",
+      "type": "Material",
+      "role": "standards_pacing",
+      "name": "023-breeds-of-livestock-cattle__horizontal-alignments.html",
+      "source_file": "023-breeds-of-livestock-cattle__horizontal-alignments.html",
+      "artifact_kind": "standards_pacing",
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__key-concepts",
+      "type": "Material",
+      "role": "student_practice",
+      "name": "023-breeds-of-livestock-cattle__key-concepts.html",
+      "source_file": "023-breeds-of-livestock-cattle__key-concepts.html",
+      "artifact_kind": "student_practice",
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__project-build-a-breed",
+      "type": "Material",
+      "role": "student_practice",
+      "name": "023-breeds-of-livestock-cattle__project-build-a-breed.html",
+      "source_file": "023-breeds-of-livestock-cattle__project-build-a-breed.html",
+      "artifact_kind": "student_practice",
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__view-lesson-plan",
+      "type": "Material",
+      "role": "lesson_plan",
+      "name": "023-breeds-of-livestock-cattle__view-lesson-plan.html",
+      "source_file": "023-breeds-of-livestock-cattle__view-lesson-plan.html",
+      "artifact_kind": "lesson_plan",
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__vocabulary-handout",
+      "type": "Material",
+      "role": "student_practice",
+      "name": "023-breeds-of-livestock-cattle__vocabulary-handout.html",
+      "source_file": "023-breeds-of-livestock-cattle__vocabulary-handout.html",
+      "artifact_kind": "student_practice",
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "id": "lesson:breeds-of-livestock-cattle:l1",
+      "type": "Lesson",
+      "name": "Class 1 \u2014 Dairy Breeds",
+      "lesson_n": 1,
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "id": "lesson:breeds-of-livestock-cattle:l2",
+      "type": "Lesson",
+      "name": "Class 2 \u2014 Asian & African Breeds",
+      "lesson_n": 2,
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "id": "lesson:breeds-of-livestock-cattle:l3",
+      "type": "Lesson",
+      "name": "Class 3 \u2014 British Breeds",
+      "lesson_n": 3,
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "id": "lesson:breeds-of-livestock-cattle:l4",
+      "type": "Lesson",
+      "name": "Class 4 \u2014 Continental Breeds",
+      "lesson_n": 4,
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "id": "lesson:breeds-of-livestock-cattle:l5",
+      "type": "Lesson",
+      "name": "Class 5 \u2014 American Breeds",
+      "lesson_n": 5,
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "id": "lesson:breeds-of-livestock-cattle:l6",
+      "type": "Lesson",
+      "name": "Class 6 \u2014 Build a Breed Project",
+      "lesson_n": 6,
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "id": "lesson:breeds-of-livestock-cattle:l7",
+      "type": "Lesson",
+      "name": "Class 7 \u2014 Final Assessment & Build a Breed Project",
+      "lesson_n": 7,
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "id": "assessment:023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds:item",
+      "type": "Assessment",
+      "name": "Check for Understanding 1 \u2014 Dairy Breeds",
+      "source_file": "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html",
+      "artifact_kind": "assessment",
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "id": "assessment:023-breeds-of-livestock-cattle__final-assessment-answer-key:item",
+      "type": "Assessment",
+      "name": "Final Assessment Answer Key",
+      "source_file": "023-breeds-of-livestock-cattle__final-assessment-answer-key.html",
+      "artifact_kind": "assessment",
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "id": "assessment:023-breeds-of-livestock-cattle__final-assessment:item",
+      "type": "Assessment",
+      "name": "Final Assessment \u2014 Breeds of Livestock: Cattle",
+      "source_file": "023-breeds-of-livestock-cattle__final-assessment.html",
+      "artifact_kind": "assessment",
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "id": "unit:external-anatomy-of-livestock-terms-terminology",
+      "type": "LessonGrouping",
+      "name": "external-anatomy-of-livestock-terms-terminology",
+      "groupName": "unit"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__action-plan",
+      "type": "Material",
+      "role": "student_practice",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__action-plan.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__action-plan.html",
+      "artifact_kind": "student_practice",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__activity-career-connections",
+      "type": "Material",
+      "role": "student_practice",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__activity-career-connections.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__activity-career-connections.html",
+      "artifact_kind": "student_practice",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar",
+      "type": "Material",
+      "role": "student_practice",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar.html",
+      "artifact_kind": "student_practice",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key",
+      "type": "Material",
+      "role": "assessment",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key.html",
+      "artifact_kind": "assessment",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__assessment",
+      "type": "Material",
+      "role": "assessment",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__assessment.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__assessment.html",
+      "artifact_kind": "assessment",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments",
+      "type": "Material",
+      "role": "standards_pacing",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments.html",
+      "artifact_kind": "standards_pacing",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__key-concepts",
+      "type": "Material",
+      "role": "student_practice",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__key-concepts.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__key-concepts.html",
+      "artifact_kind": "student_practice",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__ngss-correlation",
+      "type": "Material",
+      "role": "standards_pacing",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__ngss-correlation.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__ngss-correlation.html",
+      "artifact_kind": "standards_pacing",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor",
+      "type": "Material",
+      "role": "student_practice",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor.html",
+      "artifact_kind": "student_practice",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan",
+      "type": "Material",
+      "role": "lesson_plan",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan.html",
+      "artifact_kind": "lesson_plan",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout",
+      "type": "Material",
+      "role": "student_practice",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout.html",
+      "artifact_kind": "student_practice",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "lesson:external-anatomy-of-livestock-terms-terminology:l1",
+      "type": "Lesson",
+      "name": "Class 1 \u2014 Anatomical Terms of Location",
+      "lesson_n": 1,
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "lesson:external-anatomy-of-livestock-terms-terminology:l2",
+      "type": "Lesson",
+      "name": "Class 2 \u2014 External Components of Livestock",
+      "lesson_n": 2,
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "lesson:external-anatomy-of-livestock-terms-terminology:l3",
+      "type": "Lesson",
+      "name": "Class 3 \u2014 Livestock External Anatomy Diagrams",
+      "lesson_n": 3,
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "lesson:external-anatomy-of-livestock-terms-terminology:l4",
+      "type": "Lesson",
+      "name": "Class 4 \u2014 Labeling Activities & Livestock Instructor Project",
+      "lesson_n": 4,
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "lesson:external-anatomy-of-livestock-terms-terminology:l5",
+      "type": "Lesson",
+      "name": "Class 5 \u2014 Labeling Activities & Livestock Instructor Project",
+      "lesson_n": 5,
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "lesson:external-anatomy-of-livestock-terms-terminology:l6",
+      "type": "Lesson",
+      "name": "Class 6 \u2014 Assessment & Livestock Instructor Project",
+      "lesson_n": 6,
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key:item",
+      "type": "Assessment",
+      "name": "External Anatomy of Livestock: Terms & Terminology Final Assessment (Answer Key)",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key.html",
+      "artifact_kind": "assessment",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment:item",
+      "type": "Assessment",
+      "name": "External Anatomy of Livestock: Terms & Terminology Final Assessment",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__assessment.html",
+      "artifact_kind": "assessment",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    }
+  ],
+  "edges": [
+    {
+      "rel": "hasPart",
+      "from": "course:lab-graph-cte-cattle",
+      "to": "unit:breeds-of-livestock-cattle"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "lesson:breeds-of-livestock-cattle:l1"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "lesson:breeds-of-livestock-cattle:l2"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "lesson:breeds-of-livestock-cattle:l3"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "lesson:breeds-of-livestock-cattle:l4"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "lesson:breeds-of-livestock-cattle:l5"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "lesson:breeds-of-livestock-cattle:l6"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "lesson:breeds-of-livestock-cattle:l7"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l1",
+      "to": "material:023-breeds-of-livestock-cattle__action-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l2",
+      "to": "material:023-breeds-of-livestock-cattle__action-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l3",
+      "to": "material:023-breeds-of-livestock-cattle__action-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l4",
+      "to": "material:023-breeds-of-livestock-cattle__action-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l5",
+      "to": "material:023-breeds-of-livestock-cattle__action-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l6",
+      "to": "material:023-breeds-of-livestock-cattle__action-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l7",
+      "to": "material:023-breeds-of-livestock-cattle__action-plan"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__action-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l1",
+      "to": "material:023-breeds-of-livestock-cattle__activity-career-connections"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l2",
+      "to": "material:023-breeds-of-livestock-cattle__activity-career-connections"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l3",
+      "to": "material:023-breeds-of-livestock-cattle__activity-career-connections"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l4",
+      "to": "material:023-breeds-of-livestock-cattle__activity-career-connections"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l5",
+      "to": "material:023-breeds-of-livestock-cattle__activity-career-connections"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l6",
+      "to": "material:023-breeds-of-livestock-cattle__activity-career-connections"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l7",
+      "to": "material:023-breeds-of-livestock-cattle__activity-career-connections"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__activity-career-connections"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l1",
+      "to": "material:023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l2",
+      "to": "material:023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l3",
+      "to": "material:023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l4",
+      "to": "material:023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l5",
+      "to": "material:023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:breeds-of-livestock-cattle:l1",
+      "to": "assessment:023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds:item"
+    },
+    {
+      "rel": "uses",
+      "from": "assessment:023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds:item",
+      "to": "material:023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:breeds-of-livestock-cattle:l1",
+      "to": "assessment:023-breeds-of-livestock-cattle__final-assessment-answer-key:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:breeds-of-livestock-cattle:l2",
+      "to": "assessment:023-breeds-of-livestock-cattle__final-assessment-answer-key:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:breeds-of-livestock-cattle:l3",
+      "to": "assessment:023-breeds-of-livestock-cattle__final-assessment-answer-key:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:breeds-of-livestock-cattle:l4",
+      "to": "assessment:023-breeds-of-livestock-cattle__final-assessment-answer-key:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:breeds-of-livestock-cattle:l5",
+      "to": "assessment:023-breeds-of-livestock-cattle__final-assessment-answer-key:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:breeds-of-livestock-cattle:l7",
+      "to": "assessment:023-breeds-of-livestock-cattle__final-assessment-answer-key:item"
+    },
+    {
+      "rel": "uses",
+      "from": "assessment:023-breeds-of-livestock-cattle__final-assessment-answer-key:item",
+      "to": "material:023-breeds-of-livestock-cattle__final-assessment-answer-key"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__final-assessment-answer-key"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:breeds-of-livestock-cattle:l1",
+      "to": "assessment:023-breeds-of-livestock-cattle__final-assessment:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:breeds-of-livestock-cattle:l2",
+      "to": "assessment:023-breeds-of-livestock-cattle__final-assessment:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:breeds-of-livestock-cattle:l3",
+      "to": "assessment:023-breeds-of-livestock-cattle__final-assessment:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:breeds-of-livestock-cattle:l4",
+      "to": "assessment:023-breeds-of-livestock-cattle__final-assessment:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:breeds-of-livestock-cattle:l5",
+      "to": "assessment:023-breeds-of-livestock-cattle__final-assessment:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:breeds-of-livestock-cattle:l7",
+      "to": "assessment:023-breeds-of-livestock-cattle__final-assessment:item"
+    },
+    {
+      "rel": "uses",
+      "from": "assessment:023-breeds-of-livestock-cattle__final-assessment:item",
+      "to": "material:023-breeds-of-livestock-cattle__final-assessment"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__final-assessment"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l1",
+      "to": "material:023-breeds-of-livestock-cattle__horizontal-alignments"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l2",
+      "to": "material:023-breeds-of-livestock-cattle__horizontal-alignments"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l3",
+      "to": "material:023-breeds-of-livestock-cattle__horizontal-alignments"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l4",
+      "to": "material:023-breeds-of-livestock-cattle__horizontal-alignments"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l5",
+      "to": "material:023-breeds-of-livestock-cattle__horizontal-alignments"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l6",
+      "to": "material:023-breeds-of-livestock-cattle__horizontal-alignments"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l7",
+      "to": "material:023-breeds-of-livestock-cattle__horizontal-alignments"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__horizontal-alignments"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l1",
+      "to": "material:023-breeds-of-livestock-cattle__key-concepts"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l2",
+      "to": "material:023-breeds-of-livestock-cattle__key-concepts"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l3",
+      "to": "material:023-breeds-of-livestock-cattle__key-concepts"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l4",
+      "to": "material:023-breeds-of-livestock-cattle__key-concepts"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l5",
+      "to": "material:023-breeds-of-livestock-cattle__key-concepts"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__key-concepts"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l6",
+      "to": "material:023-breeds-of-livestock-cattle__project-build-a-breed"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l7",
+      "to": "material:023-breeds-of-livestock-cattle__project-build-a-breed"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__project-build-a-breed"
+    },
+    {
+      "rel": "describes",
+      "from": "lesson:breeds-of-livestock-cattle:l1",
+      "to": "material:023-breeds-of-livestock-cattle__view-lesson-plan"
+    },
+    {
+      "rel": "describes",
+      "from": "lesson:breeds-of-livestock-cattle:l2",
+      "to": "material:023-breeds-of-livestock-cattle__view-lesson-plan"
+    },
+    {
+      "rel": "describes",
+      "from": "lesson:breeds-of-livestock-cattle:l3",
+      "to": "material:023-breeds-of-livestock-cattle__view-lesson-plan"
+    },
+    {
+      "rel": "describes",
+      "from": "lesson:breeds-of-livestock-cattle:l4",
+      "to": "material:023-breeds-of-livestock-cattle__view-lesson-plan"
+    },
+    {
+      "rel": "describes",
+      "from": "lesson:breeds-of-livestock-cattle:l5",
+      "to": "material:023-breeds-of-livestock-cattle__view-lesson-plan"
+    },
+    {
+      "rel": "describes",
+      "from": "lesson:breeds-of-livestock-cattle:l6",
+      "to": "material:023-breeds-of-livestock-cattle__view-lesson-plan"
+    },
+    {
+      "rel": "describes",
+      "from": "lesson:breeds-of-livestock-cattle:l7",
+      "to": "material:023-breeds-of-livestock-cattle__view-lesson-plan"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__view-lesson-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l1",
+      "to": "material:023-breeds-of-livestock-cattle__vocabulary-handout"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l2",
+      "to": "material:023-breeds-of-livestock-cattle__vocabulary-handout"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l3",
+      "to": "material:023-breeds-of-livestock-cattle__vocabulary-handout"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l4",
+      "to": "material:023-breeds-of-livestock-cattle__vocabulary-handout"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l5",
+      "to": "material:023-breeds-of-livestock-cattle__vocabulary-handout"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l6",
+      "to": "material:023-breeds-of-livestock-cattle__vocabulary-handout"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:breeds-of-livestock-cattle:l7",
+      "to": "material:023-breeds-of-livestock-cattle__vocabulary-handout"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__vocabulary-handout"
+    },
+    {
+      "rel": "hasPart",
+      "from": "course:lab-graph-cte-cattle",
+      "to": "unit:external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "lesson:external-anatomy-of-livestock-terms-terminology:l1"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "lesson:external-anatomy-of-livestock-terms-terminology:l2"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "lesson:external-anatomy-of-livestock-terms-terminology:l3"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "lesson:external-anatomy-of-livestock-terms-terminology:l4"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "lesson:external-anatomy-of-livestock-terms-terminology:l5"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "lesson:external-anatomy-of-livestock-terms-terminology:l6"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l1",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__action-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l2",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__action-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l3",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__action-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l4",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__action-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l5",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__action-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l6",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__action-plan"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__action-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l1",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__activity-career-connections"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l2",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__activity-career-connections"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l3",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__activity-career-connections"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l4",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__activity-career-connections"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l5",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__activity-career-connections"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l6",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__activity-career-connections"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__activity-career-connections"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l4",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l5",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l6",
+      "to": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key:item"
+    },
+    {
+      "rel": "uses",
+      "from": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key:item",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l1",
+      "to": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l2",
+      "to": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l6",
+      "to": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment:item"
+    },
+    {
+      "rel": "uses",
+      "from": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment:item",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__assessment"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__assessment"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l1",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l2",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l3",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l4",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l5",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l6",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l1",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__key-concepts"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l2",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__key-concepts"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__key-concepts"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l1",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__ngss-correlation"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l2",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__ngss-correlation"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l3",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__ngss-correlation"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l4",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__ngss-correlation"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l5",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__ngss-correlation"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l6",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__ngss-correlation"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__ngss-correlation"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l4",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l5",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l6",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor"
+    },
+    {
+      "rel": "describes",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l1",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan"
+    },
+    {
+      "rel": "describes",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l2",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan"
+    },
+    {
+      "rel": "describes",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l3",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan"
+    },
+    {
+      "rel": "describes",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l4",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan"
+    },
+    {
+      "rel": "describes",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l5",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan"
+    },
+    {
+      "rel": "describes",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l6",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l1",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l2",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout"
+    }
+  ]
+}

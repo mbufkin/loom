@@ -1,0 +1,80 @@
+{
+  "027-external-anatomy-of-livestock-terms-terminology__action-plan.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__action-plan.html",
+    "artifact_kind": "lesson_plan",
+    "citation_element_id": "027-external-anatomy-of-livestock-terms-terminology__action-plan.html-e1",
+    "excerpt_head": "Action Plan for External Anatomy Terminology Lesson",
+    "notes": "short"
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__activity-career-connections.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__activity-career-connections.html",
+    "artifact_kind": "student_practice",
+    "citation_element_id": "027-external-anatomy-of-livestock-terms-terminology__activity-career-connections.html-e1",
+    "excerpt_head": "Career interview worksheet with guided questions for students.",
+    "notes": "short"
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar.html",
+    "artifact_kind": "student_practice",
+    "citation_element_id": "027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar.html-e1",
+    "excerpt_head": "Label the external anatomy of a boar using the given terms.",
+    "notes": "short"
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key.html",
+    "artifact_kind": "assessment",
+    "citation_element_id": "027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key.html-e1",
+    "excerpt_head": "Final Assessment External Anatomy of Livestock: Terms & Terminology Assessment Answer Key Directions: Answer the following questions.",
+    "notes": "short"
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__assessment.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__assessment.html",
+    "artifact_kind": "assessment",
+    "citation_element_id": "027-external-anatomy-of-livestock-terms-terminology__assessment.html-e1",
+    "excerpt_head": "Final Assessment External Anatomy of Livestock: Terms & Terminology Assessment",
+    "notes": "final quiz on livestock anatomy terms"
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments.html",
+    "artifact_kind": "standards_pacing",
+    "citation_element_id": "027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments.html-e1",
+    "excerpt_head": "Horizontal Alignments External Anatomy of Livestock: Terms & Terminology",
+    "notes": "short"
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__key-concepts.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__key-concepts.html",
+    "artifact_kind": "student_practice",
+    "citation_element_id": "027-external-anatomy-of-livestock-terms-terminology__key-concepts.html-e1",
+    "excerpt_head": "Key Concepts External Anatomy of Livestock: Terms & Terminology",
+    "notes": "short"
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__ngss-correlation.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__ngss-correlation.html",
+    "artifact_kind": "standards_pacing",
+    "citation_element_id": "027-external-anatomy-of-livestock-terms-terminology__ngss-correlation.html-e1",
+    "excerpt_head": "Common Core Standards Alignments External Anatomy of Livestock: Terms & Terminology NGSS Correlations",
+    "notes": "short"
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor.html",
+    "artifact_kind": "other",
+    "citation_element_id": "027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor.html-e1",
+    "excerpt_head": "Project Overview: Create presentation on external anatomy of assigned livestock animal",
+    "notes": "short",
+    "kind_fallback": true
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan.html",
+    "artifact_kind": "lesson_plan",
+    "citation_element_id": "027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan.html-e1",
+    "excerpt_head": "Lesson Plan: External Anatomy of Livestock \u2013 objectives to identify and analyze animal parts.",
+    "notes": "comprehensive lesson with multiple class activities and assessment"
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout.html",
+    "artifact_kind": "student_practice",
+    "citation_element_id": "027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout.html-e1",
+    "excerpt_head": "Vocabulary External Anatomy of Livestock Terms & Terminology Handout",
+    "notes": "short"
+  }
+}

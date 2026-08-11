@@ -29,9 +29,11 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import subprocess
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -134,6 +136,69 @@ def assert_stage_outputs(script: Path, project_id: str) -> None:
     raise StageOutputError(
         f"stage {script.name} produced no output for: {detail}"
     )
+
+
+# Plates the Review UI requires before advertising an E2E run (REVIEW-READY.json).
+# Path findings may be status:skipped but the file must exist. Course report is
+# GLOBAL-AUDIT.md or DASHBOARD.md. Graph is required only when --with-graph ran.
+REVIEW_READY_PATH_FINDINGS = tuple(
+    f"path_{letter}/findings.json" for letter in "abcdefgh"
+)
+REVIEW_READY_PLATES = (
+    "output/LESSON-QUALITY-FEEDBACK.json",
+    "output/LESSON-CURRICULUM-REVIEW.json",
+)
+
+
+def write_review_ready(
+    project_id: str,
+    *,
+    run_id: str,
+    model: str,
+    with_graph: bool,
+) -> Path | None:
+    """Publish REVIEW-READY.json when the e2e tree has a complete review surface.
+
+    Educational note: the website lists only runs with this marker. Incomplete
+    or soft-skipped quality/review plates must not become visible mid-flight.
+    """
+    root = project_dir(project_id)
+    missing: list[str] = []
+    for rel in REVIEW_READY_PATH_FINDINGS + REVIEW_READY_PLATES:
+        if not (root / rel).is_file():
+            missing.append(rel)
+    if not (
+        (root / "output" / "GLOBAL-AUDIT.md").is_file()
+        or (root / "output" / "DASHBOARD.md").is_file()
+    ):
+        missing.append("output/GLOBAL-AUDIT.md|DASHBOARD.md")
+    if with_graph:
+        graph_runs = root / "graph" / "runs"
+        has_graph = graph_runs.is_dir() and any(graph_runs.iterdir())
+        if not has_graph and not (root / "graph" / "PHASE-SUMMARY.json").is_file():
+            missing.append("graph/runs/<id>/ or graph/PHASE-SUMMARY.json")
+    if missing:
+        log(
+            "WARN: REVIEW-READY not written — missing: "
+            + ", ".join(missing)
+        )
+        return None
+    plates = list(REVIEW_READY_PATH_FINDINGS + REVIEW_READY_PLATES)
+    if (root / "output" / "GLOBAL-AUDIT.md").is_file():
+        plates.append("output/GLOBAL-AUDIT.md")
+    if (root / "output" / "DASHBOARD.md").is_file():
+        plates.append("output/DASHBOARD.md")
+    payload = {
+        "run_id": run_id,
+        "model": model,
+        "completed_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "with_graph": with_graph,
+        "plates": plates,
+    }
+    path = root / "REVIEW-READY.json"
+    path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    log(f"review-ready: wrote {path}")
+    return path
 
 
 def run_stage(script: Path, args: list[str], project_id: str) -> None:
@@ -621,11 +686,26 @@ def main() -> int:
     usage_summary = write_usage_summary(args.project)
     usage_totals = usage_summary.get("totals") or {}
 
+    # Gate the Review UI: only full e2e runs (not live-root / graph-only) publish.
+    if e2e_id and not args.graph_only and not args.allow_live_root:
+        ready = write_review_ready(
+            args.project,
+            run_id=e2e_id,
+            model=str(default_model),
+            with_graph=bool(args.with_graph),
+        )
+        if ready:
+            print(f"  Review UI:   READY ({ready.name})")
+        else:
+            print("  Review UI:   not ready (incomplete plates — see WARN above)")
+
     out = root / "output"
     print("\n" + "=" * 60)
     print("DONE — reports ready")
     print("=" * 60)
     print(f"  Dataset:     projects/{args.project}/")
+    if e2e_id:
+        print(f"  E2E root:    projects/{args.project}/e2e/runs/{e2e_id}/")
     print(f"  Global PDF:  {out / 'GLOBAL-AUDIT-REPORT.pdf'}")
     print(f"  First-pass:  {out / 'FIRST-PASS.md'}")
     print(f"  Global MD:   {out / 'GLOBAL-AUDIT.md'}")

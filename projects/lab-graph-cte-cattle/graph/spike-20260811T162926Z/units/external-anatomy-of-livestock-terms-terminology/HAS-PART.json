@@ -1,0 +1,554 @@
+{
+  "project_id": "lab-graph-cte-cattle",
+  "unit_id": "external-anatomy-of-livestock-terms-terminology",
+  "stage": "rebuilt-cte-spike",
+  "model": "cte-artifact-kind",
+  "method": "spike-graph-cte-v0-multi",
+  "nodes": [
+    {
+      "id": "course:lab-graph-cte-cattle",
+      "type": "Course",
+      "name": "lab-graph-cte-cattle"
+    },
+    {
+      "id": "unit:external-anatomy-of-livestock-terms-terminology",
+      "type": "LessonGrouping",
+      "name": "external-anatomy-of-livestock-terms-terminology",
+      "groupName": "unit"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__action-plan",
+      "type": "Material",
+      "role": "student_practice",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__action-plan.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__action-plan.html",
+      "artifact_kind": "student_practice",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__activity-career-connections",
+      "type": "Material",
+      "role": "student_practice",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__activity-career-connections.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__activity-career-connections.html",
+      "artifact_kind": "student_practice",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar",
+      "type": "Material",
+      "role": "student_practice",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar.html",
+      "artifact_kind": "student_practice",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key",
+      "type": "Material",
+      "role": "assessment",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key.html",
+      "artifact_kind": "assessment",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__assessment",
+      "type": "Material",
+      "role": "assessment",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__assessment.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__assessment.html",
+      "artifact_kind": "assessment",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments",
+      "type": "Material",
+      "role": "standards_pacing",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments.html",
+      "artifact_kind": "standards_pacing",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__key-concepts",
+      "type": "Material",
+      "role": "student_practice",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__key-concepts.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__key-concepts.html",
+      "artifact_kind": "student_practice",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__ngss-correlation",
+      "type": "Material",
+      "role": "standards_pacing",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__ngss-correlation.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__ngss-correlation.html",
+      "artifact_kind": "standards_pacing",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor",
+      "type": "Material",
+      "role": "student_practice",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor.html",
+      "artifact_kind": "student_practice",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan",
+      "type": "Material",
+      "role": "lesson_plan",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan.html",
+      "artifact_kind": "lesson_plan",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "material:027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout",
+      "type": "Material",
+      "role": "student_practice",
+      "name": "027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout.html",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout.html",
+      "artifact_kind": "student_practice",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "lesson:external-anatomy-of-livestock-terms-terminology:l1",
+      "type": "Lesson",
+      "name": "Class 1 \u2014 Anatomical Terms of Location",
+      "lesson_n": 1,
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "lesson:external-anatomy-of-livestock-terms-terminology:l2",
+      "type": "Lesson",
+      "name": "Class 2 \u2014 External Components of Livestock",
+      "lesson_n": 2,
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "lesson:external-anatomy-of-livestock-terms-terminology:l3",
+      "type": "Lesson",
+      "name": "Class 3 \u2014 External Anatomy of Cattle",
+      "lesson_n": 3,
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "lesson:external-anatomy-of-livestock-terms-terminology:l4",
+      "type": "Lesson",
+      "name": "Class 4 \u2014 External Anatomy of Swine",
+      "lesson_n": 4,
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "lesson:external-anatomy-of-livestock-terms-terminology:l5",
+      "type": "Lesson",
+      "name": "Class 5 \u2014 External Anatomy of Sheep",
+      "lesson_n": 5,
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "lesson:external-anatomy-of-livestock-terms-terminology:l6",
+      "type": "Lesson",
+      "name": "Class 6 \u2014 External Anatomy of Goats",
+      "lesson_n": 6,
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key:item",
+      "type": "Assessment",
+      "name": "Final Assessment \u2014 External Anatomy of Livestock: Terms & Terminology",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key.html",
+      "artifact_kind": "assessment",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "id": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment:item",
+      "type": "Assessment",
+      "name": "External Anatomy of Livestock: Terms & Terminology Assessment",
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__assessment.html",
+      "artifact_kind": "assessment",
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    }
+  ],
+  "edges": [
+    {
+      "rel": "hasPart",
+      "from": "course:lab-graph-cte-cattle",
+      "to": "unit:external-anatomy-of-livestock-terms-terminology"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "lesson:external-anatomy-of-livestock-terms-terminology:l1"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "lesson:external-anatomy-of-livestock-terms-terminology:l2"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "lesson:external-anatomy-of-livestock-terms-terminology:l3"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "lesson:external-anatomy-of-livestock-terms-terminology:l4"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "lesson:external-anatomy-of-livestock-terms-terminology:l5"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "lesson:external-anatomy-of-livestock-terms-terminology:l6"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l1",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__action-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l2",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__action-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l3",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__action-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l4",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__action-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l5",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__action-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l6",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__action-plan"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__action-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l1",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__activity-career-connections"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l2",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__activity-career-connections"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l3",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__activity-career-connections"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l4",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__activity-career-connections"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l5",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__activity-career-connections"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l6",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__activity-career-connections"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__activity-career-connections"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l4",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l1",
+      "to": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l2",
+      "to": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l3",
+      "to": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l4",
+      "to": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l5",
+      "to": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l6",
+      "to": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key:item"
+    },
+    {
+      "rel": "uses",
+      "from": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key:item",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l1",
+      "to": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l2",
+      "to": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l3",
+      "to": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l4",
+      "to": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l5",
+      "to": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment:item"
+    },
+    {
+      "rel": "hasPart",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l6",
+      "to": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment:item"
+    },
+    {
+      "rel": "uses",
+      "from": "assessment:027-external-anatomy-of-livestock-terms-terminology__assessment:item",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__assessment"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__assessment"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l1",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l2",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l3",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l4",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l5",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l6",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l1",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__key-concepts"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__key-concepts"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l1",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__ngss-correlation"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l2",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__ngss-correlation"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l3",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__ngss-correlation"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l4",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__ngss-correlation"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l5",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__ngss-correlation"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l6",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__ngss-correlation"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__ngss-correlation"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l1",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l2",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l3",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l4",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l5",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l6",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor"
+    },
+    {
+      "rel": "describes",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l1",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan"
+    },
+    {
+      "rel": "describes",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l2",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan"
+    },
+    {
+      "rel": "describes",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l3",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan"
+    },
+    {
+      "rel": "describes",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l4",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan"
+    },
+    {
+      "rel": "describes",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l5",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan"
+    },
+    {
+      "rel": "describes",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l6",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l1",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout"
+    },
+    {
+      "rel": "spanIn",
+      "from": "lesson:external-anatomy-of-livestock-terms-terminology:l2",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:external-anatomy-of-livestock-terms-terminology",
+      "to": "material:027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout"
+    }
+  ],
+  "coverage": {
+    "source_files": [
+      "027-external-anatomy-of-livestock-terms-terminology__action-plan.html",
+      "027-external-anatomy-of-livestock-terms-terminology__activity-career-connections.html",
+      "027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar.html",
+      "027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key.html",
+      "027-external-anatomy-of-livestock-terms-terminology__assessment.html",
+      "027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments.html",
+      "027-external-anatomy-of-livestock-terms-terminology__key-concepts.html",
+      "027-external-anatomy-of-livestock-terms-terminology__ngss-correlation.html",
+      "027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor.html",
+      "027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan.html",
+      "027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout.html"
+    ]
+  }
+}

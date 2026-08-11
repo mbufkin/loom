@@ -424,6 +424,8 @@ export interface E2ERunInfo {
   run_id: string;
   has_dashboard: boolean;
   has_quality: boolean;
+  /** True when REVIEW-READY.json is present (API only lists these). */
+  review_ready?: boolean;
   n_output_units: number;
   n_graph_runs: number;
 }

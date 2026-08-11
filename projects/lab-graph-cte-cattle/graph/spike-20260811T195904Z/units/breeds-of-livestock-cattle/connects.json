@@ -1,0 +1,172 @@
+{
+  "023-breeds-of-livestock-cattle__action-plan.html": {
+    "source_file": "023-breeds-of-livestock-cattle__action-plan.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Unit Action Plan lists student tasks for Classes 1\u20137; spans full spine, not a quiz/CFU."
+  },
+  "023-breeds-of-livestock-cattle__activity-career-connections.html": {
+    "source_file": "023-breeds-of-livestock-cattle__activity-career-connections.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Generic career-interview reflection; no breed-class lock, so usable across the unit spine as independent practice."
+  },
+  "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html": {
+    "source_file": "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Flashcards practice all 33 breeds (origin/traits/use); supports Classes 1\u20135 breed ID, not project/final."
+  },
+  "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html": {
+    "source_file": "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "assessment",
+    "covers_lesson_numbers": [
+      1
+    ],
+    "is_assessment_bearing": true,
+    "assessment_name": "Check for Understanding 1 \u2014 Dairy Breeds",
+    "notes": "CFU filename and dairy-breed content align only with Class 1 \u2014 Dairy Breeds."
+  },
+  "023-breeds-of-livestock-cattle__final-assessment-answer-key.html": {
+    "source_file": "023-breeds-of-livestock-cattle__final-assessment-answer-key.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "assessment",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7
+    ],
+    "is_assessment_bearing": true,
+    "assessment_name": "Final Assessment Answer Key",
+    "notes": "Answer key for the unit final assessment; items span dairy, Asian/African, British, continental, and American breeds. Anchored to Class 7; no Build a Breed (Class 6) project items."
+  },
+  "023-breeds-of-livestock-cattle__final-assessment.html": {
+    "source_file": "023-breeds-of-livestock-cattle__final-assessment.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "assessment",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7
+    ],
+    "is_assessment_bearing": true,
+    "assessment_name": "Final Assessment \u2014 Breeds of Livestock: Cattle",
+    "notes": "Unit final exam; items span dairy, Asian/African, British, continental, and American breeds (Classes 1\u20135) and sit on Class 7 Final Assessment. Does not assess Class 6 project work."
+  },
+  "023-breeds-of-livestock-cattle__horizontal-alignments.html": {
+    "source_file": "023-breeds-of-livestock-cattle__horizontal-alignments.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "standards_pacing",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Unit-level horizontal alignments (LA/SS/Science); applies across the full cattle-breeds spine."
+  },
+  "023-breeds-of-livestock-cattle__key-concepts.html": {
+    "source_file": "023-breeds-of-livestock-cattle__key-concepts.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Fill-in key concepts span Dairy through American breed sections; no Build-a-Breed or final-assessment content."
+  },
+  "023-breeds-of-livestock-cattle__project-build-a-breed.html": {
+    "source_file": "023-breeds-of-livestock-cattle__project-build-a-breed.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      6,
+      7
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Build a Breed project packet with directions/rubric; spine Classes 6\u20137 are the project sessions (7 also final assessment)."
+  },
+  "023-breeds-of-livestock-cattle__view-lesson-plan.html": {
+    "source_file": "023-breeds-of-livestock-cattle__view-lesson-plan.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "lesson_plan",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Full unit lesson plan with Class 1\u20137 overviews, steps, activities, and project/assessment guidance spanning the entire spine."
+  },
+  "023-breeds-of-livestock-cattle__vocabulary-handout.html": {
+    "source_file": "023-breeds-of-livestock-cattle__vocabulary-handout.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Unit-wide cattle breed vocabulary (Bos indicus/taurus, sex/age terms, crossbred/composite/heterosis, conformation) referenced across all classes and the Build a Breed project."
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "023-breeds-of-livestock-cattle__action-plan.html": {
+    "source_file": "023-breeds-of-livestock-cattle__action-plan.html",
+    "artifact_kind": "lesson_plan",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Unit action/lesson plan for the cattle breeds pack; spans the full 7-class spine (dairy through final assessment), not a single-class CFU."
+  },
+  "023-breeds-of-livestock-cattle__activity-career-connections.html": {
+    "source_file": "023-breeds-of-livestock-cattle__activity-career-connections.html",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Generic career-interview worksheet with no breed-class cue; treat as unit-wide practice for Classes 1\u20136, not the final assessment."
+  },
+  "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html": {
+    "source_file": "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Flashcard set for all 33 breeds across dairy through American classes; not tied to project or final assessment."
+  },
+  "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html": {
+    "source_file": "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html",
+    "artifact_kind": "assessment",
+    "covers_lesson_numbers": [
+      1
+    ],
+    "is_assessment_bearing": true,
+    "assessment_name": "Check for Understanding 1 \u2014 Dairy Breeds",
+    "notes": "CFU titled for dairy breeds; maps clearly to Class 1 only."
+  },
+  "023-breeds-of-livestock-cattle__final-assessment-answer-key.html": {
+    "source_file": "023-breeds-of-livestock-cattle__final-assessment-answer-key.html",
+    "artifact_kind": "assessment",
+    "covers_lesson_numbers": [
+      7
+    ],
+    "is_assessment_bearing": true,
+    "assessment_name": "Breeds of Livestock: Cattle Final Assessment",
+    "notes": "Answer key for the unit final; maps to Class 7. Items span dairy/British/continental/American breed content from earlier classes but the artifact belongs on the Final Assessment lesson."
+  },
+  "023-breeds-of-livestock-cattle__final-assessment.html": {
+    "source_file": "023-breeds-of-livestock-cattle__final-assessment.html",
+    "artifact_kind": "assessment",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7
+    ],
+    "is_assessment_bearing": true,
+    "assessment_name": "Breeds of Livestock: Cattle Final Assessment",
+    "notes": "Unit final for Class 7; items span dairy, Asian/African, British, Continental, and American breeds (not the Class 6 project)."
+  },
+  "023-breeds-of-livestock-cattle__horizontal-alignments.html": {
+    "source_file": "023-breeds-of-livestock-cattle__horizontal-alignments.html",
+    "artifact_kind": "standards_pacing",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Unit-level horizontal standards/pacing crosswalk; applies across the full cattle-breeds spine, not a single class."
+  },
+  "023-breeds-of-livestock-cattle__key-concepts.html": {
+    "source_file": "023-breeds-of-livestock-cattle__key-concepts.html",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Fill-in key concepts packet opens on dairy breeds EQ/terminology; all Layer0 excerpts only evidence Class 1. Not assessment-bearing."
+  },
+  "023-breeds-of-livestock-cattle__project-build-a-breed.html": {
+    "source_file": "023-breeds-of-livestock-cattle__project-build-a-breed.html",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      6
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Build-a-breed project maps directly to Class 6 \u2014 Build a Breed Project; practice artifact, not a formal quiz/CFU."
+  },
+  "023-breeds-of-livestock-cattle__view-lesson-plan.html": {
+    "source_file": "023-breeds-of-livestock-cattle__view-lesson-plan.html",
+    "artifact_kind": "lesson_plan",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Unit view lesson plan spanning all 7 classes (350 min); attaches to full spine."
+  },
+  "023-breeds-of-livestock-cattle__vocabulary-handout.html": {
+    "source_file": "023-breeds-of-livestock-cattle__vocabulary-handout.html",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Unit-wide cattle vocabulary (Bos indicus/taurus, sex/age terms, crossbred/composite/heterosis, dual-purpose, conformation) supports all breed classes, project, and assessment review."
+  }
+}
