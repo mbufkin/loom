@@ -1,0 +1,13 @@
+{
+  "two_units_present": true,
+  "breeds-of-livestock-cattle__lesson_nodes_ge_1": true,
+  "breeds-of-livestock-cattle__view_lesson_plan_is_lesson_plan": true,
+  "breeds-of-livestock-cattle__view_lesson_plan_path_A": true,
+  "external-anatomy-of-livestock-terms-terminology__lesson_nodes_ge_1": true,
+  "external-anatomy-of-livestock-terms-terminology__view_lesson_plan_is_lesson_plan": true,
+  "external-anatomy-of-livestock-terms-terminology__view_lesson_plan_path_A": true,
+  "no_teacher_edition_role": true,
+  "lesson_ids_namespaced": true,
+  "no_cross_unit_edges": true,
+  "no_foreign_lesson_attachments": true
+}

@@ -1,0 +1,155 @@
+{
+  "027-external-anatomy-of-livestock-terms-terminology__action-plan.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__action-plan.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Student action-plan checklist spans Class 1\u20136 with per-class steps; used across the full unit spine, not assessment-bearing."
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__activity-career-connections.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__activity-career-connections.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Career interview independent practice; no class-specific anatomy focus, so mapped as flexible enrichment across the unit spine."
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      4,
+      5
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Boar external-anatomy labeling practice maps to Class 4\u20135 Labeling Activities; not assessment-bearing."
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "assessment",
+    "covers_lesson_numbers": [
+      6
+    ],
+    "is_assessment_bearing": true,
+    "assessment_name": "External Anatomy of Livestock: Terms & Terminology Final Assessment (Answer Key)",
+    "notes": "Final assessment answer key for Class 6 Assessment day; MC items primarily assess Class 1 location terms and Class 2 external components."
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__assessment.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__assessment.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "assessment",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      6
+    ],
+    "is_assessment_bearing": true,
+    "assessment_name": "External Anatomy of Livestock: Terms & Terminology Final Assessment",
+    "notes": "Final assessment administered in Class 6; items test Class 1 location terms and Class 2 external components (no diagram/labeling items for Classes 3\u20135)."
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "standards_pacing",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Unit-level horizontal alignments (Math/ELA/Science foundations); supports full 6-class spine, not a single lesson."
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__key-concepts.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__key-concepts.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1,
+      2
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Fill-in notes span Anatomical Terms of Location (Class 1) and External Components of Livestock (Class 2); not quiz/assessment."
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__ngss-correlation.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__ngss-correlation.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "standards_pacing",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Unit-level NGSS correlation (HS-LS1-2, HS-LS2-7); applies across the full lesson spine, not a single class."
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      4,
+      5,
+      6
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Multi-day Livestock Instructor presentation project; spine Classes 4\u20136 explicitly name this project (labeling work + final share/assessment day)."
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "lesson_plan",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Full 6-class lesson plan spanning anatomical terms through assessment and Livestock Instructor Project."
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1,
+      2
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Vocab handout mixes location terms (cranial/caudal/distal/dorsal/proximal/ventral) for Class 1 and external-part terms (auricle, nares, vibrissae, etc.) for Class 2; not assessment-bearing."
+  }
+}

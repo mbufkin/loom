@@ -1,0 +1,79 @@
+{
+  "023-breeds-of-livestock-cattle__action-plan.html": {
+    "source_file": "023-breeds-of-livestock-cattle__action-plan.html",
+    "artifact_kind": "student_practice",
+    "citation_element_id": "e1",
+    "excerpt_head": "The Action Plan lays out a list of tasks for you to complete during the lesson.",
+    "notes": "Action Plan filename and student-facing task checklist across classes; rule maps Action Plan to student_practice even with objectives/overview."
+  },
+  "023-breeds-of-livestock-cattle__activity-career-connections.html": {
+    "source_file": "023-breeds-of-livestock-cattle__activity-career-connections.html",
+    "artifact_kind": "student_practice",
+    "citation_element_id": "023-breeds-of-livestock-cattle__activity-career-connections.html-e1",
+    "excerpt_head": "view the required number of interviews and answer the questions",
+    "notes": "Student Career Connections worksheet: watch interviews and answer numbered reflection prompts; independent practice, not a lesson plan or assessment."
+  },
+  "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html": {
+    "source_file": "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html",
+    "artifact_kind": "student_practice",
+    "citation_element_id": "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html-e1",
+    "excerpt_head": "You will develop a set of flashcards to practice your knowledge of cattle breeds",
+    "notes": "Student-facing flashcard activity with creation, peer quiz, and submission steps\u2014not a lesson plan or assessment."
+  },
+  "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html": {
+    "source_file": "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html",
+    "artifact_kind": "assessment",
+    "citation_element_id": "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html-e1",
+    "excerpt_head": "Check for Understanding Dairy Breeds Directions: Answer the following questions.",
+    "notes": "Primary job is a CFU quiz (MC, T/F, matching) on dairy breeds; filename and assessment_checkpoint element align."
+  },
+  "023-breeds-of-livestock-cattle__final-assessment-answer-key.html": {
+    "source_file": "023-breeds-of-livestock-cattle__final-assessment-answer-key.html",
+    "artifact_kind": "assessment",
+    "citation_element_id": "e1",
+    "excerpt_head": "Final Assessment Breeds of Livestock: Cattle Final Assessment Answer Key",
+    "notes": "Primary job is a final assessment answer key (scored items with correct responses); answer keys travel with assessments."
+  },
+  "023-breeds-of-livestock-cattle__final-assessment.html": {
+    "source_file": "023-breeds-of-livestock-cattle__final-assessment.html",
+    "artifact_kind": "assessment",
+    "citation_element_id": "e1",
+    "excerpt_head": "Final Assessment Breeds of Livestock: Cattle Final Assessment",
+    "notes": "Primary job is a scored final test: directions to answer questions plus match/MC/T-F/fill-in items on cattle breeds."
+  },
+  "023-breeds-of-livestock-cattle__horizontal-alignments.html": {
+    "source_file": "023-breeds-of-livestock-cattle__horizontal-alignments.html",
+    "artifact_kind": "standards_pacing",
+    "citation_element_id": "e1",
+    "excerpt_head": "Breeds of Livestock: Cattle Horizontal Alignments Core-Subject Area: Language Arts",
+    "notes": "Primary job is cross-subject horizontal alignments (LA/SS/Science foundation concepts), not lesson steps or student work."
+  },
+  "023-breeds-of-livestock-cattle__key-concepts.html": {
+    "source_file": "023-breeds-of-livestock-cattle__key-concepts.html",
+    "artifact_kind": "student_practice",
+    "citation_element_id": "e1",
+    "excerpt_head": "Key Concepts Breeds of Livestock: Cattle Key Concepts \u00b7 Cattle Terminology (Part 1) \u00b7 _____________",
+    "notes": "Filename and body are Key Concepts guided notes with blank lines for student fill-in; primary job is student-facing practice, not a lesson plan or assessment."
+  },
+  "023-breeds-of-livestock-cattle__project-build-a-breed.html": {
+    "source_file": "023-breeds-of-livestock-cattle__project-build-a-breed.html",
+    "artifact_kind": "student_practice",
+    "citation_element_id": "e1",
+    "excerpt_head": "Project Overview: You will create your own crossbred or composite cattle breed",
+    "notes": "Student project sheet with you-will-create directions, deliverables, gallery walk, and student rubric\u2014not a lesson plan or quiz."
+  },
+  "023-breeds-of-livestock-cattle__view-lesson-plan.html": {
+    "source_file": "023-breeds-of-livestock-cattle__view-lesson-plan.html",
+    "artifact_kind": "lesson_plan",
+    "citation_element_id": "e1",
+    "excerpt_head": "Lesson Plan Breeds of Livestock: Cattle \u2026 Seat Time: 7 Classes | 350 minutes",
+    "notes": "Primary job is the teacher class-by-class sequence (objectives, bell ringers, PPT steps, CFU/project pacing); View Lesson Plan filename matches substance."
+  },
+  "023-breeds-of-livestock-cattle__vocabulary-handout.html": {
+    "source_file": "023-breeds-of-livestock-cattle__vocabulary-handout.html",
+    "artifact_kind": "student_practice",
+    "citation_element_id": "e1",
+    "excerpt_head": "Vocabulary Breeds of Livestock: Cattle Vocabulary Handout",
+    "notes": "Student-facing vocab handout with term\u2013definition pairs; rules map vocab handouts to student_practice."
+  }
+}

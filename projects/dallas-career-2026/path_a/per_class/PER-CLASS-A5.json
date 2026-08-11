@@ -1,0 +1,1564 @@
+{
+  "spike": "path_a_per_class_a5",
+  "source_file": "doc_3a729a90b236_Business__Marketing___Finance_Lesson_Plan_.txt",
+  "doc_title": "Dallas — Business, Marketing & Finance",
+  "plain_text": true,
+  "class_count": 3,
+  "overview_chars": 2500,
+  "appendix_chars": 0,
+  "episode_chars": {
+    "1": 7694,
+    "2": 7843,
+    "3": 5503
+  },
+  "whole_doc_hunter": "6/8 whole-file",
+  "hunter_ids": [
+    "anticipatory_set",
+    "objective_purpose",
+    "input",
+    "modeling",
+    "check_for_understanding",
+    "guided_practice",
+    "independent_practice",
+    "closure"
+  ],
+  "classes": [
+    {
+      "class_num": 1,
+      "title": "Day 1",
+      "topic": "Engage: (5-10 minutes)",
+      "char_count": 7694,
+      "element_count": 10,
+      "hunter_core_present": 6,
+      "hunter_core_total": 8,
+      "missing": [
+        "independent_practice",
+        "closure"
+      ],
+      "present": [
+        "anticipatory_set",
+        "objective_purpose",
+        "input",
+        "modeling",
+        "check_for_understanding",
+        "guided_practice"
+      ],
+      "matrix": [
+        {
+          "id": "anticipatory_set",
+          "label": "1. Anticipatory set (hook / Do Now / Engage)",
+          "status": "PRESENT",
+          "cite": "Engage Activity"
+        },
+        {
+          "id": "objective_purpose",
+          "label": "2. Objective & purpose (stated to students)",
+          "status": "PRESENT",
+          "cite": "Engage: (5-10 minutes) Students will identify their favorite products.  Student Engagement Strategy / Resource: The student will create a list of 3 of their favorite products. Identify why they like the product and describe features of the product.  Students will share their answers with the class. Make note of duplicate responses to gauge the amount of students identifying the same products.  Question Stems: Engagement Question 1: What makes you buy a product the first time? Engagement…"
+        },
+        {
+          "id": "input",
+          "label": "3. Input (teach content / vocabulary)",
+          "status": "PRESENT",
+          "cite": "Explain Activity"
+        },
+        {
+          "id": "modeling",
+          "label": "4. Modeling (I do / demonstrate)",
+          "status": "PRESENT",
+          "cite": "Evaluate: (5-10 Minutes) Have students write a paragraph describing the process of creating a new product and the process of working in a group.  --- TABLE --- Principles of Business, Marketing & Finance Career                                                          Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Product the groups created on Day 1 Lesson plan Product the groups created on Day 1 Lesson plan Product the groups created on Day 1 TEKS…"
+        },
+        {
+          "id": "check_for_understanding",
+          "label": "5. Check for understanding",
+          "status": "PRESENT",
+          "cite": "Extend Activity Extend: (10-15 Minutes) Allow the students that are not presenting to ask questions/give suggestions about the products and target market. Students who are presenting can make notes of the suggestions to change anything if desired tomorrow.  Question Stems: Extend Question 1: How can I improve my product? Allow the students that are not presenting to ask questions/give suggestions about the products and target market. Students who are presenting can make notes of the…"
+        },
+        {
+          "id": "guided_practice",
+          "label": "6. Guided practice (We do)",
+          "status": "PRESENT",
+          "cite": "Explore Activity"
+        },
+        {
+          "id": "independent_practice",
+          "label": "7. Independent practice (You do)",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "closure",
+          "label": "8. Closure",
+          "status": "MISSING",
+          "cite": ""
+        }
+      ],
+      "steps": {
+        "A2": {
+          "step": "A2",
+          "teks": {
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Evaluate: (5-10 Minutes) Have students write a paragraph describing the process of creating a new product and the process of working in a group.  --- TABLE --- Principles of Business, Marketing & Finance Career                                                          Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Product the groups created on Day 1 Lesson plan Product the groups created on Day 1 Lesson plan Product the groups created on Day 1 TEKS…"
+            ]
+          },
+          "objective": {
+            "status": "PRESENT",
+            "count": 4,
+            "cites": [
+              "Engage: (5-10 minutes) Students will identify their favorite products.  Student Engagement Strategy / Resource: The student will create a list of 3 of their favorite products. Identify why they like the product and describe features of the product.  Students will share their answers with the class. Make note of duplicate responses to gauge the amount of students identifying the same products.  Question Stems: Engagement Question 1: What makes you buy a product the first time? Engagement…",
+              "Explain: (5-10 Minutes)  Students will create a product out of household items.  Student Engagement Strategy / Resource: Students will be placed in groups or no more than four. Each group will get the exact same products and quantity.  Encourage them to think out of the box to develop a new product. Their product should fulfill a consumer's needs. Encourage the students to brainstorm ideas before using the materials. Don’t replace materials if they destroy them before creating their idea. …",
+              "Explore: (25-30 Minutes) Students will explore with hands-on activity in small groups. Student Engagement Strategy / Resource: Students will be given 25-30 minutes to create their product. They will decide who the target market is and be able to identify the age, gender, etc of the person. They will also name their product.  Students will present their product to the class. They will share the name of the product, explain what the product does and share the target market.  Question Stems:…"
+            ]
+          }
+        },
+        "A3": {
+          "step": "A3",
+          "has_objective": true,
+          "has_activities": true,
+          "has_assessment": true,
+          "mismatches": [],
+          "status": "COHERENT"
+        },
+        "A4": {
+          "step": "A4",
+          "formative": {
+            "status": "PRESENT",
+            "items": [
+              {
+                "element_id": "class-1-e7",
+                "excerpt": "Extend Activity Extend: (10-15 Minutes) Allow the students that are not presenting to ask questions/give suggestions about the products and target market. Students who are presenting can make notes of the suggestions to change anything if desired tomorrow.  Question Stems: Extend Question 1: How can I improve my product? Allow the students that are not presenting to ask questions/give suggestions about the products and target market. Students who are presenting can make notes of the…"
+              },
+              {
+                "element_id": "class-1-e8",
+                "excerpt": "Evaluate Activity"
+              }
+            ]
+          },
+          "summative": {
+            "status": "MISSING",
+            "items": []
+          }
+        },
+        "A5": {
+          "step": "A5",
+          "hunter_core_present": 6,
+          "hunter_core_total": 8,
+          "matrix": [
+            {
+              "id": "anticipatory_set",
+              "label": "1. Anticipatory set (hook / Do Now / Engage)",
+              "status": "PRESENT",
+              "cite": "Engage Activity"
+            },
+            {
+              "id": "objective_purpose",
+              "label": "2. Objective & purpose (stated to students)",
+              "status": "PRESENT",
+              "cite": "Engage: (5-10 minutes) Students will identify their favorite products.  Student Engagement Strategy / Resource: The student will create a list of 3 of their favorite products. Identify why they like the product and describe features of the product.  Students will share their answers with the class. Make note of duplicate responses to gauge the amount of students identifying the same products.  Question Stems: Engagement Question 1: What makes you buy a product the first time? Engagement…"
+            },
+            {
+              "id": "input",
+              "label": "3. Input (teach content / vocabulary)",
+              "status": "PRESENT",
+              "cite": "Explain Activity"
+            },
+            {
+              "id": "modeling",
+              "label": "4. Modeling (I do / demonstrate)",
+              "status": "PRESENT",
+              "cite": "Evaluate: (5-10 Minutes) Have students write a paragraph describing the process of creating a new product and the process of working in a group.  --- TABLE --- Principles of Business, Marketing & Finance Career                                                          Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Product the groups created on Day 1 Lesson plan Product the groups created on Day 1 Lesson plan Product the groups created on Day 1 TEKS…"
+            },
+            {
+              "id": "check_for_understanding",
+              "label": "5. Check for understanding",
+              "status": "PRESENT",
+              "cite": "Extend Activity Extend: (10-15 Minutes) Allow the students that are not presenting to ask questions/give suggestions about the products and target market. Students who are presenting can make notes of the suggestions to change anything if desired tomorrow.  Question Stems: Extend Question 1: How can I improve my product? Allow the students that are not presenting to ask questions/give suggestions about the products and target market. Students who are presenting can make notes of the…"
+            },
+            {
+              "id": "guided_practice",
+              "label": "6. Guided practice (We do)",
+              "status": "PRESENT",
+              "cite": "Explore Activity"
+            },
+            {
+              "id": "independent_practice",
+              "label": "7. Independent practice (You do)",
+              "status": "MISSING",
+              "cite": ""
+            },
+            {
+              "id": "closure",
+              "label": "8. Closure",
+              "status": "MISSING",
+              "cite": ""
+            }
+          ]
+        },
+        "A6": {
+          "method": "code_fallback",
+          "present": 9,
+          "missing": 5,
+          "missing_fields": [
+            "lesson_title",
+            "independent_practice",
+            "closure",
+            "elps_language",
+            "accommodations"
+          ],
+          "fields": {
+            "lesson_title": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "learning_objective": {
+              "status": "PRESENT",
+              "text": "Engage: (5-10 minutes) Students will identify their favorite products.  Student Engagement Strategy / Resource: The student will create a list of 3 of their favorite products. Identify why they like the product and describe features of the product.  Students will share their answers with the class. Make note of duplicate responses to gauge the amount of students identifying the same products.  Question Stems: Engagement Question 1: What makes you buy a product the first time? Engagement…",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-1-e2"
+            },
+            "teks": {
+              "status": "PRESENT",
+              "text": "Engage: (5-10 minutes) Students will identify their favorite products.  Student Engagement Strategy / Resource: The student will create a list of 3 of their favorite products. Identify why they like the product and describe features of the product.  Students will share their answers with the class. Make note of duplicate responses to gauge the amount of students identifying the same products.  Question Stems: Engagement Question 1: What makes you buy a product the first time? Engagement…",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-1-e2"
+            },
+            "materials": {
+              "status": "PRESENT",
+              "text": "Explain: (5-10 Minutes)  Students will create a product out of household items.  Student Engagement Strategy / Resource: Students will be placed in groups or no more than four. Each group will get the exact same products and quantity.  Encourage them to think out of the box to develop a new product. Their product should fulfill a consumer's needs. Encourage the students to brainstorm ideas before using the materials. Don’t replace materials if they destroy them before creating their idea. …",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-1-e4"
+            },
+            "anticipatory_set": {
+              "status": "PRESENT",
+              "text": "Engage Activity",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-1-e1"
+            },
+            "objective_purpose": {
+              "status": "PRESENT",
+              "text": "Explore: (25-30 Minutes) Students will explore with hands-on activity in small groups. Student Engagement Strategy / Resource: Students will be given 25-30 minutes to create their product. They will decide who the target market is and be able to identify the age, gender, etc of the person. They will also name their product.  Students will present their product to the class. They will share the name of the product, explain what the product does and share the target market.  Question Stems:…",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-1-e6"
+            },
+            "input": {
+              "status": "PRESENT",
+              "text": "Explain Activity",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-1-e3"
+            },
+            "modeling": {
+              "status": "PRESENT",
+              "text": "Evaluate: (5-10 Minutes) Have students write a paragraph describing the process of creating a new product and the process of working in a group.  --- TABLE --- Principles of Business, Marketing & Finance Career                                                          Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Product the groups created on Day 1 Lesson plan Product the groups created on Day 1 Lesson plan Product the groups created on Day 1 TEKS…",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-1-e9"
+            },
+            "check_for_understanding": {
+              "status": "PRESENT",
+              "text": "Extend Activity Extend: (10-15 Minutes) Allow the students that are not presenting to ask questions/give suggestions about the products and target market. Students who are presenting can make notes of the suggestions to change anything if desired tomorrow.  Question Stems: Extend Question 1: How can I improve my product? Allow the students that are not presenting to ask questions/give suggestions about the products and target market. Students who are presenting can make notes of the…",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-1-e7"
+            },
+            "guided_practice": {
+              "status": "PRESENT",
+              "text": "Explore Activity",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-1-e5"
+            },
+            "independent_practice": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "closure": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "elps_language": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "accommodations": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            }
+          }
+        },
+        "A7": {
+          "step": "A7",
+          "elps": {
+            "status": "MISSING",
+            "cites": []
+          },
+          "accommodations": {
+            "status": "MISSING",
+            "cites": []
+          }
+        }
+      },
+      "pack_overview": {
+        "A2": {
+          "step": "A2",
+          "teks": {
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Day 1  Day 2  Day 3  --- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3…",
+              "Day 1  Day 2  Day 3  --- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3…"
+            ]
+          },
+          "objective": {
+            "status": "MISSING",
+            "count": 0,
+            "cites": []
+          }
+        },
+        "A3": {
+          "step": "A3",
+          "has_objective": false,
+          "has_activities": false,
+          "has_assessment": false,
+          "mismatches": [],
+          "status": "MISSING"
+        },
+        "A4": {
+          "step": "A4",
+          "formative": {
+            "status": "MISSING",
+            "items": []
+          },
+          "summative": {
+            "status": "MISSING",
+            "items": []
+          }
+        },
+        "A5": {
+          "step": "A5",
+          "hunter_core_present": 3,
+          "hunter_core_total": 8,
+          "matrix": [
+            {
+              "id": "anticipatory_set",
+              "label": "1. Anticipatory set (hook / Do Now / Engage)",
+              "status": "MISSING",
+              "cite": ""
+            },
+            {
+              "id": "objective_purpose",
+              "label": "2. Objective & purpose (stated to students)",
+              "status": "PRESENT",
+              "cite": "Day 1  Day 2  Day 3  --- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3…"
+            },
+            {
+              "id": "input",
+              "label": "3. Input (teach content / vocabulary)",
+              "status": "PRESENT",
+              "cite": "Day 1  Day 2  Day 3  --- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3…"
+            },
+            {
+              "id": "modeling",
+              "label": "4. Modeling (I do / demonstrate)",
+              "status": "PRESENT",
+              "cite": "Day 1  Day 2  Day 3  --- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3…"
+            },
+            {
+              "id": "check_for_understanding",
+              "label": "5. Check for understanding",
+              "status": "MISSING",
+              "cite": ""
+            },
+            {
+              "id": "guided_practice",
+              "label": "6. Guided practice (We do)",
+              "status": "MISSING",
+              "cite": ""
+            },
+            {
+              "id": "independent_practice",
+              "label": "7. Independent practice (You do)",
+              "status": "MISSING",
+              "cite": ""
+            },
+            {
+              "id": "closure",
+              "label": "8. Closure",
+              "status": "MISSING",
+              "cite": ""
+            }
+          ]
+        },
+        "A6": {
+          "method": "code_fallback",
+          "present": 2,
+          "missing": 12,
+          "missing_fields": [
+            "lesson_title",
+            "materials",
+            "anticipatory_set",
+            "objective_purpose",
+            "input",
+            "modeling",
+            "check_for_understanding",
+            "guided_practice",
+            "independent_practice",
+            "closure",
+            "elps_language",
+            "accommodations"
+          ],
+          "fields": {
+            "lesson_title": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "learning_objective": {
+              "status": "PRESENT",
+              "text": "Day 1  Day 2  Day 3  --- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3…",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-0-e1"
+            },
+            "teks": {
+              "status": "PRESENT",
+              "text": "Day 1  Day 2  Day 3  --- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3…",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-0-e1"
+            },
+            "materials": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "anticipatory_set": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "objective_purpose": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "input": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "modeling": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "check_for_understanding": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "guided_practice": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "independent_practice": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "closure": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "elps_language": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "accommodations": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            }
+          }
+        },
+        "A7": {
+          "step": "A7",
+          "elps": {
+            "status": "MISSING",
+            "cites": []
+          },
+          "accommodations": {
+            "status": "MISSING",
+            "cites": []
+          }
+        }
+      }
+    },
+    {
+      "class_num": 2,
+      "title": "Day 2",
+      "topic": "Engage: (5-10 minutes)",
+      "char_count": 7843,
+      "element_count": 10,
+      "hunter_core_present": 6,
+      "hunter_core_total": 8,
+      "missing": [
+        "independent_practice",
+        "closure"
+      ],
+      "present": [
+        "anticipatory_set",
+        "objective_purpose",
+        "input",
+        "modeling",
+        "check_for_understanding",
+        "guided_practice"
+      ],
+      "matrix": [
+        {
+          "id": "anticipatory_set",
+          "label": "1. Anticipatory set (hook / Do Now / Engage)",
+          "status": "PRESENT",
+          "cite": "Engage Activity"
+        },
+        {
+          "id": "objective_purpose",
+          "label": "2. Objective & purpose (stated to students)",
+          "status": "PRESENT",
+          "cite": "Engage: (5-10 minutes) Using their list from the “engage” activity from Day 1, students will identify costs.  Student Engagement Strategy / Resource: The students will use their list from the “engage” activity from Day 1 identifying the cost of the products. They will decide if they think the price is too high, too low or satisfactory.  If technology is available they can search to see how much it costs (or the markup) of their product.  Question Stems: Engagement Question 1: Why do products…"
+        },
+        {
+          "id": "input",
+          "label": "3. Input (teach content / vocabulary)",
+          "status": "PRESENT",
+          "cite": "Explain Activity"
+        },
+        {
+          "id": "modeling",
+          "label": "4. Modeling (I do / demonstrate)",
+          "status": "PRESENT",
+          "cite": "Evaluate: (5-10 Minutes) Have students write a paragraph explaining if they would be comfortable selling the product at the cost the team decided and if they would buy the product for the price they determined.  --- TABLE --- Principles of Business, Marketing & Finance Career                                                          Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Sales pitch handout Product from Day 1 Lesson plan Sales pitch handout…"
+        },
+        {
+          "id": "check_for_understanding",
+          "label": "5. Check for understanding",
+          "status": "PRESENT",
+          "cite": "Extend Activity Extend: (10-15 Minutes) Allow the students to change their percentage of markup to determine the price of higher and lower percentages. Describe why using a higher or lower percentage will be helpful or harmful to their business.  Question Stems: Extend Question 1: How do I know what the right price is for my product? Allow the students to change their percentage of markup to determine the price of higher and lower percentages. Describe why using a higher or lower percentage…"
+        },
+        {
+          "id": "guided_practice",
+          "label": "6. Guided practice (We do)",
+          "status": "PRESENT",
+          "cite": "Explore Activity"
+        },
+        {
+          "id": "independent_practice",
+          "label": "7. Independent practice (You do)",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "closure",
+          "label": "8. Closure",
+          "status": "MISSING",
+          "cite": ""
+        }
+      ],
+      "steps": {
+        "A2": {
+          "step": "A2",
+          "teks": {
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Evaluate: (5-10 Minutes) Have students write a paragraph explaining if they would be comfortable selling the product at the cost the team decided and if they would buy the product for the price they determined.  --- TABLE --- Principles of Business, Marketing & Finance Career                                                          Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Sales pitch handout Product from Day 1 Lesson plan Sales pitch handout…"
+            ]
+          },
+          "objective": {
+            "status": "PRESENT",
+            "count": 4,
+            "cites": [
+              "Engage: (5-10 minutes) Using their list from the “engage” activity from Day 1, students will identify costs.  Student Engagement Strategy / Resource: The students will use their list from the “engage” activity from Day 1 identifying the cost of the products. They will decide if they think the price is too high, too low or satisfactory.  If technology is available they can search to see how much it costs (or the markup) of their product.  Question Stems: Engagement Question 1: Why do products…",
+              "Explain: (5-10 Minutes)  Students will determine how much it costs to create one of the products. Handout for determining costs  Student Engagement Strategy / Resource: Students will again get in their groups they were in day 1.. They will need to determine the wholesale cost of these products and calculate the cost of making one of their products.  Question Stems: Explain Question 1: How do I know how much it costs to make my product?  Students will determine how much it costs to create one…",
+              "Explore: (25-30 Minutes) Students will explore with hands-on activity in small groups. Student Engagement Strategy / Resource: For the groups to finish in one period they should divide the work. Some can be making the list while others are researching the costs. They will quickly make a list of all the real products and quantities they will need to completely create one of their products. They will need to determine the wholesale cost of these products.  The students can use the attached…"
+            ]
+          }
+        },
+        "A3": {
+          "step": "A3",
+          "has_objective": true,
+          "has_activities": true,
+          "has_assessment": true,
+          "mismatches": [],
+          "status": "COHERENT"
+        },
+        "A4": {
+          "step": "A4",
+          "formative": {
+            "status": "PRESENT",
+            "items": [
+              {
+                "element_id": "class-2-e7",
+                "excerpt": "Extend Activity Extend: (10-15 Minutes) Allow the students to change their percentage of markup to determine the price of higher and lower percentages. Describe why using a higher or lower percentage will be helpful or harmful to their business.  Question Stems: Extend Question 1: How do I know what the right price is for my product? Allow the students to change their percentage of markup to determine the price of higher and lower percentages. Describe why using a higher or lower percentage…"
+              },
+              {
+                "element_id": "class-2-e8",
+                "excerpt": "Evaluate Activity"
+              }
+            ]
+          },
+          "summative": {
+            "status": "MISSING",
+            "items": []
+          }
+        },
+        "A5": {
+          "step": "A5",
+          "hunter_core_present": 6,
+          "hunter_core_total": 8,
+          "matrix": [
+            {
+              "id": "anticipatory_set",
+              "label": "1. Anticipatory set (hook / Do Now / Engage)",
+              "status": "PRESENT",
+              "cite": "Engage Activity"
+            },
+            {
+              "id": "objective_purpose",
+              "label": "2. Objective & purpose (stated to students)",
+              "status": "PRESENT",
+              "cite": "Engage: (5-10 minutes) Using their list from the “engage” activity from Day 1, students will identify costs.  Student Engagement Strategy / Resource: The students will use their list from the “engage” activity from Day 1 identifying the cost of the products. They will decide if they think the price is too high, too low or satisfactory.  If technology is available they can search to see how much it costs (or the markup) of their product.  Question Stems: Engagement Question 1: Why do products…"
+            },
+            {
+              "id": "input",
+              "label": "3. Input (teach content / vocabulary)",
+              "status": "PRESENT",
+              "cite": "Explain Activity"
+            },
+            {
+              "id": "modeling",
+              "label": "4. Modeling (I do / demonstrate)",
+              "status": "PRESENT",
+              "cite": "Evaluate: (5-10 Minutes) Have students write a paragraph explaining if they would be comfortable selling the product at the cost the team decided and if they would buy the product for the price they determined.  --- TABLE --- Principles of Business, Marketing & Finance Career                                                          Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Sales pitch handout Product from Day 1 Lesson plan Sales pitch handout…"
+            },
+            {
+              "id": "check_for_understanding",
+              "label": "5. Check for understanding",
+              "status": "PRESENT",
+              "cite": "Extend Activity Extend: (10-15 Minutes) Allow the students to change their percentage of markup to determine the price of higher and lower percentages. Describe why using a higher or lower percentage will be helpful or harmful to their business.  Question Stems: Extend Question 1: How do I know what the right price is for my product? Allow the students to change their percentage of markup to determine the price of higher and lower percentages. Describe why using a higher or lower percentage…"
+            },
+            {
+              "id": "guided_practice",
+              "label": "6. Guided practice (We do)",
+              "status": "PRESENT",
+              "cite": "Explore Activity"
+            },
+            {
+              "id": "independent_practice",
+              "label": "7. Independent practice (You do)",
+              "status": "MISSING",
+              "cite": ""
+            },
+            {
+              "id": "closure",
+              "label": "8. Closure",
+              "status": "MISSING",
+              "cite": ""
+            }
+          ]
+        },
+        "A6": {
+          "method": "code_fallback",
+          "present": 8,
+          "missing": 6,
+          "missing_fields": [
+            "lesson_title",
+            "materials",
+            "independent_practice",
+            "closure",
+            "elps_language",
+            "accommodations"
+          ],
+          "fields": {
+            "lesson_title": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "learning_objective": {
+              "status": "PRESENT",
+              "text": "Engage: (5-10 minutes) Using their list from the “engage” activity from Day 1, students will identify costs.  Student Engagement Strategy / Resource: The students will use their list from the “engage” activity from Day 1 identifying the cost of the products. They will decide if they think the price is too high, too low or satisfactory.  If technology is available they can search to see how much it costs (or the markup) of their product.  Question Stems: Engagement Question 1: Why do products…",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-2-e2"
+            },
+            "teks": {
+              "status": "PRESENT",
+              "text": "Engage: (5-10 minutes) Using their list from the “engage” activity from Day 1, students will identify costs.  Student Engagement Strategy / Resource: The students will use their list from the “engage” activity from Day 1 identifying the cost of the products. They will decide if they think the price is too high, too low or satisfactory.  If technology is available they can search to see how much it costs (or the markup) of their product.  Question Stems: Engagement Question 1: Why do products…",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-2-e2"
+            },
+            "materials": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "anticipatory_set": {
+              "status": "PRESENT",
+              "text": "Engage Activity",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-2-e1"
+            },
+            "objective_purpose": {
+              "status": "PRESENT",
+              "text": "Explain: (5-10 Minutes)  Students will determine how much it costs to create one of the products. Handout for determining costs  Student Engagement Strategy / Resource: Students will again get in their groups they were in day 1.. They will need to determine the wholesale cost of these products and calculate the cost of making one of their products.  Question Stems: Explain Question 1: How do I know how much it costs to make my product?  Students will determine how much it costs to create one…",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-2-e4"
+            },
+            "input": {
+              "status": "PRESENT",
+              "text": "Explain Activity",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-2-e3"
+            },
+            "modeling": {
+              "status": "PRESENT",
+              "text": "Evaluate: (5-10 Minutes) Have students write a paragraph explaining if they would be comfortable selling the product at the cost the team decided and if they would buy the product for the price they determined.  --- TABLE --- Principles of Business, Marketing & Finance Career                                                          Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Sales pitch handout Product from Day 1 Lesson plan Sales pitch handout…",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-2-e9"
+            },
+            "check_for_understanding": {
+              "status": "PRESENT",
+              "text": "Extend Activity Extend: (10-15 Minutes) Allow the students to change their percentage of markup to determine the price of higher and lower percentages. Describe why using a higher or lower percentage will be helpful or harmful to their business.  Question Stems: Extend Question 1: How do I know what the right price is for my product? Allow the students to change their percentage of markup to determine the price of higher and lower percentages. Describe why using a higher or lower percentage…",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-2-e7"
+            },
+            "guided_practice": {
+              "status": "PRESENT",
+              "text": "Explore Activity",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-2-e5"
+            },
+            "independent_practice": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "closure": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "elps_language": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "accommodations": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            }
+          }
+        },
+        "A7": {
+          "step": "A7",
+          "elps": {
+            "status": "MISSING",
+            "cites": []
+          },
+          "accommodations": {
+            "status": "MISSING",
+            "cites": []
+          }
+        }
+      },
+      "pack_overview": {
+        "A2": {
+          "step": "A2",
+          "teks": {
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Day 1  Day 2  Day 3  --- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3…",
+              "Day 1  Day 2  Day 3  --- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3…"
+            ]
+          },
+          "objective": {
+            "status": "MISSING",
+            "count": 0,
+            "cites": []
+          }
+        },
+        "A3": {
+          "step": "A3",
+          "has_objective": false,
+          "has_activities": false,
+          "has_assessment": false,
+          "mismatches": [],
+          "status": "MISSING"
+        },
+        "A4": {
+          "step": "A4",
+          "formative": {
+            "status": "MISSING",
+            "items": []
+          },
+          "summative": {
+            "status": "MISSING",
+            "items": []
+          }
+        },
+        "A5": {
+          "step": "A5",
+          "hunter_core_present": 3,
+          "hunter_core_total": 8,
+          "matrix": [
+            {
+              "id": "anticipatory_set",
+              "label": "1. Anticipatory set (hook / Do Now / Engage)",
+              "status": "MISSING",
+              "cite": ""
+            },
+            {
+              "id": "objective_purpose",
+              "label": "2. Objective & purpose (stated to students)",
+              "status": "PRESENT",
+              "cite": "Day 1  Day 2  Day 3  --- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3…"
+            },
+            {
+              "id": "input",
+              "label": "3. Input (teach content / vocabulary)",
+              "status": "PRESENT",
+              "cite": "Day 1  Day 2  Day 3  --- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3…"
+            },
+            {
+              "id": "modeling",
+              "label": "4. Modeling (I do / demonstrate)",
+              "status": "PRESENT",
+              "cite": "Day 1  Day 2  Day 3  --- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3…"
+            },
+            {
+              "id": "check_for_understanding",
+              "label": "5. Check for understanding",
+              "status": "MISSING",
+              "cite": ""
+            },
+            {
+              "id": "guided_practice",
+              "label": "6. Guided practice (We do)",
+              "status": "MISSING",
+              "cite": ""
+            },
+            {
+              "id": "independent_practice",
+              "label": "7. Independent practice (You do)",
+              "status": "MISSING",
+              "cite": ""
+            },
+            {
+              "id": "closure",
+              "label": "8. Closure",
+              "status": "MISSING",
+              "cite": ""
+            }
+          ]
+        },
+        "A6": {
+          "method": "code_fallback",
+          "present": 2,
+          "missing": 12,
+          "missing_fields": [
+            "lesson_title",
+            "materials",
+            "anticipatory_set",
+            "objective_purpose",
+            "input",
+            "modeling",
+            "check_for_understanding",
+            "guided_practice",
+            "independent_practice",
+            "closure",
+            "elps_language",
+            "accommodations"
+          ],
+          "fields": {
+            "lesson_title": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "learning_objective": {
+              "status": "PRESENT",
+              "text": "Day 1  Day 2  Day 3  --- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3…",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-0-e1"
+            },
+            "teks": {
+              "status": "PRESENT",
+              "text": "Day 1  Day 2  Day 3  --- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3…",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-0-e1"
+            },
+            "materials": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "anticipatory_set": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "objective_purpose": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "input": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "modeling": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "check_for_understanding": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "guided_practice": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "independent_practice": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "closure": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "elps_language": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "accommodations": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            }
+          }
+        },
+        "A7": {
+          "step": "A7",
+          "elps": {
+            "status": "MISSING",
+            "cites": []
+          },
+          "accommodations": {
+            "status": "MISSING",
+            "cites": []
+          }
+        }
+      }
+    },
+    {
+      "class_num": 3,
+      "title": "Day 3",
+      "topic": "Engage: (5-10 minutes)",
+      "char_count": 5503,
+      "element_count": 11,
+      "hunter_core_present": 6,
+      "hunter_core_total": 8,
+      "missing": [
+        "independent_practice",
+        "closure"
+      ],
+      "present": [
+        "anticipatory_set",
+        "objective_purpose",
+        "input",
+        "modeling",
+        "check_for_understanding",
+        "guided_practice"
+      ],
+      "matrix": [
+        {
+          "id": "anticipatory_set",
+          "label": "1. Anticipatory set (hook / Do Now / Engage)",
+          "status": "PRESENT",
+          "cite": "Engage Activity"
+        },
+        {
+          "id": "objective_purpose",
+          "label": "2. Objective & purpose (stated to students)",
+          "status": "PRESENT",
+          "cite": "Explain: (5-10 Minutes)  Students will write a sales pitch for their product. Handout for sales pitch  Student Engagement Strategy / Resource: Students will again get in their groups they were in day 1 and day 2. They will create their own “Shark Tank” pitch for their product.  Explain the handout they will fill out to craft their pitch.  Question Stems: Explain Question 1: How do I get people to know about my product?  Students will write a sales pitch for their product. Handout for sales…"
+        },
+        {
+          "id": "input",
+          "label": "3. Input (teach content / vocabulary)",
+          "status": "PRESENT",
+          "cite": "Explain Activity"
+        },
+        {
+          "id": "modeling",
+          "label": "4. Modeling (I do / demonstrate)",
+          "status": "PRESENT",
+          "cite": "Explain Activity"
+        },
+        {
+          "id": "check_for_understanding",
+          "label": "5. Check for understanding",
+          "status": "PRESENT",
+          "cite": "Evaluate Activity"
+        },
+        {
+          "id": "guided_practice",
+          "label": "6. Guided practice (We do)",
+          "status": "PRESENT",
+          "cite": "Explore Activity"
+        },
+        {
+          "id": "independent_practice",
+          "label": "7. Independent practice (You do)",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "closure",
+          "label": "8. Closure",
+          "status": "MISSING",
+          "cite": ""
+        }
+      ],
+      "steps": {
+        "A2": {
+          "step": "A2",
+          "teks": {
+            "status": "MISSING",
+            "count": 0,
+            "cites": []
+          },
+          "objective": {
+            "status": "PRESENT",
+            "count": 5,
+            "cites": [
+              "Explain: (5-10 Minutes)  Students will write a sales pitch for their product. Handout for sales pitch  Student Engagement Strategy / Resource: Students will again get in their groups they were in day 1 and day 2. They will create their own “Shark Tank” pitch for their product.  Explain the handout they will fill out to craft their pitch.  Question Stems: Explain Question 1: How do I get people to know about my product?  Students will write a sales pitch for their product. Handout for sales…",
+              "Explore: (15-20 Minutes) Students will create and practice their sales pitch.  Student Engagement Strategy / Resource: The students will take 15-20 minutes to craft their pitch. They will also practice their pitch.  Question Stems: Explore Question 1: How can I make my sales pitch interesting? Students will create and practice their sales pitch.  Student Engagement Strategy / Resource: The students will take 15-20 minutes to craft their pitch. They will also practice their pitch.  Question…",
+              "Extend Activity Extend: (10-15 Minutes) Students will present their sales pitch.  Student Engagement Strategy / Resource: The groups will take turns presenting their pitch for their product to the class.  Question Stems: Extend Question 1: How do I engage my audience with my sales pitch? Students will present their sales pitch.  Student Engagement Strategy / Resource: The groups will take turns presenting their pitch for their product to the class.  Question Stems: Extend Question 1: How do I…"
+            ]
+          }
+        },
+        "A3": {
+          "step": "A3",
+          "has_objective": true,
+          "has_activities": true,
+          "has_assessment": true,
+          "mismatches": [],
+          "status": "COHERENT"
+        },
+        "A4": {
+          "step": "A4",
+          "formative": {
+            "status": "PRESENT",
+            "items": [
+              {
+                "element_id": "class-3-e8",
+                "excerpt": "Evaluate Activity"
+              },
+              {
+                "element_id": "class-3-e9",
+                "excerpt": "Evaluate: (5-10 Minutes) Have students write a paragraph explaining the sales pitches they liked and which could use improvement. Include the why for each.  --- TABLE --- Entire Lesson"
+              }
+            ]
+          },
+          "summative": {
+            "status": "MISSING",
+            "items": []
+          }
+        },
+        "A5": {
+          "step": "A5",
+          "hunter_core_present": 6,
+          "hunter_core_total": 8,
+          "matrix": [
+            {
+              "id": "anticipatory_set",
+              "label": "1. Anticipatory set (hook / Do Now / Engage)",
+              "status": "PRESENT",
+              "cite": "Engage Activity"
+            },
+            {
+              "id": "objective_purpose",
+              "label": "2. Objective & purpose (stated to students)",
+              "status": "PRESENT",
+              "cite": "Explain: (5-10 Minutes)  Students will write a sales pitch for their product. Handout for sales pitch  Student Engagement Strategy / Resource: Students will again get in their groups they were in day 1 and day 2. They will create their own “Shark Tank” pitch for their product.  Explain the handout they will fill out to craft their pitch.  Question Stems: Explain Question 1: How do I get people to know about my product?  Students will write a sales pitch for their product. Handout for sales…"
+            },
+            {
+              "id": "input",
+              "label": "3. Input (teach content / vocabulary)",
+              "status": "PRESENT",
+              "cite": "Explain Activity"
+            },
+            {
+              "id": "modeling",
+              "label": "4. Modeling (I do / demonstrate)",
+              "status": "PRESENT",
+              "cite": "Explain Activity"
+            },
+            {
+              "id": "check_for_understanding",
+              "label": "5. Check for understanding",
+              "status": "PRESENT",
+              "cite": "Evaluate Activity"
+            },
+            {
+              "id": "guided_practice",
+              "label": "6. Guided practice (We do)",
+              "status": "PRESENT",
+              "cite": "Explore Activity"
+            },
+            {
+              "id": "independent_practice",
+              "label": "7. Independent practice (You do)",
+              "status": "MISSING",
+              "cite": ""
+            },
+            {
+              "id": "closure",
+              "label": "8. Closure",
+              "status": "MISSING",
+              "cite": ""
+            }
+          ]
+        },
+        "A6": {
+          "method": "code_fallback",
+          "present": 7,
+          "missing": 7,
+          "missing_fields": [
+            "lesson_title",
+            "materials",
+            "modeling",
+            "independent_practice",
+            "closure",
+            "elps_language",
+            "accommodations"
+          ],
+          "fields": {
+            "lesson_title": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "learning_objective": {
+              "status": "PRESENT",
+              "text": "Explain: (5-10 Minutes)  Students will write a sales pitch for their product. Handout for sales pitch  Student Engagement Strategy / Resource: Students will again get in their groups they were in day 1 and day 2. They will create their own “Shark Tank” pitch for their product.  Explain the handout they will fill out to craft their pitch.  Question Stems: Explain Question 1: How do I get people to know about my product?  Students will write a sales pitch for their product. Handout for sales…",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-3-e4"
+            },
+            "teks": {
+              "status": "PRESENT",
+              "text": "Explain: (5-10 Minutes)  Students will write a sales pitch for their product. Handout for sales pitch  Student Engagement Strategy / Resource: Students will again get in their groups they were in day 1 and day 2. They will create their own “Shark Tank” pitch for their product.  Explain the handout they will fill out to craft their pitch.  Question Stems: Explain Question 1: How do I get people to know about my product?  Students will write a sales pitch for their product. Handout for sales…",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-3-e4"
+            },
+            "materials": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "anticipatory_set": {
+              "status": "PRESENT",
+              "text": "Engage Activity",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-3-e1"
+            },
+            "objective_purpose": {
+              "status": "PRESENT",
+              "text": "Explore: (15-20 Minutes) Students will create and practice their sales pitch.  Student Engagement Strategy / Resource: The students will take 15-20 minutes to craft their pitch. They will also practice their pitch.  Question Stems: Explore Question 1: How can I make my sales pitch interesting? Students will create and practice their sales pitch.  Student Engagement Strategy / Resource: The students will take 15-20 minutes to craft their pitch. They will also practice their pitch.  Question…",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-3-e6"
+            },
+            "input": {
+              "status": "PRESENT",
+              "text": "Explain Activity",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-3-e3"
+            },
+            "modeling": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "check_for_understanding": {
+              "status": "PRESENT",
+              "text": "Evaluate Activity",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-3-e8"
+            },
+            "guided_practice": {
+              "status": "PRESENT",
+              "text": "Explore Activity",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-3-e5"
+            },
+            "independent_practice": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "closure": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "elps_language": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "accommodations": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            }
+          }
+        },
+        "A7": {
+          "step": "A7",
+          "elps": {
+            "status": "MISSING",
+            "cites": []
+          },
+          "accommodations": {
+            "status": "MISSING",
+            "cites": []
+          }
+        }
+      },
+      "pack_overview": {
+        "A2": {
+          "step": "A2",
+          "teks": {
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Day 1  Day 2  Day 3  --- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3…",
+              "Day 1  Day 2  Day 3  --- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3…"
+            ]
+          },
+          "objective": {
+            "status": "MISSING",
+            "count": 0,
+            "cites": []
+          }
+        },
+        "A3": {
+          "step": "A3",
+          "has_objective": false,
+          "has_activities": false,
+          "has_assessment": false,
+          "mismatches": [],
+          "status": "MISSING"
+        },
+        "A4": {
+          "step": "A4",
+          "formative": {
+            "status": "MISSING",
+            "items": []
+          },
+          "summative": {
+            "status": "MISSING",
+            "items": []
+          }
+        },
+        "A5": {
+          "step": "A5",
+          "hunter_core_present": 3,
+          "hunter_core_total": 8,
+          "matrix": [
+            {
+              "id": "anticipatory_set",
+              "label": "1. Anticipatory set (hook / Do Now / Engage)",
+              "status": "MISSING",
+              "cite": ""
+            },
+            {
+              "id": "objective_purpose",
+              "label": "2. Objective & purpose (stated to students)",
+              "status": "PRESENT",
+              "cite": "Day 1  Day 2  Day 3  --- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3…"
+            },
+            {
+              "id": "input",
+              "label": "3. Input (teach content / vocabulary)",
+              "status": "PRESENT",
+              "cite": "Day 1  Day 2  Day 3  --- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3…"
+            },
+            {
+              "id": "modeling",
+              "label": "4. Modeling (I do / demonstrate)",
+              "status": "PRESENT",
+              "cite": "Day 1  Day 2  Day 3  --- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3…"
+            },
+            {
+              "id": "check_for_understanding",
+              "label": "5. Check for understanding",
+              "status": "MISSING",
+              "cite": ""
+            },
+            {
+              "id": "guided_practice",
+              "label": "6. Guided practice (We do)",
+              "status": "MISSING",
+              "cite": ""
+            },
+            {
+              "id": "independent_practice",
+              "label": "7. Independent practice (You do)",
+              "status": "MISSING",
+              "cite": ""
+            },
+            {
+              "id": "closure",
+              "label": "8. Closure",
+              "status": "MISSING",
+              "cite": ""
+            }
+          ]
+        },
+        "A6": {
+          "method": "code_fallback",
+          "present": 2,
+          "missing": 12,
+          "missing_fields": [
+            "lesson_title",
+            "materials",
+            "anticipatory_set",
+            "objective_purpose",
+            "input",
+            "modeling",
+            "check_for_understanding",
+            "guided_practice",
+            "independent_practice",
+            "closure",
+            "elps_language",
+            "accommodations"
+          ],
+          "fields": {
+            "lesson_title": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "learning_objective": {
+              "status": "PRESENT",
+              "text": "Day 1  Day 2  Day 3  --- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3…",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-0-e1"
+            },
+            "teks": {
+              "status": "PRESENT",
+              "text": "Day 1  Day 2  Day 3  --- TABLE --- Business, Marketing & Finance Career                                                                        Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3 days Lesson plan Household items: paper plates, string, cotton balls, pipe cleaners, puff balls, plastic cups, tape,  etc Slideshow for all 3…",
+              "sources": [
+                ""
+              ],
+              "element_id": "class-0-e1"
+            },
+            "materials": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "anticipatory_set": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "objective_purpose": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "input": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "modeling": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "check_for_understanding": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "guided_practice": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "independent_practice": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "closure": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "elps_language": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            },
+            "accommodations": {
+              "status": "MISSING",
+              "text": "",
+              "sources": [],
+              "element_id": null
+            }
+          }
+        },
+        "A7": {
+          "step": "A7",
+          "elps": {
+            "status": "MISSING",
+            "cites": []
+          },
+          "accommodations": {
+            "status": "MISSING",
+            "cites": []
+          }
+        }
+      }
+    }
+  ]
+}

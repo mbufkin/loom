@@ -202,6 +202,44 @@ def test_assert_stage_outputs_allows_conditional_skip() -> None:
         _restore_project_dir(saved_audit_base, saved_e2e)
 
 
+def test_curriculum_review_writes_under_e2e_run() -> None:
+    """Regression: curriculum_review must not leak plates onto the live root.
+
+    With LOOM_E2E_RUN set, generate() writes LESSON-CURRICULUM-REVIEW.json under
+    e2e/runs/<id>/output/ (via project_dir), never projects/<id>/output/.
+    """
+    import audit_lib
+    import curriculum_review
+
+    saved_audit_base = audit_lib.BASE_DIR
+    saved_e2e = os.environ.get("LOOM_E2E_RUN")
+    try:
+        project_id, root = _with_temp_project(
+            {"layer0/ledger.json": json.dumps([])}
+        )
+        # Empty lesson list — still writes the plate; no model calls needed.
+        saved_enum = curriculum_review.enumerate_lessons
+        curriculum_review.enumerate_lessons = lambda _pid: []  # type: ignore[assignment]
+        try:
+            written = curriculum_review.generate(project_id)
+        finally:
+            curriculum_review.enumerate_lessons = saved_enum  # type: ignore[assignment]
+
+        expected = root / "output" / "LESSON-CURRICULUM-REVIEW.json"
+        assert written == expected, f"wrote {written}, expected {expected}"
+        assert expected.is_file(), f"missing e2e plate at {expected}"
+        live_leak = (
+            audit_lib.BASE_DIR
+            / "projects"
+            / project_id
+            / "output"
+            / "LESSON-CURRICULUM-REVIEW.json"
+        )
+        assert not live_leak.is_file(), f"leaked plate onto live root: {live_leak}"
+    finally:
+        _restore_project_dir(saved_audit_base, saved_e2e)
+
+
 def main() -> int:
     for t in (
         test_pipeline_stage_modules_import,
@@ -210,6 +248,7 @@ def main() -> int:
         test_assert_stage_outputs_passes_when_artifact_present,
         test_assert_stage_outputs_fails_naming_artifact,
         test_assert_stage_outputs_allows_conditional_skip,
+        test_curriculum_review_writes_under_e2e_run,
     ):
         t()
         print(f"OK {t.__name__}")

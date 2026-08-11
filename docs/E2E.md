@@ -81,16 +81,49 @@ router cascade are defined in [PATHS.md](PATHS.md). E2E trees keep
 
 ## Review UI
 
-1. Pick **curriculum** (project id)
-2. Pick **E2E · \<model\>** (defaults to a run with quality plates when present)
-3. Nested graph/quality plates resolve under that same folder
+The website is a **ready-gated** surface — not a browser for live root or
+in-flight trees.
 
-API: `GET /api/projects/{id}/e2e/runs` then scoped `?e2e_run=<model>`.
+1. Pick **curriculum** (default: `dallas-career-2026`)
+2. Pick **E2E · \<run\>** — API lists only runs with `REVIEW-READY.json`
+3. Nested graph / quality / curriculum-review plates resolve under that same folder
+
+If no ready run exists, the UI shows **No completed review run yet** (it does
+**not** fall back to live `projects/<id>/output/` plates).
+
+`run_project` writes `REVIEW-READY.json` at the end of a successful e2e run when
+path findings, lesson quality, curriculum review, and a course report are present
+(plus graph when `--with-graph`).
+
+API: `GET /api/projects/{id}/e2e/runs` → ready runs only; then scoped
+`?e2e_run=<id>`.
+
+Archived prior A/B trees live under `e2e/archive/` (not listed).
+
+### Dallas Grok (website producer)
+
+One supported command for the Dallas review surface:
+
+```bash
+./tools/run_dallas_grok_review.sh
+```
+
+Equivalent:
+
+```bash
+LOOM_CONFIG=config.grok.yaml \
+./run-audit dallas-career-2026 \
+  --with-graph \
+  --graph-backend cursor \
+  --graph-cursor-model grok-4.5 \
+  --graph-run grok-dallas-$(date -u +%Y%m%d)
+```
 
 ## Escape hatch (not for review A/B)
 
 `--allow-live-root` (or `LOOM_ALLOW_LIVE_ROOT=1`) writes the golden
-`projects/<curriculum>/` tree — overnight / golden refresh only.
+`projects/<curriculum>/` tree — overnight / golden refresh only. Never the
+Review UI default.
 
 ## Related
 

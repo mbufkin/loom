@@ -1,22 +1,20 @@
 {
   "project_id": "dallas-career-2026",
   "source": "inferred_from_documents",
-  "generated_at": "2026-08-09T13:42:24.407317+00:00",
+  "generated_at": "2026-08-10T18:20:02.785281+00:00",
   "provisional_rollup": "pacing-plan.yaml remains provisional early spine",
-  "year_note": "",
+  "year_note": "**Business Marketing** looks most stocked (3 days with evidence, no empty days). Fully evidenced with no gaps: Arts AV Technology, Career Cluster, Hospitality Tourism, and Professional Preparedness (2 each). Financial Literacy, Health Science, and Information Technology are mixed (2 evidenced, 1 empty). Thin units with no evidenced days are Agriculture, Architecture & Construction, Career Exploration, Engineering, Family Community, Law and Public Service, Manufacturing, Teaching and Training, Transportation Distribution (2 empty each), plus Dallas ISD (1 empty).",
   "units": {
     "agriculture": {
       "unit_id": "agriculture",
       "title": "Agriculture",
       "source": "inferred_from_documents",
-      "generated_at": "2026-08-09T13:42:24.398925+00:00",
+      "generated_at": "2026-08-10T18:19:56.283229+00:00",
       "days": [
         {
           "id": "d1",
-          "expected_roles_found": [
-            "lesson_content"
-          ],
-          "status": "HAS_EVIDENCE"
+          "expected_roles_found": [],
+          "status": "EMPTY"
         },
         {
           "id": "d2",
@@ -30,7 +28,7 @@
       "unit_id": "architecture-construction",
       "title": "Architecture & Construction",
       "source": "inferred_from_documents",
-      "generated_at": "2026-08-09T13:42:24.399441+00:00",
+      "generated_at": "2026-08-10T18:19:56.283803+00:00",
       "days": [
         {
           "id": "d1",
@@ -49,17 +47,21 @@
       "unit_id": "arts-av-technology",
       "title": "Arts AV Technology",
       "source": "inferred_from_documents",
-      "generated_at": "2026-08-09T13:42:24.399937+00:00",
+      "generated_at": "2026-08-10T18:19:56.284324+00:00",
       "days": [
         {
           "id": "d1",
-          "expected_roles_found": [],
-          "status": "EMPTY"
+          "expected_roles_found": [
+            "lesson_content"
+          ],
+          "status": "HAS_EVIDENCE"
         },
         {
           "id": "d2",
-          "expected_roles_found": [],
-          "status": "EMPTY"
+          "expected_roles_found": [
+            "exit_ticket"
+          ],
+          "status": "HAS_EVIDENCE"
         }
       ],
       "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
@@ -68,22 +70,28 @@
       "unit_id": "business-marketing",
       "title": "Business Marketing",
       "source": "inferred_from_documents",
-      "generated_at": "2026-08-09T13:42:24.400514+00:00",
+      "generated_at": "2026-08-10T18:19:56.284935+00:00",
       "days": [
         {
           "id": "d1",
-          "expected_roles_found": [],
-          "status": "EMPTY"
+          "expected_roles_found": [
+            "exit_ticket"
+          ],
+          "status": "HAS_EVIDENCE"
         },
         {
           "id": "d2",
-          "expected_roles_found": [],
-          "status": "EMPTY"
+          "expected_roles_found": [
+            "exit_ticket"
+          ],
+          "status": "HAS_EVIDENCE"
         },
         {
           "id": "d3",
-          "expected_roles_found": [],
-          "status": "EMPTY"
+          "expected_roles_found": [
+            "exit_ticket"
+          ],
+          "status": "HAS_EVIDENCE"
         }
       ],
       "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
@@ -92,17 +100,23 @@
       "unit_id": "career-cluster",
       "title": "Career Cluster",
       "source": "inferred_from_documents",
-      "generated_at": "2026-08-09T13:42:24.400997+00:00",
+      "generated_at": "2026-08-10T18:19:56.285440+00:00",
       "days": [
         {
           "id": "d1",
-          "expected_roles_found": [],
-          "status": "EMPTY"
+          "expected_roles_found": [
+            "exit_ticket",
+            "lesson_content"
+          ],
+          "status": "HAS_EVIDENCE"
         },
         {
           "id": "d2",
-          "expected_roles_found": [],
-          "status": "EMPTY"
+          "expected_roles_found": [
+            "exit_ticket",
+            "lesson_content"
+          ],
+          "status": "HAS_EVIDENCE"
         }
       ],
       "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
@@ -111,7 +125,7 @@
       "unit_id": "career-exploration",
       "title": "Career Exploration",
       "source": "inferred_from_documents",
-      "generated_at": "2026-08-09T13:42:24.401471+00:00",
+      "generated_at": "2026-08-10T18:19:56.285947+00:00",
       "days": [
         {
           "id": "d1",
@@ -130,7 +144,7 @@
       "unit_id": "dallas-isd",
       "title": "Dallas ISD",
       "source": "inferred_from_documents",
-      "generated_at": "2026-08-09T13:42:24.401854+00:00",
+      "generated_at": "2026-08-10T18:19:56.286358+00:00",
       "days": [
         {
           "id": "d1",
@@ -144,7 +158,7 @@
       "unit_id": "engineering",
       "title": "Engineering",
       "source": "inferred_from_documents",
-      "generated_at": "2026-08-09T13:42:24.402326+00:00",
+      "generated_at": "2026-08-10T18:19:56.286856+00:00",
       "days": [
         {
           "id": "d1",
@@ -163,7 +177,7 @@
       "unit_id": "family-community",
       "title": "Family Community",
       "source": "inferred_from_documents",
-      "generated_at": "2026-08-09T13:42:24.402799+00:00",
+      "generated_at": "2026-08-10T18:19:56.287355+00:00",
       "days": [
         {
           "id": "d1",
@@ -182,7 +196,7 @@
       "unit_id": "financial-literacy",
       "title": "Financial Literacy",
       "source": "inferred_from_documents",
-      "generated_at": "2026-08-09T13:42:24.403364+00:00",
+      "generated_at": "2026-08-10T18:19:56.287946+00:00",
       "days": [
         {
           "id": "d1",
@@ -193,8 +207,10 @@
         },
         {
           "id": "d2",
-          "expected_roles_found": [],
-          "status": "EMPTY"
+          "expected_roles_found": [
+            "exit_ticket"
+          ],
+          "status": "HAS_EVIDENCE"
         },
         {
           "id": "d3",
@@ -208,17 +224,23 @@
       "unit_id": "health-science",
       "title": "Health Science",
       "source": "inferred_from_documents",
-      "generated_at": "2026-08-09T13:42:24.403933+00:00",
+      "generated_at": "2026-08-10T18:19:56.288539+00:00",
       "days": [
         {
           "id": "d1",
-          "expected_roles_found": [],
-          "status": "EMPTY"
+          "expected_roles_found": [
+            "exit_ticket",
+            "lesson_content"
+          ],
+          "status": "HAS_EVIDENCE"
         },
         {
           "id": "d2",
-          "expected_roles_found": [],
-          "status": "EMPTY"
+          "expected_roles_found": [
+            "exit_ticket",
+            "lesson_content"
+          ],
+          "status": "HAS_EVIDENCE"
         },
         {
           "id": "d3",
@@ -232,17 +254,21 @@
       "unit_id": "hospitality-tourism",
       "title": "Hospitality Tourism",
       "source": "inferred_from_documents",
-      "generated_at": "2026-08-09T13:42:24.404411+00:00",
+      "generated_at": "2026-08-10T18:19:56.289039+00:00",
       "days": [
         {
           "id": "d1",
-          "expected_roles_found": [],
-          "status": "EMPTY"
+          "expected_roles_found": [
+            "exit_ticket"
+          ],
+          "status": "HAS_EVIDENCE"
         },
         {
           "id": "d2",
-          "expected_roles_found": [],
-          "status": "EMPTY"
+          "expected_roles_found": [
+            "exit_ticket"
+          ],
+          "status": "HAS_EVIDENCE"
         }
       ],
       "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
@@ -251,17 +277,21 @@
       "unit_id": "information-technology",
       "title": "Information Technology",
       "source": "inferred_from_documents",
-      "generated_at": "2026-08-09T13:42:24.404973+00:00",
+      "generated_at": "2026-08-10T18:19:56.289642+00:00",
       "days": [
         {
           "id": "d1",
-          "expected_roles_found": [],
-          "status": "EMPTY"
+          "expected_roles_found": [
+            "exit_ticket"
+          ],
+          "status": "HAS_EVIDENCE"
         },
         {
           "id": "d2",
-          "expected_roles_found": [],
-          "status": "EMPTY"
+          "expected_roles_found": [
+            "exit_ticket"
+          ],
+          "status": "HAS_EVIDENCE"
         },
         {
           "id": "d3",
@@ -275,7 +305,7 @@
       "unit_id": "law-and-public-service",
       "title": "Law and Public Service",
       "source": "inferred_from_documents",
-      "generated_at": "2026-08-09T13:42:24.405443+00:00",
+      "generated_at": "2026-08-10T18:19:56.290142+00:00",
       "days": [
         {
           "id": "d1",
@@ -294,14 +324,12 @@
       "unit_id": "manufacturing",
       "title": "Manufacturing",
       "source": "inferred_from_documents",
-      "generated_at": "2026-08-09T13:42:24.405907+00:00",
+      "generated_at": "2026-08-10T18:19:56.290638+00:00",
       "days": [
         {
           "id": "d1",
-          "expected_roles_found": [
-            "exit_ticket"
-          ],
-          "status": "HAS_EVIDENCE"
+          "expected_roles_found": [],
+          "status": "EMPTY"
         },
         {
           "id": "d2",
@@ -315,17 +343,21 @@
       "unit_id": "professional-preparedness",
       "title": "Professional Preparedness",
       "source": "inferred_from_documents",
-      "generated_at": "2026-08-09T13:42:24.406370+00:00",
+      "generated_at": "2026-08-10T18:19:56.291136+00:00",
       "days": [
         {
           "id": "d1",
-          "expected_roles_found": [],
-          "status": "EMPTY"
+          "expected_roles_found": [
+            "exit_ticket"
+          ],
+          "status": "HAS_EVIDENCE"
         },
         {
           "id": "d2",
-          "expected_roles_found": [],
-          "status": "EMPTY"
+          "expected_roles_found": [
+            "exit_ticket"
+          ],
+          "status": "HAS_EVIDENCE"
         }
       ],
       "note": "Inferred after Loom path workflows + Layer 1. Blank/EMPTY days = no fulfilled materials found — not authored content."
@@ -334,7 +366,7 @@
       "unit_id": "teaching-and-training",
       "title": "Teaching and Training",
       "source": "inferred_from_documents",
-      "generated_at": "2026-08-09T13:42:24.406837+00:00",
+      "generated_at": "2026-08-10T18:19:56.291634+00:00",
       "days": [
         {
           "id": "d1",
@@ -353,7 +385,7 @@
       "unit_id": "transportation-distribution",
       "title": "Transportation Distribution",
       "source": "inferred_from_documents",
-      "generated_at": "2026-08-09T13:42:24.407305+00:00",
+      "generated_at": "2026-08-10T18:19:56.292133+00:00",
       "days": [
         {
           "id": "d1",

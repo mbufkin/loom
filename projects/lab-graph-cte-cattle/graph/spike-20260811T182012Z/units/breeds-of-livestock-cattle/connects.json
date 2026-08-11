@@ -1,0 +1,139 @@
+{
+  "023-breeds-of-livestock-cattle__action-plan.html": {
+    "source_file": "023-breeds-of-livestock-cattle__action-plan.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "other",
+    "covers_lesson_numbers": [
+      1
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "short"
+  },
+  "023-breeds-of-livestock-cattle__activity-career-connections.html": {
+    "source_file": "023-breeds-of-livestock-cattle__activity-career-connections.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "short"
+  },
+  "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html": {
+    "source_file": "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "short"
+  },
+  "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html": {
+    "source_file": "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "assessment",
+    "covers_lesson_numbers": [
+      1
+    ],
+    "is_assessment_bearing": true,
+    "assessment_name": null,
+    "notes": "short"
+  },
+  "023-breeds-of-livestock-cattle__final-assessment-answer-key.html": {
+    "source_file": "023-breeds-of-livestock-cattle__final-assessment-answer-key.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "assessment",
+    "covers_lesson_numbers": [
+      7
+    ],
+    "is_assessment_bearing": true,
+    "assessment_name": "Final Assessment Answer Key",
+    "notes": "Covers only the final assessment lesson (Class 7)."
+  },
+  "023-breeds-of-livestock-cattle__final-assessment.html": {
+    "source_file": "023-breeds-of-livestock-cattle__final-assessment.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "assessment",
+    "covers_lesson_numbers": [
+      7
+    ],
+    "is_assessment_bearing": true,
+    "assessment_name": null,
+    "notes": "short"
+  },
+  "023-breeds-of-livestock-cattle__horizontal-alignments.html": {
+    "source_file": "023-breeds-of-livestock-cattle__horizontal-alignments.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "standards_pacing",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "short"
+  },
+  "023-breeds-of-livestock-cattle__key-concepts.html": {
+    "source_file": "023-breeds-of-livestock-cattle__key-concepts.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "teacher_support",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "reference for lessons 1\u20115"
+  },
+  "023-breeds-of-livestock-cattle__project-build-a-breed.html": {
+    "source_file": "023-breeds-of-livestock-cattle__project-build-a-breed.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      6
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "short"
+  },
+  "023-breeds-of-livestock-cattle__view-lesson-plan.html": {
+    "source_file": "023-breeds-of-livestock-cattle__view-lesson-plan.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "lesson_plan",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "short"
+  },
+  "023-breeds-of-livestock-cattle__vocabulary-handout.html": {
+    "source_file": "023-breeds-of-livestock-cattle__vocabulary-handout.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "short"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "023-breeds-of-livestock-cattle__action-plan.html": {
+    "source_file": "023-breeds-of-livestock-cattle__action-plan.html",
+    "artifact_kind": "other",
+    "citation_element_id": "023-breeds-of-livestock-cattle__action-plan.html-e1",
+    "excerpt_head": "Lesson Plan: Identify cattle breeds and their characteristics across multiple classes.",
+    "notes": "teacher-facing lesson overview",
+    "kind_fallback": true
+  },
+  "023-breeds-of-livestock-cattle__activity-career-connections.html": {
+    "source_file": "023-breeds-of-livestock-cattle__activity-career-connections.html",
+    "artifact_kind": "student_practice",
+    "citation_element_id": "023-breeds-of-livestock-cattle__activity-career-connections.html-e1",
+    "excerpt_head": "Career interview questions for students to answer after watching videos.",
+    "notes": "short"
+  },
+  "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html": {
+    "source_file": "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html",
+    "artifact_kind": "student_practice",
+    "citation_element_id": "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html-e1",
+    "excerpt_head": "Create flashcards for cattle breeds, including name, sketch, origin, traits, uses; then quiz peers.",
+    "notes": "student activity"
+  },
+  "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html": {
+    "source_file": "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html",
+    "artifact_kind": "assessment",
+    "citation_element_id": "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html-e1",
+    "excerpt_head": "Check for Understanding Dairy Breeds Directions: Answer the following questions.",
+    "notes": "short"
+  },
+  "023-breeds-of-livestock-cattle__final-assessment-answer-key.html": {
+    "source_file": "023-breeds-of-livestock-cattle__final-assessment-answer-key.html",
+    "artifact_kind": "assessment",
+    "citation_element_id": "023-breeds-of-livestock-cattle__final-assessment-answer-key.html-e1",
+    "excerpt_head": "Match the following breeds to their physical descriptions.",
+    "notes": "short"
+  },
+  "023-breeds-of-livestock-cattle__final-assessment.html": {
+    "source_file": "023-breeds-of-livestock-cattle__final-assessment.html",
+    "artifact_kind": "assessment",
+    "citation_element_id": "023-breeds-of-livestock-cattle__final-assessment.html-e1",
+    "excerpt_head": "Final Assessment Breeds of Livestock: Cattle Final Assessment Directions: Answer the following questions.",
+    "notes": "short"
+  },
+  "023-breeds-of-livestock-cattle__horizontal-alignments.html": {
+    "source_file": "023-breeds-of-livestock-cattle__horizontal-alignments.html",
+    "artifact_kind": "standards_pacing",
+    "citation_element_id": "023-breeds-of-livestock-cattle__horizontal-alignments.html-e1",
+    "excerpt_head": "Breeds of Livestock: Cattle Horizontal Alignments \u2013 Core-Subject Areas and Foundations",
+    "notes": "short"
+  },
+  "023-breeds-of-livestock-cattle__key-concepts.html": {
+    "source_file": "023-breeds-of-livestock-cattle__key-concepts.html",
+    "artifact_kind": "teacher_support",
+    "citation_element_id": "023-breeds-of-livestock-cattle__key-concepts.html-e1",
+    "excerpt_head": "Overview of cattle breeds, their origins, traits, and uses as key concepts for instruction.",
+    "notes": "lesson plan content"
+  },
+  "023-breeds-of-livestock-cattle__project-build-a-breed.html": {
+    "source_file": "023-breeds-of-livestock-cattle__project-build-a-breed.html",
+    "artifact_kind": "student_practice",
+    "citation_element_id": "023-breeds-of-livestock-cattle__project-build-a-breed.html-e1",
+    "excerpt_head": "Project Build a Breed: Create your own cattle breed suited to local climate and geography.",
+    "notes": "short"
+  },
+  "023-breeds-of-livestock-cattle__view-lesson-plan.html": {
+    "source_file": "023-breeds-of-livestock-cattle__view-lesson-plan.html",
+    "artifact_kind": "lesson_plan",
+    "citation_element_id": "023-breeds-of-livestock-cattle__view-lesson-plan.html-e1",
+    "excerpt_head": "Lesson Overview: Cattle Breeds \u2013 Objectives & Class Structure",
+    "notes": "comprehensive multi\u2011class lesson plan covering cattle breed analysis and project work"
+  },
+  "023-breeds-of-livestock-cattle__vocabulary-handout.html": {
+    "source_file": "023-breeds-of-livestock-cattle__vocabulary-handout.html",
+    "artifact_kind": "student_practice",
+    "citation_element_id": "023-breeds-of-livestock-cattle__vocabulary-handout.html-e1",
+    "excerpt_head": "Vocabulary terms for cattle breeds and related concepts.",
+    "notes": "short"
+  }
+}

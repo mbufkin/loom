@@ -1,0 +1,174 @@
+{
+  "project_id": "lab-graph-cte-cattle",
+  "unit_id": "breeds-of-livestock-cattle",
+  "stage": "provisional",
+  "model": "graph-inventory-v0",
+  "method": "spike-cte-provisional",
+  "nodes": [
+    {
+      "id": "course:lab-graph-cte-cattle",
+      "type": "Course",
+      "name": "lab-graph-cte-cattle"
+    },
+    {
+      "id": "unit:breeds-of-livestock-cattle",
+      "type": "LessonGrouping",
+      "name": "breeds-of-livestock-cattle",
+      "groupName": "unit"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__action-plan",
+      "type": "Material",
+      "role": "other",
+      "name": "023-breeds-of-livestock-cattle__action-plan.html",
+      "source_file": "023-breeds-of-livestock-cattle__action-plan.html"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__activity-career-connections",
+      "type": "Material",
+      "role": "other",
+      "name": "023-breeds-of-livestock-cattle__activity-career-connections.html",
+      "source_file": "023-breeds-of-livestock-cattle__activity-career-connections.html"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards",
+      "type": "Material",
+      "role": "other",
+      "name": "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html",
+      "source_file": "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds",
+      "type": "Material",
+      "role": "other",
+      "name": "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html",
+      "source_file": "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__final-assessment-answer-key",
+      "type": "Material",
+      "role": "other",
+      "name": "023-breeds-of-livestock-cattle__final-assessment-answer-key.html",
+      "source_file": "023-breeds-of-livestock-cattle__final-assessment-answer-key.html"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__final-assessment",
+      "type": "Material",
+      "role": "other",
+      "name": "023-breeds-of-livestock-cattle__final-assessment.html",
+      "source_file": "023-breeds-of-livestock-cattle__final-assessment.html"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__horizontal-alignments",
+      "type": "Material",
+      "role": "other",
+      "name": "023-breeds-of-livestock-cattle__horizontal-alignments.html",
+      "source_file": "023-breeds-of-livestock-cattle__horizontal-alignments.html"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__key-concepts",
+      "type": "Material",
+      "role": "other",
+      "name": "023-breeds-of-livestock-cattle__key-concepts.html",
+      "source_file": "023-breeds-of-livestock-cattle__key-concepts.html"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__project-build-a-breed",
+      "type": "Material",
+      "role": "other",
+      "name": "023-breeds-of-livestock-cattle__project-build-a-breed.html",
+      "source_file": "023-breeds-of-livestock-cattle__project-build-a-breed.html"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__view-lesson-plan",
+      "type": "Material",
+      "role": "other",
+      "name": "023-breeds-of-livestock-cattle__view-lesson-plan.html",
+      "source_file": "023-breeds-of-livestock-cattle__view-lesson-plan.html"
+    },
+    {
+      "id": "material:023-breeds-of-livestock-cattle__vocabulary-handout",
+      "type": "Material",
+      "role": "other",
+      "name": "023-breeds-of-livestock-cattle__vocabulary-handout.html",
+      "source_file": "023-breeds-of-livestock-cattle__vocabulary-handout.html"
+    }
+  ],
+  "edges": [
+    {
+      "rel": "hasPart",
+      "from": "course:lab-graph-cte-cattle",
+      "to": "unit:breeds-of-livestock-cattle"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__action-plan"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__activity-career-connections"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__final-assessment-answer-key"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__final-assessment"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__horizontal-alignments"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__key-concepts"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__project-build-a-breed"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__view-lesson-plan"
+    },
+    {
+      "rel": "hasPart",
+      "from": "unit:breeds-of-livestock-cattle",
+      "to": "material:023-breeds-of-livestock-cattle__vocabulary-handout"
+    }
+  ],
+  "coverage": {
+    "source_files": [
+      "023-breeds-of-livestock-cattle__action-plan.html",
+      "023-breeds-of-livestock-cattle__activity-career-connections.html",
+      "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html",
+      "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html",
+      "023-breeds-of-livestock-cattle__final-assessment-answer-key.html",
+      "023-breeds-of-livestock-cattle__final-assessment.html",
+      "023-breeds-of-livestock-cattle__horizontal-alignments.html",
+      "023-breeds-of-livestock-cattle__key-concepts.html",
+      "023-breeds-of-livestock-cattle__project-build-a-breed.html",
+      "023-breeds-of-livestock-cattle__view-lesson-plan.html",
+      "023-breeds-of-livestock-cattle__vocabulary-handout.html"
+    ]
+  }
+}

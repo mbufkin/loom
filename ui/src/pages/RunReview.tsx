@@ -74,7 +74,25 @@ function deriveBand(r: UnitRollup): Band {
   return "Developing";
 }
 
+/** Optional deep-link into a completed E2E run: ?project=&e2e=&lesson= */
+function reviewDeepLink(): {
+  project?: string;
+  e2e?: string;
+  lesson?: string;
+} {
+  if (typeof window === "undefined") return {};
+  const q = new URLSearchParams(window.location.search);
+  // Live root is not a review surface — e2e must be a real run id when set.
+  const e2e = (q.get("e2e") || "").trim() || undefined;
+  return {
+    project: q.get("project") || undefined,
+    e2e,
+    lesson: q.get("lesson") || undefined,
+  };
+}
+
 export function RunReview() {
+  const deepLink = useMemo(() => reviewDeepLink(), []);
   // Top-level view switch. "review" is the untouched console; "overview" /
   // "next" are presentation decks. Kept as a tiny local flag (no router) so the
   // existing page and all its state are undisturbed when a deck is showing.
@@ -82,7 +100,9 @@ export function RunReview() {
     "review"
   );
   const [projects, setProjects] = useState<Project[]>([]);
-  const [projectId, setProjectId] = useState<string>(DEFAULT_PROJECT);
+  const [projectId, setProjectId] = useState<string>(
+    deepLink.project || DEFAULT_PROJECT
+  );
   // Lab forks (lab-*) stay out of Curriculum until the reviewer opts in.
   const [showLabForks, setShowLabForks] = useState(false);
   const [outputs, setOutputs] = useState<OutputsTree | null>(null);
@@ -95,9 +115,14 @@ export function RunReview() {
   const [lessonReview, setLessonReview] = useState<CurriculumReview | null>(
     null
   );
-  // Full-pipeline snapshots (e2e/runs/*). Empty e2eRunId = live project root.
+  // Only REVIEW-READY e2e runs are listed; empty = waiting for a completed run.
   const [e2eRuns, setE2eRuns] = useState<E2ERunInfo[]>([]);
-  const [e2eRunId, setE2eRunId] = useState<string>("");
+  const [e2eRunId, setE2eRunId] = useState<string>(deepLink.e2e ?? "");
+  const [e2eListLoaded, setE2eListLoaded] = useState(false);
+  // One-shot: open a lesson once quality/review plates have loaded.
+  const [pendingLessonId, setPendingLessonId] = useState<string | null>(
+    deepLink.lesson ?? null
+  );
   // Model graph A/B: curriculum picker + model picker drive the belonging panel.
   // When an E2E workspace is selected, graph runs are nested under that tree.
   const [graphRuns, setGraphRuns] = useState<GraphRunInfo[]>([]);
@@ -164,7 +189,8 @@ export function RunReview() {
     });
   }, [graphRuns]);
 
-  // Load the project list once; default to Dallas when it is a real curriculum.
+  // Load the project list once. Prefer ?project= deep-link, else Dallas, else first.
+  // Best practice: never clobber an explicit URL curriculum with the default.
   useEffect(() => {
     api
       .projects()
@@ -175,14 +201,33 @@ export function RunReview() {
           curricula.length > 0
             ? curricula
             : ps.filter((p) => p.kind !== "lab" && !p.id.startsWith("lab-"));
-        if (fallback.some((p) => p.id === DEFAULT_PROJECT)) {
+        const linked =
+          deepLink.project &&
+          fallback.some((p) => p.id === deepLink.project)
+            ? deepLink.project
+            : undefined;
+        if (linked) {
+          setProjectId(linked);
+        } else if (fallback.some((p) => p.id === DEFAULT_PROJECT)) {
           setProjectId(DEFAULT_PROJECT);
         } else if (fallback[0]) {
           setProjectId(fallback[0].id);
         }
       })
       .catch((e) => setError(String(e)));
-  }, []);
+  }, [deepLink.project]);
+
+  // Keep the address bar shareable as the reviewer changes curriculum / E2E run.
+  useEffect(() => {
+    if (typeof window === "undefined" || !projectId) return;
+    const q = new URLSearchParams(window.location.search);
+    q.set("project", projectId);
+    if (e2eRunId) q.set("e2e", e2eRunId);
+    else q.delete("e2e");
+    const next = `${window.location.pathname}?${q.toString()}`;
+    const cur = `${window.location.pathname}${window.location.search}`;
+    if (next !== cur) window.history.replaceState(null, "", next);
+  }, [projectId, e2eRunId]);
 
   const loadDoc = useCallback(
     async (id: string, path: string, type = "md", e2eRun?: string) => {
@@ -203,11 +248,9 @@ export function RunReview() {
     []
   );
 
-  // Load plates / stats / graph for the current review workspace
-  // (live project root, or e2e/runs/<id>/ when an E2E snapshot is selected).
+  // Load plates / stats / graph for a completed E2E workspace only.
   const loadWorkspace = useCallback(
     async (id: string, e2eRun: string) => {
-      const e2e = e2eRun || undefined;
       setError("");
       setOutputs(null);
       setStats(null);
@@ -220,6 +263,10 @@ export function RunReview() {
       setArtifactRung(null);
       setLessonReview(null);
       setPathsSummary(null);
+      if (!e2eRun) {
+        return;
+      }
+      const e2e = e2eRun;
       try {
         const tree = await api.outputs(id, e2e);
         setOutputs(tree);
@@ -232,13 +279,11 @@ export function RunReview() {
         }
       } catch (e) {
         // Still offer View → Curriculum graph when plates are not ready yet.
-        setOutputs({ plates: [], layers: [], pdfs: [], units: [], e2e_run: e2e ?? null });
+        setOutputs({ plates: [], layers: [], pdfs: [], units: [], e2e_run: e2e });
         setActivePath(GRAPH_VIEW);
         setActiveType("md");
         setError(
-          e2e
-            ? `No E2E output plates for ${id}/${e2e} yet (graph/runs may still load).`
-            : `No outputs for ${id}: ${String(e)}`
+          `No E2E output plates for ${id}/${e2e} yet (graph/runs may still load). ${String(e)}`
         );
       }
       api.stats(id, e2e).then(setStats).catch(() => setStats(null));
@@ -276,10 +321,10 @@ export function RunReview() {
     [loadDoc]
   );
 
-  // Curriculum change: list E2E snapshots and default into the best one.
-  // Best practice: E2E is canonical — only fall back to live root when none exist.
+  // Curriculum change: list REVIEW-READY e2e runs only; auto-select when one.
   useEffect(() => {
     let cancelled = false;
+    setE2eListLoaded(false);
     setE2eRuns([]);
     setE2eRunId("");
     api
@@ -287,25 +332,30 @@ export function RunReview() {
       .then((res) => {
         if (cancelled) return;
         setE2eRuns(res.runs);
-        // Prefer a run with quality plates, else dashboard, else first id.
+        const deep =
+          deepLink.e2e && res.runs.some((r) => r.run_id === deepLink.e2e)
+            ? deepLink.e2e
+            : undefined;
+        // One ready run → select it. Several → prefer deep-link, else first.
         const preferred =
-          res.runs.find((r) => r.has_quality)?.run_id ??
-          res.runs.find((r) => r.has_dashboard)?.run_id ??
-          res.runs[0]?.run_id ??
+          deep ??
+          (res.runs.length === 1 ? res.runs[0].run_id : res.runs[0]?.run_id) ??
           "";
         setE2eRunId(preferred);
+        setE2eListLoaded(true);
       })
       .catch(() => {
         if (cancelled) return;
         setE2eRuns([]);
         setE2eRunId("");
+        setE2eListLoaded(true);
       });
     return () => {
       cancelled = true;
     };
-  }, [projectId]);
+  }, [projectId, deepLink.e2e]);
 
-  // Workspace reload whenever curriculum or E2E selection settles.
+  // Workspace reload whenever a completed E2E selection settles.
   useEffect(() => {
     loadWorkspace(projectId, e2eRunId);
   }, [projectId, e2eRunId, loadWorkspace]);
@@ -335,15 +385,18 @@ export function RunReview() {
     };
   }, [projectId, graphRunId, e2eRunId]);
 
-  // Model / E2E picker also swaps the quality heatmap + curriculum review plates.
+  // Quality + curriculum-review plates from the selected ready E2E tree only.
   useEffect(() => {
-    if (!projectId) return;
+    if (!projectId || !e2eRunId) {
+      setLessonFeedback(null);
+      setLessonReview(null);
+      return;
+    }
     let cancelled = false;
     const rid = graphRunId || undefined;
-    const e2e = e2eRunId || undefined;
     Promise.all([
-      api.lessonFeedback(projectId, rid, e2e),
-      api.lessonReview(projectId, rid, e2e),
+      api.lessonFeedback(projectId, rid, e2eRunId),
+      api.lessonReview(projectId, rid, e2eRunId),
     ])
       .then(([fb, rev]) => {
         if (cancelled) return;
@@ -359,6 +412,23 @@ export function RunReview() {
       cancelled = true;
     };
   }, [projectId, graphRunId, e2eRunId]);
+
+  // Deep-link ?lesson=… → lesson detail once the quality plate is present.
+  useEffect(() => {
+    if (!pendingLessonId || !lessonFeedback || !e2eRunId) return;
+    for (const ls of Object.values(lessonFeedback.units)) {
+      const hit = ls.find((l) => l.lesson_id === pendingLessonId);
+      if (hit) {
+        setSelectedUnitId(hit.unit_id);
+        setSelectedLessonId(pendingLessonId);
+        setSelectedArtifactId(null);
+        setActivePath(LESSON_DETAIL);
+        setActiveType("md");
+        setPendingLessonId(null);
+        return;
+      }
+    }
+  }, [pendingLessonId, lessonFeedback]);
 
   // Open unit + selected model → materials / lessons / assessments (HAS-PART).
   // Load on unit drill-down *and* Curriculum graph view so the SVG can draw
@@ -640,30 +710,34 @@ export function RunReview() {
                 <select
                   value={e2eRunId}
                   onChange={(e) => setE2eRunId(e.target.value)}
+                  disabled={!e2eRuns.length}
                   aria-label="E2E run"
-                  title="Canonical full-pipeline snapshot (e2e/runs/). Live root is legacy/golden only."
+                  title="Completed REVIEW-READY snapshot under e2e/runs/ only"
                 >
-                  <option value="">
-                    {e2eRuns.length
-                      ? "Legacy · live project root"
-                      : "No E2E runs (live root)"}
-                  </option>
-                  {e2eRuns.map((r) => (
-                    <option key={r.run_id} value={r.run_id}>
-                      E2E · {r.run_id}
-                      {r.n_output_units ? ` · ${r.n_output_units}u` : ""}
+                  {!e2eRuns.length ? (
+                    <option value="">
+                      {e2eListLoaded
+                        ? "No completed review run yet"
+                        : "Loading runs…"}
                     </option>
-                  ))}
+                  ) : (
+                    e2eRuns.map((r) => (
+                      <option key={r.run_id} value={r.run_id}>
+                        E2E · {r.run_id}
+                        {r.n_output_units ? ` · ${r.n_output_units}u` : ""}
+                      </option>
+                    ))
+                  )}
                 </select>
                 <select
                   value={graphRunId}
                   onChange={(e) => setGraphRunId(e.target.value)}
-                  disabled={!sortedGraphRuns.length}
+                  disabled={!sortedGraphRuns.length || !e2eRunId}
                   aria-label="Model run"
                   title={
                     e2eRunId
                       ? `Graph nested under e2e/runs/${e2eRunId}/graph/runs/`
-                      : "Legacy bare graph/runs/ (prefer an E2E snapshot)"
+                      : "Select a completed E2E run first"
                   }
                 >
                   {!sortedGraphRuns.length ? (
@@ -690,9 +764,7 @@ export function RunReview() {
         )}
         {topView === "review" && (
           <span className="mono" style={{ color: "var(--muted)" }}>
-            {e2eRunId
-              ? `E2E · ${e2eRunId}`
-              : "local review console"}
+            {e2eRunId ? `E2E · ${e2eRunId}` : "waiting for completed run"}
           </span>
         )}
         {topView === "next" && (
@@ -706,6 +778,34 @@ export function RunReview() {
         <Overview />
       ) : topView === "next" ? (
         <NextSteps projectId={projectId} />
+      ) : !e2eListLoaded ? (
+        <div className="layout">
+          <div className="main">
+            <div className="panel">
+              <div className="panel-body empty">Loading review runs…</div>
+            </div>
+          </div>
+        </div>
+      ) : !e2eRunId ? (
+        <div className="layout">
+          <div className="main">
+            <div className="panel">
+              <div className="panel-head">Review</div>
+              <div className="panel-body empty">
+                <p>
+                  <strong>No completed review run yet.</strong>
+                </p>
+                <p className="muted-note">
+                  The website only shows a full Dallas E2E after{" "}
+                  <code>REVIEW-READY.json</code> is written. Start one with{" "}
+                  <code>tools/run_dallas_grok_review.sh</code> (see{" "}
+                  <code>docs/E2E.md</code>). Older live plates and incomplete
+                  model trees stay off this surface.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       ) : (
       <div className="layout">
         <div className="main">
