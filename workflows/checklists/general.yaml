@@ -1,0 +1,39 @@
+# General feedback / nursery plate → Loom checklist (Path C).
+# Grain: catch-all + growth queue — NOT a junk drawer of A/B/D/E/F/H checks.
+# PRESENT = route identity / feedback log / light growth-bucket cues; never invent.
+
+version: "v1-general-nursery"
+role: general
+framework: feedback_nursery
+source_template: docs/PATH-C-GENERAL.md
+path: C
+workflow_id: general
+
+sections:
+  # Structural inventory step — scored in workflows/general.py (c1_inventory),
+  # not by keyword fields. Listed here so label loaders (Paths panel, artifact
+  # rung) resolve "C1" to a human name the same way they resolve C4.
+  c1_inventory:
+    label: C1 Inventory
+    step: C1
+
+  c4_growth:
+    label: C4 Growth-bucket cue
+    step: C4
+    fields:
+      - id: nursery_bucket
+        label: Nursery growth-bucket keyword
+        keywords:
+          - coach
+          - protocol
+          - presentation
+          - flex day
+          - flex_day
+          - game
+          - lab activity
+          - project work
+          - observation
+          - internalization
+          - manipulatives
+          - navigation guide
+        optional: true

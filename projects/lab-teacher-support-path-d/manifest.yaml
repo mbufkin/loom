@@ -1,0 +1,13 @@
+project:
+  id: lab-teacher-support-path-d
+  name: lab-teacher-support-path-d
+sources_dir: /home/lenovo/g10-control-center-loom/projects/lab-teacher-support-path-d/sources
+units:
+  curriculum:
+    title: Curriculum
+    calendar: units/curriculum/calendar.yaml
+    documents:
+    - doc_dmixed_Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.txt
+    - doc_dstrong_K-5_Math_Grade_5_Module_1_Place_Value_and_Decimals_Teacher_Edition.txt
+    - doc_dweak_Module_Placeholder_Teacher_Edition_Stub.txt
+generated_by: ingest.py

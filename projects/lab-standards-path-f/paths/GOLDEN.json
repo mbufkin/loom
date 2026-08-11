@@ -1,0 +1,173 @@
+{
+  "paths": {
+    "A": {
+      "cells": {
+        "*:A2.objective": "MISSING",
+        "*:A2.teks": "MISSING",
+        "*:A3": "MISSING",
+        "*:A4.formative": "MISSING",
+        "*:A4.summative": "MISSING",
+        "*:A5.hunter_core_present": "0",
+        "*:A5.hunter_core_total": "8",
+        "*:A7.accommodations": "MISSING",
+        "*:A7.elps": "MISSING",
+        "*:A8": "emitted"
+      },
+      "checklist": "workflows/checklists/daily_lesson_plan.yaml",
+      "doc_ids": [],
+      "lens": "Lesson",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {
+        "0": 1,
+        "8": 1,
+        "MISSING": 7,
+        "emitted": 1
+      },
+      "workflow_id": "lesson_plan"
+    },
+    "B": {
+      "cells": {},
+      "checklist": "workflows/checklists/assessment.yaml",
+      "doc_ids": [],
+      "lens": "Assessment",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "quiz"
+    },
+    "C": {
+      "cells": {},
+      "checklist": null,
+      "doc_ids": [],
+      "lens": null,
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "general"
+    },
+    "D": {
+      "cells": {},
+      "checklist": null,
+      "doc_ids": [],
+      "lens": "Teacher support",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "teacher_support"
+    },
+    "E": {
+      "cells": {},
+      "checklist": null,
+      "doc_ids": [],
+      "lens": "Student practice",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "student_practice"
+    },
+    "F": {
+      "cells": {
+        "doc_fmixed_Algebra_I_Math_YAG_150-day:F1": "PRESENT",
+        "doc_fmixed_Algebra_I_Math_YAG_150-day:F2": "PARTIAL",
+        "doc_fmixed_Algebra_I_Math_YAG_150-day:F2.pacing_or_yag": "PRESENT",
+        "doc_fmixed_Algebra_I_Math_YAG_150-day:F2.scope_or_sequence": "MISSING",
+        "doc_fmixed_Algebra_I_Math_YAG_150-day:F2.standards_overview": "PRESENT",
+        "doc_fmixed_Algebra_I_Math_YAG_150-day:F3": "PRESENT",
+        "doc_fmixed_Algebra_I_Math_YAG_150-day:F3.day_or_calendar_spine": "PRESENT",
+        "doc_fmixed_Algebra_I_Math_YAG_150-day:F3.unit_or_module_spine": "PRESENT",
+        "doc_fmixed_Algebra_I_Math_YAG_150-day:F4": "PRESENT",
+        "doc_fmixed_Algebra_I_Math_YAG_150-day:F4.teks_or_elps_or_codes": "PRESENT",
+        "doc_fmixed_Algebra_I_Math_YAG_150-day:F5": "STUB",
+        "doc_fstrong_Algebra_I_Math_150-day_Topic_Pacing_Guides:F1": "PRESENT",
+        "doc_fstrong_Algebra_I_Math_150-day_Topic_Pacing_Guides:F2": "PARTIAL",
+        "doc_fstrong_Algebra_I_Math_150-day_Topic_Pacing_Guides:F2.pacing_or_yag": "PRESENT",
+        "doc_fstrong_Algebra_I_Math_150-day_Topic_Pacing_Guides:F2.scope_or_sequence": "MISSING",
+        "doc_fstrong_Algebra_I_Math_150-day_Topic_Pacing_Guides:F2.standards_overview": "PRESENT",
+        "doc_fstrong_Algebra_I_Math_150-day_Topic_Pacing_Guides:F3": "PRESENT",
+        "doc_fstrong_Algebra_I_Math_150-day_Topic_Pacing_Guides:F3.day_or_calendar_spine": "PRESENT",
+        "doc_fstrong_Algebra_I_Math_150-day_Topic_Pacing_Guides:F3.unit_or_module_spine": "PRESENT",
+        "doc_fstrong_Algebra_I_Math_150-day_Topic_Pacing_Guides:F4": "PRESENT",
+        "doc_fstrong_Algebra_I_Math_150-day_Topic_Pacing_Guides:F4.teks_or_elps_or_codes": "PRESENT",
+        "doc_fstrong_Algebra_I_Math_150-day_Topic_Pacing_Guides:F5": "STUB",
+        "doc_fweak_Activity_Sequence_Pacing_Stub:F1": "PRESENT",
+        "doc_fweak_Activity_Sequence_Pacing_Stub:F2": "PARTIAL",
+        "doc_fweak_Activity_Sequence_Pacing_Stub:F2.pacing_or_yag": "MISSING",
+        "doc_fweak_Activity_Sequence_Pacing_Stub:F2.scope_or_sequence": "PRESENT",
+        "doc_fweak_Activity_Sequence_Pacing_Stub:F2.standards_overview": "MISSING",
+        "doc_fweak_Activity_Sequence_Pacing_Stub:F3": "PARTIAL",
+        "doc_fweak_Activity_Sequence_Pacing_Stub:F3.day_or_calendar_spine": "MISSING",
+        "doc_fweak_Activity_Sequence_Pacing_Stub:F3.unit_or_module_spine": "PRESENT",
+        "doc_fweak_Activity_Sequence_Pacing_Stub:F4": "MISSING",
+        "doc_fweak_Activity_Sequence_Pacing_Stub:F4.teks_or_elps_or_codes": "MISSING",
+        "doc_fweak_Activity_Sequence_Pacing_Stub:F5": "STUB"
+      },
+      "checklist": "workflows/checklists/standards_pacing.yaml",
+      "doc_ids": [
+        "doc_fmixed_Algebra_I_Math_YAG_150-day",
+        "doc_fstrong_Algebra_I_Math_150-day_Topic_Pacing_Guides",
+        "doc_fweak_Activity_Sequence_Pacing_Stub"
+      ],
+      "lens": "Standards & pacing",
+      "n_docs": 3,
+      "status": "ok",
+      "status_counts": {
+        "MISSING": 7,
+        "PARTIAL": 4,
+        "PRESENT": 19,
+        "STUB": 3
+      },
+      "workflow_id": "standards_pacing"
+    },
+    "G": {
+      "cells": {},
+      "checklist": "workflows/checklists/syllabus.yaml",
+      "doc_ids": [],
+      "lens": "Syllabus",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "syllabus"
+    },
+    "H": {
+      "cells": {},
+      "checklist": "workflows/checklists/exit_ticket.yaml",
+      "doc_ids": [],
+      "lens": "Exit ticket",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "exit_ticket"
+    }
+  },
+  "project_id": "lab-standards-path-f",
+  "route_map": {
+    "counts": {
+      "standards_pacing": 3
+    },
+    "routes": [
+      {
+        "doc_id": "doc_fmixed_Algebra_I_Math_YAG_150-day",
+        "doc_type": "other",
+        "path": "F",
+        "reason": "filename prior \u2192 standards_pacing",
+        "workflow_id": "standards_pacing"
+      },
+      {
+        "doc_id": "doc_fstrong_Algebra_I_Math_150-day_Topic_Pacing_Guides",
+        "doc_type": "other",
+        "path": "F",
+        "reason": "filename prior \u2192 standards_pacing",
+        "workflow_id": "standards_pacing"
+      },
+      {
+        "doc_id": "doc_fweak_Activity_Sequence_Pacing_Stub",
+        "doc_type": "other",
+        "path": "F",
+        "reason": "filename prior \u2192 standards_pacing",
+        "workflow_id": "standards_pacing"
+      }
+    ],
+    "unrouted_ledger_doc_ids": []
+  }
+}

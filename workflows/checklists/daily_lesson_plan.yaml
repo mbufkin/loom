@@ -10,6 +10,8 @@ version: "v1-test-draft-daily-lesson"
 role: lesson_plan
 framework: test_draft
 source_template: academic/daily-lesson-structure
+path: A
+workflow_id: lesson_plan
 
 sections:
   header:

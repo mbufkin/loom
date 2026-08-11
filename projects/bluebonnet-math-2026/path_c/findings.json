@@ -1,0 +1,1300 @@
+{
+  "project_id": "bluebonnet-math-2026",
+  "workflow_id": "general",
+  "path": "C",
+  "lens": "General feedback",
+  "status": "ok",
+  "doc_ids": [
+    "Algebra_I_Math_Assessment_Reflection.pdf",
+    "Algebra_I_Math_Problem-Solving_Model_Graphic_Organizer.pdf",
+    "K-5_Math_Component_Navigation_Guide.pdf",
+    "K-5_Math_Grade_5_Course_Guide.pdf",
+    "K-5_Math_Grade_5_Manipulatives_Kit.pdf",
+    "Matematicas_Algebra_I_Gu_a_para_la_Familia_en_espa_ol.pdf",
+    "Secondary_Mathematics_Coach_Lesson_Internalization_Protocol.pdf",
+    "Secondary_Mathematics_Coach_Module_and_Topic_Internalization_Guide.pdf",
+    "Secondary_Mathematics_Coach_Student_Work_Analysis_Protocol.pdf",
+    "Secondary_Mathematics_Content_Organization_Document.pdf",
+    "Secondary_Mathematics_Materials_Guide.pdf",
+    "Secondary_Mathematics_Observation_Tool.pdf",
+    "Secondary_Mathematics_Teacher_Lesson_Internalization_Protocol.pdf",
+    "Secondary_Mathematics_Teacher_Module_and_Topic_Internalization_Protocol.pdf",
+    "Secondary_Mathematics_Teacher_Student_Work_Analysis_Protocol.pdf"
+  ],
+  "checklist": "workflows/checklists/general.yaml",
+  "inventory": [
+    {
+      "doc_id": "Algebra_I_Math_Assessment_Reflection.pdf",
+      "doc_type": "other",
+      "element_count": 3,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Problem-Solving_Model_Graphic_Organizer.pdf",
+      "doc_type": "other",
+      "element_count": 4,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Component_Navigation_Guide.pdf",
+      "doc_type": "other",
+      "element_count": 6,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Course_Guide.pdf",
+      "doc_type": "other",
+      "element_count": 36,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Grade_5_Manipulatives_Kit.pdf",
+      "doc_type": "other",
+      "element_count": 3,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "Matematicas_Algebra_I_Gu_a_para_la_Familia_en_espa_ol.pdf",
+      "doc_type": "other",
+      "element_count": 48,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "Secondary_Mathematics_Coach_Lesson_Internalization_Protocol.pdf",
+      "doc_type": "other",
+      "element_count": 7,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "Secondary_Mathematics_Coach_Module_and_Topic_Internalization_Guide.pdf",
+      "doc_type": "other",
+      "element_count": 7,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "Secondary_Mathematics_Coach_Student_Work_Analysis_Protocol.pdf",
+      "doc_type": "other",
+      "element_count": 4,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "Secondary_Mathematics_Content_Organization_Document.pdf",
+      "doc_type": "other",
+      "element_count": 34,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "Secondary_Mathematics_Materials_Guide.pdf",
+      "doc_type": "other",
+      "element_count": 9,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "Secondary_Mathematics_Observation_Tool.pdf",
+      "doc_type": "other",
+      "element_count": 3,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "Secondary_Mathematics_Teacher_Lesson_Internalization_Protocol.pdf",
+      "doc_type": "other",
+      "element_count": 6,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "Secondary_Mathematics_Teacher_Module_and_Topic_Internalization_Protocol.pdf",
+      "doc_type": "other",
+      "element_count": 8,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "Secondary_Mathematics_Teacher_Student_Work_Analysis_Protocol.pdf",
+      "doc_type": "other",
+      "element_count": 7,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    }
+  ],
+  "steps_by_doc": {
+    "Algebra_I_Math_Assessment_Reflection.pdf": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 3,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "reflection_closure": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "Algebra_I_Math_Assessment_Reflection.pdf"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "Algebra_I_Math_Assessment_Reflection.pdf",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "Algebra_I_Math_Problem-Solving_Model_Graphic_Organizer.pdf": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 4,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "Algebra_I_Math_Problem-Solving_Model_Graphic_Organizer.pdf"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "Algebra_I_Math_Problem-Solving_Model_Graphic_Organizer.pdf",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "As you share your mathematical reasoning with others, ask these questions. • Did you use multiple representations to represent your mathematics? • Did you justify your mathematical reasoning? • Can others understand my process and solution?  • Did I display my work using multiple representations? • Did I explain my reasoning in terms of the problem situation? • Did I communicate the strategy used to determine the solution? THE PROBLEM-SOLVING MODEL  3   The Problem-Solving Model Graphic…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "K-5_Math_Component_Navigation_Guide.pdf": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 6,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "reflection_closure": 1,
+          "assessment_checkpoint": 1,
+          "logistics_materials": 1
+        },
+        "doc_id": "K-5_Math_Component_Navigation_Guide.pdf"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "K-5_Math_Component_Navigation_Guide.pdf",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 6,
+            "cites": [
+              "Product Design Alignment to TEKS and Student Learning Research The K–5 Math instructional materials align with the TEKS and the ELPS, as well as with student learning research. The modules and lessons are strategically and coherently sequenced to build upon learning within modules and across grades. All students are working on grade-level tasks, and time and effort are concentrated on going deep on the most important topics for the grade level. The product provides multiple opportunities for…",
+              "Module Module 1 Module 2  Grade 2  Module 3  Grade 2  Module 4  Grade 2  Module 5  Grade 2  Module 6  Grade 2  Module 7  Grade 2  Module 8  Grade 2  ADSY Module  Title Sums and Differences to 100 Addition and Subtraction of Length Units Place Value, Counting, and Comparison of Numbers to 1,200 Addition and Subtraction Within 200 with Word Problems to 100 Addition and Subtraction Within 1,000 with Word Problems Within 1,000 Foundations of Multiplication, Division, and Area Problem Solving with…",
+              "Module Module 1 Module 2  Grade 2  Module 3  Grade 2  Module 4  Grade 2  Module 5  Grade 2  Module 6  Grade 2  Module 7  Grade 2  Module 8  Grade 2  ADSY Module  Title Sums and Differences to 100 Addition and Subtraction of Length Units Place Value, Counting, and Comparison of Numbers to 1,200 Addition and Subtraction Within 200 with Word Problems to 100 Addition and Subtraction Within 1,000 with Word Problems Within 1,000 Foundations of Multiplication, Division, and Area Problem Solving with…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "K-5_Math_Grade_5_Course_Guide.pdf": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 36,
+        "by_element_type": {
+          "standards_objectives": 7,
+          "direct_instruction": 8,
+          "guided_practice": 2,
+          "assessment_checkpoint": 8,
+          "reflection_closure": 2,
+          "logistics_materials": 9
+        },
+        "doc_id": "K-5_Math_Grade_5_Course_Guide.pdf"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "K-5_Math_Grade_5_Course_Guide.pdf",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 8,
+            "cites": [
+              "GRADE 5 COURSE GUIDE  Introduction..................................................................................................................... 2 Profile of a Grade 5 Math Learner....................................................................................2 Culture of Learning in Grade 5.........................................................................................3 Collaboratively Troubleshooting Student Misconceptions...............................................5…",
+              "Play the “Divide the Card” number game with your student. Use playing cards, and take out the jacks, queens, kings, and jokers. Put the stack of remaining cards face down. 1. 2. 3. 4.  Flip three or four cards from the top of the deck and place them face up on the table. The threeor four-digit number shown by these cards will represent the dividend. Your student flips two cards from the top of the deck and places them face up on the table. The two-digit number shown by these cards will…",
+              "Flip three or four cards from the top of the deck and place them face up on the table. The threeor four-digit number shown by these cards will represent the dividend. Your student flips two cards from the top of the deck and places them face up on the table. The two-digit number shown by these cards will represent the divisor. Write the division expression using the dividend and the divisor. Then ask your student to estimate the quotient. Your student then solves the division problem using the…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "K-5_Math_Grade_5_Manipulatives_Kit.pdf": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 3,
+        "by_element_type": {
+          "logistics_materials": 2,
+          "standards_objectives": 1
+        },
+        "doc_id": "K-5_Math_Grade_5_Manipulatives_Kit.pdf"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "K-5_Math_Grade_5_Manipulatives_Kit.pdf",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Two-Color Counters, Whole Number Place Value Cards, Decimal Place Value Cards, Centimeter Cubes, Tape Measure, Graduated Manipulatives Cylinder, 5 1/2\" x 5 1/2\" Patty Paper, Ruler, 6\" Protractor, 4\" Protractor, Open Center, Whole Number Place Value Disks, Base Ten Blocks, Inch Tiles, Set Squares.  Each complet e kit includes enough material s for a class of 24 students .  The complete manipulatives kit includes all the hands-on math manipulatives that students need for this grade level.  3 …",
+              "Manipulatives Two-Color Counters, 200 pcs.  Manipulatives Whole Number Place Value Cards  Manipulatives Decimal Place Value Cards  Manipulatives Centimeter Cubes- set of 1000  Manipulatives Tape Measures, set of 10   Graduated Cylinder  5 1/2\" x 5 1/2\" Patty Paper  5000007  5000008  Manipulatives Graduated Cylinder 100 ml  Manipulatives 5 1/2\" x 5 1/2\" Patty Paper, Box of 1000  12  Clear, high quality, durable polypropylene cylinders for measurement, comparison, and volume activities.  1 …",
+              "The complete manipulatives kit includes all the hands-on math manipulatives that students need for this grade level.  3"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "Matematicas_Algebra_I_Gu_a_para_la_Familia_en_espa_ol.pdf": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 48,
+        "by_element_type": {
+          "logistics_materials": 5,
+          "standards_objectives": 12,
+          "direct_instruction": 9,
+          "guided_practice": 9,
+          "assessment_checkpoint": 7,
+          "reflection_closure": 6
+        },
+        "doc_id": "Matematicas_Algebra_I_Gu_a_para_la_Familia_en_espa_ol.pdf"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "Matematicas_Algebra_I_Gu_a_para_la_Familia_en_espa_ol.pdf",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Students have analyzed the shape of data, informally fit trend lines to model data sets, determined the equations of those lines, interpreted the slopes and y-intercepts of the lines, and used the equations to make and judge the reasonableness of predictions about the data. Students have also examined linear relationships and recognized that the slope of a line defines its steepness and direction.  As students continue in this course and in future mathematics courses, they will determine and…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "Secondary_Mathematics_Coach_Lesson_Internalization_Protocol.pdf": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 7,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "hook_engagement": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1,
+          "logistics_materials": 1
+        },
+        "doc_id": "Secondary_Mathematics_Coach_Lesson_Internalization_Protocol.pdf"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "Secondary_Mathematics_Coach_Lesson_Internalization_Protocol.pdf",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 4,
+            "cites": [
+              "Read the Lesson Overview, Texas Essential Knowledge and Skills (TEKS), TEKS Mathematical Process Standards, English Language Proficiency Standards (ELPS), and Essential Ideas. Highlight and/or record your understanding. Determine the knowledge and skills students will gain as a result of this learning experience. Consider both the Learning Together and Learning Individually experiences.  Guidance for Coaches\b",
+              "Coach Lesson Internalization Protocol   Acknowledgment Thank you to all the Texas educators and stakeholders who supported the review process and provided feedback. These materials are the result of the work of numerous individuals, and we are deeply grateful for their contributions.",
+              "Coach Lesson Internalization Protocol TEACHER PREWORK  • Re-read the Topic Overview and big ideas from internalizing the topic. • Read the Facilitation Notes."
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "Secondary_Mathematics_Coach_Module_and_Topic_Internalization_Guide.pdf": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 7,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "hook_engagement": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1,
+          "logistics_materials": 1
+        },
+        "doc_id": "Secondary_Mathematics_Coach_Module_and_Topic_Internalization_Guide.pdf"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "Secondary_Mathematics_Coach_Module_and_Topic_Internalization_Guide.pdf",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 6,
+            "cites": [
+              "Notice These learning resources have been built for Texas students, aligned to the Texas Essential Knowledge and Skills, and are made available pursuant to Chapter 31, Subchapter B-1 of the Texas Education Code. If you have further product questions or to report an error, please email openeducationresources@tea.texas.gov.   Coach Module and Topic Internalization Protocol TEACHER PREWORK Read the Module Overview and highlight, annotate, or record your thoughts on the progression of content in…",
+              "1  Understand the big picture.  USE THE MODULE OVERVIEW AND TOPIC OVERVIEW  Revisit the Module Overview and annotations created as part of the prework. Read the Topic Overview. Identify how the module utilizes the concreterepresentational-abstract (CRA) progression to build student learning from lesson to lesson. Identify new key terms and symbols. Use the cognates and the How can you use cognates to support EB students? section in the Topic Overview to start planning supports for emergent…",
+              "USE THE MODULE OVERVIEW AND TOPIC OVERVIEW  Revisit the Module Overview and annotations created as part of the prework. Read the Topic Overview. Identify how the module utilizes the concreterepresentational-abstract (CRA) progression to build student learning from lesson to lesson. Identify new key terms and symbols. Use the cognates and the How can you use cognates to support EB students? section in the Topic Overview to start planning supports for emergent bilingual students. USE THE SCOPE…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "Secondary_Mathematics_Coach_Student_Work_Analysis_Protocol.pdf": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 4,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "Secondary_Mathematics_Coach_Student_Work_Analysis_Protocol.pdf"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "Secondary_Mathematics_Coach_Student_Work_Analysis_Protocol.pdf",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 4,
+            "cites": [
+              "Notice These learning resources have been built for Texas students, aligned to the Texas Essential Knowledge and Skills, and are made available pursuant to Chapter 31, Subchapter B-1 of the Texas Education Code. If you have further product questions or to report an error, please email openeducationresources@tea.texas.gov.   Coach | Student Work Analysis Protocol BEFORE THE MEETING Prepare for the meeting by completing the steps below. These steps may have been already completed as part of the…",
+              "COACH | STUDENT WORK ANALYSIS PROTOCOL  1   S TE P  1  Understand the task, related text, and standards.  1. Examine the task by considering the questions below.  ESSENTIAL QUESTIONS • What are students being asked to do and understand in this task? • What knowledge and vocabulary do students need to access this task? • Which standards are being assessed through this task? Is the student  expected to show proficiency for the entire standard, or are other aspects of it taught in the current…",
+              "COACH | STUDENT WORK ANALYSIS PROTOCOL   Guidance for Coaches In this step, teachers establish and discuss the success criteria for the task, so that there is a clear understanding of exemplar. PROMPTS • “Take 1-2 mins to review the exemplar: What is the criteria for an  ideal answer?” • “How does this [part of the exemplar] align with the standard(s) and  expectations for the task, and important understandings for the module?” S TE P  3  Analyze and sort student work.  1. Independently…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "Secondary_Mathematics_Content_Organization_Document.pdf": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 34,
+        "by_element_type": {
+          "standards_objectives": 5,
+          "logistics_materials": 6,
+          "direct_instruction": 7,
+          "guided_practice": 5,
+          "assessment_checkpoint": 6,
+          "reflection_closure": 4,
+          "hook_engagement": 1
+        },
+        "doc_id": "Secondary_Mathematics_Content_Organization_Document.pdf"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "Secondary_Mathematics_Content_Organization_Document.pdf",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 4,
+            "cites": [
+              "Students enter Grade 6 with exper models to represent multiplication.  The Factors and Multiples topic draw experiences to formalize the distrib decompose numeric expressions. S with factor pairs supports their new common multiples and greatest com  In previous grades, students began fractions. They learned to compare determine equivalent fractions, add with like and unlike denominators, m by fractions, and divide whole num This topic builds on students’ prior models, number lines, and fact…",
+              "ical Summaries of Data When you analyze a graphical representation of numeric data, you can look In Topic 2, they learn how to summarize data sets with single values:  at its shape, center, and ey concepts Numerical Summaries ofspread to draw conclusions. measures of center and measures of variability. They develop the meaning of d? the measures and not merely how to compute them.  aries of Data, students MODULE 5 • TOPIC 1 • TOPIC SUMMARY 1151 res of central tendency Math Representation…",
+              "1  determine each unknown angle measure. TOPIC 2 2(16.53) SUMMARY 2(24.51) 1 1 2(12.47)  5(6x 49.02 15 24.94 2 2)1 133.06 4x 1 42 180 5 107.02 10x 1 40 5 180  A  Area, Surface Area, (6x – 2)° and Volume Summary 5.7 cm  140 The surface area of10x the5right rectangular prism is 107.02 x 5 14 cm2. m/B 5 4(14) 5 568  LE S S O N  m/A 5Composite 6(14) 2 2 5Figures 828  1  Base Ang [teorema ángulos d • congruen [ángulos c • straight a • collinear [ • suppleme angles [án suplemen • complem angles [án…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "Secondary_Mathematics_Materials_Guide.pdf": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 9,
+        "by_element_type": {
+          "logistics_materials": 2,
+          "standards_objectives": 2,
+          "assessment_checkpoint": 2,
+          "reflection_closure": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1
+        },
+        "doc_id": "Secondary_Mathematics_Materials_Guide.pdf"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "Secondary_Mathematics_Materials_Guide.pdf",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Summary of Components The following components are included in the Bluebonnet Learning Secondary Mathematics Edition 1:  Program Components • The Program and Implementation Guide provides a high-level overview of the instructional materials. • The Content Organization provides an overview of the content covered across all the instructional materials in the program. • The Teacher | Module and Topic Internalization Protocol provides a step-by-step process for understanding the module and each…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "Secondary_Mathematics_Observation_Tool.pdf": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 3,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "standards_objectives": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "Secondary_Mathematics_Observation_Tool.pdf"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "Secondary_Mathematics_Observation_Tool.pdf",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "EDITION 1  Coach Observation Tool",
+              "Before the Classroom Visit Review the lesson for purpose, specific instructional materials, and suggested pacing of activities. Y  N  Evidence of teacher internalization of Module, Topic, and Lesson exists. Teacher uses appropriate module within the scope and sequence. Teacher stays within +/- 5 instructional days of suggested pacing guide. Lesson meets minimum number of minutes for core instruction. Notes/Time  Key: Y for Yes, observed; fully implemented; NP No, not present OBSERVATION TOOL …",
+              "NP  Supports All Learners Teacher uses embedded support strategies within lesson (e.g., Emergent Bilingual Student Tips, Modeling Moments, and Common Misconceptions). Teacher provides just-in-time instruction using embedded HQIM resources. Y for Yes, observed; fully implemented; P Partially observed; not fully implemented; and NP No, not present Notes/Time  Key: Y for Yes, observed; fully implemented; P Partially observed; not fully implemented; and NP No, not present  After the Classroom…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "Secondary_Mathematics_Teacher_Lesson_Internalization_Protocol.pdf": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 6,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "unclear": 1
+        },
+        "doc_id": "Secondary_Mathematics_Teacher_Lesson_Internalization_Protocol.pdf"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "Secondary_Mathematics_Teacher_Lesson_Internalization_Protocol.pdf",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "1   Use a blank copy of the Student Lesson: • Complete the lesson’s Getting Started, Activities, and Talk the Talk to  display exemplar responses. • Determine appropriate locations within the lesson for aligned and  appropriately-rigorous, formative assessments, considering the exemplar responses to help determine the placement of Learning Individually days within the Topic Pacing from the Module and Topic Internalization. S TE P  3  Prepare to teach each activity with an activity deep dive. …",
+              "1   Use a blank copy of the Student Lesson: • Complete the lesson’s Getting Started, Activities, and Talk the Talk to  display exemplar responses. • Determine appropriate locations within the lesson for aligned and  appropriately-rigorous, formative assessments, considering the exemplar responses to help determine the placement of Learning Individually days within the Topic Pacing from the Module and Topic Internalization. S TE P  3  Prepare to teach each activity with an activity deep dive. …"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "Secondary_Mathematics_Teacher_Module_and_Topic_Internalization_Protocol.pdf": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 8,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "hook_engagement": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1,
+          "logistics_materials": 2
+        },
+        "doc_id": "Secondary_Mathematics_Teacher_Module_and_Topic_Internalization_Protocol.pdf"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "Secondary_Mathematics_Teacher_Module_and_Topic_Internalization_Protocol.pdf",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 5,
+            "cites": [
+              "Notice These learning resources have been built for Texas students, aligned to the Texas Essential Knowledge and Skills, and are made available pursuant to Chapter 31, Subchapter B-1 of the Texas Education Code. If you have further product questions or to report an error, please email openeducationresources@tea.texas.gov.   Teacher Module and Topic Internalization Protocol PREWORK Read the Module Overview and highlight, annotate, or record your thoughts on the progression of content in the…",
+              "Purpose The Teacher Module and Topic Internalization Protocol provides a step-bystep process for understanding each module and topic prior to teaching, including what students will learn, how teachers will assess student learning, and the high-level arc of learning. By starting with module and topic internalization, teachers can understand how each lesson fits into the big picture prior to using the Teacher Lesson Internalization Protocol. Returning to this protocol at the beginning of each…",
+              "Revisit the Module Overview and annotations created as part of the prework. Read the Topic Overview. Identify how the module utilizes the concreterepresentational-abstract (CRA) progression to build student learning from lesson to lesson. Identify new key terms and symbols. Use the cognates and the How can you use cognates to support EB students? section in the Topic Overview to start planning supports for emergent bilingual students. USE THE SCOPE AND SEQUENCE AND TOPIC PACING GUIDE  Identify…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "Secondary_Mathematics_Teacher_Student_Work_Analysis_Protocol.pdf": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 7,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "hook_engagement": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1,
+          "logistics_materials": 1
+        },
+        "doc_id": "Secondary_Mathematics_Teacher_Student_Work_Analysis_Protocol.pdf"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "Secondary_Mathematics_Teacher_Student_Work_Analysis_Protocol.pdf",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 7,
+            "cites": [
+              "expected to show proficiency for the entire standard, or are other aspects of it taught in the current module/topic or later in the year? • For literacy-based tasks, including word problems, what will be  challenging about this text for students? Where will they likely struggle? TEACHER | STUDENT WORK ANALYSIS PROTOCOL  1   S TE P  2  Determine the success criteria for the tasks.  1. Examine the resources available in your instructional materials, including rubrics and exemplars, to develop a…",
+              "challenging about this text for students? Where will they likely struggle? TEACHER | STUDENT WORK ANALYSIS PROTOCOL  1   S TE P  2  Determine the success criteria for the tasks.  1. Examine the resources available in your instructional materials, including rubrics and exemplars, to develop a deep understanding of what proficiency looks like for the task. 2. List the key components of the ideal student response.",
+              "challenging about this text for students? Where will they likely struggle? TEACHER | STUDENT WORK ANALYSIS PROTOCOL  1   S TE P  2  Determine the success criteria for the tasks.  1. Examine the resources available in your instructional materials, including rubrics and exemplars, to develop a deep understanding of what proficiency looks like for the task. 2. List the key components of the ideal student response."
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    }
+  },
+  "feedback_file": "_loom_feedback.yaml"
+}

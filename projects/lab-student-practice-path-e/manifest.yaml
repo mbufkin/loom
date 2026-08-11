@@ -1,0 +1,13 @@
+project:
+  id: lab-student-practice-path-e
+  name: lab-student-practice-path-e
+sources_dir: /home/lenovo/g10-control-center-loom/projects/lab-student-practice-path-e/sources
+units:
+  curriculum:
+    title: Curriculum
+    calendar: units/curriculum/calendar.yaml
+    documents:
+    - doc_emixed_K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition.txt
+    - doc_estrong_K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition.txt
+    - doc_eweak_K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition.txt
+generated_by: ingest.py

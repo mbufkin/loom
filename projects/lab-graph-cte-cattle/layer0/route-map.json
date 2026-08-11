@@ -1,0 +1,51 @@
+{
+  "project_id": "lab-graph-cte-cattle",
+  "generated_at": "2026-08-11T20:13:09.946932+00:00",
+  "lenses": {
+    "lesson_plan": "Lesson",
+    "quiz": "Assessment",
+    "general": "General feedback",
+    "teacher_support": "Teacher support",
+    "student_practice": "Student practice",
+    "standards_pacing": "Standards & pacing",
+    "syllabus": "Syllabus",
+    "exit_ticket": "Exit ticket"
+  },
+  "counts": {
+    "lesson_plan": 2
+  },
+  "unrouted_ledger_doc_ids": [],
+  "feedback_path": null,
+  "graph_hints": 0,
+  "routes": [
+    {
+      "doc_id": "023-breeds-of-livestock-cattle__view-lesson-plan.html",
+      "doc_type": "lesson_plan",
+      "workflow_id": "lesson_plan",
+      "path": "A",
+      "lens": "Lesson",
+      "reason": "cte-spike artifact_kind=lesson_plan \u2192 Path A (thin table)",
+      "feedback": false,
+      "confidence": 1.0,
+      "source_file": "023-breeds-of-livestock-cattle__view-lesson-plan.html",
+      "element_count": 56,
+      "graph_role": null,
+      "unit_id": "breeds-of-livestock-cattle"
+    },
+    {
+      "doc_id": "027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan.html",
+      "doc_type": "lesson_plan",
+      "workflow_id": "lesson_plan",
+      "path": "A",
+      "lens": "Lesson",
+      "reason": "cte-spike artifact_kind=lesson_plan \u2192 Path A (thin table)",
+      "feedback": false,
+      "confidence": 1.0,
+      "source_file": "027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan.html",
+      "element_count": 30,
+      "graph_role": null,
+      "unit_id": "external-anatomy-of-livestock-terms-terminology"
+    }
+  ],
+  "method": "spike-path-a-from-cte"
+}

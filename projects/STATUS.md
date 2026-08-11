@@ -6,10 +6,12 @@ Maturity = how complete generated artifacts are — not a separate code path.
 | Dataset id | Tier | Layer 0 | Layer 1 | Notes |
 |------------|------|---------|---------|-------|
 | `dallas-career-2026` | **Golden** | Yes | Yes | 18 CTE units; acceptance / demo / MVP |
+| `bluebonnet-math-2026` | Active | Yes | Yes | TX Bluebonnet Math (Alg1 + G5); E2E `grok-4.5` finished 2026-08-03 — cost notes in [docs/E2E.md](../docs/E2E.md); run artifacts stay local |
 | `oklahoma-ag-orientation-2026` | Active | — | — | Public OK CareerTech Orientation to Ag (6 units); sequential calendar |
 | `region10-career-college-2026` | Active | Yes | Yes | Region 10 career/college |
 | `ap-csp-2026` | Stress | Yes | **Blocked** | Layer 0 OK; Layer 1 ORGANIZE exceeds 65k ctx on single CED (~113k) — see dataset README; deferred roadmap |
 | `openscied-6` | Experiment | — | — | Pairs with `experiments/openscied/` |
+| `icev-aas-pilot-2026` | Experiment | Yes | Yes | iCEV AAS 6-lesson pilot; model-ingest (6 units); Review UI `e2e=grok-icev-pilot-20260810b` |
 | `_fixtures/ingest-pilot` | Fixture | — | — | Ingest smoke only |
 | `_fixtures/ingest-test` | Fixture | — | — | Ingest smoke only |
 | `_template` | Template | — | — | Copy to start a new dataset |
@@ -17,3 +19,4 @@ Maturity = how complete generated artifacts are — not a separate code path.
 **Tiers:** Golden = regression bar · Active = real work · Stress = hard inputs · Experiment = alternate code · Fixture = CI/smoke · Template = blank shelf slot.
 
 **MVP scope:** multi-document course packs (golden Dallas). Huge single-framework PDFs are Layer 0 stress only until Layer 1 chunking ships (`docs/roadmap.md`).
+

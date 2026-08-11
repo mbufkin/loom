@@ -1,0 +1,1697 @@
+{
+  "project_id": "bluebonnet-math-2026",
+  "workflow_id": "standards_pacing",
+  "path": "F",
+  "lens": "Standards & pacing",
+  "status": "ok",
+  "doc_ids": [
+    "Algebra_1_Math_Family_Guides.pdf",
+    "Algebra_1_Math_Standards_Overview.pdf",
+    "Algebra_I_Math_150-day_Topic_Pacing_Guides.pdf",
+    "Algebra_I_Math_ELPS_Summary.pdf",
+    "Algebra_I_Math_Materials_List.pdf",
+    "Algebra_I_Math_Scope_and_Sequence_150-day.pdf",
+    "Algebra_I_Math_Scope_and_Sequence_165-day.pdf",
+    "Algebra_I_Math_TEKS_Summary.pdf",
+    "Algebra_I_Math_YAG_150-day.pdf",
+    "Algebra_I_Math_YAG_165-day.pdf",
+    "K-5_Math_Family_Guide.pdf",
+    "K-5_Math_Program_and_Implementation_Guide.pdf"
+  ],
+  "checklist": "workflows/checklists/standards_pacing.yaml",
+  "inventory": [
+    {
+      "doc_id": "Algebra_1_Math_Family_Guides.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 50,
+      "F1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc"
+      },
+      "F2": {
+        "status": "PARTIAL",
+        "note": "2/3 fields present"
+      },
+      "F3": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "F4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "F5": {
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "Algebra_1_Math_Standards_Overview.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 4,
+      "F1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc"
+      },
+      "F2": {
+        "status": "PARTIAL",
+        "note": "1/3 fields present"
+      },
+      "F3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "F4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "F5": {
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_150-day_Topic_Pacing_Guides.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 47,
+      "F1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc"
+      },
+      "F2": {
+        "status": "PARTIAL",
+        "note": "2/3 fields present"
+      },
+      "F3": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "F4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "F5": {
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_ELPS_Summary.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 3,
+      "F1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc"
+      },
+      "F2": {
+        "status": "PARTIAL",
+        "note": "1/3 fields present"
+      },
+      "F3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "F4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "F5": {
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Materials_List.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 7,
+      "F1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc"
+      },
+      "F2": {
+        "status": "PARTIAL",
+        "note": "1/3 fields present"
+      },
+      "F3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "F4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "F5": {
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Scope_and_Sequence_150-day.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 13,
+      "F1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc"
+      },
+      "F2": {
+        "status": "PRESENT",
+        "note": "3/3 fields present"
+      },
+      "F3": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "F4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "F5": {
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_Scope_and_Sequence_165-day.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 40,
+      "F1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc"
+      },
+      "F2": {
+        "status": "PRESENT",
+        "note": "3/3 fields present"
+      },
+      "F3": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "F4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "F5": {
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_TEKS_Summary.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 1,
+      "F1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc"
+      },
+      "F2": {
+        "status": "PARTIAL",
+        "note": "2/3 fields present"
+      },
+      "F3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "F4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "F5": {
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_YAG_150-day.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 4,
+      "F1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc"
+      },
+      "F2": {
+        "status": "PARTIAL",
+        "note": "2/3 fields present"
+      },
+      "F3": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "F4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "F5": {
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "Algebra_I_Math_YAG_165-day.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 8,
+      "F1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc"
+      },
+      "F2": {
+        "status": "PARTIAL",
+        "note": "2/3 fields present"
+      },
+      "F3": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "F4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "F5": {
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Family_Guide.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 6,
+      "F1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc"
+      },
+      "F2": {
+        "status": "MISSING",
+        "note": "0/3 fields present"
+      },
+      "F3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "F4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "F5": {
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "K-5_Math_Program_and_Implementation_Guide.pdf",
+      "doc_type": "other",
+      "graph_role": null,
+      "element_count": 55,
+      "F1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc"
+      },
+      "F2": {
+        "status": "PRESENT",
+        "note": "3/3 fields present"
+      },
+      "F3": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "F4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "F5": {
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    }
+  ],
+  "steps_by_doc": {
+    "Algebra_1_Math_Family_Guides.pdf": {
+      "F1": {
+        "step": "F1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc",
+        "element_count": 50,
+        "by_element_type": {
+          "standards_objectives": 5,
+          "direct_instruction": 15,
+          "guided_practice": 9,
+          "assessment_checkpoint": 9,
+          "reflection_closure": 5,
+          "logistics_materials": 5,
+          "hook_engagement": 2
+        },
+        "doc_id": "Algebra_1_Math_Family_Guides.pdf"
+      },
+      "F2": {
+        "step": "F2",
+        "status": "PARTIAL",
+        "present": 2,
+        "required": 3,
+        "fields": [
+          {
+            "id": "pacing_or_yag",
+            "label": "Pacing / YAG framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "scope_or_sequence",
+            "label": "Scope and sequence framing",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "x y  Graph D  y  Graph E  MODULE 1 • TOPIC 1 • FAMILY GUIDE x  x  x  Graph F   Family Guide MODULE 1 Searching for Patterns  Algebra I  TOPIC 2 Sequences In this topic, students explore sequences represented as lists of numbers, in tables of values, by equations, and as graphs on the coordinate plane. Students move from an intuitive understanding of patterns to a more formal approach of representing sequences as functions.  Where have we been?  Where are we going?  Students have been analyzing…",
+              "Exploring Constant Change TOPIC 1 Linear Functions \b������������������������������������������������������������������ 13 TOPIC 2 \u0007Transforming and Comparing Linear Functions \b������������ 17  MODULE 2  11   12  MODULE 2   Family Guide MODULE 2 Exploring Constant Change  Algebra I  TOPIC 1 Linear Functions In this topic, students focus on the patterns that are evident in certain data sets and use linear functions to model those patterns. Using the informal knowledge of lines of best fit that…",
+              "exponent A horizontal asymptote is a horizontal line that a function gets closer and closer to, but never intersects. The graph shows a horizontal asymptote at y 5 0. y 4 3 2 1 0 −4 −3 −2 −1 −1  1  2  3  4  x  −2 −3 −4  In Lesson 1: Properties of Powers with Integer Exponents, students write and evaluate expressions with positive integer exponents.  36  MODULE 4 • TOPIC 1 • FAMILY GUIDE   Power Properties Powers have properties that can be used to expand, simplify, or just rewrite them…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "standards_overview",
+            "label": "Standards overview framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "x MODULE 1 • TOPIC 1 • LESSON 1  15  x   Supporting Your Student Myth: There is one right way to do math problems Employing multiple strategies to arrive at a single, correct solution is important in life. Suppose you are driving in a crowded downtown area. When one road is backed up, you can always take a different route. When you know only one route, you’re out of luck. Learning mathematics is no different. There may only be one right answer, but there are often multiple strategies to arrive…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F3": {
+        "step": "F3",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "day_or_calendar_spine",
+            "label": "Day / week / calendar spine",
+            "status": "PRESENT",
+            "count": 5,
+            "cites": [
+              "x MODULE 1 • TOPIC 1 • LESSON 1  15  x   Supporting Your Student Myth: There is one right way to do math problems Employing multiple strategies to arrive at a single, correct solution is important in life. Suppose you are driving in a crowded downtown area. When one road is backed up, you can always take a different route. When you know only one route, you’re out of luck. Learning mathematics is no different. There may only be one right answer, but there are often multiple strategies to arrive…",
+              "Supporting Your Student Analyze mathematical relationships to connect and communicate mathematical ideas. I can: • identify important relationships in a problem situation. • use what I know to solve new problems. • analyze and organize information. • look closely to identify patterns or structure. • look for general methods and more efficient ways to solve problems. Display, explain, and justify mathematical ideas and arguments using precise mathematical language in written or oral…",
+              "MYTH Just watch a video, and you will understand it. Has this ever happened to you? Someone explains something, and it all makes sense at the time. You feel like you get it. But then, a day later when you try to do it on your own, you suddenly feel like something’s missing? If that feeling is familiar, don’t worry. It happens to us all. It’s called the illusion of explanatory depth, and it frequently happens after watching a video. How do you break this illusion? The first step is to try to…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "unit_or_module_spine",
+            "label": "Unit / module / topic order",
+            "status": "PRESENT",
+            "count": 35,
+            "cites": [
+              "OBJECTIVES • Understand quantities and their relationships with each other. • Identify the independent and dependent quantities for  NEW KEY TERMS • dependent quantity • independent quantity  a scenario.  1. A builder is designing a rectangular parking lot. She has 300 feet of fencing to enclose the parking lot around three sides.  2. Aiko is enclosing a new rectangular flower garden with a rabbit garden fence. She has 40 meters of fencing.  3. Pedro is building a rectangular sandbox for the…",
+              "01_T01_Topic FCG.indd 4  The study of functions is a main focus of  used linear of functions model the relationship I and future math courses. This topic While Learningandoutside thetoclassroom is crucialAlgebra for your student’s success. between two quantities. They have written linear builds the foundation for future, more in-depth we don’tfunctions expect you to be aand math thebyTopic Family Guide assist in slope-intercept form shouldteacher, be study familiarizing students with thecan…",
+              "Objectives & Essential Question Each lesson begins with objectives, listed to help students understand the objectives. Also included is an essential statement connecting students’ learning with a question to ponder. The question is asked again at the end of each lesson to see how much your student understands.  Getting Started The Getting Started engages your student in the learning. In the Getting Started, your student uses what they already know about the world, what they’ve already learned,…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F4": {
+        "step": "F4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "teks_or_elps_or_codes",
+            "label": "TEKS / ELPS / standard-code cue",
+            "status": "PRESENT",
+            "count": 9,
+            "cites": [
+              "x MODULE 1 • TOPIC 1 • LESSON 1  15  x   Supporting Your Student Myth: There is one right way to do math problems Employing multiple strategies to arrive at a single, correct solution is important in life. Suppose you are driving in a crowded downtown area. When one road is backed up, you can always take a different route. When you know only one route, you’re out of luck. Learning mathematics is no different. There may only be one right answer, but there are often multiple strategies to arrive…",
+              "Supporting Your Student Analyze mathematical relationships to connect and communicate mathematical ideas. I can: • identify important relationships in a problem situation. • use what I know to solve new problems. • analyze and organize information. • look closely to identify patterns or structure. • look for general methods and more efficient ways to solve problems. Display, explain, and justify mathematical ideas and arguments using precise mathematical language in written or oral…",
+              "Exploring Constant Change TOPIC 1 Linear Functions \b������������������������������������������������������������������ 13 TOPIC 2 \u0007Transforming and Comparing Linear Functions \b������������ 17  MODULE 2  11   12  MODULE 2   Family Guide MODULE 2 Exploring Constant Change  Algebra I  TOPIC 1 Linear Functions In this topic, students focus on the patterns that are evident in certain data sets and use linear functions to model those patterns. Using the informal knowledge of lines of best fit that…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "F5": {
+        "step": "F5",
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    "Algebra_1_Math_Standards_Overview.pdf": {
+      "F1": {
+        "step": "F1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc",
+        "element_count": 4,
+        "by_element_type": {
+          "standards_objectives": 4
+        },
+        "doc_id": "Algebra_1_Math_Standards_Overview.pdf"
+      },
+      "F2": {
+        "step": "F2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 3,
+        "fields": [
+          {
+            "id": "pacing_or_yag",
+            "label": "Pacing / YAG framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "scope_or_sequence",
+            "label": "Scope and sequence framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "standards_overview",
+            "label": "Standards overview framing",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "ALGEBRA I STANDARDS OVERVIEW TEKS covered at the lesson level are shown in course color. Additional TEKS covered in Skills Practice are shown in black. Linear Functions, Equations, and Inequalities",
+              "ALGEBRA I • STANDARDS OVERVIEW  3"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F3": {
+        "step": "F3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "day_or_calendar_spine",
+            "label": "Day / week / calendar spine",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "unit_or_module_spine",
+            "label": "Unit / module / topic order",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "ALGEBRA I STANDARDS OVERVIEW TEKS covered at the lesson level are shown in course color. Additional TEKS covered in Skills Practice are shown in black. Linear Functions, Equations, and Inequalities"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F4": {
+        "step": "F4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "teks_or_elps_or_codes",
+            "label": "TEKS / ELPS / standard-code cue",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "ALGEBRA I STANDARDS OVERVIEW TEKS covered at the lesson level are shown in course color. Additional TEKS covered in Skills Practice are shown in black. Linear Functions, Equations, and Inequalities",
+              "ALGEBRA I • STANDARDS OVERVIEW  3",
+              "Bold TEKS = Readiness Standard  4"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "F5": {
+        "step": "F5",
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    "Algebra_I_Math_150-day_Topic_Pacing_Guides.pdf": {
+      "F1": {
+        "step": "F1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc",
+        "element_count": 47,
+        "by_element_type": {
+          "standards_objectives": 32,
+          "direct_instruction": 2,
+          "logistics_materials": 4,
+          "guided_practice": 3,
+          "assessment_checkpoint": 3,
+          "reflection_closure": 2,
+          "unclear": 1
+        },
+        "doc_id": "Algebra_I_Math_150-day_Topic_Pacing_Guides.pdf"
+      },
+      "F2": {
+        "step": "F2",
+        "status": "PARTIAL",
+        "present": 2,
+        "required": 3,
+        "fields": [
+          {
+            "id": "pacing_or_yag",
+            "label": "Pacing / YAG framing",
+            "status": "PRESENT",
+            "count": 8,
+            "cites": [
+              "1 DAY PACING = 45-MINUTE SESSION  TEKS Mathematical Process Standards: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G ELPS: 1.A, 1.B, 1.C, 1.E, 1.F, 2.C, 2.E, 2.I, 3.D, 3.E, 3.H, 4.C, 4.E, 4.G, 4.H, 5.B, 5.F\b  IT M O",
+              "*Bold TEKS 5 Readiness Standard; Bold Pacing 5 Reduced Number of Days",
+              "A.6A A.7A  Pacing*"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "scope_or_sequence",
+            "label": "Scope and sequence framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "standards_overview",
+            "label": "Standards overview framing",
+            "status": "PRESENT",
+            "count": 10,
+            "cites": [
+              "1 DAY PACING = 45-MINUTE SESSION  TEKS Mathematical Process Standards: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G ELPS: 1.A, 1.B, 1.C, 1.E, 1.F, 2.C, 2.E, 2.I, 3.D, 3.E, 3.H, 4.C, 4.E, 4.G, 4.H, 5.B, 5.F\b  IT M O",
+              "Students are presented with various scenarios and identify the independent and dependent quantities for each. They then match a graph to the appropriate scenario, label the axes using the independent and dependent quantities, and create the scale for the axes. Students make basic observations about the similarities and differences in the graphs. They then look more deeply at pairs of scenarios along with their graphs to focus on characteristics of the graphs, such as intercepts, increasing and…",
+              "Students are presented with various scenarios and identify the independent and dependent quantities for each. They then match a graph to the appropriate scenario, label the axes using the independent and dependent quantities, and create the scale for the axes. Students make basic observations about the similarities and differences in the graphs. They then look more deeply at pairs of scenarios along with their graphs to focus on characteristics of the graphs, such as intercepts, increasing and…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F3": {
+        "step": "F3",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "day_or_calendar_spine",
+            "label": "Day / week / calendar spine",
+            "status": "PRESENT",
+            "count": 11,
+            "cites": [
+              "1 DAY PACING = 45-MINUTE SESSION  TEKS Mathematical Process Standards: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G ELPS: 1.A, 1.B, 1.C, 1.E, 1.F, 2.C, 2.E, 2.I, 3.D, 3.E, 3.H, 4.C, 4.E, 4.G, 4.H, 5.B, 5.F\b  IT M O",
+              "*Bold TEKS 5 Readiness Standard; Bold Pacing 5 Reduced Number of Days",
+              "Day 4 TEKS: A.2A, A.2C, A.3C, A.3E  TEKS: A.2A, A.2C, A.2E, A.3C, A.3E  LESSON 1  LESSON 1 continued  Transforming Linear Functions  ACTIVITY 2  GETTING STARTED  ACTIVITY 4 ACTIVITY 5 TALK THE TALK"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "unit_or_module_spine",
+            "label": "Unit / module / topic order",
+            "status": "PRESENT",
+            "count": 19,
+            "cites": [
+              "Students are presented with various scenarios and identify the independent and dependent quantities for each. They then match a graph to the appropriate scenario, label the axes using the independent and dependent quantities, and create the scale for the axes. Students make basic observations about the similarities and differences in the graphs. They then look more deeply at pairs of scenarios along with their graphs to focus on characteristics of the graphs, such as intercepts, increasing and…",
+              "Students are presented with various scenarios and identify the independent and dependent quantities for each. They then match a graph to the appropriate scenario, label the axes using the independent and dependent quantities, and create the scale for the axes. Students make basic observations about the similarities and differences in the graphs. They then look more deeply at pairs of scenarios along with their graphs to focus on characteristics of the graphs, such as intercepts, increasing and…",
+              "Students are presented with various scenarios and identify the independent and dependent quantities for each. They then match a graph to the appropriate scenario, label the axes using the independent and dependent quantities, and create the scale for the axes. Students make basic observations about the similarities and differences in the graphs. They then look more deeply at pairs of scenarios along with their graphs to focus on characteristics of the graphs, such as intercepts, increasing and…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F4": {
+        "step": "F4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "teks_or_elps_or_codes",
+            "label": "TEKS / ELPS / standard-code cue",
+            "status": "PRESENT",
+            "count": 24,
+            "cites": [
+              "1 DAY PACING = 45-MINUTE SESSION  TEKS Mathematical Process Standards: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G ELPS: 1.A, 1.B, 1.C, 1.E, 1.F, 2.C, 2.E, 2.I, 3.D, 3.E, 3.H, 4.C, 4.E, 4.G, 4.H, 5.B, 5.F\b  IT M O",
+              "Students are presented with various scenarios and identify the independent and dependent quantities for each. They then match a graph to the appropriate scenario, label the axes using the independent and dependent quantities, and create the scale for the axes. Students make basic observations about the similarities and differences in the graphs. They then look more deeply at pairs of scenarios along with their graphs to focus on characteristics of the graphs, such as intercepts, increasing and…",
+              "Students are presented with various scenarios and identify the independent and dependent quantities for each. They then match a graph to the appropriate scenario, label the axes using the independent and dependent quantities, and create the scale for the axes. Students make basic observations about the similarities and differences in the graphs. They then look more deeply at pairs of scenarios along with their graphs to focus on characteristics of the graphs, such as intercepts, increasing and…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "F5": {
+        "step": "F5",
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    "Algebra_I_Math_ELPS_Summary.pdf": {
+      "F1": {
+        "step": "F1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc",
+        "element_count": 3,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "Algebra_I_Math_ELPS_Summary.pdf"
+      },
+      "F2": {
+        "step": "F2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 3,
+        "fields": [
+          {
+            "id": "pacing_or_yag",
+            "label": "Pacing / YAG framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "scope_or_sequence",
+            "label": "Scope and sequence framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "standards_overview",
+            "label": "Standards overview framing",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Algebra I ELPS Summary   Acknowledgment Thank you to all the Texas educators and stakeholders who supported the review process and provided feedback. These materials are the result of the work of numerous individuals, and we are deeply grateful for their contributions.  Notice These learning resources have been built for Texas students, aligned to the Texas Essential Knowledge and Skills, and are made available pursuant to Chapter 31, Subchapter B-1 of the Texas Education Code. If you have…",
+              "EDITION 1  Algebra I ELPS Summary",
+              "•  •  •  ALGEBRA I ELPS SUMMARY  11"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F3": {
+        "step": "F3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "day_or_calendar_spine",
+            "label": "Day / week / calendar spine",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "unit_or_module_spine",
+            "label": "Unit / module / topic order",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "F4": {
+        "step": "F4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "teks_or_elps_or_codes",
+            "label": "TEKS / ELPS / standard-code cue",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Algebra I ELPS Summary   Acknowledgment Thank you to all the Texas educators and stakeholders who supported the review process and provided feedback. These materials are the result of the work of numerous individuals, and we are deeply grateful for their contributions.  Notice These learning resources have been built for Texas students, aligned to the Texas Essential Knowledge and Skills, and are made available pursuant to Chapter 31, Subchapter B-1 of the Texas Education Code. If you have…",
+              "EDITION 1  Algebra I ELPS Summary",
+              "•  •  •  ALGEBRA I ELPS SUMMARY  11"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "F5": {
+        "step": "F5",
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    "Algebra_I_Math_Materials_List.pdf": {
+      "F1": {
+        "step": "F1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc",
+        "element_count": 7,
+        "by_element_type": {
+          "logistics_materials": 7
+        },
+        "doc_id": "Algebra_I_Math_Materials_List.pdf"
+      },
+      "F2": {
+        "step": "F2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 3,
+        "fields": [
+          {
+            "id": "pacing_or_yag",
+            "label": "Pacing / YAG framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "scope_or_sequence",
+            "label": "Scope and sequence framing",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Algebra Tiles Calculators Chairs Colored Paper Colored Pencils Course Guide Resources Cups Glue Graph Paper Highlighters Index Cards Lesson-Embedded Resources Markers Masking Tape Mirrors Modeling Clay Patty Paper Pennies Poster Paper Problem-Solving Model Graphic Organizer Scissors Sticker Dots Sticky Notes Straightedges String Technology Thermometer Uncooked Pasta  The Course Materials list provides an overall view of the materials required for each lesson in the course. Consult the specific…",
+              "ALGEBRA I MATERIALS  Algebra Tiles Calculators Chairs Colored Paper Colored Pencils Course Guide Resources Cups Glue Graph Paper Highlighters Index Cards Lesson-Embedded Resources Markers Masking Tape Mirrors Modeling Clay Patty Paper Pennies Poster Paper Problem-Solving Model Graphic Organizer Scissors Sticker Dots Sticky Notes Straightedges String Technology Thermometer Uncooked Pasta   \u0007Optional materials, such as those associated with differentiation strategies  MODULE 2 Exploring…",
+              "Algebra Tiles Calculators Chairs Colored Paper Colored Pencils Course Guide Resources Cups Glue Graph Paper Highlighters Index Cards Lesson-Embedded Resources Markers Masking Tape Mirrors Modeling Clay Patty Paper Pennies Poster Paper Problem-Solving Model Graphic Organizer Scissors Sticker Dots Sticky Notes Straightedges String Technology Thermometer Uncooked Pasta  ALGEBRA I MATERIALS  Key  Materials required to implement the lesson as written  MODULE 4 Investigating Growth and Decay TOPIC…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "standards_overview",
+            "label": "Standards overview framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "F3": {
+        "step": "F3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "day_or_calendar_spine",
+            "label": "Day / week / calendar spine",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "unit_or_module_spine",
+            "label": "Unit / module / topic order",
+            "status": "PRESENT",
+            "count": 6,
+            "cites": [
+              "Algebra Tiles Calculators Chairs Colored Paper Colored Pencils Course Guide Resources Cups Glue Graph Paper Highlighters Index Cards Lesson-Embedded Resources Markers Masking Tape Mirrors Modeling Clay Patty Paper Pennies Poster Paper Problem-Solving Model Graphic Organizer Scissors Sticker Dots Sticky Notes Straightedges String Technology Thermometer Uncooked Pasta  The Course Materials list provides an overall view of the materials required for each lesson in the course. Consult the specific…",
+              "Algebra Tiles Calculators Chairs Colored Paper Colored Pencils Course Guide Resources Cups Glue Graph Paper Highlighters Index Cards Lesson-Embedded Resources Markers Masking Tape Mirrors Modeling Clay Patty Paper Pennies Poster Paper Problem-Solving Model Graphic Organizer Scissors Sticker Dots Sticky Notes Straightedges String Technology Thermometer Uncooked Pasta  ALGEBRA I MATERIALS  Key  Materials required to implement the lesson as written  MODULE 3 Modeling Linear Equations and…",
+              "ALGEBRA I MATERIALS  Algebra Tiles Calculators Chairs Colored Paper Colored Pencils Course Guide Resources Cups Glue Graph Paper Highlighters Index Cards Lesson-Embedded Resources Markers Masking Tape Mirrors Modeling Clay Patty Paper Pennies Poster Paper Problem-Solving Model Graphic Organizer Scissors Sticker Dots Sticky Notes Straightedges String Technology Thermometer Uncooked Pasta   \u0007Optional materials, such as those associated with differentiation strategies  MODULE 2 Exploring…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F4": {
+        "step": "F4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "teks_or_elps_or_codes",
+            "label": "TEKS / ELPS / standard-code cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional standards cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "F5": {
+        "step": "F5",
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    "Algebra_I_Math_Scope_and_Sequence_150-day.pdf": {
+      "F1": {
+        "step": "F1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc",
+        "element_count": 13,
+        "by_element_type": {
+          "direct_instruction": 2,
+          "guided_practice": 2,
+          "assessment_checkpoint": 2,
+          "logistics_materials": 1,
+          "standards_objectives": 3,
+          "unclear": 1,
+          "hook_engagement": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "Algebra_I_Math_Scope_and_Sequence_150-day.pdf"
+      },
+      "F2": {
+        "step": "F2",
+        "status": "PRESENT",
+        "present": 3,
+        "required": 3,
+        "fields": [
+          {
+            "id": "pacing_or_yag",
+            "label": "Pacing / YAG framing",
+            "status": "PRESENT",
+            "count": 10,
+            "cites": [
+              "Comparing Linear Functions in Different Forms  Students analyze functions represented as tables, graphs, equations, and verbal descriptions. They explore slope with particular attention to parallelism and perpendicularity in different representations. Students compare properties such as slope, y-intercept, and the units for independent and dependent quantities, all in terms of the situations they represent. Students also identify the scale and origin on the graph of a function given a…",
+              "Lesson Summary •  Solving Linear Equations  Students start with a simple solution statement and create more complex equations by performing the same operation on each side of the equation. They then analyze different equations created by two students and reason about how to verify that the equations have the same solution as the original equation. The properties of equality and some basic number properties are reviewed before students practice solving linear equations and justifying their…",
+              "End of Topic Assessment  Transformations can be used to create perpendicular lines. By rotating a line 90°, the pre-image and image form perpendicular lines. • If two lines are perpendicular, their slopes are negative reciprocals. • All horizontal lines have a slope of zero, are parallel to one another, and are perpendicular to vertical lines. All vertical lines have a slope that is undefined, are parallel to one another, and are perpendicular to horizontal lines. Functions can be represented…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "scope_or_sequence",
+            "label": "Scope and sequence framing",
+            "status": "PRESENT",
+            "count": 4,
+            "cites": [
+              "A.2C A.5B  End of Topic Assessment  3  1  Learning Individually with Skills Practice  3  Schedule these days strategically throughout the topic to support student learning.  *Bold TEKS 5 Readiness Standard; Bold Pacing 5 Reduced Number of Days  ALGEBRA I • SCOPE & SEQUENCE  11   ALGEBRA I: SCOPE & SEQUENCE TOPIC 2: Systems of Equations and Inequalities  1 DAY PACING = 45-MINUTE SESSION  TEKS Mathematical Process Standards: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G ELPS: 1.D, 2.B, 2.D, 2.H, 2.I,…",
+              "Students are introduced to quadratic functions through a sequence of pennies. They are then given four different contexts that can be modeled using quadratic functions. The first context involves area and is used to compare and contrast linear and quadratic relationships, to define the term parabola, and to begin identifying key characteristics of the graphs of quadratic functions. The second context involves handshakes with a parabola that has a minimum. The third context involves a function…",
+              "ALGEBRA I: SCOPE & SEQUENCE Lesson  3"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "standards_overview",
+            "label": "Standards overview framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "A.2C A.5B  End of Topic Assessment  3  1  Learning Individually with Skills Practice  3  Schedule these days strategically throughout the topic to support student learning.  *Bold TEKS 5 Readiness Standard; Bold Pacing 5 Reduced Number of Days  ALGEBRA I • SCOPE & SEQUENCE  11   ALGEBRA I: SCOPE & SEQUENCE TOPIC 2: Systems of Equations and Inequalities  1 DAY PACING = 45-MINUTE SESSION  TEKS Mathematical Process Standards: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G ELPS: 1.D, 2.B, 2.D, 2.H, 2.I,…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F3": {
+        "step": "F3",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "day_or_calendar_spine",
+            "label": "Day / week / calendar spine",
+            "status": "PRESENT",
+            "count": 6,
+            "cites": [
+              "Comparing Linear Functions in Different Forms  Students analyze functions represented as tables, graphs, equations, and verbal descriptions. They explore slope with particular attention to parallelism and perpendicularity in different representations. Students compare properties such as slope, y-intercept, and the units for independent and dependent quantities, all in terms of the situations they represent. Students also identify the scale and origin on the graph of a function given a…",
+              "150-Day Pacing Essential Ideas  End of Topic Assessment  Transformations can be used to create perpendicular lines. By rotating a line 90°, the pre-image and image form perpendicular lines. • If two lines are perpendicular, their slopes are negative reciprocals. • All horizontal lines have a slope of zero, are parallel to one another, and are perpendicular to vertical lines. All vertical lines have a slope that is undefined, are parallel to one another, and are perpendicular to horizontal…",
+              "A.2C A.5B  End of Topic Assessment  3  1  Learning Individually with Skills Practice  3  Schedule these days strategically throughout the topic to support student learning.  *Bold TEKS 5 Readiness Standard; Bold Pacing 5 Reduced Number of Days  ALGEBRA I • SCOPE & SEQUENCE  11   ALGEBRA I: SCOPE & SEQUENCE TOPIC 2: Systems of Equations and Inequalities  1 DAY PACING = 45-MINUTE SESSION  TEKS Mathematical Process Standards: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G ELPS: 1.D, 2.B, 2.D, 2.H, 2.I,…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "unit_or_module_spine",
+            "label": "Unit / module / topic order",
+            "status": "PRESENT",
+            "count": 10,
+            "cites": [
+              "Comparing Linear Functions in Different Forms  Students analyze functions represented as tables, graphs, equations, and verbal descriptions. They explore slope with particular attention to parallelism and perpendicularity in different representations. Students compare properties such as slope, y-intercept, and the units for independent and dependent quantities, all in terms of the situations they represent. Students also identify the scale and origin on the graph of a function given a…",
+              "Lesson Summary •  Solving Linear Equations  Students start with a simple solution statement and create more complex equations by performing the same operation on each side of the equation. They then analyze different equations created by two students and reason about how to verify that the equations have the same solution as the original equation. The properties of equality and some basic number properties are reviewed before students practice solving linear equations and justifying their…",
+              "End of Topic Assessment  Transformations can be used to create perpendicular lines. By rotating a line 90°, the pre-image and image form perpendicular lines. • If two lines are perpendicular, their slopes are negative reciprocals. • All horizontal lines have a slope of zero, are parallel to one another, and are perpendicular to vertical lines. All vertical lines have a slope that is undefined, are parallel to one another, and are perpendicular to horizontal lines. Functions can be represented…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F4": {
+        "step": "F4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "teks_or_elps_or_codes",
+            "label": "TEKS / ELPS / standard-code cue",
+            "status": "PRESENT",
+            "count": 9,
+            "cites": [
+              "Comparing Linear Functions in Different Forms  Students analyze functions represented as tables, graphs, equations, and verbal descriptions. They explore slope with particular attention to parallelism and perpendicularity in different representations. Students compare properties such as slope, y-intercept, and the units for independent and dependent quantities, all in terms of the situations they represent. Students also identify the scale and origin on the graph of a function given a…",
+              "Lesson Summary •  Solving Linear Equations  Students start with a simple solution statement and create more complex equations by performing the same operation on each side of the equation. They then analyze different equations created by two students and reason about how to verify that the equations have the same solution as the original equation. The properties of equality and some basic number properties are reviewed before students practice solving linear equations and justifying their…",
+              "End of Topic Assessment  Transformations can be used to create perpendicular lines. By rotating a line 90°, the pre-image and image form perpendicular lines. • If two lines are perpendicular, their slopes are negative reciprocals. • All horizontal lines have a slope of zero, are parallel to one another, and are perpendicular to vertical lines. All vertical lines have a slope that is undefined, are parallel to one another, and are perpendicular to horizontal lines. Functions can be represented…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "F5": {
+        "step": "F5",
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    "Algebra_I_Math_Scope_and_Sequence_165-day.pdf": {
+      "F1": {
+        "step": "F1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc",
+        "element_count": 40,
+        "by_element_type": {
+          "standards_objectives": 10,
+          "direct_instruction": 13,
+          "guided_practice": 7,
+          "assessment_checkpoint": 7,
+          "logistics_materials": 2,
+          "unclear": 1
+        },
+        "doc_id": "Algebra_I_Math_Scope_and_Sequence_165-day.pdf"
+      },
+      "F2": {
+        "step": "F2",
+        "status": "PRESENT",
+        "present": 3,
+        "required": 3,
+        "fields": [
+          {
+            "id": "pacing_or_yag",
+            "label": "Pacing / YAG framing",
+            "status": "PRESENT",
+            "count": 17,
+            "cites": [
+              "TEKS* Pacing  Create a classroom of collaboration and establish the learning process as a partnership between you and your students. • Communicate continuously with students about the objectives of the lesson to encourage selfmonitoring of their learning. • The problem-solving model involves noticing patterns and formulating questions, organizing information and representing this information using appropriate mathematical notation, A.3C analyzing mathematical representations and using them to…",
+              "Recognizing Patterns and Sequences  Students begin by exploring various patterns in Pascal’s triangle. Sequences and term of a sequence are defined. Given four geometric patterns or contexts, students write a numeric sequence to represent each problem. They are guided to represent each sequence as a table of values and conclude that all sequences are functions. Students then organize the sequences in a table, state whether each sequence is increasing or decreasing, and describe the sequence…",
+              "165-Day Pacing 1 DAY PACING = 45-MINUTE SESSION  TEKS Mathematical Process Standards: A.1C, A.1D, A.1E, A.1F, A.1G \b  ELPS: 1.A, 1.C, 1.E, 3.D, 3.E, 3.J, 4.B, 5.A, 5.B, 5.F Lesson  1  2  3  Lesson Title  Lesson Summary •  Recognizing Patterns and Sequences"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "scope_or_sequence",
+            "label": "Scope and sequence framing",
+            "status": "PRESENT",
+            "count": 11,
+            "cites": [
+              "1  A.3C A.7A A.9D  2  A.3C A.7A A.9D  1  *Bold TEKS = Readiness Standard  ALGEBRA I • SCOPE & SEQUENCE  3   ALGEBRA I: SCOPE & SEQUENCE Lesson  3  4  Lesson Title  Lesson Summary •  Recognizing Functions and Function Families",
+              "Recognizing Patterns and Sequences  Students begin by exploring various patterns in Pascal’s triangle. Sequences and term of a sequence are defined. Given four geometric patterns or contexts, students write a numeric sequence to represent each problem. They are guided to represent each sequence as a table of values and conclude that all sequences are functions. Students then organize the sequences in a table, state whether each sequence is increasing or decreasing, and describe the sequence…",
+              "3  Schedule these days strategically throughout the topic to support student learning.  *Bold TEKS = Readiness Standard  ALGEBRA I • SCOPE & SEQUENCE  5   ALGEBRA I: SCOPE & SEQUENCE"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "standards_overview",
+            "label": "Standards overview framing",
+            "status": "PRESENT",
+            "count": 9,
+            "cites": [
+              "TEKS* Pacing  Create a classroom of collaboration and establish the learning process as a partnership between you and your students. • Communicate continuously with students about the objectives of the lesson to encourage selfmonitoring of their learning. • The problem-solving model involves noticing patterns and formulating questions, organizing information and representing this information using appropriate mathematical notation, A.3C analyzing mathematical representations and using them to…",
+              "165-Day Pacing 1 DAY PACING = 45-MINUTE SESSION  TEKS Mathematical Process Standards: A.1C, A.1D, A.1E, A.1F, A.1G \b  ELPS: 1.A, 1.C, 1.E, 3.D, 3.E, 3.J, 4.B, 5.A, 5.B, 5.F Lesson  1  2  3  Lesson Title  Lesson Summary •  Recognizing Patterns and Sequences",
+              "3  Schedule these days strategically throughout the topic to support student learning.  *Bold TEKS = Readiness Standard  ALGEBRA I • SCOPE & SEQUENCE  5   ALGEBRA I: SCOPE & SEQUENCE  165-Day Pacing  2 Exploring Constant Change  Module Pacing: 36 Days  TOPIC 1: Linear Functions  1 DAY PACING = 45-MINUTE SESSION  TEKS Mathematical Process Standards: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G ELPS: 1.C, 1.D, 1.E, 1.H, 2.C, 2.D, 2.E, 2.G, 3.A, 3.B, 3.C, 4.A, 4.C, 4.D, 4.F, 4.K, 5.E, 5.G Lesson  1 …"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F3": {
+        "step": "F3",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "day_or_calendar_spine",
+            "label": "Day / week / calendar spine",
+            "status": "PRESENT",
+            "count": 19,
+            "cites": [
+              "Recognizing Patterns and Sequences  Students begin by exploring various patterns in Pascal’s triangle. Sequences and term of a sequence are defined. Given four geometric patterns or contexts, students write a numeric sequence to represent each problem. They are guided to represent each sequence as a table of values and conclude that all sequences are functions. Students then organize the sequences in a table, state whether each sequence is increasing or decreasing, and describe the sequence…",
+              "3  Schedule these days strategically throughout the topic to support student learning.  *Bold TEKS = Readiness Standard  ALGEBRA I • SCOPE & SEQUENCE  5   ALGEBRA I: SCOPE & SEQUENCE",
+              "165-Day Pacing 1 DAY PACING = 45-MINUTE SESSION  TEKS Mathematical Process Standards: A.1C, A.1D, A.1E, A.1F, A.1G \b  ELPS: 1.A, 1.C, 1.E, 3.D, 3.E, 3.J, 4.B, 5.A, 5.B, 5.F Lesson  1  2  3  Lesson Title  Lesson Summary •  Recognizing Patterns and Sequences"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "unit_or_module_spine",
+            "label": "Unit / module / topic order",
+            "status": "PRESENT",
+            "count": 29,
+            "cites": [
+              "TEKS* Pacing  Create a classroom of collaboration and establish the learning process as a partnership between you and your students. • Communicate continuously with students about the objectives of the lesson to encourage selfmonitoring of their learning. • The problem-solving model involves noticing patterns and formulating questions, organizing information and representing this information using appropriate mathematical notation, A.3C analyzing mathematical representations and using them to…",
+              "1  A.3C A.7A A.9D  2  A.3C A.7A A.9D  1  *Bold TEKS = Readiness Standard  ALGEBRA I • SCOPE & SEQUENCE  3   ALGEBRA I: SCOPE & SEQUENCE Lesson  3  4  Lesson Title  Lesson Summary •  Recognizing Functions and Function Families",
+              "Recognizing Patterns and Sequences  Students begin by exploring various patterns in Pascal’s triangle. Sequences and term of a sequence are defined. Given four geometric patterns or contexts, students write a numeric sequence to represent each problem. They are guided to represent each sequence as a table of values and conclude that all sequences are functions. Students then organize the sequences in a table, state whether each sequence is increasing or decreasing, and describe the sequence…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F4": {
+        "step": "F4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "teks_or_elps_or_codes",
+            "label": "TEKS / ELPS / standard-code cue",
+            "status": "PRESENT",
+            "count": 26,
+            "cites": [
+              "TEKS* Pacing  Create a classroom of collaboration and establish the learning process as a partnership between you and your students. • Communicate continuously with students about the objectives of the lesson to encourage selfmonitoring of their learning. • The problem-solving model involves noticing patterns and formulating questions, organizing information and representing this information using appropriate mathematical notation, A.3C analyzing mathematical representations and using them to…",
+              "1  A.3C A.7A A.9D  2  A.3C A.7A A.9D  1  *Bold TEKS = Readiness Standard  ALGEBRA I • SCOPE & SEQUENCE  3   ALGEBRA I: SCOPE & SEQUENCE Lesson  3  4  Lesson Title  Lesson Summary •  Recognizing Functions and Function Families",
+              "Recognizing Patterns and Sequences  Students begin by exploring various patterns in Pascal’s triangle. Sequences and term of a sequence are defined. Given four geometric patterns or contexts, students write a numeric sequence to represent each problem. They are guided to represent each sequence as a table of values and conclude that all sequences are functions. Students then organize the sequences in a table, state whether each sequence is increasing or decreasing, and describe the sequence…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "F5": {
+        "step": "F5",
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    "Algebra_I_Math_TEKS_Summary.pdf": {
+      "F1": {
+        "step": "F1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc",
+        "element_count": 1,
+        "by_element_type": {
+          "standards_objectives": 1
+        },
+        "doc_id": "Algebra_I_Math_TEKS_Summary.pdf"
+      },
+      "F2": {
+        "step": "F2",
+        "status": "PARTIAL",
+        "present": 2,
+        "required": 3,
+        "fields": [
+          {
+            "id": "pacing_or_yag",
+            "label": "Pacing / YAG framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "scope_or_sequence",
+            "label": "Scope and sequence framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Algebra I TEKS Summary   Acknowledgment Thank you to all the Texas educators and stakeholders who supported the review process and provided feedback. These materials are the result of the work of numerous individuals, and we are deeply grateful for their contributions.  Notice These learning resources have been built for Texas students, aligned to the Texas Essential Knowledge and Skills, and are made available pursuant to Chapter 31, Subchapter B-1 of the Texas Education Code. If you have…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "standards_overview",
+            "label": "Standards overview framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Algebra I TEKS Summary   Acknowledgment Thank you to all the Texas educators and stakeholders who supported the review process and provided feedback. These materials are the result of the work of numerous individuals, and we are deeply grateful for their contributions.  Notice These learning resources have been built for Texas students, aligned to the Texas Essential Knowledge and Skills, and are made available pursuant to Chapter 31, Subchapter B-1 of the Texas Education Code. If you have…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F3": {
+        "step": "F3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "day_or_calendar_spine",
+            "label": "Day / week / calendar spine",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "unit_or_module_spine",
+            "label": "Unit / module / topic order",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Algebra I TEKS Summary   Acknowledgment Thank you to all the Texas educators and stakeholders who supported the review process and provided feedback. These materials are the result of the work of numerous individuals, and we are deeply grateful for their contributions.  Notice These learning resources have been built for Texas students, aligned to the Texas Essential Knowledge and Skills, and are made available pursuant to Chapter 31, Subchapter B-1 of the Texas Education Code. If you have…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F4": {
+        "step": "F4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "teks_or_elps_or_codes",
+            "label": "TEKS / ELPS / standard-code cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Algebra I TEKS Summary   Acknowledgment Thank you to all the Texas educators and stakeholders who supported the review process and provided feedback. These materials are the result of the work of numerous individuals, and we are deeply grateful for their contributions.  Notice These learning resources have been built for Texas students, aligned to the Texas Essential Knowledge and Skills, and are made available pursuant to Chapter 31, Subchapter B-1 of the Texas Education Code. If you have…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "F5": {
+        "step": "F5",
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    "Algebra_I_Math_YAG_150-day.pdf": {
+      "F1": {
+        "step": "F1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc",
+        "element_count": 4,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "Algebra_I_Math_YAG_150-day.pdf"
+      },
+      "F2": {
+        "step": "F2",
+        "status": "PARTIAL",
+        "present": 2,
+        "required": 3,
+        "fields": [
+          {
+            "id": "pacing_or_yag",
+            "label": "Pacing / YAG framing",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Algebra I Year-at-a-Glance 150-Day Pacing   Acknowledgment Thank you to all the Texas educators and stakeholders who supported the review process and provided feedback. These materials are the result of the work of numerous individuals, and we are deeply grateful for their contributions.  Notice These learning resources have been built for Texas students, aligned to the Texas Essential Knowledge and Skills, and are made available pursuant to Chapter 31, Subchapter B-1 of the Texas Education…",
+              "44 Total Days: 150 *Bold TEKS = Readiness Standard; Bold Pacing = Reduced Number of Days  ALGEBRA I • YEAR-AT-A-GLANCE  3   ISBN: 978-1-970197-86-0 © 2024-2026 Texas Education Agency. Portions of this work are adapted, with permission, from the originals created by and copyright © 2021 Carnegie Learning, Inc.  This work is licensed under a Creative Commons Attribution-Non-Commerial4.0 International License. You are free: to Share—to copy, distribute, and transmit the work to Remix—to adapt the…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "scope_or_sequence",
+            "label": "Scope and sequence framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "standards_overview",
+            "label": "Standards overview framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "ALGEBRA I: YEAR-AT-A-GLANCE TEKS Mathematical Process Standards are embedded in every module: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F3": {
+        "step": "F3",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "day_or_calendar_spine",
+            "label": "Day / week / calendar spine",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Algebra I Year-at-a-Glance 150-Day Pacing   Acknowledgment Thank you to all the Texas educators and stakeholders who supported the review process and provided feedback. These materials are the result of the work of numerous individuals, and we are deeply grateful for their contributions.  Notice These learning resources have been built for Texas students, aligned to the Texas Essential Knowledge and Skills, and are made available pursuant to Chapter 31, Subchapter B-1 of the Texas Education…",
+              "44 Total Days: 150 *Bold TEKS = Readiness Standard; Bold Pacing = Reduced Number of Days  ALGEBRA I • YEAR-AT-A-GLANCE  3   ISBN: 978-1-970197-86-0 © 2024-2026 Texas Education Agency. Portions of this work are adapted, with permission, from the originals created by and copyright © 2021 Carnegie Learning, Inc.  This work is licensed under a Creative Commons Attribution-Non-Commerial4.0 International License. You are free: to Share—to copy, distribute, and transmit the work to Remix—to adapt the…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "unit_or_module_spine",
+            "label": "Unit / module / topic order",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "ALGEBRA I: YEAR-AT-A-GLANCE TEKS Mathematical Process Standards are embedded in every module: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F4": {
+        "step": "F4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "teks_or_elps_or_codes",
+            "label": "TEKS / ELPS / standard-code cue",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "ALGEBRA I: YEAR-AT-A-GLANCE TEKS Mathematical Process Standards are embedded in every module: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G",
+              "10  A.2B, A.2C, A.3A, A.5A, A.5B, A.12E  2: Systems of Linear Equations and Inequalities  17  A.2A, A.2C, A.2H, A.2I, A.3D, A.3F, A.3G, A.3H, A.5C  27 1: Introduction to Exponential Functions  15  A.9A, A.9B, A.9C, A.9D, A.11A, A.11B, A.12B, A.12C, A.12D  2: Using Exponential Equations  10  A.3B, A.3C, A.9A, A.9B, A.9C, A.9D, A.9E, A.11B, A.12B  25  5 Maximizing and Minimizing  1: Introduction to Quadratic Functions  15  A.6A, A.6B, A.6C, A.7A, A.7C  2: Polynomial Operations  10  A.10A, A.10B,…",
+              "44 Total Days: 150 *Bold TEKS = Readiness Standard; Bold Pacing = Reduced Number of Days  ALGEBRA I • YEAR-AT-A-GLANCE  3   ISBN: 978-1-970197-86-0 © 2024-2026 Texas Education Agency. Portions of this work are adapted, with permission, from the originals created by and copyright © 2021 Carnegie Learning, Inc.  This work is licensed under a Creative Commons Attribution-Non-Commerial4.0 International License. You are free: to Share—to copy, distribute, and transmit the work to Remix—to adapt the…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "F5": {
+        "step": "F5",
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    "Algebra_I_Math_YAG_165-day.pdf": {
+      "F1": {
+        "step": "F1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc",
+        "element_count": 8,
+        "by_element_type": {
+          "logistics_materials": 3,
+          "standards_objectives": 5
+        },
+        "doc_id": "Algebra_I_Math_YAG_165-day.pdf"
+      },
+      "F2": {
+        "step": "F2",
+        "status": "PARTIAL",
+        "present": 2,
+        "required": 3,
+        "fields": [
+          {
+            "id": "pacing_or_yag",
+            "label": "Pacing / YAG framing",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Algebra I Year-at-a-Glance 165 Day Pacing   Acknowledgment Thank you to all the Texas educators and stakeholders who supported the review process and provided feedback. These materials are the result of the work of numerous individuals, and we are deeply grateful for their contributions.  Notice These learning resources have been built for Texas students, aligned to the Texas Essential Knowledge and Skills, and are made available pursuant to Chapter 31, Subchapter B-1 of the Texas Education…",
+              "TEKS Mathematical Process Standards are embedded in every module: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G  1 DAY PACING = 45-MINUTE SESSION  Module  1 Searching for Patterns  Topic  Pacing  TEKS*  1: Quantities and Relationships  14  A.2A, A.3C, A.6A, A.7A, A.9A, A.9D, A.12A"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "scope_or_sequence",
+            "label": "Scope and sequence framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "standards_overview",
+            "label": "Standards overview framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "TEKS Mathematical Process Standards are embedded in every module: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G  1 DAY PACING = 45-MINUTE SESSION  Module  1 Searching for Patterns  Topic  Pacing  TEKS*  1: Quantities and Relationships  14  A.2A, A.3C, A.6A, A.7A, A.9A, A.9D, A.12A"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F3": {
+        "step": "F3",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "day_or_calendar_spine",
+            "label": "Day / week / calendar spine",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Algebra I Year-at-a-Glance 165 Day Pacing   Acknowledgment Thank you to all the Texas educators and stakeholders who supported the review process and provided feedback. These materials are the result of the work of numerous individuals, and we are deeply grateful for their contributions.  Notice These learning resources have been built for Texas students, aligned to the Texas Essential Knowledge and Skills, and are made available pursuant to Chapter 31, Subchapter B-1 of the Texas Education…",
+              "TEKS Mathematical Process Standards are embedded in every module: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G  1 DAY PACING = 45-MINUTE SESSION  Module  1 Searching for Patterns  Topic  Pacing  TEKS*  1: Quantities and Relationships  14  A.2A, A.3C, A.6A, A.7A, A.9A, A.9D, A.12A",
+              "47 Total Days:  165 *Bold TEKS = Readiness Standard"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "unit_or_module_spine",
+            "label": "Unit / module / topic order",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "TEKS Mathematical Process Standards are embedded in every module: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G  1 DAY PACING = 45-MINUTE SESSION  Module  1 Searching for Patterns  Topic  Pacing  TEKS*  1: Quantities and Relationships  14  A.2A, A.3C, A.6A, A.7A, A.9A, A.9D, A.12A"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F4": {
+        "step": "F4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "teks_or_elps_or_codes",
+            "label": "TEKS / ELPS / standard-code cue",
+            "status": "PRESENT",
+            "count": 6,
+            "cites": [
+              "TEKS Mathematical Process Standards are embedded in every module: A.1A, A.1B, A.1C, A.1D, A.1E, A.1F, A.1G  1 DAY PACING = 45-MINUTE SESSION  Module  1 Searching for Patterns  Topic  Pacing  TEKS*  1: Quantities and Relationships  14  A.2A, A.3C, A.6A, A.7A, A.9A, A.9D, A.12A",
+              "24  2 Exploring Constant Change  1: Linear Functions  22  A.2A, A.2B, A.2C, A.2D, A.3A, A.3B, A.3C, A.3E, A.3F, A.4A, A.4B, A.4C, A.12A, A.12B, A.12D  2: Transforming and Comparing Linear Functions  14  A.2A, A.2C, A.2E, A.2F, A.2G, A.3A, A.3C, A.3E, A.12B  36 3 Modeling Linear Equations and Inequalities  1: Linear Equations and Inequalities  11  A.2B, A.2C, A.3A, A.5A, A.5B, A.12E  2: Systems of Linear Equations and Inequalities  22  A.2A, A.2C, A.2H, A.2I, A.3D, A.3F, A.3G, A.3H, A.5C  33 1:…",
+              "10  A.3B, A.3C, A.9A, A.9B, A.9C, A.9D, A.9E, A.11B, A.12B  25  5 Maximizing and Minimizing  1: Introduction to Quadratic Functions  16  A.6A, A.6B, A.6C, A.7A, A.7C  2: Polynomial Operations  12  A.10A, A.10B, A.10C, A.10D  3: Solving Quadratic Equations  19  A.6A, A.7A, A.7B, A.7C, A.8A, A.8B, A.10E, A.10F, A.11A"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "F5": {
+        "step": "F5",
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    "K-5_Math_Family_Guide.pdf": {
+      "F1": {
+        "step": "F1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc",
+        "element_count": 6,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "reflection_closure": 1,
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "K-5_Math_Family_Guide.pdf"
+      },
+      "F2": {
+        "step": "F2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 3,
+        "fields": [
+          {
+            "id": "pacing_or_yag",
+            "label": "Pacing / YAG framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "scope_or_sequence",
+            "label": "Scope and sequence framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "standards_overview",
+            "label": "Standards overview framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "F3": {
+        "step": "F3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "day_or_calendar_spine",
+            "label": "Day / week / calendar spine",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "unit_or_module_spine",
+            "label": "Unit / module / topic order",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Tips for Families Key Concepts Overview Focus TEKS: K.2A, K.2B, K.2C, K.2D, K.2E, K.2F, K.2I, K.8A In Module 1, students observe their world and begin to compare and classify objects. They focus on ordering, counting, and writing numbers to represent up to 10 objects to answer how many questions. Your student will: ⬜  ⬜  ⬜  ⬜  Classify, count, and sort objects, match pairs of objects according to attribute (color, size, purpose, pattern, and position), and tell if pairs of objects are exactly…",
+              "Giving Students a Choice of Tools to Solve Math Problems Research-based strategies support a balance of procedural fluency and conceptual understanding for optimal student learning. Students should engage with a variety of strategies for problem solving as a way to increase the tools in their toolbox. As students learn multiple math strategies, it increases their ability to flexibly, efficiently, and accurately problem solve while also gaining a deeper understanding of mathematics and how to…",
+              "TIPS FOR FAMILIES: Module-level tip sheets that explain math strategies and models, provide key vocabulary and ways you can support your student at home (also available in Spanish). Families can use the Key Concept Overview to help monitor their student’s progress of the knowledge and skills learned in each module.  Additional Ways to Help at Home ⬛"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F4": {
+        "step": "F4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "teks_or_elps_or_codes",
+            "label": "TEKS / ELPS / standard-code cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Tips for Families Key Concepts Overview Focus TEKS: K.2A, K.2B, K.2C, K.2D, K.2E, K.2F, K.2I, K.8A In Module 1, students observe their world and begin to compare and classify objects. They focus on ordering, counting, and writing numbers to represent up to 10 objects to answer how many questions. Your student will: ⬜  ⬜  ⬜  ⬜  Classify, count, and sort objects, match pairs of objects according to attribute (color, size, purpose, pattern, and position), and tell if pairs of objects are exactly…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "F5": {
+        "step": "F5",
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    },
+    "K-5_Math_Program_and_Implementation_Guide.pdf": {
+      "F1": {
+        "step": "F1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this standards/pacing doc",
+        "element_count": 55,
+        "by_element_type": {
+          "standards_objectives": 8,
+          "direct_instruction": 8,
+          "guided_practice": 8,
+          "reflection_closure": 7,
+          "assessment_checkpoint": 10,
+          "logistics_materials": 9,
+          "unclear": 1,
+          "hook_engagement": 2,
+          "independent_practice": 2
+        },
+        "doc_id": "K-5_Math_Program_and_Implementation_Guide.pdf"
+      },
+      "F2": {
+        "step": "F2",
+        "status": "PRESENT",
+        "present": 3,
+        "required": 3,
+        "fields": [
+          {
+            "id": "pacing_or_yag",
+            "label": "Pacing / YAG framing",
+            "status": "PRESENT",
+            "count": 8,
+            "cites": [
+              "Some items test understanding of specific TEKS, while others are synthesis items that assess either understanding of the broader concept addressed in the module or the ability to solve problems by combining knowledge, skills, and understanding. Similar to the Mid-Module Assessment tasks, the End-of-Module tasks should be completed independently by students within one class period. These tasks should also be new to the students and not preceded by analogous problems. Note: Question & Test…",
+              "Additional Days School Year (ADSY)  ENGLISH  The ADSY module, one for each grade level, consists of 25 targeted lessons, 1 pre-test assessment, 1 post-test assessment, and 3 days reserved for flexible use (i.e., flex days) as determined by local decision. Each ADSY lesson reviews a specific TEKS, chosen strategically based on its coherence with the mathematical understandings that span grade levels. Each lesson builds relational understandings about the big ideas in math and prepares students…",
+              "Step 1: Understand the big picture. •  Use the Module Overview, Topic Overview, Terminology, and Collaborative Troubleshooting sections. Revisit the Module Overview and annotations created as part of the prework. Read the Topic Overviews. Identify how the module utilizes the concrete-representational-abstract (CRA) progression to build student learning from lesson to lesson. Identify new and familiar terminology. Preview the table provided in Collaborative Troubleshooting to anticipate student…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "scope_or_sequence",
+            "label": "Scope and sequence framing",
+            "status": "PRESENT",
+            "count": 8,
+            "cites": [
+              "1   BLUEBONNET LEARNING K–5 MATH  Implementation Guide  K–5  Introduction The K–5 Math instructional materials are a comprehensive and clearly sequenced suite of materials that provides teachers with the knowledge and tools outlined in the Texas Essential Knowledge and Skills (TEKS) and guides students to be thinkers and doers of mathematics. One key feature of these high-quality instructional materials is the way they tell the unfolding story of mathematics as expressed in the standards,…",
+              "Introduction The K–5 Math instructional materials are a comprehensive and clearly sequenced suite of materials that provides teachers with the knowledge and tools outlined in the Texas Essential Knowledge and Skills (TEKS) and guides students to be thinkers and doers of mathematics. One key feature of these high-quality instructional materials is the way they tell the unfolding story of mathematics as expressed in the standards, lesson by lesson, throughout each grade. The story draws together…",
+              "Instructional Materials Design The design of these instructional materials is based on the principle that mathematics is most effectively taught as a logical, engaging story.15 In these instructional materials, the main character is the unit—the basic building block of arithmetic. Themes such as measurement, place value, and fractions run throughout the storyline, and each is given the amount of time proportionate to its role in the overall story. The story culminates with students learning to…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "standards_overview",
+            "label": "Standards overview framing",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "TEKS Mathematical Process Standards The TEKS Mathematical Process Standards (MPS) are embedded throughout the program. They are seamlessly woven into the lesson structure to require the level of thinking and behaviors that the standards embody. Here are some examples of how the TEKS MPS live in these materials: ⬛  ⬛  ⬛  20  Purposeful integration of a variety of problem types that range in complexity naturally invites students to analyze givens, constraints, relationships, and goals. Models,…",
+              "Concept Development Students engage in learning, reasoning, and discourse related to the lesson objective.  Concept Development (32 minutes) T:  S: T: S: T:  T: S:  37  (Move the 4 ones disks to join the 6 ones to form the unit ten. See the second image.) What do you see, and what should we do? We made a ten.  We have to change 10 ones for 1 ten.  Take oﬀ 10 ones, and put a ten in the tens place because 11 ones is 1 ten 1. That’s right! We rename 11 ones as 1 ten 1 one. And where do tens…",
+              "The Scope and Sequence table provides teachers with an overview of key information about each module at their grade level. This information includes module names, topic names, a breakdown of total instructional days, and standards covered within each module. Standards information for each module is organized by TEKS Mathematical Process Standards (MPS), grade-level standards (TEKS), and English Language Proficiency Standards (ELPS). Teachers can use the information in this table to aid in…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F3": {
+        "step": "F3",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "day_or_calendar_spine",
+            "label": "Day / week / calendar spine",
+            "status": "PRESENT",
+            "count": 19,
+            "cites": [
+              "Instructional Materials Design The design of these instructional materials is based on the principle that mathematics is most effectively taught as a logical, engaging story.15 In these instructional materials, the main character is the unit—the basic building block of arithmetic. Themes such as measurement, place value, and fractions run throughout the storyline, and each is given the amount of time proportionate to its role in the overall story. The story culminates with students learning to…",
+              "The Significance of the Unit Even as new concepts are introduced, the overarching theme of the story remains: developing an understanding of the basic building block of arithmetic, the unit. Studying, relating, manipulating, and converting the unit allows students to complete word problems; to add, subtract, multiply, and divide; and to understand concepts such as place value, fractions, measurements, area, and volume. Example 1: Addition of Like Units An understanding of the unit starts with…",
+              "TEKS Mathematical Process Standards The TEKS Mathematical Process Standards (MPS) are embedded throughout the program. They are seamlessly woven into the lesson structure to require the level of thinking and behaviors that the standards embody. Here are some examples of how the TEKS MPS live in these materials: ⬛  ⬛  ⬛  20  Purposeful integration of a variety of problem types that range in complexity naturally invites students to analyze givens, constraints, relationships, and goals. Models,…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "unit_or_module_spine",
+            "label": "Unit / module / topic order",
+            "status": "PRESENT",
+            "count": 41,
+            "cites": [
+              "1   BLUEBONNET LEARNING K–5 MATH  Implementation Guide  K–5  Introduction The K–5 Math instructional materials are a comprehensive and clearly sequenced suite of materials that provides teachers with the knowledge and tools outlined in the Texas Essential Knowledge and Skills (TEKS) and guides students to be thinkers and doers of mathematics. One key feature of these high-quality instructional materials is the way they tell the unfolding story of mathematics as expressed in the standards,…",
+              "Introduction The K–5 Math instructional materials are a comprehensive and clearly sequenced suite of materials that provides teachers with the knowledge and tools outlined in the Texas Essential Knowledge and Skills (TEKS) and guides students to be thinkers and doers of mathematics. One key feature of these high-quality instructional materials is the way they tell the unfolding story of mathematics as expressed in the standards, lesson by lesson, throughout each grade. The story draws together…",
+              "Application Problem “I do” Concept Development “We do” “You do”  Debrief Exit Ticket  Although the figure above may seem like a dramatic shift, in fact these materials are more aligned to what most teachers already know about how to get better at any skill. In general, the path from being a novice to becoming an expert goes through struggle and difficulty. Thus, instructional materials that prevent students from facing productive struggle or difficulty are a poor fit with how people actually…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "F4": {
+        "step": "F4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "teks_or_elps_or_codes",
+            "label": "TEKS / ELPS / standard-code cue",
+            "status": "PRESENT",
+            "count": 19,
+            "cites": [
+              "1   BLUEBONNET LEARNING K–5 MATH  Implementation Guide  K–5  Introduction The K–5 Math instructional materials are a comprehensive and clearly sequenced suite of materials that provides teachers with the knowledge and tools outlined in the Texas Essential Knowledge and Skills (TEKS) and guides students to be thinkers and doers of mathematics. One key feature of these high-quality instructional materials is the way they tell the unfolding story of mathematics as expressed in the standards,…",
+              "Introduction The K–5 Math instructional materials are a comprehensive and clearly sequenced suite of materials that provides teachers with the knowledge and tools outlined in the Texas Essential Knowledge and Skills (TEKS) and guides students to be thinkers and doers of mathematics. One key feature of these high-quality instructional materials is the way they tell the unfolding story of mathematics as expressed in the standards, lesson by lesson, throughout each grade. The story draws together…",
+              "Application Problem “I do” Concept Development “We do” “You do”  Debrief Exit Ticket  Although the figure above may seem like a dramatic shift, in fact these materials are more aligned to what most teachers already know about how to get better at any skill. In general, the path from being a novice to becoming an expert goes through struggle and difficulty. Thus, instructional materials that prevent students from facing productive struggle or difficulty are a poor fit with how people actually…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "F5": {
+        "step": "F5",
+        "status": "STUB",
+        "note": "emit Path F one-pager TBD"
+      }
+    }
+  }
+}

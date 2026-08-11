@@ -1,0 +1,11 @@
+{
+  "project_id": "lab-general-path-c",
+  "workflow_id": "student_practice",
+  "path": "E",
+  "lens": "Student practice",
+  "status": "skipped",
+  "doc_ids": [],
+  "checklist": "workflows/checklists/student_practice.yaml",
+  "inventory": [],
+  "steps_by_doc": {}
+}

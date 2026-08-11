@@ -1,0 +1,73 @@
+{
+  "023-breeds-of-livestock-cattle__action-plan.html": {
+    "source_file": "023-breeds-of-livestock-cattle__action-plan.html",
+    "artifact_kind": "student_practice",
+    "citation_element_id": "e1",
+    "excerpt_head": "The Action Plan lists tasks for students to complete during the lesson.",
+    "notes": "Explicit student task checklist; primary function is student practice."
+  },
+  "023-breeds-of-livestock-cattle__activity-career-connections.html": {
+    "source_file": "023-breeds-of-livestock-cattle__activity-career-connections.html",
+    "artifact_kind": "student_practice",
+    "citation_element_id": "e1",
+    "excerpt_head": "What was the interviewee\u2019s name? What was the interviewee\u2019s career?",
+    "notes": "The file contains a set of questions for students to answer after viewing interview videos, which aligns with student_practice as defined."
+  },
+  "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html": {
+    "source_file": "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html",
+    "artifact_kind": "student_practice",
+    "citation_element_id": "e1",
+    "excerpt_head": "Create flashcards for each breed with name, sketch on front; origin, traits, uses on back.",
+    "notes": "The activity asks students to produce and use flashcards as a learning tool."
+  },
+  "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html": {
+    "source_file": "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html",
+    "artifact_kind": "assessment",
+    "citation_element_id": "e1",
+    "excerpt_head": "Directions: Answer the following questions.",
+    "notes": "The document contains test items, multiple\u2011choice and true/false statements to evaluate student knowledge of dairy breeds, matching the definition of an assessment checkpoint."
+  },
+  "023-breeds-of-livestock-cattle__final-assessment-answer-key.html": {
+    "source_file": "023-breeds-of-livestock-cattle__final-assessment-answer-key.html",
+    "artifact_kind": "assessment",
+    "citation_element_id": "e1",
+    "excerpt_head": "Final Assessment Breeds of Livestock: Cattle Final Assessment Answer Key",
+    "notes": "The document is explicitly labeled as a final assessment answer key containing multiple question types and their correct answers, matching the definition of an assessment artifact."
+  },
+  "023-breeds-of-livestock-cattle__final-assessment.html": {
+    "source_file": "023-breeds-of-livestock-cattle__final-assessment.html",
+    "artifact_kind": "assessment"
+  },
+  "023-breeds-of-livestock-cattle__horizontal-alignments.html": {
+    "source_file": "023-breeds-of-livestock-cattle__horizontal-alignments.html",
+    "artifact_kind": "standards_pacing"
+  },
+  "023-breeds-of-livestock-cattle__key-concepts.html": {
+    "source_file": "023-breeds-of-livestock-cattle__key-concepts.html",
+    "artifact_kind": "student_practice",
+    "citation_element_id": "e1",
+    "excerpt_head": "Key Concepts Breeds of Livestock: Cattle Key Concepts & Dairy Breeds Essential Questions",
+    "notes": "Guided\u2011note worksheet with fill\u2011in blanks for terminology; matches student_practice per iCEV rules."
+  },
+  "023-breeds-of-livestock-cattle__project-build-a-breed.html": {
+    "source_file": "023-breeds-of-livestock-cattle__project-build-a-breed.html",
+    "artifact_kind": "student_practice",
+    "citation_element_id": "e1",
+    "excerpt_head": "Create your own crossbred or composite cattle breed suited to your local climate and geography.",
+    "notes": "The document provides step\u2011by\u2011step directions for students to design, research, and present a new cattle breed, which is classic student practice material."
+  },
+  "023-breeds-of-livestock-cattle__view-lesson-plan.html": {
+    "source_file": "023-breeds-of-livestock-cattle__view-lesson-plan.html",
+    "artifact_kind": "lesson_plan",
+    "citation_element_id": "e1",
+    "excerpt_head": "Goal: Provide students with origins, characteristics, traits and usages of cattle breeds.",
+    "notes": "The document is a View Lesson Plan that outlines class\u2011by\u2011class teaching sequence, objectives, hooks, PowerPoint segments, checkpoints, activities and exit tickets \u2013 matching the definition of lesson_plan."
+  },
+  "023-breeds-of-livestock-cattle__vocabulary-handout.html": {
+    "source_file": "023-breeds-of-livestock-cattle__vocabulary-handout.html",
+    "artifact_kind": "student_practice",
+    "citation_element_id": "e1",
+    "excerpt_head": "Bos indicus \u2013 scientific name for cattle from Africa or South Asia",
+    "notes": "Vocabulary handout lists breed terms and definitions; it is a student-facing resource used to learn key concepts."
+  }
+}

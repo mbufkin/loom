@@ -1,0 +1,288 @@
+{
+  "project_id": "lab-graph-cte-cattle",
+  "workflow_id": "lesson_plan",
+  "path": "A",
+  "lens": "Lesson",
+  "status": "ok",
+  "doc_ids": [
+    "023-breeds-of-livestock-cattle__view-lesson-plan.html",
+    "027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan.html"
+  ],
+  "checklist": "workflows/checklists/daily_lesson_plan.yaml",
+  "inventory": [
+    {
+      "doc_id": "023-breeds-of-livestock-cattle__view-lesson-plan.html",
+      "doc_type": "lesson_plan",
+      "element_count": 56
+    },
+    {
+      "doc_id": "027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan.html",
+      "doc_type": "lesson_plan",
+      "element_count": 30
+    }
+  ],
+  "steps_by_doc": {},
+  "steps": {
+    "A1": {
+      "step": "A1",
+      "element_count": 86,
+      "by_element_type": {
+        "logistics_materials": 20,
+        "standards_objectives": 9,
+        "hook_engagement": 11,
+        "direct_instruction": 8,
+        "assessment_checkpoint": 14,
+        "independent_practice": 13,
+        "reflection_closure": 7,
+        "guided_practice": 4
+      },
+      "doc_ids": [
+        "023-breeds-of-livestock-cattle__view-lesson-plan.html",
+        "027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan.html"
+      ]
+    },
+    "A2": {
+      "step": "A2",
+      "teks": {
+        "status": "MISSING",
+        "count": 0,
+        "cites": []
+      },
+      "objective": {
+        "status": "PRESENT",
+        "count": 9,
+        "cites": [
+          "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…",
+          "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…",
+          "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…"
+        ]
+      }
+    },
+    "A3": {
+      "step": "A3",
+      "has_objective": true,
+      "has_activities": true,
+      "has_assessment": true,
+      "mismatches": [],
+      "status": "COHERENT"
+    },
+    "A4": {
+      "step": "A4",
+      "formative": {
+        "status": "PRESENT",
+        "items": [
+          {
+            "element_id": "023-breeds-of-livestock-cattle__view-lesson-plan.html-e8",
+            "excerpt": "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…"
+          },
+          {
+            "element_id": "023-breeds-of-livestock-cattle__view-lesson-plan.html-e16",
+            "excerpt": "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…"
+          },
+          {
+            "element_id": "023-breeds-of-livestock-cattle__view-lesson-plan.html-e17",
+            "excerpt": "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…"
+          },
+          {
+            "element_id": "023-breeds-of-livestock-cattle__view-lesson-plan.html-e23",
+            "excerpt": "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…"
+          },
+          {
+            "element_id": "023-breeds-of-livestock-cattle__view-lesson-plan.html-e31",
+            "excerpt": "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…"
+          }
+        ]
+      },
+      "summative": {
+        "status": "MISSING",
+        "items": []
+      }
+    },
+    "A5": {
+      "step": "A5",
+      "hunter_core_present": 8,
+      "hunter_core_total": 8,
+      "matrix": [
+        {
+          "id": "anticipatory_set",
+          "label": "1. Anticipatory set (hook / Do Now / Engage)",
+          "status": "PRESENT",
+          "cite": "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…"
+        },
+        {
+          "id": "objective_purpose",
+          "label": "2. Objective & purpose (stated to students)",
+          "status": "PRESENT",
+          "cite": "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…"
+        },
+        {
+          "id": "input",
+          "label": "3. Input (teach content / vocabulary)",
+          "status": "PRESENT",
+          "cite": "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…"
+        },
+        {
+          "id": "modeling",
+          "label": "4. Modeling (I do / demonstrate)",
+          "status": "PRESENT",
+          "cite": "Lesson Plan External Anatomy of Livestock: Terms &amp; Terminology &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (45 slides) Seat Time: 6 Classes | 300 minutes teaching &nbsp; Goal: To analyze the external anatomy of various livestock species. &nbsp; Description: This lesson takes an in-depth look at parts of an animal to provide a foundational understanding of basic concepts. Detailed diagrams are used to identify the external anatomy of various livestock species.…"
+        },
+        {
+          "id": "check_for_understanding",
+          "label": "5. Check for understanding",
+          "status": "PRESENT",
+          "cite": "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…"
+        },
+        {
+          "id": "guided_practice",
+          "label": "6. Guided practice (We do)",
+          "status": "PRESENT",
+          "cite": "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…"
+        },
+        {
+          "id": "independent_practice",
+          "label": "7. Independent practice (You do)",
+          "status": "PRESENT",
+          "cite": "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…"
+        },
+        {
+          "id": "closure",
+          "label": "8. Closure",
+          "status": "PRESENT",
+          "cite": "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…"
+        }
+      ]
+    },
+    "A6": {
+      "method": "code_fallback",
+      "present": 6
+    },
+    "A7": {
+      "step": "A7",
+      "elps": {
+        "status": "PRESENT",
+        "cites": [
+          "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…",
+          "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…",
+          "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…"
+        ]
+      },
+      "accommodations": {
+        "status": "PRESENT",
+        "cites": [
+          "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…",
+          "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…",
+          "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…"
+        ]
+      }
+    },
+    "A8": {
+      "step": "A8",
+      "emit_paths": [
+        "path_a/findings.json"
+      ],
+      "status": "emitted"
+    }
+  },
+  "a6_fields": {
+    "lesson_title": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "learning_objective": {
+      "status": "PRESENT",
+      "text": "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…",
+      "sources": [
+        "023-breeds-of-livestock-cattle__view-lesson-plan.html"
+      ],
+      "element_id": "023-breeds-of-livestock-cattle__view-lesson-plan.html-e2"
+    },
+    "teks": {
+      "status": "PRESENT",
+      "text": "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…",
+      "sources": [
+        "023-breeds-of-livestock-cattle__view-lesson-plan.html"
+      ],
+      "element_id": "023-breeds-of-livestock-cattle__view-lesson-plan.html-e2"
+    },
+    "materials": {
+      "status": "PRESENT",
+      "text": "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…",
+      "sources": [
+        "023-breeds-of-livestock-cattle__view-lesson-plan.html"
+      ],
+      "element_id": "023-breeds-of-livestock-cattle__view-lesson-plan.html-e1"
+    },
+    "anticipatory_set": {
+      "status": "PRESENT",
+      "text": "Lesson Plan External Anatomy of Livestock: Terms &amp; Terminology &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (45 slides) Seat Time: 6 Classes | 300 minutes teaching &nbsp; Goal: To analyze the external anatomy of various livestock species. &nbsp; Description: This lesson takes an in-depth look at parts of an animal to provide a foundational understanding of basic concepts. Detailed diagrams are used to identify the external anatomy of various livestock species.…",
+      "sources": [
+        "027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan.html"
+      ],
+      "element_id": "027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan.html-e4"
+    },
+    "objective_purpose": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "input": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "modeling": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "check_for_understanding": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "guided_practice": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "independent_practice": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "closure": {
+      "status": "MISSING",
+      "text": "",
+      "sources": [],
+      "element_id": null
+    },
+    "elps_language": {
+      "status": "PRESENT",
+      "text": "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…",
+      "sources": [
+        "023-breeds-of-livestock-cattle__view-lesson-plan.html"
+      ],
+      "element_id": "023-breeds-of-livestock-cattle__view-lesson-plan.html-e1"
+    },
+    "accommodations": {
+      "status": "PRESENT",
+      "text": "Lesson Plan Breeds of Livestock: Cattle &nbsp; Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching &nbsp; Goal: To provide students with the origins, physical characteristics, traits and usages of cattle breeds. &nbsp; Description: This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn…",
+      "sources": [
+        "023-breeds-of-livestock-cattle__view-lesson-plan.html"
+      ],
+      "element_id": "023-breeds-of-livestock-cattle__view-lesson-plan.html-e1"
+    }
+  },
+  "emit_paths": [
+    "path_a/findings.json"
+  ]
+}

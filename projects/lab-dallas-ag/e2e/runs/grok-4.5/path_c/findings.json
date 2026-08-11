@@ -1,0 +1,101 @@
+{
+  "project_id": "lab-dallas-ag",
+  "workflow_id": "general",
+  "path": "C",
+  "lens": "General feedback",
+  "status": "ok",
+  "doc_ids": [
+    "b5e36486805a"
+  ],
+  "checklist": "workflows/checklists/general.yaml",
+  "inventory": [
+    {
+      "doc_id": "b5e36486805a",
+      "doc_type": "other",
+      "element_count": 17,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    }
+  ],
+  "steps_by_doc": {
+    "b5e36486805a": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 17,
+        "by_element_type": {
+          "direct_instruction": 8,
+          "hook_engagement": 3,
+          "independent_practice": 1,
+          "logistics_materials": 1,
+          "guided_practice": 2,
+          "assessment_checkpoint": 1,
+          "unclear": 1
+        },
+        "doc_id": "b5e36486805a"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "b5e36486805a",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Lab Activity  Let’s check out what is in our soil on our campus. Please take out your Let’s Find Out About Soil handout. You will need the following items: 1 spoon 1 ziplock sandwich baggie We will go outside and fill our bags ⅓ of the way full. Please make sure you take soil samples where the soil is soft and not hard. It could break your spoon.  After our soil collection  Place your bag flat on the table so that the soil can take up most of the bag. Do not open the bag, you will feel and see…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    }
+  },
+  "feedback_file": "_loom_feedback.yaml"
+}

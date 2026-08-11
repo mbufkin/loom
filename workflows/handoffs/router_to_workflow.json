@@ -10,12 +10,25 @@
     "doc_type": { "type": "string" },
     "workflow_id": {
       "type": "string",
-      "enum": ["lesson_plan", "quiz", "general"]
+      "enum": [
+        "lesson_plan",
+        "quiz",
+        "general",
+        "teacher_support",
+        "student_practice",
+        "standards_pacing",
+        "syllabus",
+        "exit_ticket"
+      ]
     },
     "path": {
       "type": "string",
-      "enum": ["A", "B", "C"],
-      "description": "Path letter on DATA-FLOW.png"
+      "enum": ["A", "B", "C", "D", "E", "F", "G", "H"],
+      "description": "Review lens letter — see docs/PATHS.md. Positionally paired with workflow_id above: A=lesson_plan … H=exit_ticket."
+    },
+    "lens": {
+      "type": "string",
+      "description": "Human lens label (Lesson, Assessment, …)"
     },
     "reason": { "type": "string" },
     "feedback": {

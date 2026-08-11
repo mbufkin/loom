@@ -1,0 +1,55 @@
+# Artifact spec: QUIZ / SUMMATIVE ASSESSMENT.
+#
+# WHY / PROVENANCE
+# Auditor-only assessment review (locked decision): we check that items EXIST and
+# MAP to the objective/TEKS, and (advisory) whether they spread across cognitive
+# demand (a light DOK/Bloom read). We NEVER assert whether an answer is correct —
+# that would require inventing domain truth the auditor has no basis for.
+#
+# HOW IT SCORES
+# presence GATES on items being present; alignment ADVISES on objective-mapping and
+# DOK spread, anchored to the unit's objective -> cited TEKS.
+
+version: "v1-quiz-2026-07"
+rubric_id: artifact_quiz
+role: quiz
+title: "Quiz / assessment"
+framework: "Assessment alignment (UbD Stage 2); Webb DOK (auditor-only)"
+scoring: presence
+auditor_only: true
+
+criteria:
+  - id: has_items
+    label: Assessment items present
+    description: The quiz contains at least one question/item for students to answer.
+    evidence_element_types: [assessment_checkpoint]
+    keywords: [question, item, multiple choice, true or false, short answer, select, which]
+    required: true
+
+  - id: has_instructions
+    label: Directions / instructions
+    description: How to take the quiz (directions, point values, time) so it is usable.
+    evidence_element_types: [logistics_materials, assessment_checkpoint]
+    keywords: [directions, instructions, points, choose, circle, minutes, complete]
+    required: false
+
+alignment:
+  framework: "UbD Stage 2 alignment; Webb Depth of Knowledge (spread only)"
+  band_scale:
+    0: "Cannot tell / items unrelated to the objective."
+    1: "Items touch the topic but not the specific objective."
+    2: "Items assess the objective but at a single, shallow level of demand."
+    3: "Items map to the objective and span more than one level of cognitive demand."
+  criteria:
+    - id: items_map_to_objective
+      label: Items map to the objective
+      description: >
+        The items assess the knowledge/skill in the anchor objective (or cited
+        TEKS), not adjacent or off-standard content.
+      reads_from: [assessment_checkpoint, standards_objectives]
+    - id: dok_spread
+      label: Range of cognitive demand
+      description: >
+        Auditor-only observation of whether items span recall AND
+        application/analysis, or sit entirely at one shallow level.
+      reads_from: [assessment_checkpoint]

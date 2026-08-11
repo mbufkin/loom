@@ -3,7 +3,7 @@
 
 Educational note: Gate A + provisional Materials inventory + soft-queue +
 per-doc raw decision logs are production-shaped. Filename role heuristics
-(ledger-mini) stay in experiments/graphing/spike_loop.py — provisional
+(ledger-mini) lived in archived experiments/graphing/spike_loop.py — provisional
 defaults role to ``other`` until narrow-steps review fills it in.
 
 See docs/GRAPH-PHASE.md.

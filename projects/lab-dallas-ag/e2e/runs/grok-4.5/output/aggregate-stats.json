@@ -1,0 +1,54 @@
+{
+  "documents_judged": 2,
+  "elements_judged": 26,
+  "finding_status_counts": {
+    "DUPLICATE": 1,
+    "MISSING": 8
+  },
+  "layer2": {
+    "complete_count": 0,
+    "documents_judged": 0,
+    "incomplete_count": 0,
+    "incomplete_docs": [],
+    "systemic_missing_components": []
+  },
+  "mismatch_docs_high": [],
+  "mismatch_docs_low": [],
+  "mismatch_element_count": 0,
+  "pacing_brief": {
+    "days_available": null,
+    "days_remaining": null,
+    "days_used": 2,
+    "disclaimer": "Inferred projected map \u2014 reconstructed from available documents. Not official district curriculum. Does not replace missing lesson materials.",
+    "district": "",
+    "grading_periods": [
+      {
+        "begin": null,
+        "end": null,
+        "label": "Inferred sequence (no grading periods)",
+        "unit_count": 1
+      }
+    ],
+    "has_school_calendar": true,
+    "mode": "sequential",
+    "school_year": "",
+    "units_placed": 1,
+    "units_total": 1
+  },
+  "review_queue_pending_pairs": 0,
+  "status_counts": {
+    "UNVERIFIED": 26
+  },
+  "systemic_missing": [],
+  "unit_rollup": [
+    {
+      "duplicate": 1,
+      "fulfilled": 0,
+      "match": 0,
+      "mismatch": 0,
+      "missing": 8,
+      "title": "Curriculum",
+      "unit_id": "curriculum"
+    }
+  ]
+}

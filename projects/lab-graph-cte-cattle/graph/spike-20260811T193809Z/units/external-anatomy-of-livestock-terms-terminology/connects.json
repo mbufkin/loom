@@ -1,0 +1,138 @@
+{
+  "027-external-anatomy-of-livestock-terms-terminology__action-plan.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__action-plan.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "spans Classes 1\u20116"
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__activity-career-connections.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__activity-career-connections.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      4
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "short"
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      3
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "short"
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "assessment",
+    "covers_lesson_numbers": [
+      6
+    ],
+    "is_assessment_bearing": true,
+    "assessment_name": "Final Assessment External Anatomy of Livestock: Terms & Terminology",
+    "notes": "short"
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__assessment.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__assessment.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "assessment",
+    "covers_lesson_numbers": [
+      6
+    ],
+    "is_assessment_bearing": true,
+    "assessment_name": "External Anatomy Assessment",
+    "notes": "short"
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "standards_pacing",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "short"
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__key-concepts.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__key-concepts.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "short"
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__ngss-correlation.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__ngss-correlation.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "standards_pacing",
+    "covers_lesson_numbers": [
+      1
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "short"
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      4
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "short"
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "lesson_plan",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "short"
+  },
+  "027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout.html": {
+    "source_file": "027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout.html",
+    "unit_id": "external-anatomy-of-livestock-terms-terminology",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "short"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "project_id": "lab-dallas-ag",
+  "source": "inferred_from_documents",
+  "disclaimer": "Inferred projected map \u2014 reconstructed from available documents. Not official district curriculum. Does not replace missing lesson materials.",
+  "mode": "sequential",
+  "summary": {
+    "units_total": 1,
+    "units_placed": 1,
+    "units_unplaced": 0,
+    "instructional_days_available": null,
+    "instructional_days_consumed": 2,
+    "instructional_days_remaining": null
+  },
+  "year_at_a_glance": {
+    "grading_period_columns": [
+      {
+        "id": "sequential",
+        "label": "Inferred sequence (no grading periods)",
+        "unit_ids": [
+          "curriculum"
+        ],
+        "unit_count": 1
+      }
+    ],
+    "unit_rows": [
+      {
+        "unit_id": "curriculum",
+        "title": "Curriculum",
+        "start_date": null,
+        "end_date": null,
+        "unit_length_days": 2,
+        "grading_periods_spanned": [
+          "sequential"
+        ]
+      }
+    ]
+  },
+  "placements": [
+    {
+      "unit_id": "curriculum",
+      "unit_title": "Curriculum",
+      "day_id": "d1",
+      "day_label": "Day 1",
+      "date": null,
+      "instructional_day_index": 1,
+      "grading_period_id": null
+    },
+    {
+      "unit_id": "curriculum",
+      "unit_title": "Curriculum",
+      "day_id": "d2",
+      "day_label": "Day 2",
+      "date": null,
+      "instructional_day_index": 2,
+      "grading_period_id": null
+    }
+  ],
+  "warnings": []
+}

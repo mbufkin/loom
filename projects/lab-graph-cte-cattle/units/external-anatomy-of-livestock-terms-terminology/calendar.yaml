@@ -1,0 +1,35 @@
+unit_id: external-anatomy-of-livestock-terms-terminology
+title: 'External Anatomy of Livestock: Terms & Terminology'
+unit_length_days: 6
+days:
+- id: d1
+  label: "Class 1 \u2014 Anatomical Terms of Location"
+  expected:
+  - lesson_content
+- id: d2
+  label: Class 2
+  expected:
+  - lesson_content
+- id: d3
+  label: Class 3
+  expected:
+  - lesson_content
+- id: d4
+  label: Class 4
+  expected:
+  - lesson_content
+- id: d5
+  label: Class 5
+  expected:
+  - lesson_content
+  - lab_activity
+  - project_work
+- id: d6
+  label: Class 6
+  expected:
+  - quiz
+unit_supporting:
+- lesson_plan
+- quiz
+- answer_key
+- worksheet

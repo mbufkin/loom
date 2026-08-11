@@ -1,0 +1,52 @@
+# Artifact spec: RUBRIC / SCORING GUIDE.
+#
+# WHY / PROVENANCE
+# Frameworks: Andrade (2000) and the AAC&U VALUE rubric guidance — a usable rubric
+# names the CRITERIA being assessed and describes LEVELS of performance for each, and
+# those criteria should map to the objective/standard the task assesses. We audit
+# structure (criteria + levels) deterministically and alignment (do the criteria
+# assess THIS objective) with the advisory model. We never re-grade student work.
+#
+# HOW IT SCORES
+# presence GATES on the two structural essentials (criteria + performance levels);
+# alignment ADVISES on whether the criteria measure the anchored objective/standard.
+
+version: "v1-rubric-2026-07"
+rubric_id: artifact_rubric
+role: rubric
+title: "Rubric / scoring guide"
+framework: "Andrade; AAC&U VALUE rubric design"
+scoring: presence
+auditor_only: true
+
+criteria:
+  - id: has_criteria
+    label: Named assessment criteria
+    description: The rubric lists the dimensions/traits it evaluates (not one blob).
+    evidence_element_types: [assessment_checkpoint, standards_objectives]
+    keywords: [criteria, criterion, dimension, trait, category, row, points, score]
+    required: true
+
+  - id: has_levels
+    label: Performance levels / scale
+    description: >
+      Each criterion has described levels of quality (a scale: e.g. 1-4,
+      emerging/proficient/exemplary) so scoring is repeatable, not a gut number.
+    evidence_element_types: [assessment_checkpoint]
+    keywords: [level, proficient, emerging, exemplary, points, scale, exceeds, meets, below]
+    required: true
+
+alignment:
+  framework: "Andrade (2000) instructional rubrics; UbD Stage 2 alignment"
+  band_scale:
+    0: "Cannot tell / criteria unrelated to the objective."
+    1: "Generic (neatness, effort) rather than tied to the learning objective."
+    2: "Some criteria assess the objective; others are off-target or generic."
+    3: "Criteria clearly measure the anchored objective/standard being assessed."
+  criteria:
+    - id: criteria_assess_objective
+      label: Criteria measure the objective
+      description: >
+        The rubric's criteria evaluate the knowledge/skill in the anchor objective
+        (or cited TEKS), not just compliance or presentation.
+      reads_from: [assessment_checkpoint, standards_objectives]

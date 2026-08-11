@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Path A review — original cattle View Lesson Plan</title>
+<style>
+  :root {
+    --bg: #eceae4;
+    --ink: #1c1917;
+    --muted: #57534e;
+    --line: #d6d3d1;
+    --accent: #0f766e;
+    --missing: #b91c1c;
+    --sidebar: #fafaf9;
+    --hi: #fde68a;
+    --hi-strong: #fbbf24;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; height: 100%;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    color: var(--ink); background: var(--bg);
+  }
+  .app { display: grid; grid-template-rows: auto 1fr; height: 100vh; }
+  header.bar {
+    display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px; background: #134e4a; color: #ecfdf5;
+  }
+  header.bar h1 { margin: 0; font-size: 1rem; }
+  header.bar .meta { font-size: 0.75rem; opacity: 0.9; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; font-size: 0.72rem; }
+  .chip {
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+    padding: 3px 8px; border-radius: 999px;
+  }
+  .chip.bad { background: #7f1d1d; }
+  .main {
+    display: grid; grid-template-columns: minmax(0, 1fr) 380px; min-height: 0;
+  }
+  @media (max-width: 960px) {
+    .main { grid-template-columns: 1fr; grid-template-rows: 55vh 45vh; }
+  }
+  .doc-pane { overflow: auto; padding: 16px; }
+  .doc-shell {
+    max-width: 860px; margin: 0 auto;
+    background: white; border: 1px solid var(--line);
+    padding: 8px 12px 40px;
+  }
+  .doc-shell .doc-label {
+    font-size: 0.72rem; color: var(--muted); margin: 4px 8px 12px;
+    border-bottom: 1px solid var(--line); padding-bottom: 8px;
+  }
+  /* Original Word HTML lives here */
+  .original {
+    background: white; color: black;
+    padding: 8px 12px;
+  }
+  .fb-anchor {
+    background: transparent;
+    border-left: 3px solid transparent;
+    scroll-margin-top: 24px;
+    display: block;
+  }
+  span.fb-anchor { display: inline; padding: 0 2px; }
+  .fb-anchor.active {
+    background: var(--hi);
+    border-left-color: var(--hi-strong);
+    outline: 2px solid var(--hi-strong);
+  }
+  .fb-anchor.missing-active {
+    background: #fecaca;
+    border-left-color: var(--missing);
+    outline: 2px solid #f87171;
+  }
+  .sidebar {
+    border-left: 1px solid var(--line); background: var(--sidebar);
+    display: flex; flex-direction: column; min-height: 0;
+  }
+  .side-head { padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  .side-head h2 { margin: 0 0 4px; font-size: 0.95rem; }
+  .side-head p { margin: 0; font-size: 0.75rem; color: var(--muted); }
+  .filters { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .filters button {
+    font: inherit; font-size: 0.72rem; cursor: pointer;
+    border: 1px solid var(--line); background: white;
+    padding: 4px 8px; border-radius: 6px;
+  }
+  .filters button.on { background: #134e4a; color: white; border-color: #134e4a; }
+  .comment-list {
+    overflow: auto; padding: 10px; flex: 1;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .comment {
+    background: white; border: 1px solid var(--line);
+    border-radius: 10px; padding: 10px 12px; cursor: pointer;
+    text-align: left; width: 100%;
+  }
+  .comment.active {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(15,118,110,0.25);
+  }
+  .comment .row {
+    display: flex; justify-content: space-between; gap: 8px; margin-bottom: 4px;
+  }
+  .comment .step {
+    font-size: 0.7rem; font-weight: 700; color: var(--accent); letter-spacing: 0.04em;
+  }
+  .badge {
+    font-size: 0.65rem; font-weight: 700; padding: 2px 6px; border-radius: 999px;
+  }
+  .badge.PRESENT, .badge.COHERENT { background: #dcfce7; color: #14532d; }
+  .badge.MISSING { background: #fee2e2; color: #7f1d1d; }
+  .comment .title { margin: 0 0 4px; font-size: 0.82rem; font-weight: 650; }
+  .comment .body { margin: 0; font-size: 0.75rem; color: var(--muted); line-height: 1.35; }
+  .comment .quote {
+    margin: 8px 0 0; padding: 6px 8px; border-left: 3px solid #a8a29e;
+    font-size: 0.7rem; color: #44403c; background: #f5f5f4;
+  }
+  .comment .note {
+    margin: 6px 0 0; font-size: 0.68rem; color: #b45309; font-style: italic;
+  }
+  .hint {
+    padding: 8px 14px 14px; font-size: 0.7rem; color: var(--muted);
+    border-top: 1px solid var(--line);
+  }
+  <style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:118%;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;
+	color:black;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	font-size:11.0pt;
+	font-family:"Aptos",sans-serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	line-height:118%;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	line-height:118%;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	line-height:118%;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	line-height:118%;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;
+	color:black;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.normaltextrun
+	{mso-style-name:normaltextrun;}
+span.eop
+	{mso-style-name:eop;}
+.MsoChpDefault
+	{font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:.5in .5in .5in .5in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+
+/*
+Begin AutoIt updated code
+This page was updated on: 5/21/2025 2:43:01 PM
+0.5in margin on the left & remove the Google Translate elements from the print out
+*/
+
+@media print{
+	div.skiptranslate, div.noPrint {
+		display: none;
+	}
+	body {
+		top: 0px !important;
+		margin: 0px !important;
+	}
+}
+@media screen{
+	body {
+		margin-left: 0.5in
+	}
+}
+</style>
+  /* Override source body margin that assumed full page */
+  .original body, .original { margin-left: 0 !important; }
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <div>
+      <h1>Path A review — original document + comments</h1>
+      <div class="meta">023 View Lesson Plan (source HTML) · click feedback to highlight</div>
+    </div>
+    <div class="chips">
+      <span class="chip">Hunter 8/8</span>
+      <span class="chip bad">A2 TEKS MISSING</span>
+      <span class="chip">A6 code_fallback</span>
+    </div>
+  </header>
+  <div class="main">
+    <div class="doc-pane" id="docPane">
+      <div class="doc-shell">
+        <div class="doc-label">
+          Original source: <code>sources/023-breeds-of-livestock-cattle__view-lesson-plan.html</code>
+          — not the plate rewrite. Yellow = selected feedback anchor.
+        </div>
+        <div class="original" id="originalDoc">
+
+
+<!-- Begin AutoIt updated code -->
+
+
+<div class=WordSection1>
+<!-- End AutoIt updated code -->
+
+
+<div class="fb-anchor" data-anchor="lesson_title" id="anchor-lesson_title"><p class=MsoHeader align=center style='text-align:center'><b><span style='font-size:24.0pt;font-family:"Arial",sans-serif'>Breeds of Livestock:
+Cattle</span></b></p></div>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:#125DA1'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#3D861B'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Lesson
+Overview</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Media: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Microsoft<sup>®</sup>
+PowerPoint<sup>®</sup> Presentation (85 slides)</span></p>
+
+<div class="fb-anchor" data-anchor="materials" id="anchor-materials"><p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Seat Time: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>7 Classes | 350 minutes
+teaching</span></p></div>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<div class="fb-anchor" data-anchor="teks" id="anchor-teks"><p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Goal: </span></b></p></div>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>To provide students
+with the origins, physical characteristics, traits and usages of cattle breeds.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Description:</span></b></p>
+
+<div class="fb-anchor" data-anchor="elps" id="anchor-elps"><p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>This lesson helps
+students discover valuable information regarding the types of cattle raised in
+the world, as well as their origins, physical characteristics, traits and
+usages. Students will learn the important roles and purposes cattle breeds have
+in livestock production.</span></p></div>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<div class="fb-anchor" data-anchor="objective" id="anchor-objective"><p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Objectives:</span></b></p></div>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>To identify breeds of
+cattle.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>To understand the
+origins and characteristics of cattle breeds.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>To analyze the
+importance of specific cattle breeds in livestock production.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#165DA2'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Class 1</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Class Overview:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Dairy Breeds </span></i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Microsoft<sup>®</sup>
+PowerPoint<sup>®</sup> Segment<i> </i></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Action Plan</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Vocabulary Handout</span></p>
+
+<div class="fb-anchor" data-anchor="modeling" id="anchor-modeling"><p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Key Concepts</span></p></div>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Dairy Breeds Check for
+Understanding</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Dairy Decisions
+Activity</span></p>
+
+<p class=MsoListParagraph style='margin:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<div class="fb-anchor" data-anchor="objective_purpose" id="anchor-objective_purpose"><p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Essential Questions:</span></b></p></div>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>What general
+terminology is associated with cattle?</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>What are the origins,
+physical characteristics, traits and usages of dairy breeds?</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<div class="fb-anchor" data-anchor="anticipatory_set" id="anchor-anticipatory_set"><p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 1: Bell Ringer:</span></b></p></div>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Display
+an image of a Holstein cow, Brahman cow and Angus cow. Have students consider
+the question “what differences do you see physically in these three breeds of
+cattle, and how may this impact their use in livestock production”. Lead a
+discussion of their responses.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 2: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Distribute the <b>Action
+Plan</b>, <b>Vocabulary Handout </b>and <b>Key Concepts</b>.</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>The
+<b>Action Plan</b> lays out a list of tasks for students to complete during the
+lesson.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>The
+<b>Vocabulary Handout</b> is a list of terms used throughout the lesson. </span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>The
+<b>Key Concepts</b> is an outline which identifies the main ideas presented in
+the lesson which students can fill in to aid in note taking during the lesson.</span></p>
+
+<div class="fb-anchor" data-anchor="input" id="anchor-input"><p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 3: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Show the<b><i> Dairy
+Breeds </i></b><a name="_Hlk119339838">PowerPoint<i><sup>®</sup></i></a><b><i> </i></b>segment.</span></p></div>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>This
+segment is 24 slides long. </span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Be
+sure to utilize the <b>Key Concepts</b> for this segment of the lesson.</span></p>
+
+<div class="fb-anchor" data-anchor="check_for_understanding" id="anchor-check_for_understanding"><p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 4: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Administer the <b>Dairy
+Breeds Check for Understanding</b>.</span></p></div>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>The
+check for understanding is a short review of the content presented in the
+segment.</span></p>
+
+<div class="fb-anchor" data-anchor="guided_practice" id="anchor-guided_practice"><p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 5: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students should complete
+the<b> Dairy Decisions Activity.</b></span></p></div>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>Students will select dairy cattle breeds for the given
+scenarios. </span></p>
+
+<div class="fb-anchor" data-anchor="closure" id="anchor-closure"><p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 6: Exit Ticket:</span></b></p></div>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have
+students turn in the <b>Dairy Decisions Activity</b>. </span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#165DA2'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Class 2 </span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Class Overview:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Asian &amp; African
+Breeds </span></i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Microsoft<sup>®</sup>
+PowerPoint<sup>®</sup> Segment<i> </i></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Action Plan</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Key Concepts</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Asian &amp; African
+Breeds Check for Understanding</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Trivia Game Exit Ticket
+Activity</span></p>
+
+<p class=MsoListParagraph style='margin:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Essential Questions:</span></b></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>What are the origins,
+physical characteristics, traits and usages of Asian and African breeds?</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>What physical characteristics
+make these breeds well-suited to hot, humid climates?</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 1: Bell Ringer:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span class=normaltextrun><span style='font-size:12.0pt;
+font-family:Symbol;color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=normaltextrun><span style='font-size:12.0pt;
+font-family:"Arial",sans-serif'>Show students an image or video of one of the
+breeds in this segment</span></span><span class=eop><span style='font-size:
+12.0pt;font-family:"Arial",sans-serif'>. Have students write down the first
+word which comes to mind. Discuss students’ answers as a class. </span></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 2: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Show the<b><i> Asian
+&amp; African Breeds </i></b>PowerPoint<i><sup>®</sup><b> </b></i>segment. </span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>This
+segment is 10 slides long. </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Be
+sure to utilize the <b>Key Concepts</b> for this segment of the lesson.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>Slide 34: Have a discussion with students about the physical
+adaptations of Asian and African breeds.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 3: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Administer the <b>Asian
+&amp; African Breeds Check for Understanding</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>The
+check for understanding is a short review of the content presented in the segment.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 4: Exit Ticket:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have
+students complete the<b> Trivia Game Exit Ticket Activity</b>, then turn it in
+before leaving class.</span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:red'> </span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#165DA2'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Class 3 </span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Class Overview:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>British Breeds </span></i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Microsoft<sup>®</sup>
+PowerPoint<sup>®</sup> Segment<i> </i></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Action Plan</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Key Concepts</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>British Breeds Check
+for Understanding</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Cattle Breeds
+Flashcards Activity</span></p>
+
+<p class=MsoListParagraph style='margin:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Essential Questions:</span></b></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>What are the origins,
+physical characteristics, traits and usages of British breeds?</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif;background:yellow'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 1: Bell Ringer:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have
+students list some of the countries Asian and African breeds come from as a
+review.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 2: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Show the<b><i> British
+Breeds </i></b>PowerPoint<i><sup>®</sup><b> </b></i>segment. </span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>This segment is 14 slides long. </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>Be sure to utilize the <b>Key Concepts</b> for this segment
+of the lesson.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>Slide 48: Have a discussion with students about common traits
+among the British breeds.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 3: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Administer the <b>British
+Breeds Check for Understanding</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>The
+check for understanding is a short review of the content presented in the
+segment.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 4: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students should begin
+the <b>Cattle Breeds Flashcards Activity</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>Students will develop a set of flashcards to practice their
+knowledge of cattle breeds and their characteristics.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 5: Exit Ticket:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have
+students provide a progress update on the <b>Cattle Breeds Flashcards Activity</b>.
+</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#165DA2'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Class 4</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Class Overview:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Continental Breeds </span></i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Microsoft<sup>®</sup>
+PowerPoint<sup>®</sup> Segment<i> </i></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Action Plan</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Key Concepts</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Continental Breeds
+Check for Understanding</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Cattle Breeds
+Flashcards Activity</span></p>
+
+<p class=MsoListParagraph style='margin:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Essential Questions:</span></b></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>What are the origins,
+physical characteristics, traits and usages of continental breeds?</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif;background:yellow'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 1: Bell Ringer:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span class=normaltextrun><span style='font-size:12.0pt;
+font-family:"Arial",sans-serif'>Have students brainstorm answers to </span></span><span class=normaltextrun><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>the question, “</span></span><span class=normaltextrun><span style='font-size:12.0pt;font-family:"Arial",sans-serif;color:windowtext'>which
+countries do continental cattle breeds originate from</span></span><span class=normaltextrun><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>”. Lead students to discuss their responses.</span></span><span class=eop><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>&nbsp;</span></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 2: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Show the<b><i> Continental
+Breeds </i></b>PowerPoint<i><sup>®</sup><b> </b></i>segment. </span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>This
+segment is 20 slides long. </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Be
+sure to utilize the <b>Key Concepts</b> for this segment of the lesson.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>Slide 68: Have a discussion with students about the common
+traits of continental breeds.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 3: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Administer the <b>Continental
+Breeds Check for Understanding</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>The
+check for understanding is a short review of the content presented in the
+segment.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 4: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students should continue
+the <b>Cattle Breeds Flashcards Activity</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>Students will develop a set of flashcards to practice their
+knowledge of cattle breeds and their characteristics.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 5: Exit Ticket:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span class=normaltextrun><span style='font-size:12.0pt;
+font-family:"Arial",sans-serif'>Have students write down three statements about
+the topic of the lesson, two truths and a lie</span></span><span class=eop><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>. Once complete, students
+should exchange statements with a partner to figure out which statement is the
+lie. </span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#165DA2'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Class 5</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Class Overview:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>American Breeds </span></i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Microsoft<sup>®</sup>
+PowerPoint<sup>®</sup> Segment<i> </i></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Action Plan</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Key Concepts</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>American Breeds Check
+for Understanding</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Cattle Breeds
+Flashcards Activity</span></p>
+
+<div class="fb-anchor" data-anchor="independent_practice" id="anchor-independent_practice"><p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Build a Breed Project</span></p></div>
+
+<p class=MsoListParagraph style='margin:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Essential Questions:</span></b></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>What are the origins,
+physical characteristics, traits and usages of American breeds?</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif;background:yellow'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 1: Bell Ringer:</span></b></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span class=eop><span style='font-size:12.0pt;font-family:
+Symbol;color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=normaltextrun><i><span style='font-size:12.0pt;
+font-family:"Arial",sans-serif'>Think, Pair, Share</span></i></span><span class=normaltextrun><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>:
+Pose the following question to students and have them consider their response
+for one or two minutes before asking them to get into groups and share their
+responses.</span></span><span class=eop><span style='font-size:12.0pt;
+font-family:"Arial",sans-serif'>&nbsp;</span></span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:1.0in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:Symbol'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Cattle
+are not native to the U.S., meaning foundation stock was imported at some
+point. What are you expecting American breeds of cattle to be like?</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 2: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Show the<b><i> American
+Breeds </i></b>PowerPoint<i><sup>®</sup><b> </b></i>segment. </span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>This
+segment is 17 slides long. </span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Be
+sure to utilize the <b>Key Concepts</b> for this segment of the lesson.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 3: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Administer the <b>American
+Breeds Check for Understanding</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>The
+check for understanding is a short review of the content presented in the
+segment.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 4: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students should complete
+the <b>Cattle Breeds Flashcards Activity</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>Students will develop a set of flashcards to practice their
+knowledge of cattle breeds and their characteristics.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 5: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students should begin
+the <b>Build a Breed Project</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students
+will create their own crossbred or composite cattle breed which would suit
+their local area well.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 6: Exit Ticket:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have
+students provide a progress update on the <b>Build a Breed Project</b>.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#165DA2'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Class 6</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Class Overview:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Action Plan</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Build a Breed Project</span></p>
+
+<p class=MsoListParagraph style='margin:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 1: Bell Ringer:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have
+students define the terms purebred, crossbred and composite in their own words.
+Review the correct definitions as a class.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 2: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students should begin
+the <b>Build a Breed Project</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students
+will create their own crossbred or composite cattle breed which would suit
+their local area well.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 3: Exit Ticket:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have
+students provide a progress update on the <b>Build a Breed Project</b>. </span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;color:red'> </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#165DA2'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Class 7 </span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Class Overview:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Action Plan</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Cattle Breeds
+Flashcards Activity</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Breeds of Livestock:
+Cattle Final Assessment</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Build a Breed Project</span></p>
+
+<p class=MsoListParagraph style='margin:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 1: Bell Ringer:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have
+students use the flashcards from the <b>Cattle Breeds Flashcards Activity</b>
+to review for the assessment.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 2: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Administer the <b>Breeds
+of Livestock: Cattle Final Assessment</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>The
+assessment is a comprehensive assessment covering material throughout the
+entire lesson.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 3: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students should
+complete the <b>Build a Breed Project</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>Stude</span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>nts
+will create their own crossbred or composite cattle breed which would suit
+their local area well.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 4: Exit Ticket:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have
+students turn in their <b>Build a Breed Project</b>.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><a name="_Hlk119339943"><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></a></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#3D861B'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Activity Overview</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Dairy Decisions</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students will select
+dairy cattle breeds for the given scenarios. </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></i></b></p>
+
+<div class="fb-anchor" data-anchor="accommodations" id="anchor-accommodations"><p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Accommodations</span></i></b><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>:</span></b></p></div>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have students work with
+a partner to complete the activity.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Modifications</span></i></b><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have students only
+respond to two scenarios.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Extension</span></i></b><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have students compare
+their answers with others and discuss the similarities or differences in their
+responses.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><u><span style='font-size:12.0pt;font-family:"Arial",sans-serif'><span style='text-decoration:
+ none'>&nbsp;</span></span></u></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><u><span style='font-size:12.0pt;font-family:"Arial",sans-serif'><span style='text-decoration:
+ none'>&nbsp;</span></span></u></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Trivia Game Exit Ticket</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>In teams, students will
+compete against one another in a game of trivia about dairy, Asian and African
+cattle breeds.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Accommodations</span></i></b><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Provide trivia
+questions both orally and in a written format for students to reference.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Modifications</span></i></b><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have students write
+their responses to only half of the trivia questions asked.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Extension</span></i></b><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have students come up
+with their own trivia questions to ask the other team. </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Cattle Breed Flashcards</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students will develop a
+set of flashcards to practice their knowledge of cattle breeds and their
+characteristics.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Accommodations</span></i></b><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Provide students
+additional time as needed.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Modifications</span></i></b><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have students complete
+flashcards for only five to seven breeds. </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Extension</span></i></b><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have students devise a
+review game utilizing their flashcards and play it. </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#3D861B'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Project
+Overview</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Build a Breed</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students will create their
+own crossbred or composite cattle breed which would suit their local area well.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Accommodations:</span></i></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Allow students to work
+with a partner. </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Modifications:</span></i></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have students complete
+only half the required components of the project.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Extension:</span></i></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have students debate on
+which new breed is best suited to the local area.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#3D861B'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Career
+&amp; Technical Student Organizations</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>National FFA Organization</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Livestock Judging</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#3D861B'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Career
+Connections</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Using the <b>Career
+Connections Activity</b> allows students to explore careers associated with
+this lesson by viewing career interviews with various industry professionals.
+The career interviews are located in the Select Media drop-down menu on the
+lesson page. See the <b>Career Connections Activity</b> for more details. </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Dale Spencer,
+President-Elect, Nebraska Cattlemen</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Emmet Callahan, Cattle
+Buyer and Cattle Farmer</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Jim Johnson, Cattle
+Producer</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><img width=624 height=41 id="Picture 1" src="CEV71836_V2_HTML_Lesson_Plan_files/image001.png" alt="iCEV Multimedia, LLC - This document is protected under copyright law.  Any unauthorized reproduction will be a violation of law and will be subject to legal action.  "></p>
+
+</div>
+
+
+        </div>
+      </div>
+    </div>
+    <aside class="sidebar">
+      <div class="side-head">
+        <h2>Path A feedback</h2>
+        <p>Select a comment to highlight the matching place in the original LP.</p>
+        <div class="filters" id="filters">
+          <button type="button" data-filter="all" class="on">All</button>
+          <button type="button" data-filter="MISSING">Missing</button>
+          <button type="button" data-filter="PRESENT">Present</button>
+          <button type="button" data-filter="A2">A2</button>
+          <button type="button" data-filter="A5">A5</button>
+          <button type="button" data-filter="A6">A6</button>
+        </div>
+      </div>
+      <div class="comment-list" id="commentList"></div>
+      <div class="hint">
+        Over SSH: use Tailscale URL
+        <code>http://100.85.15.59:8777/PATH-A-CATTLE-LP-REVIEW.html</code>
+        (not 127.0.0.1 from your laptop). Or open the Cursor Canvas review.
+      </div>
+    </aside>
+  </div>
+</div>
+<script>
+const COMMENTS = [{"id": "a2-teks", "step": "A2", "title": "TEKS / standards", "status": "MISSING", "body": "No discrete TEKS codes cited in Layer 0 evidence. Original LP has Goal/Objectives but no TEKS codes.", "anchor": "teks", "quote": "", "note": "", "anchored": true}, {"id": "a2-obj", "step": "A2", "title": "Objectives", "status": "PRESENT", "body": "Goals/objectives found (count=9).", "anchor": "objective", "quote": "Lesson Plan Breeds of Livestock: Cattle Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching Goal: To provide students with the origins, physical character…", "note": "", "anchored": true}, {"id": "a3", "step": "A3", "title": "Coherence", "status": "COHERENT", "body": "has_objective=True · has_activities=True · has_assessment=True", "anchor": "objective_purpose", "quote": "", "note": "", "anchored": true}, {"id": "a4-form", "step": "A4", "title": "Formative assessment", "status": "PRESENT", "body": "5 formative checkpoint item(s).", "anchor": "check_for_understanding", "quote": "", "note": "", "anchored": true}, {"id": "a4-summ", "step": "A4", "title": "Summative assessment", "status": "MISSING", "body": "No summative items placed in this Path A pass.", "anchor": "check_for_understanding", "quote": "", "note": "", "anchored": true}, {"id": "a5-anticipatory_set", "step": "A5", "title": "1. Anticipatory set (hook / Do Now / Engage)", "status": "PRESENT", "body": "Hunter core structure scored from evidence.", "anchor": "anticipatory_set", "quote": "Lesson Plan Breeds of Livestock: Cattle Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching Goal: To provide students with the origins, physical character…", "note": "", "anchored": true}, {"id": "a5-objective_purpose", "step": "A5", "title": "2. Objective & purpose (stated to students)", "status": "PRESENT", "body": "Hunter core structure scored from evidence.", "anchor": "objective_purpose", "quote": "Lesson Plan Breeds of Livestock: Cattle Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching Goal: To provide students with the origins, physical character…", "note": "", "anchored": true}, {"id": "a5-input", "step": "A5", "title": "3. Input (teach content / vocabulary)", "status": "PRESENT", "body": "Hunter core structure scored from evidence.", "anchor": "input", "quote": "Lesson Plan Breeds of Livestock: Cattle Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching Goal: To provide students with the origins, physical character…", "note": "", "anchored": true}, {"id": "a5-modeling", "step": "A5", "title": "4. Modeling (I do / demonstrate)", "status": "PRESENT", "body": "Hunter core structure scored from evidence.", "anchor": "modeling", "quote": "Lesson Plan External Anatomy of Livestock: Terms & Terminology Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (45 slides) Seat Time: 6 Classes | 300 minutes teaching Goal: To analyze the external anatomy o…", "note": "", "anchored": true}, {"id": "a5-check_for_understanding", "step": "A5", "title": "5. Check for understanding", "status": "PRESENT", "body": "Hunter core structure scored from evidence.", "anchor": "check_for_understanding", "quote": "Lesson Plan Breeds of Livestock: Cattle Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching Goal: To provide students with the origins, physical character…", "note": "", "anchored": true}, {"id": "a5-guided_practice", "step": "A5", "title": "6. Guided practice (We do)", "status": "PRESENT", "body": "Hunter core structure scored from evidence.", "anchor": "guided_practice", "quote": "Lesson Plan Breeds of Livestock: Cattle Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching Goal: To provide students with the origins, physical character…", "note": "", "anchored": true}, {"id": "a5-independent_practice", "step": "A5", "title": "7. Independent practice (You do)", "status": "PRESENT", "body": "Hunter core structure scored from evidence.", "anchor": "independent_practice", "quote": "Lesson Plan Breeds of Livestock: Cattle Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching Goal: To provide students with the origins, physical character…", "note": "", "anchored": true}, {"id": "a5-closure", "step": "A5", "title": "8. Closure", "status": "PRESENT", "body": "Hunter core structure scored from evidence.", "anchor": "closure", "quote": "Lesson Plan Breeds of Livestock: Cattle Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching Goal: To provide students with the origins, physical character…", "note": "", "anchored": true}, {"id": "a6-lesson_title", "step": "A6", "title": "Field: lesson_title", "status": "MISSING", "body": "Field not placed from evidence.", "anchor": "lesson_title", "quote": "", "note": "A6 model empty → code fallback", "anchored": true}, {"id": "a6-learning_objective", "step": "A6", "title": "Field: learning_objective", "status": "PRESENT", "body": "Field placed from View Lesson Plan / pack evidence.", "anchor": "objective", "quote": "Lesson Plan Breeds of Livestock: Cattle Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching Goal: To provide students with the origins, physical character…", "note": "A6 model empty → code fallback", "anchored": true}, {"id": "a6-teks", "step": "A6", "title": "Field: teks", "status": "PRESENT", "body": "Field placed from View Lesson Plan / pack evidence.", "anchor": "teks", "quote": "Lesson Plan Breeds of Livestock: Cattle Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching Goal: To provide students with the origins, physical character…", "note": "A6 model empty → code fallback", "anchored": true}, {"id": "a6-materials", "step": "A6", "title": "Field: materials", "status": "PRESENT", "body": "Field placed from View Lesson Plan / pack evidence.", "anchor": "materials", "quote": "Lesson Plan Breeds of Livestock: Cattle Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching Goal: To provide students with the origins, physical character…", "note": "A6 model empty → code fallback", "anchored": true}, {"id": "a6-anticipatory_set", "step": "A6", "title": "Field: anticipatory_set", "status": "PRESENT", "body": "Field placed from View Lesson Plan / pack evidence.", "anchor": "anticipatory_set", "quote": "Lesson Plan External Anatomy of Livestock: Terms & Terminology Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (45 slides) Seat Time: 6 Classes | 300 minutes teaching Goal: To analyze the external anatomy o…", "note": "A6 model empty → code fallback", "anchored": true}, {"id": "a6-objective_purpose", "step": "A6", "title": "Field: objective_purpose", "status": "MISSING", "body": "Field not placed from evidence.", "anchor": "objective_purpose", "quote": "", "note": "A6 model empty → code fallback", "anchored": true}, {"id": "a6-input", "step": "A6", "title": "Field: input", "status": "MISSING", "body": "Field not placed from evidence.", "anchor": "input", "quote": "", "note": "A6 model empty → code fallback", "anchored": true}, {"id": "a6-modeling", "step": "A6", "title": "Field: modeling", "status": "MISSING", "body": "Field not placed from evidence.", "anchor": "modeling", "quote": "", "note": "A6 model empty → code fallback", "anchored": true}, {"id": "a6-check_for_understanding", "step": "A6", "title": "Field: check_for_understanding", "status": "MISSING", "body": "Field not placed from evidence.", "anchor": "check_for_understanding", "quote": "", "note": "A6 model empty → code fallback", "anchored": true}, {"id": "a6-guided_practice", "step": "A6", "title": "Field: guided_practice", "status": "MISSING", "body": "Field not placed from evidence.", "anchor": "guided_practice", "quote": "", "note": "A6 model empty → code fallback", "anchored": true}, {"id": "a6-independent_practice", "step": "A6", "title": "Field: independent_practice", "status": "MISSING", "body": "Field not placed from evidence.", "anchor": "independent_practice", "quote": "", "note": "A6 model empty → code fallback", "anchored": true}, {"id": "a6-closure", "step": "A6", "title": "Field: closure", "status": "MISSING", "body": "Field not placed from evidence.", "anchor": "closure", "quote": "", "note": "A6 model empty → code fallback", "anchored": true}, {"id": "a6-elps_language", "step": "A6", "title": "Field: elps_language", "status": "PRESENT", "body": "Field placed from View Lesson Plan / pack evidence.", "anchor": "elps", "quote": "Lesson Plan Breeds of Livestock: Cattle Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching Goal: To provide students with the origins, physical character…", "note": "A6 model empty → code fallback", "anchored": true}, {"id": "a6-accommodations", "step": "A6", "title": "Field: accommodations", "status": "PRESENT", "body": "Field placed from View Lesson Plan / pack evidence.", "anchor": "accommodations", "quote": "Lesson Plan Breeds of Livestock: Cattle Lesson Overview Media: Microsoft ® PowerPoint ® Presentation (85 slides) Seat Time: 7 Classes | 350 minutes teaching Goal: To provide students with the origins, physical character…", "note": "A6 model empty → code fallback", "anchored": true}, {"id": "a7-elps", "step": "A7", "title": "ELPS / language support", "status": "PRESENT", "body": "Language-support signal from pack evidence.", "anchor": "elps", "quote": "", "note": "", "anchored": true}, {"id": "a7-acc", "step": "A7", "title": "Accommodations", "status": "PRESENT", "body": "Accommodations signal from pack evidence.", "anchor": "accommodations", "quote": "", "note": "", "anchored": true}];
+
+function render() {
+  const list = document.getElementById("commentList");
+  list.innerHTML = "";
+  const filter = document.querySelector(".filters button.on")?.dataset.filter || "all";
+  for (const c of COMMENTS) {
+    if (filter === "MISSING" && c.status !== "MISSING") continue;
+    if (filter === "PRESENT" && !(c.status === "PRESENT" || c.status === "COHERENT")) continue;
+    if (["A2","A3","A4","A5","A6","A7"].includes(filter) && c.step !== filter) continue;
+    const el = document.createElement("button");
+    el.type = "button";
+    el.className = "comment";
+    el.dataset.id = c.id;
+    el.innerHTML = `
+      <div class="row">
+        <span class="step">${c.step}</span>
+        <span class="badge ${c.status}">${c.status}</span>
+      </div>
+      <p class="title"></p>
+      <p class="body"></p>
+      ${c.quote ? '<p class="quote"></p>' : ""}
+      ${c.note ? '<p class="note"></p>' : ""}
+    `;
+    el.querySelector(".title").textContent = c.title + (c.anchored ? "" : " (unanchored)");
+    el.querySelector(".body").textContent = c.body;
+    if (c.quote) el.querySelector(".quote").textContent = c.quote;
+    if (c.note) el.querySelector(".note").textContent = c.note;
+    el.addEventListener("click", () => selectComment(c.id));
+    list.appendChild(el);
+  }
+}
+
+function selectComment(id) {
+  const c = COMMENTS.find(x => x.id === id);
+  if (!c) return;
+  document.querySelectorAll(".comment").forEach(el => {
+    el.classList.toggle("active", el.dataset.id === id);
+  });
+  document.querySelectorAll(".fb-anchor").forEach(el => {
+    el.classList.remove("active", "missing-active");
+  });
+  const mark = document.getElementById("anchor-" + c.anchor);
+  if (mark) {
+    mark.classList.add(c.status === "MISSING" ? "missing-active" : "active");
+    mark.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+  const card = document.querySelector(`.comment[data-id="${id}"]`);
+  if (card) card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+document.getElementById("filters").addEventListener("click", (e) => {
+  const btn = e.target.closest("button[data-filter]");
+  if (!btn) return;
+  document.querySelectorAll(".filters button").forEach(b => b.classList.toggle("on", b === btn));
+  render();
+});
+
+render();
+const first = COMMENTS.find(c => c.status === "MISSING") || COMMENTS[0];
+if (first) selectComment(first.id);
+</script>
+</body>
+</html>

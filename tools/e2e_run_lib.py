@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """Per-model full-pipeline A/B trees under projects/<id>/e2e/runs/<run_id>/.
 
-Educational note: graph already isolates under graph/runs/<model>/. Full E2E
-(Layer 0 → synthesize → graph) also writes layer0/layer1/output — those must
-live in a separate run root so Grok never overwrites the golden Dallas tree.
-Set LOOM_E2E_RUN=<run_id> so audit_lib.project_dir() resolves into this tree;
-symlink sources/ + manifest.yaml from the curriculum root (shared inputs).
-"""
+Educational note: **E2E is the canonical write root.** Set LOOM_E2E_RUN=<run_id>
+so audit_lib.project_dir() resolves into this tree; symlink sources/ +
+manifest.yaml from the curriculum root (shared inputs). Nested graph artifacts
+land at e2e/runs/<id>/graph/runs/<id>/ — do not start new bare
+projects/<id>/graph/runs/ writes (legacy archive only).
 
+Best practice: call ensure_e2e_env() from run_project / queues so a missing
+LOOM_E2E_RUN cannot silently clobber the golden curriculum tree.
+"""
 from __future__ import annotations
 
 import json
@@ -46,8 +48,14 @@ def prepare_e2e_run(
     model: str,
     backend: str,
     lane: str = "e2e",
+    link_layer0_from_curriculum: bool = False,
 ) -> Path:
-    """Create isolated run dir with symlinked sources + manifest. Idempotent."""
+    """Create isolated run dir with symlinked sources + manifest. Idempotent.
+
+    When ``link_layer0_from_curriculum`` is True (graph-only A/B under E2E),
+    symlink curriculum ``layer0/`` so HAS-PART can run without re-extracting.
+    Full E2E leaves layer0 writable inside the run (do not pass the flag).
+    """
     rid = slugify_run_id(run_id)
     base = curriculum_root(project_id)
     if not base.is_dir():
@@ -76,6 +84,13 @@ def prepare_e2e_run(
             continue
         dst.symlink_to(os.path.relpath(src, start=run))
 
+    # Graph-only under E2E: reuse curriculum Layer 0 ledger (read-mostly).
+    if link_layer0_from_curriculum:
+        src = base / "layer0"
+        dst = run / "layer0"
+        if not (dst.exists() or dst.is_symlink()) and src.is_dir():
+            dst.symlink_to(os.path.relpath(src, start=run))
+
     meta_path = run / "RUN.json"
     prev: dict = {}
     if meta_path.is_file():
@@ -97,3 +112,41 @@ def prepare_e2e_run(
         meta["started_at"] = now
     meta_path.write_text(json.dumps(meta, indent=2) + "\n", encoding="utf-8")
     return run
+
+
+def ensure_e2e_env(
+    project_id: str,
+    *,
+    run_id: str | None = None,
+    model: str = "unknown",
+    backend: str = "local",
+    graph_only: bool = False,
+    allow_live_root: bool = False,
+) -> str | None:
+    """Ensure LOOM_E2E_RUN is set and the e2e tree exists.
+
+    Returns the active run id, or None when ``allow_live_root`` opts into the
+    golden curriculum tree (overnight / intentional live writes only).
+
+    Best practice: never rely on callers remembering the env var — defaulting
+    here is what keeps graph/layer/output out of projects/<id>/ root.
+    """
+    if allow_live_root or os.environ.get("LOOM_ALLOW_LIVE_ROOT", "").strip() in (
+        "1",
+        "true",
+        "yes",
+    ):
+        return None
+
+    existing = (os.environ.get("LOOM_E2E_RUN") or "").strip()
+    rid = slugify_run_id(existing or run_id or model or "model")
+    os.environ["LOOM_E2E_RUN"] = rid
+    prepare_e2e_run(
+        project_id,
+        rid,
+        model=model,
+        backend=backend,
+        lane="e2e-graph-only" if graph_only else "e2e",
+        link_layer0_from_curriculum=graph_only,
+    )
+    return rid

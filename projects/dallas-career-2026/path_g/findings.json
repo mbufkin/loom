@@ -1,0 +1,12 @@
+{
+  "project_id": "dallas-career-2026",
+  "workflow_id": "syllabus",
+  "path": "G",
+  "lens": "Syllabus",
+  "status": "skipped",
+  "doc_ids": [],
+  "checklist": "workflows/checklists/syllabus.yaml",
+  "evidence_base": {},
+  "inventory": [],
+  "steps_by_doc": {}
+}

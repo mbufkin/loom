@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loom — Graph sort (intended) · heart-surgery map</title>
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --ink: #1c1917;
+      --muted: #57534e;
+      --line: #d6d3d1;
+      --card: #fffcf7;
+      --accent: #0f766e;
+      --warn: #9a3412;
+      --code: #292524;
+      --spike: #1d4ed8;
+      --pass: #15803d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font: 16px/1.5 "IBM Plex Sans", "Source Sans 3", Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #e7f0ea 0%, transparent 55%),
+        radial-gradient(900px 500px at 100% 0%, #efe8df 0%, transparent 50%),
+        var(--bg);
+    }
+    main { max-width: 920px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+    h1 { font: 700 1.75rem/1.2 "IBM Plex Sans", sans-serif; letter-spacing: -0.02em; margin: 0 0 0.35rem; }
+    h2 { font: 650 1.15rem/1.3 "IBM Plex Sans", sans-serif; margin: 2.25rem 0 0.75rem; }
+    p { margin: 0 0 0.85rem; color: var(--muted); }
+    .lede { font-size: 1.05rem; color: var(--ink); max-width: 40rem; }
+    .tag {
+      display: inline-block;
+      font: 600 0.72rem/1 "IBM Plex Sans", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--spike);
+      border: 1px solid #93c5fd;
+      background: #eff6ff;
+      padding: 0.25rem 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .pipeline { display: flex; flex-direction: column; margin: 1.5rem 0; }
+    .stage {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      padding: 1rem 1.1rem;
+      position: relative;
+    }
+    .stage + .stage { margin-top: 0.65rem; }
+    .stage::before {
+      content: "";
+      position: absolute;
+      left: 1.4rem;
+      top: -0.65rem;
+      width: 2px;
+      height: 0.65rem;
+      background: var(--line);
+    }
+    .stage:first-child::before { display: none; }
+    .stage.hl {
+      border-color: var(--accent);
+      box-shadow: inset 3px 0 0 var(--accent);
+    }
+    .stage.after {
+      border-color: #fdba74;
+      box-shadow: inset 3px 0 0 var(--warn);
+    }
+    .stage-kicker {
+      font: 650 0.7rem/1 "IBM Plex Sans", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+    .stage h3 {
+      font: 650 1rem/1.25 "IBM Plex Sans", sans-serif;
+      margin: 0 0 0.35rem;
+      color: var(--ink);
+    }
+    .stage ul { margin: 0.4rem 0 0; padding-left: 1.1rem; color: var(--muted); }
+    .stage li { margin: 0.15rem 0; }
+    .engine {
+      float: right;
+      font: 600 0.68rem/1 "IBM Plex Sans", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.2rem 0.4rem;
+      border-radius: 2px;
+      background: #e7e5e4;
+      color: var(--code);
+    }
+    .engine.model { background: #ccfbf1; color: #115e59; }
+    .engine.code { background: #e7e5e4; color: #44403c; }
+    .engine.thin { background: #fef3c7; color: #92400e; }
+    .callout {
+      margin: 1.25rem 0;
+      padding: 1rem 1.1rem;
+      background: #fff;
+      border-left: 3px solid var(--accent);
+      color: var(--muted);
+    }
+    .callout strong { color: var(--ink); }
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    @media (max-width: 700px) { .grid2 { grid-template-columns: 1fr; } }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 0.9rem 1rem;
+      color: var(--muted);
+    }
+    .card h4 { margin: 0 0 0.4rem; font: 650 0.95rem/1.2 "IBM Plex Sans", sans-serif; color: var(--ink); }
+    .card.pass1 { border-top: 3px solid var(--pass); }
+    .card.pass2 { border-top: 3px solid var(--spike); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      margin: 0.75rem 0 1.25rem;
+      background: var(--card);
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 0.5rem 0.65rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      font: 650 0.75rem/1.2 "IBM Plex Sans", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      background: #f5f5f4;
+    }
+    .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.86em; }
+    .foot { margin-top: 2rem; font-size: 0.85rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="tag">Spike design · not production yet</div>
+    <h1>Graph sort: one authority, two careful model steps</h1>
+    <p class="lede">
+      After ingest + Layer 0 decompose, the graph is the <strong>only</strong> place that
+      decides what a document is and how it hangs on the course. Paths A–H are a thin
+      lookup from that decision — not a second sort.
+    </p>
+
+    <div class="callout">
+      <strong>One pass or two?</strong>
+      Two full-evidence model steps (heart surgery):
+      <em>(1) type</em> then <em>(2) connect</em>.
+      Same full Layer 0 evidence both times — not a skim, not filename.
+      Separating them lets us verify “what is it?” before “what does it attach to?”
+    </div>
+
+    <h2>End-to-end feed (intended)</h2>
+    <div class="pipeline">
+      <div class="stage">
+        <span class="engine model">Model</span>
+        <div class="stage-kicker">1 · Ingest</div>
+        <h3>Organize folder → units + calendars</h3>
+        <ul>
+          <li><span class="mono">ingest.py</span> — group files into units</li>
+          <li>Writes <span class="mono">manifest.yaml</span>, unit calendars</li>
+          <li>Does <em>not</em> decide Path A–H</li>
+        </ul>
+      </div>
+
+      <div class="stage">
+        <span class="engine model">Model</span>
+        <div class="stage-kicker">2 · Layer 0</div>
+        <h3>Full-document decompose → element ledger</h3>
+        <ul>
+          <li>Each source read fully; cited instructional elements</li>
+          <li>Writes <span class="mono">layer0/ledger.json</span></li>
+          <li>This is <em>evidence</em>, not the sort</li>
+        </ul>
+      </div>
+
+      <div class="stage hl">
+        <span class="engine model">Model · spike focus</span>
+        <div class="stage-kicker">3 · Graph sort (new CTE ontology)</div>
+        <h3>Type + belong — single authority for “what / where”</h3>
+        <ul>
+          <li>Input: <strong>full</strong> Layer 0 evidence (spike: no 100-element truncate)</li>
+          <li>Pass 1 — <strong>Type:</strong> <span class="mono">artifact_kind</span></li>
+          <li>Pass 2 — <strong>Connect:</strong> Lesson / Assessment edges (kind frozen)</li>
+          <li>Lessons from lesson_plan class sequence — not Bluebonnet TE/SE</li>
+          <li>Output: <span class="mono">HAS-PART.json</span></li>
+        </ul>
+      </div>
+
+      <div class="stage after">
+        <span class="engine thin">Code · thin map</span>
+        <div class="stage-kicker">4 · Route (after cutover)</div>
+        <h3>artifact_kind → Path letter — no re-guess</h3>
+        <ul>
+          <li><span class="mono">lesson_plan</span> → A · assessment → B · practice → E · teacher_support → D · standards → F · other → C</li>
+          <li>Filename priors become disagreement findings, not authority</li>
+        </ul>
+      </div>
+
+      <div class="stage after">
+        <span class="engine model">Model / checklist</span>
+        <div class="stage-kicker">5 · Path workflows</div>
+        <h3>Review lens for that path only</h3>
+        <ul>
+          <li>Path A runs only on docs typed <span class="mono">lesson_plan</span></li>
+          <li>Quality / curriculum review use the same typed set</li>
+        </ul>
+      </div>
+
+      <div class="stage">
+        <span class="engine model">Model</span>
+        <div class="stage-kicker">6 · Layer 1</div>
+        <h3>Day-grid placement (calendar slots)</h3>
+        <ul>
+          <li>Only for docs already in route-map</li>
+          <li>Asks “which day role?” — not “what kind of document?”</li>
+        </ul>
+      </div>
+
+      <div class="stage">
+        <span class="engine code">Code + later</span>
+        <div class="stage-kicker">7 · Layer 2 → synthesize → Review UI</div>
+        <h3>Completeness, plates, dashboard</h3>
+        <ul>
+          <li>Lesson drill-down follows Path A / quality fed by typed lesson plans</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Inside the graph sort</h2>
+    <div class="grid2">
+      <div class="card pass1">
+        <h4>Pass 1 — Type</h4>
+        <p>Full Layer 0 JSON for one source. Returns one <span class="mono">artifact_kind</span> + citation. This is Path authority.</p>
+      </div>
+      <div class="card pass2">
+        <h4>Pass 2 — Connect</h4>
+        <p>Same evidence + unit typed inventory + Lesson spine. Returns edges only. Must not change kind.</p>
+      </div>
+    </div>
+
+    <h2>Kind → Path (thin table — not a model)</h2>
+    <table>
+      <thead>
+        <tr><th>artifact_kind</th><th>Path</th><th>What runs next</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="mono">lesson_plan</span></td><td>A</td><td>Lesson checklist + quality / curriculum review</td></tr>
+        <tr><td><span class="mono">assessment</span></td><td>B / H</td><td>Quiz↔key or exit-ticket lens</td></tr>
+        <tr><td><span class="mono">student_practice</span></td><td>E</td><td>Student practice presence</td></tr>
+        <tr><td><span class="mono">teacher_support</span></td><td>D</td><td>True TE / facilitator guide only</td></tr>
+        <tr><td><span class="mono">standards_pacing</span></td><td>F</td><td>Standards / pacing lens</td></tr>
+        <tr><td><span class="mono">other</span></td><td>C</td><td>General + feedback log</td></tr>
+      </tbody>
+    </table>
+
+    <p class="foot">
+      Companion to the CTE graph ontology spike ·
+      file: <span class="mono">docs/GRAPH-SORT-FLOW.html</span>
+    </p>
+  </main>
+</body>
+</html>

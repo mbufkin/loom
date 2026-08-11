@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Path A per-class A5 — cattle LP</title>
+<style>
+  :root {
+    --bg:#eceae4; --ink:#1c1917; --muted:#57534e; --line:#d6d3d1;
+    --accent:#0f766e; --ok:#15803d; --mid:#b45309; --bad:#b91c1c; --hi:#fde68a;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin:0; height:100%; font-family: ui-sans-serif, system-ui, sans-serif; background:var(--bg); color:var(--ink); }
+  .app { display:grid; grid-template-rows:auto 1fr; height:100vh; }
+  header { background:#134e4a; color:#ecfdf5; padding:10px 16px; display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center; }
+  header h1 { margin:0; font-size:1rem; }
+  header .meta { font-size:.75rem; opacity:.9; }
+  .chips { display:flex; gap:6px; flex-wrap:wrap; font-size:.72rem; }
+  .chip { border:1px solid rgba(255,255,255,.3); padding:3px 8px; border-radius:999px; }
+  .main { display:grid; grid-template-columns:minmax(0,1fr) 400px; min-height:0; }
+  @media (max-width:960px) { .main { grid-template-columns:1fr; grid-template-rows:50vh 50vh; } }
+  .doc-pane { overflow:auto; padding:14px; }
+  .doc-shell { max-width:860px; margin:0 auto; background:#fff; border:1px solid var(--line); padding:8px 12px 36px; }
+  .doc-label { font-size:.72rem; color:var(--muted); margin:4px 8px 12px; padding-bottom:8px; border-bottom:1px solid var(--line); }
+  .class-block { border-left:3px solid transparent; scroll-margin-top:20px; }
+  .class-block.active { background:var(--hi); border-left-color:#f59e0b; outline:2px solid #fbbf24; }
+  .pack-appendix {
+    margin-top: 18px; padding-top: 8px; border-top: 2px dashed #a8a29e;
+    opacity: 0.85;
+  }
+  .appendix-banner {
+    font-size: 0.78rem; font-weight: 700; color: #78716c;
+    background: #f5f5f4; border: 1px solid var(--line);
+    padding: 8px 10px; margin: 0 0 10px; border-radius: 8px;
+  }
+  .sidebar { border-left:1px solid var(--line); background:#fafaf9; display:flex; flex-direction:column; min-height:0; }
+  .side-head { padding:12px 14px; border-bottom:1px solid var(--line); }
+  .side-head h2 { margin:0 0 4px; font-size:.95rem; }
+  .side-head p { margin:0; font-size:.75rem; color:var(--muted); }
+  .score-list { overflow:auto; padding:10px; display:flex; flex-direction:column; gap:8px; flex:0 0 auto; max-height:48%; }
+  .score-row {
+    display:grid; grid-template-columns:64px 48px 1fr; grid-template-rows:auto auto;
+    gap:2px 8px; text-align:left; width:100%;
+    background:#fff; border:1px solid var(--line); border-radius:10px; padding:10px;
+    cursor:pointer; font:inherit;
+  }
+  .score-row .n { font-weight:700; font-size:.8rem; }
+  .score-row .hunter { font-weight:700; font-size:.8rem; }
+  .score-row .topic { grid-column:1 / -1; font-size:.72rem; color:var(--muted); }
+  .score-row .miss { grid-column:1 / -1; font-size:.7rem; color:var(--bad); }
+  .score-row.ok .hunter { color:var(--ok); }
+  .score-row.mid .hunter { color:var(--mid); }
+  .score-row.bad .hunter { color:var(--bad); }
+  .score-row.active { border-color:var(--accent); box-shadow:0 0 0 2px rgba(15,118,110,.25); }
+  .detail { overflow:auto; padding:10px 14px 16px; border-top:1px solid var(--line); flex:1; }
+  .matrix ul { list-style:none; padding:0; margin:0; }
+  .matrix li { display:flex; justify-content:space-between; gap:8px; padding:6px 0; border-bottom:1px solid var(--line); font-size:.78rem; }
+  .matrix li.present em, .matrix li.coherent em { color:var(--ok); font-style:normal; font-weight:700; }
+  .matrix li.missing em, .matrix li.partial em { color:var(--bad); font-style:normal; font-weight:700; }
+  .matrix h4 { margin:14px 0 6px; font-size:.8rem; }
+  .matrix .pack-note, .matrix .a6-miss { font-size:.72rem; color:var(--muted); margin:8px 0; }
+  .matrix .checks { margin-bottom: 8px; }
+  .hint { padding:8px 14px; font-size:.7rem; color:var(--muted); border-top:1px solid var(--line); }
+  pre.plain-ep {
+    white-space: pre-wrap; word-break: break-word;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.86rem; line-height: 1.4; margin: 0; color: #1c1917;
+  }
+  <style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	line-height:118%;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;
+	color:black;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	font-size:11.0pt;
+	font-family:"Aptos",sans-serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	line-height:118%;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	line-height:118%;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	line-height:118%;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;
+	color:black;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:.5in;
+	line-height:118%;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;
+	color:black;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;}
+span.normaltextrun
+	{mso-style-name:normaltextrun;}
+span.eop
+	{mso-style-name:eop;}
+.MsoChpDefault
+	{font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:.5in .5in .5in .5in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+
+/*
+Begin AutoIt updated code
+This page was updated on: 5/21/2025 2:43:01 PM
+0.5in margin on the left & remove the Google Translate elements from the print out
+*/
+
+@media print{
+	div.skiptranslate, div.noPrint {
+		display: none;
+	}
+	body {
+		top: 0px !important;
+		margin: 0px !important;
+	}
+}
+@media screen{
+	body {
+		margin-left: 0.5in
+	}
+}
+</style>
+  .original { margin-left:0 !important; }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div>
+      <h1>Path A spike — A5 per episode (not whole pack)</h1>
+      <div class="meta">023-breeds-of-livestock-cattle  view-lesson-plan · 7 episode(s) scored separately · 023-breeds-of-livestock-cattle__view-lesson-plan.html</div>
+    </div>
+    <div class="chips">
+      <span class="chip">episodes 7</span>
+      <span class="chip">avg Hunter 5.6/8</span>
+      <span class="chip">whole-doc 7/8 whole-file</span>
+    </div>
+  </header>
+  <div class="main">
+    <div class="doc-pane" id="docPane">
+      <div class="doc-shell">
+        <div class="doc-label">
+          Source split into episode blocks. Click a scorecard row to highlight that episode.
+          Yellow = selected.
+        </div>
+        <div class="original" id="originalDoc">
+
+<!-- Begin AutoIt updated code -->
+
+
+<div class=WordSection1>
+<!-- End AutoIt updated code -->
+
+
+<p class=MsoHeader align=center style='text-align:center'><b><span style='font-size:24.0pt;font-family:"Arial",sans-serif'>Breeds of Livestock:
+Cattle</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:#125DA1'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#3D861B'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Lesson
+Overview</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Media: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Microsoft<sup>®</sup>
+PowerPoint<sup>®</sup> Presentation (85 slides)</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Seat Time: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>7 Classes | 350 minutes
+teaching</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Goal: </span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>To provide students
+with the origins, physical characteristics, traits and usages of cattle breeds.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Description:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>This lesson helps
+students discover valuable information regarding the types of cattle raised in
+the world, as well as their origins, physical characteristics, traits and
+usages. Students will learn the important roles and purposes cattle breeds have
+in livestock production.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Objectives:</span></b></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>To identify breeds of
+cattle.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>To understand the
+origins and characteristics of cattle breeds.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>To analyze the
+importance of specific cattle breeds in livestock production.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+
+<div class="class-block" id="class-1" data-class="1"><p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#165DA2'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Class 1</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Class Overview:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Dairy Breeds </span></i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Microsoft<sup>®</sup>
+PowerPoint<sup>®</sup> Segment<i> </i></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Action Plan</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Vocabulary Handout</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Key Concepts</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Dairy Breeds Check for
+Understanding</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Dairy Decisions
+Activity</span></p>
+
+<p class=MsoListParagraph style='margin:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Essential Questions:</span></b></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>What general
+terminology is associated with cattle?</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>What are the origins,
+physical characteristics, traits and usages of dairy breeds?</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 1: Bell Ringer:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Display
+an image of a Holstein cow, Brahman cow and Angus cow. Have students consider
+the question “what differences do you see physically in these three breeds of
+cattle, and how may this impact their use in livestock production”. Lead a
+discussion of their responses.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 2: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Distribute the <b>Action
+Plan</b>, <b>Vocabulary Handout </b>and <b>Key Concepts</b>.</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>The
+<b>Action Plan</b> lays out a list of tasks for students to complete during the
+lesson.</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>The
+<b>Vocabulary Handout</b> is a list of terms used throughout the lesson. </span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>The
+<b>Key Concepts</b> is an outline which identifies the main ideas presented in
+the lesson which students can fill in to aid in note taking during the lesson.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 3: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Show the<b><i> Dairy
+Breeds </i></b><a name="_Hlk119339838">PowerPoint<i><sup>®</sup></i></a><b><i> </i></b>segment.</span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>This
+segment is 24 slides long. </span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Be
+sure to utilize the <b>Key Concepts</b> for this segment of the lesson.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 4: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Administer the <b>Dairy
+Breeds Check for Understanding</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>The
+check for understanding is a short review of the content presented in the
+segment.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 5: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students should complete
+the<b> Dairy Decisions Activity.</b></span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>Students will select dairy cattle breeds for the given
+scenarios. </span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 6: Exit Ticket:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have
+students turn in the <b>Dairy Decisions Activity</b>. </span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+</div>
+<div class="class-block" id="class-2" data-class="2"><p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#165DA2'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Class 2 </span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Class Overview:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Asian &amp; African
+Breeds </span></i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Microsoft<sup>®</sup>
+PowerPoint<sup>®</sup> Segment<i> </i></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Action Plan</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Key Concepts</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Asian &amp; African
+Breeds Check for Understanding</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Trivia Game Exit Ticket
+Activity</span></p>
+
+<p class=MsoListParagraph style='margin:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Essential Questions:</span></b></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>What are the origins,
+physical characteristics, traits and usages of Asian and African breeds?</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>What physical characteristics
+make these breeds well-suited to hot, humid climates?</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 1: Bell Ringer:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span class=normaltextrun><span style='font-size:12.0pt;
+font-family:Symbol;color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=normaltextrun><span style='font-size:12.0pt;
+font-family:"Arial",sans-serif'>Show students an image or video of one of the
+breeds in this segment</span></span><span class=eop><span style='font-size:
+12.0pt;font-family:"Arial",sans-serif'>. Have students write down the first
+word which comes to mind. Discuss students’ answers as a class. </span></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 2: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Show the<b><i> Asian
+&amp; African Breeds </i></b>PowerPoint<i><sup>®</sup><b> </b></i>segment. </span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>This
+segment is 10 slides long. </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Be
+sure to utilize the <b>Key Concepts</b> for this segment of the lesson.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>Slide 34: Have a discussion with students about the physical
+adaptations of Asian and African breeds.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 3: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Administer the <b>Asian
+&amp; African Breeds Check for Understanding</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>The
+check for understanding is a short review of the content presented in the segment.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 4: Exit Ticket:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have
+students complete the<b> Trivia Game Exit Ticket Activity</b>, then turn it in
+before leaving class.</span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:red'> </span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+</div>
+<div class="class-block" id="class-3" data-class="3"><p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#165DA2'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Class 3 </span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Class Overview:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>British Breeds </span></i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Microsoft<sup>®</sup>
+PowerPoint<sup>®</sup> Segment<i> </i></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Action Plan</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Key Concepts</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>British Breeds Check
+for Understanding</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Cattle Breeds
+Flashcards Activity</span></p>
+
+<p class=MsoListParagraph style='margin:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Essential Questions:</span></b></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>What are the origins,
+physical characteristics, traits and usages of British breeds?</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif;background:yellow'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 1: Bell Ringer:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have
+students list some of the countries Asian and African breeds come from as a
+review.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 2: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Show the<b><i> British
+Breeds </i></b>PowerPoint<i><sup>®</sup><b> </b></i>segment. </span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>This segment is 14 slides long. </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>Be sure to utilize the <b>Key Concepts</b> for this segment
+of the lesson.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>Slide 48: Have a discussion with students about common traits
+among the British breeds.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 3: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Administer the <b>British
+Breeds Check for Understanding</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>The
+check for understanding is a short review of the content presented in the
+segment.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 4: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students should begin
+the <b>Cattle Breeds Flashcards Activity</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>Students will develop a set of flashcards to practice their
+knowledge of cattle breeds and their characteristics.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 5: Exit Ticket:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have
+students provide a progress update on the <b>Cattle Breeds Flashcards Activity</b>.
+</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+</div>
+<div class="class-block" id="class-4" data-class="4"><p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#165DA2'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Class 4</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Class Overview:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Continental Breeds </span></i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Microsoft<sup>®</sup>
+PowerPoint<sup>®</sup> Segment<i> </i></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Action Plan</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Key Concepts</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Continental Breeds
+Check for Understanding</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Cattle Breeds
+Flashcards Activity</span></p>
+
+<p class=MsoListParagraph style='margin:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Essential Questions:</span></b></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>What are the origins,
+physical characteristics, traits and usages of continental breeds?</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif;background:yellow'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 1: Bell Ringer:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span class=normaltextrun><span style='font-size:12.0pt;
+font-family:"Arial",sans-serif'>Have students brainstorm answers to </span></span><span class=normaltextrun><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>the question, “</span></span><span class=normaltextrun><span style='font-size:12.0pt;font-family:"Arial",sans-serif;color:windowtext'>which
+countries do continental cattle breeds originate from</span></span><span class=normaltextrun><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>”. Lead students to discuss their responses.</span></span><span class=eop><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>&nbsp;</span></span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 2: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Show the<b><i> Continental
+Breeds </i></b>PowerPoint<i><sup>®</sup><b> </b></i>segment. </span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>This
+segment is 20 slides long. </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Be
+sure to utilize the <b>Key Concepts</b> for this segment of the lesson.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>Slide 68: Have a discussion with students about the common
+traits of continental breeds.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 3: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Administer the <b>Continental
+Breeds Check for Understanding</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>The
+check for understanding is a short review of the content presented in the
+segment.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 4: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students should continue
+the <b>Cattle Breeds Flashcards Activity</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>Students will develop a set of flashcards to practice their
+knowledge of cattle breeds and their characteristics.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 5: Exit Ticket:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span class=normaltextrun><span style='font-size:12.0pt;
+font-family:"Arial",sans-serif'>Have students write down three statements about
+the topic of the lesson, two truths and a lie</span></span><span class=eop><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>. Once complete, students
+should exchange statements with a partner to figure out which statement is the
+lie. </span></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+</div>
+<div class="class-block" id="class-5" data-class="5"><p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#165DA2'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Class 5</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Class Overview:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>American Breeds </span></i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Microsoft<sup>®</sup>
+PowerPoint<sup>®</sup> Segment<i> </i></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Action Plan</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Key Concepts</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>American Breeds Check
+for Understanding</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Cattle Breeds
+Flashcards Activity</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Build a Breed Project</span></p>
+
+<p class=MsoListParagraph style='margin:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Essential Questions:</span></b></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:.25in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>What are the origins,
+physical characteristics, traits and usages of American breeds?</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif;background:yellow'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 1: Bell Ringer:</span></b></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span class=eop><span style='font-size:12.0pt;font-family:
+Symbol;color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><span class=normaltextrun><i><span style='font-size:12.0pt;
+font-family:"Arial",sans-serif'>Think, Pair, Share</span></i></span><span class=normaltextrun><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>:
+Pose the following question to students and have them consider their response
+for one or two minutes before asking them to get into groups and share their
+responses.</span></span><span class=eop><span style='font-size:12.0pt;
+font-family:"Arial",sans-serif'>&nbsp;</span></span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+margin-bottom:0in;margin-left:1.0in;text-indent:-.25in;line-height:normal'><span style='font-size:12.0pt;font-family:Symbol'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Cattle
+are not native to the U.S., meaning foundation stock was imported at some
+point. What are you expecting American breeds of cattle to be like?</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 2: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Show the<b><i> American
+Breeds </i></b>PowerPoint<i><sup>®</sup><b> </b></i>segment. </span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>This
+segment is 17 slides long. </span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Be
+sure to utilize the <b>Key Concepts</b> for this segment of the lesson.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 3: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Administer the <b>American
+Breeds Check for Understanding</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>The
+check for understanding is a short review of the content presented in the
+segment.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 4: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students should complete
+the <b>Cattle Breeds Flashcards Activity</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>Students will develop a set of flashcards to practice their
+knowledge of cattle breeds and their characteristics.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 5: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students should begin
+the <b>Build a Breed Project</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students
+will create their own crossbred or composite cattle breed which would suit
+their local area well.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 6: Exit Ticket:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have
+students provide a progress update on the <b>Build a Breed Project</b>.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+</div>
+<div class="class-block" id="class-6" data-class="6"><p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#165DA2'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Class 6</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Class Overview:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Action Plan</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Build a Breed Project</span></p>
+
+<p class=MsoListParagraph style='margin:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 1: Bell Ringer:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have
+students define the terms purebred, crossbred and composite in their own words.
+Review the correct definitions as a class.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 2: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students should begin
+the <b>Build a Breed Project</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students
+will create their own crossbred or composite cattle breed which would suit
+their local area well.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 3: Exit Ticket:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have
+students provide a progress update on the <b>Build a Breed Project</b>. </span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;color:red'> </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+</div>
+<div class="class-block" id="class-7" data-class="7"><p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#165DA2'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Class 7 </span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Class Overview:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Action Plan</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Cattle Breeds
+Flashcards Activity</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Breeds of Livestock:
+Cattle Final Assessment</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Build a Breed Project</span></p>
+
+<p class=MsoListParagraph style='margin:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 1: Bell Ringer:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have
+students use the flashcards from the <b>Cattle Breeds Flashcards Activity</b>
+to review for the assessment.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 2: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Administer the <b>Breeds
+of Livestock: Cattle Final Assessment</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>The
+assessment is a comprehensive assessment covering material throughout the
+entire lesson.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 3: </span></b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students should
+complete the <b>Build a Breed Project</b>.</span></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif;
+color:windowtext'>Stude</span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>nts
+will create their own crossbred or composite cattle breed which would suit
+their local area well.</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+margin-left:.5in;text-indent:-.5in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Step 4: Exit Ticket:</span></b></p>
+
+<p class=MsoListParagraph style='margin-bottom:0in;text-indent:-.25in;
+line-height:normal'><span style='font-size:12.0pt;font-family:Symbol;
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have
+students turn in their <b>Build a Breed Project</b>.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><a name="_Hlk119339943"><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></a></p>
+
+</div>
+<div class="pack-appendix" id="pack-appendix"><div class="appendix-banner">Pack appendix (not part of any Class episode — activity accommodations, CTSO, career connections, copyright)</div><p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#3D861B'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Activity Overview</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Dairy Decisions</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students will select
+dairy cattle breeds for the given scenarios. </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></i></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Accommodations</span></i></b><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have students work with
+a partner to complete the activity.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Modifications</span></i></b><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have students only
+respond to two scenarios.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Extension</span></i></b><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have students compare
+their answers with others and discuss the similarities or differences in their
+responses.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><u><span style='font-size:12.0pt;font-family:"Arial",sans-serif'><span style='text-decoration:
+ none'>&nbsp;</span></span></u></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><u><span style='font-size:12.0pt;font-family:"Arial",sans-serif'><span style='text-decoration:
+ none'>&nbsp;</span></span></u></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Trivia Game Exit Ticket</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>In teams, students will
+compete against one another in a game of trivia about dairy, Asian and African
+cattle breeds.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Accommodations</span></i></b><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Provide trivia
+questions both orally and in a written format for students to reference.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Modifications</span></i></b><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have students write
+their responses to only half of the trivia questions asked.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Extension</span></i></b><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have students come up
+with their own trivia questions to ask the other team. </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Cattle Breed Flashcards</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students will develop a
+set of flashcards to practice their knowledge of cattle breeds and their
+characteristics.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Accommodations</span></i></b><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Provide students
+additional time as needed.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Modifications</span></i></b><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have students complete
+flashcards for only five to seven breeds. </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Extension</span></i></b><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have students devise a
+review game utilizing their flashcards and play it. </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#3D861B'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Project
+Overview</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:14.0pt;font-family:"Arial",sans-serif'>Build a Breed</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Students will create their
+own crossbred or composite cattle breed which would suit their local area well.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Accommodations:</span></i></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Allow students to work
+with a partner. </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Modifications:</span></i></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have students complete
+only half the required components of the project.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><i><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Extension:</span></i></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Have students debate on
+which new breed is best suited to the local area.</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#3D861B'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Career
+&amp; Technical Student Organizations</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>National FFA Organization</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Livestock Judging</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal;background:#3D861B'><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:white'>Career
+Connections</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Using the <b>Career
+Connections Activity</b> allows students to explore careers associated with
+this lesson by viewing career interviews with various industry professionals.
+The career interviews are located in the Select Media drop-down menu on the
+lesson page. See the <b>Career Connections Activity</b> for more details. </span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Dale Spencer,
+President-Elect, Nebraska Cattlemen</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Emmet Callahan, Cattle
+Buyer and Cattle Farmer</span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;line-height:normal'><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>Jim Johnson, Cattle
+Producer</span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><b><span style='font-size:12.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;text-align:center;
+line-height:normal'><img width=624 height=41 id="Picture 1" src="CEV71836_V2_HTML_Lesson_Plan_files/image001.png" alt="iCEV Multimedia, LLC - This document is protected under copyright law.  Any unauthorized reproduction will be a violation of law and will be subject to legal action.  "></p>
+
+</div>
+
+</div></div>
+      </div>
+    </div>
+    <aside class="sidebar">
+      <div class="side-head">
+        <h2>Per-episode A5 scorecard</h2>
+        <p>Same Hunter checklist as Path A — scoped to each episode only.</p>
+      </div>
+      <div class="score-list" id="scoreList">
+        <button type="button" class="score-row mid" data-class="1">
+  <span class="n">Class 1</span>
+  <span class="hunter">6/8</span>
+  <span class="topic">Dairy Breeds Microsoft ® PowerPoint ® Segment Action Plan Vocabulary Handout Key Concepts Dairy Breeds Check for Underst</span>
+  <span class="miss">guided_practice, independent_practice</span>
+</button><button type="button" class="score-row mid" data-class="2">
+  <span class="n">Class 2</span>
+  <span class="hunter">6/8</span>
+  <span class="topic">Asian &amp; African Breeds Microsoft ® PowerPoint ® Segment Action Plan Key Concepts Asian &amp; African Breeds Check for Unders</span>
+  <span class="miss">guided_practice, independent_practice</span>
+</button><button type="button" class="score-row mid" data-class="3">
+  <span class="n">Class 3</span>
+  <span class="hunter">6/8</span>
+  <span class="topic">British Breeds Microsoft ® PowerPoint ® Segment Action Plan Key Concepts British Breeds Check for Understanding Cattle B</span>
+  <span class="miss">guided_practice, independent_practice</span>
+</button><button type="button" class="score-row mid" data-class="4">
+  <span class="n">Class 4</span>
+  <span class="hunter">6/8</span>
+  <span class="topic">Continental Breeds Microsoft ® PowerPoint ® Segment Action Plan Key Concepts Continental Breeds Check for Understanding </span>
+  <span class="miss">guided_practice, independent_practice</span>
+</button><button type="button" class="score-row ok" data-class="5">
+  <span class="n">Class 5</span>
+  <span class="hunter">7/8</span>
+  <span class="topic">American Breeds Microsoft ® PowerPoint ® Segment Action Plan Key Concepts American Breeds Check for Understanding Cattle</span>
+  <span class="miss">guided_practice</span>
+</button><button type="button" class="score-row bad" data-class="6">
+  <span class="n">Class 6</span>
+  <span class="hunter">4/8</span>
+  <span class="topic">Action Plan Build a Breed Project</span>
+  <span class="miss">objective_purpose, input, modeling, guided_practice</span>
+</button><button type="button" class="score-row bad" data-class="7">
+  <span class="n">Class 7</span>
+  <span class="hunter">4/8</span>
+  <span class="topic">Action Plan Cattle Breeds Flashcards Activity Breeds of Livestock: Cattle Final Assessment Build a Breed Project</span>
+  <span class="miss">objective_purpose, input, modeling, guided_practice</span>
+</button>
+      </div>
+      <div class="detail" id="detail">
+        <div class="matrix" data-class="1" hidden><h3>Class 1 · Path A checks</h3><p class="pack-note">Pack overview A2 TEKS: <em class="missing">MISSING</em> (often in header, not each day)</p><ul class="checks"><li class="missing"><b>A2 TEKS</b><em>MISSING</em></li><li class="present"><b>A2 Objectives</b><em>PRESENT</em></li><li class="partial"><b>A3 Coherence</b><em>PARTIAL</em></li><li class="missing"><b>A4 Formative</b><em>MISSING</em></li><li class="missing"><b>A4 Summative</b><em>MISSING</em></li><li class="present"><b>A6 Fields placed</b><em>8 present / 6 missing</em></li><li class="missing"><b>A7 ELPS</b><em>MISSING</em></li><li class="missing"><b>A7 Accommodations</b><em>MISSING</em></li></ul><p class="a6-miss"><b>A6 missing fields:</b> lesson_title, materials, guided_practice, independent_practice, elps_language, accommodations</p><h4>A5 Hunter matrix</h4><ul><li class="present"><b>1. Anticipatory set (hook / Do Now / Engage)</b> <em>PRESENT</em></li><li class="present"><b>2. Objective &amp; purpose (stated to students)</b> <em>PRESENT</em></li><li class="present"><b>3. Input (teach content / vocabulary)</b> <em>PRESENT</em></li><li class="present"><b>4. Modeling (I do / demonstrate)</b> <em>PRESENT</em></li><li class="present"><b>5. Check for understanding</b> <em>PRESENT</em></li><li class="missing"><b>6. Guided practice (We do)</b> <em>MISSING</em></li><li class="missing"><b>7. Independent practice (You do)</b> <em>MISSING</em></li><li class="present"><b>8. Closure</b> <em>PRESENT</em></li></ul></div><div class="matrix" data-class="2" hidden><h3>Class 2 · Path A checks</h3><p class="pack-note">Pack overview A2 TEKS: <em class="missing">MISSING</em> (often in header, not each day)</p><ul class="checks"><li class="missing"><b>A2 TEKS</b><em>MISSING</em></li><li class="missing"><b>A2 Objectives</b><em>MISSING</em></li><li class="partial"><b>A3 Coherence</b><em>PARTIAL</em></li><li class="present"><b>A4 Formative</b><em>PRESENT</em></li><li class="missing"><b>A4 Summative</b><em>MISSING</em></li><li class="present"><b>A6 Fields placed</b><em>7 present / 7 missing</em></li><li class="missing"><b>A7 ELPS</b><em>MISSING</em></li><li class="missing"><b>A7 Accommodations</b><em>MISSING</em></li></ul><p class="a6-miss"><b>A6 missing fields:</b> lesson_title, materials, objective_purpose, guided_practice, independent_practice, elps_language, accommodations</p><h4>A5 Hunter matrix</h4><ul><li class="present"><b>1. Anticipatory set (hook / Do Now / Engage)</b> <em>PRESENT</em></li><li class="present"><b>2. Objective &amp; purpose (stated to students)</b> <em>PRESENT</em></li><li class="present"><b>3. Input (teach content / vocabulary)</b> <em>PRESENT</em></li><li class="present"><b>4. Modeling (I do / demonstrate)</b> <em>PRESENT</em></li><li class="present"><b>5. Check for understanding</b> <em>PRESENT</em></li><li class="missing"><b>6. Guided practice (We do)</b> <em>MISSING</em></li><li class="missing"><b>7. Independent practice (You do)</b> <em>MISSING</em></li><li class="present"><b>8. Closure</b> <em>PRESENT</em></li></ul></div><div class="matrix" data-class="3" hidden><h3>Class 3 · Path A checks</h3><p class="pack-note">Pack overview A2 TEKS: <em class="missing">MISSING</em> (often in header, not each day)</p><ul class="checks"><li class="missing"><b>A2 TEKS</b><em>MISSING</em></li><li class="present"><b>A2 Objectives</b><em>PRESENT</em></li><li class="partial"><b>A3 Coherence</b><em>PARTIAL</em></li><li class="missing"><b>A4 Formative</b><em>MISSING</em></li><li class="missing"><b>A4 Summative</b><em>MISSING</em></li><li class="present"><b>A6 Fields placed</b><em>8 present / 6 missing</em></li><li class="missing"><b>A7 ELPS</b><em>MISSING</em></li><li class="missing"><b>A7 Accommodations</b><em>MISSING</em></li></ul><p class="a6-miss"><b>A6 missing fields:</b> lesson_title, materials, guided_practice, independent_practice, elps_language, accommodations</p><h4>A5 Hunter matrix</h4><ul><li class="present"><b>1. Anticipatory set (hook / Do Now / Engage)</b> <em>PRESENT</em></li><li class="present"><b>2. Objective &amp; purpose (stated to students)</b> <em>PRESENT</em></li><li class="present"><b>3. Input (teach content / vocabulary)</b> <em>PRESENT</em></li><li class="present"><b>4. Modeling (I do / demonstrate)</b> <em>PRESENT</em></li><li class="present"><b>5. Check for understanding</b> <em>PRESENT</em></li><li class="missing"><b>6. Guided practice (We do)</b> <em>MISSING</em></li><li class="missing"><b>7. Independent practice (You do)</b> <em>MISSING</em></li><li class="present"><b>8. Closure</b> <em>PRESENT</em></li></ul></div><div class="matrix" data-class="4" hidden><h3>Class 4 · Path A checks</h3><p class="pack-note">Pack overview A2 TEKS: <em class="missing">MISSING</em> (often in header, not each day)</p><ul class="checks"><li class="missing"><b>A2 TEKS</b><em>MISSING</em></li><li class="present"><b>A2 Objectives</b><em>PRESENT</em></li><li class="partial"><b>A3 Coherence</b><em>PARTIAL</em></li><li class="missing"><b>A4 Formative</b><em>MISSING</em></li><li class="missing"><b>A4 Summative</b><em>MISSING</em></li><li class="present"><b>A6 Fields placed</b><em>8 present / 6 missing</em></li><li class="missing"><b>A7 ELPS</b><em>MISSING</em></li><li class="missing"><b>A7 Accommodations</b><em>MISSING</em></li></ul><p class="a6-miss"><b>A6 missing fields:</b> lesson_title, materials, guided_practice, independent_practice, elps_language, accommodations</p><h4>A5 Hunter matrix</h4><ul><li class="present"><b>1. Anticipatory set (hook / Do Now / Engage)</b> <em>PRESENT</em></li><li class="present"><b>2. Objective &amp; purpose (stated to students)</b> <em>PRESENT</em></li><li class="present"><b>3. Input (teach content / vocabulary)</b> <em>PRESENT</em></li><li class="present"><b>4. Modeling (I do / demonstrate)</b> <em>PRESENT</em></li><li class="present"><b>5. Check for understanding</b> <em>PRESENT</em></li><li class="missing"><b>6. Guided practice (We do)</b> <em>MISSING</em></li><li class="missing"><b>7. Independent practice (You do)</b> <em>MISSING</em></li><li class="present"><b>8. Closure</b> <em>PRESENT</em></li></ul></div><div class="matrix" data-class="5" hidden><h3>Class 5 · Path A checks</h3><p class="pack-note">Pack overview A2 TEKS: <em class="missing">MISSING</em> (often in header, not each day)</p><ul class="checks"><li class="missing"><b>A2 TEKS</b><em>MISSING</em></li><li class="present"><b>A2 Objectives</b><em>PRESENT</em></li><li class="partial"><b>A3 Coherence</b><em>PARTIAL</em></li><li class="missing"><b>A4 Formative</b><em>MISSING</em></li><li class="missing"><b>A4 Summative</b><em>MISSING</em></li><li class="present"><b>A6 Fields placed</b><em>9 present / 5 missing</em></li><li class="missing"><b>A7 ELPS</b><em>MISSING</em></li><li class="missing"><b>A7 Accommodations</b><em>MISSING</em></li></ul><p class="a6-miss"><b>A6 missing fields:</b> lesson_title, materials, guided_practice, elps_language, accommodations</p><h4>A5 Hunter matrix</h4><ul><li class="present"><b>1. Anticipatory set (hook / Do Now / Engage)</b> <em>PRESENT</em></li><li class="present"><b>2. Objective &amp; purpose (stated to students)</b> <em>PRESENT</em></li><li class="present"><b>3. Input (teach content / vocabulary)</b> <em>PRESENT</em></li><li class="present"><b>4. Modeling (I do / demonstrate)</b> <em>PRESENT</em></li><li class="present"><b>5. Check for understanding</b> <em>PRESENT</em></li><li class="missing"><b>6. Guided practice (We do)</b> <em>MISSING</em></li><li class="present"><b>7. Independent practice (You do)</b> <em>PRESENT</em></li><li class="present"><b>8. Closure</b> <em>PRESENT</em></li></ul></div><div class="matrix" data-class="6" hidden><h3>Class 6 · Path A checks</h3><p class="pack-note">Pack overview A2 TEKS: <em class="missing">MISSING</em> (often in header, not each day)</p><ul class="checks"><li class="missing"><b>A2 TEKS</b><em>MISSING</em></li><li class="missing"><b>A2 Objectives</b><em>MISSING</em></li><li class="partial"><b>A3 Coherence</b><em>PARTIAL</em></li><li class="present"><b>A4 Formative</b><em>PRESENT</em></li><li class="missing"><b>A4 Summative</b><em>MISSING</em></li><li class="present"><b>A6 Fields placed</b><em>4 present / 10 missing</em></li><li class="missing"><b>A7 ELPS</b><em>MISSING</em></li><li class="missing"><b>A7 Accommodations</b><em>MISSING</em></li></ul><p class="a6-miss"><b>A6 missing fields:</b> lesson_title, learning_objective, teks, materials, objective_purpose, input, modeling, guided_practice, elps_language, accommodations</p><h4>A5 Hunter matrix</h4><ul><li class="present"><b>1. Anticipatory set (hook / Do Now / Engage)</b> <em>PRESENT</em></li><li class="missing"><b>2. Objective &amp; purpose (stated to students)</b> <em>MISSING</em></li><li class="missing"><b>3. Input (teach content / vocabulary)</b> <em>MISSING</em></li><li class="missing"><b>4. Modeling (I do / demonstrate)</b> <em>MISSING</em></li><li class="present"><b>5. Check for understanding</b> <em>PRESENT</em></li><li class="missing"><b>6. Guided practice (We do)</b> <em>MISSING</em></li><li class="present"><b>7. Independent practice (You do)</b> <em>PRESENT</em></li><li class="present"><b>8. Closure</b> <em>PRESENT</em></li></ul></div><div class="matrix" data-class="7" hidden><h3>Class 7 · Path A checks</h3><p class="pack-note">Pack overview A2 TEKS: <em class="missing">MISSING</em> (often in header, not each day)</p><ul class="checks"><li class="missing"><b>A2 TEKS</b><em>MISSING</em></li><li class="missing"><b>A2 Objectives</b><em>MISSING</em></li><li class="partial"><b>A3 Coherence</b><em>PARTIAL</em></li><li class="present"><b>A4 Formative</b><em>PRESENT</em></li><li class="missing"><b>A4 Summative</b><em>MISSING</em></li><li class="present"><b>A6 Fields placed</b><em>4 present / 10 missing</em></li><li class="missing"><b>A7 ELPS</b><em>MISSING</em></li><li class="missing"><b>A7 Accommodations</b><em>MISSING</em></li></ul><p class="a6-miss"><b>A6 missing fields:</b> lesson_title, learning_objective, teks, materials, objective_purpose, input, modeling, guided_practice, elps_language, accommodations</p><h4>A5 Hunter matrix</h4><ul><li class="present"><b>1. Anticipatory set (hook / Do Now / Engage)</b> <em>PRESENT</em></li><li class="missing"><b>2. Objective &amp; purpose (stated to students)</b> <em>MISSING</em></li><li class="missing"><b>3. Input (teach content / vocabulary)</b> <em>MISSING</em></li><li class="missing"><b>4. Modeling (I do / demonstrate)</b> <em>MISSING</em></li><li class="present"><b>5. Check for understanding</b> <em>PRESENT</em></li><li class="missing"><b>6. Guided practice (We do)</b> <em>MISSING</em></li><li class="present"><b>7. Independent practice (You do)</b> <em>PRESENT</em></li><li class="present"><b>8. Closure</b> <em>PRESENT</em></li></ul></div>
+        <p class="hint" id="emptyHint">Select an episode to see its A5 matrix.</p>
+      </div>
+      <div class="hint">
+        Over SSH open:
+        <code>http://100.85.15.59:8778/PATH-A-CATTLE-PER-CLASS-REVIEW.html</code>
+      </div>
+    </aside>
+  </div>
+</div>
+<script>
+const SCORES = [{"class_num": 1, "title": "Class 1", "topic": "Dairy Breeds Microsoft ® PowerPoint ® Segment Action Plan Vocabulary Handout Key Concepts Dairy Breeds Check for Underst", "char_count": 1607, "element_count": 10, "hunter_core_present": 6, "hunter_core_total": 8, "missing": ["guided_practice", "independent_practice"], "present": ["anticipatory_set", "objective_purpose", "input", "modeling", "check_for_understanding", "closure"], "matrix": [{"id": "anticipatory_set", "label": "1. Anticipatory set (hook / Do Now / Engage)", "status": "PRESENT", "cite": "Step 1: Bell Ringer:   ·   Display an image of a Holstein cow, Brahman cow and Angus cow. Have students consider the question “what differences do you see physically in these three breeds of cattle, and how may this impact their use in livestock production”. Lead a discussion of their responses."}, {"id": "objective_purpose", "label": "2. Objective & purpose (stated to students)", "status": "PRESENT", "cite": "Essential Questions:   1. What general terminology is associated with cattle?   2. What are the origins, physical characteristics, traits and usages of dairy breeds?"}, {"id": "input", "label": "3. Input (teach content / vocabulary)", "status": "PRESENT", "cite": "Class Overview:   Dairy Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Vocabulary Handout   Key Concepts   Dairy Breeds Check for Understanding   Dairy Decisions Activity"}, {"id": "modeling", "label": "4. Modeling (I do / demonstrate)", "status": "PRESENT", "cite": "Class Overview:   Dairy Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Vocabulary Handout   Key Concepts   Dairy Breeds Check for Understanding   Dairy Decisions Activity"}, {"id": "check_for_understanding", "label": "5. Check for understanding", "status": "PRESENT", "cite": "Step 4: Administer the Dairy Breeds Check for Understanding .   ·   The check for understanding is a short review of the content presented in the segment."}, {"id": "guided_practice", "label": "6. Guided practice (We do)", "status": "MISSING", "cite": ""}, {"id": "independent_practice", "label": "7. Independent practice (You do)", "status": "MISSING", "cite": ""}, {"id": "closure", "label": "8. Closure", "status": "PRESENT", "cite": "Step 6: Exit Ticket:   ·   Have students turn in the Dairy Decisions Activity ."}], "steps": {"A2": {"step": "A2", "teks": {"status": "MISSING", "count": 0, "cites": []}, "objective": {"status": "PRESENT", "count": 2, "cites": ["Step 5: Students should complete the Dairy Decisions Activity.   ·   Students will select dairy cattle breeds for the given scenarios.", "Class 1   Class Overview:   Dairy Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Vocabulary Handout   Key Concepts   Dairy Breeds Check for Understanding   Dairy Decisions Activity   Essential Questions:   1. What general terminology is associated with cattle?   2. What are the origins, physical characteristics, traits and usages of dairy breeds?   Step 1: Bell Ringer:   ·   Display an image of a Holstein cow, Brahman cow and Angus cow. Have students consider the question “what…"]}}, "A3": {"step": "A3", "has_objective": true, "has_activities": true, "has_assessment": false, "mismatches": ["objective_without_assessment"], "status": "PARTIAL"}, "A4": {"step": "A4", "formative": {"status": "MISSING", "items": []}, "summative": {"status": "MISSING", "items": []}}, "A5": {"step": "A5", "hunter_core_present": 6, "hunter_core_total": 8, "matrix": [{"id": "anticipatory_set", "label": "1. Anticipatory set (hook / Do Now / Engage)", "status": "PRESENT", "cite": "Step 1: Bell Ringer:   ·   Display an image of a Holstein cow, Brahman cow and Angus cow. Have students consider the question “what differences do you see physically in these three breeds of cattle, and how may this impact their use in livestock production”. Lead a discussion of their responses."}, {"id": "objective_purpose", "label": "2. Objective & purpose (stated to students)", "status": "PRESENT", "cite": "Essential Questions:   1. What general terminology is associated with cattle?   2. What are the origins, physical characteristics, traits and usages of dairy breeds?"}, {"id": "input", "label": "3. Input (teach content / vocabulary)", "status": "PRESENT", "cite": "Class Overview:   Dairy Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Vocabulary Handout   Key Concepts   Dairy Breeds Check for Understanding   Dairy Decisions Activity"}, {"id": "modeling", "label": "4. Modeling (I do / demonstrate)", "status": "PRESENT", "cite": "Class Overview:   Dairy Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Vocabulary Handout   Key Concepts   Dairy Breeds Check for Understanding   Dairy Decisions Activity"}, {"id": "check_for_understanding", "label": "5. Check for understanding", "status": "PRESENT", "cite": "Step 4: Administer the Dairy Breeds Check for Understanding .   ·   The check for understanding is a short review of the content presented in the segment."}, {"id": "guided_practice", "label": "6. Guided practice (We do)", "status": "MISSING", "cite": ""}, {"id": "independent_practice", "label": "7. Independent practice (You do)", "status": "MISSING", "cite": ""}, {"id": "closure", "label": "8. Closure", "status": "PRESENT", "cite": "Step 6: Exit Ticket:   ·   Have students turn in the Dairy Decisions Activity ."}]}, "A6": {"method": "code_fallback", "present": 8, "missing": 6, "missing_fields": ["lesson_title", "materials", "guided_practice", "independent_practice", "elps_language", "accommodations"], "fields": {"lesson_title": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "learning_objective": {"status": "PRESENT", "text": "Essential Questions:   1. What general terminology is associated with cattle?   2. What are the origins, physical characteristics, traits and usages of dairy breeds?", "sources": [""], "element_id": "class-1-e3"}, "teks": {"status": "PRESENT", "text": "Essential Questions:   1. What general terminology is associated with cattle?   2. What are the origins, physical characteristics, traits and usages of dairy breeds?", "sources": [""], "element_id": "class-1-e3"}, "materials": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "anticipatory_set": {"status": "PRESENT", "text": "Step 1: Bell Ringer:   ·   Display an image of a Holstein cow, Brahman cow and Angus cow. Have students consider the question “what differences do you see physically in these three breeds of cattle, and how may this impact their use in livestock production”. Lead a discussion of their responses.", "sources": [""], "element_id": "class-1-e4"}, "objective_purpose": {"status": "PRESENT", "text": "Step 5: Students should complete the Dairy Decisions Activity.   ·   Students will select dairy cattle breeds for the given scenarios.", "sources": [""], "element_id": "class-1-e8"}, "input": {"status": "PRESENT", "text": "Class Overview:   Dairy Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Vocabulary Handout   Key Concepts   Dairy Breeds Check for Understanding   Dairy Decisions Activity", "sources": [""], "element_id": "class-1-e2"}, "modeling": {"status": "PRESENT", "text": "Step 2: Distribute the Action Plan , Vocabulary Handout and Key Concepts .   ·   The  Action Plan lays out a list of tasks for students to complete during the lesson.   ·   The  Vocabulary Handout is a list of terms used throughout the lesson.   ·   The  Key Concepts is an outline which identifies the main ideas presented in the lesson which students can fill in to aid in note taking during the lesson.", "sources": [""], "element_id": "class-1-e5"}, "check_for_understanding": {"status": "PRESENT", "text": "Step 4: Administer the Dairy Breeds Check for Understanding .   ·   The check for understanding is a short review of the content presented in the segment.", "sources": [""], "element_id": "class-1-e7"}, "guided_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "independent_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "closure": {"status": "PRESENT", "text": "Step 6: Exit Ticket:   ·   Have students turn in the Dairy Decisions Activity .", "sources": [""], "element_id": "class-1-e9"}, "elps_language": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "accommodations": {"status": "MISSING", "text": "", "sources": [], "element_id": null}}}, "A7": {"step": "A7", "elps": {"status": "MISSING", "cites": []}, "accommodations": {"status": "MISSING", "cites": []}}}, "pack_overview": {"A2": {"step": "A2", "teks": {"status": "MISSING", "count": 0, "cites": []}, "objective": {"status": "PRESENT", "count": 1, "cites": ["Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"]}}, "A3": {"step": "A3", "has_objective": true, "has_activities": false, "has_assessment": false, "mismatches": ["objective_without_assessment"], "status": "PARTIAL"}, "A4": {"step": "A4", "formative": {"status": "MISSING", "items": []}, "summative": {"status": "MISSING", "items": []}}, "A5": {"step": "A5", "hunter_core_present": 2, "hunter_core_total": 8, "matrix": [{"id": "anticipatory_set", "label": "1. Anticipatory set (hook / Do Now / Engage)", "status": "MISSING", "cite": ""}, {"id": "objective_purpose", "label": "2. Objective & purpose (stated to students)", "status": "PRESENT", "cite": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"}, {"id": "input", "label": "3. Input (teach content / vocabulary)", "status": "PRESENT", "cite": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"}, {"id": "modeling", "label": "4. Modeling (I do / demonstrate)", "status": "MISSING", "cite": ""}, {"id": "check_for_understanding", "label": "5. Check for understanding", "status": "MISSING", "cite": ""}, {"id": "guided_practice", "label": "6. Guided practice (We do)", "status": "MISSING", "cite": ""}, {"id": "independent_practice", "label": "7. Independent practice (You do)", "status": "MISSING", "cite": ""}, {"id": "closure", "label": "8. Closure", "status": "MISSING", "cite": ""}]}, "A6": {"method": "code_fallback", "present": 3, "missing": 11, "missing_fields": ["lesson_title", "materials", "anticipatory_set", "objective_purpose", "input", "modeling", "check_for_understanding", "guided_practice", "independent_practice", "closure", "accommodations"], "fields": {"lesson_title": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "learning_objective": {"status": "PRESENT", "text": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "sources": [""], "element_id": "class-0-e1"}, "teks": {"status": "PRESENT", "text": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "sources": [""], "element_id": "class-0-e1"}, "materials": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "anticipatory_set": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "objective_purpose": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "input": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "modeling": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "check_for_understanding": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "guided_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "independent_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "closure": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "elps_language": {"status": "PRESENT", "text": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "sources": [""], "element_id": "class-0-e1"}, "accommodations": {"status": "MISSING", "text": "", "sources": [], "element_id": null}}}, "A7": {"step": "A7", "elps": {"status": "PRESENT", "cites": ["Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"]}, "accommodations": {"status": "MISSING", "cites": []}}}}, {"class_num": 2, "title": "Class 2", "topic": "Asian & African Breeds Microsoft ® PowerPoint ® Segment Action Plan Key Concepts Asian & African Breeds Check for Unders", "char_count": 1188, "element_count": 8, "hunter_core_present": 6, "hunter_core_total": 8, "missing": ["guided_practice", "independent_practice"], "present": ["anticipatory_set", "objective_purpose", "input", "modeling", "check_for_understanding", "closure"], "matrix": [{"id": "anticipatory_set", "label": "1. Anticipatory set (hook / Do Now / Engage)", "status": "PRESENT", "cite": "Step 1: Bell Ringer:   ·   Show students an image or video of one of the breeds in this segment . Have students write down the first word which comes to mind. Discuss students’ answers as a class."}, {"id": "objective_purpose", "label": "2. Objective & purpose (stated to students)", "status": "PRESENT", "cite": "Essential Questions:   1. What are the origins, physical characteristics, traits and usages of Asian and African breeds?   2. What physical characteristics make these breeds well-suited to hot, humid climates?"}, {"id": "input", "label": "3. Input (teach content / vocabulary)", "status": "PRESENT", "cite": "Class Overview:   Asian & African Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Asian & African Breeds Check for Understanding   Trivia Game Exit Ticket Activity"}, {"id": "modeling", "label": "4. Modeling (I do / demonstrate)", "status": "PRESENT", "cite": "Class Overview:   Asian & African Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Asian & African Breeds Check for Understanding   Trivia Game Exit Ticket Activity"}, {"id": "check_for_understanding", "label": "5. Check for understanding", "status": "PRESENT", "cite": "Class 2   Class Overview:   Asian & African Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Asian & African Breeds Check for Understanding   Trivia Game Exit Ticket Activity   Essential Questions:   1. What are the origins, physical characteristics, traits and usages of Asian and African breeds?   2. What physical characteristics make these breeds well-suited to hot, humid climates?   Step 1: Bell Ringer:   ·   Show students an image or video of one of the breeds in…"}, {"id": "guided_practice", "label": "6. Guided practice (We do)", "status": "MISSING", "cite": ""}, {"id": "independent_practice", "label": "7. Independent practice (You do)", "status": "MISSING", "cite": ""}, {"id": "closure", "label": "8. Closure", "status": "PRESENT", "cite": "Step 4: Exit Ticket:   ·   Have students complete the Trivia Game Exit Ticket Activity , then turn it in before leaving class."}], "steps": {"A2": {"step": "A2", "teks": {"status": "MISSING", "count": 0, "cites": []}, "objective": {"status": "MISSING", "count": 0, "cites": []}}, "A3": {"step": "A3", "has_objective": false, "has_activities": true, "has_assessment": true, "mismatches": ["activities_without_objective", "assessment_without_objective"], "status": "PARTIAL"}, "A4": {"step": "A4", "formative": {"status": "PRESENT", "items": [{"element_id": "class-2-full", "excerpt": "Class 2   Class Overview:   Asian & African Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Asian & African Breeds Check for Understanding   Trivia Game Exit Ticket Activity   Essential Questions:   1. What are the origins, physical characteristics, traits and usages of Asian and African breeds?   2. What physical characteristics make these breeds well-suited to hot, humid climates?   Step 1: Bell Ringer:   ·   Show students an image or video of one of the breeds in…"}]}, "summative": {"status": "MISSING", "items": []}}, "A5": {"step": "A5", "hunter_core_present": 6, "hunter_core_total": 8, "matrix": [{"id": "anticipatory_set", "label": "1. Anticipatory set (hook / Do Now / Engage)", "status": "PRESENT", "cite": "Step 1: Bell Ringer:   ·   Show students an image or video of one of the breeds in this segment . Have students write down the first word which comes to mind. Discuss students’ answers as a class."}, {"id": "objective_purpose", "label": "2. Objective & purpose (stated to students)", "status": "PRESENT", "cite": "Essential Questions:   1. What are the origins, physical characteristics, traits and usages of Asian and African breeds?   2. What physical characteristics make these breeds well-suited to hot, humid climates?"}, {"id": "input", "label": "3. Input (teach content / vocabulary)", "status": "PRESENT", "cite": "Class Overview:   Asian & African Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Asian & African Breeds Check for Understanding   Trivia Game Exit Ticket Activity"}, {"id": "modeling", "label": "4. Modeling (I do / demonstrate)", "status": "PRESENT", "cite": "Class Overview:   Asian & African Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Asian & African Breeds Check for Understanding   Trivia Game Exit Ticket Activity"}, {"id": "check_for_understanding", "label": "5. Check for understanding", "status": "PRESENT", "cite": "Class 2   Class Overview:   Asian & African Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Asian & African Breeds Check for Understanding   Trivia Game Exit Ticket Activity   Essential Questions:   1. What are the origins, physical characteristics, traits and usages of Asian and African breeds?   2. What physical characteristics make these breeds well-suited to hot, humid climates?   Step 1: Bell Ringer:   ·   Show students an image or video of one of the breeds in…"}, {"id": "guided_practice", "label": "6. Guided practice (We do)", "status": "MISSING", "cite": ""}, {"id": "independent_practice", "label": "7. Independent practice (You do)", "status": "MISSING", "cite": ""}, {"id": "closure", "label": "8. Closure", "status": "PRESENT", "cite": "Step 4: Exit Ticket:   ·   Have students complete the Trivia Game Exit Ticket Activity , then turn it in before leaving class."}]}, "A6": {"method": "code_fallback", "present": 7, "missing": 7, "missing_fields": ["lesson_title", "materials", "objective_purpose", "guided_practice", "independent_practice", "elps_language", "accommodations"], "fields": {"lesson_title": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "learning_objective": {"status": "PRESENT", "text": "Essential Questions:   1. What are the origins, physical characteristics, traits and usages of Asian and African breeds?   2. What physical characteristics make these breeds well-suited to hot, humid climates?", "sources": [""], "element_id": "class-2-e3"}, "teks": {"status": "PRESENT", "text": "Essential Questions:   1. What are the origins, physical characteristics, traits and usages of Asian and African breeds?   2. What physical characteristics make these breeds well-suited to hot, humid climates?", "sources": [""], "element_id": "class-2-e3"}, "materials": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "anticipatory_set": {"status": "PRESENT", "text": "Step 1: Bell Ringer:   ·   Show students an image or video of one of the breeds in this segment . Have students write down the first word which comes to mind. Discuss students’ answers as a class.", "sources": [""], "element_id": "class-2-e4"}, "objective_purpose": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "input": {"status": "PRESENT", "text": "Class Overview:   Asian & African Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Asian & African Breeds Check for Understanding   Trivia Game Exit Ticket Activity", "sources": [""], "element_id": "class-2-e2"}, "modeling": {"status": "PRESENT", "text": "Step 2: Show the Asian & African Breeds PowerPoint ® segment.   ·   This segment is 10 slides long.   ·   Be sure to utilize the Key Concepts for this segment of the lesson.   ·   Slide 34: Have a discussion with students about the physical adaptations of Asian and African breeds.", "sources": [""], "element_id": "class-2-e5"}, "check_for_understanding": {"status": "PRESENT", "text": "Class 2   Class Overview:   Asian & African Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Asian & African Breeds Check for Understanding   Trivia Game Exit Ticket Activity   Essential Questions:   1. What are the origins, physical characteristics, traits and usages of Asian and African breeds?   2. What physical characteristics make these breeds well-suited to hot, humid climates?   Step 1: Bell Ringer:   ·   Show students an image or video of one of the breeds in…", "sources": [""], "element_id": "class-2-full"}, "guided_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "independent_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "closure": {"status": "PRESENT", "text": "Step 4: Exit Ticket:   ·   Have students complete the Trivia Game Exit Ticket Activity , then turn it in before leaving class.", "sources": [""], "element_id": "class-2-e7"}, "elps_language": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "accommodations": {"status": "MISSING", "text": "", "sources": [], "element_id": null}}}, "A7": {"step": "A7", "elps": {"status": "MISSING", "cites": []}, "accommodations": {"status": "MISSING", "cites": []}}}, "pack_overview": {"A2": {"step": "A2", "teks": {"status": "MISSING", "count": 0, "cites": []}, "objective": {"status": "PRESENT", "count": 1, "cites": ["Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"]}}, "A3": {"step": "A3", "has_objective": true, "has_activities": false, "has_assessment": false, "mismatches": ["objective_without_assessment"], "status": "PARTIAL"}, "A4": {"step": "A4", "formative": {"status": "MISSING", "items": []}, "summative": {"status": "MISSING", "items": []}}, "A5": {"step": "A5", "hunter_core_present": 2, "hunter_core_total": 8, "matrix": [{"id": "anticipatory_set", "label": "1. Anticipatory set (hook / Do Now / Engage)", "status": "MISSING", "cite": ""}, {"id": "objective_purpose", "label": "2. Objective & purpose (stated to students)", "status": "PRESENT", "cite": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"}, {"id": "input", "label": "3. Input (teach content / vocabulary)", "status": "PRESENT", "cite": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"}, {"id": "modeling", "label": "4. Modeling (I do / demonstrate)", "status": "MISSING", "cite": ""}, {"id": "check_for_understanding", "label": "5. Check for understanding", "status": "MISSING", "cite": ""}, {"id": "guided_practice", "label": "6. Guided practice (We do)", "status": "MISSING", "cite": ""}, {"id": "independent_practice", "label": "7. Independent practice (You do)", "status": "MISSING", "cite": ""}, {"id": "closure", "label": "8. Closure", "status": "MISSING", "cite": ""}]}, "A6": {"method": "code_fallback", "present": 3, "missing": 11, "missing_fields": ["lesson_title", "materials", "anticipatory_set", "objective_purpose", "input", "modeling", "check_for_understanding", "guided_practice", "independent_practice", "closure", "accommodations"], "fields": {"lesson_title": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "learning_objective": {"status": "PRESENT", "text": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "sources": [""], "element_id": "class-0-e1"}, "teks": {"status": "PRESENT", "text": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "sources": [""], "element_id": "class-0-e1"}, "materials": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "anticipatory_set": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "objective_purpose": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "input": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "modeling": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "check_for_understanding": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "guided_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "independent_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "closure": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "elps_language": {"status": "PRESENT", "text": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "sources": [""], "element_id": "class-0-e1"}, "accommodations": {"status": "MISSING", "text": "", "sources": [], "element_id": null}}}, "A7": {"step": "A7", "elps": {"status": "PRESENT", "cites": ["Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"]}, "accommodations": {"status": "MISSING", "cites": []}}}}, {"class_num": 3, "title": "Class 3", "topic": "British Breeds Microsoft ® PowerPoint ® Segment Action Plan Key Concepts British Breeds Check for Understanding Cattle B", "char_count": 1138, "element_count": 9, "hunter_core_present": 6, "hunter_core_total": 8, "missing": ["guided_practice", "independent_practice"], "present": ["anticipatory_set", "objective_purpose", "input", "modeling", "check_for_understanding", "closure"], "matrix": [{"id": "anticipatory_set", "label": "1. Anticipatory set (hook / Do Now / Engage)", "status": "PRESENT", "cite": "Step 1: Bell Ringer:   ·   Have students list some of the countries Asian and African breeds come from as a review."}, {"id": "objective_purpose", "label": "2. Objective & purpose (stated to students)", "status": "PRESENT", "cite": "Essential Questions:   1. What are the origins, physical characteristics, traits and usages of British breeds?"}, {"id": "input", "label": "3. Input (teach content / vocabulary)", "status": "PRESENT", "cite": "Class Overview:   British Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   British Breeds Check for Understanding   Cattle Breeds Flashcards Activity"}, {"id": "modeling", "label": "4. Modeling (I do / demonstrate)", "status": "PRESENT", "cite": "Class Overview:   British Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   British Breeds Check for Understanding   Cattle Breeds Flashcards Activity"}, {"id": "check_for_understanding", "label": "5. Check for understanding", "status": "PRESENT", "cite": "Step 3: Administer the British Breeds Check for Understanding .   ·   The check for understanding is a short review of the content presented in the segment."}, {"id": "guided_practice", "label": "6. Guided practice (We do)", "status": "MISSING", "cite": ""}, {"id": "independent_practice", "label": "7. Independent practice (You do)", "status": "MISSING", "cite": ""}, {"id": "closure", "label": "8. Closure", "status": "PRESENT", "cite": "Step 5: Exit Ticket:   ·   Have students provide a progress update on the Cattle Breeds Flashcards Activity ."}], "steps": {"A2": {"step": "A2", "teks": {"status": "MISSING", "count": 0, "cites": []}, "objective": {"status": "PRESENT", "count": 2, "cites": ["Step 4: Students should begin the Cattle Breeds Flashcards Activity .   ·   Students will develop a set of flashcards to practice their knowledge of cattle breeds and their characteristics.", "Class 3   Class Overview:   British Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   British Breeds Check for Understanding   Cattle Breeds Flashcards Activity   Essential Questions:   1. What are the origins, physical characteristics, traits and usages of British breeds?   Step 1: Bell Ringer:   ·   Have students list some of the countries Asian and African breeds come from as a review.   Step 2: Show the British Breeds PowerPoint ® segment.   ·   This segment is 14…"]}}, "A3": {"step": "A3", "has_objective": true, "has_activities": true, "has_assessment": false, "mismatches": ["objective_without_assessment"], "status": "PARTIAL"}, "A4": {"step": "A4", "formative": {"status": "MISSING", "items": []}, "summative": {"status": "MISSING", "items": []}}, "A5": {"step": "A5", "hunter_core_present": 6, "hunter_core_total": 8, "matrix": [{"id": "anticipatory_set", "label": "1. Anticipatory set (hook / Do Now / Engage)", "status": "PRESENT", "cite": "Step 1: Bell Ringer:   ·   Have students list some of the countries Asian and African breeds come from as a review."}, {"id": "objective_purpose", "label": "2. Objective & purpose (stated to students)", "status": "PRESENT", "cite": "Essential Questions:   1. What are the origins, physical characteristics, traits and usages of British breeds?"}, {"id": "input", "label": "3. Input (teach content / vocabulary)", "status": "PRESENT", "cite": "Class Overview:   British Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   British Breeds Check for Understanding   Cattle Breeds Flashcards Activity"}, {"id": "modeling", "label": "4. Modeling (I do / demonstrate)", "status": "PRESENT", "cite": "Class Overview:   British Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   British Breeds Check for Understanding   Cattle Breeds Flashcards Activity"}, {"id": "check_for_understanding", "label": "5. Check for understanding", "status": "PRESENT", "cite": "Step 3: Administer the British Breeds Check for Understanding .   ·   The check for understanding is a short review of the content presented in the segment."}, {"id": "guided_practice", "label": "6. Guided practice (We do)", "status": "MISSING", "cite": ""}, {"id": "independent_practice", "label": "7. Independent practice (You do)", "status": "MISSING", "cite": ""}, {"id": "closure", "label": "8. Closure", "status": "PRESENT", "cite": "Step 5: Exit Ticket:   ·   Have students provide a progress update on the Cattle Breeds Flashcards Activity ."}]}, "A6": {"method": "code_fallback", "present": 8, "missing": 6, "missing_fields": ["lesson_title", "materials", "guided_practice", "independent_practice", "elps_language", "accommodations"], "fields": {"lesson_title": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "learning_objective": {"status": "PRESENT", "text": "Essential Questions:   1. What are the origins, physical characteristics, traits and usages of British breeds?", "sources": [""], "element_id": "class-3-e3"}, "teks": {"status": "PRESENT", "text": "Essential Questions:   1. What are the origins, physical characteristics, traits and usages of British breeds?", "sources": [""], "element_id": "class-3-e3"}, "materials": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "anticipatory_set": {"status": "PRESENT", "text": "Step 1: Bell Ringer:   ·   Have students list some of the countries Asian and African breeds come from as a review.", "sources": [""], "element_id": "class-3-e4"}, "objective_purpose": {"status": "PRESENT", "text": "Step 4: Students should begin the Cattle Breeds Flashcards Activity .   ·   Students will develop a set of flashcards to practice their knowledge of cattle breeds and their characteristics.", "sources": [""], "element_id": "class-3-e7"}, "input": {"status": "PRESENT", "text": "Class Overview:   British Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   British Breeds Check for Understanding   Cattle Breeds Flashcards Activity", "sources": [""], "element_id": "class-3-e2"}, "modeling": {"status": "PRESENT", "text": "Step 2: Show the British Breeds PowerPoint ® segment.   ·   This segment is 14 slides long.   ·   Be sure to utilize the Key Concepts for this segment of the lesson.   ·   Slide 48: Have a discussion with students about common traits among the British breeds.", "sources": [""], "element_id": "class-3-e5"}, "check_for_understanding": {"status": "PRESENT", "text": "Step 3: Administer the British Breeds Check for Understanding .   ·   The check for understanding is a short review of the content presented in the segment.", "sources": [""], "element_id": "class-3-e6"}, "guided_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "independent_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "closure": {"status": "PRESENT", "text": "Step 5: Exit Ticket:   ·   Have students provide a progress update on the Cattle Breeds Flashcards Activity .", "sources": [""], "element_id": "class-3-e8"}, "elps_language": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "accommodations": {"status": "MISSING", "text": "", "sources": [], "element_id": null}}}, "A7": {"step": "A7", "elps": {"status": "MISSING", "cites": []}, "accommodations": {"status": "MISSING", "cites": []}}}, "pack_overview": {"A2": {"step": "A2", "teks": {"status": "MISSING", "count": 0, "cites": []}, "objective": {"status": "PRESENT", "count": 1, "cites": ["Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"]}}, "A3": {"step": "A3", "has_objective": true, "has_activities": false, "has_assessment": false, "mismatches": ["objective_without_assessment"], "status": "PARTIAL"}, "A4": {"step": "A4", "formative": {"status": "MISSING", "items": []}, "summative": {"status": "MISSING", "items": []}}, "A5": {"step": "A5", "hunter_core_present": 2, "hunter_core_total": 8, "matrix": [{"id": "anticipatory_set", "label": "1. Anticipatory set (hook / Do Now / Engage)", "status": "MISSING", "cite": ""}, {"id": "objective_purpose", "label": "2. Objective & purpose (stated to students)", "status": "PRESENT", "cite": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"}, {"id": "input", "label": "3. Input (teach content / vocabulary)", "status": "PRESENT", "cite": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"}, {"id": "modeling", "label": "4. Modeling (I do / demonstrate)", "status": "MISSING", "cite": ""}, {"id": "check_for_understanding", "label": "5. Check for understanding", "status": "MISSING", "cite": ""}, {"id": "guided_practice", "label": "6. Guided practice (We do)", "status": "MISSING", "cite": ""}, {"id": "independent_practice", "label": "7. Independent practice (You do)", "status": "MISSING", "cite": ""}, {"id": "closure", "label": "8. Closure", "status": "MISSING", "cite": ""}]}, "A6": {"method": "code_fallback", "present": 3, "missing": 11, "missing_fields": ["lesson_title", "materials", "anticipatory_set", "objective_purpose", "input", "modeling", "check_for_understanding", "guided_practice", "independent_practice", "closure", "accommodations"], "fields": {"lesson_title": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "learning_objective": {"status": "PRESENT", "text": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "sources": [""], "element_id": "class-0-e1"}, "teks": {"status": "PRESENT", "text": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "sources": [""], "element_id": "class-0-e1"}, "materials": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "anticipatory_set": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "objective_purpose": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "input": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "modeling": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "check_for_understanding": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "guided_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "independent_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "closure": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "elps_language": {"status": "PRESENT", "text": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "sources": [""], "element_id": "class-0-e1"}, "accommodations": {"status": "MISSING", "text": "", "sources": [], "element_id": null}}}, "A7": {"step": "A7", "elps": {"status": "PRESENT", "cites": ["Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"]}, "accommodations": {"status": "MISSING", "cites": []}}}}, {"class_num": 4, "title": "Class 4", "topic": "Continental Breeds Microsoft ® PowerPoint ® Segment Action Plan Key Concepts Continental Breeds Check for Understanding ", "char_count": 1351, "element_count": 9, "hunter_core_present": 6, "hunter_core_total": 8, "missing": ["guided_practice", "independent_practice"], "present": ["anticipatory_set", "objective_purpose", "input", "modeling", "check_for_understanding", "closure"], "matrix": [{"id": "anticipatory_set", "label": "1. Anticipatory set (hook / Do Now / Engage)", "status": "PRESENT", "cite": "Step 1: Bell Ringer:   ·   Have students brainstorm answers to the question, “ which countries do continental cattle breeds originate from ”. Lead students to discuss their responses."}, {"id": "objective_purpose", "label": "2. Objective & purpose (stated to students)", "status": "PRESENT", "cite": "Essential Questions:   1. What are the origins, physical characteristics, traits and usages of continental breeds?"}, {"id": "input", "label": "3. Input (teach content / vocabulary)", "status": "PRESENT", "cite": "Class Overview:   Continental Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Continental Breeds Check for Understanding   Cattle Breeds Flashcards Activity"}, {"id": "modeling", "label": "4. Modeling (I do / demonstrate)", "status": "PRESENT", "cite": "Class Overview:   Continental Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Continental Breeds Check for Understanding   Cattle Breeds Flashcards Activity"}, {"id": "check_for_understanding", "label": "5. Check for understanding", "status": "PRESENT", "cite": "Class Overview:   Continental Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Continental Breeds Check for Understanding   Cattle Breeds Flashcards Activity"}, {"id": "guided_practice", "label": "6. Guided practice (We do)", "status": "MISSING", "cite": ""}, {"id": "independent_practice", "label": "7. Independent practice (You do)", "status": "MISSING", "cite": ""}, {"id": "closure", "label": "8. Closure", "status": "PRESENT", "cite": "Step 5: Exit Ticket:   ·   Have students write down three statements about the topic of the lesson, two truths and a lie . Once complete, students should exchange statements with a partner to figure out which statement is the lie."}], "steps": {"A2": {"step": "A2", "teks": {"status": "MISSING", "count": 0, "cites": []}, "objective": {"status": "PRESENT", "count": 2, "cites": ["Step 4: Students should continue the Cattle Breeds Flashcards Activity .   ·   Students will develop a set of flashcards to practice their knowledge of cattle breeds and their characteristics.", "Class 4   Class Overview:   Continental Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Continental Breeds Check for Understanding   Cattle Breeds Flashcards Activity   Essential Questions:   1. What are the origins, physical characteristics, traits and usages of continental breeds?   Step 1: Bell Ringer:   ·   Have students brainstorm answers to the question, “ which countries do continental cattle breeds originate from ”. Lead students to discuss their responses.  …"]}}, "A3": {"step": "A3", "has_objective": true, "has_activities": true, "has_assessment": false, "mismatches": ["objective_without_assessment"], "status": "PARTIAL"}, "A4": {"step": "A4", "formative": {"status": "MISSING", "items": []}, "summative": {"status": "MISSING", "items": []}}, "A5": {"step": "A5", "hunter_core_present": 6, "hunter_core_total": 8, "matrix": [{"id": "anticipatory_set", "label": "1. Anticipatory set (hook / Do Now / Engage)", "status": "PRESENT", "cite": "Step 1: Bell Ringer:   ·   Have students brainstorm answers to the question, “ which countries do continental cattle breeds originate from ”. Lead students to discuss their responses."}, {"id": "objective_purpose", "label": "2. Objective & purpose (stated to students)", "status": "PRESENT", "cite": "Essential Questions:   1. What are the origins, physical characteristics, traits and usages of continental breeds?"}, {"id": "input", "label": "3. Input (teach content / vocabulary)", "status": "PRESENT", "cite": "Class Overview:   Continental Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Continental Breeds Check for Understanding   Cattle Breeds Flashcards Activity"}, {"id": "modeling", "label": "4. Modeling (I do / demonstrate)", "status": "PRESENT", "cite": "Class Overview:   Continental Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Continental Breeds Check for Understanding   Cattle Breeds Flashcards Activity"}, {"id": "check_for_understanding", "label": "5. Check for understanding", "status": "PRESENT", "cite": "Class Overview:   Continental Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Continental Breeds Check for Understanding   Cattle Breeds Flashcards Activity"}, {"id": "guided_practice", "label": "6. Guided practice (We do)", "status": "MISSING", "cite": ""}, {"id": "independent_practice", "label": "7. Independent practice (You do)", "status": "MISSING", "cite": ""}, {"id": "closure", "label": "8. Closure", "status": "PRESENT", "cite": "Step 5: Exit Ticket:   ·   Have students write down three statements about the topic of the lesson, two truths and a lie . Once complete, students should exchange statements with a partner to figure out which statement is the lie."}]}, "A6": {"method": "code_fallback", "present": 8, "missing": 6, "missing_fields": ["lesson_title", "materials", "guided_practice", "independent_practice", "elps_language", "accommodations"], "fields": {"lesson_title": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "learning_objective": {"status": "PRESENT", "text": "Essential Questions:   1. What are the origins, physical characteristics, traits and usages of continental breeds?", "sources": [""], "element_id": "class-4-e3"}, "teks": {"status": "PRESENT", "text": "Essential Questions:   1. What are the origins, physical characteristics, traits and usages of continental breeds?", "sources": [""], "element_id": "class-4-e3"}, "materials": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "anticipatory_set": {"status": "PRESENT", "text": "Step 1: Bell Ringer:   ·   Have students brainstorm answers to the question, “ which countries do continental cattle breeds originate from ”. Lead students to discuss their responses.", "sources": [""], "element_id": "class-4-e4"}, "objective_purpose": {"status": "PRESENT", "text": "Step 4: Students should continue the Cattle Breeds Flashcards Activity .   ·   Students will develop a set of flashcards to practice their knowledge of cattle breeds and their characteristics.", "sources": [""], "element_id": "class-4-e7"}, "input": {"status": "PRESENT", "text": "Class Overview:   Continental Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Continental Breeds Check for Understanding   Cattle Breeds Flashcards Activity", "sources": [""], "element_id": "class-4-e2"}, "modeling": {"status": "PRESENT", "text": "Step 2: Show the Continental Breeds PowerPoint ® segment.   ·   This segment is 20 slides long.   ·   Be sure to utilize the Key Concepts for this segment of the lesson.   ·   Slide 68: Have a discussion with students about the common traits of continental breeds.", "sources": [""], "element_id": "class-4-e5"}, "check_for_understanding": {"status": "PRESENT", "text": "Step 3: Administer the Continental Breeds Check for Understanding .   ·   The check for understanding is a short review of the content presented in the segment.", "sources": [""], "element_id": "class-4-e6"}, "guided_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "independent_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "closure": {"status": "PRESENT", "text": "Step 5: Exit Ticket:   ·   Have students write down three statements about the topic of the lesson, two truths and a lie . Once complete, students should exchange statements with a partner to figure out which statement is the lie.", "sources": [""], "element_id": "class-4-e8"}, "elps_language": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "accommodations": {"status": "MISSING", "text": "", "sources": [], "element_id": null}}}, "A7": {"step": "A7", "elps": {"status": "MISSING", "cites": []}, "accommodations": {"status": "MISSING", "cites": []}}}, "pack_overview": {"A2": {"step": "A2", "teks": {"status": "MISSING", "count": 0, "cites": []}, "objective": {"status": "PRESENT", "count": 1, "cites": ["Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"]}}, "A3": {"step": "A3", "has_objective": true, "has_activities": false, "has_assessment": false, "mismatches": ["objective_without_assessment"], "status": "PARTIAL"}, "A4": {"step": "A4", "formative": {"status": "MISSING", "items": []}, "summative": {"status": "MISSING", "items": []}}, "A5": {"step": "A5", "hunter_core_present": 2, "hunter_core_total": 8, "matrix": [{"id": "anticipatory_set", "label": "1. Anticipatory set (hook / Do Now / Engage)", "status": "MISSING", "cite": ""}, {"id": "objective_purpose", "label": "2. Objective & purpose (stated to students)", "status": "PRESENT", "cite": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"}, {"id": "input", "label": "3. Input (teach content / vocabulary)", "status": "PRESENT", "cite": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"}, {"id": "modeling", "label": "4. Modeling (I do / demonstrate)", "status": "MISSING", "cite": ""}, {"id": "check_for_understanding", "label": "5. Check for understanding", "status": "MISSING", "cite": ""}, {"id": "guided_practice", "label": "6. Guided practice (We do)", "status": "MISSING", "cite": ""}, {"id": "independent_practice", "label": "7. Independent practice (You do)", "status": "MISSING", "cite": ""}, {"id": "closure", "label": "8. Closure", "status": "MISSING", "cite": ""}]}, "A6": {"method": "code_fallback", "present": 3, "missing": 11, "missing_fields": ["lesson_title", "materials", "anticipatory_set", "objective_purpose", "input", "modeling", "check_for_understanding", "guided_practice", "independent_practice", "closure", "accommodations"], "fields": {"lesson_title": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "learning_objective": {"status": "PRESENT", "text": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "sources": [""], "element_id": "class-0-e1"}, "teks": {"status": "PRESENT", "text": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "sources": [""], "element_id": "class-0-e1"}, "materials": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "anticipatory_set": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "objective_purpose": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "input": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "modeling": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "check_for_understanding": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "guided_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "independent_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "closure": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "elps_language": {"status": "PRESENT", "text": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "sources": [""], "element_id": "class-0-e1"}, "accommodations": {"status": "MISSING", "text": "", "sources": [], "element_id": null}}}, "A7": {"step": "A7", "elps": {"status": "PRESENT", "cites": ["Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"]}, "accommodations": {"status": "MISSING", "cites": []}}}}, {"class_num": 5, "title": "Class 5", "topic": "American Breeds Microsoft ® PowerPoint ® Segment Action Plan Key Concepts American Breeds Check for Understanding Cattle", "char_count": 1490, "element_count": 10, "hunter_core_present": 7, "hunter_core_total": 8, "missing": ["guided_practice"], "present": ["anticipatory_set", "objective_purpose", "input", "modeling", "check_for_understanding", "independent_practice", "closure"], "matrix": [{"id": "anticipatory_set", "label": "1. Anticipatory set (hook / Do Now / Engage)", "status": "PRESENT", "cite": "Step 1: Bell Ringer:   ·   Think, Pair, Share : Pose the following question to students and have them consider their response for one or two minutes before asking them to get into groups and share their responses.   -   Cattle are not native to the U.S., meaning foundation stock was imported at some point. What are you expecting American breeds of cattle to be like?"}, {"id": "objective_purpose", "label": "2. Objective & purpose (stated to students)", "status": "PRESENT", "cite": "Essential Questions:   1. What are the origins, physical characteristics, traits and usages of American breeds?"}, {"id": "input", "label": "3. Input (teach content / vocabulary)", "status": "PRESENT", "cite": "Class Overview:   American Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   American Breeds Check for Understanding   Cattle Breeds Flashcards Activity   Build a Breed Project"}, {"id": "modeling", "label": "4. Modeling (I do / demonstrate)", "status": "PRESENT", "cite": "Class Overview:   American Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   American Breeds Check for Understanding   Cattle Breeds Flashcards Activity   Build a Breed Project"}, {"id": "check_for_understanding", "label": "5. Check for understanding", "status": "PRESENT", "cite": "Step 3: Administer the American Breeds Check for Understanding .   ·   The check for understanding is a short review of the content presented in the segment."}, {"id": "guided_practice", "label": "6. Guided practice (We do)", "status": "MISSING", "cite": ""}, {"id": "independent_practice", "label": "7. Independent practice (You do)", "status": "PRESENT", "cite": "Step 5: Students should begin the Build a Breed Project .   ·   Students will create their own crossbred or composite cattle breed which would suit their local area well."}, {"id": "closure", "label": "8. Closure", "status": "PRESENT", "cite": "Step 6: Exit Ticket:   ·   Have students provide a progress update on the Build a Breed Project ."}], "steps": {"A2": {"step": "A2", "teks": {"status": "MISSING", "count": 0, "cites": []}, "objective": {"status": "PRESENT", "count": 2, "cites": ["Step 4: Students should complete the Cattle Breeds Flashcards Activity .   ·   Students will develop a set of flashcards to practice their knowledge of cattle breeds and their characteristics.", "Class 5   Class Overview:   American Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   American Breeds Check for Understanding   Cattle Breeds Flashcards Activity   Build a Breed Project   Essential Questions:   1. What are the origins, physical characteristics, traits and usages of American breeds?   Step 1: Bell Ringer:   ·   Think, Pair, Share : Pose the following question to students and have them consider their response for one or two minutes before asking them to…"]}}, "A3": {"step": "A3", "has_objective": true, "has_activities": true, "has_assessment": false, "mismatches": ["objective_without_assessment"], "status": "PARTIAL"}, "A4": {"step": "A4", "formative": {"status": "MISSING", "items": []}, "summative": {"status": "MISSING", "items": []}}, "A5": {"step": "A5", "hunter_core_present": 7, "hunter_core_total": 8, "matrix": [{"id": "anticipatory_set", "label": "1. Anticipatory set (hook / Do Now / Engage)", "status": "PRESENT", "cite": "Step 1: Bell Ringer:   ·   Think, Pair, Share : Pose the following question to students and have them consider their response for one or two minutes before asking them to get into groups and share their responses.   -   Cattle are not native to the U.S., meaning foundation stock was imported at some point. What are you expecting American breeds of cattle to be like?"}, {"id": "objective_purpose", "label": "2. Objective & purpose (stated to students)", "status": "PRESENT", "cite": "Essential Questions:   1. What are the origins, physical characteristics, traits and usages of American breeds?"}, {"id": "input", "label": "3. Input (teach content / vocabulary)", "status": "PRESENT", "cite": "Class Overview:   American Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   American Breeds Check for Understanding   Cattle Breeds Flashcards Activity   Build a Breed Project"}, {"id": "modeling", "label": "4. Modeling (I do / demonstrate)", "status": "PRESENT", "cite": "Class Overview:   American Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   American Breeds Check for Understanding   Cattle Breeds Flashcards Activity   Build a Breed Project"}, {"id": "check_for_understanding", "label": "5. Check for understanding", "status": "PRESENT", "cite": "Step 3: Administer the American Breeds Check for Understanding .   ·   The check for understanding is a short review of the content presented in the segment."}, {"id": "guided_practice", "label": "6. Guided practice (We do)", "status": "MISSING", "cite": ""}, {"id": "independent_practice", "label": "7. Independent practice (You do)", "status": "PRESENT", "cite": "Step 5: Students should begin the Build a Breed Project .   ·   Students will create their own crossbred or composite cattle breed which would suit their local area well."}, {"id": "closure", "label": "8. Closure", "status": "PRESENT", "cite": "Step 6: Exit Ticket:   ·   Have students provide a progress update on the Build a Breed Project ."}]}, "A6": {"method": "code_fallback", "present": 9, "missing": 5, "missing_fields": ["lesson_title", "materials", "guided_practice", "elps_language", "accommodations"], "fields": {"lesson_title": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "learning_objective": {"status": "PRESENT", "text": "Essential Questions:   1. What are the origins, physical characteristics, traits and usages of American breeds?", "sources": [""], "element_id": "class-5-e3"}, "teks": {"status": "PRESENT", "text": "Essential Questions:   1. What are the origins, physical characteristics, traits and usages of American breeds?", "sources": [""], "element_id": "class-5-e3"}, "materials": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "anticipatory_set": {"status": "PRESENT", "text": "Step 1: Bell Ringer:   ·   Think, Pair, Share : Pose the following question to students and have them consider their response for one or two minutes before asking them to get into groups and share their responses.   -   Cattle are not native to the U.S., meaning foundation stock was imported at some point. What are you expecting American breeds of cattle to be like?", "sources": [""], "element_id": "class-5-e4"}, "objective_purpose": {"status": "PRESENT", "text": "Step 4: Students should complete the Cattle Breeds Flashcards Activity .   ·   Students will develop a set of flashcards to practice their knowledge of cattle breeds and their characteristics.", "sources": [""], "element_id": "class-5-e7"}, "input": {"status": "PRESENT", "text": "Class Overview:   American Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   American Breeds Check for Understanding   Cattle Breeds Flashcards Activity   Build a Breed Project", "sources": [""], "element_id": "class-5-e2"}, "modeling": {"status": "PRESENT", "text": "Step 2: Show the American Breeds PowerPoint ® segment.   ·   This segment is 17 slides long.   ·   Be sure to utilize the Key Concepts for this segment of the lesson.", "sources": [""], "element_id": "class-5-e5"}, "check_for_understanding": {"status": "PRESENT", "text": "Step 3: Administer the American Breeds Check for Understanding .   ·   The check for understanding is a short review of the content presented in the segment.", "sources": [""], "element_id": "class-5-e6"}, "guided_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "independent_practice": {"status": "PRESENT", "text": "Step 5: Students should begin the Build a Breed Project .   ·   Students will create their own crossbred or composite cattle breed which would suit their local area well.", "sources": [""], "element_id": "class-5-e8"}, "closure": {"status": "PRESENT", "text": "Step 6: Exit Ticket:   ·   Have students provide a progress update on the Build a Breed Project .", "sources": [""], "element_id": "class-5-e9"}, "elps_language": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "accommodations": {"status": "MISSING", "text": "", "sources": [], "element_id": null}}}, "A7": {"step": "A7", "elps": {"status": "MISSING", "cites": []}, "accommodations": {"status": "MISSING", "cites": []}}}, "pack_overview": {"A2": {"step": "A2", "teks": {"status": "MISSING", "count": 0, "cites": []}, "objective": {"status": "PRESENT", "count": 1, "cites": ["Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"]}}, "A3": {"step": "A3", "has_objective": true, "has_activities": false, "has_assessment": false, "mismatches": ["objective_without_assessment"], "status": "PARTIAL"}, "A4": {"step": "A4", "formative": {"status": "MISSING", "items": []}, "summative": {"status": "MISSING", "items": []}}, "A5": {"step": "A5", "hunter_core_present": 2, "hunter_core_total": 8, "matrix": [{"id": "anticipatory_set", "label": "1. Anticipatory set (hook / Do Now / Engage)", "status": "MISSING", "cite": ""}, {"id": "objective_purpose", "label": "2. Objective & purpose (stated to students)", "status": "PRESENT", "cite": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"}, {"id": "input", "label": "3. Input (teach content / vocabulary)", "status": "PRESENT", "cite": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"}, {"id": "modeling", "label": "4. Modeling (I do / demonstrate)", "status": "MISSING", "cite": ""}, {"id": "check_for_understanding", "label": "5. Check for understanding", "status": "MISSING", "cite": ""}, {"id": "guided_practice", "label": "6. Guided practice (We do)", "status": "MISSING", "cite": ""}, {"id": "independent_practice", "label": "7. Independent practice (You do)", "status": "MISSING", "cite": ""}, {"id": "closure", "label": "8. Closure", "status": "MISSING", "cite": ""}]}, "A6": {"method": "code_fallback", "present": 3, "missing": 11, "missing_fields": ["lesson_title", "materials", "anticipatory_set", "objective_purpose", "input", "modeling", "check_for_understanding", "guided_practice", "independent_practice", "closure", "accommodations"], "fields": {"lesson_title": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "learning_objective": {"status": "PRESENT", "text": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "sources": [""], "element_id": "class-0-e1"}, "teks": {"status": "PRESENT", "text": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "sources": [""], "element_id": "class-0-e1"}, "materials": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "anticipatory_set": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "objective_purpose": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "input": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "modeling": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "check_for_understanding": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "guided_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "independent_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "closure": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "elps_language": {"status": "PRESENT", "text": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "sources": [""], "element_id": "class-0-e1"}, "accommodations": {"status": "MISSING", "text": "", "sources": [], "element_id": null}}}, "A7": {"step": "A7", "elps": {"status": "PRESENT", "cites": ["Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"]}, "accommodations": {"status": "MISSING", "cites": []}}}}, {"class_num": 6, "title": "Class 6", "topic": "Action Plan Build a Breed Project", "char_count": 493, "element_count": 6, "hunter_core_present": 4, "hunter_core_total": 8, "missing": ["objective_purpose", "input", "modeling", "guided_practice"], "present": ["anticipatory_set", "check_for_understanding", "independent_practice", "closure"], "matrix": [{"id": "anticipatory_set", "label": "1. Anticipatory set (hook / Do Now / Engage)", "status": "PRESENT", "cite": "Step 1: Bell Ringer:   ·   Have students define the terms purebred, crossbred and composite in their own words. Review the correct definitions as a class."}, {"id": "objective_purpose", "label": "2. Objective & purpose (stated to students)", "status": "MISSING", "cite": ""}, {"id": "input", "label": "3. Input (teach content / vocabulary)", "status": "MISSING", "cite": ""}, {"id": "modeling", "label": "4. Modeling (I do / demonstrate)", "status": "MISSING", "cite": ""}, {"id": "check_for_understanding", "label": "5. Check for understanding", "status": "PRESENT", "cite": "Class 6   Class Overview:   Action Plan   Build a Breed Project   Step 1: Bell Ringer:   ·   Have students define the terms purebred, crossbred and composite in their own words. Review the correct definitions as a class.   Step 2: Students should begin the Build a Breed Project .   ·   Students will create their own crossbred or composite cattle breed which would suit their local area well.   Step 3: Exit Ticket:   ·   Have students provide a progress update on the Build a Breed Project ."}, {"id": "guided_practice", "label": "6. Guided practice (We do)", "status": "MISSING", "cite": ""}, {"id": "independent_practice", "label": "7. Independent practice (You do)", "status": "PRESENT", "cite": "Class Overview:   Action Plan   Build a Breed Project"}, {"id": "closure", "label": "8. Closure", "status": "PRESENT", "cite": "Step 3: Exit Ticket:   ·   Have students provide a progress update on the Build a Breed Project ."}], "steps": {"A2": {"step": "A2", "teks": {"status": "MISSING", "count": 0, "cites": []}, "objective": {"status": "MISSING", "count": 0, "cites": []}}, "A3": {"step": "A3", "has_objective": false, "has_activities": true, "has_assessment": true, "mismatches": ["activities_without_objective", "assessment_without_objective"], "status": "PARTIAL"}, "A4": {"step": "A4", "formative": {"status": "PRESENT", "items": [{"element_id": "class-6-full", "excerpt": "Class 6   Class Overview:   Action Plan   Build a Breed Project   Step 1: Bell Ringer:   ·   Have students define the terms purebred, crossbred and composite in their own words. Review the correct definitions as a class.   Step 2: Students should begin the Build a Breed Project .   ·   Students will create their own crossbred or composite cattle breed which would suit their local area well.   Step 3: Exit Ticket:   ·   Have students provide a progress update on the Build a Breed Project ."}]}, "summative": {"status": "MISSING", "items": []}}, "A5": {"step": "A5", "hunter_core_present": 4, "hunter_core_total": 8, "matrix": [{"id": "anticipatory_set", "label": "1. Anticipatory set (hook / Do Now / Engage)", "status": "PRESENT", "cite": "Step 1: Bell Ringer:   ·   Have students define the terms purebred, crossbred and composite in their own words. Review the correct definitions as a class."}, {"id": "objective_purpose", "label": "2. Objective & purpose (stated to students)", "status": "MISSING", "cite": ""}, {"id": "input", "label": "3. Input (teach content / vocabulary)", "status": "MISSING", "cite": ""}, {"id": "modeling", "label": "4. Modeling (I do / demonstrate)", "status": "MISSING", "cite": ""}, {"id": "check_for_understanding", "label": "5. Check for understanding", "status": "PRESENT", "cite": "Class 6   Class Overview:   Action Plan   Build a Breed Project   Step 1: Bell Ringer:   ·   Have students define the terms purebred, crossbred and composite in their own words. Review the correct definitions as a class.   Step 2: Students should begin the Build a Breed Project .   ·   Students will create their own crossbred or composite cattle breed which would suit their local area well.   Step 3: Exit Ticket:   ·   Have students provide a progress update on the Build a Breed Project ."}, {"id": "guided_practice", "label": "6. Guided practice (We do)", "status": "MISSING", "cite": ""}, {"id": "independent_practice", "label": "7. Independent practice (You do)", "status": "PRESENT", "cite": "Class Overview:   Action Plan   Build a Breed Project"}, {"id": "closure", "label": "8. Closure", "status": "PRESENT", "cite": "Step 3: Exit Ticket:   ·   Have students provide a progress update on the Build a Breed Project ."}]}, "A6": {"method": "code_fallback", "present": 4, "missing": 10, "missing_fields": ["lesson_title", "learning_objective", "teks", "materials", "objective_purpose", "input", "modeling", "guided_practice", "elps_language", "accommodations"], "fields": {"lesson_title": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "learning_objective": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "teks": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "materials": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "anticipatory_set": {"status": "PRESENT", "text": "Step 1: Bell Ringer:   ·   Have students define the terms purebred, crossbred and composite in their own words. Review the correct definitions as a class.", "sources": [""], "element_id": "class-6-e3"}, "objective_purpose": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "input": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "modeling": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "check_for_understanding": {"status": "PRESENT", "text": "Class 6   Class Overview:   Action Plan   Build a Breed Project   Step 1: Bell Ringer:   ·   Have students define the terms purebred, crossbred and composite in their own words. Review the correct definitions as a class.   Step 2: Students should begin the Build a Breed Project .   ·   Students will create their own crossbred or composite cattle breed which would suit their local area well.   Step 3: Exit Ticket:   ·   Have students provide a progress update on the Build a Breed Project .", "sources": [""], "element_id": "class-6-full"}, "guided_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "independent_practice": {"status": "PRESENT", "text": "Class Overview:   Action Plan   Build a Breed Project", "sources": [""], "element_id": "class-6-e2"}, "closure": {"status": "PRESENT", "text": "Step 3: Exit Ticket:   ·   Have students provide a progress update on the Build a Breed Project .", "sources": [""], "element_id": "class-6-e5"}, "elps_language": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "accommodations": {"status": "MISSING", "text": "", "sources": [], "element_id": null}}}, "A7": {"step": "A7", "elps": {"status": "MISSING", "cites": []}, "accommodations": {"status": "MISSING", "cites": []}}}, "pack_overview": {"A2": {"step": "A2", "teks": {"status": "MISSING", "count": 0, "cites": []}, "objective": {"status": "PRESENT", "count": 1, "cites": ["Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"]}}, "A3": {"step": "A3", "has_objective": true, "has_activities": false, "has_assessment": false, "mismatches": ["objective_without_assessment"], "status": "PARTIAL"}, "A4": {"step": "A4", "formative": {"status": "MISSING", "items": []}, "summative": {"status": "MISSING", "items": []}}, "A5": {"step": "A5", "hunter_core_present": 2, "hunter_core_total": 8, "matrix": [{"id": "anticipatory_set", "label": "1. Anticipatory set (hook / Do Now / Engage)", "status": "MISSING", "cite": ""}, {"id": "objective_purpose", "label": "2. Objective & purpose (stated to students)", "status": "PRESENT", "cite": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"}, {"id": "input", "label": "3. Input (teach content / vocabulary)", "status": "PRESENT", "cite": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"}, {"id": "modeling", "label": "4. Modeling (I do / demonstrate)", "status": "MISSING", "cite": ""}, {"id": "check_for_understanding", "label": "5. Check for understanding", "status": "MISSING", "cite": ""}, {"id": "guided_practice", "label": "6. Guided practice (We do)", "status": "MISSING", "cite": ""}, {"id": "independent_practice", "label": "7. Independent practice (You do)", "status": "MISSING", "cite": ""}, {"id": "closure", "label": "8. Closure", "status": "MISSING", "cite": ""}]}, "A6": {"method": "code_fallback", "present": 3, "missing": 11, "missing_fields": ["lesson_title", "materials", "anticipatory_set", "objective_purpose", "input", "modeling", "check_for_understanding", "guided_practice", "independent_practice", "closure", "accommodations"], "fields": {"lesson_title": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "learning_objective": {"status": "PRESENT", "text": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "sources": [""], "element_id": "class-0-e1"}, "teks": {"status": "PRESENT", "text": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "sources": [""], "element_id": "class-0-e1"}, "materials": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "anticipatory_set": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "objective_purpose": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "input": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "modeling": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "check_for_understanding": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "guided_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "independent_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "closure": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "elps_language": {"status": "PRESENT", "text": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "sources": [""], "element_id": "class-0-e1"}, "accommodations": {"status": "MISSING", "text": "", "sources": [], "element_id": null}}}, "A7": {"step": "A7", "elps": {"status": "PRESENT", "cites": ["Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"]}, "accommodations": {"status": "MISSING", "cites": []}}}}, {"class_num": 7, "title": "Class 7", "topic": "Action Plan Cattle Breeds Flashcards Activity Breeds of Livestock: Cattle Final Assessment Build a Breed Project", "char_count": 711, "element_count": 7, "hunter_core_present": 4, "hunter_core_total": 8, "missing": ["objective_purpose", "input", "modeling", "guided_practice"], "present": ["anticipatory_set", "check_for_understanding", "independent_practice", "closure"], "matrix": [{"id": "anticipatory_set", "label": "1. Anticipatory set (hook / Do Now / Engage)", "status": "PRESENT", "cite": "Step 1: Bell Ringer:   ·   Have students use the flashcards from the Cattle Breeds Flashcards Activity  to review for the assessment."}, {"id": "objective_purpose", "label": "2. Objective & purpose (stated to students)", "status": "MISSING", "cite": ""}, {"id": "input", "label": "3. Input (teach content / vocabulary)", "status": "MISSING", "cite": ""}, {"id": "modeling", "label": "4. Modeling (I do / demonstrate)", "status": "MISSING", "cite": ""}, {"id": "check_for_understanding", "label": "5. Check for understanding", "status": "PRESENT", "cite": "Class 7   Class Overview:   Action Plan   Cattle Breeds Flashcards Activity   Breeds of Livestock: Cattle Final Assessment   Build a Breed Project   Step 1: Bell Ringer:   ·   Have students use the flashcards from the Cattle Breeds Flashcards Activity  to review for the assessment.   Step 2: Administer the Breeds of Livestock: Cattle Final Assessment .   ·   The assessment is a comprehensive assessment covering material throughout the entire lesson.   Step 3: Students should complete the Build…"}, {"id": "guided_practice", "label": "6. Guided practice (We do)", "status": "MISSING", "cite": ""}, {"id": "independent_practice", "label": "7. Independent practice (You do)", "status": "PRESENT", "cite": "Class Overview:   Action Plan   Cattle Breeds Flashcards Activity   Breeds of Livestock: Cattle Final Assessment   Build a Breed Project"}, {"id": "closure", "label": "8. Closure", "status": "PRESENT", "cite": "Step 4: Exit Ticket:   ·   Have students turn in their Build a Breed Project ."}], "steps": {"A2": {"step": "A2", "teks": {"status": "MISSING", "count": 0, "cites": []}, "objective": {"status": "MISSING", "count": 0, "cites": []}}, "A3": {"step": "A3", "has_objective": false, "has_activities": true, "has_assessment": true, "mismatches": ["activities_without_objective", "assessment_without_objective"], "status": "PARTIAL"}, "A4": {"step": "A4", "formative": {"status": "PRESENT", "items": [{"element_id": "class-7-full", "excerpt": "Class 7   Class Overview:   Action Plan   Cattle Breeds Flashcards Activity   Breeds of Livestock: Cattle Final Assessment   Build a Breed Project   Step 1: Bell Ringer:   ·   Have students use the flashcards from the Cattle Breeds Flashcards Activity  to review for the assessment.   Step 2: Administer the Breeds of Livestock: Cattle Final Assessment .   ·   The assessment is a comprehensive assessment covering material throughout the entire lesson.   Step 3: Students should complete the Build…"}]}, "summative": {"status": "MISSING", "items": []}}, "A5": {"step": "A5", "hunter_core_present": 4, "hunter_core_total": 8, "matrix": [{"id": "anticipatory_set", "label": "1. Anticipatory set (hook / Do Now / Engage)", "status": "PRESENT", "cite": "Step 1: Bell Ringer:   ·   Have students use the flashcards from the Cattle Breeds Flashcards Activity  to review for the assessment."}, {"id": "objective_purpose", "label": "2. Objective & purpose (stated to students)", "status": "MISSING", "cite": ""}, {"id": "input", "label": "3. Input (teach content / vocabulary)", "status": "MISSING", "cite": ""}, {"id": "modeling", "label": "4. Modeling (I do / demonstrate)", "status": "MISSING", "cite": ""}, {"id": "check_for_understanding", "label": "5. Check for understanding", "status": "PRESENT", "cite": "Class 7   Class Overview:   Action Plan   Cattle Breeds Flashcards Activity   Breeds of Livestock: Cattle Final Assessment   Build a Breed Project   Step 1: Bell Ringer:   ·   Have students use the flashcards from the Cattle Breeds Flashcards Activity  to review for the assessment.   Step 2: Administer the Breeds of Livestock: Cattle Final Assessment .   ·   The assessment is a comprehensive assessment covering material throughout the entire lesson.   Step 3: Students should complete the Build…"}, {"id": "guided_practice", "label": "6. Guided practice (We do)", "status": "MISSING", "cite": ""}, {"id": "independent_practice", "label": "7. Independent practice (You do)", "status": "PRESENT", "cite": "Class Overview:   Action Plan   Cattle Breeds Flashcards Activity   Breeds of Livestock: Cattle Final Assessment   Build a Breed Project"}, {"id": "closure", "label": "8. Closure", "status": "PRESENT", "cite": "Step 4: Exit Ticket:   ·   Have students turn in their Build a Breed Project ."}]}, "A6": {"method": "code_fallback", "present": 4, "missing": 10, "missing_fields": ["lesson_title", "learning_objective", "teks", "materials", "objective_purpose", "input", "modeling", "guided_practice", "elps_language", "accommodations"], "fields": {"lesson_title": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "learning_objective": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "teks": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "materials": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "anticipatory_set": {"status": "PRESENT", "text": "Step 1: Bell Ringer:   ·   Have students use the flashcards from the Cattle Breeds Flashcards Activity  to review for the assessment.", "sources": [""], "element_id": "class-7-e3"}, "objective_purpose": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "input": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "modeling": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "check_for_understanding": {"status": "PRESENT", "text": "Class 7   Class Overview:   Action Plan   Cattle Breeds Flashcards Activity   Breeds of Livestock: Cattle Final Assessment   Build a Breed Project   Step 1: Bell Ringer:   ·   Have students use the flashcards from the Cattle Breeds Flashcards Activity  to review for the assessment.   Step 2: Administer the Breeds of Livestock: Cattle Final Assessment .   ·   The assessment is a comprehensive assessment covering material throughout the entire lesson.   Step 3: Students should complete the Build…", "sources": [""], "element_id": "class-7-full"}, "guided_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "independent_practice": {"status": "PRESENT", "text": "Class Overview:   Action Plan   Cattle Breeds Flashcards Activity   Breeds of Livestock: Cattle Final Assessment   Build a Breed Project", "sources": [""], "element_id": "class-7-e2"}, "closure": {"status": "PRESENT", "text": "Step 4: Exit Ticket:   ·   Have students turn in their Build a Breed Project .", "sources": [""], "element_id": "class-7-e6"}, "elps_language": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "accommodations": {"status": "MISSING", "text": "", "sources": [], "element_id": null}}}, "A7": {"step": "A7", "elps": {"status": "MISSING", "cites": []}, "accommodations": {"status": "MISSING", "cites": []}}}, "pack_overview": {"A2": {"step": "A2", "teks": {"status": "MISSING", "count": 0, "cites": []}, "objective": {"status": "PRESENT", "count": 1, "cites": ["Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"]}}, "A3": {"step": "A3", "has_objective": true, "has_activities": false, "has_assessment": false, "mismatches": ["objective_without_assessment"], "status": "PARTIAL"}, "A4": {"step": "A4", "formative": {"status": "MISSING", "items": []}, "summative": {"status": "MISSING", "items": []}}, "A5": {"step": "A5", "hunter_core_present": 2, "hunter_core_total": 8, "matrix": [{"id": "anticipatory_set", "label": "1. Anticipatory set (hook / Do Now / Engage)", "status": "MISSING", "cite": ""}, {"id": "objective_purpose", "label": "2. Objective & purpose (stated to students)", "status": "PRESENT", "cite": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"}, {"id": "input", "label": "3. Input (teach content / vocabulary)", "status": "PRESENT", "cite": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"}, {"id": "modeling", "label": "4. Modeling (I do / demonstrate)", "status": "MISSING", "cite": ""}, {"id": "check_for_understanding", "label": "5. Check for understanding", "status": "MISSING", "cite": ""}, {"id": "guided_practice", "label": "6. Guided practice (We do)", "status": "MISSING", "cite": ""}, {"id": "independent_practice", "label": "7. Independent practice (You do)", "status": "MISSING", "cite": ""}, {"id": "closure", "label": "8. Closure", "status": "MISSING", "cite": ""}]}, "A6": {"method": "code_fallback", "present": 3, "missing": 11, "missing_fields": ["lesson_title", "materials", "anticipatory_set", "objective_purpose", "input", "modeling", "check_for_understanding", "guided_practice", "independent_practice", "closure", "accommodations"], "fields": {"lesson_title": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "learning_objective": {"status": "PRESENT", "text": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "sources": [""], "element_id": "class-0-e1"}, "teks": {"status": "PRESENT", "text": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "sources": [""], "element_id": "class-0-e1"}, "materials": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "anticipatory_set": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "objective_purpose": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "input": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "modeling": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "check_for_understanding": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "guided_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "independent_practice": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "closure": {"status": "MISSING", "text": "", "sources": [], "element_id": null}, "elps_language": {"status": "PRESENT", "text": "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "sources": [""], "element_id": "class-0-e1"}, "accommodations": {"status": "MISSING", "text": "", "sources": [], "element_id": null}}}, "A7": {"step": "A7", "elps": {"status": "PRESENT", "cites": ["Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…", "Lesson Plan   Breeds of Livestock: Cattle   Lesson Overview   Media: Microsoft ®  PowerPoint ® Presentation (85 slides)   Seat Time: 7 Classes | 350 minutes teaching   Goal:   To provide students with the origins, physical characteristics, traits and usages of cattle breeds.   Description:   This lesson helps students discover valuable information regarding the types of cattle raised in the world, as well as their origins, physical characteristics, traits and usages. Students will learn the…"]}, "accommodations": {"status": "MISSING", "cites": []}}}}];
+function scrollDocTo(el) {
+  // Doc lives in overflow:auto (#docPane). Compute offset relative to pane.
+  const pane = document.getElementById("docPane");
+  if (!pane || !el) return;
+  let top = 0;
+  let node = el;
+  while (node && node !== pane) {
+    top += node.offsetTop;
+    node = node.offsetParent;
+    // If offsetParent jumps outside pane (e.g. to body), fall back to rects.
+    if (node && !pane.contains(node) && node !== pane) {
+      const paneRect = pane.getBoundingClientRect();
+      const elRect = el.getBoundingClientRect();
+      top = pane.scrollTop + (elRect.top - paneRect.top);
+      break;
+    }
+  }
+  pane.scrollTo({ top: Math.max(0, top - 12), behavior: "smooth" });
+}
+
+function selectClass(n) {
+  document.querySelectorAll(".score-row").forEach(el => {
+    el.classList.toggle("active", Number(el.dataset.class) === n);
+  });
+  document.querySelectorAll(".class-block").forEach(el => {
+    el.classList.toggle("active", Number(el.dataset.class) === n);
+  });
+  document.querySelectorAll(".matrix").forEach(el => {
+    el.hidden = Number(el.dataset.class) !== n;
+  });
+  const hint = document.getElementById("emptyHint");
+  if (hint) hint.hidden = true;
+  const block = document.getElementById("class-" + n);
+  if (block) scrollDocTo(block);
+}
+document.getElementById("scoreList").addEventListener("click", (e) => {
+  const btn = e.target.closest(".score-row");
+  if (!btn) return;
+  selectClass(Number(btn.dataset.class));
+});
+// Default: weakest class
+const weakest = [...SCORES].sort((a,b) => a.hunter_core_present - b.hunter_core_present)[0];
+if (weakest) selectClass(weakest.class_num);
+</script>
+</body>
+</html>

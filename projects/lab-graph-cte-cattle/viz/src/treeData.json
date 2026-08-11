@@ -1,0 +1,692 @@
+[
+  {
+    "path": "course",
+    "kind": "course",
+    "label": "Course \u00b7 lab-graph-cte-cattle"
+  },
+  {
+    "path": "course/cattle",
+    "kind": "unit",
+    "label": "Unit \u00b7 Breeds of Livestock \u2014 Cattle"
+  },
+  {
+    "path": "course/cattle/l1",
+    "kind": "lesson",
+    "label": "Class 1 \u2014 Dairy Breeds"
+  },
+  {
+    "path": "course/cattle/l1/describes_material_023-breeds-of-livestock-cattle__action-plan",
+    "kind": "material",
+    "label": "describes \u00b7 action-plan.html [lesson_plan]"
+  },
+  {
+    "path": "course/cattle/l1/describes_material_023-breeds-of-livestock-cattle__view-lesson-plan",
+    "kind": "material",
+    "label": "describes \u00b7 view-lesson-plan.html [lesson_plan]"
+  },
+  {
+    "path": "course/cattle/l1/spanIn_material_023-breeds-of-livestock-cattle__activity-career-connections",
+    "kind": "material",
+    "label": "spanIn \u00b7 activity-career-connections.html [student_practice]"
+  },
+  {
+    "path": "course/cattle/l1/spanIn_material_023-breeds-of-livestock-cattle__horizontal-alignments",
+    "kind": "material",
+    "label": "spanIn \u00b7 horizontal-alignments.html [standards_pacing]"
+  },
+  {
+    "path": "course/cattle/l1/spanIn_material_023-breeds-of-livestock-cattle__key-concepts",
+    "kind": "material",
+    "label": "spanIn \u00b7 key-concepts.html [student_practice]"
+  },
+  {
+    "path": "course/cattle/l1/spanIn_material_023-breeds-of-livestock-cattle__vocabulary-handout",
+    "kind": "material",
+    "label": "spanIn \u00b7 vocabulary-handout.html [student_practice]"
+  },
+  {
+    "path": "course/cattle/l1/assessment_assessment_023-breeds-of-livestock-cattle__final-assessment_item",
+    "kind": "assessment",
+    "label": "ASSESS Breeds of Livestock: Cattle Final Assessment"
+  },
+  {
+    "path": "course/cattle/l1/assessment_assessment_023-breeds-of-livestock-cattle__final-assessment_item/uses_material_023-breeds-of-livestock-cattle__final-assessment",
+    "kind": "uses",
+    "label": "uses final-assessment.html"
+  },
+  {
+    "path": "course/cattle/l1/assessment_assessment_023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds_item",
+    "kind": "assessment",
+    "label": "ASSESS Check for Understanding 1 \u2014 Dairy Breeds"
+  },
+  {
+    "path": "course/cattle/l1/assessment_assessment_023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds_item/uses_material_023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds",
+    "kind": "uses",
+    "label": "uses check-for-understanding-1-dairy-breeds.html"
+  },
+  {
+    "path": "course/cattle/l2",
+    "kind": "lesson",
+    "label": "Class 2 \u2014 Asian & African Breeds"
+  },
+  {
+    "path": "course/cattle/l2/describes_material_023-breeds-of-livestock-cattle__action-plan",
+    "kind": "material",
+    "label": "describes \u00b7 action-plan.html [lesson_plan]"
+  },
+  {
+    "path": "course/cattle/l2/describes_material_023-breeds-of-livestock-cattle__view-lesson-plan",
+    "kind": "material",
+    "label": "describes \u00b7 view-lesson-plan.html [lesson_plan]"
+  },
+  {
+    "path": "course/cattle/l2/spanIn_material_023-breeds-of-livestock-cattle__activity-career-connections",
+    "kind": "material",
+    "label": "spanIn \u00b7 activity-career-connections.html [student_practice]"
+  },
+  {
+    "path": "course/cattle/l2/spanIn_material_023-breeds-of-livestock-cattle__horizontal-alignments",
+    "kind": "material",
+    "label": "spanIn \u00b7 horizontal-alignments.html [standards_pacing]"
+  },
+  {
+    "path": "course/cattle/l2/spanIn_material_023-breeds-of-livestock-cattle__key-concepts",
+    "kind": "material",
+    "label": "spanIn \u00b7 key-concepts.html [student_practice]"
+  },
+  {
+    "path": "course/cattle/l2/spanIn_material_023-breeds-of-livestock-cattle__vocabulary-handout",
+    "kind": "material",
+    "label": "spanIn \u00b7 vocabulary-handout.html [student_practice]"
+  },
+  {
+    "path": "course/cattle/l2/assessment_assessment_023-breeds-of-livestock-cattle__final-assessment_item",
+    "kind": "assessment",
+    "label": "ASSESS Breeds of Livestock: Cattle Final Assessment"
+  },
+  {
+    "path": "course/cattle/l2/assessment_assessment_023-breeds-of-livestock-cattle__final-assessment_item/uses_material_023-breeds-of-livestock-cattle__final-assessment",
+    "kind": "uses",
+    "label": "uses final-assessment.html"
+  },
+  {
+    "path": "course/cattle/l3",
+    "kind": "lesson",
+    "label": "Class 3 \u2014 British Breeds"
+  },
+  {
+    "path": "course/cattle/l3/describes_material_023-breeds-of-livestock-cattle__action-plan",
+    "kind": "material",
+    "label": "describes \u00b7 action-plan.html [lesson_plan]"
+  },
+  {
+    "path": "course/cattle/l3/describes_material_023-breeds-of-livestock-cattle__view-lesson-plan",
+    "kind": "material",
+    "label": "describes \u00b7 view-lesson-plan.html [lesson_plan]"
+  },
+  {
+    "path": "course/cattle/l3/spanIn_material_023-breeds-of-livestock-cattle__activity-career-connections",
+    "kind": "material",
+    "label": "spanIn \u00b7 activity-career-connections.html [student_practice]"
+  },
+  {
+    "path": "course/cattle/l3/spanIn_material_023-breeds-of-livestock-cattle__horizontal-alignments",
+    "kind": "material",
+    "label": "spanIn \u00b7 horizontal-alignments.html [standards_pacing]"
+  },
+  {
+    "path": "course/cattle/l3/spanIn_material_023-breeds-of-livestock-cattle__key-concepts",
+    "kind": "material",
+    "label": "spanIn \u00b7 key-concepts.html [student_practice]"
+  },
+  {
+    "path": "course/cattle/l3/spanIn_material_023-breeds-of-livestock-cattle__vocabulary-handout",
+    "kind": "material",
+    "label": "spanIn \u00b7 vocabulary-handout.html [student_practice]"
+  },
+  {
+    "path": "course/cattle/l3/assessment_assessment_023-breeds-of-livestock-cattle__final-assessment_item",
+    "kind": "assessment",
+    "label": "ASSESS Breeds of Livestock: Cattle Final Assessment"
+  },
+  {
+    "path": "course/cattle/l3/assessment_assessment_023-breeds-of-livestock-cattle__final-assessment_item/uses_material_023-breeds-of-livestock-cattle__final-assessment",
+    "kind": "uses",
+    "label": "uses final-assessment.html"
+  },
+  {
+    "path": "course/cattle/l4",
+    "kind": "lesson",
+    "label": "Class 4 \u2014 Continental Breeds"
+  },
+  {
+    "path": "course/cattle/l4/describes_material_023-breeds-of-livestock-cattle__action-plan",
+    "kind": "material",
+    "label": "describes \u00b7 action-plan.html [lesson_plan]"
+  },
+  {
+    "path": "course/cattle/l4/describes_material_023-breeds-of-livestock-cattle__view-lesson-plan",
+    "kind": "material",
+    "label": "describes \u00b7 view-lesson-plan.html [lesson_plan]"
+  },
+  {
+    "path": "course/cattle/l4/spanIn_material_023-breeds-of-livestock-cattle__activity-career-connections",
+    "kind": "material",
+    "label": "spanIn \u00b7 activity-career-connections.html [student_practice]"
+  },
+  {
+    "path": "course/cattle/l4/spanIn_material_023-breeds-of-livestock-cattle__horizontal-alignments",
+    "kind": "material",
+    "label": "spanIn \u00b7 horizontal-alignments.html [standards_pacing]"
+  },
+  {
+    "path": "course/cattle/l4/spanIn_material_023-breeds-of-livestock-cattle__key-concepts",
+    "kind": "material",
+    "label": "spanIn \u00b7 key-concepts.html [student_practice]"
+  },
+  {
+    "path": "course/cattle/l4/spanIn_material_023-breeds-of-livestock-cattle__vocabulary-handout",
+    "kind": "material",
+    "label": "spanIn \u00b7 vocabulary-handout.html [student_practice]"
+  },
+  {
+    "path": "course/cattle/l4/assessment_assessment_023-breeds-of-livestock-cattle__final-assessment_item",
+    "kind": "assessment",
+    "label": "ASSESS Breeds of Livestock: Cattle Final Assessment"
+  },
+  {
+    "path": "course/cattle/l4/assessment_assessment_023-breeds-of-livestock-cattle__final-assessment_item/uses_material_023-breeds-of-livestock-cattle__final-assessment",
+    "kind": "uses",
+    "label": "uses final-assessment.html"
+  },
+  {
+    "path": "course/cattle/l5",
+    "kind": "lesson",
+    "label": "Class 5 \u2014 American Breeds"
+  },
+  {
+    "path": "course/cattle/l5/describes_material_023-breeds-of-livestock-cattle__action-plan",
+    "kind": "material",
+    "label": "describes \u00b7 action-plan.html [lesson_plan]"
+  },
+  {
+    "path": "course/cattle/l5/describes_material_023-breeds-of-livestock-cattle__view-lesson-plan",
+    "kind": "material",
+    "label": "describes \u00b7 view-lesson-plan.html [lesson_plan]"
+  },
+  {
+    "path": "course/cattle/l5/spanIn_material_023-breeds-of-livestock-cattle__activity-career-connections",
+    "kind": "material",
+    "label": "spanIn \u00b7 activity-career-connections.html [student_practice]"
+  },
+  {
+    "path": "course/cattle/l5/spanIn_material_023-breeds-of-livestock-cattle__horizontal-alignments",
+    "kind": "material",
+    "label": "spanIn \u00b7 horizontal-alignments.html [standards_pacing]"
+  },
+  {
+    "path": "course/cattle/l5/spanIn_material_023-breeds-of-livestock-cattle__key-concepts",
+    "kind": "material",
+    "label": "spanIn \u00b7 key-concepts.html [student_practice]"
+  },
+  {
+    "path": "course/cattle/l5/spanIn_material_023-breeds-of-livestock-cattle__vocabulary-handout",
+    "kind": "material",
+    "label": "spanIn \u00b7 vocabulary-handout.html [student_practice]"
+  },
+  {
+    "path": "course/cattle/l5/assessment_assessment_023-breeds-of-livestock-cattle__final-assessment_item",
+    "kind": "assessment",
+    "label": "ASSESS Breeds of Livestock: Cattle Final Assessment"
+  },
+  {
+    "path": "course/cattle/l5/assessment_assessment_023-breeds-of-livestock-cattle__final-assessment_item/uses_material_023-breeds-of-livestock-cattle__final-assessment",
+    "kind": "uses",
+    "label": "uses final-assessment.html"
+  },
+  {
+    "path": "course/cattle/l6",
+    "kind": "lesson",
+    "label": "Class 6 \u2014 Build a Breed Project"
+  },
+  {
+    "path": "course/cattle/l6/describes_material_023-breeds-of-livestock-cattle__action-plan",
+    "kind": "material",
+    "label": "describes \u00b7 action-plan.html [lesson_plan]"
+  },
+  {
+    "path": "course/cattle/l6/describes_material_023-breeds-of-livestock-cattle__view-lesson-plan",
+    "kind": "material",
+    "label": "describes \u00b7 view-lesson-plan.html [lesson_plan]"
+  },
+  {
+    "path": "course/cattle/l6/spanIn_material_023-breeds-of-livestock-cattle__horizontal-alignments",
+    "kind": "material",
+    "label": "spanIn \u00b7 horizontal-alignments.html [standards_pacing]"
+  },
+  {
+    "path": "course/cattle/l6/spanIn_material_023-breeds-of-livestock-cattle__project-build-a-breed",
+    "kind": "material",
+    "label": "spanIn \u00b7 project-build-a-breed.html [student_practice]"
+  },
+  {
+    "path": "course/cattle/l6/spanIn_material_023-breeds-of-livestock-cattle__vocabulary-handout",
+    "kind": "material",
+    "label": "spanIn \u00b7 vocabulary-handout.html [student_practice]"
+  },
+  {
+    "path": "course/cattle/l6/assessment_assessment_023-breeds-of-livestock-cattle__final-assessment_item",
+    "kind": "assessment",
+    "label": "ASSESS Breeds of Livestock: Cattle Final Assessment"
+  },
+  {
+    "path": "course/cattle/l6/assessment_assessment_023-breeds-of-livestock-cattle__final-assessment_item/uses_material_023-breeds-of-livestock-cattle__final-assessment",
+    "kind": "uses",
+    "label": "uses final-assessment.html"
+  },
+  {
+    "path": "course/cattle/l7",
+    "kind": "lesson",
+    "label": "Class 7 \u2014 Cattle Breeds Flashcards / Final Assessment"
+  },
+  {
+    "path": "course/cattle/l7/describes_material_023-breeds-of-livestock-cattle__action-plan",
+    "kind": "material",
+    "label": "describes \u00b7 action-plan.html [lesson_plan]"
+  },
+  {
+    "path": "course/cattle/l7/describes_material_023-breeds-of-livestock-cattle__view-lesson-plan",
+    "kind": "material",
+    "label": "describes \u00b7 view-lesson-plan.html [lesson_plan]"
+  },
+  {
+    "path": "course/cattle/l7/spanIn_material_023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards",
+    "kind": "material",
+    "label": "spanIn \u00b7 activity-cattle-breeds-flashcards.html [student_practice]"
+  },
+  {
+    "path": "course/cattle/l7/spanIn_material_023-breeds-of-livestock-cattle__horizontal-alignments",
+    "kind": "material",
+    "label": "spanIn \u00b7 horizontal-alignments.html [standards_pacing]"
+  },
+  {
+    "path": "course/cattle/l7/spanIn_material_023-breeds-of-livestock-cattle__vocabulary-handout",
+    "kind": "material",
+    "label": "spanIn \u00b7 vocabulary-handout.html [student_practice]"
+  },
+  {
+    "path": "course/cattle/l7/assessment_assessment_023-breeds-of-livestock-cattle__final-assessment_item",
+    "kind": "assessment",
+    "label": "ASSESS Breeds of Livestock: Cattle Final Assessment"
+  },
+  {
+    "path": "course/cattle/l7/assessment_assessment_023-breeds-of-livestock-cattle__final-assessment_item/uses_material_023-breeds-of-livestock-cattle__final-assessment",
+    "kind": "uses",
+    "label": "uses final-assessment.html"
+  },
+  {
+    "path": "course/cattle/l7/assessment_assessment_023-breeds-of-livestock-cattle__final-assessment-answer-key_item",
+    "kind": "assessment",
+    "label": "ASSESS Final Assessment Answer Key"
+  },
+  {
+    "path": "course/cattle/l7/assessment_assessment_023-breeds-of-livestock-cattle__final-assessment-answer-key_item/uses_material_023-breeds-of-livestock-cattle__final-assessment-answer-key",
+    "kind": "uses",
+    "label": "uses final-assessment-answer-key.html"
+  },
+  {
+    "path": "course/anatomy",
+    "kind": "unit",
+    "label": "Unit \u00b7 External Anatomy of Livestock"
+  },
+  {
+    "path": "course/anatomy/l1",
+    "kind": "lesson",
+    "label": "Class 1 \u2014 Anatomical Terms of Location"
+  },
+  {
+    "path": "course/anatomy/l1/describes_material_027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan",
+    "kind": "material",
+    "label": "describes \u00b7 view-lesson-plan.html [lesson_plan]"
+  },
+  {
+    "path": "course/anatomy/l1/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__action-plan",
+    "kind": "material",
+    "label": "spanIn \u00b7 action-plan.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l1/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__activity-career-connections",
+    "kind": "material",
+    "label": "spanIn \u00b7 activity-career-connections.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l1/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments",
+    "kind": "material",
+    "label": "spanIn \u00b7 horizontal-alignments.html [standards_pacing]"
+  },
+  {
+    "path": "course/anatomy/l1/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__key-concepts",
+    "kind": "material",
+    "label": "spanIn \u00b7 key-concepts.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l1/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__ngss-correlation",
+    "kind": "material",
+    "label": "spanIn \u00b7 ngss-correlation.html [standards_pacing]"
+  },
+  {
+    "path": "course/anatomy/l1/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor",
+    "kind": "material",
+    "label": "spanIn \u00b7 project-livestock-instructor.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l1/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout",
+    "kind": "material",
+    "label": "spanIn \u00b7 vocabulary-handout.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l1/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment_item",
+    "kind": "assessment",
+    "label": "ASSESS External Anatomy of Livestock: Terms & Terminology Assessment"
+  },
+  {
+    "path": "course/anatomy/l1/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment_item/uses_material_027-external-anatomy-of-livestock-terms-terminology__assessment",
+    "kind": "uses",
+    "label": "uses assessment.html"
+  },
+  {
+    "path": "course/anatomy/l1/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key_item",
+    "kind": "assessment",
+    "label": "ASSESS Final Assessment \u2014 External Anatomy of Livestock: Terms & Terminology"
+  },
+  {
+    "path": "course/anatomy/l1/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key_item/uses_material_027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key",
+    "kind": "uses",
+    "label": "uses assessment-answer-key.html"
+  },
+  {
+    "path": "course/anatomy/l2",
+    "kind": "lesson",
+    "label": "Class 2 \u2014 External Components of Livestock"
+  },
+  {
+    "path": "course/anatomy/l2/describes_material_027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan",
+    "kind": "material",
+    "label": "describes \u00b7 view-lesson-plan.html [lesson_plan]"
+  },
+  {
+    "path": "course/anatomy/l2/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__action-plan",
+    "kind": "material",
+    "label": "spanIn \u00b7 action-plan.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l2/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__activity-career-connections",
+    "kind": "material",
+    "label": "spanIn \u00b7 activity-career-connections.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l2/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments",
+    "kind": "material",
+    "label": "spanIn \u00b7 horizontal-alignments.html [standards_pacing]"
+  },
+  {
+    "path": "course/anatomy/l2/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__ngss-correlation",
+    "kind": "material",
+    "label": "spanIn \u00b7 ngss-correlation.html [standards_pacing]"
+  },
+  {
+    "path": "course/anatomy/l2/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor",
+    "kind": "material",
+    "label": "spanIn \u00b7 project-livestock-instructor.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l2/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout",
+    "kind": "material",
+    "label": "spanIn \u00b7 vocabulary-handout.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l2/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment_item",
+    "kind": "assessment",
+    "label": "ASSESS External Anatomy of Livestock: Terms & Terminology Assessment"
+  },
+  {
+    "path": "course/anatomy/l2/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment_item/uses_material_027-external-anatomy-of-livestock-terms-terminology__assessment",
+    "kind": "uses",
+    "label": "uses assessment.html"
+  },
+  {
+    "path": "course/anatomy/l2/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key_item",
+    "kind": "assessment",
+    "label": "ASSESS Final Assessment \u2014 External Anatomy of Livestock: Terms & Terminology"
+  },
+  {
+    "path": "course/anatomy/l2/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key_item/uses_material_027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key",
+    "kind": "uses",
+    "label": "uses assessment-answer-key.html"
+  },
+  {
+    "path": "course/anatomy/l3",
+    "kind": "lesson",
+    "label": "Class 3 \u2014 External Anatomy of Cattle"
+  },
+  {
+    "path": "course/anatomy/l3/describes_material_027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan",
+    "kind": "material",
+    "label": "describes \u00b7 view-lesson-plan.html [lesson_plan]"
+  },
+  {
+    "path": "course/anatomy/l3/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__action-plan",
+    "kind": "material",
+    "label": "spanIn \u00b7 action-plan.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l3/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__activity-career-connections",
+    "kind": "material",
+    "label": "spanIn \u00b7 activity-career-connections.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l3/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments",
+    "kind": "material",
+    "label": "spanIn \u00b7 horizontal-alignments.html [standards_pacing]"
+  },
+  {
+    "path": "course/anatomy/l3/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__ngss-correlation",
+    "kind": "material",
+    "label": "spanIn \u00b7 ngss-correlation.html [standards_pacing]"
+  },
+  {
+    "path": "course/anatomy/l3/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor",
+    "kind": "material",
+    "label": "spanIn \u00b7 project-livestock-instructor.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l3/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment_item",
+    "kind": "assessment",
+    "label": "ASSESS External Anatomy of Livestock: Terms & Terminology Assessment"
+  },
+  {
+    "path": "course/anatomy/l3/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment_item/uses_material_027-external-anatomy-of-livestock-terms-terminology__assessment",
+    "kind": "uses",
+    "label": "uses assessment.html"
+  },
+  {
+    "path": "course/anatomy/l3/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key_item",
+    "kind": "assessment",
+    "label": "ASSESS Final Assessment \u2014 External Anatomy of Livestock: Terms & Terminology"
+  },
+  {
+    "path": "course/anatomy/l3/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key_item/uses_material_027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key",
+    "kind": "uses",
+    "label": "uses assessment-answer-key.html"
+  },
+  {
+    "path": "course/anatomy/l4",
+    "kind": "lesson",
+    "label": "Class 4 \u2014 External Anatomy of Swine"
+  },
+  {
+    "path": "course/anatomy/l4/describes_material_027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan",
+    "kind": "material",
+    "label": "describes \u00b7 view-lesson-plan.html [lesson_plan]"
+  },
+  {
+    "path": "course/anatomy/l4/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__action-plan",
+    "kind": "material",
+    "label": "spanIn \u00b7 action-plan.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l4/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__activity-career-connections",
+    "kind": "material",
+    "label": "spanIn \u00b7 activity-career-connections.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l4/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar",
+    "kind": "material",
+    "label": "spanIn \u00b7 activity-labeling-a-boar.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l4/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments",
+    "kind": "material",
+    "label": "spanIn \u00b7 horizontal-alignments.html [standards_pacing]"
+  },
+  {
+    "path": "course/anatomy/l4/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__ngss-correlation",
+    "kind": "material",
+    "label": "spanIn \u00b7 ngss-correlation.html [standards_pacing]"
+  },
+  {
+    "path": "course/anatomy/l4/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor",
+    "kind": "material",
+    "label": "spanIn \u00b7 project-livestock-instructor.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l4/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment_item",
+    "kind": "assessment",
+    "label": "ASSESS External Anatomy of Livestock: Terms & Terminology Assessment"
+  },
+  {
+    "path": "course/anatomy/l4/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment_item/uses_material_027-external-anatomy-of-livestock-terms-terminology__assessment",
+    "kind": "uses",
+    "label": "uses assessment.html"
+  },
+  {
+    "path": "course/anatomy/l4/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key_item",
+    "kind": "assessment",
+    "label": "ASSESS Final Assessment \u2014 External Anatomy of Livestock: Terms & Terminology"
+  },
+  {
+    "path": "course/anatomy/l4/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key_item/uses_material_027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key",
+    "kind": "uses",
+    "label": "uses assessment-answer-key.html"
+  },
+  {
+    "path": "course/anatomy/l5",
+    "kind": "lesson",
+    "label": "Class 5 \u2014 External Anatomy of Sheep"
+  },
+  {
+    "path": "course/anatomy/l5/describes_material_027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan",
+    "kind": "material",
+    "label": "describes \u00b7 view-lesson-plan.html [lesson_plan]"
+  },
+  {
+    "path": "course/anatomy/l5/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__action-plan",
+    "kind": "material",
+    "label": "spanIn \u00b7 action-plan.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l5/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__activity-career-connections",
+    "kind": "material",
+    "label": "spanIn \u00b7 activity-career-connections.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l5/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments",
+    "kind": "material",
+    "label": "spanIn \u00b7 horizontal-alignments.html [standards_pacing]"
+  },
+  {
+    "path": "course/anatomy/l5/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__ngss-correlation",
+    "kind": "material",
+    "label": "spanIn \u00b7 ngss-correlation.html [standards_pacing]"
+  },
+  {
+    "path": "course/anatomy/l5/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor",
+    "kind": "material",
+    "label": "spanIn \u00b7 project-livestock-instructor.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l5/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment_item",
+    "kind": "assessment",
+    "label": "ASSESS External Anatomy of Livestock: Terms & Terminology Assessment"
+  },
+  {
+    "path": "course/anatomy/l5/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment_item/uses_material_027-external-anatomy-of-livestock-terms-terminology__assessment",
+    "kind": "uses",
+    "label": "uses assessment.html"
+  },
+  {
+    "path": "course/anatomy/l5/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key_item",
+    "kind": "assessment",
+    "label": "ASSESS Final Assessment \u2014 External Anatomy of Livestock: Terms & Terminology"
+  },
+  {
+    "path": "course/anatomy/l5/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key_item/uses_material_027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key",
+    "kind": "uses",
+    "label": "uses assessment-answer-key.html"
+  },
+  {
+    "path": "course/anatomy/l6",
+    "kind": "lesson",
+    "label": "Class 6 \u2014 External Anatomy of Goats"
+  },
+  {
+    "path": "course/anatomy/l6/describes_material_027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan",
+    "kind": "material",
+    "label": "describes \u00b7 view-lesson-plan.html [lesson_plan]"
+  },
+  {
+    "path": "course/anatomy/l6/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__action-plan",
+    "kind": "material",
+    "label": "spanIn \u00b7 action-plan.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l6/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__activity-career-connections",
+    "kind": "material",
+    "label": "spanIn \u00b7 activity-career-connections.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l6/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments",
+    "kind": "material",
+    "label": "spanIn \u00b7 horizontal-alignments.html [standards_pacing]"
+  },
+  {
+    "path": "course/anatomy/l6/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__ngss-correlation",
+    "kind": "material",
+    "label": "spanIn \u00b7 ngss-correlation.html [standards_pacing]"
+  },
+  {
+    "path": "course/anatomy/l6/spanIn_material_027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor",
+    "kind": "material",
+    "label": "spanIn \u00b7 project-livestock-instructor.html [student_practice]"
+  },
+  {
+    "path": "course/anatomy/l6/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment_item",
+    "kind": "assessment",
+    "label": "ASSESS External Anatomy of Livestock: Terms & Terminology Assessment"
+  },
+  {
+    "path": "course/anatomy/l6/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment_item/uses_material_027-external-anatomy-of-livestock-terms-terminology__assessment",
+    "kind": "uses",
+    "label": "uses assessment.html"
+  },
+  {
+    "path": "course/anatomy/l6/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key_item",
+    "kind": "assessment",
+    "label": "ASSESS Final Assessment \u2014 External Anatomy of Livestock: Terms & Terminology"
+  },
+  {
+    "path": "course/anatomy/l6/assessment_assessment_027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key_item/uses_material_027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key",
+    "kind": "uses",
+    "label": "uses assessment-answer-key.html"
+  }
+]

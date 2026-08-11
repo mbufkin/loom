@@ -1,0 +1,172 @@
+{
+  "023-breeds-of-livestock-cattle__action-plan.html": {
+    "source_file": "023-breeds-of-livestock-cattle__action-plan.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "lesson_plan",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Action Plan spans Classes 1\u20137 with per-class steps, EQs, and activities across the full cattle breeds pack."
+  },
+  "023-breeds-of-livestock-cattle__activity-career-connections.html": {
+    "source_file": "023-breeds-of-livestock-cattle__activity-career-connections.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Career interview worksheet; no breed-class lock, so unit-wide student practice."
+  },
+  "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html": {
+    "source_file": "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Flashcard practice over all 33 breeds spans dairy through American breed classes; not project/final lessons."
+  },
+  "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html": {
+    "source_file": "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "assessment",
+    "covers_lesson_numbers": [
+      1
+    ],
+    "is_assessment_bearing": true,
+    "assessment_name": "Check for Understanding \u2014 Dairy Breeds",
+    "notes": "CFU titled Dairy Breeds; maps to Class 1 only."
+  },
+  "023-breeds-of-livestock-cattle__final-assessment-answer-key.html": {
+    "source_file": "023-breeds-of-livestock-cattle__final-assessment-answer-key.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "assessment",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7
+    ],
+    "is_assessment_bearing": true,
+    "assessment_name": "Breeds of Livestock: Cattle Final Assessment (Answer Key)",
+    "notes": "Answer key for the unit final assessment; items span dairy, Asian/African, British, continental, and American breeds (Classes 1\u20135). Attach to Class 7 where the final assessment runs; not Class 6 project-only."
+  },
+  "023-breeds-of-livestock-cattle__final-assessment.html": {
+    "source_file": "023-breeds-of-livestock-cattle__final-assessment.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "assessment",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7
+    ],
+    "is_assessment_bearing": true,
+    "assessment_name": "Final Assessment \u2014 Breeds of Livestock: Cattle",
+    "notes": "Unit final assessment spanning dairy, Asian/African, British, continental, and American breed content; primary delivery is Class 7. Excludes Class 6 (Build a Breed Project has its own artifact)."
+  },
+  "023-breeds-of-livestock-cattle__horizontal-alignments.html": {
+    "source_file": "023-breeds-of-livestock-cattle__horizontal-alignments.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "standards_pacing",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Unit-wide horizontal alignments (LA/SS/Science); no class-specific scope, so maps to full spine."
+  },
+  "023-breeds-of-livestock-cattle__key-concepts.html": {
+    "source_file": "023-breeds-of-livestock-cattle__key-concepts.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Fill-in key concepts span dairy, Asian/African, British, continental, and American breed sections matching Classes 1\u20135; no Build a Breed or final-assessment content."
+  },
+  "023-breeds-of-livestock-cattle__project-build-a-breed.html": {
+    "source_file": "023-breeds-of-livestock-cattle__project-build-a-breed.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      6,
+      7
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Build a Breed project aligns to Class 6 and continues in Class 7; rubric is scoring guidance, not a standalone CFU/quiz."
+  },
+  "023-breeds-of-livestock-cattle__view-lesson-plan.html": {
+    "source_file": "023-breeds-of-livestock-cattle__view-lesson-plan.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "lesson_plan",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Full-pack teacher lesson plan with Class 1\u20137 overviews, steps, activities, and project; spans entire unit spine."
+  },
+  "023-breeds-of-livestock-cattle__vocabulary-handout.html": {
+    "source_file": "023-breeds-of-livestock-cattle__vocabulary-handout.html",
+    "unit_id": "breeds-of-livestock-cattle",
+    "artifact_kind": "student_practice",
+    "covers_lesson_numbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "is_assessment_bearing": false,
+    "assessment_name": null,
+    "notes": "Unit-wide cattle breeds vocabulary (Bos indicus/taurus, crossbred/composite, conformation terms) supports all spine lessons, including project and final assessment."
+  }
+}
