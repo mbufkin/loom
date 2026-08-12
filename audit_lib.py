@@ -143,12 +143,18 @@ def model_chat(
     temperature: float = 0.1,
     max_tokens: int = 8192,
     retries: int = 2,
+    enable_thinking: bool | None = None,
 ) -> dict:
     """POST to analyst/verifier; retry only transient errors (not 4xx client failures).
 
     Best practice: every Loom model call goes through here so token usage is
     captured once (see usage_lib). Prefer server `usage` / llama.cpp `timings`;
     estimate only when both are absent.
+
+    ``enable_thinking``: for local llama.cpp Nemotron templates that support
+    ``chat_template_kwargs.enable_thinking``. Use ``False`` for structured-JSON
+    steps so reasoning tokens cannot exhaust ``max_tokens`` and leave
+    ``content`` empty (seen with Nemotron 3.5 Lightning on Pass 2 connect).
     """
     from usage_lib import monotonic_ms, record_model_call  # local import: avoid cycles
 
@@ -181,6 +187,9 @@ def model_chat(
     # that field (HTTP 400 Unsupported parameter), so only send it to llama.cpp.
     if not cloudish:
         payload["repeat_penalty"] = 1.15
+        # Nemotron 3.5 Lightning (and Nano) honor this; ignored harmlessly if not.
+        if enable_thinking is not None:
+            payload["chat_template_kwargs"] = {"enable_thinking": bool(enable_thinking)}
     headers = {}
     # Cursor bridge (:8788) requires Bearer CURSOR_API_KEY when the bridge has a key set.
     if "8788" in str(url):
@@ -447,11 +456,19 @@ def classify_doc_type(filename: str) -> str:
     # Keep "sylibuis" as typo alias for early stub filenames.
     if "syllabus" in n or "sylibuis" in n:
         return "syllabus"
-    if "answer_key" in n or "answer key" in n:
+    # Hyphen form (answer-key) is common in iCEV / web exports.
+    if "answer_key" in n or "answer key" in n or "answer-key" in n:
         return "answer_key"
     if "exit_ticket" in n or "exit ticket" in n:
         return "exit_ticket"
     if "quizizz" in n or "quiz" in n:
+        return "quiz"
+    # iCEV final / CFU assessments (not answer keys — those matched above).
+    if "final-assessment" in n or "final_assessment" in n:
+        return "quiz"
+    if "check-for-understanding" in n or "check_for_understanding" in n:
+        return "quiz"
+    if re.search(r"(?:^|__)assessment(?:[_\s.-]|\.|$)", n):
         return "quiz"
     if "lesson_plan" in n or "lesson plan" in n:
         return "lesson_plan"

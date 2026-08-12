@@ -172,13 +172,22 @@ Experiment runners (`run_bluebonnet_slice_*.py`, `run_pd.py`, viz) are **not** i
 
 ---
 
+## Route consumption (as of v0.2)
+
+When `--with-graph` has produced HAS-PART under the run's `graph/` tree,
+`route.py` loads graph routing hints (`load_graph_routing_hints`) and may
+override weak filename priors for Paths A–H. Downstream path runners still
+consume only `layer0/route-map.json` — they do not re-read the graph.
+
+Layer 1 / Layer 2 still must not *require* graph output (opt-in remains).
+
 ## Deferred (fog — not this merge)
 
 - Synthesize / GLOBAL-AUDIT surfacing of HAS-PART
-- route / L1 consuming graph output
 - Soft vs hard failure policy changes beyond Gate A / zero-units
 - Multi-module Bluebonnet registry expansion
 - Model provider adapter beyond existing `audit_lib.model_chat` + `config.yaml`
+- Making `--with-graph` the default for every run
 
 ---
 

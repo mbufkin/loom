@@ -93,6 +93,9 @@ def save_raw_model_message(step: str, response: dict) -> Path | None:
 
 
 def chat_json(cfg: dict, step: str, prompt: str, *, max_tokens: int = 16384) -> dict:
+    # Structured HAS-PART / connect JSON: turn thinking off for Nemotron 3.5
+    # Lightning (and similar). Best practice: reasoning tokens must not exhaust
+    # max_tokens and leave message.content empty — parse_model_json then fails.
     resp = model_chat(
         cfg,
         "analyst",
@@ -100,6 +103,7 @@ def chat_json(cfg: dict, step: str, prompt: str, *, max_tokens: int = 16384) -> 
         step,
         temperature=0.1,
         max_tokens=max_tokens,
+        enable_thinking=False,
     )
     save_raw_model_message(step, resp)
     return parse_model_json(extract_content(resp), context=step)

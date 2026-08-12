@@ -203,12 +203,21 @@ def write_path_score(out_dir: Path, score: dict) -> Path:
 
 
 def chat_json(cfg: dict, step: str, prompt: str) -> dict:
+    """Structured JSON call for Pass 1/2 — thinking off so content is never empty.
+
+    Educational note: Nemotron 3.5 Lightning defaults to long ``<think>`` traces.
+    With reasoning on, ``max_tokens`` can be spent entirely on
+    ``reasoning_content``, leaving ``content`` blank and failing parse_model_json.
+    Disable thinking for machine-readable steps; keep the server's reasoning
+    default for free-form review later if needed.
+    """
     resp = model_chat(
         cfg,
         "analyst",
         [{"role": "user", "content": prompt}],
         f"spike-cte-{step}",
         temperature=0.1,
+        enable_thinking=False,
     )
     text = ((resp.get("choices") or [{}])[0].get("message") or {}).get("content") or ""
     return parse_model_json(text, context=step)

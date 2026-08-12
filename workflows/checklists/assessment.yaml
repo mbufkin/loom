@@ -28,6 +28,11 @@ sections:
           - "b)"
           - "c)"
           - "d)"
+          # iCEV / Word exports often letter choices as "A." "B." (not a))
+          - "A."
+          - "B."
+          - "C."
+          - "D."
 
   b3_key:
     label: B3 Answer key signal
@@ -38,6 +43,7 @@ sections:
         keywords:
           - answer key
           - answer keys
+          - answer-key
           - correct answer
       - id: keyed_answers
         label: Numbered correct answers
@@ -47,10 +53,12 @@ sections:
           - "1. c"
           - "1. d"
           - "1. a)"
+          - "1. A"
           - "2. a"
           - "2. b"
           - "2. c"
           - "2. d"
+          - "2. A"
 
   b4_targets:
     label: B4 Learning targets / standards
