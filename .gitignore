@@ -82,5 +82,5 @@ experiments/*/out/
 # --- Internal R&D review briefs (stays local, like research/) ---
 reviews/
 
-# Local pilot corpora (do not ship)
-projects/icev-aas-pilot-2026/
+# Local pilot corpora outside the public datasets list (do not ship)
+projects/*-pilot-2026/

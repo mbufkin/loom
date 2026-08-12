@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "notes": "Gold Path expectations for the CTE spike. Path is the thin kind→Path table after Pass 1. view-lesson-plan is the instructional LP (A). iCEV Action Plan is a student task checklist (E), not Path A.",
+  "notes": "Gold Path expectations for the CTE spike. Path is the thin kind→Path table after Pass 1. view-lesson-plan is the instructional LP (A). CTE Action Plan is a student task checklist (E), not Path A.",
   "path_by_kind": {
     "lesson_plan": "A",
     "assessment": "B",
@@ -18,7 +18,7 @@
     "023-breeds-of-livestock-cattle__action-plan.html": {
       "expected_kind": "student_practice",
       "expected_path": "E",
-      "rationale": "iCEV Action Plan = student task checklist, not the lesson plan"
+      "rationale": "CTE Action Plan = student task checklist, not the lesson plan"
     },
     "023-breeds-of-livestock-cattle__activity-career-connections.html": {
       "expected_kind": "student_practice",
@@ -73,7 +73,7 @@
     "027-external-anatomy-of-livestock-terms-terminology__action-plan.html": {
       "expected_kind": "student_practice",
       "expected_path": "E",
-      "rationale": "iCEV Action Plan = student task checklist, not the lesson plan"
+      "rationale": "CTE Action Plan = student task checklist, not the lesson plan"
     },
     "027-external-anatomy-of-livestock-terms-terminology__activity-career-connections.html": {
       "expected_kind": "student_practice",

@@ -4,17 +4,17 @@
 
 ## Hypothesis
 
-Full Layer 0 evidence → two model steps (type, then connect) can sort iCEV
+Full Layer 0 evidence → two model steps (type, then connect) can sort CTE
 lesson packs into Course → Unit → Lesson → typed Material/Assessment, so
 `view-lesson-plan` becomes `artifact_kind=lesson_plan` (Path A), not teacher edition —
 **and two units in one course do not mangle** (no cross-unit edges / foreign attachments).
 
 Evidence packing matches **production local** `graph_phase` intent: **uncapped**
-Layer 0 excerpts, fresh context per document/step. When iCEV ledger rows repeat
+Layer 0 excerpts, fresh context per document/step. When ledger rows repeat
 the same wide-span text N×, the spike collapses to unique uncapped excerpts
 (full doc once) so the Grok bridge does not hang — information-equivalent to
 production, without 39× paste. Path letter is Python-only (`kind → Path`).
-Pass 1 prompt is CTE-only (no Bluebonnet TE/SE labels) with iCEV disambiguation
+Pass 1 prompt is CTE-only (no Bluebonnet TE/SE labels) with disambiguation
 for Action Plan / Key Concepts / projects.
 
 ## Units

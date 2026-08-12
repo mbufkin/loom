@@ -28,7 +28,7 @@ sections:
           - "b)"
           - "c)"
           - "d)"
-          # iCEV / Word exports often letter choices as "A." "B." (not a))
+          # Word/web CTE exports often letter choices as "A." "B." (not a))
           - "A."
           - "B."
           - "C."
