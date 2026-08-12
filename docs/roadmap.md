@@ -5,7 +5,23 @@
 > single strong model with on-demand same-model recheck, unattended resumable queue,
 > conformance over calendar synthesis. Everything below serves those bets.
 
-## Current Direction (decided 2026-07-07)
+> **Where things stand (2026-08-09).** Layers 0–2 and the eight review paths (A–H)
+> are built and running end to end; the rung stack that turns path findings into a
+> per-unit verdict is wired for the first time. The current effort is **freezing the
+> data contract so the tuning phase is reviewable** — not adding capability.
+>
+> The live working document for that effort is
+> [ARCHITECTURE-READINESS.md](ARCHITECTURE-READINESS.md): it holds the ten checks that
+> define "structure is frozen," what passes today, and the ordered plan. Read it
+> before starting work. This roadmap is the historical record of how each layer got
+> built and what broke along the way; the sections below are kept in the order they
+> happened and are not rewritten after the fact.
+>
+> Latest entries: [Paths A–H and the rung stack](#paths-ah-and-the-rung-stack-2026-08-09),
+> structural issues [#14](#14-missing-is-overloaded-and-one-path-disagrees-with-the-other-six-found-2026-08-09)
+> and [#15](#15-nothing-asserts-a-stage-produced-output-partially-fixed-2026-08-09).
+
+## Current Direction (decided 2026-07-07, still current)
 
 **Pivot: from calendar synthesis → placement conformance.**
 
@@ -585,6 +601,151 @@ tables (`PRODUCT-OVERVIEW.md`) or brief top-of-file callouts pointing to this
 roadmap (`PIPELINE.md`, `ARCHITECTURE.md`, `DATA-FLOW.md`, `FILE-FLOW.md` —
 their Mermaid diagrams still describe the legacy path and were not redrawn;
 that's a separate follow-up, not done tonight).
+
+---
+
+## Paths A–H and the rung stack (2026-08-09)
+
+The layers answer *where does this document belong*. The paths answer *is this
+document any good for the job it claims to do*, and the rungs turn those per-document
+answers into one verdict a curriculum director can act on.
+
+### Eight review lenses
+
+`route.py` assigns every document exactly one path; `workflows/run_paths.py` runs all
+eight unconditionally and writes `path_<letter>/findings.json`.
+
+| Path | Lens | Path | Lens |
+| --- | --- | --- | --- |
+| A | Lesson plan | E | Student practice |
+| B | Assessment (quiz + key) | F | Standards & pacing |
+| C | General feedback | G | Syllabus |
+| D | Teacher support | H | Exit ticket |
+
+A corpus missing a document type writes `status: skipped` rather than failing —
+verified across six workspaces. Routing precedence is explicit and pinned by fourteen
+tests: doc_type wins, then filename priors, then graph roles, then fallback to C.
+
+Rollout evidence, including what each new lens caught that Path A could not, is in
+[PATHWAY-ROLLOUT-REVIEW.md](PATHWAY-ROLLOUT-REVIEW.md).
+
+### The rung stack
+
+```
+path_a/findings.json ──> lesson_rung  ──┐
+                                        ├──> unit_rung ──> synthesize ──> DASHBOARD
+path_b..h/findings.json ──> artifact_rung ──┘
+```
+
+`lesson_rung` grades lesson documents, `artifact_rung` everything else, `unit_rung`
+combines them into Strong / Developing / Weak / Unrated per unit. The two rungs
+partition the corpus from one shared definition (`lesson_bakeoff.LESSON_DOC_TYPES`),
+so no document is graded twice.
+
+### Two stages had been silently dead for weeks
+
+Found 2026-08-09 while auditing whether the structure was ready for tuning. A history
+rewrite had deleted `artifact_scorers.py` and several `synthesize.py` symbols without
+recording it. Both `artifact_rung` and `unit_rung` crashed on import — and both sat
+inside a `try/except Exception` band in `run_project.py` that logged a warning and let
+the run report success.
+
+The consequence was quiet and serious: `unit_rung.unit_band()` gates "Strong" on
+`has_artifact_gap`, and with the artifact rung dead that flag was permanently `False`.
+**The non-lesson quality gate had been inert the entire time** — a unit could be rated
+Strong while containing 25 quizzes with no answer key. No `ARTIFACT-RUNG.json` existed
+anywhere in the repository, and nothing noticed.
+
+Three fixes, in order:
+
+1. **Fail loudly.** `run_step` now tees child stderr and raises `StageBrokenError` on
+   an import or syntax failure. The best-effort band re-raises that class and keeps
+   warning on everything else, so a model being offline still degrades gracefully
+   while a packaging bug stops the run. `test_pipeline_stages.py` import-checks every
+   pipeline module in CI.
+2. **Restore what the rewrite took.** `load_expectations` came back from `957fa80` —
+   along with `aggregate_missing`, `_pick_exemplars`, the systemic-absence constants,
+   and `aggregate_layer1`'s `expectations` parameter, all removed in the same rewrite.
+   Restoring only the imported name would have import-cleanly then raised `TypeError`.
+3. **Rewrite the artifact rung as a rollup.** It no longer scores anything; it reads
+   Paths B–H and emits the `ARTIFACT-RUNG.json` contract `unit_rung` already expected.
+   `artifact_scorers.py` was deliberately not restored — Paths B–H are now the single
+   non-lesson scorer.
+
+**Result on Dallas:** 78 artifacts across 17 units, 12 passing the presence gate
+(15.4%), 16 units carrying a real deterministic gap, zero overlap with the 33 lesson
+documents. The loop from a path finding to a director-facing dashboard is closed for
+the first time.
+
+Unit bands did not move (15 Weak, 3 Unrated) and that is correct rather than a no-op:
+the artifact gate lives inside the Strong branch only, so it can demote Strong to
+Developing but never manufacture Weak. Dallas has no Strong candidates because
+systemic role gaps already drive every unit down. The gate is live; this corpus gives
+it nothing to act on.
+
+**The lesson worth keeping:** the bug was not the deleted module, it was that a
+best-effort `try/except` could not tell "the model is offline" from "this stage does
+not exist." Breadth of exception handling, not depth of the failure, is what made it
+invisible for weeks. See structural issue #15.
+
+### The contract is frozen (2026-08-09)
+
+All ten readiness checks pass. Four things landed after the rung work:
+
+**One vocabulary.** `OPTIONAL_ABSENT` replaced the overloaded `MISSING` for
+all-optional steps across all seven scorers, retiring `syllabus.py`'s stray `SKIPPED`
+before it ever reached a findings file. 63 Dallas cells moved; `MISSING` now means one
+thing.
+
+**One shape.** `path_*/findings.json` has a schema in `schema_validate.py`, enforced at
+write time through a single shared helper rather than seven bolted-on calls. Path A
+carries the same envelope as B–H, additively — `reports.py` still reads its `steps` for
+the curriculum tier, and that tier was verified unchanged (hunter 8, A3 `COHERENT`, zero
+unit changes). The route map validates too.
+
+**No silent stages.** All 14 stages declare their expected artifacts; a stage that runs,
+writes nothing, and exits zero now fails the run. Confirmed against the original
+incident: deleting `ARTIFACT-RUNG.json` reproduces a hard failure naming the stage and
+the missing file.
+
+**Reviewable tuning.** Path findings are golden-pinned, with `--check` in CI exiting
+non-zero on drift. A simulated rating regression produced
+`path C: 1 document C1: PRESENT -> MISSING` plus the shifted status counts — which is
+the whole point: a checklist keyword change is now a diff a human reads, not an
+invisible shift.
+
+**Coverage: all 12 projects pinned.** The four missing a route map turned out to need
+no model work at all — Layer 0 was already on disk for each, and routing plus presence
+scoring are deterministic. Re-routing and re-scoring all four took under ten seconds
+offline, which is worth remembering: *pinning a corpus is cheap; only Layer 0 is
+expensive.*
+
+Per-lens document counts now pinned: A 38, B 50, C 75, D 26, E 72, F 15, G 2, H 45.
+
+**Path G's two documents turned out to be real, and reading them found a bug in every
+lens.** `lab-culinary-syllabus` was recorded above as synthetic; it is not. It holds two
+genuine Waxahachie ISD syllabi that had been sitting in the corpus unread, which is a
+reminder that "unproven" and "no corpus" are different problems — this one only needed
+somebody to look.
+
+What the reading found was that presence had been matched as a plain substring since
+the beginning. `PPE` matched "Cli**ppe**rs", so a culinary syllabus scored lab safety
+present; `credit` matched "extra credit"; `cover` matched "recipe cover to protect from
+food", reporting a TEKS coverage claim in a document that never says TEKS. Worst of the
+set, `cte` matched "expe**cte**d", so the CTE soft gate fired on nearly every document
+and the optional safety/WBL/acknowledgment fields were never actually optional.
+
+Path G is fixed and pinned field by field against both documents (see
+`docs/ARCHITECTURE-READINESS.md` §11). It also now reads the source document rather
+than the Layer 0 ledger, which samples a syllabus rather than covering it.
+
+**Open: the same substring bug in the other seven lenses.** 60 keywords across the
+eight checklists fire only as substrings on the real corpora — `teach` inside
+"teacher", `unit` inside "opport**unit**y", `ELPS` inside "h**elps**". It was left
+scoped to G deliberately: some of those keywords are intentional stems (`facilitat`,
+`vocab`, `scaffold`) that boundary matching would break, so each checklist needs a
+per-keyword read against its corpus, and one lens at a time keeps each ratings shift
+reviewable.
 
 ---
 
@@ -1292,6 +1453,76 @@ giant CED.
 same way Layer 0 chunks — per-chunk placement drafts, then merge/check —
 without changing the multi-doc happy path. Until then: treat `ap-csp-2026` as
 Layer 0 stress only (`projects/ap-csp-2026/README.md`, `projects/STATUS.md`).
+
+### 14. `MISSING` is overloaded, and one path disagrees with the other six (found 2026-08-09)
+
+**Problem.** Scoring lives in the per-lens modules (`workflows/quiz.py`, `general.py`,
+…), not in `run_paths.py`, and every one of the seven honors the field-level `optional`
+flag. The bug is in what they conclude.
+
+Each has a `required == 0` branch for steps whose fields are all optional. Six resolve
+"no optional signal found" to `MISSING`; `syllabus.py` resolves the identical case to
+`SKIPPED`. So `MISSING` now means two different things — "a required element is absent"
+and "a nice-to-have was not found" — and nothing downstream can separate them. Six steps
+are affected: `B4`, `C4`, `D4`, `E4`, `F4`, `H3`.
+
+`SKIPPED` is worse in a quieter way: it is not in `STEP_STATUSES`
+(`PRESENT, PARTIAL, MISSING, NOT_APPLICABLE, STUB`). It has never appeared in a findings
+file only because Path G is skipped on every corpus we have, so the branch has never
+run. The first real syllabus corpus emits a status the UI silently drops.
+
+On Dallas that is 23 false MISSING marks for E4, 20 for B4, 16 for H3 — three of the
+top six drivers of gate failure, and nine documents that failed the artifact gate for
+no other reason.
+
+**Why it surfaced now.** The flag was harmless while nothing consumed path findings.
+Wiring the artifact rung (see above) turned every `MISSING` into a deterministic gap
+and made a dormant bug load-bearing overnight. Worth remembering as a pattern: giving
+an unread artifact its first consumer is also its first real test.
+
+**Current state — patched, not fixed.** `artifact_rung.py` exempts all-optional steps
+at the gate, so the unit verdict is honest. The Paths panel in the UI still renders
+those steps as red `MISSING`, so a human reviewer is misled the same way the gate was.
+
+**Fixed (2026-08-09).** All seven modules now emit `OPTIONAL_ABSENT` for this case,
+replacing both the six `MISSING` results and `syllabus.py`'s `SKIPPED`. The status is in
+`STEP_STATUSES`, the TypeScript union, and the Paths panel, styled as a neutral signal
+rather than a failure. `SKIPPED` is gone from the tree.
+
+On Dallas, 63 cells moved from `MISSING` to `OPTIONAL_ABSENT` (B4 20, C4 1, D4 3, E4 23,
+H3 16) and nothing else shifted, so `MISSING` dropped 167 → 104 and now means one thing.
+The gate workaround in `artifact_rung.py` was removed in the same pass; artifact numbers
+came out byte-identical to the workaround's, which was the point — the rule was replaced,
+not loosened.
+
+`B5` and `C1` also picked up real labels (`Quiz ↔ key pairing`, `Inventory`), declared as
+label-only checklist sections since both are scored in code.
+
+**Also in scope for that pass:** `B5` and `C1` render as bare step ids instead of
+readable labels (`B3 Answer key signal`) in `ARTIFACT-RUNG.md` and the Paths panel,
+because they are not defined in the `sections` block the label loader reads. Cosmetic,
+but it shows up in a director-facing report.
+
+### 15. Nothing asserts a stage produced output (partially fixed 2026-08-09)
+
+**Problem.** Two pipeline stages crashed on import for weeks while `run_project.py`
+reported success, because the best-effort `try/except Exception` band could not
+distinguish "the model is offline" (a legitimate soft skip) from "this module does not
+exist" (a packaging bug). Full account in the rung-stack section above.
+
+**Fixed.** Import and syntax failures now raise `StageBrokenError` and stop the run;
+`test_pipeline_stages.py` import-checks every stage in CI.
+
+**Also fixed (2026-08-09).** The quiet half is closed too. All 14 stages declare their
+expected artifacts in `STAGE_EXPECTED_OUTPUTS`, and `StageOutputError` fails the run when
+one is absent after the stage actually ran. A stage that never ran, or that legitimately
+writes `status: skipped`, still passes — that distinction was the delicate part, since
+getting it wrong turns a working pipeline red.
+
+Verified against the original incident: deleting `ARTIFACT-RUNG.json` and re-running the
+assertion produces `stage artifact_rung.py produced no output for:
+layer_artifact/ARTIFACT-RUNG.json`. The bug that hid for weeks would now stop the run on
+its first occurrence.
 
 ## Questions for the Roadmap
 

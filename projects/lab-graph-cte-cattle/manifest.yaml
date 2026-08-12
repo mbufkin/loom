@@ -1,0 +1,39 @@
+# SPIKE ONLY — isolated from production graph_phase / Bluebonnet TE-SE roles.
+# Two-unit anti-mangle lab: cattle + external anatomy.
+project:
+  id: lab-graph-cte-cattle
+  name: CTE graph sort spike (cattle + external anatomy)
+sources_dir: sources
+units:
+  breeds-of-livestock-cattle:
+    title: Breeds of Livestock — Cattle
+    calendar: units/breeds-of-livestock-cattle/calendar.yaml
+    documents:
+    - 023-breeds-of-livestock-cattle__action-plan.html
+    - 023-breeds-of-livestock-cattle__activity-career-connections.html
+    - 023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html
+    - 023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html
+    - 023-breeds-of-livestock-cattle__final-assessment-answer-key.html
+    - 023-breeds-of-livestock-cattle__final-assessment.html
+    - 023-breeds-of-livestock-cattle__horizontal-alignments.html
+    - 023-breeds-of-livestock-cattle__key-concepts.html
+    - 023-breeds-of-livestock-cattle__project-build-a-breed.html
+    - 023-breeds-of-livestock-cattle__view-lesson-plan.html
+    - 023-breeds-of-livestock-cattle__vocabulary-handout.html
+  external-anatomy-of-livestock-terms-terminology:
+    title: 'External Anatomy of Livestock: Terms & Terminology'
+    calendar: units/external-anatomy-of-livestock-terms-terminology/calendar.yaml
+    documents:
+    - 027-external-anatomy-of-livestock-terms-terminology__action-plan.html
+    - 027-external-anatomy-of-livestock-terms-terminology__activity-career-connections.html
+    - 027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar.html
+    - 027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key.html
+    - 027-external-anatomy-of-livestock-terms-terminology__assessment.html
+    - 027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments.html
+    - 027-external-anatomy-of-livestock-terms-terminology__key-concepts.html
+    - 027-external-anatomy-of-livestock-terms-terminology__ngss-correlation.html
+    - 027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor.html
+    - 027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan.html
+    - 027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout.html
+generated_by: spike-scaffold
+spike: true

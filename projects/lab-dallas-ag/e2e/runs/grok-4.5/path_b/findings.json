@@ -1,0 +1,11 @@
+{
+  "project_id": "lab-dallas-ag",
+  "workflow_id": "quiz",
+  "path": "B",
+  "lens": "Assessment",
+  "status": "skipped",
+  "doc_ids": [],
+  "checklist": "workflows/checklists/assessment.yaml",
+  "inventory": [],
+  "steps_by_doc": {}
+}

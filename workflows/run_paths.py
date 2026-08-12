@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
-workflows/run_paths.py — Run Path A/B/C after route-map exists.
+workflows/run_paths.py — Run Path A–H after route-map exists.
 
 Also refreshes unit LESSON-PLAN plates after Path A.
+See docs/PATHS.md for the A–H lens contract.
 """
 
 from __future__ import annotations
@@ -24,12 +25,17 @@ from audit_lib import (
     project_dir,
     validate_slug_id,
 )
+from workflows.exit_ticket import run_path_h_for_project
 from workflows.general import run_path_c_for_project
 from workflows.lesson_plan import (
     run_path_a_for_project,
     write_unit_lesson_plans_from_path_a,
 )
 from workflows.quiz import run_path_b_for_project
+from workflows.standards_pacing import run_path_f_for_project
+from workflows.student_practice import run_path_e_for_project
+from workflows.syllabus import run_path_g_for_project
+from workflows.teacher_support import run_path_d_for_project
 
 
 def _title_map(project_id: str) -> dict[str, str]:
@@ -38,16 +44,20 @@ def _title_map(project_id: str) -> dict[str, str]:
     sources = root / "sources"
     if not sources.is_dir():
         return out
-    for p in sources.glob("doc_*.txt"):
+    for p in sources.rglob("doc_*.txt"):
         did = doc_id_from_filename(p.name)
         name = p.stem
-        title = name.split("_", 2)[-1].replace("_", " ") if name.startswith("doc_") else name
+        title = (
+            name.split("_", 2)[-1].replace("_", " ")
+            if name.startswith("doc_")
+            else name
+        )
         out[did] = title
     return out
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Run Loom Path A/B/C workflows")
+    parser = argparse.ArgumentParser(description="Run Loom Path A–H review lenses")
     parser.add_argument("--project", required=True)
     parser.add_argument(
         "--no-model",
@@ -64,8 +74,13 @@ def main() -> int:
     a = run_path_a_for_project(args.project, use_model=not args.no_model)
     b = run_path_b_for_project(args.project)
     c = run_path_c_for_project(args.project)
+    d = run_path_d_for_project(args.project)
+    e = run_path_e_for_project(args.project)
+    f = run_path_f_for_project(args.project)
+    g = run_path_g_for_project(args.project)
+    h = run_path_h_for_project(args.project)
 
-    # Handoff aggregate for place-into-units
+    # Handoff aggregate for place-into-units / UI
     handoff = {
         "project_id": args.project,
         "workflows": [
@@ -73,6 +88,7 @@ def main() -> int:
                 "doc_id": "*",
                 "workflow_id": "lesson_plan",
                 "path": "A",
+                "lens": "Lesson",
                 "status": a.get("status"),
                 "findings_path": "path_a/findings.json",
                 "emit_paths": a.get("emit_paths") or [],
@@ -82,6 +98,7 @@ def main() -> int:
                 "doc_id": "*",
                 "workflow_id": "quiz",
                 "path": "B",
+                "lens": "Assessment",
                 "status": b.get("status"),
                 "findings_path": "path_b/findings.json",
                 "emit_paths": ["path_b/findings.json"],
@@ -91,10 +108,61 @@ def main() -> int:
                 "doc_id": "*",
                 "workflow_id": "general",
                 "path": "C",
+                "lens": "General feedback",
                 "status": c.get("status"),
                 "findings_path": "path_c/findings.json",
                 "emit_paths": ["path_c/findings.json"],
                 "summary": {"doc_count": len(c.get("doc_ids") or [])},
+            },
+            {
+                "doc_id": "*",
+                "workflow_id": "teacher_support",
+                "path": "D",
+                "lens": "Teacher support",
+                "status": d.get("status"),
+                "findings_path": "path_d/findings.json",
+                "emit_paths": ["path_d/findings.json"],
+                "summary": {"doc_count": len(d.get("doc_ids") or [])},
+            },
+            {
+                "doc_id": "*",
+                "workflow_id": "student_practice",
+                "path": "E",
+                "lens": "Student practice",
+                "status": e.get("status"),
+                "findings_path": "path_e/findings.json",
+                "emit_paths": ["path_e/findings.json"],
+                "summary": {"doc_count": len(e.get("doc_ids") or [])},
+            },
+            {
+                "doc_id": "*",
+                "workflow_id": "standards_pacing",
+                "path": "F",
+                "lens": "Standards & pacing",
+                "status": f.get("status"),
+                "findings_path": "path_f/findings.json",
+                "emit_paths": ["path_f/findings.json"],
+                "summary": {"doc_count": len(f.get("doc_ids") or [])},
+            },
+            {
+                "doc_id": "*",
+                "workflow_id": "syllabus",
+                "path": "G",
+                "lens": "Syllabus",
+                "status": g.get("status"),
+                "findings_path": "path_g/findings.json",
+                "emit_paths": ["path_g/findings.json"],
+                "summary": {"doc_count": len(g.get("doc_ids") or [])},
+            },
+            {
+                "doc_id": "*",
+                "workflow_id": "exit_ticket",
+                "path": "H",
+                "lens": "Exit ticket",
+                "status": h.get("status"),
+                "findings_path": "path_h/findings.json",
+                "emit_paths": ["path_h/findings.json"],
+                "summary": {"doc_count": len(h.get("doc_ids") or [])},
             },
         ],
     }
@@ -110,7 +178,7 @@ def main() -> int:
     except Exception as e:
         log(f"WARN: unit LESSON-PLAN refresh skipped: {e}")
 
-    log("path workflows done")
+    log("path workflows done (A–H)")
     return 0
 
 

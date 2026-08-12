@@ -1,0 +1,61 @@
+# Artifact spec: EXIT TICKET (a formative-assessment artifact).
+#
+# WHY / PROVENANCE
+# Frameworks: Black & Wiliam (2009), "Developing the theory of formative
+# assessment" — a good exit ticket (a) elicits evidence of learning against the
+# lesson's intention and (b) is usable to adjust instruction. We AUDIT those two
+# properties; we never assert whether a student's answer is correct (no invented
+# domain truth — see the locked grilling decisions).
+#
+# HOW IT SCORES
+# presence (deterministic, GATES): does the ticket actually contain a prompt/items?
+# alignment (model, ADVISES): does the prompt target the unit's objective, and is it
+# actionable? The alignment half is anchored to the lesson objective -> cited TEKS by
+# the artifact rung; when neither exists it emits "cannot assess" (rolled up as a
+# lesson-level gap), never a fabricated score.
+
+version: "v1-exitticket-2026-07"
+rubric_id: artifact_exit_ticket
+role: exit_ticket
+title: "Exit ticket (formative check for understanding)"
+framework: "Black & Wiliam formative assessment"
+scoring: presence
+auditor_only: true
+
+criteria:
+  - id: has_prompt
+    label: Prompt / question present
+    description: The ticket poses at least one question or task for students to answer.
+    evidence_element_types: [assessment_checkpoint]
+    keywords: [exit ticket, question, prompt, answer, respond, explain, solve, show]
+    required: true
+
+  - id: collects_response
+    label: Space / mechanism to collect a response
+    description: >
+      A place or means for the student to record an answer (a blank, a form, a
+      "turn in") — evidence the ticket is used to gather learning, not just read.
+    evidence_element_types: [independent_practice, assessment_checkpoint]
+    keywords: [name, answer, response, turn in, submit, write, circle, blank]
+    required: false
+
+alignment:
+  framework: "Black & Wiliam (2009) formative assessment"
+  band_scale:
+    0: "Cannot tell / no discernible tie to the objective."
+    1: "Loosely related to the topic but not to the specific objective."
+    2: "Assesses the objective but only partially (one facet or the easy part)."
+    3: "Directly elicits evidence of the objective and is actionable for reteach."
+  criteria:
+    - id: aligned_to_objective
+      label: Aligned to the lesson objective
+      description: >
+        The prompt elicits evidence of the SAME learning the anchor objective (or
+        cited TEKS) targets — not merely the same topic.
+      reads_from: [assessment_checkpoint, standards_objectives, independent_practice]
+    - id: actionable
+      label: Actionable for instruction
+      description: >
+        A teacher could look at responses and know who met the objective and what
+        to reteach (Black & Wiliam's "usable to adjust teaching").
+      reads_from: [assessment_checkpoint, reflection_closure]

@@ -2,549 +2,3355 @@
   "project_id": "dallas-career-2026",
   "workflow_id": "quiz",
   "path": "B",
-  "status": "stub",
+  "lens": "Assessment",
+  "status": "ok",
   "doc_ids": [
-    "041457651819",
-    "09bf178d4e7e",
-    "0a9fe894e4f0",
     "0ace9ac9d412",
     "0b16e1424928",
-    "1518e9d9d4e5",
-    "1b43180b2ba4",
-    "1bd2952ce87b",
-    "314d7d0905ca",
-    "3f5d5ba70a87",
+    "0cbd06c7c769",
+    "21d5442f97a2",
+    "270bcdd1de81",
+    "2fc999f5e539",
     "3fd5e5bc561c",
-    "4736326638c1",
-    "51e75ae5f576",
-    "59ddeafc2ad3",
+    "40c5e0f508f1",
+    "6880e9ded029",
+    "6c94424ba260",
     "6caee441faaf",
-    "81adda4c10f7",
-    "85c8ad2c6c50",
+    "769516e58fb5",
+    "7896317a42cd",
     "86fff193b91a",
-    "8ce965ac1600",
-    "9b49036929a2",
+    "8891b46563ae",
     "a13c35aa5c4e",
-    "ba8b5c7a6deb",
+    "addfb0873806",
+    "af9cf3b04474",
     "d3fae80ecd3f",
-    "e173d04cd3e3",
-    "e2c12c61bc5f",
+    "e2f014fb5b00",
+    "e31064aba3ae",
+    "e7b2a411cbdc",
     "ed1c99b4f5fa",
-    "eff81c789b58",
-    "f52d1bc1c462",
-    "fc48920a5ca9",
-    "ff5cd4c0712e"
+    "f1b0566d0274",
+    "f9710e5e4e97",
+    "fc48920a5ca9"
   ],
+  "checklist": "workflows/checklists/assessment.yaml",
   "inventory": [
-    {
-      "doc_id": "041457651819",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
-    },
-    {
-      "doc_id": "09bf178d4e7e",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
-    },
-    {
-      "doc_id": "0a9fe894e4f0",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
-      },
-      "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
-      },
-      "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
-    },
     {
       "doc_id": "0ace9ac9d412",
       "doc_type": "answer_key",
+      "element_count": 3,
+      "pair_key": "transportation distribution and logistics",
       "B1": {
-        "has_items": false,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
       },
       "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "B5": {
+        "status": "PARTIAL",
+        "note": "answer key without matched quiz sibling"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
       "doc_id": "0b16e1424928",
       "doc_type": "quiz",
+      "element_count": 3,
+      "pair_key": "dallas isd high school options",
       "B1": {
-        "has_items": true,
-        "has_answer_key_signal": false,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "status": "PRESENT",
+        "note": "2/2 fields present"
       },
       "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "B5": {
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
-      "doc_id": "1518e9d9d4e5",
-      "doc_type": "exit_ticket",
+      "doc_id": "0cbd06c7c769",
+      "doc_type": "rubric",
+      "element_count": 1,
+      "pair_key": "arts av technology communication flyer project rubric",
       "B1": {
-        "has_items": false,
-        "has_answer_key_signal": false,
-        "status": "MISSING"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
         "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "note": "0/2 fields present"
       },
       "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "B5": {
+        "status": "NOT_APPLICABLE",
+        "note": "rubric routed to B; pairing is for quiz↔key"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
-      "doc_id": "1b43180b2ba4",
-      "doc_type": "exit_ticket",
+      "doc_id": "21d5442f97a2",
+      "doc_type": "rubric",
+      "element_count": 2,
+      "pair_key": "hospitality tourism travel agent presentation project rubric",
       "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
         "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "note": "0/2 fields present"
       },
       "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "B5": {
+        "status": "NOT_APPLICABLE",
+        "note": "rubric routed to B; pairing is for quiz↔key"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
-      "doc_id": "1bd2952ce87b",
-      "doc_type": "exit_ticket",
+      "doc_id": "270bcdd1de81",
+      "doc_type": "rubric",
+      "element_count": 1,
+      "pair_key": "health science project rubric",
       "B1": {
-        "has_items": true,
-        "has_answer_key_signal": false,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
         "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "note": "0/2 fields present"
       },
       "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "B5": {
+        "status": "NOT_APPLICABLE",
+        "note": "rubric routed to B; pairing is for quiz↔key"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
-      "doc_id": "314d7d0905ca",
-      "doc_type": "exit_ticket",
+      "doc_id": "2fc999f5e539",
+      "doc_type": "worksheet",
+      "element_count": 4,
+      "pair_key": "students worksheet",
       "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
       },
       "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
-    },
-    {
-      "doc_id": "3f5d5ba70a87",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
-      },
-      "B2": {
         "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "note": "0/2 fields present"
       },
-      "B3": {
+      "B4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "B5": {
+        "status": "MISSING",
+        "note": "no pair group"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
       "doc_id": "3fd5e5bc561c",
       "doc_type": "quiz",
+      "element_count": 3,
+      "pair_key": "manufacturing exploration",
       "B1": {
-        "has_items": true,
-        "has_answer_key_signal": false,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "status": "PRESENT",
+        "note": "2/2 fields present"
       },
       "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "B5": {
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
-      "doc_id": "4736326638c1",
-      "doc_type": "exit_ticket",
+      "doc_id": "40c5e0f508f1",
+      "doc_type": "project_work",
+      "element_count": 2,
+      "pair_key": "career cluster student feedback project",
       "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
         "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "note": "0/2 fields present"
       },
       "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "B5": {
+        "status": "MISSING",
+        "note": "no pair group"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
-      "doc_id": "51e75ae5f576",
-      "doc_type": "exit_ticket",
+      "doc_id": "6880e9ded029",
+      "doc_type": "project_work",
+      "element_count": 3,
+      "pair_key": "commercial project instructions",
       "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
         "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "note": "0/2 fields present"
       },
       "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "B5": {
+        "status": "MISSING",
+        "note": "no pair group"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
-      "doc_id": "59ddeafc2ad3",
-      "doc_type": "exit_ticket",
+      "doc_id": "6c94424ba260",
+      "doc_type": "rubric",
+      "element_count": 1,
+      "pair_key": "information technology project rubric",
       "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
         "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "note": "0/2 fields present"
       },
       "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "B5": {
+        "status": "NOT_APPLICABLE",
+        "note": "rubric routed to B; pairing is for quiz↔key"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
       "doc_id": "6caee441faaf",
       "doc_type": "answer_key",
+      "element_count": 2,
+      "pair_key": "dallas isd high school options",
       "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
         "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "note": "0/2 fields present"
       },
       "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "B5": {
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
-      "doc_id": "81adda4c10f7",
-      "doc_type": "exit_ticket",
+      "doc_id": "769516e58fb5",
+      "doc_type": "rubric",
+      "element_count": 2,
+      "pair_key": "business marketing finance project rubric",
       "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
         "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "note": "0/2 fields present"
       },
       "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "B5": {
+        "status": "NOT_APPLICABLE",
+        "note": "rubric routed to B; pairing is for quiz↔key"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
-      "doc_id": "85c8ad2c6c50",
-      "doc_type": "exit_ticket",
+      "doc_id": "7896317a42cd",
+      "doc_type": "other",
+      "element_count": 4,
+      "pair_key": "ctso career pathway letter of intent",
       "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
         "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "note": "0/2 fields present"
       },
       "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "B5": {
+        "status": "MISSING",
+        "note": "no pair group"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
       "doc_id": "86fff193b91a",
       "doc_type": "answer_key",
+      "element_count": 3,
+      "pair_key": "engineering lesson",
       "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "status": "PRESENT",
+        "note": "2/2 fields present"
       },
       "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "B5": {
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
-      "doc_id": "8ce965ac1600",
-      "doc_type": "exit_ticket",
+      "doc_id": "8891b46563ae",
+      "doc_type": "project_work",
+      "element_count": 3,
+      "pair_key": "flyer project instructions",
       "B1": {
-        "has_items": true,
-        "has_answer_key_signal": false,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
         "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "note": "0/2 fields present"
       },
       "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
-    },
-    {
-      "doc_id": "9b49036929a2",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": false,
-        "status": "PRESENT"
-      },
-      "B2": {
         "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "note": "0/2 fields present"
       },
-      "B3": {
+      "B4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "B5": {
+        "status": "MISSING",
+        "note": "no pair group"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
       "doc_id": "a13c35aa5c4e",
       "doc_type": "answer_key",
+      "element_count": 4,
+      "pair_key": "manufacturing exploration",
       "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "status": "PRESENT",
+        "note": "2/2 fields present"
       },
       "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "B5": {
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
-      "doc_id": "ba8b5c7a6deb",
-      "doc_type": "exit_ticket",
+      "doc_id": "addfb0873806",
+      "doc_type": "worksheet",
+      "element_count": 1,
+      "pair_key": "community problem brainstorming worksheet",
       "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
         "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "note": "0/2 fields present"
       },
       "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "B5": {
+        "status": "MISSING",
+        "note": "no pair group"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "af9cf3b04474",
+      "doc_type": "rubric",
+      "element_count": 2,
+      "pair_key": "arts av technology communication commercial project rubric",
+      "B1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
+      },
+      "B2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "B5": {
+        "status": "NOT_APPLICABLE",
+        "note": "rubric routed to B; pairing is for quiz↔key"
+      },
+      "B6": {
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
       "doc_id": "d3fae80ecd3f",
       "doc_type": "quiz",
+      "element_count": 4,
+      "pair_key": "architecture and construction",
       "B1": {
-        "has_items": true,
-        "has_answer_key_signal": false,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "status": "PRESENT",
+        "note": "2/2 fields present"
       },
       "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "B5": {
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
-      "doc_id": "e173d04cd3e3",
-      "doc_type": "exit_ticket",
+      "doc_id": "e2f014fb5b00",
+      "doc_type": "other",
+      "element_count": 1,
+      "pair_key": "what are businesses saying to me and how",
       "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
         "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "note": "0/2 fields present"
       },
       "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "B5": {
+        "status": "MISSING",
+        "note": "no pair group"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
-      "doc_id": "e2c12c61bc5f",
-      "doc_type": "exit_ticket",
+      "doc_id": "e31064aba3ae",
+      "doc_type": "worksheet",
+      "element_count": 6,
+      "pair_key": "writing your sales pitch worksheet",
       "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
+      },
+      "B2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "B5": {
+        "status": "MISSING",
+        "note": "no pair group"
+      },
+      "B6": {
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "e7b2a411cbdc",
+      "doc_type": "rubric",
+      "element_count": 1,
+      "pair_key": "financial literacy project rubric",
+      "B1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
         "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "note": "0/2 fields present"
       },
       "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "B5": {
+        "status": "NOT_APPLICABLE",
+        "note": "rubric routed to B; pairing is for quiz↔key"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
       "doc_id": "ed1c99b4f5fa",
       "doc_type": "answer_key",
+      "element_count": 7,
+      "pair_key": "architecture and construction",
       "B1": {
-        "has_items": true,
-        "has_answer_key_signal": true,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "status": "PRESENT",
+        "note": "2/2 fields present"
       },
       "B3": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "B4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "B5": {
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
-      "doc_id": "eff81c789b58",
-      "doc_type": "exit_ticket",
+      "doc_id": "f1b0566d0274",
+      "doc_type": "rubric",
+      "element_count": 2,
+      "pair_key": "career cluster project rubric",
       "B1": {
-        "has_items": false,
-        "has_answer_key_signal": false,
-        "status": "MISSING"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
         "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "note": "0/2 fields present"
       },
       "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "B5": {
+        "status": "NOT_APPLICABLE",
+        "note": "rubric routed to B; pairing is for quiz↔key"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
-      "doc_id": "f52d1bc1c462",
-      "doc_type": "exit_ticket",
+      "doc_id": "f9710e5e4e97",
+      "doc_type": "worksheet",
+      "element_count": 3,
+      "pair_key": "career exploration worksheet law",
       "B1": {
-        "has_items": true,
-        "has_answer_key_signal": false,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
         "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "note": "0/2 fields present"
       },
       "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "B5": {
+        "status": "MISSING",
+        "note": "no pair group"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     },
     {
       "doc_id": "fc48920a5ca9",
       "doc_type": "quiz",
+      "element_count": 4,
+      "pair_key": "engineering lesson",
       "B1": {
-        "has_items": true,
-        "has_answer_key_signal": false,
-        "status": "PRESENT"
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
       },
       "B2": {
-        "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "status": "PRESENT",
+        "note": "2/2 fields present"
       },
       "B3": {
-        "status": "STUB",
-        "note": "formative vs summative TBD"
-      }
-    },
-    {
-      "doc_id": "ff5cd4c0712e",
-      "doc_type": "exit_ticket",
-      "B1": {
-        "has_items": true,
-        "has_answer_key_signal": false,
-        "status": "PRESENT"
-      },
-      "B2": {
         "status": "MISSING",
-        "note": "stub — TEKS string presence only"
+        "note": "0/2 fields present"
       },
-      "B3": {
+      "B4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "B5": {
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem"
+      },
+      "B6": {
         "status": "STUB",
-        "note": "formative vs summative TBD"
+        "note": "emit Path B one-pager TBD"
       }
     }
-  ]
+  ],
+  "steps_by_doc": {
+    "0ace9ac9d412": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 3,
+        "by_element_type": {
+          "direct_instruction": 1,
+          "hook_engagement": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "0ace9ac9d412"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Definitions  • Cockpit vs Flight Deck: A cockpit is the area where the pilot sits to fly the plane. Modern commercial airlines often use the term flight deck, which includes the area for the pilot, co- pilot, and extra seats for the crew. • Fuselage: the complete center body of an airplane, which the wings, tailplane, and fin are all attached to. • Cabin: the area of a plane where passengers travel. • Aileron: The ailerons are the flaps closest to the tip of each wing. They are used to turn…",
+              "NEWTON’S 3 LAWS OF MOTION  1. The Law of Inertia An object at rest stays at rest and an object in motion stays in motion unless acted upon by an outside force.  2. Force = Mass times Acceleration The greater the mass of the object, the greater the force needed to achieve the same change in motion. For any given object, a larger force causes a larger change in motion.  3. The Law of Action / Reaction For every action, there is an equal and opposite reaction.  THE 4 FORCES OF FLIGHT"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "PARTIAL",
+        "note": "answer key without matched quiz sibling",
+        "pair_key": "transportation distribution and logistics",
+        "sibling_doc_ids": []
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "0b16e1424928": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 3,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "standards_objectives": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "0b16e1424928"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Dallas ISD High School Options Total questions: 32 Worksheet time: 16mins Name Class Date 1. Match the following descriptions with the type of courses offered in the STEM program at Dallas ISD High School: Basic courses in arts and humanities STEM program courses Advanced courses in physical education Non-STEM program courses Introductory courses in history and geography Physical education courses Rigorous courses in math, science, and technology History and geography courses 2.…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Dallas ISD High School Options Total questions: 32 Worksheet time: 16mins Name Class Date 1. Match the following descriptions with the type of courses offered in the STEM program at Dallas ISD High School: Basic courses in arts and humanities STEM program courses Advanced courses in physical education Non-STEM program courses Introductory courses in history and geography Physical education courses Rigorous courses in math, science, and technology History and geography courses 2.…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem",
+        "pair_key": "dallas isd high school options",
+        "sibling_doc_ids": [
+          "6caee441faaf"
+        ]
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "0cbd06c7c769": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 1,
+        "by_element_type": {
+          "standards_objectives": 1
+        },
+        "doc_id": "0cbd06c7c769"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "NOT_APPLICABLE",
+        "note": "rubric routed to B; pairing is for quiz↔key",
+        "pair_key": "arts av technology communication flyer project rubric",
+        "sibling_doc_ids": []
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "21d5442f97a2": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 2,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "standards_objectives": 1
+        },
+        "doc_id": "21d5442f97a2"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "NOT_APPLICABLE",
+        "note": "rubric routed to B; pairing is for quiz↔key",
+        "pair_key": "hospitality tourism travel agent presentation project rubric",
+        "sibling_doc_ids": []
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "270bcdd1de81": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 1,
+        "by_element_type": {
+          "standards_objectives": 1
+        },
+        "doc_id": "270bcdd1de81"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "NOT_APPLICABLE",
+        "note": "rubric routed to B; pairing is for quiz↔key",
+        "pair_key": "health science project rubric",
+        "sibling_doc_ids": []
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "2fc999f5e539": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 4,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "2fc999f5e539"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Team up with your partners and answer the following questions in complete sentences using journals.  What part of the launcher store potential energy?  Where does your airplane get its kinetic energy?  What was the challenging part of this exercise?  What could be an improvement can be made in your design?"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "MISSING",
+        "note": "no pair group",
+        "pair_key": "students worksheet",
+        "sibling_doc_ids": []
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "3fd5e5bc561c": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 3,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "3fd5e5bc561c"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Worksheets Manufacturing exploration Total questions: 11 Worksheet time: 6mins Name Class Date 1. What is the primary focus of the learning objective titled \"Manufacturing exploration\"? a) To study historical aspects of manufacturing b) To learn about manufacturing theories c) To understand the economic impact of manufacturing d) To explore a new career in manufacturing through experiential learning 2. What aspect of the process is emphasized for improvement in the lesson? a) Cost and benefit…",
+              "6. What is the primary focus of the image related to technologies in manufacturing? a) Assembly of electronic devices b) Use of industrial robots in manufacturing c) Storage of manufactured goods d) Manual labor in factories 7. What type of technology is highlighted in the image related to manufacturing processes? a) Electrical systems b) Pneumatic systems c) Hydraulic systems d) Thermal systems 8. What is the primary focus of the image related to technologies in manufacturing? a) Pneumatics…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Worksheets Manufacturing exploration Total questions: 11 Worksheet time: 6mins Name Class Date 1. What is the primary focus of the learning objective titled \"Manufacturing exploration\"? a) To study historical aspects of manufacturing b) To learn about manufacturing theories c) To understand the economic impact of manufacturing d) To explore a new career in manufacturing through experiential learning 2. What aspect of the process is emphasized for improvement in the lesson? a) Cost and benefit…",
+              "6. What is the primary focus of the image related to technologies in manufacturing? a) Assembly of electronic devices b) Use of industrial robots in manufacturing c) Storage of manufactured goods d) Manual labor in factories 7. What type of technology is highlighted in the image related to manufacturing processes? a) Electrical systems b) Pneumatic systems c) Hydraulic systems d) Thermal systems 8. What is the primary focus of the image related to technologies in manufacturing? a) Pneumatics…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Manufacturing exploration Total questions: 11 Worksheet time: 6mins Name Class Date 1. What is the primary focus of the learning objective titled \"Manufacturing exploration\"? a) To study historical aspects of manufacturing b) To learn about manufacturing theories c) To understand the economic impact of manufacturing d) To explore a new career in manufacturing through experiential learning 2. What aspect of the process is emphasized for improvement in the lesson? a) Cost and benefit…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem",
+        "pair_key": "manufacturing exploration",
+        "sibling_doc_ids": [
+          "a13c35aa5c4e"
+        ]
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "40c5e0f508f1": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 2,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "40c5e0f508f1"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "MISSING",
+        "note": "no pair group",
+        "pair_key": "career cluster student feedback project",
+        "sibling_doc_ids": []
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "6880e9ded029": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 3,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "6880e9ded029"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "MISSING",
+        "note": "no pair group",
+        "pair_key": "commercial project instructions",
+        "sibling_doc_ids": []
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "6c94424ba260": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 1,
+        "by_element_type": {
+          "logistics_materials": 1
+        },
+        "doc_id": "6c94424ba260"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "NOT_APPLICABLE",
+        "note": "rubric routed to B; pairing is for quiz↔key",
+        "pair_key": "information technology project rubric",
+        "sibling_doc_ids": []
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "6caee441faaf": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 2,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "6caee441faaf"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem",
+        "pair_key": "dallas isd high school options",
+        "sibling_doc_ids": [
+          "0b16e1424928"
+        ]
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "769516e58fb5": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 2,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "standards_objectives": 1
+        },
+        "doc_id": "769516e58fb5"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "NOT_APPLICABLE",
+        "note": "rubric routed to B; pairing is for quiz↔key",
+        "pair_key": "business marketing finance project rubric",
+        "sibling_doc_ids": []
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "7896317a42cd": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 4,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "standards_objectives": 1,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "7896317a42cd"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "MISSING",
+        "note": "no pair group",
+        "pair_key": "ctso career pathway letter of intent",
+        "sibling_doc_ids": []
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "86fff193b91a": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 3,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "direct_instruction": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "86fff193b91a"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Engineering Design Process Quiz Total questions: 10 Worksheet time: 9mins Name Class Date 1. What is the primary objective of using the engineering design process in the context provided? a) To design, build, and test a paper airplane launcher b) To study the properties of different materials c) To create a new type of paper d) To learn about weather patterns 2. What type of energy conversion is emphasized in the learning objective? a) Solar to electrical energy b) Chemical to…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Engineering Design Process Quiz Total questions: 10 Worksheet time: 9mins Name Class Date 1. What is the primary objective of using the engineering design process in the context provided? a) To design, build, and test a paper airplane launcher b) To study the properties of different materials c) To create a new type of paper d) To learn about weather patterns 2. What type of energy conversion is emphasized in the learning objective? a) Solar to electrical energy b) Chemical to…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Engineering Design Process Quiz Total questions: 10 Worksheet time: 9mins Name Class Date 1. What is the primary objective of using the engineering design process in the context provided? a) To design, build, and test a paper airplane launcher b) To study the properties of different materials c) To create a new type of paper d) To learn about weather patterns 2. What type of energy conversion is emphasized in the learning objective? a) Solar to electrical energy b) Chemical to…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem",
+        "pair_key": "engineering lesson",
+        "sibling_doc_ids": [
+          "fc48920a5ca9"
+        ]
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "8891b46563ae": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 3,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "8891b46563ae"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "MISSING",
+        "note": "no pair group",
+        "pair_key": "flyer project instructions",
+        "sibling_doc_ids": []
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "a13c35aa5c4e": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 4,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "logistics_materials": 1,
+          "assessment_checkpoint": 2
+        },
+        "doc_id": "a13c35aa5c4e"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Manufacturing exploration Total questions: 11 Worksheet time: 6mins Name Class Date 1. What is the primary focus of the learning objective titled \"Manufacturing exploration\"? a) To study historical aspects of manufacturing b) To learn about manufacturing theories c) To understand the economic impact of manufacturing d) To explore a new career in manufacturing through experiential learning 2. What aspect of the process is emphasized for improvement in the lesson? a) Cost and benefit…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Worksheets Manufacturing exploration Total questions: 11 Worksheet time: 6mins Name Class Date 1. What is the primary focus of the learning objective titled \"Manufacturing exploration\"? a) To study historical aspects of manufacturing b) To learn about manufacturing theories c) To understand the economic impact of manufacturing d) To explore a new career in manufacturing through experiential learning 2. What aspect of the process is emphasized for improvement in the lesson? a) Cost and benefit…",
+              "6. What is the primary focus of the image related to technologies in manufacturing? a) Assembly of electronic devices b) Use of industrial robots in manufacturing c) Storage of manufactured goods d) Manual labor in factories 7. What type of technology is highlighted in the image related to manufacturing processes? a) Electrical systems b) Pneumatic systems c) Hydraulic systems d) Thermal systems 8. What is the primary focus of the image related to technologies in manufacturing? a) Pneumatics…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Manufacturing exploration Total questions: 11 Worksheet time: 6mins Name Class Date 1. What is the primary focus of the learning objective titled \"Manufacturing exploration\"? a) To study historical aspects of manufacturing b) To learn about manufacturing theories c) To understand the economic impact of manufacturing d) To explore a new career in manufacturing through experiential learning 2. What aspect of the process is emphasized for improvement in the lesson? a) Cost and benefit…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem",
+        "pair_key": "manufacturing exploration",
+        "sibling_doc_ids": [
+          "3fd5e5bc561c"
+        ]
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "addfb0873806": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 1,
+        "by_element_type": {
+          "hook_engagement": 1
+        },
+        "doc_id": "addfb0873806"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "MISSING",
+        "note": "no pair group",
+        "pair_key": "community problem brainstorming worksheet",
+        "sibling_doc_ids": []
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "af9cf3b04474": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 2,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "standards_objectives": 1
+        },
+        "doc_id": "af9cf3b04474"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "NOT_APPLICABLE",
+        "note": "rubric routed to B; pairing is for quiz↔key",
+        "pair_key": "arts av technology communication commercial project rubric",
+        "sibling_doc_ids": []
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "d3fae80ecd3f": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 4,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "d3fae80ecd3f"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Learning Activity on Building Paper Towers Total questions: 10 Worksheet time: 5mins Name Class Date 1. What is the primary objective of the learning activity described in the document? a) To design and build a paper tower based on specific criteria b) To create a digital model of a building c) To study the history of architectural design d) To write an essay about paper towers 2. What is the iterative process mentioned in the learning objective for building a paper tower? a) To…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Learning Activity on Building Paper Towers Total questions: 10 Worksheet time: 5mins Name Class Date 1. What is the primary objective of the learning activity described in the document? a) To design and build a paper tower based on specific criteria b) To create a digital model of a building c) To study the history of architectural design d) To write an essay about paper towers 2. What is the iterative process mentioned in the learning objective for building a paper tower? a) To…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Learning Activity on Building Paper Towers Total questions: 10 Worksheet time: 5mins Name Class Date 1. What is the primary objective of the learning activity described in the document? a) To design and build a paper tower based on specific criteria b) To create a digital model of a building c) To study the history of architectural design d) To write an essay about paper towers 2. What is the iterative process mentioned in the learning objective for building a paper tower? a) To…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem",
+        "pair_key": "architecture and construction",
+        "sibling_doc_ids": [
+          "ed1c99b4f5fa"
+        ]
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "e2f014fb5b00": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 1,
+        "by_element_type": {
+          "hook_engagement": 1
+        },
+        "doc_id": "e2f014fb5b00"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "MISSING",
+        "note": "no pair group",
+        "pair_key": "what are businesses saying to me and how",
+        "sibling_doc_ids": []
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "e31064aba3ae": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 6,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "hook_engagement": 1,
+          "guided_practice": 1,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1,
+          "standards_objectives": 1
+        },
+        "doc_id": "e31064aba3ae"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "I. The Hook (3-5 sentences): There are 3 options listed below. Choose ONE or combine TWO at most.  Rhetorical Question with Answer:  Write a question that you will answer where the problem is introduced. Be sure that to start with \"what if\" or \"have you ever\" to create a sincere connection with your audience. Then give your answer to the question, using your product or service as the solution. Use humor if possible. Ex: Have you ever wished you could come home to a clean house without spending…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "MISSING",
+        "note": "no pair group",
+        "pair_key": "writing your sales pitch worksheet",
+        "sibling_doc_ids": []
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "e7b2a411cbdc": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 1,
+        "by_element_type": {
+          "standards_objectives": 1
+        },
+        "doc_id": "e7b2a411cbdc"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "NOT_APPLICABLE",
+        "note": "rubric routed to B; pairing is for quiz↔key",
+        "pair_key": "financial literacy project rubric",
+        "sibling_doc_ids": []
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "ed1c99b4f5fa": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 7,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "direct_instruction": 1,
+          "assessment_checkpoint": 3,
+          "logistics_materials": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "ed1c99b4f5fa"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Worksheets Learning Activity on Building Paper Towers Total questions: 10 Worksheet time: 5mins Name Class Date 1. What is the primary objective of the learning activity described in the document? a) To design and build a paper tower based on specific criteria b) To create a digital model of a building c) To study the history of architectural design d) To write an essay about paper towers 2. What is the iterative process mentioned in the learning objective for building a paper tower? a) To…",
+              "8. Can the tower be taped to the vertical leg of a table or a wall? a) No, it can only be taped to the horizontal surface b) No, it must be free-standing c) Yes, it can be taped anywhere d) Yes, but only with special permission 9. Is it permissible to use more than one roll of tape while constructing the tower? a) Yes, but only two rolls b) No, only one roll is allowed c) Yes, as many as needed d) No, tape is not allowed 10. For how long must the tower support one can of food without…",
+              "8. Can the tower be taped to the vertical leg of a table or a wall? a) No, it can only be taped to the horizontal surface b) No, it must be free-standing c) Yes, it can be taped anywhere d) Yes, but only with special permission 9. Is it permissible to use more than one roll of tape while constructing the tower? a) Yes, but only two rolls b) No, only one roll is allowed c) Yes, as many as needed d) No, tape is not allowed 10. For how long must the tower support one can of food without…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Worksheets Learning Activity on Building Paper Towers Total questions: 10 Worksheet time: 5mins Name Class Date 1. What is the primary objective of the learning activity described in the document? a) To design and build a paper tower based on specific criteria b) To create a digital model of a building c) To study the history of architectural design d) To write an essay about paper towers 2. What is the iterative process mentioned in the learning objective for building a paper tower? a) To…",
+              "8. Can the tower be taped to the vertical leg of a table or a wall? a) No, it can only be taped to the horizontal surface b) No, it must be free-standing c) Yes, it can be taped anywhere d) Yes, but only with special permission 9. Is it permissible to use more than one roll of tape while constructing the tower? a) Yes, but only two rolls b) No, only one roll is allowed c) Yes, as many as needed d) No, tape is not allowed 10. For how long must the tower support one can of food without…",
+              "8. Can the tower be taped to the vertical leg of a table or a wall? a) No, it can only be taped to the horizontal surface b) No, it must be free-standing c) Yes, it can be taped anywhere d) Yes, but only with special permission 9. Is it permissible to use more than one roll of tape while constructing the tower? a) Yes, but only two rolls b) No, only one roll is allowed c) Yes, as many as needed d) No, tape is not allowed 10. For how long must the tower support one can of food without…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "8. Can the tower be taped to the vertical leg of a table or a wall? a) No, it can only be taped to the horizontal surface b) No, it must be free-standing c) Yes, it can be taped anywhere d) Yes, but only with special permission 9. Is it permissible to use more than one roll of tape while constructing the tower? a) Yes, but only two rolls b) No, only one roll is allowed c) Yes, as many as needed d) No, tape is not allowed 10. For how long must the tower support one can of food without…",
+              "8. Can the tower be taped to the vertical leg of a table or a wall? a) No, it can only be taped to the horizontal surface b) No, it must be free-standing c) Yes, it can be taped anywhere d) Yes, but only with special permission 9. Is it permissible to use more than one roll of tape while constructing the tower? a) Yes, but only two rolls b) No, only one roll is allowed c) Yes, as many as needed d) No, tape is not allowed 10. For how long must the tower support one can of food without…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "8. Can the tower be taped to the vertical leg of a table or a wall? a) No, it can only be taped to the horizontal surface b) No, it must be free-standing c) Yes, it can be taped anywhere d) Yes, but only with special permission 9. Is it permissible to use more than one roll of tape while constructing the tower? a) Yes, but only two rolls b) No, only one roll is allowed c) Yes, as many as needed d) No, tape is not allowed 10. For how long must the tower support one can of food without…",
+              "8. Can the tower be taped to the vertical leg of a table or a wall? a) No, it can only be taped to the horizontal surface b) No, it must be free-standing c) Yes, it can be taped anywhere d) Yes, but only with special permission 9. Is it permissible to use more than one roll of tape while constructing the tower? a) Yes, but only two rolls b) No, only one roll is allowed c) Yes, as many as needed d) No, tape is not allowed 10. For how long must the tower support one can of food without…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Learning Activity on Building Paper Towers Total questions: 10 Worksheet time: 5mins Name Class Date 1. What is the primary objective of the learning activity described in the document? a) To design and build a paper tower based on specific criteria b) To create a digital model of a building c) To study the history of architectural design d) To write an essay about paper towers 2. What is the iterative process mentioned in the learning objective for building a paper tower? a) To…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem",
+        "pair_key": "architecture and construction",
+        "sibling_doc_ids": [
+          "d3fae80ecd3f"
+        ]
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "f1b0566d0274": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 2,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "standards_objectives": 1
+        },
+        "doc_id": "f1b0566d0274"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "NOT_APPLICABLE",
+        "note": "rubric routed to B; pairing is for quiz↔key",
+        "pair_key": "career cluster project rubric",
+        "sibling_doc_ids": []
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "f9710e5e4e97": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 3,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "logistics_materials": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "f9710e5e4e97"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "MISSING",
+        "note": "no pair group",
+        "pair_key": "career exploration worksheet law",
+        "sibling_doc_ids": []
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "fc48920a5ca9": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 4,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "logistics_materials": 1,
+          "assessment_checkpoint": 2
+        },
+        "doc_id": "fc48920a5ca9"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Engineering Design Process Quiz Total questions: 10 Worksheet time: 9mins Name Class Date 1. What is the primary objective of using the engineering design process in the context provided? a) To design, build, and test a paper airplane launcher b) To study the properties of different materials c) To create a new type of paper d) To learn about weather patterns 2. What type of energy conversion is emphasized in the learning objective? a) Solar to electrical energy b) Chemical to…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Engineering Design Process Quiz Total questions: 10 Worksheet time: 9mins Name Class Date 1. What is the primary objective of using the engineering design process in the context provided? a) To design, build, and test a paper airplane launcher b) To study the properties of different materials c) To create a new type of paper d) To learn about weather patterns 2. What type of energy conversion is emphasized in the learning objective? a) Solar to electrical energy b) Chemical to…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Engineering Design Process Quiz Total questions: 10 Worksheet time: 9mins Name Class Date 1. What is the primary objective of using the engineering design process in the context provided? a) To design, build, and test a paper airplane launcher b) To study the properties of different materials c) To create a new type of paper d) To learn about weather patterns 2. What type of energy conversion is emphasized in the learning objective? a) Solar to electrical energy b) Chemical to…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem",
+        "pair_key": "engineering lesson",
+        "sibling_doc_ids": [
+          "86fff193b91a"
+        ]
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    }
+  }
 }

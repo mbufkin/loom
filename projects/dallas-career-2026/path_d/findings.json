@@ -1,0 +1,1036 @@
+{
+  "project_id": "dallas-career-2026",
+  "workflow_id": "teacher_support",
+  "path": "D",
+  "lens": "Teacher support",
+  "status": "ok",
+  "doc_ids": [
+    "0ffb85afd0ce",
+    "1f0eda900bc5",
+    "4092c72a851c",
+    "82b84c676dfd",
+    "cd8f3755cf17",
+    "e2485fe0a73f",
+    "e82d217defad",
+    "ff5244c8fa47"
+  ],
+  "checklist": "workflows/checklists/teacher_support.yaml",
+  "inventory": [
+    {
+      "doc_id": "0ffb85afd0ce",
+      "doc_type": "other",
+      "graph_role": "teacher_edition",
+      "element_count": 1,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "D3": {
+        "status": "PARTIAL",
+        "note": "1/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "1f0eda900bc5",
+      "doc_type": "other",
+      "graph_role": "teacher_edition",
+      "element_count": 16,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "D3": {
+        "status": "PARTIAL",
+        "note": "2/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "4092c72a851c",
+      "doc_type": "rubric",
+      "graph_role": "teacher_edition",
+      "element_count": 1,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "D3": {
+        "status": "PARTIAL",
+        "note": "1/3 fields present"
+      },
+      "D4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "82b84c676dfd",
+      "doc_type": "other",
+      "graph_role": "teacher_edition",
+      "element_count": 1,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "D3": {
+        "status": "MISSING",
+        "note": "0/3 fields present"
+      },
+      "D4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "cd8f3755cf17",
+      "doc_type": "other",
+      "graph_role": "teacher_edition",
+      "element_count": 5,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "D3": {
+        "status": "MISSING",
+        "note": "0/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "e2485fe0a73f",
+      "doc_type": "other",
+      "graph_role": "teacher_edition",
+      "element_count": 1,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "D3": {
+        "status": "MISSING",
+        "note": "0/3 fields present"
+      },
+      "D4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "e82d217defad",
+      "doc_type": "other",
+      "graph_role": "teacher_edition",
+      "element_count": 8,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "D3": {
+        "status": "MISSING",
+        "note": "0/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "ff5244c8fa47",
+      "doc_type": "other",
+      "graph_role": "teacher_edition",
+      "element_count": 11,
+      "D1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc"
+      },
+      "D2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "D3": {
+        "status": "MISSING",
+        "note": "0/3 fields present"
+      },
+      "D4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "D5": {
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    }
+  ],
+  "steps_by_doc": {
+    "0ffb85afd0ce": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 1,
+        "by_element_type": {
+          "teacher_support": 1
+        },
+        "doc_id": "0ffb85afd0ce"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Information Technology  Day 1   Day 1  Day 1-Engage  Do Now  Vocabulary  Algorithm Plagiarism Intellectual property Fair use Copyright Public domain  Algorithm  Instructions  With your bag of bricks, you will create a simple object. Create a detail set of instructions, algorithm, to show someone else how to make the object.   You will have 10 minutes to:\t Create your product (take a pic w/your cell phone) Create your list of instructions Take your object apart Switch bags and instructions with…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Information Technology  Day 1   Day 1  Day 1-Engage  Do Now  Vocabulary  Algorithm Plagiarism Intellectual property Fair use Copyright Public domain  Algorithm  Instructions  With your bag of bricks, you will create a simple object. Create a detail set of instructions, algorithm, to show someone else how to make the object.   You will have 10 minutes to:\t Create your product (take a pic w/your cell phone) Create your list of instructions Take your object apart Switch bags and instructions with…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "1f0eda900bc5": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 16,
+        "by_element_type": {
+          "direct_instruction": 4,
+          "guided_practice": 2,
+          "assessment_checkpoint": 2,
+          "reflection_closure": 1,
+          "logistics_materials": 3,
+          "standards_objectives": 2,
+          "unclear": 2
+        },
+        "doc_id": "1f0eda900bc5"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "PARTIAL",
+        "present": 2,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "PRESENT",
+            "count": 12,
+            "cites": [
+              "Lesson – Careers in Hospitality & Tourism Restaurants & Food/Beverage Services Lesson Objectives After completing this lesson, participants will be able to: • Identify career opportunities relating to Restaurants & Food/Beverage Services • Articulate the educational requirements, typical job duties, occupational outlook, and more for each explored profession Lesson at a Glance Activity Materials Preparation Approximate class time FOCUS • What Makes a Good Restaurant & Food/Beverage Services…",
+              "Lesson – Careers in Hospitality & Tourism FOCUS: Restaurant & Food/Beverage Services Employment Skills and Abilities 10 minutes Purpose: Careers in the Restaurant & Food/Beverage Services pathway include occupations that perform a variety of tasks to maintain food and beverage operations and promote guest services in eating and drinking establishments, from fast food operations to cafes and bars, to cafeterias and restaurants. This lesson will take a closer look at the variety of opportunities…",
+              "Job Description Project Scenario: You are the Director of Human Resources for a large, new hotel that provides many types of food services. Your task is to hire four new employees that will work in your hotel. You will be completing job postings for four positions. Choose from: Executive Chef, Kitchen Manager, Banquet Server, and Bus Person (or other related titles of choice in this pathway). For each job posting, you must include the following information: • Job title • Degree, certification,…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "PRESENT",
+            "count": 5,
+            "cites": [
+              "Lesson – Careers in Hospitality & Tourism FOCUS: Restaurant & Food/Beverage Services Employment Skills and Abilities 10 minutes Purpose: Careers in the Restaurant & Food/Beverage Services pathway include occupations that perform a variety of tasks to maintain food and beverage operations and promote guest services in eating and drinking establishments, from fast food operations to cafes and bars, to cafeterias and restaurants. This lesson will take a closer look at the variety of opportunities…",
+              "Lesson – Exploring a STEM Career FOCUS: How do you ensure a high-quality food science and technology staff? 10 minutes Purpose: The STEM cluster includes occupations that relate to food science and technology. Introduce participants to the important role that these career opportunities play in STEM. Materials: • Food science and technology video clips • Food Science and Technology Sample List of Occupations handout Facilitation Steps: 1. Begin by sharing this information with students: Food…",
+              "Lesson – Exploring a STEM Career FOCUS: How do you ensure a high-quality food science and technology staff? 10 minutes Purpose: The STEM cluster includes occupations that relate to food science and technology. Introduce participants to the important role that these career opportunities play in STEM. Materials: • Food science and technology video clips • Food Science and Technology Sample List of Occupations handout Facilitation Steps: 1. Begin by sharing this information with students: Food…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 12,
+            "cites": [
+              "Lesson – Careers in Hospitality & Tourism Restaurants & Food/Beverage Services Lesson Objectives After completing this lesson, participants will be able to: • Identify career opportunities relating to Restaurants & Food/Beverage Services • Articulate the educational requirements, typical job duties, occupational outlook, and more for each explored profession Lesson at a Glance Activity Materials Preparation Approximate class time FOCUS • What Makes a Good Restaurant & Food/Beverage Services…",
+              "Lesson – Careers in Hospitality & Tourism FOCUS: Restaurant & Food/Beverage Services Employment Skills and Abilities 10 minutes Purpose: Careers in the Restaurant & Food/Beverage Services pathway include occupations that perform a variety of tasks to maintain food and beverage operations and promote guest services in eating and drinking establishments, from fast food operations to cafes and bars, to cafeterias and restaurants. This lesson will take a closer look at the variety of opportunities…",
+              "1. Print/photocopy What Makes a Good Restaurant & Food/Beverage Services Employee handout – one for each pair 10 minutes LEARN • Job Description Project instructions • Job Postings handout 1. Print/photocopy the Job Description Project instructions and Job Postings handout – one for each participant 30-90 minutes REVIEW • Restaurant & Food/Beverage Services Employment Self-Assessment handout • Sample Careers in Restaurant & Food/Beverage Services handout • Questions for the panel - optional 1.…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "4092c72a851c": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 1,
+        "by_element_type": {
+          "standards_objectives": 1
+        },
+        "doc_id": "4092c72a851c"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Professional Preparedness Interview Rubric"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional spine cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "82b84c676dfd": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 1,
+        "by_element_type": {
+          "standards_objectives": 1
+        },
+        "doc_id": "82b84c676dfd"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional spine cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "cd8f3755cf17": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 5,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "cd8f3755cf17"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Code Cards Card 1: The Address Encoded: ∆  Γ  Σ    A  B  P  A  M  Σ Decoded: 4316 ABRAMS Hint: A number followed by a street name in Lakewood Card 2: Beginnings Encoded: I  O  Y  N  E    I  ∆ ,   M  C  M  L  I Decoded: JUNE 14, MCMXLI (1951) Hint: A summer date in Roman numerals Card 3: First Meeting Place Encoded: W  I  L  S  H  I  R  E    T  H  E  A  T  E  R Decoded: WILSHIRE THEATER Hint: Not a church building -- it was a place for movies Note: Located at Skillman & Mockingbird (no longer…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "e2485fe0a73f": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 1,
+        "by_element_type": {
+          "logistics_materials": 1
+        },
+        "doc_id": "e2485fe0a73f"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional spine cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "e82d217defad": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 8,
+        "by_element_type": {
+          "hook_engagement": 1,
+          "direct_instruction": 1,
+          "guided_practice": 3,
+          "assessment_checkpoint": 2,
+          "reflection_closure": 1
+        },
+        "doc_id": "e82d217defad"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 8,
+            "cites": [
+              "Day 1: Engage: Clip from “Chopped” Explain: Slides over Cluster with a heavy emphasis on Hospitality / Knife Cuts Explore: Students practice the different knife cuts with scissors and construction paper Extend: Practice Uniform Knife Cuts with scissors and sponges Evaluate: Which knife cut would be used for….?",
+              "Day 1: Engage: Clip from “Chopped” Explain: Slides over Cluster with a heavy emphasis on Hospitality / Knife Cuts Explore: Students practice the different knife cuts with scissors and construction paper Extend: Practice Uniform Knife Cuts with scissors and sponges Evaluate: Which knife cut would be used for….?   Day 2: Engage: clip from vacation movie Explain: Slides over Cluster with a heavy emphasis on Tourism Explore: Analyze this Brochure Extend: Create your own Brochure for a Family…",
+              "Day 1: Engage: Clip from “Chopped” Explain: Slides over Cluster with a heavy emphasis on Hospitality / Knife Cuts Explore: Students practice the different knife cuts with scissors and construction paper Extend: Practice Uniform Knife Cuts with scissors and sponges Evaluate: Which knife cut would be used for….?   Day 2: Engage: clip from vacation movie Explain: Slides over Cluster with a heavy emphasis on Tourism Explore: Analyze this Brochure Extend: Create your own Brochure for a Family…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    },
+    "ff5244c8fa47": {
+      "D1": {
+        "step": "D1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this TE / guide doc",
+        "element_count": 11,
+        "by_element_type": {
+          "hook_engagement": 3,
+          "guided_practice": 3,
+          "assessment_checkpoint": 3,
+          "independent_practice": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "ff5244c8fa47"
+      },
+      "D2": {
+        "step": "D2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "te_or_educator_label",
+            "label": "Teacher edition / educator framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "implementation_or_course",
+            "label": "Implementation / course-guide framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D3": {
+        "step": "D3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 3,
+        "fields": [
+          {
+            "id": "misconception_or_anticipate",
+            "label": "Misconception / anticipate cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "materials_or_prep",
+            "label": "Materials / prep cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "facilitate_or_instruction",
+            "label": "Facilitation / targeted instruction cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "D4": {
+        "step": "D4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "module_lesson_topic",
+            "label": "Module / lesson / topic cue",
+            "status": "PRESENT",
+            "count": 8,
+            "cites": [
+              "Day 1   Day 2   Day 3",
+              "--- TABLE --- Information Technology                                                                                                           Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Bricks “like Legos”; divide in small ziplocs for each student to have no more than 20 pieces each Create a free account on Common Sense Media Slideshow for all 3 days | Resources: Lesson plan Bricks “like Legos”; divide in small ziplocs for each student to have no…",
+              "Student Engagement Strategy / Resource: 1. Students will be placed in partners. Each person will get a bag of “bricks” and will need a sheet of paper and a pen or pencil.  The students will create a small item (you can guide the class as to what the item needs to be or allow full creativity). The student will create a list “algorithm” of how to create their item. **if the students have a phone let them take a picture of their item** The students will take their items apart and exchange their…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "D5": {
+        "step": "D5",
+        "status": "STUB",
+        "note": "emit Path D one-pager TBD"
+      }
+    }
+  }
+}

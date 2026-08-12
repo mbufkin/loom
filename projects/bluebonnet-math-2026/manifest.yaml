@@ -1,0 +1,71 @@
+project:
+  id: bluebonnet-math-2026
+  name: "TEA Bluebonnet Math \u2014 Grade 5 + Algebra I validation"
+sources_dir: /home/lenovo/g10-control-center-loom/projects/bluebonnet-math-2026/sources
+packet_type: teacher_edition
+units:
+  alg1-mod-1:
+    title: "Algebra I \u2014 Module 1"
+    calendar: units/alg1-mod-1/calendar.yaml
+    documents:
+    - algebra-1/Algebra_I_Math_Student_Edition_Volume_1_Module_1.pdf
+    - algebra-1/Algebra_I_Math_Teacher_Edition_Volume_1_Module_1.pdf
+  alg1-mod-2:
+    title: "Algebra I \u2014 Module 2"
+    calendar: units/alg1-mod-2/calendar.yaml
+    documents:
+    - algebra-1/Algebra_I_Math_Student_Edition_Volume_1_Module_2.pdf
+    - algebra-1/Algebra_I_Math_Teacher_Edition_Volume_1_Module_2.pdf
+  alg1-mod-3:
+    title: "Algebra I \u2014 Module 3"
+    calendar: units/alg1-mod-3/calendar.yaml
+    documents:
+    - algebra-1/Algebra_I_Math_Student_Edition_Volume_1_Module_3.pdf
+    - algebra-1/Algebra_I_Math_Teacher_Edition_Volume_1_Module_3.pdf
+  alg1-mod-4:
+    title: "Algebra I \u2014 Module 4"
+    calendar: units/alg1-mod-4/calendar.yaml
+    documents:
+    - algebra-1/Algebra_I_Math_Student_Edition_Volume_2_Module_4.pdf
+    - algebra-1/Algebra_I_Math_Teacher_Edition_Volume_2_Module_4.pdf
+  alg1-mod-5:
+    title: "Algebra I \u2014 Module 5"
+    calendar: units/alg1-mod-5/calendar.yaml
+    documents:
+    - algebra-1/Algebra_I_Math_Student_Edition_Volume_2_Module_5.pdf
+    - algebra-1/Algebra_I_Math_Teacher_Edition_Volume_2_Module_5.pdf
+  alg1-program:
+    title: "Algebra I \u2014 program guides"
+    calendar: units/alg1-program/calendar.yaml
+    documents:
+    - algebra-1/Algebra_1_Math_Family_Guides.pdf
+    - algebra-1/Algebra_1_Math_Standards_Overview.pdf
+    - algebra-1/Algebra_I_Math_150-day_Topic_Pacing_Guides.pdf
+    - algebra-1/Algebra_I_Math_Assessment_Reflection.pdf
+    - algebra-1/Algebra_I_Math_ELPS_Summary.pdf
+    - algebra-1/Algebra_I_Math_Materials_List.pdf
+    - algebra-1/Algebra_I_Math_Problem-Solving_Model_Graphic_Organizer.pdf
+    - algebra-1/Algebra_I_Math_Scope_and_Sequence_150-day.pdf
+    - algebra-1/Algebra_I_Math_Scope_and_Sequence_165-day.pdf
+    - algebra-1/Algebra_I_Math_Skills_Practice_Student_Edition.pdf
+    - algebra-1/Algebra_I_Math_Student_Edition_Course_Guide.pdf
+    - algebra-1/Algebra_I_Math_Student_Edition_Glossary.pdf
+    - algebra-1/Algebra_I_Math_Student_Edition_Vol_1.pdf
+    - algebra-1/Algebra_I_Math_Student_Edition_Vol_2.pdf
+    - algebra-1/Algebra_I_Math_TEKS_Summary.pdf
+    - algebra-1/Algebra_I_Math_Teacher_Edition_Course_and_Implementation_Guide.pdf
+    - algebra-1/Algebra_I_Math_Teacher_Edition_Glossary.pdf
+    - algebra-1/Algebra_I_Math_YAG_150-day.pdf
+    - algebra-1/Algebra_I_Math_YAG_165-day.pdf
+    - algebra-1/Matematicas_Algebra_I_Gu_a_para_la_Familia_en_espa_ol.pdf
+    - algebra-1/Secondary_Mathematics_Coach_Lesson_Internalization_Protocol.pdf
+    - algebra-1/Secondary_Mathematics_Coach_Module_and_Topic_Internalization_Guide.pdf
+    - algebra-1/Secondary_Mathematics_Coach_Student_Work_Analysis_Protocol.pdf
+    - algebra-1/Secondary_Mathematics_Content_Organization_Document.pdf
+    - algebra-1/Secondary_Mathematics_Materials_Guide.pdf
+    - algebra-1/Secondary_Mathematics_Observation_Tool.pdf
+    - algebra-1/Secondary_Mathematics_Program_Implementation_Guide.pdf
+    - algebra-1/Secondary_Mathematics_Teacher_Lesson_Internalization_Protocol.pdf
+    - algebra-1/Secondary_Mathematics_Teacher_Module_and_Topic_Internalization_Protocol.pdf
+    - algebra-1/Secondary_Mathematics_Teacher_Student_Work_Analysis_Protocol.pdf
+generated_by: tools/stage_bluebonnet_units.py

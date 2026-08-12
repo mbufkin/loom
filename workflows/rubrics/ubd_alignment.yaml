@@ -1,0 +1,59 @@
+# Rubric: Understanding by Design (UbD) backward-design alignment (scorer S2).
+#
+# WHY / PROVENANCE
+# REUSED from Wiggins & McTighe's Understanding by Design and the same backward-
+# design logic Loom already gestures at in workflows/lesson_plan.py a3_coherence().
+# Where completeness_core8 asks "are the parts PRESENT?", this asks the harder,
+# alignment question: do the three UbD stages point at the SAME target?
+#   Stage 1 desired results (objective) <-> Stage 2 evidence (assessment) <->
+#   Stage 3 learning plan (instruction).
+# A lesson can be complete (all parts present) yet incoherent (assessment tests
+# something the objective never claimed) — that is exactly what this catches.
+#
+# HOW IT SCORES
+# scoring: band 0-3 per criterion, each REQUIRING a cited excerpt (auditor-only:
+# a band with no evidence is invalid). Model-assisted, but grounded — the model
+# is shown the lesson's own objective/assessment/instruction excerpts and judges
+# alignment BETWEEN them, never invents content.
+
+version: "v1-ubd-2026-07"
+rubric_id: ubd_alignment
+title: "UbD backward-design alignment (objective <-> assessment <-> instruction)"
+framework: "Wiggins & McTighe, Understanding by Design"
+scoring: band
+band_scale:
+  0: "Absent — the element needed to judge alignment is missing."
+  1: "Misaligned — present but points at a different target than the objective."
+  2: "Partially aligned — related to the objective but with gaps or ambiguity."
+  3: "Aligned — clearly assesses/teaches the stated objective."
+auditor_only: true
+requires_evidence: true
+
+criteria:
+  - id: objective_specific
+    label: Objective is specific and measurable
+    description: >
+      Stage 1: is there a clear, specific desired result (not a vague topic) that a
+      lesson could actually be aligned TO?
+    reads_from: [standards_objectives]
+
+  - id: assessment_aligned
+    label: Assessment measures the objective
+    description: >
+      Stage 2: does the check-for-understanding / assessment actually gather evidence
+      of the stated objective, at the same cognitive level?
+    reads_from: [assessment_checkpoint, standards_objectives]
+
+  - id: instruction_aligned
+    label: Instruction teaches toward the objective
+    description: >
+      Stage 3: do direct instruction and practice build the specific knowledge/skill the
+      objective names (not adjacent content)?
+    reads_from: [direct_instruction, guided_practice, independent_practice, standards_objectives]
+
+  - id: three_stage_coherence
+    label: Overall backward-design coherence
+    description: >
+      Taken together, do objective, assessment, and instruction form one coherent chain
+      (a student who does the instruction could pass the assessment and meet the objective)?
+    reads_from: [standards_objectives, assessment_checkpoint, direct_instruction]

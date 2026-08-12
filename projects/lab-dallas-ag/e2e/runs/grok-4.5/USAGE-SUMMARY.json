@@ -1,0 +1,162 @@
+{
+  "project": "lab-dallas-ag",
+  "finished_at": "2026-08-09T00:49:01.326496+00:00",
+  "usage_log": "/home/lenovo/g10-control-center-loom/projects/lab-dallas-ag/e2e/runs/grok-4.5/usage.jsonl",
+  "totals": {
+    "n_calls": 20,
+    "n_ok": 20,
+    "n_error": 0,
+    "prompt_tokens": 269117,
+    "completion_tokens": 6151,
+    "total_tokens": 512196,
+    "cached_tokens": 236928,
+    "reasoning_tokens": 0,
+    "elapsed_ms": 352074.4999999999
+  },
+  "by_source": {
+    "api": 19,
+    "cursor_sdk": 1
+  },
+  "by_role": {
+    "analyst": {
+      "n_calls": 16,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "verifier": {
+      "n_calls": 3,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "cursor_agent": {
+      "n_calls": 1,
+      "prompt_tokens": 269117,
+      "completion_tokens": 6151,
+      "total_tokens": 512196
+    }
+  },
+  "by_step": {
+    "b5e36486805a-pass1": {
+      "n_calls": 1,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "b5e36486805a-pass2": {
+      "n_calls": 1,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "e9e6ac00ce09-pass1": {
+      "n_calls": 1,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "e9e6ac00ce09-pass2": {
+      "n_calls": 1,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "graph-cursor:curriculum": {
+      "n_calls": 1,
+      "prompt_tokens": 269117,
+      "completion_tokens": 6151,
+      "total_tokens": 512196
+    },
+    "path-a-a6-place": {
+      "n_calls": 1,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "layer1-organize-b5e36486805a": {
+      "n_calls": 1,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "layer1-organize-e9e6ac00ce09": {
+      "n_calls": 1,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "layer1-fulfill-curriculum-unit_supporting": {
+      "n_calls": 1,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "qd-e9e6ac00ce09-objective_clarity": {
+      "n_calls": 1,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "qd-e9e6ac00ce09-engagement": {
+      "n_calls": 1,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "qd-e9e6ac00ce09-checks_for_understanding": {
+      "n_calls": 1,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "qd-e9e6ac00ce09-differentiation_supports": {
+      "n_calls": 1,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "qd-e9e6ac00ce09-cognitive_rigor": {
+      "n_calls": 1,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "qd-e9e6ac00ce09-coherent_sequence_closure": {
+      "n_calls": 1,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "review:select": {
+      "n_calls": 1,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "review:evaluate": {
+      "n_calls": 1,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "calendars-year-note": {
+      "n_calls": 1,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "report-first-pass-synthesis-lab-dallas-ag": {
+      "n_calls": 1,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    },
+    "report-teacher-synthesis-curriculum": {
+      "n_calls": 1,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    }
+  }
+}

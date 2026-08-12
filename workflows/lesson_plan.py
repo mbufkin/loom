@@ -29,6 +29,7 @@ from lesson_plan_fill import (
 )
 from route import routed_doc_ids
 from unit_plan_fill import _pick_excerpts, _trunc, iter_checklist_fields
+from workflows.findings_io import write_path_findings
 
 TEKS_RE = re.compile(r"TEKS|§\s*\d+|Student Expectation", re.I)
 OBJECTIVE_RE = re.compile(
@@ -332,15 +333,16 @@ def a8_emit(
     doc_ids: set[str],
     a5: dict,
     a6: dict,
-    findings: dict,
 ) -> list[str]:
-    """Write path_a findings; also refresh unit LESSON-PLAN plates via caller."""
+    """Write per-doc Path A summaries; aggregate findings are written by the caller.
+
+    Keeping the project-level findings write in one place (after A8 is filled)
+    lets the shared validator see the complete payload once, instead of an
+    intermediate file that still lacks emit_paths / status.
+    """
     root = project_dir(project_id)
     out_dir = root / "path_a"
     out_dir.mkdir(parents=True, exist_ok=True)
-    path = out_dir / "findings.json"
-    atomic_write(path, json.dumps(findings, indent=2, ensure_ascii=False))
-    # Per-doc summary
     for did in sorted(doc_ids):
         atomic_write(
             out_dir / f"{did}.json",
@@ -354,7 +356,7 @@ def a8_emit(
                 ensure_ascii=False,
             ),
         )
-    return [str(path.relative_to(root))]
+    return ["path_a/findings.json"]
 
 
 def run_path_a_for_project(project_id: str, *, use_model: bool = True) -> dict:
@@ -380,37 +382,58 @@ def run_path_a_for_project(project_id: str, *, use_model: bool = True) -> dict:
     a6 = a6_model_place(elements, checklist, cfg=cfg, use_model=use_model)
     a7 = a7_supports(elements)
 
+    # Path A scores at project grain (`steps` / a6_fields / emit_paths). The
+    # shared B–H envelope keys sit alongside so every consumer can read one
+    # shape; inventory lists routed docs without fabricating per-doc step cells.
+    by_doc_count: dict[str, int] = defaultdict(int)
+    for e in elements:
+        did = e.get("doc_id")
+        if did:
+            by_doc_count[str(did)] += 1
+    inventory = [
+        {
+            "doc_id": did,
+            "doc_type": "lesson_plan",
+            "element_count": by_doc_count.get(did, 0),
+        }
+        for did in sorted(doc_ids)
+    ]
+    emits = a8_emit(project_id, doc_ids=doc_ids, a5=a5, a6=a6)
     findings = {
         "project_id": project_id,
         "workflow_id": "lesson_plan",
         "path": "A",
+        "lens": "Lesson",
+        "status": "ok" if doc_ids else "skipped",
         "doc_ids": sorted(doc_ids),
+        "checklist": "workflows/checklists/daily_lesson_plan.yaml",
+        "inventory": inventory,
+        "steps_by_doc": {},
         "steps": {
             "A1": a1,
             "A2": a2,
             "A3": a3,
             "A4": a4,
             "A5": a5,
-            "A6": {"method": a6.get("method"), "present": sum(
-                1 for f in (a6.get("fields") or {}).values() if f.get("status") == "PRESENT"
-            )},
+            "A6": {
+                "method": a6.get("method"),
+                "present": sum(
+                    1
+                    for f in (a6.get("fields") or {}).values()
+                    if f.get("status") == "PRESENT"
+                ),
+            },
             "A7": a7,
+            "A8": {
+                "step": "A8",
+                "emit_paths": emits,
+                "status": "emitted" if emits else "skipped",
+            },
         },
         "a6_fields": a6.get("fields"),
-    }
-    emits = a8_emit(project_id, doc_ids=doc_ids, a5=a5, a6=a6, findings=findings)
-    findings["emit_paths"] = emits
-    findings["steps"]["A8"] = {
-        "step": "A8",
         "emit_paths": emits,
-        "status": "emitted" if emits else "skipped",
     }
-    # Re-write findings so A8 is persisted
-    atomic_write(
-        root / "path_a" / "findings.json",
-        json.dumps(findings, indent=2, ensure_ascii=False),
-    )
-    findings["status"] = "ready" if doc_ids else "skipped"
+    write_path_findings(root / "path_a" / "findings.json", findings)
     log(
         f"path A → {len(doc_ids)} lesson_plan doc(s); "
         f"test draft {a5['hunter_core_present']}/{a5['hunter_core_total']}"

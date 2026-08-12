@@ -1,0 +1,61 @@
+:root {
+  color: #1c1917;
+  background: #f6f3ee;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 2.5rem;
+}
+
+h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.sub {
+  margin: 0 0 1rem;
+  color: #57534e;
+  font-size: 0.95rem;
+}
+
+.chart-wrap {
+  background: #fffcf7;
+  border: 1px solid #d6d3d1;
+  border-radius: 4px;
+  padding: 0.5rem;
+  min-height: 2200px;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin: 0.75rem 0 0;
+  font-size: 0.85rem;
+  color: #57534e;
+}
+
+.swatch {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 999px;
+  margin-right: 0.35rem;
+  vertical-align: -1px;
+}

@@ -1,6 +1,12 @@
-# Path A — Lesson plan workflow (proposed)
+# Path A — Lesson workflow (proposed)
+
+**Lens name:** Lesson (Path A). Taxonomy: [PATHS.md](PATHS.md).
 
 Auditor-only: **present / missing / misaligned from evidence**. Never invent lesson content.
+
+**Direction:** Path A is **lesson-level** (graph `Lesson` nodes), not only
+filename `*Lesson_Plan*`. Teacher editions route to Path D; student
+learn/practice to Path E; Path A reviews the instructional episode.
 
 ## Academically proven ways to *review* a written lesson plan
 

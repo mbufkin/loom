@@ -1,6 +1,6 @@
 # Loom — Documentation
 
-Reference for the Loom curriculum auditor (router + Path A/B/C workflows).
+Reference for the Loom curriculum auditor (router + Path A–H workflows).
 
 > Built on the design doctrine in [BETS.md](BETS.md): full-document model reading,
 > regex-as-hint-only, narrow repeated tasks, citations + "unknown", **single strong
@@ -24,6 +24,7 @@ Reference for the Loom curriculum auditor (router + Path A/B/C workflows).
 | [DOCUMENTATION-OVERHAUL-PROMPT.md](DOCUMENTATION-OVERHAUL-PROMPT.md) | AI agents | Copy-paste agent prompt for a prioritized docs pass |
 | [PR-REVIEW-FINDINGS-PROMPT.md](PR-REVIEW-FINDINGS-PROMPT.md) | AI agents | Copy-paste agent prompt for read-only PR review findings |
 | [PRODUCT-OVERVIEW.md](PRODUCT-OVERVIEW.md) | Directors, partners | What the system does |
+| [E2E.md](E2E.md) | Operators / engineers | **One program** + `e2e/runs/<model>/` review contract |
 | [PIPELINE.md](PIPELINE.md) | Engineers | End-to-end flow |
 | [DATA-FLOW.md](DATA-FLOW.md) | Presenters, engineers | Data transformation canvases (Mermaid) |
 | [FILE-FLOW.md](FILE-FLOW.md) | Presenters, operators | Directory & artifact map (Mermaid) |
@@ -31,6 +32,19 @@ Reference for the Loom curriculum auditor (router + Path A/B/C workflows).
 | [OUTPUTS.md](OUTPUTS.md) | Operators | Reports and artifacts |
 | [SAMPLE-PROJECT.md](SAMPLE-PROJECT.md) | Evaluators | Dallas sample walkthrough |
 | [REORG-2026-07.md](REORG-2026-07.md) | Everyone | Path changes after repo cleanup |
+| [PATHS.md](PATHS.md) | Everyone | **Eight review lenses A–H** — taxonomy + router cascade |
+| [PATH-A-LESSON-PLAN.md](PATH-A-LESSON-PLAN.md) | Curriculum leads | Path A (Lesson) workflow depth |
+| [PATH-B-QUIZ.md](PATH-B-QUIZ.md) | Curriculum leads | Path B (Assessment) — quiz ↔ key |
+| [PATH-C-GENERAL.md](PATH-C-GENERAL.md) | Curriculum leads | Path C (General feedback) — nursery / catch-all |
+| [PATH-D-TEACHER-SUPPORT.md](PATH-D-TEACHER-SUPPORT.md) | Curriculum leads | Path D (Teacher support) — TE / guides |
+| [PATH-E-STUDENT-PRACTICE.md](PATH-E-STUDENT-PRACTICE.md) | Curriculum leads | Path E (Student practice) — Learn / Practice / Succeed |
+| [PATH-F-STANDARDS-PACING.md](PATH-F-STANDARDS-PACING.md) | Curriculum leads | Path F (Standards & pacing) — YAG / S&S |
+| [PATH-G-SYLLABUS.md](PATH-G-SYLLABUS.md) | Curriculum leads | Path G (Syllabus) workflow — G1–G9 |
+| [PATH-H-EXIT-TICKET.md](PATH-H-EXIT-TICKET.md) | Curriculum leads | Path H (Exit ticket) — formative check |
+| [PATHWAY-ROLLOUT-REVIEW.md](PATHWAY-ROLLOUT-REVIEW.md) | Leads / engineers | **Acceptance record for B–H** — value of each path + regression proof |
+| [ARCHITECTURE-READINESS.md](ARCHITECTURE-READINESS.md) | Engineers | **Structure-freeze gate** — what blocks the tuning phase, with 9 checks |
+| [CHAMPION-REVIEW-MAP.md](CHAMPION-REVIEW-MAP.md) | Reviewers | Champion review workflow |
+| [CURRICULUM-ACCEPTANCE-REVIEW.md](CURRICULUM-ACCEPTANCE-REVIEW.md) | Leads / auditors | **CAR** — formal accept/reject of pack + run intent |
 | [curriculum-first-plan.md](curriculum-first-plan.md) | Planners | Early curriculum-first planning notes (historical) |
 | [roadmap.md](roadmap.md) | Engineers | Build plan / open work |
 

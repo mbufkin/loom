@@ -32,3 +32,26 @@ jobs:
           python3 test_doc_extract.py
           python3 test_loom_pipeline.py
           python3 test_intake_goldens_extract.py
+          python3 test_usage.py
+
+      # Path A–H lenses: the router plus every presence extractor. These gate
+      # the lens contract in docs/PATHS.md so a new path cannot silently break
+      # an existing one. All are corpus-free (synthetic fixtures).
+      - name: Run Path A-H lens suite
+        run: |
+          python3 test_keyword_match.py
+          python3 test_route_lenses.py
+          python3 test_path_a_lesson_plan.py
+          python3 test_path_b_assessment.py
+          python3 test_path_c_general.py
+          python3 test_path_d_teacher_support.py
+          python3 test_path_e_student_practice.py
+          python3 test_path_f_standards_pacing.py
+          python3 test_path_g_syllabus.py
+          python3 test_path_h_exit_ticket.py
+          python3 test_artifact_rung.py
+
+      # Path findings goldens: a checklist keyword tweak must produce a
+      # reviewable status-matrix diff, not an invisible rating shift.
+      - name: Check path findings goldens
+        run: python3 tools/snapshot_findings.py --check --paths

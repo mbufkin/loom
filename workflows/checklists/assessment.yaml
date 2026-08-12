@@ -1,0 +1,84 @@
+# Quiz ↔ answer-key plate → Loom checklist (Path B).
+# Grain: paired assessment evidence — not exit tickets (Path H), not Hunter (Path A).
+# PRESENT = evidence found in Layer 0 excerpts (or source fallback); never invent.
+
+version: "v1-assessment-quiz-key"
+role: assessment
+framework: quiz_key_pair
+source_template: docs/PATH-B-QUIZ.md
+path: B
+workflow_id: quiz
+
+sections:
+  b2_items:
+    label: B2 Item stems
+    step: B2
+    fields:
+      - id: numbered_items
+        label: Numbered questions / items
+        keywords:
+          - "1."
+          - "2."
+          - total questions
+          - question
+      - id: choice_stems
+        label: Multiple-choice options
+        keywords:
+          - "a)"
+          - "b)"
+          - "c)"
+          - "d)"
+          # iCEV / Word exports often letter choices as "A." "B." (not a))
+          - "A."
+          - "B."
+          - "C."
+          - "D."
+
+  b3_key:
+    label: B3 Answer key signal
+    step: B3
+    fields:
+      - id: answer_key_header
+        label: Answer key section / header
+        keywords:
+          - answer key
+          - answer keys
+          - answer-key
+          - correct answer
+      - id: keyed_answers
+        label: Numbered correct answers
+        keywords:
+          - "1. a"
+          - "1. b"
+          - "1. c"
+          - "1. d"
+          - "1. a)"
+          - "1. A"
+          - "2. a"
+          - "2. b"
+          - "2. c"
+          - "2. d"
+          - "2. A"
+
+  b4_targets:
+    label: B4 Learning targets / standards
+    step: B4
+    fields:
+      - id: objective_or_teks
+        label: Objective / TEKS / learning target cue
+        keywords:
+          - teks
+          - "§"
+          - learning objective
+          - learning target
+          - objective
+          - students will
+          - standard
+        optional: true
+
+  # Structural pairing step — scored in workflows/quiz.py (_pair_status), not
+  # by keyword fields. Listed here so label loaders (Paths panel, artifact rung)
+  # resolve "B5" to a human name the same way they resolve B2–B4.
+  b5_pairing:
+    label: B5 Quiz ↔ key pairing
+    step: B5

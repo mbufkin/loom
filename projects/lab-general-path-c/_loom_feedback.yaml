@@ -1,0 +1,19 @@
+# Loom unknown/weak-type feedback — read when growing lens checklists
+
+- doc_id: "doc_cmixed_CTSO_Presentation"
+  doc_type: "presentation"
+  suggested_pattern: "Still on Path C (general). Prefer a checklist inside Lesson/Assessment/Teacher/Student/Standards rather than a new path letter (see docs/PATHS.md). type='presentation'"
+  reason: "weak_or_unknown_type"
+  logged_at: "2026-08-05T16:02:45.097422+00:00"
+
+- doc_id: "doc_cstrong_Secondary_Mathematics_Coach_Lesson_Internalization_Protocol"
+  doc_type: "other"
+  suggested_pattern: "Still on Path C (general). Prefer a checklist inside Lesson/Assessment/Teacher/Student/Standards rather than a new path letter (see docs/PATHS.md). type='other'"
+  reason: "weak_or_unknown_type"
+  logged_at: "2026-08-05T16:02:45.097422+00:00"
+
+- doc_id: "doc_cweak_Other_Handout_Stub"
+  doc_type: "other"
+  suggested_pattern: "Still on Path C (general). Prefer a checklist inside Lesson/Assessment/Teacher/Student/Standards rather than a new path letter (see docs/PATHS.md). type='other'"
+  reason: "weak_or_unknown_type"
+  logged_at: "2026-08-05T16:02:45.097422+00:00"

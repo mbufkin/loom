@@ -1,0 +1,304 @@
+{
+  "project_id": "lab-dallas-ag",
+  "scorers": [
+    "s1_completeness",
+    "s3_curriculum_own"
+  ],
+  "gate_scorer": "s1_completeness",
+  "summary": {
+    "lesson_count": 1,
+    "gate_pass_count": 0,
+    "gate_pass_rate": 0.0,
+    "unit_count": 1
+  },
+  "units": {
+    "curriculum": {
+      "lesson_count": 1,
+      "gate_pass_count": 0,
+      "gate_pass_rate": 0.0,
+      "mean_coverage": {
+        "s1_completeness": 0.75,
+        "s3_curriculum_own": 0.75
+      },
+      "lessons": [
+        {
+          "lesson_id": "e9e6ac00ce09",
+          "title": "Agriculture- Plant Science Alternate Lesson Plan Template",
+          "gate_pass": false,
+          "coverage": {
+            "s1_completeness": 0.75,
+            "s3_curriculum_own": 0.75
+          }
+        }
+      ]
+    }
+  },
+  "lessons": [
+    {
+      "lesson_id": "e9e6ac00ce09",
+      "unit_id": "curriculum",
+      "title": "Agriculture- Plant Science Alternate Lesson Plan Template",
+      "gate_pass": false,
+      "coverage": {
+        "s1_completeness": 0.75,
+        "s3_curriculum_own": 0.75
+      },
+      "scores": {
+        "s1_completeness": {
+          "scorer_id": "s1_completeness",
+          "rubric_id": "completeness_core8",
+          "rubric_version": "v1-core8-2026-07",
+          "scoring": "presence",
+          "lesson_id": "e9e6ac00ce09",
+          "criteria": [
+            {
+              "criterion_id": "standards_objectives",
+              "label": "Standards & objectives",
+              "scoring": "presence",
+              "verdict": "PRESENT",
+              "band": null,
+              "evidence": [
+                {
+                  "element_id": "e9e6ac00ce09-e2",
+                  "excerpt": "--- TABLE ---\nAgriculture Career-Plant Science Program of study\nEstimated Day(s): 2 - 45 minute classes | Agriculture Career-Plant Science Program of study\n    Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities\nTEKS Student Expectation(s):\n\u00a7127.2. Career and Coll"
+                }
+              ],
+              "note": ""
+            },
+            {
+              "criterion_id": "logistics_materials",
+              "label": "Materials & logistics",
+              "scoring": "presence",
+              "verdict": "PRESENT",
+              "band": null,
+              "evidence": [
+                {
+                  "element_id": "e9e6ac00ce09-e1",
+                  "excerpt": "--- TABLE ---\nAgriculture Career-Plant Science Program of study\nEstimated Day(s): 2 - 45 minute classes | Agriculture Career-Plant Science Program of study\n    Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities\nTEKS Student Expectation(s):\n\u00a7127.2. Career and Coll"
+                }
+              ],
+              "note": ""
+            },
+            {
+              "criterion_id": "direct_instruction",
+              "label": "Direct instruction / input & modeling",
+              "scoring": "presence",
+              "verdict": "PRESENT",
+              "band": null,
+              "evidence": [
+                {
+                  "element_id": "e9e6ac00ce09-e6",
+                  "excerpt": "Materials Needed:\nSticky Notes (1)\nNote taking device or journal\nExplore Activity\nExplain: (10-15 Minutes)\n Career Advocate will explain the Career clusters in agriculture, specifically in Animal Science using the interactive lesson."
+                }
+              ],
+              "note": ""
+            },
+            {
+              "criterion_id": "assessment_checkpoint",
+              "label": "Assessment / check for understanding",
+              "scoring": "presence",
+              "verdict": "MISSING",
+              "band": null,
+              "evidence": [],
+              "note": ""
+            },
+            {
+              "criterion_id": "hook_engagement",
+              "label": "Hook / engagement (anticipatory set)",
+              "scoring": "presence",
+              "verdict": "PRESENT",
+              "band": null,
+              "evidence": [
+                {
+                  "element_id": "e9e6ac00ce09-e4",
+                  "excerpt": "\nStudent Engagement Strategy / Resource:\nActivate prior knowledge: Pass around a sticky note to each student and place the prompt on slide two of the Agriculture- Plant Science Alternate Lesson Plan Slides\n\nWhile students are working on the question, draw a tree on the board and students can place their notes inside the tree to act as leaves(For reference)..Before students place their leaves, have"
+                }
+              ],
+              "note": ""
+            },
+            {
+              "criterion_id": "guided_practice",
+              "label": "Guided practice (we do)",
+              "scoring": "presence",
+              "verdict": "PRESENT",
+              "band": null,
+              "evidence": [
+                {
+                  "element_id": "e9e6ac00ce09-e5",
+                  "excerpt": "\nQuestion Stems:\nPrompt: How do we grow Plants?\nExplain Activity\nExplore: (20-30 Minutes)\nStudents will take notes and collaborate in small groups\nStudent Engagement Strategy / Resource:\nStudents will document their understanding through the provided guided notes.\nQuestion Stems:\nWhat is the difference between Horticulture and Floriculture?\n\nMaterials Needed:\nSticky Notes (1)\nNote taking device or"
+                }
+              ],
+              "note": ""
+            },
+            {
+              "criterion_id": "independent_practice",
+              "label": "Independent practice (you do)",
+              "scoring": "presence",
+              "verdict": "MISSING",
+              "band": null,
+              "evidence": [],
+              "note": ""
+            },
+            {
+              "criterion_id": "reflection_closure",
+              "label": "Reflection / closure",
+              "scoring": "presence",
+              "verdict": "PRESENT",
+              "band": null,
+              "evidence": [
+                {
+                  "element_id": "e9e6ac00ce09-e9",
+                  "excerpt": "Question Stems:\nWhat is the importance of soil?\nWhat are the properties of soil?\nWhat is the difference between soil and dirt?\nEvaluate Activity\nEvaluate: (5-10 Minutes)\nUpon completion, have students complete the 3-2-1 Reflection handout over this lesson.\n\nReference Worksheet:\n\n3-2-1 Reflection | Evaluate: (5-10 Minutes)\nUpon completion, have students complete the 3-2-1 Reflection handout over th"
+                }
+              ],
+              "note": ""
+            }
+          ],
+          "summary": {
+            "present": 6,
+            "partial": 0,
+            "missing": 2,
+            "coverage": 0.75,
+            "required_total": 4,
+            "required_present": 3,
+            "gate_pass": false,
+            "missing_required": [
+              "Assessment / check for understanding"
+            ]
+          },
+          "cost": {
+            "model_calls": 0
+          },
+          "error": null
+        },
+        "s3_curriculum_own": {
+          "scorer_id": "s3_curriculum_own",
+          "rubric_id": "completeness_core8",
+          "rubric_version": "v1-core8-2026-07",
+          "scoring": "presence",
+          "lesson_id": "e9e6ac00ce09",
+          "criteria": [
+            {
+              "criterion_id": "standards_objectives",
+              "label": "Standards & objectives",
+              "scoring": "presence",
+              "verdict": "PRESENT",
+              "band": null,
+              "evidence": [
+                {
+                  "element_id": "e9e6ac00ce09-e2",
+                  "excerpt": "--- TABLE ---\nAgriculture Career-Plant Science Program of study\nEstimated Day(s): 2 - 45 minute classes | Agriculture Career-Plant Science Program of study\n    Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities\nTEKS Student Expectation(s):\n\u00a7127.2. Career and Coll"
+                }
+              ],
+              "note": ""
+            },
+            {
+              "criterion_id": "logistics_materials",
+              "label": "Materials & logistics",
+              "scoring": "presence",
+              "verdict": "PRESENT",
+              "band": null,
+              "evidence": [
+                {
+                  "element_id": "e9e6ac00ce09-e1",
+                  "excerpt": "--- TABLE ---\nAgriculture Career-Plant Science Program of study\nEstimated Day(s): 2 - 45 minute classes | Agriculture Career-Plant Science Program of study\n    Estimated Day(s): 2 - 45 minute classes\nResources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities | Resources:\nLesson plan\nMaterials for activities\nTEKS Student Expectation(s):\n\u00a7127.2. Career and Coll"
+                }
+              ],
+              "note": ""
+            },
+            {
+              "criterion_id": "direct_instruction",
+              "label": "Direct instruction / input & modeling",
+              "scoring": "presence",
+              "verdict": "PRESENT",
+              "band": null,
+              "evidence": [
+                {
+                  "element_id": "e9e6ac00ce09-e6",
+                  "excerpt": "Materials Needed:\nSticky Notes (1)\nNote taking device or journal\nExplore Activity\nExplain: (10-15 Minutes)\n Career Advocate will explain the Career clusters in agriculture, specifically in Animal Science using the interactive lesson."
+                }
+              ],
+              "note": ""
+            },
+            {
+              "criterion_id": "assessment_checkpoint",
+              "label": "Assessment / check for understanding",
+              "scoring": "presence",
+              "verdict": "MISSING",
+              "band": null,
+              "evidence": [],
+              "note": ""
+            },
+            {
+              "criterion_id": "hook_engagement",
+              "label": "Hook / engagement (anticipatory set)",
+              "scoring": "presence",
+              "verdict": "PRESENT",
+              "band": null,
+              "evidence": [
+                {
+                  "element_id": "e9e6ac00ce09-e4",
+                  "excerpt": "\nStudent Engagement Strategy / Resource:\nActivate prior knowledge: Pass around a sticky note to each student and place the prompt on slide two of the Agriculture- Plant Science Alternate Lesson Plan Slides\n\nWhile students are working on the question, draw a tree on the board and students can place their notes inside the tree to act as leaves(For reference)..Before students place their leaves, have"
+                }
+              ],
+              "note": ""
+            },
+            {
+              "criterion_id": "guided_practice",
+              "label": "Guided practice (we do)",
+              "scoring": "presence",
+              "verdict": "PRESENT",
+              "band": null,
+              "evidence": [
+                {
+                  "element_id": "e9e6ac00ce09-e5",
+                  "excerpt": "\nQuestion Stems:\nPrompt: How do we grow Plants?\nExplain Activity\nExplore: (20-30 Minutes)\nStudents will take notes and collaborate in small groups\nStudent Engagement Strategy / Resource:\nStudents will document their understanding through the provided guided notes.\nQuestion Stems:\nWhat is the difference between Horticulture and Floriculture?\n\nMaterials Needed:\nSticky Notes (1)\nNote taking device or"
+                }
+              ],
+              "note": ""
+            },
+            {
+              "criterion_id": "independent_practice",
+              "label": "Independent practice (you do)",
+              "scoring": "presence",
+              "verdict": "MISSING",
+              "band": null,
+              "evidence": [],
+              "note": ""
+            },
+            {
+              "criterion_id": "reflection_closure",
+              "label": "Reflection / closure",
+              "scoring": "presence",
+              "verdict": "PRESENT",
+              "band": null,
+              "evidence": [
+                {
+                  "element_id": "e9e6ac00ce09-e9",
+                  "excerpt": "Question Stems:\nWhat is the importance of soil?\nWhat are the properties of soil?\nWhat is the difference between soil and dirt?\nEvaluate Activity\nEvaluate: (5-10 Minutes)\nUpon completion, have students complete the 3-2-1 Reflection handout over this lesson.\n\nReference Worksheet:\n\n3-2-1 Reflection | Evaluate: (5-10 Minutes)\nUpon completion, have students complete the 3-2-1 Reflection handout over th"
+                }
+              ],
+              "note": ""
+            }
+          ],
+          "summary": {
+            "present": 6,
+            "partial": 0,
+            "missing": 2,
+            "coverage": 0.75,
+            "required_total": 4,
+            "required_present": 3,
+            "gate_pass": false,
+            "missing_required": [
+              "Assessment / check for understanding"
+            ]
+          },
+          "cost": {
+            "model_calls": 0
+          },
+          "error": null
+        }
+      }
+    }
+  ]
+}

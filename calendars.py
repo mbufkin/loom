@@ -5,7 +5,7 @@ calendars.py — After unit assemble, infer day grids + year notes from material
 Early rollup.py remains a provisional spine. This step is the authoritative
 inferred calendar tagged source: inferred_from_documents.
 Auditor-only: does not invent instructional content — only structures days
-from evidence already present (Layer 1 findings + Path A/B inventories).
+from evidence already present (Layer 1 findings + Path A–H inventories).
 """
 
 from __future__ import annotations

@@ -31,7 +31,7 @@
 
 | File | Role | Downstream consumers |
 |------|------|----------------------|
-| [`run_project.py`](run_project.py) | **One-command program entry** | ingest → rollup → **layer0 (0-A+0-B) → layer1 → layer2 → synthesize** |
+| [`run_project.py`](run_project.py) | **One-command program entry** | ingest → rollup → **layer0 → route → path A–H → layer1 → layer2 → synthesize** |
 | [`run-audit`](run-audit) | Shell wrapper: `./run-audit <dataset-id>` | Operators |
 | [`inbox-watch.py`](inbox-watch.py) | Watch folder → copy into `sources/` | Ingest inputs |
 
@@ -40,6 +40,7 @@
 | File | Role | Primary outputs |
 |------|------|-----------------|
 | [`layer0.py`](layer0.py) | Element-level extraction with verbatim citations (+ `--resolve-wide-spans`) | `projects/<id>/layer0/ledger.json`, `REPORT.md` |
+| [`route.py`](route.py) | Route-map builder (decides Path A–H per document) | `projects/<id>/layer0/route-map.json` (drives `workflows/`) |
 | [`layer1.py`](layer1.py) | Placement conformance (MATCH / MISMATCH / …) | `projects/<id>/layer1/bucket-ledger.json`, `findings.json`, `REPORT.md`, `REVIEW-QUEUE.md` |
 | [`layer2.py`](layer2.py) | Lesson structural completeness (code-only; no new model calls) | `projects/<id>/layer2/findings.json`, `REPORT.md` |
 
@@ -51,7 +52,22 @@
 |------|------|-----------------|
 | [`doc_extract.py`](doc_extract.py) | Multi-format text extraction | In-memory / catalog text |
 | [`ingest.py`](ingest.py) | Organize docs → units + calendars (models) | `manifest.yaml`, `units/*/calendar.yaml`, `ingest/catalog.json` |
+| [`calendars.py`](calendars.py) | Canonical per-unit calendars (source of truth for pacing) | `calendars.yaml` / calendar objects consumed by paths + rollup |
 | [`rollup.py`](rollup.py) | Unit calendars → year map (code) | `pacing-plan.yaml`, `output/03-year-calendar-map.*` |
+
+### 2.3a Path workflows (`workflows/`)
+
+| File | Role |
+|------|------|
+| [`workflows/run_paths.py`](workflows/run_paths.py) | Entry: run Path A–H after route-map exists |
+| [`workflows/lesson_plan.py`](workflows/lesson_plan.py) | Path A — lesson plans |
+| [`workflows/quiz.py`](workflows/quiz.py) | Path B — assessment |
+| [`workflows/general.py`](workflows/general.py) | Path C — general feedback |
+| [`workflows/teacher_support.py`](workflows/teacher_support.py) | Path D — teacher support |
+| [`workflows/student_practice.py`](workflows/student_practice.py) | Path E — student practice |
+| [`workflows/standards_pacing.py`](workflows/standards_pacing.py) | Path F — standards & pacing |
+| [`workflows/syllabus.py`](workflows/syllabus.py) | Path G — syllabus |
+| [`workflows/exit_ticket.py`](workflows/exit_ticket.py) | Path H — exit ticket |
 
 ### 2.4 Reporting
 
@@ -86,6 +102,8 @@
 | [`test_schema_validate.py`](test_schema_validate.py) | Schema validators |
 | [`test_audit.py`](test_audit.py) | Classification / scrub helpers |
 | [`test_rollup.py`](test_rollup.py) | Rollup against `dallas-career-2026` |
+| [`test_loom_pipeline.py`](test_loom_pipeline.py) | End-to-end pipeline (Dallas integration; auto-skips without local corpora) |
+| [`test_intake_goldens_extract.py`](test_intake_goldens_extract.py) | Intake goldens extraction |
 
 ### 2.8 Archived (not production)
 
@@ -103,10 +121,13 @@ Canonical shelf: [projects/STATUS.md](projects/STATUS.md). Layout: [PROJECT_STRU
 |------------|------|--------|---------|---------|-------|
 | [`dallas-career-2026`](projects/dallas-career-2026/) | **Golden** | Yes | Yes | Yes | Acceptance / demo dataset |
 | [`region10-career-college-2026`](projects/region10-career-college-2026/) | Active | Yes | Yes | Yes | Live district corpus |
-| [`ap-csp-2026`](projects/ap-csp-2026/) | Stress | Yes | Yes | Partial | Framework PDF stress |
+| [`oklahoma-ag-orientation-2026`](projects/oklahoma-ag-orientation-2026/) | Active | Yes | — | — | OK CareerTech Orientation to Ag; sequential calendar |
+| [`ap-csp-2026`](projects/ap-csp-2026/) | Stress | Yes | Yes | **Blocked** | Layer 1 ORGANIZE exceeds model ctx on single CED — see dataset README |
 | [`openscied-6`](projects/openscied-6/) | Experiment | Yes | — | — | + `experiments/openscied/` |
 | [`_template`](projects/_template/) | Template | Yes | — | — | Copy for new corpora |
 | [`_fixtures/`](projects/_fixtures/) | Fixture | Yes | — | — | `ingest-pilot`, `ingest-test` |
+
+> On-disk but not yet shelved: `bluebonnet-math-2026`, `pathful-planning-guides-2026`, `lab-*`, `gbbw-substack-2026` (local working datasets). Canonical tier list: [projects/STATUS.md](projects/STATUS.md).
 
 ---
 
@@ -136,9 +157,11 @@ Do not duplicate the zone table here.
 
 ---
 
-## 6. Phase 1 audit snapshot (2026-07-09)
+## 6. Phase 1 audit snapshot (2026-07-09) — historical
 
 ### 6.1 File inventory (approx.)
+
+> **Historical.** Counts below are from 2026-07-09 and are **stale**. Current (checked 2026-07-31, see §2.7): production `.py` **19** + `workflows/` **4**, test `.py` **6**, tool/experiment `.py` **29**, project YAML **~67**. Re-run an inventory pass when a fresh snapshot is needed.
 
 | Kind | Count (approx.) | Location |
 |------|-----------------|----------|

@@ -1,0 +1,84 @@
+[
+  {
+    "unit_id": "curriculum",
+    "day_id": "d1",
+    "role": "lesson_content",
+    "fulfilled_by": [],
+    "reasoning": "no candidate elements were routed to this slot",
+    "status": "MISSING"
+  },
+  {
+    "unit_id": "curriculum",
+    "day_id": "d1",
+    "role": "exit_ticket",
+    "fulfilled_by": [],
+    "reasoning": "no candidate elements were routed to this slot",
+    "status": "MISSING"
+  },
+  {
+    "unit_id": "curriculum",
+    "day_id": "d2",
+    "role": "lesson_content",
+    "fulfilled_by": [],
+    "reasoning": "no candidate elements were routed to this slot",
+    "status": "MISSING"
+  },
+  {
+    "unit_id": "curriculum",
+    "day_id": "d2",
+    "role": "exit_ticket",
+    "fulfilled_by": [],
+    "reasoning": "no candidate elements were routed to this slot",
+    "status": "MISSING"
+  },
+  {
+    "unit_id": "curriculum",
+    "day_id": "unit_supporting",
+    "role": "lesson_plan",
+    "fulfilled_by": [
+      "e9e6ac00ce09-e1",
+      "e9e6ac00ce09-e2",
+      "e9e6ac00ce09-e3",
+      "e9e6ac00ce09-e4",
+      "e9e6ac00ce09-e5",
+      "e9e6ac00ce09-e6",
+      "e9e6ac00ce09-e7",
+      "e9e6ac00ce09-e8",
+      "e9e6ac00ce09-e9"
+    ],
+    "reasoning": "These excerpts together supply teacher-facing planning: pacing, TEKS, learning goals, essential questions, materials, and timed 5E Engage\u2013Explore\u2013Explain\u2013Extend\u2013Evaluate procedures.",
+    "status": "DUPLICATE"
+  },
+  {
+    "unit_id": "curriculum",
+    "day_id": "unit_supporting",
+    "role": "quiz",
+    "fulfilled_by": [],
+    "reasoning": "No candidate contains an actual set of scored assessment items; 'Exit Ticket' is only a title, and other questions are discussion/engagement stems.",
+    "status": "MISSING"
+  },
+  {
+    "unit_id": "curriculum",
+    "day_id": "unit_supporting",
+    "role": "answer_key",
+    "fulfilled_by": [],
+    "reasoning": "No candidate provides correct answers or keyed solutions for any assessment.",
+    "status": "MISSING"
+  },
+  {
+    "unit_id": "curriculum",
+    "day_id": "unit_supporting",
+    "role": "rubric",
+    "fulfilled_by": [],
+    "reasoning": "No candidate states scoring criteria, performance levels, or evaluation dimensions.",
+    "status": "MISSING"
+  },
+  {
+    "unit_id": "curriculum",
+    "day_id": "unit_supporting",
+    "role": "worksheet",
+    "fulfilled_by": [],
+    "reasoning": "Named student handouts (Note Sheet, soil handout, 3-2-1 Reflection, web diagram) are only referenced; no excerpt itself is the student work document.",
+    "status": "MISSING"
+  }
+]

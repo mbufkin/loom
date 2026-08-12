@@ -1,0 +1,804 @@
+{
+  "project_id": "lab-assessment-path-b",
+  "workflow_id": "quiz",
+  "path": "B",
+  "lens": "Assessment",
+  "status": "ok",
+  "doc_ids": [
+    "3fd5e5bc561c",
+    "86fff193b91a",
+    "d3fae80ecd3f",
+    "doc_weak01_Blank_Quiz_Placeholder",
+    "ed1c99b4f5fa",
+    "fc48920a5ca9"
+  ],
+  "checklist": "workflows/checklists/assessment.yaml",
+  "inventory": [
+    {
+      "doc_id": "3fd5e5bc561c",
+      "doc_type": "quiz",
+      "element_count": 1,
+      "pair_key": "manufacturing exploration",
+      "B1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
+      },
+      "B2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "B5": {
+        "status": "PARTIAL",
+        "note": "quiz without matched answer-key sibling"
+      },
+      "B6": {
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "86fff193b91a",
+      "doc_type": "answer_key",
+      "element_count": 1,
+      "pair_key": "engineering lesson",
+      "B1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
+      },
+      "B2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "B3": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "B4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "B5": {
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem"
+      },
+      "B6": {
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "d3fae80ecd3f",
+      "doc_type": "quiz",
+      "element_count": 1,
+      "pair_key": "architecture and construction",
+      "B1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
+      },
+      "B2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "B5": {
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem"
+      },
+      "B6": {
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "doc_weak01_Blank_Quiz_Placeholder",
+      "doc_type": "quiz",
+      "element_count": 1,
+      "pair_key": "doc weak01 blank placeholder",
+      "B1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
+      },
+      "B2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "MISSING",
+        "note": "0/0 fields present"
+      },
+      "B5": {
+        "status": "PARTIAL",
+        "note": "quiz without matched answer-key sibling"
+      },
+      "B6": {
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "ed1c99b4f5fa",
+      "doc_type": "answer_key",
+      "element_count": 1,
+      "pair_key": "architecture and construction",
+      "B1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
+      },
+      "B2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "B3": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "B4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "B5": {
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem"
+      },
+      "B6": {
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "fc48920a5ca9",
+      "doc_type": "quiz",
+      "element_count": 1,
+      "pair_key": "engineering lesson",
+      "B1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc"
+      },
+      "B2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "B3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "B4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "B5": {
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem"
+      },
+      "B6": {
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    }
+  ],
+  "steps_by_doc": {
+    "3fd5e5bc561c": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 1,
+        "by_element_type": {
+          "assessment_item": 1
+        },
+        "doc_id": "3fd5e5bc561c"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Manufacturing exploration Total questions: 11 Worksheet time: 6mins Name Class Date 1. What is the primary focus of the learning objective titled \"Manufacturing exploration\"? a) To study historical aspects of manufacturing b) To learn about manufacturing theories c) To understand the economic impact of manufacturing d) To explore a new career in manufacturing through experiential learning 2. What aspect of the process is emphasized for improvement in the lesson? a) Cost and benefit…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Manufacturing exploration Total questions: 11 Worksheet time: 6mins Name Class Date 1. What is the primary focus of the learning objective titled \"Manufacturing exploration\"? a) To study historical aspects of manufacturing b) To learn about manufacturing theories c) To understand the economic impact of manufacturing d) To explore a new career in manufacturing through experiential learning 2. What aspect of the process is emphasized for improvement in the lesson? a) Cost and benefit…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Manufacturing exploration Total questions: 11 Worksheet time: 6mins Name Class Date 1. What is the primary focus of the learning objective titled \"Manufacturing exploration\"? a) To study historical aspects of manufacturing b) To learn about manufacturing theories c) To understand the economic impact of manufacturing d) To explore a new career in manufacturing through experiential learning 2. What aspect of the process is emphasized for improvement in the lesson? a) Cost and benefit…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "PARTIAL",
+        "note": "quiz without matched answer-key sibling",
+        "pair_key": "manufacturing exploration",
+        "sibling_doc_ids": []
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "86fff193b91a": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 1,
+        "by_element_type": {
+          "assessment_item": 1
+        },
+        "doc_id": "86fff193b91a"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Engineering Design Process Quiz Total questions: 10 Worksheet time: 9mins Name Class Date 1. What is the primary objective of using the engineering design process in the context provided? a) To design, build, and test a paper airplane launcher b) To study the properties of different materials c) To create a new type of paper d) To learn about weather patterns 2. What type of energy conversion is emphasized in the learning objective? a) Solar to electrical energy b) Chemical to…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Engineering Design Process Quiz Total questions: 10 Worksheet time: 9mins Name Class Date 1. What is the primary objective of using the engineering design process in the context provided? a) To design, build, and test a paper airplane launcher b) To study the properties of different materials c) To create a new type of paper d) To learn about weather patterns 2. What type of energy conversion is emphasized in the learning objective? a) Solar to electrical energy b) Chemical to…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Engineering Design Process Quiz Total questions: 10 Worksheet time: 9mins Name Class Date 1. What is the primary objective of using the engineering design process in the context provided? a) To design, build, and test a paper airplane launcher b) To study the properties of different materials c) To create a new type of paper d) To learn about weather patterns 2. What type of energy conversion is emphasized in the learning objective? a) Solar to electrical energy b) Chemical to…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Engineering Design Process Quiz Total questions: 10 Worksheet time: 9mins Name Class Date 1. What is the primary objective of using the engineering design process in the context provided? a) To design, build, and test a paper airplane launcher b) To study the properties of different materials c) To create a new type of paper d) To learn about weather patterns 2. What type of energy conversion is emphasized in the learning objective? a) Solar to electrical energy b) Chemical to…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Engineering Design Process Quiz Total questions: 10 Worksheet time: 9mins Name Class Date 1. What is the primary objective of using the engineering design process in the context provided? a) To design, build, and test a paper airplane launcher b) To study the properties of different materials c) To create a new type of paper d) To learn about weather patterns 2. What type of energy conversion is emphasized in the learning objective? a) Solar to electrical energy b) Chemical to…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem",
+        "pair_key": "engineering lesson",
+        "sibling_doc_ids": [
+          "fc48920a5ca9"
+        ]
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "d3fae80ecd3f": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 1,
+        "by_element_type": {
+          "assessment_item": 1
+        },
+        "doc_id": "d3fae80ecd3f"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Learning Activity on Building Paper Towers Total questions: 10 Worksheet time: 5mins Name Class Date 1. What is the primary objective of the learning activity described in the document? a) To design and build a paper tower based on specific criteria b) To create a digital model of a building c) To study the history of architectural design d) To write an essay about paper towers 2. What is the iterative process mentioned in the learning objective for building a paper tower? a) To…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Learning Activity on Building Paper Towers Total questions: 10 Worksheet time: 5mins Name Class Date 1. What is the primary objective of the learning activity described in the document? a) To design and build a paper tower based on specific criteria b) To create a digital model of a building c) To study the history of architectural design d) To write an essay about paper towers 2. What is the iterative process mentioned in the learning objective for building a paper tower? a) To…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Learning Activity on Building Paper Towers Total questions: 10 Worksheet time: 5mins Name Class Date 1. What is the primary objective of the learning activity described in the document? a) To design and build a paper tower based on specific criteria b) To create a digital model of a building c) To study the history of architectural design d) To write an essay about paper towers 2. What is the iterative process mentioned in the learning objective for building a paper tower? a) To…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem",
+        "pair_key": "architecture and construction",
+        "sibling_doc_ids": [
+          "ed1c99b4f5fa"
+        ]
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "doc_weak01_Blank_Quiz_Placeholder": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 1,
+        "by_element_type": {
+          "assessment_item": 1
+        },
+        "doc_id": "doc_weak01_Blank_Quiz_Placeholder"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "PARTIAL",
+        "note": "quiz without matched answer-key sibling",
+        "pair_key": "doc weak01 blank placeholder",
+        "sibling_doc_ids": []
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "ed1c99b4f5fa": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 1,
+        "by_element_type": {
+          "assessment_item": 1
+        },
+        "doc_id": "ed1c99b4f5fa"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Learning Activity on Building Paper Towers Total questions: 10 Worksheet time: 5mins Name Class Date 1. What is the primary objective of the learning activity described in the document? a) To design and build a paper tower based on specific criteria b) To create a digital model of a building c) To study the history of architectural design d) To write an essay about paper towers 2. What is the iterative process mentioned in the learning objective for building a paper tower? a) To…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Learning Activity on Building Paper Towers Total questions: 10 Worksheet time: 5mins Name Class Date 1. What is the primary objective of the learning activity described in the document? a) To design and build a paper tower based on specific criteria b) To create a digital model of a building c) To study the history of architectural design d) To write an essay about paper towers 2. What is the iterative process mentioned in the learning objective for building a paper tower? a) To…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Learning Activity on Building Paper Towers Total questions: 10 Worksheet time: 5mins Name Class Date 1. What is the primary objective of the learning activity described in the document? a) To design and build a paper tower based on specific criteria b) To create a digital model of a building c) To study the history of architectural design d) To write an essay about paper towers 2. What is the iterative process mentioned in the learning objective for building a paper tower? a) To…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Learning Activity on Building Paper Towers Total questions: 10 Worksheet time: 5mins Name Class Date 1. What is the primary objective of the learning activity described in the document? a) To design and build a paper tower based on specific criteria b) To create a digital model of a building c) To study the history of architectural design d) To write an essay about paper towers 2. What is the iterative process mentioned in the learning objective for building a paper tower? a) To…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Learning Activity on Building Paper Towers Total questions: 10 Worksheet time: 5mins Name Class Date 1. What is the primary objective of the learning activity described in the document? a) To design and build a paper tower based on specific criteria b) To create a digital model of a building c) To study the history of architectural design d) To write an essay about paper towers 2. What is the iterative process mentioned in the learning objective for building a paper tower? a) To…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem",
+        "pair_key": "architecture and construction",
+        "sibling_doc_ids": [
+          "d3fae80ecd3f"
+        ]
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    },
+    "fc48920a5ca9": {
+      "B1": {
+        "step": "B1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this assessment doc",
+        "element_count": 1,
+        "by_element_type": {
+          "assessment_item": 1
+        },
+        "doc_id": "fc48920a5ca9"
+      },
+      "B2": {
+        "step": "B2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "numbered_items",
+            "label": "Numbered questions / items",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Engineering Design Process Quiz Total questions: 10 Worksheet time: 9mins Name Class Date 1. What is the primary objective of using the engineering design process in the context provided? a) To design, build, and test a paper airplane launcher b) To study the properties of different materials c) To create a new type of paper d) To learn about weather patterns 2. What type of energy conversion is emphasized in the learning objective? a) Solar to electrical energy b) Chemical to…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "choice_stems",
+            "label": "Multiple-choice options",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Engineering Design Process Quiz Total questions: 10 Worksheet time: 9mins Name Class Date 1. What is the primary objective of using the engineering design process in the context provided? a) To design, build, and test a paper airplane launcher b) To study the properties of different materials c) To create a new type of paper d) To learn about weather patterns 2. What type of energy conversion is emphasized in the learning objective? a) Solar to electrical energy b) Chemical to…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "B3": {
+        "step": "B3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "answer_key_header",
+            "label": "Answer key section / header",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "keyed_answers",
+            "label": "Numbered correct answers",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "B4": {
+        "step": "B4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / learning target cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Worksheets Engineering Design Process Quiz Total questions: 10 Worksheet time: 9mins Name Class Date 1. What is the primary objective of using the engineering design process in the context provided? a) To design, build, and test a paper airplane launcher b) To study the properties of different materials c) To create a new type of paper d) To learn about weather patterns 2. What type of energy conversion is emphasized in the learning objective? a) Solar to electrical energy b) Chemical to…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "B5": {
+        "step": "B5",
+        "status": "PRESENT",
+        "note": "quiz↔key pair matched by normalized filename stem",
+        "pair_key": "engineering lesson",
+        "sibling_doc_ids": [
+          "86fff193b91a"
+        ]
+      },
+      "B6": {
+        "step": "B6",
+        "status": "STUB",
+        "note": "emit Path B one-pager TBD"
+      }
+    }
+  }
+}

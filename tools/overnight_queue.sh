@@ -49,10 +49,12 @@ curl -sf --max-time 10 http://127.0.0.1:30000/health >/dev/null \
 # This is the corpus that still has the pre-fix ~55% uncited ledger.
 # Region10 already completed cleanly earlier today — do not redo it here.
 # ---------------------------------------------------------------------------
+# Intentional golden-tree refresh: --allow-live-root bypasses e2e/runs isolation.
 status "RUNNING dallas-career-2026 (layer0-no-resume → 0-B → 1 → 2 → synthesize)"
 python3 "$DIR/run_project.py" \
   --project dallas-career-2026 \
   --layer0-no-resume \
+  --allow-live-root \
   || fail "dallas-career-2026 pipeline exited non-zero"
 
 # ---------------------------------------------------------------------------

@@ -1,0 +1,124 @@
+{
+  "version": 1,
+  "notes": "Gold Path expectations for the CTE spike. Path is the thin kind→Path table after Pass 1. view-lesson-plan is the instructional LP (A). iCEV Action Plan is a student task checklist (E), not Path A.",
+  "path_by_kind": {
+    "lesson_plan": "A",
+    "assessment": "B",
+    "student_practice": "E",
+    "teacher_support": "D",
+    "standards_pacing": "F",
+    "other": "C"
+  },
+  "documents": {
+    "023-breeds-of-livestock-cattle__view-lesson-plan.html": {
+      "expected_kind": "lesson_plan",
+      "expected_path": "A",
+      "rationale": "Primary instructional lesson plan for the cattle pack"
+    },
+    "023-breeds-of-livestock-cattle__action-plan.html": {
+      "expected_kind": "student_practice",
+      "expected_path": "E",
+      "rationale": "iCEV Action Plan = student task checklist, not the lesson plan"
+    },
+    "023-breeds-of-livestock-cattle__activity-career-connections.html": {
+      "expected_kind": "student_practice",
+      "expected_path": "E",
+      "rationale": "Student activity"
+    },
+    "023-breeds-of-livestock-cattle__activity-cattle-breeds-flashcards.html": {
+      "expected_kind": "student_practice",
+      "expected_path": "E",
+      "rationale": "Student flashcard activity"
+    },
+    "023-breeds-of-livestock-cattle__check-for-understanding-1-dairy-breeds.html": {
+      "expected_kind": "assessment",
+      "expected_path": "B",
+      "rationale": "CFU quiz"
+    },
+    "023-breeds-of-livestock-cattle__final-assessment.html": {
+      "expected_kind": "assessment",
+      "expected_path": "B",
+      "rationale": "Final assessment"
+    },
+    "023-breeds-of-livestock-cattle__final-assessment-answer-key.html": {
+      "expected_kind": "assessment",
+      "expected_path": "B",
+      "rationale": "Answer key pairs with Path B"
+    },
+    "023-breeds-of-livestock-cattle__horizontal-alignments.html": {
+      "expected_kind": "standards_pacing",
+      "expected_path": "F",
+      "rationale": "Standards / horizontal alignments"
+    },
+    "023-breeds-of-livestock-cattle__key-concepts.html": {
+      "expected_kind": "student_practice",
+      "expected_path": "E",
+      "rationale": "Student note-taking outline"
+    },
+    "023-breeds-of-livestock-cattle__project-build-a-breed.html": {
+      "expected_kind": "student_practice",
+      "expected_path": "E",
+      "rationale": "Student project sheet"
+    },
+    "023-breeds-of-livestock-cattle__vocabulary-handout.html": {
+      "expected_kind": "student_practice",
+      "expected_path": "E",
+      "rationale": "Student vocabulary handout"
+    },
+    "027-external-anatomy-of-livestock-terms-terminology__view-lesson-plan.html": {
+      "expected_kind": "lesson_plan",
+      "expected_path": "A",
+      "rationale": "Primary instructional lesson plan for the anatomy pack"
+    },
+    "027-external-anatomy-of-livestock-terms-terminology__action-plan.html": {
+      "expected_kind": "student_practice",
+      "expected_path": "E",
+      "rationale": "iCEV Action Plan = student task checklist, not the lesson plan"
+    },
+    "027-external-anatomy-of-livestock-terms-terminology__activity-career-connections.html": {
+      "expected_kind": "student_practice",
+      "expected_path": "E",
+      "rationale": "Student activity"
+    },
+    "027-external-anatomy-of-livestock-terms-terminology__activity-labeling-a-boar.html": {
+      "expected_kind": "student_practice",
+      "expected_path": "E",
+      "rationale": "Student labeling activity"
+    },
+    "027-external-anatomy-of-livestock-terms-terminology__assessment.html": {
+      "expected_kind": "assessment",
+      "expected_path": "B",
+      "rationale": "Unit assessment"
+    },
+    "027-external-anatomy-of-livestock-terms-terminology__assessment-answer-key.html": {
+      "expected_kind": "assessment",
+      "expected_path": "B",
+      "rationale": "Answer key pairs with Path B"
+    },
+    "027-external-anatomy-of-livestock-terms-terminology__horizontal-alignments.html": {
+      "expected_kind": "standards_pacing",
+      "expected_path": "F",
+      "rationale": "Standards / horizontal alignments"
+    },
+    "027-external-anatomy-of-livestock-terms-terminology__ngss-correlation.html": {
+      "expected_kind": "standards_pacing",
+      "expected_path": "F",
+      "rationale": "NGSS standards correlation"
+    },
+    "027-external-anatomy-of-livestock-terms-terminology__key-concepts.html": {
+      "expected_kind": "student_practice",
+      "expected_path": "E",
+      "rationale": "Student note-taking outline"
+    },
+    "027-external-anatomy-of-livestock-terms-terminology__project-livestock-instructor.html": {
+      "expected_kind": "student_practice",
+      "expected_path": "E",
+      "rationale": "Student project sheet"
+    },
+    "027-external-anatomy-of-livestock-terms-terminology__vocabulary-handout.html": {
+      "expected_kind": "student_practice",
+      "expected_path": "E",
+      "rationale": "Student vocabulary handout"
+    }
+  }
+}

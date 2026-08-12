@@ -1,0 +1,525 @@
+{
+  "spike": "path_a_per_class_a5",
+  "source_file": "023-breeds-of-livestock-cattle__view-lesson-plan.html",
+  "class_count": 7,
+  "overview_chars": 768,
+  "appendix_chars": 2148,
+  "episode_html_chars": {
+    "1": 8839,
+    "2": 6918,
+    "3": 6900,
+    "4": 7702,
+    "5": 8237,
+    "6": 3143,
+    "7": 4288
+  },
+  "whole_doc_hunter": "8/8 pooled",
+  "hunter_ids": [
+    "anticipatory_set",
+    "objective_purpose",
+    "input",
+    "modeling",
+    "check_for_understanding",
+    "guided_practice",
+    "independent_practice",
+    "closure"
+  ],
+  "classes": [
+    {
+      "class_num": 1,
+      "title": "Class 1",
+      "topic": "Dairy Breeds Microsoft ® PowerPoint ® Segment Action Plan Vocabulary Handout Key Concepts Dairy Breeds Check for Underst",
+      "char_count": 1607,
+      "element_count": 10,
+      "hunter_core_present": 7,
+      "hunter_core_total": 8,
+      "missing": [
+        "independent_practice"
+      ],
+      "present": [
+        "anticipatory_set",
+        "objective_purpose",
+        "input",
+        "modeling",
+        "check_for_understanding",
+        "guided_practice",
+        "closure"
+      ],
+      "matrix": [
+        {
+          "id": "anticipatory_set",
+          "label": "1. Anticipatory set (hook / Do Now / Engage)",
+          "status": "PRESENT",
+          "cite": "Step 1: Bell Ringer:   ·   Display an image of a Holstein cow, Brahman cow and Angus cow. Have students consider the question “what differences do you see physically in these three breeds of cattle, and how may this impact their use in livestock production”. Lead a discussion of their responses."
+        },
+        {
+          "id": "objective_purpose",
+          "label": "2. Objective & purpose (stated to students)",
+          "status": "PRESENT",
+          "cite": "Essential Questions:   1. What general terminology is associated with cattle?   2. What are the origins, physical characteristics, traits and usages of dairy breeds?"
+        },
+        {
+          "id": "input",
+          "label": "3. Input (teach content / vocabulary)",
+          "status": "PRESENT",
+          "cite": "Class Overview:   Dairy Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Vocabulary Handout   Key Concepts   Dairy Breeds Check for Understanding   Dairy Decisions Activity"
+        },
+        {
+          "id": "modeling",
+          "label": "4. Modeling (I do / demonstrate)",
+          "status": "PRESENT",
+          "cite": "Class Overview:   Dairy Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Vocabulary Handout   Key Concepts   Dairy Breeds Check for Understanding   Dairy Decisions Activity"
+        },
+        {
+          "id": "check_for_understanding",
+          "label": "5. Check for understanding",
+          "status": "PRESENT",
+          "cite": "Step 4: Administer the Dairy Breeds Check for Understanding .   ·   The check for understanding is a short review of the content presented in the segment."
+        },
+        {
+          "id": "guided_practice",
+          "label": "6. Guided practice (We do)",
+          "status": "PRESENT",
+          "cite": "Step 5: Students should complete the Dairy Decisions Activity.   ·   Students will select dairy cattle breeds for the given scenarios."
+        },
+        {
+          "id": "independent_practice",
+          "label": "7. Independent practice (You do)",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "closure",
+          "label": "8. Closure",
+          "status": "PRESENT",
+          "cite": "Step 6: Exit Ticket:   ·   Have students turn in the Dairy Decisions Activity ."
+        }
+      ]
+    },
+    {
+      "class_num": 2,
+      "title": "Class 2",
+      "topic": "Asian & African Breeds Microsoft ® PowerPoint ® Segment Action Plan Key Concepts Asian & African Breeds Check for Unders",
+      "char_count": 1188,
+      "element_count": 8,
+      "hunter_core_present": 7,
+      "hunter_core_total": 8,
+      "missing": [
+        "independent_practice"
+      ],
+      "present": [
+        "anticipatory_set",
+        "objective_purpose",
+        "input",
+        "modeling",
+        "check_for_understanding",
+        "guided_practice",
+        "closure"
+      ],
+      "matrix": [
+        {
+          "id": "anticipatory_set",
+          "label": "1. Anticipatory set (hook / Do Now / Engage)",
+          "status": "PRESENT",
+          "cite": "Step 1: Bell Ringer:   ·   Show students an image or video of one of the breeds in this segment . Have students write down the first word which comes to mind. Discuss students’ answers as a class."
+        },
+        {
+          "id": "objective_purpose",
+          "label": "2. Objective & purpose (stated to students)",
+          "status": "PRESENT",
+          "cite": "Essential Questions:   1. What are the origins, physical characteristics, traits and usages of Asian and African breeds?   2. What physical characteristics make these breeds well-suited to hot, humid climates?"
+        },
+        {
+          "id": "input",
+          "label": "3. Input (teach content / vocabulary)",
+          "status": "PRESENT",
+          "cite": "Class Overview:   Asian & African Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Asian & African Breeds Check for Understanding   Trivia Game Exit Ticket Activity"
+        },
+        {
+          "id": "modeling",
+          "label": "4. Modeling (I do / demonstrate)",
+          "status": "PRESENT",
+          "cite": "Class Overview:   Asian & African Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Asian & African Breeds Check for Understanding   Trivia Game Exit Ticket Activity"
+        },
+        {
+          "id": "check_for_understanding",
+          "label": "5. Check for understanding",
+          "status": "PRESENT",
+          "cite": "Class Overview:   Asian & African Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Asian & African Breeds Check for Understanding   Trivia Game Exit Ticket Activity"
+        },
+        {
+          "id": "guided_practice",
+          "label": "6. Guided practice (We do)",
+          "status": "PRESENT",
+          "cite": "Step 4: Exit Ticket:   ·   Have students complete the Trivia Game Exit Ticket Activity , then turn it in before leaving class."
+        },
+        {
+          "id": "independent_practice",
+          "label": "7. Independent practice (You do)",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "closure",
+          "label": "8. Closure",
+          "status": "PRESENT",
+          "cite": "Class Overview:   Asian & African Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Asian & African Breeds Check for Understanding   Trivia Game Exit Ticket Activity"
+        }
+      ]
+    },
+    {
+      "class_num": 3,
+      "title": "Class 3",
+      "topic": "British Breeds Microsoft ® PowerPoint ® Segment Action Plan Key Concepts British Breeds Check for Understanding Cattle B",
+      "char_count": 1138,
+      "element_count": 9,
+      "hunter_core_present": 7,
+      "hunter_core_total": 8,
+      "missing": [
+        "independent_practice"
+      ],
+      "present": [
+        "anticipatory_set",
+        "objective_purpose",
+        "input",
+        "modeling",
+        "check_for_understanding",
+        "guided_practice",
+        "closure"
+      ],
+      "matrix": [
+        {
+          "id": "anticipatory_set",
+          "label": "1. Anticipatory set (hook / Do Now / Engage)",
+          "status": "PRESENT",
+          "cite": "Step 1: Bell Ringer:   ·   Have students list some of the countries Asian and African breeds come from as a review."
+        },
+        {
+          "id": "objective_purpose",
+          "label": "2. Objective & purpose (stated to students)",
+          "status": "PRESENT",
+          "cite": "Essential Questions:   1. What are the origins, physical characteristics, traits and usages of British breeds?"
+        },
+        {
+          "id": "input",
+          "label": "3. Input (teach content / vocabulary)",
+          "status": "PRESENT",
+          "cite": "Class Overview:   British Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   British Breeds Check for Understanding   Cattle Breeds Flashcards Activity"
+        },
+        {
+          "id": "modeling",
+          "label": "4. Modeling (I do / demonstrate)",
+          "status": "PRESENT",
+          "cite": "Class Overview:   British Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   British Breeds Check for Understanding   Cattle Breeds Flashcards Activity"
+        },
+        {
+          "id": "check_for_understanding",
+          "label": "5. Check for understanding",
+          "status": "PRESENT",
+          "cite": "Step 3: Administer the British Breeds Check for Understanding .   ·   The check for understanding is a short review of the content presented in the segment."
+        },
+        {
+          "id": "guided_practice",
+          "label": "6. Guided practice (We do)",
+          "status": "PRESENT",
+          "cite": "Step 4: Students should begin the Cattle Breeds Flashcards Activity .   ·   Students will develop a set of flashcards to practice their knowledge of cattle breeds and their characteristics."
+        },
+        {
+          "id": "independent_practice",
+          "label": "7. Independent practice (You do)",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "closure",
+          "label": "8. Closure",
+          "status": "PRESENT",
+          "cite": "Step 5: Exit Ticket:   ·   Have students provide a progress update on the Cattle Breeds Flashcards Activity ."
+        }
+      ]
+    },
+    {
+      "class_num": 4,
+      "title": "Class 4",
+      "topic": "Continental Breeds Microsoft ® PowerPoint ® Segment Action Plan Key Concepts Continental Breeds Check for Understanding ",
+      "char_count": 1351,
+      "element_count": 9,
+      "hunter_core_present": 7,
+      "hunter_core_total": 8,
+      "missing": [
+        "independent_practice"
+      ],
+      "present": [
+        "anticipatory_set",
+        "objective_purpose",
+        "input",
+        "modeling",
+        "check_for_understanding",
+        "guided_practice",
+        "closure"
+      ],
+      "matrix": [
+        {
+          "id": "anticipatory_set",
+          "label": "1. Anticipatory set (hook / Do Now / Engage)",
+          "status": "PRESENT",
+          "cite": "Step 1: Bell Ringer:   ·   Have students brainstorm answers to the question, “ which countries do continental cattle breeds originate from ”. Lead students to discuss their responses."
+        },
+        {
+          "id": "objective_purpose",
+          "label": "2. Objective & purpose (stated to students)",
+          "status": "PRESENT",
+          "cite": "Essential Questions:   1. What are the origins, physical characteristics, traits and usages of continental breeds?"
+        },
+        {
+          "id": "input",
+          "label": "3. Input (teach content / vocabulary)",
+          "status": "PRESENT",
+          "cite": "Class Overview:   Continental Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Continental Breeds Check for Understanding   Cattle Breeds Flashcards Activity"
+        },
+        {
+          "id": "modeling",
+          "label": "4. Modeling (I do / demonstrate)",
+          "status": "PRESENT",
+          "cite": "Class Overview:   Continental Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Continental Breeds Check for Understanding   Cattle Breeds Flashcards Activity"
+        },
+        {
+          "id": "check_for_understanding",
+          "label": "5. Check for understanding",
+          "status": "PRESENT",
+          "cite": "Class Overview:   Continental Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   Continental Breeds Check for Understanding   Cattle Breeds Flashcards Activity"
+        },
+        {
+          "id": "guided_practice",
+          "label": "6. Guided practice (We do)",
+          "status": "PRESENT",
+          "cite": "Step 4: Students should continue the Cattle Breeds Flashcards Activity .   ·   Students will develop a set of flashcards to practice their knowledge of cattle breeds and their characteristics."
+        },
+        {
+          "id": "independent_practice",
+          "label": "7. Independent practice (You do)",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "closure",
+          "label": "8. Closure",
+          "status": "PRESENT",
+          "cite": "Step 5: Exit Ticket:   ·   Have students write down three statements about the topic of the lesson, two truths and a lie . Once complete, students should exchange statements with a partner to figure out which statement is the lie."
+        }
+      ]
+    },
+    {
+      "class_num": 5,
+      "title": "Class 5",
+      "topic": "American Breeds Microsoft ® PowerPoint ® Segment Action Plan Key Concepts American Breeds Check for Understanding Cattle",
+      "char_count": 1490,
+      "element_count": 10,
+      "hunter_core_present": 8,
+      "hunter_core_total": 8,
+      "missing": [],
+      "present": [
+        "anticipatory_set",
+        "objective_purpose",
+        "input",
+        "modeling",
+        "check_for_understanding",
+        "guided_practice",
+        "independent_practice",
+        "closure"
+      ],
+      "matrix": [
+        {
+          "id": "anticipatory_set",
+          "label": "1. Anticipatory set (hook / Do Now / Engage)",
+          "status": "PRESENT",
+          "cite": "Step 1: Bell Ringer:   ·   Think, Pair, Share : Pose the following question to students and have them consider their response for one or two minutes before asking them to get into groups and share their responses.   -   Cattle are not native to the U.S., meaning foundation stock was imported at some point. What are you expecting American breeds of cattle to be like?"
+        },
+        {
+          "id": "objective_purpose",
+          "label": "2. Objective & purpose (stated to students)",
+          "status": "PRESENT",
+          "cite": "Essential Questions:   1. What are the origins, physical characteristics, traits and usages of American breeds?"
+        },
+        {
+          "id": "input",
+          "label": "3. Input (teach content / vocabulary)",
+          "status": "PRESENT",
+          "cite": "Class Overview:   American Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   American Breeds Check for Understanding   Cattle Breeds Flashcards Activity   Build a Breed Project"
+        },
+        {
+          "id": "modeling",
+          "label": "4. Modeling (I do / demonstrate)",
+          "status": "PRESENT",
+          "cite": "Class Overview:   American Breeds Microsoft ®  PowerPoint ® Segment   Action Plan   Key Concepts   American Breeds Check for Understanding   Cattle Breeds Flashcards Activity   Build a Breed Project"
+        },
+        {
+          "id": "check_for_understanding",
+          "label": "5. Check for understanding",
+          "status": "PRESENT",
+          "cite": "Step 3: Administer the American Breeds Check for Understanding .   ·   The check for understanding is a short review of the content presented in the segment."
+        },
+        {
+          "id": "guided_practice",
+          "label": "6. Guided practice (We do)",
+          "status": "PRESENT",
+          "cite": "Step 4: Students should complete the Cattle Breeds Flashcards Activity .   ·   Students will develop a set of flashcards to practice their knowledge of cattle breeds and their characteristics."
+        },
+        {
+          "id": "independent_practice",
+          "label": "7. Independent practice (You do)",
+          "status": "PRESENT",
+          "cite": "Step 5: Students should begin the Build a Breed Project .   ·   Students will create their own crossbred or composite cattle breed which would suit their local area well."
+        },
+        {
+          "id": "closure",
+          "label": "8. Closure",
+          "status": "PRESENT",
+          "cite": "Step 6: Exit Ticket:   ·   Have students provide a progress update on the Build a Breed Project ."
+        }
+      ]
+    },
+    {
+      "class_num": 6,
+      "title": "Class 6",
+      "topic": "Action Plan Build a Breed Project",
+      "char_count": 493,
+      "element_count": 6,
+      "hunter_core_present": 3,
+      "hunter_core_total": 8,
+      "missing": [
+        "objective_purpose",
+        "input",
+        "modeling",
+        "check_for_understanding",
+        "guided_practice"
+      ],
+      "present": [
+        "anticipatory_set",
+        "independent_practice",
+        "closure"
+      ],
+      "matrix": [
+        {
+          "id": "anticipatory_set",
+          "label": "1. Anticipatory set (hook / Do Now / Engage)",
+          "status": "PRESENT",
+          "cite": "Step 1: Bell Ringer:   ·   Have students define the terms purebred, crossbred and composite in their own words. Review the correct definitions as a class."
+        },
+        {
+          "id": "objective_purpose",
+          "label": "2. Objective & purpose (stated to students)",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "input",
+          "label": "3. Input (teach content / vocabulary)",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "modeling",
+          "label": "4. Modeling (I do / demonstrate)",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "check_for_understanding",
+          "label": "5. Check for understanding",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "guided_practice",
+          "label": "6. Guided practice (We do)",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "independent_practice",
+          "label": "7. Independent practice (You do)",
+          "status": "PRESENT",
+          "cite": "Class Overview:   Action Plan   Build a Breed Project"
+        },
+        {
+          "id": "closure",
+          "label": "8. Closure",
+          "status": "PRESENT",
+          "cite": "Step 3: Exit Ticket:   ·   Have students provide a progress update on the Build a Breed Project ."
+        }
+      ]
+    },
+    {
+      "class_num": 7,
+      "title": "Class 7",
+      "topic": "Action Plan Cattle Breeds Flashcards Activity Breeds of Livestock: Cattle Final Assessment Build a Breed Project",
+      "char_count": 711,
+      "element_count": 7,
+      "hunter_core_present": 4,
+      "hunter_core_total": 8,
+      "missing": [
+        "objective_purpose",
+        "input",
+        "modeling",
+        "check_for_understanding"
+      ],
+      "present": [
+        "anticipatory_set",
+        "guided_practice",
+        "independent_practice",
+        "closure"
+      ],
+      "matrix": [
+        {
+          "id": "anticipatory_set",
+          "label": "1. Anticipatory set (hook / Do Now / Engage)",
+          "status": "PRESENT",
+          "cite": "Step 1: Bell Ringer:   ·   Have students use the flashcards from the Cattle Breeds Flashcards Activity  to review for the assessment."
+        },
+        {
+          "id": "objective_purpose",
+          "label": "2. Objective & purpose (stated to students)",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "input",
+          "label": "3. Input (teach content / vocabulary)",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "modeling",
+          "label": "4. Modeling (I do / demonstrate)",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "check_for_understanding",
+          "label": "5. Check for understanding",
+          "status": "MISSING",
+          "cite": ""
+        },
+        {
+          "id": "guided_practice",
+          "label": "6. Guided practice (We do)",
+          "status": "PRESENT",
+          "cite": "Class Overview:   Action Plan   Cattle Breeds Flashcards Activity   Breeds of Livestock: Cattle Final Assessment   Build a Breed Project"
+        },
+        {
+          "id": "independent_practice",
+          "label": "7. Independent practice (You do)",
+          "status": "PRESENT",
+          "cite": "Step 3: Students should complete the Build a Breed Project .   ·   Stude nts will create their own crossbred or composite cattle breed which would suit their local area well."
+        },
+        {
+          "id": "closure",
+          "label": "8. Closure",
+          "status": "PRESENT",
+          "cite": "Step 4: Exit Ticket:   ·   Have students turn in their Build a Breed Project ."
+        }
+      ]
+    }
+  ]
+}

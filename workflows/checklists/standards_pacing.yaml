@@ -1,0 +1,78 @@
+# Standards & pacing plate → Loom checklist (Path F).
+# Grain: YAG / pacing / scope-sequence / standards overview — not syllabus (G), not lesson (A).
+# PRESENT = evidence in Layer 0 excerpts or source fallback; never invent.
+
+version: "v1-standards-pacing"
+role: standards_pacing
+framework: pacing_standards_presence
+source_template: docs/PATH-F-STANDARDS-PACING.md
+path: F
+workflow_id: standards_pacing
+
+sections:
+  f2_role:
+    label: F2 Document role cues
+    step: F2
+    fields:
+      - id: pacing_or_yag
+        label: Pacing / YAG framing
+        keywords:
+          - pacing
+          - yag
+          - year at a glance
+          - topic pacing
+          - instructional days
+      - id: scope_or_sequence
+        label: Scope and sequence framing
+        keywords:
+          - scope and sequence
+          - scope & sequence
+          - sequence
+          - unit overview
+      - id: standards_overview
+        label: Standards overview framing
+        keywords:
+          - standards overview
+          - teks summary
+          - elps summary
+          - process standards
+
+  f3_time:
+    label: F3 Time spine
+    step: F3
+    fields:
+      - id: day_or_calendar_spine
+        label: Day / week / calendar spine
+        keywords:
+          - day
+          - days
+          - 150-day
+          - 165-day
+          - week
+          - weeks
+          - grading period
+          - nine weeks
+      - id: unit_or_module_spine
+        label: Unit / module / topic order
+        keywords:
+          - unit
+          - module
+          - topic
+          - lesson
+          - sequence
+
+  f4_standards:
+    label: F4 Standards cues
+    step: F4
+    fields:
+      - id: teks_or_elps_or_codes
+        label: TEKS / ELPS / standard-code cue
+        keywords:
+          - teks
+          - elps
+          - "§"
+          - standard
+          - standards
+          - "a.1"
+          - process standards
+        optional: true

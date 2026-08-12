@@ -1,0 +1,11 @@
+{
+  "project_id": "lab-teacher-support-path-d",
+  "workflow_id": "exit_ticket",
+  "path": "H",
+  "lens": "Exit ticket",
+  "status": "skipped",
+  "doc_ids": [],
+  "checklist": "workflows/checklists/exit_ticket.yaml",
+  "inventory": [],
+  "steps_by_doc": {}
+}

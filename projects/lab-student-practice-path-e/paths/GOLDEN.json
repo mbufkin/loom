@@ -1,0 +1,170 @@
+{
+  "paths": {
+    "A": {
+      "cells": {
+        "*:A2.objective": "MISSING",
+        "*:A2.teks": "MISSING",
+        "*:A3": "MISSING",
+        "*:A4.formative": "MISSING",
+        "*:A4.summative": "MISSING",
+        "*:A5.hunter_core_present": "0",
+        "*:A5.hunter_core_total": "8",
+        "*:A7.accommodations": "MISSING",
+        "*:A7.elps": "MISSING",
+        "*:A8": "emitted"
+      },
+      "checklist": "workflows/checklists/daily_lesson_plan.yaml",
+      "doc_ids": [],
+      "lens": "Lesson",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {
+        "0": 1,
+        "8": 1,
+        "MISSING": 7,
+        "emitted": 1
+      },
+      "workflow_id": "lesson_plan"
+    },
+    "B": {
+      "cells": {},
+      "checklist": "workflows/checklists/assessment.yaml",
+      "doc_ids": [],
+      "lens": "Assessment",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "quiz"
+    },
+    "C": {
+      "cells": {},
+      "checklist": null,
+      "doc_ids": [],
+      "lens": null,
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "general"
+    },
+    "D": {
+      "cells": {},
+      "checklist": "workflows/checklists/teacher_support.yaml",
+      "doc_ids": [],
+      "lens": "Teacher support",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "teacher_support"
+    },
+    "E": {
+      "cells": {
+        "doc_emixed_K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition:E1": "PRESENT",
+        "doc_emixed_K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition:E2": "PARTIAL",
+        "doc_emixed_K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition:E2.learn_practice_succeed": "PRESENT",
+        "doc_emixed_K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition:E2.worksheet_or_se": "MISSING",
+        "doc_emixed_K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition:E3": "PRESENT",
+        "doc_emixed_K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition:E3.problems_or_prompts": "PRESENT",
+        "doc_emixed_K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition:E3.work_process": "PRESENT",
+        "doc_emixed_K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition:E4": "PRESENT",
+        "doc_emixed_K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition:E4.objective_or_teks": "PRESENT",
+        "doc_emixed_K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition:E5": "STUB",
+        "doc_estrong_K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition:E1": "PRESENT",
+        "doc_estrong_K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition:E2": "PARTIAL",
+        "doc_estrong_K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition:E2.learn_practice_succeed": "PRESENT",
+        "doc_estrong_K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition:E2.worksheet_or_se": "MISSING",
+        "doc_estrong_K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition:E3": "PRESENT",
+        "doc_estrong_K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition:E3.problems_or_prompts": "PRESENT",
+        "doc_estrong_K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition:E3.work_process": "PRESENT",
+        "doc_estrong_K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition:E4": "PRESENT",
+        "doc_estrong_K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition:E4.objective_or_teks": "PRESENT",
+        "doc_estrong_K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition:E5": "STUB",
+        "doc_eweak_K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition:E1": "PRESENT",
+        "doc_eweak_K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition:E2": "PARTIAL",
+        "doc_eweak_K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition:E2.learn_practice_succeed": "PRESENT",
+        "doc_eweak_K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition:E2.worksheet_or_se": "MISSING",
+        "doc_eweak_K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition:E3": "MISSING",
+        "doc_eweak_K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition:E3.problems_or_prompts": "MISSING",
+        "doc_eweak_K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition:E3.work_process": "MISSING",
+        "doc_eweak_K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition:E4": "PRESENT",
+        "doc_eweak_K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition:E4.objective_or_teks": "PRESENT",
+        "doc_eweak_K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition:E5": "STUB"
+      },
+      "checklist": "workflows/checklists/student_practice.yaml",
+      "doc_ids": [
+        "doc_emixed_K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition",
+        "doc_estrong_K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition",
+        "doc_eweak_K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition"
+      ],
+      "lens": "Student practice",
+      "n_docs": 3,
+      "status": "ok",
+      "status_counts": {
+        "MISSING": 6,
+        "PARTIAL": 3,
+        "PRESENT": 18,
+        "STUB": 3
+      },
+      "workflow_id": "student_practice"
+    },
+    "F": {
+      "cells": {},
+      "checklist": "workflows/checklists/standards_pacing.yaml",
+      "doc_ids": [],
+      "lens": "Standards & pacing",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "standards_pacing"
+    },
+    "G": {
+      "cells": {},
+      "checklist": "workflows/checklists/syllabus.yaml",
+      "doc_ids": [],
+      "lens": "Syllabus",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "syllabus"
+    },
+    "H": {
+      "cells": {},
+      "checklist": "workflows/checklists/exit_ticket.yaml",
+      "doc_ids": [],
+      "lens": "Exit ticket",
+      "n_docs": 0,
+      "status": "skipped",
+      "status_counts": {},
+      "workflow_id": "exit_ticket"
+    }
+  },
+  "project_id": "lab-student-practice-path-e",
+  "route_map": {
+    "counts": {
+      "student_practice": 3
+    },
+    "routes": [
+      {
+        "doc_id": "doc_emixed_K-5_Math_Grade_5_Module_1_Succeed_Place_Value_and_Decimals_Student_Edition",
+        "doc_type": "other",
+        "path": "E",
+        "reason": "filename prior \u2192 student_practice",
+        "workflow_id": "student_practice"
+      },
+      {
+        "doc_id": "doc_estrong_K-5_Math_Grade_5_Module_1_Learn_Place_Value_and_Decimals_Student_Edition",
+        "doc_type": "other",
+        "path": "E",
+        "reason": "filename prior \u2192 student_practice",
+        "workflow_id": "student_practice"
+      },
+      {
+        "doc_id": "doc_eweak_K-5_Math_Grade_5_Module_1_Practice_Place_Value_and_Decimals_Student_Edition",
+        "doc_type": "other",
+        "path": "E",
+        "reason": "filename prior \u2192 student_practice",
+        "workflow_id": "student_practice"
+      }
+    ],
+    "unrouted_ledger_doc_ids": []
+  }
+}

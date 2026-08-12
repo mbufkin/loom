@@ -1,0 +1,680 @@
+{
+  "project_id": "lab-culinary-syllabus",
+  "workflow_id": "syllabus",
+  "path": "G",
+  "lens": "Syllabus",
+  "status": "ok",
+  "doc_ids": [
+    "Culinary I Syllabus.docx",
+    "Culinary Prac Syllabus.docx"
+  ],
+  "checklist": "workflows/checklists/syllabus.yaml",
+  "evidence_base": {
+    "Culinary I Syllabus.docx": "source_text",
+    "Culinary Prac Syllabus.docx": "source_text"
+  },
+  "inventory": [
+    {
+      "doc_id": "Culinary I Syllabus.docx",
+      "doc_type": "syllabus",
+      "graph_role": null,
+      "element_count": 6,
+      "evidence_base": "source_text",
+      "G1": {
+        "status": "PRESENT",
+        "note": "Layer 0 excerpt inventory for this syllabus doc"
+      },
+      "G2": {
+        "status": "PARTIAL",
+        "note": "3/4 fields present"
+      },
+      "G3": {
+        "status": "PARTIAL",
+        "note": "1/3 fields present"
+      },
+      "G4": {
+        "status": "PARTIAL",
+        "note": "3/4 fields present"
+      },
+      "G5": {
+        "status": "PARTIAL",
+        "note": "2/3 fields present"
+      },
+      "G6": {
+        "status": "PARTIAL",
+        "note": "2/3 fields present"
+      },
+      "G7": {
+        "status": "PARTIAL",
+        "note": "1/4 fields present"
+      },
+      "G8": {
+        "status": "STUB",
+        "note": "cross-artifact alignment (syllabus ↔ Path F) TBD"
+      },
+      "G9": {
+        "status": "STUB",
+        "note": "emit Path G one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "Culinary Prac Syllabus.docx",
+      "doc_type": "syllabus",
+      "graph_role": null,
+      "element_count": 5,
+      "evidence_base": "source_text",
+      "G1": {
+        "status": "PRESENT",
+        "note": "Layer 0 excerpt inventory for this syllabus doc"
+      },
+      "G2": {
+        "status": "PARTIAL",
+        "note": "3/4 fields present"
+      },
+      "G3": {
+        "status": "PARTIAL",
+        "note": "2/3 fields present"
+      },
+      "G4": {
+        "status": "PARTIAL",
+        "note": "3/4 fields present"
+      },
+      "G5": {
+        "status": "PARTIAL",
+        "note": "2/3 fields present"
+      },
+      "G6": {
+        "status": "PARTIAL",
+        "note": "2/3 fields present"
+      },
+      "G7": {
+        "status": "PARTIAL",
+        "note": "3/4 fields present"
+      },
+      "G8": {
+        "status": "STUB",
+        "note": "cross-artifact alignment (syllabus ↔ Path F) TBD"
+      },
+      "G9": {
+        "status": "STUB",
+        "note": "emit Path G one-pager TBD"
+      }
+    }
+  ],
+  "steps_by_doc": {
+    "Culinary I Syllabus.docx": {
+      "G1": {
+        "step": "G1",
+        "status": "PRESENT",
+        "note": "Layer 0 excerpt inventory for this syllabus doc",
+        "element_count": 6,
+        "by_element_type": {
+          "logistics_materials": 4,
+          "standards_objectives": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "Culinary I Syllabus.docx"
+      },
+      "G2": {
+        "step": "G2",
+        "status": "PARTIAL",
+        "present": 3,
+        "required": 4,
+        "fields": [
+          {
+            "id": "course_identity",
+            "label": "Course name / number / credit",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Course:"
+            ],
+            "note": ""
+          },
+          {
+            "id": "instructor_contact",
+            "label": "Teacher / instructor contact",
+            "status": "PRESENT",
+            "count": 5,
+            "cites": [
+              "Instructor",
+              "Room:",
+              "Phone:"
+            ],
+            "note": ""
+          },
+          {
+            "id": "meeting_pattern",
+            "label": "Meeting pattern / schedule block",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Appointment Times:",
+              "(B DAY"
+            ],
+            "note": ""
+          },
+          {
+            "id": "prerequisites",
+            "label": "Prerequisites / recommended prior courses",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in Layer 0 excerpts"
+          }
+        ]
+      },
+      "G3": {
+        "step": "G3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 3,
+        "fields": [
+          {
+            "id": "course_purpose",
+            "label": "Course description / why this course matters",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in Layer 0 excerpts"
+          },
+          {
+            "id": "learning_outcomes",
+            "label": "Measurable course outcomes / learning objectives",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in Layer 0 excerpts"
+          },
+          {
+            "id": "teks_goals",
+            "label": "TEKS / standards goals named on syllabus",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Show Employability Skills(See attached Rubric)",
+              "is employability skills. These skills include attendance, on-time arrival, meeting deadlines, working toward personal/team...",
+              "In order to provide focus and definition for employability skills, we have defined an assessment in terms"
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "G4": {
+        "step": "G4",
+        "status": "PARTIAL",
+        "present": 3,
+        "required": 4,
+        "fields": [
+          {
+            "id": "grade_categories",
+            "label": "Graded categories / assignment types",
+            "status": "PRESENT",
+            "count": 4,
+            "cites": [
+              "All projects and paper based assignments are due at the beginning of class. All computer assignments are due by...",
+              "This will be a major grade",
+              "Grading"
+            ],
+            "note": ""
+          },
+          {
+            "id": "grade_weights",
+            "label": "Weights or points toward final grade",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "ab Presentations 60%",
+              "40%",
+              "To calculate the grade: Total points from each Category x 4 = Grade"
+            ],
+            "note": ""
+          },
+          {
+            "id": "grading_scale",
+            "label": "Grading scale",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in Layer 0 excerpts"
+          },
+          {
+            "id": "late_makeup",
+            "label": "Late work / makeup policy",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Late work is not acceptable in my class! Instead, I will drop the two lowest grades per",
+              "...ty to check your calendar for missed assignments. Make up assig"
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "G5": {
+        "step": "G5",
+        "status": "PARTIAL",
+        "present": 2,
+        "required": 3,
+        "fields": [
+          {
+            "id": "unit_topics",
+            "label": "Units / topics sequence",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "2nd 6 Weeks",
+              "*Outline is subject to change with prior notice*",
+              "...tudents will be given one employability grade per six weeks that will count as a summative assessment in each C"
+            ],
+            "note": ""
+          },
+          {
+            "id": "due_dates",
+            "label": "Major dates / due dates",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "...beginning of class. All computer assignments are due by their perspective due dates and times.*",
+              "...ills include attendance, on-time arrival, meeting deadlines, working toward personal/team goals every day, and ethical use of technology. Dress code requireme..."
+            ],
+            "note": ""
+          },
+          {
+            "id": "teks_timeline",
+            "label": "TEKS / content coverage timeline claim",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in Layer 0 excerpts"
+          }
+        ]
+      },
+      "G6": {
+        "step": "G6",
+        "status": "PARTIAL",
+        "present": 2,
+        "required": 3,
+        "fields": [
+          {
+            "id": "attendance",
+            "label": "Attendance expectations",
+            "status": "PRESENT",
+            "count": 9,
+            "cites": [
+              "When you are absent, it is your responsibility to check your calendar for missed assignments. Make up assig",
+              "Tardy",
+              "I will not call roll ever! I will check attendance by my seating chart; so if you are standing when class starts, you’re tardy when you sit!"
+            ],
+            "note": ""
+          },
+          {
+            "id": "integrity",
+            "label": "Academic integrity / honesty",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in Layer 0 excerpts"
+          },
+          {
+            "id": "communication",
+            "label": "Communication channels / response norms",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Email:",
+              "Google classroom",
+              "and Google Classroom."
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "G7": {
+        "step": "G7",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 4,
+        "fields": [
+          {
+            "id": "accommodations",
+            "label": "Accommodations / supports / how to succeed",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in Layer 0 excerpts"
+          },
+          {
+            "id": "safety",
+            "label": "Safety rules (lab/shop/clinical)",
+            "status": "PRESENT",
+            "count": 4,
+            "cites": [
+              "ServSafe",
+              "ServSafe",
+              "..., white shirt, black calf length socks, and Black non-skid shoes)"
+            ],
+            "note": ""
+          },
+          {
+            "id": "wbl_internship",
+            "label": "Work-based learning / internship requirements",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in Layer 0 excerpts"
+          },
+          {
+            "id": "acknowledgment",
+            "label": "Student / parent acknowledgment or signature",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in Layer 0 excerpts"
+          }
+        ]
+      },
+      "G8": {
+        "step": "G8",
+        "status": "STUB",
+        "note": "cross-artifact alignment (syllabus ↔ Path F) TBD"
+      },
+      "G9": {
+        "step": "G9",
+        "status": "STUB",
+        "note": "emit Path G one-pager TBD"
+      }
+    },
+    "Culinary Prac Syllabus.docx": {
+      "G1": {
+        "step": "G1",
+        "status": "PRESENT",
+        "note": "Layer 0 excerpt inventory for this syllabus doc",
+        "element_count": 5,
+        "by_element_type": {
+          "standards_objectives": 2,
+          "logistics_materials": 2,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "Culinary Prac Syllabus.docx"
+      },
+      "G2": {
+        "step": "G2",
+        "status": "PARTIAL",
+        "present": 3,
+        "required": 4,
+        "fields": [
+          {
+            "id": "course_identity",
+            "label": "Course name / number / credit",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Course:"
+            ],
+            "note": ""
+          },
+          {
+            "id": "instructor_contact",
+            "label": "Teacher / instructor contact",
+            "status": "PRESENT",
+            "count": 4,
+            "cites": [
+              "Instructor",
+              "Room:",
+              "Phone:"
+            ],
+            "note": ""
+          },
+          {
+            "id": "meeting_pattern",
+            "label": "Meeting pattern / schedule block",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Appointment Times:",
+              "A DAY",
+              "(B DAY)"
+            ],
+            "note": ""
+          },
+          {
+            "id": "prerequisites",
+            "label": "Prerequisites / recommended prior courses",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in Layer 0 excerpts"
+          }
+        ]
+      },
+      "G3": {
+        "step": "G3",
+        "status": "PARTIAL",
+        "present": 2,
+        "required": 3,
+        "fields": [
+          {
+            "id": "course_purpose",
+            "label": "Course description / why this course matters",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "This course is a unique practicum that provides occupationally specific opportunities for students to participa..."
+            ],
+            "note": ""
+          },
+          {
+            "id": "learning_outcomes",
+            "label": "Measurable course outcomes / learning objectives",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in Layer 0 excerpts"
+          },
+          {
+            "id": "teks_goals",
+            "label": "TEKS / standards goals named on syllabus",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Show Employability Skills(See attached Rubric)",
+              "is employability skills. These skills include attendance, on-time arrival, meeting deadlines, working toward personal/team...",
+              "In order to provide focus and definition for employability skills, we have defined an assessment in terms"
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "G4": {
+        "step": "G4",
+        "status": "PARTIAL",
+        "present": 3,
+        "required": 4,
+        "fields": [
+          {
+            "id": "grade_categories",
+            "label": "Graded categories / assignment types",
+            "status": "PRESENT",
+            "count": 4,
+            "cites": [
+              "All projects and paper based assignments are due at the beginning of class. All computer assignments are due by...",
+              "This will be a major grade",
+              "Grading"
+            ],
+            "note": ""
+          },
+          {
+            "id": "grade_weights",
+            "label": "Weights or points toward final grade",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "%",
+              "30%-15%",
+              "To calculate the grade: Total points from each Category x 4 = Grade"
+            ],
+            "note": ""
+          },
+          {
+            "id": "grading_scale",
+            "label": "Grading scale",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in Layer 0 excerpts"
+          },
+          {
+            "id": "late_makeup",
+            "label": "Late work / makeup policy",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Late work is not acceptable in my class! Instead, I will drop the two lowest grades per",
+              "Make up"
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "G5": {
+        "step": "G5",
+        "status": "PARTIAL",
+        "present": 2,
+        "required": 3,
+        "fields": [
+          {
+            "id": "unit_topics",
+            "label": "Units / topics sequence",
+            "status": "PRESENT",
+            "count": 5,
+            "cites": [
+              "Course Outline:",
+              "Six Weeks",
+              "Six Weeks"
+            ],
+            "note": ""
+          },
+          {
+            "id": "due_dates",
+            "label": "Major dates / due dates",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "...beginning of class. All computer assignments are due by their perspective due dates and times.*",
+              "...ills include attendance, on-time arrival, meeting deadlines, working toward personal/team goals every day, and ethical use of technology. Dress code requireme..."
+            ],
+            "note": ""
+          },
+          {
+            "id": "teks_timeline",
+            "label": "TEKS / content coverage timeline claim",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in Layer 0 excerpts"
+          }
+        ]
+      },
+      "G6": {
+        "step": "G6",
+        "status": "PARTIAL",
+        "present": 2,
+        "required": 3,
+        "fields": [
+          {
+            "id": "attendance",
+            "label": "Attendance expectations",
+            "status": "PRESENT",
+            "count": 9,
+            "cites": [
+              "When you are absent, it is you",
+              "Tardy",
+              "will check attendance by my seating chart; so if you are standing when class starts, you’re tardy when you sit!"
+            ],
+            "note": ""
+          },
+          {
+            "id": "integrity",
+            "label": "Academic integrity / honesty",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in Layer 0 excerpts"
+          },
+          {
+            "id": "communication",
+            "label": "Communication channels / response norms",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Email:",
+              "Canvas"
+            ],
+            "note": ""
+          }
+        ]
+      },
+      "G7": {
+        "step": "G7",
+        "status": "PARTIAL",
+        "present": 3,
+        "required": 4,
+        "fields": [
+          {
+            "id": "accommodations",
+            "label": "Accommodations / supports / how to succeed",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "...; Title IX of the Educational Amendments of 1972; Section 504 of the Rehabilitation Act of 1973, as amended; Age Discrimination Act of 1975; Title II of the Amer..."
+            ],
+            "note": ""
+          },
+          {
+            "id": "safety",
+            "label": "Safety rules (lab/shop/clinical)",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "non-skid shoes)",
+              "***Students are responsible to purchase non slip shoes***",
+              "Non Slip Black Shoes"
+            ],
+            "note": ""
+          },
+          {
+            "id": "wbl_internship",
+            "label": "Work-based learning / internship requirements",
+            "status": "PRESENT",
+            "count": 5,
+            "cites": [
+              "/Practicum",
+              "Practicum",
+              "This course is a unique practicum that provides occupationally specific opportunities for students to participate in a learning exper..."
+            ],
+            "note": ""
+          },
+          {
+            "id": "acknowledgment",
+            "label": "Student / parent acknowledgment or signature",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in Layer 0 excerpts"
+          }
+        ]
+      },
+      "G8": {
+        "step": "G8",
+        "status": "STUB",
+        "note": "cross-artifact alignment (syllabus ↔ Path F) TBD"
+      },
+      "G9": {
+        "step": "G9",
+        "status": "STUB",
+        "note": "emit Path G one-pager TBD"
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+# Teacher support / TE plate → Loom checklist (Path D).
+# Grain: teacher edition / educator / implementation guide — not student SE (E), not YAG (F).
+# PRESENT = evidence in Layer 0 excerpts or source fallback; never invent.
+# Note: bare "Program and Implementation" filenames stay on Path F (router); TE-named impl guides stay on D.
+
+version: "v1-teacher-support-te"
+role: teacher_support
+framework: te_facilitation_presence
+source_template: docs/PATH-D-TEACHER-SUPPORT.md
+path: D
+workflow_id: teacher_support
+
+sections:
+  d2_role:
+    label: D2 TE / guide role cues
+    step: D2
+    fields:
+      - id: te_or_educator_label
+        label: Teacher edition / educator framing
+        keywords:
+          - teacher edition
+          - educator guide
+          - teacher materials
+          - module overview
+      - id: implementation_or_course
+        label: Implementation / course-guide framing
+        keywords:
+          - implementation
+          - course guide
+          - program guide
+          - learning together
+          - learning individually
+
+  d3_facilitation:
+    label: D3 Facilitation / support cues
+    step: D3
+    fields:
+      - id: misconception_or_anticipate
+        label: Misconception / anticipate cue
+        keywords:
+          - misconception
+          - misconceptions
+          - anticipate
+          - common error
+      - id: materials_or_prep
+        label: Materials / prep cue
+        keywords:
+          - materials
+          - prepare
+          - preparation
+          - supplies
+      - id: facilitate_or_instruction
+        label: Facilitation / targeted instruction cue
+        keywords:
+          - facilitat
+          - targeted instruction
+          - say to students
+          - teacher note
+          - teacher notes
+          - guide students
+
+  d4_spine:
+    label: D4 Lesson / module spine
+    step: D4
+    fields:
+      - id: module_lesson_topic
+        label: Module / lesson / topic cue
+        keywords:
+          - module
+          - lesson
+          - topic
+          - day
+          - unit
+        optional: true

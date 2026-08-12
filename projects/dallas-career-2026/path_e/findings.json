@@ -1,0 +1,4398 @@
+{
+  "project_id": "dallas-career-2026",
+  "workflow_id": "student_practice",
+  "path": "E",
+  "lens": "Student practice",
+  "status": "ok",
+  "doc_ids": [
+    "0a62e0b9729e",
+    "1787e9b5bfde",
+    "28552acaae5a",
+    "29140bd6d6f7",
+    "2cc1b0ae0c59",
+    "3369ae8b55a4",
+    "38290addde82",
+    "3e56e33fe53c",
+    "468be78c578b",
+    "4b97944cd264",
+    "545aa2c2190a",
+    "54aff8cc2360",
+    "56bd08f50ac3",
+    "5f0cb47fe1b1",
+    "67a41a913430",
+    "6a1919f04824",
+    "724f41bf2711",
+    "794d51da5629",
+    "7f02e4fea0d8",
+    "7f0dd1599900",
+    "80f37e7b5807",
+    "83154b464163",
+    "854451cbcfc5",
+    "89430d6aae63",
+    "8efd6fc31270",
+    "98ed44c5b0af",
+    "a8248438c079",
+    "a8e8847a5886",
+    "b05bfe476c76",
+    "b5e36486805a",
+    "d50f42a8f21e",
+    "d9f8e87d0486",
+    "ea032c71918c",
+    "eb042af8c066",
+    "f85ca6403d8c",
+    "f96797847d38"
+  ],
+  "checklist": "workflows/checklists/student_practice.yaml",
+  "inventory": [
+    {
+      "doc_id": "0a62e0b9729e",
+      "doc_type": "project_work",
+      "graph_role": "learn_student",
+      "element_count": 3,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "1787e9b5bfde",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "element_count": 24,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "28552acaae5a",
+      "doc_type": "other",
+      "graph_role": "practice_student",
+      "element_count": 5,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "29140bd6d6f7",
+      "doc_type": "other",
+      "graph_role": "learn_student",
+      "element_count": 8,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "E3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "2cc1b0ae0c59",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "element_count": 21,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "E4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "3369ae8b55a4",
+      "doc_type": "other",
+      "graph_role": "learn_student",
+      "element_count": 3,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "38290addde82",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "element_count": 4,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "3e56e33fe53c",
+      "doc_type": "game_activity",
+      "graph_role": "practice_student",
+      "element_count": 191,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "468be78c578b",
+      "doc_type": "lab_activity",
+      "graph_role": "practice_student",
+      "element_count": 3,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "4b97944cd264",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "element_count": 7,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "545aa2c2190a",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "element_count": 5,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "54aff8cc2360",
+      "doc_type": "other",
+      "graph_role": "learn_student",
+      "element_count": 10,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "56bd08f50ac3",
+      "doc_type": "project_work",
+      "graph_role": "practice_student",
+      "element_count": 1,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "5f0cb47fe1b1",
+      "doc_type": "other",
+      "graph_role": "practice_student",
+      "element_count": 2,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "67a41a913430",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "element_count": 6,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "6a1919f04824",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "element_count": 6,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "724f41bf2711",
+      "doc_type": "other",
+      "graph_role": "practice_student",
+      "element_count": 7,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "794d51da5629",
+      "doc_type": "other",
+      "graph_role": "learn_student",
+      "element_count": 17,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "7f02e4fea0d8",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "element_count": 5,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PRESENT",
+        "note": "2/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "7f0dd1599900",
+      "doc_type": "other",
+      "graph_role": "learn_student",
+      "element_count": 14,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "80f37e7b5807",
+      "doc_type": "other",
+      "graph_role": "practice_student",
+      "element_count": 1,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "83154b464163",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "element_count": 10,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "854451cbcfc5",
+      "doc_type": "other",
+      "graph_role": "learn_student",
+      "element_count": 14,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "89430d6aae63",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "element_count": 14,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "8efd6fc31270",
+      "doc_type": "game_activity",
+      "graph_role": "practice_student",
+      "element_count": 191,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "98ed44c5b0af",
+      "doc_type": "project_work",
+      "graph_role": "practice_student",
+      "element_count": 3,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "a8248438c079",
+      "doc_type": "worksheet",
+      "graph_role": "practice_student",
+      "element_count": 5,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "a8e8847a5886",
+      "doc_type": "other",
+      "graph_role": "practice_student",
+      "element_count": 2,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "b05bfe476c76",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "element_count": 6,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "b5e36486805a",
+      "doc_type": "other",
+      "graph_role": "learn_student",
+      "element_count": 12,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "d50f42a8f21e",
+      "doc_type": "presentation",
+      "graph_role": "learn_student",
+      "element_count": 6,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "d9f8e87d0486",
+      "doc_type": "other",
+      "graph_role": "learn_student",
+      "element_count": 6,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "ea032c71918c",
+      "doc_type": "other",
+      "graph_role": "learn_student",
+      "element_count": 3,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "eb042af8c066",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "element_count": 7,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "f85ca6403d8c",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "element_count": 13,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    {
+      "doc_id": "f96797847d38",
+      "doc_type": "lesson_content",
+      "graph_role": "learn_student",
+      "element_count": 4,
+      "E1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc"
+      },
+      "E2": {
+        "status": "MISSING",
+        "note": "0/2 fields present"
+      },
+      "E3": {
+        "status": "PARTIAL",
+        "note": "1/2 fields present"
+      },
+      "E4": {
+        "status": "OPTIONAL_ABSENT",
+        "note": "0/0 fields present"
+      },
+      "E5": {
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    }
+  ],
+  "steps_by_doc": {
+    "0a62e0b9729e": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 3,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "standards_objectives": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "0a62e0b9729e"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Arts, A/V Technology and Communication Slideshow Notes Follow the teachers slideshow and answer the questions or fill in the blank.",
+              "(Fill in the blank) All aspects of this cluster is in the power to ____________________.  What is a target audience? ______________________________________________________________________________________________________________________  List three platforms to send messages. _________________________________"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "1787e9b5bfde": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 24,
+        "by_element_type": {
+          "hook_engagement": 2,
+          "direct_instruction": 10,
+          "logistics_materials": 4,
+          "standards_objectives": 1,
+          "assessment_checkpoint": 2,
+          "guided_practice": 3,
+          "reflection_closure": 2
+        },
+        "doc_id": "1787e9b5bfde"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 18,
+            "cites": [
+              "when you grow up?  What do you want to be…  Do Now: Day One  ?  It's a BIG question  There’s no better time to start thinking about it than  RIGHT NOW",
+              "Have a green thumb Like working with plants and animals Enjoy working outside  Do you…  ?  Maybe a career in  is right for you.  Agriculture, Food & Natural Resources  This career deals with:  planning, managing, and performing agricultural production, horticulture and landscaping services.  Jobs in this area include:  *Greenhouse manager * Farm manager * Animal trainer   * Mining * Animal breeder * Fish and game warden * Groundskeeper  Like making designs or models Enjoy beautiful and…",
+              "Architecture & Construction  This career deals with:  designing, planning, managing, building and maintaining the built environment.  Jobs in this area include:  * Drafter * Urban Planner * Brick Mason   * Architect * Electrician * Surveyor  Have an interest in TV, film or radio Like to perform music Have a talent for writing Like to work with technology   Do you…  ?  Maybe a career in  is right for you.  Arts, A/V Technology & Communications  This career deals with:  designing, producing,…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "28552acaae5a": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 5,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "28552acaae5a"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "INSTRUCTIONS: Using the following handout, students will determine the cost of making one product and setting their sales price. After they create their list of items needed, they will look up online how much they can buy them for. (search as “wholesale price for ______) If they cannot find it they can use retail but marking up an already marked up price will cause their product to be unnecessarily expensive. The actual process is using this formula: Price X Qty Used=Cost each However,…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "INSTRUCTIONS: Using the following handout, students will determine the cost of making one product and setting their sales price. After they create their list of items needed, they will look up online how much they can buy them for. (search as “wholesale price for ______) If they cannot find it they can use retail but marking up an already marked up price will cause their product to be unnecessarily expensive. The actual process is using this formula: Price X Qty Used=Cost each However,…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "29140bd6d6f7": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 8,
+        "by_element_type": {
+          "direct_instruction": 2,
+          "logistics_materials": 3,
+          "guided_practice": 1,
+          "assessment_checkpoint": 1,
+          "standards_objectives": 1
+        },
+        "doc_id": "29140bd6d6f7"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Evaluation: To judge the value or condition of (someone or something) in a careful and thoughtful way Guided Practice: Outline of how your students will demonstrate that they have grasped skills and concepts Independent Practice: Allows students to reinforce skills and synthesize new knowledge by completing a task on their own Lesson Assessment: Therefore, teachers have lesson closure and why they review. The format can vary Lesson Closure: This activity is how teachers find out if students…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Follow along using your worksheet.  Let’s act out the role of a pre-k teacher. We are going to plan a lesson for story time. We will create a book explaining the alphabet or counting to 20.  Rubric  Remember this book is for pre-k level. Next Slide you will see my example. You will have 5 pages of blank paper to create your book. *Student could also create their book using google slide, up to teacher discretion*  Example  Title Page  D  D is for Dallas Mavericks  Example Page  We will work and…",
+              "Follow along using your worksheet.  Let’s act out the role of a pre-k teacher. We are going to plan a lesson for story time. We will create a book explaining the alphabet or counting to 20.  Rubric  Remember this book is for pre-k level. Next Slide you will see my example. You will have 5 pages of blank paper to create your book. *Student could also create their book using google slide, up to teacher discretion*  Example  Title Page  D  D is for Dallas Mavericks  Example Page  We will work and…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "PRESENT",
+            "count": 4,
+            "cites": [
+              "The teaching and training pathway includes occupations that lead or assist in the delivery of instructional materials or lessons in classrooms, workshops, or via online and distance technology. Includes individual and group instruction of children, adults, and professionals.  Teaching & Training Pathway  Teacher Assistant Elementary, Middle or High School Teacher Preschool Teacher College/University Professor Coach Childcare worker   Careers  Early Childhood Aide Nanny Childcare Director Child…",
+              "Follow along using your worksheet.  Let’s act out the role of a pre-k teacher. We are going to plan a lesson for story time. We will create a book explaining the alphabet or counting to 20.  Rubric  Remember this book is for pre-k level. Next Slide you will see my example. You will have 5 pages of blank paper to create your book. *Student could also create their book using google slide, up to teacher discretion*  Example  Title Page  D  D is for Dallas Mavericks  Example Page  We will work and…",
+              "Follow along using your worksheet.  Let’s act out the role of a pre-k teacher. We are going to plan a lesson for story time. We will create a book explaining the alphabet or counting to 20.  Rubric  Remember this book is for pre-k level. Next Slide you will see my example. You will have 5 pages of blank paper to create your book. *Student could also create their book using google slide, up to teacher discretion*  Example  Title Page  D  D is for Dallas Mavericks  Example Page  We will work and…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "2cc1b0ae0c59": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 21,
+        "by_element_type": {
+          "hook_engagement": 1,
+          "direct_instruction": 19,
+          "reflection_closure": 1
+        },
+        "doc_id": "2cc1b0ae0c59"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 6,
+            "cites": [
+              "Explore careers in healthcare Learn about anatomy, physiology, and medical terminology Internships at local hospitals and clinics   Dallas ISD High School Options  3. Health Sciences",
+              "Business and Industry Career Clusters  Agriculture, Food and Natural Resources Architecture and Construction Arts, Audio Visual Technology and Communications Business, Marketing, & Finance Hospitality and Tourism Information Technology (IT) Manufacturing Transportation, Distribution & Logistics  Agriculture, Food and Natural Resources  The Agriculture, Food, and Natural Resources (AFNR) Career Cluster® focuses on the essential elements of life—food, water, land, and air. This career cluster…",
+              "Hospitality and Tourism  The Hospitality and Tourism Career Cluster® focuses on the management, marketing, and operations of restaurants and other food/beverage services, lodging, attractions, recreation events, and travel-related services. Students learn knowledge and skills focusing on communication, time management, and customer service that meet industry standards. Students will explore the history of the hospitality and tourism industry and examine characteristics needed for success in…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 4,
+            "cites": [
+              "Business and Industry Career Clusters  Agriculture, Food and Natural Resources Architecture and Construction Arts, Audio Visual Technology and Communications Business, Marketing, & Finance Hospitality and Tourism Information Technology (IT) Manufacturing Transportation, Distribution & Logistics  Agriculture, Food and Natural Resources  The Agriculture, Food, and Natural Resources (AFNR) Career Cluster® focuses on the essential elements of life—food, water, land, and air. This career cluster…",
+              "Public Service Career Clusters  Career Clusters help students investigate careers and design their courses of study to advance their career goals. A Career Cluster is a grouping of occupations and broad industries based on commonalities. Within each career cluster, there are multiple career pathways that represent a common set of skills and knowledge, both academic and technical, necessary to pursue a full range of career opportunities within that pathway – ranging from entry level to…",
+              "Aviation  This pathway is designed to meet the needs of students interested in pursuing careers in aerospace, aviation, air traffic control, and Unmanned Aerial Systems (UAS) operators or electro-mechanical technicians. There is a significant need in this industry, as many pilots and air traffic controllers are retiring without qualified replacements in the pipeline. The Aviation pathway is available at the Career Institute North and at the Robert and Charmaine Price Institute, also known as…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "The Information Technology (IT) Career Cluster® focuses on building linkages in IT occupations for entry level, technical, and professional careers related to the design, development, support, and management of hardware, software, multimedia, and systems integration services.  Information Technology (IT) Schools  Bryan Adams High School Conrad High School IDEA Madison High School North Dallas Pinkston High School Samuell High School Skyline High School  South Oak Cliff High School Spruce High…",
+              "Aviation  This pathway is designed to meet the needs of students interested in pursuing careers in aerospace, aviation, air traffic control, and Unmanned Aerial Systems (UAS) operators or electro-mechanical technicians. There is a significant need in this industry, as many pilots and air traffic controllers are retiring without qualified replacements in the pipeline. The Aviation pathway is available at the Career Institute North and at the Robert and Charmaine Price Institute, also known as…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "PRESENT",
+            "count": 4,
+            "cites": [
+              "Hospitality and Tourism  The Hospitality and Tourism Career Cluster® focuses on the management, marketing, and operations of restaurants and other food/beverage services, lodging, attractions, recreation events, and travel-related services. Students learn knowledge and skills focusing on communication, time management, and customer service that meet industry standards. Students will explore the history of the hospitality and tourism industry and examine characteristics needed for success in…",
+              "The Human Services Career Cluster® focuses on preparing individuals for employment in career pathways that relate to families and human needs such as counseling and mental health services, family and community services, personal care services, and consumer services. Skyline High School Townview Center W.T. White High School  Law and Public Services  The Law and Public Service Career Cluster® focuses on planning, managing, and providing legal services, public safety, protective services,…",
+              "Aviation  This pathway is designed to meet the needs of students interested in pursuing careers in aerospace, aviation, air traffic control, and Unmanned Aerial Systems (UAS) operators or electro-mechanical technicians. There is a significant need in this industry, as many pilots and air traffic controllers are retiring without qualified replacements in the pipeline. The Aviation pathway is available at the Career Institute North and at the Robert and Charmaine Price Institute, also known as…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "3369ae8b55a4": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 3,
+        "by_element_type": {
+          "hook_engagement": 1,
+          "direct_instruction": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "3369ae8b55a4"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Teaching and Training  The Teaching and Training program of study prepares CTE learners for careers related to teaching, instruction, and creation of instructional and enrichment materials.  The program of study introduces CTE learners to a wide variety of student groups and their corresponding needs. It familiarizes them with the processes for developing curriculum, coordinating educational content, and coaching groups and individuals."
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Which Education & Training professional has had the most impact on your life thus far?  What impact will you have on the people that you serve?"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "38290addde82": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 4,
+        "by_element_type": {
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "38290addde82"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "What is a Career Cluster? Watch the video Career Clusters help students investigate careers and design their courses of study to advance their career goals. A Career Cluster is a grouping of occupations and broad industries based on commonalities. Within each career cluster, there are multiple career pathways that represent a common set of skills and knowledge, both academic and technical, necessary to pursue a full range of career opportunities within that pathway – ranging from entry level…",
+              "VIDEO 1 Discuss what you learned with your group  and be prepared to share what you learne d and be able to explain to the class. CAREER CONVERSATIONS Please watch the video with your group, and  take notes. VIDEO 2 Share with the class. VIDEO 3  Action 3 Action 2 Action 1 Complete the career exploration project. Start by choosing three careers from the 14 different career clusters. Follow the directions provided in the powerpoint. Be prepared to present to the class.  Please complete the exit…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "What is a Career Cluster? Watch the video Career Clusters help students investigate careers and design their courses of study to advance their career goals. A Career Cluster is a grouping of occupations and broad industries based on commonalities. Within each career cluster, there are multiple career pathways that represent a common set of skills and knowledge, both academic and technical, necessary to pursue a full range of career opportunities within that pathway – ranging from entry level…",
+              "VIDEO 1 Discuss what you learned with your group  and be prepared to share what you learne d and be able to explain to the class. CAREER CONVERSATIONS Please watch the video with your group, and  take notes. VIDEO 2 Share with the class. VIDEO 3  Action 3 Action 2 Action 1 Complete the career exploration project. Start by choosing three careers from the 14 different career clusters. Follow the directions provided in the powerpoint. Be prepared to present to the class.  Please complete the exit…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "3e56e33fe53c": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 191,
+        "by_element_type": {
+          "logistics_materials": 191
+        },
+        "doc_id": "3e56e33fe53c"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Career Cluster Bingo myfreebingocards.com Safety First! Before you print all your bingo cards, please print a test page to check they come out the right size and color. Your bingo cards start on Page 3 of this PDF. If your bingo cards have words then please check the spelling carefully. If you need to make any changes go to mfbc.us/e/ek36vp2 Play Once you've checked they are printing correctly, print off your bingo cards and start playing! On the next page you will find the \"Bingo Caller's…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "468be78c578b": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 3,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1
+        },
+        "doc_id": "468be78c578b"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Students will practice taking vital signs on their group members.  Classmate #1: (Do not write the name of the student) Pulse Respiratory Rate Temperature"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Students will practice taking vital signs on their group members.  Classmate #1: (Do not write the name of the student) Pulse Respiratory Rate Temperature"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "4b97944cd264": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 7,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "direct_instruction": 1,
+          "guided_practice": 3,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "4b97944cd264"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Learning Objective  Use the engineering design process to design, build, and test a paper airplane launcher Understand how potential energy is converted to kinetic energy when using the launcher"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "After agreeing on a design, you should start building.  Build  Explore Activity  Record the results in your worksheet.  Build  Connect with Dallas ISD CTE"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Design a Paper Airplane Launcher  Explain  Potential and Kinetic Energy  What do you already know about potential and kinetic energy?  Potential and Kinetic Energy  https://youtu.be/BSWl_Zj-CZs   Kinetic energy is the energy of an object due to its _____. A.position B.motion C.friction D.chemicals  What is the unit of work? A.Joules B.Newton C.Kilogram D.Meter per second  Explain  Paper airplane launcher video  Potential and Kinetic Energy  Explain",
+              "https://youtu.be/BSWl_Zj-CZs   Kinetic energy is the energy of an object due to its _____. A.position B.motion C.friction D.chemicals  What is the unit of work? A.Joules B.Newton C.Kilogram D.Meter per second"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Learning Objective  Use the engineering design process to design, build, and test a paper airplane launcher Understand how potential energy is converted to kinetic energy when using the launcher"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "545aa2c2190a": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 5,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "standards_objectives": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "545aa2c2190a"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "54aff8cc2360": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 10,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "direct_instruction": 3,
+          "guided_practice": 3,
+          "assessment_checkpoint": 2,
+          "reflection_closure": 1
+        },
+        "doc_id": "54aff8cc2360"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Using your workbook, complete page 7 “Budgeting Practice” You may work with a partner Be prepared to share your findings.  Vocabulary  Budgeting taxes",
+              "Do Now  Using your workbook, complete page 8 “Budgeting Practice” You may work with a partner Be prepared to share your findings.  Vocabulary  Check Deposit slip Supply demand"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 6,
+            "cites": [
+              "Vocabulary situations  Vocabulary situations  Using your workbook (or handout), complete the situations by using the correct vocabulary term.   Create your account using the access number provided As a class you will work through the first few scenarios together",
+              "Day 1-Evaluate  Complete the mini-quizzes throughout the scenarios.  Day 2  Day 2-Engage  Do Now",
+              "Using your workbook, complete page 7 “Budgeting Practice” You may work with a partner Be prepared to share your findings.  Vocabulary  Budgeting taxes"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "56bd08f50ac3": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 1,
+        "by_element_type": {
+          "direct_instruction": 1
+        },
+        "doc_id": "56bd08f50ac3"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Commercial Script Example  This is meant to be a template. All the steps can be rearranged in any order to send a message.   Step 1: Say the Problem “Have you noticed that in this community we have a big problem with _______________ (community problem)”.  Step 2: Give Example of Problem Write down dialogue giving an example of the problem. Maybe a skit of people not being able to purchase new clothes, or a skit of stray animals running around town.  Step 3: Solve the Problem “We at…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "5f0cb47fe1b1": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 2,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "direct_instruction": 1
+        },
+        "doc_id": "5f0cb47fe1b1"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Interviewing Role Play Scripts 1). Title: Interviewing for a Summer Camp Counselor Position Characters: Interviewer (INT): Represents the summer camp director or hiring manager. Applicant (APP): Represents the middle school student interviewing for the camp counselor position. Script: INT: Welcome, [Applicant's Name]. Thank you for coming in today for the interview. Let's get started. APP: Thank you for having me. I'm excited to be here. INT: Great! So, tell me a bit about yourself and why…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "67a41a913430": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 6,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "hook_engagement": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "reflection_closure": 1,
+          "logistics_materials": 1
+        },
+        "doc_id": "67a41a913430"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Learning Objective  Explore a new career, manufacturing, through experiential learning.",
+              "Introduction  Learning Objective  Explore a new career, manufacturing, through experiential learning."
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "1. The 10-Block Random Model  In this lesson you will build a 10 blocks random model. What will be the best way to complete this task (efficiency) What could be done to improve this process Quality and Quantity.",
+              "Production Line simulator.  Describe the team-based activity. Explain the roles assigned to each team member. Emphasize the importance of collaboration and efficiency. Share results and discuss which team completed the process faster.  5. Building the Pre-Design Block Model"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Learning Objective  Explore a new career, manufacturing, through experiential learning.",
+              "Introduction  Learning Objective  Explore a new career, manufacturing, through experiential learning.",
+              "1. The 10-Block Random Model  In this lesson you will build a 10 blocks random model. What will be the best way to complete this task (efficiency) What could be done to improve this process Quality and Quantity."
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "6a1919f04824": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 6,
+        "by_element_type": {
+          "direct_instruction": 1,
+          "guided_practice": 4,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "6a1919f04824"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Design an airplane that can stay in the air for the longest time. Design an airplane that can travel the farthest distance.  Use all the information you learned about Newton’s Laws and the Forces of Flight to make your design fly longer and farther.",
+              "Design an airplane that can stay in the air for the longest time. Design an airplane that can travel the farthest distance.  Use all the information you learned about Newton’s Laws and the Forces of Flight to make your design fly longer and farther."
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Design your own Airplane!  Use the Engineering Design Process Worksheet to make your own airplane. Choose a problem to solve, or try to solve both."
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Design your own Airplane!  Use the Engineering Design Process Worksheet to make your own airplane. Choose a problem to solve, or try to solve both."
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "724f41bf2711": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 7,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "standards_objectives": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "independent_practice": 1,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "724f41bf2711"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "794d51da5629": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 17,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "logistics_materials": 1,
+          "hook_engagement": 1,
+          "direct_instruction": 9,
+          "assessment_checkpoint": 3,
+          "reflection_closure": 1,
+          "guided_practice": 1
+        },
+        "doc_id": "794d51da5629"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Interviewing Skills  Learning the Basics  Research the Company or Organization: If you know who will be interviewing you or have an idea of the company you're interviewing with, take some time to learn about them. Understand what they do, their values, and any recent news or achievements. Practice Common Interview Questions: While you may not have much job experience yet, you can still prepare for common interview questions like \"Tell me about yourself,\" \"What are your strengths and…",
+              "You and your partner will practice interviewing for a new job. Practice both being the Applicant and the Interviewer. 1). Title: Interviewing for a Summer Camp Counselor Position 2). Title: Interviewing for a Retail Store Sales Associate Position 3). Title: Interviewing for a Student Library Assistant Position 4). Title: Interviewing for a School Newspaper Reporter Position 5). Title: Interviewing for a Technology Club Webmaster Position  You will present your interview to the class during the…",
+              "How to Have A Successful Interview  Interviewing Tips  Interviewing Skills  Learning the Basics  Research the Company or Organization: If you know who will be interviewing you or have an idea of the company you're interviewing with, take some time to learn about them. Understand what they do, their values, and any recent news or achievements. Practice Common Interview Questions: While you may not have much job experience yet, you can still prepare for common interview questions like \"Tell me…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 8,
+            "cites": [
+              "Do you think there's a connection between feeling good about yourself and dressing nicely? Why or why not?",
+              "Interviewing Skills  Learning the Basics  Research the Company or Organization: If you know who will be interviewing you or have an idea of the company you're interviewing with, take some time to learn about them. Understand what they do, their values, and any recent news or achievements. Practice Common Interview Questions: While you may not have much job experience yet, you can still prepare for common interview questions like \"Tell me about yourself,\" \"What are your strengths and…",
+              "Advanced Interviewing Skills  Listen Carefully: Pay attention to the interviewer's questions and make sure you understand them before answering. Take a moment to think about your response before speaking. Speak Clearly and Confidently: Speak clearly and confidently during the interview. If you're unsure about an answer, it's okay to take a moment to gather your thoughts.   Advanced Interviewing Skills"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "7f02e4fea0d8": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 5,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "logistics_materials": 1,
+          "hook_engagement": 1,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "7f02e4fea0d8"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PRESENT",
+        "present": 2,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Explain and Explore Activity  Explain  Please see the project rubric.  Explore  Please complete the career exploratins worksheet.  Please see project rubric. Am I interested in any of the career choices that have been presented to me, why or why not? Is the law pathway one I want to consider following once I get to high school, why or why not ? Have a class discussion summarizing what everyone has learned and if they would have liked to learn anything additional. Survey and see how many are…",
+              "What I LEARNAED  At the end we will come back together and discuss what we learned."
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Explain and Explore Activity  Explain  Please see the project rubric.  Explore  Please complete the career exploratins worksheet.  Please see project rubric. Am I interested in any of the career choices that have been presented to me, why or why not? Is the law pathway one I want to consider following once I get to high school, why or why not ? Have a class discussion summarizing what everyone has learned and if they would have liked to learn anything additional. Survey and see how many are…"
+            ],
+            "note": "",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Essential Understanding  Ask career questions, and discuss.",
+              "Explain and Explore Activity  Explain  Please see the project rubric.  Explore  Please complete the career exploratins worksheet.  Please see project rubric. Am I interested in any of the career choices that have been presented to me, why or why not? Is the law pathway one I want to consider following once I get to high school, why or why not ? Have a class discussion summarizing what everyone has learned and if they would have liked to learn anything additional. Survey and see how many are…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "TEKS  127.2 Career and College Expoloration (B), (C )"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "7f0dd1599900": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 14,
+        "by_element_type": {
+          "hook_engagement": 3,
+          "direct_instruction": 3,
+          "guided_practice": 5,
+          "independent_practice": 3
+        },
+        "doc_id": "7f0dd1599900"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 7,
+            "cites": [
+              "--- TABLE --- Health Science Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class | Health Science  Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Article from website Nutrition labels from various foods (ask students to bring them in or teacher can bring some from home) | Resources: Lesson plan Article from website Nutrition labels from various foods (ask students to bring them in or teacher can bring some from home) | Resources: Lesson…",
+              "Students will present their findings to the class. They will share the type of dietary restriction, explain what the meal plan is and share why it meets those guidelines. .  Question Stems: Explore Question 1: How can I create a meal plan for a patient to keep them healthy? | Explore: (25-30 Minutes) Students will work in pairs as dieticians to create a full day meal plan for someone with specific diet restrictions: (some examples can include: soft/low fiber; low lactose; high calorie, high…",
+              "Question Stems: Extend Question 1: How does physical activity alter vital signs readings? | Extend: (10-15 Minutes) Create a graph showing the changes that happened to each person after the physical activity and share their findings with the class.    Question Stems: Extend Question 1: How does physical activity alter vital signs readings? Evaluate Activity Evaluate: (5-10 Minutes) Have students identify each of their group members' results and determine if their findings were in the…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 12,
+            "cites": [
+              "--- TABLE --- Health Science Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class | Health Science  Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Article from website Nutrition labels from various foods (ask students to bring them in or teacher can bring some from home) | Resources: Lesson plan Article from website Nutrition labels from various foods (ask students to bring them in or teacher can bring some from home) | Resources: Lesson…",
+              "Students will present their findings to the class. They will share the type of dietary restriction, explain what the meal plan is and share why it meets those guidelines. .  Question Stems: Explore Question 1: How can I create a meal plan for a patient to keep them healthy? | Explore: (25-30 Minutes) Students will work in pairs as dieticians to create a full day meal plan for someone with specific diet restrictions: (some examples can include: soft/low fiber; low lactose; high calorie, high…",
+              "Question Stems: Explore Question 1: How do I take vital signs and record them? Extend Activity Extend: (10-15 Minutes) Create a graph showing the changes that happened to each person after the physical activity and share their findings with the class.    Question Stems: Extend Question 1: How does physical activity alter vital signs readings? | Extend: (10-15 Minutes) Create a graph showing the changes that happened to each person after the physical activity and share their findings with the…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "PRESENT",
+            "count": 10,
+            "cites": [
+              "--- TABLE --- Health Science Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class | Health Science  Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Article from website Nutrition labels from various foods (ask students to bring them in or teacher can bring some from home) | Resources: Lesson plan Article from website Nutrition labels from various foods (ask students to bring them in or teacher can bring some from home) | Resources: Lesson…",
+              "Students will present their findings to the class. They will share the type of dietary restriction, explain what the meal plan is and share why it meets those guidelines. .  Question Stems: Explore Question 1: How can I create a meal plan for a patient to keep them healthy? | Explore: (25-30 Minutes) Students will work in pairs as dieticians to create a full day meal plan for someone with specific diet restrictions: (some examples can include: soft/low fiber; low lactose; high calorie, high…",
+              "Question Stems: Extend Question 1: How does physical activity alter vital signs readings? | Extend: (10-15 Minutes) Create a graph showing the changes that happened to each person after the physical activity and share their findings with the class.    Question Stems: Extend Question 1: How does physical activity alter vital signs readings? Evaluate Activity Evaluate: (5-10 Minutes) Have students identify each of their group members' results and determine if their findings were in the…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "80f37e7b5807": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 1,
+        "by_element_type": {
+          "direct_instruction": 1
+        },
+        "doc_id": "80f37e7b5807"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "83154b464163": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 10,
+        "by_element_type": {
+          "direct_instruction": 3,
+          "hook_engagement": 1,
+          "guided_practice": 1,
+          "assessment_checkpoint": 2,
+          "logistics_materials": 1,
+          "standards_objectives": 1,
+          "reflection_closure": 1
+        },
+        "doc_id": "83154b464163"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Part 3 Professional/Industry Dress Codes   Professional/Industry Dress Code  A dress code is a set of guidelines that lets employees to know what is appropriate to wear to work.  Depending on the job, depends what you get to wear.  Key Vocabulary  Appearance: The way someone or something looks Business Casual: In general, business casual means dressing professionally, looking relaxed, yet neat and pulled together. The interpretation of business casual differs widely among organizations and is…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 4,
+            "cites": [
+              "How many of you have had previous speaking experiences: How many of you have given speeches in school? How many of you have given a speech in public before? Have any of you ever been on the radio or on TV for an interview before?  Answer the following by raising your hand….",
+              "What is a resume?  A resume is the tool we use to tell about ourselves, to share our skills and experience.  Resumes 101  What should my resume have?  Job objective Education Work experience Skills or capabilities Significant accomplishments Activities or organizations Honors or awards  Click on My Resume  Let’s build our own resume!  List of Action Verbs for Resumes & Professional Profiles                      Click on the word cloud below.",
+              "Part 3 Professional/Industry Dress Codes   Professional/Industry Dress Code  A dress code is a set of guidelines that lets employees to know what is appropriate to wear to work.  Depending on the job, depends what you get to wear.  Key Vocabulary  Appearance: The way someone or something looks Business Casual: In general, business casual means dressing professionally, looking relaxed, yet neat and pulled together. The interpretation of business casual differs widely among organizations and is…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "What is a resume?  A resume is the tool we use to tell about ourselves, to share our skills and experience.  Resumes 101  What should my resume have?  Job objective Education Work experience Skills or capabilities Significant accomplishments Activities or organizations Honors or awards  Click on My Resume  Let’s build our own resume!  List of Action Verbs for Resumes & Professional Profiles                      Click on the word cloud below.",
+              "What is a resume?  A resume is the tool we use to tell about ourselves, to share our skills and experience.  Resumes 101  What should my resume have?  Job objective Education Work experience Skills or capabilities Significant accomplishments Activities or organizations Honors or awards  Click on My Resume  Let’s build our own resume!  List of Action Verbs for Resumes & Professional Profiles                      Click on the word cloud below."
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "854451cbcfc5": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 14,
+        "by_element_type": {
+          "hook_engagement": 1,
+          "guided_practice": 8,
+          "logistics_materials": 3,
+          "assessment_checkpoint": 2
+        },
+        "doc_id": "854451cbcfc5"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "Daily requirements  Using the article: https://www.healthychildren.org/English/ages-stages/teen/nutrition/Pages/A-Teenagers-Nutritional-Needs.aspx Determine what daily requirements are for a student your age   Working in pairs, the students will be randomly assigned a condition that they will have to create a plan for a full day of meals. The students must look up the condition to see what the restrictions are They will then research and create a breakfast, lunch and dinner menu staying within…",
+              "Have the students discuss in pairs about what they think vital signs are and why they are important.  Vocabulary  Vital signs Pulse Respiratory rate Temp Resting heart rate  Vital Signs  Instructions  You will watch the videos to determine how to take vital signs: How to take your pulse How to Count a Respiratory Rate - EMTprep.com  How to use an Infrared Thermometer to Test Skin Temperature  Vital Signs  Working in groups of 4, the students will each take the vitals of all of their group…",
+              "Vital Signs  Working in groups of 4, the students will each take the vitals of all of their group members Record their findings on the handout If time permits: Walk around the hall, up and down the stairs, or go outside and run. Time the activity and make notes of what was done. Re-evaluate the vital signs after the physical activity  Day 2-Your are the nurse  Day 2-Evaluate  On a piece of paper, have students identify each of their group member’s results and determine if their findings were…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "89430d6aae63": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 14,
+        "by_element_type": {
+          "logistics_materials": 2,
+          "hook_engagement": 1,
+          "direct_instruction": 4,
+          "standards_objectives": 1,
+          "guided_practice": 3,
+          "assessment_checkpoint": 2,
+          "reflection_closure": 1
+        },
+        "doc_id": "89430d6aae63"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "The Printing and Imaging regional program of study introduces CTE learners to knowledge and skills related to providing printing and imaging services. CTE learners may learn about or practice the foundations of business management, customer service, graphic design, graphic production and large format printing.  Printing & Imaging...  Art Directors Multimedia Artist and Animators Desktop Publishers Printing Press Operators Graphics Equipment Operator Printing Equipment Operator  Careers",
+              "What is the main purpose of this cluster?   What career did you find most interesting within this cluster?   What would you like to learn more about this cluster?  Arts, A/V Tech & Communication"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 7,
+            "cites": [
+              "Whether it's with creating advertisements, the next new fashion trends or entertainment with video games; sending a message is a vital part of all Arts, Audio/Visual Technology and Communication.  All aspects of this cluster is in the power to  Target Audience  A target audience is a group of people defined by certain demographics and behavior.  Who are you trying to reach with your message? Would you try and sell car insurance to a baby? No...of course not. Getting the right message to the…",
+              "Can you think of a time…  when you received a message from a company?  Maybe you were scrolling through TikTok and Coca Cola put in an advertisement trying to get you to buy Diet Coke. Perhaps you were driving to school this morning and saw a billboard from the animal shelter, trying to convince you to adopt a new puppy.  Write it out.  Explore  Congratulations!!!  You have just been given the CEO position of a new nonprofit company that operates in your community. They need you to find a…",
+              "Explore  Congratulations!!!  You have just been given the CEO position of a new nonprofit company that operates in your community. They need you to find a community problem and launch an advertisement campaign to solve the problem. The company needs the ad campaign in a few days…. So get to work!!!  Brainstorm in your groups…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "8efd6fc31270": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 191,
+        "by_element_type": {
+          "logistics_materials": 191
+        },
+        "doc_id": "8efd6fc31270"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Career Cluster Bingo myfreebingocards.com Safety First! Before you print all your bingo cards, please print a test page to check they come out the right size and color. Your bingo cards start on Page 3 of this PDF. If your bingo cards have words then please check the spelling carefully. If you need to make any changes go to mfbc.us/e/h32rcj9 Play Once you've checked they are printing correctly, print off your bingo cards and start playing! On the next page you will find the \"Bingo Caller's…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "98ed44c5b0af": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 3,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1
+        },
+        "doc_id": "98ed44c5b0af"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "a8248438c079": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 5,
+        "by_element_type": {
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "assessment_checkpoint": 1,
+          "logistics_materials": 1,
+          "standards_objectives": 1
+        },
+        "doc_id": "a8248438c079"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Identify a Problem Design an airplane that can stay in the air for the longest time.  Design an airplane that can travel the farthest distance. Brainstorm, Imagine, Plan Features Considerations Design Sketch 1 Sketch 2   Create Materials Notes Test Successes Notes Evaluate, Improve Changes Notes Share Presentation Evaluation"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "a8e8847a5886": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 2,
+        "by_element_type": {
+          "direct_instruction": 1,
+          "guided_practice": 1
+        },
+        "doc_id": "a8e8847a5886"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Professional Attire - Scenarios Read the different scenarios and circle the attire you would wear to each event. Job Interview: Imagine you're applying for a part-time job at your favorite local bookstore. You want to make a good impression on the manager. What would you wear to the interview?  Lunch with a Mentor: As part of a mentorship program, you're meeting with a professional from your community over lunch to discuss your career interests and goals. The meeting is informal but still…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "b05bfe476c76": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 6,
+        "by_element_type": {
+          "hook_engagement": 1,
+          "direct_instruction": 3,
+          "guided_practice": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "b05bfe476c76"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "The Family and Community Services program of study introduces students to knowledge and skills related to social services, including child and human development and consumer sciences. CTE learners may learn about or practice managing social and community services or teaching family and consumer sciences. Students may follow career paths in social work or therapy for children, families, or school communities.  Pathways within Family and Human Services   Consumer Services Counseling & Mental…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "What do you think of when you hear Family and Community Wellness-Human Services?   Answer the following on the template!  Click the hands for a video!",
+              "What do you think are the requirements to become a social worker?  Answer the following on the template!  How to become a Social Worker?  1. Earn a bachelor’s degree in social work or related field. 2. Complete a CSWE-accredited MSW program. 3. Complete field experience requirements. 4. Take the Texas Jurisprudence Exam 5. Apply for the Social Worker License Exam   What colleges offer Social Work as a major?",
+              "Using the college pennant template, you will illustrate the college logo and colors in the front and answer the questions in the back. This college must offer social work and you will write down “social work” under classes offered. We will display these in our classroom so try your best!  Connect with Dallas ISD CTE  Dallas ISD Career and Technical Education  @DallasISD_CTEIP and @CTEinDallasISD  @DallasISDCTE  dallasisd.org/cte"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "b5e36486805a": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 12,
+        "by_element_type": {
+          "hook_engagement": 1,
+          "direct_instruction": 3,
+          "guided_practice": 2,
+          "assessment_checkpoint": 2,
+          "logistics_materials": 3,
+          "standards_objectives": 1
+        },
+        "doc_id": "b5e36486805a"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "The Agriculture, Food, and Natural Resources (AFNR) Career Cluster focuses on the essential elements of life food, water, land, and air. This career cluster includes a diverse spectrum of occupations, ranging from farmer, rancher, and veterinarian to geologist, land conservation.  Agriculture pathways……How many are they?  Agribusiness Animal Science Applied Agricultural Engineering Environmental and Natural Resources Food Science and Technology Plant Science  *Optional Use the web diagram…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 7,
+            "cites": [
+              "The Agriculture, Food, and Natural Resources (AFNR) Career Cluster focuses on the essential elements of life food, water, land, and air. This career cluster includes a diverse spectrum of occupations, ranging from farmer, rancher, and veterinarian to geologist, land conservation.  Agriculture pathways……How many are they?  Agribusiness Animal Science Applied Agricultural Engineering Environmental and Natural Resources Food Science and Technology Plant Science  *Optional Use the web diagram…",
+              "How do we grow Plants? Write it down on a Sticky note then place inside the tree.  Plant Science  The Plant Science program of study focuses on the science, research, and business of plants and other living organisms. It teaches students how to apply biology and life science to real-world life processes of plants and vegetation, either in laboratories or in the field.  Careers in plant science:  Horticulture Floral Design Forestry Turf Management Viticulture Soil Science  Let's break them down…",
+              "How do we grow Plants? Write it down on a Sticky note then place inside the tree.  Plant Science"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "d50f42a8f21e": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 6,
+        "by_element_type": {
+          "standards_objectives": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "assessment_checkpoint": 1,
+          "reflection_closure": 1,
+          "logistics_materials": 1
+        },
+        "doc_id": "d50f42a8f21e"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Dallas ISD CTE | Career & Technical Student Organization Student Organization PLEASE WATCH THE VIDEO. Question Stems:  What CTSO most interest you and why? 1. What CTSO most surprised you? 2. How can joining and participating in  this CTSO help you be successful? 3.      What is Your CTSO? What career path is bested suited for this ctso?     What are the activities, field trips, or competitions that a student can expect to participate in?     What is the procedure tp join and become a member…",
+              "What is Your CTSO? What career path is bested suited for this ctso?     What are the activities, field trips, or competitions that a student can expect to participate in?     What is the procedure tp join and become a member of a ctso? 01 12 07 Back to Agenda Page THE STUDENTS WILL WORK WITH A PARTNER AND USE THE COMPUTER AND CREATE A BROCHURE FOR THEIR CHOSEN CTSO. THE BROCHURE SHOULD BE SELLING THEIR CHOSEN PROGRAM TO FUTURE STUDENTS AND BE COLORFUL WITH PICTURES AND EXPLANATIONS OF THE…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 4,
+            "cites": [
+              "The students will understand how a CTSO can  enhance their career path and their educationa l journey. The students will understand the process on how to  pick a CTSO that will match their career path. The students will understand that being engaged in  activities outside of school will help them b e more successful in their journey. 01 12 07 Back to Agenda Page ESSENTIAL UNDERSTANDING  What is the purpose of a CTSO?  Back to Agenda Page",
+              "ESSENTIAL QUESTIONS What are the steps to join a ctso? what is the process? what is your career  pathway and the cts o that most interests you?  CTSO FBLA- Future  Business Leaders of America Skills USA FFA- Future Farmers of America HOSA- Health  Occupation s Students of America TAFE- Texas  Association o f Future Educators FCCLA- Family,  Career an d Communi ty Leaders of America DECA-Distributive  Education Clubs of America BPA- Business  Professionals of America TSA- Technical  Student…",
+              "Dallas ISD CTE | Career & Technical Student Organization Student Organization PLEASE WATCH THE VIDEO. Question Stems:  What CTSO most interest you and why? 1. What CTSO most surprised you? 2. How can joining and participating in  this CTSO help you be successful? 3.      What is Your CTSO? What career path is bested suited for this ctso?     What are the activities, field trips, or competitions that a student can expect to participate in?     What is the procedure tp join and become a member…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "The students will understand how a CTSO can  enhance their career path and their educationa l journey. The students will understand the process on how to  pick a CTSO that will match their career path. The students will understand that being engaged in  activities outside of school will help them b e more successful in their journey. 01 12 07 Back to Agenda Page ESSENTIAL UNDERSTANDING  What is the purpose of a CTSO?  Back to Agenda Page",
+              "Dallas ISD CTE | Career & Technical Student Organization Student Organization PLEASE WATCH THE VIDEO. Question Stems:  What CTSO most interest you and why? 1. What CTSO most surprised you? 2. How can joining and participating in  this CTSO help you be successful? 3.      What is Your CTSO? What career path is bested suited for this ctso?     What are the activities, field trips, or competitions that a student can expect to participate in?     What is the procedure tp join and become a member…",
+              "What is Your CTSO? What career path is bested suited for this ctso?     What are the activities, field trips, or competitions that a student can expect to participate in?     What is the procedure tp join and become a member of a ctso? 01 12 07 Back to Agenda Page THE STUDENTS WILL WORK WITH A PARTNER AND USE THE COMPUTER AND CREATE A BROCHURE FOR THEIR CHOSEN CTSO. THE BROCHURE SHOULD BE SELLING THEIR CHOSEN PROGRAM TO FUTURE STUDENTS AND BE COLORFUL WITH PICTURES AND EXPLANATIONS OF THE…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "d9f8e87d0486": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 6,
+        "by_element_type": {
+          "hook_engagement": 2,
+          "direct_instruction": 2,
+          "guided_practice": 2
+        },
+        "doc_id": "d9f8e87d0486"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 4,
+            "cites": [
+              "--- TABLE --- Financial Literacy Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class | Financial Literacy  Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Booklets from Banzai.com (free if an financial institution picks up your school…if not, you can set up your free account and then go to toolkit, workbooks and “Middle School Personal Finance Workbook” Set up your class(s) in banzai.com | Resources: Lesson plan Booklets from Banzai.com…",
+              "Student Engagement Strategy / Resource: Have students work in groups to get vocabulary situation questions complete. Can do a jigsaw activity if time is limited.  Help students get their accounts set up.   Question Stems: Explain Question 1: How do I use banzai.com? | Explain: (5-10 Minutes)  Explain that this week we will be learning about financial literacy through a scenario based program. Work together to answer the Lending, Credit & Financial Services questions in the workbook.  Student…",
+              "--- TABLE --- Financial Literacy                                                                                                                     Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Banzai workbook | Resources: Lesson plan Banzai workbook | Resources: Lesson plan Banzai workbook TEKS Student Expectation(s): §127.2. Career and College Exploration. 4(A) demonstrate effective time-management and goal-setting strategies §113.49 Personal…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 5,
+            "cites": [
+              "--- TABLE --- Financial Literacy Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class | Financial Literacy  Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Booklets from Banzai.com (free if an financial institution picks up your school…if not, you can set up your free account and then go to toolkit, workbooks and “Middle School Personal Finance Workbook” Set up your class(s) in banzai.com | Resources: Lesson plan Booklets from Banzai.com…",
+              "Student Engagement Strategy / Resource: Have students work in groups to get vocabulary situation questions complete. Can do a jigsaw activity if time is limited.  Help students get their accounts set up.   Question Stems: Explain Question 1: How do I use banzai.com? | Explain: (5-10 Minutes)  Explain that this week we will be learning about financial literacy through a scenario based program. Work together to answer the Lending, Credit & Financial Services questions in the workbook.  Student…",
+              "--- TABLE --- Financial Literacy                                                                                                                     Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Banzai workbook | Resources: Lesson plan Banzai workbook | Resources: Lesson plan Banzai workbook TEKS Student Expectation(s): §127.2. Career and College Exploration. 4(A) demonstrate effective time-management and goal-setting strategies §113.49 Personal…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "PRESENT",
+            "count": 4,
+            "cites": [
+              "--- TABLE --- Financial Literacy Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class | Financial Literacy  Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Booklets from Banzai.com (free if an financial institution picks up your school…if not, you can set up your free account and then go to toolkit, workbooks and “Middle School Personal Finance Workbook” Set up your class(s) in banzai.com | Resources: Lesson plan Booklets from Banzai.com…",
+              "Student Engagement Strategy / Resource: Have students work in groups to get vocabulary situation questions complete. Can do a jigsaw activity if time is limited.  Help students get their accounts set up.   Question Stems: Explain Question 1: How do I use banzai.com? | Explain: (5-10 Minutes)  Explain that this week we will be learning about financial literacy through a scenario based program. Work together to answer the Lending, Credit & Financial Services questions in the workbook.  Student…",
+              "--- TABLE --- Financial Literacy                                                                                                                     Estimated Day(s): 3 - (2) 70 minute classes & (1) 45 minute class Resources: Lesson plan Banzai workbook | Resources: Lesson plan Banzai workbook | Resources: Lesson plan Banzai workbook TEKS Student Expectation(s): §127.2. Career and College Exploration. 4(A) demonstrate effective time-management and goal-setting strategies §113.49 Personal…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "ea032c71918c": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 3,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "standards_objectives": 1,
+          "hook_engagement": 1
+        },
+        "doc_id": "ea032c71918c"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "www.timvandevall.com | Copyright © 2014 Dutch Renaissance Press LLC. K.W.L Chart Topic Name Date What I Know What I Want to Know What I Have Learned"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "eb042af8c066": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 7,
+        "by_element_type": {
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "reflection_closure": 1,
+          "assessment_checkpoint": 1,
+          "logistics_materials": 1,
+          "standards_objectives": 1,
+          "unclear": 1
+        },
+        "doc_id": "eb042af8c066"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Learning Objective  Design and build a paper tower based on specific criteria. Iteratively test and modify the tower to improve its performance.",
+              "Learning Objective  Design and build a paper tower based on specific criteria. Iteratively test and modify the tower to improve its performance."
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Did any students draw tower designs that looked the same? Did anyone draw a design that no one else thought of? What problems did groups encounter during the building/testing process? Do the best designs have anything in common?  Discussing."
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "Learning Objective  Design and build a paper tower based on specific criteria. Iteratively test and modify the tower to improve its performance.",
+              "Learning Objective  Design and build a paper tower based on specific criteria. Iteratively test and modify the tower to improve its performance."
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "f85ca6403d8c": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 13,
+        "by_element_type": {
+          "logistics_materials": 3,
+          "hook_engagement": 2,
+          "direct_instruction": 1,
+          "guided_practice": 2,
+          "assessment_checkpoint": 2,
+          "reflection_closure": 2,
+          "standards_objectives": 1
+        },
+        "doc_id": "f85ca6403d8c"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "Pitch a Product  Instructions  You will have 15-20 minutes to: Create your pitch using the handout Decide who will say what during your pitch Practice your pitch"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 3,
+            "cites": [
+              "On a piece of paper, write a paragraph explaining if they would be comfortable selling the product at the cost the team decided, why or why not? Also, would you buy the product for the price your team decided? Why or why not?  Present your Product  With your group you will present your project to the class sharing the following information: Name of your product Who is the target market for your product What does your product do (features)   **If time permits the class may ask questions and…",
+              "Day 1-Extend  Day 2  Day 2-Engage  Do Now  Using your list from Day 1 of the products you like, do the following: Identify the cost of the product Decide if you think the price is too high, too low or satisfactory  Vocabulary  Markup Profit Wholesale Retail Labor cost Overhead Variable cost  Price a Product  Instructions  With your group from “Create a Product” you will determine how much it costs to make the product and determine a reasonable selling price. You will have 25-30 minutes to:…",
+              "Instructions  With your group you will create a product from the supplies given to you by your teacher. (All groups will receive the same supplies)  You will have 25-30 minutes to: Create your product Name your product Identify the target market for your product Prepare to share your product with the class   Present your Product  With your group you will present your project to the class sharing the following information: Name of your product Who is the target market for your product What does…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    },
+    "f96797847d38": {
+      "E1": {
+        "step": "E1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this student-practice doc",
+        "element_count": 4,
+        "by_element_type": {
+          "logistics_materials": 1,
+          "direct_instruction": 1,
+          "guided_practice": 1,
+          "assessment_checkpoint": 1
+        },
+        "doc_id": "f96797847d38"
+      },
+      "E2": {
+        "step": "E2",
+        "status": "MISSING",
+        "present": 0,
+        "required": 2,
+        "fields": [
+          {
+            "id": "learn_practice_succeed",
+            "label": "Learn / Practice / Succeed framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          },
+          {
+            "id": "worksheet_or_se",
+            "label": "Worksheet / student-edition framing",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E3": {
+        "step": "E3",
+        "status": "PARTIAL",
+        "present": 1,
+        "required": 2,
+        "fields": [
+          {
+            "id": "problems_or_prompts",
+            "label": "Problems / prompts / questions",
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "LAW PATHWAY CAREER EXPLORATION PROJECT  1 2 3 You will work with a partner on  researching your assigned career. You will follow the format on the  next slide to create you r presentation. You and your partner will present  your project. INSTRUCTIONS  SLIDE FORMAT 1 2 3 Introduction of  yourself and partner / title page. Outline of  presentation Your career choice and why.  SLIDE FORMAT 4 5 6  Duties and  responsibilities of th e position. Education required  include colleges tha t have this…",
+              "SLIDE FORMAT 4 5 6  Duties and  responsibilities of th e position. Education required  include colleges tha t have this course of study. Skills or previous  experience require d for the employment.  SLIDE FORMAT 7 8 9 Future of this  employment. Will th e need for th is employment increase or decrease? Reference page- list of  references an d website used to loca te the information w ith links. Salary of this  employment wit h actual job posting s. You can look on si tes just as Indeed, Simply…"
+            ],
+            "note": "",
+            "optional": false
+          },
+          {
+            "id": "work_process",
+            "label": "Student work process cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "not found in excerpts",
+            "optional": false
+          }
+        ]
+      },
+      "E4": {
+        "step": "E4",
+        "status": "OPTIONAL_ABSENT",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "objective_or_teks",
+            "label": "Objective / TEKS / lesson cue",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional target cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "E5": {
+        "step": "E5",
+        "status": "STUB",
+        "note": "emit Path E one-pager TBD"
+      }
+    }
+  }
+}

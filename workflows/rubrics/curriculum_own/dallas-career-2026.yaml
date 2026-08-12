@@ -1,0 +1,84 @@
+# Rubric: the curriculum's OWN bar for dallas-career-2026 (scorer S3).
+#
+# WHY / PROVENANCE
+# The fairest bar for a lesson is the one its own district publishes. For Dallas
+# CTE that is the CTAT / Northwest ISD unit-plan template already in this repo
+# (workflows/checklists/lesson_plan.yaml) — the same fields curriculum writers
+# fill. This rubric REUSES those fields as scoreable criteria so the bake-off can
+# ask "does this lesson meet Dallas's own template?" alongside the generic bars.
+# Nothing here is invented; every criterion traces to a section of that plate.
+#
+# Per-project by design: another corpus supplies its own file under this dir
+# (e.g. bluebonnet-math-2026.yaml drawn from the Secondary Mathematics
+# internalization/observation protocols). The harness loads the file whose name
+# matches the project id, and falls back to completeness_core8 when none exists.
+#
+# scoring: presence (PRESENT / PARTIAL / MISSING) — the district template is a
+# structural checklist, not a graded scale.
+
+version: "v1-dallas-ctat-2026-07"
+rubric_id: curriculum_own_dallas_career_2026
+title: "Dallas CTE — CTAT / Northwest ISD unit-plan bar"
+framework: "CTAT / Northwest ISD lesson-plan template"
+source_checklist: workflows/checklists/lesson_plan.yaml
+scoring: presence
+auditor_only: true
+
+criteria:
+  - id: learning_target
+    label: Learning target / objective
+    description: A stated learning target and its rationale (CTAT Lesson Instruction).
+    evidence_element_types: [standards_objectives]
+    keywords: [learning target, objective, rationale, SWBAT]
+    required: true
+
+  - id: teks_alignment
+    label: TEKS listed and aligned to objective
+    description: TEKS present and consistent with the learning target (CTAT Unit Overview).
+    evidence_element_types: [standards_objectives]
+    keywords: [TEKS, student expectation, standard]
+    required: true
+
+  - id: materials_prep
+    label: Materials, supplies & teacher prep
+    description: Supplementary materials, supply needs, references/prep (CTAT Lesson Notes).
+    evidence_element_types: [logistics_materials]
+    keywords: [materials, supplies, resources, teacher prep, references]
+    required: true
+
+  - id: instructional_activities
+    label: Instructional activities (launch -> activities -> closure)
+    description: Described instructional activities from launch through closure (CTAT Lesson Instruction).
+    evidence_element_types: [hook_engagement, direct_instruction, guided_practice, independent_practice, reflection_closure]
+    keywords: [launch, intro, activity, closure]
+    required: true
+
+  - id: formative_assessment
+    label: Formative assessment
+    description: Formative checks such as exit tickets (CTAT Unit Assessments).
+    evidence_element_types: [assessment_checkpoint]
+    keywords: [formative, exit ticket, check for understanding]
+    required: true
+
+  - id: summative_assessment
+    label: Summative assessment
+    description: Summative assessment such as a quiz or rubric-scored task (CTAT Unit Assessments).
+    evidence_element_types: [assessment_checkpoint]
+    keywords: [summative, quiz, test, rubric, project]
+    required: false
+
+  - id: elps_strategies
+    label: ELPS / language strategies
+    description: English Language Proficiency Standards strategies (CTAT Additional Required Components).
+    evidence_element_types: []
+    keywords: [ELPS, English language, language proficiency, sentence stem]
+    required: false
+
+  - id: cte_essentials
+    label: CTE essential unit elements
+    description: >
+      Career development, portfolio checks, professional-skills review, or certification
+      prep (CTAT CTE Essential Unit Elements).
+    evidence_element_types: []
+    keywords: [career, portfolio, professional skills, PSPR, certification, IBC]
+    required: false

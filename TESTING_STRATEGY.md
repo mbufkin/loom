@@ -50,7 +50,7 @@ python3 test_schema_validate.py
 | `test_schema_validate.py` | Validators / invalid payloads | `python3 test_schema_validate.py` |
 | `test_audit.py` | classify / scrub / clean helpers | `python3 test_audit.py` |
 | `test_rollup.py` | Rollup against dallas calendars | `python3 test_rollup.py` |
-| `test_loom_pipeline.py` | Router → Path A/B/C → inferred calendars → tiers | `python3 test_loom_pipeline.py` |
+| `test_loom_pipeline.py` | Router → Path A–H → inferred calendars → tiers | `python3 test_loom_pipeline.py` |
 
 **Minimum local gate before PR:**
 

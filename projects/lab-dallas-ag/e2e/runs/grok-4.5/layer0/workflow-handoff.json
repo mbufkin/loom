@@ -1,0 +1,247 @@
+{
+  "project_id": "lab-dallas-ag",
+  "workflows": [
+    {
+      "doc_id": "*",
+      "workflow_id": "lesson_plan",
+      "path": "A",
+      "lens": "Lesson",
+      "status": "ready",
+      "findings_path": "path_a/findings.json",
+      "emit_paths": [
+        "path_a/findings.json"
+      ],
+      "summary": {
+        "A1": {
+          "step": "A1",
+          "element_count": 9,
+          "by_element_type": {
+            "logistics_materials": 1,
+            "standards_objectives": 2,
+            "hook_engagement": 1,
+            "guided_practice": 3,
+            "direct_instruction": 1,
+            "reflection_closure": 1
+          },
+          "doc_ids": [
+            "e9e6ac00ce09"
+          ]
+        },
+        "A2": {
+          "step": "A2",
+          "teks": {
+            "status": "PRESENT",
+            "count": 2,
+            "cites": [
+              "--- TABLE --- Agriculture Career-Plant Science Program of study Estimated Day(s): 2 - 45 minute classes | Agriculture Career-Plant Science Program of study     Estimated Day(s): 2 - 45 minute classes Resources: Lesson plan Materials for activities | Resources: Lesson plan Materials for activities | Resources: Lesson plan Materials for activities TEKS Student Expectation(s): §127.2. Career and College Exploration. (B) explore and describe the CTE career clusters (C) identify various career…",
+              "§130.2. Principles of Agriculture, Food, and Natural Resources (10) The student develops technical knowledge and skills related to soil systems. (A) identify the components and properties of soils; (B) identify and describe the process of soil formation (11) The student develops technical knowledge and skills related to plant systems. (D) identify plants of importance to agriculture, food, and natural resources; Learning Goals: The students will be able to: Define agriculture and explain…"
+            ]
+          },
+          "objective": {
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "§130.2. Principles of Agriculture, Food, and Natural Resources (10) The student develops technical knowledge and skills related to soil systems. (A) identify the components and properties of soils; (B) identify and describe the process of soil formation (11) The student develops technical knowledge and skills related to plant systems. (D) identify plants of importance to agriculture, food, and natural resources; Learning Goals: The students will be able to: Define agriculture and explain…"
+            ]
+          }
+        },
+        "A3": {
+          "step": "A3",
+          "has_objective": true,
+          "has_activities": true,
+          "has_assessment": false,
+          "mismatches": [
+            "objective_without_assessment"
+          ],
+          "status": "PARTIAL"
+        },
+        "A4": {
+          "step": "A4",
+          "formative": {
+            "status": "MISSING",
+            "items": []
+          },
+          "summative": {
+            "status": "MISSING",
+            "items": []
+          }
+        },
+        "A5": {
+          "step": "A5",
+          "hunter_core_present": 6,
+          "hunter_core_total": 8,
+          "matrix": [
+            {
+              "id": "anticipatory_set",
+              "label": "1. Anticipatory set (hook / Do Now / Engage)",
+              "status": "PRESENT",
+              "cite": "Student Engagement Strategy / Resource: Activate prior knowledge: Pass around a sticky note to each student and place the prompt on slide two of the Agriculture- Plant Science Alternate Lesson Plan Slides  While students are working on the question, draw a tree on the board and students can place their notes inside the tree to act as leaves(For reference)..Before students place their leaves, have them share with each other within their table groups/peers.   Question Stems: Prompt: How do we…"
+            },
+            {
+              "id": "objective_purpose",
+              "label": "2. Objective & purpose (stated to students)",
+              "status": "PRESENT",
+              "cite": "--- TABLE --- Agriculture Career-Plant Science Program of study Estimated Day(s): 2 - 45 minute classes | Agriculture Career-Plant Science Program of study     Estimated Day(s): 2 - 45 minute classes Resources: Lesson plan Materials for activities | Resources: Lesson plan Materials for activities | Resources: Lesson plan Materials for activities TEKS Student Expectation(s): §127.2. Career and College Exploration. (B) explore and describe the CTE career clusters (C) identify various career…"
+            },
+            {
+              "id": "input",
+              "label": "3. Input (teach content / vocabulary)",
+              "status": "PRESENT",
+              "cite": "Materials Needed: Sticky Notes (1) Note taking device or journal Explore Activity Explain: (10-15 Minutes)  Career Advocate will explain the Career clusters in agriculture, specifically in Animal Science using the interactive lesson."
+            },
+            {
+              "id": "modeling",
+              "label": "4. Modeling (I do / demonstrate)",
+              "status": "PRESENT",
+              "cite": "§130.2. Principles of Agriculture, Food, and Natural Resources (10) The student develops technical knowledge and skills related to soil systems. (A) identify the components and properties of soils; (B) identify and describe the process of soil formation (11) The student develops technical knowledge and skills related to plant systems. (D) identify plants of importance to agriculture, food, and natural resources; Learning Goals: The students will be able to: Define agriculture and explain…"
+            },
+            {
+              "id": "check_for_understanding",
+              "label": "5. Check for understanding",
+              "status": "MISSING",
+              "cite": ""
+            },
+            {
+              "id": "guided_practice",
+              "label": "6. Guided practice (We do)",
+              "status": "PRESENT",
+              "cite": "Question Stems: Prompt: How do we grow Plants? Explain Activity Explore: (20-30 Minutes) Students will take notes and collaborate in small groups Student Engagement Strategy / Resource: Students will document their understanding through the provided guided notes. Question Stems: What is the difference between Horticulture and Floriculture?  Materials Needed: Sticky Notes (1) Note taking device or journal | Explore: (20-30 Minutes) Students will take notes and collaborate in small groups…"
+            },
+            {
+              "id": "independent_practice",
+              "label": "7. Independent practice (You do)",
+              "status": "MISSING",
+              "cite": ""
+            },
+            {
+              "id": "closure",
+              "label": "8. Closure",
+              "status": "PRESENT",
+              "cite": "Question Stems: What is the importance of soil? What are the properties of soil? What is the difference between soil and dirt? Evaluate Activity Evaluate: (5-10 Minutes) Upon completion, have students complete the 3-2-1 Reflection handout over this lesson.  Reference Worksheet:  3-2-1 Reflection | Evaluate: (5-10 Minutes) Upon completion, have students complete the 3-2-1 Reflection handout over this lesson."
+            }
+          ]
+        },
+        "A6": {
+          "method": "model",
+          "present": 8
+        },
+        "A7": {
+          "step": "A7",
+          "elps": {
+            "status": "MISSING",
+            "cites": []
+          },
+          "accommodations": {
+            "status": "MISSING",
+            "cites": []
+          }
+        },
+        "A8": {
+          "step": "A8",
+          "emit_paths": [
+            "path_a/findings.json"
+          ],
+          "status": "emitted"
+        }
+      }
+    },
+    {
+      "doc_id": "*",
+      "workflow_id": "quiz",
+      "path": "B",
+      "lens": "Assessment",
+      "status": "skipped",
+      "findings_path": "path_b/findings.json",
+      "emit_paths": [
+        "path_b/findings.json"
+      ],
+      "summary": {
+        "doc_count": 0
+      }
+    },
+    {
+      "doc_id": "*",
+      "workflow_id": "general",
+      "path": "C",
+      "lens": "General feedback",
+      "status": "ok",
+      "findings_path": "path_c/findings.json",
+      "emit_paths": [
+        "path_c/findings.json"
+      ],
+      "summary": {
+        "doc_count": 1
+      }
+    },
+    {
+      "doc_id": "*",
+      "workflow_id": "teacher_support",
+      "path": "D",
+      "lens": "Teacher support",
+      "status": "skipped",
+      "findings_path": "path_d/findings.json",
+      "emit_paths": [
+        "path_d/findings.json"
+      ],
+      "summary": {
+        "doc_count": 0
+      }
+    },
+    {
+      "doc_id": "*",
+      "workflow_id": "student_practice",
+      "path": "E",
+      "lens": "Student practice",
+      "status": "skipped",
+      "findings_path": "path_e/findings.json",
+      "emit_paths": [
+        "path_e/findings.json"
+      ],
+      "summary": {
+        "doc_count": 0
+      }
+    },
+    {
+      "doc_id": "*",
+      "workflow_id": "standards_pacing",
+      "path": "F",
+      "lens": "Standards & pacing",
+      "status": "skipped",
+      "findings_path": "path_f/findings.json",
+      "emit_paths": [
+        "path_f/findings.json"
+      ],
+      "summary": {
+        "doc_count": 0
+      }
+    },
+    {
+      "doc_id": "*",
+      "workflow_id": "syllabus",
+      "path": "G",
+      "lens": "Syllabus",
+      "status": "skipped",
+      "findings_path": "path_g/findings.json",
+      "emit_paths": [
+        "path_g/findings.json"
+      ],
+      "summary": {
+        "doc_count": 0
+      }
+    },
+    {
+      "doc_id": "*",
+      "workflow_id": "exit_ticket",
+      "path": "H",
+      "lens": "Exit ticket",
+      "status": "skipped",
+      "findings_path": "path_h/findings.json",
+      "emit_paths": [
+        "path_h/findings.json"
+      ],
+      "summary": {
+        "doc_count": 0
+      }
+    }
+  ]
+}

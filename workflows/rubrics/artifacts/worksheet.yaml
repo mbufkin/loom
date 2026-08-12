@@ -1,0 +1,48 @@
+# Artifact spec: WORKSHEET / PRACTICE.
+#
+# WHY / PROVENANCE
+# Framework: Gradual Release of Responsibility (Pearson & Gallagher) — practice
+# artifacts are the "you do" that must target the same objective the lesson taught.
+# We audit that the worksheet has real tasks and (advisory) that the practice is
+# aligned to the anchored objective.
+#
+# HOW IT SCORES
+# presence GATES on tasks being present; alignment ADVISES on objective alignment.
+
+version: "v1-worksheet-2026-07"
+rubric_id: artifact_worksheet
+role: worksheet
+title: "Worksheet / practice"
+framework: "Gradual Release of Responsibility; UbD alignment"
+scoring: presence
+auditor_only: true
+
+criteria:
+  - id: has_tasks
+    label: Practice tasks / problems present
+    description: The worksheet gives students something to do (problems, prompts, items).
+    evidence_element_types: [independent_practice, guided_practice, assessment_checkpoint]
+    keywords: [complete, solve, answer, fill in, practice, problem, question, exercise]
+    required: true
+
+  - id: has_directions
+    label: Directions
+    description: Instructions telling students how to complete the work.
+    evidence_element_types: [logistics_materials, direct_instruction]
+    keywords: [directions, instructions, complete the, use the, show your work]
+    required: false
+
+alignment:
+  framework: "Gradual Release ('you do'); UbD Stage 2 alignment"
+  band_scale:
+    0: "Cannot tell / practice unrelated to the objective."
+    1: "Practice touches the topic but not the specific objective."
+    2: "Practice partially targets the objective."
+    3: "Practice directly rehearses the anchored objective's skill."
+  criteria:
+    - id: practice_aligned
+      label: Practice aligned to the objective
+      description: >
+        The tasks rehearse the knowledge/skill in the anchor objective (or cited
+        TEKS), giving students reps on what the lesson set out to teach.
+      reads_from: [independent_practice, guided_practice, standards_objectives]

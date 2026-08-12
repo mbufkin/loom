@@ -1,0 +1,253 @@
+{
+  "project_id": "lab-general-path-c",
+  "workflow_id": "general",
+  "path": "C",
+  "lens": "General feedback",
+  "status": "ok",
+  "doc_ids": [
+    "doc_cmixed_CTSO_Presentation",
+    "doc_cstrong_Secondary_Mathematics_Coach_Lesson_Internalization_Protocol",
+    "doc_cweak_Other_Handout_Stub"
+  ],
+  "checklist": "workflows/checklists/general.yaml",
+  "inventory": [
+    {
+      "doc_id": "doc_cmixed_CTSO_Presentation",
+      "doc_type": "presentation",
+      "element_count": 1,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "doc_cstrong_Secondary_Mathematics_Coach_Lesson_Internalization_Protocol",
+      "doc_type": "other",
+      "element_count": 1,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "PRESENT",
+        "note": "1/1 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    {
+      "doc_id": "doc_cweak_Other_Handout_Stub",
+      "doc_type": "other",
+      "element_count": 1,
+      "feedback": true,
+      "C1": {
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc"
+      },
+      "C2": {
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)"
+      },
+      "C3": {
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map"
+      },
+      "C4": {
+        "status": "MISSING",
+        "note": "0/0 fields present"
+      },
+      "C5": {
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    }
+  ],
+  "steps_by_doc": {
+    "doc_cmixed_CTSO_Presentation": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 1,
+        "by_element_type": {
+          "general": 1
+        },
+        "doc_id": "doc_cmixed_CTSO_Presentation"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "doc_cmixed_CTSO_Presentation",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "presentation",
+        "reason": "mapped from doc_type=presentation (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "doc_cmixed_CTSO_Presentation.txt Tip: Use links to go to a different page inside your presentation.  How: Highlight text, click on the link symbol on the toolbar, and select  the page in your presentation  you want to connect. 01 12 07 CAREER AND TECHNICAL EDUCATION STUDENT ORGANIZATIONS (CTSO) What is a CTSO Create a Brochure signing day exit survey AGENDA AGENDA   The students will understand how a CTSO can  enhance their career path and their educationa l journey.  The students will…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "doc_cstrong_Secondary_Mathematics_Coach_Lesson_Internalization_Protocol": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 1,
+        "by_element_type": {
+          "general": 1
+        },
+        "doc_id": "doc_cstrong_Secondary_Mathematics_Coach_Lesson_Internalization_Protocol"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "doc_cstrong_Secondary_Mathematics_Coach_Lesson_Internalization_Protocol",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "PRESENT",
+        "present": 1,
+        "required": 1,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "PRESENT",
+            "count": 1,
+            "cites": [
+              "doc_cstrong_Secondary_Mathematics_Coach_Lesson_Internalization_Protocol.txt Read the Lesson Overview, Texas Essential Knowledge and Skills (TEKS), TEKS Mathematical Process Standards, English Language Proficiency Standards (ELPS), and Essential Ideas. Highlight and/or record your understanding. Determine the knowledge and skills students will gain as a result of this learning experience. Consider both the Learning Together and Learning Individually experiences.  Guidance for Coaches\b  Coach…"
+            ],
+            "note": "",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    },
+    "doc_cweak_Other_Handout_Stub": {
+      "C1": {
+        "step": "C1",
+        "status": "PRESENT",
+        "note": "Layer 0 / source excerpt inventory for this catch-all doc",
+        "element_count": 1,
+        "by_element_type": {
+          "general": 1
+        },
+        "doc_id": "doc_cweak_Other_Handout_Stub"
+      },
+      "C2": {
+        "step": "C2",
+        "status": "PRESENT",
+        "note": "catch-all identity from route-map (workflow/path/doc_type)",
+        "doc_id": "doc_cweak_Other_Handout_Stub",
+        "workflow_id": "general",
+        "path": "C",
+        "doc_type": "other",
+        "reason": "mapped from doc_type=other (general feedback lens)"
+      },
+      "C3": {
+        "step": "C3",
+        "status": "PRESENT",
+        "note": "feedback flagged on route-map",
+        "route_feedback": true,
+        "in_feedback_yaml": true
+      },
+      "C4": {
+        "step": "C4",
+        "status": "MISSING",
+        "present": 0,
+        "required": 0,
+        "fields": [
+          {
+            "id": "nursery_bucket",
+            "label": "Nursery growth-bucket keyword",
+            "status": "MISSING",
+            "count": 0,
+            "cites": [],
+            "note": "optional growth-bucket cue not found",
+            "optional": true
+          }
+        ]
+      },
+      "C5": {
+        "step": "C5",
+        "status": "STUB",
+        "note": "emit Path C one-pager / growth digest TBD"
+      }
+    }
+  },
+  "feedback_file": "_loom_feedback.yaml"
+}

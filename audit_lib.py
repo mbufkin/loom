@@ -31,7 +31,9 @@ _logging_ready = False
 
 
 def load_config() -> dict:
-    with open(CONFIG_PATH) as f:
+    """Load YAML config. Override path with ``LOOM_CONFIG`` (A/B / NIM queues)."""
+    path = Path(os.environ["LOOM_CONFIG"]) if os.environ.get("LOOM_CONFIG") else CONFIG_PATH
+    with open(path) as f:
         return yaml.safe_load(f)
 
 
@@ -141,41 +143,106 @@ def model_chat(
     temperature: float = 0.1,
     max_tokens: int = 8192,
     retries: int = 2,
+    enable_thinking: bool | None = None,
 ) -> dict:
-    """POST to analyst/verifier; retry only transient errors (not 4xx client failures)."""
+    """POST to analyst/verifier; retry only transient errors (not 4xx client failures).
+
+    Best practice: every Loom model call goes through here so token usage is
+    captured once (see usage_lib). Prefer server `usage` / llama.cpp `timings`;
+    estimate only when both are absent.
+
+    ``enable_thinking``: for local llama.cpp Nemotron templates that support
+    ``chat_template_kwargs.enable_thinking``. Use ``False`` for structured-JSON
+    steps so reasoning tokens cannot exhaust ``max_tokens`` and leave
+    ``content`` empty (seen with Nemotron 3.5 Lightning on Pass 2 connect).
+    """
+    from usage_lib import monotonic_ms, record_model_call  # local import: avoid cycles
+
     key = "analyst" if role == "analyst" else "verifier"
     url = cfg["models"][f"{key}_url"]
     model = cfg["models"][f"{key}_model"]
     timeout = cfg["models"]["timeout_seconds"]
+    # Cloud / bridge / NIM: more attempts on 429 worker limits.
+    cloudish = any(
+        x in str(url)
+        for x in (
+            "8787",
+            "8788",
+            "integrate.api.nvidia.com",
+            "nvidia.com",
+            "api.openai.com",
+            "api.x.ai",
+        )
+    )
+    if cloudish:
+        retries = max(retries, 6)
     payload = {
         "model": model,
         "messages": messages,
         "temperature": temperature,
         "max_tokens": max_tokens,
-        # Confirmed live (2026-07-07, region10 corpus): a repetitive, link/list-heavy
-        # source document (lots of near-identical short lines and Google Docs URLs)
-        # made the local llama.cpp server hang for the full 300s timeout on every
-        # attempt, reproducibly, in isolation with no other load on the box — the
-        # classic small-local-model failure mode of falling into a repetition loop
-        # and generating right up to max_tokens instead of stopping. `repeat_penalty`
-        # is llama.cpp's own sampling parameter (not part of the OpenAI schema, but
-        # llama.cpp's server accepts it as a passthrough extra field on the
-        # OpenAI-compatible endpoint) and directly discourages the model from
-        # repeating recent tokens. 1.15 is llama.cpp's own suggested default for
-        # curbing repetition without noticeably hurting output quality — not tuned
-        # further than that starting point.
-        "repeat_penalty": 1.15,
     }
+    # Confirmed live (2026-07-07, region10): llama.cpp can hang on repetitive
+    # sources without repeat_penalty. NVIDIA NIM / OpenAI / Cursor bridge reject
+    # that field (HTTP 400 Unsupported parameter), so only send it to llama.cpp.
+    if not cloudish:
+        payload["repeat_penalty"] = 1.15
+        # Nemotron 3.5 Lightning (and Nano) honor this; ignored harmlessly if not.
+        if enable_thinking is not None:
+            payload["chat_template_kwargs"] = {"enable_thinking": bool(enable_thinking)}
+    headers = {}
+    # Cursor bridge (:8788) requires Bearer CURSOR_API_KEY when the bridge has a key set.
+    if "8788" in str(url):
+        key = (
+            (cfg.get("models") or {}).get("api_key")
+            or os.environ.get("CURSOR_API_KEY")
+            or ""
+        )
+        if key:
+            headers["Authorization"] = f"Bearer {key}"
     last_err: Exception | None = None
+    t0 = monotonic_ms()
     for attempt in range(retries + 1):
         try:
-            resp = requests.post(url, json=payload, timeout=timeout)
+            resp = requests.post(url, json=payload, headers=headers or None, timeout=timeout)
             resp.raise_for_status()
-            return resp.json()
+            data = resp.json()
+            record_model_call(
+                role=role,
+                step=step,
+                model=str(data.get("model") or model),
+                messages=messages,
+                resp=data,
+                elapsed_ms=monotonic_ms() - t0,
+                ok=True,
+            )
+            return data
         except requests.HTTPError as e:
             status = e.response.status_code if e.response is not None else 0
             body = (e.response.text[:300] if e.response is not None else "") or str(e)
+            # 429/503 = rate limit / worker exhaustion — retry with backoff.
+            # Other 4xx are client errors and should not be blindly retried.
+            if status in (429, 503, 529):
+                last_err = e
+                if attempt < retries:
+                    wait = min(120, 5 * (2**attempt))
+                    log(
+                        f"WARN: {step} HTTP {status} (rate/capacity) attempt "
+                        f"{attempt + 1}; retry in {wait}s"
+                    )
+                    time.sleep(wait)
+                continue
             if 400 <= status < 500:
+                record_model_call(
+                    role=role,
+                    step=step,
+                    model=model,
+                    messages=messages,
+                    resp=None,
+                    elapsed_ms=monotonic_ms() - t0,
+                    ok=False,
+                    error=f"HTTP {status}: {body}",
+                )
                 raise RuntimeError(
                     f"{step}: HTTP {status} (not retrying): {body}"
                 ) from e
@@ -194,6 +261,16 @@ def model_chat(
                     f"WARN: {step} attempt {attempt + 1} failed ({e}); retry in {wait}s"
                 )
                 time.sleep(wait)
+    record_model_call(
+        role=role,
+        step=step,
+        model=model,
+        messages=messages,
+        resp=None,
+        elapsed_ms=monotonic_ms() - t0,
+        ok=False,
+        error=str(last_err),
+    )
     raise RuntimeError(f"{step}: {last_err}") from last_err
 
 
@@ -228,7 +305,21 @@ def atomic_write(path: Path, content: str) -> None:
 
 
 def project_dir(project_id: str) -> Path:
-    return BASE_DIR / "projects" / project_id
+    """Resolve the writable project root.
+
+    Best practice: E2E is canonical. ``run_project`` sets LOOM_E2E_RUN so Layer 0 /
+    output / graph land under projects/<id>/e2e/runs/<run_id>/ and never clobber
+    the golden curriculum tree (see tools/e2e_run_lib.py). Bare projects/<id>/
+    is for --allow-live-root / overnight golden refresh only.
+    """
+    base = BASE_DIR / "projects" / project_id
+    run = (os.environ.get("LOOM_E2E_RUN") or "").strip()
+    if run:
+        safe = re.sub(r"[^\w.\-]+", "-", run).strip("-._")[:80]
+        if not safe:
+            raise ValueError("LOOM_E2E_RUN is empty after sanitization")
+        return base / "e2e" / "runs" / safe
+    return base
 
 
 def resolve_sources_dir(manifest: dict, root_override: Path | None = None) -> Path:
@@ -361,11 +452,23 @@ VALID_SLOT_ROLES = frozenset(
 def classify_doc_type(filename: str) -> str:
     """Infer artifact type from filename — deterministic, no model."""
     n = filename.lower()
-    if "answer_key" in n or "answer key" in n:
+    # Path G lens — match early so syllabus filenames don't fall through to other.
+    # Keep "sylibuis" as typo alias for early stub filenames.
+    if "syllabus" in n or "sylibuis" in n:
+        return "syllabus"
+    # Hyphen form (answer-key) is common in iCEV / web exports.
+    if "answer_key" in n or "answer key" in n or "answer-key" in n:
         return "answer_key"
     if "exit_ticket" in n or "exit ticket" in n:
         return "exit_ticket"
     if "quizizz" in n or "quiz" in n:
+        return "quiz"
+    # iCEV final / CFU assessments (not answer keys — those matched above).
+    if "final-assessment" in n or "final_assessment" in n:
+        return "quiz"
+    if "check-for-understanding" in n or "check_for_understanding" in n:
+        return "quiz"
+    if re.search(r"(?:^|__)assessment(?:[_\s.-]|\.|$)", n):
         return "quiz"
     if "lesson_plan" in n or "lesson plan" in n:
         return "lesson_plan"

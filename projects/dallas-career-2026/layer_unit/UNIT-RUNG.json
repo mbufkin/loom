@@ -1,0 +1,1712 @@
+{
+  "project_id": "dallas-career-2026",
+  "gate_scorer": "s1_completeness",
+  "summary": {
+    "unit_count": 18,
+    "band_counts": {
+      "Weak": 15,
+      "Unrated": 3
+    }
+  },
+  "units": {
+    "agriculture": {
+      "title": "Agriculture",
+      "band": "Weak",
+      "lessons": {
+        "count": 1,
+        "gate_pass": 1,
+        "gate_pass_rate": 1.0,
+        "mean_coverage": {
+          "s1_completeness": 0.875,
+          "s3_curriculum_own": 0.75
+        }
+      },
+      "roles": {
+        "fulfilled": 2,
+        "missing": 7,
+        "systemic_absent": [
+          "answer_key",
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 3
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 1,
+        "ratio": 0.5,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 1,
+        "gate_pass": 1,
+        "gate_pass_rate": 1.0,
+        "roles": {
+          "other": 1
+        },
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "agriculture"
+      }
+    },
+    "architecture-construction": {
+      "title": "Architecture & Construction",
+      "band": "Weak",
+      "lessons": {
+        "count": 2,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.5,
+        "mean_coverage": {
+          "s1_completeness": 0.625,
+          "s3_curriculum_own": 0.562
+        }
+      },
+      "roles": {
+        "fulfilled": 4,
+        "missing": 5,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 1
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 1,
+        "top_missing_components": [
+          "independent_practice",
+          "logistics_materials",
+          "reflection_closure"
+        ]
+      },
+      "artifacts": {
+        "count": 3,
+        "gate_pass": 2,
+        "gate_pass_rate": 0.667,
+        "roles": {
+          "answer_key": 1,
+          "exit_ticket": 1,
+          "quiz": 1
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "d3fae80ecd3f",
+            "role": "quiz",
+            "title": "Architecture and Construction Quizizz",
+            "missing_required": [
+              "B3 Answer key signal"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "architecture-construction"
+      }
+    },
+    "arts-av-technology": {
+      "title": "Arts AV Technology",
+      "band": "Weak",
+      "lessons": {
+        "count": 2,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.5,
+        "mean_coverage": {
+          "s1_completeness": 0.688,
+          "s3_curriculum_own": 0.688
+        }
+      },
+      "roles": {
+        "fulfilled": 3,
+        "missing": 6,
+        "systemic_absent": [
+          "answer_key",
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 1
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 6,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {
+          "exit_ticket": 3,
+          "project_work": 1,
+          "rubric": 2
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "314d7d0905ca",
+            "role": "exit_ticket",
+            "title": "Arts AV Technology Communication - Exit Ticket Day 1",
+            "missing_required": [
+              "H4 Next-day formative signal"
+            ]
+          },
+          {
+            "doc_id": "ff5cd4c0712e",
+            "role": "exit_ticket",
+            "title": "Arts AV Technology Communication - Exit Ticket Day 2",
+            "missing_required": [
+              "H4 Next-day formative signal"
+            ]
+          },
+          {
+            "doc_id": "e2c12c61bc5f",
+            "role": "exit_ticket",
+            "title": "Arts AV Technology Communication - Exit Ticket Day 3",
+            "missing_required": [
+              "H4 Next-day formative signal"
+            ]
+          },
+          {
+            "doc_id": "0a62e0b9729e",
+            "role": "project_work",
+            "title": "Arts A V Student Notes",
+            "missing_required": [
+              "E2 Document role cues"
+            ]
+          },
+          {
+            "doc_id": "af9cf3b04474",
+            "role": "rubric",
+            "title": "Arts AV Technology Communication Commercial Project Rubric",
+            "missing_required": [
+              "B2 Item stems",
+              "B3 Answer key signal"
+            ]
+          },
+          {
+            "doc_id": "0cbd06c7c769",
+            "role": "rubric",
+            "title": "Arts AV Technology Communication Flyer Project Rubric",
+            "missing_required": [
+              "B2 Item stems",
+              "B3 Answer key signal"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "arts-av-technology"
+      }
+    },
+    "business-marketing": {
+      "title": "Business Marketing",
+      "band": "Weak",
+      "lessons": {
+        "count": 2,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.5,
+        "mean_coverage": {
+          "s1_completeness": 0.625,
+          "s3_curriculum_own": 0.625
+        }
+      },
+      "roles": {
+        "fulfilled": 1,
+        "missing": 10,
+        "systemic_absent": [
+          "answer_key",
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "worksheet",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 3
+      },
+      "pacing": {
+        "planned_days": 3,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 2,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {
+          "exit_ticket": 1,
+          "rubric": 1
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "8ce965ac1600",
+            "role": "exit_ticket",
+            "title": "Business Marketing Finance - Exit Ticket",
+            "missing_required": [
+              "H4 Next-day formative signal"
+            ]
+          },
+          {
+            "doc_id": "769516e58fb5",
+            "role": "rubric",
+            "title": "Business Marketing Finance - Project Rubric",
+            "missing_required": [
+              "B2 Item stems",
+              "B3 Answer key signal"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "business-marketing"
+      }
+    },
+    "career-cluster": {
+      "title": "Career Cluster",
+      "band": "Weak",
+      "lessons": {
+        "count": 4,
+        "gate_pass": 2,
+        "gate_pass_rate": 0.5,
+        "mean_coverage": {
+          "s1_completeness": 0.781,
+          "s3_curriculum_own": 0.688
+        }
+      },
+      "roles": {
+        "fulfilled": 3,
+        "missing": 6,
+        "systemic_absent": [
+          "answer_key",
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 1
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 23,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.043,
+        "roles": {
+          "exit_ticket": 3,
+          "game_activity": 2,
+          "other": 7,
+          "presentation": 1,
+          "project_work": 6,
+          "rubric": 1,
+          "worksheet": 3
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "f52d1bc1c462",
+            "role": "exit_ticket",
+            "title": "Career Cluster - Exit Ticket Day 2",
+            "missing_required": [
+              "H4 Next-day formative signal"
+            ]
+          },
+          {
+            "doc_id": "59ddeafc2ad3",
+            "role": "exit_ticket",
+            "title": "Career Cluster - Exit Ticket Day 3",
+            "missing_required": [
+              "H4 Next-day formative signal"
+            ]
+          },
+          {
+            "doc_id": "0a9fe894e4f0",
+            "role": "exit_ticket",
+            "title": "Career Cluster- Exit Ticket Day 1",
+            "missing_required": [
+              "H4 Next-day formative signal"
+            ]
+          },
+          {
+            "doc_id": "8efd6fc31270",
+            "role": "game_activity",
+            "title": "Career Cluster Bingo",
+            "missing_required": [
+              "E2 Document role cues"
+            ]
+          },
+          {
+            "doc_id": "3e56e33fe53c",
+            "role": "game_activity",
+            "title": "Career Cluster Bingo Large",
+            "missing_required": [
+              "E2 Document role cues"
+            ]
+          },
+          {
+            "doc_id": "7896317a42cd",
+            "role": "other",
+            "title": "CTSO Career Pathway Letter of Intent",
+            "missing_required": [
+              "B2 Item stems",
+              "B3 Answer key signal",
+              "B5"
+            ]
+          },
+          {
+            "doc_id": "e82d217defad",
+            "role": "other",
+            "title": "Carrasco Brainstorm",
+            "missing_required": [
+              "D2 TE / guide role cues",
+              "D3 Facilitation / support cues"
+            ]
+          },
+          {
+            "doc_id": "80f37e7b5807",
+            "role": "other",
+            "title": "Knife Skills Sponge",
+            "missing_required": [
+              "E2 Document role cues",
+              "E3 Student task cues"
+            ]
+          },
+          {
+            "doc_id": "28552acaae5a",
+            "role": "other",
+            "title": "Pricing a product with example and instructions",
+            "missing_required": [
+              "E2 Document role cues"
+            ]
+          },
+          {
+            "doc_id": "e2f014fb5b00",
+            "role": "other",
+            "title": "What are businesses saying to me and how",
+            "missing_required": [
+              "B2 Item stems",
+              "B3 Answer key signal",
+              "B5"
+            ]
+          },
+          {
+            "doc_id": "e2485fe0a73f",
+            "role": "other",
+            "title": "runway-pictures",
+            "missing_required": [
+              "D2 TE / guide role cues",
+              "D3 Facilitation / support cues"
+            ]
+          },
+          {
+            "doc_id": "cd8f3755cf17",
+            "role": "other",
+            "title": "wilshire-code-cards",
+            "missing_required": [
+              "D2 TE / guide role cues",
+              "D3 Facilitation / support cues"
+            ]
+          },
+          {
+            "doc_id": "98ed44c5b0af",
+            "role": "project_work",
+            "title": "3 Course Meal Menu",
+            "missing_required": [
+              "E2 Document role cues",
+              "E3 Student task cues"
+            ]
+          },
+          {
+            "doc_id": "40c5e0f508f1",
+            "role": "project_work",
+            "title": "Career Cluster Student Feedback- Project",
+            "missing_required": [
+              "B2 Item stems",
+              "B3 Answer key signal",
+              "B5"
+            ]
+          },
+          {
+            "doc_id": "6880e9ded029",
+            "role": "project_work",
+            "title": "Commercial Project Instructions",
+            "missing_required": [
+              "B2 Item stems",
+              "B3 Answer key signal",
+              "B5"
+            ]
+          },
+          {
+            "doc_id": "56bd08f50ac3",
+            "role": "project_work",
+            "title": "Commercial Script Example",
+            "missing_required": [
+              "E2 Document role cues"
+            ]
+          },
+          {
+            "doc_id": "8891b46563ae",
+            "role": "project_work",
+            "title": "Flyer Project Instructions",
+            "missing_required": [
+              "B2 Item stems",
+              "B3 Answer key signal",
+              "B5"
+            ]
+          },
+          {
+            "doc_id": "851a02b17dc9",
+            "role": "project_work",
+            "title": "Non Profit Flyer Examples",
+            "missing_required": [
+              "C1"
+            ]
+          },
+          {
+            "doc_id": "f1b0566d0274",
+            "role": "rubric",
+            "title": "Career Cluster - Project Rubric",
+            "missing_required": [
+              "B2 Item stems",
+              "B3 Answer key signal"
+            ]
+          },
+          {
+            "doc_id": "addfb0873806",
+            "role": "worksheet",
+            "title": "Community Problem Brainstorming Worksheet",
+            "missing_required": [
+              "B2 Item stems",
+              "B3 Answer key signal",
+              "B5"
+            ]
+          },
+          {
+            "doc_id": "2fc999f5e539",
+            "role": "worksheet",
+            "title": "Students Worksheet",
+            "missing_required": [
+              "B3 Answer key signal",
+              "B5"
+            ]
+          },
+          {
+            "doc_id": "e31064aba3ae",
+            "role": "worksheet",
+            "title": "Writing Your Sales Pitch Worksheet",
+            "missing_required": [
+              "B3 Answer key signal",
+              "B5"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "career-cluster"
+      }
+    },
+    "career-exploration": {
+      "title": "Career Exploration",
+      "band": "Weak",
+      "lessons": {
+        "count": 3,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.333,
+        "mean_coverage": {
+          "s1_completeness": 0.583,
+          "s3_curriculum_own": 0.583
+        }
+      },
+      "roles": {
+        "fulfilled": 4,
+        "missing": 5,
+        "systemic_absent": [
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 1
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 1,
+        "top_missing_components": [
+          "hook_engagement",
+          "independent_practice"
+        ]
+      },
+      "artifacts": {
+        "count": 2,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {
+          "other": 1,
+          "worksheet": 1
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "1f0eda900bc5",
+            "role": "other",
+            "title": "Culinary-Career-Exploration-curriculum-free-asset",
+            "missing_required": [
+              "D2 TE / guide role cues"
+            ]
+          },
+          {
+            "doc_id": "f9710e5e4e97",
+            "role": "worksheet",
+            "title": "Career Exploration Worksheet- LAW",
+            "missing_required": [
+              "B2 Item stems",
+              "B3 Answer key signal",
+              "B5"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "career-exploration"
+      }
+    },
+    "dallas-isd": {
+      "title": "Dallas ISD",
+      "band": "Weak",
+      "lessons": {
+        "count": 2,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.5,
+        "mean_coverage": {
+          "s1_completeness": 0.625,
+          "s3_curriculum_own": 0.438
+        }
+      },
+      "roles": {
+        "fulfilled": 2,
+        "missing": 5,
+        "systemic_absent": [
+          "answer_key",
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 2
+      },
+      "pacing": {
+        "planned_days": 1,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 1,
+        "top_missing_components": [
+          "direct_instruction",
+          "guided_practice",
+          "hook_engagement"
+        ]
+      },
+      "artifacts": {
+        "count": 3,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.333,
+        "roles": {
+          "answer_key": 1,
+          "exit_ticket": 1,
+          "quiz": 1
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "6caee441faaf",
+            "role": "answer_key",
+            "title": "Dallas ISD High School Options Quizizz Answer Key",
+            "missing_required": [
+              "B2 Item stems",
+              "B3 Answer key signal"
+            ]
+          },
+          {
+            "doc_id": "0b16e1424928",
+            "role": "quiz",
+            "title": "Dallas ISD High School Options Quizizz",
+            "missing_required": [
+              "B3 Answer key signal"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "dallas-isd"
+      }
+    },
+    "engineering": {
+      "title": "Engineering",
+      "band": "Weak",
+      "lessons": {
+        "count": 2,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.625,
+          "s3_curriculum_own": 0.5
+        }
+      },
+      "roles": {
+        "fulfilled": 2,
+        "missing": 6,
+        "systemic_absent": [
+          "answer_key",
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 1
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 1,
+        "top_missing_components": [
+          "logistics_materials",
+          "reflection_closure",
+          "standards_objectives"
+        ]
+      },
+      "artifacts": {
+        "count": 3,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.333,
+        "roles": {
+          "answer_key": 1,
+          "exit_ticket": 1,
+          "quiz": 1
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "86fff193b91a",
+            "role": "answer_key",
+            "title": "Engineering Lesson Quiz Quizizz Answer key",
+            "missing_required": [
+              "B3 Answer key signal"
+            ]
+          },
+          {
+            "doc_id": "fc48920a5ca9",
+            "role": "quiz",
+            "title": "Engineering Lesson Quiz Quizizz",
+            "missing_required": [
+              "B3 Answer key signal"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "engineering"
+      }
+    },
+    "family-community": {
+      "title": "Family Community",
+      "band": "Weak",
+      "lessons": {
+        "count": 2,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.5,
+          "s3_curriculum_own": 0.5
+        }
+      },
+      "roles": {
+        "fulfilled": 1,
+        "missing": 8,
+        "systemic_absent": [
+          "answer_key",
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 3
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {},
+        "has_gap": false,
+        "deterministic_gaps": [],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "family-community"
+      }
+    },
+    "financial-literacy": {
+      "title": "Financial Literacy",
+      "band": "Unrated",
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 4,
+        "missing": 7,
+        "systemic_absent": [
+          "answer_key",
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 1
+      },
+      "pacing": {
+        "planned_days": 3,
+        "evidence_days": 1,
+        "ratio": 0.333,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 4,
+        "gate_pass": 2,
+        "gate_pass_rate": 0.5,
+        "roles": {
+          "exit_ticket": 1,
+          "other": 2,
+          "rubric": 1
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "eff81c789b58",
+            "role": "exit_ticket",
+            "title": "Financial Literacy - Exit Ticket",
+            "missing_required": [
+              "H4 Next-day formative signal"
+            ]
+          },
+          {
+            "doc_id": "e7b2a411cbdc",
+            "role": "rubric",
+            "title": "Financial Literacy - Project Rubric",
+            "missing_required": [
+              "B2 Item stems",
+              "B3 Answer key signal"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "financial-literacy"
+      }
+    },
+    "health-science": {
+      "title": "Health Science",
+      "band": "Unrated",
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 2,
+        "missing": 9,
+        "systemic_absent": [
+          "answer_key",
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "worksheet",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 2
+      },
+      "pacing": {
+        "planned_days": 3,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 5,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.2,
+        "roles": {
+          "exit_ticket": 1,
+          "lab_activity": 1,
+          "other": 2,
+          "rubric": 1
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "1518e9d9d4e5",
+            "role": "exit_ticket",
+            "title": "Health Science - Exit Ticket",
+            "missing_required": [
+              "H4 Next-day formative signal"
+            ]
+          },
+          {
+            "doc_id": "468be78c578b",
+            "role": "lab_activity",
+            "title": "Vital Signs Lab Activity",
+            "missing_required": [
+              "E3 Student task cues"
+            ]
+          },
+          {
+            "doc_id": "854451cbcfc5",
+            "role": "other",
+            "title": "Health Science",
+            "missing_required": [
+              "E2 Document role cues",
+              "E3 Student task cues"
+            ]
+          },
+          {
+            "doc_id": "270bcdd1de81",
+            "role": "rubric",
+            "title": "Health Science - Project Rubric",
+            "missing_required": [
+              "B2 Item stems",
+              "B3 Answer key signal"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "health-science"
+      }
+    },
+    "hospitality-tourism": {
+      "title": "Hospitality Tourism",
+      "band": "Weak",
+      "lessons": {
+        "count": 1,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.5,
+          "s3_curriculum_own": 0.375
+        }
+      },
+      "roles": {
+        "fulfilled": 2,
+        "missing": 7,
+        "systemic_absent": [
+          "answer_key",
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "worksheet",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 2
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 5,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {
+          "exit_ticket": 4,
+          "rubric": 1
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "85c8ad2c6c50",
+            "role": "exit_ticket",
+            "title": "Day 1 Exit Ticket HOSPITALITY AND TOURISM",
+            "missing_required": [
+              "H4 Next-day formative signal"
+            ]
+          },
+          {
+            "doc_id": "51e75ae5f576",
+            "role": "exit_ticket",
+            "title": "Exit Ticket Day 3 HOSPITALITY AND TOURISM",
+            "missing_required": [
+              "H4 Next-day formative signal"
+            ]
+          },
+          {
+            "doc_id": "9b49036929a2",
+            "role": "exit_ticket",
+            "title": "Hospitality Tourism Day 2 - Exit Ticket",
+            "missing_required": [
+              "H4 Next-day formative signal"
+            ]
+          },
+          {
+            "doc_id": "3f5d5ba70a87",
+            "role": "exit_ticket",
+            "title": "Hospitality Tourism Day 2 Exit Ticket",
+            "missing_required": [
+              "H4 Next-day formative signal"
+            ]
+          },
+          {
+            "doc_id": "21d5442f97a2",
+            "role": "rubric",
+            "title": "Hospitality Tourism Travel Agent Presentation Project Rubric",
+            "missing_required": [
+              "B2 Item stems",
+              "B3 Answer key signal"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "hospitality-tourism"
+      }
+    },
+    "information-technology": {
+      "title": "Information Technology",
+      "band": "Unrated",
+      "lessons": {
+        "count": 0,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {}
+      },
+      "roles": {
+        "fulfilled": 2,
+        "missing": 9,
+        "systemic_absent": [
+          "answer_key",
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "worksheet",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 2
+      },
+      "pacing": {
+        "planned_days": 3,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 4,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {
+          "exit_ticket": 1,
+          "other": 2,
+          "rubric": 1
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "1bd2952ce87b",
+            "role": "exit_ticket",
+            "title": "Information Technology - Exit Ticket",
+            "missing_required": [
+              "H4 Next-day formative signal"
+            ]
+          },
+          {
+            "doc_id": "0ffb85afd0ce",
+            "role": "other",
+            "title": "Information Technology",
+            "missing_required": [
+              "D2 TE / guide role cues"
+            ]
+          },
+          {
+            "doc_id": "ff5244c8fa47",
+            "role": "other",
+            "title": "Information Technology",
+            "missing_required": [
+              "D2 TE / guide role cues",
+              "D3 Facilitation / support cues"
+            ]
+          },
+          {
+            "doc_id": "6c94424ba260",
+            "role": "rubric",
+            "title": "Information Technology - Project Rubric",
+            "missing_required": [
+              "B2 Item stems",
+              "B3 Answer key signal"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "information-technology"
+      }
+    },
+    "law-and-public-service": {
+      "title": "Law and Public Service",
+      "band": "Weak",
+      "lessons": {
+        "count": 4,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.594,
+          "s3_curriculum_own": 0.625
+        }
+      },
+      "roles": {
+        "fulfilled": 1,
+        "missing": 8,
+        "systemic_absent": [
+          "answer_key",
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "worksheet",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 3
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 1,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {
+          "other": 1
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "ea032c71918c",
+            "role": "other",
+            "title": "Law and Public Service KWL",
+            "missing_required": [
+              "E3 Student task cues"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "law-and-public-service"
+      }
+    },
+    "manufacturing": {
+      "title": "Manufacturing",
+      "band": "Weak",
+      "lessons": {
+        "count": 2,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.438,
+          "s3_curriculum_own": 0.312
+        }
+      },
+      "roles": {
+        "fulfilled": 4,
+        "missing": 5,
+        "systemic_absent": [
+          "answer_key",
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 1
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 1,
+        "ratio": 0.5,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 2,
+        "docs_incomplete": 2,
+        "top_missing_components": [
+          "assessment_checkpoint",
+          "independent_practice",
+          "direct_instruction"
+        ]
+      },
+      "artifacts": {
+        "count": 3,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.333,
+        "roles": {
+          "answer_key": 1,
+          "exit_ticket": 1,
+          "quiz": 1
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "a13c35aa5c4e",
+            "role": "answer_key",
+            "title": "Manufacturing exploration Answer keys Quizizz",
+            "missing_required": [
+              "B3 Answer key signal"
+            ]
+          },
+          {
+            "doc_id": "3fd5e5bc561c",
+            "role": "quiz",
+            "title": "Manufacturing exploration Quizizz",
+            "missing_required": [
+              "B3 Answer key signal"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "manufacturing"
+      }
+    },
+    "professional-preparedness": {
+      "title": "Professional Preparedness",
+      "band": "Weak",
+      "lessons": {
+        "count": 3,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.333,
+        "mean_coverage": {
+          "s1_completeness": 0.708,
+          "s3_curriculum_own": 0.667
+        }
+      },
+      "roles": {
+        "fulfilled": 3,
+        "missing": 6,
+        "systemic_absent": [
+          "answer_key",
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 1
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 9,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.111,
+        "roles": {
+          "exit_ticket": 3,
+          "other": 5,
+          "rubric": 1
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "041457651819",
+            "role": "exit_ticket",
+            "title": "Professional Preparedness - Exit Ticket Day 1",
+            "missing_required": [
+              "H4 Next-day formative signal"
+            ]
+          },
+          {
+            "doc_id": "4736326638c1",
+            "role": "exit_ticket",
+            "title": "Professional Preparedness - Exit Ticket Day 2",
+            "missing_required": [
+              "H4 Next-day formative signal"
+            ]
+          },
+          {
+            "doc_id": "09bf178d4e7e",
+            "role": "exit_ticket",
+            "title": "Professional Preparedness - Exit Ticket Day 3",
+            "missing_required": [
+              "H4 Next-day formative signal"
+            ]
+          },
+          {
+            "doc_id": "5f0cb47fe1b1",
+            "role": "other",
+            "title": "Interviewing Role Play Scripts",
+            "missing_required": [
+              "E2 Document role cues"
+            ]
+          },
+          {
+            "doc_id": "724f41bf2711",
+            "role": "other",
+            "title": "Middle School Resume Builder",
+            "missing_required": [
+              "E2 Document role cues",
+              "E3 Student task cues"
+            ]
+          },
+          {
+            "doc_id": "a8e8847a5886",
+            "role": "other",
+            "title": "Professional Attire - Scenarios",
+            "missing_required": [
+              "E2 Document role cues"
+            ]
+          },
+          {
+            "doc_id": "82b84c676dfd",
+            "role": "other",
+            "title": "Professional Attire Answers",
+            "missing_required": [
+              "D2 TE / guide role cues",
+              "D3 Facilitation / support cues"
+            ]
+          },
+          {
+            "doc_id": "4092c72a851c",
+            "role": "rubric",
+            "title": "Professional Preparedness - Project Rubric",
+            "missing_required": [
+              "D2 TE / guide role cues"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "professional-preparedness"
+      }
+    },
+    "teaching-and-training": {
+      "title": "Teaching and Training",
+      "band": "Weak",
+      "lessons": {
+        "count": 1,
+        "gate_pass": 1,
+        "gate_pass_rate": 1.0,
+        "mean_coverage": {
+          "s1_completeness": 0.75,
+          "s3_curriculum_own": 0.75
+        }
+      },
+      "roles": {
+        "fulfilled": 3,
+        "missing": 6,
+        "systemic_absent": [
+          "answer_key",
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 1
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 1,
+        "docs_incomplete": 1,
+        "top_missing_components": [
+          "hook_engagement",
+          "independent_practice",
+          "reflection_closure"
+        ]
+      },
+      "artifacts": {
+        "count": 2,
+        "gate_pass": 1,
+        "gate_pass_rate": 0.5,
+        "roles": {
+          "other": 2
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "29140bd6d6f7",
+            "role": "other",
+            "title": "Teaching and Training Education and Training",
+            "missing_required": [
+              "E3 Student task cues"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "teaching-and-training"
+      }
+    },
+    "transportation-distribution": {
+      "title": "Transportation Distribution",
+      "band": "Weak",
+      "lessons": {
+        "count": 2,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "mean_coverage": {
+          "s1_completeness": 0.375,
+          "s3_curriculum_own": 0.25
+        }
+      },
+      "roles": {
+        "fulfilled": 1,
+        "missing": 8,
+        "systemic_absent": [
+          "answer_key",
+          "exit_ticket",
+          "lesson_content"
+        ],
+        "isolated_gaps": [
+          {
+            "role": "lesson_plan",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "quiz",
+            "day_id": "unit_supporting"
+          },
+          {
+            "role": "rubric",
+            "day_id": "unit_supporting"
+          }
+        ],
+        "isolated_gap_total": 3
+      },
+      "pacing": {
+        "planned_days": 2,
+        "evidence_days": 0,
+        "ratio": 0.0,
+        "flag": "UNDER_COVERED"
+      },
+      "internal": {
+        "docs_judged": 0,
+        "docs_incomplete": 0,
+        "top_missing_components": []
+      },
+      "artifacts": {
+        "count": 2,
+        "gate_pass": 0,
+        "gate_pass_rate": 0.0,
+        "roles": {
+          "answer_key": 1,
+          "worksheet": 1
+        },
+        "has_gap": true,
+        "deterministic_gaps": [
+          {
+            "doc_id": "0ace9ac9d412",
+            "role": "answer_key",
+            "title": "Transportation Distribution and Logistics Answer Key",
+            "missing_required": [
+              "B3 Answer key signal"
+            ]
+          },
+          {
+            "doc_id": "a8248438c079",
+            "role": "worksheet",
+            "title": "Transportation Distribution and Logistics Student Worksheet",
+            "missing_required": [
+              "E2 Document role cues"
+            ]
+          }
+        ],
+        "cannot_assess_alignment": 0
+      },
+      "cites": {
+        "lesson_rung": "layer_lesson/LESSON-RUNG.json",
+        "artifact_rung": "layer_artifact/ARTIFACT-RUNG.json",
+        "layer1_findings": "layer1/findings.json",
+        "unit_id": "transportation-distribution"
+      }
+    }
+  }
+}

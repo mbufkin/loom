@@ -1,0 +1,71 @@
+digraph CattleTree {
+  rankdir=TB;
+  splines=true;
+  overlap=false;
+  nodesep=0.4;
+  ranksep=0.7;
+  bgcolor="#f6f3ee";
+  node [fontname="DejaVu Sans", fontsize=12, shape=box, style="rounded,filled", margin="0.14,0.10"];
+  edge [color="#78716c", arrowsize=0.8, penwidth=1.4];
+
+  n_course_lab_graph_cte_cattle [label="Course
+lab-graph-cte-cattle", fillcolor="#ccfbf1", color="#0f766e", fontcolor="#1c1917", fontsize=14];
+  n_unit_breeds_of_livestock_cattle [label="Unit
+Breeds of Livestock — Cattle", fillcolor="#ccfbf1", color="#0f766e", fontcolor="#1c1917", fontsize=14];
+  n_lesson_breeds_of_livestock_cattle_l1 [label="Class 1 — Dairy Breeds", fillcolor="#dbeafe", color="#1d4ed8", fontcolor="#1c1917", fontsize=12];
+  n_lesson_breeds_of_livestock_cattle_l2 [label="Class 2 — Asian & African Breeds", fillcolor="#dbeafe", color="#1d4ed8", fontcolor="#1c1917", fontsize=12];
+  n_lesson_breeds_of_livestock_cattle_l3 [label="Class 3 — British Breeds", fillcolor="#dbeafe", color="#1d4ed8", fontcolor="#1c1917", fontsize=12];
+  n_lesson_breeds_of_livestock_cattle_l4 [label="Class 4 — Continental Breeds", fillcolor="#dbeafe", color="#1d4ed8", fontcolor="#1c1917", fontsize=12];
+  n_lesson_breeds_of_livestock_cattle_l5 [label="Class 5 — American Breeds", fillcolor="#dbeafe", color="#1d4ed8", fontcolor="#1c1917", fontsize=12];
+  n_lesson_breeds_of_livestock_cattle_l6 [label="Class 6 — Build a Breed Project", fillcolor="#dbeafe", color="#1d4ed8", fontcolor="#1c1917", fontsize=12];
+  n_lesson_breeds_of_livestock_cattle_l7 [label="Class 7 — Final Assessment", fillcolor="#dbeafe", color="#1d4ed8", fontcolor="#1c1917", fontsize=12];
+  n_folder_unit_wide [label="Unit-wide materials
+(span many classes)", fillcolor="#ecfdf5", color="#15803d", fontcolor="#1c1917", fontsize=11];
+  n_material_023_breeds_of_livestock_cattle_action_plan [label="action-plan.html
+[lesson_plan]", fillcolor="#ffedd5", color="#c2410c", fontcolor="#1c1917", fontsize=10];
+  n_material_023_breeds_of_livestock_cattle_activity_career_connections [label="activity-career-connections.html
+[student_practice]", fillcolor="#ffedd5", color="#c2410c", fontcolor="#1c1917", fontsize=10];
+  n_material_023_breeds_of_livestock_cattle_activity_cattle_breeds_flashcards [label="activity-cattle-breeds-flashcards.html
+[student_practice]", fillcolor="#ffedd5", color="#c2410c", fontcolor="#1c1917", fontsize=10];
+  n_material_023_breeds_of_livestock_cattle_horizontal_alignments [label="horizontal-alignments.html
+[standards_pacing]", fillcolor="#ffedd5", color="#c2410c", fontcolor="#1c1917", fontsize=10];
+  n_material_023_breeds_of_livestock_cattle_key_concepts [label="key-concepts.html
+[student_practice]", fillcolor="#ffedd5", color="#c2410c", fontcolor="#1c1917", fontsize=10];
+  n_material_023_breeds_of_livestock_cattle_project_build_a_breed [label="project-build-a-breed.html
+[student_practice]", fillcolor="#ffedd5", color="#c2410c", fontcolor="#1c1917", fontsize=10];
+  n_material_023_breeds_of_livestock_cattle_view_lesson_plan [label="view-lesson-plan.html
+[lesson_plan]", fillcolor="#ffedd5", color="#c2410c", fontcolor="#1c1917", fontsize=10];
+  n_material_023_breeds_of_livestock_cattle_vocabulary_handout [label="vocabulary-handout.html
+[student_practice]", fillcolor="#ffedd5", color="#c2410c", fontcolor="#1c1917", fontsize=10];
+  n_assessment_023_breeds_of_livestock_cattle_check_for_understanding_1_dairy_breeds_item [label="ASSESS
+check-for-understanding-1-dairy-breeds.html", fillcolor="#ede9fe", color="#5b21b6", fontcolor="#1c1917", fontsize=10];
+  n_assessment_023_breeds_of_livestock_cattle_final_assessment_answer_key_item [label="ASSESS
+final-assessment-answer-key.html", fillcolor="#ede9fe", color="#5b21b6", fontcolor="#1c1917", fontsize=10];
+  n_assessment_023_breeds_of_livestock_cattle_final_assessment_item [label="ASSESS
+final-assessment.html", fillcolor="#ede9fe", color="#5b21b6", fontcolor="#1c1917", fontsize=10];
+  n_course_lab_graph_cte_cattle -> n_unit_breeds_of_livestock_cattle;
+  n_unit_breeds_of_livestock_cattle -> n_folder_unit_wide;
+  n_unit_breeds_of_livestock_cattle -> n_lesson_breeds_of_livestock_cattle_l1;
+  n_unit_breeds_of_livestock_cattle -> n_lesson_breeds_of_livestock_cattle_l2;
+  n_unit_breeds_of_livestock_cattle -> n_lesson_breeds_of_livestock_cattle_l3;
+  n_unit_breeds_of_livestock_cattle -> n_lesson_breeds_of_livestock_cattle_l4;
+  n_unit_breeds_of_livestock_cattle -> n_lesson_breeds_of_livestock_cattle_l5;
+  n_unit_breeds_of_livestock_cattle -> n_lesson_breeds_of_livestock_cattle_l6;
+  n_unit_breeds_of_livestock_cattle -> n_lesson_breeds_of_livestock_cattle_l7;
+  n_folder_unit_wide -> n_material_023_breeds_of_livestock_cattle_action_plan;
+  n_folder_unit_wide -> n_material_023_breeds_of_livestock_cattle_activity_career_connections;
+  n_folder_unit_wide -> n_material_023_breeds_of_livestock_cattle_activity_cattle_breeds_flashcards;
+  n_folder_unit_wide -> n_material_023_breeds_of_livestock_cattle_horizontal_alignments;
+  n_lesson_breeds_of_livestock_cattle_l1 -> n_material_023_breeds_of_livestock_cattle_key_concepts;
+  n_lesson_breeds_of_livestock_cattle_l6 -> n_material_023_breeds_of_livestock_cattle_project_build_a_breed;
+  n_folder_unit_wide -> n_material_023_breeds_of_livestock_cattle_view_lesson_plan;
+  n_folder_unit_wide -> n_material_023_breeds_of_livestock_cattle_vocabulary_handout;
+  n_lesson_breeds_of_livestock_cattle_l1 -> n_assessment_023_breeds_of_livestock_cattle_check_for_understanding_1_dairy_breeds_item;
+  n_lesson_breeds_of_livestock_cattle_l7 -> n_assessment_023_breeds_of_livestock_cattle_final_assessment_answer_key_item;
+  n_lesson_breeds_of_livestock_cattle_l7 -> n_assessment_023_breeds_of_livestock_cattle_final_assessment_item;
+  labelloc="t";
+  label="Cattle unit — tree diagram (spike)\nCourse → Unit → Lessons → Materials / Assessments";
+  fontname="DejaVu Sans";
+  fontsize=18;
+  fontcolor="#1c1917";
+}
