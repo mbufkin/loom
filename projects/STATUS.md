@@ -11,7 +11,6 @@ Maturity = how complete generated artifacts are — not a separate code path.
 | `region10-career-college-2026` | Active | Yes | Yes | Region 10 career/college |
 | `ap-csp-2026` | Stress | Yes | **Blocked** | Layer 0 OK; Layer 1 ORGANIZE exceeds 65k ctx on single CED (~113k) — see dataset README; deferred roadmap |
 | `openscied-6` | Experiment | — | — | Pairs with `experiments/openscied/` |
-| `icev-aas-pilot-2026` | Experiment | Yes | Yes | iCEV AAS 6-lesson pilot; model-ingest (6 units); Review UI `e2e=grok-icev-pilot-20260810b` |
 | `_fixtures/ingest-pilot` | Fixture | — | — | Ingest smoke only |
 | `_fixtures/ingest-test` | Fixture | — | — | Ingest smoke only |
 | `_template` | Template | — | — | Copy to start a new dataset |

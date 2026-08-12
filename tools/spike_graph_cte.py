@@ -257,7 +257,7 @@ def evidence_pack(source_file: str, elements: list[dict]) -> dict:
     Production ``graph_phase`` local steps dump every ledger row with
     **uncapped** excerpts (no 900-char clip). This spike matches that.
 
-    iCEV Layer 0 sometimes repeats the *same* wide-span excerpt across many
+    CTE Layer 0 sometimes repeats the *same* wide-span excerpt across many
     element_type rows (e.g. 39× identical action-plan text). Sending that
     verbatim matches production bytes but blows the context window and hung
     the Grok bridge. We therefore keep **uncapped** text but collapse
@@ -340,7 +340,7 @@ Allowed artifact_kind values (pick exactly one token — never a list):
   standards_pacing — standards alignments, NGSS/TEKS maps, horizontal alignments (not instruction)
   other — none of the above
 
-Disambiguation (common iCEV packs):
+Disambiguation (common CTE packs):
   - Filename/title "View Lesson Plan" or a document whose primary job is the teacher class sequence → lesson_plan.
   - Filename/title "Action Plan" that lists tasks for students to complete → student_practice, even if it also prints objectives or class overviews.
   - "Key Concepts" fill-in / guided notes for students → student_practice (not teacher_support, not lesson_plan).

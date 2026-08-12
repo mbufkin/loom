@@ -23,12 +23,12 @@ Loom V0.2: wire the **graph → route → Paths A–H** data path for production
 - Pipeline fails loudly on missing declared stage outputs; findings contract
   frozen for path scorers.
 
-### CTE / iCEV filename and Path B signals
+### CTE filename and Path B signals
 
 - `classify_doc_type` recognizes `answer-key`, `final-assessment`,
   check-for-understanding, and `__assessment__` style names.
-- Path B checklist keywords cover iCEV letter choices (`A.` …) and hyphenated
-  answer-key cues.
+- Path B checklist keywords cover letter choices (`A.` …) and hyphenated
+  answer-key cues common in web/Word CTE exports.
 
 ### Docs
 

@@ -189,10 +189,9 @@ These are accepted, not defects:
   syllabi. The lens is correct; the sample is small.
 - **Bluebonnet's B/C/D/E findings are stale `status: stub`.** Only Path F was re-run
   there. Dallas is the current reference for those four paths.
-- **ICEV curriculum is not in the repository**, so the originally planned "one corpus
-  exercises all of A–H" run could not happen. Coverage is assembled across three
-  corpora instead, which is weaker evidence for the router's cascade ordering under
-  a genuinely mixed document set.
+- **No single ingested corpus exercises all of A–H together.** Coverage is assembled
+  across three corpora instead, which is weaker evidence for the router's cascade
+  ordering under a genuinely mixed document set.
 - **`test_loom_pipeline.py` writes into the live Dallas tree.** Running the suite
   produces uncommitted changes under `projects/dallas-career-2026/path_*/`. Expected,
   but do not mistake it for drift.
@@ -215,8 +214,8 @@ These are accepted, not defects:
 
 In priority order:
 
-1. **Ingest ICEV** (or any single mixed corpus) and run one E2E that exercises all of
-   A–H together. This is the only material gap in the evidence.
+1. **Ingest one mixed corpus** and run one E2E that exercises all of A–H together.
+   This is the only material gap in the evidence.
 2. **Refresh Bluebonnet's B/C/D/E** so a second corpus corroborates Dallas.
 3. **Implement the `*5`/`*6` emit steps**, starting with H5 — exit tickets have the
    highest miss rate (`H4 MISSING` on 17 of 21) and the smallest one-pager.

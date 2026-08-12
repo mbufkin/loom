@@ -3,7 +3,7 @@
 
 Educational note
 ----------------
-iCEV "View Lesson Plan" files are often multi-day packs (Seat Time: N Classes).
+CTE "View Lesson Plan" files are often multi-day packs (Seat Time: N Classes).
 Whole-doc Path A scores Hunter once against the entire pack, so evidence from
 *any* class can mark the pack 8/8. This spike splits Class 1..N, runs the
 same A5 Hunter matrix on each class's text, and emits a scorecard + HTML
@@ -41,7 +41,7 @@ OUT_HTML = ROOT / "docs" / "PATH-A-CATTLE-PER-CLASS-REVIEW.html"
 
 # Heuristic typing of class-local snippets so we can reuse a5_hunter_matrix.
 TYPE_RULES: list[tuple[str, list[str]]] = [
-    # Hunter-ish + iCEV steps
+    # Hunter-ish + CTE steps
     ("hook_engagement", [r"bell\s*ringer", r"warm-?up", r"do now", r"\bengage\b", r"kwl"]),
     ("standards_objectives", [r"essential questions?", r"objectives?", r"learning (?:goals?|target)", r"teks"]),
     ("direct_instruction", [r"powerpoint", r"show the", r"segment", r"key concepts", r"\bexplain\b", r"slideshow", r"interactive lesson"]),
@@ -54,7 +54,7 @@ TYPE_RULES: list[tuple[str, list[str]]] = [
 # Episode headers — keep matches INSIDE one <p>…</p> so we never latch from
 # Class 1's blue bar across later "Class N" titles (multi-LP formats).
 EPISODE_HEADER_RES: list[re.Pattern[str]] = [
-    # iCEV / Word export blue banner: Class|Day|Lesson|Session N
+    # CTE / Word export blue banner: Class|Day|Lesson|Session N
     re.compile(
         r"<p[^>]*background\s*:\s*#165DA2[^>]*>"
         r"(?:(?!</p>).){0,400}?"
@@ -73,7 +73,7 @@ EPISODE_HEADER_RES: list[re.Pattern[str]] = [
 
 # Pack-level appendix that follows the last daily episode (not part of that class).
 # Order matters: first hit after an episode start wins as the cut.
-# iCEV often uses green banners (#3D861B) for these pack sections.
+# CTE often uses green banners (#3D861B) for these pack sections.
 _PACK_SECTION = (
     r"Activity\s+Overview|"
     r"Project\s+Overview|"
@@ -84,7 +84,7 @@ _PACK_SECTION = (
     r"References"
 )
 PACK_APPENDIX_RES: list[re.Pattern[str]] = [
-    # Colored section banner (iCEV green / similar)
+    # Colored section banner (CTE green / similar)
     re.compile(
         rf"<p[^>]*background\s*:\s*#[0-9A-Fa-f]{{3,8}}[^>]*>"
         rf"(?:(?!</p>).){{0,400}}?(?:{_PACK_SECTION})"
@@ -141,7 +141,7 @@ def split_lesson_episodes(raw_html: str) -> tuple[str, list[dict], str]:
     """Split a multi-episode lesson pack into overview / episodes / appendix.
 
     Designed for many LP shapes (Class/Day/Lesson/Session N banners), not only
-    iCEV cattle. Each episode is clipped to *its* range — never the next
+    CTE cattle. Each episode is clipped to *its* range — never the next
     episode, and never pack-level appendix after the last Exit Ticket.
 
     Returns (overview_html, episodes, appendix_html).

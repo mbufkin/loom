@@ -41,9 +41,9 @@
       "note": "Lens tests existed but were ungated before this review; now in CI and npm test."
     }
   },
-  "icev": {
+  "mixed_corpus_ah": {
     "available": false,
-    "note": "No ICEV project or files under /home/lenovo (searched); single-corpus A-H run blocked until ingest."
+    "note": "No single ingested project exercises all of A-H together; coverage is assembled across corpora until a mixed-corpus E2E lands."
   },
   "corpora": {
     "dallas_live_root": {

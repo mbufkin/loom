@@ -456,14 +456,14 @@ def classify_doc_type(filename: str) -> str:
     # Keep "sylibuis" as typo alias for early stub filenames.
     if "syllabus" in n or "sylibuis" in n:
         return "syllabus"
-    # Hyphen form (answer-key) is common in iCEV / web exports.
+    # Hyphen form (answer-key) is common in web/Word CTE exports.
     if "answer_key" in n or "answer key" in n or "answer-key" in n:
         return "answer_key"
     if "exit_ticket" in n or "exit ticket" in n:
         return "exit_ticket"
     if "quizizz" in n or "quiz" in n:
         return "quiz"
-    # iCEV final / CFU assessments (not answer keys — those matched above).
+    # CTE final / CFU assessments (not answer keys — those matched above).
     if "final-assessment" in n or "final_assessment" in n:
         return "quiz"
     if "check-for-understanding" in n or "check_for_understanding" in n:

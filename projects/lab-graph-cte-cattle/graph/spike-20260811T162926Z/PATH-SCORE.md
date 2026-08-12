@@ -36,5 +36,5 @@ Path = thin `kind → Path` table after Pass 1 (not a second model sort).
 
 - Expected: `student_practice` → Path **E**
 - Got: `lesson_plan` → Path **A**
-- Rationale: iCEV Action Plan = student task checklist, not the lesson plan
+- Rationale: CTE Action Plan = student task checklist, not the lesson plan
 

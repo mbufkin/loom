@@ -15,7 +15,9 @@ assembled across four corpora:
 | `bluebonnet-math-2026` (`e2e/runs/grok-4.5`) | **F** | 12 YAG / scope-and-sequence docs at `status: ok` |
 | `lab-culinary-syllabus` | **G** | Seeded lab, 2 syllabi — no ingested project had any |
 | `lab-*-path-{b,c,d,e,f,h}` | one path each | Isolation labs: prove one `ok` + the rest `skipped` |
-| ICEV | — | Not on disk; a single-corpus A–H run is blocked until ingest |
+
+A single mixed corpus that exercises all of A–H in one E2E is still the
+coverage gap (see rollout review §6).
 
 ## Files
 
