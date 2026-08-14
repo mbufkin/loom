@@ -32,27 +32,46 @@ Path letters stay stable for UI and `route-map.json`. Deeper checklists live
 **except** when a lens truly has a different review job (Path H split from B
 because quiz↔key ≠ exit-ticket formative).
 
-## Router (assign-path step)
+## Router (solved with graphing)
 
 `route.py` writes `layer0/route-map.json`. Downstream Path runners and Layer 1
-**only** consume that map — they do not re-guess types.
+**only** consume that map — they do not re-guess types and they do not re-read
+the graph.
 
-### Intended assigner (cascade)
+**The Bluebonnet failure is closed.** Filename-only routing dumped TE/SE/practice
+modules (no `Lesson_Plan` in the name) onto Path C. Graph HAS-PART
+(`Material.role`, Assessment links) now feeds `load_graph_routing_hints` so those
+docs land on D / E / B. Measured on graph-enabled E2E runs: Bluebonnet D18/E29/F12
+with C as leftover nursery (10), not the whole corpus; Dallas 97 graph hints;
+AAS CTE pilot 57/72 graph-assigned. CTE two-unit gold Path table: 22/22 PASS.
 
-1. **Filename / regex prior** — cheap, non-authoritative (`classify_doc_type`, Layer 0 `regex_doc_type_prior`)
-2. **Graph override** — when `--with-graph` has run, Material roles and Assessment / Lesson links win over “other” (exit-ticket filenames still force Path H)
-3. **Model classify (planned)** — docs historically claimed a model router (full-doc); production code was filename-only. Restore as the tip of the cascade when still uncertain (`general` / low confidence)
+### Assigner (cascade in `route.py` today)
 
-Doctrine (Bet 0 / Bet 2): the model (or graph) reading **content** is authoritative; filename is a prior. Disagreement is itself a finding.
+1. **Hard filename / `doc_type` wins** — explicit `lesson_plan` → A, quiz/key → B,
+   exit ticket → H, syllabus → G, standards/pacing names → F. These beat a graph
+   mis-tag (scope-and-sequence is not a teacher edition).
+2. **Graph override** — when `--with-graph` has written HAS-PART, Material roles
+   (`teacher_edition` → D, `learn_student` / `practice_student` → E) and Assessment
+   links → B win over silent names.
+3. **Filename D/E priors** — Teacher_Edition / worksheet names if graph is missing.
+4. **Path C** — nursery / `_loom_feedback.yaml` only after 1–3. Not “untyped TE.”
+
+A full-document **model classify tip** is still unused (optional later for leftover
+C). Graph *is* the content router; it does **not** replace `route-map.json`.
+
+Supported review path: `layer0 → graph (--with-graph) → route.py → run_paths.py`.
+`--with-graph` remains opt-in in the CLI; without it the router falls back to
+filename priors only (the old Bluebonnet failure). Use `--with-graph` for any
+real review.
+
+Doctrine (Bet 0 / Bet 2): the graph reading **content** is authoritative for
+silent names; filename is a prior. Disagreement is itself a finding.
 
 ### Pipeline slot
 
 ```text
-layer0 → graph (opt-in) → route.py → workflows/run_paths.py → layer1 …
+layer0 → graph (--with-graph) → route.py → workflows/run_paths.py → layer1 …
 ```
-
-Graph runs **before** route so belonging can help the router. Graph does **not**
-replace `route-map.json`; it feeds it.
 
 ## Depth vs stub
 
@@ -78,9 +97,8 @@ Path H exit ticket are the intentional lens additions).
 
 - **Dallas** often has discrete `*Lesson_Plan*` files → Path A by filename works.
 - **Bluebonnet** ships TE / SE / practice modules with **no** `Lesson_Plan` in
-  the name → filename-only routing dumped everything to C. Graph already emits
-  `Lesson` nodes and `teacher_edition` / `learn_student` roles; the router must
-  use those signals so D/E (and later lesson-level A) receive real reviews.
+  the name. Filename-only used to dump them to C. Graph `teacher_edition` /
+  `learn_student` / `practice_student` roles now assign D/E (and assessments to B).
 - **Syllabus** filenames / `doc_type=syllabus` route to Path G (G1–G9).
 - **Exit tickets** route to Path H; quizzes and keys stay on Path B.
 

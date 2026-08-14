@@ -172,14 +172,20 @@ Experiment runners (`run_bluebonnet_slice_*.py`, `run_pd.py`, viz) are **not** i
 
 ---
 
-## Route consumption (as of v0.2)
+## Route consumption (solved)
 
 When `--with-graph` has produced HAS-PART under the run's `graph/` tree,
-`route.py` loads graph routing hints (`load_graph_routing_hints`) and may
-override weak filename priors for Paths A–H. Downstream path runners still
+`route.py` loads graph routing hints (`load_graph_routing_hints`) and **uses
+them as the content router**: Material roles assign D/E and Assessment links
+assign B whenever the filename is silent. Hard filename wins remain for
+explicit lesson plans, quizzes, exit tickets, syllabi, and pacing names.
+
+This closed the Bluebonnet TE/SE to Path C failure. Downstream path runners still
 consume only `layer0/route-map.json` — they do not re-read the graph.
 
-Layer 1 / Layer 2 still must not *require* graph output (opt-in remains).
+Layer 1 / Layer 2 still must not *require* graph output (`--with-graph` remains
+opt-in in the CLI). Any real review should pass `--with-graph`; without it
+the router is filename-only again.
 
 ## Deferred (fog — not this merge)
 

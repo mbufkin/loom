@@ -28,8 +28,12 @@ sources/                    ← curriculum DATA (any supported format)
     │
     ▼  layer0.py            0-B: --resolve-wide-spans (models)          ← citation precision
     │
+    ▼  graph_phase.py       HAS-PART belonging (--with-graph)           ← content router
+    │                       Material roles + Assessment links feed route.py
+    │                       does not replace route-map.json
+    │
     ▼  route.py             Loom router: doc → Path A–H lenses          ← headline
-    │                       (filename prior → graph override → model TBD)
+    │                       filename hard-wins → graph override → Path C nursery
     │                       writes layer0/route-map.json
     │                       see docs/PATHS.md
     │
@@ -72,7 +76,7 @@ Doc-level scrub→place lived under `archive/legacy-unit-audit/` and is **not** 
 |------|--------|
 | Extract, rollup, Layer 2, PDF, dashboard / review-queue plates | **Code** |
 | Organize documents, infer unit structure | **Models** |
-| Loom router — Path A–H assignment | **Code cascade today** (filename + graph); **model tip planned** — [PATHS.md](PATHS.md) |
+| Loom router — Path A–H assignment | **Solved with graphing** — filename hard-wins + HAS-PART roles. Path C is leftover nursery. [PATHS.md](PATHS.md) |
 | Path A–H review lenses | **Mixed** — presence checklists + Path A emit (writes `path_a/`…`path_h/`) |
 | Layer 0 / Layer 1 conformance | **Models** |
 | Model calendars (authoritative inferred map) | **Models** |
