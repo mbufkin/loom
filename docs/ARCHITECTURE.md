@@ -2,7 +2,7 @@
 
 > **Program vs data:** Loom (repo root) is one auditor program.
 > Folders under `projects/<id>/` are interchangeable curriculum datasets.
-> `./run-audit <id>` runs Layer 0 → **route (Path A–H)** → Layer 1 → Layer 2 → **calendars** → hybrid synthesize (headline path).
+> `./run-audit <id> --with-graph` runs Layer 0 → **graph (HAS-PART)** → **route (Path A–H)** → Layer 1 → Layer 2 → **calendars** → hybrid synthesize (headline path).
 > See [PIPELINE.md](PIPELINE.md), [DEPENDENCY_FLOW.md](../DEPENDENCY_FLOW.md), and [projects/STATUS.md](../projects/STATUS.md).
 
 ## Single responsibility

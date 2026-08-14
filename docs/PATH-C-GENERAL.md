@@ -2,8 +2,9 @@
 
 **Lens name:** General feedback (Path C). Taxonomy: [PATHS.md](PATHS.md).
 
-Entry: Loom router assigned `general` after A/B/D/E/F/G/H did not claim the
-document (weak/unknown types, presentation, flex day, game, lab, project, …).
+Entry: leftover after filename hard-wins **and** graph HAS-PART. The router
+assigned `general` after A/B/D/E/F/G/H did not claim the document
+(weak/unknown types, presentation, flex day, game, lab, project, …).
 
 ## Why a nursery — not a junk drawer?
 

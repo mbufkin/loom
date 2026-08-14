@@ -2,8 +2,8 @@
 
 **Lens name:** Assessment (Path B). Taxonomy: [PATHS.md](PATHS.md).
 
-Entry: Loom router typed the document as `quiz` / `answer_key` (or rubric
-when assessment-bearing). **Exit tickets are Path H.**
+Entry: filename quiz/key **or** graph Assessment link (or rubric when
+assessment-bearing). **Exit tickets are Path H.**
 
 ## Steps (B1 → B6)
 

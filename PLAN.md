@@ -6,6 +6,7 @@
 
 ```
 sources → extract → Layer 0 (decompose + classify)
+       → graph HAS-PART (--with-graph)
        → Loom router (BEFORE units) → Path A–H
          (A lesson / B assessment / C general / D teacher support /
           E student practice / F standards & pacing / G syllabus / H exit ticket)
@@ -18,7 +19,7 @@ sources → extract → Layer 0 (decompose + classify)
 
 ## What Loom adds vs Crystallize
 
-Crystallize classifies then runs the same analysis for everything. Loom **routes** after Layer 0 so lesson plans, quizzes, and other docs get different workflows — and **nothing is placed into a unit until it has been routed**.
+Crystallize classifies then runs the same analysis for everything. Loom **routes** after Layer 0 + graph so lesson plans, quizzes, TE/SE, pacing, syllabus, and leftovers get different workflows — and **nothing is placed into a unit until it has been routed**. Graphing solves silent names (Bluebonnet TE/SE no longer dump to Path C). `route.py` still writes `layer0/route-map.json`; path runners do not re-read the graph.
 
 ## Phases (ship order)
 
@@ -34,7 +35,7 @@ Crystallize classifies then runs the same analysis for everything. Loom **routes
 ## Design principles
 
 1. **One file at a time.** No massive refactors.
-2. **Generic fallback always works.** Unknown types → Path C + feedback log.
+2. **Generic fallback always works.** After filename + graph, leftovers → Path C + feedback log.
 3. **Feedback is data you read**, not a notification (`_loom_feedback.yaml`).
 4. **Auditor-only.** Report gaps; never author curriculum.
 

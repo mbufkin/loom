@@ -5,7 +5,7 @@ classified documents but then ran the same generic analysis on everything.
 
 **Loom supersedes and replaces Crystallize.** Loom keeps the same decomposition
 and classification engine and adds a router so each document type flows through
-the right workflow (Path A–H).
+the right workflow (Path A–H, graph-fed).
 
 Start here instead:
 

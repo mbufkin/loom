@@ -53,7 +53,7 @@ Entry: router has already typed the document as `lesson_plan`.
 ## How this sits in the big pipeline
 
 ```
-… → Layer 0 classify → Loom router → Path A (A1–A8) → place into units → …
+… → Layer 0 → graph HAS-PART → Loom router → Path A (A1–A8) → place into units → …
 ```
 
-Quiz docs never enter A1–A8 (they use Path B). Unknowns use Path C.
+Quiz docs never enter A1–A8 (Path B). Teacher editions use Path D; student learn/practice use Path E. Path C is leftover nursery after filename + graph.
