@@ -1,6 +1,6 @@
 # Loom — Documentation
 
-Reference for the Loom curriculum auditor (router + Path A–H workflows).
+Reference for the Loom curriculum auditor (graph-fed router + Path A–H workflows).
 
 > Built on the design doctrine in [BETS.md](BETS.md): full-document model reading,
 > regex-as-hint-only, narrow repeated tasks, citations + "unknown", **single strong
@@ -32,7 +32,7 @@ Reference for the Loom curriculum auditor (router + Path A–H workflows).
 | [OUTPUTS.md](OUTPUTS.md) | Operators | Reports and artifacts |
 | [SAMPLE-PROJECT.md](SAMPLE-PROJECT.md) | Evaluators | Dallas sample walkthrough |
 | [REORG-2026-07.md](REORG-2026-07.md) | Everyone | Path changes after repo cleanup |
-| [PATHS.md](PATHS.md) | Everyone | **Eight review lenses A–H** — taxonomy + router cascade |
+| [PATHS.md](PATHS.md) | Everyone | **Eight review lenses A–H** — graph-fed router (solved with graphing) |
 | [PATH-A-LESSON-PLAN.md](PATH-A-LESSON-PLAN.md) | Curriculum leads | Path A (Lesson) workflow depth |
 | [PATH-B-QUIZ.md](PATH-B-QUIZ.md) | Curriculum leads | Path B (Assessment) — quiz ↔ key |
 | [PATH-C-GENERAL.md](PATH-C-GENERAL.md) | Curriculum leads | Path C (General feedback) — nursery / catch-all |
