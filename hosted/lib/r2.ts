@@ -48,6 +48,16 @@ export function assertR2Configured(): void {
   }
 }
 
+/**
+ * AWS SDK v3 signs CRC32 checksum query params by default. A browser
+ * PUT then either fails CORS (extra headers) or 403s on signature.
+ * R2 does not need those checksums for a private Packet put.
+ */
+export const R2_S3_CHECKSUMS = {
+  requestChecksumCalculation: "WHEN_REQUIRED" as const,
+  responseChecksumValidation: "WHEN_REQUIRED" as const,
+};
+
 export function r2Client(): S3Client {
   // Guard before required() so Accept Bargain names the missing host,
   // not an env var the Admin should never see.
@@ -60,6 +70,7 @@ export function r2Client(): S3Client {
       accessKeyId: required("R2_ACCESS_KEY_ID"),
       secretAccessKey: required("R2_SECRET_ACCESS_KEY"),
     },
+    ...R2_S3_CHECKSUMS,
   });
 }
 
@@ -70,6 +81,23 @@ export async function r2PutJson(key: string, value: unknown): Promise<void> {
       Key: key,
       Body: JSON.stringify(value),
       ContentType: "application/json",
+    }),
+  );
+}
+
+/** Packet file bytes from a same-origin Function — no browser CORS. */
+export async function r2PutBytes(
+  key: string,
+  body: Uint8Array,
+  contentType: string,
+): Promise<void> {
+  await r2Client().send(
+    new PutObjectCommand({
+      Bucket: r2Bucket(),
+      Key: key,
+      Body: body,
+      ContentType: contentType,
+      ContentLength: body.byteLength,
     }),
   );
 }

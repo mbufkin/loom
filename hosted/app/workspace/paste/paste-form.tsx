@@ -6,6 +6,7 @@ import {
   MAX_FILE_BYTES,
   MAX_FILES_PER_PACKET,
   PACKET_NAME_MAX,
+  SERVER_PUT_MAX_BYTES,
   packetFilePath,
   sanitizeFilename,
 } from "@/lib/packets";
@@ -14,6 +15,81 @@ type Props = {
   districtId: string;
   names: string[];
 };
+
+/** Browser TypeError when CORS (or the network) blocks the PUT. */
+function fetchFailed(caught: unknown): boolean {
+  return caught instanceof TypeError && /fetch/i.test(caught.message);
+}
+
+async function readError(response: Response, fallback: string): Promise<string> {
+  try {
+    const json = (await response.json()) as { error?: string };
+    return json.error ?? fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+/**
+ * Files under 4 MB go Loom → R2 (same origin). Larger files still
+ * presign to R2 and need bucket CORS — Vercel will not accept a 25 MB
+ * Function body.
+ */
+async function putPacketFile(
+  pathname: string,
+  file: File,
+  contentType: string,
+): Promise<void> {
+  if (file.size <= SERVER_PUT_MAX_BYTES) {
+    const put = await fetch("/api/r2/put", {
+      method: "POST",
+      headers: {
+        "x-loom-pathname": pathname,
+        "x-loom-content-type": contentType,
+        "x-loom-size": String(file.size),
+      },
+      body: file,
+    });
+    if (!put.ok) {
+      throw new Error(await readError(put, "Could not store this file"));
+    }
+    return;
+  }
+
+  const signed = await fetch("/api/r2/presign", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({
+      pathname,
+      contentType,
+      size: file.size,
+    }),
+  });
+  const grant = (await signed.json()) as {
+    url?: string;
+    error?: string;
+  };
+  if (!signed.ok || !grant.url) {
+    throw new Error(grant.error ?? "Could not open the Packet store");
+  }
+  try {
+    const put = await fetch(grant.url, {
+      method: "PUT",
+      headers: { "content-type": contentType },
+      body: file,
+    });
+    if (!put.ok) {
+      throw new Error("R2 rejected this file");
+    }
+  } catch (caught) {
+    if (fetchFailed(caught)) {
+      throw new Error(
+        "The browser could not put this file in the Packet store. Add CORS on the loom R2 bucket (Settings → CORS), then retry.",
+      );
+    }
+    throw caught;
+  }
+}
 
 export function PasteForm({ districtId, names }: Props) {
   const router = useRouter();
@@ -64,30 +140,7 @@ export function PasteForm({ districtId, names }: Props) {
         }
         const pathname = packetFilePath(districtId, packetId, filename);
         const contentType = file.type || "application/octet-stream";
-        const signed = await fetch("/api/r2/presign", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({
-            pathname,
-            contentType,
-            size: file.size,
-          }),
-        });
-        const grant = (await signed.json()) as {
-          url?: string;
-          error?: string;
-        };
-        if (!signed.ok || !grant.url) {
-          throw new Error(grant.error ?? "Could not open the Packet store");
-        }
-        const put = await fetch(grant.url, {
-          method: "PUT",
-          headers: { "content-type": contentType },
-          body: file,
-        });
-        if (!put.ok) {
-          throw new Error("R2 rejected this file");
-        }
+        await putPacketFile(pathname, file, contentType);
         uploaded.push({
           name: filename,
           pathname,
