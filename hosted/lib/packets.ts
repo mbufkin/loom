@@ -78,6 +78,13 @@ export function normalizePacketName(raw: string): string | null {
 export const PACKET_NAME_MAX = NAME_MAX;
 export const MAX_FILES_PER_PACKET = 30;
 export const MAX_FILE_BYTES = 25 * 1024 * 1024;
+/**
+ * Vercel Functions cap the inbound body at 4.5 MB. Stay under that so
+ * paste can PUT through /api/r2/put (same origin) instead of the
+ * browser talking to R2. R2 CORS is a bucket setting this token cannot
+ * write — that path is what painted “Failed to fetch”.
+ */
+export const SERVER_PUT_MAX_BYTES = 4 * 1024 * 1024;
 
 const UUID_RE =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
