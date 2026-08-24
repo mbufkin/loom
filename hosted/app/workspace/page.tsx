@@ -4,6 +4,7 @@ import { auth } from "@/auth";
 import { BARGAIN_SENTENCE, canPasteOrStart } from "@/lib/bargain";
 import { packetListStatus, packetListStatusLabel } from "@/lib/packets";
 import { STORE_CEILING_REASON } from "@/lib/store-ceiling";
+import { r2Configured } from "@/lib/r2";
 import {
   listPackets,
   readBargain,
@@ -19,6 +20,9 @@ export default async function WorkspacePage() {
   }
 
   const districtId = session.user.districtId;
+  // Reads already fail-soft. A missing R2_* host config must not offer
+  // Accept — that POST is what painted the Workspace error page.
+  const storeReady = r2Configured();
   const [bargain, packets, storeFull] = await Promise.all([
     readBargain(districtId, session.user.googleSub),
     listPackets(districtId),
@@ -31,6 +35,10 @@ export default async function WorkspacePage() {
     const again = await auth();
     if (!again?.user?.isAdmin || !again.user.districtId || !again.user.googleSub) {
       redirect("/");
+    }
+    // Second door: a stale tab can still POST after env was never set.
+    if (!r2Configured()) {
+      redirect("/workspace");
     }
     const existing = await readBargain(again.user.districtId, again.user.googleSub);
     if (!existing) {
@@ -57,7 +65,12 @@ export default async function WorkspacePage() {
           Signed in as <strong>{session.user.email}</strong>
         </p>
 
-        {accepted && storeFull ? (
+        {!storeReady ? (
+          <p className="lede">
+            The Packet store is not configured on the host. Your sign-in
+            is fine — Accept and paste wait until R2 is set.
+          </p>
+        ) : accepted && storeFull ? (
           <p className="note">{STORE_CEILING_REASON}.</p>
         ) : accepted ? (
           <p className="actions">

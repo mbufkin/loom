@@ -17,6 +17,9 @@ import {
 } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
+/** Thrown on writes when Vercel/Fly has Auth but no R2_* vars. */
+export const PACKET_STORE_UNCONFIGURED = "Packet store is not configured";
+
 function required(name: string): string {
   const value = process.env[name]?.trim();
   if (!value) throw new Error(`${name} is not set`);
@@ -35,7 +38,20 @@ export function r2Configured(): boolean {
   );
 }
 
+/**
+ * Writes must fail with a product sentence, not `R2_ACCOUNT_ID is not set`.
+ * That raw throw became the signed-in Workspace error boundary.
+ */
+export function assertR2Configured(): void {
+  if (!r2Configured()) {
+    throw new Error(PACKET_STORE_UNCONFIGURED);
+  }
+}
+
 export function r2Client(): S3Client {
+  // Guard before required() so Accept Bargain names the missing host,
+  // not an env var the Admin should never see.
+  assertR2Configured();
   const accountId = required("R2_ACCOUNT_ID");
   return new S3Client({
     region: "auto",
