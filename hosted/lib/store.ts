@@ -132,6 +132,7 @@ export async function reservedBytesByOthers(
 export async function ceilingForIncoming(
   incomingBytes: number,
   exceptPacketId: string,
+  incomingObjects: number = 0,
 ): Promise<CeilingDecision> {
   if (!r2Configured()) {
     return { ok: false, reason: STORE_CEILING_REASON };
@@ -140,11 +141,16 @@ export async function ceilingForIncoming(
     "ceilingForIncoming",
     { ok: false, reason: STORE_CEILING_REASON },
     async () => {
-      const [{ bytes: used }, reserved] = await Promise.all([
+      const [{ bytes: used, objects }, reserved] = await Promise.all([
         r2BucketUsage(),
         reservedBytesByOthers(exceptPacketId, Date.now()),
       ]);
-      return ceilingAllowsWrite(used + reserved, incomingBytes);
+      return ceilingAllowsWrite(
+        used + reserved,
+        incomingBytes,
+        objects,
+        incomingObjects,
+      );
     },
   );
 }
@@ -168,10 +174,10 @@ export async function storeCeilingBlocksPaste(): Promise<boolean> {
   // Fail open on the Workspace: a dead store is not “full”. Reserve
   // still fail-closes via ceilingForIncoming so we do not write blind.
   return r2ReadFallback("storeCeilingBlocksPaste", false, async () => {
-    const [{ bytes: used }, reserved] = await Promise.all([
-      r2BucketUsage(),
-      reservedBytesByOthers("", Date.now()),
-    ]);
-    return !ceilingAllowsWrite(used + reserved, 0).ok;
+      const [{ bytes: used, objects }, reserved] = await Promise.all([
+        r2BucketUsage(),
+        reservedBytesByOthers("", Date.now()),
+      ]);
+      return !ceilingAllowsWrite(used + reserved, 0, objects, 0).ok;
   });
 }

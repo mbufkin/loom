@@ -1,7 +1,10 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import {
+  R2_FREE_CLASS_A,
+  R2_FREE_STORAGE_BYTES,
   STORE_CEILING_BYTES,
+  STORE_CEILING_OBJECTS,
   STORE_CEILING_REASON,
   ceilingAllowsWrite,
   reservationLive,
@@ -36,6 +39,20 @@ describe("ceilingAllowsWrite", () => {
   it("blocks a paste that would cross 9 GB (never the billable 10 GB)", () => {
     const decision = ceilingAllowsWrite(STORE_CEILING_BYTES - 100, 101);
     assert.deepEqual(decision, { ok: false, reason: STORE_CEILING_REASON });
+  });
+
+  it("keeps the byte Ceiling inside R2’s 10 GB-month include", () => {
+    assert.equal(STORE_CEILING_BYTES < R2_FREE_STORAGE_BYTES, true);
+  });
+
+  it("blocks when object count would leave the Class A include reachable", () => {
+    assert.equal(STORE_CEILING_OBJECTS < R2_FREE_CLASS_A, true);
+    const decision = ceilingAllowsWrite(0, 1, STORE_CEILING_OBJECTS, 1);
+    assert.deepEqual(decision, { ok: false, reason: STORE_CEILING_REASON });
+  });
+
+  it("lets a small paste through when objects are still under the Ceiling", () => {
+    assert.equal(ceilingAllowsWrite(0, 1_024, STORE_CEILING_OBJECTS - 3, 2).ok, true);
   });
 });
 

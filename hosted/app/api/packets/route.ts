@@ -14,8 +14,10 @@ import {
   deleteReservation,
   listPackets,
   readBargain,
+  readReservation,
   writePacket,
 } from "@/lib/store";
+import { reservationLive, STORE_CEILING_REASON } from "@/lib/store-ceiling";
 
 export async function GET() {
   const admin = await requireAdmin();
@@ -52,6 +54,13 @@ export async function POST(request: Request) {
   }
   if (files.length === 0 || files.length > MAX_FILES_PER_PACKET) {
     return NextResponse.json({ error: "Choose 1–30 files" }, { status: 400 });
+  }
+
+  // Freeze only after a live reservation. Otherwise a client could skip
+  // /api/store-ceiling and write meta forever (Class A, no byte cap).
+  const reservation = await readReservation(packetId);
+  if (!reservation || !reservationLive(reservation, Date.now())) {
+    return NextResponse.json({ error: STORE_CEILING_REASON }, { status: 409 });
   }
 
   const cleaned: PacketFile[] = [];

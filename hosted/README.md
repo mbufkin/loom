@@ -27,7 +27,7 @@ Env on Vercel (not the NIM key): `AUTH_SECRET`, `AUTH_GOOGLE_ID`, `AUTH_GOOGLE_S
 
 Without `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, and `R2_SECRET_ACCESS_KEY`, Workspace still loads (sign-in is fine) but Accept and paste wait. Those three plus `R2_BUCKET` come from a Cloudflare R2 API token — they are not minted here.
 
-The Packet store **Ceiling** refuses new pastes at 9 GB of R2’s 10 GB-month free include so the bucket should not bill. That is not the Run Cap.
+The Packet store **Ceiling** refuses new pastes at 9 GB of R2’s 10 GB-month free include, or 8,000 objects — whichever comes first. Tiny files cannot burn the 1 million Class A include while storage still looks empty. That is not the Run Cap.
 
 `NVIDIA_API_KEY` belongs on Fly app `loom-smnysw` only.
 

@@ -18,6 +18,7 @@ import { STORE_CEILING_REASON } from "@/lib/store-ceiling";
 type ReserveBody = {
   packetId?: string;
   bytes?: number;
+  files?: number;
 };
 
 /**
@@ -42,16 +43,24 @@ export async function POST(request: Request) {
   const body = (await request.json()) as ReserveBody;
   const packetId = body.packetId ?? "";
   const bytes = body.bytes ?? 0;
+  const files = body.files ?? 0;
   const maxPaste = MAX_FILES_PER_PACKET * MAX_FILE_BYTES;
 
   if (!isPacketId(packetId)) {
     return NextResponse.json({ error: "Bad Packet id" }, { status: 400 });
   }
-  if (bytes <= 0 || bytes > maxPaste) {
+  if (
+    bytes <= 0 ||
+    bytes > maxPaste ||
+    files <= 0 ||
+    files > MAX_FILES_PER_PACKET
+  ) {
     return NextResponse.json({ error: "Choose 1–30 files, 25 MB each" }, { status: 400 });
   }
 
-  const decision = await ceilingForIncoming(bytes, packetId);
+  // +2 = reservation JSON + Packet meta. Conservative: extra objects
+  // refuse a paste before Class A can run up.
+  const decision = await ceilingForIncoming(bytes, packetId, files + 2);
   if (!decision.ok) {
     return NextResponse.json({ error: STORE_CEILING_REASON }, { status: 409 });
   }
