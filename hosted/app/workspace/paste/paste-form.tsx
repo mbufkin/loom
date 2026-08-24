@@ -3,13 +3,16 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import {
-  MAX_FILE_BYTES,
   MAX_FILES_PER_PACKET,
   PACKET_NAME_MAX,
   SERVER_PUT_MAX_BYTES,
   packetFilePath,
   sanitizeFilename,
 } from "@/lib/packets";
+import {
+  preparePacketFile,
+  type PreparedPacketFile,
+} from "@/lib/prepare-packet-file";
 
 type Props = {
   districtId: string;
@@ -112,14 +115,22 @@ export function PasteForm({ districtId, names }: Props) {
       setError(`At most ${MAX_FILES_PER_PACKET} files in one Packet.`);
       return;
     }
-    if (files.some((file) => file.size > MAX_FILE_BYTES)) {
-      setError("Each file must be 25 MB or smaller.");
-      return;
-    }
-
     setBusy(true);
     const packetId = crypto.randomUUID();
-    const bytes = files.reduce((sum, file) => sum + file.size, 0);
+    let prepared: PreparedPacketFile[];
+    try {
+      // .pptx becomes slide text here. Reserve the uploaded bytes, not
+      // the 50–234 MB deck — photos never enter R2.
+      prepared = [];
+      for (const file of files) {
+        prepared.push(await preparePacketFile(file));
+      }
+    } catch (caught) {
+      setError(caught instanceof Error ? caught.message : "Could not read files");
+      setBusy(false);
+      return;
+    }
+    const bytes = prepared.reduce((sum, item) => sum + item.file.size, 0);
 
     try {
       const hold = await fetch("/api/store-ceiling", {
@@ -133,7 +144,8 @@ export function PasteForm({ districtId, names }: Props) {
       }
 
       const uploaded = [];
-      for (const file of files) {
+      for (const item of prepared) {
+        const file = item.file;
         const filename = sanitizeFilename(file.name);
         if (!filename) {
           throw new Error(`Cannot paste “${file.name}”.`);
@@ -197,6 +209,10 @@ export function PasteForm({ districtId, names }: Props) {
         <span>Documents</span>
         <input name="files" type="file" required multiple disabled={busy} />
       </label>
+      <p className="note">
+        PowerPoint (.pptx) becomes slide text in this tab. Pictures stay
+        on this computer. PDFs and other files under 4 MB upload as-is.
+      </p>
       {error ? <p className="form-error">{error}</p> : null}
       <button className="btn btn-brass" type="submit" disabled={busy}>
         {busy ? "Pasting…" : "Paste Packet"}
