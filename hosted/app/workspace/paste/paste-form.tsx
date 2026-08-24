@@ -49,7 +49,7 @@ export function PasteForm({ districtId, names }: Props) {
       const hold = await fetch("/api/store-ceiling", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ packetId, bytes }),
+        body: JSON.stringify({ packetId, bytes, files: files.length }),
       });
       const holdJson = (await hold.json()) as { error?: string };
       if (!hold.ok) {

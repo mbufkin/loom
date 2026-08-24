@@ -13,12 +13,17 @@
  * concurrent pastes that reserved but have not landed, plate publishes,
  * and Cloudflare’s GB-month rounding.
  *
- * Class A/B are not metered here. A 9 GB store of 25 MB files is a few
- * hundred writes — nowhere near 1 million. Storage fills first.
+ * Class A (writes/lists) are 1 million / month on the free tier. A 9 GB
+ * store of 1-byte files would be millions of PutObjects — that bills
+ * while storage still looks empty. The object Ceiling stops that.
+ * Class B (reads) and egress stay unmetered; they do not bill first.
  */
 
 export const R2_FREE_STORAGE_BYTES = 10_000_000_000;
+export const R2_FREE_CLASS_A = 1_000_000;
 export const STORE_CEILING_BYTES = 9_000_000_000;
+/** Hard stop on object count so tiny files cannot burn the Class A include. */
+export const STORE_CEILING_OBJECTS = 8_000;
 export const STORE_CEILING_REASON = "the Packet store is full";
 export const RESERVATION_MS = 15 * 60 * 1000;
 
@@ -63,10 +68,13 @@ export function reservationLive(
 export function ceilingAllowsWrite(
   usedBytes: number,
   incomingBytes: number,
+  usedObjects: number = 0,
+  incomingObjects: number = 0,
 ): CeilingDecision {
   if (
     usedBytes >= STORE_CEILING_BYTES ||
-    usedBytes + incomingBytes > STORE_CEILING_BYTES
+    usedBytes + incomingBytes > STORE_CEILING_BYTES ||
+    usedObjects + incomingObjects > STORE_CEILING_OBJECTS
   ) {
     return { ok: false, reason: STORE_CEILING_REASON };
   }
