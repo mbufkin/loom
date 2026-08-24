@@ -33,8 +33,9 @@ export default async function PastePage() {
         <h1>Paste a Packet</h1>
         <p className="lede">
           One frozen set of documents. Start a Run from the Packet after
-          these files land. New pastes stop if they would leave the Packet
-          store’s free tier.
+          these files land. PowerPoint decks become slide text here —
+          the pictures never enter the store. New pastes stop if they
+          would leave the Packet store’s free tier.
         </p>
         <div className="card">
           <PasteForm districtId={districtId} names={names} />
