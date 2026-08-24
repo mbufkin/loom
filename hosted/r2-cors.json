@@ -1,0 +1,12 @@
+[
+  {
+    "AllowedOrigins": [
+      "https://loom-pi-seven.vercel.app",
+      "http://localhost:3000"
+    ],
+    "AllowedMethods": ["PUT", "GET", "HEAD"],
+    "AllowedHeaders": ["*"],
+    "ExposeHeaders": ["ETag"],
+    "MaxAgeSeconds": 3600
+  }
+]

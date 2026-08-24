@@ -1,0 +1,8 @@
+# Real secrets stay local. .env.example is the empty template and is committed.
+.env
+.env.*
+!.env.example
+.next
+node_modules
+next-env.d.ts
+.vercel

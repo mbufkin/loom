@@ -42,6 +42,14 @@ projects/_fixtures/ingest-test/
 *.swp
 .venv/
 
+# --- Hosted thin path (Next.js) ---
+hosted/.env
+hosted/.env.local
+hosted/.next/
+
+# --- Wayfinder / local tracker (keep off GitHub) ---
+.scratch/
+
 # --- Local npm tooling (markdownlint, etc.) — never commit ---
 node_modules/
 
