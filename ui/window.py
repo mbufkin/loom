@@ -143,6 +143,12 @@ def main() -> int:
         help="curriculum id to open on start, e.g. disd-aas-icev-smoke",
     )
     ap.add_argument(
+        "--view",
+        choices=("review", "overview", "next"),
+        default=None,
+        help="open straight to a deck instead of the review console",
+    )
+    ap.add_argument(
         "--no-spawn",
         action="store_true",
         help="do not start the servers; attach to ones already running",
@@ -150,9 +156,12 @@ def main() -> int:
     ap.add_argument("--api-port", type=int, default=DEFAULT_API_PORT)
     args = ap.parse_args()
 
+    # The app reads these off the query string, so the launcher only has to
+    # build a URL — no IPC into the page and nothing to keep in sync.
+    query = {k: v for k, v in (("project", args.project), ("view", args.view)) if v}
     url = f"http://{HOST}:{VITE_PORT}/"
-    if args.project:
-        url += "?" + urllib.parse.urlencode({"project": args.project})
+    if query:
+        url += "?" + urllib.parse.urlencode(query)
 
     children: list[subprocess.Popen] = []
     try:

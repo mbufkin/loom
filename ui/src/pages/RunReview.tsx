@@ -74,20 +74,31 @@ function deriveBand(r: UnitRollup): Band {
   return "Developing";
 }
 
-/** Optional deep-link into a completed E2E run: ?project=&e2e=&lesson= */
+/** Top-level page switch: the review console, or one of the two decks. */
+type TopView = "review" | "overview" | "next";
+const TOP_VIEWS: readonly TopView[] = ["review", "overview", "next"];
+const DEFAULT_TOP_VIEW: TopView = "review";
+
+/** Optional deep-link into a completed E2E run: ?project=&e2e=&lesson=&view= */
 function reviewDeepLink(): {
   project?: string;
   e2e?: string;
   lesson?: string;
+  view?: TopView;
 } {
   if (typeof window === "undefined") return {};
   const q = new URLSearchParams(window.location.search);
   // Live root is not a review surface — e2e must be a real run id when set.
   const e2e = (q.get("e2e") || "").trim() || undefined;
+  // Validate against the known decks: an unrecognised ?view= must fall back to
+  // the console rather than render an empty page.
+  const rawView = (q.get("view") || "").trim() as TopView;
+  const view = TOP_VIEWS.includes(rawView) ? rawView : undefined;
   return {
     project: q.get("project") || undefined,
     e2e,
     lesson: q.get("lesson") || undefined,
+    view,
   };
 }
 
@@ -95,9 +106,10 @@ export function RunReview() {
   const deepLink = useMemo(() => reviewDeepLink(), []);
   // Top-level view switch. "review" is the untouched console; "overview" /
   // "next" are presentation decks. Kept as a tiny local flag (no router) so the
-  // existing page and all its state are undisturbed when a deck is showing.
-  const [topView, setTopView] = useState<"review" | "overview" | "next">(
-    "review"
+  // existing page and all its state are undisturbed when a deck is showing —
+  // seeded from ?view= so the desktop launcher can open straight to a deck.
+  const [topView, setTopView] = useState<TopView>(
+    deepLink.view ?? DEFAULT_TOP_VIEW
   );
   const [projects, setProjects] = useState<Project[]>([]);
   const [projectId, setProjectId] = useState<string>(
@@ -227,10 +239,13 @@ export function RunReview() {
     q.set("project", projectId);
     if (e2eRunId) q.set("e2e", e2eRunId);
     else q.delete("e2e");
+    // Only record a non-default deck, so the common case stays a clean URL.
+    if (topView !== DEFAULT_TOP_VIEW) q.set("view", topView);
+    else q.delete("view");
     const next = `${window.location.pathname}?${q.toString()}`;
     const cur = `${window.location.pathname}${window.location.search}`;
     if (next !== cur) window.history.replaceState(null, "", next);
-  }, [projectId, e2eRunId]);
+  }, [projectId, e2eRunId, topView]);
 
   const loadDoc = useCallback(
     async (id: string, path: string, type = "md", e2eRun?: string) => {
