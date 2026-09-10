@@ -1,0 +1,13 @@
+# Desktop shell dependency for the review window (ui/window.py).
+#
+# Deliberately separate from the top-level requirements.txt: headless pipeline
+# boxes that only run ./run-audit should not have to install a GUI stack. The
+# API (ui/server.py) is stdlib-only and needs nothing from this file.
+#
+# pywebview renders in the OS webview rather than bundling a browser engine:
+#   Windows  Edge WebView2 runtime (ships with Win10/11) — pulls pythonnet
+#   Linux    WebKitGTK, via system packages:
+#            apt install python3-gi gir1.2-webkit2-4.1
+#   macOS    Cocoa/WebKit, via pyobjc
+
+pywebview==6.2.1

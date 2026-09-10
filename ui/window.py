@@ -4,15 +4,17 @@ One command opens the review UI in an OS-native window: no browser, no tab, no
 URL to paste. It starts the two dev processes the app needs, waits for them to
 answer, shows the window, and shuts them down again when the window closes.
 
-    ./run-ui                      # repo root, POSIX
-    run-ui.cmd                    # repo root, Windows
-    python ui/window.py           # equivalent
+    ./run-ui                                  # repo root, POSIX
+    run-ui.cmd                                # repo root, Windows
+    python ui/window.py                       # equivalent
 
 Useful flags:
 
     --project disd-aas-icev-smoke   open straight to one curriculum
+    --view overview                 open a deck instead of the review console
     --no-spawn                      attach to servers you started yourself
     --api-port 8899                 move the API off its default port
+    --debug                         enable webview devtools (F12)
 
 Why the window loads the Vite dev server rather than a built bundle: hot-module
 reload keeps working *inside* the native window, so editing a `.tsx` updates
@@ -35,12 +37,17 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import webbrowser
 from pathlib import Path
 
 import webview
+from webview.menu import Menu, MenuAction, MenuSeparator
 
 UI_DIR = Path(__file__).resolve().parent
 ROOT = UI_DIR.parent
+# Built from assets/pdf/mark.png. .NET's Icon() constructor needs a real .ico,
+# so a PNG cannot be handed to pywebview directly.
+ICON = ROOT / "assets" / "loom.ico"
 
 HOST = "127.0.0.1"
 DEFAULT_API_PORT = 8770
@@ -50,6 +57,33 @@ DEFAULT_API_PORT = 8770
 VITE_PORT = 5173
 
 WINDOW_TITLE = "Loom Run Review"
+
+# Route clicks that mean "leave this window" out to the OS instead of letting
+# WebView2 open a chromeless popup it cannot navigate. Covers both external
+# https links inside curriculum markdown and the `target="_blank"` artifact
+# links (PDF / HTML) that should open in the system's default viewer.
+_EXTERNAL_LINK_SHIM = """
+(function () {
+  if (window.__loomExternalLinks) return;
+  window.__loomExternalLinks = true;
+  document.addEventListener(
+    'click',
+    function (ev) {
+      var a = ev.target && ev.target.closest ? ev.target.closest('a') : null;
+      if (!a) return;
+      var href = a.getAttribute('href') || '';
+      if (!href || href.charAt(0) === '#') return;
+      var newWindow = a.target === '_blank';
+      var external = /^https?:\\/\\//i.test(href);
+      if (!newWindow && !external) return;
+      ev.preventDefault();
+      // a.href is the resolved absolute form of the attribute.
+      window.pywebview.api.open_external(a.href);
+    },
+    true
+  );
+})();
+"""
 
 
 def _log(message: str) -> None:
@@ -61,6 +95,16 @@ def _log(message: str) -> None:
     each line keeps the startup readable wherever it is run from.
     """
     print(message, flush=True)
+
+
+def open_external(url: str) -> None:
+    """Hand a URL to the OS. Exposed to the page as pywebview.api.open_external.
+
+    Also the answer to in-window PDFs: WebView2 renders them inline but
+    WebKitGTK on Linux does not, so the explicit "open" links defer to whatever
+    the operating system already uses for that file type.
+    """
+    webbrowser.open(url)
 
 
 def _port_in_use(port: int) -> bool:
@@ -135,6 +179,30 @@ def _spawn_vite() -> subprocess.Popen:
     return subprocess.Popen(["node", str(vite_bin)], cwd=str(UI_DIR))
 
 
+def _build_menu(window: webview.Window) -> list[Menu]:
+    """A minimal menu bar covering what a browser would otherwise provide.
+
+    A native window has no address bar or reload button, so without this there
+    is no way to recover from a failed load, and no way to escape to a real
+    browser when you want one.
+    """
+    return [
+        Menu(
+            "View",
+            [
+                # location.reload() re-runs the SPA at its current URL, which
+                # keeps the selected curriculum and run in place.
+                MenuAction("Reload", lambda: window.run_js("location.reload()")),
+                MenuSeparator(),
+                MenuAction(
+                    "Open in browser",
+                    lambda: open_external(window.get_current_url() or ""),
+                ),
+            ],
+        )
+    ]
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Loom Run Review desktop window")
     ap.add_argument(
@@ -154,6 +222,11 @@ def main() -> int:
         help="do not start the servers; attach to ones already running",
     )
     ap.add_argument("--api-port", type=int, default=DEFAULT_API_PORT)
+    ap.add_argument(
+        "--debug",
+        action="store_true",
+        help="enable webview devtools (F12) and verbose pywebview logging",
+    )
     args = ap.parse_args()
 
     # The app reads these off the query string, so the launcher only has to
@@ -162,6 +235,10 @@ def main() -> int:
     url = f"http://{HOST}:{VITE_PORT}/"
     if query:
         url += "?" + urllib.parse.urlencode(query)
+
+    # Name the loaded curriculum in the title bar: with several windows open,
+    # alt-tab is the only way to tell them apart.
+    title = f"{WINDOW_TITLE} — {args.project}" if args.project else WINDOW_TITLE
 
     children: list[subprocess.Popen] = []
     try:
@@ -199,11 +276,31 @@ def main() -> int:
                 raise SystemExit("Vite did not come up within 60s.")
 
         _log(f"[loom-ui] opening window at {url}")
-        webview.create_window(WINDOW_TITLE, url, width=1600, height=1000)
+        window = webview.create_window(
+            title,
+            url,
+            width=1600,
+            height=1000,
+            # Below roughly this the three-column review layout starts to
+            # collide, so stop the drag rather than render something broken.
+            min_size=(1100, 700),
+            # pywebview disables both by default. A reviewer has to be able to
+            # quote an excerpt and to zoom into a dense findings table.
+            text_select=True,
+            zoomable=True,
+        )
+        window.expose(open_external)
+        # `loaded` fires on every navigation; the shim guards against
+        # double-binding so a reload does not stack listeners.
+        window.events.loaded += lambda: window.run_js(_EXTERNAL_LINK_SHIM)
+
+        start_kwargs = {"debug": args.debug, "menu": _build_menu(window)}
+        if ICON.is_file():
+            start_kwargs["icon"] = str(ICON)
         # start() takes the main thread for the platform UI loop and returns
         # when the window closes. On Windows the renderer is the Edge WebView2
         # runtime that ships with the OS, so no browser engine is bundled here.
-        webview.start()
+        webview.start(**start_kwargs)
         return 0
     finally:
         # Always reached: normal close, Ctrl+C, or a startup failure above.
