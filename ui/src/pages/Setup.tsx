@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { api, describeError } from "../lib/api";
-import type { ModelDiscovery, RunPreflight, SetupCheck } from "../types";
+import { readiness, usePreflight } from "../lib/usePreflight";
+import type { ModelDiscovery, SetupCheck } from "../types";
 
 /**
  * Setup: what this computer still needs, and exactly what to type to get it.
@@ -296,11 +297,10 @@ function ModelPicker({ onConnected }: { onConnected: () => void }) {
 }
 
 export function Setup() {
-  const [preflight, setPreflight] = useState<RunPreflight | null>(null);
-  const [error, setError] = useState<{ message: string; detail: string } | null>(
-    null,
-  );
-  const [loaded, setLoaded] = useState(false);
+  // Shared with every other screen, so a model connected here is reflected in
+  // Settings without either page having to know the other exists.
+  const { preflight, error: preflightError, loaded, refresh } = usePreflight();
+  const error = preflightError ? describeError(preflightError) : null;
   const [checking, setChecking] = useState(false);
   const [installing, setInstalling] = useState(false);
   const [installLog, setInstallLog] = useState<string | null>(null);
@@ -308,15 +308,11 @@ export function Setup() {
   const load = useCallback(async () => {
     setChecking(true);
     try {
-      setPreflight(await api.canRun());
-      setError(null);
-    } catch (e) {
-      setError(describeError(e));
+      await refresh();
     } finally {
-      setLoaded(true);
       setChecking(false);
     }
-  }, []);
+  }, [refresh]);
 
   /**
    * Install the Python dependencies, then immediately re-check.
@@ -355,14 +351,22 @@ export function Setup() {
 
   const checks = preflight?.checks ?? [];
   const platform = preflight?.platform ?? "linux";
+  // The verdict comes from the server's own can_run, via the one shared
+  // helper. Deriving it here by filtering `checks` was the bug behind Settings
+  // and Setup contradicting each other: an empty `checks` array filtered down
+  // to no problems, which read as success even while can_run was false.
+  const { ready, pdfOnly } = readiness(preflight);
   const blocking = checks.filter((c) => c.severity === "required" && !c.ok);
-  const pdfBlocked = checks.filter((c) => c.severity === "pdf" && !c.ok);
   // Anything whose fix is a pip command can be done for the user. The model
   // and the WeasyPrint system libraries cannot, so a button that claimed to
   // install "everything" would be lying about those two.
   const installable = checks.some(
     (c) => !c.ok && (c.id === "packages" || c.id === "pdf"),
   );
+  // Fallback for a response with no `checks` (an older server still running
+  // from before an upgrade). Naming what it reported beats a blank screen,
+  // and the restart hint is the actual fix.
+  const staleServer = !!preflight && checks.length === 0;
 
   return (
     <div className="home">
@@ -394,12 +398,12 @@ export function Setup() {
         <div className="panel">
           <div className="panel-head">Where you stand</div>
           <div className="panel-body">
-            {blocking.length === 0 && pdfBlocked.length === 0 ? (
+            {ready ? (
               <p>
                 This computer is ready. You can set up a curriculum and run an
                 audit.
               </p>
-            ) : blocking.length === 0 ? (
+            ) : pdfOnly ? (
               <p>
                 Loom can run here, but it cannot open PDF files yet. If your
                 curriculum is Word or plain text you can start now; otherwise
@@ -409,10 +413,24 @@ export function Setup() {
               <p>
                 {blocking.length === 1
                   ? "One thing is missing"
-                  : `${blocking.length} things are missing`}{" "}
-                before Loom can read a curriculum here. Each one below has the
-                command to fix it. Reviewing audits that were run elsewhere
-                works regardless.
+                  : blocking.length > 1
+                    ? `${blocking.length} things are missing`
+                    : "Something is missing"}{" "}
+                before Loom can read a curriculum here.
+                {blocking.length > 0 &&
+                  " Each one below has the command to fix it."}{" "}
+                Reviewing audits that were run elsewhere works regardless.
+              </p>
+            )}
+            {staleServer && (
+              <p className="err-message">
+                Loom reported{" "}
+                {preflight.missing.length > 0
+                  ? preflight.missing.join(", ")
+                  : "a problem"}
+                , but this window is talking to an older copy of Loom that
+                cannot describe it in detail. Close and reopen Loom to get the
+                full list.
               </p>
             )}
             <div className="setup-actions">

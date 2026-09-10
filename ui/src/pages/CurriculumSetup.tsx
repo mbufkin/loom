@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { api, describeError } from "../lib/api";
-import type { Project, RunPreflight, StorageInfo } from "../types";
+import { usePreflight } from "../lib/usePreflight";
+import type { Project, StorageInfo } from "../types";
 
 /**
  * Setting up a curriculum: adding a new one, or finishing an existing one.
@@ -23,29 +24,29 @@ export function CurriculumSetup() {
 
   const [project, setProject] = useState<Project | null>(null);
   const [storage, setStorage] = useState<StorageInfo | null>(null);
-  const [preflight, setPreflight] = useState<RunPreflight | null>(null);
   const [error, setError] = useState<{ message: string; detail: string } | null>(
     null,
   );
   const [loaded, setLoaded] = useState(false);
+  // Shared with Setup and Settings — see lib/usePreflight.
+  const { preflight, refresh: refreshPreflight } = usePreflight();
 
   const load = useCallback(async () => {
     try {
-      const [ps, st, pf] = await Promise.all([
+      const [ps, st] = await Promise.all([
         api.projects(),
         api.storage().catch(() => null),
-        api.canRun().catch(() => null),
       ]);
+      await refreshPreflight();
       setProject(ps.find((p) => p.id === projectId) ?? null);
       setStorage(st);
-      setPreflight(pf);
       setError(null);
     } catch (e) {
       setError(describeError(e));
     } finally {
       setLoaded(true);
     }
-  }, [projectId]);
+  }, [projectId, refreshPreflight]);
 
   useEffect(() => {
     void load();

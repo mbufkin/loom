@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { api, describeError } from "../lib/api";
-import type { ConfigSummary, RunPreflight, StorageInfo } from "../types";
+import { readiness, usePreflight } from "../lib/usePreflight";
+import type { ConfigSummary, StorageInfo } from "../types";
 
 /** Is this endpoint on this machine, or somewhere on the network? */
 function isLocalEndpoint(url: string | null | undefined): boolean {
@@ -25,32 +26,35 @@ function isLocalEndpoint(url: string | null | undefined): boolean {
 export function Settings() {
   const [config, setConfig] = useState<ConfigSummary | null>(null);
   const [storage, setStorage] = useState<StorageInfo | null>(null);
-  const [preflight, setPreflight] = useState<RunPreflight | null>(null);
   const [error, setError] = useState<{ message: string; detail: string } | null>(
     null,
   );
   const [loaded, setLoaded] = useState(false);
+  // Shared with Setup rather than fetched separately. When each screen kept
+  // its own copy they could answer the same question differently depending on
+  // when they happened to ask, which is how "finish setup" ended up linking
+  // to a screen that said setup was already finished.
+  const { preflight, refresh: refreshPreflight } = usePreflight();
 
   const load = useCallback(async () => {
     try {
       // Each is independently optional — a missing endpoint on an older build
       // should grey out one card, not blank the whole screen.
-      const [cfg, st, pf] = await Promise.all([
+      const [cfg, st] = await Promise.all([
         api.config().catch(() => null),
         api.storage().catch(() => null),
-        api.canRun().catch(() => null),
       ]);
-      if (!cfg && !st && !pf) throw new Error("no settings endpoints responded");
+      await refreshPreflight();
+      if (!cfg && !st) throw new Error("no settings endpoints responded");
       setConfig(cfg);
       setStorage(st);
-      setPreflight(pf);
       setError(null);
     } catch (e) {
       setError(describeError(e));
     } finally {
       setLoaded(true);
     }
-  }, []);
+  }, [refreshPreflight]);
 
   useEffect(() => {
     void load();
@@ -138,12 +142,14 @@ export function Settings() {
         <div className="panel">
           <div className="panel-head">Can this computer run an audit?</div>
           <div className="panel-body">
-            {preflight.can_run && preflight.can_read_pdf !== false ? (
+            {/* Same helper Setup uses, so the two screens cannot reach
+                different conclusions from the same reply. */}
+            {readiness(preflight).ready ? (
               <p>Yes — everything an audit needs is installed.</p>
             ) : (
               <>
                 <p className="err-message">
-                  {preflight.can_run
+                  {readiness(preflight).pdfOnly
                     ? "Almost. Loom can run here but cannot open PDF files yet."
                     : "Not yet — something an audit needs is missing."}
                 </p>
