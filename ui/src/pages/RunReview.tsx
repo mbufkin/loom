@@ -201,9 +201,12 @@ export function RunReview() {
           curricula.length > 0
             ? curricula
             : ps.filter((p) => p.kind !== "lab" && !p.id.startsWith("lab-"));
+        // Honour an explicit ?project= against the *full* API list, not just the
+        // curated curriculum rows. An ad-hoc tree (kind "other", e.g. a local
+        // smoke run) is a real reviewable project, and matching only `fallback`
+        // silently dropped the deep link and loaded the default instead.
         const linked =
-          deepLink.project &&
-          fallback.some((p) => p.id === deepLink.project)
+          deepLink.project && ps.some((p) => p.id === deepLink.project)
             ? deepLink.project
             : undefined;
         if (linked) {
@@ -678,6 +681,22 @@ export function RunReview() {
                 labProjects.some((p) => p.id === projectId) && (
                   <optgroup label="Lab forks">
                     {labProjects
+                      .filter((p) => p.id === projectId)
+                      .map((p) => (
+                        <option key={p.id} value={p.id}>
+                          {curriculumOptionLabel(p)}
+                        </option>
+                      ))}
+                  </optgroup>
+                )}
+              {/* A deep-linked tree in neither list still needs a visible row,
+                  otherwise <select> falls back to showing the first option and
+                  the picker would disagree with what is actually loaded. */}
+              {!curriculumProjects.some((p) => p.id === projectId) &&
+                !labProjects.some((p) => p.id === projectId) &&
+                projects.some((p) => p.id === projectId) && (
+                  <optgroup label="Other">
+                    {projects
                       .filter((p) => p.id === projectId)
                       .map((p) => (
                         <option key={p.id} value={p.id}>
