@@ -1,5 +1,9 @@
 # --- Local / machine config (not public) ---
 config.yaml
+# The Setup screen keeps a backup whenever it repoints the model, so this is
+# the same machine-specific content as config.yaml and must be ignored too.
+config.yaml.bak
+config.yaml.tmp
 **/manifest.local.yaml
 
 # --- One-off local debug scripts ---
