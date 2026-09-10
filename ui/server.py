@@ -17,6 +17,8 @@ Endpoints (all under /api):
   GET  /api/projects/{id}/graph/runs[?e2e_run=] -> model graph runs under graph/runs/*
   GET  /api/projects/{id}/graph/runs/{run_id}/overview[?e2e_run=] -> per-unit HAS-PART rollup
   GET  /api/projects/{id}/graph/runs/{run_id}/units/{unit_id}[?e2e_run=] -> HAS-PART + SUMMARY
+  GET  /api/models/discover               -> local model servers found on loopback
+  POST /api/models/select                 -> {ok}  (points config.yaml at one)
   POST /api/install-deps                  -> {ok, output}  (pip install -r requirements.txt)
   POST /api/projects/{id}/run             -> {runId}  (spawns run_project.py)
   POST /api/projects/{id}/packet-type     -> declare packet_type; regen unit rung
@@ -1077,6 +1079,166 @@ def _model_reachable() -> tuple[bool, str]:
     return False, f"nothing is answering at {base}"
 
 
+# Local model servers, by the port each one listens on out of the box.
+#
+# Nearly every one of these speaks the OpenAI API, which is the only reason a
+# scan like this is practical: one request shape (`GET /v1/models`) identifies
+# the server AND lists what it can run. The port is only used to give the
+# result a name people recognise -- "Ollama" rather than "something on 11434".
+_MODEL_PORTS: list[tuple[int, str]] = [
+    (11434, "Ollama"),
+    (1234, "LM Studio"),
+    (8080, "llama.cpp"),
+    (8081, "llama.cpp"),
+    (8000, "vLLM"),
+    (5001, "KoboldCpp"),
+    (1337, "Jan"),
+    (4891, "GPT4All"),
+    (8788, "local proxy"),
+]
+
+# Loopback only, and deliberately so. Scanning the district's network for
+# anything answering like a language model is the kind of thing that lands in
+# a security report, and "nothing leaves this computer" has to be true of the
+# scan as well as the audit. Remote endpoints stay a manual entry.
+_SCAN_HOST = "127.0.0.1"
+
+
+def _probe_openai_server(port: int, label: str, timeout: float) -> dict | None:
+    """Ask one port whether it is an OpenAI-compatible model server.
+
+    Returns None for anything that does not answer in the expected shape, so a
+    web server that happens to occupy port 8080 is not offered as a model.
+    """
+    base = f"http://{_SCAN_HOST}:{port}"
+    try:
+        req = urllib.request.Request(f"{base}/v1/models", method="GET")
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            payload = json.loads(resp.read().decode("utf-8", "replace"))
+    except Exception:
+        return None
+
+    entries = payload.get("data") if isinstance(payload, dict) else None
+    if not isinstance(entries, list):
+        return None
+    models = [
+        str(m.get("id"))
+        for m in entries
+        if isinstance(m, dict) and m.get("id")
+    ]
+    return {
+        "name": label,
+        "base": base,
+        "chat_url": f"{base}/v1/chat/completions",
+        "models": sorted(models),
+    }
+
+
+def _discover_models() -> dict:
+    """Find local model servers by asking every well-known port at once.
+
+    Concurrent because it is a user-facing action: probed one at a time, nine
+    ports at half a second each is a five-second stare at a spinner, and most
+    of that is spent waiting on ports where nothing is listening.
+    """
+    from concurrent.futures import ThreadPoolExecutor
+
+    with ThreadPoolExecutor(max_workers=len(_MODEL_PORTS)) as pool:
+        futures = [
+            pool.submit(_probe_openai_server, port, label, 1.2)
+            for port, label in _MODEL_PORTS
+        ]
+        found = [f.result() for f in futures]
+
+    servers = [s for s in found if s]
+    # Two servers on neighbouring ports are usually one program; dedupe on the
+    # model list so the user is not asked to choose between identical options.
+    seen: set[str] = set()
+    unique = []
+    for s in servers:
+        key = f"{s['name']}|{','.join(s['models'])}"
+        if key in seen:
+            continue
+        seen.add(key)
+        unique.append(s)
+
+    current_url, current_model = "", ""
+    try:
+        import yaml
+
+        cfg = yaml.safe_load(CONFIG.read_text(encoding="utf-8")) or {}
+        models = cfg.get("models") or {}
+        current_url = str(models.get("analyst_url") or "")
+        current_model = str(models.get("analyst_model") or "")
+    except Exception:
+        pass
+
+    return {
+        "servers": unique,
+        "current": {"url": current_url, "model": current_model},
+        "scanned": [f"{_SCAN_HOST}:{p}" for p, _ in _MODEL_PORTS],
+    }
+
+
+def _set_model(url: str, model: str) -> dict:
+    """Point config.yaml at a chosen model server.
+
+    Edits the four `models:` lines in place rather than round-tripping through
+    yaml.safe_load and dumping. A dump would silently drop every comment and
+    reorder the file, and this is the one file every pipeline stage reads --
+    quietly rewriting parts the user did not ask to change is how a config
+    file stops being trustworthy. A .bak is left next to it either way.
+    """
+    if not re.match(r"^https?://", url):
+        return {"ok": False, "error": "the address must start with http:// or https://"}
+    if not model.strip():
+        return {"ok": False, "error": "no model name was given"}
+    if not CONFIG.is_file():
+        return {"ok": False, "error": f"config.yaml not found at {CONFIG}"}
+
+    wanted = {
+        "analyst_url": url,
+        "verifier_url": url,
+        "analyst_model": model,
+        "verifier_model": model,
+    }
+    lines = CONFIG.read_text(encoding="utf-8").splitlines()
+    in_models = False
+    written: set[str] = set()
+    out: list[str] = []
+    for line in lines:
+        if re.match(r"^\S", line):  # any top-level key ends the models block
+            if in_models:
+                # Add whatever the block was missing before leaving it.
+                for key, val in wanted.items():
+                    if key not in written:
+                        out.append(f'  {key}: "{val}"')
+                        written.add(key)
+            in_models = line.startswith("models:")
+            out.append(line)
+            continue
+        if in_models:
+            m = re.match(r"^(\s+)(\w+):", line)
+            if m and m.group(2) in wanted:
+                out.append(f'{m.group(1)}{m.group(2)}: "{wanted[m.group(2)]}"')
+                written.add(m.group(2))
+                continue
+        out.append(line)
+    if in_models:  # models: was the final block in the file
+        for key, val in wanted.items():
+            if key not in written:
+                out.append(f'  {key}: "{val}"')
+                written.add(key)
+    if not written:
+        return {"ok": False, "error": "no models: section found in config.yaml"}
+
+    shutil.copyfile(CONFIG, CONFIG.with_suffix(".yaml.bak"))
+    tmp = CONFIG.with_suffix(".yaml.tmp")
+    tmp.write_text("\n".join(out) + "\n", encoding="utf-8")
+    tmp.replace(CONFIG)  # atomic: never leave a half-written config behind
+    return {"ok": True, "url": url, "model": model}
+
+
 def _requirements() -> list[dict]:
     """Everything an audit needs, what it is for, and how to install it.
 
@@ -1363,6 +1525,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(_config_summary())
             if parts == ["api", "can-run"]:
                 return self._json(_run_preflight())
+            if parts == ["api", "models", "discover"]:
+                return self._json(_discover_models())
             if parts == ["api", "storage"]:
                 return self._json(_storage_summary())
             if parts == ["api", "packet-types"]:
@@ -1519,6 +1683,11 @@ class Handler(BaseHTTPRequestHandler):
         try:
             if parts == ["api", "install-deps"]:
                 return self._json(_install_dependencies())
+            if parts == ["api", "models", "select"]:
+                body = _read_json_body(self)
+                return self._json(
+                    _set_model(str(body.get("url", "")), str(body.get("model", "")))
+                )
             if len(parts) == 4 and parts[:2] == ["api", "projects"] and parts[3] == "run":
                 body = _read_json_body(self)
                 run_id = _start_run(parts[2], body.get("flags", []))

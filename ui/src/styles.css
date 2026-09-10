@@ -4492,3 +4492,64 @@ button:disabled {
   flex-wrap: wrap;
   margin-top: 4px;
 }
+
+/* --- Model discovery ---------------------------------------------------- */
+.setup-server {
+  border: 1px solid var(--line, #d9dde3);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin: 10px 0;
+  background: #fbfcfd;
+}
+
+.setup-server-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.setup-models {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+/* Model name on the left, action on the right: the eye scans the names to
+   find the one it wants, and the buttons line up rather than chasing the
+   ragged right edge of variable-length model ids. */
+.setup-models li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 5px 0;
+  border-top: 1px solid var(--line, #eceff2);
+}
+
+.setup-models li:first-child {
+  border-top: none;
+}
+
+.setup-models button {
+  flex: none;
+  font-size: 12px;
+  padding: 3px 12px;
+}
+
+.setup-manual {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.setup-manual input {
+  flex: 1 1 240px;
+  min-width: 0;
+  padding: 5px 8px;
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 12.5px;
+  border: 1px solid var(--line, #d9dde3);
+  border-radius: 4px;
+}

@@ -61,6 +61,23 @@ export interface SetupCheck {
   fix: Record<string, string>;
 }
 
+/** A local model server found by scanning loopback, and what it can run. */
+export interface ModelServer {
+  /** Recognisable name inferred from the port, e.g. "Ollama". */
+  name: string;
+  base: string;
+  /** The OpenAI-compatible endpoint Loom would talk to. */
+  chat_url: string;
+  models: string[];
+}
+
+export interface ModelDiscovery {
+  servers: ModelServer[];
+  current: { url: string; model: string };
+  /** host:port pairs that were tried, so an empty result is explainable. */
+  scanned: string[];
+}
+
 /** Whether this machine can run an audit, and what it would take. */
 export interface RunPreflight {
   can_run: boolean;

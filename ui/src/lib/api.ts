@@ -17,6 +17,7 @@ import type {
   GraphRunsResponse,
   GraphUnitDetail,
   LessonFeedback,
+  ModelDiscovery,
   OutputsTree,
   PacketType,
   PathsSummary,
@@ -169,6 +170,28 @@ export const api = {
 
   /** Where curricula, settings and logs are kept on this machine. */
   storage: () => getJSON<StorageInfo>("/api/storage"),
+
+  /**
+   * Look for model servers running on this computer.
+   *
+   * Loopback only — see the server-side note. Takes a second or two, since it
+   * has to wait out the ports where nothing is listening.
+   */
+  discoverModels: () => getJSON<ModelDiscovery>("/api/models/discover"),
+
+  /** Point config.yaml at a model. Returns {ok} or {ok:false, error}. */
+  async selectModel(
+    url: string,
+    model: string,
+  ): Promise<{ ok: boolean; error?: string }> {
+    const res = await fetch("/api/models/select", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ url, model }),
+    });
+    if (!res.ok) throw new Error(`select model failed: ${res.status}`);
+    return res.json();
+  },
 
   /**
    * Install the Python dependencies on this machine.
