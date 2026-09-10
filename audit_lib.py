@@ -298,10 +298,12 @@ def excerpt_cited_in(excerpt: str, content: str, min_len: int = 10) -> bool:
 
 
 def atomic_write(path: Path, content: str) -> None:
+    # Best practice: use os.replace so the temp→final swap works on Windows
+    # (Path.rename fails with WinError 183 when the destination already exists).
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(path.suffix + ".tmp")
-    tmp.write_text(content)
-    tmp.rename(path)
+    tmp.write_text(content, encoding="utf-8")
+    os.replace(tmp, path)
 
 
 def project_dir(project_id: str) -> Path:
