@@ -120,6 +120,8 @@ export function Setup() {
   );
   const [loaded, setLoaded] = useState(false);
   const [checking, setChecking] = useState(false);
+  const [installing, setInstalling] = useState(false);
+  const [installLog, setInstallLog] = useState<string | null>(null);
 
   const load = useCallback(async () => {
     setChecking(true);
@@ -133,6 +135,27 @@ export function Setup() {
       setChecking(false);
     }
   }, []);
+
+  /**
+   * Install the Python dependencies, then immediately re-check.
+   *
+   * Re-checking is the point: an install that leaves the screen still showing
+   * the old failures reads as if it did nothing, which is worse than not
+   * offering the button at all.
+   */
+  const install = useCallback(async () => {
+    setInstalling(true);
+    setInstallLog(null);
+    try {
+      const res = await api.installDeps();
+      setInstallLog(res.output || (res.ok ? "Finished." : "Failed."));
+      await load();
+    } catch (e) {
+      setInstallLog(describeError(e).detail);
+    } finally {
+      setInstalling(false);
+    }
+  }, [load]);
 
   useEffect(() => {
     void load();
@@ -152,6 +175,12 @@ export function Setup() {
   const platform = preflight?.platform ?? "linux";
   const blocking = checks.filter((c) => c.severity === "required" && !c.ok);
   const pdfBlocked = checks.filter((c) => c.severity === "pdf" && !c.ok);
+  // Anything whose fix is a pip command can be done for the user. The model
+  // and the WeasyPrint system libraries cannot, so a button that claimed to
+  // install "everything" would be lying about those two.
+  const installable = checks.some(
+    (c) => !c.ok && (c.id === "packages" || c.id === "pdf"),
+  );
 
   return (
     <div className="home">
@@ -204,14 +233,42 @@ export function Setup() {
                 works regardless.
               </p>
             )}
-            <button
-              type="button"
-              className="btn"
-              onClick={() => void load()}
-              disabled={checking}
-            >
-              {checking ? "Checking…" : "Check again"}
-            </button>
+            <div className="setup-actions">
+              {/* Offered whenever anything installable is outstanding. Nearly
+                  every requirement is now an ordinary Python package with
+                  prebuilt wheels, so "go install this" can be a button rather
+                  than an instruction to hand to IT. */}
+              {installable && (
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={() => void install()}
+                  disabled={installing}
+                >
+                  {installing ? "Installing…" : "Install what’s missing"}
+                </button>
+              )}
+              <button
+                type="button"
+                className="btn"
+                onClick={() => void load()}
+                disabled={checking || installing}
+              >
+                {checking ? "Checking…" : "Check again"}
+              </button>
+            </div>
+            {installing && (
+              <p className="home-note">
+                Downloading and installing. This can take a couple of minutes
+                the first time.
+              </p>
+            )}
+            {installLog && (
+              <details className="err-details">
+                <summary>Installation log</summary>
+                <pre>{installLog}</pre>
+              </details>
+            )}
           </div>
         </div>
       )}

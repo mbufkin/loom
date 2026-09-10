@@ -170,6 +170,20 @@ export const api = {
   /** Where curricula, settings and logs are kept on this machine. */
   storage: () => getJSON<StorageInfo>("/api/storage"),
 
+  /**
+   * Install the Python dependencies on this machine.
+   *
+   * Takes no arguments by design — the server runs a fixed
+   * `pip install -r requirements.txt` and accepts no package name from the
+   * client. Can take a couple of minutes on a cold cache, so callers should
+   * show progress rather than assume it returns quickly.
+   */
+  async installDeps(): Promise<{ ok: boolean; output: string }> {
+    const res = await fetch("/api/install-deps", { method: "POST" });
+    if (!res.ok) throw new Error(`install failed: ${res.status}`);
+    return res.json();
+  },
+
   // Absolute URL so <a href> / <embed src> for PDFs work directly.
   fileUrl: (id: string, path: string, e2eRun?: string) =>
     withE2e(

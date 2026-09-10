@@ -160,7 +160,51 @@ def _extract_pdf(path: Path) -> str:
         )
         return result.stdout
     except FileNotFoundError:
-        raise RuntimeError("pdftotext not installed (apt: poppler-utils)") from None
+        # Poppler is a system package, not a Python one: it needs a package
+        # manager and, on Windows, usually admin rights. Districts hand this
+        # program to curriculum staff on locked-down machines, so requiring it
+        # meant the program could not read a PDF on the very computers it is
+        # meant for. Fall back to PDFium, which ships as an ordinary wheel on
+        # every platform and installs with the rest of the dependencies.
+        #
+        # Fallback rather than replacement on purpose: the no-`-layout` poppler
+        # behaviour above was tuned against real multi-column curriculum PDFs,
+        # and the existing intake goldens were recorded from it. Preferring
+        # poppler when it is present keeps those outputs byte-identical.
+        return _extract_pdf_pdfium(path)
+
+
+def _extract_pdf_pdfium(path: Path) -> str:
+    """Extract PDF text with PDFium, the engine Chrome uses to display PDFs.
+
+    Its text layer walks the page in reading order rather than raw PDF-stream
+    order, which is the same property that made plain `pdftotext` beat
+    `pdftotext -layout` on multi-column material (see the note above).
+    """
+    try:
+        import pypdfium2 as pdfium
+    except ImportError:
+        raise RuntimeError(
+            "Cannot read PDF files: neither pdftotext nor pypdfium2 is "
+            "available. Install the Python dependencies "
+            "(pip install -r requirements.txt), or install poppler."
+        ) from None
+
+    doc = pdfium.PdfDocument(str(path))
+    try:
+        pages = []
+        for page in doc:
+            textpage = page.get_textpage()
+            try:
+                pages.append(textpage.get_text_range())
+            finally:
+                textpage.close()
+                page.close()
+        # Poppler separates pages with a form feed; match it so anything
+        # downstream that counts or splits on pages behaves the same either way.
+        return "\f".join(pages)
+    finally:
+        doc.close()
 
 
 def _extract_legacy_doc(path: Path) -> str:

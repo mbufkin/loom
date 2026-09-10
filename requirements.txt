@@ -6,5 +6,19 @@
 requests==2.31.0
 PyYAML==6.0.1
 reportlab==4.1.0
-weasyprint==69.0
 Jinja2==3.1.2
+
+# PDF text extraction without a system package. Poppler's `pdftotext` is still
+# preferred when present (doc_extract tuned its flags against real curriculum
+# PDFs), but it needs a package manager and usually admin rights, which school
+# staff on managed machines do not have. PDFium ships as a prebuilt wheel for
+# Windows, macOS and Linux on both x86_64 and arm64, so `pip install` is the
+# whole installation. Apache-2.0/BSD-3 — no copyleft obligation for districts.
+pypdfium2==5.13.0
+
+# PDF *output*. Unlike everything above, this needs native GTK/Pango libraries
+# that pip cannot supply on Windows. It is deliberately last and deliberately
+# optional: reports.py wraps every render in try/except and logs
+# "PDF render skipped", so without it each report is still written as Markdown.
+# Install it if you want PDFs; skip it and the audit is unaffected.
+weasyprint==69.0

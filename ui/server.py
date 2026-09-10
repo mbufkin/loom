@@ -17,6 +17,7 @@ Endpoints (all under /api):
   GET  /api/projects/{id}/graph/runs[?e2e_run=] -> model graph runs under graph/runs/*
   GET  /api/projects/{id}/graph/runs/{run_id}/overview[?e2e_run=] -> per-unit HAS-PART rollup
   GET  /api/projects/{id}/graph/runs/{run_id}/units/{unit_id}[?e2e_run=] -> HAS-PART + SUMMARY
+  POST /api/install-deps                  -> {ok, output}  (pip install -r requirements.txt)
   POST /api/projects/{id}/run             -> {runId}  (spawns run_project.py)
   POST /api/projects/{id}/packet-type     -> declare packet_type; regen unit rung
   GET  /api/projects/{id}/gaps            -> GapItem work queue (create chapter)
@@ -1021,10 +1022,30 @@ def _weasyprint_ok() -> bool:
 def _missing_packages() -> list[str]:
     """Required third-party imports that are not available."""
     out: list[str] = []
-    for mod, dist in (("yaml", "PyYAML"), ("requests", "requests"), ("jinja2", "Jinja2")):
+    for mod, dist in (
+        ("yaml", "PyYAML"),
+        ("requests", "requests"),
+        ("jinja2", "Jinja2"),
+        ("pypdfium2", "pypdfium2"),
+    ):
         if importlib.util.find_spec(mod) is None:
             out.append(dist)
     return out
+
+
+def _pdf_engine() -> tuple[bool, str]:
+    """Can this machine get text out of a PDF, and with what?
+
+    Two engines, in preference order. Poppler's `pdftotext` is used when it is
+    on PATH because doc_extract tuned its flags against real curriculum PDFs
+    and the intake goldens were recorded from it. PDFium is the fallback and
+    needs no system package, so `pip install` alone is enough to read PDFs.
+    """
+    if shutil.which("pdftotext"):
+        return True, "poppler (pdftotext)"
+    if importlib.util.find_spec("pypdfium2") is not None:
+        return True, "PDFium, installed with the Python dependencies"
+    return False, "no PDF text extractor is installed"
 
 
 def _model_reachable() -> tuple[bool, str]:
@@ -1063,9 +1084,8 @@ def _requirements() -> list[dict]:
     unhelpful "missing bash and python3":
 
       required   the audit cannot run at all
-      pdf        the audit cannot read PDF documents (it crashes on the first
-                 one: doc_extract raises RuntimeError and extract_with_meta
-                 only catches ValueError). Fine if the sources are Word or text
+      pdf        the audit cannot read PDF documents. Fine if the sources are
+                 Word or plain text, fatal if they are not
       optional   an output is unavailable, everything else works
 
     `fix` is keyed by sys.platform so each machine is told what to type on it,
@@ -1074,6 +1094,7 @@ def _requirements() -> list[dict]:
     pip = f'"{sys.executable}" -m pip install -r requirements.txt'
     packages = _missing_packages()
     model_ok, model_detail = _model_reachable()
+    pdf_ok, pdf_engine = _pdf_engine()
 
     return [
         {
@@ -1111,22 +1132,17 @@ def _requirements() -> list[dict]:
             },
         },
         {
-            "id": "poppler",
-            "label": "PDF text extraction (poppler)",
-            "why": "Gets the text out of PDF documents. Most curriculum "
-            "arrives as PDF, and Loom stops on the first one without it.",
+            "id": "pdf",
+            "label": "Reading PDF documents",
+            "why": "Most curriculum arrives as PDF. This is what gets the "
+            "words out of those files.",
             "severity": "pdf",
-            "ok": bool(shutil.which("pdftotext")),
-            "detail": shutil.which("pdftotext") or "pdftotext is not on PATH",
-            "fix": {
-                "win32": "choco install poppler    (or: scoop install poppler)\n"
-                "Or download a build from\n"
-                "https://github.com/oschwartz10612/poppler-windows/releases\n"
-                "and add its bin folder to PATH.",
-                "darwin": "brew install poppler",
-                "linux": "sudo apt install poppler-utils      (Debian/Ubuntu)\n"
-                "sudo dnf install poppler-utils      (Fedora/RHEL)",
-            },
+            "ok": pdf_ok,
+            "detail": pdf_engine,
+            # Installing the Python dependencies is the whole fix now, so this
+            # points at the same one-liner as the packages row rather than at a
+            # system package manager the user may not be allowed to run.
+            "fix": {"all": pip},
         },
         {
             "id": "weasyprint",
@@ -1157,6 +1173,42 @@ def _requirements() -> list[dict]:
             },
         },
     ]
+
+
+def _install_dependencies() -> dict:
+    """Install the Python dependencies, so the user does not have to.
+
+    Everything Loom genuinely needs is now a Python package with prebuilt
+    wheels on all three platforms, which means "go and install this" can be a
+    button rather than an instruction. Only WeasyPrint's native libraries fall
+    outside that, and it is optional.
+
+    Deliberately not parameterised: the command is fixed at
+    `-r requirements.txt` and takes nothing from the request. An endpoint on
+    localhost that installs a caller-supplied package name would be a way to
+    run arbitrary code on this machine, and the convenience is not worth it.
+    """
+    req = ROOT / "requirements.txt"
+    if not req.is_file():
+        return {"ok": False, "output": f"requirements.txt not found at {req}"}
+    proc = subprocess.run(
+        [sys.executable, "-m", "pip", "install", "-r", str(req)],
+        cwd=str(ROOT),
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        timeout=900,
+    )
+    out = (proc.stdout or "") + (proc.stderr or "")
+    # Invalidate the cached WeasyPrint probe: a successful install is exactly
+    # the moment its answer might have changed.
+    global _WEASYPRINT_OK
+    _WEASYPRINT_OK = None
+    # importlib caches "this module does not exist" lookups, so a freshly
+    # installed package stays invisible to find_spec without this.
+    importlib.invalidate_caches()
+    return {"ok": proc.returncode == 0, "output": out.strip()[-8000:]}
 
 
 def _run_preflight() -> dict:
@@ -1465,6 +1517,8 @@ class Handler(BaseHTTPRequestHandler):
         parsed = urlparse(self.path)
         parts = [p for p in parsed.path.split("/") if p]
         try:
+            if parts == ["api", "install-deps"]:
+                return self._json(_install_dependencies())
             if len(parts) == 4 and parts[:2] == ["api", "projects"] and parts[3] == "run":
                 body = _read_json_body(self)
                 run_id = _start_run(parts[2], body.get("flags", []))

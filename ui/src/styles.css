@@ -4482,3 +4482,13 @@ button:disabled {
   font-size: 12px;
   padding: 3px 10px;
 }
+
+/* Actions sit on one row so "install for me" and "check again" read as two
+   ways forward rather than a primary action with an afterthought below it. */
+.setup-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
