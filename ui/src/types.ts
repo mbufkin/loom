@@ -71,6 +71,29 @@ export interface ModelServer {
   models: string[];
 }
 
+/** A hosted model service Loom knows how to talk to, e.g. NVIDIA. */
+export interface ModelProvider {
+  id: string;
+  label: string;
+  chat_url: string;
+  /** What a valid key looks like, e.g. "nvapi-". Used only to warn early. */
+  key_prefix: string;
+  key_help: string;
+  host: string;
+  /** Whether a key is stored. The key itself is never sent to the browser. */
+  present: boolean;
+  /** Name of the OS credential store, or null if none is available. */
+  backend: string | null;
+}
+
+export interface RemoteModels {
+  ok: boolean;
+  error?: string;
+  name?: string;
+  chat_url?: string;
+  models?: string[];
+}
+
 export interface ModelDiscovery {
   servers: ModelServer[];
   current: { url: string; model: string };

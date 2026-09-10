@@ -15,6 +15,7 @@ import yaml
 
 from doc_extract import extract_with_meta
 from doc_extract import iter_source_files as _iter_source_files_recursive
+import loom_keys
 from loom_paths import DATA_DIR, INSTALL_DIR
 from schema_validate import (
     raise_on_errors,
@@ -195,16 +196,16 @@ def model_chat(
         # Nemotron 3.5 Lightning (and Nano) honor this; ignored harmlessly if not.
         if enable_thinking is not None:
             payload["chat_template_kwargs"] = {"enable_thinking": bool(enable_thinking)}
-    headers = {}
-    # Cursor bridge (:8788) requires Bearer CURSOR_API_KEY when the bridge has a key set.
-    if "8788" in str(url):
-        key = (
-            (cfg.get("models") or {}).get("api_key")
-            or os.environ.get("CURSOR_API_KEY")
-            or ""
-        )
-        if key:
-            headers["Authorization"] = f"Bearer {key}"
+    # Bearer token for hosted endpoints. This used to fire only for the Cursor
+    # bridge on :8788, which meant any other authenticated service -- NVIDIA's
+    # build API, for one -- got no Authorization header at all and came back
+    # 401 with nothing in the logs to explain why.
+    #
+    # loom_keys scopes each key to the endpoint's host, so a credential saved
+    # for a hosted provider cannot be attached to a request aimed at a local
+    # model. It also still honours the old config.yaml and CURSOR_API_KEY
+    # paths, so existing setups behave exactly as before.
+    headers = loom_keys.auth_headers(str(url), cfg)
     last_err: Exception | None = None
     t0 = monotonic_ms()
     for attempt in range(retries + 1):

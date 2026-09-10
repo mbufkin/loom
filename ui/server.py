@@ -18,6 +18,9 @@ Endpoints (all under /api):
   GET  /api/projects/{id}/graph/runs/{run_id}/overview[?e2e_run=] -> per-unit HAS-PART rollup
   GET  /api/projects/{id}/graph/runs/{run_id}/units/{unit_id}[?e2e_run=] -> HAS-PART + SUMMARY
   GET  /api/models/discover               -> local model servers found on loopback
+  GET  /api/models/providers              -> hosted services + whether a key is stored
+  GET  /api/models/remote?provider=       -> that service's models, using the stored key
+  POST /api/models/key                    -> save/clear a key (never returns it)
   POST /api/models/select                 -> {ok}  (points config.yaml at one)
   POST /api/install-deps                  -> {ok, output}  (pip install -r requirements.txt)
   POST /api/projects/{id}/run             -> {runId}  (spawns run_project.py)
@@ -1180,6 +1183,88 @@ def _discover_models() -> dict:
     }
 
 
+# Hosted services Loom knows how to talk to. Each is an ordinary
+# OpenAI-compatible endpoint, so the only per-provider knowledge needed is
+# where it lives and what its keys look like.
+_PROVIDERS: dict[str, dict] = {
+    "nvidia": {
+        "label": "NVIDIA (build.nvidia.com)",
+        "base": "https://integrate.api.nvidia.com",
+        "chat_url": "https://integrate.api.nvidia.com/v1/chat/completions",
+        "models_url": "https://integrate.api.nvidia.com/v1/models",
+        "key_prefix": "nvapi-",
+        "key_help": "Create a key at build.nvidia.com — it begins with nvapi-.",
+    },
+}
+
+
+def _key_status(url: str) -> dict:
+    """Whether a key is stored for this endpoint. Never returns the key.
+
+    The browser has no business holding a credential it cannot use, and a key
+    echoed back into a page is a key in the DOM, in devtools, and in any
+    screenshot of the screen. Presence is the only fact the UI needs.
+    """
+    import loom_keys
+
+    cfg = {}
+    try:
+        import yaml
+
+        cfg = yaml.safe_load(CONFIG.read_text(encoding="utf-8")) or {}
+    except Exception:
+        pass
+    return {
+        "host": loom_keys.host_of(url),
+        "present": loom_keys.key_present(url, cfg),
+        "backend": loom_keys.backend_name(),
+    }
+
+
+def _remote_models(provider: str) -> dict:
+    """List a hosted provider's models using the stored key.
+
+    Runs server-side rather than from the page for the same reason the key is
+    never returned: the credential stays in this process and never reaches
+    the browser.
+    """
+    import loom_keys
+
+    spec = _PROVIDERS.get(provider)
+    if not spec:
+        return {"ok": False, "error": f"unknown provider {provider}"}
+    key = loom_keys.get_key(spec["chat_url"])
+    if not key:
+        return {"ok": False, "error": "no key is saved for this service yet"}
+    req = urllib.request.Request(
+        spec["models_url"],
+        headers={"Authorization": f"Bearer {key}", "Accept": "application/json"},
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            payload = json.loads(resp.read().decode("utf-8", "replace"))
+    except urllib.error.HTTPError as e:
+        if e.code in (401, 403):
+            return {"ok": False, "error": "that key was rejected by the service"}
+        return {"ok": False, "error": f"the service returned HTTP {e.code}"}
+    except Exception as e:
+        return {"ok": False, "error": f"could not reach the service: {e}"}
+
+    entries = payload.get("data") if isinstance(payload, dict) else None
+    models = sorted(
+        str(m.get("id"))
+        for m in (entries or [])
+        if isinstance(m, dict) and m.get("id")
+    )
+    return {
+        "ok": True,
+        "name": spec["label"],
+        "base": spec["base"],
+        "chat_url": spec["chat_url"],
+        "models": models,
+    }
+
+
 def _set_model(url: str, model: str) -> dict:
     """Point config.yaml at a chosen model server.
 
@@ -1527,6 +1612,26 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(_run_preflight())
             if parts == ["api", "models", "discover"]:
                 return self._json(_discover_models())
+            if parts == ["api", "models", "providers"]:
+                # Static catalogue plus whether each already has a key.
+                return self._json(
+                    {
+                        "providers": [
+                            {
+                                "id": pid,
+                                "label": spec["label"],
+                                "chat_url": spec["chat_url"],
+                                "key_prefix": spec["key_prefix"],
+                                "key_help": spec["key_help"],
+                                **_key_status(spec["chat_url"]),
+                            }
+                            for pid, spec in _PROVIDERS.items()
+                        ]
+                    }
+                )
+            if parts == ["api", "models", "remote"]:
+                q = parse_qs(urlparse(self.path).query)
+                return self._json(_remote_models((q.get("provider") or [""])[0]))
             if parts == ["api", "storage"]:
                 return self._json(_storage_summary())
             if parts == ["api", "packet-types"]:
@@ -1688,6 +1793,20 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(
                     _set_model(str(body.get("url", "")), str(body.get("model", "")))
                 )
+            if parts == ["api", "models", "key"]:
+                import loom_keys
+
+                body = _read_json_body(self)
+                url = str(body.get("url", ""))
+                if body.get("clear"):
+                    ok, msg = loom_keys.delete_key(url)
+                else:
+                    key = str(body.get("key", "")).strip()
+                    if not key:
+                        return self._json({"ok": False, "error": "no key given"})
+                    ok, msg = loom_keys.set_key(url, key)
+                # Report presence back, never the key itself.
+                return self._json({"ok": ok, "message": msg, **_key_status(url)})
             if len(parts) == 4 and parts[:2] == ["api", "projects"] and parts[3] == "run":
                 body = _read_json_body(self)
                 run_id = _start_run(parts[2], body.get("flags", []))

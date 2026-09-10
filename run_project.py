@@ -235,10 +235,11 @@ def preflight_models() -> None:
             raise RuntimeError(f"config.yaml missing models.{role}_url")
         checks.append((role, str(url)))
 
-    headers = {}
-    key = models.get("api_key") or os.environ.get("CURSOR_API_KEY") or ""
-    if key:
-        headers["Authorization"] = f"Bearer {key}"
+    # Same key resolution the real calls use, so a health check cannot pass
+    # against an endpoint the audit will then be rejected by (or vice versa).
+    import loom_keys
+
+    headers = loom_keys.auth_headers(str(models.get("analyst_url") or ""), cfg)
 
     # Deduplicate when both roles point at the same server (single-model doctrine).
     seen: set[str] = set()

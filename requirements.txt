@@ -16,6 +16,12 @@ Jinja2==3.1.2
 # whole installation. Apache-2.0/BSD-3 — no copyleft obligation for districts.
 pypdfium2==5.13.0
 
+# API keys for hosted model services, stored in the OS credential store
+# (Windows Credential Manager / macOS Keychain / Secret Service) rather than
+# in config.yaml. See loom_keys.py. Optional in practice: a local model needs
+# no key, and loom_keys degrades quietly when no credential store exists.
+keyring==25.7.0
+
 # PDF *output*. Unlike everything above, this needs native GTK/Pango libraries
 # that pip cannot supply on Windows. It is deliberately last and deliberately
 # optional: reports.py wraps every render in try/except and logs

@@ -18,10 +18,12 @@ import type {
   GraphUnitDetail,
   LessonFeedback,
   ModelDiscovery,
+  ModelProvider,
   OutputsTree,
   PacketType,
   PathsSummary,
   Project,
+  RemoteModels,
   RunPreflight,
   RunStatus,
   Stats,
@@ -178,6 +180,37 @@ export const api = {
    * has to wait out the ports where nothing is listening.
    */
   discoverModels: () => getJSON<ModelDiscovery>("/api/models/discover"),
+
+  /** Hosted services and whether each already has a key stored. */
+  providers: () =>
+    getJSON<{ providers: ModelProvider[] }>("/api/models/providers"),
+
+  /** List a hosted service's models, using the key held server-side. */
+  remoteModels: (provider: string) =>
+    getJSON<RemoteModels>(
+      `/api/models/remote?provider=${encodeURIComponent(provider)}`,
+    ),
+
+  /**
+   * Save or clear an API key for an endpoint.
+   *
+   * The key travels to the local server once and is written to the OS
+   * credential store. It is never read back — responses report only whether
+   * a key is present, so it cannot end up in the page, in devtools, or in a
+   * screenshot.
+   */
+  async saveKey(
+    url: string,
+    key: string | null,
+  ): Promise<{ ok: boolean; message?: string; error?: string; present: boolean }> {
+    const res = await fetch("/api/models/key", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(key === null ? { url, clear: true } : { url, key }),
+    });
+    if (!res.ok) throw new Error(`key save failed: ${res.status}`);
+    return res.json();
+  },
 
   /** Point config.yaml at a model. Returns {ok} or {ok:false, error}. */
   async selectModel(
