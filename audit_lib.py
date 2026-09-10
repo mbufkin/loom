@@ -140,6 +140,50 @@ def is_unit_report_success(report_text: str) -> bool:
     return bool(re.search(r"\*\*Status:\*\*\s*SUCCESS", report_text, re.IGNORECASE))
 
 
+def _retry_after_seconds(resp) -> int | None:
+    """Seconds to wait per the service's Retry-After header, if it sent one.
+
+    Supports the delay-seconds form; the HTTP-date form is ignored rather than
+    parsed, since a wrong date parse would produce a nonsense sleep and every
+    service worth rate-limiting against sends the integer.
+    """
+    try:
+        raw = (resp.headers.get("Retry-After") or "").strip() if resp is not None else ""
+    except Exception:
+        return None
+    if not raw.isdigit():
+        return None
+    return max(0, min(300, int(raw)))
+
+
+def _unusable_reply(data: dict) -> str | None:
+    """Why this reply cannot be used as an answer, or None if it is fine.
+
+    Reasoning models make a 200 OK response an unreliable signal of success.
+    Nemotron 3.5 Lightning emits several hundred tokens of internal monologue
+    before its answer, and when the token ceiling cuts that off, NVIDIA's API
+    returns the monologue in ``content`` -- non-empty, plausible-looking prose
+    that is not an answer to anything.
+
+    Nothing downstream can spot that. ``report_delivery`` writes ``content``
+    straight into a teacher-facing synthesis file, and its only failure test
+    is whether an exception was raised. Observed live at the 400-token ceiling
+    that call site used to set: the report received "Here's a thinking
+    process: 1. Analyze the Request..." in place of the summary.
+    """
+    ch = (data.get("choices") or [{}])[0]
+    msg = ch.get("message") or {}
+    content = (msg.get("content") or "").strip()
+    reasoning = (msg.get("reasoning_content") or "").strip()
+    if ch.get("finish_reason") == "length":
+        return "hit the max_tokens ceiling mid-reply"
+    if reasoning and not content:
+        return "spent its whole budget reasoning and returned no answer"
+    if reasoning and content == reasoning:
+        return "returned its reasoning instead of an answer"
+    return None
+
+
 def model_chat(
     cfg: dict,
     role: str,
@@ -208,11 +252,56 @@ def model_chat(
     headers = loom_keys.auth_headers(str(url), cfg)
     last_err: Exception | None = None
     t0 = monotonic_ms()
-    for attempt in range(retries + 1):
+
+    # Raising the ceiling after a truncated reply is not a failed attempt, so
+    # it gets its own allowance rather than eating the retry budget. Two
+    # quadruplings covers the gap between a budget sized for a plain model and
+    # what a reasoning model needs for the same answer.
+    max_escalations = 2
+    escalations = 0
+    failures = 0
+    # An explicit loop with two independent budgets, rather than one range
+    # covering both. Sharing a single count let HTTP failures spend the
+    # escalation allowance, which meant a rate-limited service got extra
+    # requests with no backoff between them -- the opposite of what a 429 is
+    # asking for. Every path below returns, raises, or advances a bounded
+    # counter, so this cannot spin.
+    while True:
         try:
             resp = requests.post(url, json=payload, headers=headers or None, timeout=timeout)
             resp.raise_for_status()
             data = resp.json()
+
+            problem = _unusable_reply(data)
+            if problem:
+                if escalations < max_escalations:
+                    escalations += 1
+                    ceiling = int(payload["max_tokens"])
+                    payload["max_tokens"] = min(ceiling * 4, 32768)
+                    log(
+                        f"WARN: {step} reply {problem} at max_tokens={ceiling}; "
+                        f"retrying with {payload['max_tokens']}"
+                    )
+                    continue
+                record_model_call(
+                    role=role,
+                    step=step,
+                    model=str(data.get("model") or model),
+                    messages=messages,
+                    resp=data,
+                    elapsed_ms=monotonic_ms() - t0,
+                    ok=False,
+                    error=f"unusable reply: {problem}",
+                )
+                # ValueError, not RuntimeError: the parse-retry wrappers in
+                # layer0/layer1 catch ValueError, so a bad generation is
+                # retried there instead of aborting the whole run.
+                raise ValueError(
+                    f"{step}: the model {problem} "
+                    f"(max_tokens={payload['max_tokens']}). This model needs a "
+                    f"larger ceiling for this step."
+                )
+
             record_model_call(
                 role=role,
                 step=step,
@@ -230,13 +319,23 @@ def model_chat(
             # Other 4xx are client errors and should not be blindly retried.
             if status in (429, 503, 529):
                 last_err = e
-                if attempt < retries:
-                    wait = min(120, 5 * (2**attempt))
-                    log(
-                        f"WARN: {step} HTTP {status} (rate/capacity) attempt "
-                        f"{attempt + 1}; retry in {wait}s"
-                    )
-                    time.sleep(wait)
+                if failures >= retries:
+                    break
+                # Honour Retry-After when the service sends it. Guessing a
+                # backoff against a service that has told us exactly how long
+                # to wait is how a free tier turns into a ban. Taken as a
+                # floor, not a replacement, so a service asking for 1s cannot
+                # talk us into hammering it.
+                wait = min(120, 5 * (2**failures))
+                hinted = _retry_after_seconds(e.response)
+                if hinted is not None:
+                    wait = min(300, max(wait, hinted))
+                log(
+                    f"WARN: {step} HTTP {status} (rate/capacity) attempt "
+                    f"{failures + 1}; retry in {wait}s"
+                )
+                failures += 1
+                time.sleep(wait)
                 continue
             if 400 <= status < 500:
                 record_model_call(
@@ -253,20 +352,24 @@ def model_chat(
                     f"{step}: HTTP {status} (not retrying): {body}"
                 ) from e
             last_err = e
-            if attempt < retries:
-                wait = 2**attempt
-                log(
-                    f"WARN: {step} HTTP {status} attempt {attempt + 1}; retry in {wait}s"
-                )
-                time.sleep(wait)
+            if failures >= retries:
+                break
+            wait = 2**failures
+            log(
+                f"WARN: {step} HTTP {status} attempt {failures + 1}; retry in {wait}s"
+            )
+            failures += 1
+            time.sleep(wait)
         except (requests.ConnectionError, requests.Timeout, TimeoutError) as e:
             last_err = e
-            if attempt < retries:
-                wait = 2**attempt
-                log(
-                    f"WARN: {step} attempt {attempt + 1} failed ({e}); retry in {wait}s"
-                )
-                time.sleep(wait)
+            if failures >= retries:
+                break
+            wait = 2**failures
+            log(
+                f"WARN: {step} attempt {failures + 1} failed ({e}); retry in {wait}s"
+            )
+            failures += 1
+            time.sleep(wait)
     record_model_call(
         role=role,
         step=step,

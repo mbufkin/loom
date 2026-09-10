@@ -104,7 +104,12 @@ LESSON PLAN TEMPLATE CHECK:
             [{"role": "user", "content": prompt}],
             step,
             temperature=0.2,
-            max_tokens=400,
+            # Sized for a reasoning model, not for the 3-5 sentences asked
+            # for. Nemotron-class models spend several hundred tokens thinking
+            # before they answer, and at the old 400 ceiling the reply was cut
+            # off mid-thought -- which arrived here as the monologue itself and
+            # was written into the teacher's synthesis file.
+            max_tokens=4096,
         )
         text = _extract_content(resp).strip()
         atomic_write(raw_dir / "synthesis.txt", text)
@@ -180,7 +185,8 @@ DATA (aggregate pack — source of truth, do not contradict):
             [{"role": "user", "content": prompt}],
             step,
             temperature=0.2,
-            max_tokens=600,
+            # Same reasoning-model headroom as the synthesis call above.
+            max_tokens=4096,
         )
         text = _extract_content(resp).strip()
         atomic_write(raw_dir / "synthesis.txt", text)
