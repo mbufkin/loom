@@ -494,9 +494,8 @@ export function CreateStudio({ projectId }: { projectId: string }) {
           </div>
           <div className="panel-body">
             <p className="cs-lead-line">
-              Largest holes first. Open a unit to see Stage 1 → 2 → 3 (goals →
-              evidence → learning) with present and missing together.{" "}
-              <span className="mono muted">docs/CREATE-WORKFLOW.md</span>
+              Biggest gaps first. Open a unit to see its goals, evidence and
+              learning side by side, with what’s there and what’s missing.
             </p>
             <div className="cs-matrix-head mono">
               <span>Unit</span>
@@ -547,8 +546,8 @@ export function CreateStudio({ projectId }: { projectId: string }) {
               })
             )}
             <p className="cs-list-hint mono">
-              S1/S2/S3 = missing/present per UbD stage · Open = undecided
-              decisions
+              S1 goals · S2 evidence · S3 learning — each shows missing/present
+              · Open = decisions you haven’t made yet
             </p>
           </div>
         </div>
@@ -565,8 +564,8 @@ export function CreateStudio({ projectId }: { projectId: string }) {
           </div>
           <div className="panel-body">
             <p className="cs-lead-line">
-              Cross-unit absences (Jacobs large-group lens). Use to prioritize —
-              then repair inside a unit on the Units view.
+              Gaps that show up across many units at once. Use this to decide
+              what to tackle first, then fix it inside a unit on the Units view.
             </p>
             <div className="cs-role-head mono cs-role-head-bar">
               <span>Element</span>

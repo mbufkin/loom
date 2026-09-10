@@ -247,6 +247,13 @@ def _list_e2e_runs(project_id: str) -> dict:
                 )
             else:
                 n_units = 0
+            # When the audit finished, so the picker can label runs by date
+            # instead of by internal run id. REVIEW-READY.json is written last,
+            # which makes its mtime the closest thing to a completion time.
+            try:
+                finished = (d / "REVIEW-READY.json").stat().st_mtime
+            except OSError:
+                finished = None
             runs.append(
                 {
                     "run_id": d.name,
@@ -255,6 +262,7 @@ def _list_e2e_runs(project_id: str) -> dict:
                     "review_ready": True,
                     "n_output_units": n_units,
                     "n_graph_runs": n_graph,
+                    "finished_at": finished,
                 }
             )
     return {"project_id": project_id, "runs": runs}

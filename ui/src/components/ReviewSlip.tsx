@@ -9,10 +9,12 @@ interface Props {
   onRun: () => void;
   onRefresh: () => void;
   onQuickLink: (path: string) => void;
+  /** Engineering mode: show the internal corpus tier. */
+  advanced?: boolean;
 }
 
-// Sticky right-rail slip — the Loom analogue of Fairway's DraftSlip. Shows the
-// tier badge, headline counts, run controls, and quick links to top plates.
+// Sticky right-rail slip: headline counts, run controls, and quick links to
+// the top reports.
 export function ReviewSlip({
   project,
   stats,
@@ -22,6 +24,7 @@ export function ReviewSlip({
   onRun,
   onRefresh,
   onQuickLink,
+  advanced = false,
 }: Props) {
   const findings = stats?.finding_status_counts ?? {};
   const missing = findings["MISSING"] ?? 0;
@@ -30,23 +33,30 @@ export function ReviewSlip({
 
   return (
     <aside className="panel slip">
-      <div className="panel-head">Review slip</div>
+      <div className="panel-head">At a glance</div>
       <div className="panel-body">
-        <span className="tier-badge">{project.tier}</span>{" "}
-        <span className="mono">{project.id}</span>
+        {/* The tier grades our own test corpus ("Golden", "Unknown"), not the
+            district's materials. Displayed next to their curriculum name it
+            reads as a verdict Loom never made, so it stays in advanced mode. */}
+        {advanced && (
+          <>
+            <span className="tier-badge">{project.tier}</span>{" "}
+          </>
+        )}
+        <span className="slip-project">{project.title || project.id}</span>
 
         <div className="stat-grid">
           <div className="stat">
             <div className="n">{stats?.documents_judged ?? "—"}</div>
-            <div className="l">Docs judged</div>
+            <div className="l">Documents read</div>
           </div>
           <div className="stat">
             <div className="n">{stats?.elements_judged ?? "—"}</div>
-            <div className="l">Elements</div>
+            <div className="l">Things checked</div>
           </div>
           <div className="stat">
             <div className="n">{fulfilled}</div>
-            <div className="l">Fulfilled</div>
+            <div className="l">Found</div>
           </div>
           <div className="stat">
             <div className="n">{missing}</div>
@@ -54,7 +64,7 @@ export function ReviewSlip({
           </div>
           <div className="stat">
             <div className="n">{pending}</div>
-            <div className="l">Review pairs</div>
+            <div className="l">Need your decision</div>
           </div>
           <div className="stat">
             <div className="n">{stats?.unit_rollup?.length ?? "—"}</div>
@@ -64,7 +74,7 @@ export function ReviewSlip({
 
         <div className="actions">
           <button className="primary" onClick={onRun} disabled={running}>
-            {running ? "Running…" : "Run"}
+            {running ? "Running…" : "Run audit again"}
           </button>
           <button onClick={onRefresh}>Refresh</button>
         </div>

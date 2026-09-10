@@ -440,6 +440,9 @@ export interface E2ERunInfo {
   review_ready?: boolean;
   n_output_units: number;
   n_graph_runs: number;
+  /** Unix seconds when the audit finished; null when the file is unreadable.
+   *  Used to label runs by date rather than by internal run id. */
+  finished_at?: number | null;
 }
 
 export interface E2ERunsResponse {

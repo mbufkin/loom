@@ -37,7 +37,8 @@ export function PacketTypeBar({ projectId, packet, onChanged }: Props) {
     setError("");
     try {
       const res = await api.setPacketType(projectId, id);
-      if (!res.regenerated) setError("Saved, but unit rung did not regenerate.");
+      if (!res.regenerated)
+        setError("Saved, but the unit scores did not refresh. Re-run the audit.");
       onChanged();
     } catch (e) {
       setError(String(e));
@@ -50,8 +51,8 @@ export function PacketTypeBar({ projectId, packet, onChanged }: Props) {
 
   return (
     <div className="packet-bar">
-      <span className="packet-lead">Curriculum packet type</span>
-      <div className="packet-seg" role="group" aria-label="declare packet type">
+      <span className="packet-lead">Curriculum type</span>
+      <div className="packet-seg" role="group" aria-label="curriculum type">
         {types.map((t) => (
           <button
             key={t.id}

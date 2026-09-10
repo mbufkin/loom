@@ -57,13 +57,13 @@ function statusBlurb(p: PathSummary): string {
     case "ok":
       return `${p.n_docs} document${p.n_docs === 1 ? "" : "s"} reviewed`;
     case "skipped":
-      return "No documents of this type in the corpus";
+      return "No documents of this type in the curriculum";
     case "stub":
-      return "Ran before this lens had presence checks";
+      return "Ran before this check recorded what was present";
     case "emitted":
       return `${p.n_docs} per-document file${p.n_docs === 1 ? "" : "s"} written`;
     default:
-      return "No findings file — this path has not run here";
+      return "This check has not run on this curriculum";
   }
 }
 
@@ -109,9 +109,11 @@ function LensCard({
       </div>
       <div className="pp-card-label">{path.label}</div>
       <div className="pp-card-nums mono">
-        <span title="Documents routed to this lens">{path.routed} routed</span>
+        <span title="Documents sent to this check">
+          {path.routed} document{path.routed === 1 ? "" : "s"}
+        </span>
         {path.missing_total > 0 && (
-          <span className="pp-flag" title="Total MISSING checklist results">
+          <span className="pp-flag" title="Expected items this check did not find">
             {path.missing_total} missing
           </span>
         )}
@@ -170,8 +172,8 @@ function LensDetail({
           <strong>
             {path.letter} · {path.label}
           </strong>{" "}
-          — {statusBlurb(path)}. The router considered this lens and found
-          nothing to send it, which is a valid outcome, not a failure.
+          — {statusBlurb(path)}. Loom considered this check and found nothing
+          for it to look at, which is a normal outcome, not a problem.
         </div>
       </div>
     );
@@ -186,7 +188,7 @@ function LensDetail({
         </div>
         <div className="pp-detail-actions">
           {path.top_reasons.length > 0 && (
-            <span className="pp-reasons mono" title="How the router chose this lens">
+            <span className="pp-reasons mono" title="Why these documents came to this check">
               {path.top_reasons.map((r) => `${r.reason} ×${r.count}`).join(" · ")}
             </span>
           )}
@@ -195,7 +197,7 @@ function LensDetail({
               className="pp-link"
               onClick={() => onOpenFindings(path.findings_path)}
             >
-              raw findings.json ↗
+              full findings ↗
             </button>
           )}
         </div>
@@ -238,8 +240,8 @@ function LensDetail({
         </>
       ) : (
         <div className="empty">
-          This lens emits per-document files rather than a checklist table. Open
-          the raw findings for the document list.
+          This check reports on each document separately rather than as a
+          checklist. Open the full findings for the document list.
         </div>
       )}
 
@@ -309,12 +311,11 @@ export function PathsPanel({ summary, loading, onOpenFindings }: Props) {
     return ran.reduce((a, b) => (b.missing_total > a.missing_total ? b : a));
   }, [summary, selected]);
 
-  if (loading) return <div className="empty">Loading paths…</div>;
+  if (loading) return <div className="empty">Loading checks…</div>;
   if (!summary) {
     return (
       <div className="empty">
-        No route map for this workspace. Paths appear once Layer 0 has routed the
-        corpus.
+        The checks appear once Loom has sorted this curriculum’s documents.
       </div>
     );
   }
@@ -326,17 +327,17 @@ export function PathsPanel({ summary, loading, onOpenFindings }: Props) {
     <div className="pp">
       <div className="pp-summary mono">
         <span>
-          <strong>{summary.total_routed}</strong> documents routed
+          <strong>{summary.total_routed}</strong> documents reviewed
         </span>
         <span>
-          <strong>{ran}</strong> of 8 lenses ran
+          <strong>{ran}</strong> of 8 checks ran
         </span>
         <span className={flagged > 0 ? "pp-flag" : ""}>
-          <strong>{flagged}</strong> missing elements flagged
+          <strong>{flagged}</strong> expected items missing
         </span>
         {summary.unrouted > 0 && (
-          <span className="pp-flag">
-            <strong>{summary.unrouted}</strong> unrouted
+          <span className="pp-flag" title="Loom could not tell what these documents were">
+            <strong>{summary.unrouted}</strong> unsorted
           </span>
         )}
       </div>

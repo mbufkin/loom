@@ -209,9 +209,9 @@ export function UnitDetail({
           <span className={`u-band ${BAND_CLASS[band]}`}>{band}</span>
         </div>
         <p className="muted-note">
-          No unit-rung record for <code>{unitId}</code>. This project may predate
-          the unit rung, or need a re-run. The band above is derived from Layer 1
-          role fulfillment.
+          This unit wasn’t scored in detail by this audit, so the rating above
+          is an estimate based on which expected materials were found. Running
+          the audit again will produce a full score.
         </p>
         {lessonsSection}
         {documentsSection}

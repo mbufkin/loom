@@ -12,13 +12,15 @@ interface Props {
   /** When true, show Curriculum graph as an available View option. */
   hasGraph?: boolean;
   graphLabel?: string;
-  /** Lenses that actually ran here — drives the Paths A–H badge. */
+  /** How many of the eight checks ran — drives the badge. */
   nPathsRan?: number;
+  /** Engineering mode: keep unavailable options visible for diagnosis. */
+  advanced?: boolean;
 }
 
-// Left-rail navigation. Course plates (incl. Global audit) come first; a
-// dedicated View group sits *below* those plates so reviewers open graph /
-// heatmap from Review — not from Next Steps.
+// Left-rail navigation. Reports (incl. Global audit) come first; a dedicated
+// View group sits *below* those so reviewers open the graph / unit quality
+// from Review — not from Next Steps.
 export function OutputNav({
   outputs,
   activePath,
@@ -26,6 +28,7 @@ export function OutputNav({
   hasGraph = false,
   graphLabel = "Curriculum graph",
   nPathsRan = 0,
+  advanced = false,
 }: Props) {
   const items = (files: OutputsTree["plates"]) =>
     files.map((f) => (
@@ -63,10 +66,10 @@ export function OutputNav({
 
   return (
     <div className="panel">
-      <div className="panel-head">Outputs</div>
+      <div className="panel-head">Results</div>
       <div className="panel-body nav">
-        {/* Plates first so Global audit is above View options. */}
-        {section("Course plates", outputs.plates, true)}
+        {/* Reports first so Global audit is above View options. */}
+        {section("Reports", outputs.plates, true)}
 
         <details className="nav-group" open>
           <summary>
@@ -78,39 +81,44 @@ export function OutputNav({
           <button
             className={`nav-item ${activePath === VIEW_UNITS ? "active" : ""}`}
             onClick={() => onSelect(VIEW_UNITS)}
-            title="Unit quality heatmap for this E2E run"
+            title="How complete and how strong each unit is"
           >
-            <span>Unit heatmap</span>
-            <span className="tag">heatmap</span>
+            <span>Unit quality</span>
+            <span className="tag">units</span>
           </button>
           <button
             className={`nav-item ${activePath === VIEW_PATHS ? "active" : ""}`}
             onClick={() => onSelect(VIEW_PATHS)}
-            title="The eight review lenses: what each path caught in this corpus"
+            title="The eight checks Loom runs, and what each one found"
           >
-            <span>Paths A–H</span>
+            <span>What we checked for</span>
             <span className="tag">
-              {nPathsRan > 0 ? `${nPathsRan}/8` : "lenses"}
+              {nPathsRan > 0 ? `${nPathsRan}/8` : "checks"}
             </span>
           </button>
-          <button
-            className={`nav-item ${activePath === VIEW_GRAPH ? "active" : ""}`}
-            onClick={() => onSelect(VIEW_GRAPH)}
-            disabled={!hasGraph}
-            title={
-              hasGraph
-                ? "Materials → lessons → assessments belonging graph"
-                : "No graph run for this curriculum / E2E yet"
-            }
-          >
-            <span>{graphLabel}</span>
-            <span className="tag">{hasGraph ? "graph" : "none"}</span>
-          </button>
+          {/* Only offered when there is a graph to open. A permanently greyed
+              row badged "none" reads as something broken rather than as a
+              feature this audit simply did not produce. */}
+          {(hasGraph || advanced) && (
+            <button
+              className={`nav-item ${activePath === VIEW_GRAPH ? "active" : ""}`}
+              onClick={() => onSelect(VIEW_GRAPH)}
+              disabled={!hasGraph}
+              title={
+                hasGraph
+                  ? "How materials, lessons and assessments connect"
+                  : "Not available for this audit"
+              }
+            >
+              <span>{graphLabel}</span>
+              <span className="tag">{hasGraph ? "graph" : "none"}</span>
+            </button>
+          )}
           {nTeachers > 0 && (
             <button
               className={`nav-item ${activePath === VIEW_UNITS ? "active" : ""}`}
               onClick={() => onSelect(VIEW_UNITS)}
-              title="Open heatmap, then a unit for teacher packets"
+              title="Open Unit quality, then a unit, for its teacher packet"
             >
               <span>Teacher packets</span>
               <span className="tag">{nTeachers}u</span>
@@ -118,7 +126,7 @@ export function OutputNav({
           )}
         </details>
 
-        {section("Stage reports", outputs.layers, hasActivePlateInLayers)}
+        {section("How it was checked", outputs.layers, hasActivePlateInLayers)}
         {section("PDF", outputs.pdfs, false)}
 
         {/* Per-unit file lists stay available but collapsed by default. */}

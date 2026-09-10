@@ -923,6 +923,12 @@ button:disabled {
   padding: 10px 12px;
 }
 
+/* The curriculum name in the slip: a title, so it reads as prose rather than
+   as the monospaced folder id it replaced. */
+.slip-project {
+  font-weight: 700;
+}
+
 /* ---- Error messages ---------------------------------------------------- */
 /* The sentence leads; the status code and URL stay folded away so they are
    available for a bug report without being the first thing anyone reads. */

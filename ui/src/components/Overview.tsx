@@ -29,7 +29,7 @@ const PHASES: Phase[] = [
   {
     n: "A",
     name: "Decode",
-    tag: "layer 0–1",
+    tag: "read the documents",
     steps: [
       { t: "Decompose", d: "PDF → elements + evidence spans" },
       { t: "Classify", d: "doc type · graceful fallback" },
@@ -51,13 +51,13 @@ const PHASES: Phase[] = [
   {
     n: "B",
     name: "Organize",
-    tag: "layer 1–2",
+    tag: "sort into units",
     steps: [
       { t: "Match", d: "elements → units · roles · standards" },
       { t: "Completeness", d: "expected vs. present" },
     ],
     blurb:
-      "Routed documents are placed into units against the day grid and packet type. The system compares what the calendar expects with what was found — MATCH, MISMATCH, MISSING, ORPHAN — always with a citation.",
+      "Sorted documents are placed into units against the calendar and the curriculum type. The system compares what the calendar expects with what was found — MATCH, MISMATCH, MISSING, ORPHAN — always with a citation.",
     flow: [
       { label: "Routed docs", note: "from Decode" },
       { label: "Place into units", note: "roles · days · standards" },
@@ -73,7 +73,7 @@ const PHASES: Phase[] = [
   {
     n: "C",
     name: "Review",
-    tag: "the rungs",
+    tag: "score the quality",
     steps: [
       { t: "Lesson quality", d: "7 criteria · per-criterion · cited" },
       { t: "Artifact check", d: "presence gate + alignment" },
@@ -189,7 +189,7 @@ function PhaseDetail({
   );
 }
 
-export function Overview() {
+export function Overview({ advanced = false }: { advanced?: boolean }) {
   const [openPhase, setOpenPhase] = useState<string | null>(null);
   const active = PHASES.find((p) => p.n === openPhase) ?? null;
 
@@ -215,8 +215,8 @@ export function Overview() {
             Point it at a district&apos;s curriculum. It tells you{" "}
             <b>what&apos;s there, what&apos;s missing, and how good it is</b> —
             every judgment quoted from the source, nothing leaving the building.
-            Works on any pack via a <b>declared packet type</b> — no per-district
-            engineering.
+            Works on any curriculum by declaring its <b>curriculum type</b> — no
+            per-district engineering.
           </p>
         </div>
         <div className="ov-pills">
@@ -347,14 +347,19 @@ export function Overview() {
               <i className="tick" /> Evidence, not opinions
             </div>
             <p>
-              Every verdict <b>quotes the source text</b>. Two separate axes: is
-              it complete for its packet type, and is what&apos;s there any good.
-              No hallucinated grades.
+              Every verdict <b>quotes the source text</b>. Two separate
+              questions: is it complete for this type of curriculum, and is
+              what&apos;s there any good. No invented grades.
             </p>
           </div>
         </div>
       </section>
 
+      {/* Product roadmap: written for the team and for design partners, not
+          for the district staff reviewing their own curriculum. Telling a
+          reviewer the tool is "not yet a product" undermines the results they
+          are looking at, so it stays behind ?advanced=1. */}
+      {advanced && (
       <section className="ov-sec">
         <h2 className="ov-h">From working engine to product</h2>
         <div className="ov-arc">
@@ -376,6 +381,7 @@ export function Overview() {
           scores. Mechanical productizing, not more invention.
         </p>
       </section>
+      )}
 
       <div className="ov-foot mono">Local curriculum audit · on-device</div>
     </div>

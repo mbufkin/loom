@@ -38,7 +38,6 @@ import type {
   UnitRung,
 } from "../types";
 
-const DEFAULT_PROJECT = "dallas-career-2026";
 const UNITS_VIEW = VIEW_UNITS;
 const GRAPH_VIEW = VIEW_GRAPH;
 const PATHS_VIEW = VIEW_PATHS;
@@ -54,10 +53,33 @@ function graphRunLabel(r: GraphRunInfo): string {
   return m;
 }
 
-/** Curriculum option text: prefer manifest title, keep tier for STATUS rows. */
-function curriculumOptionLabel(p: Project): string {
+/** Human label for a finished audit: when it completed, not its internal id.
+ *
+ * Reviewers pick between audits by recency ("the one from last Tuesday"), so
+ * the date is the useful handle. The run id only surfaces when the server
+ * could not read a completion time.
+ */
+function auditLabel(r?: E2ERunInfo): string {
+  if (!r) return "audit";
+  const units = r.n_output_units ? ` · ${r.n_output_units} units` : "";
+  if (!r.finished_at) return `Audit · ${r.run_id}${units}`;
+  const when = new Date(r.finished_at * 1000).toLocaleDateString(undefined, {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+  return `Audit · ${when}${units}`;
+}
+
+/** Curriculum option text: prefer manifest title.
+ *
+ * The tier ("Golden", "Stress", "Experiment") grades our own test corpus, not
+ * the district's curriculum, so it stays out of the picker unless advanced
+ * mode is on — otherwise it reads as a verdict on their materials.
+ */
+function curriculumOptionLabel(p: Project, advanced = false): string {
   const title = (p.title || p.id).trim();
-  if (p.kind === "lab") return title;
+  if (p.kind === "lab" || !advanced) return title;
   if (p.tier && p.tier !== "Unknown") return `${title} — ${p.tier}`;
   return title;
 }
@@ -88,8 +110,9 @@ function reviewDeepLink(): {
   e2e?: string;
   lesson?: string;
   view?: TopView;
+  advanced: boolean;
 } {
-  if (typeof window === "undefined") return {};
+  if (typeof window === "undefined") return { advanced: false };
   const q = new URLSearchParams(window.location.search);
   // Live root is not a review surface — e2e must be a real run id when set.
   const e2e = (q.get("e2e") || "").trim() || undefined;
@@ -102,6 +125,11 @@ function reviewDeepLink(): {
     e2e,
     lesson: q.get("lesson") || undefined,
     view,
+    // ?advanced=1 reveals the engineering controls (lab forks, model runs).
+    // They are meaningless to a curriculum reviewer and several of them are
+    // permanently disabled on a normal install, so a control you cannot use is
+    // simply noise. Opt-in rather than opt-out.
+    advanced: q.get("advanced") === "1",
   };
 }
 
@@ -115,9 +143,10 @@ export function RunReview() {
     deepLink.view ?? DEFAULT_TOP_VIEW
   );
   const [projects, setProjects] = useState<Project[]>([]);
-  const [projectId, setProjectId] = useState<string>(
-    deepLink.project || DEFAULT_PROJECT
-  );
+  // Empty until the project list arrives and picks one with results. Seeding a
+  // hardcoded district here would flash somebody else's curriculum name in the
+  // picker before the real default settles.
+  const [projectId, setProjectId] = useState<string>(deepLink.project || "");
   // Lab forks (lab-*) stay out of Curriculum until the reviewer opts in.
   const [showLabForks, setShowLabForks] = useState(false);
   const [outputs, setOutputs] = useState<OutputsTree | null>(null);
@@ -236,7 +265,8 @@ export function RunReview() {
     });
   }, [graphRuns]);
 
-  // Load the project list. Prefer ?project= deep-link, else Dallas, else first.
+  // Load the project list. Prefer ?project= deep-link, else the first
+  // curriculum with results.
   // Best practice: never clobber an explicit URL curriculum with the default.
   // Extracted from the effect so the offline screen can offer a real retry.
   const loadProjects = useCallback(() => {
@@ -259,23 +289,19 @@ export function RunReview() {
             ? deepLink.project
             : undefined;
         // Land on something that will actually render. The console only shows
-        // REVIEW-READY e2e runs, so always defaulting to one fixed curriculum
-        // meant a first-time user on a fresh machine opened onto a blank page
-        // with no idea why. Preference order: the URL, the usual default when
-        // it has a run, any curriculum with a run, any project with a run.
+        // finished audits, so opening on a curriculum without one meant a blank
+        // page with no explanation. No district is hardcoded here: Loom serves
+        // any district, and privileging one by name is both wrong for everyone
+        // else and a guaranteed dead end wherever that folder is absent.
+        // Preference order: the URL, a curriculum with a finished audit, any
+        // project with one, then simply the first curriculum listed.
         const firstReviewable = (list: Project[]) =>
           list.find((p) => p.has_review_run)?.id;
-        const defaultHasRun = !!fallback.find(
-          (p) => p.id === DEFAULT_PROJECT
-        )?.has_review_run;
         const next =
           linked ??
-          (defaultHasRun ? DEFAULT_PROJECT : undefined) ??
           firstReviewable(fallback) ??
           firstReviewable(ps) ??
-          (fallback.some((p) => p.id === DEFAULT_PROJECT)
-            ? DEFAULT_PROJECT
-            : fallback[0]?.id);
+          fallback[0]?.id;
         if (next) setProjectId(next);
       })
       // If the project list itself cannot be fetched the service is down, and
@@ -418,6 +444,9 @@ export function RunReview() {
     setE2eListLoaded(false);
     setE2eRuns([]);
     setE2eRunId("");
+    // No curriculum chosen yet (the list is still loading). Requesting
+    // /api/projects//e2e/runs would just 404 and flash a false empty state.
+    if (!projectId) return;
     api
       .e2eRuns(projectId)
       .then((res) => {
@@ -448,6 +477,7 @@ export function RunReview() {
 
   // Workspace reload whenever a completed E2E selection settles.
   useEffect(() => {
+    if (!projectId) return;
     loadWorkspace(projectId, e2eRunId);
   }, [projectId, e2eRunId, loadWorkspace]);
 
@@ -696,16 +726,37 @@ export function RunReview() {
   const nPathsRan =
     pathsSummary?.paths.filter((p) => p.status === "ok").length ?? 0;
 
+  // The nav already knows a human label for every file it lists. Without this
+  // lookup the panel header renders the raw relative path, so the most
+  // prominent heading on the page reads "output/03-year-calendar-map.md".
+  const fileLabels = useMemo(() => {
+    const m = new Map<string, string>();
+    if (!outputs) return m;
+    for (const f of [...outputs.plates, ...outputs.layers, ...outputs.pdfs]) {
+      m.set(f.path, f.label);
+    }
+    for (const u of outputs.units) {
+      for (const f of [...u.files, ...(u.teacher_files ?? [])]) {
+        m.set(f.path, f.label);
+      }
+    }
+    return m;
+  }, [outputs]);
+
   let panelTitle: string;
-  if (showUnits) panelTitle = "Unit heatmap";
+  if (showUnits) panelTitle = "Unit quality";
   else if (showGraph) panelTitle = "Curriculum graph";
-  else if (showPaths) panelTitle = "Paths A–H · review lenses";
+  else if (showPaths) panelTitle = "What we checked for";
   else if (showUnitDetail)
     panelTitle = `Unit · ${selectedRecord?.title ?? selectedRollup?.title ?? selectedUnitId}`;
   else if (showLessonDetail) panelTitle = `Lesson · ${selectedLesson!.title}`;
   else if (showArtifactDetail)
     panelTitle = `Artifact · ${selectedArtifact!.title}`;
-  else panelTitle = activePath ?? "Viewer";
+  else
+    panelTitle =
+      (activePath ? fileLabels.get(activePath) : undefined) ??
+      activePath ??
+      "Viewer";
 
   return (
     <div className="app">
@@ -751,7 +802,7 @@ export function RunReview() {
               <optgroup label="Curriculum">
                 {curriculumProjects.map((p) => (
                   <option key={p.id} value={p.id}>
-                    {curriculumOptionLabel(p)}
+                    {curriculumOptionLabel(p, deepLink.advanced)}
                   </option>
                 ))}
               </optgroup>
@@ -759,7 +810,7 @@ export function RunReview() {
                 <optgroup label="Lab forks">
                   {labProjects.map((p) => (
                     <option key={p.id} value={p.id}>
-                      {curriculumOptionLabel(p)}
+                      {curriculumOptionLabel(p, deepLink.advanced)}
                     </option>
                   ))}
                 </optgroup>
@@ -772,7 +823,7 @@ export function RunReview() {
                       .filter((p) => p.id === projectId)
                       .map((p) => (
                         <option key={p.id} value={p.id}>
-                          {curriculumOptionLabel(p)}
+                          {curriculumOptionLabel(p, deepLink.advanced)}
                         </option>
                       ))}
                   </optgroup>
@@ -788,12 +839,15 @@ export function RunReview() {
                       .filter((p) => p.id === projectId)
                       .map((p) => (
                         <option key={p.id} value={p.id}>
-                          {curriculumOptionLabel(p)}
+                          {curriculumOptionLabel(p, deepLink.advanced)}
                         </option>
                       ))}
                   </optgroup>
                 )}
             </select>
+            {/* Engineering-only: experiment forks are not curricula anyone is
+                reviewing, so they stay behind ?advanced=1. */}
+            {deepLink.advanced && (
             <label className="topbar-lab-toggle" title="Show lab-* experiment forks">
               <input
                 type="checkbox"
@@ -804,7 +858,7 @@ export function RunReview() {
                   // Leaving labs: snap back to a real curriculum so the list stays clean.
                   if (!on && labProjects.some((p) => p.id === projectId)) {
                     const next =
-                      curriculumProjects.find((p) => p.id === DEFAULT_PROJECT) ??
+                      curriculumProjects.find((p) => p.has_review_run) ??
                       curriculumProjects[0];
                     if (next) setProjectId(next.id);
                   }
@@ -812,30 +866,31 @@ export function RunReview() {
               />
               <span>Lab forks</span>
             </label>
+            )}
             {topView === "review" && (
               <>
                 <select
                   value={e2eRunId}
                   onChange={(e) => setE2eRunId(e.target.value)}
                   disabled={!e2eRuns.length}
-                  aria-label="E2E run"
-                  title="Completed REVIEW-READY snapshot under e2e/runs/ only"
+                  aria-label="Audit"
+                  title="Finished audits of this curriculum"
                 >
                   {!e2eRuns.length ? (
                     <option value="">
-                      {e2eListLoaded
-                        ? "No completed review run yet"
-                        : "Loading runs…"}
+                      {e2eListLoaded ? "No finished audit yet" : "Loading…"}
                     </option>
                   ) : (
                     e2eRuns.map((r) => (
                       <option key={r.run_id} value={r.run_id}>
-                        E2E · {r.run_id}
-                        {r.n_output_units ? ` · ${r.n_output_units}u` : ""}
+                        {auditLabel(r)}
                       </option>
                     ))
                   )}
                 </select>
+                {/* Model runs are an A/B research control, not a reviewer
+                    control, and are empty on a normal install. */}
+                {deepLink.advanced && (
                 <select
                   value={graphRunId}
                   onChange={(e) => setGraphRunId(e.target.value)}
@@ -844,7 +899,7 @@ export function RunReview() {
                   title={
                     e2eRunId
                       ? `Graph nested under e2e/runs/${e2eRunId}/graph/runs/`
-                      : "Select a completed E2E run first"
+                      : "Open a finished audit first"
                   }
                 >
                   {!sortedGraphRuns.length ? (
@@ -859,6 +914,7 @@ export function RunReview() {
                     ))
                   )}
                 </select>
+                )}
               </>
             )}
           </>
@@ -871,18 +927,20 @@ export function RunReview() {
         )}
         {topView === "review" && (
           <span className="mono" style={{ color: "var(--muted)" }}>
-            {e2eRunId ? `E2E · ${e2eRunId}` : "waiting for completed run"}
+            {e2eRunId
+              ? auditLabel(e2eRuns.find((r) => r.run_id === e2eRunId))
+              : "no finished audit"}
           </span>
         )}
         {topView === "next" && (
           <span className="mono" style={{ color: "var(--muted)" }}>
-            create-after-audit
+            what to fix next
           </span>
         )}
       </div>
 
       {topView === "overview" ? (
-        <Overview />
+        <Overview advanced={deepLink.advanced} />
       ) : serviceError ? (
         // Checked before every data-backed view. The Overview deck above is
         // static, so it stays readable even when the service is unreachable.
@@ -977,8 +1035,8 @@ export function RunReview() {
                 <>
                   {(stats?.unit_rollup ?? []).length === 0 ? (
                     <div className="empty">
-                      No unit rollup in aggregate-stats. Pick an E2E run with
-                      finished output, or open Curriculum graph from View.
+                      This audit didn’t produce per-unit results. Choose a
+                      different audit, or run this one again.
                     </div>
                   ) : (
                     <>
@@ -1161,6 +1219,7 @@ export function RunReview() {
                   : "Curriculum graph"
               }
               nPathsRan={nPathsRan}
+              advanced={deepLink.advanced}
               onSelect={(path, type) => {
                 if (
                   path === UNITS_VIEW ||
@@ -1185,6 +1244,7 @@ export function RunReview() {
             quickLinks={quickLinks}
             running={running}
             runStatus={runStatus}
+            advanced={deepLink.advanced}
             onRun={startRun}
             onRefresh={() => loadWorkspace(projectId, e2eRunId)}
             onQuickLink={(path) =>
