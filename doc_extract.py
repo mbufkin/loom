@@ -10,6 +10,7 @@ import re
 import subprocess
 import zipfile
 import xml.etree.ElementTree as ET
+from html import unescape
 from pathlib import Path
 
 # Extensions we attempt to read (lowercase). Add new types here.
@@ -223,10 +224,62 @@ def _extract_legacy_doc(path: Path) -> str:
     return ""
 
 
-def _strip_html(html: str) -> str:
-    text = re.sub(r"<(script|style)[^>]*>[\s\S]*?</\1>", " ", html, flags=re.I)
+# Tags that end one idea and begin the next. Layer 0 asks the model to cite
+# evidence by paragraph number and resolves the quote from our own paragraph
+# list, so paragraph boundaries ARE the citation granularity: if a document
+# arrives as one unbroken run of text, every element can only legally point at
+# paragraph 1 and the resolved excerpt becomes the whole document. Marking
+# these as blank lines is what gives number_paragraphs() something to split on.
+_HTML_BLOCK_TAGS = (
+    "p|div|br|li|dt|dd|tr|h[1-6]|section|article|header|footer|nav|aside"
+    "|blockquote|pre|figure|figcaption|hr|table|thead|tbody|tfoot|ul|ol|dl|form"
+)
+
+# Table cells are the exception: breaking every <td> onto its own paragraph
+# shreds a row into meaningless fragments, so cells get a plain space and only
+# the row (<tr>, above) becomes a boundary.
+_HTML_CELL_TAGS = "td|th"
+
+
+def _strip_html(markup: str) -> str:
+    """Flatten HTML to text while preserving paragraph structure.
+
+    Named `markup` rather than `html` so it does not shadow the stdlib `html`
+    module we rely on for entity decoding.
+    """
+    # Script and style bodies are code, not prose - drop them wholesale before
+    # any other rule can turn their contents into "text".
+    text = re.sub(r"<(script|style)[^>]*>[\s\S]*?</\1>", " ", markup, flags=re.I)
+
+    # Whitespace is insignificant in HTML, so a pretty-printed file wraps
+    # sentences mid-phrase. Flatten the source's own newlines FIRST and every
+    # newline that remains is one we deliberately inserted below - otherwise
+    # the file's line wrapping shows up as breaks inside a quoted excerpt
+    # ("B\nCells"). Trade-off: <pre> whitespace is not preserved, which these
+    # curriculum exports do not rely on.
+    text = re.sub(r"\s+", " ", text)
+
+    # Order matters: convert boundaries to blank lines BEFORE stripping tags,
+    # because once every tag is a space the structure is unrecoverable.
+    text = re.sub(rf"<\s*/?\s*(?:{_HTML_CELL_TAGS})\b[^>]*>", " ", text, flags=re.I)
+    text = re.sub(rf"<\s*/?\s*(?:{_HTML_BLOCK_TAGS})\b[^>]*>", "\n\n", text, flags=re.I)
     text = re.sub(r"<[^>]+>", " ", text)
-    return re.sub(r"\s+", " ", text).strip()
+
+    # Decode entities only now that markup is gone, so a literal "&lt;p&gt;" in
+    # the source is never mistaken for a real tag. Without this, "&nbsp;" and
+    # "&amp;" reach the model's prompt and any excerpt quoted in a report.
+    text = unescape(text)
+
+    # A non-breaking space reads as a space but is not one; normalise it so it
+    # collapses with the run below instead of surviving inside excerpts.
+    text = text.replace("\u00a0", " ")
+
+    # Collapse only horizontal whitespace. Using \s+ here (as this once did)
+    # eats the newlines above and returns every document to a single paragraph.
+    text = re.sub(r"[ \t\r\f\v]+", " ", text)
+    text = re.sub(r" *\n *", "\n", text)
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    return text.strip()
 
 
 def extract_text(path: Path) -> tuple[str, str]:
