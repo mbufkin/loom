@@ -4553,3 +4553,9 @@ button:disabled {
   border: 1px solid var(--line, #d9dde3);
   border-radius: 4px;
 }
+
+/* The model row on Setup carries a link to Settings rather than a command,
+   so it needs the same left offset the command boxes use to stay aligned. */
+.setup-fix-action {
+  margin: 8px 0 0 calc(1em + 10px);
+}

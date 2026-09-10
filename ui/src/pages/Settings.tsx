@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { ModelPicker } from "../components/ModelPicker";
 import { api, describeError } from "../lib/api";
 import { readiness, usePreflight } from "../lib/usePreflight";
 import type { ConfigSummary, StorageInfo } from "../types";
@@ -155,6 +156,12 @@ export function Settings() {
         </div>
       </div>
 
+      {/* Directly under the panel that says where the reading happens, since
+          this is the control that changes it. onConnected reloads the config
+          summary as well as the preflight, so the statement above updates in
+          the same beat as the choice below. */}
+      <ModelPicker onConnected={() => void load()} />
+
       {preflight && (
         <div className="panel">
           <div className="panel-head">Can this computer run an audit?</div>
@@ -231,8 +238,9 @@ export function Settings() {
       )}
 
       <p className="home-note">
-        These settings are read-only in the app for now. Changing the model or
-        adding an API key still means editing <code>config.yaml</code> by hand.
+        The model can be changed here. Everything else on this screen is still
+        read-only, and API keys for hosted services are not managed in the app
+        yet.
       </p>
     </div>
   );

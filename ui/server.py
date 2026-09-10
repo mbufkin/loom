@@ -1289,8 +1289,8 @@ def _requirements() -> list[dict]:
             "ok": model_ok,
             "detail": model_detail,
             "fix": {
-                "all": "Start your local model server, or point Loom at one in "
-                "config.yaml under models.analyst_url.",
+                "all": "Start a local model server — Ollama, LM Studio and "
+                "llama.cpp all work — then choose it in Settings.",
             },
         },
         {
