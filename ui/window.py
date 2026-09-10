@@ -12,13 +12,21 @@ Useful flags:
 
     --project disd-aas-icev-smoke   open straight to one curriculum
     --view overview                 open a deck instead of the review console
+    --prod                          ship mode: one origin, no Vite, no Node
     --no-spawn                      attach to servers you started yourself
-    --api-port 8899                 move the API off its default port
+    --api-port 8899                 move the API off its default port (--prod)
     --debug                         enable webview devtools (F12)
 
-Why the window loads the Vite dev server rather than a built bundle: hot-module
-reload keeps working *inside* the native window, so editing a `.tsx` updates
-what you are looking at. A bundle would have to be rebuilt on every edit.
+Two modes, and the difference matters:
+
+  default  Vite on 5173 serves the app and proxies /api to the Python API on
+           8770. Hot-module reload works *inside* the native window, so editing
+           a `.tsx` updates what you are looking at. This is the mode to use
+           while changing the UI.
+
+  --prod   The Python API serves the built ui/dist itself on a single
+           OS-assigned port. No Vite, no Node, no proxy, no CORS — one process
+           behind the window, which is what you want on a delivered machine.
 
 Why Vite is launched through `node` instead of `npm run dev`: on Windows `npm`
 is a PowerShell/cmd shim that cannot be spawned without a shell, and it would
@@ -45,6 +53,8 @@ from webview.menu import Menu, MenuAction, MenuSeparator
 
 UI_DIR = Path(__file__).resolve().parent
 ROOT = UI_DIR.parent
+VITE_BIN = UI_DIR / "node_modules" / "vite" / "bin" / "vite.js"
+DIST = UI_DIR / "dist"
 # Built from assets/pdf/mark.png. .NET's Icon() constructor needs a real .ico,
 # so a PNG cannot be handed to pywebview directly.
 ICON = ROOT / "assets" / "loom.ico"
@@ -114,6 +124,19 @@ def _port_in_use(port: int) -> bool:
         return sock.connect_ex((HOST, port)) == 0
 
 
+def _free_port() -> int:
+    """Ask the OS for an unused port.
+
+    Production mode has no fixed port to defend: nothing proxies to it and no
+    bookmark points at it, so binding 0 and reading the result avoids ever
+    colliding with another tool. We pick it here rather than passing
+    `--port 0` to the server so the URL is known before the child starts.
+    """
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+        sock.bind((HOST, 0))
+        return sock.getsockname()[1]
+
+
 def _wait_until_answering(url: str, timeout_s: float) -> bool:
     """Poll a URL until it produces any HTTP response, or time out.
 
@@ -169,14 +192,31 @@ def _spawn_api(api_port: int) -> subprocess.Popen:
     )
 
 
+def _require_vite() -> None:
+    if not VITE_BIN.is_file():
+        raise SystemExit(f"Vite is not installed. Run:\n    cd {UI_DIR} && npm ci")
+
+
 def _spawn_vite() -> subprocess.Popen:
     """Start the Vite dev server as a single, directly-killable process."""
-    vite_bin = UI_DIR / "node_modules" / "vite" / "bin" / "vite.js"
-    if not vite_bin.is_file():
+    _require_vite()
+    return subprocess.Popen(["node", str(VITE_BIN)], cwd=str(UI_DIR))
+
+
+def _build_dist() -> None:
+    """Produce ui/dist so the API can serve the app on one origin.
+
+    A convenience build for first run in --prod; `npm run ui:build` remains the
+    canonical one because it also runs `tsc -b`. This deliberately skips the
+    typecheck so launching is not gated on unrelated type errors.
+    """
+    _require_vite()
+    _log("[loom-ui] no bundle at ui/dist — building it (first --prod run only)")
+    result = subprocess.run(["node", str(VITE_BIN), "build"], cwd=str(UI_DIR))
+    if result.returncode != 0 or not (DIST / "index.html").is_file():
         raise SystemExit(
-            f"Vite is not installed. Run:\n    cd {UI_DIR} && npm ci"
+            "vite build failed. Run `npm run ui:build` in ui/ to see the error."
         )
-    return subprocess.Popen(["node", str(vite_bin)], cwd=str(UI_DIR))
 
 
 def _build_menu(window: webview.Window) -> list[Menu]:
@@ -217,11 +257,21 @@ def main() -> int:
         help="open straight to a deck instead of the review console",
     )
     ap.add_argument(
+        "--prod",
+        action="store_true",
+        help="single-origin mode: serve the built ui/dist from the API, no Vite",
+    )
+    ap.add_argument(
         "--no-spawn",
         action="store_true",
         help="do not start the servers; attach to ones already running",
     )
-    ap.add_argument("--api-port", type=int, default=DEFAULT_API_PORT)
+    ap.add_argument(
+        "--api-port",
+        type=int,
+        default=None,
+        help=f"default {DEFAULT_API_PORT} in dev; an OS-assigned port in --prod",
+    )
     ap.add_argument(
         "--debug",
         action="store_true",
@@ -229,12 +279,27 @@ def main() -> int:
     )
     args = ap.parse_args()
 
+    if args.prod:
+        # Nothing proxies to this port, so let the OS choose and never clash.
+        api_port = args.api_port or _free_port()
+        origin = f"http://{HOST}:{api_port}/"
+    else:
+        # In dev the port is fixed by vite.config.ts, whose /api proxy targets
+        # 8770. Moving the API without editing that config would leave every
+        # /api call falling through to the SPA index — fail instead of guessing.
+        if args.api_port not in (None, DEFAULT_API_PORT):
+            raise SystemExit(
+                f"--api-port {args.api_port} cannot work in dev: the Vite proxy in "
+                f"vite.config.ts targets {DEFAULT_API_PORT}.\n"
+                f"Use --prod for a custom port, or edit vite.config.ts."
+            )
+        api_port = DEFAULT_API_PORT
+        origin = f"http://{HOST}:{VITE_PORT}/"
+
     # The app reads these off the query string, so the launcher only has to
     # build a URL — no IPC into the page and nothing to keep in sync.
     query = {k: v for k, v in (("project", args.project), ("view", args.view)) if v}
-    url = f"http://{HOST}:{VITE_PORT}/"
-    if query:
-        url += "?" + urllib.parse.urlencode(query)
+    url = origin + ("?" + urllib.parse.urlencode(query) if query else "")
 
     # Name the loaded curriculum in the title bar: with several windows open,
     # alt-tab is the only way to tell them apart.
@@ -243,37 +308,50 @@ def main() -> int:
     children: list[subprocess.Popen] = []
     try:
         if args.no_spawn:
-            if not _port_in_use(VITE_PORT):
+            expected = api_port if args.prod else VITE_PORT
+            if not _port_in_use(expected):
+                hint = (
+                    f"python {UI_DIR / 'server.py'} --port {expected}"
+                    if args.prod
+                    else f"cd {UI_DIR} && npm run dev"
+                )
                 raise SystemExit(
-                    f"--no-spawn given but nothing is listening on {HOST}:{VITE_PORT}.\n"
-                    f"Start it with: cd {UI_DIR} && npm run dev"
+                    f"--no-spawn given but nothing is listening on {HOST}:{expected}.\n"
+                    f"Start it with: {hint}"
                 )
         else:
             # Fail before spawning anything, so we never half-start and leave
             # a stray server behind.
-            if _port_in_use(VITE_PORT):
+            if not args.prod and _port_in_use(VITE_PORT):
                 raise SystemExit(
                     f"Port {VITE_PORT} is already in use and vite.config.ts pins it "
                     f"(strictPort).\nStop the other dev server, or attach to it with "
                     f"--no-spawn."
                 )
-            if _port_in_use(args.api_port):
+            if _port_in_use(api_port):
                 raise SystemExit(
-                    f"Port {args.api_port} is already in use.\n"
+                    f"Port {api_port} is already in use.\n"
                     f"Stop the other API, or pick another with --api-port."
                 )
+            if args.prod and not (DIST / "index.html").is_file():
+                _build_dist()
 
-            _log(f"[loom-ui] starting API on {HOST}:{args.api_port}")
-            children.append(_spawn_api(args.api_port))
-            _log(f"[loom-ui] starting vite on {HOST}:{VITE_PORT}")
-            children.append(_spawn_vite())
+            _log(f"[loom-ui] starting API on {HOST}:{api_port}")
+            children.append(_spawn_api(api_port))
+            if not args.prod:
+                _log(f"[loom-ui] starting vite on {HOST}:{VITE_PORT}")
+                children.append(_spawn_vite())
 
             if not _wait_until_answering(
-                f"http://{HOST}:{args.api_port}/api/projects", timeout_s=30
+                f"http://{HOST}:{api_port}/api/projects", timeout_s=30
             ):
                 raise SystemExit("API did not come up within 30s.")
             if not _wait_until_answering(url, timeout_s=60):
-                raise SystemExit("Vite did not come up within 60s.")
+                raise SystemExit(
+                    "The app did not come up within 60s."
+                    if args.prod
+                    else "Vite did not come up within 60s."
+                )
 
         _log(f"[loom-ui] opening window at {url}")
         window = webview.create_window(

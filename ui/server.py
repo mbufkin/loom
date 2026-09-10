@@ -60,6 +60,10 @@ ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 PROJECTS = ROOT / "projects"
+# Built SPA bundle (npm run ui:build). Present only in production mode; when it
+# is absent this server stays a pure JSON API and the Vite dev server on 5173
+# serves the app, so the development flow is completely unaffected.
+DIST = ROOT / "ui" / "dist"
 RUN_AUDIT = ROOT / "run-audit"
 CONFIG = ROOT / "config.yaml"
 RUNS_DIR = ROOT / "ui" / ".runs"  # per-run log files (gitignored)
@@ -533,6 +537,36 @@ def _safe_file(pid: str, rel: str, e2e_run: str | None = None) -> Path:
     if not target.is_file():
         raise FileNotFoundError(rel)
     return target
+
+
+def _safe_static(url_path: str) -> Path | None:
+    """Resolve a request path inside ui/dist, or None when there is nothing to send.
+
+    Single-origin production mode: the desktop window loads this server
+    directly, so it has to serve the built app as well as /api — which removes
+    the Vite proxy, the second port, and CORS from the shipped product.
+
+    Two rules worth knowing:
+      * A path that escapes dist is a hard PermissionError, never a fallback.
+      * Only navigation paths (no file extension) fall back to index.html. A
+        missing *asset* must 404 instead of quietly returning HTML, which
+        otherwise shows up as the baffling "Unexpected token '<'" script error.
+    """
+    if not DIST.is_dir():
+        return None
+    dist = DIST.resolve()
+    rel = url_path.lstrip("/") or "index.html"
+    if ".." in Path(rel).parts:
+        raise PermissionError(rel)
+    target = (dist / rel).resolve()
+    if target != dist and dist not in target.parents:
+        raise PermissionError(rel)
+    if target.is_file():
+        return target
+    if Path(rel).suffix:
+        return None
+    index = dist / "index.html"
+    return index if index.is_file() else None
 
 
 def _exists(pid_dir: Path, rel: str) -> bool:
@@ -1128,6 +1162,20 @@ class Handler(BaseHTTPRequestHandler):
             if len(parts) == 3 and parts[:2] == ["api", "runs"]:
                 res = _run_status(parts[2])
                 return self._json(res) if res else self._json({"error": "no such run"}, 404)
+            # Anything that is not an /api route is a request for the app
+            # itself. Only reachable in production mode, where ui/dist exists.
+            if not parts or parts[0] != "api":
+                static = _safe_static(parsed.path)
+                if static is not None:
+                    return self._bytes(static)
+                if not DIST.is_dir():
+                    return self._json(
+                        {
+                            "error": "no ui/dist bundle: this server is API-only. "
+                            "Run `npm run ui:build`, or use the Vite dev server."
+                        },
+                        501,
+                    )
             return self._json({"error": "not found"}, 404)
         except FileNotFoundError as e:
             return self._json({"error": f"not found: {e}"}, 404)
@@ -1252,11 +1300,22 @@ class Handler(BaseHTTPRequestHandler):
 
 def main() -> int:
     ap = argparse.ArgumentParser(description="Loom Run Review local API")
-    ap.add_argument("--port", type=int, default=8770)
+    ap.add_argument(
+        "--port",
+        type=int,
+        default=8770,
+        help="0 lets the OS pick a free port; the chosen one is printed below",
+    )
     ap.add_argument("--host", default="127.0.0.1")
     args = ap.parse_args()
     httpd = ThreadingHTTPServer((args.host, args.port), Handler)
-    print(f"[loom-review] API on http://{args.host}:{args.port}  (root: {ROOT})")
+    # Report the *bound* port, not the requested one: with --port 0 the OS
+    # assigns it, and the caller has no other way to learn where we ended up.
+    # flush so a launcher reading our output is not blocked by stdio buffering.
+    port = httpd.server_address[1]
+    print(f"[loom-review] API on http://{args.host}:{port}  (root: {ROOT})", flush=True)
+    if DIST.is_dir():
+        print(f"[loom-review] serving app from {DIST}", flush=True)
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:

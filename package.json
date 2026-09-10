@@ -14,7 +14,8 @@
     "ui:dev": "cd ui && npm run dev",
     "ui:api": "python3 ui/server.py",
     "ui:build": "cd ui && npm run build",
-    "ui:window": "python3 ui/window.py"
+    "ui:window": "python3 ui/window.py",
+    "ui:window:prod": "python3 ui/window.py --prod"
   },
   "repository": {
     "type": "git",
