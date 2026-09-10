@@ -71,24 +71,16 @@ function auditLabel(r?: E2ERunInfo): string {
   return `Audit · ${when}${units}`;
 }
 
-/** Curriculum option text: prefer manifest title.
- *
- * The tier ("Golden", "Stress", "Experiment") grades our own test corpus, not
- * the district's curriculum, so it stays out of the picker unless advanced
- * mode is on — otherwise it reads as a verdict on their materials.
- */
-function curriculumOptionLabel(p: Project, advanced = false): string {
-  const title = (p.title || p.id).trim();
-  if (p.kind === "lab" || !advanced) return title;
-  if (p.tier && p.tier !== "Unknown") return `${title} — ${p.tier}`;
-  return title;
+/** Curriculum option text: prefer the manifest title, fall back to the id. */
+function curriculumOptionLabel(p: Project): string {
+  return (p.title || p.id).trim();
 }
 
 /** Most recently audited first, then never-audited alphabetically.
  *
- * Mirrors the order the API returns. This used to rank by `sort_tier`, which
- * grades our sample corpus and is simply absent on an installed copy — there,
- * every curriculum tied at 9 and the list was effectively unordered.
+ * Mirrors the order the API returns. This used to rank by a tier parsed out of
+ * projects/STATUS.md, which grades our sample corpus and is simply absent on an
+ * installed copy — there, every curriculum tied and the list was unordered.
  */
 function projectSortKey(p: Project): [number, string, string] {
   return [-(p.last_audit ?? 0), (p.title || p.id).toLowerCase(), p.id];
@@ -218,20 +210,23 @@ export function RunReview() {
   // first-run screen offers a button or explains why it cannot.
   const [preflight, setPreflight] = useState<RunPreflight | null>(null);
 
-  const project = projects.find((p) => p.id === projectId) ?? {
+  // Placeholder for the window between "a project is selected" and "the list
+  // has arrived", so the panels below can render without null checks.
+  const project: Project = projects.find((p) => p.id === projectId) ?? {
     id: projectId,
-    tier: "Unknown",
     has_output: false,
     has_stats: false,
     has_unit_rung: false,
   };
 
-  // Curricula = STATUS.md rows. If STATUS is empty, fall back to non-lab dirs.
+  // A curriculum is a folder ingest has organised into units. The fallback
+  // catches one that has documents but has not been organised yet, so a
+  // half-finished setup is still reachable instead of silently missing.
   const curriculumProjects = useMemo(() => {
-    const fromStatus = projects.filter((p) => p.kind === "curriculum");
+    const ingested = projects.filter((p) => p.kind === "curriculum");
     const list =
-      fromStatus.length > 0
-        ? fromStatus
+      ingested.length > 0
+        ? ingested
         : projects.filter((p) => p.kind !== "lab" && !p.id.startsWith("lab-"));
     return [...list].sort((a, b) => {
       const ka = projectSortKey(a);
@@ -808,7 +803,7 @@ export function RunReview() {
               <optgroup label="Curriculum">
                 {curriculumProjects.map((p) => (
                   <option key={p.id} value={p.id}>
-                    {curriculumOptionLabel(p, deepLink.advanced)}
+                    {curriculumOptionLabel(p)}
                   </option>
                 ))}
               </optgroup>
@@ -816,7 +811,7 @@ export function RunReview() {
                 <optgroup label="Lab forks">
                   {labProjects.map((p) => (
                     <option key={p.id} value={p.id}>
-                      {curriculumOptionLabel(p, deepLink.advanced)}
+                      {curriculumOptionLabel(p)}
                     </option>
                   ))}
                 </optgroup>
@@ -829,7 +824,7 @@ export function RunReview() {
                       .filter((p) => p.id === projectId)
                       .map((p) => (
                         <option key={p.id} value={p.id}>
-                          {curriculumOptionLabel(p, deepLink.advanced)}
+                          {curriculumOptionLabel(p)}
                         </option>
                       ))}
                   </optgroup>
@@ -845,7 +840,7 @@ export function RunReview() {
                       .filter((p) => p.id === projectId)
                       .map((p) => (
                         <option key={p.id} value={p.id}>
-                          {curriculumOptionLabel(p, deepLink.advanced)}
+                          {curriculumOptionLabel(p)}
                         </option>
                       ))}
                   </optgroup>
@@ -1250,7 +1245,6 @@ export function RunReview() {
             quickLinks={quickLinks}
             running={running}
             runStatus={runStatus}
-            advanced={deepLink.advanced}
             onRun={startRun}
             onRefresh={() => loadWorkspace(projectId, e2eRunId)}
             onQuickLink={(path) =>

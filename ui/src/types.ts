@@ -5,14 +5,9 @@ export type ProjectKind = "curriculum" | "lab" | "other";
 
 export interface Project {
   id: string;
-  tier: string;
   /** Human label from manifest when present. */
   title?: string;
   kind?: ProjectKind;
-  in_status?: boolean;
-  /** 0=Golden … 9=unknown. Developer annotation from projects/STATUS.md only;
-   *  absent on an installed copy, so never sort or filter on it. */
-  sort_tier?: number;
   has_output: boolean;
   has_stats: boolean;
   has_unit_rung: boolean;

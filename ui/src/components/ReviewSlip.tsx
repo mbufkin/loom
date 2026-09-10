@@ -9,8 +9,6 @@ interface Props {
   onRun: () => void;
   onRefresh: () => void;
   onQuickLink: (path: string) => void;
-  /** Engineering mode: show the internal corpus tier. */
-  advanced?: boolean;
 }
 
 // Sticky right-rail slip: headline counts, run controls, and quick links to
@@ -24,7 +22,6 @@ export function ReviewSlip({
   onRun,
   onRefresh,
   onQuickLink,
-  advanced = false,
 }: Props) {
   const findings = stats?.finding_status_counts ?? {};
   const missing = findings["MISSING"] ?? 0;
@@ -35,14 +32,6 @@ export function ReviewSlip({
     <aside className="panel slip">
       <div className="panel-head">At a glance</div>
       <div className="panel-body">
-        {/* The tier grades our own test corpus ("Golden", "Unknown"), not the
-            district's materials. Displayed next to their curriculum name it
-            reads as a verdict Loom never made, so it stays in advanced mode. */}
-        {advanced && (
-          <>
-            <span className="tier-badge">{project.tier}</span>{" "}
-          </>
-        )}
         <span className="slip-project">{project.title || project.id}</span>
 
         <div className="stat-grid">

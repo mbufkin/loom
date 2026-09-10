@@ -23,17 +23,21 @@ from audit_lib import (
 )
 
 
-def test_engineering_calendar_on_disk():
-    cal = load_unit_calendar(
-        BASE / "projects/dallas-career-2026/units/engineering/calendar.yaml"
-    )
-    assert cal["unit_id"] == "engineering"
+# Real files on disk, so the loaders are exercised against the same YAML shape
+# production sees. Points at the synthetic fixture rather than a district's
+# committed corpus — see tests/fixtures/data-root/README.md.
+FIXTURE_PROJECT = BASE / "tests/fixtures/data-root/projects/sample-cte-demo"
+
+
+def test_unit_calendar_on_disk():
+    cal = load_unit_calendar(FIXTURE_PROJECT / "units/welding/calendar.yaml")
+    assert cal["unit_id"] == "welding"
     assert len(cal["days"]) >= 1
 
 
 def test_manifest_on_disk():
-    m = load_manifest(BASE / "projects/dallas-career-2026/manifest.yaml")
-    assert "engineering" in m["units"]
+    m = load_manifest(FIXTURE_PROJECT / "manifest.yaml")
+    assert "welding" in m["units"]
 
 
 def test_ingest_plan_rejects_bad_unit_id():

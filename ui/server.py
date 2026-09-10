@@ -9,7 +9,7 @@ alongside and write only under projects/<id>/create/. Local-only by design:
 no auth, binds to 127.0.0.1, and every file read is confined to the project dir.
 
 Endpoints (all under /api):
-  GET  /api/projects                      -> [{id, tier, has_output, ...}]
+  GET  /api/projects                      -> [{id, title, kind, has_output, ...}]
   GET  /api/projects/{id}/outputs[?e2e_run=] -> grouped tree of reviewable files
   GET  /api/projects/{id}/file?path=REL[&e2e_run=] -> raw bytes of one file (guarded)
   GET  /api/projects/{id}/stats[?e2e_run=] -> output/aggregate-stats.json
@@ -434,42 +434,6 @@ def _graph_unit_detail(
     }
 
 
-def _status_tiers() -> dict[str, str]:
-    """Parse projects/STATUS.md's markdown table into {project_id: tier}.
-
-    A developer-only annotation, and nothing user-facing may depend on it: the
-    file describes our sample corpora, so it is absent on an installed copy and
-    every real district curriculum is simply "Unknown". Surfaced behind the
-    advanced flag; never used to decide what a reviewer can see.
-    """
-    tiers: dict[str, str] = {}
-    status = PROJECTS / "STATUS.md"
-    if not status.is_file():
-        return tiers
-    # Rows look like: | `dallas-career-2026` | Active | Yes | Yes | ... |
-    row = re.compile(r"^\|\s*`([^`]+)`\s*\|\s*\*{0,2}([^*|]+?)\*{0,2}\s*\|")
-    for line in status.read_text(encoding="utf-8", errors="replace").splitlines():
-        m = row.match(line.strip())
-        if m:
-            tiers[m.group(1).strip()] = m.group(2).strip()
-    return tiers
-
-
-# Curriculum picker sort: Golden first, then Active / Stress / Experiment.
-_TIER_SORT_RANK = {
-    "golden": 0,
-    "active": 1,
-    "stress": 2,
-    "experiment": 3,
-    "fixture": 4,
-    "template": 5,
-}
-
-
-def _sort_tier_rank(tier: str) -> int:
-    return _TIER_SORT_RANK.get((tier or "").strip().lower(), 9)
-
-
 def _project_title(project_dir: Path, pid: str) -> str:
     """Human label from manifest when present; otherwise the folder id."""
     manifest = project_dir / "manifest.yaml"
@@ -494,12 +458,12 @@ def _project_title(project_dir: Path, pid: str) -> str:
 def _project_kind(pid: str, has_manifest: bool) -> str:
     """curriculum = has an ingested manifest; lab = lab-* forks; other = the rest.
 
-    Derived from what is on disk, deliberately *not* from projects/STATUS.md.
-    STATUS.md is a hand-maintained table describing our own sample corpora, so
-    on any machine but a developer's it lists nothing — which meant every
-    curriculum a district ingested was classified "other" and disappeared from
-    a picker that shows kind == "curriculum". The manifest is the honest
-    signal: ingest writes one once it has organised documents into units.
+    Derived from what is on disk. This used to read projects/STATUS.md, a
+    hand-maintained table describing our own sample corpora — so on any machine
+    but a developer's it listed nothing, and every curriculum a district
+    ingested was classified "other" and disappeared from a picker that shows
+    kind == "curriculum". The manifest is the honest signal: ingest writes one
+    once it has organised the documents into units.
     """
     if pid.startswith("lab-"):
         return "lab"
@@ -535,29 +499,23 @@ def _list_projects() -> list[dict]:
     Curriculum dropdown uses kind=curriculum (an ingested manifest). Lab forks
     stay loadable by id but are opt-in in the UI (kind=lab).
     """
-    tiers = _status_tiers()
     out: list[dict] = []
     if not PROJECTS.is_dir():
         return out
     for child in PROJECTS.iterdir():
-        # Skip files (STATUS.md, README.md) and private/underscore shelves.
+        # Skip files (README.md and friends) and private/underscore shelves.
         if not child.is_dir() or child.name.startswith("_"):
             continue
         pid = child.name
         has_manifest = (child / "manifest.yaml").is_file()
-        tier = tiers.get(pid, "Unknown")
-        in_status = pid in tiers
         kind = _project_kind(pid, has_manifest)
         title = _project_title(child, pid)
         last_audit = _latest_review_run(child)
         out.append(
             {
                 "id": pid,
-                "tier": tier,
                 "title": title,
                 "kind": kind,
-                "in_status": in_status,
-                "sort_tier": _sort_tier_rank(tier),
                 "has_output": (child / "output").is_dir(),
                 "has_stats": (child / "output" / "aggregate-stats.json").is_file(),
                 "has_unit_rung": (child / "layer_unit" / "UNIT-RUNG.md").is_file(),
@@ -574,8 +532,7 @@ def _list_projects() -> list[dict]:
         )
     # Most recently audited first: the curriculum somebody last worked on is the
     # one they most likely want back. Never-audited trees sort to the bottom
-    # alphabetically, rather than by an internal tier table that means nothing
-    # outside this repo.
+    # alphabetically.
     out.sort(
         key=lambda p: (
             -(p["last_audit"] or 0.0),

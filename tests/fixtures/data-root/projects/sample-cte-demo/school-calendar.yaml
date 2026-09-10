@@ -1,0 +1,78 @@
+# Synthetic district calendar for the test fixture curriculum.
+#
+# Entirely invented. No real district's data is used here, which is the point:
+# the pipeline tests used to assert against a live district corpus committed
+# under projects/, which meant shipping the program shipped that district's
+# curriculum structure. See tests/fixtures/data-root/README.md.
+#
+# Dates are deliberately set in 2030-2031 so nobody mistakes this for a real
+# academic year, and every boundary below is a genuine weekday (verified when
+# the fixture was generated). The shape exercises each branch of
+# rollup.collect_blocked_dates: bare date strings, {date, name} holidays,
+# {begin, end, name} spans, and the separate fall_break block.
+
+district: Example Unified School District
+school_year: "2030-2031"
+source: synthetic fixture (no real district data)
+
+# Core instructional boundaries. Aug 5 2030 and May 23 2031 are both weekdays.
+first_day_of_class: "2030-08-05"
+last_day_of_class: "2031-05-23"
+
+# Four quarters. Note the deliberate gap between q1 and q2: q1 ends Thursday
+# Oct 10, fall break covers Fri Oct 11 + Mon Oct 14, and q2 opens Tue Oct 15.
+# That gives the tests a *weekday* which belongs to no grading period, which is
+# the interesting case — a weekend would pass for the wrong reason.
+grading_periods:
+  - id: q1
+    label: "Quarter 1"
+    begin: "2030-08-05"
+    end: "2030-10-10"
+  - id: q2
+    label: "Quarter 2"
+    begin: "2030-10-15"
+    end: "2030-12-20"
+  - id: q3
+    label: "Quarter 3"
+    begin: "2031-01-06"
+    end: "2031-03-14"
+  - id: q4
+    label: "Quarter 4"
+    begin: "2031-03-24"
+    end: "2031-05-23"
+
+# Non-instructional days: no student-facing lesson should be scheduled here.
+professional_development:
+  - "2030-07-29"
+  - "2031-01-05"
+
+teacher_workdays:
+  - "2030-07-30"
+  - "2031-05-25"
+
+holidays_no_school:
+  - date: "2030-09-02"
+    name: Labor Day
+  - begin: "2030-11-25"
+    end: "2030-11-29"
+    name: Thanksgiving Break
+  - begin: "2030-12-23"
+    end: "2031-01-03"
+    name: Winter Break
+  - date: "2031-01-20"
+    name: Martin Luther King Jr. Day
+  - date: "2031-02-17"
+    name: Presidents Day
+  - begin: "2031-03-17"
+    end: "2031-03-21"
+    name: Spring Break
+  - date: "2031-05-26"
+    name: Memorial Day
+
+fall_break:
+  begin: "2030-10-11"
+  end: "2030-10-14"
+  note: Students and campus team members
+
+inclement_weather_days:
+  - "2031-04-03"

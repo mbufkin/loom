@@ -1,0 +1,45 @@
+# Synthetic curriculum manifest for pipeline tests. Invented courses, invented
+# district. Six two-day units, so a sequential placement consumes exactly
+# twelve instructional days — a number the tests can assert on directly
+# instead of hard-coding a real corpus's shape.
+#
+# Unit order matters: rollup places units sequentially in the order they appear
+# here, and yaml.safe_load preserves insertion order on Python 3.7+.
+
+project:
+  id: sample-cte-demo
+  name: Example CTE Program (synthetic fixture)
+
+sources_dir: sources
+
+units:
+  welding:
+    title: Welding Fundamentals
+    calendar: units/welding/calendar.yaml
+    documents:
+      - doc_welding_lesson.txt
+  horticulture:
+    title: Horticulture and Plant Science
+    calendar: units/horticulture/calendar.yaml
+    documents:
+      - doc_horticulture_lesson.txt
+  culinary-arts:
+    title: Culinary Arts
+    calendar: units/culinary-arts/calendar.yaml
+    documents:
+      - doc_culinary_lesson.txt
+  networking:
+    title: Computer Networking
+    calendar: units/networking/calendar.yaml
+    documents:
+      - doc_networking_lesson.txt
+  health-science:
+    title: Health Science Theory
+    calendar: units/health-science/calendar.yaml
+    documents:
+      - doc_health_science_lesson.txt
+  drafting:
+    title: Engineering Drafting
+    calendar: units/drafting/calendar.yaml
+    documents:
+      - doc_drafting_lesson.txt

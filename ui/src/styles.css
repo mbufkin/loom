@@ -735,16 +735,6 @@ button:disabled {
   top: 84px;
 }
 
-.slip .tier-badge {
-  display: inline-block;
-  font-weight: 800;
-  text-transform: uppercase;
-  border: 2px solid var(--line);
-  padding: 3px 10px;
-  background: var(--band-golden);
-  box-shadow: var(--shadow-sm);
-}
-
 .slip .stat-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
