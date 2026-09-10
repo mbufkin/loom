@@ -1,0 +1,90 @@
+# EXAMPLE district calendar — copy to `school-calendar.yaml` and edit.
+#
+# This file is deliberately named `.example.yaml` so nothing reads it. A new
+# curriculum starts with NO calendar, which is a supported state, not a broken
+# one:
+#
+#   with a calendar     rollup runs in `dated` mode. Units land on real dates,
+#                       and you get a year-at-a-glance keyed to your school
+#                       year, with holidays and non-instructional days skipped.
+#   without a calendar  rollup runs in `sequential` mode. Units are placed in
+#                       order (Unit 1, Unit 2, ...) with no dates. Every other
+#                       part of the audit is unaffected.
+#
+# So you can audit a curriculum today and add the calendar later; re-running
+# rollup upgrades the pacing plan from sequential to dated. Nothing else needs
+# to change.
+#
+# Dates are ISO `YYYY-MM-DD` and quoted, so YAML keeps them as strings rather
+# than parsing them into its own date type.
+
+# --- Identification (labels only; nothing branches on these) ---
+district: Your School District
+school_year: "2026-2027"
+source: reference/your-district-calendar.pdf
+
+# --- The instructional spine. These two fields are what enable dated mode. ---
+# rollup walks first -> last, keeping weekdays that are not blocked below.
+first_day_of_class: "2026-08-17"
+last_day_of_class: "2027-05-28"
+
+# --- Grading periods (optional) ---
+# Used to group units into terms on the year-at-a-glance. `id` is yours to
+# choose; it appears in generated reports. Gaps between periods are fine.
+grading_periods:
+  - id: q1
+    label: "Quarter 1"
+    begin: "2026-08-17"
+    end: "2026-10-16"
+  - id: q2
+    label: "Quarter 2"
+    begin: "2026-10-19"
+    end: "2026-12-18"
+  - id: q3
+    label: "Quarter 3"
+    begin: "2027-01-05"
+    end: "2027-03-12"
+  - id: q4
+    label: "Quarter 4"
+    begin: "2027-03-22"
+    end: "2027-05-28"
+
+# --- Non-instructional days ---
+# Everything below is optional and additive: each entry removes days from the
+# instructional calendar so the audit never expects a lesson on a day students
+# are not in class. List whatever your district publishes and omit the rest.
+
+# Staff-only days. Plain date strings.
+professional_development:
+  - "2026-08-13"
+  - "2027-01-04"
+
+teacher_workdays:
+  - "2026-08-14"
+  - "2027-05-31"
+
+# Two accepted shapes: a single `date`, or a `begin`/`end` span (inclusive).
+# `name` is for reports.
+holidays_no_school:
+  - date: "2026-09-07"
+    name: Labor Day
+  - begin: "2026-11-23"
+    end: "2026-11-27"
+    name: Thanksgiving Break
+  - begin: "2026-12-21"
+    end: "2027-01-01"
+    name: Winter Break
+  - begin: "2027-03-15"
+    end: "2027-03-19"
+    name: Spring Break
+
+# A single span, if your district has one.
+fall_break:
+  begin: "2026-10-17"
+  end: "2026-10-18"
+
+# Days held in reserve for closures. Blocked like any other non-instructional
+# day; if they go unused, delete them and re-run rollup.
+inclement_weather_days:
+  - "2027-02-15"
+  - "2027-04-02"

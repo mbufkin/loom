@@ -25,7 +25,12 @@ cp shared/disd-school-calendar/DISD-Academic-Calendar-2026-2027.png projects/<id
 python3 rollup.py --project <id> --force
 ```
 
-`projects/_template/` already ships with both files so `cp -a projects/_template projects/<id>` includes the DISD spine by default.
+This is one district's calendar, kept here for the Dallas datasets. It is
+deliberately **not** in `projects/_template/` any more: the template used to
+ship this spine, which meant every new curriculum — for any district — silently
+inherited Dallas's school year. The template now ships a neutral
+`school-calendar.example.yaml` instead, and the calendar is optional (without
+one, rollup runs in sequential mode).
 
 ## Source / verification
 
@@ -37,5 +42,5 @@ python3 rollup.py --project <id> --force
 
 1. Download the new Traditional PDF/PNG into this folder.
 2. Update `school-calendar.yaml` dates from the legend.
-3. Copy into `projects/_template/` and any active Dallas projects.
+3. Copy into any active Dallas curriculum (not into `_template` — see above).
 4. `python3 rollup.py --project <id> --force` on each Dallas dataset.

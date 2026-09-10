@@ -23,14 +23,17 @@ This runs: preflight → ingest (if needed) → rollup → **Layer 0 → (graph)
 ```bash
 cp -a projects/_template projects/my-district
 # copy curriculum files into projects/my-district/sources/
-# DISD: school-calendar.yaml + reference/ calendar image are already in _template
-# (canonical: shared/disd-school-calendar/). Other districts: replace or remove.
+# optional: cp school-calendar.example.yaml school-calendar.yaml and edit it
 ./run-audit my-district
 ```
 
-Dated YAG / pacing requires `projects/<id>/school-calendar.yaml`. Without it,
-rollup runs in sequential mode only. After editing the spine:  
-`python3 rollup.py --project <id> --force`.
+The school calendar is optional. Dated pacing and a dated year-at-a-glance
+require `projects/<id>/school-calendar.yaml`; without one, rollup runs in
+sequential mode and every other part of the audit is unchanged. The template
+ships a documented `school-calendar.example.yaml` to copy and edit — no
+district's calendar is assumed. A calendar can be added at any time; re-run
+`python3 rollup.py --project <id> --force` and the pacing plan upgrades from
+sequential to dated.
 
 ### After adding documents
 

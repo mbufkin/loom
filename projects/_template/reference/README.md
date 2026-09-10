@@ -1,11 +1,11 @@
-# Official district calendar reference
+# District calendar reference (optional)
 
-| File | Description |
-|------|-------------|
-| `DISD-Academic-Calendar-2026-2027.png` | Dallas ISD Traditional academic calendar (2026–2027) |
+Drop your district's published academic calendar here — the PDF, image or
+printout it was distributed as. Nothing reads these files; they exist so a
+reviewer can check the structured
+[`../school-calendar.example.yaml`](../school-calendar.example.yaml) → 
+`../school-calendar.yaml` against the source it was transcribed from.
 
-Structured spine: **`../school-calendar.yaml`** (required for dated pacing / year-at-a-glance).
-
-Canonical copy also lives at repo-level [`shared/disd-school-calendar/`](../../../shared/disd-school-calendar/).
-
-**Non-DISD datasets:** replace or delete these files and author a district-specific `school-calendar.yaml`, or run without one (rollup sequential mode only).
+The structured file is what the pipeline actually uses, and it is optional:
+without it, pacing is sequential rather than dated. See
+[`../README.md`](../README.md).
