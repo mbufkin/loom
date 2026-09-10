@@ -1,6 +1,122 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { api, describeError } from "../lib/api";
 import type { ModelDiscovery, ModelProvider } from "../types";
+
+/** Does this endpoint run on this machine? Drives the whole privacy story. */
+function isLocalEndpoint(url: string | undefined | null): boolean {
+  if (!url) return false;
+  return /^https?:\/\/(127\.0\.0\.1|localhost|\[::1\])(:|\/|$)/i.test(url);
+}
+
+function hostOf(url: string | undefined | null): string {
+  if (!url) return "";
+  try {
+    return new URL(url).host;
+  } catch {
+    return url;
+  }
+}
+
+/**
+ * What Loom is reading with right now, stated once and stated loudly.
+ *
+ * The badge is the point. "llama3.2:3b" and "nvidia/llama-3.3-70b" look
+ * equally harmless as bare names, but one keeps every document on this
+ * machine and the other posts them to a company. Someone glancing at this
+ * screen should be able to tell which without reading a URL.
+ */
+function CurrentModel({
+  current,
+  source,
+}: {
+  current?: { url: string; model: string };
+  source: string;
+}) {
+  if (!current?.url || !current.model) {
+    return (
+      <div className="model-now none">
+        <div className="model-now-model">No model chosen yet</div>
+        <div className="model-now-note">
+          Loom cannot read a curriculum until one is selected below.
+        </div>
+      </div>
+    );
+  }
+  const local = isLocalEndpoint(current.url);
+  return (
+    <div className={`model-now ${local ? "local" : "remote"}`}>
+      <div className="model-now-label">Reading with</div>
+      <div className="model-now-model mono">{current.model}</div>
+      <div className="model-now-where">
+        {source}
+        {source && " · "}
+        <span className="mono">{hostOf(current.url)}</span>
+      </div>
+      <div className="model-now-badge">
+        {local
+          ? "Stays on this computer"
+          : `Your documents are sent to ${hostOf(current.url)}`}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Models whose names say they were built for a job that is not reading a
+ * curriculum: embedders, rerankers, safety classifiers, reward models,
+ * speech, OCR and vision.
+ *
+ * A hosted catalogue is one flat list of everything the provider sells, and
+ * NVIDIA's is over a hundred entries. Offering `nv-embedqa-mistral-7b-v2`
+ * beside a chat model as an equal choice is a trap — pick it and the audit
+ * fails with an unhelpful API error, long after you have forgotten which
+ * button caused it. These stay reachable behind "show everything" rather
+ * than being removed, because a heuristic on a name will be wrong sometimes
+ * and hiding a working model with no way back is worse than a long list.
+ */
+const NOT_FOR_READING =
+  /(embed|rerank|guard|safety|reward|topic-control|jailbreak|translate|parse|ocr|clip|speech|asr|[-/]tts|[-/]stt|vila|neva|riva|diffusion|image|video)/i;
+
+/** The chosen model first. Hunting alphabetically for your own choice is not a task. */
+function activeFirst(models: string[], active: string | undefined): string[] {
+  if (!active) return models;
+  return [...models].sort(
+    (a, b) => Number(b === active) - Number(a === active),
+  );
+}
+
+/**
+ * One selectable model. Shared by the local and hosted lists so that "in
+ * use" looks identical wherever the model happens to live — the previous
+ * version only marked local models, so choosing a hosted one left no visible
+ * trace anywhere in the list.
+ */
+function ModelRow({
+  name,
+  active,
+  busy,
+  disabled,
+  onUse,
+}: {
+  name: string;
+  active: boolean;
+  busy: boolean;
+  disabled: boolean;
+  onUse: () => void;
+}) {
+  return (
+    <li className={active ? "in-use" : undefined}>
+      <span className="mono">{name}</span>
+      {active ? (
+        <span className="setup-tag in-use-tag">In use</span>
+      ) : (
+        <button type="button" onClick={onUse} disabled={disabled}>
+          {busy ? "Connecting…" : "Use this"}
+        </button>
+      )}
+    </li>
+  );
+}
 
 /**
  * A hosted model service: key entry, then its model list.
@@ -20,10 +136,13 @@ import type { ModelDiscovery, ModelProvider } from "../types";
  */
 function HostedProvider({
   provider,
-  onConnected,
+  current,
+  onChanged,
 }: {
   provider: ModelProvider;
-  onConnected: () => void;
+  /** The endpoint and model config.yaml currently points at, if any. */
+  current?: { url: string; model: string };
+  onChanged: () => void | Promise<void>;
 }) {
   const [keyInput, setKeyInput] = useState("");
   const [present, setPresent] = useState(provider.present);
@@ -31,6 +150,8 @@ function HostedProvider({
   const [note, setNote] = useState<string | null>(null);
   const [models, setModels] = useState<string[] | null>(null);
   const [connecting, setConnecting] = useState<string | null>(null);
+  const [filter, setFilter] = useState("");
+  const [showAll, setShowAll] = useState(false);
 
   const noStore = provider.backend === null;
 
@@ -92,15 +213,48 @@ function HostedProvider({
       try {
         const res = await api.selectModel(provider.chat_url, model);
         setNote(res.ok ? `Connected to ${model}.` : (res.error ?? "Failed."));
-        if (res.ok) onConnected();
+        // Refresh the parent so the card at the top and the "In use" marker
+        // update together — the choice is not confirmed until both agree.
+        if (res.ok) await onChanged();
       } catch (e) {
         setNote(describeError(e).message);
       } finally {
         setConnecting(null);
       }
     },
-    [onConnected, provider.chat_url],
+    [onChanged, provider.chat_url],
   );
+
+  // If this service is the one in use, fetch its models unprompted. Making
+  // someone press "show available models" to see which of them is currently
+  // selected would hide the answer behind the question.
+  const isActiveProvider = current?.url === provider.chat_url;
+  useEffect(() => {
+    if (isActiveProvider && present && models === null && !busy) {
+      void loadModels();
+    }
+  }, [isActiveProvider, present, models, busy, loadModels]);
+
+  const activeModel = isActiveProvider ? current?.model : undefined;
+
+  // Narrow the catalogue down to something a person can actually read: the
+  // chosen model first, chat-capable models only unless asked otherwise, and
+  // a text filter once the list is long enough to need one.
+  const { shown, hiddenCount } = useMemo(() => {
+    const q = filter.trim().toLowerCase();
+    const matches = (models ?? []).filter(
+      (m) => !q || m.toLowerCase().includes(q),
+    );
+    // Counted after the text filter, not before, so the number always
+    // describes what "show everything" would actually add to this screen.
+    const hidden = matches.filter(
+      (m) => NOT_FOR_READING.test(m) && m !== activeModel,
+    ).length;
+    const usable = showAll
+      ? matches
+      : matches.filter((m) => !NOT_FOR_READING.test(m) || m === activeModel);
+    return { shown: activeFirst(usable, activeModel), hiddenCount: hidden };
+  }, [models, filter, showAll, activeModel]);
 
   const looksWrong =
     keyInput.trim().length > 0 && !keyInput.trim().startsWith(provider.key_prefix);
@@ -175,20 +329,54 @@ function HostedProvider({
       )}
 
       {models !== null && models.length > 0 && (
-        <ul className="setup-models">
-          {models.map((m) => (
-            <li key={m}>
-              <span className="mono">{m}</span>
+        <>
+          <div className="model-filter">
+            <input
+              type="search"
+              spellCheck={false}
+              placeholder={`Filter ${models.length} models`}
+              value={filter}
+              onChange={(e) => setFilter(e.target.value)}
+            />
+            <span className="setup-detail">
+              {shown.length} shown
+              {hiddenCount > 0 && !showAll && ` · ${hiddenCount} hidden`}
+            </span>
+          </div>
+
+          {shown.length === 0 ? (
+            <p className="setup-hint">Nothing matches “{filter}”.</p>
+          ) : (
+            <ul className="setup-models">
+              {shown.map((m) => (
+                <ModelRow
+                  key={m}
+                  name={m}
+                  active={m === activeModel}
+                  busy={connecting === m}
+                  disabled={connecting !== null}
+                  onUse={() => void connect(m)}
+                />
+              ))}
+            </ul>
+          )}
+
+          {hiddenCount > 0 && (
+            <p className="setup-hint">
               <button
                 type="button"
-                onClick={() => void connect(m)}
-                disabled={connecting !== null}
+                className="link-button"
+                onClick={() => setShowAll(!showAll)}
               >
-                {connecting === m ? "Connecting…" : "Use this"}
+                {showAll
+                  ? "Show only models that can read documents"
+                  : `Show everything, including ${hiddenCount} models built for other jobs`}
               </button>
-            </li>
-          ))}
-        </ul>
+              {!showAll &&
+                " — embedding, safety, translation and image models are hidden because an audit cannot use them."}
+            </p>
+          )}
+        </>
       )}
       {models !== null && models.length === 0 && (
         <p className="setup-hint">The service returned no models.</p>
@@ -277,17 +465,29 @@ export function ModelPicker({ onConnected }: { onConnected: () => void }) {
 
   const current = scan?.current;
   const servers = scan?.servers ?? [];
-  // True when the configured endpoint is not one of the servers we found —
-  // a district-hosted model, or one on a port the scan does not know. Worth
-  // stating, because otherwise the list looks like it has forgotten the
-  // model the panel above says is in use.
-  const currentIsElsewhere =
-    !!current?.url && !servers.some((s) => s.chat_url === current.url);
+
+  // Name the place the current model actually runs, by matching its endpoint
+  // against what we know. Without this the answer to "what am I using?" is a
+  // URL, and a URL is not an answer most people can act on.
+  const currentSource =
+    servers.find((s) => s.chat_url === current?.url)?.name ??
+    providers.find((p) => p.chat_url === current?.url)?.label ??
+    (current?.url ? "Custom endpoint" : "");
 
   return (
     <div className="panel">
-      <div className="panel-head">Choose a language model</div>
+      <div className="panel-head">Language model</div>
       <div className="panel-body">
+        {/* One prominent statement of what is in use, above the choices.
+            Previously this was spread over three places — a separate panel,
+            a line of small print, and an "In use" tag buried in a list — so
+            after picking a hosted model the only feedback was a sentence at
+            the bottom. The badge carries the part that actually matters:
+            whether curriculum text stays on this machine. */}
+        <CurrentModel current={current} source={currentSource} />
+
+        <h4 className="model-group">On this computer</h4>
+
         {scanning && <p className="home-note">Looking on this computer…</p>}
 
         {!scanning && servers.length === 0 && (
@@ -305,13 +505,6 @@ export function ModelPicker({ onConnected }: { onConnected: () => void }) {
           </>
         )}
 
-        {!scanning && currentIsElsewhere && servers.length > 0 && (
-          <p className="setup-detail">
-            The model in use, <strong>{current?.model}</strong>, is not one of
-            these — it is at <span className="mono">{current?.url}</span>.
-          </p>
-        )}
-
         {servers.map((s) => (
           <div className="setup-server" key={s.base}>
             <div className="setup-server-head">
@@ -322,28 +515,19 @@ export function ModelPicker({ onConnected }: { onConnected: () => void }) {
               <p className="setup-hint">Running, but no model is loaded yet.</p>
             ) : (
               <ul className="setup-models">
-                {s.models.map((m) => {
-                  const active =
-                    current?.url === s.chat_url && current?.model === m;
-                  return (
-                    <li key={m}>
-                      <span className="mono">{m}</span>
-                      {active ? (
-                        <span className="setup-tag">In use</span>
-                      ) : (
-                        <button
-                          type="button"
-                          onClick={() => void connect(s.chat_url, m)}
-                          disabled={busy !== null}
-                        >
-                          {busy === `${s.chat_url}|${m}`
-                            ? "Connecting…"
-                            : "Use this"}
-                        </button>
-                      )}
-                    </li>
-                  );
-                })}
+                {activeFirst(
+                  s.models,
+                  current?.url === s.chat_url ? current?.model : undefined,
+                ).map((m) => (
+                  <ModelRow
+                    key={m}
+                    name={m}
+                    active={current?.url === s.chat_url && current?.model === m}
+                    busy={busy === `${s.chat_url}|${m}`}
+                    disabled={busy !== null}
+                    onUse={() => void connect(s.chat_url, m)}
+                  />
+                ))}
               </ul>
             )}
           </div>
@@ -364,17 +548,30 @@ export function ModelPicker({ onConnected }: { onConnected: () => void }) {
 
         {/* Collapsed by default, and below the local servers, because the
             ordering is the recommendation: a model on this machine is the
-            option that keeps curriculum text in the building. */}
+            option that keeps curriculum text in the building. Opens by
+            itself when a hosted model is the one in use, so the section is
+            never hiding the thing that is currently active. */}
         {providers.length > 0 && (
-          <details className="err-details">
-            <summary>Use a hosted service (needs an API key)</summary>
+          <details
+            className="err-details"
+            open={providers.some((p) => p.chat_url === current?.url)}
+          >
+            <summary>Somewhere else (needs an API key)</summary>
             <p className="setup-hint">
               These run outside your building. Loom sends them your curriculum
               text to read, so this is a decision for whoever owns data policy
               at your district — not just a faster model.
             </p>
             {providers.map((p) => (
-              <HostedProvider key={p.id} provider={p} onConnected={onConnected} />
+              <HostedProvider
+                key={p.id}
+                provider={p}
+                current={current}
+                onChanged={async () => {
+                  await rescan();
+                  onConnected();
+                }}
+              />
             ))}
           </details>
         )}

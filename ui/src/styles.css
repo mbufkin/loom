@@ -4559,3 +4559,122 @@ button:disabled {
 .setup-fix-action {
   margin: 8px 0 0 calc(1em + 10px);
 }
+
+/* --- Current model card ------------------------------------------------- */
+/* The one place that answers "what is Loom reading with, and does anything
+   leave this machine?". Sits above the choices so the answer is not
+   assembled from a list. */
+.model-now {
+  border: 1px solid var(--line, #d9dde3);
+  border-left-width: 5px;
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  background: #fbfcfd;
+}
+
+.model-now.local {
+  border-left-color: #2e7d4f;
+}
+.model-now.remote {
+  border-left-color: #b06f00;
+}
+.model-now.none {
+  border-left-color: #b3261e;
+}
+
+.model-now-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #5b636c;
+}
+
+.model-now-model {
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 2px;
+  word-break: break-all;
+}
+
+.model-now-where {
+  font-size: 12.5px;
+  color: #5b636c;
+  margin-top: 2px;
+}
+
+/* Wording carries the meaning, not just the colour — this has to survive
+   greyscale printing and colour-blindness. */
+.model-now-badge {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 999px;
+}
+
+.model-now.local .model-now-badge {
+  background: #e6f4ec;
+  color: #1d5c39;
+}
+
+.model-now.remote .model-now-badge {
+  background: #fdf0dd;
+  color: #7a4d00;
+}
+
+.model-now-note {
+  font-size: 13px;
+  color: #5b636c;
+  margin-top: 4px;
+}
+
+/* Group heading above each source of models. */
+.model-group {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #5b636c;
+  margin: 4px 0 0;
+  font-weight: 600;
+}
+
+/* The selected row, wherever it lives — local list or hosted list. */
+.setup-models li.in-use {
+  background: #f2f8f4;
+  border-radius: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.setup-models .in-use-tag {
+  color: #1d5c39;
+  border-color: #9ccbb0;
+  background: #e6f4ec;
+}
+
+/* Filter row above a long hosted catalogue. */
+.model-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 6px;
+}
+
+.model-filter input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* A button that reads as a link — used for "show everything", which changes
+   what is on screen rather than changing any setting. */
+.link-button {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: #1a5fb4;
+  text-decoration: underline;
+  cursor: pointer;
+}

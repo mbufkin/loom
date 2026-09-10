@@ -3,29 +3,22 @@ import { Link } from "react-router-dom";
 import { ModelPicker } from "../components/ModelPicker";
 import { api, describeError } from "../lib/api";
 import { readiness, usePreflight } from "../lib/usePreflight";
-import type { ConfigSummary, StorageInfo } from "../types";
-
-/** Is this endpoint on this machine, or somewhere on the network? */
-function isLocalEndpoint(url: string | null | undefined): boolean {
-  if (!url) return false;
-  return /^https?:\/\/(127\.0\.0\.1|localhost|\[::1\])(:|\/|$)/i.test(url);
-}
+import type { StorageInfo } from "../types";
 
 /**
  * Settings: what this copy of Loom is currently doing, and where.
  *
- * Read-only for now, and it says so rather than presenting inputs that
- * silently fail to save. That is deliberate: `config.yaml` has never had a
- * write path — the API only ever exposed a curated read — so shipping an
- * editor here would mean building the write side, and doing that carelessly is
- * how you corrupt the file that every pipeline stage depends on.
+ * Answers the questions people actually get stuck on: which model is being
+ * used, does it run on this computer, where did my work go, and can this
+ * machine run an audit at all.
  *
- * What it *can* do honestly today is answer the questions people actually get
- * stuck on: which model is being used, is it running on this computer, where
- * did my work go, and can this machine run an audit at all.
+ * The model is the one setting that can be changed here, and ModelPicker
+ * owns that story end to end — what is in use, where it runs, whether
+ * documents leave the machine, and what else is available. This screen used
+ * to describe the current model itself as well, which meant two components
+ * rendering one fact from two sources.
  */
 export function Settings() {
-  const [config, setConfig] = useState<ConfigSummary | null>(null);
   const [storage, setStorage] = useState<StorageInfo | null>(null);
   const [error, setError] = useState<{ message: string; detail: string } | null>(
     null,
@@ -39,15 +32,10 @@ export function Settings() {
 
   const load = useCallback(async () => {
     try {
-      // Each is independently optional — a missing endpoint on an older build
-      // should grey out one card, not blank the whole screen.
-      const [cfg, st] = await Promise.all([
-        api.config().catch(() => null),
-        api.storage().catch(() => null),
-      ]);
+      // Independently optional — a missing endpoint on an older build should
+      // grey out one card, not blank the whole screen.
+      const st = await api.storage().catch(() => null);
       await refreshPreflight();
-      if (!cfg && !st) throw new Error("no settings endpoints responded");
-      setConfig(cfg);
       setStorage(st);
       setError(null);
     } catch (e) {
@@ -60,10 +48,6 @@ export function Settings() {
   useEffect(() => {
     void load();
   }, [load]);
-
-  const models = config?.models ?? {};
-  const analystUrl = models.analyst_url ?? null;
-  const local = isLocalEndpoint(analystUrl);
 
   // A response with no `checks` came from a server started before the program
   // was updated — the usual cause is a desktop window left open across an
@@ -114,52 +98,11 @@ export function Settings() {
         </div>
       )}
 
-      <div className="panel">
-        <div className="panel-head">Where the reading happens</div>
-        <div className="panel-body">
-          {analystUrl ? (
-            <>
-              <p>
-                {local ? (
-                  <>
-                    Loom is reading your documents with a model running{" "}
-                    <strong>on this computer</strong>. No curriculum text
-                    leaves the building.
-                  </>
-                ) : (
-                  <>
-                    Loom is reading your documents with a model at{" "}
-                    <strong>an address outside this computer</strong>. Curriculum
-                    text is sent there, so this should only be an endpoint your
-                    district approves.
-                  </>
-                )}
-              </p>
-              <dl className="set-grid">
-                <dt>Model</dt>
-                <dd>{models.analyst_model || "not set"}</dd>
-                <dt>Address</dt>
-                <dd className="mono">{analystUrl}</dd>
-                {models.verifier_url && models.verifier_url !== analystUrl && (
-                  <>
-                    <dt>Second opinion</dt>
-                    <dd className="mono">{models.verifier_url}</dd>
-                  </>
-                )}
-              </dl>
-            </>
-          ) : (
-            <p className="err-message">
-              No model is configured, so an audit cannot read anything yet.
-            </p>
-          )}
-        </div>
-      </div>
-
-      {/* Directly under the panel that says where the reading happens, since
-          this is the control that changes it. onConnected reloads the config
-          summary as well as the preflight, so the statement above updates in
-          the same beat as the choice below. */}
+      {/* The picker now owns the whole model story — what is in use, where it
+          runs, whether documents leave the machine, and what else is
+          available. There used to be a separate "Where the reading happens"
+          panel above it, but two panels describing one setting is how they
+          drift apart, and the answer was split across both. */}
       <ModelPicker onConnected={() => void load()} />
 
       {preflight && (
