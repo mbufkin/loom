@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Loom Run Review — open the review UI in a native desktop window (no browser).
+# Usage: ./run-ui [--project <curriculum-id>] [--no-spawn] [--api-port N]
+# Example: ./run-ui --project disd-aas-icev-smoke
+# Starts the API + vite dev server, shows the window, stops them on close.
+set -euo pipefail
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+exec python3 "$DIR/ui/window.py" "$@"
