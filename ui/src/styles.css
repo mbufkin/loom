@@ -4059,3 +4059,298 @@ button:disabled {
   font-weight: 700;
 }
 
+
+/* ======================================================================
+   App shell + top-level screens (Home / Calendars / Settings / Setup)
+   ======================================================================
+   The shell bar is the GLOBAL nav: which part of the app am I in. The review
+   console keeps its own `.topbar` below for PAGE CONTEXT (which curriculum,
+   which audit), so the curriculum picker never follows you onto a screen
+   where it means nothing. Two tiers, each with one job. */
+
+.shellbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 20px;
+  border-bottom: 3px solid var(--line);
+  background: var(--ink);
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+
+.shell-brand {
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--panel);
+  text-decoration: none;
+}
+
+.shell-brand:hover {
+  color: var(--band-golden);
+}
+
+.shellnav {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.shellnav a {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  color: var(--panel);
+  text-decoration: none;
+  border: 2px solid transparent;
+}
+
+.shellnav a:hover {
+  border-color: var(--panel);
+}
+
+/* NavLink sets aria-current, so the visual active state and the state
+   announced to a screen reader are driven by the same attribute and cannot
+   drift apart. */
+.shellnav a[aria-current="page"] {
+  background: var(--panel);
+  color: var(--ink);
+  border-color: var(--panel);
+}
+
+.shellbar .spacer {
+  flex: 1;
+}
+
+/* ---- Shared layout for the non-console screens ---------------------- */
+.home {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 28px 24px 64px;
+  box-sizing: border-box;
+}
+
+.home-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.home-head h2 {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+  flex: 1;
+}
+
+.home-note {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 68ch;
+}
+
+.home-storage code {
+  word-break: break-all;
+}
+
+/* Anchors that need to read as buttons. The global `button` rule cannot
+   apply here because these are links, and they must stay links so that
+   middle-click, copy-link and keyboard navigation all behave normally. */
+.btn,
+.btn-primary {
+  display: inline-block;
+  font: inherit;
+  font-weight: 700;
+  border: 2px solid var(--line);
+  padding: 7px 14px;
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--panel);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--band-golden);
+}
+
+.btn:hover,
+.btn-primary:hover {
+  transform: translate(-1px, -1px);
+}
+
+/* ---- Curriculum list (Home) ----------------------------------------- */
+.curr-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+.curr-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--panel);
+  border: 3px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+
+.curr-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.curr-title {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.curr-meta {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+/* ---- Calendars ------------------------------------------------------ */
+.cal-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cal-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--band-unrated);
+}
+
+.cal-row:last-child {
+  border-bottom: 0;
+}
+
+.cal-name {
+  flex: 1;
+  min-width: 0;
+  font-weight: 600;
+}
+
+.cal-badge {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border: 2px solid var(--line);
+}
+
+.cal-dated {
+  background: var(--band-strong);
+}
+
+.cal-seq {
+  background: var(--band-unrated);
+}
+
+.cal-none {
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ---- Settings key/value grid ---------------------------------------- */
+.set-grid {
+  display: grid;
+  grid-template-columns: minmax(120px, max-content) 1fr;
+  gap: 6px 16px;
+  margin: 12px 0 0;
+}
+
+.set-grid dt {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.set-grid dd {
+  margin: 0;
+  word-break: break-all;
+}
+
+/* ---- Setup checklist ------------------------------------------------ */
+.setup-steps {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  counter-reset: step;
+}
+
+.setup-steps li {
+  counter-increment: step;
+  position: relative;
+  background: var(--panel);
+  border: 3px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  padding: 14px 16px 14px 56px;
+  margin-bottom: 10px;
+}
+
+.setup-steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  border: 2px solid var(--line);
+  background: var(--bg);
+}
+
+/* A completed step is marked, not hidden: the checklist doubles as a status
+   report for a half-finished curriculum. */
+.setup-steps li.done::before {
+  content: "\2713";
+  background: var(--band-strong);
+}
+
+.setup-step-head {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.setup-steps p {
+  margin: 6px 0 0;
+  line-height: 1.6;
+  max-width: 68ch;
+}
+
+.setup-path {
+  font-size: 12px;
+  background: var(--bg);
+  border: 2px solid var(--band-unrated);
+  padding: 6px 8px;
+  word-break: break-all;
+}
+
+.setup-ok {
+  font-size: 13px;
+  font-weight: 600;
+}

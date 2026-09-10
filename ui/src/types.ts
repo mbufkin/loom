@@ -13,6 +13,9 @@ export interface Project {
   has_unit_rung: boolean;
   /** True once ingest has organised the documents into units. */
   has_manifest?: boolean;
+  /** True when a school-calendar.yaml exists, i.e. pacing can be dated.
+   *  Optional input: without one, rollup places units sequentially instead. */
+  has_calendar?: boolean;
   /** True when a REVIEW-READY e2e run exists, i.e. the console has something
    *  to show. The picker prefers these so a first run never lands on a blank
    *  curriculum. */

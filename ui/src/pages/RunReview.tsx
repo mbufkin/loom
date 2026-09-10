@@ -760,9 +760,10 @@ export function RunReview() {
       "Viewer";
 
   return (
-    <div className="app">
+    // No `.app` wrapper: AppShell provides it, along with the global nav. This
+    // bar is page context only — which curriculum, which audit, which deck.
+    <>
       <div className="topbar">
-        <h1>Run Review</h1>
         {/* Top-level page switch: review console vs presentation decks. */}
         <div className="topnav" role="group" aria-label="page">
           <button
@@ -1254,6 +1255,6 @@ export function RunReview() {
         </div>
       </div>
       )}
-    </div>
+    </>
   );
 }

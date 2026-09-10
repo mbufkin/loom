@@ -522,6 +522,12 @@ def _list_projects() -> list[dict]:
                 # Has ingest organised the documents into units yet? Distinguishes
                 # "set up, ready to audit" from "documents dropped in, nothing read".
                 "has_manifest": has_manifest,
+                # A district calendar is optional input, not a prerequisite:
+                # with one, rollup dates the pacing plan; without one it places
+                # units sequentially and everything else is identical. Reported
+                # so the UI can say which mode a curriculum is in and offer to
+                # upgrade it, rather than leaving that invisible.
+                "has_calendar": (child / "school-calendar.yaml").is_file(),
                 # Does the review console have anything to show for this
                 # project? The console only renders REVIEW-READY e2e runs, so
                 # without this the picker cannot avoid landing a first-time
