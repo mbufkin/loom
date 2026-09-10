@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { api, describeError } from "../lib/api";
 import type { ConfigSummary, RunPreflight, StorageInfo } from "../types";
 
@@ -137,15 +138,27 @@ export function Settings() {
         <div className="panel">
           <div className="panel-head">Can this computer run an audit?</div>
           <div className="panel-body">
-            {preflight.can_run ? (
+            {preflight.can_run && preflight.can_read_pdf !== false ? (
               <p>Yes — everything an audit needs is installed.</p>
             ) : (
-              <p className="err-message">
-                Not yet. This computer is missing{" "}
-                {preflight.missing.join(" and ")}, which Loom needs in order to
-                read a curriculum. You can still open and review audits that
-                were run elsewhere.
-              </p>
+              <>
+                <p className="err-message">
+                  {preflight.can_run
+                    ? "Almost. Loom can run here but cannot open PDF files yet."
+                    : "Not yet — something an audit needs is missing."}
+                </p>
+                {/* Point at the fix rather than restating the problem. Setup
+                    lists each requirement separately with the command for this
+                    platform, which is the part a reviewer can actually act on. */}
+                <p>
+                  <Link className="btn btn-primary" to="/setup">
+                    Finish setup
+                  </Link>
+                </p>
+                <p className="home-note">
+                  Reviewing audits that were run elsewhere works either way.
+                </p>
+              </>
             )}
           </div>
         </div>

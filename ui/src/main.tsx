@@ -13,6 +13,7 @@ import { CurriculumSetup } from "./pages/CurriculumSetup";
 import { Home } from "./pages/Home";
 import { RunReview } from "./pages/RunReview";
 import { Settings } from "./pages/Settings";
+import { Setup } from "./pages/Setup";
 import "./styles.css";
 
 /**
@@ -47,6 +48,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           <Route path="/review" element={<RunReview />} />
           <Route path="/calendars" element={<Calendars />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/setup" element={<Setup />} />
           <Route path="/curricula/new" element={<CurriculumSetup />} />
           <Route path="/curricula/:projectId" element={<CurriculumSetup />} />
           {/* Anything unrecognised goes home rather than showing a blank

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Link } from "react-router-dom";
 import type { Project, RunPreflight, RunStatus } from "../types";
 
 interface Props {
@@ -12,12 +13,6 @@ interface Props {
   onRunAudit: () => void;
   running: boolean;
   runStatus: RunStatus | null;
-}
-
-/** "bash and python3", "bash, python3 and the run-audit script". */
-function formatList(items: string[]): string {
-  if (items.length <= 1) return items[0] ?? "";
-  return `${items.slice(0, -1).join(", ")} and ${items[items.length - 1]}`;
 }
 
 // Shown in place of the review console when the selected curriculum has no
@@ -35,9 +30,11 @@ export function FirstRun({
 }: Props) {
   const nothingAudited = reviewable.length === 0;
 
-  // The action is gated on a real capability check rather than optimism:
-  // starting an audit shells out to bash + python3, and offering a button that
-  // dies on spawn is exactly the dead end this screen exists to remove.
+  // The action is gated on a real capability check rather than optimism: an
+  // audit needs a reachable model and a way to read the documents, and
+  // offering a button that dies on the first file is exactly the dead end this
+  // screen exists to remove. When it can't run we send people to Setup, which
+  // can actually resolve it, instead of naming the missing piece and stopping.
   let action: ReactNode;
   if (!preflight) {
     action = <p className="muted-note">Checking what this computer can do…</p>;
@@ -62,13 +59,17 @@ export function FirstRun({
     action = (
       <>
         <p className="fr-blocked">
-          <strong>This computer can’t start an audit.</strong> It’s missing{" "}
-          {formatList(preflight.missing)}.
+          <strong>This computer isn’t ready to run an audit yet.</strong>
+        </p>
+        <p>
+          <Link className="btn btn-primary" to="/setup">
+            Finish setup
+          </Link>
         </p>
         <p className="muted-note">
-          Run the audit on the workstation where Loom is set up, then copy the
-          results folder over and reopen this window. Reading finished results
-          works perfectly well here.
+          It’s a short list, and Setup gives you the exact command for this
+          computer. You can also run the audit on another workstation and copy
+          the results folder here — reading finished results works either way.
         </p>
       </>
     );

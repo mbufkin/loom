@@ -37,12 +37,39 @@ export interface StorageInfo {
   config_present: boolean;
 }
 
-/** Whether this machine can start an audit (bash + python3 + run-audit). */
+/**
+ * How severely a missing requirement bites.
+ *
+ * `required` stops an audit outright; `pdf` stops it only once it meets a PDF
+ * (which is most curricula, but not all); `optional` costs an output and
+ * nothing else. Keeping these apart is what lets Setup say "you are two
+ * commands from working" rather than one undifferentiated list of problems.
+ */
+export type CheckSeverity = "required" | "pdf" | "optional";
+
+/** One thing an audit needs, whether it is here, and how to install it. */
+export interface SetupCheck {
+  id: string;
+  label: string;
+  /** Plain-language reason this matters, shown to non-technical reviewers. */
+  why: string;
+  severity: CheckSeverity;
+  ok: boolean;
+  /** Where it was found, or why it wasn't. */
+  detail: string;
+  /** Keyed by platform ("win32" | "darwin" | "linux"), or "all". */
+  fix: Record<string, string>;
+}
+
+/** Whether this machine can run an audit, and what it would take. */
 export interface RunPreflight {
   can_run: boolean;
-  /** Human-readable names of what is missing, e.g. ["bash", "python3"]. */
+  /** False when PDF text extraction is unavailable. */
+  can_read_pdf?: boolean;
+  /** Flat list of unmet requirement labels. */
   missing: string[];
   platform: string;
+  checks?: SetupCheck[];
 }
 
 export interface OutputFile {

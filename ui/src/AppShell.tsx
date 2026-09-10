@@ -29,6 +29,7 @@ export function AppShell() {
             Curricula
           </NavLink>
           <NavLink to="/calendars">Calendars</NavLink>
+          <NavLink to="/setup">Setup</NavLink>
           <NavLink to="/settings">Settings</NavLink>
         </nav>
         <div className="spacer" />

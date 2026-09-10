@@ -17,7 +17,7 @@ Endpoints (all under /api):
   GET  /api/projects/{id}/graph/runs[?e2e_run=] -> model graph runs under graph/runs/*
   GET  /api/projects/{id}/graph/runs/{run_id}/overview[?e2e_run=] -> per-unit HAS-PART rollup
   GET  /api/projects/{id}/graph/runs/{run_id}/units/{unit_id}[?e2e_run=] -> HAS-PART + SUMMARY
-  POST /api/projects/{id}/run             -> {runId}  (spawns ./run-audit)
+  POST /api/projects/{id}/run             -> {runId}  (spawns run_project.py)
   POST /api/projects/{id}/packet-type     -> declare packet_type; regen unit rung
   GET  /api/projects/{id}/gaps            -> GapItem work queue (create chapter)
   GET  /api/projects/{id}/create/matrix   -> Unit matrix + UbD stage rollups (primary)
@@ -41,6 +41,7 @@ Run:  .venv/bin/python ui/server.py [--port 8770]
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import json
 import mimetypes
 import os
@@ -50,6 +51,8 @@ import subprocess
 import sys
 import threading
 import time
+import urllib.error
+import urllib.request
 import uuid
 from collections import Counter
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -74,7 +77,13 @@ from loom_paths import ensure_data_dirs, is_legacy_in_repo  # noqa: E402
 # is absent this server stays a pure JSON API and the Vite dev server on 5173
 # serves the app, so the development flow is completely unaffected.
 DIST = ROOT / "ui" / "dist"
-RUN_AUDIT = ROOT / "run-audit"
+# The pipeline entry point, invoked directly rather than through the ./run-audit
+# shell wrapper. run-audit is one line -- `exec python3 run_project.py ...` -- so
+# going through it bought nothing and cost two dependencies the app cannot
+# assume: `bash`, which Windows does not ship, and `python3`, which on Windows
+# is `python` or `py`. We are already inside a Python process, so sys.executable
+# is the interpreter to use, and it is correct on Windows, macOS and Linux alike.
+RUN_PROJECT = ROOT / "run_project.py"
 PACKET_TYPES_SPEC = ROOT / "workflows" / "packet_types.yaml"
 UNIT_RUNG_SCRIPT = ROOT / "unit_rung.py"
 
@@ -635,7 +644,7 @@ def _checklist_labels(checklist_rel: str | None) -> dict[str, str]:
     try:
         import yaml
 
-        data = yaml.safe_load(spec.read_text()) or {}
+        data = yaml.safe_load(spec.read_text(encoding="utf-8")) or {}
     except Exception:  # noqa: BLE001 - a bad checklist must not break the panel
         return {}
     labels: dict[str, str] = {}
@@ -847,7 +856,7 @@ def _config_summary() -> dict:
     try:
         import yaml  # PyYAML ships with the Loom engine deps.
 
-        cfg = yaml.safe_load(CONFIG.read_text()) or {}
+        cfg = yaml.safe_load(CONFIG.read_text(encoding="utf-8")) or {}
     except Exception as e:  # noqa: BLE001 - degrade to a note, never 500 the UI
         return {"error": f"config.yaml unreadable: {e}"}
     models = cfg.get("models", {}) or {}
@@ -870,7 +879,7 @@ def _packet_types() -> dict:
     try:
         import yaml
 
-        data = yaml.safe_load(PACKET_TYPES_SPEC.read_text()) or {}
+        data = yaml.safe_load(PACKET_TYPES_SPEC.read_text(encoding="utf-8")) or {}
     except Exception as e:  # noqa: BLE001
         return {"error": f"packet_types.yaml unreadable: {e}", "default": None, "types": []}
     types = []
@@ -934,8 +943,13 @@ def _set_packet_type(pid: str, type_id: str) -> dict:
 
 
 def _start_run(pid: str, flags: list[str]) -> str:
-    """Spawn ./run-audit <pid> <flags>, streaming combined output to a per-run log.
-    Returns a runId the client polls. Flags are whitelisted to a safe few."""
+    """Run the pipeline for <pid>, streaming combined output to a per-run log.
+
+    Returns a runId the client polls. Flags are whitelisted to a safe few.
+    Invokes run_project.py with sys.executable -- the interpreter already
+    running this server -- so an audit needs no `bash` and no `python3` on
+    PATH, and starts the same way on all three platforms.
+    """
     _project_dir(pid)  # validate before spawning
     allowed = {"--ingest", "--force", "--only", "--skip-drive-push"}
     clean: list[str] = []
@@ -948,11 +962,17 @@ def _start_run(pid: str, flags: list[str]) -> str:
     log_path = RUNS_DIR / f"{run_id}.log"
     log_fh = open(log_path, "w", encoding="utf-8")  # noqa: SIM115 - closed in waiter
     proc = subprocess.Popen(
-        ["bash", str(RUN_AUDIT), pid, *clean],
+        [sys.executable, str(RUN_PROJECT), "--project", pid, *clean],
         cwd=str(ROOT),
         stdout=log_fh,
         stderr=subprocess.STDOUT,
         text=True,
+        # The pipeline writes curriculum text -- em dashes, curly quotes,
+        # accented names -- and Windows still defaults to cp1252, which turns
+        # those into mojibake or a hard UnicodeEncodeError mid-run.
+        encoding="utf-8",
+        errors="replace",
+        env={**os.environ, "PYTHONIOENCODING": "utf-8"},
     )
     with _RUNS_LOCK:
         _RUNS[run_id] = {
@@ -975,22 +995,190 @@ def _start_run(pid: str, flags: list[str]) -> str:
     return run_id
 
 
-def _run_preflight() -> dict:
-    """Can this machine actually start an audit? Checked before offering to.
+_WEASYPRINT_OK: bool | None = None
 
-    `_start_run` shells out to `bash run-audit`, which in turn calls `python3`.
-    On a box missing either one the run dies immediately with a spawn error the
-    reviewer cannot interpret. Reporting the blockers up front lets the UI
-    explain the situation instead of handing someone a button that fails.
+
+def _weasyprint_ok() -> bool:
+    """Can WeasyPrint load its native libraries (Pango/GObject)?
+
+    Cached, because the import is slow and prints a wall of warnings when it
+    fails, and because native libraries cannot appear without a restart of this
+    process anyway. `find_spec` is not enough: the Python package installs
+    cleanly and only fails at import time when the C libraries are absent,
+    which is the usual situation on Windows.
     """
-    missing: list[str] = []
-    if not RUN_AUDIT.is_file():
-        missing.append("the run-audit script")
-    if not shutil.which("bash"):
-        missing.append("bash")
-    if not shutil.which("python3"):
-        missing.append("python3")
-    return {"can_run": not missing, "missing": missing, "platform": sys.platform}
+    global _WEASYPRINT_OK
+    if _WEASYPRINT_OK is None:
+        try:
+            import weasyprint  # noqa: F401
+
+            _WEASYPRINT_OK = True
+        except Exception:
+            _WEASYPRINT_OK = False
+    return _WEASYPRINT_OK
+
+
+def _missing_packages() -> list[str]:
+    """Required third-party imports that are not available."""
+    out: list[str] = []
+    for mod, dist in (("yaml", "PyYAML"), ("requests", "requests"), ("jinja2", "Jinja2")):
+        if importlib.util.find_spec(mod) is None:
+            out.append(dist)
+    return out
+
+
+def _model_reachable() -> tuple[bool, str]:
+    """Is the configured analyst endpoint answering? (ok, detail).
+
+    Short timeout on purpose: this runs on a settings screen, and a model that
+    takes longer than a couple of seconds to say hello is not going to make an
+    audit anyone enjoys. Any HTTP answer counts -- a 404 on /health still means
+    something is listening, which is what we are actually asking.
+    """
+    try:
+        import yaml  # Imported here: its absence is itself one of the checks.
+
+        cfg = yaml.safe_load(CONFIG.read_text(encoding="utf-8")) or {}
+    except Exception as e:
+        return False, f"config.yaml could not be read: {e}"
+    url = ((cfg.get("models") or {}).get("analyst_url") or "").strip()
+    if not url:
+        return False, "no analyst_url is set in config.yaml"
+    base = url.split("/v1/")[0].rstrip("/")
+    for probe in (f"{base}/health", f"{base}/healthz", base):
+        try:
+            with urllib.request.urlopen(probe, timeout=2.0):
+                return True, url
+        except urllib.error.HTTPError:
+            return True, url  # answering, just not with 200
+        except Exception:
+            continue
+    return False, f"nothing is answering at {base}"
+
+
+def _requirements() -> list[dict]:
+    """Everything an audit needs, what it is for, and how to install it.
+
+    Three severities, because lumping them together is what produced the
+    unhelpful "missing bash and python3":
+
+      required   the audit cannot run at all
+      pdf        the audit cannot read PDF documents (it crashes on the first
+                 one: doc_extract raises RuntimeError and extract_with_meta
+                 only catches ValueError). Fine if the sources are Word or text
+      optional   an output is unavailable, everything else works
+
+    `fix` is keyed by sys.platform so each machine is told what to type on it,
+    rather than being shown three sets of instructions to choose between.
+    """
+    pip = f'"{sys.executable}" -m pip install -r requirements.txt'
+    packages = _missing_packages()
+    model_ok, model_detail = _model_reachable()
+
+    return [
+        {
+            "id": "program",
+            "label": "Loom’s pipeline",
+            "why": "Reads the documents and produces the audit.",
+            "severity": "required",
+            "ok": RUN_PROJECT.is_file(),
+            "detail": str(RUN_PROJECT),
+            "fix": {
+                "all": "This part of Loom is missing from the installation. "
+                "Reinstalling should restore it.",
+            },
+        },
+        {
+            "id": "packages",
+            "label": "Python support libraries",
+            "why": "Reading calendars and manifests, and talking to the model.",
+            "severity": "required",
+            "ok": not packages,
+            "detail": ", ".join(packages) if packages else "all present",
+            "fix": {"all": pip},
+        },
+        {
+            "id": "model",
+            "label": "A language model",
+            "why": "Does the actual reading. Loom sends it your documents "
+            "and it answers with what it found.",
+            "severity": "required",
+            "ok": model_ok,
+            "detail": model_detail,
+            "fix": {
+                "all": "Start your local model server, or point Loom at one in "
+                "config.yaml under models.analyst_url.",
+            },
+        },
+        {
+            "id": "poppler",
+            "label": "PDF text extraction (poppler)",
+            "why": "Gets the text out of PDF documents. Most curriculum "
+            "arrives as PDF, and Loom stops on the first one without it.",
+            "severity": "pdf",
+            "ok": bool(shutil.which("pdftotext")),
+            "detail": shutil.which("pdftotext") or "pdftotext is not on PATH",
+            "fix": {
+                "win32": "choco install poppler    (or: scoop install poppler)\n"
+                "Or download a build from\n"
+                "https://github.com/oschwartz10612/poppler-windows/releases\n"
+                "and add its bin folder to PATH.",
+                "darwin": "brew install poppler",
+                "linux": "sudo apt install poppler-utils      (Debian/Ubuntu)\n"
+                "sudo dnf install poppler-utils      (Fedora/RHEL)",
+            },
+        },
+        {
+            "id": "weasyprint",
+            "label": "PDF report output (WeasyPrint)",
+            "why": "Turns the finished reports into PDFs. Without it every "
+            "report is still written, just as Markdown instead of PDF.",
+            "severity": "optional",
+            "ok": _weasyprint_ok(),
+            "detail": "ready" if _weasyprint_ok() else "native libraries not found",
+            "fix": {
+                "win32": "Needs the GTK/Pango libraries. Follow\n"
+                "https://doc.courtbouillon.org/weasyprint/stable/first_steps.html",
+                "darwin": "brew install pango gdk-pixbuf libffi",
+                "linux": "sudo apt install libpango-1.0-0 libpangoft2-1.0-0",
+            },
+        },
+        {
+            "id": "antiword",
+            "label": "Legacy .doc support (antiword)",
+            "why": "Only needed for old Word .doc files. .docx works without it.",
+            "severity": "optional",
+            "ok": bool(shutil.which("antiword")),
+            "detail": shutil.which("antiword") or "not installed",
+            "fix": {
+                "win32": "Rarely needed. Re-saving the files as .docx avoids it.",
+                "darwin": "brew install antiword",
+                "linux": "sudo apt install antiword",
+            },
+        },
+    ]
+
+
+def _run_preflight() -> dict:
+    """Can this machine run an audit, and if not, what would make it able to?
+
+    This used to check for `bash` and `python3` and report their absence, which
+    was both unhelpful and wrong: those were needed only because the server
+    shelled out through a one-line shell wrapper. It now reports the real
+    requirements, each with a platform-appropriate fix, so the UI can walk
+    somebody through setup instead of naming a missing command.
+    """
+    checks = _requirements()
+    blocking = [c for c in checks if c["severity"] == "required" and not c["ok"]]
+    pdf_blocked = [c for c in checks if c["severity"] == "pdf" and not c["ok"]]
+    return {
+        "can_run": not blocking,
+        "can_read_pdf": not pdf_blocked,
+        # Kept for older clients: a flat list of what is not satisfied.
+        "missing": [c["label"] for c in checks if not c["ok"]],
+        "platform": sys.platform,
+        "checks": checks,
+    }
 
 
 def _storage_summary() -> dict:

@@ -157,10 +157,24 @@ export function CurriculumSetup() {
             decision.
           </p>
           {preflight && !preflight.can_run && (
+            <>
+              <p className="err-message">
+                This computer isn’t ready to run an audit yet.
+              </p>
+              {/* A link to the fix, not a restatement of the problem: Setup
+                  names each requirement and gives the command for this OS. */}
+              <p>
+                <Link className="btn" to="/setup">
+                  Finish setup
+                </Link>
+              </p>
+            </>
+          )}
+          {preflight?.can_run && preflight.can_read_pdf === false && (
             <p className="err-message">
-              This computer is missing {preflight.missing.join(" and ")}, so an
-              audit cannot be started here. Audits run elsewhere can still be
-              opened and reviewed.
+              PDF documents can’t be read on this computer yet.{" "}
+              <Link to="/setup">Finish setup</Link> if any of your files are
+              PDFs.
             </p>
           )}
           {project?.has_review_run && (

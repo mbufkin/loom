@@ -4354,3 +4354,131 @@ button:disabled {
   font-size: 13px;
   font-weight: 600;
 }
+
+/* --- Setup screen: one requirement per row ------------------------------ */
+/* Each row carries its own state so a missing PDF reader and a stopped model
+   read as two separate, separately-fixable problems. The left border encodes
+   severity, which is the fastest way to see "must fix" vs "nice to have". */
+.setup-checks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.setup-check {
+  border: 1px solid var(--line, #d9dde3);
+  border-left-width: 4px;
+  border-radius: 6px;
+  padding: 12px 14px;
+  background: #fff;
+}
+
+.setup-check.done {
+  border-left-color: #2e7d4f;
+  background: #fbfdfb;
+}
+.setup-check.required {
+  border-left-color: #b3261e;
+}
+.setup-check.pdf {
+  border-left-color: #b06f00;
+}
+.setup-check.optional {
+  border-left-color: #9aa3ad;
+}
+
+.setup-check-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+/* Not the only signal: the tag next to it carries the same meaning in words,
+   so the state survives greyscale printing and colour-blindness alike. */
+.setup-mark {
+  font-weight: 700;
+  width: 1em;
+  text-align: center;
+}
+.setup-check.done .setup-mark {
+  color: #2e7d4f;
+}
+.setup-check.required .setup-mark {
+  color: #b3261e;
+}
+.setup-check.pdf .setup-mark {
+  color: #b06f00;
+}
+.setup-check.optional .setup-mark {
+  color: #9aa3ad;
+}
+
+.setup-check-title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.setup-tag {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #5b636c;
+  border: 1px solid var(--line, #d9dde3);
+  border-radius: 999px;
+  padding: 1px 8px;
+}
+
+.setup-why {
+  margin: 6px 0 0 calc(1em + 10px);
+  color: #3d444c;
+}
+
+.setup-detail {
+  margin: 6px 0 0 calc(1em + 10px);
+  color: #5b636c;
+  font-size: 13px;
+}
+
+.setup-fix {
+  margin-top: 4px;
+}
+
+.setup-hint {
+  margin: 6px 0 0 calc(1em + 10px);
+  font-size: 13px;
+  color: #3d444c;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* The command and its copy button share a row: on a machine with no working
+   terminal history, retyping a package-manager invocation by hand is where
+   setup usually goes wrong. */
+.setup-cmd {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 0 calc(1em + 10px);
+  background: #f4f6f8;
+  border: 1px solid var(--line, #d9dde3);
+  border-radius: 4px;
+  padding: 6px 8px;
+}
+
+.setup-cmd code {
+  flex: 1;
+  font-size: 12.5px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.setup-cmd button {
+  flex: none;
+  font-size: 12px;
+  padding: 3px 10px;
+}
