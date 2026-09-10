@@ -64,6 +64,23 @@ export function Settings() {
   const analystUrl = models.analyst_url ?? null;
   const local = isLocalEndpoint(analystUrl);
 
+  // A response with no `checks` came from a server started before the program
+  // was updated — the usual cause is a desktop window left open across an
+  // upgrade, which keeps its original server process alive indefinitely.
+  const staleServer = !!preflight && (preflight.checks ?? []).length === 0;
+  // Prefer the detailed checks; fall back to the flat list an older server
+  // sends, since naming something beats naming nothing.
+  const missingNames = (preflight?.checks ?? [])
+    .filter((c) => !c.ok && c.severity !== "optional")
+    .map((c) => c.label);
+  const shown = missingNames.length > 0 ? missingNames : (preflight?.missing ?? []);
+  const missingLabel =
+    shown.length === 0
+      ? ""
+      : shown.length === 1
+        ? `${shown[0]} is missing`
+        : `${shown.slice(0, -1).join(", ")} and ${shown[shown.length - 1]} are missing`;
+
   if (!loaded) {
     return (
       <div className="home">
@@ -148,14 +165,26 @@ export function Settings() {
               <p>Yes — everything an audit needs is installed.</p>
             ) : (
               <>
+                {/* Name what is missing rather than saying "something".
+                    "Something is missing" sends the reader to another screen
+                    just to learn the noun, and it hides the case that matters
+                    most here: a stale answer. Seeing "bash, python3" on a
+                    Windows box is immediately recognisable as wrong, where
+                    "something" looks like a normal setup step. */}
                 <p className="err-message">
                   {readiness(preflight).pdfOnly
                     ? "Almost. Loom can run here but cannot open PDF files yet."
-                    : "Not yet — something an audit needs is missing."}
+                    : missingLabel
+                      ? `Not yet — ${missingLabel}.`
+                      : "Not yet — something an audit needs is missing."}
                 </p>
-                {/* Point at the fix rather than restating the problem. Setup
-                    lists each requirement separately with the command for this
-                    platform, which is the part a reviewer can actually act on. */}
+                {staleServer && (
+                  <p className="err-message">
+                    That list looks out of date. This window is still talking
+                    to a copy of Loom that was started before the program was
+                    updated. Close Loom and open it again.
+                  </p>
+                )}
                 <p>
                   <Link className="btn btn-primary" to="/setup">
                     Finish setup
