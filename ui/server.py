@@ -988,6 +988,10 @@ def _start_run(pid: str, flags: list[str]) -> str:
             "status": "running",
             "exit_code": None,
             "started": time.time(),
+            # Kept so progress can count only the documents in scope. A run
+            # limited to one unit that reports "3 of 27" is worse than no
+            # number at all.
+            "flags": list(clean),
         }
 
     def _wait() -> None:
@@ -1638,12 +1642,191 @@ def _create_status() -> dict:
     }
 
 
+# The pipeline's stages, in the order run_project.py performs them, paired
+# with the log line each one prints when it starts. Deriving progress from the
+# log rather than adding a reporting channel keeps this working for runs
+# started from the command line too, and means the pipeline needs no knowledge
+# that a UI is watching.
+_RUN_STAGES: list[tuple[str, str, re.Pattern]] = [
+    ("setup", "Preparing the run", re.compile(r"^\[audit\] e2e:")),
+    ("models", "Checking the model", re.compile(r"^\[audit\] models:")),
+    ("rollup", "Working out the pacing", re.compile(r"^\[audit\] rollup:")),
+    ("layer0", "Reading the documents", re.compile(r"^\[audit\] Layer 0:")),
+    ("layer1", "Matching to standards", re.compile(r"^\[audit\] Layer 1:")),
+    ("layer2", "Confirming the evidence", re.compile(r"^\[audit\] Layer 2:")),
+    ("paths", "Checking document types", re.compile(r"^\[audit\] path [A-H] ")),
+    ("calendars", "Placing work on the calendar", re.compile(r"^\[audit\] calendars?:")),
+    ("reports", "Writing the reports", re.compile(r"^\[audit\] report")),
+]
+
+# Per-document progress inside Layer 0, the longest stage by far.
+_LAYER0_DOC = re.compile(r"^\[audit\] Layer 0: decomposing (.+?) \((\d+) chars\)")
+_LAYER1_SCOPE = re.compile(r"^\[audit\] Layer 1: (\d+) element")
+_LAYER2_SCOPE = re.compile(r"^\[audit\] Layer 2: (\d+) FULFILLED")
+
+
+_E2E_RUN_LINE = re.compile(r"LOOM_E2E_RUN=([\w.\-]+)")
+
+
+def _usage_rows(pid: str, e2e_run: str) -> list[dict]:
+    """Completed model calls for this specific run, newest last.
+
+    The log says which document is being read; this says whether the model has
+    actually answered. Without it a stage waiting on a slow reply looks
+    exactly like one that has hung, which is the single thing a person
+    watching a long run needs to distinguish.
+
+    Scoped to ``e2e_run`` on purpose. Falling back to whichever run tree was
+    written most recently reported the *previous* run's timings against the
+    current one -- a fresh run appeared to have been waiting several minutes
+    before it had made a single call.
+    """
+    if not e2e_run:
+        return []
+    safe = re.sub(r"[^\w.\-]+", "-", e2e_run).strip("-._")[:80]
+    if not safe:
+        return []
+    path = DATA_ROOT / "projects" / pid / "e2e" / "runs" / safe / "usage.jsonl"
+    rows: list[dict] = []
+    try:
+        with open(path, encoding="utf-8", errors="replace") as fh:
+            for line in fh:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    rows.append(json.loads(line))
+                except json.JSONDecodeError:
+                    continue
+    except OSError:
+        return []
+    return rows
+
+
+def _run_progress(
+    pid: str, log_text: str, started: float, status: str, flags: list[str] | None = None
+) -> dict:
+    """Turn a run's log tail into stages, a current activity, and liveness."""
+    lines = log_text.splitlines()
+    seen: set[str] = set()
+    order = [s[0] for s in _RUN_STAGES]
+    for line in lines:
+        for sid, _label, pat in _RUN_STAGES:
+            if pat.search(line):
+                seen.add(sid)
+    # The furthest stage reached wins; stages are strictly sequential, so
+    # anything before it is finished even if its log line scrolled out of the
+    # tail we read.
+    current = ""
+    for sid in order:
+        if sid in seen:
+            current = sid
+    reached = order.index(current) if current else -1
+
+    stages = []
+    for i, (sid, label, _pat) in enumerate(_RUN_STAGES):
+        if status == "done":
+            state = "done"
+        elif i < reached:
+            state = "done"
+        elif i == reached:
+            state = "failed" if status == "error" else "running"
+        else:
+            state = "pending"
+        stages.append({"id": sid, "label": label, "state": state})
+
+    # What Layer 0 is chewing on right now, and how far through it is.
+    detail = ""
+    done = total = 0
+    docs = [m.group(1) for line in lines if (m := _LAYER0_DOC.search(line))]
+    if docs:
+        detail = docs[-1]
+        done = len(docs) - 1
+        only = ""
+        fl = flags or []
+        if "--only" in fl:
+            i = fl.index("--only")
+            only = fl[i + 1] if i + 1 < len(fl) else ""
+        total = _layer0_total(pid, only)
+    for line in reversed(lines):
+        if m := _LAYER1_SCOPE.search(line):
+            if current == "layer1":
+                detail = f"{m.group(1)} elements in scope"
+            break
+        if m := _LAYER2_SCOPE.search(line):
+            if current == "layer2":
+                detail = f"{m.group(1)} confirmed findings"
+            break
+
+    # The pipeline prints its own run id on the first line, so the ledger can
+    # be located exactly rather than guessed at.
+    e2e_run = ""
+    for line in lines:
+        if m := _E2E_RUN_LINE.search(line):
+            e2e_run = m.group(1)
+            break
+    rows = _usage_rows(pid, e2e_run)
+    calls = len(rows)
+    last_ms = 0.0
+    waiting = 0.0
+    if rows:
+        try:
+            last_ms = float(rows[-1].get("elapsed_ms") or 0)
+        except (TypeError, ValueError):
+            last_ms = 0.0
+    # Seconds since the newest completed call, i.e. how long the current one
+    # has been outstanding.
+    stamps = [r.get("ts") or r.get("timestamp") for r in rows if r.get("ts") or r.get("timestamp")]
+    if stamps:
+        try:
+            from datetime import datetime
+
+            newest = str(stamps[-1]).replace("Z", "+00:00")
+            dt = datetime.fromisoformat(newest)
+            waiting = max(0.0, time.time() - dt.timestamp())
+        except Exception:
+            waiting = 0.0
+
+    return {
+        "stages": stages,
+        "current": current,
+        "detail": detail,
+        "docsDone": done,
+        "docsTotal": total,
+        "elapsed": max(0.0, time.time() - started),
+        "modelCalls": calls,
+        "lastCallSeconds": round(last_ms / 1000.0, 1),
+        "waitingSeconds": round(waiting, 1),
+    }
+
+
+def _layer0_total(pid: str, only: str = "") -> int:
+    """How many documents this run will read, from the manifest.
+
+    Honours ``--only``, because a single-unit run that claims to be 3 of 27
+    is actively misleading about how much is left.
+    """
+    try:
+        import yaml
+
+        man = _project_dir(pid) / "manifest.yaml"
+        data = yaml.safe_load(man.read_text(encoding="utf-8")) or {}
+        units = data.get("units") or {}
+        if only:
+            units = {k: v for k, v in units.items() if k == only}
+        return sum(len((u or {}).get("documents") or []) for u in units.values())
+    except Exception:
+        return 0
+
+
 def _run_status(run_id: str, tail_bytes: int = 16000) -> dict | None:
     with _RUNS_LOCK:
         rec = _RUNS.get(run_id)
         if not rec:
             return None
         status, code, log_path = rec["status"], rec["exit_code"], rec["log_path"]
+        pid, started = rec["pid"], rec.get("started") or time.time()
+        flags = list(rec.get("flags") or [])
     log_text = ""
     try:
         with open(log_path, "rb") as fh:
@@ -1653,7 +1836,20 @@ def _run_status(run_id: str, tail_bytes: int = 16000) -> dict | None:
             log_text = fh.read().decode("utf-8", errors="replace")
     except OSError:
         pass
-    return {"runId": run_id, "status": status, "exitCode": code, "log": log_text}
+    progress = {}
+    try:
+        progress = _run_progress(pid, log_text, started, status, flags)
+    except Exception:
+        # Progress is a convenience. A parser bug must not take down the
+        # status endpoint the client relies on to know a run finished.
+        progress = {}
+    return {
+        "runId": run_id,
+        "status": status,
+        "exitCode": code,
+        "log": log_text,
+        "progress": progress,
+    }
 
 
 class Handler(BaseHTTPRequestHandler):

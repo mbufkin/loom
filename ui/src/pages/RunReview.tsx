@@ -15,6 +15,7 @@ import { UnitOutputRow } from "../components/UnitOutputRow";
 import { PacketTypeBar } from "../components/PacketTypeBar";
 import { Overview } from "../components/Overview";
 import { NextSteps } from "../components/NextSteps";
+import { RunProgress } from "../components/RunProgress";
 import { GraphBelongingPanel } from "../components/GraphBelongingPanel";
 import { PathsPanel } from "../components/PathsPanel";
 import { FirstRun } from "../components/FirstRun";
@@ -993,15 +994,23 @@ export function RunReview() {
           {runStatus && (
             <div className="panel">
               <div className="panel-head">
-                Run log{" "}
+                Audit progress{" "}
                 <span className={`pill ${runStatus.status}`}>
                   {runStatus.status}
                 </span>
               </div>
               <div className="panel-body">
-                <div className="runlog">
-                  {runStatus.log || "starting…"}
-                </div>
+                {/* Stages first, log second. The log is the diagnostic; the
+                    stages are the answer to "what is it doing and is it
+                    still alive", which is what someone watching wants. */}
+                <RunProgress
+                  progress={runStatus.progress}
+                  status={runStatus.status}
+                />
+                <details className="err-details">
+                  <summary>Run log</summary>
+                  <div className="runlog">{runStatus.log || "starting…"}</div>
+                </details>
               </div>
             </div>
           )}

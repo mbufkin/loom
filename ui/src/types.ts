@@ -385,11 +385,41 @@ export interface ArtifactRung {
   units: Record<string, ArtifactUnit>;
 }
 
+/** One step of the pipeline, as derived from the run log. */
+export interface RunStage {
+  id: string;
+  label: string;
+  state: "pending" | "running" | "done" | "failed";
+}
+
+/**
+ * Derived view of a run in flight.
+ *
+ * Read out of the run log and the usage ledger rather than reported by the
+ * pipeline, so a run started from the command line is just as visible as one
+ * started from the app.
+ */
+export interface RunProgressInfo {
+  stages: RunStage[];
+  current: string;
+  /** The document or scope the current stage is working on. */
+  detail: string;
+  docsDone: number;
+  docsTotal: number;
+  elapsed: number;
+  /** Completed model calls, the signal that a slow run is still alive. */
+  modelCalls: number;
+  lastCallSeconds: number;
+  /** Seconds since the last model reply landed. */
+  waitingSeconds: number;
+}
+
 export interface RunStatus {
   runId: string;
   status: "running" | "done" | "error";
   exitCode: number | null;
   log: string;
+  progress?: RunProgressInfo;
 }
 
 export interface ConfigSummary {

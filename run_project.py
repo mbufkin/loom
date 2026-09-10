@@ -210,16 +210,38 @@ def run_stage(script: Path, args: list[str], project_id: str) -> None:
 def _health_candidates(chat_completions_url: str) -> list[str]:
     """Possible health endpoints for an OpenAI-compatible chat URL.
 
-    llama.cpp serves /health; the Cursor bridge serves /healthz.
+    ``/health`` and ``/healthz`` are conventions, not part of the OpenAI API:
+    llama.cpp serves the first, the Cursor bridge the second, and Ollama, LM
+    Studio and vLLM serve neither. Probing only those two meant a run against
+    Ollama refused to start with a 404 on ``/healthz`` while the app's own
+    Settings screen showed the model as reachable -- the two disagreeing about
+    the same server.
+
+    So the sibling ``/models`` of the configured chat endpoint is tried first.
+    Every OpenAI-compatible server implements it, it is derived from the chat
+    URL so it stays correct for services hosted under a subpath, and a 200
+    from it proves the thing we actually need rather than that some unrelated
+    health route exists.
     """
     parsed = urlparse(chat_completions_url)
     if not parsed.scheme or not parsed.netloc:
         raise ValueError(f"invalid model URL: {chat_completions_url!r}")
     base = f"{parsed.scheme}://{parsed.netloc}"
+
+    candidates: list[str] = []
+    path = parsed.path or ""
+    if path.endswith("/chat/completions"):
+        candidates.append(f"{base}{path[: -len('/chat/completions')]}/models")
+
     # Prefer /healthz first on the Cursor bridge port.
     if ":8788" in parsed.netloc or parsed.netloc.endswith("8788"):
-        return [f"{base}/healthz", f"{base}/health"]
-    return [f"{base}/health", f"{base}/healthz"]
+        candidates += [f"{base}/healthz", f"{base}/health"]
+    else:
+        candidates += [f"{base}/health", f"{base}/healthz"]
+
+    # Ollama answers "Ollama is running" on the root and nothing else useful.
+    candidates.append(base)
+    return candidates
 
 
 def preflight_models() -> None:

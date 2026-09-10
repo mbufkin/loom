@@ -15,10 +15,58 @@ from __future__ import annotations
 import json
 import os
 import re
+import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def share_into_run(src: Path, dst: Path, run: Path) -> str:
+    """Make ``src`` readable at ``dst`` without copying the corpus.
+
+    A plain symlink is first choice and the only one needed on macOS and
+    Linux. On Windows ``os.symlink`` raises WinError 1314 -- "a required
+    privilege is not held" -- unless the process is elevated or Developer
+    Mode is switched on. Neither is a reasonable ask of a locked-down school
+    machine, and the failure stopped the pipeline before it read a single
+    document.
+
+    Windows does offer two unprivileged equivalents, so the fallbacks are
+    picked by what the thing actually is:
+
+    * directories -> a junction, which behaves like a directory symlink and
+      needs no privilege.
+    * files -> a hard link, which needs none either on NTFS within a volume.
+      Same-inode semantics, so edits are shared exactly as with a symlink.
+
+    Copying is the last resort only. It is correct but duplicates the corpus,
+    which the shared-inputs design exists to avoid.
+
+    Returns how the link was made, for the run metadata.
+    """
+    try:
+        dst.symlink_to(os.path.relpath(src, start=run))
+        return "symlink"
+    except OSError:
+        pass
+
+    if src.is_dir():
+        try:
+            import _winapi  # Windows-only; absent elsewhere
+
+            _winapi.CreateJunction(str(src.resolve()), str(dst))
+            return "junction"
+        except Exception:
+            shutil.copytree(src, dst)
+            return "copytree"
+
+    try:
+        os.link(src, dst)
+        return "hardlink"
+    except OSError:
+        shutil.copy2(src, dst)
+        return "copy"
 
 
 def slugify_run_id(label: str) -> str:
@@ -82,14 +130,14 @@ def prepare_e2e_run(
             if name in required:
                 raise FileNotFoundError(f"missing {src}")
             continue
-        dst.symlink_to(os.path.relpath(src, start=run))
+        share_into_run(src, dst, run)
 
     # Graph-only under E2E: reuse curriculum Layer 0 ledger (read-mostly).
     if link_layer0_from_curriculum:
         src = base / "layer0"
         dst = run / "layer0"
         if not (dst.exists() or dst.is_symlink()) and src.is_dir():
-            dst.symlink_to(os.path.relpath(src, start=run))
+            share_into_run(src, dst, run)
 
     meta_path = run / "RUN.json"
     prev: dict = {}
