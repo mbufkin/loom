@@ -24,6 +24,7 @@ import type {
   RunPreflight,
   RunStatus,
   Stats,
+  StorageInfo,
   UnitRung,
 } from "../types";
 
@@ -165,6 +166,9 @@ export const api = {
 
   /** Can this machine start an audit? Asked before offering the button. */
   canRun: () => getJSON<RunPreflight>("/api/can-run"),
+
+  /** Where curricula, settings and logs are kept on this machine. */
+  storage: () => getJSON<StorageInfo>("/api/storage"),
 
   // Absolute URL so <a href> / <embed src> for PDFs work directly.
   fileUrl: (id: string, path: string, e2eRun?: string) =>

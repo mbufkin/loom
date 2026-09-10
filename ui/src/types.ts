@@ -10,15 +10,33 @@ export interface Project {
   title?: string;
   kind?: ProjectKind;
   in_status?: boolean;
-  /** 0=Golden … 9=unknown — API already sorts by this. */
+  /** 0=Golden … 9=unknown. Developer annotation from projects/STATUS.md only;
+   *  absent on an installed copy, so never sort or filter on it. */
   sort_tier?: number;
   has_output: boolean;
   has_stats: boolean;
   has_unit_rung: boolean;
+  /** True once ingest has organised the documents into units. */
+  has_manifest?: boolean;
   /** True when a REVIEW-READY e2e run exists, i.e. the console has something
    *  to show. The picker prefers these so a first run never lands on a blank
    *  curriculum. */
   has_review_run?: boolean;
+  /** Unix seconds when the most recent audit finished; null if never audited.
+   *  The picker's real sort key. */
+  last_audit?: number | null;
+}
+
+/** Where this copy of Loom keeps curricula, settings and logs. */
+export interface StorageInfo {
+  data_root: string;
+  install_root: string;
+  projects_root: string;
+  /** True when data shares the program's folder — a developer checkout. */
+  legacy_in_repo: boolean;
+  /** True when LOOM_HOME pinned the location explicitly. */
+  pinned_by_env: boolean;
+  config_present: boolean;
 }
 
 /** Whether this machine can start an audit (bash + python3 + run-audit). */

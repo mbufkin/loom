@@ -56,20 +56,34 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
-# Repo root = parent of this ui/ directory. Everything is resolved against it.
+# Install root = parent of this ui/ directory. Holds the program itself, and
+# must be importable before anything below can load loom_paths.
 ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
-PROJECTS = ROOT / "projects"
+
+# The install/data split (see loom_paths). On a developer checkout these are the
+# same directory and nothing below behaves differently; on an installed copy the
+# curricula live under the user's own data directory instead of inside the
+# program folder, so one district never sees another's work — or ours.
+from loom_paths import DATA_DIR as DATA_ROOT  # noqa: E402
+from loom_paths import ensure_data_dirs, is_legacy_in_repo  # noqa: E402
+
+# --- Ships with the program. Read-only in normal use. ---
 # Built SPA bundle (npm run ui:build). Present only in production mode; when it
 # is absent this server stays a pure JSON API and the Vite dev server on 5173
 # serves the app, so the development flow is completely unaffected.
 DIST = ROOT / "ui" / "dist"
 RUN_AUDIT = ROOT / "run-audit"
-CONFIG = ROOT / "config.yaml"
-RUNS_DIR = ROOT / "ui" / ".runs"  # per-run log files (gitignored)
 PACKET_TYPES_SPEC = ROOT / "workflows" / "packet_types.yaml"
 UNIT_RUNG_SCRIPT = ROOT / "unit_rung.py"
+
+# --- Belongs to whoever is using the program. Survives an upgrade. ---
+PROJECTS = DATA_ROOT / "projects"
+CONFIG = DATA_ROOT / "config.yaml"
+# Per-run log files. Deliberately not under ui/, which is program territory and
+# may be read-only once this is packaged.
+RUNS_DIR = DATA_ROOT / "logs" / "runs"
 
 # Top-level "course plates" a reviewer wants first, in priority order. Only those
 # that actually exist for a project are surfaced.
@@ -421,8 +435,13 @@ def _graph_unit_detail(
 
 
 def _status_tiers() -> dict[str, str]:
-    """Parse projects/STATUS.md's markdown table into {project_id: tier}. Best-effort:
-    the review site still works if STATUS.md is missing or reformatted."""
+    """Parse projects/STATUS.md's markdown table into {project_id: tier}.
+
+    A developer-only annotation, and nothing user-facing may depend on it: the
+    file describes our sample corpora, so it is absent on an installed copy and
+    every real district curriculum is simply "Unknown". Surfaced behind the
+    advanced flag; never used to decide what a reviewer can see.
+    """
     tiers: dict[str, str] = {}
     status = PROJECTS / "STATUS.md"
     if not status.is_file():
@@ -472,34 +491,49 @@ def _project_title(project_dir: Path, pid: str) -> str:
     return pid
 
 
-def _project_kind(pid: str, in_status: bool) -> str:
-    """curriculum = STATUS.md row; lab = lab-* forks; other = everything else."""
+def _project_kind(pid: str, has_manifest: bool) -> str:
+    """curriculum = has an ingested manifest; lab = lab-* forks; other = the rest.
+
+    Derived from what is on disk, deliberately *not* from projects/STATUS.md.
+    STATUS.md is a hand-maintained table describing our own sample corpora, so
+    on any machine but a developer's it lists nothing — which meant every
+    curriculum a district ingested was classified "other" and disappeared from
+    a picker that shows kind == "curriculum". The manifest is the honest
+    signal: ingest writes one once it has organised documents into units.
+    """
     if pid.startswith("lab-"):
         return "lab"
-    if in_status:
+    if has_manifest:
         return "curriculum"
     return "other"
 
 
-def _has_review_run(project: Path) -> bool:
-    """True when at least one completed (REVIEW-READY) e2e run exists.
+def _latest_review_run(project: Path) -> float | None:
+    """When the most recent finished audit completed, or None if never audited.
 
-    Cheap on purpose: this runs once per project on every picker load, so it
-    stops at the first match rather than building the full run list.
+    Serves two purposes: the "is there anything to review?" signal, and the
+    picker's sort key. REVIEW-READY.json is written last, which makes its mtime
+    the closest thing to a completion time we have.
     """
     runs_root = project / "e2e" / "runs"
     if not runs_root.is_dir():
-        return False
-    return any(
-        (d / "REVIEW-READY.json").is_file() for d in runs_root.iterdir() if d.is_dir()
-    )
+        return None
+    stamps: list[float] = []
+    for d in runs_root.iterdir():
+        if not d.is_dir():
+            continue
+        try:
+            stamps.append((d / "REVIEW-READY.json").stat().st_mtime)
+        except OSError:
+            continue  # unfinished run, or a file we cannot read — not reviewable
+    return max(stamps) if stamps else None
 
 
 def _list_projects() -> list[dict]:
     """List reviewable project dirs with picker metadata (kind / title / sort).
 
-    Curriculum dropdown uses kind=curriculum (STATUS.md). Lab forks stay
-    loadable by id but are opt-in in the UI (kind=lab).
+    Curriculum dropdown uses kind=curriculum (an ingested manifest). Lab forks
+    stay loadable by id but are opt-in in the UI (kind=lab).
     """
     tiers = _status_tiers()
     out: list[dict] = []
@@ -510,10 +544,12 @@ def _list_projects() -> list[dict]:
         if not child.is_dir() or child.name.startswith("_"):
             continue
         pid = child.name
+        has_manifest = (child / "manifest.yaml").is_file()
         tier = tiers.get(pid, "Unknown")
         in_status = pid in tiers
-        kind = _project_kind(pid, in_status)
+        kind = _project_kind(pid, has_manifest)
         title = _project_title(child, pid)
+        last_audit = _latest_review_run(child)
         out.append(
             {
                 "id": pid,
@@ -525,14 +561,28 @@ def _list_projects() -> list[dict]:
                 "has_output": (child / "output").is_dir(),
                 "has_stats": (child / "output" / "aggregate-stats.json").is_file(),
                 "has_unit_rung": (child / "layer_unit" / "UNIT-RUNG.md").is_file(),
+                # Has ingest organised the documents into units yet? Distinguishes
+                # "set up, ready to audit" from "documents dropped in, nothing read".
+                "has_manifest": has_manifest,
                 # Does the review console have anything to show for this
                 # project? The console only renders REVIEW-READY e2e runs, so
                 # without this the picker cannot avoid landing a first-time
                 # user on a curriculum that renders an empty page.
-                "has_review_run": _has_review_run(child),
+                "has_review_run": last_audit is not None,
+                "last_audit": last_audit,
             }
         )
-    out.sort(key=lambda p: (p["sort_tier"], (p["title"] or p["id"]).lower(), p["id"]))
+    # Most recently audited first: the curriculum somebody last worked on is the
+    # one they most likely want back. Never-audited trees sort to the bottom
+    # alphabetically, rather than by an internal tier table that means nothing
+    # outside this repo.
+    out.sort(
+        key=lambda p: (
+            -(p["last_audit"] or 0.0),
+            (p["title"] or p["id"]).lower(),
+            p["id"],
+        )
+    )
     return out
 
 
@@ -980,6 +1030,27 @@ def _run_preflight() -> dict:
     return {"can_run": not missing, "missing": missing, "platform": sys.platform}
 
 
+def _storage_summary() -> dict:
+    """Where this copy keeps curricula, config and logs.
+
+    Worth surfacing in the UI rather than hiding: "where did my work go?" is a
+    question people genuinely need answered, and an install sharing its folder
+    with the program (`legacy_in_repo`) is a developer setup, not something a
+    district should end up in silently.
+    """
+    return {
+        "data_root": str(DATA_ROOT),
+        "install_root": str(ROOT),
+        "projects_root": str(PROJECTS),
+        "legacy_in_repo": is_legacy_in_repo(),
+        # An explicit LOOM_HOME outranks every default, so say when it is set —
+        # otherwise a pinned data directory looks indistinguishable from the
+        # per-OS default and is very confusing to debug.
+        "pinned_by_env": bool((os.environ.get("LOOM_HOME") or "").strip()),
+        "config_present": CONFIG.is_file(),
+    }
+
+
 def _read_json_body(handler: BaseHTTPRequestHandler) -> dict:
     length = int(handler.headers.get("Content-Length") or 0)
     raw = handler.rfile.read(length) if length else b"{}"
@@ -1089,6 +1160,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(_config_summary())
             if parts == ["api", "can-run"]:
                 return self._json(_run_preflight())
+            if parts == ["api", "storage"]:
+                return self._json(_storage_summary())
             if parts == ["api", "packet-types"]:
                 return self._json(_packet_types())
             if parts == ["api", "create", "status"]:
@@ -1368,7 +1441,11 @@ def main() -> int:
     # assigns it, and the caller has no other way to learn where we ended up.
     # flush so a launcher reading our output is not blocked by stdio buffering.
     port = httpd.server_address[1]
-    print(f"[loom-review] API on http://{args.host}:{port}  (root: {ROOT})", flush=True)
+    # Create the data skeleton at startup rather than on first write, so a fresh
+    # install has somewhere to put things and the path shown below always exists.
+    ensure_data_dirs()
+    print(f"[loom-review] API on http://{args.host}:{port}  (install: {ROOT})", flush=True)
+    print(f"[loom-review] data root: {DATA_ROOT}", flush=True)
     if DIST.is_dir():
         print(f"[loom-review] serving app from {DIST}", flush=True)
     try:

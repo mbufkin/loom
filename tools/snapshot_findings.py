@@ -42,7 +42,7 @@ from pathlib import Path
 # Allow running as `python3 tools/snapshot_findings.py` from the repo root.
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from audit_lib import BASE_DIR, atomic_write, load_yaml, log, project_dir  # noqa: E402
+from audit_lib import DATA_DIR, atomic_write, load_yaml, log, project_dir  # noqa: E402
 from synthesize import (  # noqa: E402
     aggregate_layer1,
     aggregate_layer2,
@@ -106,7 +106,7 @@ def paths_golden_path(project_id: str) -> Path:
 
 def discover_layer1_projects() -> list[str]:
     """Every project that has Layer 1 output on disk (a bucket-ledger to snapshot)."""
-    projects_root = BASE_DIR / "projects"
+    projects_root = DATA_DIR / "projects"
     return sorted(
         p.name
         for p in projects_root.iterdir()
@@ -122,7 +122,7 @@ def discover_path_projects() -> list[str]:
     before the router existed are skipped — pinning them would freeze an
     unreproducible snapshot.
     """
-    projects_root = BASE_DIR / "projects"
+    projects_root = DATA_DIR / "projects"
     out: list[str] = []
     for p in projects_root.iterdir():
         if not p.is_dir():

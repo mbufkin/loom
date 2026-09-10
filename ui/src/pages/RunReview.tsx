@@ -84,8 +84,14 @@ function curriculumOptionLabel(p: Project, advanced = false): string {
   return title;
 }
 
+/** Most recently audited first, then never-audited alphabetically.
+ *
+ * Mirrors the order the API returns. This used to rank by `sort_tier`, which
+ * grades our sample corpus and is simply absent on an installed copy — there,
+ * every curriculum tied at 9 and the list was effectively unordered.
+ */
 function projectSortKey(p: Project): [number, string, string] {
-  return [p.sort_tier ?? 9, (p.title || p.id).toLowerCase(), p.id];
+  return [-(p.last_audit ?? 0), (p.title || p.id).toLowerCase(), p.id];
 }
 
 // Prefer the real unit-rung band; otherwise derive a heat band from Layer 1 role

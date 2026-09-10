@@ -40,7 +40,7 @@ _ROOT = Path(__file__).resolve().parent.parent
 if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT))
 
-from audit_lib import BASE_DIR, load_yaml, log, project_dir, validate_slug_id
+from audit_lib import DATA_DIR, load_yaml, log, project_dir, validate_slug_id
 from synthesize import readable_title_from_filename
 
 DEFAULT_REMOTE = os.environ.get("CRYSTALLIZE_DRIVE_REMOTE", "gdrive")
@@ -298,7 +298,7 @@ def push_project(
 
 def list_projects_with_pdf() -> list[str]:
     """All projects/<id>/output/GLOBAL-AUDIT-REPORT.pdf under the shelf."""
-    projects = BASE_DIR / "projects"
+    projects = DATA_DIR / "projects"
     ids: list[str] = []
     if not projects.is_dir():
         return ids

@@ -15,15 +15,20 @@ import yaml
 
 from doc_extract import extract_with_meta
 from doc_extract import iter_source_files as _iter_source_files_recursive
+from loom_paths import DATA_DIR, INSTALL_DIR
 from schema_validate import (
     raise_on_errors,
     validate_manifest,
     validate_unit_calendar,
 )
 
-BASE_DIR = Path(__file__).resolve().parent
-CONFIG_PATH = BASE_DIR / "config.yaml"
-LOG_DIR = BASE_DIR / "logs"
+# Where the program is. Pipeline stages, checklists and tools resolve against
+# this, and it must not move when the user's data does.
+BASE_DIR = INSTALL_DIR
+# Where the user's stuff is. On a developer checkout these are the same
+# directory; on an installed copy they are not. See loom_paths.
+CONFIG_PATH = DATA_DIR / "config.yaml"
+LOG_DIR = DATA_DIR / "logs"
 SLUG_ID_RE = re.compile(r"^[a-z0-9.]+(?:-[a-z0-9.]+)*$")
 
 _logger = logging.getLogger("crystallize.audit")
@@ -313,8 +318,11 @@ def project_dir(project_id: str) -> Path:
     output / graph land under projects/<id>/e2e/runs/<run_id>/ and never clobber
     the golden curriculum tree (see tools/e2e_run_lib.py). Bare projects/<id>/
     is for --allow-live-root / overnight golden refresh only.
+
+    Resolves under DATA_DIR, not the install directory, so a district's
+    curricula never land inside the program's own folder.
     """
-    base = BASE_DIR / "projects" / project_id
+    base = DATA_DIR / "projects" / project_id
     run = (os.environ.get("LOOM_E2E_RUN") or "").strip()
     if run:
         safe = re.sub(r"[^\w.\-]+", "-", run).strip("-._")[:80]

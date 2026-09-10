@@ -24,8 +24,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-# Keep this module free of audit_lib imports at load time (model_chat imports us).
-BASE_DIR = Path(__file__).resolve().parent
+# Keep this module free of audit_lib imports at load time (model_chat imports
+# us). loom_paths is stdlib-only precisely so both sides can share the seam.
+from loom_paths import DATA_DIR  # noqa: E402
 
 # Rough English/code average used only when the server omits usage.
 CHARS_PER_TOKEN = 4
@@ -33,7 +34,7 @@ CHARS_PER_TOKEN = 4
 
 def project_dir(project_id: str) -> Path:
     """Match audit_lib: honor LOOM_E2E_RUN so usage.jsonl stays with that A/B tree."""
-    base = BASE_DIR / "projects" / project_id
+    base = DATA_DIR / "projects" / project_id
     run = (os.environ.get("LOOM_E2E_RUN") or "").strip()
     if run:
         import re
@@ -88,13 +89,13 @@ def usage_log_path(project_id: str | None = None) -> Path:
     pid = project_id or get_usage_project()
     if pid:
         return project_dir(pid) / "usage.jsonl"
-    return BASE_DIR / "logs" / "usage-unscoped.jsonl"
+    return DATA_DIR / "logs" / "usage-unscoped.jsonl"
 
 
 def usage_summary_path(project_id: str | None = None) -> Path:
     pid = project_id or get_usage_project()
     if not pid:
-        return BASE_DIR / "logs" / "USAGE-SUMMARY-unscoped.json"
+        return DATA_DIR / "logs" / "USAGE-SUMMARY-unscoped.json"
     return project_dir(pid) / "USAGE-SUMMARY.json"
 
 

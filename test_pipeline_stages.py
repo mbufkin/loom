@@ -103,7 +103,7 @@ def test_known_broken_stages_still_broken() -> None:
 def _with_temp_project(rel_files: dict[str, str] | None = None) -> tuple[str, Path]:
     """Create an isolated curriculum id under a temp LOOM projects root.
 
-    Uses LOOM_E2E_RUN + a swapped audit_lib.BASE_DIR so assertions resolve
+    Uses LOOM_E2E_RUN + a swapped audit_lib.DATA_DIR so assertions resolve
     through the same project_dir helper production uses, without touching
     real corpora.
     """
@@ -120,7 +120,7 @@ def _with_temp_project(rel_files: dict[str, str] | None = None) -> tuple[str, Pa
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(body, encoding="utf-8")
 
-    audit_lib.BASE_DIR = tmp
+    audit_lib.DATA_DIR = tmp
     os.environ["LOOM_E2E_RUN"] = run_id
     return project_id, root
 
@@ -128,7 +128,7 @@ def _with_temp_project(rel_files: dict[str, str] | None = None) -> tuple[str, Pa
 def _restore_project_dir(saved_audit_base: Path, saved_e2e: str | None) -> None:
     import audit_lib
 
-    audit_lib.BASE_DIR = saved_audit_base
+    audit_lib.DATA_DIR = saved_audit_base
     if saved_e2e is None:
         os.environ.pop("LOOM_E2E_RUN", None)
     else:
@@ -139,7 +139,7 @@ def test_assert_stage_outputs_passes_when_artifact_present() -> None:
     from run_project import LESSON_RUNG, assert_stage_outputs
     import audit_lib
 
-    saved_audit_base = audit_lib.BASE_DIR
+    saved_audit_base = audit_lib.DATA_DIR
     saved_e2e = os.environ.get("LOOM_E2E_RUN")
     try:
         project_id, _ = _with_temp_project(
@@ -154,7 +154,7 @@ def test_assert_stage_outputs_fails_naming_artifact() -> None:
     from run_project import LESSON_RUNG, StageOutputError, assert_stage_outputs
     import audit_lib
 
-    saved_audit_base = audit_lib.BASE_DIR
+    saved_audit_base = audit_lib.DATA_DIR
     saved_e2e = os.environ.get("LOOM_E2E_RUN")
     try:
         project_id, root = _with_temp_project()
@@ -186,7 +186,7 @@ def test_assert_stage_outputs_allows_conditional_skip() -> None:
     )
     import audit_lib
 
-    saved_audit_base = audit_lib.BASE_DIR
+    saved_audit_base = audit_lib.DATA_DIR
     saved_e2e = os.environ.get("LOOM_E2E_RUN")
     try:
         # Undeclared stage on an empty project root — must be silent.
@@ -211,7 +211,7 @@ def test_curriculum_review_writes_under_e2e_run() -> None:
     import audit_lib
     import curriculum_review
 
-    saved_audit_base = audit_lib.BASE_DIR
+    saved_audit_base = audit_lib.DATA_DIR
     saved_e2e = os.environ.get("LOOM_E2E_RUN")
     try:
         project_id, root = _with_temp_project(
@@ -229,7 +229,7 @@ def test_curriculum_review_writes_under_e2e_run() -> None:
         assert written == expected, f"wrote {written}, expected {expected}"
         assert expected.is_file(), f"missing e2e plate at {expected}"
         live_leak = (
-            audit_lib.BASE_DIR
+            audit_lib.DATA_DIR
             / "projects"
             / project_id
             / "output"

@@ -16,7 +16,7 @@ import usage_lib as ul  # noqa: E402
 
 def _isolated_project(tmp: Path, name: str = "usage-test") -> str:
     """Point usage_lib at a temp projects/<id> tree."""
-    ul.BASE_DIR = tmp
+    ul.DATA_DIR = tmp
     (tmp / "projects" / name).mkdir(parents=True)
     ul.set_usage_project(name)
     # Reset argv scan so tests don't inherit the pytest/unittest argv.
