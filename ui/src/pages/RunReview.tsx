@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { api } from "../lib/api";
+import { api, describeError } from "../lib/api";
 import { MarkdownViewer } from "../components/MarkdownViewer";
 import {
   OutputNav,
@@ -17,6 +17,8 @@ import { Overview } from "../components/Overview";
 import { NextSteps } from "../components/NextSteps";
 import { GraphBelongingPanel } from "../components/GraphBelongingPanel";
 import { PathsPanel } from "../components/PathsPanel";
+import { FirstRun } from "../components/FirstRun";
+import { ServiceDown } from "../components/ServiceDown";
 import type {
   ArtifactRung,
   Band,
@@ -29,6 +31,7 @@ import type {
   OutputsTree,
   PathsSummary,
   Project,
+  RunPreflight,
   RunStatus,
   Stats,
   UnitRollup,
@@ -155,10 +158,30 @@ export function RunReview() {
     null
   );
   const [viewerText, setViewerText] = useState<string>("");
-  const [error, setError] = useState<string>("");
+  // A sentence the reviewer can act on, plus the raw text behind a disclosure.
+  // Never render the detail on its own: it is a status code and a URL.
+  const [error, setError] = useState<{
+    message: string;
+    detail?: string;
+  } | null>(null);
+  // Distinct from `error`: this means the local API is unreachable, so nothing
+  // on the page can be trusted. Kept separate because loadWorkspace clears
+  // `error` on every navigation and would wipe it out.
+  const [serviceError, setServiceError] = useState<{
+    message: string;
+    detail?: string;
+  } | null>(null);
+  // Bumped by the retry action so every data effect re-runs. Reloading only the
+  // project list is not enough: the e2e-run lookup keys off projectId, which is
+  // unchanged after a recovery, so the console would keep showing the stale
+  // "not audited yet" state even though the service was back.
+  const [reloadKey, setReloadKey] = useState(0);
 
   const [runStatus, setRunStatus] = useState<RunStatus | null>(null);
   const pollRef = useRef<number | null>(null);
+  // Asked once: can this machine start an audit at all? Drives whether the
+  // first-run screen offers a button or explains why it cannot.
+  const [preflight, setPreflight] = useState<RunPreflight | null>(null);
 
   const project = projects.find((p) => p.id === projectId) ?? {
     id: projectId,
@@ -182,6 +205,18 @@ export function RunReview() {
     });
   }, [projects]);
 
+  // Curricula that actually have something to review, offered as one-click
+  // escapes on the first-run screen. Labs stay out: they are not a place to
+  // send someone who just wants to see a finished audit.
+  const reviewableProjects = useMemo(
+    () =>
+      projects.filter(
+        (p) =>
+          p.has_review_run && p.kind !== "lab" && !p.id.startsWith("lab-")
+      ),
+    [projects]
+  );
+
   const labProjects = useMemo(() => {
     return projects
       .filter((p) => p.kind === "lab" || p.id.startsWith("lab-"))
@@ -201,12 +236,14 @@ export function RunReview() {
     });
   }, [graphRuns]);
 
-  // Load the project list once. Prefer ?project= deep-link, else Dallas, else first.
+  // Load the project list. Prefer ?project= deep-link, else Dallas, else first.
   // Best practice: never clobber an explicit URL curriculum with the default.
-  useEffect(() => {
+  // Extracted from the effect so the offline screen can offer a real retry.
+  const loadProjects = useCallback(() => {
     api
       .projects()
       .then((ps) => {
+        setServiceError(null);
         setProjects(ps);
         const curricula = ps.filter((p) => p.kind === "curriculum");
         const fallback =
@@ -221,16 +258,50 @@ export function RunReview() {
           deepLink.project && ps.some((p) => p.id === deepLink.project)
             ? deepLink.project
             : undefined;
-        if (linked) {
-          setProjectId(linked);
-        } else if (fallback.some((p) => p.id === DEFAULT_PROJECT)) {
-          setProjectId(DEFAULT_PROJECT);
-        } else if (fallback[0]) {
-          setProjectId(fallback[0].id);
-        }
+        // Land on something that will actually render. The console only shows
+        // REVIEW-READY e2e runs, so always defaulting to one fixed curriculum
+        // meant a first-time user on a fresh machine opened onto a blank page
+        // with no idea why. Preference order: the URL, the usual default when
+        // it has a run, any curriculum with a run, any project with a run.
+        const firstReviewable = (list: Project[]) =>
+          list.find((p) => p.has_review_run)?.id;
+        const defaultHasRun = !!fallback.find(
+          (p) => p.id === DEFAULT_PROJECT
+        )?.has_review_run;
+        const next =
+          linked ??
+          (defaultHasRun ? DEFAULT_PROJECT : undefined) ??
+          firstReviewable(fallback) ??
+          firstReviewable(ps) ??
+          (fallback.some((p) => p.id === DEFAULT_PROJECT)
+            ? DEFAULT_PROJECT
+            : fallback[0]?.id);
+        if (next) setProjectId(next);
       })
-      .catch((e) => setError(String(e)));
+      // If the project list itself cannot be fetched the service is down, and
+      // every "nothing here yet" panel below would be telling the reviewer a
+      // comfortable lie. Record it separately so the UI can say so outright.
+      .catch((e) => setServiceError(describeError(e)));
   }, [deepLink.project]);
+
+  useEffect(() => {
+    loadProjects();
+  }, [loadProjects, reloadKey]);
+
+  // Capability check for the audit button. A failure here is not worth an error
+  // banner: treat it as "cannot run" and let the first-run screen say so.
+  useEffect(() => {
+    api
+      .canRun()
+      .then(setPreflight)
+      .catch(() =>
+        setPreflight({
+          can_run: false,
+          missing: ["a working connection to the local Loom service"],
+          platform: "unknown",
+        })
+      );
+  }, []);
 
   // Keep the address bar shareable as the reviewer changes curriculum / E2E run.
   useEffect(() => {
@@ -269,7 +340,7 @@ export function RunReview() {
   // Load plates / stats / graph for a completed E2E workspace only.
   const loadWorkspace = useCallback(
     async (id: string, e2eRun: string) => {
-      setError("");
+      setError(null);
       setOutputs(null);
       setStats(null);
       setUnitRung(null);
@@ -300,9 +371,11 @@ export function RunReview() {
         setOutputs({ plates: [], layers: [], pdfs: [], units: [], e2e_run: e2e });
         setActivePath(GRAPH_VIEW);
         setActiveType("md");
-        setError(
-          `No E2E output plates for ${id}/${e2e} yet (graph/runs may still load). ${String(e)}`
-        );
+        setError({
+          message:
+            "The reports for this audit aren’t readable yet — it may still be finishing.",
+          detail: `no output plates for ${id}/${e2e}: ${describeError(e).detail}`,
+        });
       }
       api.stats(id, e2e).then(setStats).catch(() => setStats(null));
       api.unitRung(id, e2e).then(setUnitRung);
@@ -371,7 +444,7 @@ export function RunReview() {
     return () => {
       cancelled = true;
     };
-  }, [projectId, deepLink.e2e]);
+  }, [projectId, deepLink.e2e, reloadKey]);
 
   // Workspace reload whenever a completed E2E selection settles.
   useEffect(() => {
@@ -502,7 +575,7 @@ export function RunReview() {
         }
       }, 1500);
     } catch (e) {
-      setError(String(e));
+      setError(describeError(e));
     }
   }, [projectId, e2eRunId, loadWorkspace]);
 
@@ -810,6 +883,13 @@ export function RunReview() {
 
       {topView === "overview" ? (
         <Overview />
+      ) : serviceError ? (
+        // Checked before every data-backed view. The Overview deck above is
+        // static, so it stays readable even when the service is unreachable.
+        <ServiceDown
+          error={serviceError}
+          onRetry={() => setReloadKey((k) => k + 1)}
+        />
       ) : topView === "next" ? (
         <NextSteps projectId={projectId} />
       ) : !e2eListLoaded ? (
@@ -821,32 +901,31 @@ export function RunReview() {
           </div>
         </div>
       ) : !e2eRunId ? (
-        <div className="layout">
-          <div className="main">
-            <div className="panel">
-              <div className="panel-head">Review</div>
-              <div className="panel-body empty">
-                <p>
-                  <strong>No completed review run yet.</strong>
-                </p>
-                <p className="muted-note">
-                  The website only shows a full Dallas E2E after{" "}
-                  <code>REVIEW-READY.json</code> is written. Start one with{" "}
-                  <code>tools/run_dallas_grok_review.sh</code> (see{" "}
-                  <code>docs/E2E.md</code>). Older live plates and incomplete
-                  model trees stay off this surface.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <FirstRun
+          projectTitle={project.title || project.id}
+          reviewable={reviewableProjects}
+          onPick={(id) => {
+            setE2eRunId("");
+            setProjectId(id);
+          }}
+          preflight={preflight}
+          onRunAudit={startRun}
+          running={running}
+          runStatus={runStatus}
+        />
       ) : (
       <div className="layout">
         <div className="main">
           {error && (
             <div className="panel">
-              <div className="panel-body" style={{ color: "var(--accent)" }}>
-                {error}
+              <div className="panel-body">
+                <p className="err-message">{error.message}</p>
+                {error.detail && (
+                  <details className="err-details">
+                    <summary>Technical details</summary>
+                    <code>{error.detail}</code>
+                  </details>
+                )}
               </div>
             </div>
           )}

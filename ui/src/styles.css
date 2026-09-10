@@ -879,6 +879,78 @@ button:disabled {
   text-align: center;
 }
 
+/* ---- First-run / not-audited-yet screen -------------------------------- */
+/* Reads as a short explanation with one obvious next step, so it is left
+   aligned and measure-limited rather than centred like .empty. */
+.fr-body {
+  padding: 32px 36px 36px;
+  max-width: 62ch;
+}
+
+.fr-title {
+  margin: 0 0 12px;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.fr-lead {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.fr-picks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.fr-action {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 2px solid var(--line);
+}
+
+.fr-action .muted-note {
+  margin-top: 10px;
+}
+
+.fr-blocked {
+  margin: 0;
+  background: var(--band-weak);
+  border: 2px solid var(--line);
+  padding: 10px 12px;
+}
+
+/* ---- Error messages ---------------------------------------------------- */
+/* The sentence leads; the status code and URL stay folded away so they are
+   available for a bug report without being the first thing anyone reads. */
+.err-message {
+  margin: 0;
+  font-weight: 600;
+}
+
+.err-details {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.err-details summary {
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.err-details code {
+  display: block;
+  margin-top: 6px;
+  word-break: break-all;
+}
+
 .pill {
   font-size: 11px;
   padding: 1px 7px;

@@ -45,6 +45,7 @@ import json
 import mimetypes
 import os
 import re
+import shutil
 import subprocess
 import sys
 import threading
@@ -472,6 +473,20 @@ def _project_kind(pid: str, in_status: bool) -> str:
     return "other"
 
 
+def _has_review_run(project: Path) -> bool:
+    """True when at least one completed (REVIEW-READY) e2e run exists.
+
+    Cheap on purpose: this runs once per project on every picker load, so it
+    stops at the first match rather than building the full run list.
+    """
+    runs_root = project / "e2e" / "runs"
+    if not runs_root.is_dir():
+        return False
+    return any(
+        (d / "REVIEW-READY.json").is_file() for d in runs_root.iterdir() if d.is_dir()
+    )
+
+
 def _list_projects() -> list[dict]:
     """List reviewable project dirs with picker metadata (kind / title / sort).
 
@@ -502,6 +517,11 @@ def _list_projects() -> list[dict]:
                 "has_output": (child / "output").is_dir(),
                 "has_stats": (child / "output" / "aggregate-stats.json").is_file(),
                 "has_unit_rung": (child / "layer_unit" / "UNIT-RUNG.md").is_file(),
+                # Does the review console have anything to show for this
+                # project? The console only renders REVIEW-READY e2e runs, so
+                # without this the picker cannot avoid landing a first-time
+                # user on a curriculum that renders an empty page.
+                "has_review_run": _has_review_run(child),
             }
         )
     out.sort(key=lambda p: (p["sort_tier"], (p["title"] or p["id"]).lower(), p["id"]))
@@ -934,6 +954,24 @@ def _start_run(pid: str, flags: list[str]) -> str:
     return run_id
 
 
+def _run_preflight() -> dict:
+    """Can this machine actually start an audit? Checked before offering to.
+
+    `_start_run` shells out to `bash run-audit`, which in turn calls `python3`.
+    On a box missing either one the run dies immediately with a spawn error the
+    reviewer cannot interpret. Reporting the blockers up front lets the UI
+    explain the situation instead of handing someone a button that fails.
+    """
+    missing: list[str] = []
+    if not RUN_AUDIT.is_file():
+        missing.append("the run-audit script")
+    if not shutil.which("bash"):
+        missing.append("bash")
+    if not shutil.which("python3"):
+        missing.append("python3")
+    return {"can_run": not missing, "missing": missing, "platform": sys.platform}
+
+
 def _read_json_body(handler: BaseHTTPRequestHandler) -> dict:
     length = int(handler.headers.get("Content-Length") or 0)
     raw = handler.rfile.read(length) if length else b"{}"
@@ -1041,6 +1079,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(_list_projects())
             if parts == ["api", "config"]:
                 return self._json(_config_summary())
+            if parts == ["api", "can-run"]:
+                return self._json(_run_preflight())
             if parts == ["api", "packet-types"]:
                 return self._json(_packet_types())
             if parts == ["api", "create", "status"]:
@@ -1181,6 +1221,11 @@ class Handler(BaseHTTPRequestHandler):
             return self._json({"error": f"not found: {e}"}, 404)
         except (PermissionError, ValueError) as e:
             return self._json({"error": f"forbidden: {e}"}, 403)
+        except ModuleNotFoundError as e:
+            # The `create` chapter is gitignored and absent on most machines.
+            # 501 says "this build does not have that feature", which the UI can
+            # explain honestly; a 500 would read as "Loom is broken".
+            return self._json({"error": f"not installed: {e.name}"}, 501)
         except Exception as e:  # noqa: BLE001
             return self._json({"error": str(e)}, 500)
 
@@ -1294,6 +1339,8 @@ class Handler(BaseHTTPRequestHandler):
             return self._json({"error": "not found"}, 404)
         except (PermissionError, ValueError) as e:
             return self._json({"error": f"forbidden: {e}"}, 403)
+        except ModuleNotFoundError as e:
+            return self._json({"error": f"not installed: {e.name}"}, 501)
         except Exception as e:  # noqa: BLE001
             return self._json({"error": str(e)}, 500)
 

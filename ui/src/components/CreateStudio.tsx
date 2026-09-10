@@ -3,7 +3,7 @@
 // Secondary: systemic patterns (cross-unit role absences).
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { api } from "../lib/api";
+import { api, describeError } from "../lib/api";
 import type {
   CreateMatrixResponse,
   CreateMatrixUnit,
@@ -125,7 +125,13 @@ export function CreateStudio({ projectId }: { projectId: string }) {
   const [slot, setSlot] = useState<CreateSlot | null>(null);
   const [status, setStatus] = useState<CreateStatus | null>(null);
   const [busy, setBusy] = useState(false);
-  const [error, setError] = useState("");
+  // Same contract as the review console: a sentence to show, raw text folded
+  // away. Without this the missing `create` package surfaced to the reviewer as
+  // "500 Internal Server Error for /api/projects/<id>/create/matrix".
+  const [error, setError] = useState<{
+    message: string;
+    detail?: string;
+  } | null>(null);
   const [flash, setFlash] = useState("");
   const [context, setContext] = useState("");
   const [pane, setPane] = useState<Pane>("draft");
@@ -134,7 +140,7 @@ export function CreateStudio({ projectId }: { projectId: string }) {
   const [overrideStageGate, setOverrideStageGate] = useState(false);
 
   const loadMatrix = useCallback(async () => {
-    setError("");
+    setError(null);
     try {
       const [m, st] = await Promise.all([
         api.createMatrix(projectId),
@@ -143,7 +149,7 @@ export function CreateStudio({ projectId }: { projectId: string }) {
       setMatrix(m);
       setStatus(st);
     } catch (e) {
-      setError(String(e));
+      setError(describeError(e));
     }
   }, [projectId]);
 
@@ -193,7 +199,7 @@ export function CreateStudio({ projectId }: { projectId: string }) {
           if (!cancelled) setEditor(res.text);
         } else if (!cancelled) setEditor("");
       } catch (e) {
-        if (!cancelled) setError(String(e));
+        if (!cancelled) setError(describeError(e));
       }
     })();
     return () => {
@@ -210,7 +216,7 @@ export function CreateStudio({ projectId }: { projectId: string }) {
 
   async function openPatterns() {
     setBusy(true);
-    setError("");
+    setError(null);
     try {
       const t = await api.createTree(projectId);
       setPatterns(t.roles);
@@ -218,7 +224,7 @@ export function CreateStudio({ projectId }: { projectId: string }) {
       setSlot(null);
       setFlash("");
     } catch (e) {
-      setError(String(e));
+      setError(describeError(e));
     } finally {
       setBusy(false);
     }
@@ -226,7 +232,7 @@ export function CreateStudio({ projectId }: { projectId: string }) {
 
   async function openUnit(unitId: string) {
     setBusy(true);
-    setError("");
+    setError(null);
     setFlash("");
     setOverrideStageGate(false);
     try {
@@ -235,7 +241,7 @@ export function CreateStudio({ projectId }: { projectId: string }) {
       setView("unit");
       setSlot(null);
     } catch (e) {
-      setError(String(e));
+      setError(describeError(e));
     } finally {
       setBusy(false);
     }
@@ -245,7 +251,7 @@ export function CreateStudio({ projectId }: { projectId: string }) {
     setSlot(s);
     setView("slot");
     setFlash("");
-    setError("");
+    setError(null);
     setContext("");
     setOverrideStageGate(false);
   }
@@ -295,7 +301,7 @@ export function CreateStudio({ projectId }: { projectId: string }) {
   async function decide(decision: GapDecision) {
     if (!slot?.gap_id) return;
     setBusy(true);
-    setError("");
+    setError(null);
     try {
       await api.setGapDecision(projectId, slot.gap_id, decision);
       setFlash(
@@ -307,7 +313,7 @@ export function CreateStudio({ projectId }: { projectId: string }) {
       );
       await refreshAfterChange();
     } catch (e) {
-      setError(String(e));
+      setError(describeError(e));
     } finally {
       setBusy(false);
     }
@@ -316,7 +322,7 @@ export function CreateStudio({ projectId }: { projectId: string }) {
   async function makeBrief() {
     if (!slot?.gap_id) return;
     setBusy(true);
-    setError("");
+    setError(null);
     try {
       const res = await api.makeBrief(projectId, slot.gap_id);
       setPane("brief");
@@ -325,7 +331,7 @@ export function CreateStudio({ projectId }: { projectId: string }) {
       setFlash("Brief ready — next: Draft with Cursor");
       await refreshAfterChange();
     } catch (e) {
-      setError(String(e));
+      setError(describeError(e));
     } finally {
       setBusy(false);
     }
@@ -340,7 +346,7 @@ export function CreateStudio({ projectId }: { projectId: string }) {
       return;
     }
     setBusy(true);
-    setError("");
+    setError(null);
     setFlash("Cursor is drafting…");
     setPane("draft");
     setEditor("…");
@@ -352,7 +358,7 @@ export function CreateStudio({ projectId }: { projectId: string }) {
       setFlash("Draft ready — edit below, then Save");
       await refreshAfterChange();
     } catch (e) {
-      setError(String(e));
+      setError(describeError(e));
       setFlash("");
     } finally {
       setBusy(false);
@@ -362,7 +368,7 @@ export function CreateStudio({ projectId }: { projectId: string }) {
   async function saveEditor() {
     if (!slot?.gap_id) return;
     setBusy(true);
-    setError("");
+    setError(null);
     try {
       if (pane === "brief")
         await api.saveBrief(projectId, slot.gap_id, editor);
@@ -371,7 +377,7 @@ export function CreateStudio({ projectId }: { projectId: string }) {
       setFlash("Saved.");
       await refreshAfterChange();
     } catch (e) {
-      setError(String(e));
+      setError(describeError(e));
     } finally {
       setBusy(false);
     }
@@ -460,7 +466,15 @@ export function CreateStudio({ projectId }: { projectId: string }) {
 
       {error && (
         <div className="panel">
-          <div className="panel-body cs-error">{error}</div>
+          <div className="panel-body cs-error">
+            <p className="err-message">{error.message}</p>
+            {error.detail && (
+              <details className="err-details">
+                <summary>Technical details</summary>
+                <code>{error.detail}</code>
+              </details>
+            )}
+          </div>
         </div>
       )}
 

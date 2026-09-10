@@ -21,6 +21,7 @@ import type {
   PacketType,
   PathsSummary,
   Project,
+  RunPreflight,
   RunStatus,
   Stats,
   UnitRung,
@@ -39,16 +40,106 @@ function withE2e(url: string, e2eRun?: string): string {
   return `${url}${sep}e2e_run=${encodeURIComponent(e2eRun)}`;
 }
 
+/** An API failure carrying both what to tell the reviewer and what we saw.
+ *
+ * The reviewer is a curriculum director, not an engineer: showing them
+ * "500 Internal Server Error for /api/projects/x/create/matrix" tells them
+ * nothing they can act on. `message` is the sentence to display; `detail`
+ * keeps the status, URL and server text for the Details disclosure and logs.
+ */
+export class ApiError extends Error {
+  readonly status: number;
+  readonly url: string;
+  readonly detail: string;
+
+  constructor(opts: {
+    message: string;
+    status: number;
+    url: string;
+    detail: string;
+  }) {
+    super(opts.message);
+    this.name = "ApiError";
+    this.status = opts.status;
+    this.url = opts.url;
+    this.detail = opts.detail;
+  }
+}
+
+/** Split any thrown value into a sentence to show and the raw text to hide.
+ *
+ * Use this at every catch site that renders something: it keeps the technical
+ * string available for a Details disclosure without ever putting a status code
+ * or a URL in front of the reviewer.
+ */
+export function describeError(e: unknown): { message: string; detail: string } {
+  if (e instanceof ApiError) return { message: e.message, detail: e.detail };
+  return {
+    message: "Something went wrong. The details below may help.",
+    detail: String(e),
+  };
+}
+
+/** Plain-language cause for an HTTP status, matching what this API means by it. */
+function humanReason(status: number): string {
+  switch (status) {
+    case 501:
+      return "That part of Loom isn’t installed on this machine.";
+    case 404:
+      return "That isn’t part of this audit.";
+    case 403:
+      return "That file sits outside the curriculum folder, so it wasn’t opened.";
+    case 400:
+      return "Loom couldn’t read that request.";
+    default:
+      return status >= 500
+        ? "Something went wrong reading this audit."
+        : "That request didn’t go through.";
+  }
+}
+
 async function getJSON<T>(url: string): Promise<T> {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`${res.status} ${res.statusText} for ${url}`);
+  let res: Response;
+  try {
+    res = await fetch(url);
+  } catch (e) {
+    // Fetch only rejects on a transport failure: the API process is down or
+    // the window outlived its server.
+    throw new ApiError({
+      message:
+        "Lost contact with the local Loom service. Close the window and start it again.",
+      status: 0,
+      url,
+      detail: `network error for ${url}: ${String(e)}`,
+    });
+  }
+  if (!res.ok) {
+    // The API reports its own failures as {"error": "..."} — prefer that text
+    // as the detail, since it is far more specific than the status line.
+    const serverText = await res
+      .json()
+      .then((b) => (b && typeof b.error === "string" ? b.error : ""))
+      .catch(() => "");
+    throw new ApiError({
+      message: humanReason(res.status),
+      status: res.status,
+      url,
+      detail: `${res.status} ${res.statusText} for ${url}${
+        serverText ? ` — ${serverText}` : ""
+      }`,
+    });
+  }
   const ctype = res.headers.get("content-type") || "";
   // Vite SPA fallback returns HTML when /api proxy is down or misconfigured —
   // fail loudly instead of a cryptic JSON parse error.
   if (ctype.includes("text/html")) {
-    throw new Error(
-      `API returned HTML for ${url} (is ui/server.py on :8770 and Vite proxying /api?)`
-    );
+    throw new ApiError({
+      message:
+        "The Loom service answered with a web page instead of data, so it is probably not running.",
+      status: res.status,
+      url,
+      detail: `API returned HTML for ${url} (is ui/server.py on :8770 and Vite proxying /api?)`,
+    });
   }
   return (await res.json()) as T;
 }
@@ -71,6 +162,9 @@ export const api = {
     getJSON<PathsSummary>(withE2e(`/api/projects/${id}/paths`, e2eRun)),
 
   config: () => getJSON<ConfigSummary>("/api/config"),
+
+  /** Can this machine start an audit? Asked before offering the button. */
+  canRun: () => getJSON<RunPreflight>("/api/can-run"),
 
   // Absolute URL so <a href> / <embed src> for PDFs work directly.
   fileUrl: (id: string, path: string, e2eRun?: string) =>

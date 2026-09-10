@@ -15,6 +15,18 @@ export interface Project {
   has_output: boolean;
   has_stats: boolean;
   has_unit_rung: boolean;
+  /** True when a REVIEW-READY e2e run exists, i.e. the console has something
+   *  to show. The picker prefers these so a first run never lands on a blank
+   *  curriculum. */
+  has_review_run?: boolean;
+}
+
+/** Whether this machine can start an audit (bash + python3 + run-audit). */
+export interface RunPreflight {
+  can_run: boolean;
+  /** Human-readable names of what is missing, e.g. ["bash", "python3"]. */
+  missing: string[];
+  platform: string;
 }
 
 export interface OutputFile {
