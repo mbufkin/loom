@@ -1186,6 +1186,16 @@ def _discover_models() -> dict:
 # Hosted services Loom knows how to talk to. Each is an ordinary
 # OpenAI-compatible endpoint, so the only per-provider knowledge needed is
 # where it lives and what its keys look like.
+#
+# This list is a convenience, not a gate. Anything that speaks the same API
+# can be entered by hand with its own key, so a district running its own
+# authenticated endpoint is not waiting on us to add it here. Entries exist
+# to save someone from having to know that Groq's path has an extra /openai
+# segment in it.
+#
+# `key_prefix` is only used to catch a pasted-the-wrong-thing mistake. Where
+# a provider has no stable prefix it is left empty, which disables the check
+# rather than inventing a rule that would reject valid keys.
 _PROVIDERS: dict[str, dict] = {
     "nvidia": {
         "label": "NVIDIA (build.nvidia.com)",
@@ -1194,6 +1204,70 @@ _PROVIDERS: dict[str, dict] = {
         "models_url": "https://integrate.api.nvidia.com/v1/models",
         "key_prefix": "nvapi-",
         "key_help": "Create a key at build.nvidia.com — it begins with nvapi-.",
+    },
+    "openai": {
+        "label": "OpenAI",
+        "base": "https://api.openai.com",
+        "chat_url": "https://api.openai.com/v1/chat/completions",
+        "models_url": "https://api.openai.com/v1/models",
+        "key_prefix": "sk-",
+        "key_help": "Create a key at platform.openai.com/api-keys.",
+    },
+    "openrouter": {
+        "label": "OpenRouter",
+        "base": "https://openrouter.ai/api",
+        "chat_url": "https://openrouter.ai/api/v1/chat/completions",
+        "models_url": "https://openrouter.ai/api/v1/models",
+        "key_prefix": "sk-or-",
+        "key_help": "Create a key at openrouter.ai/keys. One key reaches most other providers.",
+    },
+    "groq": {
+        "label": "Groq",
+        "base": "https://api.groq.com/openai",
+        "chat_url": "https://api.groq.com/openai/v1/chat/completions",
+        "models_url": "https://api.groq.com/openai/v1/models",
+        "key_prefix": "gsk_",
+        "key_help": "Create a key at console.groq.com/keys.",
+    },
+    "together": {
+        "label": "Together AI",
+        "base": "https://api.together.xyz",
+        "chat_url": "https://api.together.xyz/v1/chat/completions",
+        "models_url": "https://api.together.xyz/v1/models",
+        "key_prefix": "",
+        "key_help": "Create a key at api.together.xyz/settings/api-keys.",
+    },
+    "fireworks": {
+        "label": "Fireworks AI",
+        "base": "https://api.fireworks.ai/inference",
+        "chat_url": "https://api.fireworks.ai/inference/v1/chat/completions",
+        "models_url": "https://api.fireworks.ai/inference/v1/models",
+        "key_prefix": "",
+        "key_help": "Create a key at fireworks.ai under Account, API keys.",
+    },
+    "deepseek": {
+        "label": "DeepSeek",
+        "base": "https://api.deepseek.com",
+        "chat_url": "https://api.deepseek.com/v1/chat/completions",
+        "models_url": "https://api.deepseek.com/v1/models",
+        "key_prefix": "sk-",
+        "key_help": "Create a key at platform.deepseek.com.",
+    },
+    "mistral": {
+        "label": "Mistral AI",
+        "base": "https://api.mistral.ai",
+        "chat_url": "https://api.mistral.ai/v1/chat/completions",
+        "models_url": "https://api.mistral.ai/v1/models",
+        "key_prefix": "",
+        "key_help": "Create a key at console.mistral.ai/api-keys.",
+    },
+    "cerebras": {
+        "label": "Cerebras",
+        "base": "https://api.cerebras.ai",
+        "chat_url": "https://api.cerebras.ai/v1/chat/completions",
+        "models_url": "https://api.cerebras.ai/v1/models",
+        "key_prefix": "csk-",
+        "key_help": "Create a key at cloud.cerebras.ai.",
     },
 }
 
@@ -1221,8 +1295,25 @@ def _key_status(url: str) -> dict:
     }
 
 
-def _remote_models(provider: str) -> dict:
-    """List a hosted provider's models using the stored key.
+def _models_url_for(chat_url: str) -> str:
+    """Guess the model-list endpoint from a chat endpoint.
+
+    The OpenAI shape puts them side by side, so `/v1/chat/completions` implies
+    `/v1/models`. Only a guess, which is why a failure here is reported as a
+    normal unreachable-service error rather than treated as fatal — someone
+    can always type the model name in by hand.
+    """
+    if chat_url.endswith("/chat/completions"):
+        return chat_url[: -len("/chat/completions")] + "/models"
+    return chat_url.rstrip("/") + "/models"
+
+
+def _remote_models(provider: str, url: str = "") -> dict:
+    """List a hosted service's models using the stored key.
+
+    Takes either a known provider id or an arbitrary chat endpoint, so a
+    district running its own authenticated service is not restricted to the
+    list Loom happens to ship with.
 
     Runs server-side rather than from the page for the same reason the key is
     never returned: the credential stays in this process and never reaches
@@ -1230,14 +1321,25 @@ def _remote_models(provider: str) -> dict:
     """
     import loom_keys
 
-    spec = _PROVIDERS.get(provider)
-    if not spec:
-        return {"ok": False, "error": f"unknown provider {provider}"}
-    key = loom_keys.get_key(spec["chat_url"])
+    if provider:
+        spec = _PROVIDERS.get(provider)
+        if not spec:
+            return {"ok": False, "error": f"unknown provider {provider}"}
+        chat_url, models_url = spec["chat_url"], spec["models_url"]
+        label, base = spec["label"], spec["base"]
+    else:
+        chat_url = url.strip()
+        if not re.match(r"^https?://", chat_url):
+            return {"ok": False, "error": "the address must start with http:// or https://"}
+        models_url = _models_url_for(chat_url)
+        label = loom_keys.host_of(chat_url)
+        base = chat_url
+
+    key = loom_keys.get_key(chat_url)
     if not key:
         return {"ok": False, "error": "no key is saved for this service yet"}
     req = urllib.request.Request(
-        spec["models_url"],
+        models_url,
         headers={"Authorization": f"Bearer {key}", "Accept": "application/json"},
     )
     try:
@@ -1258,9 +1360,9 @@ def _remote_models(provider: str) -> dict:
     )
     return {
         "ok": True,
-        "name": spec["label"],
-        "base": spec["base"],
-        "chat_url": spec["chat_url"],
+        "name": label,
+        "base": base,
+        "chat_url": chat_url,
         "models": models,
     }
 
@@ -1629,9 +1731,19 @@ class Handler(BaseHTTPRequestHandler):
                         ]
                     }
                 )
+            if parts == ["api", "models", "key"]:
+                # Presence only, for an endpoint typed in by hand. Same rule
+                # as everywhere else: the key itself never crosses this line.
+                q = parse_qs(urlparse(self.path).query)
+                return self._json(_key_status((q.get("url") or [""])[0]))
             if parts == ["api", "models", "remote"]:
                 q = parse_qs(urlparse(self.path).query)
-                return self._json(_remote_models((q.get("provider") or [""])[0]))
+                return self._json(
+                    _remote_models(
+                        (q.get("provider") or [""])[0],
+                        (q.get("url") or [""])[0],
+                    )
+                )
             if parts == ["api", "storage"]:
                 return self._json(_storage_summary())
             if parts == ["api", "packet-types"]:

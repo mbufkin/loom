@@ -71,7 +71,25 @@ export interface ModelServer {
   models: string[];
 }
 
-/** A hosted model service Loom knows how to talk to, e.g. NVIDIA. */
+/**
+ * Whether a key is stored for an endpoint, and where.
+ *
+ * Deliberately has no field for the key. The server never returns one, so
+ * there is nowhere in this type for a credential to leak into the page.
+ */
+export interface KeyStatus {
+  host: string;
+  present: boolean;
+  backend: string | null;
+}
+
+/**
+ * A hosted model service Loom ships an entry for, e.g. NVIDIA or OpenAI.
+ *
+ * A convenience, not a limit — any OpenAI-compatible endpoint can be entered
+ * by hand with its own key, so this list saves typing rather than granting
+ * permission.
+ */
 export interface ModelProvider {
   id: string;
   label: string;

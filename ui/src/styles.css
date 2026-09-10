@@ -4576,8 +4576,11 @@ button:disabled {
 .model-now.local {
   border-left-color: #2e7d4f;
 }
+/* Slate, not amber. A hosted model is a supported choice, and colouring it
+   like a fault would make the app argue with a decision the district has
+   already made. The badge text still names the destination. */
 .model-now.remote {
-  border-left-color: #b06f00;
+  border-left-color: #4a6b8a;
 }
 .model-now.none {
   border-left-color: #b3261e;
@@ -4620,8 +4623,8 @@ button:disabled {
 }
 
 .model-now.remote .model-now-badge {
-  background: #fdf0dd;
-  color: #7a4d00;
+  background: #e8eef4;
+  color: #33506b;
 }
 
 .model-now-note {

@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { api, describeError } from "../lib/api";
-import type { ModelDiscovery, ModelProvider } from "../types";
+import type { KeyStatus, ModelDiscovery, ModelProvider } from "../types";
 
 /** Does this endpoint run on this machine? Drives the whole privacy story. */
 function isLocalEndpoint(url: string | undefined | null): boolean {
@@ -53,10 +53,14 @@ function CurrentModel({
         {source && " · "}
         <span className="mono">{hostOf(current.url)}</span>
       </div>
+      {/* A state, not a verdict. Both are supported choices, so the wording
+          carries the fact and the colour does not editorialise: green for
+          local because it needs no thought, neutral slate for hosted rather
+          than the amber of a warning. */}
       <div className="model-now-badge">
         {local
           ? "Stays on this computer"
-          : `Your documents are sent to ${hostOf(current.url)}`}
+          : `Documents are sent to ${hostOf(current.url)}`}
       </div>
       {/* Separate from the privacy badge on purpose: these are two unrelated
           risks, and collapsing them would let one hide the other. */}
@@ -314,20 +318,15 @@ function HostedProvider({
     keyInput.trim().length > 0 && !keyInput.trim().startsWith(provider.key_prefix);
 
   return (
-    <div className="setup-server">
-      <div className="setup-server-head">
+    // Open when there is something to see: a saved key, or the model in use.
+    // Nine collapsed rows is a menu; nine expanded ones is a wall.
+    <details className="setup-server" open={present || isActiveProvider}>
+      <summary className="setup-server-head">
         <strong>{provider.label}</strong>
-        <span className="setup-tag">{present ? "Key saved" : "No key"}</span>
-      </div>
-
-      <p className="setup-hint">
-        This model runs on {provider.host}, not on this computer.{" "}
-        <strong>
-          Your curriculum documents would be sent there to be read.
-        </strong>{" "}
-        Only use it if your district permits curriculum material to leave the
-        building.
-      </p>
+        <span className="mono setup-detail">{provider.host}</span>
+        {present && <span className="setup-tag">Key saved</span>}
+        {isActiveProvider && <span className="setup-tag in-use-tag">In use</span>}
+      </summary>
 
       {noStore ? (
         <p className="err-message">
@@ -437,7 +436,196 @@ function HostedProvider({
       )}
 
       {note && <p className="setup-detail">{note}</p>}
-    </div>
+    </details>
+  );
+}
+
+/**
+ * Any endpoint that speaks the OpenAI API, with its own key.
+ *
+ * The escape hatch that keeps the built-in provider list from being a limit.
+ * Loom shipping a curated list of nine services would otherwise mean a
+ * district running its own authenticated model behind a gateway — or anyone
+ * using a provider we have not heard of — waits for a release. Keys here go
+ * to the same host-scoped credential store, so a key saved for one endpoint
+ * is never attached to a request to another.
+ */
+function CustomEndpoint({
+  url,
+  model,
+  onUrl,
+  onModel,
+  busy,
+  onConnect,
+}: {
+  url: string;
+  model: string;
+  onUrl: (v: string) => void;
+  onModel: (v: string) => void;
+  busy: boolean;
+  onConnect: (url: string, model: string) => void;
+}) {
+  const [keyInput, setKeyInput] = useState("");
+  const [status, setStatus] = useState<KeyStatus | null>(null);
+  const [models, setModels] = useState<string[] | null>(null);
+  const [note, setNote] = useState<string | null>(null);
+  const [working, setWorking] = useState(false);
+
+  const trimmed = url.trim();
+  const valid = /^https?:\/\//i.test(trimmed);
+  const needsKey = valid && !isLocalEndpoint(trimmed);
+
+  // Look up whether a key is already stored for whatever has been typed, so
+  // returning to this screen shows the endpoint as configured rather than
+  // blank. Debounced because it fires on every keystroke of a URL.
+  useEffect(() => {
+    if (!needsKey) {
+      setStatus(null);
+      return;
+    }
+    const t = setTimeout(() => {
+      void api
+        .keyStatus(trimmed)
+        .then(setStatus)
+        .catch(() => setStatus(null));
+    }, 400);
+    return () => clearTimeout(t);
+  }, [trimmed, needsKey]);
+
+  const saveKey = useCallback(async () => {
+    setWorking(true);
+    setNote(null);
+    try {
+      const res = await api.saveKey(trimmed, keyInput.trim());
+      setStatus(res);
+      setKeyInput("");
+      setNote(res.present ? "Key saved." : "Could not save that key.");
+    } catch (e) {
+      setNote(describeError(e).message);
+    } finally {
+      setWorking(false);
+    }
+  }, [trimmed, keyInput]);
+
+  const listModels = useCallback(async () => {
+    setWorking(true);
+    setNote(null);
+    try {
+      const res = await api.remoteModelsByUrl(trimmed);
+      if (!res.ok) {
+        setNote(res.error ?? "Could not list models.");
+        setModels(null);
+        return;
+      }
+      setModels(res.models ?? []);
+    } catch (e) {
+      setNote(describeError(e).message);
+    } finally {
+      setWorking(false);
+    }
+  }, [trimmed]);
+
+  return (
+    <>
+      <p className="setup-hint">
+        Anything that speaks the OpenAI API works here — a model on an unusual
+        port, a service Loom does not list, or one your district hosts itself.
+        The address is the full chat endpoint, usually ending in{" "}
+        <code>/v1/chat/completions</code>.
+      </p>
+
+      <div className="setup-manual">
+        <input
+          type="text"
+          spellCheck={false}
+          placeholder="https://example.com/v1/chat/completions"
+          value={url}
+          onChange={(e) => onUrl(e.target.value)}
+        />
+      </div>
+
+      {needsKey && (
+        <>
+          <div className="setup-manual">
+            <input
+              type="password"
+              autoComplete="off"
+              spellCheck={false}
+              placeholder={
+                status?.present ? "Replace the saved key" : "API key, if this service needs one"
+              }
+              value={keyInput}
+              onChange={(e) => setKeyInput(e.target.value)}
+            />
+            <button
+              type="button"
+              className="btn"
+              onClick={() => void saveKey()}
+              disabled={!keyInput.trim() || working}
+            >
+              {working ? "Saving…" : "Save key"}
+            </button>
+            {status?.present && <span className="setup-tag">Key saved</span>}
+          </div>
+          <p className="setup-hint">
+            Stored against <span className="mono">{status?.host || hostOf(trimmed)}</span>{" "}
+            in {status?.backend ?? "the system credential store"}, so it is
+            only ever sent to that host.
+          </p>
+        </>
+      )}
+
+      {/* Listing is optional. Plenty of endpoints do not implement /v1/models,
+          and the model name can simply be typed in, so a failure here must
+          not block connecting. */}
+      {valid && status?.present && models === null && (
+        <div className="setup-actions">
+          <button
+            type="button"
+            className="btn"
+            onClick={() => void listModels()}
+            disabled={working}
+          >
+            {working ? "Asking…" : "List its models"}
+          </button>
+        </div>
+      )}
+
+      {models !== null && models.length > 0 && (
+        <ul className="setup-models">
+          {models.map((m) => (
+            <ModelRow
+              key={m}
+              name={m}
+              active={false}
+              busy={false}
+              disabled={busy}
+              onUse={() => onConnect(trimmed, m)}
+            />
+          ))}
+        </ul>
+      )}
+
+      <div className="setup-manual">
+        <input
+          type="text"
+          spellCheck={false}
+          placeholder="model name"
+          value={model}
+          onChange={(e) => onModel(e.target.value)}
+        />
+        <button
+          type="button"
+          className="btn"
+          onClick={() => onConnect(trimmed, model.trim())}
+          disabled={!valid || !model.trim() || busy}
+        >
+          Connect
+        </button>
+      </div>
+
+      {note && <p className="setup-detail">{note}</p>}
+    </>
   );
 }
 
@@ -610,11 +798,19 @@ export function ModelPicker({ onConnected }: { onConnected: () => void }) {
             className="err-details"
             open={providers.some((p) => p.chat_url === current?.url)}
           >
-            <summary>Somewhere else (needs an API key)</summary>
+            <summary>Hosted services (needs an API key)</summary>
+            {/* Said once, here, where the choice is actually made. It used to
+                also appear on the section above and on every provider card,
+                and a warning repeated three times after the fact reads as
+                disapproval rather than information — which is how people
+                learn to skip past warnings that do matter. */}
             <p className="setup-hint">
-              These run outside your building. Loom sends them your curriculum
-              text to read, so this is a decision for whoever owns data policy
-              at your district — not just a faster model.
+              These run outside your building, so Loom sends them your
+              curriculum text to read. Faster and stronger than most local
+              models, and a data-policy decision rather than a purely
+              technical one. Your key is kept in{" "}
+              {providers[0]?.backend ?? "the system credential store"} and
+              only ever sent to the service it belongs to.
             </p>
             {providers.map((p) => (
               <HostedProvider
@@ -631,38 +827,15 @@ export function ModelPicker({ onConnected }: { onConnected: () => void }) {
         )}
 
         <details className="err-details">
-          <summary>Connect to something else</summary>
-          <p className="setup-hint">
-            For a model on an unusual port, or one your district hosts. The
-            address is the full chat endpoint, usually ending in{" "}
-            <code>/v1/chat/completions</code>. Anything not on this computer
-            means curriculum text leaves the building, so it should be an
-            endpoint your district has approved.
-          </p>
-          <div className="setup-manual">
-            <input
-              type="text"
-              placeholder="http://127.0.0.1:1234/v1/chat/completions"
-              value={manualUrl}
-              onChange={(e) => setManualUrl(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="model name"
-              value={manualModel}
-              onChange={(e) => setManualModel(e.target.value)}
-            />
-            <button
-              type="button"
-              className="btn"
-              onClick={() => void connect(manualUrl.trim(), manualModel.trim())}
-              disabled={
-                !manualUrl.trim() || !manualModel.trim() || busy !== null
-              }
-            >
-              Connect
-            </button>
-          </div>
+          <summary>Any other OpenAI-compatible service</summary>
+          <CustomEndpoint
+            url={manualUrl}
+            model={manualModel}
+            onUrl={setManualUrl}
+            onModel={setManualModel}
+            busy={busy !== null}
+            onConnect={(u, m) => void connect(u, m)}
+          />
         </details>
       </div>
     </div>

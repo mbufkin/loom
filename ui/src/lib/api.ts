@@ -16,6 +16,7 @@ import type {
   GraphOverview,
   GraphRunsResponse,
   GraphUnitDetail,
+  KeyStatus,
   LessonFeedback,
   ModelDiscovery,
   ModelProvider,
@@ -191,6 +192,14 @@ export const api = {
       `/api/models/remote?provider=${encodeURIComponent(provider)}`,
     ),
 
+  /** The same listing, for an endpoint Loom does not ship a provider entry for. */
+  remoteModelsByUrl: (url: string) =>
+    getJSON<RemoteModels>(`/api/models/remote?url=${encodeURIComponent(url)}`),
+
+  /** Whether a key is stored for an endpoint. Presence only, never the key. */
+  keyStatus: (url: string) =>
+    getJSON<KeyStatus>(`/api/models/key?url=${encodeURIComponent(url)}`),
+
   /**
    * Save or clear an API key for an endpoint.
    *
@@ -202,7 +211,7 @@ export const api = {
   async saveKey(
     url: string,
     key: string | null,
-  ): Promise<{ ok: boolean; message?: string; error?: string; present: boolean }> {
+  ): Promise<KeyStatus & { ok: boolean; message?: string; error?: string }> {
     const res = await fetch("/api/models/key", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
