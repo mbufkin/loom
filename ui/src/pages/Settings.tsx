@@ -181,9 +181,8 @@ export function Settings() {
       )}
 
       <p className="home-note">
-        The model can be changed here. Everything else on this screen is still
-        read-only, and API keys for hosted services are not managed in the app
-        yet.
+        The model and its API key can be changed here. Everything else on this
+        screen is still read-only.
       </p>
     </div>
   );

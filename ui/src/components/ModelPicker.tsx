@@ -43,6 +43,7 @@ function CurrentModel({
     );
   }
   const local = isLocalEndpoint(current.url);
+  const caution = sizeCaution(current.model);
   return (
     <div className={`model-now ${local ? "local" : "remote"}`}>
       <div className="model-now-label">Reading with</div>
@@ -57,6 +58,9 @@ function CurrentModel({
           ? "Stays on this computer"
           : `Your documents are sent to ${hostOf(current.url)}`}
       </div>
+      {/* Separate from the privacy badge on purpose: these are two unrelated
+          risks, and collapsing them would let one hide the other. */}
+      {caution && <div className="model-now-caution">{caution}</div>}
     </div>
   );
 }
@@ -76,6 +80,47 @@ function CurrentModel({
  */
 const NOT_FOR_READING =
   /(embed|rerank|guard|safety|reward|topic-control|jailbreak|translate|parse|ocr|clip|speech|asr|[-/]tts|[-/]stt|vila|neva|riva|diffusion|image|video)/i;
+
+/**
+ * Parameter count in billions, read off the model's name.
+ *
+ * Nothing in the OpenAI-compatible API reports a model's size, so the name
+ * is the only signal available without a per-provider lookup table. It is
+ * a convention rather than a guarantee, so every caller has to cope with
+ * null — an unknown size produces no claim at all rather than a guess.
+ */
+export function paramsB(name: string): number | null {
+  // "8x7b" mixtures: the name understates the model, so multiply out.
+  const moe = name.match(/(\d+)\s*x\s*(\d+(?:\.\d+)?)\s*b(?![a-z0-9])/i);
+  if (moe) return Number(moe[1]) * Number(moe[2]);
+  const m = name.match(/(?:^|[^a-z0-9])(\d+(?:\.\d+)?)\s*b(?![a-z0-9])/i);
+  return m ? Number(m[1]) : null;
+}
+
+/** Below this, a model invents findings often enough to waste a teacher's day. */
+const FLOOR_B = 7;
+/** Below this it works, but its output still wants checking. */
+const COMFORTABLE_B = 14;
+
+/**
+ * Whether the chosen model is big enough to be trusted with an audit.
+ *
+ * Worth saying out loud, because a too-small model does not fail — it
+ * answers confidently and wrongly, and the cost lands on whoever reads the
+ * report and cannot tell which findings were imagined. That failure is
+ * invisible at the point of choosing, which is exactly where this belongs.
+ */
+export function sizeCaution(name: string): string | null {
+  const b = paramsB(name);
+  if (b === null) return null;
+  if (b < FLOOR_B) {
+    return `This is a ${b}B model. Models this small miss real misalignments and invent ones that are not there. About 8B is a realistic floor for audit work, and 14B or more is better.`;
+  }
+  if (b < COMFORTABLE_B) {
+    return `This is a ${b}B model — workable, but near the floor for audit work. Plan to check its findings against the source documents.`;
+  }
+  return null;
+}
 
 /** The chosen model first. Hunting alphabetically for your own choice is not a task. */
 function activeFirst(models: string[], active: string | undefined): string[] {
@@ -104,9 +149,18 @@ function ModelRow({
   disabled: boolean;
   onUse: () => void;
 }) {
+  // Size shown on every row, neutrally. Comparing "3b" against "70b" is the
+  // judgement people are trying to make here, and it should not require
+  // knowing that the number in the name means anything.
+  const b = paramsB(name);
   return (
     <li className={active ? "in-use" : undefined}>
       <span className="mono">{name}</span>
+      {b !== null && (
+        <span className={`model-size${b < FLOOR_B ? " weak" : ""}`}>
+          {b}B
+        </span>
+      )}
       {active ? (
         <span className="setup-tag in-use-tag">In use</span>
       ) : (
