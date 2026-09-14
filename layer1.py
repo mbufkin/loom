@@ -58,6 +58,7 @@ from audit_lib import (
     normalize_ws,
     parse_model_json,
     project_dir,
+    salvage_json_array,
     validate_slug_id,
 )
 from schema_validate import (
@@ -175,6 +176,7 @@ def call_and_parse_with_retry(
     parse_retries: int = 1,
     validator=None,
     normalizer=None,
+    salvage_key: str | None = None,
 ) -> dict:
     """Call a model and parse its JSON, retrying on PARSE *or schema* failure (not
     just the transient HTTP/connection retry model_chat() already does). Same
@@ -192,6 +194,14 @@ def call_and_parse_with_retry(
     If raw_path is given, the LAST attempt's raw response is saved there (matches
     layer0.py's .raw/ debugging convention) — earlier failed attempts are only
     logged, not kept, since they're by definition not what the ledger used.
+
+    salvage_key, if given, is the name of the array this response is built around
+    ("placements", "role_fulfillment"). When every attempt fails, a reply that
+    got part-way through that array is treated as a PARTIAL answer rather than a
+    dead one: the complete objects are kept and the elements the model never
+    reached simply stay unjudged, which is what Phase 2 already assumes for any
+    element without a judgment. Salvaged rows go through the same normalizer and
+    validator as a clean parse — this recovers work, it does not lower the bar.
     """
     last_err: Exception | None = None
     resp: dict = {}
@@ -214,6 +224,41 @@ def call_and_parse_with_retry(
                 )
     if raw_path is not None:
         raw_path.write_text(json.dumps(resp, indent=2))
+
+    # Nothing parsed as a whole. Before writing the document off, check whether
+    # the model gave a partial answer -- it may have judged several elements
+    # correctly and then stopped. finish_reason tells us which failure this is
+    # and is worth saying out loud: "invalid JSON (Expecting ',' delimiter)" is
+    # true but describes the symptom, and sends whoever reads the log looking
+    # for a malformed-output bug instead of a model that quit mid-reply.
+    if salvage_key is not None:
+        content = extract_content(resp) if resp else ""
+        recovered = salvage_json_array(content, salvage_key)
+        if recovered:
+            salvaged = {salvage_key: recovered}
+            try:
+                if normalizer is not None:
+                    normalizer(salvaged)
+                if validator is not None:
+                    raise_on_errors(validator(salvaged), step)
+            except ValueError as e:
+                log(f"WARN: {step}: partial reply did not validate either: {e}")
+            else:
+                why = (
+                    (resp.get("choices") or [{}])[0].get("finish_reason") or "unknown"
+                )
+                cause = (
+                    "ran out of output budget mid-array"
+                    if why == "length"
+                    else "stopped answering mid-array and began narrating"
+                )
+                log(
+                    f"WARN: {step}: the model {cause} (finish_reason={why}); "
+                    f"keeping {len(recovered)} complete judgment(s), the rest of "
+                    "this document stays unjudged"
+                )
+                return salvaged
+
     raise ValueError(
         f"{step}: parse/schema failed after {parse_retries + 1} attempts: {last_err}"
     )
@@ -481,6 +526,11 @@ def organize_document(
         step,
         raw_path=raw_dir / f"{doc_id}-phase1.json",
         validator=validate_layer1_placements,
+        # A whole document's elements in one reply: if the model judges some and
+        # then stops, those judgments are worth keeping. The elements it never
+        # reached fall through to Phase 2 with no judgment, exactly as they do
+        # when the document fails outright.
+        salvage_key="placements",
     )
 
     unit_ids = {u["unit_id"] for u in unit_vocab}
@@ -880,6 +930,9 @@ def fulfill_slot(
         raw_path=raw_dir / f"{unit_id}-{day_id}-phase3.json",
         validator=validate_layer1_fulfillment,
         normalizer=_normalize_fulfillment,
+        # Same partial-answer reasoning as Phase 1: a day slot's roles come back
+        # as one array, and the roles that were answered are still useful.
+        salvage_key="role_fulfillment",
     )
     return data.get("role_fulfillment", [])
 

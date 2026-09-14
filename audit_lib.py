@@ -133,6 +133,52 @@ def parse_model_json(text: str, *, context: str = "model response") -> dict:
     raise ValueError(f"{context}: no JSON object found; starts with {raw[:120]!r}")
 
 
+def salvage_json_array(text: str, key: str) -> list:
+    """Recover the complete objects from a JSON array the model abandoned partway.
+
+    A reasoning model sometimes answers correctly and then stops answering. Seen
+    live on nemotron-3.5-lightning-30b: a Layer 1 reply opened with a clean
+    {"placements": [ ... ]}, wrote four complete, well-quoted judgments, then
+    abandoned JSON mid-object and narrated its plan for the remaining elements
+    ("Let me proceed with the remaining element judgments.") before stopping with
+    finish_reason "stop". Nothing was truncated by a token ceiling -- the model
+    simply quit mid-answer.
+
+    parse_model_json cannot help: the document as a whole is not valid JSON, and
+    a retry reproduces the drift. Without salvage the four good judgments are
+    discarded with the narration, which is the expensive part -- the model's
+    correct work is thrown away because of how it stopped.
+
+    Uses raw_decode rather than counting braces so that braces and brackets
+    inside quoted strings (common here, since these objects quote curriculum
+    text verbatim) cannot throw off the boundaries.
+
+    Returns the objects decoded before the first failure, or [] if the reply
+    never got as far as one complete object. Callers must still validate what
+    comes back: this recovers structure, it does not vouch for content.
+    """
+    if not text or not key:
+        return []
+    marker = re.search(rf'"{re.escape(key)}"\s*:\s*\[', text)
+    if not marker:
+        return []
+
+    decoder = json.JSONDecoder(strict=False)
+    recovered: list = []
+    idx = marker.end()
+    while idx < len(text):
+        while idx < len(text) and text[idx] in " \t\r\n,":
+            idx += 1
+        if idx >= len(text) or text[idx] == "]":
+            break
+        try:
+            obj, idx = decoder.raw_decode(text, idx)
+        except ValueError:
+            break  # the drift starts here; everything before it is intact
+        recovered.append(obj)
+    return recovered
+
+
 def is_unit_report_success(report_text: str) -> bool:
     """True when unit REPORT.md marks a successful audit (not substring 'SUCCESS')."""
     if re.search(r"\*\*Status:\*\*\s*FAILED", report_text, re.IGNORECASE):
