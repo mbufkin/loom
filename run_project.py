@@ -287,6 +287,55 @@ def preflight_models() -> None:
                 "  Check models.*_url in config (and CURSOR_API_KEY for :8788)."
             )
     log(f"models: OK ({', '.join(sorted(seen))})")
+    _preflight_context_window(cfg)
+
+
+def _preflight_context_window(cfg: dict) -> None:
+    """Confirm the analyst endpoint will actually read a full-sized prompt.
+
+    Reachable is not the same as usable. A server with a small context window
+    accepts the request, truncates the prompt from the front -- dropping the
+    rules and JSON schema Layer 0 depends on -- and answers 200 OK anyway, so
+    the run completes and the report is built on documents the model barely
+    saw. Catching that here costs one short model call; missing it costs the
+    whole audit, and quietly.
+
+    A failed probe is only a warning: a transient blip should not block a run
+    when audit_lib's per-call guard will still abort if the prompt really is
+    being truncated. A probe that *succeeds* in measuring a window too small
+    is fatal, because every call for the next several hours would be.
+    """
+    from audit_lib import measure_context_window
+
+    try:
+        result = measure_context_window(cfg)
+    except Exception as e:  # noqa: BLE001
+        log(f"WARN: could not measure the context window ({e}); continuing")
+        return
+
+    if result.get("error"):
+        log(f"WARN: context window probe failed ({result['error']}); continuing")
+        return
+
+    asked, accepted = result["asked"], result["accepted"]
+    how = (
+        f"window set by Loom to {result['window']} via Ollama's native endpoint"
+        if result["native"]
+        else "window fixed by the server"
+    )
+    if result["ok"]:
+        log(f"context: accepted ~{accepted} of ~{asked} probe tokens ({how})")
+        return
+
+    raise RuntimeError(
+        f"the analyst endpoint accepted only ~{accepted} of ~{asked} tokens "
+        f"sent ({how}), so it would truncate every prompt in this run and "
+        f"produce a report based on documents the model never fully read.\n"
+        "  llama.cpp: restart the server with -c 32768\n"
+        "  LM Studio: raise the context length in the model's load settings\n"
+        "  Ollama:    set OLLAMA_CONTEXT_LENGTH=32768 and restart it\n"
+        "  vLLM:      restart with --max-model-len 32768"
+    )
 
 
 def run_step(script: Path, args: list[str]) -> None:

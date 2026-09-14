@@ -345,6 +345,116 @@ def _out_of_memory(status: int, body: str) -> bool:
     return bool(re.search(r"memory|out of memory|requires more|cuda|vram", body, re.I))
 
 
+def is_hosted_endpoint(url: str) -> bool:
+    """Whether this endpoint is a hosted service rather than a local server.
+
+    Extracted so the preflight probe and the real calls cannot drift: a probe
+    that decided "local" where model_chat decides "hosted" would measure a
+    different request path than the run actually uses, which is worse than not
+    measuring at all.
+    """
+    return any(
+        x in str(url)
+        for x in (
+            "8787",
+            "8788",
+            "integrate.api.nvidia.com",
+            "nvidia.com",
+            "api.openai.com",
+            "api.x.ai",
+        )
+    )
+
+
+def measure_context_window(cfg: dict, role: str = "analyst") -> dict:
+    """Ask the server to read a prompt of known size and report what it kept.
+
+    Meant to run before a long audit rather than during one. A server that
+    truncates still answers 200 OK with plausible prose, so without this the
+    failure surfaces as a disappointing report hours later instead of an
+    error. For LM Studio, llama.cpp and vLLM -- where the window is fixed when
+    the server starts and Loom cannot change it -- this is the only way to find
+    out before committing to the run.
+
+    Cheap by construction: the reply budget is 16 tokens, so it measures how
+    much the server will *accept* without waiting for it to generate anything.
+    On a local server it also warms the model.
+
+    The probe is sized to just clear the dangerous defaults (2048 and 4096)
+    rather than to match the largest prompt a run will send. Measuring the
+    full 20k-token case took 191s here -- a window that big spilled past an
+    8GB card -- and three minutes of waiting before every run is too high a
+    price for an early warning. A prompt this size still catches every server
+    left at its default, and audit_lib's per-call guard remains the backstop
+    for a window that is large enough for the probe but not for the run.
+
+    Returns a dict rather than raising, so a caller can decide whether a small
+    window is fatal. ``accepted``/``asked`` are token counts, and
+    ``recalled_marker`` independently confirms the front of the prompt
+    survived -- the half that gets dropped first, and where Layer 0 keeps its
+    rules and schema.
+    """
+    key = "analyst" if role == "analyst" else "verifier"
+    url = str(cfg["models"][f"{key}_url"])
+    model = str(cfg["models"][f"{key}_model"])
+    timeout = cfg["models"]["timeout_seconds"]
+
+    marker = "ZEPHYR"
+    filler = " ".join(f"Line {i}: curriculum pacing evidence." for i in range(1, 640))
+    prompt = (
+        f"REMEMBER THIS WORD: {marker}.\n\n{filler}\n\n"
+        "What word were you told to remember? Reply with only that word."
+    )
+    messages = [{"role": "user", "content": prompt}]
+    asked = estimate_tokens(messages)
+    payload = {
+        "model": model,
+        "messages": messages,
+        "temperature": 0,
+        "max_tokens": 16,
+    }
+
+    native = None if is_hosted_endpoint(url) else ollama_native_chat_url(url)
+    # Sized the same way a real call would be, so the number reported is the
+    # number the run will actually get.
+    num_ctx = context_window_for(messages, 16) if native else 0
+    headers = loom_keys.auth_headers(url, cfg)
+
+    result = {
+        "ok": False,
+        "asked": asked,
+        "accepted": 0,
+        "recalled_marker": False,
+        "native": bool(native),
+        "window": num_ctx,
+        "error": "",
+    }
+    try:
+        if native:
+            target, body = native, _to_ollama_payload(payload, num_ctx)
+        else:
+            target, body = url, payload
+        resp = requests.post(target, json=body, headers=headers or None, timeout=timeout)
+        resp.raise_for_status()
+        data = resp.json()
+        if native:
+            data = _from_ollama_response(data)
+    except Exception as e:  # noqa: BLE001
+        result["error"] = str(e)
+        return result
+
+    result["accepted"] = int((data.get("usage") or {}).get("prompt_tokens") or 0)
+    reply = ((data.get("choices") or [{}])[0].get("message") or {}).get("content") or ""
+    result["recalled_marker"] = marker in reply.upper()
+    # A server reporting no usage at all cannot be measured this way, so fall
+    # back to the marker: llama.cpp reports timings instead of usage.
+    if result["accepted"]:
+        result["ok"] = result["accepted"] >= asked * _TRUNCATION_RATIO
+    else:
+        result["ok"] = result["recalled_marker"]
+    return result
+
+
 def model_chat(
     cfg: dict,
     role: str,
@@ -374,17 +484,7 @@ def model_chat(
     model = cfg["models"][f"{key}_model"]
     timeout = cfg["models"]["timeout_seconds"]
     # Cloud / bridge / NIM: more attempts on 429 worker limits.
-    cloudish = any(
-        x in str(url)
-        for x in (
-            "8787",
-            "8788",
-            "integrate.api.nvidia.com",
-            "nvidia.com",
-            "api.openai.com",
-            "api.x.ai",
-        )
-    )
+    cloudish = is_hosted_endpoint(url)
     if cloudish:
         retries = max(retries, 6)
     payload = {

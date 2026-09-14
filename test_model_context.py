@@ -144,6 +144,78 @@ class TestTruncationGuard:
         assert audit_lib._truncated_prompt(_messages(65_000), {"usage": {}}) is None
 
 
+class TestHostedEndpointDetection:
+    def test_recognises_hosted_services(self):
+        assert audit_lib.is_hosted_endpoint("https://integrate.api.nvidia.com/v1/chat/completions")
+        assert audit_lib.is_hosted_endpoint("https://api.openai.com/v1/chat/completions")
+        assert audit_lib.is_hosted_endpoint("http://127.0.0.1:8788/v1/chat/completions")
+
+    def test_treats_a_local_server_as_local(self):
+        # Must be local for the Ollama probe to fire at all; a hosted endpoint
+        # is never probed, since a speculative /api/version against someone's
+        # paid service is pointless.
+        assert not audit_lib.is_hosted_endpoint("http://127.0.0.1:11434/v1/chat/completions")
+        assert not audit_lib.is_hosted_endpoint("http://localhost:1234/v1/chat/completions")
+
+
+class TestPreflightContextWindow:
+    """The preflight's job is to fail fast, but only on evidence."""
+
+    def test_passes_when_the_server_accepts_the_prompt(self, monkeypatch):
+        import run_project
+
+        monkeypatch.setattr(
+            "audit_lib.measure_context_window",
+            lambda cfg, role="analyst": {
+                "ok": True, "asked": 6000, "accepted": 5800,
+                "native": True, "window": 8192, "error": "",
+            },
+        )
+        run_project._preflight_context_window({})  # must not raise
+
+    def test_aborts_when_the_window_is_measurably_too_small(self, monkeypatch):
+        import pytest
+        import run_project
+
+        monkeypatch.setattr(
+            "audit_lib.measure_context_window",
+            lambda cfg, role="analyst": {
+                "ok": False, "asked": 6000, "accepted": 1026,
+                "native": False, "window": 0, "error": "",
+            },
+        )
+        with pytest.raises(RuntimeError) as excinfo:
+            run_project._preflight_context_window({})
+        message = str(excinfo.value)
+        # The message has to tell an operator what to change, per server.
+        assert "1026" in message
+        assert "-c 32768" in message
+        assert "OLLAMA_CONTEXT_LENGTH" in message
+
+    def test_a_failed_probe_only_warns(self, monkeypatch):
+        # A transient blip must not block a run: the per-call guard in
+        # audit_lib still aborts if prompts really are being truncated.
+        import run_project
+
+        monkeypatch.setattr(
+            "audit_lib.measure_context_window",
+            lambda cfg, role="analyst": {
+                "ok": False, "asked": 6000, "accepted": 0,
+                "native": False, "window": 0, "error": "connection refused",
+            },
+        )
+        run_project._preflight_context_window({})  # must not raise
+
+    def test_an_exception_in_the_probe_only_warns(self, monkeypatch):
+        import run_project
+
+        def boom(cfg, role="analyst"):
+            raise OSError("socket closed")
+
+        monkeypatch.setattr("audit_lib.measure_context_window", boom)
+        run_project._preflight_context_window({})  # must not raise
+
+
 class TestOutOfMemoryDetection:
     def test_recognises_a_window_that_does_not_fit(self):
         assert audit_lib._out_of_memory(500, "model requires more system memory than available")
