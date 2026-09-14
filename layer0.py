@@ -195,15 +195,15 @@ TIER1_SCHEMA = """Respond with ONLY valid JSON (no markdown fences):
 {
   "elements": [
     {
-      "element_type": "hook_engagement|direct_instruction|guided_practice|independent_practice|assessment_checkpoint|reflection_closure|logistics_materials|standards_objectives|unclear",
+      "element_type": "<exactly ONE of these nine values, copied whole: hook_engagement, direct_instruction, guided_practice, independent_practice, assessment_checkpoint, reflection_closure, logistics_materials, standards_objectives, unclear>",
       "excerpt_start_paragraph": <plain integer, first paragraph of this element's evidence>,
       "excerpt_end_paragraph": <plain integer, LAST paragraph of this element's evidence -- same as start if only one paragraph>,
       "inferred_position": "<e.g. 'Day 2', 'early in unit', or 'unknown'>",
       "inferred_timing": "<e.g. '10-15 minutes', or 'unknown'>",
-      "confidence": "high|medium|low"
+      "confidence": "<exactly one of: high, medium, low>"
     }
   ],
-  "document_confidence": "high|medium|low",
+  "document_confidence": "<exactly one of: high, medium, low>",
   "escalate_to_tier2": true,
   "notes": ["optional auditor notes — findings only, never fixes"]
 }
@@ -250,15 +250,15 @@ TIER2_SCHEMA = """Respond with ONLY valid JSON (no markdown fences):
 {
   "elements": [
     {
-      "element_type": "hook_engagement|direct_instruction|guided_practice|independent_practice|assessment_checkpoint|reflection_closure|logistics_materials|standards_objectives|unclear",
+      "element_type": "<exactly ONE of these nine values, copied whole: hook_engagement, direct_instruction, guided_practice, independent_practice, assessment_checkpoint, reflection_closure, logistics_materials, standards_objectives, unclear>",
       "excerpt_start_paragraph": <plain integer, first paragraph of this element's evidence>,
       "excerpt_end_paragraph": <plain integer, LAST paragraph of this element's evidence -- same as start if only one paragraph>,
       "inferred_position": "<e.g. 'Day 2', 'early in unit', or 'unknown'>",
       "inferred_timing": "<e.g. '10-15 minutes', or 'unknown'>",
-      "confidence": "high|medium|low"
+      "confidence": "<exactly one of: high, medium, low>"
     }
   ],
-  "document_confidence": "high|medium|low",
+  "document_confidence": "<exactly one of: high, medium, low>",
   "escalate_to_tier2": false,
   "notes": ["optional auditor notes — what made this document ambiguous"]
 }
@@ -915,12 +915,12 @@ LAYER0B_SCHEMA = """Respond with ONLY valid JSON (no markdown fences):
   "decision": "keep|split",
   "elements": [
     {
-      "element_type": "hook_engagement|direct_instruction|guided_practice|independent_practice|assessment_checkpoint|reflection_closure|logistics_materials|standards_objectives|unclear",
+      "element_type": "<exactly ONE of these nine values, copied whole: hook_engagement, direct_instruction, guided_practice, independent_practice, assessment_checkpoint, reflection_closure, logistics_materials, standards_objectives, unclear>",
       "excerpt_start_paragraph": <plain integer, within the original flagged range>,
       "excerpt_end_paragraph": <plain integer, within the original flagged range>,
       "inferred_position": "<e.g. 'Day 2', 'early in unit', or 'unknown'>",
       "inferred_timing": "<e.g. '10-15 minutes', or 'unknown'>",
-      "confidence": "high|medium|low"
+      "confidence": "<exactly one of: high, medium, low>"
     }
   ],
   "reasoning": "<one sentence: why keep, or why split this particular way>"
