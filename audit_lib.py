@@ -184,6 +184,167 @@ def _unusable_reply(data: dict) -> str | None:
     return None
 
 
+# Layer 0 hands over a whole document plus the rules and JSON schema, then asks
+# for a large structured reply, so the window has to cover both halves of the
+# exchange. These bracket what we will ask a server for.
+CONTEXT_FLOOR = 4096
+CONTEXT_CEILING = 32768
+
+
+def estimate_tokens(messages: list) -> int:
+    """Approximate token count for a chat payload.
+
+    Deliberately a heuristic. Loading a tokenizer per model family would add a
+    heavy dependency to answer a question we only need roughly, and the guards
+    built on this all leave wide margin for it being wrong. Four characters per
+    token is the usual figure for English prose.
+    """
+    chars = sum(len(str(m.get("content") or "")) for m in messages)
+    return max(1, chars // 4)
+
+
+def context_window_for(messages: list, max_tokens: int) -> int:
+    """Context window to request: the prompt, the reply, and a little headroom.
+
+    Derived from the actual exchange rather than fixed, because num_ctx sizes
+    the KV cache and that memory is not free -- an 8B model at 16384 fills an
+    8GB card almost exactly, so demanding the ceiling on every call would put a
+    school laptop into swap for no benefit. Too small silently truncates.
+
+    Rounded up to the next 2048 rather than to the next power of two. Doubling
+    overshoots by up to 2x, and measured on llama3.1:8b that was not free:
+    a Layer 0 call needing ~20k tokens got a 32768 window and took 243s, where
+    the same call in a 16384 window took 84s. The whole reply budget is
+    reserved even though most replies are far shorter, since a window that
+    cannot hold the worst case truncates mid-answer.
+    """
+    need = estimate_tokens(messages) + int(max_tokens) + 512
+    if need <= CONTEXT_FLOOR:
+        return CONTEXT_FLOOR
+    block = 2048
+    window = ((need + block - 1) // block) * block
+    return min(window, CONTEXT_CEILING)
+
+
+_OLLAMA_PROBE_CACHE: dict[str, str | None] = {}
+
+
+def ollama_native_chat_url(url: str) -> str | None:
+    """Native ``/api/chat`` URL if this endpoint is an Ollama server, else None.
+
+    Worth detecting because Ollama's OpenAI-compatible endpoint silently
+    discards the context-window setting. Verified against 0.34.0 with the
+    server started at 2048: passing ``num_ctx`` as ``options.num_ctx`` and as a
+    top-level field both left ``prompt_tokens`` pinned at 1026, while the same
+    value on ``/api/chat`` raised it to 12253.
+
+    That matters more than it sounds. Ollama truncates from the *front*, which
+    is exactly where Layer 0's rules and schema sit, so the default window
+    leaves the model filling in a schema it was never shown -- and the run
+    still returns 200 OK with plausible-looking output. Routing local Ollama
+    traffic through the native endpoint is what lets Loom guarantee the window
+    itself, instead of asking every district to set an environment variable.
+
+    Cached per URL: this costs an HTTP round trip and the answer cannot change
+    within a run.
+    """
+    if url in _OLLAMA_PROBE_CACHE:
+        return _OLLAMA_PROBE_CACHE[url]
+    native: str | None = None
+    try:
+        base = url.split("/v1/", 1)[0] if "/v1/" in url else url.rsplit("/", 1)[0]
+        base = base.rstrip("/")
+        resp = requests.get(f"{base}/api/version", timeout=5)
+        if resp.ok and (resp.json() or {}).get("version"):
+            native = f"{base}/api/chat"
+    except Exception:
+        # Not an Ollama server, or not reachable. Either way the OpenAI path
+        # stays in use and the truncation guard below remains the safety net.
+        native = None
+    _OLLAMA_PROBE_CACHE[url] = native
+    return native
+
+
+def _to_ollama_payload(payload: dict, num_ctx: int) -> dict:
+    """Translate an OpenAI-shaped payload into Ollama's native form."""
+    options = {
+        "temperature": payload.get("temperature", 0.1),
+        "num_predict": int(payload.get("max_tokens", 8192)),
+        "num_ctx": int(num_ctx),
+    }
+    if "repeat_penalty" in payload:
+        options["repeat_penalty"] = payload["repeat_penalty"]
+    return {
+        "model": payload["model"],
+        "messages": payload["messages"],
+        "stream": False,
+        "options": options,
+    }
+
+
+def _from_ollama_response(data: dict) -> dict:
+    """Normalise Ollama's native reply into the OpenAI shape.
+
+    Done here and nowhere else: the unusable-reply check, usage recording and
+    every caller reading ``choices[0].message.content`` all speak OpenAI, so
+    one translation at the boundary keeps the native endpoint an implementation
+    detail rather than a second dialect running through the codebase.
+    """
+    message = data.get("message") or {}
+    # Ollama reports "length" when it stops at num_predict -- the same
+    # condition OpenAI calls finish_reason "length", which _unusable_reply
+    # already treats as a truncated and therefore unusable answer.
+    reason = data.get("done_reason") or "stop"
+    prompt_tokens = int(data.get("prompt_eval_count") or 0)
+    completion_tokens = int(data.get("eval_count") or 0)
+    normalised = {
+        "role": message.get("role") or "assistant",
+        "content": message.get("content") or "",
+    }
+    # Newer Ollama returns a reasoning model's monologue separately, as NVIDIA
+    # does; map it to the field _unusable_reply already knows to look at.
+    if message.get("thinking"):
+        normalised["reasoning_content"] = message["thinking"]
+    return {
+        "model": data.get("model"),
+        "choices": [{"message": normalised, "finish_reason": reason}],
+        "usage": {
+            "prompt_tokens": prompt_tokens,
+            "completion_tokens": completion_tokens,
+            "total_tokens": prompt_tokens + completion_tokens,
+        },
+    }
+
+
+# A server that quietly drops most of the prompt is the worst failure mode
+# available to an audit tool: it returns 200 OK, the run goes green, and the
+# report cites a document the model barely read. Flagged at half the estimate
+# so a wrong characters-per-token guess cannot cause a false alarm -- real
+# truncation is an order-of-magnitude shortfall, not a rounding error.
+_TRUNCATION_RATIO = 0.5
+
+
+def _truncated_prompt(messages: list, data: dict) -> str | None:
+    """Message explaining that the server dropped part of the prompt, or None."""
+    counted = int((data.get("usage") or {}).get("prompt_tokens") or 0)
+    if not counted:
+        return None  # Server reports no usage; nothing to compare against.
+    sent = estimate_tokens(messages)
+    if counted >= sent * _TRUNCATION_RATIO:
+        return None
+    return (
+        f"the server accepted only ~{counted} tokens of an estimated ~{sent} "
+        f"sent, so most of the prompt was discarded before the model saw it"
+    )
+
+
+def _out_of_memory(status: int, body: str) -> bool:
+    """Whether a server error looks like it could not fit the context window."""
+    if status not in (400, 500, 503):
+        return False
+    return bool(re.search(r"memory|out of memory|requires more|cuda|vram", body, re.I))
+
+
 def model_chat(
     cfg: dict,
     role: str,
@@ -250,6 +411,18 @@ def model_chat(
     # model. It also still honours the old config.yaml and CURSOR_API_KEY
     # paths, so existing setups behave exactly as before.
     headers = loom_keys.auth_headers(str(url), cfg)
+
+    # Only local servers are probed for Ollama: a hosted provider is never
+    # Ollama, and firing a speculative /api/version at someone's paid endpoint
+    # is rude and pointless.
+    native_url = None if cloudish else ollama_native_chat_url(str(url))
+    num_ctx = context_window_for(messages, max_tokens) if native_url else 0
+    if native_url:
+        log(
+            f"{step}: using Ollama's native endpoint with a "
+            f"{num_ctx}-token context window"
+        )
+
     last_err: Exception | None = None
     t0 = monotonic_ms()
 
@@ -260,6 +433,12 @@ def model_chat(
     max_escalations = 2
     escalations = 0
     failures = 0
+    # Shrinking the window after the server says it cannot fit it is a third
+    # independent budget, for the same reason escalation has its own: a machine
+    # too small for 16384 tokens should step down, not spend the retry
+    # allowance discovering that repeatedly.
+    max_shrinks = 3
+    shrinks = 0
     # An explicit loop with two independent budgets, rather than one range
     # covering both. Sharing a single count let HTTP failures spend the
     # escalation allowance, which meant a rate-limited service got extra
@@ -268,9 +447,41 @@ def model_chat(
     # counter, so this cannot spin.
     while True:
         try:
-            resp = requests.post(url, json=payload, headers=headers or None, timeout=timeout)
+            if native_url:
+                target, body = native_url, _to_ollama_payload(payload, num_ctx)
+            else:
+                target, body = url, payload
+            resp = requests.post(target, json=body, headers=headers or None, timeout=timeout)
             resp.raise_for_status()
             data = resp.json()
+            if native_url:
+                data = _from_ollama_response(data)
+
+            # Checked before anything reads the reply: if the server dropped
+            # most of the prompt, the answer is about a document that was never
+            # fully shown, and no amount of retrying the same prompt changes
+            # that. RuntimeError rather than ValueError deliberately -- the
+            # parse-retry wrappers in layer0/layer1 swallow ValueError and
+            # would grind through a whole corpus producing confident nonsense.
+            dropped = _truncated_prompt(messages, data)
+            if dropped:
+                record_model_call(
+                    role=role,
+                    step=step,
+                    model=str(data.get("model") or model),
+                    messages=messages,
+                    resp=data,
+                    elapsed_ms=monotonic_ms() - t0,
+                    ok=False,
+                    error=f"prompt truncated: {dropped}",
+                )
+                raise RuntimeError(
+                    f"{step}: {dropped}. The context window at {url} is too "
+                    f"small for this run. For llama.cpp start the server with "
+                    f"-c {CONTEXT_CEILING}; for LM Studio raise the context "
+                    f"length in the model's load settings; for Ollama set "
+                    f"OLLAMA_CONTEXT_LENGTH={CONTEXT_CEILING} and restart it."
+                )
 
             problem = _unusable_reply(data)
             if problem:
@@ -315,6 +526,27 @@ def model_chat(
         except requests.HTTPError as e:
             status = e.response.status_code if e.response is not None else 0
             body = (e.response.text[:300] if e.response is not None else "") or str(e)
+            # A machine that cannot hold the window we asked for should be
+            # offered a smaller one, not told the run has failed: a 4GB card
+            # still does useful work at 4096 tokens. Only reachable on the
+            # native path, because that is the only one where we set the
+            # window at all. If the smaller window then cannot hold the
+            # prompt, the truncation guard above says so plainly rather than
+            # letting a half-read document through.
+            if (
+                native_url
+                and shrinks < max_shrinks
+                and num_ctx > CONTEXT_FLOOR
+                and _out_of_memory(status, body)
+            ):
+                shrinks += 1
+                previous = num_ctx
+                num_ctx = max(CONTEXT_FLOOR, num_ctx // 2)
+                log(
+                    f"WARN: {step} server could not fit a {previous}-token "
+                    f"context window; retrying at {num_ctx}"
+                )
+                continue
             # 429/503 = rate limit / worker exhaustion — retry with backoff.
             # Other 4xx are client errors and should not be blindly retried.
             if status in (429, 503, 529):
