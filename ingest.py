@@ -84,7 +84,28 @@ Every catalog file must appear in exactly one unit's source_files.
 def model_call(
     cfg: dict, role: str, messages: list, step: str, temperature: float = 0.1
 ) -> dict:
-    return model_chat(cfg, role, messages, step, temperature=temperature)
+    # enable_thinking=False for the same reason as layer0.model_call and
+    # layer1: both organize steps want a JSON object matching ORGANIZE_SCHEMA,
+    # not an argument for one. A reasoning model left to think spends the whole
+    # output budget on monologue and returns that instead of the plan -- and on
+    # NVIDIA's gateway the request does not merely come back wrong, it times out
+    # at 504. Observed live on the first in-app organise run: the analyst
+    # answered, the verifier retried 504s until it was killed.
+    #
+    # max_tokens is explicit because this reply scales with the corpus: one
+    # object per unit, each listing its files and a day-by-day calendar. The
+    # default ceiling is comfortable for six documents and not for sixty, and a
+    # plan truncated mid-array fails validate_coverage as "file not assigned",
+    # which reads as a model mistake rather than a budget that ran out.
+    return model_chat(
+        cfg,
+        role,
+        messages,
+        step,
+        temperature=temperature,
+        max_tokens=16384,
+        enable_thinking=False,
+    )
 
 
 def parse_json(text: str, *, step: str = "ingest") -> dict:

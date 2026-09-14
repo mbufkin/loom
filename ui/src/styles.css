@@ -4299,7 +4299,13 @@ button:disabled {
   counter-reset: step;
 }
 
-.setup-steps li {
+/* Direct children only. A bare `.setup-steps li` also matched every list item
+   *inside* a step — so once the steps gained real content (a document list, an
+   upload log, the proposed units), each of those rows was given a step number
+   and a 56px indent, which numbered them 3-8 and clipped their filenames
+   behind the badge. Steps are the immediate children; anything deeper is the
+   contents of a step. */
+.setup-steps > li {
   counter-increment: step;
   position: relative;
   background: var(--panel);
@@ -4309,7 +4315,7 @@ button:disabled {
   margin-bottom: 10px;
 }
 
-.setup-steps li::before {
+.setup-steps > li::before {
   content: counter(step);
   position: absolute;
   left: 14px;
@@ -4325,7 +4331,7 @@ button:disabled {
 
 /* A completed step is marked, not hidden: the checklist doubles as a status
    report for a half-finished curriculum. */
-.setup-steps li.done::before {
+.setup-steps > li.done::before {
   content: "\2713";
   background: var(--band-strong);
 }
@@ -4336,7 +4342,9 @@ button:disabled {
   margin-bottom: 4px;
 }
 
-.setup-steps p {
+/* Direct children too, for the same reason: the 68ch measure is right for a
+   step's explanatory prose and wrong for text nested inside its controls. */
+.setup-steps > li > p {
   margin: 6px 0 0;
   line-height: 1.6;
   max-width: 68ch;
@@ -4353,6 +4361,203 @@ button:disabled {
 .setup-ok {
   font-size: 13px;
   font-weight: 600;
+}
+
+/* --- Curriculum setup: naming, adding documents, reviewing units --------- */
+
+/* The name field and its button share a row. The slug preview sits under it as
+   a .setup-path, so what the folder will be called is visible while typing. */
+.setup-name {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px 0 8px;
+}
+
+.setup-name input {
+  font: inherit;
+  padding: 7px 10px;
+  border: 2px solid var(--line);
+  background: var(--panel);
+  min-width: 280px;
+  flex: 1;
+}
+
+/* Dashed rather than solid: the one border in this interface that means "put
+   something here" instead of "this is a thing". */
+.setup-drop {
+  border: 3px dashed var(--line);
+  background: var(--bg);
+  padding: 18px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.setup-drop.dragging {
+  background: var(--band-golden);
+}
+
+.setup-drop p {
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.setup-drop-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Per-file outcome while uploading. Colour-coded because the interesting case
+   is a short list of rejections inside a long list of successes. */
+.setup-uploads {
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+  font-size: 12.5px;
+  max-height: 220px;
+  overflow: auto;
+}
+
+.setup-uploads li {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 4px 8px;
+  border-left: 4px solid var(--band-unrated);
+  margin-bottom: 2px;
+  background: var(--bg);
+}
+
+.setup-uploads li.done {
+  border-left-color: var(--band-strong);
+}
+
+.setup-uploads li.error {
+  border-left-color: var(--band-weak);
+}
+
+.setup-uploads .up-name {
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.setup-uploads .up-state {
+  color: var(--muted);
+  flex: none;
+  text-align: right;
+}
+
+/* What is in sources/ now, each row with its own remove action. */
+.setup-docs {
+  list-style: none;
+  margin: 8px 0;
+  padding: 0;
+  font-size: 12.5px;
+  max-height: 280px;
+  overflow: auto;
+}
+
+.setup-docs li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 5px 8px;
+  border: 2px solid var(--band-unrated);
+  margin-bottom: 3px;
+  background: var(--panel);
+}
+
+/* A file the extractor cannot open is still listed — hiding it would make the
+   folder look complete when part of it will never be read. */
+.setup-docs li.unreadable {
+  border-color: var(--band-weak);
+  background: #fff6f3;
+}
+
+.setup-docs .doc-name {
+  flex: 1;
+  word-break: break-all;
+}
+
+.setup-docs .doc-size {
+  color: var(--muted);
+  flex: none;
+}
+
+.setup-docs .doc-remove {
+  font: inherit;
+  font-size: 11.5px;
+  flex: none;
+  border: 2px solid var(--line);
+  background: var(--panel);
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.setup-docs .doc-remove:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.setup-runlog {
+  margin: 10px 0;
+}
+
+/* The units organise proposed. Collapsed to a title and a count, because the
+   question being asked is "do these look like your units", not "read every
+   filename" — but the filenames are one click away, since that is how someone
+   spots a document filed under the wrong unit. */
+.setup-units {
+  margin-top: 12px;
+}
+
+.setup-units > ul {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.setup-units .unit-toggle {
+  display: flex;
+  width: 100%;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: baseline;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  border: 2px solid var(--line);
+  background: var(--panel);
+  padding: 7px 10px;
+  margin-bottom: 4px;
+}
+
+.setup-units .unit-toggle:hover {
+  background: var(--bg);
+}
+
+.setup-units .u-title {
+  font-weight: 700;
+}
+
+.setup-units .u-metrics {
+  color: var(--muted);
+  font-size: 12px;
+  flex: none;
+}
+
+.setup-units .unit-docs {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 6px 10px 6px 18px;
+  background: var(--bg);
+  border: 2px solid var(--band-unrated);
+  border-top: none;
+  font-size: 12px;
+  word-break: break-all;
 }
 
 /* --- Setup screen: one requirement per row ------------------------------ */

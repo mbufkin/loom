@@ -13,8 +13,10 @@ export interface Project {
   has_unit_rung: boolean;
   /** True once ingest has organised the documents into units. */
   has_manifest?: boolean;
-  /** True when a school-calendar.yaml exists, i.e. pacing can be dated.
-   *  Optional input: without one, rollup places units sequentially instead. */
+  /** True when this curriculum's calendar would really date the pacing plan.
+   *  Not merely "a school-calendar.yaml exists": organise always leaves one
+   *  behind, and a stub with no district dates still yields sequential
+   *  placement. Mirrors rollup's own `dated_mode`. */
   has_calendar?: boolean;
   /** True when a REVIEW-READY e2e run exists, i.e. the console has something
    *  to show. The picker prefers these so a first run never lands on a blank
@@ -419,7 +421,56 @@ export interface RunStatus {
   status: "running" | "done" | "error";
   exitCode: number | null;
   log: string;
+  /**
+   * Which kind of work this is. Only an audit has pipeline stages, so
+   * `progress` is absent for an organise run and the client shows its log
+   * instead of a stage list that would sit at "pending" forever.
+   */
+  kind?: "audit" | "organise";
   progress?: RunProgressInfo;
+}
+
+/** One file sitting in a curriculum's sources/ folder. */
+export interface SourceDocument {
+  /** Path relative to sources/, forward-slashed even on Windows. */
+  name: string;
+  bytes: number;
+  ext: string;
+  /**
+   * Whether the extractor can read it. False means the file is in the folder
+   * but no audit will ever see inside it — worth saying, not worth hiding.
+   */
+  readable: boolean;
+}
+
+export interface DocumentList {
+  documents: SourceDocument[];
+  count: number;
+  readable_count: number;
+  has_manifest: boolean;
+  /** Documents changed after the last organise, so the units are out of date. */
+  organise_stale: boolean;
+}
+
+/** A unit the organise step proposed, shown for review before a long audit. */
+export interface ProposedUnit {
+  unit_id: string;
+  title: string;
+  documents: string[];
+  document_count: number;
+  /** Days in the unit's inferred calendar; 0 when it has none yet. */
+  days: number;
+}
+
+export interface ProposedUnits {
+  has_manifest: boolean;
+  /** False when the manifest exists but fails the pipeline's own validator. */
+  valid?: boolean;
+  error?: string;
+  project_name?: string;
+  generated_by?: string;
+  units: ProposedUnit[];
+  unit_count?: number;
 }
 
 export interface ConfigSummary {

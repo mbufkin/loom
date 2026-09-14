@@ -10,6 +10,7 @@ import type {
   CreateUnitTreeResponse,
   CreateUnitsResponse,
   CurriculumReview,
+  DocumentList,
   E2ERunsResponse,
   GapItem,
   GapsResponse,
@@ -24,6 +25,7 @@ import type {
   PacketType,
   PathsSummary,
   Project,
+  ProposedUnits,
   RemoteModels,
   RunPreflight,
   RunStatus,
@@ -147,6 +149,50 @@ async function getJSON<T>(url: string): Promise<T> {
     });
   }
   return (await res.json()) as T;
+}
+
+/** POST, preferring the server's own sentence as the thing to show.
+ *
+ * getJSON deliberately replaces the server's text with a generic reason,
+ * because most GET failures are plumbing ("the service isn't running") and the
+ * server's wording would not help. The setup endpoints are the opposite: their
+ * errors are written for the person reading them — "Use lowercase letters,
+ * numbers and hyphens", "Loom cannot read .tiff" — and the whole point is to
+ * say which of those went wrong. Dropping that in favour of "Loom couldn't
+ * read that request" would leave someone with a rejected name and no idea why.
+ */
+async function postJSON<T>(url: string, body?: unknown): Promise<T> {
+  let res: Response;
+  const init: RequestInit = { method: "POST" };
+  if (body !== undefined) {
+    init.headers = { "Content-Type": "application/json" };
+    init.body = JSON.stringify(body);
+  }
+  try {
+    res = await fetch(url, init);
+  } catch (e) {
+    throw new ApiError({
+      message:
+        "Lost contact with the local Loom service. Close the window and start it again.",
+      status: 0,
+      url,
+      detail: `network error for ${url}: ${String(e)}`,
+    });
+  }
+  const payload = await res.json().catch(() => null);
+  if (!res.ok) {
+    const serverText =
+      payload && typeof payload.error === "string" ? payload.error : "";
+    throw new ApiError({
+      message: serverText || humanReason(res.status),
+      status: res.status,
+      url,
+      detail: `${res.status} ${res.statusText} for ${url}${
+        serverText ? ` — ${serverText}` : ""
+      }`,
+    });
+  }
+  return payload as T;
 }
 
 export const api = {
@@ -349,6 +395,85 @@ export const api = {
       return null;
     }
   },
+
+  // --- Setting up a curriculum: create, add documents, organise ------------
+
+  /** Make a new curriculum folder with its sources/ subfolder. */
+  createProject: (id: string, title = "") =>
+    postJSON<{ ok: boolean; id: string; title: string; path: string }>(
+      "/api/projects",
+      { id, title }
+    ),
+
+  /** What is in this curriculum's sources folder, and whether organise is stale. */
+  documents: (id: string) =>
+    getJSON<DocumentList>(`/api/projects/${id}/documents`),
+
+  /**
+   * Upload one document into sources/.
+   *
+   * One request per file with the bytes as the raw body and the name in the
+   * query string. Not a multipart form: the server side of that is a parser
+   * with a security boundary in front of it, and the stdlib's own (`cgi`) is
+   * gone in Python 3.13. This shape also gives per-file progress and per-file
+   * errors, which matters when someone drops twenty files and two are the
+   * wrong type — those two get named, the other eighteen still land.
+   */
+  async addDocument(
+    id: string,
+    file: File
+  ): Promise<{ name: string; bytes: number; renamed: boolean }> {
+    const url = `/api/projects/${id}/documents?name=${encodeURIComponent(
+      file.name
+    )}`;
+    let res: Response;
+    try {
+      res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/octet-stream" },
+        body: file,
+      });
+    } catch (e) {
+      throw new ApiError({
+        message: `${file.name} could not be sent to Loom.`,
+        status: 0,
+        url,
+        detail: `network error for ${url}: ${String(e)}`,
+      });
+    }
+    const payload = await res.json().catch(() => null);
+    if (!res.ok) {
+      const serverText =
+        payload && typeof payload.error === "string" ? payload.error : "";
+      throw new ApiError({
+        message: serverText || `${file.name} was not accepted.`,
+        status: res.status,
+        url,
+        detail: `${res.status} ${res.statusText} for ${url}${
+          serverText ? ` — ${serverText}` : ""
+        }`,
+      });
+    }
+    return payload;
+  },
+
+  removeDocument: (id: string, name: string) =>
+    postJSON<{ ok: boolean; removed: string }>(
+      `/api/projects/${id}/documents/delete`,
+      { name }
+    ),
+
+  /** Read every document and group them into units. Returns a runId to poll. */
+  async organise(id: string): Promise<string> {
+    const out = await postJSON<{ runId: string }>(
+      `/api/projects/${id}/organise`,
+      {}
+    );
+    return out.runId;
+  },
+
+  /** The units organise proposed, for review before committing to an audit. */
+  units: (id: string) => getJSON<ProposedUnits>(`/api/projects/${id}/units`),
 
   async startRun(id: string, flags: string[] = []): Promise<string> {
     const res = await fetch(`/api/projects/${id}/run`, {

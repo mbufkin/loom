@@ -10,6 +10,12 @@ no auth, binds to 127.0.0.1, and every file read is confined to the project dir.
 
 Endpoints (all under /api):
   GET  /api/projects                      -> [{id, title, kind, has_output, ...}]
+  POST /api/projects                      -> create projects/<id>/ with sources/
+  GET  /api/projects/{id}/documents       -> what is in sources/ + organise state
+  POST /api/projects/{id}/documents?name= -> store one document (raw body)
+  POST /api/projects/{id}/documents/delete-> remove one document from sources/
+  POST /api/projects/{id}/organise        -> {runId}  (spawns ingest.py)
+  GET  /api/projects/{id}/units           -> units organise proposed, for review
   GET  /api/projects/{id}/outputs[?e2e_run=] -> grouped tree of reviewable files
   GET  /api/projects/{id}/file?path=REL[&e2e_run=] -> raw bytes of one file (guarded)
   GET  /api/projects/{id}/stats[?e2e_run=] -> output/aggregate-stats.json
@@ -508,6 +514,37 @@ def _latest_review_run(project: Path) -> float | None:
     return max(stamps) if stamps else None
 
 
+def _has_dated_calendar(path: Path) -> bool:
+    """Would this calendar actually put dates on the pacing plan?
+
+    Deliberately not `path.is_file()`. ingest.py writes a school-calendar.yaml
+    on every organise run, and when the documents carry no district dates that
+    file is a placeholder — `school_year: null`, `grading_periods: []`. rollup
+    reads it, finds no instructional-day spine, and runs in sequential mode.
+
+    Treating presence as "dated" meant the UI told the operator "this
+    curriculum has a school calendar, so its pacing plan is dated" about a file
+    with no dates in it, while rollup was writing `mode: sequential` — and it
+    said so about every curriculum set up through the app, since organise
+    always leaves the stub behind. The Calendars screen sorted them into the
+    wrong column for the same reason.
+
+    Delegates to rollup's own enumerate_instructional_days rather than checking
+    for the date keys here, so this cannot drift from the condition the pipeline
+    actually branches on (`dated_mode`).
+    """
+    if not path.is_file():
+        return False
+    try:
+        from audit_lib import load_yaml
+        from rollup import enumerate_instructional_days
+
+        return bool(enumerate_instructional_days(load_yaml(path) or {}))
+    except Exception:
+        # A calendar we cannot parse is one that will not date anything either.
+        return False
+
+
 def _list_projects() -> list[dict]:
     """List reviewable project dirs with picker metadata (kind / title / sort).
 
@@ -541,8 +578,9 @@ def _list_projects() -> list[dict]:
                 # with one, rollup dates the pacing plan; without one it places
                 # units sequentially and everything else is identical. Reported
                 # so the UI can say which mode a curriculum is in and offer to
-                # upgrade it, rather than leaving that invisible.
-                "has_calendar": (child / "school-calendar.yaml").is_file(),
+                # upgrade it, rather than leaving that invisible. "Has one"
+                # means it would really produce dates — see _has_dated_calendar.
+                "has_calendar": _has_dated_calendar(child / "school-calendar.yaml"),
                 # Does the review console have anything to show for this
                 # project? The console only renders REVIEW-READY e2e runs, so
                 # without this the picker cannot avoid landing a first-time
@@ -948,6 +986,334 @@ def _set_packet_type(pid: str, type_id: str) -> dict:
     }
 
 
+# --- Curriculum setup: create, add documents, organise ----------------------
+#
+# Until now these three steps happened in a file manager and a terminal, and the
+# setup screen said so. That is a poor first experience for the people this tool
+# is for: a curriculum coordinator should not have to know that a manifest
+# exists, let alone that `run-audit` prepares its run directory before ingest
+# and therefore needs manifest.yaml to already be there.
+#
+# The ordering constraint is real and cannot be papered over, so the API keeps
+# organise as its own explicit step rather than folding it into the audit. That
+# also happens to be the right product shape: organising is model-driven and can
+# mis-group files, it is cheap next to a full audit, and confirming the units
+# first is both faster and more trustworthy than discovering the mistake at the
+# end of a two-hour run.
+
+# Stricter than _project_dir's character class, which has to keep accepting the
+# ids of curricula that already exist on disk. New ones follow the documented
+# convention -- lowercase, digits, single hyphens -- so that a project id is
+# always safe as a directory name, as subprocess argv, and in a URL.
+NEW_PROJECT_ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+
+
+class _BadRequest(ValueError):
+    """A problem with what was sent, phrased so a user can act on it.
+
+    Subclasses ValueError so an older handler that only catches that still
+    catches this, but caught ahead of it so the message arrives unprefixed:
+    "forbidden: Use lowercase letters and hyphens" reads as a permissions
+    failure for what is really a typo in a name.
+    """
+
+# A ceiling per file, not a budget for the curriculum. Big scanned teacher
+# editions are legitimately 50-100MB; the limit exists so a mis-selected disk
+# image cannot fill the data drive, and it is checked before the body is read.
+MAX_UPLOAD_BYTES = 250 * 1024 * 1024
+
+
+def _supported_exts() -> set[str]:
+    """The extensions the extractor can actually read.
+
+    Read from audit_lib rather than restated here: a second copy would drift,
+    and the failure mode of drift is a file the UI happily accepts and the
+    pipeline silently ignores.
+    """
+    from audit_lib import SUPPORTED_EXTS
+
+    return set(SUPPORTED_EXTS)
+
+
+def _new_project_dir(pid: str) -> Path:
+    """Validate and resolve the directory for a curriculum being created.
+
+    Separate from _project_dir because that one requires the directory to exist
+    already -- correct everywhere else, useless for creation.
+    """
+    if not NEW_PROJECT_ID_RE.match(pid or ""):
+        raise _BadRequest(
+            "Use lowercase letters, numbers and hyphens only — for example "
+            "my-district-2026"
+        )
+    target = (PROJECTS / pid).resolve()
+    if target.parent != PROJECTS.resolve():
+        raise _BadRequest("invalid curriculum name")
+    return target
+
+
+def _create_project(pid: str, title: str = "") -> dict:
+    """Make projects/<pid>/ with the folders a curriculum starts with."""
+    target = _new_project_dir(pid)
+    if target.exists():
+        raise FileExistsError(f"There is already a curriculum called {pid}")
+
+    (target / "sources").mkdir(parents=True)
+    # reference/ is where a district drops the calendar PDF a human reads to
+    # check inferred pacing against. Created now so the folder is self
+    # explanatory when opened in a file manager.
+    (target / "reference").mkdir(parents=True)
+    name = (title or "").strip() or pid
+    (target / "README.md").write_text(
+        f"# {name}\n\n"
+        f"Curriculum folder created by Loom.\n\n"
+        f"- `sources/` — the curriculum documents to audit.\n"
+        f"- `reference/` — optional: the district calendar a human reads.\n"
+        f"- `school-calendar.yaml` — optional: add it for dated pacing.\n"
+        f"  See `projects/_template/school-calendar.example.yaml`.\n\n"
+        f"`manifest.yaml` and `units/` are written by the organise step; they\n"
+        f"are not hand-maintained.\n",
+        encoding="utf-8",
+    )
+    return {"ok": True, "id": pid, "title": name, "path": str(target)}
+
+
+def _sources_dir(pid: str, create: bool = False) -> Path:
+    """sources/ for an existing curriculum."""
+    base = _project_dir(pid) / "sources"
+    if create:
+        base.mkdir(parents=True, exist_ok=True)
+    return base
+
+
+def _safe_upload_name(raw: str) -> str:
+    """Reduce a client-supplied filename to something safe to write.
+
+    Takes the basename and nothing else. A browser sends a bare filename, but
+    this endpoint must not depend on that: "../../config.yaml" has to land in
+    sources/ as a file called config.yaml or be refused, never resolve outside
+    the curriculum. Extension is checked against what the extractor reads, so a
+    file cannot be accepted here and then ignored by the pipeline without a word.
+    """
+    name = os.path.basename((raw or "").replace("\\", "/")).strip()
+    if not name or name in (".", ".."):
+        raise _BadRequest("no filename given")
+    if any(c in name for c in '\0/\\:*?"<>|'):
+        raise _BadRequest(f"{name!r} contains characters a filename cannot hold")
+    ext = Path(name).suffix.lower()
+    supported = _supported_exts()
+    if ext not in supported:
+        readable = ", ".join(sorted(e.lstrip(".") for e in supported))
+        raise _BadRequest(
+            f"Loom cannot read {ext or 'files with no extension'}. "
+            f"Supported: {readable}."
+        )
+    return name
+
+
+def _store_document(pid: str, raw_name: str, data: bytes) -> dict:
+    """Write one uploaded document into sources/.
+
+    One file per request with the bytes as the raw body, rather than a multipart
+    form. The stdlib's multipart parser lives in `cgi`, which is deprecated and
+    gone in 3.13, and hand-rolling one is a parser with a security boundary in
+    front of it. A raw body with the name in the query string removes that
+    surface entirely, and gives the client per-file progress and per-file errors
+    for free.
+    """
+    name = _safe_upload_name(raw_name)
+    sources = _sources_dir(pid, create=True)
+    target = (sources / name).resolve()
+    if target.parent != sources.resolve():
+        raise PermissionError(name)
+
+    # Never overwrite silently: two files can legitimately share a name across
+    # units, and losing one to the other is a data-loss bug the user cannot see.
+    if target.exists():
+        stem, suffix = Path(name).stem, Path(name).suffix
+        for n in range(2, 1000):
+            candidate = sources / f"{stem} ({n}){suffix}"
+            if not candidate.exists():
+                target = candidate.resolve()
+                break
+        else:
+            raise FileExistsError(name)
+
+    target.write_bytes(data)
+    return {
+        "ok": True,
+        "name": target.name,
+        "bytes": len(data),
+        "renamed": target.name != name,
+    }
+
+
+def _list_documents(pid: str) -> dict:
+    """What is in sources/ right now, and whether organise has run since."""
+    project = _project_dir(pid)
+    sources = project / "sources"
+    files: list[dict] = []
+    if sources.is_dir():
+        from audit_lib import iter_source_files
+
+        readable = {p.resolve() for p in iter_source_files(sources)}
+        # Walk everything, not just the readable set, so a file the extractor
+        # skips is visible in the UI instead of vanishing without explanation.
+        for path in sorted(sources.rglob("*")):
+            if not path.is_file():
+                continue
+            files.append(
+                {
+                    "name": str(path.relative_to(sources)).replace("\\", "/"),
+                    "bytes": path.stat().st_size,
+                    "ext": path.suffix.lower(),
+                    "readable": path.resolve() in readable,
+                }
+            )
+    manifest = project / "manifest.yaml"
+    return {
+        "documents": files,
+        "count": len(files),
+        "readable_count": sum(1 for f in files if f["readable"]),
+        "has_manifest": manifest.is_file(),
+        # Organising is only stale if documents changed after it ran. Comparing
+        # mtimes is enough to stop the UI insisting on a re-organise that would
+        # change nothing.
+        "organise_stale": bool(
+            manifest.is_file()
+            and files
+            and max(
+                (sources / f["name"]).stat().st_mtime for f in files
+            )
+            > manifest.stat().st_mtime
+        ),
+    }
+
+
+def _remove_document(pid: str, raw_name: str) -> dict:
+    """Delete one file from sources/ — the undo for picking the wrong folder."""
+    sources = _sources_dir(pid).resolve()
+    rel = (raw_name or "").replace("\\", "/").strip()
+    if not rel or rel.startswith("/") or ".." in Path(rel).parts:
+        raise PermissionError(rel)
+    target = (sources / rel).resolve()
+    if sources not in target.parents:
+        raise PermissionError(rel)
+    if not target.is_file():
+        raise FileNotFoundError(rel)
+    target.unlink()
+    return {"ok": True, "removed": rel}
+
+
+def _start_organise(pid: str) -> str:
+    """Spawn ingest.py for <pid>, tracked like an audit so the client can poll.
+
+    LOOM_E2E_RUN is stripped from the child's environment deliberately. Ingest
+    has to write manifest.yaml and units/ to the real curriculum folder: those
+    are inputs that `run-audit` copies into its per-model run directory, so
+    writing them inside a run directory instead would leave the curriculum
+    itself still unorganised and the next audit would fail exactly as before.
+    """
+    project = _project_dir(pid)
+    sources = project / "sources"
+    if not sources.is_dir() or not any(sources.iterdir()):
+        raise FileNotFoundError(
+            "Add some documents first — there is nothing in this curriculum's "
+            "sources folder yet."
+        )
+    run_id = uuid.uuid4().hex[:12]
+    RUNS_DIR.mkdir(parents=True, exist_ok=True)
+    log_path = RUNS_DIR / f"{run_id}.log"
+    log_fh = open(log_path, "w", encoding="utf-8")  # noqa: SIM115 - closed in waiter
+    env = {k: v for k, v in os.environ.items() if k != "LOOM_E2E_RUN"}
+    env["PYTHONIOENCODING"] = "utf-8"
+    proc = subprocess.Popen(
+        [sys.executable, str(ROOT / "ingest.py"), "--project", pid],
+        cwd=str(ROOT),
+        stdout=log_fh,
+        stderr=subprocess.STDOUT,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        env=env,
+    )
+    with _RUNS_LOCK:
+        _RUNS[run_id] = {
+            "pid": pid,
+            "proc": proc,
+            "log_path": str(log_path),
+            "status": "running",
+            "exit_code": None,
+            "started": time.time(),
+            "flags": [],
+            # Distinguishes this from an audit so the status endpoint does not
+            # try to read pipeline stages out of an ingest log and report a run
+            # that never started.
+            "kind": "organise",
+        }
+
+    def _wait() -> None:
+        code = proc.wait()
+        log_fh.close()
+        with _RUNS_LOCK:
+            _RUNS[run_id]["status"] = "done" if code == 0 else "error"
+            _RUNS[run_id]["exit_code"] = code
+
+    threading.Thread(target=_wait, daemon=True).start()
+    return run_id
+
+
+def _proposed_units(pid: str) -> dict:
+    """The units organise came up with, for confirmation before a long audit.
+
+    Deliberately reads manifest.yaml through load_manifest so the same validator
+    the pipeline uses decides whether this is usable. A manifest that renders
+    nicely here and fails in Layer 1 would be worse than no screen at all.
+    """
+    project = _project_dir(pid)
+    manifest_path = project / "manifest.yaml"
+    if not manifest_path.is_file():
+        return {"has_manifest": False, "units": []}
+
+    from audit_lib import load_manifest, load_yaml
+
+    try:
+        manifest = load_manifest(manifest_path)
+    except Exception as e:  # noqa: BLE001
+        return {"has_manifest": True, "valid": False, "error": str(e), "units": []}
+
+    units = []
+    for uid, unit in (manifest.get("units") or {}).items():
+        docs = unit.get("documents", unit.get("source_files", [])) or []
+        days = 0
+        cal_rel = unit.get("calendar")
+        if cal_rel:
+            cal_path = project / cal_rel
+            if cal_path.is_file():
+                try:
+                    cal = load_yaml(cal_path) or {}
+                    days = len(cal.get("days") or [])
+                except Exception:  # noqa: BLE001
+                    days = 0
+        units.append(
+            {
+                "unit_id": uid,
+                "title": unit.get("title") or uid,
+                "documents": list(docs),
+                "document_count": len(docs),
+                "days": days,
+            }
+        )
+    return {
+        "has_manifest": True,
+        "valid": True,
+        "project_name": (manifest.get("project") or {}).get("name") or pid,
+        "generated_by": manifest.get("generated_by") or "",
+        "units": units,
+        "unit_count": len(units),
+    }
+
+
 def _start_run(pid: str, flags: list[str]) -> str:
     """Run the pipeline for <pid>, streaming combined output to a per-run log.
 
@@ -992,6 +1358,7 @@ def _start_run(pid: str, flags: list[str]) -> str:
             # limited to one unit that reports "3 of 27" is worse than no
             # number at all.
             "flags": list(clean),
+            "kind": "audit",
         }
 
     def _wait() -> None:
@@ -1827,6 +2194,7 @@ def _run_status(run_id: str, tail_bytes: int = 16000) -> dict | None:
         status, code, log_path = rec["status"], rec["exit_code"], rec["log_path"]
         pid, started = rec["pid"], rec.get("started") or time.time()
         flags = list(rec.get("flags") or [])
+        kind = rec.get("kind") or "audit"
     log_text = ""
     try:
         with open(log_path, "rb") as fh:
@@ -1837,17 +2205,22 @@ def _run_status(run_id: str, tail_bytes: int = 16000) -> dict | None:
     except OSError:
         pass
     progress = {}
-    try:
-        progress = _run_progress(pid, log_text, started, status, flags)
-    except Exception:
-        # Progress is a convenience. A parser bug must not take down the
-        # status endpoint the client relies on to know a run finished.
-        progress = {}
+    # Only an audit has pipeline stages. Running the stage parser over an ingest
+    # log would report every stage as pending forever, which reads as a run that
+    # never started rather than a different kind of work.
+    if kind == "audit":
+        try:
+            progress = _run_progress(pid, log_text, started, status, flags)
+        except Exception:
+            # Progress is a convenience. A parser bug must not take down the
+            # status endpoint the client relies on to know a run finished.
+            progress = {}
     return {
         "runId": run_id,
         "status": status,
         "exitCode": code,
         "log": log_text,
+        "kind": kind,
         "progress": progress,
     }
 
@@ -1904,6 +2277,18 @@ class Handler(BaseHTTPRequestHandler):
         try:
             if parts == ["api", "projects"]:
                 return self._json(_list_projects())
+            if (
+                len(parts) == 4
+                and parts[:2] == ["api", "projects"]
+                and parts[3] == "documents"
+            ):
+                return self._json(_list_documents(parts[2]))
+            if (
+                len(parts) == 4
+                and parts[:2] == ["api", "projects"]
+                and parts[3] == "units"
+            ):
+                return self._json(_proposed_units(parts[2]))
             if parts == ["api", "config"]:
                 return self._json(_config_summary())
             if parts == ["api", "can-run"]:
@@ -2078,6 +2463,8 @@ class Handler(BaseHTTPRequestHandler):
                         501,
                     )
             return self._json({"error": "not found"}, 404)
+        except _BadRequest as e:
+            return self._json({"error": str(e)}, 400)
         except FileNotFoundError as e:
             return self._json({"error": f"not found: {e}"}, 404)
         except (PermissionError, ValueError) as e:
@@ -2096,6 +2483,45 @@ class Handler(BaseHTTPRequestHandler):
         try:
             if parts == ["api", "install-deps"]:
                 return self._json(_install_dependencies())
+            if parts == ["api", "projects"]:
+                body = _read_json_body(self)
+                pid = str(body.get("id", "")).strip().lower()
+                return self._json(
+                    _create_project(pid, str(body.get("title", ""))), 201
+                )
+            if (
+                len(parts) == 4
+                and parts[:2] == ["api", "projects"]
+                and parts[3] == "documents"
+            ):
+                # Raw body, filename in the query string -- see _store_document
+                # for why this is not a multipart form.
+                qs = parse_qs(parsed.query)
+                name = (qs.get("name") or [""])[0]
+                length = int(self.headers.get("Content-Length") or 0)
+                if length <= 0:
+                    return self._json({"error": f"{name or 'file'} is empty"}, 400)
+                if length > MAX_UPLOAD_BYTES:
+                    mb = MAX_UPLOAD_BYTES // (1024 * 1024)
+                    return self._json(
+                        {"error": f"{name} is larger than the {mb}MB limit"}, 413
+                    )
+                data = self.rfile.read(length)
+                return self._json(_store_document(parts[2], name, data), 201)
+            if (
+                len(parts) == 5
+                and parts[:2] == ["api", "projects"]
+                and parts[3] == "documents"
+                and parts[4] == "delete"
+            ):
+                body = _read_json_body(self)
+                return self._json(_remove_document(parts[2], str(body.get("name", ""))))
+            if (
+                len(parts) == 4
+                and parts[:2] == ["api", "projects"]
+                and parts[3] == "organise"
+            ):
+                return self._json({"runId": _start_organise(parts[2])})
             if parts == ["api", "models", "select"]:
                 body = _read_json_body(self)
                 return self._json(
@@ -2219,6 +2645,12 @@ class Handler(BaseHTTPRequestHandler):
                 )
                 return self._json(result)
             return self._json({"error": "not found"}, 404)
+        except _BadRequest as e:
+            return self._json({"error": str(e)}, 400)
+        except FileExistsError as e:
+            return self._json({"error": str(e)}, 409)
+        except FileNotFoundError as e:
+            return self._json({"error": str(e)}, 404)
         except (PermissionError, ValueError) as e:
             return self._json({"error": f"forbidden: {e}"}, 403)
         except ModuleNotFoundError as e:
