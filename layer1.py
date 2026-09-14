@@ -79,7 +79,14 @@ def model_call(cfg: dict, role: str, messages: list, step: str) -> dict:
     # deterministic "Expecting ',' delimiter" parse failures (see docs/roadmap.md,
     # "max_tokens ceiling"). Reusing the lower value here would just reintroduce
     # a bug this project already paid to find and fix once.
-    return model_chat(cfg, role, messages, step, temperature=0.1, max_tokens=16384)
+    #
+    # enable_thinking=False for the same reason as layer0.model_call: these are
+    # structured-JSON steps, and a reasoning model spends the ceiling above on
+    # monologue rather than placements.
+    return model_chat(
+        cfg, role, messages, step, temperature=0.1, max_tokens=16384,
+        enable_thinking=False,
+    )
 
 
 def extract_content(response: dict) -> str:

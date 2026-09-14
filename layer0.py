@@ -391,7 +391,15 @@ def model_call(cfg: dict, role: str, messages: list, step: str) -> dict:
     # 16384 (was 8192): content-dense chunks were hitting the 8192 ceiling mid-array,
     # producing a deterministic "Expecting ',' delimiter" JSON parse failure that a
     # retry cannot fix (observed live against the AP CSP framework — see roadmap.md).
-    return model_chat(cfg, role, messages, step, temperature=0.1, max_tokens=16384)
+    #
+    # enable_thinking=False because this step wants a JSON array, not an
+    # argument. A reasoning model left to think spends the ceiling above on
+    # monologue and returns that instead of the elements -- and on NVIDIA's
+    # gateway the request times out at 504 before anything comes back.
+    return model_chat(
+        cfg, role, messages, step, temperature=0.1, max_tokens=16384,
+        enable_thinking=False,
+    )
 
 
 def extract_content(response: dict) -> str:

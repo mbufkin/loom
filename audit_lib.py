@@ -498,9 +498,19 @@ def model_chat(
     # that field (HTTP 400 Unsupported parameter), so only send it to llama.cpp.
     if not cloudish:
         payload["repeat_penalty"] = 1.15
-        # Nemotron 3.5 Lightning (and Nano) honor this; ignored harmlessly if not.
-        if enable_thinking is not None:
-            payload["chat_template_kwargs"] = {"enable_thinking": bool(enable_thinking)}
+    # Deliberately OUTSIDE the local-only branch above. This used to sit beside
+    # repeat_penalty, which NVIDIA NIM really does reject -- but the two are not
+    # the same kind of field, and bundling them meant the one setting that makes
+    # a reasoning model usable never reached the service that needs it most.
+    #
+    # Nemotron 3.5 Lightning on NIM thinks for hundreds of tokens before
+    # answering. Left to do that on a Layer 0 call it spends the entire 16384
+    # budget reasoning and returns the monologue instead of an answer, and the
+    # gateway returns 504 before the reply lands. Both observed live on one
+    # lesson plan. Turning thinking off for structured-JSON steps is what makes
+    # the hosted path finish at all.
+    if enable_thinking is not None:
+        payload["chat_template_kwargs"] = {"enable_thinking": bool(enable_thinking)}
     # Bearer token for hosted endpoints. This used to fire only for the Cursor
     # bridge on :8788, which meant any other authenticated service -- NVIDIA's
     # build API, for one -- got no Authorization header at all and came back
@@ -668,6 +678,24 @@ def model_chat(
                 )
                 failures += 1
                 time.sleep(wait)
+                continue
+            # Now that chat_template_kwargs goes to hosted services too, a
+            # server that rejects it outright must not take the run down with
+            # it. Dropping the field and retrying is strictly better than
+            # failing: the request is still valid, the model just keeps its
+            # default thinking behaviour and the reasoning guards downstream
+            # stay in place. Naturally bounded -- the field is gone, so this
+            # branch cannot be reached a second time.
+            if (
+                "chat_template_kwargs" in payload
+                and 400 <= status < 500
+                and re.search(r"chat_template_kwargs|enable_thinking", body, re.I)
+            ):
+                payload.pop("chat_template_kwargs", None)
+                log(
+                    f"WARN: {step}: {url} rejected chat_template_kwargs; "
+                    "retrying without it"
+                )
                 continue
             if 400 <= status < 500:
                 record_model_call(
