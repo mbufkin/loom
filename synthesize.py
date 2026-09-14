@@ -827,9 +827,14 @@ def render_global_audit_deterministic(
         )
     elif pacing:
         agenda.append(
+            # Points at the shipped example rather than any one district's
+            # calendar: this text lands in a report a teacher reads, and Loom
+            # is meant to be adoptable by any district without another
+            # district's name in its output.
             "**Year-at-a-Glance / pacing** — no district school calendar was found, so "
-            "dates are sequential only. Add `school-calendar.yaml` (DISD spine is in "
-            "`shared/disd-school-calendar/`) and re-run rollup for a dated YAG."
+            "dates are sequential only. Add your district's `school-calendar.yaml` to "
+            "this project (see `projects/_template/school-calendar.example.yaml` for "
+            "the expected shape) and re-run rollup for a dated YAG."
         )
     else:
         agenda.append(
@@ -898,8 +903,10 @@ def render_global_audit_deterministic(
             lines += ["", f"> {pacing['disclaimer']}"]
     elif pacing:
         lines.append(
-            "Pacing exists but is **sequential** (no dated district spine). Copy the DISD "
-            "calendar from `shared/disd-school-calendar/` into this project and re-run rollup."
+            # Same reason as the agenda line above: no district name in output.
+            "Pacing exists but is **sequential** (no dated district spine). Add your "
+            "district's `school-calendar.yaml` to this project (see "
+            "`projects/_template/school-calendar.example.yaml`) and re-run rollup."
         )
     else:
         lines.append(

@@ -838,19 +838,30 @@ def main() -> int:
     print(f"  Dataset:     projects/{args.project}/")
     if e2e_id:
         print(f"  E2E root:    projects/{args.project}/e2e/runs/{e2e_id}/")
-    print(f"  Global PDF:  {out / 'GLOBAL-AUDIT-REPORT.pdf'}")
-    print(f"  First-pass:  {out / 'FIRST-PASS.md'}")
-    print(f"  Global MD:   {out / 'GLOBAL-AUDIT.md'}")
-    print(f"  Dashboard:   {out / 'DASHBOARD.md'}")
+    # Only list what was actually written. These printed unconditionally, so a
+    # run whose PDF step failed still advertised GLOBAL-AUDIT-REPORT.pdf and
+    # sent the operator looking for a file that was never created. That is not
+    # hypothetical: WeasyPrint needs GTK libraries absent from a stock Windows
+    # machine, and a completed run logged three "PDF skipped" warnings and then
+    # printed the PDF path anyway. Graph, Layer 2 and the pacing plan below
+    # were already guarded this way; this makes the rest agree.
+    def _artifact(label: str, path: Path) -> None:
+        if path.is_file():
+            print(f"  {label:<12} {path}")
+
+    _artifact("Global PDF:", out / "GLOBAL-AUDIT-REPORT.pdf")
+    _artifact("First-pass:", out / "FIRST-PASS.md")
+    _artifact("Global MD:", out / "GLOBAL-AUDIT.md")
+    _artifact("Dashboard:", out / "DASHBOARD.md")
     teachers = out / "teachers"
     if teachers.is_dir():
         print(f"  Teachers:    {teachers}/<unit>/TEACHER-PACKET.md")
-    print(f"  Summary:     {out / 'SUMMARY.md'}")
-    print(f"  Layer 0:     {root / 'layer0' / 'ledger.json'}")
+    _artifact("Summary:", out / "SUMMARY.md")
+    _artifact("Layer 0:", root / "layer0" / "ledger.json")
     graph_summary = root / "graph" / "PHASE-SUMMARY.json"
     if graph_summary.is_file():
         print(f"  Graph:       {graph_summary}")
-    print(f"  Layer 1:     {root / 'layer1' / 'bucket-ledger.json'}")
+    _artifact("Layer 1:", root / "layer1" / "bucket-ledger.json")
     l2_findings = root / "layer2" / "findings.json"
     if l2_findings.is_file():
         print(f"  Layer 2:     {l2_findings}")
@@ -864,8 +875,16 @@ def main() -> int:
         f"total_tokens={usage_totals.get('total_tokens', 0)})"
     )
     if not args.skip_drive_push:
+        # Read the same defaults the uploader uses instead of restating a path.
+        # The hardcoded string here named a specific district AND disagreed
+        # with push_drive_reports, which writes to <remote>:<base>/<project>/ --
+        # so this line pointed operators at a folder nothing was ever put in.
+        import os
+
+        remote = os.environ.get("CRYSTALLIZE_DRIVE_REMOTE", "gdrive")
+        base = os.environ.get("CRYSTALLIZE_DRIVE_BASE", "Loom")
         print(
-            f"  Drive:       gdrive:DISD CTE/Crystallize/{args.project}/"
+            f"  Drive:       {remote}:{base.rstrip('/')}/{args.project}/"
             " (global PDF + teachers/*.pdf + runs/ archive)"
         )
     print("=" * 60 + "\n")
