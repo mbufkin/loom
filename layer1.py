@@ -647,8 +647,12 @@ def check_placement(
     parent_unit_id = parent_link_map.get(doc_id)
     matched_unit_id = (judgment or {}).get("matched_unit_id")
     matched_day_id = (judgment or {}).get("matched_day_id")
-    supporting_quote = (judgment or {}).get("supporting_quote")
-    reasoning = (judgment or {}).get("reasoning")
+    # Collapse a blank string to None so the ledger carries one spelling of
+    # "not stated". The schema accepts both (models write "" for a field they
+    # have nothing to say about), but a report rendering an empty quote as
+    # evidence reads as a missing citation rather than an absent one.
+    supporting_quote = (judgment or {}).get("supporting_quote") or None
+    reasoning = (judgment or {}).get("reasoning") or None
 
     total_declared = sum(target_counts.values())
     dominant_target, dominant_count = (

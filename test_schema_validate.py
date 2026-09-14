@@ -160,9 +160,51 @@ def test_clean_element_id_strips_candidate_prefix():
     assert _clean_element_id("abc-e1") == "abc-e1"
 
 
+def test_nullable_placement_fields_accept_a_blank_string():
+    """"" and null both mean "not stated" and must both be accepted.
+
+    Observed on a real run: llama3.1:8b returned a correct no-match judgment
+    (self_identifies_with_a_unit false, both ids null) and wrote "" for
+    supporting_quote and reasoning, having nothing to say about either. The
+    validator rejected blank strings while accepting null, so the payload
+    failed, the retry failed identically -- a low-temperature model repeats
+    itself -- and the whole document was left unjudged. Six placements were
+    discarded, five of which carried real unit matches.
+    """
+    from schema_validate import validate_layer1_placements
+
+    blank = {
+        "placements": [
+            {
+                "element_id": "e1",
+                "matched_unit_id": None,
+                "matched_day_id": None,
+                "supporting_quote": "",
+                "reasoning": "",
+            },
+            {
+                "element_id": "e2",
+                "matched_unit_id": "immune",
+                "matched_day_id": "d1",
+                "supporting_quote": "List the functions of the immune system.",
+                "reasoning": "names the unit topic directly",
+            },
+        ]
+    }
+    assert validate_layer1_placements(blank) == []
+
+    # A non-string is still a genuine schema violation, not a spelling of absence.
+    for bad_value in (["a list"], 7, {"nested": "object"}):
+        errs = validate_layer1_placements(
+            {"placements": [{"element_id": "e1", "supporting_quote": bad_value}]}
+        )
+        assert errs, f"{bad_value!r} should have been rejected"
+
+
 if __name__ == "__main__":
     for fn in [
-        test_engineering_calendar_on_disk,
+        test_nullable_placement_fields_accept_a_blank_string,
+        test_unit_calendar_on_disk,
         test_manifest_on_disk,
         test_ingest_plan_rejects_bad_unit_id,
         test_placements_require_excerpt,

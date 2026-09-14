@@ -244,6 +244,50 @@ def _health_candidates(chat_completions_url: str) -> list[str]:
     return candidates
 
 
+def resolve_only(manifest_path: Path, requested: str) -> tuple[str, str]:
+    """Resolve --only into (document filter, manifest unit name).
+
+    One value cannot serve both stages unaltered. Layer 0 filters source
+    FILENAMES by substring, while Layer 1, Layer 2 and the graph phase look the
+    unit up by its key in manifest.yaml -- and in a real curriculum those
+    differ. An iCEV export arrives as "037-immune__assessment.html" under a
+    unit the manifest calls "immune", so `--only 037-immune` selected every
+    document correctly and then failed Layer 1 with "Unknown unit(s) in
+    manifest: ['037-immune']".
+
+    That arrived 31 minutes in, after Layer 0 had done all of the model work
+    for the unit, which is an expensive way to find out about a naming
+    mismatch. Resolving both forms here means a run either starts correctly or
+    stops immediately, naming the units that would have worked.
+    """
+    from audit_lib import load_manifest
+
+    units = load_manifest(manifest_path).get("units") or {}
+    if requested in units:
+        return requested, requested
+
+    # Not a unit key, so treat it as a filename fragment and find the unit
+    # that owns the documents it matches.
+    needle = requested.lower()
+    matched = sorted(
+        name
+        for name, unit in units.items()
+        if any(needle in str(doc).lower() for doc in (unit.get("documents") or []))
+    )
+    available = ", ".join(sorted(units)) or "none"
+    if len(matched) == 1:
+        return requested, matched[0]
+    if not matched:
+        raise ValueError(
+            f"--only {requested!r} matches no unit key and no document in "
+            f"manifest.yaml. Units available: {available}"
+        )
+    raise ValueError(
+        f"--only {requested!r} spans more than one unit "
+        f"({', '.join(matched)}); name one of them instead"
+    )
+
+
 def preflight_models() -> None:
     """Health-check analyst/verifier endpoints from config.yaml (not hardcoded ports)."""
     import os
@@ -511,6 +555,19 @@ def main() -> int:
     root = project_dir(args.project)
     manifest = root / "manifest.yaml"
     sources = args.sources or (root / "sources")
+
+    # Resolved here rather than at parse time because it needs the manifest,
+    # and before any stage runs so a mismatch costs a second instead of the
+    # whole Layer 0 pass.
+    only_docs = only_unit
+    if only_unit:
+        try:
+            only_docs, only_unit = resolve_only(manifest, only_unit)
+        except (ValueError, FileNotFoundError) as e:
+            log(f"ERROR: {e}")
+            return 2
+        if only_docs != only_unit:
+            log(f"only: documents matching {only_docs!r} in manifest unit {only_unit!r}")
     # Propagate to every subprocess (layer0/1/2, graph, synthesize, …) so
     # model_chat can append to projects/<id>/usage.jsonl without each script
     # wiring its own meter.
@@ -588,9 +645,12 @@ def main() -> int:
                 )
 
             l0_args = ["--project", args.project, "--sources", str(src)]
-            if only_unit:
-                # Filename substring filter — unit slug usually appears in extracts.
-                l0_args.extend(["--only", only_unit])
+            if only_docs:
+                # Filename substring filter. Deliberately the raw request, not
+                # the resolved manifest key: the two differ whenever exports
+                # are prefixed ("037-immune__*" under unit "immune"), and the
+                # filenames are what this stage matches against.
+                l0_args.extend(["--only", only_docs])
             if args.layer0_no_resume:
                 l0_args.append("--no-resume")
             run_stage(LAYER0, l0_args, args.project)

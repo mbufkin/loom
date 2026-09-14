@@ -367,7 +367,20 @@ def validate_layer1_placements(data: dict) -> list[str]:
             "reasoning",
         ):
             val = p.get(name)
-            if val is not None and not _is_str(val):
+            # isinstance rather than _is_str: these four fields are explicitly
+            # nullable, and _is_str additionally rejects a BLANK string, which
+            # made "" fail while null passed. Models write "" for a field they
+            # have nothing to say about -- observed on llama3.1:8b returning a
+            # correct no-match judgment (self_identifies_with_a_unit false,
+            # both ids null) with supporting_quote and reasoning as "". The two
+            # spellings mean the same thing, and this validator's own message
+            # says 'not stated' is valid, so rejecting one of them was
+            # arbitrary. It was also expensive: a low-temperature model repeats
+            # itself, so both retries failed identically and the whole document
+            # was left unjudged -- discarding the genuinely matched placements
+            # alongside the blank one. A non-string (list, number, dict) is
+            # still a real schema violation and still reported.
+            if val is not None and not isinstance(val, str):
                 errors.append(
                     f"{pp}.{name} must be a string or null — Bet 4 ('not stated' is valid)"
                 )
