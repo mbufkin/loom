@@ -1,0 +1,150 @@
+UNIT 1 - SHIELDED METAL ARC WELDING: VOCABULARY HANDOUT
+Introduction to Welding Technology (CTE 1042)
+
+Keep this handout in your shop folder. You will need the electrode table
+during booth practice on Days 2 and 3.
+
+
+TERMS
+
+Arc
+    The sustained electrical discharge between the electrode and the
+    workpiece. Temperature at the arc reaches roughly 6,500 degrees F, which
+    is hotter than the surface of molten steel by a wide margin and is why
+    the pool forms almost instantly.
+
+Arc length
+    The distance between the tip of the electrode and the surface of the
+    weld pool. Held at roughly the diameter of the electrode. Too long and
+    the gas shield disperses, causing porosity; too short and the electrode
+    freezes to the plate.
+
+Arc flash (arc eye)
+    A burn to the cornea caused by ultraviolet radiation from the arc.
+    Symptoms usually appear six to twelve hours after exposure, so it is
+    typically felt at home in the evening rather than in the shop. Prevented
+    entirely by lowering the hood before striking an arc.
+
+Base metal
+    The material being welded, as distinct from the filler metal deposited
+    by the electrode.
+
+Bead
+    The deposited weld metal left by a single pass of the electrode.
+
+DCEP (direct current electrode positive)
+    Polarity with the electrode connected to the positive terminal. Places
+    roughly two thirds of the heat in the electrode, giving deeper
+    penetration. Also called reverse polarity.
+
+DCEN (direct current electrode negative)
+    Polarity with the electrode connected to the negative terminal. Places
+    more heat in the base metal, giving shallower penetration and a faster
+    deposition rate. Also called straight polarity.
+
+Electrode
+    The consumable metal rod, coated in flux, that carries the current and
+    supplies filler metal to the weld.
+
+Electrode holder
+    The insulated clamp that grips the electrode and connects it to the
+    electrode lead. Hung clear of the welding table when not in use, never
+    laid on it.
+
+Flux
+    The coating on the electrode. As it burns it produces a shielding gas
+    that excludes atmospheric oxygen and nitrogen from the molten pool, and
+    leaves a slag layer that slows cooling.
+
+Fusion
+    The melting together of base metal and filler metal into one continuous
+    mass. Poor fusion may be invisible on the surface, which is why bead
+    appearance alone does not prove a sound weld.
+
+Kerf
+    The width of material removed by a cutting process. Relevant in Unit 2
+    rather than here, but listed because students meet the word in the shop.
+
+Penetration
+    The depth to which the weld extends into the base metal from its
+    surface.
+
+Polarity
+    The direction of current flow in a DC welding circuit. See DCEP and
+    DCEN. Reversed polarity is the most common setup error and produces a
+    bead that can look acceptable while having poor fusion.
+
+Porosity
+    Gas pockets trapped in the solidified weld. Caused by a lost gas shield
+    (long arc, wind, damp electrode) or contaminated base metal.
+
+PPE (personal protective equipment)
+    Helmet at shade 10 minimum, safety glasses under the helmet, leather
+    gauntlet gloves, flame-resistant jacket or sleeves, leather boots.
+
+Slag
+    The solidified flux residue sitting on top of a finished bead. Chipped
+    and brushed away before the next pass. Slag left between passes becomes
+    a slag inclusion, which is a defect.
+
+Spatter
+    Droplets of molten metal thrown clear of the weld pool. Excessive
+    spatter usually means amperage is too high or arc length too long.
+
+Stringer bead
+    A bead run in a straight line with little or no side-to-side motion.
+    The first bead type taught, because it isolates travel speed and arc
+    length from weaving technique.
+
+Undercut
+    A groove melted into the base metal along the toe of the weld and left
+    unfilled. Reduces the effective thickness of the joint and is a rejectable
+    defect under visual inspection.
+
+Work clamp
+    The clamp completing the welding circuit, attached to the workpiece or
+    the table it rests on. Never attached through a chain, vice screw or
+    bearing.
+
+Work lead
+    The cable running from the work clamp back to the machine. Carries the
+    full welding current, like every other part of the circuit.
+
+
+ELECTRODE SELECTION TABLE
+
+  Electrode   Current      Use it for                  Watch out for
+  ---------   ----------   -------------------------   --------------------
+  E6010       DCEP only    Deep penetration on         Will not run on AC
+                           dirty or painted steel
+
+  E6011       AC or DC     Same digging arc as         Heavy spatter
+                           E6010, tolerates AC
+
+  E6013       AC or DC     Thin sheet, smooth          Shallow penetration
+                           appearance, easiest
+
+  E7018       DC or AC     Structural strength,        Must stay dry
+                           clean ductile welds
+
+
+READING AN ELECTRODE NUMBER: E7018
+
+  E     electrode for arc welding
+  70    70,000 psi minimum tensile strength
+  1     all positions (2 would mean flat and horizontal only)
+  8     low-hydrogen iron powder coating
+
+
+AMPERAGE STARTING POINT
+
+  Roughly 1 amp per 0.001 inch of electrode diameter.
+  1/8 inch electrode = 0.125 inch = start near 125 amps.
+  For 1/4 inch plate with 1/8 inch E7018: 110 to 130 amps DCEP.
+
+  Then read the bead, not the dial:
+
+  Too low    electrode sticks, arc dies, bead high and narrow
+  Too high   heavy spatter, electrode burns back, undercut at the toes
+  Correct    steady crackle, slag lifts in one piece, bead 1.5 to 2x
+             electrode diameter wide

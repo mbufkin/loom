@@ -111,12 +111,178 @@ def _extract_odt(path: Path) -> str:
     return "\n".join(_xml_texts(root, "p")) or "\n".join(_xml_texts(root, "span"))
 
 
-def _extract_xlsx(path: Path) -> str:
-    with zipfile.ZipFile(path) as zf:
-        if "xl/sharedStrings.xml" not in zf.namelist():
-            return ""
+def _local(tag: str) -> str:
+    """Tag name without its namespace: '{...spreadsheetml/2006/main}c' -> 'c'."""
+    return tag.rpartition("}")[2]
+
+
+def _rich_text(el: ET.Element) -> str:
+    """
+    Flatten one OOXML string element -- an <si> from the shared-string table or
+    an <is> from a cell -- into the string a reader would see.
+
+    Only direct children are walked, which is the point rather than an
+    optimisation. A styled string is stored as one <r> run per formatting
+    change, each carrying its own <t>, and those runs are one value that
+    happens to be bold in the middle -- so they concatenate with no separator.
+    Walking the whole subtree instead would also pick up <rPh>, the phonetic
+    guide used for Japanese text, and interleave pronunciation hints into the
+    content.
+    """
+    parts = []
+    for child in el:
+        name = _local(child.tag)
+        if name == "t":
+            parts.append(child.text or "")
+        elif name == "r":
+            parts.extend(t.text or "" for t in child if _local(t.tag) == "t")
+    return "".join(parts)
+
+
+def _shared_strings(zf: zipfile.ZipFile) -> list[str]:
+    """
+    The workbook's shared-string table, indexed as the sheets expect.
+
+    One entry per <si>, built whole. Collecting every <t> in the file into one
+    flat list instead would silently shift every index after the first styled
+    cell, because a styled string contributes several <t> elements and the
+    sheets refer to strings by position.
+    """
+    if "xl/sharedStrings.xml" not in zf.namelist():
+        return []
+    try:
         root = ET.fromstring(zf.read("xl/sharedStrings.xml"))
-    return "\n".join(_xml_texts(root, "t"))
+    except ET.ParseError:
+        return []
+    return [_rich_text(si) for si in root if _local(si.tag) == "si"]
+
+
+def _sheet_parts(zf: zipfile.ZipFile) -> list[tuple[str, str]]:
+    """
+    (sheet name, zip part) for each worksheet, in the tab order Excel shows.
+
+    Resolved through workbook.xml and its relationships rather than by globbing
+    worksheets/, because sheet names are content in their own right -- a tab
+    called "Cutting bays and consumables" says what the numbers under it are --
+    and because sheet1.xml is not reliably the first tab once sheets have been
+    reordered or deleted. Falls back to numeric filename order if either part
+    is missing or unreadable, which still beats returning nothing.
+    """
+    parts = [
+        n
+        for n in zf.namelist()
+        if n.startswith("xl/worksheets/sheet") and n.endswith(".xml")
+    ]
+
+    def by_number(name: str) -> tuple[int, str]:
+        digits = re.search(r"(\d+)", Path(name).stem)
+        return (int(digits.group(1)) if digits else 0, name)
+
+    fallback = [("", n) for n in sorted(parts, key=by_number)]
+
+    try:
+        workbook = ET.fromstring(zf.read("xl/workbook.xml"))
+        rels = ET.fromstring(zf.read("xl/_rels/workbook.xml.rels"))
+    except (KeyError, ET.ParseError):
+        return fallback
+
+    # Relationship targets are written relative to xl/, but absolute forms
+    # ("/xl/worksheets/sheet1.xml") are also valid, so normalise both.
+    targets = {}
+    for rel in rels:
+        target = rel.get("Target", "").lstrip("/")
+        if not target.startswith("xl/"):
+            target = f"xl/{target}"
+        targets[rel.get("Id")] = target
+
+    out = []
+    for sheet in workbook.iter():
+        if _local(sheet.tag) != "sheet":
+            continue
+        rid = next((v for k, v in sheet.attrib.items() if _local(k) == "id"), None)
+        part = targets.get(rid)
+        if part in zf.namelist():
+            out.append((sheet.get("name", ""), part))
+    return out or fallback
+
+
+def _cell_text(cell: ET.Element, shared: list[str]) -> str:
+    """One cell's value as text, whichever way the writer chose to store it."""
+    kind = cell.get("t", "n")
+
+    if kind == "inlineStr":
+        # Text written straight into the cell instead of into the shared-string
+        # table. Both are valid OOXML and the table is only an optimisation for
+        # repeated values, so a reader that handles one and not the other works
+        # on some files and comes back empty on others. Excel prefers the
+        # table; openpyxl, pandas .to_excel() and Google Sheets exports write
+        # inline -- which is to say, most spreadsheets that were not last saved
+        # by Excel itself.
+        inline = next((c for c in cell if _local(c.tag) == "is"), None)
+        return _rich_text(inline) if inline is not None else ""
+
+    value = next((c for c in cell if _local(c.tag) == "v"), None)
+    raw = (value.text or "") if value is not None else ""
+
+    if kind == "s":
+        try:
+            return shared[int(raw)]
+        except (ValueError, IndexError):
+            return ""
+    if kind == "b":
+        return "TRUE" if raw.strip() == "1" else "FALSE"
+    if kind == "e":
+        # An error value such as #REF! or #DIV/0!. Dropped rather than
+        # reported: it is a broken formula, not something a teacher wrote.
+        return ""
+
+    # "n" (number) and "str" (a formula's string result) both keep their text
+    # in <v>. Numbers come through as stored, so a date-formatted cell reads as
+    # its serial number -- resolving that would mean parsing styles.xml for the
+    # cell's number format, which is a larger job than this and has not been
+    # needed yet. Dates typed as text, which is how they usually arrive in a
+    # hand-kept inventory, are unaffected.
+    return raw
+
+
+def _extract_xlsx(path: Path) -> str:
+    """
+    Text from a workbook, one line per row, sheet names kept as headings.
+
+    Rows are joined with " | " rather than split onto separate lines so that a
+    value stays attached to the row it describes. "Booth 8 | Out of service |
+    Primary lead insulation cracked" is a fact about booth 8; the same words
+    one per line are three unrelated fragments, and that distinction is the
+    whole reason a curriculum inventory is worth reading at all.
+    """
+    chunks = []
+    with zipfile.ZipFile(path) as zf:
+        shared = _shared_strings(zf)
+        for sheet_name, part in _sheet_parts(zf):
+            try:
+                root = ET.fromstring(zf.read(part))
+            except (KeyError, ET.ParseError):
+                continue
+
+            rows = []
+            for row in root.iter():
+                if _local(row.tag) != "row":
+                    continue
+                cells = [
+                    _cell_text(c, shared) for c in row if _local(c.tag) == "c"
+                ]
+                # Trailing blanks are formatting, not data -- a row styled to
+                # the edge of the used range should not end in empty columns.
+                while cells and not cells[-1].strip():
+                    cells.pop()
+                if any(c.strip() for c in cells):
+                    rows.append(" | ".join(cells))
+
+            if rows:
+                body = "\n".join(rows)
+                chunks.append(f"## {sheet_name}\n{body}" if sheet_name else body)
+
+    return "\n\n".join(chunks)
 
 
 def _extract_pdf(path: Path) -> str:
