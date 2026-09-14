@@ -46,6 +46,7 @@ Endpoints (all under /api):
   GET  /api/runs/{runId}                  -> {status, exitCode, log}
   GET  /api/packet-types                  -> declarable packet-type registry
   GET  /api/config                        -> read-only config.yaml summary
+  GET  /api/version                       -> {bundle} id of the served UI build
 
 Run:  .venv/bin/python ui/server.py [--port 8770]
 """
@@ -53,6 +54,7 @@ Run:  .venv/bin/python ui/server.py [--port 8770]
 from __future__ import annotations
 
 import argparse
+import hashlib
 import importlib.util
 import json
 import mimetypes
@@ -631,6 +633,41 @@ def _safe_file(pid: str, rel: str, e2e_run: str | None = None) -> Path:
     if not target.is_file():
         raise FileNotFoundError(rel)
     return target
+
+
+def _bundle_version() -> dict:
+    """Which build of the interface is this server handing out?
+
+    Exists because a desktop window is not a browser tab: it can stay open for
+    days, and the JavaScript it loaded at startup keeps running no matter what
+    is rebuilt underneath it. Observed for real — a window left open for four
+    days went on showing the old read-only setup checklist after the upload
+    flow shipped, with nothing anywhere to suggest the app on disk had moved
+    on. The only recovery was knowing to use View - Reload.
+
+    The identity is a hash of dist/index.html rather than its mtime or this
+    process's start time, and that choice is the whole trick:
+
+      * index.html names the bundles, and Vite content-hashes those filenames,
+        so the hash changes exactly when the code a browser would fetch
+        changes.
+      * Rebuilding without editing anything produces the same hash, so `npm
+        run build` in a loop cannot nag someone to reload an identical app.
+      * Restarting this server does not change it either, so a reconnect is
+        not mistaken for an upgrade.
+
+    Returns bundle=None when there is no dist, which is the development case:
+    Vite serves the app on 5173 with hot reload and this check has no business
+    firing there.
+    """
+    index = DIST / "index.html"
+    if not index.is_file():
+        return {"bundle": None}
+    try:
+        digest = hashlib.sha256(index.read_bytes()).hexdigest()[:12]
+    except OSError:
+        return {"bundle": None}
+    return {"bundle": digest}
 
 
 def _safe_static(url_path: str) -> Path | None:
@@ -2289,6 +2326,8 @@ class Handler(BaseHTTPRequestHandler):
                 and parts[3] == "units"
             ):
                 return self._json(_proposed_units(parts[2]))
+            if parts == ["api", "version"]:
+                return self._json(_bundle_version())
             if parts == ["api", "config"]:
                 return self._json(_config_summary())
             if parts == ["api", "can-run"]:

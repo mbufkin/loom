@@ -214,6 +214,9 @@ export const api = {
 
   config: () => getJSON<ConfigSummary>("/api/config"),
 
+  /** Which build of the interface this server is serving. See useFreshBundle. */
+  version: () => getJSON<{ bundle: string | null }>("/api/version"),
+
   /** Can this machine start an audit? Asked before offering the button. */
   canRun: () => getJSON<RunPreflight>("/api/can-run"),
 

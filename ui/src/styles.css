@@ -4363,6 +4363,38 @@ button:disabled {
   font-weight: 600;
 }
 
+/* --- "Loom has been updated" notice ------------------------------------- */
+/* Golden rather than red: an available upgrade is news, not a fault. Sits
+   above the nav bar and does not scroll, because it describes the window
+   rather than the screen inside it. */
+.stale-banner {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: var(--band-golden);
+  border-bottom: 3px solid var(--line);
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stale-banner button {
+  font: inherit;
+  font-weight: 700;
+  font-size: 12px;
+  border: 2px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow-sm);
+  padding: 4px 12px;
+  cursor: pointer;
+}
+
+.stale-banner button:hover {
+  transform: translate(-1px, -1px);
+}
+
 /* --- Curriculum setup: naming, adding documents, reviewing units --------- */
 
 /* The name field and its button share a row. The slug preview sits under it as

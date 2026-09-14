@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
+import { useFreshBundle } from "./lib/useFreshBundle";
 
 /**
  * Global navigation, persistent across every screen.
@@ -15,8 +16,27 @@ import { NavLink, Outlet } from "react-router-dom";
  * curriculum picker followed you onto screens where it means nothing.
  */
 export function AppShell() {
+  // A native window has no address bar, so an upgrade that happened while it
+  // was open is otherwise invisible. See lib/useFreshBundle.
+  const { stale, reload } = useFreshBundle();
+
   return (
     <div className="app">
+      {/* Above the nav bar, not inside a page: it is true of the whole window
+          rather than of whatever screen happens to be open, and it must not
+          scroll away. Not a modal either — nothing here is urgent, and a
+          window mid-audit should not be interrupted to be told about it. */}
+      {stale && (
+        <div className="stale-banner" role="status">
+          <span>
+            Loom has been updated. Reload to use the new version — this won’t
+            affect any audit that is running.
+          </span>
+          <button type="button" onClick={reload}>
+            Reload
+          </button>
+        </div>
+      )}
       <header className="shellbar">
         <NavLink to="/" className="shell-brand">
           Loom

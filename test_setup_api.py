@@ -355,6 +355,55 @@ def test_a_calendar_stub_with_no_dates_does_not_count_as_dated():
         fx.close()
 
 
+def test_bundle_version_changes_only_when_the_built_app_changes():
+    """The signal behind the "Loom has been updated" notice.
+
+    The value has to be stable under everything that is not an upgrade,
+    otherwise the notice becomes noise someone learns to dismiss: rebuilding
+    without editing, and restarting this server, must both leave it alone.
+    """
+    fx = _Fixture()
+    try:
+        saved_dist = server.DIST
+        dist = fx.tmp / "dist"
+        dist.mkdir()
+        server.DIST = dist
+
+        # No dist at all is the development case: Vite serves the app on 5173
+        # with hot reload, so there is nothing to compare and nothing to say.
+        server.DIST = fx.tmp / "no-dist-here"
+        code, body = fx.request("GET", "/api/version")
+        assert code == 200
+        assert body["bundle"] is None
+
+        server.DIST = dist
+        index = dist / "index.html"
+        index.write_text('<script src="/assets/index-AAA111.js">', encoding="utf-8")
+        _, first = fx.request("GET", "/api/version")
+        assert first["bundle"], "a built app must have an identity"
+
+        # Asked again with nothing touched: same answer. This is what stops a
+        # window being nagged to reload the app it is already running.
+        _, again = fx.request("GET", "/api/version")
+        assert again["bundle"] == first["bundle"]
+
+        # Rewriting the same content -- `npm run build` with no source changes
+        # -- must not read as an upgrade either. This is why the id is a hash
+        # of the file and not its mtime.
+        index.write_text('<script src="/assets/index-AAA111.js">', encoding="utf-8")
+        _, rebuilt = fx.request("GET", "/api/version")
+        assert rebuilt["bundle"] == first["bundle"], "mtime must not be the id"
+
+        # A real rebuild: Vite content-hashes the bundle name, so index.html
+        # changes and the window should be told.
+        index.write_text('<script src="/assets/index-BBB222.js">', encoding="utf-8")
+        _, upgraded = fx.request("GET", "/api/version")
+        assert upgraded["bundle"] != first["bundle"]
+    finally:
+        server.DIST = saved_dist
+        fx.close()
+
+
 if __name__ == "__main__":
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     failed = 0
