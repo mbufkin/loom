@@ -1,15 +1,84 @@
-"""WeasyPrint orchestrator for Crystallize packet PDFs."""
+"""Packet PDF orchestrator: WeasyPrint when it can run, ReportLab when it cannot."""
 
 from __future__ import annotations
 
 import html
+import os
+import sys
+from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
-from weasyprint import CSS, HTML
 
 from pdf_theme.md_to_html import md_to_html
+from pdf_theme.reportlab_render import render_packet_pdf_reportlab
+
+
+_ENGINE: tuple | None = None
+_PROBED = False
+
+
+@contextmanager
+def _quiet_probe():
+    """Silence the WeasyPrint import probe at file-descriptor level.
+
+    Both descriptors, because WeasyPrint prints this particular banner to
+    STDOUT -- which is why redirect_stderr missed it and why suppressing fd 2
+    alone still left it in the run log, where it sat directly above our own
+    "using the ReportLab renderer" line telling the reader the opposite.
+
+    Held only for the duration of the import and restored in a finally, so the
+    rest of the process keeps its output. Worth the file-descriptor work rather
+    than leaving advice to "report an issue" in the log of a run that produced
+    every report it promised.
+    """
+    saved = (os.dup(1), os.dup(2))
+    devnull = os.open(os.devnull, os.O_WRONLY)
+    try:
+        sys.stdout.flush()
+        sys.stderr.flush()
+        os.dup2(devnull, 1)
+        os.dup2(devnull, 2)
+        yield
+    finally:
+        sys.stdout.flush()
+        sys.stderr.flush()
+        os.dup2(saved[0], 1)
+        os.dup2(saved[1], 2)
+        os.close(devnull)
+        os.close(saved[0])
+        os.close(saved[1])
+
+
+def _weasyprint():
+    """Import WeasyPrint on demand, or return None if it cannot run here.
+
+    Deliberately NOT a module-level import. WeasyPrint's Python package installs
+    from pip fine and then raises OSError at import time when its GTK/Pango
+    libraries are missing, which is the normal state of a Windows machine. With
+    the import at module scope that failure took the whole pdf_theme package
+    down, so every caller lost PDFs -- including the ReportLab path, which has
+    no native dependencies and would have worked.
+
+    Probed once and remembered: a run renders a PDF per unit plus the global
+    report, and on a machine without the libraries each attempt otherwise
+    reprints WeasyPrint's multi-line "follow the installation steps before
+    reporting an issue" banner. That advice is misleading once a working
+    fallback exists, so the banner is swallowed here and the caller says which
+    engine it used instead.
+    """
+    global _ENGINE, _PROBED
+    if _PROBED:
+        return _ENGINE
+    _PROBED = True
+    try:
+        with _quiet_probe():
+            from weasyprint import CSS, HTML
+        _ENGINE = (CSS, HTML)
+    except Exception:
+        _ENGINE = None
+    return _ENGINE
 
 THEME_ROOT = Path(__file__).resolve().parents[1] / "assets" / "pdf"
 TEMPLATES = THEME_ROOT / "templates"
@@ -19,6 +88,29 @@ def _env() -> Environment:
     return Environment(
         loader=FileSystemLoader(str(TEMPLATES)),
         autoescape=select_autoescape(["html", "xml"]),
+    )
+
+
+_ANNOUNCED = False
+
+
+def _announce_fallback() -> None:
+    """Say which engine is rendering, once per run rather than once per packet.
+
+    Silence would be worse than the old banner: the PDFs look different from the
+    print theme, and whoever opens them should know why without having to guess
+    whether something is broken.
+    """
+    global _ANNOUNCED
+    if _ANNOUNCED:
+        return
+    _ANNOUNCED = True
+    from audit_lib import log
+
+    log(
+        "PDF: using the ReportLab renderer (WeasyPrint's GTK/Pango libraries are "
+        "not installed). Reports are complete; they do not carry the full print "
+        "theme. Install GTK to get it."
     )
 
 
@@ -32,7 +124,28 @@ def render_packet_pdf(
     unit_id: str | None = None,
     appendix_html: str = "",
 ) -> Path:
-    """Wrap markdown body in the Crystallize print shell and write a Letter PDF."""
+    """Wrap markdown body in the Crystallize print shell and write a Letter PDF.
+
+    WeasyPrint stays preferred: it renders the real print theme. ReportLab is
+    the fallback rather than the default because it draws flowables instead of
+    CSS, so it reproduces the structure and palette but not the full theme.
+    Same preferred-if-present arrangement bootstrap.py describes for poppler
+    over PDFium.
+    """
+    engine = _weasyprint()
+    if engine is None:
+        _announce_fallback()
+        return render_packet_pdf_reportlab(
+            pdf_path=pdf_path,
+            project_id=project_id,
+            title=title,
+            doc_kind=doc_kind,
+            md_text=md_text,
+            unit_id=unit_id,
+            appendix_html=appendix_html,
+        )
+    CSS, HTML = engine
+
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     running_meta = project_id if not unit_id else f"{project_id} · {unit_id}"
     body_html = md_to_html(md_text, skip_h1=True)

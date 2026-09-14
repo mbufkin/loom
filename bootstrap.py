@@ -17,20 +17,23 @@ Two things are deliberately *not* installed here:
     which model, and whether it runs on this machine or on a server the
     district approves, is a policy decision, not a setup step.
   * WeasyPrint's native GTK/Pango libraries. These are the one dependency pip
-    cannot supply on Windows, and they are optional: reports.py wraps every
-    PDF render in try/except, so without them each report is still written as
-    Markdown and the audit is unaffected.
+    cannot supply on Windows, and they are optional: PDFs are rendered with
+    ReportLab when they are absent, so every report is still produced. GTK buys
+    the full print theme, not the PDF itself.
 
 Design note for anyone extending this: prefer a Python package with wheels
 over a system package every time, even if the system tool is marginally
 better. A dependency your users cannot install is worse than a slightly worse
 dependency they already have. That reasoning is why PDF reading moved from
 poppler (a system package, usually needing admin) to PDFium (a wheel), with
-poppler kept only as a preferred-if-present upgrade.
+poppler kept only as a preferred-if-present upgrade. PDF *writing* now follows
+the same shape: ReportLab (a wheel) always works, WeasyPrint is the
+preferred-if-present upgrade for the print theme.
 """
 
 from __future__ import annotations
 
+import os
 import shutil
 import subprocess
 import sys
@@ -56,12 +59,33 @@ def _can_import(module: str) -> bool:
     libraries are missing -- exactly WeasyPrint's failure mode on Windows --
     and reporting that as "installed" is how people end up debugging a
     mysterious crash three steps later.
+
+    Output is muted at file-descriptor level for the duration of the import.
+    WeasyPrint prints a multi-line "follow the installation steps before
+    reporting an issue" banner to stdout when its libraries are missing, which
+    would otherwise land in the middle of this checklist and read as a failure,
+    directly above the line saying PDFs still work without it.
     """
+    saved = (os.dup(1), os.dup(2))
+    devnull = os.open(os.devnull, os.O_WRONLY)
     try:
-        __import__(module)
-        return True
-    except Exception:
-        return False
+        sys.stdout.flush()
+        sys.stderr.flush()
+        os.dup2(devnull, 1)
+        os.dup2(devnull, 2)
+        try:
+            __import__(module)
+            return True
+        except Exception:
+            return False
+    finally:
+        sys.stdout.flush()
+        sys.stderr.flush()
+        os.dup2(saved[0], 1)
+        os.dup2(saved[1], 2)
+        os.close(devnull)
+        os.close(saved[0])
+        os.close(saved[1])
 
 
 def install_requirements() -> bool:
@@ -97,7 +121,7 @@ def report() -> bool:
     weasy = _can_import("weasyprint")
     print(
         f"  [{'ok' if weasy else '--'}] {'WeasyPrint':<12} "
-        "PDF report output (reports are still written as Markdown without it)"
+        "full PDF print theme (ReportLab still writes every PDF without it)"
     )
     poppler = shutil.which("pdftotext")
     print(
