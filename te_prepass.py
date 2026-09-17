@@ -112,8 +112,16 @@ def te_child_records(project_id: str) -> list[dict]:
     ledger = json.loads(ledger_path.read_text())
     manifest = load_yaml(root / "manifest.yaml")
 
+    # One unit per document, deliberately, unlike unit_rung and artifact_rung:
+    # each child lesson below is identified by f"{parent_doc_id}__L{n}" and
+    # written to its own file, so fanning a shared document out across units
+    # would collide those ids rather than describe anything true. Teacher
+    # editions are per-unit documents in practice, so this is rarely exercised.
+    # Units are walked in sorted order so the choice is at least stable across
+    # runs instead of depending on the manifest's key order.
     doc_unit: dict[str, str] = {}
-    for uid, unit in (manifest.get("units") or {}).items():
+    for uid in sorted((manifest.get("units") or {}).keys()):
+        unit = (manifest.get("units") or {})[uid] or {}
         for rel in unit.get("documents") or unit.get("source_files") or []:
             doc_unit.setdefault(doc_id_from_filename(rel), uid)
 

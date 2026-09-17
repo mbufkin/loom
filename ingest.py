@@ -39,9 +39,29 @@ ORGANIZER_RULES = """
 You are a curriculum document organizer and auditor. READ-ONLY.
 
 Tasks:
-1. Group every source file into exactly one curriculum unit (no file left unassigned).
-2. Infer the instructional calendar for each unit from document text (days, weeks, phases).
-3. Define expected artifact types per day (lesson_content, exit_ticket, etc.).
+1. Identify the instructional units the course teaches.
+2. Assign every source file to every unit it serves. No file may be left
+   unassigned.
+3. Infer the instructional calendar for each unit from document text (days, weeks, phases).
+4. Define expected artifact types per day (lesson_content, exit_ticket, etc.).
+
+HOW TO ASSIGN FILES (read this twice):
+- A unit is a block of instruction that is taught over days. Units come only
+  from the instructional content.
+- Most documents serve one unit. List them under that unit only.
+- Some documents serve the whole course: syllabi, course pacing guides,
+  standards alignments, grading policies, equipment or materials inventories,
+  course-wide teacher notes. List each of these under EVERY unit it serves.
+  Repeating the same filename under several units is correct and expected.
+- NEVER create a unit to hold course-level documents. A unit named "course
+  overview", "introduction", "pacing" or "general" is wrong -- those documents
+  belong to the real units, all of them.
+- NEVER create a unit with no instructional days. If a group of files has no
+  days to teach, it is not a unit, and those files are course-level.
+
+Why: each unit is audited on its own. A unit that cannot see the pacing guide
+is reported as having no pacing, even though the teacher supplied one. Filing a
+course-wide document under one unit therefore invents a gap in every other unit.
 
 RULES:
 - Use ONLY evidence from the catalog below. Cite source_file when inferring calendar length.
@@ -77,7 +97,31 @@ Respond with ONLY valid JSON (no markdown fences):
     }
   ]
 }
-Every catalog file must appear in exactly one unit's source_files.
+Every catalog file must appear in at least one unit's source_files: once if it
+serves one unit, once per unit if it serves several. Never twice in the same
+unit's list.
+
+WORKED EXAMPLE. A catalog of five files:
+  unit-1-lesson-plan.html, unit-1-quiz.html,
+  unit-2-lesson-plan.html, unit-2-quiz.html,
+  course-pacing-guide.md
+
+Correct -- two units, and the pacing guide listed under BOTH because it
+describes both:
+  "units": [
+    {"unit_id": "...", "source_files": ["unit-1-lesson-plan.html",
+                                        "unit-1-quiz.html",
+                                        "course-pacing-guide.md"], ...},
+    {"unit_id": "...", "source_files": ["unit-2-lesson-plan.html",
+                                        "unit-2-quiz.html",
+                                        "course-pacing-guide.md"], ...}
+  ]
+
+Wrong -- a third unit invented to hold the pacing guide:
+  {"unit_id": "course-overview", "source_files": ["course-pacing-guide.md"]}
+
+Wrong -- the pacing guide filed under only the first unit, leaving unit 2
+looking as though it has no pacing.
 """
 
 
@@ -193,27 +237,81 @@ ANALYST OUTPUT:
 
 
 def validate_coverage(records: list[dict], plan: dict) -> list[str]:
-    """Deterministic check: all files assigned exactly once."""
+    """Deterministic check: every file assigned at least once, and no file listed
+    twice within the same unit.
+
+    "At least once" rather than "exactly once" because a document can serve more
+    than one unit, and the same file appearing under two units is how the plan
+    says so. Repeating it inside ONE unit still means nothing and is still
+    rejected -- that is either a model slip or a truncated reply, and letting it
+    through would double-count the document's evidence for that unit.
+    """
     errors = []
     catalog = {r["source_file"] for r in records}
-    assigned = []
+    assigned: list[str] = []
+    repeated_in_one_unit: set[str] = set()
     for u in plan.get("units", []):
-        assigned.extend(u.get("source_files", []))
-    assigned_set = set(assigned)
-    missing = catalog - assigned_set
-    extra = assigned_set - catalog
-    dupes = [f for f in assigned if assigned.count(f) > 1]
+        files = u.get("source_files") or []
+        assigned.extend(files)
+        repeated_in_one_unit |= {f for f in files if files.count(f) > 1}
+
+    missing = catalog - set(assigned)
+    extra = set(assigned) - catalog
+
     if missing:
+        shown = sorted(missing)[:5]
         errors.append(
-            f"unassigned files: {sorted(missing)[:5]}{'...' if len(missing) > 5 else ''}"
+            f"unassigned files: {shown}{'...' if len(missing) > 5 else ''}. "
+            "Every document must be listed under at least one unit. A document "
+            "that serves the whole course -- a syllabus, pacing guide, standards "
+            "alignment or equipment list -- goes under every unit it serves"
         )
     if extra:
         errors.append(f"unknown files in plan: {sorted(extra)[:5]}")
-    if dupes:
-        errors.append(f"duplicate assignments: {sorted(set(dupes))[:5]}")
+    if repeated_in_one_unit:
+        errors.append(
+            f"listed twice in the same unit: {sorted(repeated_in_one_unit)[:5]}"
+        )
     if not plan.get("units"):
         errors.append("no units in plan")
     return errors
+
+
+def share_unplaced_documents(records: list[dict], plan: dict) -> list[str]:
+    """Place any document the organiser left out under every unit, and say which.
+
+    A document the organiser finished its plan without putting in any unit is,
+    by that fact alone, not specific to a unit -- which is the definition of a
+    course-level document. Sharing it across every unit is what the plan should
+    have said, so this fills it in rather than stopping the audit.
+
+    This is safe to do deterministically because a short reply cannot reach
+    here. model_chat rejects a reply whose finish_reason is "length" and retries
+    with a larger ceiling (see _unusable_reply), so a plan arriving at this
+    point is one the model chose to end. Leftovers are its judgment, not a
+    truncated tail -- which matters, because silently spreading the missing half
+    of a cut-off plan across two surviving units would corrupt the organisation
+    while looking orderly.
+
+    Prompt instructions alone did not achieve this. Told plainly to list
+    course-wide documents under every unit, with a worked example, a capable
+    hosted model still shared a pacing guide and teacher notes correctly while
+    refusing to place a shop equipment inventory anywhere -- it does not read an
+    asset register as instructional material. Failing the whole run over that
+    one file is the dead end this replaces: the inventory is exactly the kind of
+    course-level document a unit's audit should see, since it is what says
+    whether the unit can be taught at all.
+    """
+    units = plan.get("units") or []
+    if not units:
+        return []
+    assigned = {f for u in units for f in (u.get("source_files") or [])}
+    unplaced = sorted({r["source_file"] for r in records} - assigned)
+    if not unplaced:
+        return []
+    for unit in units:
+        unit["source_files"] = list(unit.get("source_files") or []) + unplaced
+    return unplaced
 
 
 def write_yaml_files(project_id: str, sources: Path, plan: dict) -> None:
@@ -288,6 +386,16 @@ def ingest(project_id: str, sources: Path, skip_models: bool = False) -> Path:
         final = verifier_organize(cfg, records, draft)
         atomic_write(raw_dir / "organize-verifier.json", json.dumps(final, indent=2))
         plan = final
+
+    shared = share_unplaced_documents(records, plan)
+    if shared:
+        # ASCII only: the logging handler on Windows encodes as cp1252 and
+        # raises on an em-dash, which turns an informational line into a stack
+        # trace in the run log.
+        log(
+            f"course-level: {', '.join(shared)} - placed in no unit by the "
+            "organiser, so shared across all of them"
+        )
 
     errors = validate_coverage(records, plan)
     errors.extend(validate_ingest_plan(plan))

@@ -61,9 +61,14 @@ def enumerate_lessons(project_id: str) -> list[LessonInput]:
         raise FileNotFoundError(f"no Layer 0 ledger at {ledger_path} — run layer0 first")
     ledger = json.loads(ledger_path.read_text())
 
-    # doc_id -> unit_id (a doc listed under multiple units keeps its first unit).
+    # doc_id -> unit_id. A document listed under several units keeps the first
+    # by unit id, not the first the manifest happens to list, so two runs of a
+    # bakeoff compare like with like. One unit on purpose: a bakeoff scores each
+    # lesson once, and the same lesson entered twice under different units would
+    # weight it twice in the comparison.
     doc_unit: dict[str, str] = {}
-    for uid, unit in (manifest.get("units") or {}).items():
+    for uid in sorted((manifest.get("units") or {}).keys()):
+        unit = (manifest.get("units") or {})[uid] or {}
         for rel in unit.get("documents") or unit.get("source_files") or []:
             doc_unit.setdefault(doc_id_from_filename(rel), uid)
 

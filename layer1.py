@@ -274,14 +274,23 @@ def load_ledger(project_id: str) -> list[dict]:
     return json.loads(path.read_text())
 
 
-def build_parent_link_map(manifest: dict) -> dict[str, str]:
-    """doc_id -> unit_id, derived the same way Layer 0 derives doc_id from filename
-    (basename, strip extension / doc_ hash prefix). This is the ONE place the
-    manifest's "answer" lives — Phase 1 must never see this map."""
-    mapping: dict[str, str] = {}
+def build_parent_link_map(manifest: dict) -> dict[str, set[str]]:
+    """doc_id -> every unit_id it is filed under, derived the same way Layer 0
+    derives doc_id from filename (basename, strip doc_ hash prefix). This is the
+    ONE place the manifest's "answer" lives — Phase 1 must never see this map.
+
+    A set rather than a single id because a document can legitimately serve more
+    than one unit: a course pacing guide describes each unit it covers, a
+    syllabus and a shop equipment list serve all of them. Those documents are
+    filed under every unit they serve, and collapsing that to one id here --
+    which this did, keeping whichever unit the manifest happened to list last --
+    made the rest of Phase 2 accuse the document of being in the wrong place for
+    every unit that lost. See check_placement.
+    """
+    mapping: dict[str, set[str]] = {}
     for unit_id, unit in manifest["units"].items():
         for doc_path in unit.get("documents", unit.get("source_files", [])):
-            mapping[doc_id_from_filename(doc_path)] = unit_id
+            mapping.setdefault(doc_id_from_filename(doc_path), set()).add(unit_id)
     return mapping
 
 
@@ -660,7 +669,7 @@ def compute_document_target_counts(
 def check_placement(
     element: dict,
     judgment: dict | None,
-    parent_link_map: dict[str, str],
+    parent_link_map: dict[str, set[str] | str],
     overview_unit_ids: set[str],
     target_counts: Counter,
     known_overlap_pairs: set[frozenset],
@@ -701,7 +710,13 @@ def check_placement(
        be a listed overlap pair).
     """
     doc_id = element["doc_id"]
-    parent_unit_id = parent_link_map.get(doc_id)
+    # A bare string is normalised rather than rejected: this map is built
+    # elsewhere too, and treating a string as an iterable of characters would
+    # make every element an ORPHAN -- a quiet wrong answer that still renders.
+    filed_under = parent_link_map.get(doc_id) or set()
+    if isinstance(filed_under, str):
+        filed_under = {filed_under}
+    parent_unit_ids = sorted(filed_under)
     matched_unit_id = (judgment or {}).get("matched_unit_id")
     matched_day_id = (judgment or {}).get("matched_day_id")
     # Collapse a blank string to None so the ledger carries one spelling of
@@ -723,6 +738,28 @@ def check_placement(
 
     cross_reference_note = None
 
+    # Hub and overlap homes are looked up against every unit the document is
+    # filed under, not just the representative one: a pacing guide filed under
+    # a hub unit and two content units is still a hub document, and one home
+    # pairing with the target is still a human-confirmed overlap.
+    hub_homes = filed_under & set(overview_unit_ids)
+    overlap_homes = [
+        home
+        for home in parent_unit_ids
+        if frozenset((home, matched_unit_id)) in known_overlap_pairs
+    ]
+
+    # One home is reported and routed on, chosen deterministically so two runs
+    # of the same audit never disagree about which unit a finding belongs to.
+    # When the element names one of the document's own homes that home is the
+    # obvious representative: a shared pacing guide's Unit 2 content is Unit 2's.
+    if matched_unit_id in filed_under:
+        parent_unit_id = matched_unit_id
+    elif parent_unit_ids:
+        parent_unit_id = parent_unit_ids[0]
+    else:
+        parent_unit_id = None
+
     if parent_unit_id is None:
         match_status = "ORPHAN"
         final_unit_id = matched_unit_id
@@ -731,7 +768,9 @@ def check_placement(
         match_status = "UNVERIFIED"
         final_unit_id = parent_unit_id
         placement_basis = "parent_link_only"
-    elif matched_unit_id == parent_unit_id:
+    elif matched_unit_id in filed_under:
+        # Agreement with any one of the document's homes. For a document filed
+        # under a single unit this is plain equality, exactly as before.
         match_status = "MATCH"
         final_unit_id = matched_unit_id
         placement_basis = "self_declared"
@@ -746,18 +785,20 @@ def check_placement(
             f"discounted self-declaration of hub unit '{matched_unit_id}' "
             "(not specific enough to be placement evidence, e.g. boilerplate branding)"
         )
-    elif parent_unit_id in overview_unit_ids and not (
-        concentrated and matched_unit_id == dominant_target
-    ):
+    elif hub_homes and not (concentrated and matched_unit_id == dominant_target):
         match_status = "CROSS_REFERENCE"
+        # Report the hub home, since the hub is what makes this expected.
+        parent_unit_id = sorted(hub_homes)[0]
         final_unit_id = parent_unit_id
         placement_basis = "self_declared"
         cross_reference_note = (
             f"hub unit '{parent_unit_id}' element references '{matched_unit_id}' "
             "— expected overview behavior, not a misfile"
         )
-    elif frozenset((parent_unit_id, matched_unit_id)) in known_overlap_pairs:
+    elif overlap_homes:
         match_status = "EXPECTED_OVERLAP"
+        # Report the home that pairs with the target, not an unrelated one.
+        parent_unit_id = overlap_homes[0]
         final_unit_id = parent_unit_id
         placement_basis = "self_declared"
         cross_reference_note = (
@@ -786,6 +827,11 @@ def check_placement(
         "supporting_quote": supporting_quote,
         "reasoning": reasoning,
         "parent_link_unit_id": parent_unit_id,
+        # Every unit the document is filed under. parent_link_unit_id above
+        # stays a single id so existing consumers and reports are unaffected;
+        # this is what tells a reader that a document serving three units was
+        # not arbitrarily assigned to one of them.
+        "parent_link_unit_ids": parent_unit_ids,
         "final_unit_id": final_unit_id,
         "final_day_id": matched_day_id,  # Phase 1 is the only source of day info; null if not stated
         "match_status": match_status,

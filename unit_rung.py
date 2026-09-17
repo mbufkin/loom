@@ -206,13 +206,18 @@ def build_unit_rung(project_id: str) -> Path:
 
     # Layer 2 rows + doc->unit map (via manifest, same key Layer 2 writes).
     l2_rows = load_layer2_data(project_id)
-    doc_unit: dict[str, str] = {}
+    # Read unit by unit straight from the manifest rather than by inverting a
+    # doc->unit lookup. This is a membership question -- "is this document part
+    # of this unit?" -- and a document can serve several: a course pacing guide,
+    # a syllabus, an equipment list. Inverting through a 1:1 map gave such a
+    # document to whichever unit the manifest happened to list first, so every
+    # other unit it served reported its content as missing when it had in fact
+    # been supplied. A gap reported against evidence the teacher handed over is
+    # the most expensive kind of wrong answer this audit can produce.
+    unit_doc_ids: dict[str, set[str]] = defaultdict(set)
     for uid, u in units_manifest.items():
         for rel in u.get("documents") or u.get("source_files") or []:
-            doc_unit.setdefault(doc_id_from_filename(rel), uid)
-    unit_doc_ids: dict[str, set[str]] = defaultdict(set)
-    for did, uid in doc_unit.items():
-        unit_doc_ids[uid].add(did)
+            unit_doc_ids[uid].add(doc_id_from_filename(rel))
 
     # Findings grouped per unit, for isolated-vs-systemic gap classification.
     findings_by_unit: dict[str, list[dict]] = defaultdict(list)

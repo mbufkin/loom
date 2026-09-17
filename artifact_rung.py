@@ -121,17 +121,24 @@ def _gap_label(step: str, labels: dict[str, str]) -> str:
 # --- enumeration / route metadata -------------------------------------------
 
 
-def doc_unit_map(project_id: str) -> dict[str, str]:
-    """doc_id -> unit_id from the project's manifest. Unmapped docs fall through
-    to the caller, which uses the '(unlinked)' bucket — same fallback the
-    original ledger enumeration used when a file was outside every unit."""
+def doc_unit_map(project_id: str) -> dict[str, list[str]]:
+    """doc_id -> every unit_id it is filed under, from the project's manifest.
+    Unmapped docs fall through to the caller, which uses the '(unlinked)' bucket
+    — same fallback the original ledger enumeration used when a file was outside
+    every unit.
+
+    A list because a document can serve more than one unit, and an artifact that
+    serves three units is present in all three. Returning a single unit made the
+    other two report that artifact as absent. Sorted so repeat runs of the same
+    audit order the records identically.
+    """
     root = project_dir(project_id)
     manifest = load_yaml(root / "manifest.yaml")
-    doc_unit: dict[str, str] = {}
+    doc_unit: dict[str, set[str]] = {}
     for uid, unit in (manifest.get("units") or {}).items():
         for rel in unit.get("documents") or unit.get("source_files") or []:
-            doc_unit.setdefault(doc_id_from_filename(rel), uid)
-    return doc_unit
+            doc_unit.setdefault(doc_id_from_filename(rel), set()).add(uid)
+    return {did: sorted(uids) for did, uids in doc_unit.items()}
 
 
 def _route_by_doc(project_id: str) -> dict[str, dict]:
@@ -298,7 +305,7 @@ def collect_path_records(project_id: str) -> list[dict]:
     doc_unit = doc_unit_map(project_id)
     routes = _route_by_doc(project_id)
     records: list[dict] = []
-    seen: set[str] = set()
+    seen: set[tuple[str, str]] = set()
 
     for letter in ARTIFACT_PATHS:
         findings = _load_path_findings(project_id, letter)
@@ -313,9 +320,28 @@ def collect_path_records(project_id: str) -> list[dict]:
             if not isinstance(item, dict):
                 continue
             doc_id = str(item.get("doc_id") or "")
-            if not doc_id or doc_id in seen:
+            if not doc_id:
                 continue
-            seen.add(doc_id)
+            # One record per unit the document serves, so the key is (unit,
+            # document) rather than the document alone: a pacing guide covering
+            # three units is a present artifact in all three, and emitting it
+            # once meant two of them reported it missing. Within a unit the
+            # de-duplication still matters, because the same document is
+            # routinely inventoried by more than one Path.
+            #
+            # Claimed before the doc_type check, not after, so that the first
+            # Path to reach a document still settles it: a document this Path
+            # calls lesson_content is skipped here AND blocked from being
+            # re-added by a later Path that types it differently.
+            fresh = [
+                unit_id
+                for unit_id in (doc_unit.get(doc_id) or ["(unlinked)"])
+                if (unit_id, doc_id) not in seen
+            ]
+            if not fresh:
+                continue
+            seen.update((unit_id, doc_id) for unit_id in fresh)
+
             route = routes.get(doc_id) or {}
             # Prefer inventory doc_type; fall back to the route-map's classification.
             doc_type = str(item.get("doc_type") or route.get("doc_type") or "other")
@@ -330,17 +356,18 @@ def collect_path_records(project_id: str) -> list[dict]:
                 else doc_id
             )
             source_file = f"sources/{source}" if source else None
-            records.append(
-                artifact_record_from_path(
-                    item,
-                    unit_id=doc_unit.get(doc_id, "(unlinked)"),
-                    title=title,
-                    source_file=source_file,
-                    labels=labels,
-                    path=path,
-                    lens=lens,
+            for unit_id in fresh:
+                records.append(
+                    artifact_record_from_path(
+                        item,
+                        unit_id=unit_id,
+                        title=title,
+                        source_file=source_file,
+                        labels=labels,
+                        path=path,
+                        lens=lens,
+                    )
                 )
-            )
 
     records.sort(key=lambda r: (r["unit_id"], r["doc_type"], r["title"], r["doc_id"]))
     return records
