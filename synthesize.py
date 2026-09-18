@@ -580,13 +580,110 @@ def render_glossary_md() -> str:
     return "\n".join(lines)
 
 
-def render_dashboard(project_id: str, agg: dict, agg2: dict | None = None) -> str:
+def _ranked_gaps(agg: dict) -> list[dict]:
+    """Missing roles ordered by how much of the course each one touches.
+
+    The dashboard used to lead its gap section with `systemic_missing`, which
+    only fires at SYSTEMIC_MIN_UNITS (3) distinct units. A two-unit course
+    therefore printed "No pattern reached the 3+ unit threshold" at the exact
+    moment a role was absent from every slot that expected it -- the audit's
+    strongest finding rendered as the absence of a finding. Most CTE courses
+    are small, so that was the common case, not the edge one.
+
+    Ranking the per-role rollup by absence rate says the same thing without a
+    cliff edge: a role missing everywhere sorts first whether the course has
+    two units or twenty. This deliberately does not touch the `classification`
+    the rollup assigns -- unit_rung.py reads systemic_absent to inhibit child
+    flags, and re-tuning that threshold is a pipeline decision, not a
+    rendering one.
+
+    Silenced roles are dropped: a human has already ruled them not expected
+    here, so they are calibration rather than a gap.
+    """
+    roles = (agg.get("missing_rollup") or {}).get("roles") or []
+    live = [r for r in roles if r.get("classification") != "silenced"]
+    return sorted(
+        live,
+        key=lambda r: (
+            -r.get("absence_rate", 0.0),
+            -r.get("units_missing", 0),
+            -r.get("missing", 0),
+            r.get("role", ""),
+        ),
+    )
+
+
+def _reach_phrase(r: dict) -> str:
+    """How much of the expectation a gap covers, in words rather than a rate.
+
+    "All 5 places it was expected" and "2 of the 5 places it was expected" are
+    different instructions; 0.4 and 1.0 in an absence_rate column are not.
+    """
+    missing, expected = r.get("missing", 0), r.get("expected", 0)
+    if expected and missing >= expected:
+        return f"All {expected} place{'' if expected == 1 else 's'} it was expected"
+    return f"{missing} of the {expected} places it was expected"
+
+
+def _gap_decision(r: dict) -> str:
+    """The choice this gap actually puts in front of a reviewer."""
+    expected = r.get("expected", 0)
+    if expected and r.get("missing", 0) >= expected:
+        # Absent from every slot is far more often the day grid expecting
+        # something this course does not ship than it is N separate defects,
+        # so the useful prompt is about the expectation, not about authoring.
+        return "Absent course-wide — confirm this course is meant to ship them"
+    return "Author it, pull it from another drive, or take it off the day grid"
+
+
+def render_dashboard(
+    project_id: str,
+    agg: dict,
+    agg2: dict | None = None,
+    tiers: dict[str, str] | None = None,
+) -> str:
+    """The one page most reviewers read. `tiers` maps unit_id -> Strong /
+    Developing / Weak, resolved by the caller (reports.unit_tiers) because it
+    needs the project tree; omitted, the heatmap simply drops that column."""
     confirmed, worth = _split_attention_for_champions(agg)
+    gaps = _ranked_gaps(agg)
     lines = [
         "# Curriculum Review Dashboard",
         "",
         f"**Dataset:** {project_id}",
         "",
+        # The verdict leads because it is the only line guaranteed to be read.
+        # Shared with the work packet so the two cannot drift apart.
+        _verdict_sentence(agg),
+        "",
+    ]
+
+    if gaps:
+        lines += [
+            "## What is missing, most widespread first",
+            "",
+            "Ranked by how much of the course each gap touches, so one decision "
+            "that covers every unit sorts above one that covers a single day.",
+            "",
+            "| Missing | Reach | Units affected | What to decide |",
+            "|---------|-------|----------------|----------------|",
+        ]
+        lines += [
+            f"| **{_role_label(r['role'])}** | {_reach_phrase(r)} "
+            f"| {r.get('units_missing', 0)} of {r.get('units_total', 0)} "
+            f"| {_gap_decision(r)} |"
+            for r in gaps
+        ]
+        silenced = (agg.get("missing_rollup") or {}).get("silenced") or []
+        if silenced:
+            names = ", ".join(_role_label(s["role"]) for s in silenced)
+            lines += [
+                "",
+                f"Not counted: {names} — already marked not expected in this course.",
+            ]
+        lines.append("")
+
+    lines += [
         "## At a glance (work-session)",
         "",
         "| Focus | Count |",
@@ -602,31 +699,39 @@ def render_dashboard(project_id: str, agg: dict, agg2: dict | None = None) -> st
         lines.append(
             f"| Lesson plans needing template work | {agg2['incomplete_count']} of {agg2['documents_judged']} |"
         )
+    # The Tier column is the one thing SUMMARY.md said that this page did not,
+    # which is why SUMMARY.md existed at all. Folding it in here retires a
+    # whole report rather than leaving a second page alive for one cell.
+    tier_head = " Tier |" if tiers else ""
+    tier_rule = "------|" if tiers else ""
     lines += [
         "",
         "## Unit heatmap",
         "",
-        "| Unit | Confirmed | Misfiled | Found | Not in folder | Duplicates |",
-        "|------|-----------|----------|-------|---------------|------------|",
+        f"| Unit |{tier_head} Confirmed | Misfiled | Found | Not in folder | Duplicates |",
+        f"|------|{tier_rule}-----------|----------|-------|---------------|------------|",
     ]
     for u in sorted(
         agg["unit_rollup"],
         key=lambda x: (-x["mismatch"], -x["duplicate"], -x["missing"]),
     ):
         bar = "🔴" if u["mismatch"] > 0 else ("🟡" if u["duplicate"] > 0 else "🟢")
+        tier_cell = ""
+        if tiers:
+            # Unbolded em dash for "not graded": bolding it would give an
+            # absent verdict the same visual weight as a real one, and Weak is
+            # what a reader assumes when a grade column looks filled in.
+            grade = tiers.get(u["unit_id"])
+            tier_cell = f" **{grade}** |" if grade else " — |"
         lines.append(
-            f"| {bar} {u['title']} | {u['match']} | {u['mismatch']} | {u['fulfilled']} | {u['missing']} | {u['duplicate']} |"
+            f"| {bar} {u['title']} |{tier_cell} {u['match']} | {u['mismatch']} "
+            f"| {u['fulfilled']} | {u['missing']} | {u['duplicate']} |"
         )
 
-    lines.extend(["", "## Scope gaps across 3+ units", ""])
-    if agg["systemic_missing"]:
-        for i, p in enumerate(agg["systemic_missing"][:5], 1):
-            lines.append(
-                f"{i}. **{_role_label(p['role'])}** — missing in **{p['unit_count']}** units"
-            )
-    else:
-        lines.append("- No pattern reached the 3+ unit threshold.")
-
+    # No trailing "Scope gaps across 3+ units" section: the ranked table above
+    # reports the same patterns without a threshold that a small course can
+    # never clear, and the old else-branch actively told the reviewer there was
+    # no pattern while one was absent from the entire course.
     return "\n".join(lines) + "\n"
 
 

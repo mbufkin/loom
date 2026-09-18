@@ -110,11 +110,29 @@ RUNS_DIR = DATA_ROOT / "logs" / "runs"
 
 # Top-level "course plates" a reviewer wants first, in priority order. Only those
 # that actually exist for a project are surfaced.
+#
+# Two files this list used to carry are deliberately absent, for different
+# reasons -- both still written to disk, neither worth a reviewer's click.
+#
+# FIRST-PASS.md: reports.write_first_pass writes it and then copies it to
+# GLOBAL-AUDIT.md as an alias, so the two are byte-identical on every run.
+# Listing both put the same 79-line packet in the rail twice under two names,
+# and a reviewer who opened them in order had no way to tell they had already
+# read it. render_pdf still prefers the original and run_project still checks
+# for the alias, so only the duplicate entry is gone.
+#
+# output/REVIEW-QUEUE.md: not a report. It is a seven-line signpost whose body
+# is a path to layer1/REVIEW-QUEUE.md plus a synthesize.py command line -- and
+# the file it points at now sits behind ?advanced=1, making it a dead link in
+# the default view. The number it was standing in for, overlap pairs awaiting a
+# decision, is already a row in the dashboard's "At a glance" table.
+#
+# output/SUMMARY.md: every figure on it -- units in scope, elements judged,
+# per-unit MATCH and MISMATCH -- restates the dashboard in terser words. Its
+# one unique column, Tier, now renders in the dashboard's unit heatmap from
+# the same reports.unit_tiers call, so nothing is lost by not listing it.
 PLATE_FILES = [
     ("Dashboard", "output/DASHBOARD.md"),
-    ("First pass", "output/FIRST-PASS.md"),
-    ("Summary", "output/SUMMARY.md"),
-    ("Review queue", "output/REVIEW-QUEUE.md"),
     ("Lesson quality feedback", "output/LESSON-QUALITY-FEEDBACK.md"),
     ("Global audit", "output/GLOBAL-AUDIT.md"),
     ("Year calendar map", "output/03-year-calendar-map.md"),
@@ -852,16 +870,41 @@ def _paths_summary(pid: str, e2e_run: str | None = None) -> dict:
 
 
 
+def _viewer_type(rel: str) -> str:
+    """Which of the reviewer's three viewers opens this file.
+
+    The review screen renders Markdown through its own parser, PDFs through an
+    <embed>, and HTML through an iframe. A file listed without a type falls back
+    to Markdown, so getting this wrong is not a styling problem: the global
+    audit report came through as its own bytes, "%PDF-1.4 ... /BaseFont
+    /Helvetica", set as prose. PDF_FILES carried a label and a path and nothing
+    else, and the omission was invisible until someone clicked it.
+
+    Deriving the type from the extension, rather than writing it out beside each
+    path, is what keeps that from happening again -- a new entry cannot be added
+    without one.
+    """
+    return {".pdf": "pdf", ".html": "html", ".htm": "html"}.get(
+        Path(rel).suffix.lower(), "md"
+    )
+
+
 def _outputs_tree(pid: str, e2e_run: str | None = None) -> dict:
     base = _workspace(pid, e2e_run)
     plates = [
-        {"label": lbl, "path": rel} for lbl, rel in PLATE_FILES if _exists(base, rel)
+        {"label": lbl, "path": rel, "type": _viewer_type(rel)}
+        for lbl, rel in PLATE_FILES
+        if _exists(base, rel)
     ]
     layers = [
-        {"label": lbl, "path": rel} for lbl, rel in LAYER_FILES if _exists(base, rel)
+        {"label": lbl, "path": rel, "type": _viewer_type(rel)}
+        for lbl, rel in LAYER_FILES
+        if _exists(base, rel)
     ]
     pdfs = [
-        {"label": lbl, "path": rel} for lbl, rel in PDF_FILES if _exists(base, rel)
+        {"label": lbl, "path": rel, "type": _viewer_type(rel)}
+        for lbl, rel in PDF_FILES
+        if _exists(base, rel)
     ]
 
     # Unit titles from the stats rollup when available, else the folder name.
@@ -903,7 +946,15 @@ def _outputs_tree(pid: str, e2e_run: str | None = None) -> dict:
             for tf in sorted(teacher_dir.iterdir()):
                 # Include .html so usefulness-test one-pagers can open in-browser
                 # with their own contrast styles (not forced through the MD viewer).
-                if tf.is_file() and tf.suffix in (".md", ".pdf", ".json", ".html"):
+                #
+                # .json is deliberately absent. Every packet is written three
+                # times -- .json, .md and .pdf -- and the JSON is the machine
+                # copy the other two are rendered from. Listing it tripled the
+                # length of each unit and offered a reviewer a brace-and-quote
+                # dump of something they could already read as prose next to it.
+                # Nothing is lost: it is still on disk, and still fetchable by
+                # path for anything that needs the structured form.
+                if tf.is_file() and tf.suffix in (".md", ".pdf", ".html"):
                     teacher_files.append(
                         {
                             "label": tf.name,

@@ -243,20 +243,7 @@ def write_first_pass(
     atomic_write(alias, md)  # one-release compat for PDF / ops paths
 
     # Lightweight SUMMARY.md (batch table) — still useful next to first-pass
-    import json
-
-    path_a_hunter = None
-    path_a_coherent = None
-    path_a_findings = ctx.root / "path_a" / "findings.json"
-    if path_a_findings.is_file():
-        try:
-            pa = json.loads(path_a_findings.read_text(encoding="utf-8"))
-            a3 = (pa.get("steps") or {}).get("A3") or {}
-            a5 = (pa.get("steps") or {}).get("A5") or {}
-            path_a_hunter = a5.get("hunter_core_present")
-            path_a_coherent = a3.get("status") == "COHERENT"
-        except Exception:
-            pass
+    tiers = unit_tiers(ctx)
 
     lines = [
         "# Audit Batch Summary",
@@ -268,21 +255,7 @@ def write_first_pass(
         "|------|------|-------|----------|-------------|",
     ]
     for u in sorted(ctx.agg["unit_rollup"], key=lambda x: x["title"]):
-        # Per-unit Hunter from LESSON-PLAN.json when available (overrides project Path A)
-        hunter = path_a_hunter
-        lp_json = ctx.root / "output" / "teachers" / u["unit_id"] / "LESSON-PLAN.json"
-        if lp_json.is_file():
-            try:
-                lp = json.loads(lp_json.read_text(encoding="utf-8"))
-                hunter = (lp.get("summary") or {}).get("hunter_core_present", hunter)
-            except Exception:
-                pass
-        tier = compute_curriculum_tier(
-            missing=u.get("missing") or 0,
-            fulfilled=u.get("fulfilled") or 0,
-            hunter_present=hunter,
-            path_a_coherent=path_a_coherent,
-        )
+        tier = tiers[u["unit_id"]]
         # Slot status stays factual; calendar GAPS must not redefine a Strong Path A tier.
         if u["mismatch"]:
             slot_status = "REVIEW"
@@ -317,7 +290,13 @@ def write_dashboard(
     from synthesize import render_dashboard
 
     path = ctx.out_dir / "DASHBOARD.md"
-    atomic_write(path, render_dashboard(ctx.project_id, ctx.agg, ctx.agg2))
+    # Tiers are resolved here rather than inside render_dashboard so that
+    # renderer stays a pure function of its arguments and remains testable
+    # without a project tree on disk.
+    tiers = {uid: t["tier"] for uid, t in unit_tiers(ctx).items()}
+    atomic_write(
+        path, render_dashboard(ctx.project_id, ctx.agg, ctx.agg2, tiers=tiers)
+    )
     log(f"report dashboard → {path}")
     return [path]
 
@@ -480,6 +459,62 @@ def compute_curriculum_tier(
         "miss_rate": round(miss_rate, 3),
         "hunter_rate": round(hunter_rate, 3) if hunter_rate is not None else None,
     }
+
+
+def unit_tiers(ctx: ReportContext) -> dict[str, dict]:
+    """Strong / Developing / Weak for every unit, keyed by unit id.
+
+    Lifted out of write_first_pass so the dashboard and SUMMARY.md read the
+    same verdict from the same inputs. Call sites each doing their own Path A
+    lookup is how a course ends up labelled Developing on one page and Strong
+    on another, which costs the report all of its authority at exactly the
+    moment someone notices.
+
+    Not yet the only copy: write_teacher still resolves a tier inline for its
+    single unit, with the same inputs in a slightly different precedence
+    (LESSON-PLAN.json first, project Path A only when that key is absent).
+    Folding it in here is worth doing, but it changes a report's output in
+    that edge case, so it wants its own change and its own test.
+
+    Hunter coverage is resolved per unit and falls back to the project-wide
+    Path A number: a unit that produced its own LESSON-PLAN.json has better
+    evidence than the project aggregate, and a unit that did not should still
+    be graded rather than skipped.
+    """
+    import json
+
+    path_a_hunter = None
+    path_a_coherent = None
+    path_a_findings = ctx.root / "path_a" / "findings.json"
+    if path_a_findings.is_file():
+        try:
+            pa = json.loads(path_a_findings.read_text(encoding="utf-8"))
+            a3 = (pa.get("steps") or {}).get("A3") or {}
+            a5 = (pa.get("steps") or {}).get("A5") or {}
+            path_a_hunter = a5.get("hunter_core_present")
+            path_a_coherent = a3.get("status") == "COHERENT"
+        except Exception:
+            # A malformed Path A plate must not take the whole report down; the
+            # tier simply falls back to the slot-count branch below.
+            pass
+
+    out: dict[str, dict] = {}
+    for u in ctx.agg["unit_rollup"]:
+        hunter = path_a_hunter
+        lp_json = ctx.root / "output" / "teachers" / u["unit_id"] / "LESSON-PLAN.json"
+        if lp_json.is_file():
+            try:
+                lp = json.loads(lp_json.read_text(encoding="utf-8"))
+                hunter = (lp.get("summary") or {}).get("hunter_core_present", hunter)
+            except Exception:
+                pass
+        out[u["unit_id"]] = compute_curriculum_tier(
+            missing=u.get("missing") or 0,
+            fulfilled=u.get("fulfilled") or 0,
+            hunter_present=hunter,
+            path_a_coherent=path_a_coherent,
+        )
+    return out
 
 
 # Singular labels for the per-row "Expected" cell. Not derived from

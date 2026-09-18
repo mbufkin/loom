@@ -7,14 +7,13 @@ import {
   VIEW_PATHS,
   VIEW_UNITS,
 } from "../components/OutputNav";
+import type { NavDoc } from "../components/OutputNav";
 import { ReviewSlip } from "../components/ReviewSlip";
 import { UnitDetail } from "../components/UnitDetail";
 import { LessonDetail } from "../components/LessonDetail";
 import { ArtifactDetail } from "../components/ArtifactDetail";
 import { UnitOutputRow } from "../components/UnitOutputRow";
 import { PacketTypeBar } from "../components/PacketTypeBar";
-import { Overview } from "../components/Overview";
-import { NextSteps } from "../components/NextSteps";
 import { RunProgress } from "../components/RunProgress";
 import { GraphBelongingPanel } from "../components/GraphBelongingPanel";
 import { PathsPanel } from "../components/PathsPanel";
@@ -98,32 +97,21 @@ function deriveBand(r: UnitRollup): Band {
   return "Developing";
 }
 
-/** Top-level page switch: the review console, or one of the two decks. */
-type TopView = "review" | "overview" | "next";
-const TOP_VIEWS: readonly TopView[] = ["review", "overview", "next"];
-const DEFAULT_TOP_VIEW: TopView = "review";
-
-/** Optional deep-link into a completed E2E run: ?project=&e2e=&lesson=&view= */
+/** Optional deep-link into a completed E2E run: ?project=&e2e=&lesson= */
 function reviewDeepLink(): {
   project?: string;
   e2e?: string;
   lesson?: string;
-  view?: TopView;
   advanced: boolean;
 } {
   if (typeof window === "undefined") return { advanced: false };
   const q = new URLSearchParams(window.location.search);
   // Live root is not a review surface — e2e must be a real run id when set.
   const e2e = (q.get("e2e") || "").trim() || undefined;
-  // Validate against the known decks: an unrecognised ?view= must fall back to
-  // the console rather than render an empty page.
-  const rawView = (q.get("view") || "").trim() as TopView;
-  const view = TOP_VIEWS.includes(rawView) ? rawView : undefined;
   return {
     project: q.get("project") || undefined,
     e2e,
     lesson: q.get("lesson") || undefined,
-    view,
     // ?advanced=1 reveals the engineering controls (lab forks, model runs).
     // They are meaningless to a curriculum reviewer and several of them are
     // permanently disabled on a normal install, so a control you cannot use is
@@ -134,13 +122,6 @@ function reviewDeepLink(): {
 
 export function RunReview() {
   const deepLink = useMemo(() => reviewDeepLink(), []);
-  // Top-level view switch. "review" is the untouched console; "overview" /
-  // "next" are presentation decks. Kept as a tiny local flag (no router) so the
-  // existing page and all its state are undisturbed when a deck is showing —
-  // seeded from ?view= so the desktop launcher can open straight to a deck.
-  const [topView, setTopView] = useState<TopView>(
-    deepLink.view ?? DEFAULT_TOP_VIEW
-  );
   const [projects, setProjects] = useState<Project[]>([]);
   // Empty until the project list arrives and picks one with results. Seeding a
   // hardcoded district here would flash somebody else's curriculum name in the
@@ -185,6 +166,15 @@ export function RunReview() {
   const [selectedArtifactId, setSelectedArtifactId] = useState<string | null>(
     null
   );
+  // Which unit's review of that document to show. A course-level document is
+  // filed under every unit it serves, so a doc_id on its own no longer names
+  // one review: the artifact rung judges a document in the context of the unit
+  // it sits in, and verdicts like "quiz -> key pairing" depend on that unit's
+  // other documents. Without this, opening the pacing guide under Unit 2 shows
+  // the review written for Unit 1.
+  const [selectedArtifactUnitId, setSelectedArtifactUnitId] = useState<
+    string | null
+  >(null);
   const [viewerText, setViewerText] = useState<string>("");
   // A sentence the reviewer can act on, plus the raw text behind a disclosure.
   // Never render the detail on its own: it is a status code and a URL.
@@ -338,13 +328,14 @@ export function RunReview() {
     q.set("project", projectId);
     if (e2eRunId) q.set("e2e", e2eRunId);
     else q.delete("e2e");
-    // Only record a non-default deck, so the common case stays a clean URL.
-    if (topView !== DEFAULT_TOP_VIEW) q.set("view", topView);
-    else q.delete("view");
+    // Strip ?view= if an old bookmark still carries it. It named the Overview
+    // and Next Steps decks, and an address bar advertising a page that no
+    // longer exists is worse than no parameter at all.
+    q.delete("view");
     const next = `${window.location.pathname}?${q.toString()}`;
     const cur = `${window.location.pathname}${window.location.search}`;
     if (next !== cur) window.history.replaceState(null, "", next);
-  }, [projectId, e2eRunId, topView]);
+  }, [projectId, e2eRunId]);
 
   const loadDoc = useCallback(
     async (id: string, path: string, type = "md", e2eRun?: string) => {
@@ -647,8 +638,9 @@ export function RunReview() {
     setActiveType("md");
   }, []);
 
-  const openArtifactDetail = useCallback((docId: string) => {
+  const openArtifactDetail = useCallback((docId: string, unitId?: string) => {
     setSelectedArtifactId(docId);
+    setSelectedArtifactUnitId(unitId ?? null);
     setActivePath(ARTIFACT_DETAIL);
     setActiveType("md");
   }, []);
@@ -686,14 +678,40 @@ export function RunReview() {
     return artifactRung.units[selectedUnitId];
   }, [selectedUnitId, artifactRung]);
 
+  // The reviewed documents per unit, in the shape the rail needs. Sorted by
+  // title so a unit's documents read in a stable order rather than whatever
+  // order the rung happened to write them in.
+  const docsByUnit = useMemo(() => {
+    const out: Record<string, NavDoc[]> = {};
+    for (const [unitId, u] of Object.entries(artifactRung?.units ?? {})) {
+      out[unitId] = u.documents
+        .map((d) => ({
+          doc_id: d.doc_id,
+          title: d.title || d.doc_id,
+          gate_pass: d.presence.gate_pass,
+        }))
+        .sort((a, b) => a.title.localeCompare(b.title));
+    }
+    return out;
+  }, [artifactRung]);
+
   const selectedArtifact = useMemo(() => {
     if (!selectedArtifactId || !artifactRung) return undefined;
+    const inUnit = selectedArtifactUnitId
+      ? artifactRung.units[selectedArtifactUnitId]?.documents.find(
+          (d) => d.doc_id === selectedArtifactId
+        )
+      : undefined;
+    if (inUnit) return inUnit;
+    // Opened without a unit in hand. Any review of this document beats an
+    // empty panel, so take the first — but only as a fallback, because for a
+    // shared document "the first" is an arbitrary one of several.
     for (const u of Object.values(artifactRung.units)) {
       const hit = u.documents.find((d) => d.doc_id === selectedArtifactId);
       if (hit) return hit;
     }
     return undefined;
-  }, [selectedArtifactId, artifactRung]);
+  }, [selectedArtifactId, selectedArtifactUnitId, artifactRung]);
 
   // Per-unit artifact files, minus the thin stub "Report" when richer files
   // exist, so the detail panel links to the useful reports first.
@@ -765,194 +783,147 @@ export function RunReview() {
     // bar is page context only — which curriculum, which audit, which deck.
     <>
       <div className="topbar">
-        {/* Top-level page switch: review console vs presentation decks. */}
-        <div className="topnav" role="group" aria-label="page">
-          <button
-            type="button"
-            aria-pressed={topView === "review"}
-            onClick={() => setTopView("review")}
-          >
-            Review
-          </button>
-          <button
-            type="button"
-            aria-pressed={topView === "overview"}
-            onClick={() => setTopView("overview")}
-          >
-            Overview
-          </button>
-          <button
-            type="button"
-            aria-pressed={topView === "next"}
-            onClick={() => setTopView("next")}
-          >
-            Next Steps
-          </button>
-        </div>
-        {(topView === "review" || topView === "next") && (
-          <>
-            <select
-              value={projectId}
-              onChange={(e) => {
-                // Clear E2E with the curriculum change so we never request
-                // projects/<new>/e2e/runs/<old-id> for one paint cycle.
-                setE2eRunId("");
-                setProjectId(e.target.value);
-              }}
-              aria-label="Curriculum"
-              title="Curriculum"
-            >
-              <optgroup label="Curriculum">
-                {curriculumProjects.map((p) => (
-                  <option key={p.id} value={p.id}>
-                    {curriculumOptionLabel(p)}
-                  </option>
-                ))}
-              </optgroup>
-              {showLabForks && labProjects.length > 0 && (
-                <optgroup label="Lab forks">
-                  {labProjects.map((p) => (
+        <select
+          value={projectId}
+          onChange={(e) => {
+            // Clear E2E with the curriculum change so we never request
+            // projects/<new>/e2e/runs/<old-id> for one paint cycle.
+            setE2eRunId("");
+            setProjectId(e.target.value);
+          }}
+          aria-label="Curriculum"
+          title="Curriculum"
+        >
+          <optgroup label="Curriculum">
+            {curriculumProjects.map((p) => (
+              <option key={p.id} value={p.id}>
+                {curriculumOptionLabel(p)}
+              </option>
+            ))}
+          </optgroup>
+          {showLabForks && labProjects.length > 0 && (
+            <optgroup label="Lab forks">
+              {labProjects.map((p) => (
+                <option key={p.id} value={p.id}>
+                  {curriculumOptionLabel(p)}
+                </option>
+              ))}
+            </optgroup>
+          )}
+          {/* Keep a selected lab visible if the toggle was just turned off. */}
+          {!showLabForks &&
+            labProjects.some((p) => p.id === projectId) && (
+              <optgroup label="Lab forks">
+                {labProjects
+                  .filter((p) => p.id === projectId)
+                  .map((p) => (
                     <option key={p.id} value={p.id}>
                       {curriculumOptionLabel(p)}
                     </option>
                   ))}
-                </optgroup>
-              )}
-              {/* Keep a selected lab visible if the toggle was just turned off. */}
-              {!showLabForks &&
-                labProjects.some((p) => p.id === projectId) && (
-                  <optgroup label="Lab forks">
-                    {labProjects
-                      .filter((p) => p.id === projectId)
-                      .map((p) => (
-                        <option key={p.id} value={p.id}>
-                          {curriculumOptionLabel(p)}
-                        </option>
-                      ))}
-                  </optgroup>
-                )}
-              {/* A deep-linked tree in neither list still needs a visible row,
-                  otherwise <select> falls back to showing the first option and
-                  the picker would disagree with what is actually loaded. */}
-              {!curriculumProjects.some((p) => p.id === projectId) &&
-                !labProjects.some((p) => p.id === projectId) &&
-                projects.some((p) => p.id === projectId) && (
-                  <optgroup label="Other">
-                    {projects
-                      .filter((p) => p.id === projectId)
-                      .map((p) => (
-                        <option key={p.id} value={p.id}>
-                          {curriculumOptionLabel(p)}
-                        </option>
-                      ))}
-                  </optgroup>
-                )}
-            </select>
-            {/* Engineering-only: experiment forks are not curricula anyone is
-                reviewing, so they stay behind ?advanced=1. */}
-            {deepLink.advanced && (
-            <label className="topbar-lab-toggle" title="Show lab-* experiment forks">
-              <input
-                type="checkbox"
-                checked={showLabForks}
-                onChange={(e) => {
-                  const on = e.target.checked;
-                  setShowLabForks(on);
-                  // Leaving labs: snap back to a real curriculum so the list stays clean.
-                  if (!on && labProjects.some((p) => p.id === projectId)) {
-                    const next =
-                      curriculumProjects.find((p) => p.has_review_run) ??
-                      curriculumProjects[0];
-                    if (next) setProjectId(next.id);
-                  }
-                }}
-              />
-              <span>Lab forks</span>
-            </label>
+              </optgroup>
             )}
-            {topView === "review" && (
-              <>
-                <select
-                  value={e2eRunId}
-                  onChange={(e) => setE2eRunId(e.target.value)}
-                  disabled={!e2eRuns.length}
-                  aria-label="Audit"
-                  title="Finished audits of this curriculum"
-                >
-                  {!e2eRuns.length ? (
-                    <option value="">
-                      {e2eListLoaded ? "No finished audit yet" : "Loading…"}
+          {/* A deep-linked tree in neither list still needs a visible row,
+              otherwise <select> falls back to showing the first option and
+              the picker would disagree with what is actually loaded. */}
+          {!curriculumProjects.some((p) => p.id === projectId) &&
+            !labProjects.some((p) => p.id === projectId) &&
+            projects.some((p) => p.id === projectId) && (
+              <optgroup label="Other">
+                {projects
+                  .filter((p) => p.id === projectId)
+                  .map((p) => (
+                    <option key={p.id} value={p.id}>
+                      {curriculumOptionLabel(p)}
                     </option>
-                  ) : (
-                    e2eRuns.map((r) => (
-                      <option key={r.run_id} value={r.run_id}>
-                        {auditLabel(r)}
-                      </option>
-                    ))
-                  )}
-                </select>
-                {/* Model runs are an A/B research control, not a reviewer
-                    control, and are empty on a normal install. */}
-                {deepLink.advanced && (
-                <select
-                  value={graphRunId}
-                  onChange={(e) => setGraphRunId(e.target.value)}
-                  disabled={!sortedGraphRuns.length || !e2eRunId}
-                  aria-label="Model run"
-                  title={
-                    e2eRunId
-                      ? `Graph nested under e2e/runs/${e2eRunId}/graph/runs/`
-                      : "Open a finished audit first"
-                  }
-                >
-                  {!sortedGraphRuns.length ? (
-                    <option value="">No model runs</option>
-                  ) : (
-                    sortedGraphRuns.map((r) => (
-                      <option key={r.run_id} value={r.run_id}>
-                        {graphRunLabel(r)}
-                        {r.active ? " · active" : ""}
-                        {r.n_haspart ? ` · ${r.n_haspart}u` : ""}
-                      </option>
-                    ))
-                  )}
-                </select>
-                )}
-              </>
+                  ))}
+              </optgroup>
             )}
-          </>
+        </select>
+        {/* Engineering-only: experiment forks are not curricula anyone is
+            reviewing, so they stay behind ?advanced=1. */}
+        {deepLink.advanced && (
+        <label className="topbar-lab-toggle" title="Show lab-* experiment forks">
+          <input
+            type="checkbox"
+            checked={showLabForks}
+            onChange={(e) => {
+              const on = e.target.checked;
+              setShowLabForks(on);
+              // Leaving labs: snap back to a real curriculum so the list stays clean.
+              if (!on && labProjects.some((p) => p.id === projectId)) {
+                const next =
+                  curriculumProjects.find((p) => p.has_review_run) ??
+                  curriculumProjects[0];
+                if (next) setProjectId(next.id);
+              }
+            }}
+          />
+          <span>Lab forks</span>
+        </label>
+        )}
+        <select
+          value={e2eRunId}
+          onChange={(e) => setE2eRunId(e.target.value)}
+          disabled={!e2eRuns.length}
+          aria-label="Audit"
+          title="Finished audits of this curriculum"
+        >
+          {!e2eRuns.length ? (
+            <option value="">
+              {e2eListLoaded ? "No finished audit yet" : "Loading…"}
+            </option>
+          ) : (
+            e2eRuns.map((r) => (
+              <option key={r.run_id} value={r.run_id}>
+                {auditLabel(r)}
+              </option>
+            ))
+          )}
+        </select>
+        {/* Model runs are an A/B research control, not a reviewer
+            control, and are empty on a normal install. */}
+        {deepLink.advanced && (
+        <select
+          value={graphRunId}
+          onChange={(e) => setGraphRunId(e.target.value)}
+          disabled={!sortedGraphRuns.length || !e2eRunId}
+          aria-label="Model run"
+          title={
+            e2eRunId
+              ? `Graph nested under e2e/runs/${e2eRunId}/graph/runs/`
+              : "Open a finished audit first"
+          }
+        >
+          {!sortedGraphRuns.length ? (
+            <option value="">No model runs</option>
+          ) : (
+            sortedGraphRuns.map((r) => (
+              <option key={r.run_id} value={r.run_id}>
+                {graphRunLabel(r)}
+                {r.active ? " · active" : ""}
+                {r.n_haspart ? ` · ${r.n_haspart}u` : ""}
+              </option>
+            ))
+          )}
+        </select>
         )}
         <div className="spacer" />
-        {topView === "overview" && (
-          <span className="mono" style={{ color: "var(--muted)" }}>
-            how it works
-          </span>
-        )}
-        {topView === "review" && (
-          <span className="mono" style={{ color: "var(--muted)" }}>
-            {e2eRunId
-              ? auditLabel(e2eRuns.find((r) => r.run_id === e2eRunId))
-              : "no finished audit"}
-          </span>
-        )}
-        {topView === "next" && (
-          <span className="mono" style={{ color: "var(--muted)" }}>
-            what to fix next
-          </span>
-        )}
+        <span className="mono" style={{ color: "var(--muted)" }}>
+          {e2eRunId
+            ? auditLabel(e2eRuns.find((r) => r.run_id === e2eRunId))
+            : "no finished audit"}
+        </span>
       </div>
 
-      {topView === "overview" ? (
-        <Overview advanced={deepLink.advanced} />
-      ) : serviceError ? (
-        // Checked before every data-backed view. The Overview deck above is
-        // static, so it stays readable even when the service is unreachable.
+      {serviceError ? (
+        // Checked before every data-backed view below: without this each
+        // "nothing here yet" panel would be stating a comfortable lie when the
+        // truth is that the local service cannot be reached at all.
         <ServiceDown
           error={serviceError}
           onRetry={() => setReloadKey((k) => k + 1)}
         />
-      ) : topView === "next" ? (
-        <NextSteps projectId={projectId} />
       ) : !e2eListLoaded ? (
         <div className="layout">
           <div className="main">
@@ -1121,7 +1092,9 @@ export function RunReview() {
                     lessons={selectedUnitLessons}
                     onSelectLesson={openLessonDetail}
                     artifacts={selectedUnitArtifacts}
-                    onSelectArtifact={openArtifactDetail}
+                    onSelectArtifact={(docId) =>
+                      openArtifactDetail(docId, selectedUnitId!)
+                    }
                   />
                   <GraphBelongingPanel
                     overview={graphOverview}
@@ -1231,6 +1204,13 @@ export function RunReview() {
               }
               nPathsRan={nPathsRan}
               advanced={deepLink.advanced}
+              docsByUnit={docsByUnit}
+              onSelectDoc={openArtifactDetail}
+              activeDoc={
+                showArtifactDetail
+                  ? { docId: selectedArtifactId!, unitId: selectedArtifactUnitId }
+                  : null
+              }
               onSelect={(path, type) => {
                 if (
                   path === UNITS_VIEW ||

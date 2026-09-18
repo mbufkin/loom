@@ -404,6 +404,74 @@ def test_bundle_version_changes_only_when_the_built_app_changes():
         fx.close()
 
 
+def test_every_listed_output_says_which_viewer_opens_it():
+    """A PDF must arrive tagged as one, or the reviewer reads its bytes.
+
+    The review screen picks its viewer from this `type` and treats a missing one
+    as Markdown. The global audit PDF was listed with only a label and a path,
+    so clicking it rendered "%PDF-1.4 ... /BaseFont /Helvetica" as prose -- the
+    one report a principal is most likely to open, and the failure looked like a
+    corrupt file rather than a missing field.
+    """
+    fx = _Fixture()
+    try:
+        out = fx.projects / "typed" / "output"
+        out.mkdir(parents=True)
+        (out / "DASHBOARD.md").write_text("# Dashboard\n", encoding="utf-8")
+        (out / "GLOBAL-AUDIT-REPORT.pdf").write_bytes(b"%PDF-1.4\n")
+
+        code, body = fx.request("GET", "/api/projects/typed/outputs")
+        assert code == 200, body
+
+        # Checked across every group rather than on the PDF alone: the point is
+        # that nothing is listed untyped, whichever list it came from.
+        listed = [*body["plates"], *body["layers"], *body["pdfs"]]
+        assert listed, "fixture should produce something to open"
+        untyped = [f["path"] for f in listed if not f.get("type")]
+        assert not untyped, f"no viewer chosen for {untyped}"
+
+        by_path = {f["path"]: f["type"] for f in listed}
+        assert by_path["output/GLOBAL-AUDIT-REPORT.pdf"] == "pdf"
+        assert by_path["output/DASHBOARD.md"] == "md"
+    finally:
+        fx.close()
+
+
+def test_the_first_pass_packet_is_listed_once_not_under_both_its_names():
+    """reports.py writes one packet and copies it to a second name.
+
+    write_first_pass emits FIRST-PASS.md and then GLOBAL-AUDIT.md as an alias of
+    it, so the two files are byte-identical after every run. The rail listed
+    both, which put the same 79-line document in front of the reviewer twice
+    with nothing to distinguish them -- reading one and then the other is pure
+    waste, and the second read looks like a report that failed to update.
+
+    Asserting on content rather than on the literal label keeps this honest if
+    the entries are ever renamed.
+    """
+    fx = _Fixture()
+    try:
+        out = fx.projects / "aliased" / "output"
+        out.mkdir(parents=True)
+        packet = "# Curriculum Review Work Packet (first-pass)\n"
+        (out / "FIRST-PASS.md").write_text(packet, encoding="utf-8")
+        (out / "GLOBAL-AUDIT.md").write_text(packet, encoding="utf-8")
+        (out / "DASHBOARD.md").write_text("# Dashboard\n", encoding="utf-8")
+
+        code, body = fx.request("GET", "/api/projects/aliased/outputs")
+        assert code == 200, body
+
+        paths = [f["path"] for f in body["plates"]]
+        aliases = [p for p in paths if p.endswith(("FIRST-PASS.md", "GLOBAL-AUDIT.md"))]
+        assert len(aliases) == 1, f"packet listed under both names: {aliases}"
+
+        # The dashboard is untouched by this: it is a different document and
+        # must still be there, first.
+        assert paths[0] == "output/DASHBOARD.md"
+    finally:
+        fx.close()
+
+
 if __name__ == "__main__":
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     failed = 0

@@ -5,6 +5,14 @@ export const VIEW_UNITS = "__units__";
 export const VIEW_GRAPH = "__graph__";
 export const VIEW_PATHS = "__paths__";
 
+/** One reviewed curriculum document, as the rail needs to show it. */
+export interface NavDoc {
+  doc_id: string;
+  title: string;
+  /** False when the document is missing a part its type is expected to have. */
+  gate_pass: boolean;
+}
+
 interface Props {
   outputs: OutputsTree;
   activePath: string | null;
@@ -16,6 +24,14 @@ interface Props {
   nPathsRan?: number;
   /** Engineering mode: keep unavailable options visible for diagnosis. */
   advanced?: boolean;
+  /** The curriculum documents reviewed in each unit, keyed by unit id. Empty
+      until the artifact rung has run. */
+  docsByUnit?: Record<string, NavDoc[]>;
+  /** Opens one document with the parts of it that were reviewed. Takes the
+      unit too: a course-level document is filed under every unit it serves,
+      and each of those units reviewed it separately. */
+  onSelectDoc?: (docId: string, unitId: string) => void;
+  activeDoc?: { docId: string; unitId: string | null } | null;
 }
 
 // Left-rail navigation. Reports (incl. Global audit) come first; a dedicated
@@ -29,6 +45,9 @@ export function OutputNav({
   graphLabel = "Curriculum graph",
   nPathsRan = 0,
   advanced = false,
+  docsByUnit = {},
+  onSelectDoc,
+  activeDoc = null,
 }: Props) {
   const items = (files: OutputsTree["plates"]) =>
     files.map((f) => (
@@ -126,45 +145,91 @@ export function OutputNav({
           )}
         </details>
 
-        {section("How it was checked", outputs.layers, hasActivePlateInLayers)}
+        {/* The Layer 0/1/2 and rung reports are the audit's working papers:
+            the same findings one stage earlier, before they were written up
+            for a reader. Someone reviewing a curriculum wants what was found,
+            not the machinery that found it, so these sit behind ?advanced=1
+            rather than in the default rail -- still there to diagnose a run
+            with, just not competing with the reports for attention. */}
+        {advanced &&
+          section("How it was checked", outputs.layers, hasActivePlateInLayers)}
         {section("PDF", outputs.pdfs, false)}
 
-        {/* Per-unit file lists stay available but collapsed by default. */}
+        {/* Per unit: the curriculum documents first, then the files Loom
+            wrote about them. Documents lead because they are what a reviewer
+            came to look at -- opening one shows the document beside the parts
+            of it that were reviewed, which is the whole point of the audit.
+            The generated packets are the write-up of that and sit under a
+            sub-group, present but not first in the eye's path. */}
         {outputs.units.length > 0 && (
           <details className="nav-group" open={false}>
             <summary>
-              <span>Unit files</span>
+              <span>Unit documents</span>
               <span className="tag">{outputs.units.length}</span>
             </summary>
-            {outputs.units.map((u) => (
-              <details key={u.unit_id} className="nav-group nav-unit">
-                <summary>
-                  <span>{u.title || u.unit_id}</span>
-                  <span className="tag">
-                    {(u.files?.length ?? 0) + (u.teacher_files?.length ?? 0)}
-                  </span>
-                </summary>
-                {(u.files ?? []).map((f) => (
-                  <button
-                    key={f.path}
-                    className={`nav-item ${activePath === f.path ? "active" : ""}`}
-                    onClick={() => onSelect(f.path, f.type)}
-                  >
-                    <span>{f.label}</span>
-                  </button>
-                ))}
-                {(u.teacher_files ?? []).map((f) => (
-                  <button
-                    key={f.path}
-                    className={`nav-item ${activePath === f.path ? "active" : ""}`}
-                    onClick={() => onSelect(f.path, f.type)}
-                  >
-                    <span>{f.label}</span>
-                    <span className="tag">teacher</span>
-                  </button>
-                ))}
-              </details>
-            ))}
+            {outputs.units.map((u) => {
+              const docs = docsByUnit[u.unit_id] ?? [];
+              const generated = [
+                ...(u.files ?? []),
+                ...(u.teacher_files ?? []),
+              ];
+              return (
+                <details key={u.unit_id} className="nav-group nav-unit">
+                  <summary>
+                    <span>{u.title || u.unit_id}</span>
+                    {/* Counts the documents when there are any, because that is
+                        what the group now leads with. Falls back to the file
+                        count so a unit audited before the artifact rung ran
+                        still reports something truthful. */}
+                    <span className="tag">
+                      {docs.length || generated.length}
+                    </span>
+                  </summary>
+                  {docs.map((d) => {
+                    const on =
+                      activeDoc?.docId === d.doc_id &&
+                      activeDoc?.unitId === u.unit_id;
+                    return (
+                      <button
+                        key={d.doc_id}
+                        className={`nav-item ${on ? "active" : ""}`}
+                        onClick={() => onSelectDoc?.(d.doc_id, u.unit_id)}
+                        title="The document, and the parts of it that were reviewed"
+                      >
+                        <span>{d.title || d.doc_id}</span>
+                        {/* Only the gaps are badged. Tagging every document
+                            "complete" would put a label on all of them and
+                            leave the reviewer no better off than no labels. */}
+                        {!d.gate_pass && <span className="tag warn">gaps</span>}
+                      </button>
+                    );
+                  })}
+                  {generated.length > 0 && (
+                    <details className="nav-group nav-generated">
+                      <summary>
+                        <span>Generated files</span>
+                        <span className="tag">{generated.length}</span>
+                      </summary>
+                      {generated.map((f) => (
+                        <button
+                          key={f.path}
+                          className={`nav-item ${activePath === f.path ? "active" : ""}`}
+                          onClick={() => onSelect(f.path, f.type)}
+                        >
+                          <span>{f.label}</span>
+                          {f.type === "pdf" && (
+                            <span className="tag">pdf</span>
+                          )}
+                        </button>
+                      ))}
+                    </details>
+                  )}
+                  {!docs.length && !generated.length && (
+                    <p className="nav-empty">Nothing recorded for this unit.</p>
+                  )}
+                </details>
+              );
+            })}
           </details>
         )}
       </div>
