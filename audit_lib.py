@@ -1034,6 +1034,94 @@ def dedupe_table_line(line: str) -> str:
     return " | ".join(out) if len(out) > 1 else (out[0] if out else line)
 
 
+# Paragraph structure is the unit of citation in this pipeline. Layer 0 numbers
+# the paragraphs of whatever text it reads and asks the model to cite ranges of
+# them, then slices the excerpt out of its own paragraph list -- so an excerpt is
+# only ever as precise as a paragraph is small.
+#
+# HTML and plain-text sources arrive with blank lines between blocks, and that
+# works. PDF text does not. Measured on the TEA Bluebonnet Algebra I Teacher
+# Edition, Module 1: 349,886 characters, 9,913 single newlines, zero blank lines.
+# The entire module is one paragraph, so every citation in it resolves to the
+# whole document and the evidence ledger cannot say where anything came from.
+# It also defeats the wide-span check, because a one-paragraph span never looks
+# wide, and it pushes the chunker onto its oversized-paragraph guard.
+#
+# Reflowing invents nothing and joins nothing. It only promotes some of the line
+# breaks already in the text to paragraph breaks, so every character survives in
+# its original order and an excerpt sliced from the result is still verbatim
+# source text.
+TARGET_PARAGRAPH_CHARS = 1_200
+
+# A document is rebuilt only when its paragraphs average more than this many
+# characters, i.e. when whatever blank lines it has are too sparse to be doing
+# the job. Judging the average against the target is what matters, not counting
+# breaks: the Bluebonnet student edition course guide has seventeen blank lines
+# across 68,615 characters, which looks like structure until you notice each
+# "paragraph" is 3,800 characters and useless as a citation. HTML and Markdown
+# sources average well under 100 and are never touched.
+UNSTRUCTURED_MEAN_PARAGRAPH_CHARS = TARGET_PARAGRAPH_CHARS * 2
+
+# Lines that should begin a paragraph even mid-block: the headings that carry a
+# curriculum document's shape. Breaking here keeps a cited range aligned to
+# something a teacher would recognise rather than an arbitrary 1,200 characters.
+#
+# Deliberately does NOT break on bullets or numbered list items. On the
+# Bluebonnet Module 1 teacher edition, adding them took the median paragraph
+# from 700 characters to 86 and made 17% of paragraphs shorter than 40 -- most
+# of them list fragments too small to stand as evidence on their own. It also
+# costs real money downstream: Layer 0-B spends a model call on every span wider
+# than WIDE_SPAN_PARAGRAPHS, and a single lesson written as a bulleted list
+# crosses that threshold on paragraph count alone while covering one idea.
+_PARAGRAPH_START_RE = re.compile(
+    r"^\s*(?:"
+    r"(?:LESSON|TOPIC|MODULE|UNIT|DAY|SESSION|CHAPTER|APPENDIX|OVERVIEW)\b"
+    r"|(?:Lesson|Topic|Module|Unit|Day|Session|Chapter|Appendix)\s+\d"
+    r"|TEKS\b|ELPS\b"
+    r")"
+)
+
+
+def looks_unstructured(text: str) -> bool:
+    """True when a document's paragraphs are too big to cite usefully."""
+    paragraphs = [p for p in text.split("\n\n") if p.strip()]
+    if not paragraphs:
+        return bool(text.strip())
+    return len(text) / len(paragraphs) > UNSTRUCTURED_MEAN_PARAGRAPH_CHARS
+
+
+def reflow_paragraphs(text: str, target: int = TARGET_PARAGRAPH_CHARS) -> str:
+    """Promote line breaks to paragraph breaks in text that has no paragraphs.
+
+    Breaks at headings and list markers where they exist, and otherwise once a
+    block reaches `target` characters. Only ever splits at a line break that was
+    already in the text, which is what keeps the result verbatim.
+    """
+    paragraphs: list[str] = []
+    current: list[str] = []
+    current_len = 0
+
+    def flush() -> None:
+        nonlocal current, current_len
+        if current:
+            paragraphs.append("\n".join(current))
+            current = []
+            current_len = 0
+
+    for line in text.split("\n"):
+        if not line.strip():
+            flush()
+            continue
+        if current and _PARAGRAPH_START_RE.match(line):
+            flush()
+        current.append(line)
+        current_len += len(line) + 1
+        if current_len >= target:
+            flush()
+    flush()
+    return "\n\n".join(paragraphs)
+
+
 def clean_document_text(raw: str) -> str:
     lines = [dedupe_table_line(ln.rstrip()) for ln in raw.splitlines()]
     cleaned = []
@@ -1044,7 +1132,12 @@ def clean_document_text(raw: str) -> str:
             continue
         cleaned.append(ln)
         prev = stripped
-    return "\n".join(cleaned).strip()
+    text = "\n".join(cleaned).strip()
+    # Guarded so that every corpus already in the repo is byte-for-byte
+    # unaffected: only text that has no paragraph structure to lose gets rebuilt.
+    if looks_unstructured(text):
+        text = reflow_paragraphs(text)
+    return text
 
 
 def extract_day_hints(text: str) -> list[int]:

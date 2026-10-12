@@ -64,6 +64,17 @@ CHUNK_THRESHOLD_CHARS = 100_000
 CHUNK_SIZE_CHARS = 60_000  # generous single-prompt budget per chunk (~15K tokens)
 OVERLAP_PARAGRAPHS = 2  # trailing paragraphs repeated at the start of the next chunk
 
+# Ceiling on how much of a chunk the repeated overlap may occupy. Without it the
+# overlap is "the last OVERLAP_PARAGRAPHS paragraphs" at any size, which is fine
+# for prose but runs away when paragraphs are themselves huge -- and the
+# oversized-paragraph guard below manufactures exactly that case, slicing a
+# blank-line-free document into pieces of chunk_size each. Carrying two of those
+# forward starts the next chunk at 2x the budget before a single new character is
+# added, so chunks grow to 3x chunk_size and the same text is sent two or three
+# times. Measured on a 300K-char document with no blank lines: 5 chunks sized
+# 60K/120K/180K/180K/180K, 2.4x more text billed than the document contains.
+OVERLAP_MAX_FRACTION = 0.2
+
 # --- Citation mechanism: pointers, not generated text -----------------------
 # Earlier versions asked the model to *retype* a verbatim excerpt, then verified it
 # post-hoc with excerpt_cited_in() (fuzzy whitespace-normalized substring match).
@@ -349,14 +360,31 @@ def split_into_chunks(
             for i in range(0, len(para), chunk_size):
                 safe_paragraphs.append(para[i : i + chunk_size])
 
+    # Trailing paragraphs to repeat at the top of the next chunk, taken newest
+    # first and stopped once they would eat OVERLAP_MAX_FRACTION of the budget.
+    # Dropping the oldest first keeps the overlap adjacent to the boundary it
+    # exists to protect, and the budget is what stops a single huge paragraph
+    # from being carried forward at all -- there is no useful sense in which a
+    # 60,000-char slice is "context" for the slice after it.
+    overlap_budget = int(chunk_size * OVERLAP_MAX_FRACTION)
+
+    def overlap_tail(paras: list[str]) -> list[str]:
+        tail: list[str] = []
+        total = 0
+        for para in reversed(paras[-overlap_paragraphs:] if overlap_paragraphs else []):
+            if total + len(para) > overlap_budget:
+                break
+            tail.insert(0, para)
+            total += len(para)
+        return tail
+
     chunks: list[str] = []
     current: list[str] = []
     current_len = 0
     for para in safe_paragraphs:
         if current_len + len(para) > chunk_size and current:
             chunks.append("\n\n".join(current))
-            overlap_start = max(0, len(current) - overlap_paragraphs)
-            current = current[overlap_start:]
+            current = overlap_tail(current)
             current_len = sum(len(p) for p in current)
         current.append(para)
         current_len += len(para)
@@ -977,6 +1005,16 @@ is shown, because nothing outside it may be cited):
 {LAYER0B_SCHEMA}
 """
     step = f"{row['element_id']}-layer0b"
+    # enable_thinking=False for the same reason model_call above sets it, and
+    # this was the one Layer 0 call path that never got it. Layer 0-B wants an
+    # object matching LAYER0B_SCHEMA; a reasoning model left to think spends
+    # the 16384 ceiling on monologue instead, and NVIDIA's gateway does not
+    # return the wrong answer -- it times out at 504 with nothing to parse.
+    #
+    # Measured on a live run of disd-aas-icev-smoke: Layer 0 decomposed all 27
+    # documents in nine minutes, then Layer 0-B managed two of its 23 flagged
+    # spans in the next eighteen, every call retrying 504s. Nothing downstream
+    # of it -- graph, routing, Layer 1/2, reports -- can start until it ends.
     resp = model_chat(
         cfg,
         "verifier",
@@ -984,6 +1022,7 @@ is shown, because nothing outside it may be cited):
         step,
         temperature=0.1,
         max_tokens=16384,
+        enable_thinking=False,
     )
     return parse_model_json(extract_content(resp), context=step)
 

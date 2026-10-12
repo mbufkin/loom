@@ -14,6 +14,7 @@ by this stage — rollup.py reads it to produce dated pacing plans.
 from __future__ import annotations
 
 import argparse
+import difflib
 import json
 import re
 import sys
@@ -236,6 +237,120 @@ ANALYST OUTPUT:
     return parse_json(extract_content(resp), step="ingest-verifier")
 
 
+def _filename_key(name: str) -> str:
+    """Collapse a filename to what survives a model retyping it."""
+    return re.sub(r"[^a-z0-9]+", "", name.casefold())
+
+
+def _digits(name: str) -> list[str]:
+    """Every run of digits in a filename, in order.
+
+    Module and volume numbers live here, and they are the one part of a
+    curriculum filename that must never be matched approximately: "Volume 1
+    Module 1" and "Volume 1 Module 2" differ by a single character in forty and
+    score 0.98 on any string similarity worth using. Requiring the digits to be
+    identical is what separates a dropped word from a different module.
+    """
+    return re.findall(r"\d+", name)
+
+
+def reconcile_source_files(records: list[dict], plan: dict) -> list[str]:
+    """Snap the plan's filenames back onto the real ones, and say what moved.
+
+    The organiser is handed a catalog of filenames and asked to group them, so
+    every name in its reply should be a name it was given. In practice it
+    retypes them, and a retyped identifier drifts: on the Bluebonnet Algebra I
+    corpus it returned "150-Day_Topic_Pacing_Guides" for a file called
+    "150-day_Topic_Pacing_Guides", and dropped a word from
+    "Student_Edition_Course_Guide". Both documents exist and both were correctly
+    grouped -- the plan was rejected over capitalisation and a missing word.
+
+    This is the same stance Layer 0 takes on citations: when the authoritative
+    list is already in hand, never let a model's transcription of it be the
+    thing that decides. Matching goes exact, then case- and
+    punctuation-insensitive, then near-miss for a dropped or added word -- and
+    anything still unmatched is left untouched so validate_coverage reports it
+    as the real problem it may be.
+
+    Every tier refuses to guess. A near-miss is accepted only when it is the
+    single candidate above the threshold and its module and volume numbers match
+    exactly, because the cost of being wrong here is evidence attributed to the
+    wrong unit, which no later stage can detect.
+    """
+    catalog = [r["source_file"] for r in records]
+    exact = set(catalog)
+    folded: dict[str, list[str]] = {}
+    for name in catalog:
+        folded.setdefault(_filename_key(name), []).append(name)
+
+    corrections: list[str] = []
+    for unit in plan.get("units", []):
+        files = unit.get("source_files") or []
+        for i, given in enumerate(files):
+            if given in exact:
+                continue
+            match = _resolve_filename(given, folded)
+            if match:
+                files[i] = match
+                corrections.append(f"{given} -> {match}")
+    return corrections
+
+
+# How close a retyped filename must be to the real one. 0.85 admits a dropped
+# word such as "Student_Course_Guide" for "Student_Edition_Course_Guide" (0.90)
+# while excluding documents that merely share a long prefix.
+FILENAME_MATCH_CUTOFF = 0.85
+
+
+def _resolve_filename(given: str, folded: dict[str, list[str]]) -> str | None:
+    """The one real filename `given` refers to, or None if that is not certain."""
+    key = _filename_key(given)
+
+    # Case and punctuation only: the plan said 150-Day, the file says 150-day.
+    candidates = folded.get(key, [])
+    if len(candidates) == 1:
+        return candidates[0]
+    if candidates:
+        return None  # two files differing only in punctuation: show the human
+
+    near = difflib.get_close_matches(
+        key, list(folded), n=3, cutoff=FILENAME_MATCH_CUTOFF
+    )
+    if len(near) != 1:
+        return None
+    hits = folded[near[0]]
+    if len(hits) != 1:
+        return None
+    if _digits(given) != _digits(hits[0]):
+        return None
+    return hits[0]
+
+
+def dedupe_source_files(plan: dict) -> list[str]:
+    """Collapse a document listed more than once inside one unit, and say which.
+
+    Listing a file twice under the same unit carries no information that listing
+    it once does not -- the unit either draws on that document or it does not.
+    So this is a transcription artifact, and the right response is to repair it
+    rather than to stop the run, which is what validate_coverage would do.
+
+    Note the deliberate narrowness: this only touches repeats *within* one unit.
+    The same document appearing under several units is the normal and intended
+    way a course-level pacing guide or standards alignment is represented, and
+    collapsing that would destroy real structure.
+    """
+    collapsed: list[str] = []
+    for unit in plan.get("units", []):
+        files = unit.get("source_files") or []
+        # dict.fromkeys keeps first-seen order, so the plan stays in the sequence
+        # the organiser chose instead of being silently re-sorted.
+        unique = list(dict.fromkeys(files))
+        if len(unique) != len(files):
+            collapsed.extend(f for f in unique if files.count(f) > 1)
+            unit["source_files"] = unique
+    return sorted(set(collapsed))
+
+
 def validate_coverage(records: list[dict], plan: dict) -> list[str]:
     """Deterministic check: every file assigned at least once, and no file listed
     twice within the same unit.
@@ -386,6 +501,19 @@ def ingest(project_id: str, sources: Path, skip_models: bool = False) -> Path:
         final = verifier_organize(cfg, records, draft)
         atomic_write(raw_dir / "organize-verifier.json", json.dumps(final, indent=2))
         plan = final
+
+    # Before anything reasons about which files are missing: a mistyped name
+    # looks exactly like an unplaced document, and share_unplaced_documents
+    # would then "helpfully" share a file that was already correctly grouped.
+    corrected = reconcile_source_files(records, plan)
+    if corrected:
+        log(f"filename match: {', '.join(corrected)}")
+
+    # After matching, not before: two mistyped spellings of one filename become
+    # a duplicate only once they have both been snapped onto the real name.
+    collapsed = dedupe_source_files(plan)
+    if collapsed:
+        log(f"listed more than once in a unit, collapsed: {', '.join(collapsed)}")
 
     shared = share_unplaced_documents(records, plan)
     if shared:

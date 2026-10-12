@@ -11,8 +11,80 @@ from __future__ import annotations
 import json
 import os
 import re
+import shutil
+import stat
 from datetime import datetime, timezone
 from pathlib import Path
+
+
+def _is_link(p: Path) -> bool:
+    """True for a symlink and, on Windows, for a directory junction too.
+
+    Path.is_symlink() answers False for a junction, so code that asks only
+    that question sees a junction as an ordinary directory full of real data.
+    set_active_graph_run asks it before deciding whether graph/units is
+    pre-namespace data worth preserving -- so once junctions became the
+    Windows fallback, the second call of a single run "migrated" its own
+    junction into runs/legacy-pre-namespace, and that phantom run then showed
+    up beside the real one in the review UI's run picker.
+    """
+    if p.is_symlink():
+        return True
+    try:
+        attrs = getattr(p.lstat(), "st_file_attributes", 0)
+    except OSError:
+        return False
+    return bool(attrs & getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0))
+
+
+def _remove_link(p: Path) -> None:
+    """Remove a link without touching what it points at.
+
+    A junction is a directory to the Windows API, so unlink refuses it and
+    rmdir is the call that removes the link itself rather than its contents.
+    """
+    try:
+        p.unlink()
+    except OSError:
+        os.rmdir(p)
+
+
+def _point_at(link: Path, target_rel: Path, *, is_dir: bool) -> str:
+    """Make `link` resolve to `target_rel`, however the platform permits.
+
+    Returns the mechanism used, for the caller's log.
+
+    Windows refuses os.symlink unless the process is elevated or Developer
+    Mode is on, and raises WinError 1314 otherwise. That killed a whole audit
+    on the machine this was first run on: Layer 0 and Layer 0-B had finished,
+    the graph phase had written every unit, and the run then aborted creating
+    a convenience link. Nothing that matters depends on these links --
+    graph/ACTIVE records which run is current, and the review UI reads
+    graph/runs/<id>/units/... directly -- so they are worth attempting and
+    never worth failing a run over.
+
+    A directory junction is the Windows equivalent that needs no privilege;
+    for the small JSON pointer a plain copy is truthful enough, since it is
+    rewritten on every run.
+    """
+    target_abs = (link.parent / target_rel).resolve()
+    try:
+        os.symlink(target_rel, link, target_is_directory=is_dir)
+        return "symlink"
+    except (OSError, NotImplementedError, AttributeError):
+        pass
+    if is_dir and os.name == "nt":
+        try:
+            import _winapi
+
+            _winapi.CreateJunction(str(target_abs), str(link))
+            return "junction"
+        except Exception:
+            pass
+    if not is_dir and target_abs.is_file():
+        shutil.copy2(target_abs, link)
+        return "copy"
+    return "skipped"
 
 
 def slugify_run_id(label: str) -> str:
@@ -98,8 +170,8 @@ def set_active_graph_run(project_root: Path, run_id: str) -> None:
     # Convenience symlink for legacy readers of graph/units/...
     link = graph / "units"
     target = Path("runs") / rid / "units"
-    if link.is_symlink():
-        link.unlink()
+    if _is_link(link):
+        _remove_link(link)
     elif link.exists():
         # Preserve pre-namespaced data once: move into runs/legacy-units.
         legacy = graph_run_dir(project_root, "legacy-pre-namespace")
@@ -120,15 +192,23 @@ def set_active_graph_run(project_root: Path, run_id: str) -> None:
                 "move it aside manually before continuing"
             )
     if not link.exists():
-        os.symlink(target, link)
+        how = _point_at(link, target, is_dir=True)
+        if how == "skipped":
+            from audit_lib import log
+
+            log(
+                f"NOTE: could not create {link} (no symlink or junction support). "
+                f"graph/ACTIVE still names the run; only legacy graph/units readers "
+                f"are affected."
+            )
 
     # Also expose PHASE-SUMMARY at graph/ for run_project DONE banner.
     phase = run_dir / "PHASE-SUMMARY.json"
     phase_link = graph / "PHASE-SUMMARY.json"
     if phase.is_file():
-        if phase_link.is_symlink() or phase_link.exists():
-            phase_link.unlink()
-        os.symlink(Path("runs") / rid / "PHASE-SUMMARY.json", phase_link)
+        if _is_link(phase_link) or phase_link.exists():
+            _remove_link(phase_link)
+        _point_at(phase_link, Path("runs") / rid / "PHASE-SUMMARY.json", is_dir=False)
 
 
 def resolve_run_id(
