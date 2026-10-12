@@ -327,6 +327,14 @@ class LiveServer(unittest.TestCase):
         self.assertEqual(self._req("/api/models/key", "POST", t, b"{}")[0], 403)
         self.assertEqual(self._req("/api/models/providers", headers=t)[0], 403)
 
+    def test_organise_and_run_needs_a_token_and_is_not_desktop_only(self):
+        path = "/api/projects/no-such-curriculum/organise-and-run"
+        self.assertEqual(self._req(path, "POST", body=b"{}")[0], 401)
+        self.assertEqual(self._req(path, "POST", hdr("junk"), b"{}")[0], 403)
+        # With a valid token it reaches the router: 404 for a curriculum that
+        # does not exist, not the guard's 403. Nothing is spawned.
+        self.assertEqual(self._req(path, "POST", hdr(make_token()), b"{}")[0], 404)
+
     def test_healthz_from_localhost(self):
         self.assertEqual(self._req("/healthz")[0], 200)
 

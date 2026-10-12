@@ -15,6 +15,7 @@ Endpoints (all under /api):
   POST /api/projects/{id}/documents?name= -> store one document (raw body)
   POST /api/projects/{id}/documents/delete-> remove one document from sources/
   POST /api/projects/{id}/organise        -> {runId}  (spawns ingest.py)
+  POST /api/projects/{id}/organise-and-run -> {runId} (ingest, then the audit, as one run)
   GET  /api/projects/{id}/units           -> units organise proposed, for review
   GET  /api/projects/{id}/outputs[?e2e_run=] -> grouped tree of reviewable files
   GET  /api/projects/{id}/file?path=REL[&e2e_run=] -> raw bytes of one file (guarded)
@@ -1095,12 +1096,14 @@ def _set_packet_type(pid: str, type_id: str) -> dict:
 # exists, let alone that `run-audit` prepares its run directory before ingest
 # and therefore needs manifest.yaml to already be there.
 #
-# The ordering constraint is real and cannot be papered over, so the API keeps
-# organise as its own explicit step rather than folding it into the audit. That
-# also happens to be the right product shape: organising is model-driven and can
-# mis-group files, it is cheap next to a full audit, and confirming the units
-# first is both faster and more trustworthy than discovering the mistake at the
-# end of a two-hour run.
+# The ordering constraint is real: organise has to finish, with a valid
+# manifest, before the audit can start. The setup screen used to expose it as
+# two steps with a unit review in between. The operator chose one step instead
+# ("Organise and run the audit", no review), so organise-and-run chains the two
+# *here on the server*: one tracked run that organises, checks the manifest, and
+# only then audits. Chaining in the browser would stop the moment the tab
+# closed. The separate organise and run endpoints stay for the desktop app and
+# the tests.
 
 # Stricter than _project_dir's character class, which has to keep accepting the
 # ids of curricula that already exist on disk. New ones follow the documented
@@ -1152,6 +1155,15 @@ def _new_project_dir(pid: str) -> Path:
     if target.parent != PROJECTS.resolve():
         raise _BadRequest("invalid curriculum name")
     return target
+
+
+class _Busy(RuntimeError):
+    """A run is already going for this curriculum.
+
+    Two runs on one curriculum write the same manifest.yaml and output/ at the
+    same time, so the second is refused (409) rather than queued. A double
+    click is the usual cause, and refusing it is what makes it harmless.
+    """
 
 
 def _create_project(pid: str, title: str = "") -> dict:
@@ -1307,14 +1319,57 @@ def _remove_document(pid: str, raw_name: str) -> dict:
     return {"ok": True, "removed": rel}
 
 
-def _start_organise(pid: str) -> str:
-    """Spawn ingest.py for <pid>, tracked like an audit so the client can poll.
+def _organise_argv(pid: str) -> list[str]:
+    """The ingest command. One definition for both ways of starting it, and
+    the seam the tests replace with a fake that makes no model calls."""
+    return [sys.executable, str(ROOT / "ingest.py"), "--project", pid]
 
-    LOOM_E2E_RUN is stripped from the child's environment deliberately. Ingest
-    has to write manifest.yaml and units/ to the real curriculum folder: those
-    are inputs that `run-audit` copies into its per-model run directory, so
-    writing them inside a run directory instead would leave the curriculum
-    itself still unorganised and the next audit would fail exactly as before.
+
+def _organise_env() -> dict[str, str]:
+    """ingest's environment, without LOOM_E2E_RUN.
+
+    Ingest has to write manifest.yaml and units/ to the real curriculum
+    folder: those are inputs that `run-audit` copies into its per-model run
+    directory, so writing them inside a run directory instead would leave the
+    curriculum itself still unorganised and the next audit would fail exactly
+    as before.
+    """
+    env = {k: v for k, v in os.environ.items() if k != "LOOM_E2E_RUN"}
+    env["PYTHONIOENCODING"] = "utf-8"
+    return env
+
+
+def _audit_argv(pid: str, flags: list[str]) -> list[str]:
+    """The audit command; see _start_run for why it is sys.executable."""
+    return [sys.executable, str(RUN_PROJECT), "--project", pid, *flags]
+
+
+def _audit_env() -> dict[str, str]:
+    return {**os.environ, "PYTHONIOENCODING": "utf-8"}
+
+
+def _spawn_logged(argv: list[str], log_fh, env: dict[str, str]) -> subprocess.Popen:
+    """Start a child with stdout and stderr both going to the run's log."""
+    return subprocess.Popen(
+        argv,
+        cwd=str(ROOT),
+        stdout=log_fh,
+        stderr=subprocess.STDOUT,
+        text=True,
+        # The pipeline writes curriculum text -- em dashes, curly quotes,
+        # accented names -- and Windows still defaults to cp1252, which turns
+        # those into mojibake or a hard UnicodeEncodeError mid-run.
+        encoding="utf-8",
+        errors="replace",
+        env=env,
+    )
+
+
+def _require_documents(pid: str) -> Path:
+    """The curriculum's folder, refusing one with nothing in sources/ yet.
+
+    Spawning ingest on an empty folder burns a model round-trip to produce a
+    manifest with no units, which then fails validation further down.
     """
     project = _project_dir(pid)
     sources = project / "sources"
@@ -1323,22 +1378,17 @@ def _start_organise(pid: str) -> str:
             "Add some documents first — there is nothing in this curriculum's "
             "sources folder yet."
         )
+    return project
+
+
+def _start_organise(pid: str) -> str:
+    """Spawn ingest.py for <pid>, tracked like an audit so the client can poll."""
+    _require_documents(pid)
     run_id = uuid.uuid4().hex[:12]
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
     log_path = RUNS_DIR / f"{run_id}.log"
     log_fh = open(log_path, "w", encoding="utf-8")  # noqa: SIM115 - closed in waiter
-    env = {k: v for k, v in os.environ.items() if k != "LOOM_E2E_RUN"}
-    env["PYTHONIOENCODING"] = "utf-8"
-    proc = subprocess.Popen(
-        [sys.executable, str(ROOT / "ingest.py"), "--project", pid],
-        cwd=str(ROOT),
-        stdout=log_fh,
-        stderr=subprocess.STDOUT,
-        text=True,
-        encoding="utf-8",
-        errors="replace",
-        env=env,
-    )
+    proc = _spawn_logged(_organise_argv(pid), log_fh, _organise_env())
     with _RUNS_LOCK:
         _RUNS[run_id] = {
             "pid": pid,
@@ -1435,19 +1485,7 @@ def _start_run(pid: str, flags: list[str]) -> str:
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
     log_path = RUNS_DIR / f"{run_id}.log"
     log_fh = open(log_path, "w", encoding="utf-8")  # noqa: SIM115 - closed in waiter
-    proc = subprocess.Popen(
-        [sys.executable, str(RUN_PROJECT), "--project", pid, *clean],
-        cwd=str(ROOT),
-        stdout=log_fh,
-        stderr=subprocess.STDOUT,
-        text=True,
-        # The pipeline writes curriculum text -- em dashes, curly quotes,
-        # accented names -- and Windows still defaults to cp1252, which turns
-        # those into mojibake or a hard UnicodeEncodeError mid-run.
-        encoding="utf-8",
-        errors="replace",
-        env={**os.environ, "PYTHONIOENCODING": "utf-8"},
-    )
+    proc = _spawn_logged(_audit_argv(pid, clean), log_fh, _audit_env())
     with _RUNS_LOCK:
         _RUNS[run_id] = {
             "pid": pid,
@@ -1474,7 +1512,129 @@ def _start_run(pid: str, flags: list[str]) -> str:
     return run_id
 
 
-_WEASYPRINT_OK: bool | None = None
+# Written into the log between the two phases of an organise-and-run. The
+# status endpoint reads pipeline stages only from what follows it, so ingest's
+# output can never be mistaken for audit progress.
+AUDIT_PHASE_MARKER = "=== Auditing ==="
+
+
+def _start_organise_and_run(pid: str) -> str:
+    """Organise <pid>, then audit it, as one tracked run.
+
+    Returns at once with a runId; the work happens on a server thread, so
+    closing the browser does not stop it. The run record carries a `phase`
+    ("organising", then "auditing") that the status endpoint reports, and both
+    phases write to the same log.
+
+    Organises every time, never "only if stale": the button promises an audit
+    of the documents as they are now, and re-organising is cheap next to
+    auditing a stale manifest.
+
+    The audit gets no flags, exactly as the separate Run step starts it.
+    """
+    _require_documents(pid)
+    run_id = uuid.uuid4().hex[:12]
+    RUNS_DIR.mkdir(parents=True, exist_ok=True)
+    log_path = RUNS_DIR / f"{run_id}.log"
+    log_path.write_text("", encoding="utf-8")
+    # Check and register under one lock hold: two requests arriving together
+    # must not both see "nothing running" and both start.
+    with _RUNS_LOCK:
+        for rec in _RUNS.values():
+            if rec["pid"] == pid and rec["status"] == "running":
+                raise _Busy(
+                    "This curriculum is already being organised or audited. "
+                    "Wait for that run to finish."
+                )
+        _RUNS[run_id] = {
+            "pid": pid,
+            "proc": None,
+            "log_path": str(log_path),
+            "status": "running",
+            "exit_code": None,
+            "started": time.time(),
+            "flags": [],
+            "kind": "organise-and-run",
+            "phase": "organising",
+            "error": None,
+            # Set when the audit starts: where its part of the log begins and
+            # when it started, so progress and ETA describe the audit alone.
+            "audit_offset": None,
+            "audit_started": None,
+        }
+    threading.Thread(
+        target=_organise_then_audit, args=(run_id, pid, log_path), daemon=True
+    ).start()
+    return run_id
+
+
+def _organise_then_audit(run_id: str, pid: str, log_path: Path) -> None:
+    """The body of an organise-and-run. Never raises: every way out ends the
+    run with a status, so the client is never left polling "running"."""
+
+    def update(**fields) -> None:
+        with _RUNS_LOCK:
+            _RUNS[run_id].update(fields)
+
+    def fail(log_fh, message: str, code: int | None) -> None:
+        log_fh.write(f"\n[loom] {message}\n")
+        log_fh.flush()
+        update(status="error", exit_code=code, error=message)
+
+    try:
+        # Append mode, flushed before each spawn: the children write to the
+        # same file through their own descriptor, and our marker lines must
+        # land between their output, not in the middle of it.
+        with open(log_path, "a", encoding="utf-8") as log_fh:
+            log_fh.write("=== Organising the documents ===\n")
+            log_fh.flush()
+            proc = _spawn_logged(_organise_argv(pid), log_fh, _organise_env())
+            update(proc=proc)
+            code = proc.wait()
+            if code != 0:
+                return fail(
+                    log_fh,
+                    f"Organising the documents failed (exit code {code}), so "
+                    f"the audit was not started. The log above says where it "
+                    f"stopped.",
+                    code,
+                )
+
+            # Same validator the pipeline uses: a manifest that ingest wrote
+            # but Layer 1 would reject must stop the chain here, not two hours
+            # into the audit.
+            units = _proposed_units(pid)
+            if not units.get("valid") or not units.get("units"):
+                why = units.get("error") or "no units were found in the documents"
+                return fail(
+                    log_fh,
+                    f"Organising finished but the units it wrote can't be used "
+                    f"({why}), so the audit was not started.",
+                    code,
+                )
+
+            log_fh.write(
+                f"\n{AUDIT_PHASE_MARKER} {len(units['units'])} unit(s)\n"
+            )
+            log_fh.flush()
+            update(
+                phase="auditing",
+                audit_offset=log_path.stat().st_size,
+                audit_started=time.time(),
+            )
+            proc = _spawn_logged(_audit_argv(pid, []), log_fh, _audit_env())
+            update(proc=proc)
+            code = proc.wait()
+            if code != 0:
+                return fail(
+                    log_fh,
+                    f"The audit stopped before it finished (exit code {code}). "
+                    f"The log above says where.",
+                    code,
+                )
+            update(status="done", exit_code=0)
+    except Exception as e:  # noqa: BLE001 - a dead thread would leave "running" forever
+        update(status="error", error=f"Loom could not run this: {e}")
 
 
 def _weasyprint_ok() -> bool:
@@ -2297,27 +2457,43 @@ def _run_status(run_id: str, tail_bytes: int = 16000) -> dict | None:
         pid, started = rec["pid"], rec.get("started") or time.time()
         flags = list(rec.get("flags") or [])
         kind = rec.get("kind") or "audit"
+        phase = rec.get("phase")
+        error = rec.get("error")
+        audit_offset = rec.get("audit_offset")
+        audit_started = rec.get("audit_started")
     log_text = ""
+    tail_start = 0
     try:
         with open(log_path, "rb") as fh:
             fh.seek(0, os.SEEK_END)
             size = fh.tell()
-            fh.seek(max(0, size - tail_bytes))
+            tail_start = max(0, size - tail_bytes)
+            fh.seek(tail_start)
             log_text = fh.read().decode("utf-8", errors="replace")
     except OSError:
         pass
-    progress = {}
+
     # Only an audit has pipeline stages. Running the stage parser over an ingest
     # log would report every stage as pending forever, which reads as a run that
     # never started rather than a different kind of work.
+    stage_text: str | None = None
     if kind == "audit":
+        stage_text = log_text
+    elif kind == "organise-and-run" and audit_offset is not None:
+        # The audit's part of the log only. If the tail already starts after
+        # the marker, all of it is audit output.
+        cut = max(0, audit_offset - tail_start)
+        stage_text = log_text.encode("utf-8")[cut:].decode("utf-8", errors="replace")
+        started = audit_started or started
+    progress = {}
+    if stage_text is not None:
         try:
-            progress = _run_progress(pid, log_text, started, status, flags)
+            progress = _run_progress(pid, stage_text, started, status, flags)
         except Exception:
             # Progress is a convenience. A parser bug must not take down the
             # status endpoint the client relies on to know a run finished.
             progress = {}
-    return {
+    out = {
         "runId": run_id,
         "status": status,
         "exitCode": code,
@@ -2325,6 +2501,10 @@ def _run_status(run_id: str, tail_bytes: int = 16000) -> dict | None:
         "kind": kind,
         "progress": progress,
     }
+    if kind == "organise-and-run":
+        out["phase"] = phase
+        out["error"] = error
+    return out
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -2652,6 +2832,12 @@ class Handler(BaseHTTPRequestHandler):
                 and parts[3] == "organise"
             ):
                 return self._json({"runId": _start_organise(parts[2])})
+            if (
+                len(parts) == 4
+                and parts[:2] == ["api", "projects"]
+                and parts[3] == "organise-and-run"
+            ):
+                return self._json({"runId": _start_organise_and_run(parts[2])})
             if parts == ["api", "models", "select"]:
                 body = _read_json_body(self)
                 return self._json(
@@ -2777,7 +2963,7 @@ class Handler(BaseHTTPRequestHandler):
             return self._json({"error": "not found"}, 404)
         except _BadRequest as e:
             return self._json({"error": str(e)}, 400)
-        except FileExistsError as e:
+        except (FileExistsError, _Busy) as e:
             return self._json({"error": str(e)}, 409)
         except FileNotFoundError as e:
             return self._json({"error": str(e)}, 404)

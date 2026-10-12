@@ -3,29 +3,24 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { RunProgress } from "../components/RunProgress";
 import { api, describeError } from "../lib/api";
 import { usePreflight } from "../lib/usePreflight";
-import type {
-  DocumentList,
-  Project,
-  ProposedUnits,
-  RunStatus,
-  StorageInfo,
-} from "../types";
+import type { DocumentList, Project, RunStatus, StorageInfo } from "../types";
 
 /**
  * Setting up a curriculum: adding a new one, or finishing an existing one.
  *
  * One screen for both because they are the same checklist at different points.
- * The steps are not cosmetic — they reflect a real constraint in the pipeline:
- * `run-audit` prepares its run directory *before* ingest, and that preparation
- * needs `manifest.yaml` and `units/` to already exist, which ingest is what
- * creates. So a brand-new curriculum genuinely cannot go straight from
- * "documents dropped in" to "audited"; the organise step has to happen first.
  *
- * Rather than hide that, the checklist names it. It is also the step worth
- * pausing on: organising is model-driven and can mis-group files, and an audit
- * is long, so confirming the units first is both cheaper and more trustworthy.
+ * The pipeline still has an ordering constraint: `run-audit` prepares its run
+ * directory *before* ingest, and that needs `manifest.yaml` and `units/`, which
+ * ingest (organise) creates. This screen used to show organise and audit as
+ * two steps with a unit review between them, on the argument that organising
+ * can mis-group files and checking first is cheaper than a wasted audit. The
+ * operator chose otherwise: one step, no review. So the last step is a single
+ * "Organise and run the audit", and the ordering is enforced on the server
+ * (POST /organise-and-run), which organises, checks the manifest, and only
+ * then audits — as one run that keeps going if this window closes.
  *
- * Every step is now done here rather than in a file manager and a terminal.
+ * Every step is done here rather than in a file manager and a terminal.
  * The folder paths are still shown, because the folder is real and someone who
  * prefers Explorer should not be locked out of it — but nobody has to go there.
  */
@@ -76,6 +71,14 @@ function humanBytes(n: number): string {
   return `${(n / (1024 * 1024)).toFixed(1)} MB`;
 }
 
+/** Where the runId of a curriculum's organise-and-run is remembered.
+ *
+ * The run lives on the server and outlives this window, so someone who closes
+ * the tab and comes back should see it still going rather than a fresh button
+ * that would only be refused as "already running".
+ */
+const runKey = (projectId: string) => `loom.setupRun.${projectId}`;
+
 /** What happened to one file while it was being added. */
 interface UploadState {
   name: string;
@@ -91,7 +94,6 @@ export function CurriculumSetup() {
   const [project, setProject] = useState<Project | null>(null);
   const [storage, setStorage] = useState<StorageInfo | null>(null);
   const [docs, setDocs] = useState<DocumentList | null>(null);
-  const [units, setUnits] = useState<ProposedUnits | null>(null);
   const [error, setError] = useState<{ message: string; detail: string } | null>(
     null,
   );
@@ -110,13 +112,11 @@ export function CurriculumSetup() {
   const fileInput = useRef<HTMLInputElement>(null);
   const folderInput = useRef<HTMLInputElement>(null);
 
-  // Steps 3 and 4 — organise, then audit. Both are tracked runs, polled the
-  // same way; kept apart so an audit's progress cannot be shown for an
-  // organise, which has no pipeline stages.
-  const [organiseRun, setOrganiseRun] = useState<RunStatus | null>(null);
-  const [auditRun, setAuditRun] = useState<RunStatus | null>(null);
+  // Step 3 — one tracked run that organises and then audits. Its `phase` says
+  // which half is going; only the audit half has pipeline stages to show.
+  const [run, setRun] = useState<RunStatus | null>(null);
+  const [starting, setStarting] = useState(false);
   const pollRef = useRef<number | null>(null);
-  const [expandedUnit, setExpandedUnit] = useState<string | null>(null);
 
   const stopPoll = useCallback(() => {
     if (pollRef.current) {
@@ -130,14 +130,12 @@ export function CurriculumSetup() {
 
   const loadProjectState = useCallback(
     async (id: string) => {
-      const [ps, d, u] = await Promise.all([
+      const [ps, d] = await Promise.all([
         api.projects(),
         api.documents(id).catch(() => null),
-        api.units(id).catch(() => null),
       ]);
       setProject(ps.find((p) => p.id === id) ?? null);
       setDocs(d);
-      setUnits(u);
     },
     [],
   );
@@ -237,58 +235,72 @@ export function CurriculumSetup() {
     [projectId, loadProjectState],
   );
 
-  // --- Steps 3 and 4: organise, then audit ----------------------------------
+  // --- Step 3: organise and run the audit -----------------------------------
 
-  const organise = useCallback(async () => {
-    if (!projectId) return;
-    setError(null);
-    try {
+  const follow = useCallback(
+    (id: string, runId: string) => {
       stopPoll();
-      const runId = await api.organise(projectId);
-      setOrganiseRun({ runId, status: "running", exitCode: null, log: "" });
       pollRef.current = window.setInterval(async () => {
         try {
           const s = await api.runStatus(runId);
-          setOrganiseRun(s);
+          setRun(s);
           if (s.status !== "running") {
             stopPoll();
-            // Reload regardless of exit code: a failed organise may still have
-            // written a manifest, and if it did, the units panel has to show
-            // what it actually says rather than the last good state.
-            await loadProjectState(projectId);
+            window.localStorage.removeItem(runKey(id));
+            await loadProjectState(id);
           }
         } catch {
+          // Most often the server restarted and the run is gone from its
+          // memory. Forget it so the button comes back instead of a frozen
+          // "Organising…".
           stopPoll();
-        }
-      }, 1500);
-    } catch (e) {
-      setError(describeError(e));
-    }
-  }, [projectId, stopPoll, loadProjectState]);
-
-  const runAudit = useCallback(async () => {
-    if (!projectId) return;
-    setError(null);
-    try {
-      stopPoll();
-      const runId = await api.startRun(projectId, []);
-      setAuditRun({ runId, status: "running", exitCode: null, log: "" });
-      pollRef.current = window.setInterval(async () => {
-        try {
-          const s = await api.runStatus(runId);
-          setAuditRun(s);
-          if (s.status !== "running") {
-            stopPoll();
-            await loadProjectState(projectId);
-          }
-        } catch {
-          stopPoll();
+          window.localStorage.removeItem(runKey(id));
+          setRun(null);
         }
       }, 2000);
+    },
+    [stopPoll, loadProjectState],
+  );
+
+  // Pick a run that is still going back up after a reload or a closed tab.
+  useEffect(() => {
+    if (!projectId) return;
+    const saved = window.localStorage.getItem(runKey(projectId));
+    if (!saved) return;
+    api
+      .runStatus(saved)
+      .then((s) => {
+        setRun(s);
+        if (s.status === "running") follow(projectId, saved);
+        else window.localStorage.removeItem(runKey(projectId));
+      })
+      .catch(() => window.localStorage.removeItem(runKey(projectId)));
+  }, [projectId, follow]);
+
+  const organiseAndRun = useCallback(async () => {
+    if (!projectId || starting) return;
+    setError(null);
+    setStarting(true);
+    try {
+      const runId = await api.organiseAndRun(projectId);
+      window.localStorage.setItem(runKey(projectId), runId);
+      setRun({
+        runId,
+        status: "running",
+        exitCode: null,
+        log: "",
+        kind: "organise-and-run",
+        phase: "organising",
+      });
+      follow(projectId, runId);
     } catch (e) {
+      // A 409 ("already being organised or audited") lands here with the
+      // server's own words, which say what to do.
       setError(describeError(e));
+    } finally {
+      setStarting(false);
     }
-  }, [projectId, stopPoll, loadProjectState]);
+  }, [projectId, starting, follow]);
 
   // --- Render ---------------------------------------------------------------
 
@@ -296,9 +308,10 @@ export function CurriculumSetup() {
     ? joinPath(storage.projects_root, projectId ?? "<curriculum-name>")
     : null;
   const sourcesFolder = folder ? joinPath(folder, "sources") : null;
-  const organising = organiseRun?.status === "running";
-  const auditing = auditRun?.status === "running";
-  const busy = organising || auditing;
+  const running = run?.status === "running";
+  const busy = running || starting;
+  const auditing = running && run?.phase === "auditing";
+  const failed = run?.status === "error";
   const docCount = docs?.count ?? 0;
   const hasManifest = docs?.has_manifest ?? project?.has_manifest ?? false;
   const unreadable = (docs?.documents ?? []).filter((d) => !d.readable);
@@ -526,111 +539,14 @@ export function CurriculumSetup() {
           )}
         </li>
 
-        {/* ---- 3. organise ---- */}
-        <li className={hasManifest ? "done" : ""}>
-          <div className="setup-step-head">Let Loom organise them</div>
+        {/* ---- 3. organise and audit, one step ---- */}
+        <li className={project?.has_review_run && !busy ? "done" : ""}>
+          <div className="setup-step-head">Organise and run the audit</div>
           <p>
-            Loom reads every document and groups them into units, working out
-            what each one is. This has to happen before a full audit can start.
-          </p>
-
-          {!isNew && docCount > 0 && (
-            <div className="setup-actions">
-              <button
-                type="button"
-                className={hasManifest ? "btn" : "btn-primary"}
-                disabled={busy || !preflight?.can_run}
-                onClick={() => void organise()}
-              >
-                {organising
-                  ? "Organising…"
-                  : hasManifest
-                    ? "Organise again"
-                    : "Organise documents"}
-              </button>
-            </div>
-          )}
-          {!isNew && docCount > 0 && !preflight?.can_run && (
-            <p className="err-message">
-              Organising needs a working model connection.{" "}
-              <Link to="/setup">Finish setup</Link> first.
-            </p>
-          )}
-
-          {organiseRun && (
-            <div className="setup-runlog">
-              {/* An organise run has no pipeline stages, so its log is the
-                  progress. It is short and it names each document as it is
-                  read, which is exactly what someone waiting wants to see. */}
-              <div className="runlog">{organiseRun.log || "starting…"}</div>
-              {organiseRun.status === "error" && (
-                <p className="err-message">
-                  Organising stopped before it finished. The log above says
-                  where.
-                </p>
-              )}
-            </div>
-          )}
-
-          {docs?.organise_stale && !organising && (
-            <p className="err-message">
-              Documents changed since these units were worked out. Organise
-              again so the audit covers everything.
-            </p>
-          )}
-
-          {units?.has_manifest && units.valid === false && (
-            <p className="err-message">
-              The units couldn’t be read back: {units.error} Organising again
-              usually fixes it.
-            </p>
-          )}
-
-          {units?.units && units.units.length > 0 && (
-            <div className="setup-units">
-              <p className="setup-ok">
-                {plural(units.units.length, "unit")} — check these look right
-                before starting an audit.
-              </p>
-              <ul>
-                {units.units.map((u) => (
-                  <li key={u.unit_id}>
-                    <button
-                      type="button"
-                      className="unit-toggle"
-                      onClick={() =>
-                        setExpandedUnit(
-                          expandedUnit === u.unit_id ? null : u.unit_id,
-                        )
-                      }
-                    >
-                      <span className="u-title">{u.title}</span>
-                      <span className="u-metrics">
-                        {plural(u.document_count, "document")}
-                        {u.days > 0 ? ` · ${plural(u.days, "day")}` : ""}
-                      </span>
-                    </button>
-                    {expandedUnit === u.unit_id && (
-                      <ul className="unit-docs">
-                        {u.documents.map((d) => (
-                          <li key={d}>{d}</li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </li>
-
-        {/* ---- 4. audit ---- */}
-        <li className={project?.has_review_run ? "done" : ""}>
-          <div className="setup-step-head">Run the audit</div>
-          <p>
-            Loom checks every unit against what a complete unit needs, and
-            reports what is present, what is missing, and what needs your
-            decision.
+            Loom reads every document, groups them into units, and then checks
+            every unit against what a complete unit needs. It reports what is
+            present, what is missing, and what needs your decision. It keeps
+            going if you close this window.
           </p>
 
           {preflight && !preflight.can_run && (
@@ -660,31 +576,68 @@ export function CurriculumSetup() {
               <button
                 type="button"
                 className="btn-primary"
-                disabled={busy || !hasManifest}
-                onClick={() => void runAudit()}
+                disabled={busy || docCount === 0}
+                onClick={() => void organiseAndRun()}
               >
-                {auditing ? "Auditing…" : "Start the audit"}
+                {starting
+                  ? "Starting…"
+                  : running
+                    ? auditing
+                      ? "Auditing…"
+                      : "Organising…"
+                    : project?.has_review_run
+                      ? "Organise and run the audit again"
+                      : "Organise and run the audit"}
               </button>
-              {!hasManifest && (
-                <span className="setup-hint">Organise the documents first.</span>
+              {docCount === 0 && (
+                <span className="setup-hint">Add the documents first.</span>
               )}
             </div>
           )}
 
-          {auditRun && (
+          {run && (
             <div className="setup-runlog">
-              <RunProgress
-                progress={auditRun.progress}
-                status={auditRun.status}
-              />
-              <details className="err-details">
-                <summary>Run log</summary>
-                <div className="runlog">{auditRun.log || "starting…"}</div>
-              </details>
+              {/* Organising has no pipeline stages, so while it runs the log
+                  is the progress: it names each document as it is read. Once
+                  the audit starts, the stage view takes over and the log moves
+                  behind a disclosure, as it was for the audit on its own. */}
+              {run.phase === "auditing" ? (
+                <>
+                  <RunProgress progress={run.progress} status={run.status} />
+                  <details className="err-details">
+                    <summary>Run log</summary>
+                    <div className="runlog">{run.log || "starting…"}</div>
+                  </details>
+                </>
+              ) : (
+                <div className="runlog">{run.log || "starting…"}</div>
+              )}
+              {failed && (
+                <>
+                  <p className="err-message">
+                    {run.error ||
+                      (run.phase === "auditing"
+                        ? "The audit stopped before it finished. The log above says where."
+                        : "Organising stopped before it finished, so the audit was not started. The log above says where.")}
+                  </p>
+                  {preflight?.can_run && (
+                    <p>
+                      <button
+                        type="button"
+                        className="btn"
+                        disabled={busy || docCount === 0}
+                        onClick={() => void organiseAndRun()}
+                      >
+                        Try again
+                      </button>
+                    </p>
+                  )}
+                </>
+              )}
             </div>
           )}
 
-          {project?.has_review_run && !auditing && (
+          {project?.has_review_run && !busy && (
             <p className="setup-ok">
               Done —{" "}
               <Link to={`/review?project=${project.id}`}>open the results</Link>

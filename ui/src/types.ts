@@ -426,8 +426,15 @@ export interface RunStatus {
    * `progress` is absent for an organise run and the client shows its log
    * instead of a stage list that would sit at "pending" forever.
    */
-  kind?: "audit" | "organise";
+  kind?: "audit" | "organise" | "organise-and-run";
   progress?: RunProgressInfo;
+  /**
+   * organise-and-run only: which half is going, or where it stopped.
+   * `progress` describes the audit and is empty while organising.
+   */
+  phase?: "organising" | "auditing";
+  /** organise-and-run only: why it stopped, in words for the operator. */
+  error?: string | null;
 }
 
 /** One file sitting in a curriculum's sources/ folder. */

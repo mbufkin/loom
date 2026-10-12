@@ -429,6 +429,230 @@ def share_unplaced_documents(records: list[dict], plan: dict) -> list[str]:
     return unplaced
 
 
+# --- repair, then deterministic cleanup ---------------------------------------
+#
+# Observed live on a course of 18 documents: the verifier wrote documents'
+# in-file *titles* where their filenames belonged ("Unit Overview.docx" for a
+# file called "Unit Overview Lesson Plan.docx"), and gave one unit no days. The near-miss matcher rightly refused to guess those
+# names, and the whole organise failed on validation.
+#
+# The response is in two layers. First one repair round: the same verifier is
+# shown the exact catalog filenames and the exact errors, and asked to fix only
+# that. Then a deterministic cleanup that never guesses -- it removes what is
+# still wrong and says so in the run log -- so a single bad unit no longer sinks
+# a whole curriculum. Only a plan with nothing usable left fails.
+
+# What a unit gets when the organiser gave it documents but no days. The same
+# shape _deterministic_plan uses, so it audits like any one-day unit.
+DEFAULT_DAY = {"id": "d1", "label": "Day 1", "expected": ["lesson_content", "exit_ticket"]}
+
+
+def _unknown_files(records: list[dict], plan: dict) -> list[str]:
+    catalog = {r["source_file"] for r in records}
+    named = {
+        f for u in plan.get("units") or [] for f in (u.get("source_files") or [])
+        if isinstance(f, str)
+    }
+    return sorted(named - catalog)
+
+
+def plan_problems(records: list[dict], plan: dict) -> list[str]:
+    """What a repair round should be asked to fix: invented filenames and
+    structural errors.
+
+    Unplaced documents are deliberately not in this list: share_unplaced_documents
+    already turns those into course-level documents, which is the intended
+    behaviour, not a mistake to send back to the model.
+    """
+    problems: list[str] = []
+    unknown = _unknown_files(records, plan)
+    if unknown:
+        problems.append(f"unknown files in plan (not in the catalog): {unknown}")
+    problems.extend(validate_ingest_plan(plan))
+    return problems
+
+
+def repair_prompt(records: list[dict], plan: dict, problems: list[str]) -> str:
+    """The one repair request. Exact names and exact errors, nothing vaguer:
+    "use the catalog filenames" was already in the first prompt and not enough."""
+    names = "\n".join(f"  {r['source_file']}" for r in records)
+    errors = "\n".join(f"  - {p}" for p in problems)
+    return f"""{ORGANIZER_RULES}
+
+Your organization below failed validation. Fix ONLY these problems:
+{errors}
+
+The ONLY valid filenames are these {len(records)}, character for character.
+Use them exactly as written. Do not use a document's title as its filename, and
+do not shorten, retype or invent a name. A file you cannot place in a unit may be
+left out; it will be shared with every unit as a course-level document.
+{names}
+
+Every unit must have at least one calendar day. A group of files with no days to
+teach is not a unit: remove that unit and leave its files out.
+
+CATALOG (titles and excerpts, for context only -- filenames come from the list
+above):
+{catalog_block(records)}
+
+YOUR PREVIOUS OUTPUT:
+{json.dumps(plan, indent=2)}
+
+{ORGANIZE_SCHEMA}
+"""
+
+
+def verifier_repair(
+    cfg: dict, records: list[dict], plan: dict, problems: list[str]
+) -> dict:
+    """Ask the verifier, with the same settings, to fix the listed problems."""
+    resp = model_call(
+        cfg,
+        "verifier",
+        [{"role": "user", "content": repair_prompt(records, plan, problems)}],
+        "ingest-repair",
+        temperature=0.0,
+    )
+    return parse_json(extract_content(resp), step="ingest-repair")
+
+
+def clean_plan(records: list[dict], plan: dict) -> list[str]:
+    """Remove what is still wrong after repair, and return a WARN line for each
+    change. Never maps a name to a file: guessing which document an invented
+    name meant would attribute evidence to the wrong unit, invisibly.
+
+    - a filename not in the catalog is dropped from its unit;
+    - a unit with documents but no days gets one default day;
+    - a unit with no documents left is removed. Its days alone are nothing to
+      audit, and any real files it lost are still shared below as course-level
+      documents, so no evidence is lost by removing it.
+    """
+    catalog = {r["source_file"] for r in records}
+    warnings: list[str] = []
+    kept: list[dict] = []
+    for unit in plan.get("units") or []:
+        if not isinstance(unit, dict):
+            warnings.append(f"removed a unit that was not an object: {unit!r:.80}")
+            continue
+        uid = unit.get("unit_id") or "(no id)"
+        files = unit.get("source_files") or []
+        if not isinstance(files, list):
+            files = []
+        good = []
+        for f in files:
+            if f in catalog:
+                good.append(f)
+            else:
+                warnings.append(
+                    f"dropped {f!r} from unit {uid}: no document by that name "
+                    f"in this curriculum"
+                )
+        unit["source_files"] = good
+
+        cal = unit.get("calendar")
+        if not isinstance(cal, dict):
+            cal = {}
+            unit["calendar"] = cal
+        has_days = isinstance(cal.get("days"), list) and bool(cal["days"])
+
+        if not good:
+            warnings.append(
+                f"removed unit {uid}: none of its documents are in this "
+                f"curriculum" + (" (it had days but nothing to audit)" if has_days else "")
+            )
+            continue
+        if not has_days:
+            cal["days"] = [dict(DEFAULT_DAY)]
+            length = cal.get("unit_length_days")
+            if not isinstance(length, int) or length < 1:
+                cal["unit_length_days"] = 1
+            warnings.append(
+                f"unit {uid} had no calendar days; gave it one default day (d1)"
+            )
+        kept.append(unit)
+    plan["units"] = kept
+    return warnings
+
+
+def _match_names(records: list[dict], plan: dict) -> None:
+    """Snap retyped filenames onto real ones, then collapse in-unit repeats."""
+    # Before anything reasons about which files are missing: a mistyped name
+    # looks exactly like an unplaced document, and share_unplaced_documents
+    # would then "helpfully" share a file that was already correctly grouped.
+    corrected = reconcile_source_files(records, plan)
+    if corrected:
+        log(f"filename match: {', '.join(corrected)}")
+
+    # After matching, not before: two mistyped spellings of one filename become
+    # a duplicate only once they have both been snapped onto the real name.
+    collapsed = dedupe_source_files(plan)
+    if collapsed:
+        log(f"listed more than once in a unit, collapsed: {', '.join(collapsed)}")
+
+
+def settle_plan(records: list[dict], plan: dict, repair=None) -> dict:
+    """Take the organiser's plan to one that validates, or fail saying why.
+
+    `repair(plan, problems) -> plan` is called at most once, and only when
+    matching leaves invented filenames or structural errors. None skips it (the
+    offline --skip-models path, and tests that want cleanup alone).
+    """
+    _match_names(records, plan)
+
+    problems = plan_problems(records, plan)
+    if problems and repair is not None:
+        log(
+            "WARN: the organisation has problems; asking the verifier once "
+            f"to fix: {'; '.join(problems)}"
+        )
+        try:
+            repaired = repair(plan, problems)
+        except Exception as e:  # noqa: BLE001 - any failure here falls back to cleanup
+            # A failed repair is not a failed organise: the cleanup below can
+            # still salvage the original plan, so carry on with that.
+            log(
+                f"WARN: the repair attempt failed ({e}); cleaning up the "
+                "original organisation instead"
+            )
+        else:
+            # A reply with no units would only make things worse; keep the
+            # original, whose good units cleanup can still save.
+            if isinstance(repaired, dict) and isinstance(repaired.get("units"), list) and repaired["units"]:
+                plan = repaired
+                _match_names(records, plan)
+            else:
+                log(
+                    "WARN: the repair attempt returned no units; cleaning up "
+                    "the original organisation instead"
+                )
+
+    for line in clean_plan(records, plan):
+        log(f"WARN: {line}")
+
+    if not plan.get("units"):
+        raise ValueError(
+            "Organising found no usable units: every unit the organiser proposed "
+            "named documents that are not in this curriculum. The WARN lines "
+            "above list each name it used. Organising again often works; if it "
+            "keeps happening, check the documents open and have readable text."
+        )
+
+    shared = share_unplaced_documents(records, plan)
+    if shared:
+        # ASCII only: the logging handler on Windows encodes as cp1252 and
+        # raises on an em-dash, which turns an informational line into a stack
+        # trace in the run log.
+        log(
+            f"course-level: {', '.join(shared)} - placed in no unit by the "
+            "organiser, so shared across all of them"
+        )
+
+    errors = validate_coverage(records, plan)
+    errors.extend(validate_ingest_plan(plan))
+    raise_on_errors(errors, "Ingest validation")
+    return plan
+
+
 def write_yaml_files(project_id: str, sources: Path, plan: dict) -> None:
     root = project_dir(project_id)
     units_dir = root / "units"
@@ -489,6 +713,7 @@ def ingest(project_id: str, sources: Path, skip_models: bool = False) -> Path:
     atomic_write(ingest_dir / "catalog.json", json.dumps(records, indent=2))
     log(f"catalog: {len(records)} documents from {sources}")
 
+    repair = None
     if skip_models:
         # Deterministic fallback: one unit per unique top-level token in filename
         plan = _deterministic_plan(records)
@@ -502,32 +727,12 @@ def ingest(project_id: str, sources: Path, skip_models: bool = False) -> Path:
         atomic_write(raw_dir / "organize-verifier.json", json.dumps(final, indent=2))
         plan = final
 
-    # Before anything reasons about which files are missing: a mistyped name
-    # looks exactly like an unplaced document, and share_unplaced_documents
-    # would then "helpfully" share a file that was already correctly grouped.
-    corrected = reconcile_source_files(records, plan)
-    if corrected:
-        log(f"filename match: {', '.join(corrected)}")
+        def repair(bad: dict, problems: list[str]) -> dict:
+            fixed = verifier_repair(cfg, records, bad, problems)
+            atomic_write(raw_dir / "organize-repair.json", json.dumps(fixed, indent=2))
+            return fixed
 
-    # After matching, not before: two mistyped spellings of one filename become
-    # a duplicate only once they have both been snapped onto the real name.
-    collapsed = dedupe_source_files(plan)
-    if collapsed:
-        log(f"listed more than once in a unit, collapsed: {', '.join(collapsed)}")
-
-    shared = share_unplaced_documents(records, plan)
-    if shared:
-        # ASCII only: the logging handler on Windows encodes as cp1252 and
-        # raises on an em-dash, which turns an informational line into a stack
-        # trace in the run log.
-        log(
-            f"course-level: {', '.join(shared)} - placed in no unit by the "
-            "organiser, so shared across all of them"
-        )
-
-    errors = validate_coverage(records, plan)
-    errors.extend(validate_ingest_plan(plan))
-    raise_on_errors(errors, "Ingest validation")
+    plan = settle_plan(records, plan, repair=repair)
 
     write_yaml_files(project_id, sources, plan)
     log(f"wrote manifest.yaml + {len(plan['units'])} unit calendars → {root}")

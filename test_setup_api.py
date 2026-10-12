@@ -472,6 +472,180 @@ def test_the_first_pass_packet_is_listed_once_not_under_both_its_names():
         fx.close()
 
 
+# --- organise-and-run: one run, organise then audit ---------------------------
+#
+# ingest and the audit are swapped for a small fake script through the
+# _organise_argv / _audit_argv seams, so these tests exercise the real
+# subprocess, thread and log handling with no model calls at all.
+
+_FAKE_STEP = r'''
+import pathlib, sys, time
+root, mode = pathlib.Path(sys.argv[1]), sys.argv[2]
+if mode == "audit":
+    print("fake audit ran", flush=True)
+    (root / "audit-ran.txt").write_text("yes", encoding="utf-8")
+    sys.exit(0)
+print("fake ingest reading documents", flush=True)
+if mode == "ingest-fail":
+    sys.exit(3)
+if mode == "ingest-wait":
+    for _ in range(200):
+        if (root / "release").exists():
+            break
+        time.sleep(0.05)
+if mode != "ingest-no-manifest":
+    (root / "units" / "u1").mkdir(parents=True, exist_ok=True)
+    (root / "units" / "u1" / "calendar.yaml").write_text(
+        "days:\n  - id: d1\n    label: Day 1\n", encoding="utf-8")
+    (root / "manifest.yaml").write_text(
+        "project:\n  id: p\n  name: P\nunits:\n  u1:\n    title: Unit One\n"
+        "    calendar: units/u1/calendar.yaml\n    documents:\n      - a.md\n"
+        "generated_by: ingest.py\n", encoding="utf-8")
+'''
+
+
+def _use_fake_steps(fx: _Fixture, ingest_mode: str):
+    """Point both phases at the fake; returns a function that undoes it."""
+    script = fx.tmp / "fake_step.py"
+    script.write_text(_FAKE_STEP, encoding="utf-8")
+    saved = (server._organise_argv, server._audit_argv)
+    server._organise_argv = lambda pid: [
+        sys.executable, str(script), str(fx.projects / pid), ingest_mode
+    ]
+    server._audit_argv = lambda pid, flags: [
+        sys.executable, str(script), str(fx.projects / pid), "audit"
+    ]
+
+    def restore() -> None:
+        server._organise_argv, server._audit_argv = saved
+
+    return restore
+
+
+def _project_with_a_document(fx: _Fixture, pid: str) -> Path:
+    fx.request("POST", "/api/projects", {"id": pid})
+    _upload(fx, pid, "a.md", b"# Unit 1\n")
+    return fx.projects / pid
+
+
+def _wait_for_run(fx: _Fixture, run_id: str, timeout: float = 20.0) -> dict:
+    import time
+
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        code, status = fx.request("GET", f"/api/runs/{run_id}")
+        assert code == 200, status
+        if status["status"] != "running":
+            return status
+        time.sleep(0.1)
+    raise AssertionError(f"run {run_id} still running after {timeout}s")
+
+
+def test_organise_and_run_audits_after_a_successful_organise():
+    fx = _Fixture()
+    restore = _use_fake_steps(fx, "ingest-ok")
+    try:
+        root = _project_with_a_document(fx, "chain-ok")
+        code, body = fx.request("POST", "/api/projects/chain-ok/organise-and-run", {})
+        assert code == 200, body
+        status = _wait_for_run(fx, body["runId"])
+
+        assert status["status"] == "done", status
+        assert status["kind"] == "organise-and-run"
+        assert status["phase"] == "auditing", "it got as far as the audit"
+        assert status["error"] is None
+        assert (root / "manifest.yaml").is_file()
+        assert (root / "audit-ran.txt").is_file(), "the audit was started"
+        # One run, one log, both phases in order.
+        log = status["log"]
+        assert log.index("fake ingest") < log.index(server.AUDIT_PHASE_MARKER)
+        assert log.index(server.AUDIT_PHASE_MARKER) < log.index("fake audit ran")
+    finally:
+        restore()
+        fx.close()
+
+
+def test_organise_and_run_does_not_audit_when_organise_fails():
+    fx = _Fixture()
+    restore = _use_fake_steps(fx, "ingest-fail")
+    try:
+        root = _project_with_a_document(fx, "chain-fail")
+        code, body = fx.request("POST", "/api/projects/chain-fail/organise-and-run", {})
+        assert code == 200, body
+        status = _wait_for_run(fx, body["runId"])
+
+        assert status["status"] == "error", status
+        assert status["exitCode"] == 3
+        assert status["phase"] == "organising", "it never reached the audit"
+        assert "audit was not started" in status["error"]
+        assert "audit was not started" in status["log"], "the log says so too"
+        assert server.AUDIT_PHASE_MARKER not in status["log"]
+        assert not (root / "audit-ran.txt").exists()
+    finally:
+        restore()
+        fx.close()
+
+
+def test_organise_and_run_does_not_audit_without_usable_units():
+    """ingest exiting 0 is not enough: no manifest means nothing to audit."""
+    fx = _Fixture()
+    restore = _use_fake_steps(fx, "ingest-no-manifest")
+    try:
+        root = _project_with_a_document(fx, "chain-empty")
+        _, body = fx.request("POST", "/api/projects/chain-empty/organise-and-run", {})
+        status = _wait_for_run(fx, body["runId"])
+        assert status["status"] == "error", status
+        assert status["phase"] == "organising"
+        assert "can't be used" in status["error"]
+        assert not (root / "audit-ran.txt").exists()
+    finally:
+        restore()
+        fx.close()
+
+
+def test_organise_and_run_refuses_a_second_run_on_the_same_curriculum():
+    """A double click must not start two runs writing the same manifest."""
+    fx = _Fixture()
+    restore = _use_fake_steps(fx, "ingest-wait")
+    try:
+        root = _project_with_a_document(fx, "chain-busy")
+        _project_with_a_document(fx, "chain-other")
+        code, first = fx.request("POST", "/api/projects/chain-busy/organise-and-run", {})
+        assert code == 200, first
+
+        code, second = fx.request("POST", "/api/projects/chain-busy/organise-and-run", {})
+        assert code == 409, (code, second)
+        assert "already being organised or audited" in second["error"]
+
+        # Only that curriculum is locked; another one starts normally.
+        code, other = fx.request("POST", "/api/projects/chain-other/organise-and-run", {})
+        assert code == 200, other
+
+        (root / "release").write_text("", encoding="utf-8")
+        (fx.projects / "chain-other" / "release").write_text("", encoding="utf-8")
+        assert _wait_for_run(fx, first["runId"])["status"] == "done"
+        assert _wait_for_run(fx, other["runId"])["status"] == "done"
+
+        # Once it has finished, the curriculum can be run again.
+        code, again = fx.request("POST", "/api/projects/chain-busy/organise-and-run", {})
+        assert code == 200, again
+        _wait_for_run(fx, again["runId"])
+    finally:
+        restore()
+        fx.close()
+
+
+def test_organise_and_run_refuses_when_there_are_no_documents_yet():
+    fx = _Fixture()
+    try:
+        fx.request("POST", "/api/projects", {"id": "chain-nodocs"})
+        code, body = fx.request("POST", "/api/projects/chain-nodocs/organise-and-run", {})
+        assert code == 404, (code, body)
+        assert "Add some documents first" in body["error"]
+    finally:
+        fx.close()
+
+
 if __name__ == "__main__":
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     failed = 0

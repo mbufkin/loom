@@ -477,6 +477,19 @@ export const api = {
     return out.runId;
   },
 
+  /**
+   * Organise, then audit, as one run on the server — closing the window does
+   * not stop it. Its status carries `phase`; a 409 means a run for this
+   * curriculum is already going.
+   */
+  async organiseAndRun(id: string): Promise<string> {
+    const out = await postJSON<{ runId: string }>(
+      `${API_ROOT}/projects/${id}/organise-and-run`,
+      {}
+    );
+    return out.runId;
+  },
+
   /** The units organise proposed, for review before committing to an audit. */
   units: (id: string) => getJSON<ProposedUnits>(`${API_ROOT}/projects/${id}/units`),
 
