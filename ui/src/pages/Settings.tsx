@@ -2,8 +2,30 @@ import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ModelPicker } from "../components/ModelPicker";
 import { api, describeError } from "../lib/api";
+import { IS_HOSTED } from "../lib/hosted";
 import { readiness, usePreflight } from "../lib/usePreflight";
-import type { StorageInfo } from "../types";
+import type { ConfigSummary, StorageInfo } from "../types";
+
+/** Read-only model panel for the hosted build. */
+function HostedModel() {
+  const [config, setConfig] = useState<ConfigSummary | null>(null);
+  useEffect(() => {
+    api.config().then(setConfig).catch(() => setConfig(null));
+  }, []);
+  const model = config?.models?.analyst_model;
+  return (
+    <div className="panel">
+      <div className="panel-head">Model</div>
+      <div className="panel-body">
+        <p>
+          {model ? <code>{model}</code> : "The operator’s pinned model"}, run by
+          the Loom service. The operator chooses the model; it cannot be
+          changed here.
+        </p>
+      </div>
+    </div>
+  );
+}
 
 /**
  * Settings: what this copy of Loom is currently doing, and where.
@@ -103,7 +125,10 @@ export function Settings() {
           available. There used to be a separate "Where the reading happens"
           panel above it, but two panels describing one setting is how they
           drift apart, and the answer was split across both. */}
-      <ModelPicker onConnected={() => void load()} />
+      {/* Hosted: the model is pinned by the operator on the server, and the
+          server refuses /api/models/* anyway. Showing a picker that cannot
+          work would be worse than saying plainly what is in use. */}
+      {IS_HOSTED ? <HostedModel /> : <ModelPicker onConnected={() => void load()} />}
 
       {preflight && (
         <div className="panel">
@@ -181,8 +206,9 @@ export function Settings() {
       )}
 
       <p className="home-note">
-        The model and its API key can be changed here. Everything else on this
-        screen is still read-only.
+        {IS_HOSTED
+          ? "Everything on this screen is read-only in the hosted app."
+          : "The model and its API key can be changed here. Everything else on this screen is still read-only."}
       </p>
     </div>
   );

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { api, describeError } from "../lib/api";
+import { IS_HOSTED } from "../lib/hosted";
 import { readiness, usePreflight } from "../lib/usePreflight";
 import type { SetupCheck } from "../types";
 
@@ -191,9 +192,11 @@ export function Setup() {
   // Anything whose fix is a pip command can be done for the user. The model
   // and the WeasyPrint system libraries cannot, so a button that claimed to
   // install "everything" would be lying about those two.
-  const installable = checks.some(
-    (c) => !c.ok && (c.id === "packages" || c.id === "pdf"),
-  );
+  // Never in the hosted build: the server runs in a sealed container and
+  // refuses /api/install-deps, so the button could only ever fail.
+  const installable =
+    !IS_HOSTED &&
+    checks.some((c) => !c.ok && (c.id === "packages" || c.id === "pdf"));
   // Fallback for a response with no `checks` (an older server still running
   // from before an upgrade). Naming what it reported beats a blank screen,
   // and the restart hint is the actual fix.

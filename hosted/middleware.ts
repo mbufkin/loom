@@ -9,6 +9,15 @@ export default auth((req) => {
   const user = req.auth?.user;
   const path = req.nextUrl.pathname;
 
+  // The full Loom app (React build in public/app). Same bar as the Workspace.
+  // Its API calls go to /api/loom, which checks the session itself.
+  if (path === "/app" || path.startsWith("/app/")) {
+    if (!user?.isAdmin) {
+      const dest = user?.isOperator ? "/operator" : "/";
+      return NextResponse.redirect(new URL(dest, req.nextUrl.origin));
+    }
+  }
+
   if (path.startsWith("/workspace")) {
     if (!user?.isAdmin) {
       const dest = user?.isOperator ? "/operator" : "/";
@@ -36,5 +45,5 @@ export default auth((req) => {
 });
 
 export const config = {
-  matcher: ["/workspace/:path*", "/operator/:path*", "/hats"],
+  matcher: ["/workspace/:path*", "/operator/:path*", "/hats", "/app", "/app/:path*"],
 };

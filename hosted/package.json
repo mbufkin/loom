@@ -5,7 +5,8 @@
   "description": "Hosted Loom thin path — District Workspace on Vercel. Not the local Review UI.",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run build:ui && next build",
+    "build:ui": "cd ../ui && npm ci --no-audit --no-fund && VITE_API_BASE=/api/loom VITE_HOSTED=1 npx tsc -b && VITE_API_BASE=/api/loom VITE_HOSTED=1 npx vite build --base=/app/ --outDir ../hosted/public/app --emptyOutDir",
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test lib/*.test.ts"

@@ -1,5 +1,7 @@
 // Thin fetch wrappers around the local API. Everything is same-origin in dev via
-// the Vite proxy (/api -> :8770), so no base URL juggling.
+// the Vite proxy (/api -> :8770). Every path goes through API_ROOT so the hosted
+// build can point at the signed-in forwarder (/api/loom) — see lib/hosted.ts.
+import { API_ROOT } from "./hosted";
 import type {
   ArtifactRung,
   ConfigSummary,
@@ -196,32 +198,32 @@ async function postJSON<T>(url: string, body?: unknown): Promise<T> {
 }
 
 export const api = {
-  projects: () => getJSON<Project[]>("/api/projects"),
+  projects: () => getJSON<Project[]>(`${API_ROOT}/projects`),
 
   /** Full-pipeline snapshots under e2e/runs/* (Dashboard, layers, teachers…). */
   e2eRuns: (id: string) =>
-    getJSON<E2ERunsResponse>(`/api/projects/${id}/e2e/runs`),
+    getJSON<E2ERunsResponse>(`${API_ROOT}/projects/${id}/e2e/runs`),
 
   outputs: (id: string, e2eRun?: string) =>
-    getJSON<OutputsTree>(withE2e(`/api/projects/${id}/outputs`, e2eRun)),
+    getJSON<OutputsTree>(withE2e(`${API_ROOT}/projects/${id}/outputs`, e2eRun)),
 
   stats: (id: string, e2eRun?: string) =>
-    getJSON<Stats>(withE2e(`/api/projects/${id}/stats`, e2eRun)),
+    getJSON<Stats>(withE2e(`${API_ROOT}/projects/${id}/stats`, e2eRun)),
 
   /** A–H review lenses: routing, findings status, and per-step presence rollups. */
   paths: (id: string, e2eRun?: string) =>
-    getJSON<PathsSummary>(withE2e(`/api/projects/${id}/paths`, e2eRun)),
+    getJSON<PathsSummary>(withE2e(`${API_ROOT}/projects/${id}/paths`, e2eRun)),
 
-  config: () => getJSON<ConfigSummary>("/api/config"),
+  config: () => getJSON<ConfigSummary>(`${API_ROOT}/config`),
 
   /** Which build of the interface this server is serving. See useFreshBundle. */
-  version: () => getJSON<{ bundle: string | null }>("/api/version"),
+  version: () => getJSON<{ bundle: string | null }>(`${API_ROOT}/version`),
 
   /** Can this machine start an audit? Asked before offering the button. */
-  canRun: () => getJSON<RunPreflight>("/api/can-run"),
+  canRun: () => getJSON<RunPreflight>(`${API_ROOT}/can-run`),
 
   /** Where curricula, settings and logs are kept on this machine. */
-  storage: () => getJSON<StorageInfo>("/api/storage"),
+  storage: () => getJSON<StorageInfo>(`${API_ROOT}/storage`),
 
   /**
    * Look for model servers running on this computer.
@@ -229,25 +231,25 @@ export const api = {
    * Loopback only — see the server-side note. Takes a second or two, since it
    * has to wait out the ports where nothing is listening.
    */
-  discoverModels: () => getJSON<ModelDiscovery>("/api/models/discover"),
+  discoverModels: () => getJSON<ModelDiscovery>(`${API_ROOT}/models/discover`),
 
   /** Hosted services and whether each already has a key stored. */
   providers: () =>
-    getJSON<{ providers: ModelProvider[] }>("/api/models/providers"),
+    getJSON<{ providers: ModelProvider[] }>(`${API_ROOT}/models/providers`),
 
   /** List a hosted service's models, using the key held server-side. */
   remoteModels: (provider: string) =>
     getJSON<RemoteModels>(
-      `/api/models/remote?provider=${encodeURIComponent(provider)}`,
+      `${API_ROOT}/models/remote?provider=${encodeURIComponent(provider)}`,
     ),
 
   /** The same listing, for an endpoint Loom does not ship a provider entry for. */
   remoteModelsByUrl: (url: string) =>
-    getJSON<RemoteModels>(`/api/models/remote?url=${encodeURIComponent(url)}`),
+    getJSON<RemoteModels>(`${API_ROOT}/models/remote?url=${encodeURIComponent(url)}`),
 
   /** Whether a key is stored for an endpoint. Presence only, never the key. */
   keyStatus: (url: string) =>
-    getJSON<KeyStatus>(`/api/models/key?url=${encodeURIComponent(url)}`),
+    getJSON<KeyStatus>(`${API_ROOT}/models/key?url=${encodeURIComponent(url)}`),
 
   /**
    * Save or clear an API key for an endpoint.
@@ -261,7 +263,7 @@ export const api = {
     url: string,
     key: string | null,
   ): Promise<KeyStatus & { ok: boolean; message?: string; error?: string }> {
-    const res = await fetch("/api/models/key", {
+    const res = await fetch(`${API_ROOT}/models/key`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(key === null ? { url, clear: true } : { url, key }),
@@ -275,7 +277,7 @@ export const api = {
     url: string,
     model: string,
   ): Promise<{ ok: boolean; error?: string }> {
-    const res = await fetch("/api/models/select", {
+    const res = await fetch(`${API_ROOT}/models/select`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ url, model }),
@@ -293,7 +295,7 @@ export const api = {
    * show progress rather than assume it returns quickly.
    */
   async installDeps(): Promise<{ ok: boolean; output: string }> {
-    const res = await fetch("/api/install-deps", { method: "POST" });
+    const res = await fetch(`${API_ROOT}/install-deps`, { method: "POST" });
     if (!res.ok) throw new Error(`install failed: ${res.status}`);
     return res.json();
   },
@@ -301,7 +303,7 @@ export const api = {
   // Absolute URL so <a href> / <embed src> for PDFs work directly.
   fileUrl: (id: string, path: string, e2eRun?: string) =>
     withE2e(
-      `/api/projects/${id}/file?path=${encodeURIComponent(path)}`,
+      `${API_ROOT}/projects/${id}/file?path=${encodeURIComponent(path)}`,
       e2eRun
     ),
 
@@ -404,13 +406,13 @@ export const api = {
   /** Make a new curriculum folder with its sources/ subfolder. */
   createProject: (id: string, title = "") =>
     postJSON<{ ok: boolean; id: string; title: string; path: string }>(
-      "/api/projects",
+      `${API_ROOT}/projects`,
       { id, title }
     ),
 
   /** What is in this curriculum's sources folder, and whether organise is stale. */
   documents: (id: string) =>
-    getJSON<DocumentList>(`/api/projects/${id}/documents`),
+    getJSON<DocumentList>(`${API_ROOT}/projects/${id}/documents`),
 
   /**
    * Upload one document into sources/.
@@ -426,7 +428,7 @@ export const api = {
     id: string,
     file: File
   ): Promise<{ name: string; bytes: number; renamed: boolean }> {
-    const url = `/api/projects/${id}/documents?name=${encodeURIComponent(
+    const url = `${API_ROOT}/projects/${id}/documents?name=${encodeURIComponent(
       file.name
     )}`;
     let res: Response;
@@ -462,24 +464,24 @@ export const api = {
 
   removeDocument: (id: string, name: string) =>
     postJSON<{ ok: boolean; removed: string }>(
-      `/api/projects/${id}/documents/delete`,
+      `${API_ROOT}/projects/${id}/documents/delete`,
       { name }
     ),
 
   /** Read every document and group them into units. Returns a runId to poll. */
   async organise(id: string): Promise<string> {
     const out = await postJSON<{ runId: string }>(
-      `/api/projects/${id}/organise`,
+      `${API_ROOT}/projects/${id}/organise`,
       {}
     );
     return out.runId;
   },
 
   /** The units organise proposed, for review before committing to an audit. */
-  units: (id: string) => getJSON<ProposedUnits>(`/api/projects/${id}/units`),
+  units: (id: string) => getJSON<ProposedUnits>(`${API_ROOT}/projects/${id}/units`),
 
   async startRun(id: string, flags: string[] = []): Promise<string> {
-    const res = await fetch(`/api/projects/${id}/run`, {
+    const res = await fetch(`${API_ROOT}/projects/${id}/run`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ flags }),
@@ -488,10 +490,10 @@ export const api = {
     return (await res.json()).runId as string;
   },
 
-  runStatus: (runId: string) => getJSON<RunStatus>(`/api/runs/${runId}`),
+  runStatus: (runId: string) => getJSON<RunStatus>(`${API_ROOT}/runs/${runId}`),
 
   // Declarable packet-type registry (drives the start-point selector).
-  packetTypes: () => getJSON<PacketTypeRegistry>("/api/packet-types"),
+  packetTypes: () => getJSON<PacketTypeRegistry>(`${API_ROOT}/packet-types`),
 
   // DECLARE a project's packet type. Persists to the manifest and regenerates the
   // unit rung server-side; caller should reload the project to pick up new bands.
@@ -499,7 +501,7 @@ export const api = {
     id: string,
     packet_type: string
   ): Promise<{ packet_type: string; regenerated: boolean; detail: string }> {
-    const res = await fetch(`/api/projects/${id}/packet-type`, {
+    const res = await fetch(`${API_ROOT}/projects/${id}/packet-type`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ packet_type }),
@@ -508,28 +510,28 @@ export const api = {
     return res.json();
   },
 
-  createStatus: () => getJSON<CreateStatus>("/api/create/status"),
+  createStatus: () => getJSON<CreateStatus>(`${API_ROOT}/create/status`),
 
   createMatrix: (id: string) =>
-    getJSON<CreateMatrixResponse>(`/api/projects/${id}/create/matrix`),
+    getJSON<CreateMatrixResponse>(`${API_ROOT}/projects/${id}/create/matrix`),
 
   createTree: (id: string) =>
-    getJSON<CreateTreeResponse>(`/api/projects/${id}/create/tree`),
+    getJSON<CreateTreeResponse>(`${API_ROOT}/projects/${id}/create/tree`),
 
   createRoleTree: (id: string, role: string) =>
     getJSON<CreateRoleTreeResponse>(
-      `/api/projects/${id}/create/tree/${encodeURIComponent(role)}`
+      `${API_ROOT}/projects/${id}/create/tree/${encodeURIComponent(role)}`
     ),
 
   createUnits: (id: string) =>
-    getJSON<CreateUnitsResponse>(`/api/projects/${id}/create/units`),
+    getJSON<CreateUnitsResponse>(`${API_ROOT}/projects/${id}/create/units`),
 
   createUnitTree: (id: string, unitId: string) =>
     getJSON<CreateUnitTreeResponse>(
-      `/api/projects/${id}/create/units/${encodeURIComponent(unitId)}`
+      `${API_ROOT}/projects/${id}/create/units/${encodeURIComponent(unitId)}`
     ),
 
-  gaps: (id: string) => getJSON<GapsResponse>(`/api/projects/${id}/gaps`),
+  gaps: (id: string) => getJSON<GapsResponse>(`${API_ROOT}/projects/${id}/gaps`),
 
   async setGapDecision(
     id: string,
@@ -537,7 +539,7 @@ export const api = {
     decision: GapItem["decision"],
     note = ""
   ): Promise<{ gap_id: string; decision: GapItem["decision"]; note: string; updated_at: string }> {
-    const res = await fetch(`/api/projects/${id}/gaps/${gapId}/decision`, {
+    const res = await fetch(`${API_ROOT}/projects/${id}/gaps/${gapId}/decision`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ decision, note }),
@@ -553,7 +555,7 @@ export const api = {
     id: string,
     gapId: string
   ): Promise<{ gap_id: string; path: string; text: string }> {
-    const res = await fetch(`/api/projects/${id}/gaps/${gapId}/brief`, {
+    const res = await fetch(`${API_ROOT}/projects/${id}/gaps/${gapId}/brief`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ generate: true }),
@@ -566,7 +568,7 @@ export const api = {
   },
 
   async getBrief(id: string, gapId: string): Promise<{ text: string }> {
-    return getJSON(`/api/projects/${id}/gaps/${gapId}/brief`);
+    return getJSON(`${API_ROOT}/projects/${id}/gaps/${gapId}/brief`);
   },
 
   async makeDraft(
@@ -582,7 +584,7 @@ export const api = {
     key_source: string;
     chars: number;
   }> {
-    const res = await fetch(`/api/projects/${id}/gaps/${gapId}/draft`, {
+    const res = await fetch(`${API_ROOT}/projects/${id}/gaps/${gapId}/draft`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ context, generate: true }),
@@ -595,11 +597,11 @@ export const api = {
   },
 
   async getDraft(id: string, gapId: string): Promise<{ text: string }> {
-    return getJSON(`/api/projects/${id}/gaps/${gapId}/draft`);
+    return getJSON(`${API_ROOT}/projects/${id}/gaps/${gapId}/draft`);
   },
 
   async saveBrief(id: string, gapId: string, text: string): Promise<void> {
-    const res = await fetch(`/api/projects/${id}/gaps/${gapId}/brief`, {
+    const res = await fetch(`${API_ROOT}/projects/${id}/gaps/${gapId}/brief`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text }),
@@ -611,7 +613,7 @@ export const api = {
   },
 
   async saveDraft(id: string, gapId: string, text: string): Promise<void> {
-    const res = await fetch(`/api/projects/${id}/gaps/${gapId}/draft`, {
+    const res = await fetch(`${API_ROOT}/projects/${id}/gaps/${gapId}/draft`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text }),
@@ -625,13 +627,13 @@ export const api = {
   /** Model graph runs for a curriculum (A/B trees under graph/runs/). */
   graphRuns: (id: string, e2eRun?: string) =>
     getJSON<GraphRunsResponse>(
-      withE2e(`/api/projects/${id}/graph/runs`, e2eRun)
+      withE2e(`${API_ROOT}/projects/${id}/graph/runs`, e2eRun)
     ),
 
   graphOverview: (id: string, runId: string, e2eRun?: string) =>
     getJSON<GraphOverview>(
       withE2e(
-        `/api/projects/${id}/graph/runs/${encodeURIComponent(runId)}/overview`,
+        `${API_ROOT}/projects/${id}/graph/runs/${encodeURIComponent(runId)}/overview`,
         e2eRun
       )
     ),
@@ -644,7 +646,7 @@ export const api = {
   ) =>
     getJSON<GraphUnitDetail>(
       withE2e(
-        `/api/projects/${id}/graph/runs/${encodeURIComponent(runId)}/units/${encodeURIComponent(unitId)}`,
+        `${API_ROOT}/projects/${id}/graph/runs/${encodeURIComponent(runId)}/units/${encodeURIComponent(unitId)}`,
         e2eRun
       )
     ),

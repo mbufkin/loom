@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { api, describeError } from "../lib/api";
+import { IS_HOSTED } from "../lib/hosted";
 import type { Project, StorageInfo } from "../types";
 
 /** "Audited 10 Sep 2026", or an honest statement that it has not been. */
@@ -145,7 +146,15 @@ export function Home() {
         </p>
       )}
 
-      {storage && (
+      {/* The desktop promise ("nothing is uploaded") is false when hosted, and
+          a privacy claim is the one sentence that must never be wrong. */}
+      {storage && IS_HOSTED && (
+        <p className="home-note home-storage">
+          Curricula and reports are kept on the Loom service the operator runs.
+          To read them, Loom sends document text to the operator’s hosted model.
+        </p>
+      )}
+      {storage && !IS_HOSTED && (
         <p className="home-note home-storage">
           Curricula, settings and reports are stored on this computer at{" "}
           <code>{storage.data_root}</code>. Nothing is uploaded anywhere.

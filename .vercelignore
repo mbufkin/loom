@@ -1,0 +1,24 @@
+# The Vercel project's Root Directory is `hosted`, so CLI deploys run from the
+# repo root. Upload ONLY the hosted app and the React UI it builds into
+# hosted/public/app: the rest of the repo holds curriculum corpora (projects/),
+# auditor code, and local config that must never leave this machine.
+# Allowlist style, so new top-level folders stay private by default.
+/*
+!/hosted
+!/ui
+
+# Rebuilt on Vercel; uploading them is slow and can leak local state.
+/hosted/node_modules
+/hosted/.next
+/hosted/.vercel
+/hosted/tsconfig.tsbuildinfo
+/hosted/public/app
+/ui/node_modules
+/ui/dist
+/ui/mockups
+/ui/*.tsbuildinfo
+
+# Secrets live in Vercel env vars, never in the upload.
+/hosted/.env*
+!/hosted/.env.example
+/ui/.env*

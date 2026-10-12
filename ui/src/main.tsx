@@ -8,6 +8,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { AppShell } from "./AppShell";
+import { ROUTER_BASENAME } from "./lib/hosted";
 import { Calendars } from "./pages/Calendars";
 import { CurriculumSetup } from "./pages/CurriculumSetup";
 import { Home } from "./pages/Home";
@@ -41,7 +42,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         falls back to index.html for any extensionless path (_safe_static), and
         Vite does the same in development, so real paths work in both modes and
         the URL stays readable. */}
-    <BrowserRouter>
+    {/* basename: the hosted build lives under /app/ on the Next site. */}
+    <BrowserRouter basename={ROUTER_BASENAME}>
       <Routes>
         <Route element={<AppShell />}>
           <Route path="/" element={<RootRoute />} />

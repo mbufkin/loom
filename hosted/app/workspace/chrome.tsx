@@ -13,6 +13,10 @@ export function WorkspaceBar({
         {districtName}
       </p>
       <div className="bar-actions">
+        {/* Plain <a>, not <Link>: /app is a separate React app, not a Next page. */}
+        <a className="linkish" href="/app/">
+          Open Loom app
+        </a>
         {showHats ? (
           <a className="linkish" href="/hats">
             Other door

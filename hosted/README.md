@@ -42,6 +42,15 @@ cd hosted && npm test && npm run typecheck && npm run build && cd ..
 npx -y vercel@62.7.0 --prod
 ```
 
+## Loom app (`/app`) and the Pi forwarder (`/api/loom/*`)
+
+`/app` is the real Loom UI (`../ui`), built into `public/app` by `npm run build:ui`
+(part of `npm run build`). Its API calls go to `/api/loom/*`
+(`app/api/loom/[...path]/route.ts` → `lib/loom-proxy.ts`), which requires an
+invited Admin and forwards to the Pi with `LOOM_PROXY_SECRET`. Needs
+`LOOM_API_URL` + `LOOM_PROXY_SECRET` in Vercel env. Pi side, secret rotation and
+deploy steps: `../deploy/hosted-app/RUNBOOK.md`.
+
 ## Runs (Start a Run → plates)
 
 Contract: `../hosted_runs.py` (authoritative; keep `lib/packets.ts` in sync).
