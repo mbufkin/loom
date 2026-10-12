@@ -1763,6 +1763,10 @@ def _organise_then_audit(run_id: str, pid: str, log_path: Path) -> None:
         update(status="error", error=f"Loom could not run this: {e}")
 
 
+# Cached result of _weasyprint_ok(); None means not probed yet.
+_WEASYPRINT_OK: bool | None = None
+
+
 def _weasyprint_ok() -> bool:
     """Can WeasyPrint load its native libraries (Pango/GObject)?
 

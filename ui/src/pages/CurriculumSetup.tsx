@@ -99,7 +99,11 @@ export function CurriculumSetup() {
   );
   const [loaded, setLoaded] = useState(false);
   // Shared with Setup and Settings — see lib/usePreflight.
-  const { preflight, refresh: refreshPreflight } = usePreflight();
+  const {
+    preflight,
+    error: preflightError,
+    refresh: refreshPreflight,
+  } = usePreflight();
 
   // Step 1 — naming a new curriculum.
   const [typedName, setTypedName] = useState("");
@@ -571,6 +575,25 @@ export function CurriculumSetup() {
             </p>
           )}
 
+          {/* Without this, a failed check hides the button with no word of
+              why, which reads as a missing feature rather than an error. */}
+          {!preflight && preflightError != null && (
+            <>
+              <p className="err-message">
+                Loom couldn’t check whether it’s ready to run an audit, so
+                the button is hidden. {describeError(preflightError).message}
+              </p>
+              <p>
+                <button
+                  type="button"
+                  className="btn"
+                  onClick={() => void refreshPreflight()}
+                >
+                  Check again
+                </button>
+              </p>
+            </>
+          )}
           {!isNew && preflight?.can_run && (
             <div className="setup-actions">
               <button

@@ -801,6 +801,20 @@ def test_purge_removes_only_trash_older_than_seven_days():
         fx.close()
 
 
+def test_the_readiness_check_answers_instead_of_crashing():
+    # The setup screen only shows "Organise and run the audit" once this says
+    # can_run. If the check raises, the page gets a 500 and the button is
+    # silently missing, so a crash here must fail the suite, not the user.
+    fx = _Fixture()
+    try:
+        code, body = fx.request("GET", "/api/can-run")
+        assert code == 200, body
+        assert isinstance(body.get("can_run"), bool), body
+        assert isinstance(body.get("checks"), list), body
+    finally:
+        fx.close()
+
+
 if __name__ == "__main__":
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     failed = 0
