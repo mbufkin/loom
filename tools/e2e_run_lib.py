@@ -19,7 +19,17 @@ import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 
+import sys
+
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+# Curricula live under the data directory, not the program folder (loom_paths).
+# On a developer checkout the two are the same directory, so this changes
+# nothing there; on an installed copy or the hosted container, ROOT/projects
+# holds only the template and every run failed with FileNotFoundError.
+from loom_paths import DATA_DIR  # noqa: E402
 
 
 def share_into_run(src: Path, dst: Path, run: Path) -> str:
@@ -78,7 +88,7 @@ def slugify_run_id(label: str) -> str:
 
 
 def curriculum_root(project_id: str) -> Path:
-    return ROOT / "projects" / project_id
+    return DATA_DIR / "projects" / project_id
 
 
 def e2e_runs_root(project_id: str) -> Path:
