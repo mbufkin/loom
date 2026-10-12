@@ -335,6 +335,13 @@ class LiveServer(unittest.TestCase):
         # does not exist, not the guard's 403. Nothing is spawned.
         self.assertEqual(self._req(path, "POST", hdr(make_token()), b"{}")[0], 404)
 
+    def test_delete_needs_a_token_and_is_not_desktop_only(self):
+        path = "/api/projects/no-such-curriculum/delete"
+        self.assertEqual(self._req(path, "POST", body=b"{}")[0], 401)
+        self.assertEqual(self._req(path, "POST", hdr("junk"), b"{}")[0], 403)
+        # Reaches the router with a valid token: 404, nothing moved.
+        self.assertEqual(self._req(path, "POST", hdr(make_token()), b"{}")[0], 404)
+
     def test_healthz_from_localhost(self):
         self.assertEqual(self._req("/healthz")[0], 200)
 

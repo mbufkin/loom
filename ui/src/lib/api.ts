@@ -468,6 +468,13 @@ export const api = {
       { name }
     ),
 
+  /** Move a curriculum to the trash, where it is kept for `keep_days`. */
+  deleteProject: (id: string) =>
+    postJSON<{ ok: boolean; id: string; trashed_as: string; keep_days: number }>(
+      `${API_ROOT}/projects/${id}/delete`,
+      {}
+    ),
+
   /** Read every document and group them into units. Returns a runId to poll. */
   async organise(id: string): Promise<string> {
     const out = await postJSON<{ runId: string }>(

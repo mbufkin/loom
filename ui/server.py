@@ -16,6 +16,7 @@ Endpoints (all under /api):
   POST /api/projects/{id}/documents/delete-> remove one document from sources/
   POST /api/projects/{id}/organise        -> {runId}  (spawns ingest.py)
   POST /api/projects/{id}/organise-and-run -> {runId} (ingest, then the audit, as one run)
+  POST /api/projects/{id}/delete          -> moves the folder to <data>/.trash for 7 days
   GET  /api/projects/{id}/units           -> units organise proposed, for review
   GET  /api/projects/{id}/outputs[?e2e_run=] -> grouped tree of reviewable files
   GET  /api/projects/{id}/file?path=REL[&e2e_run=] -> raw bytes of one file (guarded)
@@ -55,6 +56,7 @@ Run:  .venv/bin/python ui/server.py [--port 8770]
 from __future__ import annotations
 
 import argparse
+import calendar
 import hashlib
 import importlib.util
 import json
@@ -588,6 +590,7 @@ def _list_projects() -> list[dict]:
     out: list[dict] = []
     if not PROJECTS.is_dir():
         return out
+    running = _running_project_ids()
     for child in PROJECTS.iterdir():
         # Skip files (README.md and friends) and private/underscore shelves.
         if not child.is_dir() or child.name.startswith("_"):
@@ -621,6 +624,9 @@ def _list_projects() -> list[dict]:
                 # user on a curriculum that renders an empty page.
                 "has_review_run": last_audit is not None,
                 "last_audit": last_audit,
+                # So the list can disable Delete up front; the delete endpoint
+                # refuses a running curriculum regardless.
+                "run_in_progress": pid in running,
             }
         )
     # Most recently audited first: the curriculum somebody last worked on is the
@@ -1301,6 +1307,126 @@ def _list_documents(pid: str) -> dict:
             )
             > manifest.stat().st_mtime
         ),
+    }
+
+
+# --- Deleting a curriculum: a move to .trash, purged after a week ------------
+#
+# Soft, because a curriculum folder holds a district's documents and the audit
+# they paid model time for, and "delete" is one click from "open". Moving the
+# folder is a single rename on the same filesystem -- atomic, instant, and
+# undoable by moving it back -- where rmtree would be none of those.
+
+TRASH_KEEP_DAYS = 7
+
+# Names the delete endpoint will never act on, whatever is on disk. Underscore
+# folders (_template and friends) are shelves the listing already hides, and a
+# dot name could be the trash itself.
+_UNDELETABLE = {"_template", ".trash", ".", ".."}
+
+# <id>-<UTC timestamp>, optionally -N when two deletes land in one second.
+_TRASH_NAME_RE = re.compile(r"^(?P<id>.+)-(?P<ts>\d{8}T\d{6}Z)(?:-\d+)?$")
+
+
+def _trash_dir() -> Path:
+    """<data root>/.trash, beside projects/ so the move is a same-disk rename.
+
+    Derived from PROJECTS rather than DATA_ROOT so the two can never end up on
+    different filesystems, where a rename would fail rather than move.
+    """
+    return PROJECTS.parent / ".trash"
+
+
+def _running_project_ids() -> set[str]:
+    with _RUNS_LOCK:
+        return {r["pid"] for r in _RUNS.values() if r["status"] == "running"}
+
+
+def _purge_trash(keep_days: int = TRASH_KEEP_DAYS, now: float | None = None) -> list[str]:
+    """Remove trash entries deleted more than `keep_days` ago; return their names.
+
+    Age comes from the timestamp in the entry's name, not its mtime: a rename
+    keeps the folder's old mtime, so a curriculum last touched a month ago
+    would be purged the moment it was deleted. Anything whose name this code
+    did not write is left alone.
+    """
+    trash = _trash_dir()
+    if not trash.is_dir():
+        return []
+    cutoff = (now if now is not None else time.time()) - keep_days * 86400
+    purged: list[str] = []
+    for entry in sorted(trash.iterdir()):
+        m = _TRASH_NAME_RE.match(entry.name)
+        if not m:
+            continue
+        deleted_at = calendar.timegm(time.strptime(m["ts"], "%Y%m%dT%H%M%SZ"))
+        if deleted_at >= cutoff:
+            continue
+        try:
+            if entry.is_dir() and not entry.is_symlink():
+                shutil.rmtree(entry)
+            else:
+                entry.unlink()
+        except OSError as e:
+            print(f"[loom-trash] could not purge {entry.name}: {e}", flush=True)
+            continue
+        purged.append(entry.name)
+        print(f"[loom-trash] purged {entry.name} (deleted over {keep_days} days ago)", flush=True)
+    return purged
+
+
+def _delete_project(pid: str) -> dict:
+    """Move projects/<pid> to .trash/<pid>-<UTC timestamp>.
+
+    Validation is stricter than _project_dir's, because a mistake here loses
+    work rather than showing the wrong page: no reserved or hidden names, no
+    symlinks (renaming one would trash the link and leave a confusing target
+    behind), and nothing that resolves outside projects/.
+    """
+    if not re.fullmatch(r"[A-Za-z0-9._-]+", pid or "") or pid in (".", ".."):
+        raise _BadRequest("invalid curriculum name")
+    if pid in _UNDELETABLE or pid.startswith(("_", ".")):
+        raise PermissionError(f"{pid} is part of Loom itself and can't be deleted")
+    candidate = PROJECTS / pid
+    if candidate.is_symlink():
+        raise PermissionError(f"{pid} is a link, not a curriculum folder")
+    if not candidate.is_dir():
+        raise FileNotFoundError(f"There is no curriculum called {pid}")
+    if candidate.resolve().parent != PROJECTS.resolve():
+        raise PermissionError(f"{pid} is outside the curricula folder")
+
+    trash = _trash_dir()
+    trash.mkdir(parents=True, exist_ok=True)
+    stamp = time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())
+    target = trash / f"{pid}-{stamp}"
+    n = 2
+    while target.exists():
+        target = trash / f"{pid}-{stamp}-{n}"
+        n += 1
+
+    # Held across the rename so a run cannot start on a folder mid-move:
+    # organise-and-run registers under this same lock.
+    with _RUNS_LOCK:
+        if any(r["pid"] == pid and r["status"] == "running" for r in _RUNS.values()):
+            raise _Busy(
+                "This curriculum is being organised or audited right now. "
+                "It can be deleted once that run finishes."
+            )
+        os.rename(candidate, target)
+    print(f"[loom-trash] deleted {pid} -> .trash/{target.name}", flush=True)
+
+    # A failed purge must not turn a successful delete into an error.
+    try:
+        purged = _purge_trash()
+    except OSError as e:
+        print(f"[loom-trash] purge skipped: {e}", flush=True)
+        purged = []
+    return {
+        "ok": True,
+        "id": pid,
+        "trashed_as": f".trash/{target.name}",
+        "keep_days": TRASH_KEEP_DAYS,
+        "purged": purged,
     }
 
 
@@ -2838,6 +2964,12 @@ class Handler(BaseHTTPRequestHandler):
                 and parts[3] == "organise-and-run"
             ):
                 return self._json({"runId": _start_organise_and_run(parts[2])})
+            if (
+                len(parts) == 4
+                and parts[:2] == ["api", "projects"]
+                and parts[3] == "delete"
+            ):
+                return self._json(_delete_project(parts[2]))
             if parts == ["api", "models", "select"]:
                 body = _read_json_body(self)
                 return self._json(
@@ -3002,6 +3134,10 @@ def main() -> int:
     # Create the data skeleton at startup rather than on first write, so a fresh
     # install has somewhere to put things and the path shown below always exists.
     ensure_data_dirs()
+    try:
+        _purge_trash()
+    except OSError as e:
+        print(f"[loom-trash] purge skipped: {e}", flush=True)
     print(f"[loom-review] API on http://{args.host}:{port}  (install: {ROOT})", flush=True)
     print(f"[loom-review] data root: {DATA_ROOT}", flush=True)
     if DIST.is_dir():

@@ -25,6 +25,8 @@ export interface Project {
   /** Unix seconds when the most recent audit finished; null if never audited.
    *  The picker's real sort key. */
   last_audit?: number | null;
+  /** True while an organise or audit is running for it; Delete is refused. */
+  run_in_progress?: boolean;
 }
 
 /** Where this copy of Loom keeps curricula, settings and logs. */

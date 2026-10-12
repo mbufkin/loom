@@ -20,6 +20,10 @@ projects/*/ingest/
 projects/*/runs/
 **/.raw/
 
+# Deleted curricula, kept for a week. On a developer checkout the data root is
+# this tree, so without this a deleted district folder could be committed.
+.trash/
+
 # --- Curriculum corpus (licensing / size) ---
 data/career-curriculum/
 projects/*/sources/**

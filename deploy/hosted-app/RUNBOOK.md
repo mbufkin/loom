@@ -79,6 +79,22 @@ Cloudflare Zero Trust → Access → Applications → `Loom` → policy emails. 
 `LOOM_ALLOWED_EMAILS` is set in `app.env`, add the email there too and
 `docker compose up -d --force-recreate`.
 
+## Restore a deleted curriculum
+
+Delete in the app moves the folder to `/data/.trash/<id>-<UTC timestamp>`
+(host: `/media/mbufkin/pi-srv/loom-app/data/.trash/`). Entries older than 7
+days are purged on server start and on every delete (`[loom-trash]` lines in
+`docker logs loom-app`). To restore, move it back under its id, which must
+not be in use:
+
+```bash
+cd /media/mbufkin/pi-srv/loom-app/data
+ls .trash/
+mv .trash/test1-20261012T182608Z projects/test1
+```
+
+It reappears on the next page load; no restart needed.
+
 ## Known limits
 
 - No per-district separation yet: everyone allowed in sees every curriculum.

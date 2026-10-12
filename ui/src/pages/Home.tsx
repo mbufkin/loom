@@ -1,8 +1,113 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { api, describeError } from "../lib/api";
 import { IS_HOSTED } from "../lib/hosted";
 import type { Project, StorageInfo } from "../types";
+
+/**
+ * Confirming a curriculum delete.
+ *
+ * A native <dialog> opened with showModal(), styled as one of the app's
+ * panels: the browser supplies the focus trap, Escape to cancel, and an inert
+ * page behind it, which a hand-rolled overlay would have to re-implement.
+ *
+ * The guard is typing the curriculum's folder name, not a second "are you
+ * sure". The setup screen already shows that name in mono as the folder is
+ * created, so it is a name the operator has seen; and a second click is the
+ * same reflex as the first, where typing is not. Cancel takes focus, so Enter
+ * on arrival does nothing destructive.
+ */
+function DeleteDialog({
+  project,
+  onCancel,
+  onDeleted,
+}: {
+  project: Project;
+  onCancel: () => void;
+  onDeleted: (title: string, keepDays: number) => void;
+}) {
+  const ref = useRef<HTMLDialogElement>(null);
+  const [typed, setTyped] = useState("");
+  const [deleting, setDeleting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const title = project.title || project.id;
+  const matches = typed.trim().toLowerCase() === project.id.toLowerCase();
+
+  useEffect(() => {
+    const d = ref.current;
+    if (d && !d.open) d.showModal();
+  }, []);
+
+  const confirm = async () => {
+    if (!matches || deleting) return;
+    setDeleting(true);
+    setError(null);
+    try {
+      const res = await api.deleteProject(project.id);
+      onDeleted(title, res.keep_days);
+    } catch (e) {
+      // 409 (a run started meanwhile) arrives here in the server's words.
+      setError(describeError(e).message);
+      setDeleting(false);
+    }
+  };
+
+  return (
+    <dialog
+      ref={ref}
+      className="panel confirm-dialog"
+      aria-labelledby="delete-title"
+      // Escape fires "cancel"; route it through the same path as the button
+      // so the parent's state and the dialog never disagree.
+      onCancel={(e) => {
+        e.preventDefault();
+        if (!deleting) onCancel();
+      }}
+    >
+      <div className="panel-head" id="delete-title">
+        Delete this curriculum?
+      </div>
+      <div className="panel-body">
+        <p>
+          <strong>{title}</strong> will be removed from Loom: its documents,
+          the units Loom organised, and its audit results.
+        </p>
+        <p className="home-note">
+          {IS_HOSTED
+            ? "It is kept for 7 days in case this was a mistake; the operator can restore it in that time."
+            : "It is kept for 7 days in the .trash folder beside your curricula, in case this was a mistake."}
+        </p>
+        <label className="confirm-type">
+          Type <code>{project.id}</code> to confirm
+          <input
+            type="text"
+            value={typed}
+            autoComplete="off"
+            spellCheck={false}
+            onChange={(e) => setTyped(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") void confirm();
+            }}
+          />
+        </label>
+        {error && <p className="err-message">{error}</p>}
+        <div className="confirm-actions">
+          <button type="button" autoFocus disabled={deleting} onClick={onCancel}>
+            Cancel
+          </button>
+          <button
+            type="button"
+            className="btn-danger"
+            disabled={!matches || deleting}
+            onClick={() => void confirm()}
+          >
+            {deleting ? "Deleting…" : "Delete curriculum"}
+          </button>
+        </div>
+      </div>
+    </dialog>
+  );
+}
 
 /** "Audited 10 Sep 2026", or an honest statement that it has not been. */
 function auditedLabel(p: Project): string {
@@ -35,6 +140,8 @@ export function Home() {
     null,
   );
   const [loaded, setLoaded] = useState(false);
+  const [toDelete, setToDelete] = useState<Project | null>(null);
+  const [deletedNote, setDeletedNote] = useState<string | null>(null);
 
   const load = useCallback(async () => {
     try {
@@ -120,8 +227,28 @@ export function Home() {
             <li key={p.id} className="curr-row">
               <div className="curr-main">
                 <div className="curr-title">{p.title || p.id}</div>
-                <div className="curr-meta">{auditedLabel(p)}</div>
+                <div className="curr-meta" id={`meta-${p.id}`}>
+                  {auditedLabel(p)}
+                  {p.run_in_progress &&
+                    " · Organising or auditing now — it can be deleted when that finishes"}
+                </div>
               </div>
+              {/* Quiet on purpose: the row's job is Open, and a destructive
+                  action should not compete with it for attention. The
+                  confirmation is where it becomes explicit. */}
+              <button
+                type="button"
+                className="curr-delete"
+                disabled={p.run_in_progress}
+                aria-label={`Delete ${p.title || p.id}`}
+                aria-describedby={p.run_in_progress ? `meta-${p.id}` : undefined}
+                onClick={() => {
+                  setDeletedNote(null);
+                  setToDelete(p);
+                }}
+              >
+                Delete
+              </button>
               {/* The console only renders a finished audit, so a curriculum
                   without one goes to its setup page instead of to a screen
                   that would have nothing on it. */}
@@ -137,6 +264,26 @@ export function Home() {
             </li>
           ))}
         </ul>
+      )}
+
+      {deletedNote && (
+        <p className="home-note" role="status">
+          {deletedNote}
+        </p>
+      )}
+
+      {toDelete && (
+        <DeleteDialog
+          project={toDelete}
+          onCancel={() => setToDelete(null)}
+          onDeleted={(title, keepDays) => {
+            setToDelete(null);
+            setDeletedNote(
+              `Deleted “${title}”. It can be recovered for ${keepDays} days.`,
+            );
+            void load();
+          }}
+        />
       )}
 
       {loaded && curricula.length > 0 && reviewable.length === 0 && (

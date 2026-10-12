@@ -646,6 +646,161 @@ def test_organise_and_run_refuses_when_there_are_no_documents_yet():
         fx.close()
 
 
+# --- deleting a curriculum: soft, into <data root>/.trash -------------------
+
+
+def _raw_post(fx: _Fixture, path: str) -> int:
+    """POST a path exactly as written. urllib would normalise "/../" away
+    before it left the client, which is not what an attacker's client does."""
+    import http.client
+
+    conn = http.client.HTTPConnection("127.0.0.1", fx.port, timeout=10)
+    try:
+        conn.request("POST", path, body=b"{}", headers={"Content-Type": "application/json"})
+        return conn.getresponse().status
+    finally:
+        conn.close()
+
+
+def test_delete_moves_the_curriculum_to_trash_and_off_the_list():
+    fx = _Fixture()
+    try:
+        _project_with_a_document(fx, "to-delete")
+        _project_with_a_document(fx, "keep-me")
+
+        code, body = fx.request("POST", "/api/projects/to-delete/delete", {})
+        assert code == 200, body
+        assert body["ok"] is True and body["keep_days"] == 7
+        assert body["trashed_as"].startswith(".trash/to-delete-")
+
+        assert not (fx.projects / "to-delete").exists()
+        trashed = fx.tmp / body["trashed_as"]
+        assert (trashed / "sources" / "a.md").is_file(), "documents kept, recoverable"
+
+        _, listing = fx.request("GET", "/api/projects")
+        ids = [p["id"] for p in listing]
+        assert "to-delete" not in ids and "keep-me" in ids
+
+        # The id is free again, and a second delete of the new folder does not
+        # collide with the first one's trash entry.
+        fx.request("POST", "/api/projects", {"id": "to-delete"})
+        code, again = fx.request("POST", "/api/projects/to-delete/delete", {})
+        assert code == 200, again
+        assert again["trashed_as"] != body["trashed_as"]
+    finally:
+        fx.close()
+
+
+def test_delete_of_an_unknown_curriculum_is_404():
+    fx = _Fixture()
+    try:
+        code, body = fx.request("POST", "/api/projects/never-existed/delete", {})
+        assert code == 404, (code, body)
+        assert "no curriculum called never-existed" in body["error"]
+    finally:
+        fx.close()
+
+
+def test_delete_refuses_traversal_and_invalid_ids():
+    fx = _Fixture()
+    try:
+        _project_with_a_document(fx, "victim")
+        (fx.tmp / "outside").mkdir()
+        for path in (
+            "/api/projects/../delete",
+            "/api/projects/%2e%2e/delete",
+            "/api/projects/..%2Fvictim/delete",
+            "/api/projects/semi;colon/delete",
+            "/api/projects/.hidden/delete",
+        ):
+            status = _raw_post(fx, path)
+            assert status in (400, 403, 404), (path, status)
+        assert (fx.projects / "victim" / "sources" / "a.md").is_file()
+        assert (fx.tmp / "outside").is_dir()
+        assert not (fx.tmp / ".trash").exists() or not any((fx.tmp / ".trash").iterdir())
+
+        # A symlink in projects/ is not a curriculum folder; neither the link
+        # nor what it points at may be moved.
+        (fx.projects / "linky").symlink_to(fx.tmp / "outside", target_is_directory=True)
+        code, body = fx.request("POST", "/api/projects/linky/delete", {})
+        assert code == 403, (code, body)
+        assert (fx.projects / "linky").is_symlink() and (fx.tmp / "outside").is_dir()
+    finally:
+        fx.close()
+
+
+def test_delete_refuses_the_template():
+    fx = _Fixture()
+    try:
+        (fx.projects / "_template").mkdir()
+        code, body = fx.request("POST", "/api/projects/_template/delete", {})
+        assert code == 403, (code, body)
+        assert "can't be deleted" in body["error"]
+        assert (fx.projects / "_template").is_dir()
+    finally:
+        fx.close()
+
+
+def test_delete_refuses_a_curriculum_with_a_run_in_progress():
+    fx = _Fixture()
+    try:
+        _project_with_a_document(fx, "busy-one")
+        with server._RUNS_LOCK:
+            server._RUNS["fake-running"] = {
+                "pid": "busy-one", "status": "running", "kind": "audit",
+                "log_path": str(fx.tmp / "none.log"), "exit_code": None,
+            }
+        try:
+            _, listing = fx.request("GET", "/api/projects")
+            assert {p["id"]: p for p in listing}["busy-one"]["run_in_progress"] is True
+
+            code, body = fx.request("POST", "/api/projects/busy-one/delete", {})
+            assert code == 409, (code, body)
+            assert "once that run finishes" in body["error"]
+            assert (fx.projects / "busy-one").is_dir()
+        finally:
+            with server._RUNS_LOCK:
+                server._RUNS.pop("fake-running", None)
+
+        code, body = fx.request("POST", "/api/projects/busy-one/delete", {})
+        assert code == 200, body
+    finally:
+        fx.close()
+
+
+def test_purge_removes_only_trash_older_than_seven_days():
+    import os
+    import time
+
+    fx = _Fixture()
+    try:
+        trash = fx.tmp / ".trash"
+        trash.mkdir()
+        now = time.time()
+
+        def stamp(days_ago: float) -> str:
+            return time.strftime("%Y%m%dT%H%M%SZ", time.gmtime(now - days_ago * 86400))
+
+        old = trash / f"old-one-{stamp(8)}"
+        fresh = trash / f"fresh-one-{stamp(1)}"
+        edge = trash / f"edge-one-{stamp(6.9)}-2"
+        unrelated = trash / "notes-by-hand"
+        for d in (old, fresh, edge, unrelated):
+            (d / "sources").mkdir(parents=True)
+        # Age is read from the name, not mtime: a renamed folder keeps the
+        # mtime of its last edit, which can be months old.
+        month_ago = now - 30 * 86400
+        os.utime(fresh, (month_ago, month_ago))
+
+        purged = server._purge_trash(now=now)
+
+        assert purged == [old.name]
+        assert not old.exists()
+        assert fresh.is_dir() and edge.is_dir() and unrelated.is_dir()
+    finally:
+        fx.close()
+
+
 if __name__ == "__main__":
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     failed = 0
