@@ -48,7 +48,7 @@ export default async function SignInPage() {
           </form>
           <p className="note">
             {ready
-              ? "Workspace membership follows the hosted domain on this sign-in. Students and vendors on that domain are Admins too."
+              ? "Loom is invite-only. Admins need a school Workspace account and an invitation from the Operator; the hosted domain on this sign-in names the District."
               : "Google sign-in is not configured yet. Copy hosted/.env.example to hosted/.env.local and add AUTH_SECRET, AUTH_GOOGLE_ID, and AUTH_GOOGLE_SECRET."}
           </p>
         </div>

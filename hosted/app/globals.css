@@ -338,3 +338,12 @@ h2.section {
   color: var(--ink-soft);
   line-height: 1.5;
 }
+
+/* The FIRST-PASS report is the product; supporting plates sit below it. */
+.plate-main {
+  border-left: 4px solid var(--brass);
+}
+
+.row-selected td {
+  background: var(--page-edge);
+}

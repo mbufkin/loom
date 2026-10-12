@@ -2,10 +2,15 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 import { BARGAIN_SENTENCE, canPasteOrStart } from "@/lib/bargain";
-import { packetListStatus, packetListStatusLabel } from "@/lib/packets";
+import {
+  packetListStatus,
+  packetListStatusLabel,
+  type PacketRun,
+} from "@/lib/packets";
 import { STORE_CEILING_REASON } from "@/lib/store-ceiling";
 import { r2Configured } from "@/lib/r2";
 import {
+  listDistrictRuns,
   listPackets,
   readBargain,
   storeCeilingBlocksPaste,
@@ -23,12 +28,21 @@ export default async function WorkspacePage() {
   // Reads already fail-soft. A missing R2_* host config must not offer
   // Accept — that POST is what painted the Workspace error page.
   const storeReady = r2Configured();
-  const [bargain, packets, storeFull] = await Promise.all([
+  const [bargain, packets, storeFull, districtRuns] = await Promise.all([
     readBargain(districtId, session.user.googleSub),
     listPackets(districtId),
     storeCeilingBlocksPaste(),
+    listDistrictRuns(districtId),
   ]);
   const accepted = canPasteOrStart(Boolean(bargain));
+  // One listing for the whole District, grouped here — not one per row.
+  const runsByPacket = new Map<string, PacketRun[]>();
+  for (const run of districtRuns) {
+    const list = runsByPacket.get(run.packetId) ?? [];
+    list.push(run);
+    runsByPacket.set(run.packetId, list);
+  }
+  const nowMs = Date.now();
 
   async function acceptBargain() {
     "use server";
@@ -59,7 +73,8 @@ export default async function WorkspacePage() {
         />
         <h1>Workspace</h1>
         <p className="lede">
-          Packets for this District. Anyone on {districtId} may open them.
+          Packets for this District. Invited Admins on {districtId} may open
+          them. Open a Packet to start a Run or read its report.
         </p>
         <p className="identity">
           Signed in as <strong>{session.user.email}</strong>
@@ -113,7 +128,10 @@ export default async function WorkspacePage() {
                 </tr>
               ) : (
                 packets.map((packet) => {
-                  const status = packetListStatus(packet.runs);
+                  const status = packetListStatus(
+                    runsByPacket.get(packet.id) ?? [],
+                    nowMs,
+                  );
                   const pasted = new Date(packet.pastedAt).toLocaleDateString(
                     "en-US",
                     { year: "numeric", month: "short", day: "numeric" },

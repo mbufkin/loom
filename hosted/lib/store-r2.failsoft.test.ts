@@ -39,6 +39,15 @@ describe("store reads survive a rejected R2 key", () => {
       assert.deepEqual(packets, []);
       assert.equal(bargain, null);
       assert.equal(full, false);
+
+      // Run readers back the Workspace and packet page — same rule.
+      const { listRuns, listDistrictRuns, listAllRuns } = await import("./store");
+      const runReads = await Promise.all([
+        listRuns("dallasisd.org", "11111111-1111-4111-8111-111111111111"),
+        listDistrictRuns("dallasisd.org"),
+        listAllRuns(),
+      ]);
+      assert.deepEqual(runReads, [[], [], []]);
     } finally {
       for (const key of KEYS) {
         if (prior[key] === undefined) delete process.env[key];

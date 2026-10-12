@@ -23,13 +23,38 @@ Project: `wrccai/loom` (`prj_9VmFm5xMofswGGqW3k2qAhPd8Mgl`).
 
 Set **Root Directory** to `hosted` (dashboard created this project as a Python preset — do not deploy `./run-audit` as a Function).
 
-Env on Vercel (not the NIM key): `AUTH_SECRET`, `AUTH_GOOGLE_ID`, `AUTH_GOOGLE_SECRET`, `AUTH_URL`, `OPERATOR_EMAILS`, plus the four `R2_*` vars.
+Env on Vercel (not the NIM key): `AUTH_SECRET`, `AUTH_GOOGLE_ID`, `AUTH_GOOGLE_SECRET`, `AUTH_URL`, `OPERATOR_EMAILS`, `ADMIN_EMAILS`, plus the four `R2_*` vars.
+
+Sign-in is **invite-only** (see `.scratch/hosted-district-thin-path/issues/11-manual-runs-and-invite-only.md`): an Admin needs a Workspace `hd` **and** an email on `ADMIN_EMAILS`. Empty or missing `ADMIN_EMAILS` = nobody reaches Workspace (the Operator view still works). Invite someone by adding their email and redeploying.
 
 Without `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, and `R2_SECRET_ACCESS_KEY`, Workspace still loads (sign-in is fine) but Accept and paste wait. Those three plus `R2_BUCKET` come from a Cloudflare R2 API token — they are not minted here.
 
-The Packet store **Ceiling** refuses new pastes at 9 GB of R2’s 10 GB-month free include, or 8,000 objects — whichever comes first. Tiny files cannot burn the 1 million Class A include while storage still looks empty. That is not the Run Cap.
+The Packet store **Ceiling** refuses new pastes at 9 GB of R2’s 10 GB-month free include, or 8,000 objects — whichever comes first. Tiny files cannot burn the 1 million Class A include while storage still looks empty. That is not the Run Cap (see Runs below).
 
-`NVIDIA_API_KEY` belongs on Fly app `loom-smnysw` only.
+`NVIDIA_API_KEY` is never on Vercel. It lives only on the Pi Worker (`hosted_worker.py`, see `.scratch/hosted-district-thin-path/issues/12-worker-on-the-pi.md`).
+
+## Deploy
+
+Run from the **repo root**, not `hosted/` — the Vercel project's Root Directory is `hosted`, and the root `.vercelignore` uploads only `hosted/`:
+
+```bash
+cd hosted && npm test && npm run typecheck && npm run build && cd ..
+npx -y vercel@62.7.0 --prod
+```
+
+## Runs (Start a Run → plates)
+
+Contract: `../hosted_runs.py` (authoritative; keep `lib/packets.ts` in sync).
+
+| Object | Writer |
+|--------|--------|
+| `d/<d>/packets/<p>/runs/<runId>/run.json` | Vercel creates (`status: queued`, `attempt: 0`, create-only); Worker owns after claim |
+| `queue/<runId>.json` | Vercel creates after run.json (create-only); Worker deletes on claim |
+| `d/<d>/packets/<p>/runs/<runId>/plates/*` | Worker only; served to the Admin via `/api/file` |
+
+- Status shown = `run.json` status, except `running` with `heartbeatAt` older than 15 min shows **Stalled**. `meta.json` `runs` is a stale legacy field — never read it for status.
+- Start (`POST /api/packets/<id>/runs`, rules in `lib/runs.ts`) needs: invited Admin of that District, Bargain accepted, Packet in that District. Cap, counted from run records by `queuedAt` (UTC): **2 started Runs per District per day**, **20 per calendar month across all Districts**, **1 queued/running Run per District**. Failed Runs count; a Worker requeue does not create a new Run.
+- Double-submit: the page mints one `runId` per view and the server writes create-only, so a repeat returns the same Run (HTTP 200) instead of a second one.
 
 ## Spec
 

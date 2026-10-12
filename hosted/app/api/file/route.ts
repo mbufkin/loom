@@ -4,13 +4,17 @@ import { requireSignedIn } from "@/lib/require-admin";
 
 /**
  * Private R2 — browsers cannot fetch the bucket. Admins of that
- * District and Operators may read the same Packet files.
+ * District and Operators may read the same Packet files and Run plates
+ * (everything under d/<district>/packets/).
  */
 export async function GET(request: Request) {
   const user = await requireSignedIn();
   if (!user) return NextResponse.json({ error: "denied" }, { status: 401 });
 
-  const pathname = new URL(request.url).searchParams.get("p") ?? "";
+  const search = new URL(request.url).searchParams;
+  const pathname = search.get("p") ?? "";
+  // Plates offer View (inline) and Download (attachment) from the same key.
+  const disposition = search.get("download") === "1" ? "attachment" : "inline";
   const match = /^d\/([^/]+)\/packets\//.exec(pathname);
   if (!match?.[1]) {
     return NextResponse.json({ error: "Bad path" }, { status: 400 });
@@ -32,7 +36,7 @@ export async function GET(request: Request) {
     return new NextResponse(obj.Body.transformToWebStream(), {
       headers: {
         "content-type": obj.ContentType || "application/octet-stream",
-        "content-disposition": `inline; filename="${filename.replace(/"/g, "")}"`,
+        "content-disposition": `${disposition}; filename="${filename.replace(/"/g, "")}"`,
       },
     });
   } catch (error) {

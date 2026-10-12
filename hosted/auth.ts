@@ -3,11 +3,27 @@ import Google from "next-auth/providers/google";
 import {
   afterAuthPath,
   decideSignIn,
-  parseOperatorEmails,
+  parseEmailList,
+  type SignInDecision,
 } from "@/lib/access";
 
-function operatorEmails(): string[] {
-  return parseOperatorEmails(process.env.OPERATOR_EMAILS);
+type GoogleProfileish =
+  | { email?: string | null; email_verified?: boolean; hd?: string }
+  | null
+  | undefined;
+
+/**
+ * One place that reads the allowlists, so `signIn` and `jwt` can never
+ * disagree about who gets in or which hats they wear.
+ */
+function decideForProfile(profile: GoogleProfileish): SignInDecision {
+  return decideSignIn({
+    email: profile?.email,
+    emailVerified: Boolean(profile?.email_verified),
+    hd: profile?.hd,
+    operatorEmails: parseEmailList(process.env.OPERATOR_EMAILS),
+    adminEmails: parseEmailList(process.env.ADMIN_EMAILS),
+  });
 }
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
@@ -30,14 +46,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   },
   callbacks: {
     async signIn({ profile }) {
-      const decision = decideSignIn({
-        email: profile?.email,
-        emailVerified: Boolean(
-          (profile as { email_verified?: boolean } | undefined)?.email_verified,
-        ),
-        hd: (profile as { hd?: string } | undefined)?.hd,
-        operatorEmails: operatorEmails(),
-      });
+      const decision = decideForProfile(profile as GoogleProfileish);
       if (decision.ok) return true;
       return `/denied?reason=${decision.reason}`;
     },
@@ -45,14 +54,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       // Only on the first sign-in does Google send `profile`. Later requests
       // reuse the JWT. District identity follows current `hd` on that sign-in.
       if (profile && account?.provider === "google") {
-        const decision = decideSignIn({
-          email: profile.email,
-          emailVerified: Boolean(
-            (profile as { email_verified?: boolean }).email_verified,
-          ),
-          hd: (profile as { hd?: string }).hd,
-          operatorEmails: operatorEmails(),
-        });
+        const decision = decideForProfile(profile as GoogleProfileish);
         if (!decision.ok) {
           return token;
         }

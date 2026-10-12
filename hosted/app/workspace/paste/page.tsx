@@ -32,8 +32,9 @@ export default async function PastePage() {
         </p>
         <h1>Paste a Packet</h1>
         <p className="lede">
-          One frozen set of documents. Start a Run from the Packet after
-          these files land. PowerPoint decks become slide text here —
+          One frozen set of documents. After these files land, open the
+          Packet to start a Run (limits apply per District per day).
+          PowerPoint decks become slide text here —
           the pictures never enter the store. New pastes stop if they
           would leave the Packet store’s free tier.
         </p>

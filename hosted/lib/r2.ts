@@ -1,6 +1,6 @@
 /**
- * Cloudflare R2 is the Packet archive (S3 API). Fly and Vercel both speak
- * this. The bucket is private — browsers never get a public URL.
+ * Cloudflare R2 is the Packet archive (S3 API). Vercel and the Pi Worker
+ * both speak this. The bucket is private — browsers never get a public URL.
  *
  * Required env (never commit values):
  *   R2_ACCOUNT_ID
@@ -17,7 +17,7 @@ import {
 } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
-/** Thrown on writes when Vercel/Fly has Auth but no R2_* vars. */
+/** Thrown on writes when the host has Auth but no R2_* vars. */
 export const PACKET_STORE_UNCONFIGURED = "Packet store is not configured";
 
 function required(name: string): string {
@@ -83,6 +83,44 @@ export async function r2PutJson(key: string, value: unknown): Promise<void> {
       ContentType: "application/json",
     }),
   );
+}
+
+/**
+ * Create-only JSON write (If-None-Match: *). Returns false when the key
+ * already exists instead of overwriting it — that is how a double-click
+ * on Start cannot create two Runs, and how Vercel never clobbers a
+ * run.json the Worker already owns. R2 answers 412 for an existing key
+ * and may answer 409 when two creates race on the same key.
+ */
+export async function r2PutJsonIfAbsent(
+  key: string,
+  value: unknown,
+): Promise<boolean> {
+  try {
+    await r2Client().send(
+      new PutObjectCommand({
+        Bucket: r2Bucket(),
+        Key: key,
+        Body: JSON.stringify(value),
+        ContentType: "application/json",
+        IfNoneMatch: "*",
+      }),
+    );
+    return true;
+  } catch (error) {
+    const name = (error as { name?: string }).name;
+    const status = (error as { $metadata?: { httpStatusCode?: number } })
+      .$metadata?.httpStatusCode;
+    if (
+      name === "PreconditionFailed" ||
+      name === "ConditionalRequestConflict" ||
+      status === 412 ||
+      status === 409
+    ) {
+      return false;
+    }
+    throw error;
+  }
 }
 
 /** Packet file bytes from a same-origin Function — no browser CORS. */

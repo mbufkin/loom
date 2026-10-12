@@ -19,4 +19,4 @@ export function canPasteOrStart(accepted: boolean): boolean {
 
 /** The sentence Admins accept. Keep this aligned with CONTEXT.md. */
 export const BARGAIN_SENTENCE =
-  "A free Run means the Operator may open this District’s Packets, plates, and usage. We do not use Packets to improve Loom. Other Admins on your hosted domain share this Workspace, including students.";
+  "A free Run means the Operator may open this District’s Packets, plates, and usage. We do not use Packets to improve Loom. Other invited Admins on your hosted domain share this Workspace.";
