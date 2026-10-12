@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "npm run build:ui && next build",
-    "build:ui": "cd ../ui && npm ci --no-audit --no-fund && VITE_API_BASE=/api/loom VITE_HOSTED=1 npx tsc -b && VITE_API_BASE=/api/loom VITE_HOSTED=1 npx vite build --base=/app/ --outDir ../hosted/public/app --emptyOutDir",
+    "build:ui": "cd ../ui && npm ci --include=dev --no-audit --no-fund && VITE_API_BASE=/api/loom VITE_HOSTED=1 npm run build:hosted",
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test lib/*.test.ts"
