@@ -86,6 +86,8 @@ if str(ROOT) not in sys.path:
 from loom_paths import DATA_DIR as DATA_ROOT  # noqa: E402
 from loom_paths import ensure_data_dirs, is_legacy_in_repo  # noqa: E402
 
+import hosted_guard  # noqa: E402  (ui/ is sys.path[0] when run as a script)
+
 # --- Ships with the program. Read-only in normal use. ---
 # Built SPA bundle (npm run ui:build). Present only in production mode; when it
 # is absent this server stays a pure JSON API and the Vite dev server on 5173
@@ -1108,7 +1110,8 @@ class _BadRequest(ValueError):
 # A ceiling per file, not a budget for the curriculum. Big scanned teacher
 # editions are legitimately 50-100MB; the limit exists so a mis-selected disk
 # image cannot fill the data drive, and it is checked before the body is read.
-MAX_UPLOAD_BYTES = 250 * 1024 * 1024
+# LOOM_MAX_UPLOAD_MB lowers it for the hosted service, where the SSD is shared.
+MAX_UPLOAD_BYTES = int(os.environ.get("LOOM_MAX_UPLOAD_MB") or 250) * 1024 * 1024
 
 
 def _supported_exts() -> set[str]:
@@ -2348,13 +2351,30 @@ class Handler(BaseHTTPRequestHandler):
     def log_message(self, fmt, *args) -> None:  # quieter console
         return
 
+    def _refused(self) -> bool:
+        """Apply the hosted-mode door (see hosted_guard). True = already answered.
+
+        Runs before routing and before any request body is read, so a stranger
+        cannot make the server parse an upload or touch the disk.
+        """
+        verdict = hosted_guard.check(urlparse(self.path).path, self.headers)
+        if verdict is None:
+            return False
+        code, message = verdict
+        self._json({"error": message}, code)
+        return True
+
     # --- routing ------------------------------------------------------------
     def do_OPTIONS(self) -> None:
+        if self._refused():
+            return
         self.send_response(204)
         self._cors()
         self.end_headers()
 
     def do_GET(self) -> None:
+        if self._refused():
+            return
         parsed = urlparse(self.path)
         parts = [p for p in parsed.path.split("/") if p]
         qs = parse_qs(parsed.query)
@@ -2568,6 +2588,8 @@ class Handler(BaseHTTPRequestHandler):
             return self._json({"error": str(e)}, 500)
 
     def do_POST(self) -> None:
+        if self._refused():
+            return
         parsed = urlparse(self.path)
         parts = [p for p in parsed.path.split("/") if p]
         try:

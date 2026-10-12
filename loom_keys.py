@@ -22,8 +22,9 @@ Resolution order, most specific first:
 
   1. LOOM_API_KEY_<HOST>   per-host environment override
   2. LOOM_API_KEY          one key for the configured endpoint
-  3. the OS credential store   what Settings writes; the recommended path
-  4. models.api_key in config.yaml   legacy plaintext, still read so older
+  3. NVIDIA_API_KEY        NVIDIA's host only; the hosted container's path
+  4. the OS credential store   what Settings writes; the recommended path
+  5. models.api_key in config.yaml   legacy plaintext, still read so older
      setups keep working, but never written by the app
 
 Nothing here ever returns a key to the browser. The server exposes only
@@ -40,6 +41,8 @@ from urllib.parse import urlparse
 # In Credential Manager this shows up as loom/integrate.api.nvidia.com, which
 # is legible to anyone auditing the machine's stored credentials.
 SERVICE = "loom"
+
+NVIDIA_HOST = "integrate.api.nvidia.com"
 
 
 def host_of(url: str) -> str:
@@ -115,6 +118,15 @@ def get_key(url: str, cfg: dict | None = None) -> str:
     env_general = os.environ.get("LOOM_API_KEY")
     if env_general:
         return env_general.strip()
+
+    # Headless Linux (the hosted container on the Pi) has no credential store,
+    # and NVIDIA_API_KEY is the name NVIDIA's own docs and the Pi's secrets
+    # file use. Honoured only for NVIDIA's host, so it can never be sent to a
+    # model server somebody else typed in.
+    if host == NVIDIA_HOST:
+        env_nvidia = os.environ.get("NVIDIA_API_KEY")
+        if env_nvidia:
+            return env_nvidia.strip()
 
     kr = _keyring()
     if kr is not None:

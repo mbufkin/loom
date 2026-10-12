@@ -1,0 +1,26 @@
+# Build context is the repo root. Allowlist-by-exclusion: keep curricula,
+# the Next app, local state and anything secret out of the image.
+.git
+**/node_modules
+**/__pycache__
+**/.venv
+hosted
+ui/dist
+ui/mockups
+docs
+experiments
+sample-documents
+scratch
+research
+archive
+data
+logs
+config.yaml
+config.yaml.*
+**/.env
+**/.env.*
+**/*.env
+
+# Curricula: only the empty template ships.
+projects/*
+!projects/_template

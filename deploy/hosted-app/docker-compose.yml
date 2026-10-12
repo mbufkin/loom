@@ -1,0 +1,52 @@
+# Hosted Loom app server on the Pi (raspberrypi). See RUNBOOK.md.
+#   cd deploy/hosted-app && docker compose up -d --build
+# LOOM_APP_ROOT defaults to the 1 TB SSD.
+name: loom-app
+services:
+  loom-app:
+    build:
+      context: ../..
+      dockerfile: deploy/hosted-app/Dockerfile
+    image: loom-app:latest
+    container_name: loom-app
+    restart: unless-stopped
+    init: false  # tini is already PID 1
+    # NVIDIA_API_KEY + LOOM_PROXY_SECRET (mode 600 on the host). Never in the image.
+    env_file:
+      - ${LOOM_APP_ROOT:-/media/mbufkin/pi-srv/loom-app}/secrets/app.env
+    environment:
+      LOOM_MAX_UPLOAD_MB: "100"
+    # Loopback only: cloudflared on the host reaches it; the LAN does not.
+    ports:
+      - "127.0.0.1:8770:8770"
+    volumes:
+      # create_host_path: false — if the SSD is not mounted, refuse to start
+      # instead of silently writing district documents to the SD card.
+      - type: bind
+        source: ${LOOM_APP_ROOT:-/media/mbufkin/pi-srv/loom-app}/data
+        target: /data
+        bind: { create_host_path: false }
+      # Pinned model config, read-only, layered over the data volume so the
+      # server's own CONFIG path and the pipeline's LOOM_CONFIG agree.
+      - type: bind
+        source: ./config.hosted.yaml
+        target: /data/config.yaml
+        read_only: true
+        bind: { create_host_path: false }
+    read_only: true
+    tmpfs:
+      - /tmp:size=256m
+    security_opt:
+      - no-new-privileges:true
+    cap_drop: [ALL]
+    mem_limit: 2g
+    pids_limit: 256
+    healthcheck:
+      # The secret comes from the container env; nothing is printed.
+      test: ["CMD", "python", "-c", "import os,urllib.request as u; u.urlopen(u.Request('http://127.0.0.1:8770/api/version', headers={'X-Loom-Proxy-Secret': os.environ['LOOM_PROXY_SECRET']}), timeout=5)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+    logging:
+      driver: json-file
+      options: { max-size: "10m", max-file: "5" }

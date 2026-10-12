@@ -1,0 +1,25 @@
+# Pinned model config for the hosted app. Mounted read-only at /data/config.yaml.
+# Safe to commit: the key comes from NVIDIA_API_KEY in the Pi's env file
+# (loom_keys.get_key), never from this file.
+#
+# Model pinned by the Operator (admins do not pick; the hosted UI hides the
+# picker and the server refuses /api/models/*). Single-strong-model doctrine:
+# both roles hit the same model.
+models:
+  analyst_url: "https://integrate.api.nvidia.com/v1/chat/completions"
+  verifier_url: "https://integrate.api.nvidia.com/v1/chat/completions"
+  analyst_model: "nvidia/nemotron-3.5-lightning-30b-a3b"
+  verifier_model: "nvidia/nemotron-3.5-lightning-30b-a3b"
+  # Lightning on NIM puts its reasoning in `content` unless this is off, which
+  # eats max_tokens and breaks the JSON steps.
+  enable_thinking: false
+  # Shared key with unpublished limits: long timeout; model_chat already
+  # retries 429/503 with backoff.
+  timeout_seconds: 600
+
+paths:
+  base_dir: "."
+  default_sources_dir: "projects/my-district/sources"
+
+policy:
+  auditor_only: true  # never generate or fix curriculum content
