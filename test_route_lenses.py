@@ -19,6 +19,7 @@ from route import (  # noqa: E402
     PATH_BY_WORKFLOW,
     filename_lens_prior,
     resolve_workflow,
+    route_summary,
     _norm_source_key,
 )
 
@@ -224,8 +225,27 @@ def test_bluebonnet_e2e_route_smoke_if_present() -> None:
         os.environ.pop("LOOM_E2E_RUN", None)
 
 
+def test_route_summary_splits_content_filename_and_fallback() -> None:
+    routes = [
+        {"reason": "graph Material.role=teacher_edition", "path": "D"},
+        {"reason": "graph Material.role=learn_student", "path": "E"},
+        {"reason": "graph Assessment link", "path": "B"},
+        {"reason": "filename doc_type=lesson_plan", "path": "A"},
+        {"reason": "filename prior → syllabus", "path": "G"},
+        {"reason": "mapped from doc_type=other (general feedback lens)", "path": "C"},
+    ]
+    assert route_summary(routes) == (
+        "Sorted 6 documents: 3 by content, 2 by filename, "
+        "1 by the general fallback; paths A×1 B×1 C×1 D×1 E×1 G×1"
+    )
+    # No fallback clause when there is none, and an empty map still reads.
+    assert route_summary(routes[:1]) == "Sorted 1 document: 1 by content, 0 by filename; paths D×1"
+    assert route_summary([]) == "Sorted 0 documents: 0 by content, 0 by filename; paths none"
+
+
 def main() -> int:
     tests = [
+        test_route_summary_splits_content_filename_and_fallback,
         test_path_letters_cover_eight_lenses,
         test_dallas_style_lesson_plan_filename,
         test_exit_ticket_is_path_h_not_quiz,

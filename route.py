@@ -408,6 +408,36 @@ def append_feedback(project_id: str, entries: list[dict]) -> Path | None:
     return path
 
 
+def route_summary(routes: list[dict]) -> str:
+    """One line a person can read: how each document was sorted, and where to.
+
+    "By content" means the graph phase decided (the reason starts with
+    ``graph``); "by filename" means a filename rule or Layer 0's filename-based
+    doc type did; anything else is the general fallback. The split matters
+    because a run whose graph phase silently did nothing looks identical to a
+    good one in the path counts alone.
+
+    >>> route_summary([{"reason": "graph Material.role=teacher_edition", "path": "D"},
+    ...                {"reason": "filename doc_type=quiz", "path": "B"}])
+    'Sorted 2 documents: 1 by content, 1 by filename; paths B×1 D×1'
+    """
+    content = sum(1 for r in routes if str(r.get("reason") or "").startswith("graph"))
+    filename = sum(
+        1
+        for r in routes
+        if not str(r.get("reason") or "").startswith("graph")
+        and "filename" in str(r.get("reason") or "")
+    )
+    fallback = len(routes) - content - filename
+    paths = Counter(str(r.get("path") or "?") for r in routes)
+    noun = "document" if len(routes) == 1 else "documents"
+    parts = f"{content} by content, {filename} by filename"
+    if fallback:
+        parts += f", {fallback} by the general fallback"
+    shown = " ".join(f"{p}×{paths[p]}" for p in sorted(paths))
+    return f"Sorted {len(routes)} {noun}: {parts}; paths {shown or 'none'}"
+
+
 def build_route_map(project_id: str) -> dict:
     records = collect_doc_records(project_id)
     graph_hints = load_graph_routing_hints(project_id)
@@ -491,6 +521,7 @@ def build_route_map(project_id: str) -> dict:
         f"G={counts[WORKFLOW_SYLLABUS]} H={counts[WORKFLOW_EXIT]}; "
         f"graph_hints={len(graph_hints)} feedback={len(feedback)})"
     )
+    log(route_summary(routes))
     return out
 
 

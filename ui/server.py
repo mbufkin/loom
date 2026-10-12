@@ -1465,6 +1465,15 @@ def _organise_env() -> dict[str, str]:
     return env
 
 
+# Flags every audit started from the site carries, whatever the caller sent.
+# The graph phase sorts documents by what they contain (teacher edition,
+# student practice, assessment) before the router assigns review paths;
+# without it a document whose filename says nothing falls to the general
+# path. It is not offered as a toggle because an audit without it routes
+# silently worse, and nobody choosing the toggle could see that.
+ALWAYS_AUDIT_FLAGS: tuple[str, ...] = ("--with-graph",)
+
+
 def _audit_argv(pid: str, flags: list[str]) -> list[str]:
     """The audit command; see _start_run for why it is sys.executable."""
     return [sys.executable, str(RUN_PROJECT), "--project", pid, *flags]
@@ -1814,6 +1823,10 @@ def _start_run(pid: str, flags: list[str]) -> str:
         # Allow the whitelisted flags and bare values following --only.
         if f in allowed or (clean and clean[-1] == "--only"):
             clean.append(f)
+    # A dangling --only would swallow the next flag as its unit name.
+    if clean and clean[-1] == "--only":
+        clean.pop()
+    clean.extend(f for f in ALWAYS_AUDIT_FLAGS if f not in clean)
     run_id = uuid.uuid4().hex[:12]
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
     choice = _choose_backend(run_id)
@@ -1896,7 +1909,7 @@ def _start_organise_and_run(pid: str) -> str:
             "status": "running",
             "exit_code": None,
             "started": time.time(),
-            "flags": [],
+            "flags": list(ALWAYS_AUDIT_FLAGS),
             "kind": "organise-and-run",
             "phase": "organising",
             "error": None,
@@ -1980,7 +1993,9 @@ def _organise_then_audit(run_id: str, pid: str, log_path: Path) -> None:
                 audit_started=time.time(),
             )
             proc = _spawn_logged(
-                _audit_argv(pid, []), log_fh, _run_env(_audit_env(), choice)
+                _audit_argv(pid, list(ALWAYS_AUDIT_FLAGS)),
+                log_fh,
+                _run_env(_audit_env(), choice),
             )
             update(proc=proc)
             code = proc.wait()
@@ -2644,15 +2659,22 @@ _RUN_STAGES: list[tuple[str, str, re.Pattern]] = [
     ("models", "Checking the model", re.compile(r"^\[audit\] models:")),
     ("rollup", "Working out the pacing", re.compile(r"^\[audit\] rollup:")),
     ("layer0", "Reading the documents", re.compile(r"^\[audit\] Layer 0:")),
+    ("graph", "Sorting documents by content", re.compile(r"^\[audit\] graph: run_id=")),
+    # The path runners (workflows/run_paths.py) run straight after the router
+    # and before Layer 1. Listing them after Layer 2, as this once did, made
+    # the furthest-stage-wins rule mark Layers 1 and 2 done before they began.
+    ("paths", "Running each document's review path", re.compile(r"^\[audit\] path [A-H] ")),
     ("layer1", "Matching to standards", re.compile(r"^\[audit\] Layer 1:")),
     ("layer2", "Confirming the evidence", re.compile(r"^\[audit\] Layer 2:")),
-    ("paths", "Checking document types", re.compile(r"^\[audit\] path [A-H] ")),
     ("calendars", "Placing work on the calendar", re.compile(r"^\[audit\] calendars?:")),
     ("reports", "Writing the reports", re.compile(r"^\[audit\] report")),
 ]
 
 # Per-document progress inside Layer 0, the longest stage by far.
 _LAYER0_DOC = re.compile(r"^\[audit\] Layer 0: decomposing (.+?) \((\d+) chars\)")
+# The graph phase prints one of these per document per unit (a stub line when
+# Layer 0 found nothing to read in it), so counting them is its progress.
+_GRAPH_DOC = re.compile(r"^\[audit\] graph STEP (?:role|stub \(no evidence\)) ← (.+)$")
 _LAYER1_SCOPE = re.compile(r"^\[audit\] Layer 1: (\d+) element")
 _LAYER2_SCOPE = re.compile(r"^\[audit\] Layer 2: (\d+) FULFILLED")
 
@@ -2730,16 +2752,23 @@ def _run_progress(
     # What Layer 0 is chewing on right now, and how far through it is.
     detail = ""
     done = total = 0
+    only = ""
+    fl = flags or []
+    if "--only" in fl:
+        i = fl.index("--only")
+        only = fl[i + 1] if i + 1 < len(fl) else ""
     docs = [m.group(1) for line in lines if (m := _LAYER0_DOC.search(line))]
     if docs:
         detail = docs[-1]
         done = len(docs) - 1
-        only = ""
-        fl = flags or []
-        if "--only" in fl:
-            i = fl.index("--only")
-            only = fl[i + 1] if i + 1 < len(fl) else ""
         total = _layer0_total(pid, only)
+    if current == "graph":
+        # Same denominator as Layer 0: the graph walks every unit's document
+        # list, so a document shared by two units is sorted (and counted) twice.
+        sorted_docs = [m.group(1) for line in lines if (m := _GRAPH_DOC.search(line))]
+        detail = sorted_docs[-1] if sorted_docs else ""
+        done = max(0, len(sorted_docs) - 1)
+        total = total or _layer0_total(pid, only)
     for line in reversed(lines):
         if m := _LAYER1_SCOPE.search(line):
             if current == "layer1":

@@ -40,7 +40,10 @@ export function RunProgress({
 
   const running = status === "running";
   const { docsDone, docsTotal, detail, elapsed, modelCalls } = progress;
-  const showDocs = docsTotal > 0 && progress.current === "layer0";
+  // Reading (Layer 0) and sorting (graph) both walk the document list, so both
+  // get the bar; the server reports the count for whichever is running.
+  const sorting = progress.current === "graph";
+  const showDocs = docsTotal > 0 && (progress.current === "layer0" || sorting);
   const pct = showDocs ? Math.round((docsDone / docsTotal) * 100) : 0;
 
   return (
@@ -75,7 +78,7 @@ export function RunProgress({
             <div className="run-bar-fill" style={{ width: `${pct}%` }} />
           </div>
           <span className="setup-detail">
-            {docsDone} of {docsTotal} documents read
+            {docsDone} of {docsTotal} documents {sorting ? "sorted" : "read"}
           </span>
         </div>
       )}

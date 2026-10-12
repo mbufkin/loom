@@ -55,8 +55,14 @@ class FakeNim:
     """A NIM-shaped server. `health`, `models` and `delay` set its behaviour;
     every request's Authorization header is recorded."""
 
-    def __init__(self, health: int = 200, models: list[str] | None = None, delay: float = 0):
-        self.health, self.delay = health, delay
+    def __init__(
+        self,
+        health: int = 200,
+        models: list[str] | None = None,
+        delay: float = 0,
+        reply: str = "ok",
+    ):
+        self.health, self.delay, self.reply = health, delay, reply
         self.models = [MODEL] if models is None else models
         self.auth_seen: list[str | None] = []
         self.chat_bodies: list[dict] = []
@@ -90,7 +96,7 @@ class FakeNim:
                 fake.chat_bodies.append(json.loads(self.rfile.read(n) or b"{}"))
                 return self._send(200, {
                     "model": MODEL,
-                    "choices": [{"message": {"content": "ok"}, "finish_reason": "stop"}],
+                    "choices": [{"message": {"content": fake.reply}, "finish_reason": "stop"}],
                     "usage": {"prompt_tokens": 5, "completion_tokens": 1},
                 })
 
@@ -265,6 +271,57 @@ def test_the_api_path_environment_is_unchanged() -> None:
         assert server._run_env(base_env, choice) == base_env
     finally:
         env.close()
+
+
+_GRAPH_CALL = r'''
+import sys
+sys.path.insert(0, sys.argv[1])
+import audit_lib, graph_phase
+out = graph_phase.chat_json(audit_lib.load_config(), "graph-role-test", "Which role?")
+print("graph got role=" + out["role"], flush=True)
+'''
+
+
+def test_the_graph_phase_uses_the_per_run_config_and_is_metered() -> None:
+    # The graph phase runs as a grandchild of the server (server -> run_project
+    # -> graph_phase). Neither hop passes an env, so the per-run LOOM_CONFIG
+    # must survive inheritance and graph_phase must read it via load_config().
+    # Proven here with the real graph_phase.chat_json against a fake NIM.
+    nim = FakeNim(reply='{"role": "teacher_edition"}')
+    env = _Env(nim.base)
+    home = env.tmp / "home"
+    try:
+        choice = server._choose_backend("graph-run")
+        assert choice["backend"] == "brev", choice
+        child_env = server._run_env(server._audit_env(), choice)
+        child_env.update(
+            LOOM_HOME=str(home), LOOM_USAGE_PROJECT="p", LOOM_E2E_RUN="r1", LOOM_HOSTED="0"
+        )
+        script = env.tmp / "graph_call.py"
+        script.write_text(_GRAPH_CALL, encoding="utf-8")
+        import subprocess
+
+        done = subprocess.run(
+            [sys.executable, str(script), str(BASE)],
+            env=child_env, capture_output=True, text=True, timeout=60,
+        )
+        assert done.returncode == 0, done.stdout + done.stderr
+        assert "graph got role=teacher_edition" in done.stdout
+
+        # The call went to Brev, with the pinned model, thinking off, no key.
+        assert len(nim.chat_bodies) == 1, nim.chat_bodies
+        body = nim.chat_bodies[0]
+        assert body["model"] == MODEL
+        assert FAKE_NVIDIA_KEY not in json.dumps(body)
+        assert all(FAKE_NVIDIA_KEY not in (a or "") for a in nim.auth_seen)
+
+        # And it was metered into this run's usage log.
+        usage = home / "projects" / "p" / "e2e" / "runs" / "r1" / "usage.jsonl"
+        rows = [json.loads(l) for l in usage.read_text().splitlines() if l.strip()]
+        assert len(rows) == 1, rows
+    finally:
+        env.close()
+        nim.stop()
 
 
 # --- through the HTTP API, with fake pipeline steps --------------------------

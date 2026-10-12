@@ -801,6 +801,95 @@ def test_purge_removes_only_trash_older_than_seven_days():
         fx.close()
 
 
+def test_every_site_audit_runs_the_graph_phase():
+    # Both ways the site starts an audit must sort documents by content first.
+    # The flag is forced, not offered, so whatever the caller sends it is there
+    # exactly once, and a stray graph option from the caller is not.
+    fx = _Fixture()
+    restore = _use_fake_steps(fx, "ingest-ok")
+    fake_argv = server._audit_argv
+    seen: list[list[str]] = []
+
+    def recording(pid, flags):
+        seen.append(list(flags))
+        return fake_argv(pid, flags)
+
+    server._audit_argv = recording
+    try:
+        _project_with_a_document(fx, "graph-on")
+        code, body = fx.request("POST", "/api/projects/graph-on/organise-and-run", {})
+        assert code == 200, body
+        assert _wait_for_run(fx, body["runId"])["status"] == "done"
+        assert seen[-1] == ["--with-graph"], seen
+
+        for sent, expected in [
+            ([], ["--with-graph"]),
+            (["--force", "--only"], ["--force", "--with-graph"]),
+            (
+                ["--only", "u1", "--with-graph", "--graph-backend", "cursor"],
+                ["--only", "u1", "--with-graph"],
+            ),
+        ]:
+            code, body = fx.request("POST", "/api/projects/graph-on/run", {"flags": sent})
+            assert code == 200, body
+            _wait_for_run(fx, body["runId"])
+            assert seen[-1] == expected, (sent, seen[-1])
+    finally:
+        restore()
+        fx.close()
+
+
+def _progress_log(*lines: str) -> str:
+    return "\n".join(["[audit] e2e: LOOM_E2E_RUN=r1", "[audit] models: ok", *lines])
+
+
+def test_progress_shows_the_sorting_stage_with_per_document_counts():
+    fx = _Fixture()
+    try:
+        fx.request("POST", "/api/projects", {"id": "prog"})
+        (fx.projects / "prog" / "manifest.yaml").write_text(
+            "units:\n  u1:\n    documents: [a.md, b.md]\n  u2:\n    documents: [c.md]\n",
+            encoding="utf-8",
+        )
+        read = [f"[audit] Layer 0: decomposing {n} (10 chars)" for n in ("a.md", "b.md", "c.md")]
+        sorting = [
+            "[audit] graph: run_id=r1 backend=local model=m",
+            "[audit] graph STEP role ← a.md",
+            "[audit] graph STEP lessons ← a.md",
+            "[audit] graph STEP assessment ← a.md",
+            "[audit] graph STEP stub (no evidence) ← b.md",
+        ]
+        p = server._run_progress("prog", _progress_log(*read, *sorting), 0.0, "running", [])
+        by_id = {s["id"]: s for s in p["stages"]}
+        assert p["current"] == "graph", p
+        assert by_id["graph"]["label"] == "Sorting documents by content"
+        assert by_id["graph"]["state"] == "running" and by_id["layer0"]["state"] == "done"
+        # One line per document, not per step: b.md is in hand, a.md is done.
+        assert (p["detail"], p["docsDone"], p["docsTotal"]) == ("b.md", 1, 3), p
+
+        # The pipeline order: read, sort, review paths, then Layers 1 and 2.
+        ids = [s["id"] for s in p["stages"]]
+        for earlier, later in [("layer0", "graph"), ("graph", "paths"),
+                               ("paths", "layer1"), ("layer1", "layer2")]:
+            assert ids.index(earlier) < ids.index(later), ids
+        assert by_id["paths"]["label"] == "Running each document's review path"
+
+        after = [
+            "[audit] Sorted 3 documents: 2 by content, 1 by filename; paths A×1 D×2",
+            "[audit] path A → 1 lesson_plan doc(s); A1–A6",
+            "[audit] Layer 1: 40 elements in scope",
+        ]
+        p = server._run_progress(
+            "prog", _progress_log(*read, *sorting, *after), 0.0, "running", []
+        )
+        by_id = {s["id"]: s for s in p["stages"]}
+        assert p["current"] == "layer1", p
+        assert by_id["graph"]["state"] == by_id["paths"]["state"] == "done"
+        assert by_id["layer2"]["state"] == "pending", "Layer 2 has not started"
+    finally:
+        fx.close()
+
+
 def test_the_readiness_check_answers_instead_of_crashing():
     # The setup screen only shows "Organise and run the audit" once this says
     # can_run. If the check raises, the page gets a 500 and the button is

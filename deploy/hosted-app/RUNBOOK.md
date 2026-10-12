@@ -143,6 +143,28 @@ docker run -d --name loom-nim --gpus=all --restart unless-stopped --shm-size=16g
   re-download. Ready when `curl http://100.101.96.36:8000/v1/health/ready`
   returns 200 from the Pi.
 
+## Every audit sorts documents by content
+
+Both "Organise and run the audit" and the legacy run endpoint always pass
+`--with-graph` (`ALWAYS_AUDIT_FLAGS` in `ui/server.py`; not a toggle). The
+graph phase runs after Layer 0 and before the router, on the same model as the
+rest of the run (Brev or NVIDIA API, via the per-run `LOOM_CONFIG`), and its
+calls are metered in the run's `usage.jsonl`. Cost: three extra model calls per
+document per unit.
+
+What to look for in a run log:
+
+- Progress stage **Sorting documents by content**, with an "N of M documents
+  sorted" bar (one `graph STEP role ← <file>` line per document).
+- After routing, one line such as
+  `Sorted 14 documents: 9 by content, 5 by filename; paths A×3 B×2 C×2 D×4 E×3`.
+  "By content" = the graph decided. Filename rules still win first for lesson
+  plans, quizzes, exit tickets, syllabi and standards/pacing (docs/PATHS.md),
+  so a pack of well-named files can honestly show few. `0 by content` on a
+  pack of vaguely named files means the graph found nothing; check
+  `graph/runs/<id>/PHASE-SUMMARY.json` under the run tree.
+- Per-document paths and reasons are in the results view under Paths (A–H).
+
 ## Restore a deleted curriculum
 
 Delete in the app moves the folder to `/data/.trash/<id>-<UTC timestamp>`
