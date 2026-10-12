@@ -301,6 +301,44 @@ def _card_cache_path(cards_dir: Path, text: str) -> Path:
     return cards_dir / f"{digest}-v{CARD_VERSION}.json"
 
 
+# Retries after the first answer when a card's JSON will not parse. One stray
+# unescaped quote in a 46-document organise used to stop the whole run.
+CARD_JSON_RETRIES = 2
+
+
+def _card_from_model(cfg: dict, prompt: str, step: str) -> dict:
+    """Ask for one document card; re-ask with the parse error if the JSON is bad.
+
+    The retry resends the full prompt (the whole document part) plus the bad
+    reply and the exact parse error, so the model repairs its own answer rather
+    than re-reading less. Still bad after CARD_JSON_RETRIES re-asks -> raise, so
+    organise fails loudly instead of grouping a document it could not describe.
+    """
+    messages = [{"role": "user", "content": prompt}]
+    for attempt in range(CARD_JSON_RETRIES + 1):
+        resp = model_call(cfg, "analyst", messages, step if attempt == 0 else f"{step}-retry{attempt}")
+        content = extract_content(resp)
+        try:
+            return parse_json(content, step=step)
+        except ValueError as exc:
+            if attempt == CARD_JSON_RETRIES:
+                raise ValueError(f"{exc} (still invalid after {CARD_JSON_RETRIES} re-asks)") from exc
+            log(f"organise: {step}: reply was not valid JSON ({exc}); asking again")
+            messages = [
+                {"role": "user", "content": prompt},
+                {"role": "assistant", "content": content},
+                {
+                    "role": "user",
+                    "content": (
+                        f"That reply is not valid JSON: {exc}. Send the same card again as "
+                        "one valid JSON object only. Escape any double quotes inside "
+                        "strings and put no text outside the object."
+                    ),
+                },
+            ]
+    raise AssertionError("unreachable")
+
+
 def build_card(cfg: dict, record: dict, root: Path, project_id: str) -> dict:
     """Read one document in full into a card, or reuse its cached card.
 
@@ -334,8 +372,7 @@ def build_card(cfg: dict, record: dict, root: Path, project_id: str) -> dict:
         prompt = _card_prompt(name, numbered, i, len(parts))
         prompts.append(prompt)
         step = f"organise-card-{Path(name).stem}" + (f"-part{i}of{len(parts)}" if len(parts) > 1 else "")
-        resp = model_call(cfg, "analyst", [{"role": "user", "content": prompt}], step)
-        card = parse_json(extract_content(resp), step=step)
+        card = _card_from_model(cfg, prompt, step)
         if not isinstance(card, dict):
             raise ValueError(f"{name}: document card for part {i} was not a JSON object")
         for ev in card.get("evidence") or []:

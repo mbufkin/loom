@@ -374,6 +374,50 @@ def test_covered_chars_sees_text_inside_json_prompts() -> None:
     assert audit_lib.covered_chars([piece], ["unrelated"]) == 0
 
 
+
+class _BadThenGood(_FakeOrganiser):
+    """The first N card replies for one file are broken JSON, then good."""
+
+    def __init__(self, bad_file: str, bad_times: int) -> None:
+        super().__init__()
+        self.bad_file, self.bad_left = bad_file, bad_times
+        self.retry_messages: list[list[dict]] = []
+
+    def __call__(self, cfg, role, messages, step, temperature=0.1):
+        if step.startswith("organise-card") and self.bad_file in step:
+            if "-retry" in step:
+                self.retry_messages.append(messages)
+            if self.bad_left > 0:
+                self.bad_left -= 1
+                return {"choices": [{"message": {"content": '{"topic": "a "quoted" word", "role": "quiz"}'}}]}
+        return super().__call__(cfg, role, messages, step, temperature)
+
+
+def test_a_bad_card_reply_is_re_asked_with_the_full_document() -> None:
+    records = [_doc("exit-ticket.docx", "Unit 3 exit ticket.\n\nDay 4 check."),
+               _doc("plan.docx", "Unit 3 lesson plan, Day 4.")]
+    fake = _BadThenGood("exit-ticket", bad_times=1)
+    root, logged = _run_ingest(records, fake, Path(tempfile.mkdtemp(prefix="loom-ft-")))
+    assert (root / "manifest.yaml").is_file()
+    assert any("not valid JSON" in l and "asking again" in l for l in logged), logged
+    # The re-ask carries the whole original prompt, the bad reply and the error.
+    msgs = fake.retry_messages[0]
+    assert "Unit 3 exit ticket." in msgs[0]["content"] and "Day 4 check." in msgs[0]["content"]
+    assert msgs[1]["role"] == "assistant" and "not valid JSON" in msgs[2]["content"]
+    assert any(l.startswith("Full-text check: organise 2/2") for l in logged), logged
+
+
+def test_a_card_that_never_parses_still_fails_loudly() -> None:
+    records = [_doc("exit-ticket.docx", "Unit 3 exit ticket."), _doc("plan.docx", "Unit 3 plan.")]
+    fake = _BadThenGood("exit-ticket", bad_times=99)
+    try:
+        _run_ingest(records, fake, Path(tempfile.mkdtemp(prefix="loom-ft-")))
+    except (ValueError, SystemExit) as e:
+        assert "re-ask" in str(e) or isinstance(e, SystemExit), e
+    else:
+        raise AssertionError("organise should fail when a card never parses")
+    assert len(fake.retry_messages) == ingest.CARD_JSON_RETRIES
+
 TESTS = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
 
 
