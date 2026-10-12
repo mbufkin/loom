@@ -46,11 +46,17 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from audit_lib import (  # noqa: E402
+    batch_by_chars,
+    check_coverage,
+    covered_chars,
     load_config,
     log,
     model_chat,
     parse_model_json,
     project_dir,
+    prompt_budget_chars,
+    record_coverage,
+    reset_coverage,
 )
 from lesson_bakeoff import enumerate_lessons  # noqa: E402
 
@@ -67,7 +73,9 @@ ROLE_TYPES = {
     "practice": {"guided_practice", "independent_practice"},
     "assessment": {"assessment_checkpoint"},
 }
-MAX_CANDS = 8  # cap per role so a 17-guided-practice lesson stays a sane prompt
+# Every type-correct candidate is shown in full (Bet 1). When they outgrow one
+# prompt, stage 1 runs as a tournament: each batch picks its best per role, then
+# a final round picks among those winners -- every candidate is read once.
 
 
 # ---- STAGE 1: grounded selection -------------------------------------------
@@ -164,26 +172,54 @@ def assemble_tagged(elements) -> dict[str, dict]:
 def build_candidates(tag_map: dict[str, dict]) -> dict[str, list[tuple[str, str]]]:
     """Group tags into per-role candidate lists by their Layer 0 element_type.
     Compound types (a|b) match if ANY part maps to the role. tag_map preserves
-    document order, so candidates read top-to-bottom; we cap each list at MAX_CANDS."""
+    document order, so candidates read top-to-bottom. Nothing is capped."""
     cands: dict[str, list[tuple[str, str]]] = {r: [] for r in ROLES}
     for tag, m in tag_map.items():
         parts = {p for p in (m["etype"] or "").split("|") if p}
         for role, types in ROLE_TYPES.items():
             if parts & types:
                 cands[role].append((tag, m["excerpt"]))
-    return {r: v[:MAX_CANDS] for r, v in cands.items()}
+    return cands
 
 
-def stage1_select(cfg, candidates, tag_map, *, verbose: bool = False) -> dict[str, dict]:
+def stage1_select(
+    cfg, candidates, tag_map, *, verbose: bool = False, prompts: list[str] | None = None
+) -> dict[str, dict]:
     """Return {role: {tag, real_id, excerpt}} for each role the model could ground.
-    A pick is accepted ONLY if it is in that role's type-correct candidate set."""
+    A pick is accepted ONLY if it is in that role's type-correct candidate set.
+
+    Candidates that fit one prompt are judged in one call. Otherwise they are
+    split into batches, each batch picks per role, and a final round chooses
+    among the batch winners. `prompts`, when given, collects every prompt sent.
+    """
+    sent = prompts if prompts is not None else []
+    entries = [(role, tag, ex) for role in ROLES for tag, ex in candidates[role]]
+    batches = batch_by_chars(entries, lambda e: len(e[2]), prompt_budget_chars())
+    if len(batches) <= 1:
+        return _select_once(cfg, candidates, tag_map, verbose=verbose, prompts=sent)
+    winners: dict[str, list[tuple[str, str]]] = {r: [] for r in ROLES}
+    for batch in batches:
+        part = {r: [(t, ex) for (role, t, ex) in batch if role == r] for r in ROLES}
+        for role, v in _select_once(cfg, part, tag_map, verbose=verbose, prompts=sent).items():
+            winners[role].append((v["tag"], v["excerpt"]))
+    if sum(len(v) for v in winners.values()) == len(entries):
+        # No narrowing happened (every batch picked everything it had); judging
+        # the same set again would never finish.
+        return _select_once(cfg, winners, tag_map, verbose=verbose, prompts=sent)
+    return stage1_select(cfg, winners, tag_map, verbose=verbose, prompts=sent)
+
+
+def _select_once(
+    cfg, candidates, tag_map, *, verbose: bool = False, prompts: list[str]
+) -> dict[str, dict]:
+    """One selection call (with its single retry) over the given candidates."""
     block_lines: list[str] = []
     for role in ROLES:
         block_lines.append(f"{role} candidates:")
         if not candidates[role]:
             block_lines.append("  (none)")
         for tag, ex in candidates[role]:
-            block_lines.append(f"  [{tag}] {ex[:180]}")
+            block_lines.append(f"  [{tag}] {ex}")
     block = "\n".join(block_lines)
 
     role_tags = {r: {t for t, _ in candidates[r]} for r in ROLES}
@@ -194,6 +230,7 @@ def stage1_select(cfg, candidates, tag_map, *, verbose: bool = False) -> dict[st
     # giving up — cheap insurance against a one-off blip sinking a whole lesson.
     verified: dict[str, dict] = {}
     for attempt in (1, 2):
+        prompts.append(SELECT_USER.replace("%%CANDS%%", block))
         resp = model_chat(
             cfg,
             "analyst",
@@ -238,7 +275,7 @@ def stage2_evaluate(cfg, verified, valid_ids, *, verbose: bool = False) -> dict 
     if not verified:
         return None
     evidence = "\n".join(
-        f"- {role}: [{v['tag']}] {v['excerpt'][:400]}" for role, v in verified.items()
+        f"- {role}: [{v['tag']}] {v['excerpt']}" for role, v in verified.items()
     )
     resp = model_chat(
         cfg,
@@ -274,14 +311,23 @@ def stage2_evaluate(cfg, verified, valid_ids, *, verbose: bool = False) -> dict 
     return out
 
 
-def review_lesson(cfg, lesson, source_file=None, *, verbose: bool = False) -> dict:
+def review_lesson(
+    cfg, lesson, source_file=None, *, verbose: bool = False, coverage_project: str | None = None
+) -> dict:
     """Run both stages for one lesson and return a UI-ready record."""
     tag_map = assemble_tagged(lesson.elements)
     valid_ids = set(tag_map)
     candidates = build_candidates(tag_map)
 
     t0 = time.time()
-    verified = stage1_select(cfg, candidates, tag_map, verbose=verbose)
+    prompts: list[str] = []
+    verified = stage1_select(cfg, candidates, tag_map, verbose=verbose, prompts=prompts)
+    if coverage_project:
+        pieces = list(dict.fromkeys(ex for role in ROLES for _t, ex in candidates[role]))
+        record_coverage(
+            coverage_project, "review", lesson.lesson_id,
+            available=sum(len(x) for x in pieces), sent=covered_chars(pieces, prompts),
+        )
     out = stage2_evaluate(cfg, verified, valid_ids, verbose=verbose) or {}
     dt = time.time() - t0
 
@@ -367,9 +413,13 @@ def generate(project: str, unit: str | None = None) -> Path:
         + (f" in unit {unit}" if unit else "") + f" with {SCORER_ID}")
 
     units: dict[str, list[dict]] = {}
+    reset_coverage(project, "review")
     for le in lessons:
         try:
-            rec = review_lesson(cfg, le, source_file=_resolve_source(doc_source, le.lesson_id))
+            rec = review_lesson(
+                cfg, le, source_file=_resolve_source(doc_source, le.lesson_id),
+                coverage_project=project,
+            )
         except Exception as e:  # noqa: BLE001 — advisory + non-blocking, per stage contract
             log(f"WARN: curriculum-review skipped {le.lesson_id}: {e}")
             continue
@@ -395,6 +445,7 @@ def generate(project: str, unit: str | None = None) -> Path:
 
     json_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
     log(f"curriculum-review: wrote {json_path}")
+    check_coverage(project, "review", "curriculum review", "lessons")
     return json_path
 
 

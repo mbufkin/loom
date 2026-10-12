@@ -30,7 +30,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import lesson_quality_scorer  # noqa: F401 — registers s4_quality_decomposed
-from audit_lib import load_config, log, project_dir
+from audit_lib import check_coverage, load_config, log, project_dir, reset_coverage
 from lesson_bakeoff import enumerate_lessons
 from lesson_scoring import build_scorer
 
@@ -61,6 +61,8 @@ def generate(project: str) -> Path:
     """Score every lesson and write the .md + .json plates. Returns the .md path."""
     cfg = load_config()
     scorer = build_scorer(SCORER_ID)
+    scorer.coverage_project = project
+    reset_coverage(project, "quality")
     lessons = enumerate_lessons(project)
     doc_source = _doc_source_map(project)
     log(f"lesson-quality: scoring {len(lessons)} lessons with {SCORER_ID}")
@@ -153,6 +155,7 @@ def generate(project: str) -> Path:
         ),
         encoding="utf-8",
     )
+    check_coverage(project, "quality", "lesson quality", "lessons")
     pct = round(100 * total_cited / total_crit) if total_crit else 0
     log(f"lesson-quality: wrote {md_path} (citation {total_cited}/{total_crit} = {pct}%)")
     return md_path

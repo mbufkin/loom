@@ -1,0 +1,35 @@
+---
+description: Models always read whole documents; never cap document text to save context or cost
+alwaysApply: true
+---
+
+# Full documents, always
+
+Loom's audit is only as good as what the model reads (docs/BETS.md, Bet 1).
+
+- Never truncate, cap, sample or "head + tail" document text, excerpts,
+  elements or candidate lists that go into a model prompt -- not to save
+  context, not to save cost, not "to keep the prompt sane". Cost is not a
+  reason here.
+- Too big for one call? Split and merge, never cut:
+  - whole documents: `audit_lib.document_parts()` (layer0's
+    `CHUNK_THRESHOLD_CHARS` 100K / `CHUNK_SIZE_CHARS` 60K, paragraph-aware
+    with overlap), one call per part, merge the answers;
+  - lists of elements/candidates: `audit_lib.batch_by_chars()` with
+    `prompt_budget_chars()`, one call per batch, then merge (union, majority,
+    or a final round over the batch winners).
+- Record what was sent: `record_coverage()` per document from the actual
+  prompts (`covered_chars()`), then `check_coverage()` at the end of the stage.
+- Truncating text for display, logs, error messages or output plates is fine.
+- `test_no_document_caps.py` enforces this. If it flags your line, fix it as
+  above; only add an ALLOWLIST entry (with a one-line reason) for
+  display/log/output-only text.
+
+```python
+# Bad: the model judges the first 8,000 characters and nobody knows.
+prompt = f"...{text[:8000]}..."
+
+# Better: every part is read; answers merged.
+for part in document_parts(text):
+    answers.append(ask(part))
+```

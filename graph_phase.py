@@ -27,7 +27,20 @@ import subprocess
 import sys
 from pathlib import Path
 
-from audit_lib import BASE_DIR, load_config, log, model_chat, parse_model_json, project_dir
+from audit_lib import (
+    BASE_DIR,
+    batch_by_chars,
+    check_coverage,
+    covered_chars,
+    load_config,
+    log,
+    model_chat,
+    parse_model_json,
+    project_dir,
+    prompt_budget_chars,
+    record_coverage,
+    reset_coverage,
+)
 from graph_assemble import (
     load_unit_slice,
     merge_narrow_step_findings,
@@ -57,6 +70,9 @@ ROLES = {
 }
 
 _RAW_DIR: Path | None = None
+# Every prompt chat_json sends, so run_unit can prove each step saw all of a
+# document's evidence (the "sorting" full-text check).
+_SENT: list[str] = []
 
 
 def extract_content(response: dict) -> str:
@@ -96,6 +112,7 @@ def chat_json(cfg: dict, step: str, prompt: str, *, max_tokens: int = 16384) -> 
     # Structured HAS-PART / connect JSON: turn thinking off for Nemotron 3.5
     # Lightning (and similar). Best practice: reasoning tokens must not exhaust
     # max_tokens and leave message.content empty — parse_model_json then fails.
+    _SENT.append(prompt)
     resp = model_chat(
         cfg,
         "analyst",
@@ -208,22 +225,16 @@ def write_stub_step_files(raw_dir: Path, source_files: list[str]) -> None:
         )
 
 
-def pack_evidence_for_agent(
-    elements: list[dict], *, max_elements: int = 100
-) -> dict:
-    """Compact ledger rows for Cursor agents (head+tail if oversized)."""
-    n = len(elements)
-    if n <= max_elements:
-        kept = elements
-        note = None
-    else:
-        head, tail = 80, 20
-        kept = elements[:head] + elements[-tail:]
-        note = f"truncated from {n} elements; kept head {head} + tail {tail}"
+def pack_evidence_for_agent(elements: list[dict]) -> dict:
+    """Ledger rows for Cursor agents: every element (Bet 1: never truncate).
+
+    The pack is a file the agent reads, not a prompt, so there is no reason to
+    drop the middle of a long document as this once did (head 80 + tail 20).
+    """
     return {
-        "n_elements_included": len(kept),
-        "truncation_note": note,
-        "elements": kept,
+        "n_elements_included": len(elements),
+        "truncation_note": None,
+        "elements": elements,
     }
 
 
@@ -252,11 +263,138 @@ def filename_role_prior(source_file: str) -> str:
     return "other"
 
 
+# --- Oversized evidence: read in parts, never cut (Bet 1) ------------------
+# A document's Layer 0 evidence normally fits one prompt. When its JSON exceeds
+# the per-call budget (layer0.CHUNK_SIZE_CHARS, the same 60K characters Layer 0
+# reads a document in), the elements are split into batches, each step runs
+# once per batch, and the answers are merged. No element is ever dropped.
+SPECIFIC_ROLES = ("teacher_edition", "practice_student", "learn_student", "succeed_student")
+
+
+def evidence_batches(elements: list[dict]) -> list[list[dict]]:
+    return batch_by_chars(
+        elements, lambda el: len(json.dumps(el, ensure_ascii=False)), prompt_budget_chars()
+    ) or [[]]
+
+
+def _evidence_label(part: int, parts: int) -> str:
+    if parts == 1:
+        return "FULL_LAYER0_EVIDENCE_JSON"
+    return (
+        f"LAYER0_EVIDENCE_JSON (part {part} of {parts}: this document's evidence is too "
+        f"large for one prompt, so it is read in {parts} parts and every part is read; "
+        f"answer from THIS part)"
+    )
+
+
+def _part_suffix(part: int, parts: int) -> str:
+    return f"-part{part}of{parts}" if parts > 1 else ""
+
+
+def merge_role_answers(source_file: str, answers: list[tuple[dict, int]]) -> dict:
+    """Role across parts: the specific role with the most evidence behind it
+    (elements in the batches that chose it) wins over 'other'; the winning
+    batch's citation is kept and every vote recorded."""
+    if len(answers) == 1:
+        return answers[0][0]
+    votes: dict[str, int] = {}
+    for data, weight in answers:
+        votes[data.get("role") or "other"] = votes.get(data.get("role") or "other", 0) + weight
+    specific = {r: w for r, w in votes.items() if r in SPECIFIC_ROLES}
+    winner = max(specific, key=specific.get) if specific else "other"
+    chosen = next(d for d, _w in answers if (d.get("role") or "other") == winner)
+    merged = dict(chosen)
+    merged.update(source_file=source_file, role=winner, role_votes=votes, parts=len(answers))
+    merged["role_fallback"] = all(d.get("role_fallback") for d, _w in answers)
+    return merged
+
+
+def _union_citations(answers: list[dict]) -> list:
+    out, seen = [], set()
+    for d in answers:
+        for c in d.get("citations") or []:
+            key = json.dumps(c, sort_keys=True, ensure_ascii=False)
+            if key not in seen:
+                seen.add(key)
+                out.append(c)
+    return out
+
+
+def merge_lesson_answers(source_file: str, answers: list[dict]) -> dict:
+    """Lessons across parts: the union of what each part covers, citations
+    deduplicated."""
+    if len(answers) == 1:
+        return answers[0]
+    nums = sorted({n for d in answers for n in d.get("covers_lesson_numbers") or []})
+    return {
+        "source_file": source_file,
+        "covers_lesson_numbers": nums,
+        "citations": _union_citations(answers),
+        "notes": " | ".join(str(d.get("notes") or "").strip() for d in answers if d.get("notes")),
+        "lessons_retried": any(d.get("lessons_retried") for d in answers),
+        "parts": len(answers),
+    }
+
+
+def merge_assessment_answers(source_file: str, answers: list[tuple[dict, int]]) -> dict:
+    """Assessment across parts. Whole-file belonging is a majority question (an
+    exit ticket inside one part of a Learn book must not make the whole book an
+    Assessment), so it is decided by the share of elements in parts that said
+    yes; the lesson numbers and citations are the union from those parts."""
+    if len(answers) == 1:
+        return answers[0][0]
+    total = sum(w for _d, w in answers) or 1
+    yes = [(d, w) for d, w in answers if d.get("is_assessment_bearing")]
+    bearing = sum(w for _d, w in yes) * 2 > total
+    picked = [d for d, _w in yes] if bearing else []
+    return {
+        "source_file": source_file,
+        "is_assessment_bearing": bearing,
+        "assessment_lesson_numbers": sorted(
+            {n for d in picked for n in d.get("assessment_lesson_numbers") or []}
+        ),
+        "assessment_name": next((d.get("assessment_name") for d in picked if d.get("assessment_name")), None),
+        "citations": _union_citations(picked),
+        "notes": " | ".join(str(d.get("notes") or "").strip() for d, _w in answers if d.get("notes")),
+        "assessment_votes": {"yes_elements": sum(w for _d, w in yes), "total_elements": total},
+        "parts": len(answers),
+    }
+
+
 def step_role(cfg: dict, source_file: str, elements: list[dict]) -> dict:
+    batches = evidence_batches(elements)
+    answers = [
+        (_step_role_once(cfg, source_file, b, k, len(batches)), len(b))
+        for k, b in enumerate(batches, 1)
+    ]
+    return merge_role_answers(source_file, answers)
+
+
+def step_lessons(cfg: dict, source_file: str, elements: list[dict], role: str) -> dict:
+    batches = evidence_batches(elements)
+    answers = [
+        _step_lessons_once(cfg, source_file, b, role, k, len(batches))
+        for k, b in enumerate(batches, 1)
+    ]
+    return merge_lesson_answers(source_file, answers)
+
+
+def step_assessment(cfg: dict, source_file: str, elements: list[dict], role: str) -> dict:
+    batches = evidence_batches(elements)
+    answers = [
+        (_step_assessment_once(cfg, source_file, b, role, k, len(batches)), len(b))
+        for k, b in enumerate(batches, 1)
+    ]
+    return merge_assessment_answers(source_file, answers)
+
+
+def _step_role_once(
+    cfg: dict, source_file: str, elements: list[dict], part: int = 1, parts: int = 1
+) -> dict:
     prompt = f"""Classify ONE curriculum source into exactly one role.
 
 SOURCE_FILE: {source_file}
-FULL_LAYER0_EVIDENCE_JSON:
+{_evidence_label(part, parts)}:
 {json.dumps({"n": len(elements), "elements": elements}, ensure_ascii=False)}
 
 Respond ONLY JSON:
@@ -264,7 +402,7 @@ Respond ONLY JSON:
 
 role must be exactly one of those five strings — not a list, not a pipe-joined enum.
 """
-    data = chat_json(cfg, f"role-{Path(source_file).stem[:40]}", prompt)
+    data = chat_json(cfg, f"role-{Path(source_file).stem[:40]}{_part_suffix(part, parts)}", prompt)
     role = str(data.get("role") or "").strip()
     if role not in ROLES:
         prior = filename_role_prior(source_file)
@@ -324,13 +462,15 @@ def citation_implied_lessons(data: dict) -> set[int]:
     return implied
 
 
-def step_lessons(cfg: dict, source_file: str, elements: list[dict], role: str) -> dict:
-    stem = Path(source_file).stem[:40]
+def _step_lessons_once(
+    cfg: dict, source_file: str, elements: list[dict], role: str, part: int = 1, parts: int = 1
+) -> dict:
+    stem = Path(source_file).stem[:40] + _part_suffix(part, parts)
     base_prompt = f"""List lesson numbers this ONE document covers. Read all excerpts.
 
 SOURCE_FILE: {source_file}
 ROLE_ALREADY_CHOSEN: {role}
-FULL_LAYER0_EVIDENCE_JSON:
+{_evidence_label(part, parts)}:
 {json.dumps({"n": len(elements), "elements": elements}, ensure_ascii=False)}
 
 Respond ONLY JSON:
@@ -366,7 +506,7 @@ PREVIOUS_JSON:
 Contradiction: citations/notes imply {sorted(implied)}, but covers_lesson_numbers
 was {sorted(listed)}. Missing: {missing}.
 
-FULL_LAYER0_EVIDENCE_JSON:
+{_evidence_label(part, parts)}:
 {json.dumps({"n": len(elements), "elements": elements}, ensure_ascii=False)}
 
 Respond ONLY JSON:
@@ -382,13 +522,15 @@ Respond ONLY JSON:
     return data
 
 
-def step_assessment(cfg: dict, source_file: str, elements: list[dict], role: str) -> dict:
+def _step_assessment_once(
+    cfg: dict, source_file: str, elements: list[dict], role: str, part: int = 1, parts: int = 1
+) -> dict:
     prompt = f"""Decide if this ONE file should become a Lesson-attached Assessment node
 in a HAS-PART graph (whole-file belonging), or stay a plain Material.
 
 SOURCE_FILE: {source_file}
 ROLE_ALREADY_CHOSEN: {role}
-FULL_LAYER0_EVIDENCE_JSON:
+{_evidence_label(part, parts)}:
 {json.dumps({"n": len(elements), "elements": elements}, ensure_ascii=False)}
 
 Context: some curricula pack Learn / Practice / Succeed / Teacher Edition as
@@ -399,7 +541,9 @@ often SHOULD be Assessment-bearing.
 Respond ONLY JSON:
 {{"source_file":"{source_file}","is_assessment_bearing":false,"assessment_lesson_numbers":[],"assessment_name":null,"citations":[],"notes":"..."}}
 """
-    data = chat_json(cfg, f"assess-{Path(source_file).stem[:40]}", prompt, max_tokens=16384)
+    data = chat_json(
+        cfg, f"assess-{Path(source_file).stem[:40]}{_part_suffix(part, parts)}", prompt, max_tokens=16384
+    )
     data["is_assessment_bearing"] = bool(data.get("is_assessment_bearing"))
     nums = []
     for x in data.get("assessment_lesson_numbers") or []:
@@ -615,20 +759,36 @@ def run_unit(
 
     for sf in review_sources:
         els = evidence[sf]
+        pieces = [json.dumps(el, ensure_ascii=False) for el in els]
+        step_prompts: list[list[str]] = []
         log(f"graph STEP role ← {Path(sf).name}")
+        mark = len(_SENT)
         roles[sf] = step_role(cfg, sf, els)
+        step_prompts.append(_SENT[mark:])
         (raw_dir / f"01-role-{Path(sf).stem}.json").write_text(
             json.dumps(roles[sf], indent=2) + "\n", encoding="utf-8"
         )
 
         log(f"graph STEP lessons ← {Path(sf).name}")
+        mark = len(_SENT)
         lessons[sf] = step_lessons(cfg, sf, els, roles[sf]["role"])
+        step_prompts.append(_SENT[mark:])
         (raw_dir / f"02-lessons-{Path(sf).stem}.json").write_text(
             json.dumps(lessons[sf], indent=2) + "\n", encoding="utf-8"
         )
 
         log(f"graph STEP assessment ← {Path(sf).name}")
+        mark = len(_SENT)
         assesses[sf] = step_assessment(cfg, sf, els, roles[sf]["role"])
+        step_prompts.append(_SENT[mark:])
+        # Each step on its own must have seen every element: the weakest step
+        # is what the document's coverage is.
+        record_coverage(
+            project_id, "sorting", Path(sf).name,
+            available=sum(len(x) for x in pieces),
+            sent=min(covered_chars(pieces, sp) for sp in step_prompts),
+            parts=len(evidence_batches(els)),
+        )
         (raw_dir / f"03-assess-{Path(sf).stem}.json").write_text(
             json.dumps(assesses[sf], indent=2) + "\n", encoding="utf-8"
         )
@@ -743,6 +903,8 @@ def run_graph_phase(
     )
     set_active_graph_run(root, run_id)
     log(f"graph: run_id={run_id} backend={backend} model={model_label}")
+    if backend == "local":
+        reset_coverage(project_id, "sorting")
 
     results = []
     errors: list[str] = []
@@ -780,6 +942,8 @@ def run_graph_phase(
     set_active_graph_run(root, run_id)  # refresh PHASE-SUMMARY symlink
     if errors:
         raise RuntimeError("graph phase failed: " + "; ".join(errors))
+    if backend == "local":
+        check_coverage(project_id, "sorting", "sorting")
     return 0
 
 

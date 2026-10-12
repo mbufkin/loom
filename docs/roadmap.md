@@ -923,6 +923,36 @@ chunks (many standards, many elements) can produce responses long enough to get
 cut off mid-generation, which is a deterministic failure retries can't fix. Fixed:
 `max_tokens` raised from 8192 to 16384 for decompose calls in `layer0.py`.
 
+#### Update 2026-10-12: full text at every model stage, not just Layer 0
+
+Layer 0 never truncated, but other stages did: organise grouped units from ~200
+characters per document, the path workflows' text fallback read 8,000, and the
+lesson-quality, curriculum-review and Path A placement prompts cut each excerpt
+(1,400 / 180-400 / 280 characters) or capped how many elements were shown. All
+of these now send full text and split, never cut, when it is too much for one
+call. Thresholds are Layer 0's, shared through `audit_lib`:
+
+| Stage | Over the limit | Limit |
+|---|---|---|
+| Layer 0 (`layer0.py`) | chunks with 2-paragraph overlap, one call per chunk, dedup merge | document > `CHUNK_THRESHOLD_CHARS` (100K chars); chunks of `CHUNK_SIZE_CHARS` (60K) |
+| Organise (`ingest.py`) | **map**: one card call per part (same chunks as Layer 0), cards merged; **reduce**: the grouping/verifier/repair prompts read the cards. Cards cached by content hash under `ingest/cards/` | same as Layer 0 |
+| Sorting (`graph_phase.py`, local) | evidence elements batched, each step per batch; role = specific role with most evidence, lessons = union, assessment = majority of evidence | evidence JSON > 60K chars |
+| Path A placement (A6) | tournament: batches propose, final round over proposals | candidates > 60K chars |
+| Lesson quality | per-criterion candidates batched, best-evidenced band kept | > 60K chars |
+| Curriculum review | stage-1 tournament over all type-correct candidates | > 60K chars |
+| Path B–H text fallback | whole file (local keyword checks, no model) | none |
+
+Each of those stages records, from the prompts it actually sent, how many
+characters of each document (or lesson's evidence) reached the model, logs
+`Full-text check: <stage> N/N documents read in full (1 in 3 parts)`, and fails
+on any shortfall. `run_project.py` logs one combined line at the end.
+`test_no_document_caps.py` statically rejects new caps on document text bound
+for a prompt; display/log/output truncation is allowlisted there with a reason.
+Rule for coding agents: `.cursor/rules/full-documents.mdc` and `AGENTS.md`.
+
+Still open: Layer 1 ORGANIZE for a single framework-sized document (#13) sends
+the whole document in one call; it is full text, but not yet chunked.
+
 ### 5. UNCITED placement flag — RESOLVED (2026-07-07, via Layer 0 build)
 
 **Problem (was):** Many placements are flagged `⚠ UNCITED` — the model claimed an excerpt but `excerpt_in_evidence()` can't match it back to the source text. This is partly a normalization issue (whitespace, punctuation) and partly the model paraphrasing instead of quoting.

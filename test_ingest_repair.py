@@ -47,6 +47,7 @@ RECORDS = [
         "unit_length_days_hint": None,
         "title": n,
         "excerpt_head": "",
+        "content_clean": f"{n}\n\nBody of {n}.",
     }
     for n in CATALOG
 ]
@@ -297,6 +298,9 @@ def test_ingest_end_to_end_with_a_fake_model() -> None:
     seen: list[dict] = []
 
     def fake_model_call(cfg, role, messages, step, temperature=0.1):
+        if step.startswith("organise-card"):
+            # Organise first reads each document in full into a card.
+            return {"choices": [{"message": {"content": json.dumps({"topic": step, "role": "other"})}}]}
         seen.append({"role": role, "step": step, "prompt": messages[0]["content"]})
         return {"choices": [{"message": {"content": json.dumps(replies[len(seen) - 1])}}]}
 

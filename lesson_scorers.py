@@ -19,7 +19,7 @@ from __future__ import annotations
 
 import json
 
-from audit_lib import parse_model_json
+from audit_lib import batch_by_chars, parse_model_json, prompt_budget_chars
 from lesson_scoring import (
     CriterionResult,
     Evidence,
@@ -64,14 +64,15 @@ def _presence_result(
 
 def _band_candidates(lesson: LessonInput, rubric: dict) -> list:
     """Elements a band rubric may cite: the union of every criterion's reads_from
-    types (fallback to all elements). Capped so the prompt stays bounded."""
+    types (fallback to all elements). All of them, in full: a large set is
+    scored in batches by _band_result, never cut (Bet 1)."""
     wanted: set[str] = set()
     for c in rubric["criteria"]:
         wanted.update(c.get("reads_from") or [])
     els = lesson.elements_of_type(*wanted) if wanted else list(lesson.elements)
     if not els:
         els = list(lesson.elements)
-    return els[:40]
+    return els
 
 
 def _build_band_prompt(lesson: LessonInput, rubric: dict, candidates: list) -> str:
@@ -83,7 +84,7 @@ def _build_band_prompt(lesson: LessonInput, rubric: dict, candidates: list) -> s
         for c in rubric["criteria"]
     )
     cand_block = "\n\n".join(
-        f"[{el.element_id}] ({el.element_type})\n\"\"\"\n{(el.excerpt or '')[:600]}\n\"\"\""
+        f"[{el.element_id}] ({el.element_type})\n\"\"\"\n{el.excerpt or ''}\n\"\"\""
         for el in candidates
     ) or "(no candidate elements for this lesson)"
     ids = ", ".join(c["id"] for c in rubric["criteria"])
@@ -133,22 +134,38 @@ def _band_result(
 
     candidates = _band_candidates(lesson, rubric)
     valid_ids = {el.element_id: el for el in candidates}
-    prompt = _build_band_prompt(lesson, rubric, candidates)
+    batches = batch_by_chars(candidates, lambda el: len(el.excerpt or ""), prompt_budget_chars())
+    replies: list[dict] = []
     try:
         from layer1 import call_and_parse_with_retry
 
-        data = call_and_parse_with_retry(
-            cfg, "analyst", prompt, f"lesson-score-{scorer_id}-{lesson.lesson_id}"
-        )
+        for k, batch in enumerate(batches or [[]], 1):
+            prompt = _build_band_prompt(lesson, rubric, batch)
+            step = f"lesson-score-{scorer_id}-{lesson.lesson_id}" + (
+                f"-b{k}" if len(batches) > 1 else ""
+            )
+            replies.append(call_and_parse_with_retry(cfg, "analyst", prompt, step))
     except Exception as e:  # noqa: BLE001 — any model/parse failure degrades cleanly
         empty.error = f"model call failed: {e}"
         empty.criteria = [
             CriterionResult(c["id"], c.get("label", c["id"]), "band", note="error")
             for c in rubric["criteria"]
         ]
-        empty.cost = {"model_calls": 1}
+        empty.cost = {"model_calls": len(replies) + 1}
         return empty
 
+    # One reply unless the candidates outgrew a prompt; then each criterion
+    # takes the highest band any batch could evidence.
+    best: dict[str, dict] = {}
+    for reply in replies:
+        for sc in reply.get("scores") or []:
+            cid = sc.get("criterion_id")
+            b = sc.get("band") if isinstance(sc.get("band"), (int, float)) else -1
+            prev = best.get(cid)
+            pb = prev.get("band") if prev and isinstance(prev.get("band"), (int, float)) else -1
+            if prev is None or b > pb:
+                best[cid] = sc
+    data = {"scores": list(best.values())}
     scored = {s.get("criterion_id"): s for s in (data.get("scores") or [])}
     crits: list[CriterionResult] = []
     for c in rubric["criteria"]:
@@ -183,7 +200,7 @@ def _band_result(
         lesson_id=lesson.lesson_id,
         criteria=crits,
         summary=summarize_bands(crits, max_band=max_band),
-        cost={"model_calls": 1},
+        cost={"model_calls": len(replies)},
     )
 
 

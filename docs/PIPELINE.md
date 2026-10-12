@@ -20,6 +20,8 @@ sources/                    ← curriculum DATA (any supported format)
     ▼  doc_extract.py       text extraction (code)
     │
     ▼  ingest.py            organize + infer unit calendars (models → YAML)
+    │                       map: one card per document from its FULL text
+    │                       reduce: group units from the cards
     │
     ▼  rollup.py            unit calendars → pacing-plan / year map (code)
     │                       (provisional early spine only)

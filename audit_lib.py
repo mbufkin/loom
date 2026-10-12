@@ -1224,3 +1224,199 @@ def scrub_document(path: Path) -> dict:
         "content_clean": cleaned,
         "excerpt_head": cleaned[:500],
     }
+
+
+# --- Full text, always (docs/BETS.md, Bet 1) --------------------------------
+# Every model stage sends the whole of every document it judges. When a
+# document (or a document's evidence) is too big for one prompt it is split
+# into parts with layer0's thresholds and the per-part answers are merged;
+# nothing is cut to save context or cost. These helpers are shared so every
+# stage splits the same way, and so each stage can prove after the fact --
+# from the prompts it actually sent -- that nothing was left out. The proof is
+# written to a per-stage coverage ledger and a stage with a shortfall fails.
+
+
+class FullTextError(RuntimeError):
+    """A stage sent a model less than the full text of a document."""
+
+
+def prompt_budget_chars() -> int:
+    """Characters of document text per model call (layer0.CHUNK_SIZE_CHARS)."""
+    from layer0 import CHUNK_SIZE_CHARS  # lazy: layer0 imports this module
+
+    return CHUNK_SIZE_CHARS
+
+
+def document_parts(text: str) -> list[str]:
+    """The whole document as one part, or layer0's chunks above its threshold.
+
+    Same rule as Layer 0 (CHUNK_THRESHOLD_CHARS / split_into_chunks), so a
+    document is split identically wherever it is read.
+    """
+    from layer0 import CHUNK_THRESHOLD_CHARS, split_into_chunks
+
+    if len(text) <= CHUNK_THRESHOLD_CHARS:
+        return [text]
+    return split_into_chunks(text)
+
+
+def text_pieces(text: str) -> list[str]:
+    """The document as the paragraphs layer0 numbers, in order.
+
+    A paragraph longer than one part's budget is cut into budget-sized pieces,
+    exactly as split_into_chunks cuts it, so every piece is a substring of the
+    prompt it was sent in.
+    """
+    size = prompt_budget_chars()
+    pieces: list[str] = []
+    for para in text.split("\n\n"):
+        if not para.strip():
+            continue
+        for i in range(0, len(para), size):
+            pieces.append(para[i : i + size])
+    return pieces
+
+
+def batch_by_chars(items: list, size_of, budget: int | None = None) -> list[list]:
+    """Split items, in order, into batches whose sizes sum to <= budget.
+
+    Never drops an item: one bigger than the budget gets a batch of its own
+    (Layer 0's chunking already bounds elements, so this is a backstop).
+    """
+    budget = budget or prompt_budget_chars()
+    batches: list[list] = []
+    current: list = []
+    total = 0
+    for item in items:
+        n = size_of(item)
+        if current and total + n > budget:
+            batches.append(current)
+            current, total = [], 0
+        current.append(item)
+        total += n
+    if current:
+        batches.append(current)
+    return batches
+
+
+def _as_sent_forms(piece: str) -> tuple[str, ...]:
+    # Prompts carry text raw ("[P3] ...") or inside JSON, where newlines and
+    # quotes are escaped; a piece counts as sent if either form is present.
+    return (
+        piece,
+        json.dumps(piece, ensure_ascii=False)[1:-1],
+        json.dumps(piece)[1:-1],
+    )
+
+
+def covered_chars(pieces: list[str], prompts: list[str]) -> int:
+    """How many characters of `pieces` appear verbatim in `prompts`.
+
+    Pieces and prompts are usually in the same order, so the search starts at
+    the prompt the previous piece was found in and wraps around.
+    """
+    if not prompts:
+        return 0
+    covered = 0
+    j = 0
+    n = len(prompts)
+    for piece in pieces:
+        forms = _as_sent_forms(piece)
+        for step in range(n):
+            k = (j + step) % n
+            if any(f in prompts[k] for f in forms):
+                covered += len(piece)
+                j = k
+                break
+    return covered
+
+
+def _coverage_file(project_id: str, stage: str, root: Path | None = None) -> Path:
+    base = root if root is not None else project_dir(project_id)
+    return base / "coverage" / f"{stage}.jsonl"
+
+
+def reset_coverage(project_id: str, stage: str, root: Path | None = None) -> None:
+    path = _coverage_file(project_id, stage, root)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("", encoding="utf-8")
+
+
+def record_coverage(
+    project_id: str,
+    stage: str,
+    item: str,
+    *,
+    available: int,
+    sent: int,
+    parts: int = 1,
+    note: str = "",
+    root: Path | None = None,
+) -> None:
+    """Append one item's coverage (a document, or a lesson's evidence)."""
+    path = _coverage_file(project_id, stage, root)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    row = {"item": item, "available": int(available), "sent": int(sent), "parts": int(parts)}
+    if note:
+        row["note"] = note
+    with open(path, "a", encoding="utf-8") as fh:
+        fh.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+
+def coverage_summary(
+    project_id: str, stage: str, label: str, noun: str = "documents", root: Path | None = None
+) -> tuple[str, list[str]] | None:
+    """('<label> 9/9 documents read in full (1 in 3 parts)', shortfalls) or None.
+
+    An item seen several times (a document in two units) is full only if every
+    record of it is full.
+    """
+    path = _coverage_file(project_id, stage, root)
+    if not path.is_file():
+        return None
+    items: dict[str, dict] = {}
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        try:
+            r = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        cur = items.setdefault(r["item"], {"short": 0, "parts": 1, "notes": set()})
+        cur["short"] = max(cur["short"], r["available"] - r["sent"])
+        cur["parts"] = max(cur["parts"], r.get("parts") or 1)
+        if r.get("note"):
+            cur["notes"].add(r["note"])
+    if not items:
+        return None
+    shortfalls = [
+        f"{k}: {v['short']} chars not sent" for k, v in items.items() if v["short"] > 0
+    ]
+    full = len(items) - len(shortfalls)
+    split = [v["parts"] for v in items.values() if v["parts"] > 1]
+    text = f"{label} {full}/{len(items)} {noun} read in full"
+    if len(split) == 1:
+        text += f" (1 in {split[0]} parts)"
+    elif split:
+        text += f" ({len(split)} in parts, up to {max(split)})"
+    reused = sum(1 for v in items.values() if "reused" in v["notes"])
+    if reused:
+        text += f", {reused} unchanged since a full read"
+    return text, shortfalls
+
+
+def check_coverage(
+    project_id: str, stage: str, label: str, noun: str = "documents", root: Path | None = None
+) -> str:
+    """Log this stage's full-text line; raise FullTextError on any shortfall."""
+    summary = coverage_summary(project_id, stage, label, noun, root=root)
+    if summary is None:
+        return ""
+    text, shortfalls = summary
+    log(f"Full-text check: {text}")
+    if shortfalls:
+        raise FullTextError(
+            f"{label} sent a model less than the full text of "
+            f"{len(shortfalls)} item(s): " + "; ".join(shortfalls)
+        )
+    return text

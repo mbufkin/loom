@@ -172,7 +172,7 @@ def _source_text_elements(root: Path, doc_id: str, source_file: str) -> list[dic
     candidates.extend(sources.glob(f"*{doc_id}*"))
     for path in candidates:
         if path.is_file():
-            text = path.read_text(encoding="utf-8", errors="replace")[:8000]
+            text = path.read_text(encoding="utf-8", errors="replace")
             if not text.strip():
                 continue
             return [

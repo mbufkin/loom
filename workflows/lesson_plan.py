@@ -15,6 +15,12 @@ from typing import Any
 
 from audit_lib import (
     atomic_write,
+    batch_by_chars,
+    check_coverage,
+    covered_chars,
+    prompt_budget_chars,
+    record_coverage,
+    reset_coverage,
     load_config,
     load_yaml,
     log,
@@ -195,54 +201,91 @@ def a5_hunter_matrix(elements: list[dict], checklist: dict) -> dict:
     }
 
 
+A6_SYSTEM = (
+    "You are a curriculum auditor assigning EXISTING excerpts to daily "
+    "lesson-plan fields (test draft plate). Never invent content. If nothing "
+    "fits a field, use null. "
+    "Return JSON only: {\"assignments\": {\"<field_id>\": \"<element_id>|null\", ...}}"
+)
+
+
+def _a6_assign(cfg: dict, field_ids: list[str], candidates: list[dict], prompts: list[str]) -> dict:
+    """Field -> element_id over candidates sent in full.
+
+    One call when they fit a prompt. Otherwise each batch proposes its best
+    element per field and a final round chooses among the proposals, so every
+    candidate is read once and nothing is cut (Bet 1).
+    """
+    batches = batch_by_chars(
+        candidates, lambda c: len(json.dumps(c, ensure_ascii=False)), prompt_budget_chars()
+    )
+    if len(batches) > 1:
+        proposed: list[str] = []
+        for batch in batches:
+            for eid in (_a6_assign(cfg, field_ids, batch, prompts) or {}).values():
+                if eid and eid != "null" and eid not in proposed:
+                    proposed.append(eid)
+        finalists = [c for c in candidates if c["element_id"] in proposed]
+        if not finalists:
+            return {}
+        if len(finalists) < len(candidates):
+            return _a6_assign(cfg, field_ids, finalists, prompts)
+        batches = [finalists]
+    user = (
+        f"FIELDS: {json.dumps(field_ids)}\n\n"
+        f"CANDIDATES:\n{json.dumps(batches[0] if batches else [], ensure_ascii=False)}\n\n"
+        "Assign at most one element_id per field. Prefer the best fit. "
+        "Do not reuse the same element_id across multiple structure-core fields if avoidable."
+    )
+    prompts.append(user)
+    resp = model_chat(
+        cfg,
+        "analyst",
+        [{"role": "system", "content": A6_SYSTEM}, {"role": "user", "content": user}],
+        step="path-a-a6-place",
+        temperature=0.1,
+        max_tokens=2048,
+    )
+    content = resp["choices"][0]["message"]["content"]
+    parsed = parse_model_json(content) or {}
+    return parsed.get("assignments") or {}
+
+
 def a6_model_place(
     elements: list[dict],
     checklist: dict,
     *,
     cfg: dict | None,
     use_model: bool = True,
+    coverage_project: str | None = None,
 ) -> dict:
     """Assign existing excerpts to structure fields via model; blank if none fit."""
-    candidates = []
-    for e in elements:
-        candidates.append(
-            {
-                "element_id": e.get("element_id"),
-                "element_type": e.get("element_type"),
-                "excerpt": _trunc(e.get("excerpt") or "", 280),
-            }
-        )
+    candidates = [
+        {
+            "element_id": e.get("element_id"),
+            "element_type": e.get("element_type"),
+            "excerpt": e.get("excerpt") or "",
+        }
+        for e in elements
+    ]
     field_ids = [f["id"] for f in iter_checklist_fields(checklist)]
     placed: dict[str, Any] = {}
 
     if use_model and cfg and candidates:
-        system = (
-            "You are a curriculum auditor assigning EXISTING excerpts to daily "
-            "lesson-plan fields (test draft plate). Never invent content. If nothing "
-            "fits a field, use null. "
-            "Return JSON only: {\"assignments\": {\"<field_id>\": \"<element_id>|null\", ...}}"
-        )
-        user = (
-            f"FIELDS: {json.dumps(field_ids)}\n\n"
-            f"CANDIDATES:\n{json.dumps(candidates[:40], ensure_ascii=False)}\n\n"
-            "Assign at most one element_id per field. Prefer the best fit. "
-            "Do not reuse the same element_id across multiple structure-core fields if avoidable."
-        )
         try:
-            resp = model_chat(
-                cfg,
-                "analyst",
-                [
-                    {"role": "system", "content": system},
-                    {"role": "user", "content": user},
-                ],
-                step="path-a-a6-place",
-                temperature=0.1,
-                max_tokens=2048,
-            )
-            content = resp["choices"][0]["message"]["content"]
-            parsed = parse_model_json(content) or {}
-            assignments = parsed.get("assignments") or {}
+            prompts: list[str] = []
+            assignments = _a6_assign(cfg, field_ids, candidates, prompts)
+            if coverage_project:
+                by_doc: dict[str, list[str]] = defaultdict(list)
+                for e in elements:
+                    if e.get("excerpt"):
+                        by_doc[str(e.get("doc_id") or "?")].append(e["excerpt"])
+                for did, pieces in sorted(by_doc.items()):
+                    record_coverage(
+                        coverage_project, "path-a", did,
+                        available=sum(len(x) for x in pieces),
+                        sent=covered_chars(pieces, prompts),
+                    )
             by_eid = {e.get("element_id"): e for e in elements}
             used: set[str] = set()
             for fid in field_ids:
@@ -379,7 +422,11 @@ def run_path_a_for_project(project_id: str, *, use_model: bool = True) -> dict:
     a3 = a3_coherence(elements, a2)
     a4 = a4_assessment_path(elements)
     a5 = a5_hunter_matrix(elements, checklist)
-    a6 = a6_model_place(elements, checklist, cfg=cfg, use_model=use_model)
+    reset_coverage(project_id, "path-a")
+    a6 = a6_model_place(
+        elements, checklist, cfg=cfg, use_model=use_model, coverage_project=project_id
+    )
+    check_coverage(project_id, "path-a", "lesson-plan placement")
     a7 = a7_supports(elements)
 
     # Path A scores at project grain (`steps` / a6_fields / emit_paths). The

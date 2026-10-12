@@ -39,7 +39,15 @@ from urllib.parse import urlparse
 
 import requests
 
-from audit_lib import BASE_DIR, load_config, log, project_dir, validate_slug_id
+from audit_lib import (
+    BASE_DIR,
+    DATA_DIR,
+    coverage_summary,
+    load_config,
+    log,
+    project_dir,
+    validate_slug_id,
+)
 from tools.e2e_run_lib import ensure_e2e_env, slugify_run_id
 from usage_lib import set_usage_project, write_usage_summary
 
@@ -72,6 +80,46 @@ class StageBrokenError(RuntimeError):
     recover the failure class from stderr so best-effort bands can still warn on
     model/runtime issues without swallowing packaging bugs again.
     """
+
+
+class FullTextStageError(StageBrokenError):
+    """A stage sent a model less than the full text of a document (Bet 1).
+
+    A subclass of StageBrokenError on purpose: every best-effort band below
+    already re-raises that class, so a full-text failure in an advisory stage
+    (lesson quality, curriculum review) fails the run instead of being skipped
+    with a warning.
+    """
+
+
+# Every model stage that keeps a full-text coverage ledger, in pipeline order:
+# (ledger name, label in the log, what it counts). "organise" lives in the
+# curriculum's own folder (ingest runs outside the e2e run tree).
+FULL_TEXT_STAGES = (
+    ("organise", "organise", "documents"),
+    ("layer0", "layer0", "documents"),
+    ("sorting", "sorting", "documents"),
+    ("path-a", "lesson-plan placement", "documents"),
+    ("quality", "lesson quality", "lessons"),
+    ("review", "curriculum review", "lessons"),
+)
+
+
+def full_text_line(project_id: str) -> tuple[str, list[str]]:
+    """'Full-text check: organise 9/9 documents read in full; ...' + shortfalls."""
+    parts: list[str] = []
+    shortfalls: list[str] = []
+    for stage, label, noun in FULL_TEXT_STAGES:
+        root = DATA_DIR / "projects" / project_id if stage == "organise" else None
+        summary = coverage_summary(project_id, stage, label, noun, root=root)
+        if summary is None:
+            continue
+        text, short = summary
+        parts.append(text)
+        shortfalls.extend(f"{label}: {s}" for s in short)
+    if not parts:
+        return "", []
+    return "Full-text check: " + "; ".join(parts), shortfalls
 
 
 class StageOutputError(RuntimeError):
@@ -401,6 +449,12 @@ def run_step(script: Path, args: list[str]) -> None:
     rc = proc.wait()
     if rc != 0:
         err = "".join(stderr_chunks)
+        if "FullTextError" in err:
+            last = next(
+                (ln.strip() for ln in reversed(err.splitlines()) if "FullTextError" in ln),
+                f"exit {rc}",
+            )
+            raise FullTextStageError(f"{script.name}: {last}")
         if any(marker in err for marker in _STAGE_BROKEN_MARKERS):
             last = next(
                 (ln.strip() for ln in reversed(err.splitlines()) if ln.strip()),
@@ -591,6 +645,9 @@ def main() -> int:
             if args.graph_backend == "local":
                 preflight_models()
             run_stage(GRAPH_PHASE, g_args, args.project)
+            line, _short = full_text_line(args.project)
+            if line:
+                log(line)
             usage_summary = write_usage_summary(args.project)
             usage_totals = usage_summary.get("totals") or {}
             print("\n" + "=" * 60)
@@ -793,6 +850,16 @@ def main() -> int:
 
     except RuntimeError as e:
         log(f"ERROR: {e}")
+        return 1
+
+    # One line covering every model stage that ran. Each stage already failed
+    # itself on a shortfall; this is the summary a reader of the log needs, and
+    # a last check in case a stage's own check was bypassed.
+    line, shortfalls = full_text_line(args.project)
+    if line:
+        log(line)
+    if shortfalls:
+        log("ERROR: full text not sent to the model: " + "; ".join(shortfalls))
         return 1
 
     # Default: push the course report PDF to Drive (organized by curriculum id).

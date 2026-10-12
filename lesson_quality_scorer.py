@@ -52,14 +52,20 @@ from lesson_scoring import (  # noqa: E402
     summarize_bands,
 )
 from rubrics import QUALITY_RUBRIC, load_rubric  # noqa: E402
+from audit_lib import (  # noqa: E402
+    batch_by_chars,
+    covered_chars,
+    prompt_budget_chars,
+    record_coverage,
+)
 
 # How many reranked candidate elements to show the model per criterion. Kept small
 # on purpose: Liu et al. show reader performance saturates/degrades past ~20 chunks,
 # and a handful of *relevant* elements keeps the key text out of the lossy "middle".
 TOP_K = 6
-# Generous per-element budget — big enough to hold a full objective block / activity,
-# unlike the baseline's 600-char guillotine, but bounded so the prompt stays sane.
-EXCERPT_CHARS = 1400
+# Each shown element is sent in full (Bet 1). Elements are already bounded by
+# Layer 0's chunking; if a criterion's candidates together exceed one prompt's
+# budget they are judged in batches and the best-evidenced band kept.
 
 # Neutral, non-deficit reviewer stance (finding 3). We still keep Loom's read-only
 # auditor rule (diagnose the lesson's own words; never rewrite it).
@@ -193,7 +199,9 @@ def _rerank(lesson: LessonInput, criterion: dict) -> list:
     return chosen[: TOP_K + 3]
 
 
-def _prompt(lesson: LessonInput, rubric: dict, criterion: dict, cands: list) -> str:
+def _prompt(
+    lesson: LessonInput, rubric: dict, criterion: dict, cands: list, start: int = 1
+) -> str:
     scale = "\n".join(
         f"  {k}: {v}" for k, v in (rubric.get("band_scale") or {}).items()
     )
@@ -201,9 +209,10 @@ def _prompt(lesson: LessonInput, rubric: dict, criterion: dict, cands: list) -> 
     # model would not echo our long ids, so citation never bound; a tiny tag it will
     # reliably reproduce, and we map it back to the real element id afterward.
     cand_block = "\n\n".join(
-        f"[E{i}] ({el.element_type})\n\"\"\"\n{(el.excerpt or '')[:EXCERPT_CHARS]}\n\"\"\""
-        for i, el in enumerate(cands, 1)
+        f"[E{i}] ({el.element_type})\n\"\"\"\n{el.excerpt or ''}\n\"\"\""
+        for i, el in enumerate(cands, start)
     ) or "(no candidate elements for this dimension)"
+    last = start + len(cands) - 1
     return f"""{PREAMBLE}
 
 DIMENSION TO JUDGE: {criterion.get('label', criterion['id'])}
@@ -213,7 +222,7 @@ BAND SCALE:
 {scale}
 
 LESSON: {lesson.title}
-EXCERPTS (most relevant first, tagged E1..E{len(cands)}):
+EXCERPTS (most relevant first, tagged E{start}..E{last}):
 {cand_block}
 
 Do these steps IN ORDER:
@@ -238,6 +247,9 @@ class QualityDecomposedScorer(Scorer):
 
     def __init__(self) -> None:
         self.rubric = load_rubric(QUALITY_RUBRIC)
+        # Set by lesson_quality.py so each lesson's full-text coverage lands in
+        # that project's ledger; None (lab use) records nothing.
+        self.coverage_project: str | None = None
 
     def score(self, lesson: LessonInput, cfg: dict | None = None) -> ScorerResult:
         rubric = self.rubric
@@ -265,18 +277,40 @@ class QualityDecomposedScorer(Scorer):
             cands = _rerank(lesson, c)
             # Map the short tags we show the model (E1..En) back to real element ids.
             tag_to_id = {f"e{i}": el.element_id for i, el in enumerate(cands, 1)}
-            prompt = _prompt(lesson, rubric, c, cands)
             label = c.get("label", c["id"])
-            try:
-                data = call_and_parse_with_retry(
-                    cfg, "analyst", prompt, f"qd-{lesson.lesson_id}-{c['id']}"
+            batches = batch_by_chars(cands, lambda el: len(el.excerpt or ""), prompt_budget_chars())
+            answers: list[dict] = []
+            prompts: list[str] = []
+            errors: list[str] = []
+            start = 1
+            for k, batch in enumerate(batches or [[]], 1):
+                prompt = _prompt(lesson, rubric, c, batch, start)
+                prompts.append(prompt)
+                start += len(batch)
+                step = f"qd-{lesson.lesson_id}-{c['id']}" + (f"-b{k}" if len(batches) > 1 else "")
+                try:
+                    answers.append(call_and_parse_with_retry(cfg, "analyst", prompt, step))
+                    calls += 1
+                except Exception as e:  # noqa: BLE001 — one bad criterion must not sink the lesson
+                    errors.append(str(e))
+            if self.coverage_project:
+                pieces = [el.excerpt for el in cands if el.excerpt]
+                record_coverage(
+                    self.coverage_project, "quality", lesson.lesson_id,
+                    available=sum(len(x) for x in pieces),
+                    sent=covered_chars(pieces, prompts), parts=len(batches),
                 )
-                calls += 1
-            except Exception as e:  # noqa: BLE001 — one bad criterion must not sink the lesson
+            if not answers:
                 crits.append(
-                    CriterionResult(c["id"], label, "band", note=f"model error: {e}")
+                    CriterionResult(c["id"], label, "band", note=f"model error: {errors[0] if errors else 'no reply'}")
                 )
                 continue
+            # Batches only happen when the evidence is too big for one prompt;
+            # the band rests on the best evidence any batch found.
+            data = max(
+                answers,
+                key=lambda d: d.get("band") if isinstance(d.get("band"), (int, float)) else -1,
+            )
 
             band = data.get("band")
             band = int(band) if isinstance(band, (int, float)) else None

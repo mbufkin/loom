@@ -32,6 +32,12 @@ import sys
 from pathlib import Path
 
 from audit_lib import (
+    check_coverage,
+    covered_chars,
+    document_parts,
+    record_coverage,
+    reset_coverage,
+    text_pieces,
     atomic_write,
     doc_id_from_filename,
     excerpt_cited_in,
@@ -415,7 +421,13 @@ def dedup_elements(elements: list[dict]) -> list[dict]:
     return deduped
 
 
+# Every prompt model_call sends, so run_layer0 can prove each document was
+# shown in full (the "layer0" full-text check).
+_SENT: list[str] = []
+
+
 def model_call(cfg: dict, role: str, messages: list, step: str) -> dict:
+    _SENT.append("\n".join(str(m.get("content") or "") for m in messages))
     # 16384 (was 8192): content-dense chunks were hitting the 8192 ceiling mid-array,
     # producing a deterministic "Expecting ',' delimiter" JSON parse failure that a
     # retry cannot fix (observed live against the AP CSP framework — see roadmap.md).
@@ -1292,6 +1304,7 @@ def run_layer0(
         ]
 
     cfg = load_config()
+    reset_coverage(project_id, "layer0")
     all_rows: list[dict] = []
     run_stats: list[dict] = []
     skipped_extraction = []
@@ -1305,8 +1318,14 @@ def run_layer0(
         chash = content_hash(record["content_clean"])
 
         cached_rows = existing.get(doc_id)
+        pieces = text_pieces(record["content_clean"])
+        available = sum(len(x) for x in pieces)
         if resume and cached_rows and cached_rows[0].get("content_hash") == chash:
             log(f"cache hit  {p.name} ({len(cached_rows)} elements, unchanged)")
+            record_coverage(
+                project_id, "layer0", p.name, available=available, sent=available,
+                parts=len(document_parts(record["content_clean"])), note="reused",
+            )
             all_rows.extend(cached_rows)
             run_stats.append(
                 {
@@ -1320,8 +1339,13 @@ def run_layer0(
             continue
 
         log(f"Layer 0: decomposing {p.name} ({record['char_count_clean']} chars)...")
+        mark = len(_SENT)
         try:
             rows, stats = process_document(cfg, record, raw_dir)
+            record_coverage(
+                project_id, "layer0", p.name, available=available,
+                sent=covered_chars(pieces, _SENT[mark:]), parts=stats.get("chunks", 1),
+            )
         except (RuntimeError, ValueError) as e:
             log(f"ERROR: {p.name}: {e}")
             run_stats.append(
@@ -1394,6 +1418,7 @@ def run_layer0(
     log(
         f"Layer 0 done: {len(all_rows)} elements from {len(run_stats)} documents -> {l0_dir}"
     )
+    check_coverage(project_id, "layer0", "layer0")
     return l0_dir
 
 

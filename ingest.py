@@ -25,6 +25,12 @@ import yaml
 from audit_lib import (
     BASE_DIR,
     atomic_write,
+    check_coverage,
+    covered_chars,
+    document_parts,
+    record_coverage,
+    reset_coverage,
+    text_pieces,
     iter_source_files,
     load_config,
     log,
@@ -187,15 +193,193 @@ def build_catalog(sources: Path) -> tuple[list[dict], list[Path]]:
     return usable, paths
 
 
+# --- Map: one "document card" per document, read from its FULL text ---------
+# Grouping used to see ~200 characters per document, so a unit was decided
+# from a title and an opening line. Now every document is read in full first
+# (parts above layer0's threshold, merged) into a compact card, and the
+# grouping prompt below sees the cards. Cards are cached by content hash so a
+# re-organise only re-reads documents that changed.
+CARD_VERSION = 1
+
+CARD_ROLES = (
+    "lesson_plan", "slides", "student_handout", "student_practice", "assessment",
+    "answer_key", "rubric", "project", "syllabus", "pacing_guide",
+    "standards_alignment", "teacher_notes", "reference", "other",
+)
+
+CARD_RULES = """You are reading ONE curriculum document in full so a course organizer
+can group it with the right unit. READ-ONLY: describe only what the text shows;
+never invent or write curriculum content.
+
+Read every numbered paragraph ([P<N>]) start to finish. Unit, lesson and day
+numbering is often deep in the body, not in the opening -- report it wherever
+it appears.
+"""
+
+CARD_SCHEMA = """Respond with ONLY valid JSON (no markdown fences):
+{
+  "topic": "one sentence: what this document teaches or is for",
+  "skills": ["main skills or concepts, most important first"],
+  "unit_cues": ["unit/module/chapter names or numbers the text states"],
+  "sequence_cues": ["lesson/day/week/period markers exactly as written, e.g. 'Day 3'"],
+  "day_numbers": [1, 2],
+  "lesson_numbers": [4],
+  "standards": ["standard codes the text cites"],
+  "role": "%s",
+  "course_wide": false,
+  "references": ["other documents, files or resources the text names"],
+  "evidence": [{"claim": "short claim from above", "paragraph": 12}]
+}
+Keep each list to the items that matter for grouping (about a dozen at most).
+course_wide is true only for documents that serve the whole course (syllabus,
+pacing guide, standards alignment, policies, inventories).
+""" % "|".join(CARD_ROLES)
+
+
+def _card_prompt(source_file: str, numbered: str, part: int, parts: int) -> str:
+    where = (
+        f"\nThis is PART {part} of {parts} of the document (it is long, so it is read "
+        f"in parts and every part is read). Describe only what is in THIS part.\n"
+        if parts > 1
+        else ""
+    )
+    return (
+        f"{CARD_RULES}{where}\nSOURCE_FILE: {source_file}\n\nDOCUMENT TEXT:\n"
+        f"{numbered}\n\n{CARD_SCHEMA}"
+    )
+
+
+def _uniq(seq) -> list:
+    out, seen = [], set()
+    for x in seq:
+        key = json.dumps(x, sort_keys=True, ensure_ascii=False)
+        if key not in seen:
+            seen.add(key)
+            out.append(x)
+    return out
+
+
+def _ints(raw) -> list[int]:
+    out = set()
+    for x in raw or []:
+        try:
+            out.add(int(x))
+        except (TypeError, ValueError):
+            continue
+    return sorted(out)
+
+
+def merge_cards(cards: list[dict]) -> dict:
+    """One card from per-part cards: lists unioned in order, numbers unioned,
+    role by majority (a specific role beats 'other'), course_wide if any part
+    says so. Evidence keeps which part it came from."""
+    if len(cards) == 1:
+        card = dict(cards[0])
+    else:
+        roles = [c.get("role") for c in cards if c.get("role") in CARD_ROLES]
+        specific = [r for r in roles if r != "other"] or roles or ["other"]
+        role = max(dict.fromkeys(specific), key=specific.count)
+        topics = _uniq(str(c.get("topic") or "").strip() for c in cards)
+        card = {
+            "topic": " / ".join(t for t in topics if t),
+            "role": role,
+            "course_wide": any(bool(c.get("course_wide")) for c in cards),
+        }
+        for key in ("skills", "unit_cues", "sequence_cues", "standards", "references", "evidence"):
+            card[key] = _uniq(x for c in cards for x in (c.get(key) or []))
+    for key in ("day_numbers", "lesson_numbers"):
+        card[key] = _ints(x for c in cards for x in (c.get(key) or []))
+    if card.get("role") not in CARD_ROLES:
+        card["role"] = "other"
+    return card
+
+
+def _card_cache_path(cards_dir: Path, text: str) -> Path:
+    import hashlib
+
+    digest = hashlib.sha256(text.encode("utf-8", errors="replace")).hexdigest()
+    return cards_dir / f"{digest}-v{CARD_VERSION}.json"
+
+
+def build_card(cfg: dict, record: dict, root: Path, project_id: str) -> dict:
+    """Read one document in full into a card, or reuse its cached card.
+
+    Records coverage for the 'organise' stage from the prompts actually sent:
+    every paragraph of the cleaned text must appear in one of them.
+    """
+    from layer0 import number_paragraphs
+
+    text = record.get("content_clean") or ""
+    name = record["source_file"]
+    cards_dir = root / "ingest" / "cards"
+    cache = _card_cache_path(cards_dir, text)
+    if cache.is_file():
+        try:
+            cached = json.loads(cache.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            cached = None
+        if cached and cached.get("sent") == cached.get("available"):
+            log(f"organise: {name}: read {len(text)} chars in {cached['parts']} part(s) (unchanged, card reused)")
+            record_coverage(
+                project_id, "organise", name, available=cached["available"],
+                sent=cached["sent"], parts=cached["parts"], note="reused", root=root,
+            )
+            return cached["card"]
+
+    parts = document_parts(text)
+    prompts: list[str] = []
+    part_cards: list[dict] = []
+    for i, part in enumerate(parts, start=1):
+        numbered, _ = number_paragraphs(part)
+        prompt = _card_prompt(name, numbered, i, len(parts))
+        prompts.append(prompt)
+        step = f"organise-card-{Path(name).stem}" + (f"-part{i}of{len(parts)}" if len(parts) > 1 else "")
+        resp = model_call(cfg, "analyst", [{"role": "user", "content": prompt}], step)
+        card = parse_json(extract_content(resp), step=step)
+        if not isinstance(card, dict):
+            raise ValueError(f"{name}: document card for part {i} was not a JSON object")
+        for ev in card.get("evidence") or []:
+            if isinstance(ev, dict) and len(parts) > 1:
+                ev["part"] = i
+        part_cards.append(card)
+    card = merge_cards(part_cards)
+
+    available = sum(len(p) for p in text_pieces(text))
+    sent = covered_chars(text_pieces(text), prompts)
+    log(f"organise: {name}: read {len(text)} chars in {len(parts)} part(s)")
+    record_coverage(
+        project_id, "organise", name, available=available, sent=sent, parts=len(parts), root=root
+    )
+    if sent == available:
+        cards_dir.mkdir(parents=True, exist_ok=True)
+        atomic_write(cache, json.dumps(
+            {"source_file": name, "parts": len(parts), "available": available,
+             "sent": sent, "card": card}, indent=2, ensure_ascii=False))
+    return card
+
+
+def build_cards(cfg: dict, records: list[dict], root: Path, project_id: str) -> None:
+    """Attach a full-text card to every record (record['card'])."""
+    reset_coverage(project_id, "organise", root=root)
+    for r in records:
+        r["card"] = build_card(cfg, r, root, project_id)
+    check_coverage(project_id, "organise", "organise", root=root)
+
+
+# --- Reduce: the grouping prompts read the cards ----------------------------
+
+
 def catalog_block(records: list[dict]) -> str:
     lines = []
     for r in records:
-        lines.append(
+        line = (
             f"- {r['source_file']} | fmt={r.get('source_format','?')} | type={r['doc_type']} | "
             f"days={r['day_hints']} | len_hint={r.get('unit_length_days_hint')} | "
-            f"title={r['title'][:80]!r}\n"
-            f"  excerpt: {r['excerpt_head'][:200]!r}"
+            f"title={r['title']!r}"
         )
+        if r.get("card"):
+            line += "\n  card: " + json.dumps(r["card"], ensure_ascii=False, separators=(",", ":"))
+        lines.append(line)
     return "\n".join(lines)
 
 
@@ -217,7 +401,7 @@ def verifier_organize(cfg: dict, records: list[dict], draft: dict) -> dict:
     prompt = f"""{ORGANIZER_RULES}
 
 Verify and correct the Analyst's organization. Every catalog file must be assigned once.
-Remove calendar days not supported by document excerpts. Fix unit groupings if wrong.
+Remove calendar days not supported by the document cards. Fix unit groupings if wrong.
 
 CATALOG:
 {catalog_block(records)}
@@ -491,7 +675,7 @@ left out; it will be shared with every unit as a course-level document.
 Every unit must have at least one calendar day. A group of files with no days to
 teach is not a unit: remove that unit and leave its files out.
 
-CATALOG (titles and excerpts, for context only -- filenames come from the list
+CATALOG (titles and document cards, for context only -- filenames come from the list
 above):
 {catalog_block(records)}
 
@@ -719,6 +903,10 @@ def ingest(project_id: str, sources: Path, skip_models: bool = False) -> Path:
         plan = _deterministic_plan(records)
     else:
         cfg = load_config()
+        log(f"Reading all {len(records)} documents in full...")
+        build_cards(cfg, records, root, project_id)
+        atomic_write(ingest_dir / "cards.json", json.dumps(
+            {r["source_file"]: r["card"] for r in records}, indent=2, ensure_ascii=False))
         log("Analyst organizing documents + inferring calendars...")
         draft = analyst_organize(cfg, records)
         atomic_write(raw_dir / "organize-analyst.json", json.dumps(draft, indent=2))
