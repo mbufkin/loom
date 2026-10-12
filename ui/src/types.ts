@@ -437,6 +437,15 @@ export interface RunStatus {
   phase?: "organising" | "auditing";
   /** organise-and-run only: why it stopped, in words for the operator. */
   error?: string | null;
+  /**
+   * Where this run's model calls go, decided once at its start: the Brev GPU,
+   * NVIDIA's API, or ("configured") whatever a desktop's settings name. Null
+   * until an organise-and-run has decided.
+   */
+  backend?: "brev" | "nvidia-api" | "configured" | null;
+  /** Whether a Brev GPU is configured at all, so "Brev was off" is only said
+   *  when there is a Brev to be off. */
+  brev_configured?: boolean | null;
 }
 
 /** One file sitting in a curriculum's sources/ folder. */

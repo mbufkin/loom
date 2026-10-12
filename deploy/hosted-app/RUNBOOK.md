@@ -79,6 +79,36 @@ Cloudflare Zero Trust → Access → Applications → `Loom` → policy emails. 
 `LOOM_ALLOWED_EMAILS` is set in `app.env`, add the email there too and
 `docker compose up -d --force-recreate`.
 
+## Brev GPU (optional, usually off)
+
+Each run checks the Brev NIM once at its start: `GET <base>/v1/health/ready`
+must be 200 and `GET <base>/v1/models` must list
+`nvidia/nemotron-3.5-lightning-30b-a3b` (3 s to connect, 5 s total). If so,
+the whole run (organise and audit) uses Brev through a per-run config at
+`/data/logs/runs/<runId>.config.yaml`; otherwise it uses NVIDIA's API exactly
+as before. The first log line says which, and why. No key is ever sent to
+Brev, and a Brev run's environment does not contain `NVIDIA_API_KEY`. If Brev
+goes away mid-run, the run fails and says so; there is no mid-run switch.
+
+Turn it on, once the Brev box has joined the tailnet (its NIM published on
+port 8000):
+
+```bash
+F=/media/mbufkin/pi-srv/loom-app/secrets/app.env
+grep -q '^LOOM_BREV_URL=' "$F" \
+  && sed -i 's|^LOOM_BREV_URL=.*|LOOM_BREV_URL=http://100.X.Y.Z:8000|' "$F" \
+  || echo 'LOOM_BREV_URL=http://100.X.Y.Z:8000' >> "$F"
+grep -c '^LOOM_BREV_URL=' "$F"   # 1; prints no values
+cd /media/mbufkin/pi-srv/loom-app/src/deploy/hosted-app
+docker compose up -d --force-recreate
+docker exec loom-app python -c "import sys; sys.path[:0]=['/app','/app/ui']; import server; print(server._probe_brev(server._brev_base(), 'nvidia/nemotron-3.5-lightning-30b-a3b'))"
+```
+
+`(True, 'Brev is up')` means the next run uses it. Turn it off by deleting the
+line and recreating; leaving it set while the box is off is fine (runs fall
+back after at most ~5 s). The container reaches tailnet addresses through the
+host's Tailscale (verified 2026-10-12), so no network changes are needed.
+
 ## Restore a deleted curriculum
 
 Delete in the app moves the folder to `/data/.trash/<id>-<UTC timestamp>`

@@ -3630,6 +3630,13 @@ button.btn-danger {
   margin: 10px 0;
 }
 
+/* Which server the run is on: information, not a status to act on. */
+.setup-runlog .run-backend {
+  margin: 0 0 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
 /* The units organise proposed. Collapsed to a title and a count, because the
    question being asked is "do these look like your units", not "read every
    filename" — but the filenames are one click away, since that is how someone

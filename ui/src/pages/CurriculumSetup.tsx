@@ -79,6 +79,19 @@ function humanBytes(n: number): string {
  */
 const runKey = (projectId: string) => `loom.setupRun.${projectId}`;
 
+/** One quiet line saying which server the run uses, or null when there is
+ *  nothing worth saying (a desktop on its own configured model). */
+function backendLine(run: RunStatus): string | null {
+  const verb = run.status === "running" ? "Running" : "Ran";
+  if (run.backend === "brev") return `${verb} on the Brev GPU`;
+  if (run.backend === "nvidia-api") {
+    return run.brev_configured
+      ? `${verb} on NVIDIA’s API — Brev was off`
+      : `${verb} on NVIDIA’s API`;
+  }
+  return null;
+}
+
 /** What happened to one file while it was being added. */
 interface UploadState {
   name: string;
@@ -620,6 +633,7 @@ export function CurriculumSetup() {
 
           {run && (
             <div className="setup-runlog">
+              {backendLine(run) && <p className="run-backend">{backendLine(run)}</p>}
               {/* Organising has no pipeline stages, so while it runs the log
                   is the progress: it names each document as it is read. Once
                   the audit starts, the stage view takes over and the log moves

@@ -1507,14 +1507,214 @@ def _require_documents(pid: str) -> Path:
     return project
 
 
+# --- Which model server a run uses: the Brev GPU when it is up ---------------
+#
+# The operator's Brev box runs the same Lightning model on a rented GPU and is
+# usually off, because it bills by the hour. So every run asks once, at its
+# start, whether Brev is up, and uses it for the whole run if so; otherwise the
+# pinned config (NVIDIA's API) exactly as before. Once per run, never per call:
+# switching servers mid-run would mix two backends' output in one report.
+#
+# The switch is a per-run copy of the pinned config with only the two URLs
+# changed, handed to the run's subprocesses through LOOM_CONFIG -- the variable
+# audit_lib.load_config reads in every stage, and which every child inherits.
+# The read-only /data/config.yaml is never touched.
+
+# Short on purpose: the probe runs before every run, and when Brev is off the
+# answer should be "no" in seconds, not after a TCP timeout.
+BREV_CONNECT_TIMEOUT = 3.0
+BREV_TOTAL_TIMEOUT = 5.0
+
+
+def _base_config_path() -> Path:
+    return Path(os.environ.get("LOOM_CONFIG") or CONFIG)
+
+
+def _brev_base() -> str:
+    """LOOM_BREV_URL as a bare base URL, or "" when Brev is not configured.
+
+    Accepts "http://host:8000", a trailing slash, or ".../v1", because all
+    three are what someone copying from NIM's docs is likely to paste.
+    """
+    raw = (os.environ.get("LOOM_BREV_URL") or "").strip().rstrip("/")
+    if raw.endswith("/v1"):
+        raw = raw[: -len("/v1")]
+    return raw
+
+
+def _probe_brev(
+    base: str,
+    model: str,
+    connect_timeout: float = BREV_CONNECT_TIMEOUT,
+    total_timeout: float = BREV_TOTAL_TIMEOUT,
+) -> tuple[bool, str]:
+    """(usable, reason). Usable means NIM says it is ready AND serves `model`.
+
+    Ready alone is not enough: a NIM that came up with a different model would
+    take the run and answer as something else. No credentials are sent --
+    this is the operator's own box on the tailnet, and the NVIDIA key must
+    never reach it.
+    """
+    import requests
+
+    deadline = time.monotonic() + total_timeout
+
+    def get(path: str):
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            raise requests.Timeout("probe deadline passed")
+        return requests.get(
+            base + path,
+            timeout=(min(connect_timeout, remaining), remaining),
+            allow_redirects=False,
+        )
+
+    try:
+        r = get("/v1/health/ready")
+        if r.status_code != 200:
+            return False, f"Brev not ready: health check returned {r.status_code}"
+        r = get("/v1/models")
+        if r.status_code != 200:
+            return False, f"Brev model list returned {r.status_code}"
+        listed = r.json().get("data") or []
+        ids = [m.get("id") for m in listed if isinstance(m, dict)]
+    except requests.Timeout:
+        return False, "Brev not reachable: connection timed out"
+    except requests.ConnectionError:
+        return False, "Brev not reachable: connection refused or no route"
+    except (ValueError, AttributeError):
+        return False, "Brev answered, but not with a model list"
+    if model not in ids:
+        return False, f"Brev is serving {', '.join(map(str, ids)) or 'no model'}, not {model}"
+    return True, "Brev is up"
+
+
+def _brev_config(cfg: dict, base: str) -> dict:
+    """The pinned config with both roles pointed at Brev; nothing else changes.
+
+    Two things are deliberately removed or added. `api_key` is dropped: a
+    legacy plaintext key in config.yaml is sent by loom_keys to whatever URL
+    the config names, which would now be Brev. `nim: true` tells audit_lib to
+    treat this 100.x address as the NIM it is rather than as a local
+    llama.cpp/Ollama server (see audit_lib.treat_as_hosted).
+    """
+    out = json.loads(json.dumps(cfg))
+    models = out.setdefault("models", {})
+    url = f"{base}/v1/chat/completions"
+    models["analyst_url"] = url
+    models["verifier_url"] = url
+    models.pop("api_key", None)
+    models["nim"] = True
+    return out
+
+
+def _choose_backend(run_id: str) -> dict:
+    """Decide, once, where this run's model calls go. Never raises.
+
+    Returns the backend ("brev", "nvidia-api", or "configured" for a desktop
+    pointed at some other server), the line that opens the run log, and the
+    per-run config path when Brev was chosen.
+    """
+    import yaml
+
+    try:
+        cfg = yaml.safe_load(_base_config_path().read_text(encoding="utf-8")) or {}
+    except (OSError, yaml.YAMLError) as e:
+        # The run will report the real problem itself; just don't hide it here.
+        return {
+            "backend": "configured",
+            "brev_configured": bool(_brev_base()),
+            "line": f"Model: from config.yaml (could not read it: {e})",
+            "config": None,
+        }
+    models = cfg.get("models") or {}
+    model = str(models.get("analyst_model") or "")
+    name = "Lightning" if "lightning" in model.lower() else (model or "the configured model")
+
+    import loom_keys
+
+    api_host = loom_keys.host_of(str(models.get("analyst_url") or ""))
+    on_nvidia = api_host == loom_keys.NVIDIA_HOST
+    fallback = {
+        "backend": "nvidia-api" if on_nvidia else "configured",
+        "config": None,
+    }
+    where = "NVIDIA API" if on_nvidia else (api_host or "the configured server")
+
+    base = _brev_base()
+    if not base:
+        return {
+            **fallback,
+            "brev_configured": False,
+            "line": f"Model: {name} on {where} (Brev not configured)",
+        }
+    ok, why = _probe_brev(base, model)
+    if not ok:
+        return {**fallback, "brev_configured": True, "line": f"Model: {name} on {where} ({why})"}
+
+    RUNS_DIR.mkdir(parents=True, exist_ok=True)
+    path = RUNS_DIR / f"{run_id}.config.yaml"
+    path.write_text(yaml.safe_dump(_brev_config(cfg, base), sort_keys=False), encoding="utf-8")
+    return {
+        "backend": "brev",
+        "brev_configured": True,
+        "line": f"Model: {name} on Brev GPU ({urlparse(base).netloc})",
+        "config": str(path),
+        "brev_base": base,
+        "model": model,
+    }
+
+
+def _run_env(base_env: dict[str, str], choice: dict) -> dict[str, str]:
+    """The run's environment for the chosen backend.
+
+    On Brev the NVIDIA key and the catch-all LOOM_API_KEY are removed outright.
+    loom_keys already scopes NVIDIA_API_KEY to NVIDIA's host, but a run that
+    never talks to NVIDIA has no reason to hold the key at all.
+    """
+    env = dict(base_env)
+    if choice.get("config"):
+        env["LOOM_CONFIG"] = choice["config"]
+        env.pop("NVIDIA_API_KEY", None)
+        env.pop("LOOM_API_KEY", None)
+    return env
+
+
+def _brev_drop_note(choice: dict) -> str:
+    """For a run on Brev that failed: say so if Brev has since gone away.
+
+    Re-probed rather than assumed, so an ordinary failure on a healthy Brev
+    is not blamed on the GPU.
+    """
+    if choice.get("backend") != "brev":
+        return ""
+    ok, _why = _probe_brev(choice["brev_base"], choice.get("model") or "")
+    if ok:
+        return ""
+    return (
+        " The Brev GPU stopped answering during this run, so it could not "
+        "finish. Running it again will use NVIDIA's API if Brev is still off."
+    )
+
+
+def _backend_fields(choice: dict) -> dict:
+    return {
+        "backend": choice["backend"],
+        "brev_configured": choice["brev_configured"],
+    }
+
+
 def _start_organise(pid: str) -> str:
     """Spawn ingest.py for <pid>, tracked like an audit so the client can poll."""
     _require_documents(pid)
     run_id = uuid.uuid4().hex[:12]
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
+    choice = _choose_backend(run_id)
     log_path = RUNS_DIR / f"{run_id}.log"
     log_fh = open(log_path, "w", encoding="utf-8")  # noqa: SIM115 - closed in waiter
-    proc = _spawn_logged(_organise_argv(pid), log_fh, _organise_env())
+    log_fh.write(choice["line"] + "\n")
+    log_fh.flush()
+    proc = _spawn_logged(_organise_argv(pid), log_fh, _run_env(_organise_env(), choice))
     with _RUNS_LOCK:
         _RUNS[run_id] = {
             "pid": pid,
@@ -1528,14 +1728,21 @@ def _start_organise(pid: str) -> str:
             # try to read pipeline stages out of an ingest log and report a run
             # that never started.
             "kind": "organise",
+            "error": None,
+            **_backend_fields(choice),
         }
 
     def _wait() -> None:
         code = proc.wait()
+        note = _brev_drop_note(choice).strip() if code != 0 else ""
+        if note:
+            log_fh.write(f"\n[loom] {note}\n")
         log_fh.close()
         with _RUNS_LOCK:
             _RUNS[run_id]["status"] = "done" if code == 0 else "error"
             _RUNS[run_id]["exit_code"] = code
+            if note:
+                _RUNS[run_id]["error"] = note
 
     threading.Thread(target=_wait, daemon=True).start()
     return run_id
@@ -1609,9 +1816,12 @@ def _start_run(pid: str, flags: list[str]) -> str:
             clean.append(f)
     run_id = uuid.uuid4().hex[:12]
     RUNS_DIR.mkdir(parents=True, exist_ok=True)
+    choice = _choose_backend(run_id)
     log_path = RUNS_DIR / f"{run_id}.log"
     log_fh = open(log_path, "w", encoding="utf-8")  # noqa: SIM115 - closed in waiter
-    proc = _spawn_logged(_audit_argv(pid, clean), log_fh, _audit_env())
+    log_fh.write(choice["line"] + "\n")
+    log_fh.flush()
+    proc = _spawn_logged(_audit_argv(pid, clean), log_fh, _run_env(_audit_env(), choice))
     with _RUNS_LOCK:
         _RUNS[run_id] = {
             "pid": pid,
@@ -1625,14 +1835,21 @@ def _start_run(pid: str, flags: list[str]) -> str:
             # number at all.
             "flags": list(clean),
             "kind": "audit",
+            "error": None,
+            **_backend_fields(choice),
         }
 
     def _wait() -> None:
         code = proc.wait()
+        note = _brev_drop_note(choice).strip() if code != 0 else ""
+        if note:
+            log_fh.write(f"\n[loom] {note}\n")
         log_fh.close()
         with _RUNS_LOCK:
             _RUNS[run_id]["status"] = "done" if code == 0 else "error"
             _RUNS[run_id]["exit_code"] = code
+            if note:
+                _RUNS[run_id]["error"] = note
 
     threading.Thread(target=_wait, daemon=True).start()
     return run_id
@@ -1683,6 +1900,10 @@ def _start_organise_and_run(pid: str) -> str:
             "kind": "organise-and-run",
             "phase": "organising",
             "error": None,
+            # Decided on the run's thread, so the HTTP reply is not held up
+            # by the Brev probe; None until then.
+            "backend": None,
+            "brev_configured": None,
             # Set when the audit starts: where its part of the log begins and
             # when it started, so progress and ETA describe the audit alone.
             "audit_offset": None,
@@ -1702,19 +1923,29 @@ def _organise_then_audit(run_id: str, pid: str, log_path: Path) -> None:
         with _RUNS_LOCK:
             _RUNS[run_id].update(fields)
 
+    choice: dict = {"backend": None}
+
     def fail(log_fh, message: str, code: int | None) -> None:
+        message += _brev_drop_note(choice)
         log_fh.write(f"\n[loom] {message}\n")
         log_fh.flush()
         update(status="error", exit_code=code, error=message)
 
     try:
+        # Decided once, here, and used by both phases: an organise on one
+        # backend and an audit on another would be one run with two models.
+        choice = _choose_backend(run_id)
+        update(**_backend_fields(choice))
         # Append mode, flushed before each spawn: the children write to the
         # same file through their own descriptor, and our marker lines must
         # land between their output, not in the middle of it.
         with open(log_path, "a", encoding="utf-8") as log_fh:
+            log_fh.write(choice["line"] + "\n")
             log_fh.write("=== Organising the documents ===\n")
             log_fh.flush()
-            proc = _spawn_logged(_organise_argv(pid), log_fh, _organise_env())
+            proc = _spawn_logged(
+                _organise_argv(pid), log_fh, _run_env(_organise_env(), choice)
+            )
             update(proc=proc)
             code = proc.wait()
             if code != 0:
@@ -1748,7 +1979,9 @@ def _organise_then_audit(run_id: str, pid: str, log_path: Path) -> None:
                 audit_offset=log_path.stat().st_size,
                 audit_started=time.time(),
             )
-            proc = _spawn_logged(_audit_argv(pid, []), log_fh, _audit_env())
+            proc = _spawn_logged(
+                _audit_argv(pid, []), log_fh, _run_env(_audit_env(), choice)
+            )
             update(proc=proc)
             code = proc.wait()
             if code != 0:
@@ -2591,6 +2824,8 @@ def _run_status(run_id: str, tail_bytes: int = 16000) -> dict | None:
         error = rec.get("error")
         audit_offset = rec.get("audit_offset")
         audit_started = rec.get("audit_started")
+        backend = rec.get("backend")
+        brev_configured = rec.get("brev_configured")
     log_text = ""
     tail_start = 0
     try:
@@ -2630,10 +2865,14 @@ def _run_status(run_id: str, tail_bytes: int = 16000) -> dict | None:
         "log": log_text,
         "kind": kind,
         "progress": progress,
+        # "brev" | "nvidia-api" | "configured"; None until an organise-and-run
+        # has made its choice.
+        "backend": backend,
+        "brev_configured": brev_configured,
+        "error": error,
     }
     if kind == "organise-and-run":
         out["phase"] = phase
-        out["error"] = error
     return out
 
 

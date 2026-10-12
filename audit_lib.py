@@ -412,6 +412,20 @@ def is_hosted_endpoint(url: str) -> bool:
     )
 
 
+def treat_as_hosted(cfg: dict, url: str) -> bool:
+    """is_hosted_endpoint, plus endpoints the config declares to be a NIM.
+
+    A self-hosted NIM -- the operator's Brev GPU on a 100.x tailnet address --
+    matches none of the hosted hostnames, so it would be handled like a local
+    llama.cpp or Ollama server: sent `repeat_penalty`, which NIM rejects with
+    HTTP 400, probed for Ollama's /api/version, and given 2 retries instead of
+    the 6 a NIM warming up or under load needs. `models.nim: true` in the
+    config (written by the server's per-run Brev config) says what the URL
+    cannot.
+    """
+    return is_hosted_endpoint(url) or bool((cfg.get("models") or {}).get("nim"))
+
+
 def measure_context_window(cfg: dict, role: str = "analyst") -> dict:
     """Ask the server to read a prompt of known size and report what it kept.
 
@@ -460,7 +474,7 @@ def measure_context_window(cfg: dict, role: str = "analyst") -> dict:
         "max_tokens": 16,
     }
 
-    native = None if is_hosted_endpoint(url) else ollama_native_chat_url(url)
+    native = None if treat_as_hosted(cfg, url) else ollama_native_chat_url(url)
     # Sized the same way a real call would be, so the number reported is the
     # number the run will actually get.
     num_ctx = context_window_for(messages, 16) if native else 0
@@ -530,7 +544,7 @@ def model_chat(
     model = cfg["models"][f"{key}_model"]
     timeout = cfg["models"]["timeout_seconds"]
     # Cloud / bridge / NIM: more attempts on 429 worker limits.
-    cloudish = is_hosted_endpoint(url)
+    cloudish = treat_as_hosted(cfg, url)
     if cloudish:
         retries = max(retries, 6)
     payload = {
