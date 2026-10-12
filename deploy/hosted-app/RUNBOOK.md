@@ -109,6 +109,40 @@ line and recreating; leaving it set while the box is off is fine (runs fall
 back after at most ~5 s). The container reaches tailnet addresses through the
 host's Tailscale (verified 2026-10-12), so no network changes are needed.
 
+### The Brev box itself (live since 2026-10-12)
+
+- Instance `original-red-moose` (H200 141 GB, Nebius), org DISD. Mac CLI:
+  `~/.local/bin/brev ls | start | stop original-red-moose`; SSH alias
+  `original-red-moose`. Billed per hour while running: stop it when idle.
+- Tailnet name `loom-gpu`, address `100.101.96.36` (the value in
+  `LOOM_BREV_URL`). Joined with `--netfilter-mode=off`: with Tailscale's
+  default firewall rules the box drops traffic from Brev's own 100.x network,
+  which cuts off Brev SSH and the notebook. Do not turn netfilter back on.
+- NGC key: the same NVIDIA API key as the Pi, in `~/.loom-nim/ngc.env`
+  (mode 600). Replace it with `bash ~/set-ngc-key.sh` (hidden prompt).
+- Firewall: Docker's `DOCKER-USER` chain drops forwarded traffic by default.
+  `loom-nim-allow-pi.service` (systemd, enabled) inserts one rule: TCP 8000
+  in on `tailscale0` from the Pi (`100.70.45.23`) only. Other tailnet devices
+  are refused.
+- Model: container `loom-nim`, `--restart unless-stopped`, full precision.
+  NIM picks int4 by default even on an H200, so the bf16 profile is pinned:
+
+```bash
+docker run -d --name loom-nim --gpus=all --restart unless-stopped --shm-size=16g \
+  --env-file ~/.loom-nim/ngc.env \
+  -e NIM_MODEL_PROFILE=d74ba8ea77c6fa3a553400b56e1172846a3c073b0c57c2f24f3d48e71184fa39 \
+  -e NIM_PASSTHROUGH_ARGS="--reasoning-parser nemotron_v3" \
+  -e NIM_MODEL_NAME=nvidia/nemotron-3.5-lightning-30b-a3b \
+  -e NIM_SERVED_MODEL_NAME=nvidia/nemotron-3.5-lightning-30b-a3b \
+  -v ~/.cache/nim:/opt/nim/.cache \
+  -p 100.101.96.36:8000:8000 \
+  nvcr.io/nim/nvidia/nemotron-3.5-lightning-30b-a3b:2.0.9-variant
+```
+
+  Weights are cached in `~/.cache/nim`, so a restart is ~3-5 minutes, not a
+  re-download. Ready when `curl http://100.101.96.36:8000/v1/health/ready`
+  returns 200 from the Pi.
+
 ## Restore a deleted curriculum
 
 Delete in the app moves the folder to `/data/.trash/<id>-<UTC timestamp>`
