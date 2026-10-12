@@ -18,6 +18,19 @@ browser ─▶ Cloudflare Access (app `Loom`, one-time PIN) ─▶ tunnel `loom`
 - Model is pinned in `config.hosted.yaml` (NIM, Nemotron 3.5 Lightning, thinking off).
 - The UI is built in the image with `VITE_HOSTED=1` (no model/key/install settings).
 
+## Live configuration (not secrets)
+
+| Setting | Value |
+|---|---|
+| URL | https://app.loomaudit.com |
+| Access team domain | https://weathered-sun-6ada.cloudflareaccess.com |
+| Access app / policy | `Loom`, "Approved users": Allow, emails mbufkin@dallasisd.org; One-time PIN; 24 h session |
+| Application AUD (`LOOM_ACCESS_AUD`) | `f17f06587630eb8e2239a0ac74a9b1cf479a68b9d442ddbbf8a2a3df085b88f3` |
+| Tunnel | `loom`, id `1051ab5b-9c95-4b4f-b700-184253ff23d4`, DNS CNAME app.loomaudit.com |
+
+Boot order: the SSD is in `/etc/fstab` (`nofail`) and `docker.service` waits for
+`media-mbufkin-pi\x2dsrv.mount`, so containers come back after a reboot.
+
 ## Where things live (Pi `raspberrypi`)
 
 | What | Path |
@@ -31,9 +44,8 @@ browser ─▶ Cloudflare Access (app `Loom`, one-time PIN) ─▶ tunnel `loom`
 
 `cloudflared-travel-pdf-quick.service` is a separate tunnel for travel-pdf; never edit it.
 
-The SSD is not in fstab. After a reboot Docker can start before the SSD is
-mounted; the bind mounts then fail and the containers stay down (by design,
-so nothing lands on the SD card). Once the SSD is mounted:
+If the SSD is ever missing at boot, the bind mounts fail and the containers
+stay down (by design, so nothing lands on the SD card). Once it is mounted:
 `docker start loom-app loom-worker`.
 
 ## Deploy / update
