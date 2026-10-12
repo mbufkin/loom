@@ -1,0 +1,13 @@
+# Cloudflare tunnel `loom` for the hosted Loom app. Installed on the Pi as
+# /home/mbufkin/.cloudflared/loom.yml (separate from any other tunnel config).
+# The tunnel id is not a secret; the credentials file it points to is (mode 400,
+# never in git).
+tunnel: 1051ab5b-9c95-4b4f-b700-184253ff23d4
+credentials-file: /home/mbufkin/.cloudflared/1051ab5b-9c95-4b4f-b700-184253ff23d4.json
+
+ingress:
+  # Cloudflare Access (app `Loom`) sits in front of this hostname; the origin
+  # also verifies the Access token on every request (ui/hosted_guard.py).
+  - hostname: app.loomaudit.com
+    service: http://127.0.0.1:8790
+  - service: http_status:404

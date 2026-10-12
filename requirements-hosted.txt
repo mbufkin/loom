@@ -1,0 +1,8 @@
+# Extra runtime dependencies for the hosted container only (deploy/hosted-app).
+# The desktop app never imports these: ui/hosted_guard.py loads jwt lazily,
+# and only when LOOM_HOSTED=1.
+#
+# PyJWT verifies the Cloudflare Access token (RS256 against the team's JWKS);
+# cryptography supplies the RSA implementation behind PyJWT's [crypto] extra.
+PyJWT[crypto]==2.10.1
+cryptography==50.0.2

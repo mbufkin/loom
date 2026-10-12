@@ -88,6 +88,17 @@ from loom_paths import ensure_data_dirs, is_legacy_in_repo  # noqa: E402
 
 import hosted_guard  # noqa: E402  (ui/ is sys.path[0] when run as a script)
 
+# Built once, on first request or eagerly in main(). Tests replace it with a
+# guard that trusts a local fake key set.
+GUARD = None
+
+
+def _guard():
+    global GUARD
+    if GUARD is None:
+        GUARD = hosted_guard.build()
+    return GUARD
+
 # --- Ships with the program. Read-only in normal use. ---
 # Built SPA bundle (npm run ui:build). Present only in production mode; when it
 # is absent this server stays a pure JSON API and the Vite dev server on 5173
@@ -2322,6 +2333,9 @@ class Handler(BaseHTTPRequestHandler):
     # --- response helpers ---------------------------------------------------
     def _cors(self) -> None:
         # Local-only tool: Vite dev server (5173) talks to this API (8770).
+        # Hosted is single-origin, so no cross-origin access is ever granted.
+        if hosted_guard.is_hosted():
+            return
         self.send_header("Access-Control-Allow-Origin", "*")
         self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
         self.send_header("Access-Control-Allow-Headers", "Content-Type")
@@ -2357,7 +2371,9 @@ class Handler(BaseHTTPRequestHandler):
         Runs before routing and before any request body is read, so a stranger
         cannot make the server parse an upload or touch the disk.
         """
-        verdict = hosted_guard.check(urlparse(self.path).path, self.headers)
+        verdict = _guard().check(
+            urlparse(self.path).path, self.headers, self.client_address[0]
+        )
         if verdict is None:
             return False
         code, message = verdict
@@ -2383,6 +2399,8 @@ class Handler(BaseHTTPRequestHandler):
         e2e_raw = (qs.get("e2e_run") or [""])[0].strip()
         e2e_run = e2e_raw or None
         try:
+            if parts == ["healthz"]:
+                return self._json({"ok": True})
             if parts == ["api", "projects"]:
                 return self._json(_list_projects())
             if (
@@ -2781,6 +2799,15 @@ def main() -> int:
     )
     ap.add_argument("--host", default="127.0.0.1")
     args = ap.parse_args()
+    # Fail closed: in hosted mode, incomplete Access settings stop the server
+    # here rather than letting the first request discover them.
+    try:
+        _guard()
+    except hosted_guard.ConfigError as e:
+        print(f"[loom-review] {e}", file=sys.stderr, flush=True)
+        return 78
+    if hosted_guard.is_hosted():
+        print("[loom-review] hosted mode: Cloudflare Access token required", flush=True)
     httpd = ThreadingHTTPServer((args.host, args.port), Handler)
     # Report the *bound* port, not the requested one: with --port 0 the OS
     # assigns it, and the caller has no other way to learn where we ended up.

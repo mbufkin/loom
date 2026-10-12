@@ -42,7 +42,12 @@ cd hosted && npm test && npm run typecheck && npm run build && cd ..
 npx -y vercel@62.7.0 --prod
 ```
 
-## Loom app (`/app`) and the Pi forwarder (`/api/loom/*`)
+## Loom app (`/app`) and the Pi forwarder (`/api/loom/*`) — superseded
+
+Superseded 2026-10-12: the app is served from the Pi at app.loomaudit.com behind
+Cloudflare Access (`../deploy/hosted-app/RUNBOOK.md`). The Pi no longer accepts
+`LOOM_PROXY_SECRET`, so this forwarder cannot work and was never deployed to
+production. Kept until the cutover decision; do not deploy it.
 
 `/app` is the real Loom UI (`../ui`), built into `public/app` by `npm run build:ui`
 (part of `npm run build`). Its API calls go to `/api/loom/*`

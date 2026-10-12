@@ -1,0 +1,22 @@
+# Cloudflare tunnel for the hosted Loom app (app.loomaudit.com -> 127.0.0.1:8790).
+# Install: sudo cp cloudflared-loom.service /etc/systemd/system/ && sudo systemctl daemon-reload
+# Start only once the Access application exists and loom-app validates tokens:
+#   sudo systemctl enable --now cloudflared-loom.service
+# Independent of cloudflared-travel-pdf-quick.service; never edit that one.
+[Unit]
+Description=Cloudflare tunnel for Loom (app.loomaudit.com)
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=mbufkin
+ExecStart=/usr/local/bin/cloudflared --no-autoupdate tunnel --config /home/mbufkin/.cloudflared/loom.yml run
+Restart=always
+RestartSec=10
+NoNewPrivileges=true
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,4 +1,4 @@
-# Hosted Loom app server on the Pi (raspberrypi). See RUNBOOK.md.
+# Hosted Loom app on the Pi (raspberrypi). See RUNBOOK.md.
 #   cd deploy/hosted-app && docker compose up -d --build
 # LOOM_APP_ROOT defaults to the 1 TB SSD.
 name: loom-app
@@ -10,15 +10,18 @@ services:
     image: loom-app:latest
     container_name: loom-app
     restart: unless-stopped
-    init: false  # tini is already PID 1
-    # NVIDIA_API_KEY + LOOM_PROXY_SECRET (mode 600 on the host). Never in the image.
+    # app.env (mode 600 on the host, never in git or the image):
+    #   NVIDIA_API_KEY, LOOM_ACCESS_TEAM_DOMAIN, LOOM_ACCESS_AUD,
+    #   optional LOOM_ALLOWED_EMAILS.
     env_file:
       - ${LOOM_APP_ROOT:-/media/mbufkin/pi-srv/loom-app}/secrets/app.env
     environment:
-      LOOM_MAX_UPLOAD_MB: "100"
+      # Cloudflare's free plan caps request bodies at 100 MB; stay under it so
+      # the server's own message is what a person sees.
+      LOOM_MAX_UPLOAD_MB: "95"
     # Loopback only: cloudflared on the host reaches it; the LAN does not.
     ports:
-      - "127.0.0.1:8770:8770"
+      - "127.0.0.1:8790:8770"
     volumes:
       # create_host_path: false — if the SSD is not mounted, refuse to start
       # instead of silently writing district documents to the SD card.
@@ -42,8 +45,8 @@ services:
     mem_limit: 2g
     pids_limit: 256
     healthcheck:
-      # The secret comes from the container env; nothing is printed.
-      test: ["CMD", "python", "-c", "import os,urllib.request as u; u.urlopen(u.Request('http://127.0.0.1:8770/api/version', headers={'X-Loom-Proxy-Secret': os.environ['LOOM_PROXY_SECRET']}), timeout=5)"]
+      # /healthz needs no token, but only from inside the container (127.0.0.1).
+      test: ["CMD", "python", "-c", "import urllib.request as u; u.urlopen('http://127.0.0.1:8770/healthz', timeout=5)"]
       interval: 60s
       timeout: 10s
       retries: 3

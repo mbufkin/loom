@@ -1,15 +1,22 @@
 # Hosted Loom app — runbook
 
 ```
-browser ─▶ Vercel (hosted/, Google sign-in) ─/api/loom/*─▶ tunnel ─▶ Pi: loom-app container (ui/server.py)
-           serves /app = React build of ui/       + X-Loom-Proxy-Secret        127.0.0.1:8770
+browser ─▶ Cloudflare Access (app `Loom`, one-time PIN) ─▶ tunnel `loom` ─▶ Pi 127.0.0.1:8790
+           app.loomaudit.com                               cloudflared-loom.service    └▶ loom-app container
+                                                                                         ui/server.py: React UI + /api
 ```
 
-- Access control lives on Vercel: `/app` and `/api/loom/*` need an invited Admin
-  (Workspace `hd` + `ADMIN_EMAILS`). The Pi only trusts the shared secret.
-- Desktop-only routes (`/api/models/*`, `/api/install-deps`) are refused on both
-  hops (`hosted/lib/loom-proxy.ts`, `ui/hosted_guard.py`). Keep the lists in step.
+- Cloudflare Access signs people in and adds a signed JWT (`Cf-Access-Jwt-Assertion`)
+  to every request. The server verifies it on **every** request, UI files included
+  (`ui/hosted_guard.py`): RS256 against `https://<team>.cloudflareaccess.com/cdn-cgi/access/certs`,
+  `aud` = `LOOM_ACCESS_AUD`, `iss` = team domain, exp/nbf with 30 s leeway.
+  Missing token → 401; invalid → 403. Optional `LOOM_ALLOWED_EMAILS` allowlist.
+- Hosted mode (`LOOM_HOSTED=1`, set in the image) refuses to start without
+  `LOOM_ACCESS_TEAM_DOMAIN` and `LOOM_ACCESS_AUD` (fail closed).
+- Desktop-only routes (`/api/models/*`, `/api/install-deps`) → 403 even when signed in.
+- `/healthz` answers without a token only from inside the container (Docker healthcheck).
 - Model is pinned in `config.hosted.yaml` (NIM, Nemotron 3.5 Lightning, thinking off).
+- The UI is built in the image with `VITE_HOSTED=1` (no model/key/install settings).
 
 ## Where things live (Pi `raspberrypi`)
 
@@ -17,67 +24,51 @@ browser ─▶ Vercel (hosted/, Google sign-in) ─/api/loom/*─▶ tunnel ─�
 |---|---|
 | Source clone (git works here) | `/media/mbufkin/pi-srv/loom-app/src` |
 | Curricula, logs, run outputs | `/media/mbufkin/pi-srv/loom-app/data` (`/data` in the container) |
-| Secrets (mode 600): `NVIDIA_API_KEY`, `LOOM_PROXY_SECRET` | `/media/mbufkin/pi-srv/loom-app/secrets/app.env` |
+| App env (mode 600): `NVIDIA_API_KEY`, `LOOM_ACCESS_TEAM_DOMAIN`, `LOOM_ACCESS_AUD`, `LOOM_ALLOWED_EMAILS` | `/media/mbufkin/pi-srv/loom-app/secrets/app.env` |
 | Volume marker (container refuses to start without it) | `data/.loom-app-volume` |
+| Tunnel config / credentials | `~/.cloudflared/loom.yml`, `~/.cloudflared/1051ab5b-….json` (never in git) |
+| Tunnel unit | `/etc/systemd/system/cloudflared-loom.service` (copy of `cloudflared/` here) |
 
-The SSD is not in fstab. If it is not mounted, the bind mounts fail and the
-container does not start — by design, so nothing lands on the SD card.
+`cloudflared-travel-pdf-quick.service` is a separate tunnel for travel-pdf; never edit it.
 
-## Deploy / update the Pi server
+The SSD is not in fstab. After a reboot Docker can start before the SSD is
+mounted; the bind mounts then fail and the containers stay down (by design,
+so nothing lands on the SD card). Once the SSD is mounted:
+`docker start loom-app loom-worker`.
+
+## Deploy / update
 
 ```sh
 ssh raspberrypi
 cd /media/mbufkin/pi-srv/loom-app/src && git pull
 cd deploy/hosted-app && docker compose up -d --build
-docker ps --filter name=loom-app        # expect "healthy" within ~1 min
+docker ps --filter name=loom-app                      # expect "healthy"
+curl -s -o /dev/null -w '%{http_code}\n' http://127.0.0.1:8790/api/version   # 401 (no token)
+curl -s -o /dev/null -w '%{http_code}\n' -H 'Cf-Access-Jwt-Assertion: x' http://127.0.0.1:8790/  # 403
 ```
 
-Check (prints status codes only, never the secret):
+Tests (offline, inside the image):
+`docker run --rm --entrypoint python -e LOOM_HOME=/tmp/lh loom-app:latest test_hosted_guard.py`
+
+## Tunnel
 
 ```sh
-H=$(mktemp); chmod 600 $H
-printf 'X-Loom-Proxy-Secret: %s\n' "$(grep ^LOOM_PROXY_SECRET= ../../../secrets/app.env | cut -d= -f2-)" > $H
-curl -s -o /dev/null -w '%{http_code}\n' http://127.0.0.1:8770/api/version            # 401
-curl -s -o /dev/null -w '%{http_code}\n' -H @$H http://127.0.0.1:8770/api/version     # 200
-curl -s -o /dev/null -w '%{http_code}\n' -H @$H -X POST http://127.0.0.1:8770/api/install-deps  # 403
-rm -f $H
+cp deploy/hosted-app/cloudflared/loom.yml ~/.cloudflared/loom.yml
+sudo cp deploy/hosted-app/cloudflared/cloudflared-loom.service /etc/systemd/system/ && sudo systemctl daemon-reload
+# Only after the Access app exists and loom-app is running with the Access env:
+cloudflared tunnel route dns loom app.loomaudit.com
+sudo systemctl enable --now cloudflared-loom.service
+curl -sI https://app.loomaudit.com | head -3     # 302 to <team>.cloudflareaccess.com
 ```
 
-## Rotate the shared secret
+## Change who can sign in
 
-Both ends must change together; the app is down for the minute in between.
-
-```sh
-# On the Pi: new value in app.env, restart.
-R=/media/mbufkin/pi-srv/loom-app/secrets/app.env
-NEW=$(python3 -c 'import secrets;print(secrets.token_urlsafe(48))')
-sed -i "s|^LOOM_PROXY_SECRET=.*|LOOM_PROXY_SECRET=$NEW|" $R && unset NEW
-cd /media/mbufkin/pi-srv/loom-app/src/deploy/hosted-app && docker compose up -d --force-recreate
-
-# On the Mac: pipe it into Vercel without printing it, then redeploy.
-npx -y vercel@62.7.0 env rm LOOM_PROXY_SECRET production -y
-ssh raspberrypi 'grep ^LOOM_PROXY_SECRET= /media/mbufkin/pi-srv/loom-app/secrets/app.env | cut -d= -f2-' \
-  | tr -d '\n' | npx -y vercel@62.7.0 env add LOOM_PROXY_SECRET production
-```
-
-## Deploy Vercel (from the Mac; Mac git is unavailable)
-
-```sh
-D=$(mktemp -d) && cd $D
-gh api repos/mbufkin/loom/tarball/feat/hosted-app > src.tgz && tar xzf src.tgz --strip-components=1 && rm src.tgz
-mkdir -p .vercel && cp ~/Desktop/loom/.vercel/project.json .vercel/   # project wrccai/loom
-npx -y vercel@62.7.0 deploy --prod     # repo root; .vercelignore uploads only hosted/ + ui/
-```
-
-Vercel's Root Directory is `hosted`; its build runs `npm run build:ui` (builds
-`../ui` into `hosted/public/app` with `VITE_API_BASE=/api/loom VITE_HOSTED=1`)
-then `next build`.
-
-Production env needed beyond the existing AUTH/Google/R2 vars:
-`LOOM_API_URL` (public tunnel origin, no trailing path) and `LOOM_PROXY_SECRET`.
+Cloudflare Zero Trust → Access → Applications → `Loom` → policy emails. If
+`LOOM_ALLOWED_EMAILS` is set in `app.env`, add the email there too and
+`docker compose up -d --force-recreate`.
 
 ## Known limits
 
-- Vercel caps request bodies at ~4.5 MB, so hosted uploads are limited to about
-  4 MB per file (the Pi allows 100 MB). Bigger files need a direct-to-Pi upload grant.
-- No per-district separation yet: every invited Admin sees every curriculum.
+- No per-district separation yet: everyone allowed in sees every curriculum.
+- Cloudflare free plan caps uploads at 100 MB per request (server limit 95 MB).
+- In-flight runs die if the container or Pi restarts; finished outputs stay on disk.
