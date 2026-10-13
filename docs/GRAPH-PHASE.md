@@ -208,3 +208,51 @@ the router is filename-only again.
 | [Artifact / gate / CLI](../.plan/graph-into-loom/tickets/05-project-artifact-gate-contract.md) | `graph/units/<id>/`; Gate A hard; `--with-graph` |
 | [Unit prerequisites](../.plan/graph-into-loom/tickets/06-unit-prerequisites.md) | manifest docs + sources + ledger; fail closed |
 | [Handoff shape](../.plan/graph-into-loom/tickets/07-handoff-merge-spec-shape.md) | This file |
+
+---
+
+## Card-based graph (candidate replacement, not yet wired in)
+
+**Status:** `graph_from_cards.py` exists and is tested (`test_graph_from_cards.py`). It is **not**
+called by `run_project.py`, the router or the review UI yet. The model-based `graph_phase.py`
+above is still what runs.
+
+**Why:** on Test 1 the model-based graph tagged every document "covers lessons 1 and 2" (the
+literal example in its prompt), made two invented Lesson nodes, typed lesson plans, quizzes
+and slides all as `practice_student`, found zero assessments, and copied 7 shared files into
+every unit. Each document was judged alone, so no cross-document link could exist.
+
+**What it does instead (no model calls):** builds the graph from the organise cards
+(`ingest/cards.json`) and the organiser's units (`manifest.yaml`).
+
+- Keeps the organiser's placement when a document is in exactly one unit.
+- Places a shared document only if its subject words clearly match one unit; otherwise it goes to
+  an explicit `Unattached` shelf.
+- Document kinds: lesson_plan, slides, handout, exit_ticket, quiz, answer_key, rubric, project,
+  reference, other (file-name evidence first, then the card role).
+- Links, each with a `why`: answer key to its quiz (same quiz URL, else closest title), materials
+  and assessments to the lesson plan (shared subject words), a lesson plan to files it names.
+- Days only from the lesson plan's own day numbers or an explicit "Day N" in a file name.
+- Findings: unattached files, possible duplicates (same kind, same title words, same day), units
+  with no assessment or no lesson plan, a unit that looks like two lessons merged.
+
+**Run (read-only on project data; writes graph.json to --out):**
+
+```bash
+cd /media/mbufkin/pi-srv/loom-app/src
+docker run --rm -v "$PWD":/w -w /w -v <DATA>/projects/<id>:/projects/<id>:ro -v /tmp/gout:/out \
+  --entrypoint python3 loom-app:latest graph_from_cards.py --project-dir /projects/<id> --out /out
+docker run --rm -v "$PWD":/w -w /w --entrypoint python3 loom-app:latest test_graph_from_cards.py
+```
+
+**Measured on Test 1 (46 documents, 6 units; one corpus, so not a general accuracy claim):** every
+document appears once; 39 kept from the organiser; 6 of 7 shared files placed by evidence and 1
+shelved; found the merged Transportation+Manufacturing unit and the duplicate Day 2 exit ticket;
+quiz and answer key paired by URL.
+
+**Before wiring in:** the router (`route.py: load_graph_routing_hints`) reads `Material.role` and
+`Assessment` nodes. The new graph keeps those shapes (handouts map to `practice_student`, everything
+else `other`; assessment files get an `Assessment` node with a `uses` edge), but routing outputs must be
+compared before and after on a real project. Also open: the organise step still drops unplaced files
+into every unit (`ingest.share_unplaced_documents`) and can merge two lessons into one unit; this graph
+reports both but does not fix them.
