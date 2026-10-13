@@ -73,6 +73,29 @@ sudo systemctl enable --now cloudflared-loom.service
 curl -sI https://app.loomaudit.com | head -3     # 302 to <team>.cloudflareaccess.com
 ```
 
+## Landing page (loomaudit.com)
+
+Public front door: one static file, `deploy/hosted-app/landing/index.html` (plus
+`_headers`). No JavaScript, fonts or third-party requests. Its "Sign in" button goes
+to `https://app.loomaudit.com`, which is still protected by Cloudflare Access. The
+page holds no secrets and no real district data.
+
+Host it on **Cloudflare Pages**, not on the Pi or through the `loom` tunnel: it stays
+up when the Pi is down and it cannot touch the app's origin.
+
+1. Cloudflare dashboard, Workers & Pages, Create, Pages, **Upload assets**.
+2. Project name `loom-landing`; upload the whole `deploy/hosted-app/landing/` folder
+   (so `index.html` and `_headers` are at the top level).
+3. Project, Custom domains, add `loomaudit.com` (and `www.loomaudit.com`). Cloudflare
+   creates the DNS records itself. Do not add the apex to `loom.yml`.
+4. Check: `curl -sI https://loomaudit.com | head -3` returns 200, and
+   `curl -sI https://app.loomaudit.com | head -3` still returns a 302 to Access.
+
+To change the page: edit `index.html`, run `python3 test_landing_page.py` (guards:
+no scripts, no remote resources, links only to the app / mailto, CSP present), then
+upload the folder again as a new Pages deployment. The contact address appears twice
+(Request access button and footer); change both.
+
 ## Change who can sign in
 
 Cloudflare Zero Trust → Access → Applications → `Loom` → policy emails. If
