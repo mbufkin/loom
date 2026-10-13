@@ -307,16 +307,27 @@ CARD_JSON_RETRIES = 2
 
 
 def _card_from_model(cfg: dict, prompt: str, step: str) -> dict:
-    """Ask for one document card; re-ask with the parse error if the JSON is bad.
+    """One document card, re-asked on bad JSON (see _json_from_model)."""
+    return _json_from_model(cfg, "analyst", prompt, step)
+
+
+def _json_from_model(
+    cfg: dict, role: str, prompt: str, step: str, temperature: float = 0.1
+) -> dict:
+    """Ask for one JSON object; re-ask with the parse error if the JSON is bad.
 
     The retry resends the full prompt (the whole document part) plus the bad
     reply and the exact parse error, so the model repairs its own answer rather
     than re-reading less. Still bad after CARD_JSON_RETRIES re-asks -> raise, so
-    organise fails loudly instead of grouping a document it could not describe.
+    organise fails loudly. Used for document cards and the organise, verify and
+    repair plans; the plan replies are the longest JSON Loom asks for.
     """
     messages = [{"role": "user", "content": prompt}]
     for attempt in range(CARD_JSON_RETRIES + 1):
-        resp = model_call(cfg, "analyst", messages, step if attempt == 0 else f"{step}-retry{attempt}")
+        resp = model_call(
+            cfg, role, messages, step if attempt == 0 else f"{step}-retry{attempt}",
+            temperature=temperature,
+        )
         content = extract_content(resp)
         try:
             return parse_json(content, step=step)
@@ -330,7 +341,7 @@ def _card_from_model(cfg: dict, prompt: str, step: str) -> dict:
                 {
                     "role": "user",
                     "content": (
-                        f"That reply is not valid JSON: {exc}. Send the same card again as "
+                        f"That reply is not valid JSON: {exc}. Send the same answer again as "
                         "one valid JSON object only. Escape any double quotes inside "
                         "strings and put no text outside the object."
                     ),
@@ -428,10 +439,7 @@ DOCUMENT CATALOG ({len(records)} files):
 
 {ORGANIZE_SCHEMA}
 """
-    resp = model_call(
-        cfg, "analyst", [{"role": "user", "content": prompt}], "ingest-analyst"
-    )
-    return parse_json(extract_content(resp), step="ingest-analyst")
+    return _json_from_model(cfg, "analyst", prompt, "ingest-analyst")
 
 
 def verifier_organize(cfg: dict, records: list[dict], draft: dict) -> dict:
@@ -448,14 +456,7 @@ ANALYST OUTPUT:
 
 {ORGANIZE_SCHEMA}
 """
-    resp = model_call(
-        cfg,
-        "verifier",
-        [{"role": "user", "content": prompt}],
-        "ingest-verifier",
-        temperature=0.0,
-    )
-    return parse_json(extract_content(resp), step="ingest-verifier")
+    return _json_from_model(cfg, "verifier", prompt, "ingest-verifier", temperature=0.0)
 
 
 def _filename_key(name: str) -> str:
@@ -727,14 +728,9 @@ def verifier_repair(
     cfg: dict, records: list[dict], plan: dict, problems: list[str]
 ) -> dict:
     """Ask the verifier, with the same settings, to fix the listed problems."""
-    resp = model_call(
-        cfg,
-        "verifier",
-        [{"role": "user", "content": repair_prompt(records, plan, problems)}],
-        "ingest-repair",
-        temperature=0.0,
+    return _json_from_model(
+        cfg, "verifier", repair_prompt(records, plan, problems), "ingest-repair", temperature=0.0
     )
-    return parse_json(extract_content(resp), step="ingest-repair")
 
 
 def clean_plan(records: list[dict], plan: dict) -> list[str]:

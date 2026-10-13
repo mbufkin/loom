@@ -108,22 +108,53 @@ def save_raw_model_message(step: str, response: dict) -> Path | None:
     return path
 
 
+# Re-asks after the first answer when a reply's JSON will not parse. One stray
+# unescaped quote in one document's role reply used to stop a 7-unit audit.
+JSON_RETRIES = 2
+
+
 def chat_json(cfg: dict, step: str, prompt: str, *, max_tokens: int = 16384) -> dict:
     # Structured HAS-PART / connect JSON: turn thinking off for Nemotron 3.5
     # Lightning (and similar). Best practice: reasoning tokens must not exhaust
     # max_tokens and leave message.content empty — parse_model_json then fails.
+    #
+    # A bad reply is re-asked with the full original prompt, the reply and the
+    # exact parse error, so the model repairs its own answer over the same
+    # evidence. Still bad after JSON_RETRIES re-asks -> raise, as before.
     _SENT.append(prompt)
-    resp = model_chat(
-        cfg,
-        "analyst",
-        [{"role": "user", "content": prompt}],
-        step,
-        temperature=0.1,
-        max_tokens=max_tokens,
-        enable_thinking=False,
-    )
-    save_raw_model_message(step, resp)
-    return parse_model_json(extract_content(resp), context=step)
+    messages = [{"role": "user", "content": prompt}]
+    for attempt in range(JSON_RETRIES + 1):
+        name = step if attempt == 0 else f"{step}-retry{attempt}"
+        resp = model_chat(
+            cfg,
+            "analyst",
+            messages,
+            name,
+            temperature=0.1,
+            max_tokens=max_tokens,
+            enable_thinking=False,
+        )
+        save_raw_model_message(name, resp)
+        content = extract_content(resp)
+        try:
+            return parse_model_json(content, context=step)
+        except ValueError as exc:
+            if attempt == JSON_RETRIES:
+                raise ValueError(f"{exc} (still invalid after {JSON_RETRIES} re-asks)") from exc
+            log(f"graph: {step}: reply was not valid JSON ({exc}); asking again")
+            messages = [
+                {"role": "user", "content": prompt},
+                {"role": "assistant", "content": content},
+                {
+                    "role": "user",
+                    "content": (
+                        f"That reply is not valid JSON: {exc}. Send the same answer again as "
+                        "one valid JSON object only. Escape any double quotes inside "
+                        "strings and put no text outside the object."
+                    ),
+                },
+            ]
+    raise AssertionError("unreachable")
 
 
 def resolve_source_path(sources_root: Path, basename: str) -> Path | None:

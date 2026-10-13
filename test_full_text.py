@@ -418,6 +418,78 @@ def test_a_card_that_never_parses_still_fails_loudly() -> None:
         raise AssertionError("organise should fail when a card never parses")
     assert len(fake.retry_messages) == ingest.CARD_JSON_RETRIES
 
+
+def test_graph_re_asks_a_bad_json_reply_with_the_full_prompt() -> None:
+    import graph_phase
+
+    calls: list[list[dict]] = []
+    replies = ['{"role": "other", "excerpt_head": "the "key" page"}',
+               '{"role": "teacher_edition", "excerpt_head": "the key page"}']
+
+    def fake(cfg, role, messages, step, **kw):
+        calls.append(messages)
+        return {"choices": [{"message": {"content": replies[len(calls) - 1]}}]}
+
+    saved = (graph_phase.model_chat, graph_phase.save_raw_model_message, graph_phase.log)
+    graph_phase.model_chat, graph_phase.save_raw_model_message = fake, lambda *a, **k: None
+    logged: list[str] = []
+    graph_phase.log = logged.append
+    try:
+        data = graph_phase.chat_json({}, "role-answer-keys", "FULL EVIDENCE: every element")
+    finally:
+        graph_phase.model_chat, graph_phase.save_raw_model_message, graph_phase.log = saved
+    assert data["role"] == "teacher_edition"
+    assert len(calls) == 2 and calls[1][0]["content"] == "FULL EVIDENCE: every element"
+    assert calls[1][1]["role"] == "assistant" and "not valid JSON" in calls[1][2]["content"]
+    assert any("asking again" in l for l in logged), logged
+
+
+def test_graph_json_that_never_parses_still_fails() -> None:
+    import graph_phase
+
+    n = {"calls": 0}
+
+    def fake(cfg, role, messages, step, **kw):
+        n["calls"] += 1
+        return {"choices": [{"message": {"content": '{"role": "a "b" c"}'}}]}
+
+    saved = (graph_phase.model_chat, graph_phase.save_raw_model_message, graph_phase.log)
+    graph_phase.model_chat, graph_phase.save_raw_model_message = fake, lambda *a, **k: None
+    graph_phase.log = lambda *a, **k: None
+    try:
+        graph_phase.chat_json({}, "role-x", "prompt")
+    except ValueError as e:
+        assert "re-asks" in str(e), e
+    else:
+        raise AssertionError("expected ValueError")
+    finally:
+        graph_phase.model_chat, graph_phase.save_raw_model_message, graph_phase.log = saved
+    assert n["calls"] == graph_phase.JSON_RETRIES + 1
+
+
+class _BadPlanOnce(_FakeOrganiser):
+    """The first organise-plan reply is broken JSON; the re-ask is good."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.plan_steps: list[str] = []
+
+    def __call__(self, cfg, role, messages, step, temperature=0.1):
+        if step.startswith("ingest-analyst"):
+            self.plan_steps.append(step)
+            if step == "ingest-analyst":
+                return {"choices": [{"message": {"content": '{"units": [{"title": "a "b""}]}'}}]}
+        return super().__call__(cfg, role, messages, step, temperature)
+
+
+def test_a_bad_organise_plan_reply_is_re_asked() -> None:
+    records = [_doc("a.docx", "Unit 1 plan, Day 1."), _doc("b.docx", "Unit 1 quiz, Day 2.")]
+    fake = _BadPlanOnce()
+    root, logged = _run_ingest(records, fake, Path(tempfile.mkdtemp(prefix="loom-ft-")))
+    assert (root / "manifest.yaml").is_file()
+    assert fake.plan_steps[:2] == ["ingest-analyst", "ingest-analyst-retry1"], fake.plan_steps
+    assert any("ingest-analyst" in l and "asking again" in l for l in logged), logged
+
 TESTS = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
 
 
