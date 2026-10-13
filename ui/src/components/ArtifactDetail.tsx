@@ -210,8 +210,12 @@ function SourceText({
     setText(null);
     setErr("");
     api
-      .fileText(projectId, path)
-      .then((t) => alive && setText(t))
+      .sourceText(projectId, path)
+      .then((r) => {
+        if (!alive) return;
+        if (r.error) setErr(r.error);
+        else setText(r.text);
+      })
       .catch((e) => alive && setErr(String(e)));
     return () => {
       alive = false;

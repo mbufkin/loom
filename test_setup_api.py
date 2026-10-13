@@ -904,6 +904,66 @@ def test_the_readiness_check_answers_instead_of_crashing():
         fx.close()
 
 
+def _tiny_docx(path: Path, paragraphs: list[str]) -> None:
+    """A minimal real .docx (a zip with word/document.xml), no library needed."""
+    import zipfile
+
+    body = "".join(f"<w:p><w:r><w:t>{x}</w:t></w:r></w:p>" for x in paragraphs)
+    xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>'
+        '<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">'
+        f"<w:body>{body}</w:body></w:document>"
+    )
+    with zipfile.ZipFile(path, "w") as z:
+        z.writestr("[Content_Types].xml", '<?xml version="1.0"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"/>')
+        z.writestr("word/document.xml", xml)
+
+
+def test_source_text_returns_readable_text_not_the_files_raw_bytes():
+    # The review panel used to show "PK..." binary for an Office file because it
+    # read the raw bytes. It must get the extracted text instead.
+    fx = _Fixture()
+    try:
+        assert fx.request("POST", "/api/projects", {"id": "t1", "title": "T"})[0] == 201
+        src = fx.projects / "t1" / "sources"
+        _tiny_docx(src / "3 Course Meal Menu.docx", ["Appetizer: bruschetta", "Main: grilled salmon"])
+        (src / "notes.txt").write_text("Plain notes, Day 1.", encoding="utf-8")
+
+        q = urllib.parse.urlencode({"path": "sources/3 Course Meal Menu.docx"})
+        code, body = fx.request("GET", f"/api/projects/t1/source-text?{q}")
+        assert code == 200, body
+        assert body["error"] is None, body
+        assert "bruschetta" in body["text"] and "grilled salmon" in body["text"], body
+        assert "PK" not in body["text"][:4] and "word/document.xml" not in body["text"], body
+
+        q = urllib.parse.urlencode({"path": "sources/notes.txt"})
+        code, body = fx.request("GET", f"/api/projects/t1/source-text?{q}")
+        assert code == 200 and "Plain notes" in body["text"], body
+    finally:
+        fx.close()
+
+
+def test_source_text_reports_an_unreadable_file_and_refuses_escapes():
+    fx = _Fixture()
+    try:
+        assert fx.request("POST", "/api/projects", {"id": "t2", "title": "T"})[0] == 201
+        src = fx.projects / "t2" / "sources"
+        _tiny_docx(src / "flyer.docx", [])  # a document with no text at all
+        q = urllib.parse.urlencode({"path": "sources/flyer.docx"})
+        code, body = fx.request("GET", f"/api/projects/t2/source-text?{q}")
+        # A normal answer that says why, not a failed request the panel cannot explain.
+        assert code == 200 and body["text"] == "" and body["error"], body
+
+        for bad in ("../../etc/passwd", "/etc/passwd", "sources/../../../etc/passwd"):
+            q = urllib.parse.urlencode({"path": bad})
+            code, _ = fx.request("GET", f"/api/projects/t2/source-text?{q}")
+            assert code in (400, 403, 404), (bad, code)
+        q = urllib.parse.urlencode({"path": "sources/missing.docx"})
+        assert fx.request("GET", f"/api/projects/t2/source-text?{q}")[0] == 404
+    finally:
+        fx.close()
+
+
 if __name__ == "__main__":
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     failed = 0

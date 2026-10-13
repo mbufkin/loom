@@ -317,6 +317,26 @@ export const api = {
     return res.text();
   },
 
+  /**
+   * The readable text of a source document (.docx, .pptx, .pdf, ...), as Loom
+   * read it. Use this, not fileText, for anything a person will read: fileText
+   * returns raw bytes, which for an Office file is a zip archive.
+   */
+  async sourceText(
+    id: string,
+    path: string,
+    e2eRun?: string
+  ): Promise<{ text: string; format: string | null; error: string | null }> {
+    const res = await fetch(
+      withE2e(
+        `${API_ROOT}/projects/${id}/source-text?path=${encodeURIComponent(path)}`,
+        e2eRun
+      )
+    );
+    if (!res.ok) throw new Error(`${res.status} for ${path}`);
+    return res.json();
+  },
+
   // Best-effort: UNIT-RUNG.json may not exist for every project.
   async unitRung(id: string, e2eRun?: string): Promise<UnitRung | null> {
     try {

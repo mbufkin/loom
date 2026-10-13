@@ -20,6 +20,7 @@ Endpoints (all under /api):
   GET  /api/projects/{id}/units           -> units organise proposed, for review
   GET  /api/projects/{id}/outputs[?e2e_run=] -> grouped tree of reviewable files
   GET  /api/projects/{id}/file?path=REL[&e2e_run=] -> raw bytes of one file (guarded)
+  GET  /api/projects/{id}/source-text?path=REL[&e2e_run=] -> the readable text of one source document
   GET  /api/projects/{id}/stats[?e2e_run=] -> output/aggregate-stats.json
   GET  /api/projects/{id}/e2e/runs        -> full-pipeline snapshots under e2e/runs/*
   GET  /api/projects/{id}/graph/runs[?e2e_run=] -> model graph runs under graph/runs/*
@@ -671,6 +672,48 @@ def _safe_file(pid: str, rel: str, e2e_run: str | None = None) -> Path:
     if not target.is_file():
         raise FileNotFoundError(rel)
     return target
+
+
+# Source text for the review panels, keyed by (path, mtime_ns, size) so a
+# re-uploaded file is re-read but flipping between lessons does not re-extract
+# a 200-page PDF each time. Small and bounded: this is a viewing convenience.
+_SOURCE_TEXT_CACHE: dict[tuple, dict] = {}
+_SOURCE_TEXT_CACHE_MAX = 32
+
+
+def _source_text(pid: str, rel: str, e2e_run: str | None = None) -> dict:
+    """The readable text of one source document, as Loom read it.
+
+    Why this exists: /file returns raw bytes, which is right for a PDF viewer
+    and wrong for a .docx or .pptx (a zip archive, so the review panel showed
+    "PK..." binary). This runs the same extractor and cleaner the audit used
+    (scrub_document), so the panel shows what the model was given, not a
+    second interpretation of the file. Display only: nothing here is cut.
+
+    Returns {"text", "format", "method", "error"}. An unreadable file is a
+    normal result (error set, text empty), not an exception, so the panel can
+    say why instead of showing a failed request.
+    """
+    path = _safe_file(pid, rel, e2e_run)  # same confinement as /file
+    st = path.stat()
+    key = (str(path), st.st_mtime_ns, st.st_size)
+    hit = _SOURCE_TEXT_CACHE.get(key)
+    if hit is not None:
+        return hit
+    from audit_lib import scrub_document
+
+    ev = scrub_document(path)
+    err = ev.get("extraction_error")
+    out = {
+        "text": "" if err else (ev.get("content_clean") or ""),
+        "format": ev.get("source_format"),
+        "method": ev.get("extraction_method"),
+        "error": str(err) if err else (None if ev.get("content_clean") else "no text could be extracted from this file"),
+    }
+    if len(_SOURCE_TEXT_CACHE) >= _SOURCE_TEXT_CACHE_MAX:
+        _SOURCE_TEXT_CACHE.pop(next(iter(_SOURCE_TEXT_CACHE)))
+    _SOURCE_TEXT_CACHE[key] = out
+    return out
 
 
 def _bundle_version() -> dict:
@@ -3151,6 +3194,9 @@ class Handler(BaseHTTPRequestHandler):
             if len(parts) == 4 and parts[:2] == ["api", "projects"] and parts[3] == "file":
                 rel = (qs.get("path") or [""])[0]
                 return self._bytes(_safe_file(parts[2], rel, e2e_run))
+            if len(parts) == 4 and parts[:2] == ["api", "projects"] and parts[3] == "source-text":
+                rel = (qs.get("path") or [""])[0]
+                return self._json(_source_text(parts[2], rel, e2e_run))
             if len(parts) == 3 and parts[:2] == ["api", "runs"]:
                 res = _run_status(parts[2])
                 return self._json(res) if res else self._json({"error": "no such run"}, 404)
