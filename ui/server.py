@@ -3038,6 +3038,17 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(_proposed_units(parts[2]))
             if parts == ["api", "version"]:
                 return self._json(_bundle_version())
+            if parts == ["api", "me"]:
+                # Who is signed in, for the top bar. Behind the same door as every
+                # other route (a missing/invalid token never reaches here). On the
+                # desktop there is no sign-in, so `hosted` is false and the UI
+                # shows nothing.
+                return self._json(
+                    {
+                        "hosted": hosted_guard.is_hosted(),
+                        "email": _guard().email_of(self.headers) or None,
+                    }
+                )
             if parts == ["api", "config"]:
                 return self._json(_config_summary())
             if parts == ["api", "can-run"]:

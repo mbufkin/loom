@@ -1,5 +1,51 @@
+import { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import { api } from "./lib/api";
 import { useFreshBundle } from "./lib/useFreshBundle";
+
+/**
+ * "Signed in as <email> / Sign out", hosted app only.
+ *
+ * Why it exists: on a shared school computer a person must be able to see which
+ * account is open and end the session. The email comes from the server, which
+ * reads it from the verified Cloudflare Access token. The browser never decodes
+ * the token itself, so there is nothing here to spoof or to trust.
+ *
+ * Sign out goes to /cdn-cgi/access/logout, an endpoint Cloudflare serves on this
+ * domain. It ends the Loom session only; the person stays signed in to Google,
+ * which is the normal behaviour of "Sign in with Google" everywhere.
+ *
+ * Cosmetic by design: if /api/me fails the bar simply stays empty rather than
+ * showing an error on every screen.
+ */
+function SignedInAs() {
+  const [email, setEmail] = useState<string | null>(null);
+  useEffect(() => {
+    let alive = true;
+    api
+      .me()
+      .then((r) => {
+        if (alive && r.hosted) setEmail(r.email);
+      })
+      .catch(() => {
+        /* cosmetic: stay hidden */
+      });
+    return () => {
+      alive = false;
+    };
+  }, []);
+  if (!email) return null;
+  return (
+    <div className="shell-user">
+      <span className="shell-user-email" title={email}>
+        {email}
+      </span>
+      <a className="shell-signout" href="/cdn-cgi/access/logout">
+        Sign out
+      </a>
+    </div>
+  );
+}
 
 /**
  * Global navigation, persistent across every screen.
@@ -53,6 +99,7 @@ export function AppShell() {
           <NavLink to="/settings">Settings</NavLink>
         </nav>
         <div className="spacer" />
+        <SignedInAs />
       </header>
       <Outlet />
     </div>

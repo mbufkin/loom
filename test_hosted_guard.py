@@ -192,6 +192,20 @@ class TokenRules(unittest.TestCase):
         finally:
             CERTS.keys = [_jwk(KEY, "kid-1")]
 
+    def test_email_of_returns_only_a_verified_email(self):
+        g = self.g
+        self.assertEqual(
+            g.email_of(hdr(make_token(email="Admin@Example.org"))), "admin@example.org"
+        )
+        self.assertEqual(g.email_of({}), "")
+        self.assertEqual(g.email_of(hdr("junk")), "")
+        # A forged token must never put a name on the screen.
+        self.assertEqual(g.email_of(hdr(make_token(key=OTHER_KEY, kid="kid-1"))), "")
+        self.assertEqual(g.email_of(hdr(make_token(aud=["some-other-app"]))), "")
+        # A signed-in person who is not on the allow-list is shown nothing.
+        allow = make_guard(allowed_emails=frozenset({"admin@example.org"}))
+        self.assertEqual(allow.email_of(hdr(make_token(email="x@example.org"))), "")
+
     def test_email_allowlist(self):
         g = make_guard(allowed_emails=frozenset({"admin@example.org"}))
         self.assertIsNone(g.check("/api/version", hdr(make_token(email="Admin@Example.org"))))
@@ -316,6 +330,18 @@ class LiveServer(unittest.TestCase):
 
     def test_ui_root_needs_a_token(self):
         self.assertEqual(self._req("/")[0], 401)
+
+    def test_me_shows_who_is_signed_in_and_needs_a_token(self):
+        self.assertEqual(self._req("/api/me")[0], 401)
+        self.assertEqual(self._req("/api/me", headers=hdr("junk"))[0], 403)
+        req = urllib.request.Request(
+            self.base + "/api/me", headers=hdr(make_token(email="Admin@Example.org"))
+        )
+        with urllib.request.urlopen(req, timeout=10) as res:
+            self.assertEqual(res.status, 200)
+            self.assertEqual(
+                json.load(res), {"hosted": True, "email": "admin@example.org"}
+            )
 
     def test_post_without_token_is_refused_before_routing(self):
         self.assertEqual(self._req("/api/projects", "POST", body=b"{}")[0], 401)

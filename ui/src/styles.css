@@ -3144,6 +3144,49 @@ button:disabled {
   flex: 1;
 }
 
+/* Signed-in indicator (hosted app only). Email is truncated, not wrapped, so a
+   long address never pushes the nav around; on a phone it is hidden and only
+   the Sign out button stays. */
+.shell-user {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  color: var(--panel);
+  font-size: 12px;
+}
+
+.shell-user-email {
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  opacity: 0.85;
+}
+
+.shell-signout {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  color: var(--panel);
+  text-decoration: none;
+  border: 2px solid var(--panel);
+}
+
+.shell-signout:hover {
+  background: var(--panel);
+  color: var(--ink);
+}
+
+@media (max-width: 640px) {
+  .shell-user-email {
+    display: none;
+  }
+}
+
 /* ---- Shared layout for the non-console screens ---------------------- */
 .home {
   width: 100%;

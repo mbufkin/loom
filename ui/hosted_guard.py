@@ -181,6 +181,23 @@ class AccessGuard:
                 raise ValueError("email not on LOOM_ALLOWED_EMAILS")
         return claims
 
+    def email_of(self, headers: Mapping[str, str]) -> str:
+        """Email of the signed-in person, or "" when there is no valid token.
+
+        Display only ("Signed in as ..."). It goes through verify(), the same
+        signature, audience, issuer and allow-list checks as check(), so an
+        unverified or forged token can never put a name on the screen. Never
+        use this for authorisation decisions: check() is the door.
+        """
+        token = self.token_from(headers)
+        if not token:
+            return ""
+        try:
+            claims = self.verify(token)
+        except Exception:  # noqa: BLE001 - cosmetic lookup: any failure means "unknown"
+            return ""
+        return str(claims.get("email") or "").strip().lower()
+
     def check(self, path: str, headers: Mapping[str, str], client_ip: str = ""):
         """None to allow, or ``(status, message)`` to refuse.
 
@@ -207,6 +224,9 @@ class _DesktopGuard:
 
     def check(self, path, headers, client_ip=""):  # noqa: ARG002
         return None
+
+    def email_of(self, headers):  # noqa: ARG002
+        return ""
 
 
 def build(env: Mapping[str, str] | None = None):

@@ -218,6 +218,7 @@ export const api = {
 
   /** Which build of the interface this server is serving. See useFreshBundle. */
   version: () => getJSON<{ bundle: string | null }>(`${API_ROOT}/version`),
+  me: () => getJSON<{ hosted: boolean; email: string | null }>(`${API_ROOT}/me`),
 
   /** Can this machine start an audit? Asked before offering the button. */
   canRun: () => getJSON<RunPreflight>(`${API_ROOT}/can-run`),
