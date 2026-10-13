@@ -113,7 +113,25 @@ def save_raw_model_message(step: str, response: dict) -> Path | None:
 JSON_RETRIES = 2
 
 
-def chat_json(cfg: dict, step: str, prompt: str, *, max_tokens: int = 16384) -> dict:
+# Temperature per attempt. A low-temperature model reproduces a malformed reply
+# character for character (seen live: the same stray ")" at char 282 on all
+# three tries), so the re-asks run hotter to get a different answer.
+RETRY_TEMPERATURES = (0.1, 0.5, 0.8)
+
+
+def chat_json(
+    cfg: dict,
+    step: str,
+    prompt: str,
+    *,
+    max_tokens: int = 16384,
+    salvage=None,
+) -> dict:
+    """salvage(content) -> dict | None: last resort once every re-ask failed.
+
+    Only for steps whose required fields are simple enough to recover from a
+    broken reply (an enum). It must return None when it cannot, and the caller
+    then fails loudly as before. Every salvage is logged as a WARN."""
     # Structured HAS-PART / connect JSON: turn thinking off for Nemotron 3.5
     # Lightning (and similar). Best practice: reasoning tokens must not exhaust
     # max_tokens and leave message.content empty — parse_model_json then fails.
@@ -130,7 +148,7 @@ def chat_json(cfg: dict, step: str, prompt: str, *, max_tokens: int = 16384) -> 
             "analyst",
             messages,
             name,
-            temperature=0.1,
+            temperature=RETRY_TEMPERATURES[min(attempt, len(RETRY_TEMPERATURES) - 1)],
             max_tokens=max_tokens,
             enable_thinking=False,
         )
@@ -140,6 +158,11 @@ def chat_json(cfg: dict, step: str, prompt: str, *, max_tokens: int = 16384) -> 
             return parse_model_json(content, context=step)
         except ValueError as exc:
             if attempt == JSON_RETRIES:
+                recovered = salvage(content) if salvage else None
+                if recovered is not None:
+                    log(f"WARN graph: {step}: reply stayed invalid JSON after {JSON_RETRIES} "
+                        f"re-asks; recovered the required fields from it ({exc})")
+                    return recovered
                 raise ValueError(f"{exc} (still invalid after {JSON_RETRIES} re-asks)") from exc
             log(f"graph: {step}: reply was not valid JSON ({exc}); asking again")
             messages = [
@@ -419,6 +442,26 @@ def step_assessment(cfg: dict, source_file: str, elements: list[dict], role: str
     return merge_assessment_answers(source_file, answers)
 
 
+_ROLE_VALUES = ("teacher_edition", "learn_student", "practice_student", "succeed_student", "other")
+
+
+def _salvage_role(content: str) -> dict | None:
+    """Recover role and citation from a reply whose JSON is broken.
+
+    The role is one of five fixed strings and the citation is an element id;
+    excerpt_head is only a preview, and quoting source text is exactly what
+    breaks the JSON, so it is dropped rather than guessed."""
+    m = re.search(r'"role"\s*:\s*"([a-z_]+)"', content or "")
+    if not m or m.group(1) not in _ROLE_VALUES:
+        return None
+    cite = re.search(r'"citation_element_id"\s*:\s*"([^"]*)"', content)
+    return {
+        "role": m.group(1),
+        "citation_element_id": cite.group(1) if cite else None,
+        "excerpt_head": "",
+    }
+
+
 def _step_role_once(
     cfg: dict, source_file: str, elements: list[dict], part: int = 1, parts: int = 1
 ) -> dict:
@@ -432,8 +475,14 @@ Respond ONLY JSON:
 {{"source_file":"{source_file}","role":"teacher_edition|learn_student|practice_student|succeed_student|other","citation_element_id":"...","excerpt_head":"<=120 chars"}}
 
 role must be exactly one of those five strings — not a list, not a pipe-joined enum.
+excerpt_head must not contain any double-quote characters: leave them out or use single quotes.
 """
-    data = chat_json(cfg, f"role-{Path(source_file).stem[:40]}{_part_suffix(part, parts)}", prompt)
+    data = chat_json(
+        cfg,
+        f"role-{Path(source_file).stem[:40]}{_part_suffix(part, parts)}",
+        prompt,
+        salvage=_salvage_role,
+    )
     role = str(data.get("role") or "").strip()
     if role not in ROLES:
         prior = filename_role_prior(source_file)

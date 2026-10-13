@@ -490,6 +490,46 @@ def test_a_bad_organise_plan_reply_is_re_asked() -> None:
     assert fake.plan_steps[:2] == ["ingest-analyst", "ingest-analyst-retry1"], fake.plan_steps
     assert any("ingest-analyst" in l and "asking again" in l for l in logged), logged
 
+
+def test_graph_role_is_recovered_when_only_the_preview_breaks_the_json() -> None:
+    import graph_phase
+
+    live_reply = (
+        '{"source_file":"k.pdf","role":"teacher_edition","citation_element_id":"k.pdf-e1",'
+        '"excerpt_head":"1. What is the \\"Manufacturing exploration\\"?")}'
+    )
+    temps: list[float] = []
+
+    def fake(cfg, role, messages, step, **kw):
+        temps.append(kw.get("temperature"))
+        return {"choices": [{"message": {"content": live_reply}}]}
+
+    saved = (graph_phase.model_chat, graph_phase.save_raw_model_message, graph_phase.log)
+    graph_phase.model_chat, graph_phase.save_raw_model_message = fake, lambda *a, **k: None
+    logged: list[str] = []
+    graph_phase.log = logged.append
+    try:
+        data = graph_phase.chat_json({}, "role-k", "p", salvage=graph_phase._salvage_role)
+        try:
+            graph_phase.chat_json({}, "lessons-k", "p")
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("steps without a salvage must still fail loudly")
+    finally:
+        graph_phase.model_chat, graph_phase.save_raw_model_message, graph_phase.log = saved
+    assert data["role"] == "teacher_edition" and data["citation_element_id"] == "k.pdf-e1"
+    assert any(l.startswith("WARN graph: role-k") for l in logged), logged
+    # Re-asks run hotter so the model cannot repeat the same slip verbatim.
+    assert temps[:3] == [0.1, 0.5, 0.8], temps
+
+
+def test_role_salvage_refuses_an_unknown_role() -> None:
+    import graph_phase
+
+    assert graph_phase._salvage_role('{"role":"banana",') is None
+    assert graph_phase._salvage_role("no json at all") is None
+
 TESTS = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
 
 
