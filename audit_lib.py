@@ -26,6 +26,14 @@ from schema_validate import (
 # Where the program is. Pipeline stages, checklists and tools resolve against
 # this, and it must not move when the user's data does.
 BASE_DIR = INSTALL_DIR
+
+# Operator decision (2026-10-12): no document is run as a teacher edition for
+# now. With this False the sorting phase never assigns the role, the router
+# never sends a document to Path D (teacher support), and Teacher_Edition
+# filenames get no Path D prior; those documents fall through to the other
+# lenses. Read it as `audit_lib.TEACHER_EDITION_ENABLED` (not `from ... import`)
+# so one assignment, or a test, turns it back on everywhere.
+TEACHER_EDITION_ENABLED = False
 # Where the user's stuff is. On a developer checkout these are the same
 # directory; on an installed copy they are not. See loom_paths.
 CONFIG_PATH = DATA_DIR / "config.yaml"

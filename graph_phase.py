@@ -27,6 +27,7 @@ import subprocess
 import sys
 from pathlib import Path
 
+import audit_lib
 from audit_lib import (
     BASE_DIR,
     batch_by_chars,
@@ -303,7 +304,31 @@ def write_unit_evidence_packs(
         out.write_text(json.dumps(pack, indent=2) + "\n", encoding="utf-8")
 
 
+def enabled_roles() -> tuple[str, ...]:
+    """Roles the model may choose from, honouring TEACHER_EDITION_ENABLED."""
+    return tuple(
+        r for r in ("teacher_edition", "learn_student", "practice_student", "succeed_student", "other")
+        if r != "teacher_edition" or audit_lib.TEACHER_EDITION_ENABLED
+    )
+
+
+def apply_role_policy(role: str, source_file: str = "") -> str:
+    """Map a disabled role to 'other', say so, and leave everything else alone.
+
+    One choke point for every route to a role (model answer, salvage, filename
+    prior, merged batches) so a disabled role cannot slip in through a side door."""
+    if role == "teacher_edition" and not audit_lib.TEACHER_EDITION_ENABLED:
+        if source_file:
+            log(f"graph: {source_file}: teacher_edition is switched off; treating it as 'other'")
+        return "other"
+    return role
+
+
 def filename_role_prior(source_file: str) -> str:
+    return apply_role_policy(_filename_role_prior(source_file))
+
+
+def _filename_role_prior(source_file: str) -> str:
     """Filename is a prior only — used if the model returns garbage."""
     low = source_file.lower()
     if "teacher_edition" in low:
@@ -456,7 +481,7 @@ def _salvage_role(content: str) -> dict | None:
         return None
     cite = re.search(r'"citation_element_id"\s*:\s*"([^"]*)"', content)
     return {
-        "role": m.group(1),
+        "role": apply_role_policy(m.group(1)),
         "citation_element_id": cite.group(1) if cite else None,
         "excerpt_head": "",
     }
@@ -472,9 +497,9 @@ SOURCE_FILE: {source_file}
 {json.dumps({"n": len(elements), "elements": elements}, ensure_ascii=False)}
 
 Respond ONLY JSON:
-{{"source_file":"{source_file}","role":"teacher_edition|learn_student|practice_student|succeed_student|other","citation_element_id":"...","excerpt_head":"<=120 chars"}}
+{{"source_file":"{source_file}","role":"{"|".join(enabled_roles())}","citation_element_id":"...","excerpt_head":"<=120 chars"}}
 
-role must be exactly one of those five strings — not a list, not a pipe-joined enum.
+role must be exactly one of those {len(enabled_roles())} strings — not a list, not a pipe-joined enum.
 excerpt_head must not contain any double-quote characters: leave them out or use single quotes.
 """
     data = chat_json(
@@ -483,7 +508,8 @@ excerpt_head must not contain any double-quote characters: leave them out or use
         prompt,
         salvage=_salvage_role,
     )
-    role = str(data.get("role") or "").strip()
+    role = apply_role_policy(str(data.get("role") or "").strip(), source_file)
+    data["role"] = role
     if role not in ROLES:
         prior = filename_role_prior(source_file)
         log(f"WARN role invalid {role!r} → prior {prior}")

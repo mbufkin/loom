@@ -189,7 +189,7 @@ def test_graph_batches_oversized_evidence_and_drops_nothing() -> None:
         p = messages[0]["content"]
         prompts.append(p)
         if step.startswith("role-"):
-            return _reply({"role": "teacher_edition" if "teacher note" in p else "other"})
+            return _reply({"role": "practice_student" if "teacher note" in p else "other"})
         if step.startswith("lessons-"):
             # A marker the prompt template never contains (it quotes "Lesson 4").
             nums = sorted({int(n) for n in re.findall(r"LSN(\d+)", p)})
@@ -215,7 +215,7 @@ def test_graph_batches_oversized_evidence_and_drops_nothing() -> None:
         assert any(js in p for p in prompts[len(batches):]), el["element_id"]
     assert "part 1 of" in prompts[0]
     # Only one batch saw the teacher note; the specific role still wins.
-    assert role["role"] == "teacher_edition" and role["parts"] == len(batches)
+    assert role["role"] == "practice_student" and role["parts"] == len(batches)
     # Lessons 2 and 17 sit in different batches; both survive the merge.
     assert lessons["covers_lesson_numbers"] == [2, 17], lessons
 
@@ -424,7 +424,7 @@ def test_graph_re_asks_a_bad_json_reply_with_the_full_prompt() -> None:
 
     calls: list[list[dict]] = []
     replies = ['{"role": "other", "excerpt_head": "the "key" page"}',
-               '{"role": "teacher_edition", "excerpt_head": "the key page"}']
+               '{"role": "practice_student", "excerpt_head": "the key page"}']
 
     def fake(cfg, role, messages, step, **kw):
         calls.append(messages)
@@ -438,7 +438,7 @@ def test_graph_re_asks_a_bad_json_reply_with_the_full_prompt() -> None:
         data = graph_phase.chat_json({}, "role-answer-keys", "FULL EVIDENCE: every element")
     finally:
         graph_phase.model_chat, graph_phase.save_raw_model_message, graph_phase.log = saved
-    assert data["role"] == "teacher_edition"
+    assert data["role"] == "practice_student"
     assert len(calls) == 2 and calls[1][0]["content"] == "FULL EVIDENCE: every element"
     assert calls[1][1]["role"] == "assistant" and "not valid JSON" in calls[1][2]["content"]
     assert any("asking again" in l for l in logged), logged
@@ -495,7 +495,7 @@ def test_graph_role_is_recovered_when_only_the_preview_breaks_the_json() -> None
     import graph_phase
 
     live_reply = (
-        '{"source_file":"k.pdf","role":"teacher_edition","citation_element_id":"k.pdf-e1",'
+        '{"source_file":"k.pdf","role":"practice_student","citation_element_id":"k.pdf-e1",'
         '"excerpt_head":"1. What is the \\"Manufacturing exploration\\"?")}'
     )
     temps: list[float] = []
@@ -518,7 +518,7 @@ def test_graph_role_is_recovered_when_only_the_preview_breaks_the_json() -> None
             raise AssertionError("steps without a salvage must still fail loudly")
     finally:
         graph_phase.model_chat, graph_phase.save_raw_model_message, graph_phase.log = saved
-    assert data["role"] == "teacher_edition" and data["citation_element_id"] == "k.pdf-e1"
+    assert data["role"] == "practice_student" and data["citation_element_id"] == "k.pdf-e1"
     assert any(l.startswith("WARN graph: role-k") for l in logged), logged
     # Re-asks run hotter so the model cannot repeat the same slip verbatim.
     assert temps[:3] == [0.1, 0.5, 0.8], temps

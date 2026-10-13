@@ -25,6 +25,7 @@ from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
+import audit_lib
 from audit_lib import (
     atomic_write,
     classify_doc_type,
@@ -156,7 +157,7 @@ def load_graph_routing_hints(project_id: str) -> dict[str, dict]:
                 continue
             role = (n.get("role") or "").strip().lower()
             wf = None
-            if role == "teacher_edition":
+            if role == "teacher_edition" and audit_lib.TEACHER_EDITION_ENABLED:
                 wf = WORKFLOW_TEACHER
             elif role in {"learn_student", "practice_student"}:
                 wf = WORKFLOW_STUDENT
@@ -218,7 +219,7 @@ def filename_lens_prior(source_file: str) -> tuple[str, str] | None:
         return WORKFLOW_SYLLABUS, "filename prior → syllabus"
     if _STANDARDS_RE.search(name):
         return WORKFLOW_STANDARDS, "filename prior → standards_pacing"
-    if _TE_RE.search(name):
+    if audit_lib.TEACHER_EDITION_ENABLED and _TE_RE.search(name):
         return WORKFLOW_TEACHER, "filename prior → teacher_support"
     if _STUDENT_RE.search(name):
         return WORKFLOW_STUDENT, "filename prior → student_practice"
@@ -275,7 +276,11 @@ def resolve_workflow(
         )
 
     # Graph override (Bluebonnet TE/SE, assessments). Do not let graph steal G/H.
-    if graph_hint and graph_hint.get("workflow_id") in PATH_BY_WORKFLOW:
+    if (
+        graph_hint
+        and graph_hint.get("workflow_id") in PATH_BY_WORKFLOW
+        and (graph_hint["workflow_id"] != WORKFLOW_TEACHER or audit_lib.TEACHER_EDITION_ENABLED)
+    ):
         wf = graph_hint["workflow_id"]
         return (
             wf,

@@ -15,6 +15,7 @@ from pathlib import Path
 BASE = Path(__file__).resolve().parent
 sys.path.insert(0, str(BASE))
 
+import audit_lib  # noqa: E402
 from route import (  # noqa: E402
     PATH_BY_WORKFLOW,
     filename_lens_prior,
@@ -76,6 +77,15 @@ def test_quiz_and_rubric_stay_path_b() -> None:
 
 
 def test_graph_teacher_edition_overrides_other() -> None:
+    # Only meaningful while the lens is on; the default is off (see below).
+    audit_lib.TEACHER_EDITION_ENABLED = True
+    try:
+        _graph_teacher_edition_overrides_other()
+    finally:
+        audit_lib.TEACHER_EDITION_ENABLED = False
+
+
+def _graph_teacher_edition_overrides_other() -> None:
     hint = {
         "role": "teacher_edition",
         "workflow_id": "teacher_support",
@@ -88,6 +98,42 @@ def test_graph_teacher_edition_overrides_other() -> None:
     )
     assert (wf, path, fb) == ("teacher_support", "D", False)
     assert "graph" in reason
+
+
+def test_teacher_edition_is_off_by_default_nothing_reaches_path_d() -> None:
+    assert audit_lib.TEACHER_EDITION_ENABLED is False
+    # A stale graph hint from an older run is ignored.
+    hint = {
+        "role": "teacher_edition",
+        "workflow_id": "teacher_support",
+        "reason": "graph Material.role=teacher_edition",
+    }
+    wf, path, _fb, _why = resolve_workflow(
+        doc_type="other", source_file="Algebra_Teacher_Edition_Module_1.pdf", graph_hint=hint
+    )
+    assert path != "D" and wf != "teacher_support", (wf, path)
+    # The Teacher_Edition filename gets no Path D prior either.
+    assert filename_lens_prior("Algebra_Teacher_Edition_Module_1.pdf") is None
+    wf, path, _fb, _why = resolve_workflow(
+        doc_type="other", source_file="Implementation_Guide.pdf", graph_hint=None
+    )
+    assert path != "D", (wf, path)
+
+
+def test_sorting_phase_never_assigns_teacher_edition() -> None:
+    import graph_phase
+
+    assert "teacher_edition" not in graph_phase.enabled_roles()
+    assert graph_phase.apply_role_policy("teacher_edition") == "other"
+    assert graph_phase.apply_role_policy("learn_student") == "learn_student"
+    assert graph_phase.filename_role_prior("Algebra_teacher_edition_m1.pdf") == "other"
+    assert graph_phase._salvage_role('{"role":"teacher_edition","citation_element_id":"x-e1",')["role"] == "other"
+    audit_lib.TEACHER_EDITION_ENABLED = True
+    try:
+        assert "teacher_edition" in graph_phase.enabled_roles()
+        assert graph_phase.apply_role_policy("teacher_edition") == "teacher_edition"
+    finally:
+        audit_lib.TEACHER_EDITION_ENABLED = False
 
 
 def test_graph_student_role() -> None:
@@ -251,6 +297,8 @@ def main() -> int:
         test_exit_ticket_is_path_h_not_quiz,
         test_quiz_and_rubric_stay_path_b,
         test_graph_teacher_edition_overrides_other,
+        test_teacher_edition_is_off_by_default_nothing_reaches_path_d,
+        test_sorting_phase_never_assigns_teacher_edition,
         test_graph_student_role,
         test_filename_standards_prior,
         test_filename_syllabus_prior,
