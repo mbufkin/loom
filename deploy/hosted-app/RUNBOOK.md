@@ -75,38 +75,51 @@ curl -sI https://app.loomaudit.com | head -3     # 302 to <team>.cloudflareacces
 
 ## Landing page and sign-in page (loomaudit.com)
 
-Public front door, three files in `deploy/hosted-app/landing/`: `index.html`
-(landing), `signin.html` (branded sign-in), `site.css` (shared styles), plus
-`_headers`. No JavaScript, fonts or third-party requests; the page policy allows
-styles only from the same site. No secrets and no real district data.
+Public front door: `deploy/hosted-app/landing/` holds `index.html` (landing),
+`signin.html` (branded sign-in) and `site.css` (shared styles). No JavaScript, fonts
+or third-party requests; the page policy allows styles only from the same site. No
+secrets and no real district data.
 
-Visitor path: `loomaudit.com` -> "Sign in" -> `/signin` -> "Sign in with Google"
--> `app.loomaudit.com`. With Google as Access's only login method and **instant
+Visitor path: `loomaudit.com` -> "Sign in" -> `/signin` -> "Sign in with Google" ->
+`app.loomaudit.com`. With Google as Access's only login method and **instant
 authentication** on, Cloudflare sends the visitor straight to Google with no
-Cloudflare picker page, then back into the app. The `signin.html` page
-also tells a refused user to request access (Cloudflare's own "access denied"
-page may not be restylable on the Free plan; unconfirmed, so the guidance lives here).
+Cloudflare picker page, then back into the app. `signin.html` also tells a refused
+user to request access (Cloudflare's own "access denied" page may not be restylable
+on the Free plan; unconfirmed, so the guidance lives here).
 
-Login settings (Zero Trust, Access controls, Applications, `Loom`, Authentication,
-Identity): Google only selected, "Apply instant authentication" on. To allow a
-person without a Google account, turn One-time PIN back on; the Cloudflare picker
-page then returns. Google provider: Integrations, Identity providers.
+How it runs (Pi, same tunnel as the app, separate container):
 
-Host it on **Cloudflare Pages**, not on the Pi or the `loom` tunnel: it stays up
-when the Pi is down and cannot touch the app's origin.
+```text
+loomaudit.com, www.loomaudit.com ─▶ tunnel `loom` ─▶ 127.0.0.1:8791 ─▶ loom-landing (nginx, read-only)
+app.loomaudit.com                ─▶ tunnel `loom` ─▶ 127.0.0.1:8790 ─▶ loom-app (behind Cloudflare Access)
+```
 
-1. Cloudflare dashboard, Workers & Pages, Create, Pages, **Upload assets**.
-2. Project name `loom-landing`; upload the whole `deploy/hosted-app/landing/` folder
-   (`index.html`, `signin.html`, `site.css`, `_headers` at the top level).
-3. Project, Custom domains, add `loomaudit.com` (and `www.loomaudit.com`). Cloudflare
-   creates the DNS records itself. Do not add the apex to `loom.yml`.
-4. Check: `curl -sI https://loomaudit.com/signin | head -1` returns 200, and
-   `curl -sI https://app.loomaudit.com | head -3` still returns a 302 to Access.
+- `loom-landing` is `nginxinc/nginx-unprivileged`, read-only, all capabilities
+  dropped, loopback only, and sees only `landing/` and `landing.nginx.conf`: no
+  secrets, no app data. Security headers live in `landing.nginx.conf`.
+- Trade-off: when the Pi is down the public pages are down too (the app would be
+  anyway). Hosting on Cloudflare Pages instead would keep them up; it would need the
+  same headers as a `_headers` file.
+- DNS: `cloudflared tunnel route dns loom loomaudit.com` (and `www.`), already done.
+  Never route these names to port 8790.
 
-To change the pages: edit them, run `python3 test_landing_page.py` (guards: no
-scripts, no remote resources, links only to the app / mailto / these pages, sign-in
-flow wiring, CSP, noindex on sign-in), then upload the folder again as a new Pages
-deployment. The contact address appears in `index.html` (twice) and `signin.html`.
+Update the pages (no rebuild, no restart of the app):
+
+```bash
+cd /media/mbufkin/pi-srv/loom-app/src
+# edit deploy/hosted-app/landing/*.html or site.css, then:
+python3 test_landing_page.py          # guards: no scripts/remote resources, links, CSP, headers, loopback
+```
+
+The files are bind-mounted read-only, so edits are served at once (browsers may
+cache for up to 5 minutes). After changing `landing.nginx.conf` or the compose
+service: `cd deploy/hosted-app && docker compose -f docker-compose.yml up -d
+loom-landing && docker restart loom-landing`. Starting only `loom-landing` does
+not rebuild or touch `loom-app`.
+
+Check: `curl -sI https://loomaudit.com/signin | head -1` is 200, and
+`curl -sI https://app.loomaudit.com | head -3` is still a 302 to Access. The contact
+address appears in `index.html` (twice) and `signin.html`.
 
 ## Change who can sign in
 

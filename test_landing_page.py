@@ -112,10 +112,38 @@ def test_no_real_district_or_secret_content() -> None:
             assert needle not in text, f"{name}: unexpected content on public page: {needle!r}"
 
 
-def test_headers_file_present() -> None:
-    headers = _read("_headers")
-    for h in ("X-Content-Type-Options: nosniff", "X-Frame-Options: DENY", "Referrer-Policy"):
-        assert h in headers, f"_headers missing {h}"
+def test_web_server_sets_security_headers_and_clean_urls() -> None:
+    conf = (LANDING.parent / "landing.nginx.conf").read_text(encoding="utf-8")
+    for h in ("X-Content-Type-Options", "X-Frame-Options", "Referrer-Policy", "server_tokens off"):
+        assert h in conf, f"landing.nginx.conf missing {h}"
+    assert "try_files $uri $uri/ $uri.html =404" in conf, "/, clean /signin URL or 404 fallback lost"
+    assert "autoindex" not in conf, "directory listing must stay off"
+    # A location block that adds its own header would silently drop the server-level ones.
+    # Strip comments first: prose that mentions "location" must not look like a block.
+    code = re.sub(r"(?m)^\s*#.*$", "", conf)
+    locations = re.findall(r"location\s[^{;]*\{([^}]*)\}", code)
+    assert locations, "expected a location block"
+    assert not any("add_header" in body for body in locations), "add_header inside a location"
+    assert not (LANDING / "_headers").exists(), "_headers is Pages-only and would be served publicly"
+
+
+def test_public_pages_service_is_loopback_only_and_read_only() -> None:
+    compose = (LANDING.parent / "docker-compose.yml").read_text(encoding="utf-8")
+    assert '"127.0.0.1:8791:8080"' in compose, "loom-landing must bind to loopback only"
+    assert not re.search(r'"(?:0\.0\.0\.0:)?8791:8080"', compose), "loom-landing exposed on the LAN"
+    block = compose[compose.index("loom-landing:"):]
+    for needle in ("read_only: true", "cap_drop: [ALL]", "no-new-privileges:true"):
+        assert needle in block, f"loom-landing missing {needle}"
+    assert "secrets" not in block and "/data" not in block, "public service must not see app data"
+
+
+def test_tunnel_routes_public_names_to_the_static_service_only() -> None:
+    tunnel = (LANDING.parent / "cloudflared" / "loom.yml").read_text(encoding="utf-8")
+    assert re.search(r"hostname: app\.loomaudit\.com\s+service: http://127\.0\.0\.1:8790", tunnel)
+    for host in ("loomaudit.com", "www.loomaudit.com"):
+        assert re.search(
+            rf"hostname: {re.escape(host)}\s+service: http://127\.0\.0\.1:8791", tunnel
+        ), f"{host} must go to the static service on 8791"
 
 
 def main() -> int:

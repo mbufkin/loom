@@ -1,9 +1,0 @@
-# Cloudflare Pages reads this file and adds these headers to every response.
-# They harden a static page that has no need to be framed, sniffed or to use
-# device features. (HSTS is left to the Cloudflare zone setting on purpose: a
-# header here that covered subdomains could also affect app.loomaudit.com.)
-/*
-  X-Content-Type-Options: nosniff
-  X-Frame-Options: DENY
-  Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=()

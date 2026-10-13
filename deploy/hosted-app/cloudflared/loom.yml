@@ -10,4 +10,10 @@ ingress:
   # also verifies the Access token on every request (ui/hosted_guard.py).
   - hostname: app.loomaudit.com
     service: http://127.0.0.1:8790
+  # Public pages (landing + sign-in): static, no Access. Served by the loom-landing
+  # container on loopback; never route this to the app.
+  - hostname: loomaudit.com
+    service: http://127.0.0.1:8791
+  - hostname: www.loomaudit.com
+    service: http://127.0.0.1:8791
   - service: http_status:404

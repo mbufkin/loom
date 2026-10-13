@@ -53,3 +53,41 @@ services:
     logging:
       driver: json-file
       options: { max-size: "10m", max-file: "5" }
+
+  # Public pages for loomaudit.com (landing + sign-in). Static files only, no secrets,
+  # no access to app data. Separate from loom-app on purpose: a mistake in a public
+  # page cannot reach the app, and the app can be rebuilt without touching this.
+  loom-landing:
+    image: nginxinc/nginx-unprivileged:1.27-alpine
+    container_name: loom-landing
+    restart: unless-stopped
+    # Loopback only: cloudflared reaches it; the LAN does not.
+    ports:
+      - "127.0.0.1:8791:8080"
+    volumes:
+      - type: bind
+        source: ./landing
+        target: /usr/share/nginx/html
+        read_only: true
+        bind: { create_host_path: false }
+      - type: bind
+        source: ./landing.nginx.conf
+        target: /etc/nginx/conf.d/default.conf
+        read_only: true
+        bind: { create_host_path: false }
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m
+    security_opt:
+      - no-new-privileges:true
+    cap_drop: [ALL]
+    mem_limit: 64m
+    pids_limit: 64
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+    logging:
+      driver: json-file
+      options: { max-size: "5m", max-file: "3" }
