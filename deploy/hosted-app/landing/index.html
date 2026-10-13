@@ -8,152 +8,18 @@
   <meta name="theme-color" content="#f4f1e8">
 
   <!--
-    Best practice: a static marketing page needs no JavaScript, fonts or third-party
-    requests. This policy blocks all of them, so even a future copy/paste mistake
-    (a tracking snippet, a remote script) simply will not load. 'unsafe-inline' is
-    allowed for styles only because the stylesheet below is inline on purpose: one
-    file, nothing to deploy separately, nothing that can 404.
+    Best practice: a public page needs no JavaScript, fonts or third-party requests.
+    This policy blocks all of them, so a future copy/paste mistake (a tracking
+    snippet, a remote script) simply will not load. Styles are allowed only from this
+    same site ('self'); there is no 'unsafe-inline' anywhere.
   -->
   <meta http-equiv="Content-Security-Policy"
-        content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+        content="default-src 'none'; style-src 'self'; img-src data:; base-uri 'none'; form-action 'none'">
 
   <!-- Inline SVG favicon: no extra file, no extra request. -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2314110c'/%3E%3Cpath d='M14 18h36M14 32h36M14 46h36M22 12v40M42 12v40' stroke='%23ff5c38' stroke-width='5' stroke-linecap='square'/%3E%3C/svg%3E">
 
-  <style>
-    /*
-      Design tokens. They match the Loom app (ui/src/styles.css) so the front door
-      and the product feel like one thing. Change a colour here, not in each rule.
-    */
-    :root {
-      --bg: #f4f1e8;
-      --panel: #fffdf7;
-      --ink: #14110c;
-      --muted: #5c553f;      /* darker than the app's muted grey: passes AA on --bg */
-      --accent: #ff5c38;
-      --focus: #2b6cff;
-      --accent-ink: #14110c; /* dark text on orange: white on #ff5c38 fails contrast */
-      --good: #b8f0c8;
-      --warn: #ffe58a;
-      --bad: #ffb3a1;
-      --border: 2px solid var(--ink);
-      --shadow: 4px 4px 0 var(--ink);
-      --maxw: 1080px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      /* System font stack: instant load, no font files, familiar on school devices. */
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      font-size: 17px;
-      line-height: 1.6;
-    }
-    h1, h2, h3 { line-height: 1.15; margin: 0; letter-spacing: -0.02em; }
-    p { margin: 0; }
-    a { color: inherit; }
-    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
-    .mono { font-family: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, monospace; }
-
-    /* Keyboard users get a visible focus ring everywhere; never remove outlines. */
-    a:focus-visible, .btn:focus-visible {
-      outline: 3px solid var(--focus);
-      outline-offset: 3px;
-    }
-    .skip {
-      position: absolute; left: -999px; top: 8px;
-      background: var(--ink); color: var(--bg); padding: 8px 14px; z-index: 10;
-    }
-    .skip:focus { left: 8px; }
-
-    /* ---- Header --------------------------------------------------------- */
-    header { border-bottom: var(--border); background: var(--panel); }
-    .bar { display: flex; align-items: center; justify-content: space-between; height: 68px; }
-    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 800; font-size: 22px; letter-spacing: -0.02em; }
-    .mark { width: 30px; height: 30px; flex: none; }
-
-    /* ---- Buttons -------------------------------------------------------- */
-    .btn {
-      display: inline-block; text-decoration: none; font-weight: 700; font-size: 16px;
-      padding: 12px 22px; border: var(--border); box-shadow: var(--shadow);
-      background: var(--panel); color: var(--ink);
-      transition: transform .08s, box-shadow .08s;
-    }
-    .btn:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
-    .btn.primary { background: var(--accent); color: var(--accent-ink); }
-    .btn.small { padding: 8px 16px; font-size: 15px; box-shadow: 3px 3px 0 var(--ink); }
-    @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
-
-    /* ---- Hero ----------------------------------------------------------- */
-    .hero { padding: 72px 0 80px; }
-    .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
-    .eyebrow {
-      display: inline-block; font-size: 13px; font-weight: 700; letter-spacing: .08em;
-      text-transform: uppercase; border: var(--border); background: var(--warn);
-      padding: 4px 10px; margin-bottom: 22px;
-    }
-    h1 { font-size: clamp(36px, 5.4vw, 58px); font-weight: 800; }
-    h1 em { font-style: normal; background: linear-gradient(transparent 62%, var(--accent) 62%); }
-    .lede { margin-top: 22px; font-size: 20px; color: var(--muted); max-width: 34em; }
-    .cta { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 34px; }
-    .cta-note { margin-top: 18px; font-size: 15px; color: var(--muted); }
-
-    /* ---- Illustrative report card -------------------------------------- */
-    .card { background: var(--panel); border: var(--border); box-shadow: 6px 6px 0 var(--ink); }
-    .card-head { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-bottom: var(--border); background: var(--ink); color: var(--bg); font-size: 14px; }
-    .card-body { padding: 16px; display: grid; gap: 12px; }
-    .row { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; padding: 10px 12px; border: var(--border); font-size: 15px; line-height: 1.4; }
-    .row b { display: block; }
-    .row.good { background: var(--good); }
-    .row.warn { background: var(--warn); }
-    .row.bad  { background: var(--bad); }
-    /* Status is also written as text, never colour alone (colour-blind safe). */
-    .tag { font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; border: var(--border); background: var(--panel); padding: 2px 8px; white-space: nowrap; }
-    .card-foot { padding: 10px 16px; border-top: var(--border); font-size: 13px; color: var(--muted); }
-
-    /* ---- Sections ------------------------------------------------------- */
-    section { padding: 72px 0; border-top: var(--border); }
-    section.alt { background: var(--panel); }
-    .kicker { font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
-    h2 { font-size: clamp(28px, 3.6vw, 40px); font-weight: 800; max-width: 22em; }
-    .sub { margin-top: 14px; color: var(--muted); max-width: 40em; font-size: 18px; }
-
-    .steps { margin-top: 44px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .step { background: var(--panel); border: var(--border); box-shadow: var(--shadow); padding: 24px; }
-    section.alt .step { background: var(--bg); }
-    .num { display: inline-grid; place-items: center; width: 40px; height: 40px; border: var(--border); background: var(--accent); font-weight: 800; font-size: 18px; margin-bottom: 16px; }
-    .step h3 { font-size: 21px; margin-bottom: 10px; }
-    .step p { color: var(--muted); font-size: 16px; }
-
-    .principles { margin-top: 44px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .principle { border-left: 6px solid var(--accent); padding: 4px 0 4px 20px; }
-    .principle h3 { font-size: 20px; margin-bottom: 8px; }
-    .principle p { color: var(--muted); font-size: 16px; }
-
-    .access { display: grid; grid-template-columns: 1.2fr .8fr; gap: 40px; align-items: center; }
-    .access-box { background: var(--panel); border: var(--border); box-shadow: 6px 6px 0 var(--ink); padding: 28px; }
-    .access-box p { color: var(--muted); font-size: 16px; margin: 10px 0 22px; }
-    .access-box .btn { width: 100%; text-align: center; }
-    .access-box .btn + .btn { margin-top: 14px; }
-
-    /* ---- Footer --------------------------------------------------------- */
-    footer { border-top: var(--border); background: var(--ink); color: var(--bg); padding: 28px 0; font-size: 15px; }
-    footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; }
-    footer a { color: var(--bg); }
-
-    /* ---- Small screens -------------------------------------------------- */
-    @media (max-width: 860px) {
-      .hero { padding: 44px 0 56px; }
-      .hero-grid, .access { grid-template-columns: 1fr; gap: 36px; }
-      .steps, .principles { grid-template-columns: 1fr; }
-      section { padding: 52px 0; }
-      body { font-size: 16px; }
-      .lede { font-size: 18px; }
-    }
-  </style>
+  <link rel="stylesheet" href="/site.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -164,8 +30,8 @@
         <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#14110c"/><path d="M14 18h36M14 32h36M14 46h36M22 12v40M42 12v40" stroke="#ff5c38" stroke-width="5" stroke-linecap="square" fill="none"/></svg>
         Loom
       </a>
-      <!-- The one link that matters. The app itself is protected by Cloudflare Access. -->
-      <a class="btn small primary" href="https://app.loomaudit.com">Sign in</a>
+      <!-- Goes to the branded sign-in page, which then hands off to Google and the app. -->
+      <a class="btn small primary" href="/signin">Sign in</a>
     </div>
   </header>
 
@@ -177,7 +43,7 @@
           <h1>Know what is in your curriculum &mdash; and <em>what is missing</em>.</h1>
           <p class="lede">Loom reads every document in full, groups them into units, and checks each unit against what a complete unit needs. You get a clear report of what is present, what is missing, and what needs your decision.</p>
           <div class="cta">
-            <a class="btn primary" href="https://app.loomaudit.com">Sign in</a>
+            <a class="btn primary" href="/signin">Sign in</a>
             <a class="btn" href="#access">Request access</a>
           </div>
           <p class="cta-note">Available to approved users. Sign in with the account you were approved with.</p>
@@ -255,7 +121,7 @@
         <div class="access-box">
           <h3>Get started</h3>
           <p>Already approved? Sign in. Not yet? Send a short request.</p>
-          <a class="btn primary" href="https://app.loomaudit.com">Sign in</a>
+          <a class="btn primary" href="/signin">Sign in</a>
           <!-- The contact address appears here and in the footer; change both together. -->
           <a class="btn" href="mailto:mbufkin@dallasisd.org?subject=Loom%20access%20request">Request access</a>
         </div>
@@ -266,7 +132,7 @@
   <footer>
     <div class="wrap">
       <span><strong>Loom</strong> &middot; Curriculum audit</span>
-      <span><a href="https://app.loomaudit.com">Sign in</a> &nbsp;&middot;&nbsp; <a href="mailto:mbufkin@dallasisd.org?subject=Loom">Contact</a></span>
+      <span><a href="/signin">Sign in</a> &nbsp;&middot;&nbsp; <a href="mailto:mbufkin@dallasisd.org?subject=Loom">Contact</a></span>
     </div>
   </footer>
 </body>

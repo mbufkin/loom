@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in — Loom</title>
+  <meta name="description" content="Sign in to Loom with your approved Google account.">
+  <meta name="theme-color" content="#f4f1e8">
+  <!-- This page is a doorway, not content: keep it out of search results. -->
+  <meta name="robots" content="noindex">
+
+  <!-- Same policy as the landing page: no scripts, no third parties, styles from this site only. -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; style-src 'self'; img-src data:; base-uri 'none'; form-action 'none'">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2314110c'/%3E%3Cpath d='M14 18h36M14 32h36M14 46h36M22 12v40M42 12v40' stroke='%23ff5c38' stroke-width='5' stroke-linecap='square'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/site.css">
+</head>
+<body class="signin-page">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header>
+    <div class="wrap bar">
+      <a class="brand" href="/" aria-label="Loom home">
+        <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#14110c"/><path d="M14 18h36M14 32h36M14 46h36M22 12v40M42 12v40" stroke="#ff5c38" stroke-width="5" stroke-linecap="square" fill="none"/></svg>
+        Loom
+      </a>
+      <a class="btn small" href="/">Back to home</a>
+    </div>
+  </header>
+
+  <main id="main" class="signin-main">
+    <div class="signin-card">
+      <h1>Sign in to Loom</h1>
+      <p class="signin-lede">Use the Google account your access was approved for.</p>
+
+      <!--
+        The one real action on this page. The app is protected by Cloudflare Access,
+        which is set to Google only with instant authentication, so this link sends
+        the visitor straight to Google and then into the app.
+      -->
+      <a class="google-btn" href="https://app.loomaudit.com">
+        <!-- Google's standard four-colour "G" mark. -->
+        <svg viewBox="0 0 48 48" width="22" height="22" aria-hidden="true">
+          <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+          <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+          <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+          <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+        </svg>
+        <span>Sign in with Google</span>
+      </a>
+
+      <ol class="signin-steps">
+        <li>You go to Google to sign in.</li>
+        <li>Google sends you straight back to Loom.</li>
+      </ol>
+
+      <div class="signin-help">
+        <h2>Seeing &ldquo;access denied&rdquo;?</h2>
+        <p>That Google account is not on the approved list yet. Request access using the same email address you signed in with, and you will be told when it is ready.</p>
+        <a class="btn small" href="mailto:mbufkin@dallasisd.org?subject=Loom%20access%20request">Request access</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span><strong>Loom</strong> &middot; Curriculum audit</span>
+      <span>Access is limited to approved accounts.</span>
+    </div>
+  </footer>
+</body>
+</html>

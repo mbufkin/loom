@@ -1,7 +1,7 @@
 # Hosted Loom app — runbook
 
 ```
-browser ─▶ Cloudflare Access (app `Loom`, one-time PIN) ─▶ tunnel `loom` ─▶ Pi 127.0.0.1:8790
+browser ─▶ Cloudflare Access (app `Loom`, Google only) ─▶ tunnel `loom` ─▶ Pi 127.0.0.1:8790
            app.loomaudit.com                               cloudflared-loom.service    └▶ loom-app container
                                                                                          ui/server.py: React UI + /api
 ```
@@ -24,7 +24,7 @@ browser ─▶ Cloudflare Access (app `Loom`, one-time PIN) ─▶ tunnel `loom`
 |---|---|
 | URL | https://app.loomaudit.com |
 | Access team domain | https://weathered-sun-6ada.cloudflareaccess.com |
-| Access app / policy | `Loom`, "Approved users": Allow, emails mbufkin@dallasisd.org; One-time PIN; 24 h session |
+| Access app / policy | `Loom`, "Approved users": Allow, emails mbufkin@dallasisd.org; login method: Google only (instant authentication should be on so there is no Cloudflare picker page; confirm in the dashboard); 24 h session |
 | Application AUD (`LOOM_ACCESS_AUD`) | `f17f06587630eb8e2239a0ac74a9b1cf479a68b9d442ddbbf8a2a3df085b88f3` |
 | Tunnel | `loom`, id `1051ab5b-9c95-4b4f-b700-184253ff23d4`, DNS CNAME app.loomaudit.com |
 
@@ -73,28 +73,40 @@ sudo systemctl enable --now cloudflared-loom.service
 curl -sI https://app.loomaudit.com | head -3     # 302 to <team>.cloudflareaccess.com
 ```
 
-## Landing page (loomaudit.com)
+## Landing page and sign-in page (loomaudit.com)
 
-Public front door: one static file, `deploy/hosted-app/landing/index.html` (plus
-`_headers`). No JavaScript, fonts or third-party requests. Its "Sign in" button goes
-to `https://app.loomaudit.com`, which is still protected by Cloudflare Access. The
-page holds no secrets and no real district data.
+Public front door, three files in `deploy/hosted-app/landing/`: `index.html`
+(landing), `signin.html` (branded sign-in), `site.css` (shared styles), plus
+`_headers`. No JavaScript, fonts or third-party requests; the page policy allows
+styles only from the same site. No secrets and no real district data.
 
-Host it on **Cloudflare Pages**, not on the Pi or through the `loom` tunnel: it stays
-up when the Pi is down and it cannot touch the app's origin.
+Visitor path: `loomaudit.com` -> "Sign in" -> `/signin` -> "Sign in with Google"
+-> `app.loomaudit.com`. With Google as Access's only login method and **instant
+authentication** on, Cloudflare sends the visitor straight to Google with no
+Cloudflare picker page, then back into the app. The `signin.html` page
+also tells a refused user to request access (Cloudflare's own "access denied"
+page may not be restylable on the Free plan; unconfirmed, so the guidance lives here).
+
+Login settings (Zero Trust, Access controls, Applications, `Loom`, Authentication,
+Identity): Google only selected, "Apply instant authentication" on. To allow a
+person without a Google account, turn One-time PIN back on; the Cloudflare picker
+page then returns. Google provider: Integrations, Identity providers.
+
+Host it on **Cloudflare Pages**, not on the Pi or the `loom` tunnel: it stays up
+when the Pi is down and cannot touch the app's origin.
 
 1. Cloudflare dashboard, Workers & Pages, Create, Pages, **Upload assets**.
 2. Project name `loom-landing`; upload the whole `deploy/hosted-app/landing/` folder
-   (so `index.html` and `_headers` are at the top level).
+   (`index.html`, `signin.html`, `site.css`, `_headers` at the top level).
 3. Project, Custom domains, add `loomaudit.com` (and `www.loomaudit.com`). Cloudflare
    creates the DNS records itself. Do not add the apex to `loom.yml`.
-4. Check: `curl -sI https://loomaudit.com | head -3` returns 200, and
+4. Check: `curl -sI https://loomaudit.com/signin | head -1` returns 200, and
    `curl -sI https://app.loomaudit.com | head -3` still returns a 302 to Access.
 
-To change the page: edit `index.html`, run `python3 test_landing_page.py` (guards:
-no scripts, no remote resources, links only to the app / mailto, CSP present), then
-upload the folder again as a new Pages deployment. The contact address appears twice
-(Request access button and footer); change both.
+To change the pages: edit them, run `python3 test_landing_page.py` (guards: no
+scripts, no remote resources, links only to the app / mailto / these pages, sign-in
+flow wiring, CSP, noindex on sign-in), then upload the folder again as a new Pages
+deployment. The contact address appears in `index.html` (twice) and `signin.html`.
 
 ## Change who can sign in
 
