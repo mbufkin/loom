@@ -75,7 +75,7 @@ and `lesson_plan_fill.py`.
 
 ## Loom order (locked)
 
-Classify → **router** → Path A–H (A lesson / B assessment / C general /
+Classify → **graph (HAS-PART)** → **router** → Path A–H (A lesson / B assessment / C general /
 D teacher support / E student practice / F standards & pacing / G syllabus /
 H exit ticket) → place into units → assemble →
 **inferred calendars** (`calendars_inferred/`) → plates → Drive.
